@@ -55,6 +55,23 @@ export async function fetchRecent(limit = 500) {
   return res.json();
 }
 
+// Read rows added since an ISO timestamp (by scraped_at = when WE ingested them).
+// Used by the email digest to find "new" items.
+export async function fetchSince(sinceISO, limit = 500) {
+  const { url, serviceKey, anonKey } = sbConfig();
+  const key = serviceKey || anonKey;
+  if (!key) throw new Error("Need SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY to read.");
+  const q = new URL(`${url}/rest/v1/articles`);
+  q.searchParams.set("select",
+    "url,title,summary,image_url,source,source_url,country,lang,tags,published_at,scraped_at");
+  q.searchParams.set("scraped_at", `gte.${sinceISO}`);
+  q.searchParams.set("order", "published_at.desc.nullslast");
+  q.searchParams.set("limit", String(limit));
+  const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
+  return res.json();
+}
+
 // Count total rows (HEAD with count header).
 export async function countArticles() {
   const { url, serviceKey, anonKey } = sbConfig();
