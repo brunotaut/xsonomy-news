@@ -9,7 +9,10 @@
     "ingest:dry": "node scripts/ingest.mjs --dry",
     "backfill": "node scripts/backfill.mjs --days 300",
     "build": "node scripts/generate.mjs",
-    "test": "node scripts/test-parser.mjs"
+    "digest": "node scripts/digest.mjs --period day",
+    "digest:week": "node scripts/digest.mjs --period week",
+    "digest:dry": "node scripts/digest.mjs --period day --dry",
+    "test": "node scripts/test-parser.mjs && node scripts/test-digest.mjs"
   },
   "engines": { "node": ">=20" }
 }
