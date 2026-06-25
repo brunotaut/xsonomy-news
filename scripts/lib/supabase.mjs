@@ -91,7 +91,7 @@ export async function fetchRecent(limit = 500) {
   if (!key) throw new Error("Need SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY to read.");
   const q = new URL(`${url}/rest/v1/articles`);
   q.searchParams.set("select",
-    "url,title,summary,image_url,source,source_url,country,lang,tags,published_at");
+    "url,title,summary,image_url,source,source_url,country,lang,tags,companies,products,published_at");
   q.searchParams.set("order", "published_at.desc.nullslast");
   q.searchParams.set("limit", String(limit));
   const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
