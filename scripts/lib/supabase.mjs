@@ -40,6 +40,50 @@ export async function upsertArticles(rows, { chunk = 200 } = {}) {
   return written;
 }
 
+// Given a list of URLs, return the Set of those already analyzed
+// (analyzed_at IS NOT NULL). Used by ingest to skip work it's already done.
+// Chunks the IN() list to keep URLs out of overlong query strings.
+export async function fetchAnalyzedUrls(urls, { chunk = 100 } = {}) {
+  const { url, serviceKey, anonKey } = sbConfig();
+  const key = serviceKey || anonKey;
+  if (!key) throw new Error("Need SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY to read.");
+  const done = new Set();
+  for (let i = 0; i < urls.length; i += chunk) {
+    const batch = urls.slice(i, i + chunk);
+    const inList = batch.map((u) => `"${u.replace(/"/g, '""')}"`).join(",");
+    const q = new URL(`${url}/rest/v1/articles`);
+    q.searchParams.set("select", "url");
+    q.searchParams.set("analyzed_at", "not.is.null");
+    q.searchParams.set("url", `in.(${inList})`);
+    const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+    if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
+    for (const row of await res.json()) done.add(row.url);
+  }
+  return done;
+}
+
+// Patch a single article's analysis result by URL. Uses HTTP PATCH (= UPDATE),
+// not upsert, so NOT NULL columns we don't touch are never disturbed. Always
+// stamps analyzed_at so the row won't be re-analyzed on the next run.
+export async function patchAnalysis(articleUrl, { companies = [], products = [] } = {}) {
+  const { url, serviceKey } = sbConfig();
+  if (!serviceKey) throw new Error("SUPABASE_SERVICE_KEY is required for writes.");
+  const q = new URL(`${url}/rest/v1/articles`);
+  q.searchParams.set("url", `eq.${articleUrl}`);
+  const res = await fetch(q, {
+    method: "PATCH",
+    headers: {
+      apikey: serviceKey,
+      Authorization: `Bearer ${serviceKey}`,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal",
+    },
+    body: JSON.stringify({ companies, products, analyzed_at: new Date().toISOString() }),
+  });
+  if (!res.ok) throw new Error(`Supabase patch ${res.status}: ${await res.text()}`);
+  return true;
+}
+
 // Read the most recent N rows (used by the build step).
 export async function fetchRecent(limit = 500) {
   const { url, serviceKey, anonKey } = sbConfig();
