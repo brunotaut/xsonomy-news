@@ -28,6 +28,19 @@ export function hasApiKey() {
 
 // --- HTML → readable text --------------------------------------------------
 
+// Boilerplate headings that mark the end of the story and the start of
+// related-links / recommended / comment sections. We cut the text here so
+// entities from sidebars (e.g. a "More in Drones" rail) don't leak in.
+const CUT_MARKERS = [
+  "related articles", "related stories", "related posts", "more like this",
+  "more in", "more from", "latest in", "latest news", "most read", "most popular",
+  "popular posts", "trending", "read more", "you may also", "you might also",
+  "recommended", "post navigation", "previous post", "next post", "share this",
+  "sign up", "subscribe to our", "newsletter", "leave a comment", "comments",
+  "follow us", "about the author", "in this story", "©", "all rights reserved",
+];
+const CUT_MIN = 400;   // never cut before this much real text has accumulated
+
 // Strip boilerplate and pull the human-readable text out of an article page.
 // Not a full readability port — just enough signal for entity extraction.
 export function htmlToText(html) {
@@ -42,15 +55,38 @@ export function htmlToText(html) {
        .replace(/<footer[\s\S]*?<\/footer>/gi, " ")
        .replace(/<aside[\s\S]*?<\/aside>/gi, " ")
        .replace(/<form[\s\S]*?<\/form>/gi, " ");
-  // Prefer the <article> region if present; it usually isolates the story.
-  const art = s.match(/<article[\s\S]*?<\/article>/i);
-  if (art) s = art[0];
+  // Drop containers whose class/id smells like chrome: related rails, sharing,
+  // recommendations, comments, sidebars, newsletters, menus. Non-greedy and
+  // single-level, but catches the common WordPress/news-CMS patterns.
+  const JUNK = "related|recommend|share|social|newsletter|subscribe|comment|sidebar|" +
+               "widget|promo|advert|read-?more|more-?(stories|posts|from|like)|popular|" +
+               "trending|latest|footer|nav(bar|igation)?|menu|breadcrumb|tags?|author-?bio";
+  const junkRe = new RegExp(
+    `<(div|section|ul|ol|aside)[^>]*\\b(?:class|id)\\s*=\\s*["'][^"']*(?:${JUNK})[^"']*["'][^>]*>[\\s\\S]*?</\\1>`,
+    "gi"
+  );
+  for (let i = 0; i < 3; i++) s = s.replace(junkRe, " ");   // a few passes for nesting
+  // Remove list blocks that are mostly links (menus / related rails).
+  s = s.replace(/<(ul|ol)[^>]*>[\s\S]*?<\/\1>/gi, (m) =>
+    (m.match(/<a\b/gi) || []).length >= 3 ? " " : m);
+  // Prefer the <main> region, then <article>; either usually isolates the story.
+  const main = s.match(/<main[\s\S]*?<\/main>/i);
+  if (main) s = main[0];
+  else { const art = s.match(/<article[\s\S]*?<\/article>/i); if (art) s = art[0]; }
   // Block tags → newlines so sentences don't run together.
   s = s.replace(/<\/(p|div|li|h[1-6]|br|tr|section)>/gi, "\n");
   s = s.replace(/<[^>]+>/g, " ");
   s = decodeEntities(s);
   // Collapse whitespace; keep paragraph breaks.
   s = s.replace(/[ \t\f\v]+/g, " ").replace(/\s*\n\s*/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+  // Truncate at the first boilerplate marker that appears after CUT_MIN chars.
+  const lower = s.toLowerCase();
+  let cut = -1;
+  for (const mk of CUT_MARKERS) {
+    const idx = lower.indexOf(mk, CUT_MIN);
+    if (idx !== -1 && (cut === -1 || idx < cut)) cut = idx;
+  }
+  if (cut !== -1) s = s.slice(0, cut).trim();
   return s;
 }
 
@@ -69,21 +105,33 @@ export async function fetchBodyText(url) {
 
 const SYSTEM = [
   "You extract named entities from defense/UAV news articles.",
-  "Return ONLY the entities that actually appear in the text.",
+  "Return ONLY entities that actually appear in the article text. Do not invent",
+  "entities and do not pull names from unrelated 'related articles' fragments.",
   "",
-  "companies: organisations that make, sell, fund, operate, or are otherwise named",
-  "  in the article — manufacturers, defense firms, startups, integrators. If a",
-  "  product is named but its maker is not, infer the maker ONLY when it is",
-  "  unambiguous and well known (e.g. 'MQ-28 Ghost Bat' -> Boeing, 'M109A7",
-  "  Paladin' -> BAE Systems, 'CROWS' -> Kongsberg). Include every company",
-  "  mentioned, including adversary/third-party makers.",
-  "products: named systems, platforms, drones, munitions, software, or weapon",
-  "  systems mentioned — including adversary/competitor products mentioned in",
-  "  passing (e.g. Shahed-136, Orlan-10).",
+  "companies: commercial organisations that make, sell, fund, operate, or are",
+  "  otherwise named in the article — manufacturers, defense firms, startups,",
+  "  integrators, contractors. Include adversary/third-party makers. If a product",
+  "  is named but its maker is not, infer the maker ONLY when it is unambiguous",
+  "  and well known (e.g. 'MQ-28 Ghost Bat' -> Boeing, 'M109A7 Paladin' -> BAE",
+  "  Systems, 'CROWS' -> Kongsberg, 'Bayraktar TB2' -> Baykar, 'Starlink' -> SpaceX).",
   "",
-  "Exclude: government bodies/militaries (U.S. Army, Pentagon, NATO, ministries),",
-  "  publications/media outlets, trade shows/exercises, people, and places.",
+  "products: SPECIFIC named systems — proper-noun models of platforms, drones,",
+  "  munitions, missiles, weapon systems, or named software. Include adversary/",
+  "  competitor products mentioned in passing (e.g. Shahed-136, Orlan-10).",
+  "",
+  "STRICT EXCLUSIONS (never output these):",
+  "  - Governments, militaries, agencies, programs, labs: U.S. Army, Navy, Air",
+  "    Force, Pentagon, DoD, Department of War, DARPA, NATO, EU, ministries, DEVCOM.",
+  "  - Media outlets, publications, and book publishers (e.g. TWZ, Knox Press).",
+  "  - Universities, trade shows, exercises, conferences (Eurosatory, Valiant Shield).",
+  "  - People and places (cities, countries, bases).",
+  "  - GENERIC technology categories, NOT specific products. Exclude bare terms like",
+  "    'radar', 'RF detection', 'electro-optical sensors', 'acoustic systems',",
+  "    'jammer', 'drone', 'loitering munition', 'counter-UAS', 'AI', 'machine learning'.",
+  "    A product must be a distinct branded/model name, not a capability or category.",
+  "",
   "Normalise each name to a single canonical form; do not duplicate variants.",
+  "If nothing qualifies for a field, return an empty array.",
   "Respond with a single JSON object and nothing else:",
   '{"companies": string[], "products": string[]}',
 ].join("\n");
