@@ -27,6 +27,7 @@ const fmtDate = (s) => {
   return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
 };
 function card(a) {
+  const cos = (a.companies || []).slice(0, 4).map((c) => `<span class="company">${esc(c)}</span>`).join("");
   const tags = (a.tags || []).slice(0, 3).map((t) => `<span>${esc(t)}</span>`).join("");
   const thumb = a.image_url
     ? `<div class="thumb" style="background-image:url('${esc(a.image_url)}')"></div>`
@@ -37,7 +38,7 @@ function card(a) {
       <div class="meta"><span class="src">${esc(a.source)}</span><span>${fmtDate(a.published_at)}</span></div>
       <h3>${esc(a.title)}</h3>
       ${a.summary ? `<p>${esc(a.summary)}</p>` : ""}
-      <div class="tags">${tags}</div>
+      <div class="tags">${cos}${tags}</div>
     </div>
   </a>`;
 }
@@ -46,7 +47,7 @@ function card(a) {
 function buildUrl() {
   const u = new URL(`${CFG.supabaseUrl}/rest/v1/articles`);
   u.searchParams.set("select",
-    "url,title,summary,image_url,source,source_url,country,lang,tags,published_at");
+    "url,title,summary,image_url,source,source_url,country,lang,tags,companies,products,published_at");
   u.searchParams.set("order", "published_at.desc.nullslast");
   u.searchParams.set("limit", String(PAGE));
   u.searchParams.set("offset", String(offset));
