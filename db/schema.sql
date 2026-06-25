@@ -18,9 +18,17 @@ create table if not exists public.articles (
   country       text,
   lang          text,
   tags          text[] not null default '{}',  -- e.g. {counter-uas, eu-regulatory, ukraine}
+  companies     text[] not null default '{}',  -- orgs/manufacturers mentioned, e.g. {Anduril, DJI}
+  products      text[] not null default '{}',  -- systems/products mentioned, e.g. {MQ-28 Ghost Bat}
   published_at  timestamptz,                   -- from the feed
-  scraped_at    timestamptz not null default now()
+  scraped_at    timestamptz not null default now(),
+  analyzed_at   timestamptz                    -- when the LLM entity pass last ran (null = pending)
 );
+
+-- Back-fill the new columns onto pre-existing tables (idempotent).
+alter table public.articles add column if not exists companies   text[] not null default '{}';
+alter table public.articles add column if not exists products    text[] not null default '{}';
+alter table public.articles add column if not exists analyzed_at  timestamptz;
 
 -- ---------------------------------------------------------------------------
 -- Indexes — feed is queried by recency, by tag, and by full-text search.
@@ -28,6 +36,9 @@ create table if not exists public.articles (
 create index if not exists articles_published_idx on public.articles (published_at desc);
 create index if not exists articles_source_idx    on public.articles (source);
 create index if not exists articles_tags_idx      on public.articles using gin (tags);
+create index if not exists articles_companies_idx on public.articles using gin (companies);
+create index if not exists articles_products_idx  on public.articles using gin (products);
+create index if not exists articles_analyzed_idx  on public.articles (analyzed_at);
 
 -- Full-text search over title + summary (used by the client search box).
 alter table public.articles
@@ -60,3 +71,6 @@ create or replace view public.feed as
          country, lang, tags, published_at
   from public.articles
   order by published_at desc nulls last;
+
+-- Make sure PostgREST picks up the new table/columns immediately.
+notify pgrst, 'reload schema';
