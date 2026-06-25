@@ -25,12 +25,13 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Ingest latest headlines into Supabase
+      - name: Ingest latest headlines into Supabase (+ LLM entity tagging)
         if: github.event_name != 'push'      # skip the write on code-only pushes
         run: npm run ingest
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Build static site
         run: npm run build
