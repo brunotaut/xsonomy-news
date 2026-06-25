@@ -71,6 +71,7 @@ After pushing to `main`, "Ingest & deploy news" appears in the **Actions** tab.
 | `SUPABASE_URL` | your Project URL |
 | `SUPABASE_ANON_KEY` | anon public key |
 | `SUPABASE_SERVICE_KEY` | service_role key |
+| `ANTHROPIC_API_KEY` | Claude API key from console.anthropic.com (entity tagging). Optional — if omitted, ingest still runs and the companies/products pass is skipped. |
 
 **Variables** (plain):
 
@@ -104,14 +105,33 @@ npm run build            # build ./public
 npx serve public         # preview
 ```
 
+## Email digest
+
+A **daily digest Tue–Fri at 07:00 UTC**, plus a **weekly roundup Monday 07:00 UTC**
+(no daily on Monday, nothing on weekends). Items are grouped by theme and sent via
+**Resend**. Each recipient can be filtered to only the topics they care about, every
+email carries an unsubscribe link + `List-Unsubscribe` header, and empty days send nothing.
+
+Setup:
+1. Sign up at resend.com → **Add domain** → verify `xsonomy.com` (add the DNS records they show). This lets you send from `news@xsonomy.com`. *(To test before verifying, use `DIGEST_FROM=onboarding@resend.dev`.)*
+2. **API Keys → Create** → copy the key.
+3. In the repo, add **secret** `RESEND_API_KEY`, **variable** `DIGEST_FROM` (e.g. `xSonomy News <news@xsonomy.com>`), and optionally `DIGEST_UNSUBSCRIBE` (defaults to `news@xsonomy.com`).
+4. **Recipients & per-person filters**: copy `recipients.example.json` → `recipients.json`, edit, and commit it. Each entry is `{ "email": "...", "tags": [...] }`; an empty `tags` array means *everything*, otherwise the person only gets items carrying one of those tags. (No file? It falls back to the `DIGEST_RECIPIENTS` JSON variable, then to a plain `DIGEST_TO` list.)
+5. The `Email digest` workflow runs on the schedule above. Trigger it manually anytime from the Actions tab (choose `day` or `week`).
+
+**Unsubscribe**: there's no subscriber database — the link is a `mailto:` that asks to be removed, and you delete that address from `recipients.json`. Gmail/Apple Mail also show a one-click unsubscribe from the `List-Unsubscribe` header.
+
+Local: `npm run digest:dry` writes a per-recipient `public/_digest_*.html` preview without sending; `npm run digest` sends the daily one.
+
 ## Tuning
 - **Add/remove outlets**: edit `sources.json`. Set `"specialist": true` to keep every item from a drone-only outlet; `false` applies the UAV keyword gate.
 - **Relevance / tags**: keyword lists in `scripts/lib/enrich.mjs`.
+- **Companies & products (LLM)**: extracted per-article in `scripts/lib/analyze.mjs` (Claude). It reads the full article body, falls back to title+summary if the page can't be fetched, and writes the `companies` / `products` arrays. Each row is stamped `analyzed_at`, so the daily run only analyzes new/unanalyzed items and retries past failures. Knobs: `ANTHROPIC_MODEL`, `ANALYZE_MAX` (per-run cost cap, default 80), `ANALYZE_CONCURRENCY` (default 4). Skip it with `npm run ingest -- --no-analyze`.
 - **Daily look-back window**: `INGEST_MAX_AGE_DAYS` (default 14).
 - **Sources without RSS** (`"rss": null` — currently Försvarets forum SE, Yle, C4Defence): covered by the sitemap backfill only; add a feed URL if you find one.
 
 ## Notes & caveats
 - **RSS depth**: feeds carry only the latest ~20–100 items, which is why history comes from the sitemap backfill, not RSS.
 - **Hotlinked images** can break if a publisher blocks hotlinking or changes URLs; the UI falls back to a placeholder tile.
-- **Aggregation hygiene**: only headline + short summary + image + backlink are stored — never full article text.
+- **Aggregation hygiene**: only headline + short summary + image + backlink are stored — never full article text. The LLM entity pass fetches the body transiently to read it, but only the extracted `companies`/`products` names are persisted.
 - **Supabase free tier** pauses a project after ~1 week of inactivity; the daily job keeps it awake. At ~5–10 new items/day plus the backfill you stay well within the free 500 MB.
