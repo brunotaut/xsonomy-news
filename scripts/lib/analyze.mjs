@@ -180,38 +180,67 @@ function cleanList(arr) {
   return out;
 }
 
-async function callClaude(userContent) {
+const RETRY_STATUS = new Set([429, 500, 502, 503, 529]);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Generic Anthropic Messages call with retry/backoff. Returns the text reply.
+// Shared by the article entity pass and the company-enrichment pipeline.
+export async function anthropicComplete({ system, user, maxTokens = 1024, retries = 4 } = {}) {
   const key = process.env.ANTHROPIC_API_KEY;
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), 40000);
-  try {
-    const res = await fetch(API_URL, {
-      method: "POST",
-      signal: ctrl.signal,
-      headers: {
-        "x-api-key": key,
-        "anthropic-version": ANTHROPIC_VERSION,
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 1024,
-        temperature: 0,
-        system: SYSTEM,
-        messages: [{ role: "user", content: userContent }],
-      }),
-    });
-    clearTimeout(t);
-    if (!res.ok) {
+  let lastErr;
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 40000);
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        signal: ctrl.signal,
+        headers: {
+          "x-api-key": key,
+          "anthropic-version": ANTHROPIC_VERSION,
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          model: MODEL,
+          max_tokens: maxTokens,
+          temperature: 0,
+          system,
+          messages: [{ role: "user", content: user }],
+        }),
+      });
+      clearTimeout(t);
+      if (res.ok) {
+        const data = await res.json();
+        return (data.content || []).map((b) => b.text || "").join("");
+      }
       const detail = await res.text().catch(() => "");
+      // Retry on rate limits / transient server errors, honoring Retry-After.
+      if (RETRY_STATUS.has(res.status) && attempt < retries) {
+        const ra = Number(res.headers.get("retry-after"));
+        const wait = Number.isFinite(ra) && ra > 0 ? ra * 1000 : Math.min(30000, 1000 * 2 ** attempt);
+        await sleep(wait);
+        lastErr = new Error(`Anthropic ${res.status}: ${detail.slice(0, 120)}`);
+        continue;
+      }
       throw new Error(`Anthropic ${res.status}: ${detail.slice(0, 200)}`);
+    } catch (e) {
+      clearTimeout(t);
+      lastErr = e;
+      // Network/abort errors: back off and retry too.
+      if (attempt < retries && (e.name === "AbortError" || e.name === "TypeError")) {
+        await sleep(Math.min(30000, 1000 * 2 ** attempt));
+        continue;
+      }
+      throw e;
     }
-    const data = await res.json();
-    return (data.content || []).map((b) => b.text || "").join("");
-  } finally {
-    clearTimeout(t);
   }
+  throw lastErr;
 }
+
+// Also export the defensive JSON-object parser so other pipelines can reuse it.
+export { parseEntities as parseJsonObject };
+
+const callClaude = (userContent) => anthropicComplete({ system: SYSTEM, user: userContent, maxTokens: 1024 });
 
 // --- public API ------------------------------------------------------------
 
