@@ -89,6 +89,22 @@ If using a subdomain, add a DNS `CNAME` record `news` → `<your-user>.github.io
 *Actions tab → "Historical backfill (manual)" → Run workflow* (days `300`, max per source `300`).
 This is slow (crawls sitemaps + fetches article pages). Re-runnable safely.
 
+### 5b. Backfill companies/products over old articles (one-time)
+*Actions tab → "Analyze backfill (manual)" → Run workflow.* Runs the LLM entity pass over
+every article with `analyzed_at IS NULL`, filling `companies`/`products`. **Resumable** —
+each row is stamped when done, so you can stop and re-run to continue, or cap a run with the
+`max` input. Needs the `ANTHROPIC_API_KEY` secret. It does not deploy; run "Ingest & deploy
+news" (or wait for the daily run) afterwards to publish the chips. Locally: `npm run analyze:backfill`.
+
+### 5c. Enrich the company catalogue (one-time)
+*Actions tab → "Enrich companies (manual)" → Run workflow.* Fills `public.companies`
+profile + financial fields from Claude's training knowledge only (no web). Guardrails:
+never overwrites curated values, leaves uncertain fields NULL (don't trust it to know
+financials/CAGE/sanctions for small firms), records a `confidence` level, stamps
+`enrichment_status='llm'`, and leaves `publication_status='draft'` for review. **Resumable.**
+Needs `ANTHROPIC_API_KEY`. Locally: `npm run enrich:companies` (or `npm run enrich:companies:dry`
+for a no-write sample). Review drafts before flipping any to `published`.
+
 ### 6. Done — it runs itself
 The daily workflow ingests new items, rebuilds, and redeploys at 05:00 UTC. You can also
 trigger "Ingest & deploy news" manually anytime.
