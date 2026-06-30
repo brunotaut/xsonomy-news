@@ -24,23 +24,23 @@ a { color: inherit; text-decoration: none; }
 .muted { color: var(--muted); }
 
 /* subscribe form */
-.subscribe { flex: 0 0 300px; max-width: 100%; background: var(--panel); border: 1px solid var(--line);
-  border-radius: var(--radius); padding: 16px 16px 14px; }
-.subscribe .sub-h { font-family: "Share Tech Mono", ui-monospace, monospace; font-size: 10px; letter-spacing: .28em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
-.subscribe .sub-p { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
-.subscribe input { width: 100%; padding: 10px 12px; font-size: 14px; color: var(--text); background: var(--bg);
-  border: 1px solid var(--line); border-radius: 9px; margin-bottom: 8px; }
+.subscribe { flex: 0 0 48%; max-width: 50%; align-self: stretch; background: var(--panel);
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+.subscribe .sub-h { font-family: "Chakra Petch", sans-serif; font-weight: 600; font-size: 18px;
+  letter-spacing: .02em; color: var(--text); margin-bottom: 12px; }
+.subscribe .sub-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.subscribe input { flex: 1 1 130px; min-width: 0; padding: 10px 12px; font-size: 14px; color: var(--text);
+  background: var(--bg); border: 1px solid var(--line); border-radius: 9px; }
 .subscribe input:focus { outline: none; border-color: var(--accent); }
-.subscribe button { width: 100%; padding: 10px 12px; font-family: "Share Tech Mono", ui-monospace, monospace;
+.subscribe button { flex: 0 0 auto; padding: 10px 18px; font-family: "Share Tech Mono", ui-monospace, monospace;
   font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0a0d10; background: var(--accent);
   border: 1px solid var(--accent); border-radius: 9px; cursor: pointer; }
 .subscribe button:hover { filter: brightness(1.08); }
 .subscribe button:disabled { opacity: .55; cursor: default; }
-.subscribe .sub-msg { min-height: 16px; margin-top: 8px; font-size: 12px; font-family: "Share Tech Mono", ui-monospace, monospace; letter-spacing: .03em; }
+.subscribe .sub-msg { min-height: 16px; margin-top: 10px; font-size: 12px; font-family: "Share Tech Mono", ui-monospace, monospace; letter-spacing: .03em; }
 .subscribe .sub-msg.ok { color: var(--accent2); }
 .subscribe .sub-msg.err { color: #ff6a5f; }
-@media (max-width: 640px) { .subscribe { flex-basis: 100%; } }
+@media (max-width: 760px) { .subscribe { flex-basis: 100%; max-width: 100%; } }
 
 .controls { display: flex; flex-direction: column; gap: 12px; margin: 22px 0; }
 #q { width: 100%; padding: 13px 16px; font-size: 16px; color: var(--text);
