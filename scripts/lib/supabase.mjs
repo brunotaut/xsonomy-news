@@ -207,6 +207,21 @@ export async function patchCompanyFields(id, fields = {}) {
   return true;
 }
 
+// Read newsletter subscribers (needs the SERVICE key — RLS hides them from anon).
+// Used by the digest to merge website sign-ups into the recipient list.
+export async function fetchSubscribers() {
+  const { url, serviceKey, anonKey } = sbConfig();
+  const key = serviceKey || anonKey;
+  if (!key) throw new Error("Need SUPABASE_SERVICE_KEY to read subscribers.");
+  const q = new URL(`${url}/rest/v1/subscribers`);
+  q.searchParams.set("select", "email,name,confirmed");
+  q.searchParams.set("order", "created_at.asc");
+  q.searchParams.set("limit", "10000");
+  const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  if (!res.ok) throw new Error(`Supabase subscribers ${res.status}: ${await res.text()}`);
+  return res.json();
+}
+
 // Read the most recent N rows (used by the build step).
 export async function fetchRecent(limit = 500) {
   const { url, serviceKey, anonKey } = sbConfig();
