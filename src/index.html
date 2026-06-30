@@ -26,9 +26,19 @@
 
   <main class="wrap">
     <section class="intro">
-      <h1>UAV &amp; Counter-Drone News</h1>
-      <p>Headlines aggregated from <strong>__SOURCECOUNT__</strong> proven defence and drone-industry outlets, refreshed daily.
-         Every card links to the original source. <span class="muted">__COUNT__ items archived · built __BUILT__</span></p>
+      <div class="intro-head">
+        <h1>UAV &amp; Counter-Drone News</h1>
+        <p>Headlines aggregated from <strong>__SOURCECOUNT__</strong> proven defence and drone-industry outlets, refreshed daily.
+           Every card links to the original source. <span class="muted">__COUNT__ items archived · built __BUILT__</span></p>
+      </div>
+      <form id="subscribe" class="subscribe" aria-label="Subscribe to daily news updates">
+        <div class="sub-h">// Daily briefing</div>
+        <p class="sub-p">The day's UAV &amp; counter-UAS headlines, in your inbox.</p>
+        <input id="sub-name" name="name" type="text" placeholder="Name" autocomplete="name" />
+        <input id="sub-email" name="email" type="email" required placeholder="you@email.com" autocomplete="email" />
+        <button type="submit">Subscribe</button>
+        <div id="sub-msg" class="sub-msg" role="status" aria-live="polite"></div>
+      </form>
     </section>
 
     <section class="controls" aria-label="Filters">
@@ -49,5 +59,6 @@
   </footer>
 
   <script src="assets/app.js" type="module"></script>
+  <script src="assets/subscribe.js" type="module"></script>
 </body>
 </html>
