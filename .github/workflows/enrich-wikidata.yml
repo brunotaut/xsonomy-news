@@ -1,0 +1,31 @@
+name: Enrich companies (Wikidata)
+
+# Free, no-LLM enrichment: fills founded year, HQ city, employees, revenue,
+# valuation, ticker, website, logo and social links from Wikidata. NULL-only —
+# never overwrites curated or LLM values. Safe to re-run.
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: "Max companies this run (blank = all)"
+        required: false
+        default: ""
+      dry:
+        description: "Dry run — resolve & print, NO writes"
+        type: boolean
+        required: false
+        default: true
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Enrich from Wikidata
+        run: node scripts/enrich-wikidata.mjs ${{ github.event.inputs.dry == 'true' && '--dry' || '' }} ${{ github.event.inputs.max && format('--max {0}', github.event.inputs.max) || '' }}
+        env:
+          SUPABASE_URL: https://uobidcahmrmfdmfbrtkt.supabase.co
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
