@@ -21,22 +21,24 @@ if (form) {
 
     btn.disabled = true; show("Subscribing…", "");
     try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/subscribers?on_conflict=email`, {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/subscribers`, {
         method: "POST",
         headers: {
           apikey: SUPABASE_KEY,
           Authorization: `Bearer ${SUPABASE_KEY}`,
           "Content-Type": "application/json",
-          Prefer: "resolution=ignore-duplicates,return=minimal",
+          Prefer: "return=minimal",
         },
         body: JSON.stringify({ email, name: name || null, source: "news" }),
       });
       if (res.ok) {
         form.reset();
         show("You're subscribed ✓ — daily briefing on its way.", "ok");
+      } else if (res.status === 409) {
+        show("You're already subscribed ✓", "ok");
       } else {
         const t = await res.text().catch(() => "");
-        show(/duplicate|unique/i.test(t) ? "You're already subscribed ✓" : "Something went wrong — try again.", /duplicate|unique/i.test(t) ? "ok" : "err");
+        show(/duplicate|unique|23505/i.test(t) ? "You're already subscribed ✓" : "Something went wrong — try again.", /duplicate|unique|23505/i.test(t) ? "ok" : "err");
       }
     } catch {
       show("Network error — try again.", "err");
