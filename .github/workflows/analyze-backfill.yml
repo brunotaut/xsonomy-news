@@ -1,0 +1,44 @@
+name: Analyze backfill (manual)
+
+# One-off / occasional. Runs the LLM entity pass (companies/products) over every
+# article that hasn't been analyzed yet. Resumable: re-run to continue. Does NOT
+# rebuild or deploy the site — run "Ingest & deploy news" afterwards (or wait for
+# the daily run) to publish the new chips.
+
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: "Max articles to analyze this run (blank = all remaining)"
+        default: ""
+        required: false
+      concurrency:
+        description: "Parallel analyses"
+        default: "5"
+        required: true
+      batch:
+        description: "Rows fetched per page"
+        default: "50"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Backfill companies/products
+        run: |
+          MAX_ARG=""
+          if [ -n "${{ github.event.inputs.max }}" ]; then MAX_ARG="--max ${{ github.event.inputs.max }}"; fi
+          node scripts/analyze-backfill.mjs --concurrency ${{ github.event.inputs.concurrency }} --batch ${{ github.event.inputs.batch }} $MAX_ARG
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
