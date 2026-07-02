@@ -254,6 +254,103 @@ export async function fetchSince(sinceISO, limit = 500) {
   return res.json();
 }
 
+// ---------------------------------------------------------------------------
+// Entity resolution (resolve-entities.mjs)
+// ---------------------------------------------------------------------------
+
+function writeHeaders(serviceKey, extra = {}) {
+  return {
+    apikey: serviceKey,
+    Authorization: `Bearer ${serviceKey}`,
+    "Content-Type": "application/json",
+    ...extra,
+  };
+}
+
+// Fetch analyzed-but-unresolved articles (tags present, junctions not built).
+export async function fetchUnresolvedArticles(limit = 150) {
+  const { url, serviceKey, anonKey } = sbConfig();
+  const key = serviceKey || anonKey;
+  if (!key) throw new Error("Need SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY to read.");
+  const q = new URL(`${url}/rest/v1/articles`);
+  q.searchParams.set("select", "id,url,title,companies,products");
+  q.searchParams.set("analyzed_at", "not.is.null");
+  q.searchParams.set("entities_resolved_at", "is.null");
+  q.searchParams.set("order", "published_at.desc.nullslast");
+  q.searchParams.set("limit", String(limit));
+  const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
+  return res.json();
+}
+
+// Fetch ALL rows of a table, paginated past PostgREST's per-request cap.
+export async function fetchAllRows(table, select, { pageSize = 1000 } = {}) {
+  const { url, serviceKey, anonKey } = sbConfig();
+  const key = serviceKey || anonKey;
+  if (!key) throw new Error("Need SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY to read.");
+  const rows = [];
+  for (let offset = 0; ; offset += pageSize) {
+    const q = new URL(`${url}/rest/v1/${table}`);
+    q.searchParams.set("select", select);
+    q.searchParams.set("limit", String(pageSize));
+    q.searchParams.set("offset", String(offset));
+    const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+    if (!res.ok) throw new Error(`Supabase read ${table} ${res.status}: ${await res.text()}`);
+    const page = await res.json();
+    rows.push(...page);
+    if (page.length < pageSize) return rows;
+  }
+}
+
+// Generic insert. ignoreDuplicates needs onConflict (comma-separated columns).
+// returning=true asks PostgREST for the created rows (to get generated ids).
+export async function insertRows(table, rows, { onConflict, ignoreDuplicates = false, returning = false } = {}) {
+  if (!rows.length) return [];
+  const { url, serviceKey } = sbConfig();
+  if (!serviceKey) throw new Error("SUPABASE_SERVICE_KEY is required for writes.");
+  const q = new URL(`${url}/rest/v1/${table}`);
+  if (onConflict) q.searchParams.set("on_conflict", onConflict);
+  const prefer = [
+    ignoreDuplicates ? "resolution=ignore-duplicates" : null,
+    returning ? "return=representation" : "return=minimal",
+  ].filter(Boolean).join(",");
+  const res = await fetch(q, {
+    method: "POST",
+    headers: writeHeaders(serviceKey, { Prefer: prefer }),
+    body: JSON.stringify(rows),
+  });
+  if (!res.ok) throw new Error(`Supabase insert ${table} ${res.status}: ${await res.text()}`);
+  return returning ? res.json() : [];
+}
+
+// Delete resolution-cache rows by id (used to heal stale cache entries).
+export async function deleteTagResolutions(ids) {
+  if (!ids.length) return;
+  const { url, serviceKey } = sbConfig();
+  if (!serviceKey) throw new Error("SUPABASE_SERVICE_KEY is required for writes.");
+  const q = new URL(`${url}/rest/v1/tag_resolutions`);
+  q.searchParams.set("id", `in.(${ids.join(",")})`);
+  const res = await fetch(q, { method: "DELETE", headers: writeHeaders(serviceKey, { Prefer: "return=minimal" }) });
+  if (!res.ok) throw new Error(`Supabase delete tag_resolutions ${res.status}: ${await res.text()}`);
+}
+
+// Stamp entities_resolved_at on fully-processed articles.
+export async function stampEntitiesResolved(ids, { chunk = 100 } = {}) {
+  if (!ids.length) return;
+  const { url, serviceKey } = sbConfig();
+  if (!serviceKey) throw new Error("SUPABASE_SERVICE_KEY is required for writes.");
+  for (let i = 0; i < ids.length; i += chunk) {
+    const q = new URL(`${url}/rest/v1/articles`);
+    q.searchParams.set("id", `in.(${ids.slice(i, i + chunk).join(",")})`);
+    const res = await fetch(q, {
+      method: "PATCH",
+      headers: writeHeaders(serviceKey, { Prefer: "return=minimal" }),
+      body: JSON.stringify({ entities_resolved_at: new Date().toISOString() }),
+    });
+    if (!res.ok) throw new Error(`Supabase stamp ${res.status}: ${await res.text()}`);
+  }
+}
+
 // Count total rows (HEAD with count header).
 export async function countArticles() {
   const { url, serviceKey, anonKey } = sbConfig();
