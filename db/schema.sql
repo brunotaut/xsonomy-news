@@ -72,5 +72,27 @@ create or replace view public.feed as
   from public.articles
   order by published_at desc nulls last;
 
+-- ---------------------------------------------------------------------------
+-- Entity resolution (resolve-entities.mjs): per-tag decision cache + per-
+-- article progress stamp. Applied to the live DB as migration
+-- 'entity_resolution' (2026-07-02); kept here for reference/idempotent re-runs.
+-- ---------------------------------------------------------------------------
+create table if not exists public.tag_resolutions (
+  id          uuid primary key default gen_random_uuid(),
+  kind        text not null check (kind in ('company','product')),
+  tag         citext not null,
+  decision    text not null check (decision in ('matched','created','rejected')),
+  entity_id   uuid,               -- companies.id or products.id (null when rejected)
+  reason      text,               -- 'exact' | 'alias' | 'normalized' | 'fuzzy:0.93' | 'llm' | 'blocklist' | …
+  created_at  timestamptz not null default now(),
+  unique (kind, tag)
+);
+
+alter table public.articles add column if not exists entities_resolved_at timestamptz;
+
+create index if not exists articles_entities_unresolved_idx
+  on public.articles (published_at desc)
+  where entities_resolved_at is null and analyzed_at is not null;
+
 -- Make sure PostgREST picks up the new table/columns immediately.
 notify pgrst, 'reload schema';
