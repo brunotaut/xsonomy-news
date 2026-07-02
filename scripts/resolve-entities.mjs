@@ -154,6 +154,7 @@ async function main() {
   const companyInserts = [];        // rows for POST /companies
   const companyInsertMeta = [];     // parallel: { tags:[lowerTag…], aliases:[names…] }
   const canonSeen = new Map();      // lower(canonical) → index into companyInserts
+  const sideRows = { investors: new Map(), institutions: new Map() };  // slug → row
   for (const [lo, u] of unknown.company) {
     const v = verdicts.companies.get(lo);
     if (!v) { stats.undecided++; continue; }                    // no verdict → retry next run
@@ -161,6 +162,23 @@ async function main() {
       decisions.company.set(lo, { rejected: true });
       newCacheRows.push({ kind: "company", tag: u.name, decision: "rejected", entity_id: null, reason: "llm:not_company" });
       stats.llmRejected++;
+      continue;
+    }
+    // Investors and government/quasi-government bodies live in their own
+    // side tables, not the companies registry. Cached as 'rejected' so the
+    // tag never creates a companies row; the side insert is best-effort.
+    if (v.kind !== "company") {
+      const table = v.kind === "investor" ? "investors" : "institutions";
+      const slug = slugify(v.canonical);
+      if (!sideRows[table].has(slug)) {
+        sideRows[table].set(slug, {
+          name: v.canonical, slug, hq_country: v.country, website: v.website,
+          source_urls: u.urls.slice(0, MAX_SOURCE_URLS),
+        });
+      }
+      decisions.company.set(lo, { rejected: true });
+      newCacheRows.push({ kind: "company", tag: u.name, decision: "rejected", entity_id: null, reason: `llm:${v.kind}` });
+      stats[table] = (stats[table] || 0) + 1;
       continue;
     }
     // The canonical form may already exist ("RTX Collins Aerospace" → "Collins Aerospace").
@@ -193,7 +211,8 @@ async function main() {
     if (canonLo !== lo) companyInsertMeta[ix].aliases.push(u.name);
   }
 
-  const productPlans = [];          // { row (sans company_id), makerName, tag, lo }
+  const productPlans = [];          // { row (sans company_id), makerName, tags: [{lo, tag}] }
+  const prodCanonSeen = new Map();  // lower(canonical) → plan (dedupe within the run)
   for (const [lo, u] of unknown.product) {
     const v = verdicts.products.get(lo);
     if (!v) { stats.undecided++; continue; }
@@ -210,8 +229,13 @@ async function main() {
       stats.matched++;
       continue;
     }
-    productPlans.push({
-      lo, tag: u.name, makerName: v.maker,
+    // Two tags can canonicalise to the same product ("CROWS" + "Common
+    // Remotely Operated Weapon Station") — create once, cache both tags.
+    const canonLo = v.canonical.toLowerCase();
+    const dup = prodCanonSeen.get(canonLo);
+    if (dup) { dup.tags.push({ lo, tag: u.name }); continue; }
+    const plan = {
+      tags: [{ lo, tag: u.name }], makerName: v.maker,
       row: {
         name: v.canonical,
         slug: uniqueSlug(v.canonical),
@@ -221,7 +245,9 @@ async function main() {
         confidence: "low",
         source_urls: u.urls.slice(0, MAX_SOURCE_URLS),
       },
-    });
+    };
+    prodCanonSeen.set(canonLo, plan);
+    productPlans.push(plan);
   }
 
   // --- report / dry-run -------------------------------------------------------
@@ -232,6 +258,11 @@ async function main() {
   if (productPlans.length) {
     console.log(`\nNew products (${productPlans.length}):`);
     for (const p of productPlans) console.log(`  + ${p.row.name}  [${p.row.category}]  maker: ${p.makerName || "—"}`);
+  }
+  for (const table of ["investors", "institutions"]) {
+    if (!sideRows[table].size) continue;
+    console.log(`\nNew ${table} (${sideRows[table].size}):`);
+    for (const r of sideRows[table].values()) console.log(`  + ${r.name}  [${r.hq_country || "?"}]`);
   }
   if (DRY) {
     const rej = newCacheRows.filter((r) => r.decision === "rejected");
@@ -244,10 +275,14 @@ async function main() {
   }
 
   // --- pass 4: write ----------------------------------------------------------
-  // 4a. create companies (need ids back), cache + alias them.
+  // Ordering matters for crash-safety: entity creations first (we need the
+  // ids), then the decision cache (so a later failure never causes the LLM to
+  // re-vet — and possibly contradict — a decision), then best-effort links.
+
+  // 4a. create companies (need ids back).
+  const aliasRows = [];
   if (companyInserts.length) {
     const created = await insertRows("companies", companyInserts, { returning: true });
-    const aliasRows = [];
     created.forEach((row, ix) => {
       const meta = companyInsertMeta[ix];
       for (const lo of meta.tags) decisions.company.set(lo, { entityId: row.id });
@@ -259,37 +294,48 @@ async function main() {
       // Extend the in-memory index so product maker links can hit new companies.
       companyIndex.exact.set(row.name.toLowerCase(), row.id);
     });
-    if (aliasRows.length) await insertRows("company_aliases", aliasRows, { onConflict: "company_id,alias", ignoreDuplicates: true });
     stats.created += created.length;
     console.log(`Created ${created.length} company row(s).`);
   }
 
   // 4b. create products with maker links.
+  const pcRows = [];
   if (productPlans.length) {
     const rows = productPlans.map((p) => {
       const maker = p.makerName ? matchCompany(p.makerName, companyIndex) : null;
       return { ...p.row, company_id: maker ? maker.id : null };
     });
     const created = await insertRows("products", rows, { returning: true });
-    const pcRows = [];
     created.forEach((row, ix) => {
       const plan = productPlans[ix];
-      decisions.product.set(plan.lo, { entityId: row.id });
-      newCacheRows.push({ kind: "product", tag: plan.tag, decision: "created", entity_id: row.id, reason: "llm" });
+      for (const { lo, tag } of plan.tags) {
+        decisions.product.set(lo, { entityId: row.id });
+        newCacheRows.push({ kind: "product", tag, decision: "created", entity_id: row.id, reason: "llm" });
+      }
       if (row.company_id) pcRows.push({ product_id: row.id, company_id: row.company_id, role: "manufacturer" });
     });
-    if (pcRows.length) await insertRows("product_companies", pcRows, { onConflict: "product_id,company_id", ignoreDuplicates: true });
     stats.created += created.length;
     console.log(`Created ${created.length} product row(s) (${pcRows.length} maker link(s)).`);
   }
 
-  // 4c. persist the decision cache (ignore races on unique (kind, tag)).
+  // 4c. persist the decision cache FIRST (ignore races on unique (kind, tag)).
   if (newCacheRows.length) {
     await insertRows("tag_resolutions", newCacheRows, { onConflict: "kind,tag", ignoreDuplicates: true });
   }
 
-  // 4d. junctions + stamp. An article is stamped only when EVERY tag got a
-  // decision; otherwise it stays unstamped and is retried next run.
+  // 4d. best-effort link tables — a failure here must not abort the run.
+  const warn = (what) => (e) => console.log(`WARN: ${what} failed: ${e.message}`);
+  await insertRows("company_aliases", aliasRows, { onConflict: "company_id,alias", ignoreDuplicates: true })
+    .catch(warn("company_aliases insert"));
+  await insertRows("product_companies", pcRows, { onConflict: "product_id,company_id,role", ignoreDuplicates: true })
+    .catch(warn("product_companies insert"));
+  for (const table of ["investors", "institutions"]) {
+    await insertRows(table, [...sideRows[table].values()], { onConflict: "slug", ignoreDuplicates: true })
+      .catch(warn(`${table} insert`));
+  }
+
+  // 4e. junctions + stamp. An article is stamped only when EVERY tag got a
+  // decision AND its junction writes succeeded; otherwise it's retried.
   const acRows = [], apRows = [], doneIds = [];
   for (const art of articles) {
     let complete = true;
@@ -305,9 +351,14 @@ async function main() {
     }
     if (complete) doneIds.push(art.id);
   }
-  await insertRows("article_companies", acRows, { onConflict: "article_id,company_id", ignoreDuplicates: true });
-  await insertRows("article_products", apRows, { onConflict: "article_id,product_id", ignoreDuplicates: true });
-  await stampEntitiesResolved(doneIds);
+  try {
+    await insertRows("article_companies", acRows, { onConflict: "article_id,company_id", ignoreDuplicates: true });
+    await insertRows("article_products", apRows, { onConflict: "article_id,product_id", ignoreDuplicates: true });
+    await stampEntitiesResolved(doneIds);
+  } catch (e) {
+    console.log(`WARN: junction/stamp failed (articles stay queued for retry): ${e.message}`);
+    doneIds.length = 0;
+  }
 
   console.log(`\nDone. ${doneIds.length}/${articles.length} article(s) resolved; ` +
     `${acRows.length} company link(s), ${apRows.length} product link(s). ` +
