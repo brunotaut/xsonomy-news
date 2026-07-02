@@ -94,5 +94,40 @@ create index if not exists articles_entities_unresolved_idx
   on public.articles (published_at desc)
   where entities_resolved_at is null and analyzed_at is not null;
 
+-- ---------------------------------------------------------------------------
+-- Side catalogues (resolve-entities.mjs): investment funds and government/
+-- quasi-government bodies mentioned in the news, kept out of the companies
+-- registry. Applied to the live DB as migration 'investors_institutions'
+-- (2026-07-02); kept here for reference.
+-- ---------------------------------------------------------------------------
+create table if not exists public.investors (
+  id            uuid primary key default gen_random_uuid(),
+  slug          citext unique not null,
+  name          text not null,
+  investor_type text,                -- vc / pe / corporate / impact / angel …
+  hq_country    text,
+  website       text,
+  source_urls   text[] not null default '{}',
+  created_at    timestamptz not null default now()
+);
+
+create table if not exists public.institutions (
+  id               uuid primary key default gen_random_uuid(),
+  slug             citext unique not null,
+  name             text not null,
+  institution_type text,             -- government_research / ansp / intergovernmental / think_tank / test_centre / association / foundation …
+  hq_country       text,
+  website          text,
+  source_urls      text[] not null default '{}',
+  created_at       timestamptz not null default now()
+);
+
+alter table public.investors    enable row level security;
+alter table public.institutions enable row level security;
+drop policy if exists "public read" on public.investors;
+create policy "public read" on public.investors    for select to anon using (true);
+drop policy if exists "public read" on public.institutions;
+create policy "public read" on public.institutions for select to anon using (true);
+
 -- Make sure PostgREST picks up the new table/columns immediately.
 notify pgrst, 'reload schema';
