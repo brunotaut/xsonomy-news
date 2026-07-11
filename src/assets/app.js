@@ -3,11 +3,13 @@
 const CFG = window.XSONOMY || {};
 const PAGE = CFG.pageSize || 24;
 
+// Curated quick-filter tags (companies are a separate field, so none appear here).
 const THEME_CHIPS = [
-  ["counter-uas", "Counter-UAS"], ["critical-infra", "Critical infra"],
-  ["eu-regulatory", "EU / regulatory"], ["c2-sensors", "C2 / sensors"],
-  ["contract-intel", "Contracts / M&A"], ["ukraine", "Ukraine"],
+  ["contract-intel", "Contracts / M&A"], ["counter-uas", "Counter-UAS"],
+  ["ukraine", "Ukraine"], ["eu-regulatory", "EU / regulatory"],
+  ["c2-sensors", "C2 / sensors"], ["critical-infra", "Critical infra"],
   ["swarm", "Swarms"], ["maritime", "Maritime"],
+  ["drone-warfare", "Drone warfare"],
 ];
 
 const feedEl = document.getElementById("feed");
