@@ -24,12 +24,19 @@ const esc = (s) => String(s == null ? "" : s)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const fmtDate = (s) => { if (!s) return ""; const d = new Date(s); return isNaN(d) ? "" : d.toISOString().slice(0, 10); };
 
+// Stable placeholder pick (1..5) from the article URL, so image-less cards keep
+// the same drone graphic across rebuilds.
+function placeholder(url) {
+  let h = 0; const s = String(url || "");
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+  return `assets/ph-drone-${(h % 5) + 1}.svg`;
+}
+
 function cardHtml(a) {
   const cos = (a.companies || []).slice(0, 4).map((c) => `<span class="company">${esc(c)}</span>`).join("");
   const tags = (a.tags || []).slice(0, 3).map((t) => `<span>${esc(t)}</span>`).join("");
-  const thumb = a.image_url
-    ? `<div class="thumb" style="background-image:url('${esc(a.image_url)}')"></div>`
-    : `<div class="thumb empty" aria-hidden="true">◇</div>`;
+  const img = a.image_url || placeholder(a.url);
+  const thumb = `<div class="thumb" style="background-image:url('${esc(img)}')"></div>`;
   return `<a class="card" href="${esc(a.url)}" target="_blank" rel="noopener nofollow">${thumb}<div class="body">` +
     `<div class="meta"><span class="src">${esc(a.source)}</span><span>${fmtDate(a.published_at)}</span></div>` +
     `<h3>${esc(a.title)}</h3>${a.summary ? `<p>${esc(a.summary)}</p>` : ""}` +
