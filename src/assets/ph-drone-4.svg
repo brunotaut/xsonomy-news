@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" role="img" aria-label="FPV drone reticle placeholder">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#12171f"/><stop offset="1" stop-color="#1b212c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="270" fill="url(#bg4)"/>
+  <!-- HUD ticks -->
+  <g stroke="#273140" stroke-width="2">
+    <path d="M40 40V70 M40 40H70 M760 40V70 M760 40H730 M40 230V200 M40 230H70 M760 230V200 M760 230H730"/>
+  </g>
+  <!-- reticle -->
+  <g transform="translate(400 135)" stroke="#4ea1ff" fill="none">
+    <circle r="78" stroke-width="1.5" opacity="0.5"/>
+    <circle r="52" stroke-width="2"/>
+    <path d="M0 -92V-64 M0 92V64 M-92 0H-64 M92 0H64" stroke-width="2"/>
+    <path d="M-14 0H14 M0 -14V14" stroke-width="2" stroke="#7cf0c8"/>
+  </g>
+  <!-- fpv quad -->
+  <g transform="translate(400 135)" stroke="#93a1b5" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M-30 -20 L-12 -8 M30 -20 L12 -8 M-30 20 L-12 8 M30 20 L12 8"/>
+    <rect x="-12" y="-9" width="24" height="18" rx="4" fill="#0f141b"/>
+    <circle cx="-34" cy="-24" r="10"/><circle cx="34" cy="-24" r="10"/>
+    <circle cx="-34" cy="24" r="10"/><circle cx="34" cy="24" r="10"/>
+  </g>
+  <text x="600" y="42" fill="#7cf0c8" font-family="monospace" font-size="14" opacity="0.8">● REC</text>
+  <text x="30" y="240" fill="#93a1b5" font-family="monospace" font-size="14" opacity="0.7">FPV // LOCK</text>
+</svg>

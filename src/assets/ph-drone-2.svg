@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" role="img" aria-label="Radar drone placeholder">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#161c26"/><stop offset="1" stop-color="#10151c"/>
+    </linearGradient>
+    <radialGradient id="sweep2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(230 135) rotate(-35) scale(180)">
+      <stop offset="0" stop-color="#4ea1ff" stop-opacity="0.35"/><stop offset="1" stop-color="#4ea1ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="270" fill="url(#bg2)"/>
+  <g transform="translate(230 135)" fill="none" stroke="#273140">
+    <circle r="45"/><circle r="90"/><circle r="135"/><circle r="178"/>
+    <path d="M-178 0H178 M0 -178V178" stroke-width="1"/>
+  </g>
+  <path d="M230 135 L230 135 L410 -6 A230 230 0 0 0 230 -95 Z" fill="url(#sweep2)"/>
+  <g transform="translate(230 135)" stroke="#7cf0c8" stroke-width="3" fill="none">
+    <path d="M0 0 L150 -55" opacity="0.8"/>
+  </g>
+  <!-- blip drone -->
+  <g transform="translate(380 80)" stroke="#7cf0c8" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M-18 -10 L-6 -3 M18 -10 L6 -3 M-18 10 L-6 3 M18 10 L6 3"/>
+    <rect x="-7" y="-5" width="14" height="10" rx="3" fill="#10151c"/>
+  </g>
+  <circle cx="380" cy="80" r="26" fill="none" stroke="#7cf0c8" stroke-width="1.5" opacity="0.6"/>
+  <text x="560" y="230" fill="#93a1b5" font-family="monospace" font-size="14" opacity="0.7">TRACK // C-UAS</text>
+</svg>

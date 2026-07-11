@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" role="img" aria-label="Swarm drone placeholder">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#151b24"/><stop offset="1" stop-color="#10151c"/>
+    </linearGradient>
+    <g id="mini" stroke-width="2.5" fill="none" stroke-linecap="round">
+      <path d="M-11 -7 L-4 -3 M11 -7 L4 -3 M-11 7 L-4 3 M11 7 L4 3"/>
+      <rect x="-4" y="-3" width="8" height="6" rx="2" fill="#10151c"/>
+      <circle cx="-13" cy="-8" r="4"/><circle cx="13" cy="-8" r="4"/>
+      <circle cx="-13" cy="8" r="4"/><circle cx="13" cy="8" r="4"/>
+    </g>
+  </defs>
+  <rect width="800" height="270" fill="url(#bg5)"/>
+  <g stroke="#273140" stroke-width="1" opacity="0.5">
+    <path d="M0 67H800M0 135H800M0 203H800 M160 0V270M320 0V270M480 0V270M640 0V270"/>
+  </g>
+  <!-- connecting mesh -->
+  <g stroke="#4ea1ff" stroke-width="1.2" opacity="0.35">
+    <path d="M200 90 L360 140 L300 205 L200 90 M360 140 L540 95 L620 175 L360 140 M540 95 L300 205"/>
+  </g>
+  <use href="#mini" transform="translate(200 90)" stroke="#7cf0c8"/>
+  <use href="#mini" transform="translate(360 140)" stroke="#4ea1ff"/>
+  <use href="#mini" transform="translate(300 205)" stroke="#93a1b5"/>
+  <use href="#mini" transform="translate(540 95)" stroke="#4ea1ff"/>
+  <use href="#mini" transform="translate(620 175)" stroke="#7cf0c8"/>
+  <text x="30" y="42" fill="#93a1b5" font-family="monospace" font-size="14" opacity="0.7">SWARM // MESH</text>
+</svg>

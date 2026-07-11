@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" role="img" aria-label="Fixed-wing drone placeholder">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a212c"/><stop offset="1" stop-color="#12171f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="270" fill="url(#bg3)"/>
+  <g stroke="#273140" stroke-width="1" opacity="0.5">
+    <path d="M0 60H800M0 120H800M0 180H800M0 240H800"/>
+  </g>
+  <!-- flight path -->
+  <path d="M40 210 Q260 210 380 130 T760 60" fill="none" stroke="#4ea1ff" stroke-width="2" stroke-dasharray="6 8" opacity="0.7"/>
+  <circle cx="40" cy="210" r="5" fill="#4ea1ff"/>
+  <g transform="translate(760 60)"><circle r="5" fill="#7cf0c8"/><circle r="12" fill="none" stroke="#7cf0c8" stroke-width="1.5" opacity="0.6"/></g>
+  <!-- fixed-wing UAV silhouette -->
+  <g transform="translate(410 150) rotate(-24)" fill="#0f141b" stroke="#93a1b5" stroke-width="3" stroke-linejoin="round">
+    <path d="M-60 0 L40 0 L70 0 L58 -8 L40 0 L58 8 Z"/>
+    <path d="M-10 0 L-40 -46 L-2 -8 Z"/>
+    <path d="M-10 0 L-40 46 L-2 8 Z"/>
+    <path d="M40 0 L60 -20 L48 -3 Z"/>
+    <path d="M40 0 L60 20 L48 3 Z"/>
+    <circle cx="-2" cy="0" r="5" fill="#4ea1ff" stroke="none"/>
+  </g>
+  <text x="30" y="42" fill="#93a1b5" font-family="monospace" font-size="14" opacity="0.7">ISR // BVLOS</text>
+</svg>
