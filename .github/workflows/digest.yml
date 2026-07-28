@@ -10,8 +10,7 @@ on:
         default: "day"
         required: true
   schedule:
-    - cron: "0 7 * * 2-5"    # Tue–Fri 07:00 UTC — daily digest
-    - cron: "0 7 * * 1"      # Monday 07:00 UTC — weekly roundup (no daily on Mon; none on weekends)
+    - cron: "0 8 * * *"      # every morning 08:00 UTC (GMT) — daily digest
 
 permissions:
   contents: read
@@ -29,8 +28,6 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "period=${{ github.event.inputs.period }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "0 7 * * 1" ]; then
-            echo "period=week" >> "$GITHUB_OUTPUT"
           else
             echo "period=day" >> "$GITHUB_OUTPUT"
           fi
