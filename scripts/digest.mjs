@@ -21,10 +21,10 @@ const PERIOD = getArg("--period", "day");        // "day" | "week"
 const DRY = args.includes("--dry");
 const HOURS = PERIOD === "week" ? 24 * 7 : 24;
 
-const SITE_URL = (process.env.SITE_URL || "https://news.xsonomy.com").replace(/\/+$/, "");
-const FROM = process.env.DIGEST_FROM || "xSonomy News <news@xsonomy.com>";
+const SITE_URL = (process.env.SITE_URL || "https://uav360.xyz").replace(/\/+$/, "");
+const FROM = process.env.DIGEST_FROM || "UAV360 News <news@uav360.xyz>";
 // mailto used for unsubscribe (no subscription DB — removal is manual via recipients.json)
-const UNSUB_ADDR = process.env.DIGEST_UNSUBSCRIBE || "news@xsonomy.com";
+const UNSUB_ADDR = process.env.DIGEST_UNSUBSCRIBE || "news@uav360.xyz";
 
 // Recipients with optional per-person tag filters.
 // Priority: recipients.json  >  DIGEST_RECIPIENTS env (JSON)  >  DIGEST_TO env (all tags).
@@ -98,20 +98,11 @@ function groupByTheme(items) {
 }
 
 function itemHtml(a) {
-  const thumb = a.image_url
-    ? `<td width="96" valign="top" style="padding-right:14px;">
-         <img src="${esc(a.image_url)}" width="84" height="56" alt="" style="display:block;border-radius:6px;object-fit:cover;width:84px;height:56px;border:1px solid #e2e8f0;">
-       </td>`
-    : "";
+  // Text-only — no images in the email.
   return `<tr><td style="padding:10px 0;border-bottom:1px solid #eef2f7;">
-    <table role="presentation" cellpadding="0" cellspacing="0" width="100%"><tr>
-      ${thumb}
-      <td valign="top">
-        <div style="font:600 12px/1.4 Arial,sans-serif;color:#2563eb;">${esc(a.source)} <span style="color:#94a3b8;font-weight:400;">· ${fmtDate(a.published_at)}</span></div>
-        <a href="${esc(a.url)}" style="font:700 15px/1.35 Arial,sans-serif;color:#0f172a;text-decoration:none;">${esc(a.title)}</a>
-        ${a.summary ? `<div style="font:400 13px/1.5 Arial,sans-serif;color:#475569;margin-top:3px;">${esc(a.summary)}</div>` : ""}
-      </td>
-    </tr></table>
+    <div style="font:600 12px/1.4 Arial,sans-serif;color:#2563eb;">${esc(a.source)} <span style="color:#94a3b8;font-weight:400;">· ${fmtDate(a.published_at)}</span></div>
+    <a href="${esc(a.url)}" style="font:700 15px/1.35 Arial,sans-serif;color:#0f172a;text-decoration:none;">${esc(a.title)}</a>
+    ${a.summary ? `<div style="font:400 13px/1.5 Arial,sans-serif;color:#475569;margin-top:3px;">${esc(a.summary)}</div>` : ""}
   </td></tr>`;
 }
 
@@ -136,7 +127,7 @@ export function buildHtml(items, period = "day", opts = {}) {
   <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background:#f1f5f9;padding:24px 0;"><tr><td align="center">
     <table role="presentation" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;">
       <tr><td style="background:#0c0f14;padding:20px 24px;">
-        <div style="font:800 20px/1 Arial,sans-serif;color:#ffffff;letter-spacing:.5px;">xSonomy</div>
+        <div style="font:800 20px/1 Arial,sans-serif;color:#ffffff;letter-spacing:.5px;">UAV360</div>
         <div style="font:600 13px/1.4 Arial,sans-serif;color:#7cf0c8;margin-top:4px;">UAV &amp; Counter-Drone — ${esc(label)}</div>
       </td></tr>
       <tr><td style="padding:18px 24px 0;">
@@ -147,9 +138,9 @@ export function buildHtml(items, period = "day", opts = {}) {
         <a href="${esc(SITE_URL)}/" style="font:700 14px/1 Arial,sans-serif;color:#ffffff;background:#2563eb;text-decoration:none;padding:11px 20px;border-radius:8px;display:inline-block;">Open the full feed →</a>
       </td></tr>
       <tr><td style="background:#f8fafc;padding:16px 24px;border-top:1px solid #e2e8f0;">
-        <div style="font:400 11px/1.5 Arial,sans-serif;color:#94a3b8;">${esc(filterNote)}Headlines aggregated from proven defence &amp; drone-industry media. Each link points to the original publisher. — xSonomy</div>
+        <div style="font:400 11px/1.5 Arial,sans-serif;color:#94a3b8;">${esc(filterNote)}Headlines aggregated from proven defence &amp; drone-industry media. Each link points to the original publisher. — UAV360</div>
         <div style="font:400 11px/1.5 Arial,sans-serif;color:#94a3b8;margin-top:8px;">
-          You're receiving this because you're on the xSonomy news list.
+          You're receiving this because you're on the UAV360 news list.
           <a href="${esc(unsubscribeUrl)}" style="color:#64748b;text-decoration:underline;">Unsubscribe</a>.
         </div>
       </td></tr>
@@ -191,7 +182,7 @@ async function main() {
     if (!mine.length) { skipped++; console.log(`  – ${r.email}: 0 matching items, skipped`); continue; }
     const unsubscribeUrl = `mailto:${UNSUB_ADDR}?subject=${encodeURIComponent("Unsubscribe " + r.email)}`;
     const html = buildHtml(mine, PERIOD, { email: r.email, tags: r.tags, unsubscribeUrl });
-    const subject = `xSonomy ${PERIOD === "week" ? "weekly" : "daily"} UAV digest — ${mine.length} new`;
+    const subject = `UAV360 ${PERIOD === "week" ? "weekly" : "daily"} digest — ${mine.length} new`;
 
     if (DRY) {
       await mkdir(join(ROOT, "public"), { recursive: true });
