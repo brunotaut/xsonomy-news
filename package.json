@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "xSonomy UAV/C-UAS news feed — daily RSS ingest into Supabase, static site on GitHub Pages.",
+  "description": "xSonomy UAV/C-UAS news feed \u2014 daily RSS ingest into Supabase, static site on GitHub Pages.",
   "scripts": {
     "ingest": "node scripts/ingest.mjs",
     "ingest:dry": "node scripts/ingest.mjs --dry",
@@ -21,7 +21,9 @@
     "digest:dry": "node scripts/digest.mjs --period day --dry",
     "digest:week:dry": "node scripts/digest.mjs --period week --dry",
     "digest:month:dry": "node scripts/digest.mjs --period month --dry",
-    "test": "node scripts/test-parser.mjs && node scripts/test-digest.mjs && node scripts/test-trends.mjs && node scripts/test-topics.mjs"
+    "test": "node scripts/test-parser.mjs && node scripts/test-digest.mjs && node scripts/test-trends.mjs && node scripts/test-topics.mjs && node scripts/test-relevance.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

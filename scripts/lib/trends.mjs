@@ -119,15 +119,30 @@ export function sourceTally(items) {
  * mentions out of the report. They are deliberately conservative: a digest that
  * claims a trend off one article is worse than one that says nothing.
  */
+// A firm only counts as a "mover" if several outlets carried it. Without this,
+// the movers list is won by whoever one prolific publisher writes about most —
+// DJI took 32 mentions in a real week from just 2 outlets, which is a house
+// interest, not a market shift.
+export const MIN_OUTLETS_FOR_MOVER = 3;
+
 export function buildTrends(current, previous) {
   const curCompanies = tally(current.companies || []);
   const prevCompanies = tally(previous.companies || []);
-  const companyRows = compare(curCompanies, prevCompanies, { min: 2 });
+  // Outlet spread per company, when the caller supplies it.
+  const curOutlets = current.companyOutlets || new Map();
+  const prevOutlets = previous.companyOutlets || new Map();
+  const wellCovered = (r) =>
+    !current.companyOutlets ||
+    (curOutlets.get(r.name) || 0) >= MIN_OUTLETS_FOR_MOVER ||
+    (prevOutlets.get(r.name) || 0) >= MIN_OUTLETS_FOR_MOVER;
+
+  const companyRows = compare(curCompanies, prevCompanies, { min: 2 }).filter(wellCovered);
   // "Gone quiet" needs rows the min-2 filter throws away: a firm that fell from
   // nine mentions to zero is the strongest decline there is, and `min` measures
   // the CURRENT period. Keep every row, then judge on the previous figure.
   const companyDeclines = compare(curCompanies, prevCompanies, { min: 0 })
-    .filter((r) => r.previous >= 3);
+    .filter((r) => r.previous >= 3)
+    .filter(wellCovered);
   const productRows = compare(tally(current.products || []), tally(previous.products || []), { min: 2 });
   const themeRows = compare(themeTally(current.items || []), themeTally(previous.items || []));
   const sourceRows = compare(sourceTally(current.items || []), sourceTally(previous.items || []));
@@ -165,6 +180,84 @@ export function buildTrends(current, previous) {
     isEmpty:
       !companyRows.length && !productRows.length && !themeRows.length,
   };
+}
+
+// ---------------------------------------------------------------------------
+// The written lead.
+//
+// A digest should open by telling you what happened, in sentences — not by
+// presenting a table and leaving you to infer the story. These are assembled
+// from the same numbers the tables below show, so the prose can never drift
+// from the data.
+// ---------------------------------------------------------------------------
+
+const list = (names) => {
+  if (names.length === 1) return names[0];
+  if (names.length === 2) return `${names[0]} and ${names[1]}`;
+  return `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+};
+
+const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+
+/**
+ * Two to four plain-English sentences describing the period.
+ * Returns an array of sentences so the caller can render them as it likes.
+ */
+export function buildNarrative(trends, topics = [], period = "week") {
+  if (!trends || trends.isEmpty) return [];
+  const unit = period === "month" ? "month" : "week";
+  const out = [];
+  const v = trends.volume;
+
+  // 1. Scale and the dominant theme.
+  const lead = trends.themes[0];
+  if (lead) {
+    const dir = lead.change > 0 ? `up ${lead.change} on the previous ${unit}`
+      : lead.change < 0 ? `down ${Math.abs(lead.change)}`
+      : "level with the period before";
+    out.push(`${lead.label} led the ${unit} with ${plural(lead.current, "story", "stories")}, ${dir}.`);
+  }
+  const runners = trends.themes.slice(1, 3).filter((t) => t.current > 0);
+  if (runners.length) {
+    const rising = runners.filter((t) => t.change > 0);
+    out.push(rising.length
+      ? `${list(runners.map((t) => `${t.label} (${t.current})`))} followed, with ${list(rising.map((t) => t.label))} gaining ground.`
+      : `${list(runners.map((t) => `${t.label} (${t.current})`))} followed.`);
+  }
+
+  // 2. Who moved — the part that says where things are heading.
+  const risers = trends.companies.rising.slice(0, 3);
+  const fresh = trends.companies.newcomers.slice(0, 2);
+  if (risers.length) {
+    const tail = fresh.length
+      ? `, while ${list(fresh.map((r) => `${r.name} (${r.current})`))} ${fresh.length === 1 ? "arrives" : "arrive"} after no coverage at all the ${unit} before`
+      : "";
+    out.push(`Attention shifted towards ${list(risers.map((r) =>
+      `${r.name} (${r.current}, up from ${r.previous})`))}${tail}.`);
+  } else if (fresh.length) {
+    out.push(`${list(fresh.map((r) => `${r.name} (${r.current})`))} ${fresh.length === 1 ? "arrives" : "arrive"} after no coverage at all the ${unit} before.`);
+  }
+
+  const quiet = trends.companies.falling.slice(0, 2).filter((r) => r.previous >= 4);
+  if (quiet.length) {
+    out.push(`Going the other way, ${list(quiet.map((r) =>
+      `${r.name} (${r.previous} ${r.previous === 1 ? "story" : "stories"} down to ${r.current})`))}.`);
+  }
+
+  // 3. The single story the industry converged on.
+  const top = topics[0];
+  if (top && top.outlets > 1) {
+    out.push(`The most widely reported story was “${top.title}”, carried by ${plural(top.outlets, "outlet", "outlets")}.`);
+  }
+
+  // 4. Overall scale, last — context rather than headline.
+  if (v.previous) {
+    const shift = v.pct === null || v.change === 0 ? "in line with the period before"
+      : `${v.pct > 0 ? "up" : "down"} ${Math.abs(v.pct)}% on the ${unit} before`;
+    out.push(`Across the ${unit} there were ${plural(v.current, "story", "stories")} in total, ${shift}.`);
+  }
+
+  return out;
 }
 
 // ---------------------------------------------------------------------------

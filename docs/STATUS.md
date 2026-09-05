@@ -5,9 +5,10 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 ## Working now
 - Daily ingest + site deploy (05:00 UTC). Daily email digest via Resend (08:00 UTC).
 - **Weekly roundup (Mon 07:00 UTC) and monthly briefing (1st, 07:00 UTC)** — `roundup.yml`.
-  Each leads with ranked **topics** (top 10 weekly / 20 monthly in the email; 20 / 40 on the
-  archive page), carries a trends section, and is archived at `SITE_URL/digest/<slug>/`.
-  Roundups deliberately do **not** list every headline — a week is ~210 stories, a month ~850.
+  Structure: a written lead in plain English → the trends numbers → a ranked shortlist of
+  **topics** (top 10 weekly / 20 monthly in the email; 20 / 40 on the archive page). Archived at
+  `SITE_URL/digest/<slug>/`. Roundups deliberately do **not** list every headline — a week is
+  ~210 stories, a month ~850 — and consumer / civil-mobility coverage is filtered out entirely.
 - LLM entity tagging on ingest; entity resolution into `companies`/`products`; enrichment scripts (manual).
 - `db/schema.sql` now mirrors the live database (19 tables, 3 views, 3 functions, 2 triggers,
   52 indexes, 15 RLS policies), verified against project `uobidcahmrmfdmfbrtkt` on 2026-09-05.
@@ -106,6 +107,26 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
   Corporation" count once. This also merged two real stories the title pass alone had missed.
 - 2026-09-05 — Among single-outlet stories, ranking prefers **rising** coverage over steady
   presence, so the tail is not just "another story mentioning a big prime".
+- 2026-09-05 — Roundups are filtered to **defence / counter-UAV** (`scripts/lib/relevance.mjs`).
+  The test is "is there positive evidence this is civil", NOT "is there evidence this is
+  military": a first attempt demanding military proof dropped roughly half the genuine defence
+  coverage, including "Tekever acquires Flowcopter", the most-covered story of the sample week,
+  which contains no military vocabulary. On a real week this keeps 197 of 210 and drops 13 —
+  GoPro cameras, DJI Osmo launches, drone pharmacies, A2Z delivery.
+- 2026-09-05 — The DB's own classification could not do that filtering: 2,147 of 2,372 products
+  have no `use_class` and `company_sectors` covers under half the registry. Article tags are
+  populated on everything, so relevance is scored from tags plus headline wording.
+- 2026-09-05 — `CONSUMER_ONLY_COMPANIES` in relevance.mjs suppresses firms with no defence
+  business from the highlighted name lists only — their stories are still judged on merit.
+  **DJI is deliberately not on it**: consumer-branded but central to counter-UAV (import bans,
+  jamming, front-line use). Edit the list as the market changes.
+- 2026-09-05 — A company only counts as a "mover" if ≥3 distinct outlets carried it
+  (`MIN_OUTLETS_FOR_MOVER`). DJI drew 32 mentions in a real week from 2 outlets and was leading
+  "most talked about" purely on one publisher's volume. Same lesson as topic ranking, applied to
+  the trends tables.
+- 2026-09-05 — The lead paragraph is generated from the same numbers the tables show
+  (`buildNarrative`), so the prose cannot drift from the data. If it should instead be
+  LLM-written, that is a per-issue Anthropic call and a budget decision — not yet taken.
 
 ## Session notes
 _(newest first; `/wrap-up` appends here)_

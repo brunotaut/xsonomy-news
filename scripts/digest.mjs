@@ -5,9 +5,12 @@
 //   node scripts/digest.mjs --period month     # last 30 days (monthly briefing)
 //   node scripts/digest.mjs --period day --dry # render HTML to ./public/_digest.html, no send
 //
-// Weekly and monthly issues additionally carry a trends section (which companies
-// and themes moved versus the period before) and are archived as a permanent page
-// under archive/digests/, which generate.mjs publishes at SITE_URL/digest/<slug>/.
+// Weekly and monthly issues are a defence / counter-UAV briefing, not a headline
+// list. They open with a written lead ("what happened", in sentences), then the
+// trends numbers, then a ranked shortlist of topics. Consumer and civil-mobility
+// coverage is filtered out first (see lib/relevance.mjs). Each issue is archived
+// as a permanent page under archive/digests/, which generate.mjs publishes at
+// SITE_URL/digest/<slug>/.
 //
 // Env: SUPABASE_URL + (SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY) to read,
 //      RESEND_API_KEY to send, DIGEST_TO (comma-separated), DIGEST_FROM, SITE_URL.
@@ -20,8 +23,9 @@ import { loadDotenv } from "./lib/http.mjs";
 import {
   fetchSince, fetchSubscribers, fetchArticlesBetween, fetchEntityMentions, fetchEntityLinks,
 } from "./lib/supabase.mjs";
-import { buildTrends, issueSlug, issueTitle } from "./lib/trends.mjs";
+import { buildTrends, buildNarrative, issueSlug, issueTitle } from "./lib/trends.mjs";
 import { rankTopics } from "./lib/topics.mjs";
+import { splitByRelevance, withoutConsumerCompanies } from "./lib/relevance.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
@@ -158,6 +162,17 @@ function subBlock(title, body) {
   </td></tr>`;
 }
 
+// The written lead — what happened, in sentences, before any table.
+export function narrativeHtml(sentences) {
+  if (!sentences || !sentences.length) return "";
+  return `<tr><td style="padding:18px 0 2px;">
+      <div style="font:700 13px/1 Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#0ea5a3;">What happened</div>
+    </td></tr>
+    <tr><td style="padding:6px 0 2px;">
+      <p style="font:400 15px/1.65 Georgia,'Times New Roman',serif;color:#1e293b;margin:0;">${sentences.map(esc).join(" ")}</p>
+    </td></tr>`;
+}
+
 export function trendsHtml(trends, period = "week") {
   if (!trends || trends.isEmpty) return "";
   const unit = period === "month" ? "month" : "week";
@@ -259,6 +274,7 @@ export function buildHtml(items, period = "day", opts = {}) {
     : "";
   const unsubscribeUrl = opts.unsubscribeUrl ||
     `mailto:${UNSUB_ADDR}?subject=${encodeURIComponent("Unsubscribe " + (opts.email || ""))}`;
+  const leadBlock = narrativeHtml(opts.narrative);
   const trendsBlock = trendsHtml(opts.trends, period);
   const topics = opts.topics || [];
   // Roundups lead with ranked topics; the daily digest keeps its theme listing.
@@ -304,6 +320,7 @@ export function buildHtml(items, period = "day", opts = {}) {
       <tr><td style="padding:18px 24px 0;">
         <div style="font:400 13px/1.5 Arial,sans-serif;color:#64748b;">${esc(opts.issueTitle || today)} · ${countNote}</div>
       </td></tr>
+      ${leadBlock ? `<tr><td style="padding:0 24px;"><table role="presentation" cellpadding="0" cellspacing="0" width="100%">${leadBlock}</table></td></tr>` : ""}
       ${trendsBlock ? `<tr><td style="padding:0 24px;"><table role="presentation" cellpadding="0" cellspacing="0" width="100%">${trendsBlock}</table></td></tr>` : ""}
       <tr><td style="padding:0 24px 8px;"><table role="presentation" cellpadding="0" cellspacing="0" width="100%">${body}</table></td></tr>
       <tr><td style="padding:18px 24px 26px;">
@@ -348,9 +365,16 @@ async function loadRoundup(hours) {
     now: new Date(now).toISOString(),
   };
 
-  const current = await fetchArticlesBetween(bounds.curStart, bounds.now);
-  const previous = await fetchArticlesBetween(bounds.prevStart, bounds.curStart);
-  console.log(`Trends window: ${current.length} items this period, ${previous.length} the period before.`);
+  const currentAll = await fetchArticlesBetween(bounds.curStart, bounds.now);
+  const previousAll = await fetchArticlesBetween(bounds.prevStart, bounds.curStart);
+
+  // Drop consumer and civil-mobility coverage before anything is measured, so
+  // topics AND trends both reflect a defence / counter-UAV agenda.
+  const cur = splitByRelevance(currentAll);
+  const prev = splitByRelevance(previousAll);
+  const current = cur.kept, previous = prev.kept;
+  console.log(`Window: ${current.length} defence-relevant of ${currentAll.length} this period ` +
+    `(${cur.dropped.length} consumer/civil dropped); ${previous.length} of ${previousAll.length} the period before.`);
 
   // Attach the resolver's normalised company names to each article, and collect
   // the flat mention lists the trends maths wants. Using resolved names rather
@@ -364,10 +388,21 @@ async function loadRoundup(hours) {
       if (!byArticle.has(l.article_id)) byArticle.set(l.article_id, []);
       byArticle.get(l.article_id).push(l.name);
     }
-    for (const a of items) a.resolved_companies = byArticle.get(a.id) || [];
+    // Consumer-only firms are stripped from the highlighted names (see
+    // relevance.mjs) so they cannot reach "most talked about" on volume alone.
+    for (const a of items) a.resolved_companies = withoutConsumerCompanies(byArticle.get(a.id) || []);
+    // Distinct outlets per company: the movers list is filtered on this so a
+    // single prolific publisher cannot manufacture a "trend" on its own.
+    const bySource = new Map(items.map((a) => [a.id, a.source]));
+    const outlets = new Map();
+    for (const l of companyLinks) {
+      if (!outlets.has(l.name)) outlets.set(l.name, new Set());
+      outlets.get(l.name).add(bySource.get(l.article_id));
+    }
     return {
       items,
-      companies: companyLinks.map((l) => l.name),
+      companies: withoutConsumerCompanies(companyLinks.map((l) => l.name)),
+      companyOutlets: new Map([...outlets].map(([n, set]) => [n, set.size])),
       products: await fetchEntityMentions(ids, "product"),
     };
   };
@@ -377,7 +412,7 @@ async function loadRoundup(hours) {
   const momentum = new Map(
     (trends.companies.all || []).filter((r) => r.change > 0).map((r) => [r.name, r.change])
   );
-  return { items: current, trends, momentum };
+  return { items: current, trends, momentum, totalSeen: currentAll.length };
 }
 
 async function main() {
@@ -386,7 +421,7 @@ async function main() {
 
   // Daily keeps its original behaviour (new since we last ingested). Roundups use
   // the news date so the trend windows line up with when things were published.
-  let items, trends = null, momentum = new Map();
+  let items, trends = null, momentum = new Map(), narrative = [];
   if (IS_ROUNDUP) {
     ({ items, trends, momentum } = await loadRoundup(HOURS));
   } else {
@@ -407,6 +442,8 @@ async function main() {
   if (IS_ROUNDUP) {
     archiveTopics = rankTopics(items, { limit: TOPICS_ARCHIVE[PERIOD], momentum });
     emailTopics = archiveTopics.slice(0, TOPICS_EMAIL[PERIOD]);
+    narrative = buildNarrative(trends, emailTopics, PERIOD);
+    for (const line of narrative) console.log(`  » ${line}`);
     console.log(`Ranked ${totalCount} stories into topics: ${emailTopics.length} in the email, ${archiveTopics.length} on the archive page.`);
     for (const [i, t] of emailTopics.slice(0, 5).entries()) {
       console.log(`  ${i + 1}. [${t.outlets} outlet(s)] ${t.title.slice(0, 70)}`);
@@ -420,7 +457,7 @@ async function main() {
 
   if (IS_ROUNDUP && !SKIP_ARCHIVE) {
     const page = buildHtml(items, PERIOD, {
-      trends, forWeb: true, archiveUrl, issueTitle: title, totalCount, topics: archiveTopics,
+      trends, narrative, forWeb: true, archiveUrl, issueTitle: title, totalCount, topics: archiveTopics,
     });
     if (DRY) {
       await mkdir(join(ROOT, "public"), { recursive: true });
@@ -458,7 +495,7 @@ async function main() {
       : filtered ? rankTopics(mine, { limit: TOPICS_EMAIL[PERIOD], momentum })
       : emailTopics;
     const html = buildHtml(mine, PERIOD, {
-      email: r.email, tags: r.tags, unsubscribeUrl, trends, archiveUrl, issueTitle: title,
+      email: r.email, tags: r.tags, unsubscribeUrl, trends, narrative, archiveUrl, issueTitle: title,
       totalCount: filtered ? mine.length : totalCount, topics: theirTopics,
     });
     const kind = { day: "daily digest", week: "weekly roundup", month: "monthly briefing" }[PERIOD];
