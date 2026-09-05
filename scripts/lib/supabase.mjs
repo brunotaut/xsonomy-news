@@ -351,6 +351,97 @@ export async function stampEntitiesResolved(ids, { chunk = 100 } = {}) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Trends (weekly / monthly digest). Reads two windows of articles and the
+// entity links hanging off them. All reads — nothing here writes.
+// ---------------------------------------------------------------------------
+
+// Articles whose news date falls inside [sinceISO, untilISO).
+//
+// "News date" is published_at, falling back to scraped_at for the ~8% of rows
+// where the feed gave us no date. That matters: a third of the table was
+// back-filled, so scraped_at alone would date old stories to the backfill run.
+// Done as two simple requests rather than one `or=()` filter, to stay with the
+// query patterns already used in this file.
+export async function fetchArticlesBetween(sinceISO, untilISO, { pageSize = 1000 } = {}) {
+  const { url, serviceKey, anonKey } = sbConfig();
+  const key = serviceKey || anonKey;
+  if (!key) throw new Error("Need SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY to read.");
+  const select = "id,url,title,summary,source,source_url,tags,published_at,scraped_at";
+
+  async function page(build) {
+    const out = [];
+    for (let offset = 0; ; offset += pageSize) {
+      const q = new URL(`${url}/rest/v1/articles`);
+      q.searchParams.set("select", select);
+      build(q);
+      q.searchParams.set("order", "published_at.desc.nullslast");
+      q.searchParams.set("limit", String(pageSize));
+      q.searchParams.set("offset", String(offset));
+      const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+      if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
+      const rows = await res.json();
+      out.push(...rows);
+      if (rows.length < pageSize) return out;
+    }
+  }
+
+  const dated = await page((q) => {
+    q.searchParams.append("published_at", `gte.${sinceISO}`);
+    q.searchParams.append("published_at", `lt.${untilISO}`);
+  });
+  const undated = await page((q) => {
+    q.searchParams.set("published_at", "is.null");
+    q.searchParams.append("scraped_at", `gte.${sinceISO}`);
+    q.searchParams.append("scraped_at", `lt.${untilISO}`);
+  });
+
+  const seen = new Set();
+  return [...dated, ...undated].filter((r) => !seen.has(r.id) && seen.add(r.id));
+}
+
+// Entity names mentioned by the given articles, ONE ENTRY PER MENTION (so the
+// caller can just count them). kind is "company" or "product".
+export async function fetchEntityMentions(articleIds, kind = "company", { chunk = 100 } = {}) {
+  if (!articleIds.length) return [];
+  const { url, serviceKey, anonKey } = sbConfig();
+  const key = serviceKey || anonKey;
+  if (!key) throw new Error("Need SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY to read.");
+  const headers = { apikey: key, Authorization: `Bearer ${key}` };
+
+  const junction = kind === "product" ? "article_products" : "article_companies";
+  const fk = kind === "product" ? "product_id" : "company_id";
+  const entityTable = kind === "product" ? "products" : "companies";
+
+  // 1. article -> entity id links (duplicates are meaningful: they are mentions)
+  const entityIds = [];
+  for (let i = 0; i < articleIds.length; i += chunk) {
+    const q = new URL(`${url}/rest/v1/${junction}`);
+    q.searchParams.set("select", fk);
+    q.searchParams.set("article_id", `in.(${articleIds.slice(i, i + chunk).join(",")})`);
+    q.searchParams.set("limit", "10000");
+    const res = await fetch(q, { headers });
+    if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
+    for (const row of await res.json()) if (row[fk]) entityIds.push(row[fk]);
+  }
+  if (!entityIds.length) return [];
+
+  // 2. resolve those ids to display names
+  const names = new Map();
+  const unique = [...new Set(entityIds)];
+  for (let i = 0; i < unique.length; i += chunk) {
+    const q = new URL(`${url}/rest/v1/${entityTable}`);
+    q.searchParams.set("select", "id,name");
+    q.searchParams.set("id", `in.(${unique.slice(i, i + chunk).join(",")})`);
+    q.searchParams.set("limit", "10000");
+    const res = await fetch(q, { headers });
+    if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
+    for (const row of await res.json()) names.set(row.id, row.name);
+  }
+
+  return entityIds.map((id) => names.get(id)).filter(Boolean);
+}
+
 // Count total rows (HEAD with count header).
 export async function countArticles() {
   const { url, serviceKey, anonKey } = sbConfig();

@@ -5,7 +5,8 @@
 //  - copies src/ (frontend) into public/
 // Run after ingest. Reads from Supabase with the anon or service key.
 
-import { mkdir, rm, cp, writeFile, readFile } from "node:fs/promises";
+import { mkdir, rm, cp, writeFile, readFile, readdir } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadDotenv } from "./lib/http.mjs";
@@ -61,6 +62,61 @@ ${entries}
 </channel></rss>`;
 }
 
+// Copy the committed digest archive into public/ and build its index.
+// digest.mjs writes archive/digests/<slug>.html + <slug>.json; public/ is wiped
+// on every build, so the source of truth has to live outside it.
+async function publishDigestArchive() {
+  const dir = join(ROOT, "archive", "digests");
+  if (!existsSync(dir)) return [];
+
+  const files = (await readdir(dir)).filter((f) => f.endsWith(".json"));
+  const issues = [];
+  for (const f of files) {
+    try {
+      const meta = JSON.parse(await readFile(join(dir, f), "utf8"));
+      const page = join(dir, `${meta.slug}.html`);
+      if (!existsSync(page)) {
+        console.error(`WARN: ${f} has no matching .html — skipping.`);
+        continue;
+      }
+      await mkdir(join(OUT, "digest", meta.slug), { recursive: true });
+      await cp(page, join(OUT, "digest", meta.slug, "index.html"));
+      issues.push(meta);
+    } catch (e) {
+      console.error(`WARN: could not publish digest ${f}: ${e.message}`);
+    }
+  }
+  if (!issues.length) return [];
+
+  // Newest first — slugs sort correctly as strings ("2026-w09" < "2026-w36").
+  issues.sort((a, b) => String(b.slug).localeCompare(String(a.slug)));
+
+  const rows = issues.map((i) => `<li style="margin:0 0 14px;">
+      <a href="/digest/${esc(i.slug)}/" style="font:700 16px/1.4 Arial,sans-serif;color:#0f172a;text-decoration:none;">${esc(i.title || i.slug)}</a>
+      <div style="font:400 13px/1.5 Arial,sans-serif;color:#64748b;">${esc(i.period === "month" ? "Monthly briefing" : "Weekly roundup")} · ${Number(i.count) || 0} stories</div>
+    </li>`).join("\n");
+
+  await writeFile(join(OUT, "digest", "index.html"),
+`<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Digest archive — UAV360</title>
+<meta name="description" content="Every UAV360 weekly roundup and monthly briefing: the headlines that mattered, and the companies and themes that moved.">
+<link rel="canonical" href="${SITE_URL}/digest/">
+</head><body style="margin:0;background:#f1f5f9;">
+<div style="max-width:640px;margin:0 auto;padding:32px 20px;">
+  <a href="/" style="font:600 13px/1 Arial,sans-serif;color:#2563eb;text-decoration:none;">← UAV360</a>
+  <h1 style="font:800 26px/1.2 Arial,sans-serif;color:#0f172a;margin:16px 0 6px;">Digest archive</h1>
+  <p style="font:400 14px/1.6 Arial,sans-serif;color:#64748b;margin:0 0 24px;">
+    Weekly roundups and monthly briefings, with the companies and themes that moved each period.</p>
+  <ul style="list-style:none;padding:0;margin:0;">
+${rows}
+  </ul>
+</div></body></html>\n`);
+
+  console.log(`  digest archive — ${issues.length} issue(s) published under /digest/`);
+  return issues;
+}
+
 async function main() {
   await loadDotenv();
   const { sources } = JSON.parse(await readFile(join(ROOT, "sources.json"), "utf8"));
@@ -99,13 +155,24 @@ async function main() {
     .replace("__BUILT__", new Date().toISOString().slice(0, 10));
   await writeFile(join(OUT, "index.html"), html);
 
+  // Digest archive: archive/digests/<slug>.html (written by digest.mjs and
+  // committed) becomes /digest/<slug>/ here, plus an index listing every issue.
+  const issues = await publishDigestArchive();
+
   // data + feeds
   await mkdir(join(OUT, "data"), { recursive: true });
   await writeFile(join(OUT, "data", "recent.json"), JSON.stringify(recent));
   await writeFile(join(OUT, "feed.xml"), rssXml(recent));
   await writeFile(join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+  const today = new Date().toISOString().slice(0, 10);
+  const urls = [
+    `  <url><loc>${SITE_URL}/</loc><lastmod>${today}</lastmod></url>`,
+    ...(issues.length ? [`  <url><loc>${SITE_URL}/digest/</loc><lastmod>${today}</lastmod></url>`] : []),
+    ...issues.map((i) =>
+      `  <url><loc>${SITE_URL}/digest/${i.slug}/</loc><lastmod>${(i.generated_at || "").slice(0, 10) || today}</lastmod></url>`),
+  ].join("\n");
   await writeFile(join(OUT, "sitemap.xml"),
-    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${SITE_URL}/</loc><lastmod>${new Date().toISOString().slice(0,10)}</lastmod></url>\n</urlset>\n`);
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
 
   if (process.env.CNAME) await writeFile(join(OUT, "CNAME"), process.env.CNAME.trim() + "\n");
 

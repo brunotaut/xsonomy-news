@@ -17,8 +17,11 @@
     "build": "node scripts/generate.mjs",
     "digest": "node scripts/digest.mjs --period day",
     "digest:week": "node scripts/digest.mjs --period week",
+    "digest:month": "node scripts/digest.mjs --period month",
     "digest:dry": "node scripts/digest.mjs --period day --dry",
-    "test": "node scripts/test-parser.mjs && node scripts/test-digest.mjs"
+    "digest:week:dry": "node scripts/digest.mjs --period week --dry",
+    "digest:month:dry": "node scripts/digest.mjs --period month --dry",
+    "test": "node scripts/test-parser.mjs && node scripts/test-digest.mjs && node scripts/test-trends.mjs"
   },
   "engines": { "node": ">=20" }
 }

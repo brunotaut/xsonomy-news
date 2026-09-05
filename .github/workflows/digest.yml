@@ -1,14 +1,10 @@
-name: Email digest
+name: Email digest (daily)
+
+# Daily digest only. Weekly roundups and monthly briefings live in roundup.yml,
+# because they also write and publish an archive page before sending.
 
 on:
-  workflow_dispatch:
-    inputs:
-      period:
-        description: "Digest period"
-        type: choice
-        options: ["day", "week"]
-        default: "day"
-        required: true
+  workflow_dispatch: {}
   schedule:
     - cron: "0 8 * * *"      # every morning 08:00 UTC (GMT) — daily digest
 
@@ -23,20 +19,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Decide period
-        id: p
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "period=${{ github.event.inputs.period }}" >> "$GITHUB_OUTPUT"
-          else
-            echo "period=day" >> "$GITHUB_OUTPUT"
-          fi
       - name: Send digest
-        run: node scripts/digest.mjs --period ${{ steps.p.outputs.period }}
+        run: node scripts/digest.mjs --period day
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           DIGEST_TO: ${{ vars.DIGEST_TO }}
           DIGEST_FROM: ${{ vars.DIGEST_FROM }}
+          DIGEST_UNSUBSCRIBE: ${{ vars.DIGEST_UNSUBSCRIBE }}
           SITE_URL: ${{ vars.SITE_URL }}

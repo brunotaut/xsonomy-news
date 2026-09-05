@@ -1,9 +1,11 @@
 # STATUS — xsonomy-news
 
-_Last updated: 2026-09-05 (session 1 — schema synced from the live DB)_
+_Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 
 ## Working now
-- Daily ingest + site deploy (05:00 UTC). Email digest daily/weekly via Resend (08:00 UTC).
+- Daily ingest + site deploy (05:00 UTC). Daily email digest via Resend (08:00 UTC).
+- **Weekly roundup (Mon 07:00 UTC) and monthly briefing (1st, 07:00 UTC)** — `roundup.yml`.
+  Each carries a trends section and is archived at `SITE_URL/digest/<slug>/`.
 - LLM entity tagging on ingest; entity resolution into `companies`/`products`; enrichment scripts (manual).
 - `db/schema.sql` now mirrors the live database (19 tables, 3 views, 3 functions, 2 triggers,
   52 indexes, 15 RLS policies), verified against project `uobidcahmrmfdmfbrtkt` on 2026-09-05.
@@ -40,13 +42,26 @@ _Last updated: 2026-09-05 (session 1 — schema synced from the live DB)_
   relying on it to rebuild a database, run it once against a scratch Supabase project.
 - README still describes companies/products as arrays on `articles` only; the resolver is newer.
   README is stale.
+- **The site is uav360.xyz, not news.xsonomy.com.** `digest.mjs` and `generate.mjs` both default to
+  the old domain in code (`generate.mjs` still falls back to `https://news.xsonomy.com`), and
+  CLAUDE.md / ARCHITECTURE.md still name it. Production is fine because the `SITE_URL` Actions
+  variable overrides the default — but a run without that variable would emit a sitemap full of
+  wrong-domain URLs. Worth fixing the defaults and the docs together.
+- **`digest-preview.html` is a committed build artefact.** `npm test` rewrites it every run, so it
+  always shows up as modified. The repo has no `.gitignore` at all (which is also why `.DS_Store`
+  keeps appearing). One small `.gitignore` would settle both.
+- **Roundup trends are unverified against live data.** The maths and rendering are covered by
+  `scripts/test-trends.mjs` (offline), and the Supabase reads follow existing query patterns, but
+  no roundup has run against the real database yet. Do a `--dry` run before trusting the first send.
 
 ## Next tasks (in order)
 1. **README refresh** — make README match reality (short; CLAUDE.md is the real brief).
 2. **ARCHITECTURE.md refresh** — add the six missing tables and explain the taxonomy subsystem
    once its writer is identified.
-3. **Reports** — new `scripts/reports.mjs`: new + edited companies/products for `--period week|month`,
-   output markdown + HTML, send via Resend. Add `reports.yml` (Mon 07:00 UTC weekly; 1st of month monthly).
+3. **Catalogue reports** — still open, and distinct from the news roundups just built. `roundup.yml`
+   reports on *articles*; this would report on *catalogue changes* (companies/products created or
+   edited in the period). If it happens, reuse `scripts/lib/trends.mjs` and the archive plumbing
+   rather than starting a new script.
 4. **Catalogue publish gate** — decide when to flip `PUBLISH_STATUS` to `"live"` in the xSonomy repo.
    Note this is now partly moot: RLS already restricts the anon key to `publication_status = 'live'`
    rows, so the flag is belt-and-braces rather than the actual gate.
@@ -63,6 +78,15 @@ _Last updated: 2026-09-05 (session 1 — schema synced from the live DB)_
 - 2026-09-05 — `db/schema.sql` is documentation of the live DB, kept idempotent. Constraint
   definitions in it are inline in `create table` and therefore only apply on a fresh database;
   columns, indexes and policies re-apply on every run.
+- 2026-09-05 — Roundup trends are built on **entity mentions**, not article volume. Volume is flat
+  (~200/week for eight weeks) and the curated theme mix barely moves month to month, so neither
+  carries a story; which companies the press started or stopped covering does.
+- 2026-09-05 — Roundups live in their own `roundup.yml`, separate from the daily `digest.yml`.
+  They run archive → deploy → send as three jobs, because a commit pushed with `GITHUB_TOKEN`
+  deliberately does not trigger other workflows; relying on `ingest-and-deploy.yml` to notice the
+  push would leave the emailed "read online" link 404ing until the next morning.
+- 2026-09-05 — Roundup emails list at most 45 (week) / 70 (month) stories. Trends still cover every
+  story in the period; a month is ~850 items, which is not an email.
 
 ## Session notes
 _(newest first; `/wrap-up` appends here)_
@@ -71,3 +95,9 @@ _(newest first; `/wrap-up` appends here)_
 Committed CLAUDE.md + docs. Dumped the live Supabase schema into `db/schema.sql` (read-only;
 no writes to the database). Found six tables and three views that no repo doc mentioned, and
 that the draft/live review gate is currently empty — everything is published.
+
+Then built the weekly roundup and monthly briefing: `scripts/lib/trends.mjs` (period-over-period
+maths), trends rendering and a `--period month` in `digest.mjs`, an archive page published by
+`generate.mjs` at `/digest/<slug>/`, and `roundup.yml` to run it. Also found that the weekly
+digest had never actually been scheduled — `digest.yml` hard-coded `day` for every scheduled run,
+despite the docs claiming weekly was live.

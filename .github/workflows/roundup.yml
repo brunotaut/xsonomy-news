@@ -1,0 +1,122 @@
+name: Weekly & monthly roundup
+
+# Weekly roundups and monthly briefings: the headlines for the period plus a
+# trends section (which companies and themes moved versus the period before).
+#
+# Runs in three stages on purpose. The email links to a permanent archive page,
+# so that page has to be live BEFORE the email goes out:
+#   1. archive – write archive/digests/<slug>.html, commit it, rebuild the site
+#   2. deploy  – publish to GitHub Pages
+#   3. send    – email the issue, now that the link resolves
+#
+# (A commit pushed with GITHUB_TOKEN deliberately does not trigger other
+# workflows, so ingest-and-deploy.yml will NOT pick this up — hence the
+# build/deploy steps here rather than relying on the push.)
+
+on:
+  workflow_dispatch:
+    inputs:
+      period:
+        description: "Roundup period"
+        type: choice
+        options: ["week", "month"]
+        default: "week"
+        required: true
+  schedule:
+    - cron: "0 7 * * 1"      # Mondays 07:00 UTC — weekly roundup
+    - cron: "0 7 1 * *"      # 1st of the month 07:00 UTC — monthly briefing
+
+permissions:
+  contents: write            # to commit the archive page
+  pages: write
+  id-token: write
+
+concurrency:
+  group: news-pages          # shared with ingest-and-deploy: never two Pages deploys at once
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    outputs:
+      period: ${{ steps.p.outputs.period }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Decide period
+        id: p
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "period=${{ github.event.inputs.period }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 7 1 * *" ]; then
+            echo "period=month" >> "$GITHUB_OUTPUT"
+          else
+            echo "period=week" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write the archive page (no email yet)
+        run: node scripts/digest.mjs --period ${{ steps.p.outputs.period }} --skip-send
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+
+      - name: Commit the archive page
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive/digests
+          if git diff --cached --quiet; then
+            echo "No new archive page to commit."
+          else
+            git commit -m "Add ${{ steps.p.outputs.period }}ly digest archive page"
+            git pull --rebase --autostash origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      - name: Build the static site (now including the new issue)
+        run: npm run build
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          HOME_URL: ${{ vars.HOME_URL }}
+          CNAME: ${{ vars.NEWS_CNAME }}
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: archive
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  send:
+    needs: [archive, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Send the roundup email
+        run: node scripts/digest.mjs --period ${{ needs.archive.outputs.period }} --skip-archive
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_TO: ${{ vars.DIGEST_TO }}
+          DIGEST_FROM: ${{ vars.DIGEST_FROM }}
+          DIGEST_UNSUBSCRIBE: ${{ vars.DIGEST_UNSUBSCRIBE }}
+          SITE_URL: ${{ vars.SITE_URL }}
