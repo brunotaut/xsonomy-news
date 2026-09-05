@@ -69,6 +69,16 @@ assert.equal(trends.volume.pct, 200, "3 vs 1 = +200%");
 assert.equal(trends.companies.rising[0].name, "DJI", "DJI is the top climber");
 assert.equal(trends.companies.newcomers[0].name, "Epirus", "Epirus is new (0 -> 2)");
 assert.equal(trends.companies.falling[0].name, "Anduril", "Anduril fell 5 -> 3");
+
+// A company that vanished entirely is the strongest decline, and must not be
+// filtered out for having no mentions in the current period.
+const vanished = buildTrends(
+  { items: [], companies: ["Kept", "Kept"] },
+  { items: [], companies: [...Array(9).fill("Joby Aviation"), "Kept"] }
+);
+assert.equal(vanished.companies.falling[0].name, "Joby Aviation", "9 -> 0 is the top faller");
+assert.equal(vanished.companies.falling[0].current, 0);
+assert.equal(vanished.companies.falling[0].change, -9);
 assert.equal(trends.isEmpty, false);
 assert.equal(buildTrends({ items: [] }, { items: [] }).isEmpty, true, "empty in, empty out");
 

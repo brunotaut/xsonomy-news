@@ -367,7 +367,9 @@ export async function fetchArticlesBetween(sinceISO, untilISO, { pageSize = 1000
   const { url, serviceKey, anonKey } = sbConfig();
   const key = serviceKey || anonKey;
   if (!key) throw new Error("Need SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY to read.");
-  const select = "id,url,title,summary,source,source_url,tags,published_at,scraped_at";
+  // companies/products come along for topic clustering (which entities a story
+  // is about), so topics need no extra round trip.
+  const select = "id,url,title,summary,source,source_url,tags,companies,products,published_at,scraped_at";
 
   async function page(build) {
     const out = [];
@@ -402,7 +404,17 @@ export async function fetchArticlesBetween(sinceISO, untilISO, { pageSize = 1000
 
 // Entity names mentioned by the given articles, ONE ENTRY PER MENTION (so the
 // caller can just count them). kind is "company" or "product".
-export async function fetchEntityMentions(articleIds, kind = "company", { chunk = 100 } = {}) {
+export async function fetchEntityMentions(articleIds, kind = "company", opts = {}) {
+  return (await fetchEntityLinks(articleIds, kind, opts)).map((l) => l.name);
+}
+
+// article_id -> resolved entity name, one row per link.
+//
+// Prefer this over the raw `articles.companies` text array whenever names are
+// compared or grouped: the resolver has already folded aliases together, so
+// "AV" and "AeroVironment", or "Terra Drone" and "Terra Drone Corporation",
+// arrive as one name instead of two.
+export async function fetchEntityLinks(articleIds, kind = "company", { chunk = 100 } = {}) {
   if (!articleIds.length) return [];
   const { url, serviceKey, anonKey } = sbConfig();
   const key = serviceKey || anonKey;
@@ -414,21 +426,23 @@ export async function fetchEntityMentions(articleIds, kind = "company", { chunk 
   const entityTable = kind === "product" ? "products" : "companies";
 
   // 1. article -> entity id links (duplicates are meaningful: they are mentions)
-  const entityIds = [];
+  const links = [];
   for (let i = 0; i < articleIds.length; i += chunk) {
     const q = new URL(`${url}/rest/v1/${junction}`);
-    q.searchParams.set("select", fk);
+    q.searchParams.set("select", `article_id,${fk}`);
     q.searchParams.set("article_id", `in.(${articleIds.slice(i, i + chunk).join(",")})`);
     q.searchParams.set("limit", "10000");
     const res = await fetch(q, { headers });
     if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
-    for (const row of await res.json()) if (row[fk]) entityIds.push(row[fk]);
+    for (const row of await res.json()) {
+      if (row[fk]) links.push({ article_id: row.article_id, entity_id: row[fk] });
+    }
   }
-  if (!entityIds.length) return [];
+  if (!links.length) return [];
 
   // 2. resolve those ids to display names
   const names = new Map();
-  const unique = [...new Set(entityIds)];
+  const unique = [...new Set(links.map((l) => l.entity_id))];
   for (let i = 0; i < unique.length; i += chunk) {
     const q = new URL(`${url}/rest/v1/${entityTable}`);
     q.searchParams.set("select", "id,name");
@@ -439,7 +453,9 @@ export async function fetchEntityMentions(articleIds, kind = "company", { chunk 
     for (const row of await res.json()) names.set(row.id, row.name);
   }
 
-  return entityIds.map((id) => names.get(id)).filter(Boolean);
+  return links
+    .map((l) => ({ article_id: l.article_id, name: names.get(l.entity_id) }))
+    .filter((l) => l.name);
 }
 
 // Count total rows (HEAD with count header).

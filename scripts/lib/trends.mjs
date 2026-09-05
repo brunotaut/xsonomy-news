@@ -120,7 +120,14 @@ export function sourceTally(items) {
  * claims a trend off one article is worse than one that says nothing.
  */
 export function buildTrends(current, previous) {
-  const companyRows = compare(tally(current.companies || []), tally(previous.companies || []), { min: 2 });
+  const curCompanies = tally(current.companies || []);
+  const prevCompanies = tally(previous.companies || []);
+  const companyRows = compare(curCompanies, prevCompanies, { min: 2 });
+  // "Gone quiet" needs rows the min-2 filter throws away: a firm that fell from
+  // nine mentions to zero is the strongest decline there is, and `min` measures
+  // the CURRENT period. Keep every row, then judge on the previous figure.
+  const companyDeclines = compare(curCompanies, prevCompanies, { min: 0 })
+    .filter((r) => r.previous >= 3);
   const productRows = compare(tally(current.products || []), tally(previous.products || []), { min: 2 });
   const themeRows = compare(themeTally(current.items || []), themeTally(previous.items || []));
   const sourceRows = compare(sourceTally(current.items || []), sourceTally(previous.items || []));
@@ -139,10 +146,13 @@ export function buildTrends(current, previous) {
       .map((r) => ({ ...r, label: themeLabel(r.name) }))
       .sort((a, b) => b.current - a.current || a.name.localeCompare(b.name)),
     companies: {
+      // Every comparable company row, for callers that need the full picture
+      // (topic ranking uses it to find which firms gained coverage).
+      all: companyRows,
       top: topBy(companyRows.filter((r) => r.current >= 3), 8),
       rising: rising(companyRows.filter((r) => r.current >= 3), 5),
       newcomers: newcomers(companyRows, 5),
-      falling: falling(companyRows, 3),
+      falling: falling(companyDeclines, 3),
     },
     products: {
       top: topBy(productRows.filter((r) => r.current >= 2), 6),

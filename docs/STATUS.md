@@ -5,7 +5,9 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 ## Working now
 - Daily ingest + site deploy (05:00 UTC). Daily email digest via Resend (08:00 UTC).
 - **Weekly roundup (Mon 07:00 UTC) and monthly briefing (1st, 07:00 UTC)** — `roundup.yml`.
-  Each carries a trends section and is archived at `SITE_URL/digest/<slug>/`.
+  Each leads with ranked **topics** (top 10 weekly / 20 monthly in the email; 20 / 40 on the
+  archive page), carries a trends section, and is archived at `SITE_URL/digest/<slug>/`.
+  Roundups deliberately do **not** list every headline — a week is ~210 stories, a month ~850.
 - LLM entity tagging on ingest; entity resolution into `companies`/`products`; enrichment scripts (manual).
 - `db/schema.sql` now mirrors the live database (19 tables, 3 views, 3 functions, 2 triggers,
   52 indexes, 15 RLS policies), verified against project `uobidcahmrmfdmfbrtkt` on 2026-09-05.
@@ -50,9 +52,15 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 - **`digest-preview.html` is a committed build artefact.** `npm test` rewrites it every run, so it
   always shows up as modified. The repo has no `.gitignore` at all (which is also why `.DS_Store`
   keeps appearing). One small `.gitignore` would settle both.
-- **Roundup trends are unverified against live data.** The maths and rendering are covered by
-  `scripts/test-trends.mjs` (offline), and the Supabase reads follow existing query patterns, but
-  no roundup has run against the real database yet. Do a `--dry` run before trusting the first send.
+- **The roundup has never run end to end.** The clustering, ranking and trends maths were validated
+  against a real week (210 articles pulled read-only, ranked offline — the top 10 came out as ten
+  genuine multi-outlet stories), and the logic is covered by `test-trends.mjs` / `test-topics.mjs`.
+  But `digest.mjs --period week` itself has not run: there is no `.env` on the dev machine, so the
+  PostgREST queries in `fetchArticlesBetween` / `fetchEntityLinks` are still untested against a
+  live endpoint. Do `npm run digest:week:dry` before the first real send.
+- **Entity extraction is noisy on the margins.** Some articles list companies that are only
+  tangential (a DJI camera story tagged with Amazon, Insta360 and LandSpace). It does not affect
+  ranking much — outlet spread dominates — but it shows up in the "who" line under a topic.
 
 ## Next tasks (in order)
 1. **README refresh** — make README match reality (short; CLAUDE.md is the real brief).
@@ -85,8 +93,19 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
   They run archive → deploy → send as three jobs, because a commit pushed with `GITHUB_TOKEN`
   deliberately does not trigger other workflows; relying on `ingest-and-deploy.yml` to notice the
   push would leave the emailed "read online" link 404ing until the next morning.
-- 2026-09-05 — Roundup emails list at most 45 (week) / 70 (month) stories. Trends still cover every
-  story in the period; a month is ~850 items, which is not an email.
+- 2026-09-05 — Roundups are a **shortlist of topics**, not a headline list. `scripts/lib/topics.mjs`
+  clusters near-duplicate headlines into one story and ranks by **distinct outlets**, never by
+  article count: measured live, DJI drew 32 mentions in a week from 2 outlets (one publisher's
+  house interest) while Anduril drew 10 across 7. Counting articles would put DJI top every week.
+- 2026-09-05 — Clustering runs two passes: titles ≥ 0.42 similarity (syndicated copy), then
+  ≥ 0.22 **if the articles share a resolved company name**. Measured on live data, one story told
+  two ways scores 0.261 while separate stories sharing a company sit at 0.05–0.13, so the shared-name
+  requirement is what makes the lower threshold safe.
+- 2026-09-05 — Topics and trends use the resolver's names (`article_companies`), not the raw
+  `articles.companies` text array, so "AV"/"AeroVironment" and "Terra Drone"/"Terra Drone
+  Corporation" count once. This also merged two real stories the title pass alone had missed.
+- 2026-09-05 — Among single-outlet stories, ranking prefers **rising** coverage over steady
+  presence, so the tail is not just "another story mentioning a big prime".
 
 ## Session notes
 _(newest first; `/wrap-up` appends here)_

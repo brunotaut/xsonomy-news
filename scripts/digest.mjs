@@ -18,9 +18,10 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadDotenv } from "./lib/http.mjs";
 import {
-  fetchSince, fetchSubscribers, fetchArticlesBetween, fetchEntityMentions,
+  fetchSince, fetchSubscribers, fetchArticlesBetween, fetchEntityMentions, fetchEntityLinks,
 } from "./lib/supabase.mjs";
 import { buildTrends, issueSlug, issueTitle } from "./lib/trends.mjs";
+import { rankTopics } from "./lib/topics.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
@@ -33,9 +34,11 @@ const SKIP_SEND = args.includes("--skip-send");
 const SKIP_ARCHIVE = args.includes("--skip-archive");
 const PERIOD_HOURS = { day: 24, week: 24 * 7, month: 24 * 30 };
 const HOURS = PERIOD_HOURS[PERIOD] || 24;
-// A week carries ~200 stories and a month ~850 — far too many to email. Cap what
-// gets listed; the trends are still computed across every story in the period.
-const MAX_SHOWN = { day: Infinity, week: 45, month: 70 };
+// A digest is a shortlist, not an archive. A week carries ~200 stories and a
+// month ~850; nobody reads that. Roundups lead with ranked TOPICS instead, and
+// the permanent archive page carries a longer list than the email.
+const TOPICS_EMAIL = { week: 10, month: 20 };
+const TOPICS_ARCHIVE = { week: 20, month: 40 };
 // Only the longer issues get analytics and a permanent archive page.
 const IS_ROUNDUP = PERIOD === "week" || PERIOD === "month";
 
@@ -206,10 +209,49 @@ export function trendsHtml(trends, period = "week") {
     </td></tr>`;
 }
 
+// ---------------------------------------------------------------------------
+// Topics (weekly / monthly). A ranked shortlist of what the industry actually
+// covered — NOT every headline. Each entry shows why it ranked, so the reader
+// can see the working.
+// ---------------------------------------------------------------------------
+function topicHtml(t, n) {
+  const others = t.sources.filter((s) => s !== t.source).slice(0, 4);
+  const alsoIn = others.length
+    ? `<div style="font:400 12px/1.5 Arial,sans-serif;color:#94a3b8;margin-top:4px;">Also in ${esc(others.join(", "))}</div>`
+    : "";
+  const who = t.companies.length
+    ? `<div style="font:600 12px/1.5 Arial,sans-serif;color:#0ea5a3;margin-top:4px;">${t.companies.map(esc).join(" · ")}</div>`
+    : "";
+  return `<tr><td style="padding:14px 0;border-bottom:1px solid #eef2f7;">
+    <table role="presentation" cellpadding="0" cellspacing="0" width="100%"><tr>
+      <td width="30" valign="top" style="font:800 18px/1.2 Arial,sans-serif;color:#cbd5e1;">${n}</td>
+      <td valign="top">
+        <div style="font:600 12px/1.4 Arial,sans-serif;color:#2563eb;">${esc(t.source)}
+          <span style="color:#94a3b8;font-weight:400;">· ${fmtDate(t.published_at)} · ${esc(t.reason)}</span></div>
+        <a href="${esc(t.url)}" style="font:700 16px/1.35 Arial,sans-serif;color:#0f172a;text-decoration:none;">${esc(t.title)}</a>
+        ${t.summary ? `<div style="font:400 13px/1.5 Arial,sans-serif;color:#475569;margin-top:4px;">${esc(t.summary)}</div>` : ""}
+        ${who}
+        ${alsoIn}
+      </td>
+    </tr></table>
+  </td></tr>`;
+}
+
+export function topicsHtml(topics, period = "week") {
+  if (!topics || !topics.length) return "";
+  const heading = `Top ${topics.length} ${period === "month" ? "of the month" : "of the week"}`;
+  return `<tr><td style="padding:22px 0 2px;">
+      <div style="font:700 13px/1 Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#0ea5a3;">${esc(heading)}</div>
+      <div style="font:400 12px/1.5 Arial,sans-serif;color:#94a3b8;margin-top:3px;">Ranked by how many outlets covered each story.</div>
+    </td></tr>
+    <tr><td><table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+      ${topics.map((t, i) => topicHtml(t, i + 1)).join("")}
+    </table></td></tr>`;
+}
+
 const PERIOD_LABELS = { day: "Daily digest", week: "Weekly roundup", month: "Monthly briefing" };
 
 export function buildHtml(items, period = "day", opts = {}) {
-  const groups = groupByTheme(items);
   const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
   const label = PERIOD_LABELS[period] || PERIOD_LABELS.day;
   const filterNote = opts.tags && opts.tags.length
@@ -218,11 +260,14 @@ export function buildHtml(items, period = "day", opts = {}) {
   const unsubscribeUrl = opts.unsubscribeUrl ||
     `mailto:${UNSUB_ADDR}?subject=${encodeURIComponent("Unsubscribe " + (opts.email || ""))}`;
   const trendsBlock = trendsHtml(opts.trends, period);
-  // When the listing was capped, say so rather than implying this is everything.
+  const topics = opts.topics || [];
+  // Roundups lead with ranked topics; the daily digest keeps its theme listing.
   const total = opts.totalCount || items.length;
-  const countNote = total > items.length
-    ? `showing the ${items.length} most recent of ${total} stories`
-    : `${items.length} new item${items.length === 1 ? "" : "s"}`;
+  const countNote = topics.length
+    ? `${total} stories, distilled to the ${topics.length} that mattered`
+    : total > items.length
+      ? `showing the ${items.length} most recent of ${total} stories`
+      : `${items.length} new item${items.length === 1 ? "" : "s"}`;
   // The archived copy on the website: no unsubscribe furniture, and a link back
   // to the issue is pointless when you are already reading it.
   const forWeb = !!opts.forWeb;
@@ -231,11 +276,13 @@ export function buildHtml(items, period = "day", opts = {}) {
          <a href="${esc(opts.archiveUrl)}" style="color:#64748b;">Read this issue on the web →</a>
        </div>`
     : "";
-  const sections = groups.map((g) => `
+  // Roundups render ranked topics; the daily digest keeps its theme-grouped list.
+  const themeSections = () => groupByTheme(items).map((g) => `
     <tr><td style="padding:22px 0 6px;">
       <div style="font:700 13px/1 Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#0ea5a3;">${esc(g.label)} <span style="color:#cbd5e1;">(${g.items.length})</span></div>
     </td></tr>
     <tr><td><table role="presentation" cellpadding="0" cellspacing="0" width="100%">${g.items.map(itemHtml).join("")}</table></td></tr>`).join("");
+  const body = topics.length ? topicsHtml(topics, period) : themeSections();
 
   // The emailed copy stays head-less (mail clients ignore it); the archived copy
   // gets a real head so it is shareable and indexable.
@@ -258,7 +305,7 @@ export function buildHtml(items, period = "day", opts = {}) {
         <div style="font:400 13px/1.5 Arial,sans-serif;color:#64748b;">${esc(opts.issueTitle || today)} · ${countNote}</div>
       </td></tr>
       ${trendsBlock ? `<tr><td style="padding:0 24px;"><table role="presentation" cellpadding="0" cellspacing="0" width="100%">${trendsBlock}</table></td></tr>` : ""}
-      <tr><td style="padding:0 24px 8px;"><table role="presentation" cellpadding="0" cellspacing="0" width="100%">${sections}</table></td></tr>
+      <tr><td style="padding:0 24px 8px;"><table role="presentation" cellpadding="0" cellspacing="0" width="100%">${body}</table></td></tr>
       <tr><td style="padding:18px 24px 26px;">
         <a href="${esc(SITE_URL)}/" style="font:700 14px/1 Arial,sans-serif;color:#ffffff;background:#2563eb;text-decoration:none;padding:11px 20px;border-radius:8px;display:inline-block;">Open the full feed →</a>
         ${archiveLink}
@@ -305,14 +352,32 @@ async function loadRoundup(hours) {
   const previous = await fetchArticlesBetween(bounds.prevStart, bounds.curStart);
   console.log(`Trends window: ${current.length} items this period, ${previous.length} the period before.`);
 
-  const window = async (items) => ({
-    items,
-    companies: await fetchEntityMentions(items.map((a) => a.id), "company"),
-    products: await fetchEntityMentions(items.map((a) => a.id), "product"),
-  });
+  // Attach the resolver's normalised company names to each article, and collect
+  // the flat mention lists the trends maths wants. Using resolved names rather
+  // than the raw articles.companies array means "AV" and "AeroVironment" count
+  // as one firm, in both the trends and the topic clustering.
+  const window = async (items) => {
+    const ids = items.map((a) => a.id);
+    const companyLinks = await fetchEntityLinks(ids, "company");
+    const byArticle = new Map();
+    for (const l of companyLinks) {
+      if (!byArticle.has(l.article_id)) byArticle.set(l.article_id, []);
+      byArticle.get(l.article_id).push(l.name);
+    }
+    for (const a of items) a.resolved_companies = byArticle.get(a.id) || [];
+    return {
+      items,
+      companies: companyLinks.map((l) => l.name),
+      products: await fetchEntityMentions(ids, "product"),
+    };
+  };
 
   const trends = buildTrends(await window(current), await window(previous));
-  return { items: current, trends };
+  // Which firms gained coverage since last period — used to rank topics.
+  const momentum = new Map(
+    (trends.companies.all || []).filter((r) => r.change > 0).map((r) => [r.name, r.change])
+  );
+  return { items: current, trends, momentum };
 }
 
 async function main() {
@@ -321,9 +386,9 @@ async function main() {
 
   // Daily keeps its original behaviour (new since we last ingested). Roundups use
   // the news date so the trend windows line up with when things were published.
-  let items, trends = null;
+  let items, trends = null, momentum = new Map();
   if (IS_ROUNDUP) {
-    ({ items, trends } = await loadRoundup(HOURS));
+    ({ items, trends, momentum } = await loadRoundup(HOURS));
   } else {
     const since = new Date(Date.now() - HOURS * 3600000).toISOString();
     items = await fetchSince(since, 600);
@@ -335,15 +400,17 @@ async function main() {
     return;
   }
 
-  // Trends already cover the whole period; the listing is trimmed to the most
-  // recent N so the email stays readable.
+  // Rank the period into topics. Trends and topics both consider every story;
+  // only the number shown differs between the email and the archive page.
   const totalCount = items.length;
-  const cap = MAX_SHOWN[PERIOD] ?? Infinity;
-  if (totalCount > cap) {
-    items = [...items]
-      .sort((a, b) => new Date(b.published_at || b.scraped_at || 0) - new Date(a.published_at || a.scraped_at || 0))
-      .slice(0, cap);
-    console.log(`Listing the ${items.length} most recent of ${totalCount}.`);
+  let emailTopics = [], archiveTopics = [];
+  if (IS_ROUNDUP) {
+    archiveTopics = rankTopics(items, { limit: TOPICS_ARCHIVE[PERIOD], momentum });
+    emailTopics = archiveTopics.slice(0, TOPICS_EMAIL[PERIOD]);
+    console.log(`Ranked ${totalCount} stories into topics: ${emailTopics.length} in the email, ${archiveTopics.length} on the archive page.`);
+    for (const [i, t] of emailTopics.slice(0, 5).entries()) {
+      console.log(`  ${i + 1}. [${t.outlets} outlet(s)] ${t.title.slice(0, 70)}`);
+    }
   }
 
   // Archive page: the full, unfiltered issue, published at SITE_URL/digest/<slug>/.
@@ -352,7 +419,9 @@ async function main() {
   const archiveUrl = slug ? `${SITE_URL}/digest/${slug}/` : null;
 
   if (IS_ROUNDUP && !SKIP_ARCHIVE) {
-    const page = buildHtml(items, PERIOD, { trends, forWeb: true, archiveUrl, issueTitle: title, totalCount });
+    const page = buildHtml(items, PERIOD, {
+      trends, forWeb: true, archiveUrl, issueTitle: title, totalCount, topics: archiveTopics,
+    });
     if (DRY) {
       await mkdir(join(ROOT, "public"), { recursive: true });
       const out = join(ROOT, "public", `_digest_archive_${slug}.html`);
@@ -363,7 +432,7 @@ async function main() {
       await mkdir(dir, { recursive: true });
       await writeFile(join(dir, `${slug}.html`), page);
       await writeFile(join(dir, `${slug}.json`), JSON.stringify({
-        slug, title, period: PERIOD, count: totalCount, listed: items.length,
+        slug, title, period: PERIOD, count: totalCount, topics: archiveTopics.length,
         generated_at: new Date().toISOString(),
       }, null, 2) + "\n");
       console.log(`  archive page → archive/digests/${slug}.html  (publishes at ${archiveUrl})`);
@@ -383,14 +452,18 @@ async function main() {
     // A recipient with tag filters gets their own subset, so the "of N" note
     // only makes sense for people taking the unfiltered issue.
     const filtered = !!(r.tags && r.tags.length);
+    // A filtered recipient gets topics ranked within their own themes, not the
+    // global shortlist — otherwise their digest would name stories they excluded.
+    const theirTopics = !IS_ROUNDUP ? []
+      : filtered ? rankTopics(mine, { limit: TOPICS_EMAIL[PERIOD], momentum })
+      : emailTopics;
     const html = buildHtml(mine, PERIOD, {
       email: r.email, tags: r.tags, unsubscribeUrl, trends, archiveUrl, issueTitle: title,
-      totalCount: filtered ? mine.length : totalCount,
+      totalCount: filtered ? mine.length : totalCount, topics: theirTopics,
     });
     const kind = { day: "daily digest", week: "weekly roundup", month: "monthly briefing" }[PERIOD];
-    const headline = filtered ? mine.length : totalCount;
     const subject = IS_ROUNDUP
-      ? `UAV360 ${kind} — ${title} (${headline} stories)`
+      ? `UAV360 ${kind} — ${title}: ${theirTopics.length} topics that mattered`
       : `UAV360 ${kind} — ${mine.length} new`;
 
     if (DRY) {
