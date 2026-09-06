@@ -31,7 +31,7 @@ assert.ok(html.includes("4 new items"), "shows count");
 assert.ok(!/undefined|NaN/.test(html), "no undefined/NaN leaked into output");
 
 const weekly = buildHtml(sample, "week");
-assert.ok(weekly.includes("Weekly roundup"), "weekly label");
+assert.ok(weekly.includes("Weekly digest"), "weekly label");
 
 // unsubscribe footer + List-Unsubscribe-friendly mailto
 const personal = buildHtml(sample, "day", { email: "a@b.com", tags: ["contract-intel"], unsubscribeUrl: "mailto:news@xsonomy.com?subject=Unsubscribe%20a@b.com" });

@@ -141,6 +141,13 @@ const mail = buildHtml(sample, "week", {
 assert.ok(mail.includes("Read this issue on the web"), "email links to the archive copy");
 assert.ok(mail.includes("Unsubscribe"), "email keeps the unsubscribe link");
 
+// Weekly issues are not archived on the site, so they must not offer a link to
+// a page that will never exist.
+const weeklyMail = buildHtml(sample, "week", { trends, email: "a@b.com" });
+assert.ok(weeklyMail.includes("Weekly digest"), "weekly is named Weekly digest");
+assert.ok(!weeklyMail.includes("Read this issue on the web"),
+  "an unarchived issue offers no web link");
+
 assert.ok(!/undefined|NaN|\[object Object\]/.test(monthly + web + mail),
   "nothing leaked into the rendered output");
 

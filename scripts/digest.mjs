@@ -46,8 +46,12 @@ const HOURS = PERIOD_HOURS[PERIOD] || 24;
 // the permanent archive page carries a longer list than the email.
 const TOPICS_EMAIL = { week: 10, month: 20 };
 const TOPICS_ARCHIVE = { week: 20, month: 40 };
-// Only the longer issues get analytics and a permanent archive page.
+// Both longer issues get analytics (a written lead, trends, ranked topics).
 const IS_ROUNDUP = PERIOD === "week" || PERIOD === "month";
+// Only the MONTHLY digest is archived on the site. A weekly issue is a mailout:
+// archiving both would fill the /digest/ catalogue with 52 weeklies a year and
+// bury the monthly retrospectives people actually go back to.
+const HAS_ARCHIVE = PERIOD === "month";
 
 const SITE_URL = (process.env.SITE_URL || "https://uav360.xyz").replace(/\/+$/, "");
 const FROM = process.env.DIGEST_FROM || "UAV360 News <news@uav360.xyz>";
@@ -268,7 +272,7 @@ export function topicsHtml(topics, period = "week") {
     </table></td></tr>`;
 }
 
-const PERIOD_LABELS = { day: "Daily digest", week: "Weekly roundup", month: "Monthly digest" };
+const PERIOD_LABELS = { day: "Daily digest", week: "Weekly digest", month: "Monthly digest" };
 
 export function buildHtml(items, period = "day", opts = {}) {
   const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
@@ -508,9 +512,10 @@ async function main() {
   // Archive page: the full, unfiltered issue, published at SITE_URL/digest/<slug>/.
   const slug = bounds ? bounds.slug : null;
   const title = bounds ? bounds.title : null;
-  const archiveUrl = slug ? `${SITE_URL}/digest/${slug}/` : null;
+  // Weekly issues are not archived, so they carry no "read this online" link.
+  const archiveUrl = HAS_ARCHIVE && slug ? `${SITE_URL}/digest/${slug}/` : null;
 
-  if (IS_ROUNDUP && !SKIP_ARCHIVE) {
+  if (HAS_ARCHIVE && !SKIP_ARCHIVE) {
     const page = buildHtml(items, PERIOD, {
       trends, narrative, forWeb: true, archiveUrl, issueTitle: title, totalCount, topics: archiveTopics,
     });
@@ -554,7 +559,7 @@ async function main() {
       email: r.email, tags: r.tags, unsubscribeUrl, trends, narrative, archiveUrl, issueTitle: title,
       totalCount: filtered ? mine.length : totalCount, topics: theirTopics,
     });
-    const kind = { day: "daily digest", week: "weekly roundup", month: "monthly digest" }[PERIOD];
+    const kind = { day: "daily digest", week: "weekly digest", month: "monthly digest" }[PERIOD];
     const subject = IS_ROUNDUP
       ? `UAV360 ${kind} — ${title}: ${theirTopics.length} topics that mattered`
       : `UAV360 ${kind} — ${mine.length} new`;

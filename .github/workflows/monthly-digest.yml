@@ -1,10 +1,11 @@
-name: Weekly & monthly roundup
+name: Monthly digest
 
-# Weekly roundups and the monthly digest: the headlines for the period plus a
-# trends section (which companies and themes moved versus the period before).
+# The monthly digest: a written lead, the trends numbers, and a ranked shortlist
+# of the stories the most outlets carried. Unlike the daily and weekly mailouts
+# (digest.yml), this one is also published as a permanent page on the site.
 #
-# Runs in three stages on purpose. The email links to a permanent archive page,
-# so that page has to be live BEFORE the email goes out:
+# Three stages on purpose. The email links to that archive page, so the page has
+# to be live BEFORE the email goes out:
 #   1. archive – write archive/digests/<slug>.html, commit it, rebuild the site
 #   2. deploy  – publish to GitHub Pages
 #   3. send    – email the issue, now that the link resolves
@@ -16,15 +17,12 @@ name: Weekly & monthly roundup
 on:
   workflow_dispatch:
     inputs:
-      period:
-        description: "Roundup period"
-        type: choice
-        options: ["week", "month"]
-        default: "week"
-        required: true
+      month:
+        description: "Month to publish as YYYY-MM (blank = the last 30 days)"
+        type: string
+        required: false
   schedule:
-    - cron: "0 7 * * 1"      # Mondays 07:00 UTC — weekly roundup
-    - cron: "0 7 1 * *"      # 1st of the month 07:00 UTC — monthly digest
+    - cron: "0 7 1 * *"      # 1st of the month 07:00 UTC
 
 permissions:
   contents: write            # to commit the archive page
@@ -38,8 +36,6 @@ concurrency:
 jobs:
   archive:
     runs-on: ubuntu-latest
-    outputs:
-      period: ${{ steps.p.outputs.period }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -48,19 +44,19 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Decide period
-        id: p
+      # Blank input = the rolling last 30 days; YYYY-MM backfills that calendar
+      # month against the one before it.
+      - name: Resolve arguments
+        id: a
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "period=${{ github.event.inputs.period }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "0 7 1 * *" ]; then
-            echo "period=month" >> "$GITHUB_OUTPUT"
+          if [ -n "${{ github.event.inputs.month }}" ]; then
+            echo "args=--month ${{ github.event.inputs.month }}" >> "$GITHUB_OUTPUT"
           else
-            echo "period=week" >> "$GITHUB_OUTPUT"
+            echo "args=--period month" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Write the archive page (no email yet)
-        run: node scripts/digest.mjs --period ${{ steps.p.outputs.period }} --skip-send
+        run: node scripts/digest.mjs ${{ steps.a.outputs.args }} --skip-send
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
@@ -74,7 +70,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No new archive page to commit."
           else
-            git commit -m "Add ${{ steps.p.outputs.period }}ly digest archive page"
+            git commit -m "Add monthly digest archive page"
             git pull --rebase --autostash origin ${{ github.ref_name }}
             git push origin HEAD:${{ github.ref_name }}
           fi
@@ -110,8 +106,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Send the roundup email
-        run: node scripts/digest.mjs --period ${{ needs.archive.outputs.period }} --skip-archive
+      - name: Resolve arguments
+        id: a
+        run: |
+          if [ -n "${{ github.event.inputs.month }}" ]; then
+            echo "args=--month ${{ github.event.inputs.month }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "args=--period month" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Send the monthly digest
+        run: node scripts/digest.mjs ${{ steps.a.outputs.args }} --skip-archive
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

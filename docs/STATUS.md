@@ -4,11 +4,15 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 
 ## Working now
 - Daily ingest + site deploy (05:00 UTC). Daily email digest via Resend (08:00 UTC).
-- **Weekly roundup (Mon 07:00 UTC) and monthly digest (1st, 07:00 UTC)** — `roundup.yml`.
-  Structure: a written lead in plain English → the trends numbers → a ranked shortlist of
-  **topics** (top 10 weekly / 20 monthly in the email; 20 / 40 on the archive page). Archived at
-  `SITE_URL/digest/<slug>/`. Roundups deliberately do **not** list every headline — a week is
-  ~210 stories, a month ~850 — and consumer / civil-mobility coverage is filtered out entirely.
+- **Weekly digest (Mon 07:00 UTC)** — `digest.yml`, alongside the daily. Email only.
+- **Monthly digest (1st, 07:00 UTC)** — `monthly-digest.yml`. Email **plus** a permanent archive
+  page, which is why it has its own build-and-deploy stages.
+- Both carry: a written lead in plain English → the trends numbers → a ranked shortlist of
+  **topics** (top 10 weekly / 20 monthly in the email; 40 on the monthly archive page). Neither
+  lists every headline — a week is ~210 stories, a month ~850 — and consumer / civil-mobility
+  coverage is filtered out entirely.
+- Only the monthly is archived. Publishing 52 weeklies a year would bury the monthly
+  retrospectives in the `/digest/` catalogue.
 - LLM entity tagging on ingest; entity resolution into `companies`/`products`; enrichment scripts (manual).
 - `db/schema.sql` now mirrors the live database (19 tables, 3 views, 3 functions, 2 triggers,
   52 indexes, 15 RLS policies), verified against project `uobidcahmrmfdmfbrtkt` on 2026-09-05.
@@ -23,7 +27,7 @@ Live issues in `archive/digests/`, published at `SITE_URL/digest/<slug>/`:
 - `2026-08` August 2026 — 782 of 910
 
 Backfill any month with `node scripts/digest.mjs --month YYYY-MM --skip-send` (writes the archive
-page, sends nothing), or via the `roundup.yml` dispatch. These three were generated from the same
+page, sends nothing), or via the `monthly-digest.yml` dispatch, which takes a `month` input. These three were generated from the same
 library code but **outside** the pipeline, because there is no `.env` on the dev machine — the
 data was exported read-only from Supabase and fed to `buildTrends` / `rankTopics` / `buildHtml`
 directly. Regenerating them through `digest.mjs` should reproduce them.
@@ -74,6 +78,9 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
   But `digest.mjs --period week` itself has not run: there is no `.env` on the dev machine, so the
   PostgREST queries in `fetchArticlesBetween` / `fetchEntityLinks` are still untested against a
   live endpoint. Do `npm run digest:week:dry` before the first real send.
+- **Pushing needs the `workflow` token permission.** A push touching `.github/workflows/` is
+  rejected unless the PAT grants Workflows: Read and write (fine-grained) or the `workflow` scope
+  (classic). This blocked the first deploy attempt of everything built in session 1.
 - **Individual issue pages still use the email styling.** `/digest/<slug>/` serves the same
   light, table-based HTML that goes out by email, so clicking from the dark catalogue into an
   issue is a visual jolt. The catalogue and the site chrome are dark; the issue is not. Wrapping
