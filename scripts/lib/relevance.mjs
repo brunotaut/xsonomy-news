@@ -85,7 +85,7 @@ export function splitByRelevance(items, min = DEFENCE_MIN) {
 //
 // Story-level scoring handles most of this, but a few consumer and logistics
 // names still accumulate enough mentions to reach "most talked about" on volume
-// alone — which is how a counter-UAV briefing ends up leading with Amazon
+// alone — which is how a counter-UAV digest ends up leading with Amazon
 // parcel drops. This list only suppresses NAME HIGHLIGHTING; their stories are
 // still scored on merit like any other.
 //

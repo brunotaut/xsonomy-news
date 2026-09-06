@@ -1,6 +1,6 @@
 name: Weekly & monthly roundup
 
-# Weekly roundups and monthly briefings: the headlines for the period plus a
+# Weekly roundups and the monthly digest: the headlines for the period plus a
 # trends section (which companies and themes moved versus the period before).
 #
 # Runs in three stages on purpose. The email links to a permanent archive page,
@@ -24,7 +24,7 @@ on:
         required: true
   schedule:
     - cron: "0 7 * * 1"      # Mondays 07:00 UTC — weekly roundup
-    - cron: "0 7 1 * *"      # 1st of the month 07:00 UTC — monthly briefing
+    - cron: "0 7 1 * *"      # 1st of the month 07:00 UTC — monthly digest
 
 permissions:
   contents: write            # to commit the archive page

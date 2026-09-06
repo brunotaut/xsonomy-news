@@ -115,7 +115,7 @@ const sample = [
 ];
 
 const monthly = buildHtml(sample, "month", { trends, issueTitle: "August 2026" });
-assert.ok(monthly.includes("Monthly briefing"), "monthly label");
+assert.ok(monthly.includes("Monthly digest"), "monthly label");
 assert.ok(monthly.includes("The numbers"), "monthly carries the trends block");
 assert.ok(monthly.includes("August 2026"), "shows the issue title");
 

@@ -4,7 +4,7 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 
 ## Working now
 - Daily ingest + site deploy (05:00 UTC). Daily email digest via Resend (08:00 UTC).
-- **Weekly roundup (Mon 07:00 UTC) and monthly briefing (1st, 07:00 UTC)** — `roundup.yml`.
+- **Weekly roundup (Mon 07:00 UTC) and monthly digest (1st, 07:00 UTC)** — `roundup.yml`.
   Structure: a written lead in plain English → the trends numbers → a ranked shortlist of
   **topics** (top 10 weekly / 20 monthly in the email; 20 / 40 on the archive page). Archived at
   `SITE_URL/digest/<slug>/`. Roundups deliberately do **not** list every headline — a week is
@@ -165,7 +165,7 @@ Committed CLAUDE.md + docs. Dumped the live Supabase schema into `db/schema.sql`
 no writes to the database). Found six tables and three views that no repo doc mentioned, and
 that the draft/live review gate is currently empty — everything is published.
 
-Then built the weekly roundup and monthly briefing: `scripts/lib/trends.mjs` (period-over-period
+Then built the weekly roundup and monthly digest: `scripts/lib/trends.mjs` (period-over-period
 maths), trends rendering and a `--period month` in `digest.mjs`, an archive page published by
 `generate.mjs` at `/digest/<slug>/`, and `roundup.yml` to run it. Also found that the weekly
 digest had never actually been scheduled — `digest.yml` hard-coded `day` for every scheduled run,

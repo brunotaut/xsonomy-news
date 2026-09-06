@@ -65,7 +65,7 @@ ${entries}
 // One card in the /digest/ catalogue. Everything shown comes from the issue's
 // .json summary — the rendered page itself is never parsed.
 function issueCardHtml(i) {
-  const kind = i.period === "month" ? "Monthly briefing" : "Weekly roundup";
+  const kind = i.period === "month" ? "Monthly digest" : "Weekly roundup";
   const figure = (value, label) =>
     value == null ? "" : `<div><b>${esc(value)}</b><span>${esc(label)}</span></div>`;
 
@@ -95,7 +95,7 @@ function issueCardHtml(i) {
     </div>
     ${lead}
     ${names ? `<div class="names">${names}</div>` : ""}
-    <span class="go">Read the briefing →</span>
+    <span class="go">Read the digest →</span>
   </a>`;
 }
 

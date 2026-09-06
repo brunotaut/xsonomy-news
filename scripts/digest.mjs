@@ -2,10 +2,10 @@
 //
 //   node scripts/digest.mjs --period day       # last 24h  (daily digest)
 //   node scripts/digest.mjs --period week      # last 7 days (Monday roundup)
-//   node scripts/digest.mjs --period month     # last 30 days (monthly briefing)
+//   node scripts/digest.mjs --period month     # last 30 days (monthly digest)
 //   node scripts/digest.mjs --period day --dry # render HTML to ./public/_digest.html, no send
 //
-// Weekly and monthly issues are a defence / counter-UAV briefing, not a headline
+// Weekly and monthly issues are a defence / counter-UAV digest, not a headline
 // list. They open with a written lead ("what happened", in sentences), then the
 // trends numbers, then a ranked shortlist of topics. Consumer and civil-mobility
 // coverage is filtered out first (see lib/relevance.mjs). Each issue is archived
@@ -268,7 +268,7 @@ export function topicsHtml(topics, period = "week") {
     </table></td></tr>`;
 }
 
-const PERIOD_LABELS = { day: "Daily digest", week: "Weekly roundup", month: "Monthly briefing" };
+const PERIOD_LABELS = { day: "Daily digest", week: "Weekly roundup", month: "Monthly digest" };
 
 export function buildHtml(items, period = "day", opts = {}) {
   const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
@@ -554,7 +554,7 @@ async function main() {
       email: r.email, tags: r.tags, unsubscribeUrl, trends, narrative, archiveUrl, issueTitle: title,
       totalCount: filtered ? mine.length : totalCount, topics: theirTopics,
     });
-    const kind = { day: "daily digest", week: "weekly roundup", month: "monthly briefing" }[PERIOD];
+    const kind = { day: "daily digest", week: "weekly roundup", month: "monthly digest" }[PERIOD];
     const subject = IS_ROUNDUP
       ? `UAV360 ${kind} — ${title}: ${theirTopics.length} topics that mattered`
       : `UAV360 ${kind} — ${mine.length} new`;
