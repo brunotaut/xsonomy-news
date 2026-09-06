@@ -100,3 +100,54 @@ Ascento Guard was already `ground-ugv` — left alone, other facets added.
   United States.
 - **Aero-200** — sources conflict on MTOW: helis.com says 150 kg for the Aero2, while the
   Aero-200 rename is stated to reflect MTOW (i.e. 200 kg). Tagged Class II at medium.
+
+---
+
+## Batch 2 — products 26–50 of the work list (16 tagged, 9 not)
+
+**Tagged (16), 85 rows:** X1 (ESOX), GhostFoiler, DriX, DriX O-16, Griffen, Squall,
+Flock Alpha, Beluga, Tracer-160, White Knight, Wildfire, AIR Pro, AIR Speed, Heliblade,
+YETI, Alphawing.
+
+GhostFoiler / DriX / DriX O-16 were already `surface-usv` — verified, no domain change needed.
+
+**Not tagged (9) — and this batch is where the queue's quality really shows:**
+
+*Software / systems mis-filed as aircraft (4):*
+- **SkyWeaver** (DZYNE, spelled "DYZNE") — an **AI mission operating system** built with
+  Palantir, not an aircraft.
+- **SkyStream** — a **video-streaming software platform**, and it belongs to **Garuda
+  Robotics (Singapore)**, not Garuda Aerospace (India). Two different companies.
+- **ZEE** — **Archer's AI foundation model** for aviation, not an Insitu/Boeing aircraft.
+- **VERTI-GO** (Honeywell) — an **EU SESAR research project** on integrating eVTOLs and
+  cargo drones into European airspace. Not an aircraft.
+  ⚠ This one is already live on the public site at `xsonomy.com/uav/verti-go/`.
+
+*Crewed aircraft (2):*
+- **CX300** — this is **BETA Technologies' Alia CX300**, a crewed all-electric fixed-wing
+  aircraft that has flown fare-paying passengers. "Electric Aviation Maven" is a press
+  phrase, not a manufacturer.
+- **Ellyon** (IAI) — a crewed EW/ISTAR mission suite integrated onto **large business jet
+  platforms**. Not a UAV.
+
+*Crewed + duplicate (1):*
+- **Flying Tiger** — the nickname for the **V.MO passenger eVTOL**, which carries four
+  people, and it is **Volkswagen Group China's**, not Geely's. Also a duplicate of the
+  `V.MO` row already skipped (which itself is misattributed to Xpeng). Three errors in one row.
+
+*Unidentified after 2 searches (2):*
+- **X3** (ESOX Group) — ESOX has an X1 interceptor drone and an X2 UGV; no X3 found.
+- **HP47** (Foxtech) — no such model in Foxtech's catalogue.
+
+### Corrections spotted (logged only, not fixed)
+- **Tracer-160** — Frost Unmanned is a **Swedish** defence manufacturer; `hq_country` says France.
+- **AIR Pro / AIR Speed** — General Cherry (General Chereshnya) is **Ukrainian**;
+  `hq_country` says Croatia. Croatia is where it is opening a production line, not its HQ.
+- **Heliblade** — designed by **X721** (ex-Airbus/Arianespace engineers); Hemeria's role
+  looks like partner/industrialiser rather than designer.
+- **Beluga** naming clash: Flyde's Beluga (France, yacht delivery) is unrelated to
+  **Eurolink Systems' BELUGA** (Italy). Different products, same name.
+- **Squall** — built with Croatian firm **Orqa**, the same company flagged elsewhere in the
+  queue for a wrong `hq_country` (SkyAgent 001 row).
+- **Heliblade** weight vs role: 18 m wingspan but under 4 kg takeoff mass, so it tags
+  Class I by weight while being a HALE platform by role. Tagged on weight, noted here.
