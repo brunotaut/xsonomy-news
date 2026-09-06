@@ -359,6 +359,29 @@ async function sendResend(to, subject, html, unsubscribeUrl) {
 }
 
 /**
+ * Summary of an issue, written alongside its HTML as <slug>.json.
+ *
+ * generate.mjs builds the /digest/ catalogue from these, so anything the
+ * catalogue cards show has to live here — the HTML page is never parsed.
+ */
+export function archiveMeta({ slug, title, period, count, topics = [], trends, generatedAt }) {
+  const lead = topics[0];
+  return {
+    slug,
+    title,
+    period,
+    count,                       // defence-relevant stories in the period
+    topics: topics.length,       // how many made the shortlist
+    outlets: trends?.volume?.outlets ?? null,
+    lead: lead ? { title: lead.title, url: lead.url, outlets: lead.outlets } : null,
+    themes: (trends?.themes || []).slice(0, 3).map((t) => ({ label: t.label, count: t.current })),
+    movers: (trends?.companies?.rising || []).slice(0, 3).map((r) => r.name),
+    newcomers: (trends?.companies?.newcomers || []).slice(0, 3).map((r) => r.name),
+    generated_at: generatedAt,
+  };
+}
+
+/**
  * The window an issue covers, plus the window before it for comparison.
  *
  * Normally that is "the last N hours" and "the N hours before those". With
@@ -500,10 +523,11 @@ async function main() {
       const dir = join(ROOT, "archive", "digests");
       await mkdir(dir, { recursive: true });
       await writeFile(join(dir, `${slug}.html`), page);
-      await writeFile(join(dir, `${slug}.json`), JSON.stringify({
-        slug, title, period: PERIOD, count: totalCount, topics: archiveTopics.length,
-        generated_at: new Date().toISOString(),
-      }, null, 2) + "\n");
+      await writeFile(join(dir, `${slug}.json`),
+        JSON.stringify(archiveMeta({
+          slug, title, period: PERIOD, count: totalCount,
+          topics: archiveTopics, trends, generatedAt: new Date().toISOString(),
+        }), null, 2) + "\n");
       console.log(`  archive page → archive/digests/${slug}.html  (publishes at ${archiveUrl})`);
     }
   }

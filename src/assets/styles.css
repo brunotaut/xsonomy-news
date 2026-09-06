@@ -16,6 +16,14 @@ a { color: inherit; text-decoration: none; }
 .site-head nav a { color: var(--muted); margin-left: 20px; font-family: "Share Tech Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; }
 .site-head nav a:hover { color: var(--text); }
 .site-head nav a[aria-current] { color: var(--accent); }
+/* The brand is long; on narrow screens let it shrink rather than wrap onto two
+   lines and shove the nav out of the bar. */
+@media (max-width: 560px) {
+  .site-head .wrap { height: auto; min-height: 56px; padding-top: 10px; padding-bottom: 10px; gap: 12px; }
+  .brand { font-size: 15px; letter-spacing: .1em; }
+  .site-head nav { display: flex; gap: 16px; flex: 0 0 auto; }
+  .site-head nav a { margin-left: 0; }
+}
 
 .intro { padding: 34px 0 10px; display: flex; gap: 28px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; }
 .intro-head { flex: 1 1 460px; min-width: 280px; }
@@ -70,6 +78,40 @@ a { color: inherit; text-decoration: none; }
 /* Company entities — blue, to stand apart from the grey theme tags. */
 .card .tags span.company { color: var(--accent); background: rgba(78,161,255,.12);
   border: 1px solid rgba(78,161,255,.35); font-weight: 600; }
+
+/* ---------------------------------------------------------------------------
+   Monthly briefing archive (/digest/). One card per issue: the month, what it
+   covered, and the story the industry converged on.
+   --------------------------------------------------------------------------- */
+.issues { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 18px; margin: 10px 0 40px; }
+.issue { display: flex; flex-direction: column; gap: 12px; padding: 20px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  transition: transform .12s ease, border-color .12s ease; }
+.issue:hover { transform: translateY(-2px); border-color: var(--accent); }
+.issue .period { font-family: "Share Tech Mono", ui-monospace, monospace; font-size: 11px;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--accent2); }
+.issue h2 { font-family: "Chakra Petch", sans-serif; font-weight: 600; letter-spacing: .02em;
+  font-size: 24px; margin: 0; }
+.issue .figures { display: flex; flex-wrap: wrap; gap: 18px; }
+.issue .figures div { display: flex; flex-direction: column; }
+.issue .figures b { font-family: "Chakra Petch", sans-serif; font-size: 20px; font-weight: 600; }
+.issue .figures span { font-size: 11px; color: var(--muted); font-family: "Share Tech Mono", ui-monospace, monospace;
+  letter-spacing: .1em; text-transform: uppercase; }
+.issue .lead { padding: 12px 14px; background: var(--panel2); border-radius: 10px;
+  border-left: 2px solid var(--accent); }
+.issue .lead .label { font-family: "Share Tech Mono", ui-monospace, monospace; font-size: 10px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+.issue .lead .headline { font-size: 14.5px; line-height: 1.4; font-weight: 600; }
+.issue .names { display: flex; flex-wrap: wrap; gap: 6px; }
+.issue .names span { font-size: 11px; color: var(--accent); background: rgba(95,208,224,.1);
+  border: 1px solid rgba(95,208,224,.3); padding: 2px 8px; border-radius: 6px; font-weight: 600; }
+.issue .names span.theme { color: var(--muted); background: var(--panel2);
+  border-color: var(--line); font-weight: 400; }
+.issue .go { margin-top: auto; padding-top: 4px; font-family: "Share Tech Mono", ui-monospace, monospace;
+  font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.issue:hover .go { color: var(--accent2); }
+.issues .empty { color: var(--muted); }
 
 .status { text-align: center; color: var(--muted); padding: 22px 0; }
 .more { display: block; margin: 8px auto 50px; padding: 12px 26px; font-weight: 700;

@@ -62,6 +62,43 @@ ${entries}
 </channel></rss>`;
 }
 
+// One card in the /digest/ catalogue. Everything shown comes from the issue's
+// .json summary — the rendered page itself is never parsed.
+function issueCardHtml(i) {
+  const kind = i.period === "month" ? "Monthly briefing" : "Weekly roundup";
+  const figure = (value, label) =>
+    value == null ? "" : `<div><b>${esc(value)}</b><span>${esc(label)}</span></div>`;
+
+  const lead = i.lead && i.lead.title
+    ? `<div class="lead">
+         <span class="label">Most covered${i.lead.outlets ? ` · ${esc(i.lead.outlets)} outlets` : ""}</span>
+         <span class="headline">${esc(i.lead.title)}</span>
+       </div>`
+    : "";
+
+  // Movers first (they are the "where is this going" signal), topped up with
+  // newcomers — a month measured against a thin baseline has no risers at all,
+  // because every name reads as brand new.
+  const companies = [...new Set([...(i.movers || []), ...(i.newcomers || [])])].slice(0, 3);
+  const names = [
+    ...companies.map((n) => `<span>${esc(n)}</span>`),
+    ...(i.themes || []).slice(0, 2).map((t) => `<span class="theme">${esc(t.label)} ${esc(t.count)}</span>`),
+  ].join("");
+
+  return `<a class="issue" href="/digest/${esc(i.slug)}/">
+    <span class="period">${esc(kind)}</span>
+    <h2>${esc(i.title || i.slug)}</h2>
+    <div class="figures">
+      ${figure(Number(i.count) || 0, "stories")}
+      ${figure(Number(i.topics) || 0, "topics")}
+      ${figure(i.outlets, "outlets")}
+    </div>
+    ${lead}
+    ${names ? `<div class="names">${names}</div>` : ""}
+    <span class="go">Read the briefing →</span>
+  </a>`;
+}
+
 // Copy the committed digest archive into public/ and build its index.
 // digest.mjs writes archive/digests/<slug>.html + <slug>.json; public/ is wiped
 // on every build, so the source of truth has to live outside it.
@@ -91,27 +128,10 @@ async function publishDigestArchive() {
   // Newest first — slugs sort correctly as strings ("2026-w09" < "2026-w36").
   issues.sort((a, b) => String(b.slug).localeCompare(String(a.slug)));
 
-  const rows = issues.map((i) => `<li style="margin:0 0 14px;">
-      <a href="/digest/${esc(i.slug)}/" style="font:700 16px/1.4 Arial,sans-serif;color:#0f172a;text-decoration:none;">${esc(i.title || i.slug)}</a>
-      <div style="font:400 13px/1.5 Arial,sans-serif;color:#64748b;">${esc(i.period === "month" ? "Monthly briefing" : "Weekly roundup")} · ${Number(i.count) || 0} stories</div>
-    </li>`).join("\n");
-
+  const cards = issues.map(issueCardHtml).join("\n");
+  const template = await readFile(join(SRC, "digest.html"), "utf8");
   await writeFile(join(OUT, "digest", "index.html"),
-`<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Digest archive — UAV360</title>
-<meta name="description" content="Every UAV360 weekly roundup and monthly briefing: the headlines that mattered, and the companies and themes that moved.">
-<link rel="canonical" href="${SITE_URL}/digest/">
-</head><body style="margin:0;background:#f1f5f9;">
-<div style="max-width:640px;margin:0 auto;padding:32px 20px;">
-  <a href="/" style="font:600 13px/1 Arial,sans-serif;color:#2563eb;text-decoration:none;">← UAV360</a>
-  <h1 style="font:800 26px/1.2 Arial,sans-serif;color:#0f172a;margin:16px 0 6px;">Digest archive</h1>
-  <p style="font:400 14px/1.6 Arial,sans-serif;color:#64748b;margin:0 0 24px;">
-    Weekly roundups and monthly briefings, with the companies and themes that moved each period.</p>
-  <ul style="list-style:none;padding:0;margin:0;">
-${rows}
-  </ul>
-</div></body></html>\n`);
+    template.replaceAll("__SITEURL__", SITE_URL).replace("__ISSUES__", cards));
 
   console.log(`  digest archive — ${issues.length} issue(s) published under /digest/`);
   return issues;

@@ -14,8 +14,10 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
   52 indexes, 15 RLS policies), verified against project `uobidcahmrmfdmfbrtkt` on 2026-09-05.
 
 ## Digest archive
-Live issues in `archive/digests/`, published at `SITE_URL/digest/<slug>/` and indexed at
-`SITE_URL/digest/`:
+Catalogue page at `SITE_URL/digest/` — built from `src/digest.html` + the per-issue `.json`
+summaries, in the site's own dark theme, linked from the header nav on every page. Cards show
+story/topic/outlet counts, the most-covered story, and the companies and themes that moved.
+Live issues in `archive/digests/`, published at `SITE_URL/digest/<slug>/`:
 - `2026-06` June 2026 — 1,163 defence-relevant stories of 1,190
 - `2026-07` July 2026 — 860 of 990
 - `2026-08` August 2026 — 782 of 910
@@ -72,6 +74,10 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
   But `digest.mjs --period week` itself has not run: there is no `.env` on the dev machine, so the
   PostgREST queries in `fetchArticlesBetween` / `fetchEntityLinks` are still untested against a
   live endpoint. Do `npm run digest:week:dry` before the first real send.
+- **Individual issue pages still use the email styling.** `/digest/<slug>/` serves the same
+  light, table-based HTML that goes out by email, so clicking from the dark catalogue into an
+  issue is a visual jolt. The catalogue and the site chrome are dark; the issue is not. Wrapping
+  the issue body in site chrome (while keeping the email build separate) would fix it.
 - **Entity extraction is noisy on the margins.** Some articles list companies that are only
   tangential (a DJI camera story tagged with Amazon, Insta360 and LandSpace). It does not affect
   ranking much — outlet spread dominates — but it shows up in the "who" line under a topic.
