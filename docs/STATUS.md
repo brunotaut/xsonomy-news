@@ -41,6 +41,13 @@ library code but **outside** the pipeline, because there is no `.env` on the dev
 data was exported read-only from Supabase and fed to `buildTrends` / `rankTopics` / `buildHtml`
 directly. Regenerating them through `digest.mjs` should reproduce them.
 
+## PENDING — one migration to apply
+`db/migrations/2026-09-07_subscriber_frequency.sql` adds `daily` / `weekly` / `monthly` to
+`subscribers`. **Not yet applied** (the Supabase write was blocked in the session that wrote it).
+Run it in the Supabase SQL editor. Until then the sign-up form still works and nobody loses email:
+`subscribe.js` retries without the columns and `fetchSubscribers` treats everyone as subscribed to
+all three — but a new subscriber's choice is silently ignored.
+
 ## Resolved this session
 - **Is `resolve-entities.mjs` scheduled?** Yes — `ingest-and-deploy.yml:38` runs `npm run resolve`
   in the daily job. (Old task #3 is done; removed from the list.)
@@ -112,6 +119,8 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
 - 2026-07-02 — `entity_resolution` (tag_resolutions + articles.entities_resolved_at).
 - 2026-07-02 — `investors_institutions`.
 - 2026-09-05 — none. `db/schema.sql` was brought into line with the DB; the DB was not changed.
+- 2026-09-07 — `subscriber_frequency_preferences` — **WRITTEN, NOT APPLIED**. See the pending
+  section at the top of this file.
 
 ## Decisions log
 - 2026-09-05 — Keep two repos (Pages constraint). All DB writes stay in xsonomy-news.

@@ -34,14 +34,21 @@
         <h1>UAV &amp; Counter-Drone News</h1>
         <p>Headlines aggregated from <strong>__SOURCECOUNT__</strong> proven defence and drone-industry outlets.</p>
       </div>
-      <form id="subscribe" class="subscribe" aria-label="Subscribe to daily news updates">
-        <div class="sub-h">Daily UAV &amp; counter-UAS news</div>
+      <form id="subscribe" class="subscribe" aria-label="Subscribe to UAV and counter-UAS news">
+        <div class="sub-h">UAV &amp; counter-UAS news</div>
         <div class="sub-row">
           <input id="sub-name" name="name" type="text" placeholder="Name" autocomplete="name" />
           <input id="sub-email" name="email" type="email" required placeholder="you@email.com" autocomplete="email" />
           <button type="submit">Subscribe</button>
         </div>
+        <fieldset class="sub-freq">
+          <legend>Send me</legend>
+          <label><input type="checkbox" id="sub-daily" name="daily" value="daily" checked /> <span>Daily</span></label>
+          <label><input type="checkbox" id="sub-weekly" name="weekly" value="weekly" checked /> <span>Weekly</span></label>
+          <label><input type="checkbox" id="sub-monthly" name="monthly" value="monthly" checked /> <span>Monthly</span></label>
+        </fieldset>
         <div id="sub-msg" class="sub-msg" role="status" aria-live="polite"></div>
+        <p class="sub-consent">By pressing Subscribe, you agree to receive newsletters from UAV360. You can unsubscribe at any time.</p>
       </form>
     </section>
 

@@ -517,8 +517,23 @@ create table if not exists public.subscribers (
   email      citext not null unique,
   source     text default 'news',
   confirmed  boolean not null default false,
-  created_at timestamptz not null default now()
+  created_at timestamptz not null default now(),
+  -- Which digests this person wants. Defaulting to true means anyone who
+  -- subscribed before the choice existed keeps receiving what they signed up for.
+  daily      boolean not null default true,
+  weekly     boolean not null default true,
+  monthly    boolean not null default true
 );
+
+-- Applied to the live DB as migration 'subscriber_frequency_preferences'.
+alter table public.subscribers add column if not exists daily   boolean not null default true;
+alter table public.subscribers add column if not exists weekly  boolean not null default true;
+alter table public.subscribers add column if not exists monthly boolean not null default true;
+
+-- digest.mjs reads by period, so index the flag it filters on.
+create index if not exists subscribers_daily_idx   on public.subscribers (daily)   where daily;
+create index if not exists subscribers_weekly_idx  on public.subscribers (weekly)  where weekly;
+create index if not exists subscribers_monthly_idx on public.subscribers (monthly) where monthly;
 
 -- ---------------------------------------------------------------------------
 -- match_company(tag) — the resolver's matching ladder, in SQL. Tries, in order:

@@ -45,6 +45,25 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--accent); border-radius: 9px; cursor: pointer; }
 .subscribe button:hover { filter: brightness(1.08); }
 .subscribe button:disabled { opacity: .55; cursor: default; }
+/* frequency choice + consent */
+.subscribe .sub-freq { display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+  border: 0; margin: 12px 0 0; padding: 0; }
+.subscribe .sub-freq legend { float: left; width: 100%; padding: 0; margin: 0 0 8px;
+  font-family: "Share Tech Mono", ui-monospace, monospace; font-size: 11px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.subscribe .sub-freq label { display: inline-flex; align-items: center; gap: 7px;
+  font-size: 14px; color: var(--text); cursor: pointer; user-select: none; }
+.subscribe .sub-freq input[type=checkbox] { appearance: none; -webkit-appearance: none;
+  width: 17px; height: 17px; margin: 0; flex: 0 0 auto; cursor: pointer;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 5px; position: relative; }
+.subscribe .sub-freq input[type=checkbox]:hover { border-color: var(--accent); }
+.subscribe .sub-freq input[type=checkbox]:checked { background: var(--accent); border-color: var(--accent); }
+.subscribe .sub-freq input[type=checkbox]:checked::after { content: ""; position: absolute;
+  left: 5px; top: 1px; width: 4px; height: 9px; border: solid #0a0d10;
+  border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.subscribe .sub-freq input[type=checkbox]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.subscribe .sub-consent { margin: 10px 0 0; font-size: 11.5px; line-height: 1.5; color: var(--muted); }
+
 .subscribe .sub-msg { min-height: 16px; margin-top: 10px; font-size: 12px; font-family: "Share Tech Mono", ui-monospace, monospace; letter-spacing: .03em; }
 .subscribe .sub-msg.ok { color: var(--accent2); }
 .subscribe .sub-msg.err { color: #ff6a5f; }

@@ -213,12 +213,29 @@ export async function fetchSubscribers() {
   const { url, serviceKey, anonKey } = sbConfig();
   const key = serviceKey || anonKey;
   if (!key) throw new Error("Need SUPABASE_SERVICE_KEY to read subscribers.");
-  const q = new URL(`${url}/rest/v1/subscribers`);
-  q.searchParams.set("select", "email,name,confirmed");
-  q.searchParams.set("order", "created_at.asc");
-  q.searchParams.set("limit", "10000");
-  const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
-  if (!res.ok) throw new Error(`Supabase subscribers ${res.status}: ${await res.text()}`);
+  const get = async (select) => {
+    const q = new URL(`${url}/rest/v1/subscribers`);
+    q.searchParams.set("select", select);
+    q.searchParams.set("order", "created_at.asc");
+    q.searchParams.set("limit", "10000");
+    return fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  };
+
+  // daily/weekly/monthly say which digests each person wants.
+  let res = await get("email,name,confirmed,daily,weekly,monthly");
+  if (!res.ok) {
+    // Older database without the preference columns: fall back to the plain
+    // shape and treat everyone as subscribed to everything, which is what they
+    // were receiving before the choice existed.
+    const detail = await res.text().catch(() => "");
+    if (res.status === 400 && /daily|weekly|monthly|column|PGRST/i.test(detail)) {
+      console.error("subscribers: no daily/weekly/monthly columns yet — treating everyone as subscribed to all.");
+      res = await get("email,name,confirmed");
+      if (!res.ok) throw new Error(`Supabase subscribers ${res.status}: ${await res.text()}`);
+      return (await res.json()).map((r) => ({ ...r, daily: true, weekly: true, monthly: true }));
+    }
+    throw new Error(`Supabase subscribers ${res.status}: ${detail}`);
+  }
   return res.json();
 }
 

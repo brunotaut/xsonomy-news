@@ -90,13 +90,33 @@ async function loadRecipients() {
     const k = (s.email || "").toLowerCase();
     if (k && !seen.has(k)) { seen.add(k); merged.push(s); }
   }
-  console.log(`Recipients: ${base.length} base + ${merged.length - base.length} subscriber(s) = ${merged.length}.`);
-  return merged;
+  const wanted = merged.filter((r) => wantsPeriod(r, PERIOD));
+  console.log(`Recipients: ${base.length} base + ${merged.length - base.length} subscriber(s) = ${merged.length}; ` +
+    `${wanted.length} want the ${PERIOD === "day" ? "daily" : PERIOD === "week" ? "weekly" : "monthly"} digest.`);
+  return wanted;
 }
+// A recipient carries per-theme tag filters and per-period opt-ins. Anything
+// unspecified counts as opted IN: people on the base list (recipients.json /
+// DIGEST_TO) predate the choice and should keep getting everything.
 function normaliseRecipients(arr) {
   return (arr || [])
-    .map((r) => (typeof r === "string" ? { email: r, tags: [] } : { email: r.email, tags: Array.isArray(r.tags) ? r.tags : [] }))
+    .map((r) => (typeof r === "string"
+      ? { email: r, tags: [], daily: true, weekly: true, monthly: true }
+      : {
+          email: r.email,
+          tags: Array.isArray(r.tags) ? r.tags : [],
+          daily: r.daily !== false,
+          weekly: r.weekly !== false,
+          monthly: r.monthly !== false,
+        }))
     .filter((r) => r.email);
+}
+
+// Does this person want this issue? PERIOD maps straight onto the flag.
+export function wantsPeriod(recipient, period) {
+  if (period === "week") return recipient.weekly !== false;
+  if (period === "month") return recipient.monthly !== false;
+  return recipient.daily !== false;
 }
 // Keep items matching a recipient's tag filter ([] / missing = everything).
 export function filterForRecipient(items, tags) {
