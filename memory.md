@@ -151,3 +151,54 @@ GhostFoiler / DriX / DriX O-16 were already `surface-usv` — verified, no domai
   queue for a wrong `hq_country` (SkyAgent 001 row).
 - **Heliblade** weight vs role: 18 m wingspan but under 4 kg takeoff mass, so it tags
   Class I by weight while being a HALE platform by role. Tagged on weight, noted here.
+
+---
+
+## Batch 3 — products 51–75 of the work list (19 tagged, 6 not)
+
+**Tagged (19), 128 rows:** J-110 Pegasus, Astore Levante, HALIA, Mule 28, Quencher, Max1,
+Raptor 2, Kuryer, Kestrel, Spectr, Ayre CX, Cobra 600, DropShip, Ghost Hunter, Hunter Eagle,
+A3, Saildrone Explorer, Saildrone Spectre, Argo-1.
+
+**Domain corrections applied:**
+- **Max1** (Maximus Labs) → `ground-ugv`. A modular UGV: 850 kg payload, tows 4.5 t, 16 km/h.
+- **Kuryer** (NPO Android Technology) → `ground-ugv`. Tracked Russian UGV, 200 kg, 35 km/h.
+- **HALIA** (LeVanta Tech) → **added** `surface-usv` alongside `aerial-uav-uas`. It is genuinely
+  amphibious — a "float-and-fly" maritime drone that loiters on the sea for 30+ days between
+  flights — so both domains apply. Flagged for category review rather than replaced.
+
+Saildrone Explorer / Spectre were already `surface-usv` — verified.
+
+**Not tagged (6):**
+- **Flatbow** (Kraken Kinetics) — a **ground control system** (soldier-borne Crossbow GCS
+  successor), not an aircraft; and in the US Army PBAS programme it pairs with **Neros'** Archer,
+  not a Kraken Kinetics airframe. Kraken Kinetics makes the Terminus strike *payload*.
+- **DiSCO** (L3Harris) — an **EW system architecture** (Distributed Spectrum Collaboration and
+  Operations), flown as a payload on L3Harris Green Wolf and on a Seasats Lightfish USV.
+- **DroneHive** (Rheinmetall) — a **launcher**: a 4x4 container grid of launch pods holding up to
+  18 munitions. The aircraft in it is the FV-014 loitering munition, which is the row that should
+  exist instead.
+- **SkyAgent 001** — a **700 g passive RF SIGINT sensor** made by **Sky Spy**, carried on Orqa's
+  MRM2-10 FPV drone. A payload, not an aircraft, and not Orqa's product.
+- **STRIX** (MP-SEC) — MP-Sec France is a **tactical-equipment distributor**, not a manufacturer.
+  At least three unrelated STRIX UAVs exist (BAE Systems Australia STRIX, EOS Technologie
+  STRIX 300, Alpi Aviation Strix-DF Mini) and the row cannot be resolved to one.
+- **COBRA** (POLARIS Spaceplanes) — probable duplicate of **Cobra 600**, which is tagged.
+
+### Corrections spotted (logged only, not fixed)
+- **Ayre CX** — made by **EXEDY Globalparts**, not Parallel Flight Technologies (whose heavy-lift
+  product is the Firefly). Tagged anyway, since the airframe itself is real and correctly described;
+  only the company attribution is wrong.
+- **Raptor 2** — Nordic Wing is **Danish**; `hq_country` says Sweden. Sweden is the customer (FMV).
+- **Quencher** — Marcos Aerospace is **Greek**; `hq_country` is blank.
+- **Kestrel / Spectr** — OM Defence Systems is **Ukrainian**; `hq_country` is blank on both.
+- **HALIA** — LeVanta Tech is **California-based**, developing with Ukrainian industry;
+  `hq_country` is blank.
+- **Astore Levante** — worth noting it is a rebadged **Bayraktar TB3**, so it may duplicate a TB3
+  row elsewhere in the catalogue.
+
+### Taxonomy gap worth raising
+`weight_class` splits Class III (>600 kg) into **MALE / HALE / Strike-combat** only. Large
+**uncrewed cargo/logistics** aircraft have no correct home: Pyka **DropShip** (635 kg MTOW) and
+BETA **MV250** both fit none of the three. I left `weight_class` untagged for them rather than
+file a cargo aircraft as MALE. Consider adding a Class III "transport/logistics" option.
