@@ -4,7 +4,7 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 
 ## Working now
 - Daily ingest + site deploy (05:00 UTC). Daily email digest via Resend (08:00 UTC).
-- **Weekly digest (Mon 07:00 UTC)** — `digest.yml`, alongside the daily. Email only.
+- **Weekly digest (Sun 07:00 UTC)** — `digest.yml`, alongside the daily. Email only.
 - **Monthly digest (1st, 07:00 UTC)** — `monthly-digest.yml`. Email **plus** a permanent archive
   page, which is why it has its own build-and-deploy stages.
 - Both carry: a written lead in plain English → the trends numbers → a ranked shortlist of
@@ -13,6 +13,12 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
   coverage is filtered out entirely.
 - Only the monthly is archived. Publishing 52 weeklies a year would bury the monthly
   retrospectives in the `/digest/` catalogue.
+- **One digest per day, longest period wins.** On the 1st only the monthly goes out; on Sundays
+  only the weekly; otherwise the daily. Cron cannot express "not the 1st", so `digest.yml`
+  decides at run time and skips the send. Manual dispatches always send.
+- The scheduled monthly always runs `--month <the month that just ended>`, computed as
+  `date -u -d yesterday +%Y-%m` on the 1st. That is an exact calendar month, where the old
+  `--period month` was a rolling 30 days whose title claimed to be a calendar month.
 - LLM entity tagging on ingest; entity resolution into `companies`/`products`; enrichment scripts (manual).
 - `db/schema.sql` now mirrors the live database (19 tables, 3 views, 3 functions, 2 triggers,
   52 indexes, 15 RLS policies), verified against project `uobidcahmrmfdmfbrtkt` on 2026-09-05.
@@ -21,6 +27,9 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 Catalogue page at `SITE_URL/digest/` — built from `src/digest.html` + the per-issue `.json`
 summaries, in the site's own dark theme, linked from the header nav on every page. Cards show
 story/topic/outlet counts, the most-covered story, and the companies and themes that moved.
+Issue pages are rendered for the web by `scripts/lib/issuepage.mjs` (dark, site header and nav,
+site CSS) — deliberately separate from the email renderer in `digest.mjs`, which stays
+table-based and light so it survives Gmail and Outlook.
 Live issues in `archive/digests/`, published at `SITE_URL/digest/<slug>/`:
 - `2026-06` June 2026 — 1,163 defence-relevant stories of 1,190
 - `2026-07` July 2026 — 860 of 990
@@ -81,10 +90,6 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
 - **Pushing needs the `workflow` token permission.** A push touching `.github/workflows/` is
   rejected unless the PAT grants Workflows: Read and write (fine-grained) or the `workflow` scope
   (classic). This blocked the first deploy attempt of everything built in session 1.
-- **Individual issue pages still use the email styling.** `/digest/<slug>/` serves the same
-  light, table-based HTML that goes out by email, so clicking from the dark catalogue into an
-  issue is a visual jolt. The catalogue and the site chrome are dark; the issue is not. Wrapping
-  the issue body in site chrome (while keeping the email build separate) would fix it.
 - **Entity extraction is noisy on the margins.** Some articles list companies that are only
   tangential (a DJI camera story tagged with Amazon, Insta360 and LandSpace). It does not affect
   ranking much — outlet spread dominates — but it shows up in the "who" line under a topic.

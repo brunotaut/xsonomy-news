@@ -25,6 +25,7 @@ import {
 } from "./lib/supabase.mjs";
 import { buildTrends, buildNarrative, issueSlug, issueTitle } from "./lib/trends.mjs";
 import { rankTopics } from "./lib/topics.mjs";
+import { buildIssuePage } from "./lib/issuepage.mjs";
 import { splitByRelevance, withoutConsumerCompanies } from "./lib/relevance.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -45,7 +46,9 @@ const HOURS = PERIOD_HOURS[PERIOD] || 24;
 // month ~850; nobody reads that. Roundups lead with ranked TOPICS instead, and
 // the permanent archive page carries a longer list than the email.
 const TOPICS_EMAIL = { week: 10, month: 20 };
-const TOPICS_ARCHIVE = { week: 20, month: 40 };
+// The published page carries the same 20 as the email — a shortlist people read,
+// not a longer list they scroll past.
+const TOPICS_ARCHIVE = { week: 20, month: 20 };
 // Both longer issues get analytics (a written lead, trends, ranked topics).
 const IS_ROUNDUP = PERIOD === "week" || PERIOD === "month";
 // Only the MONTHLY digest is archived on the site. A weekly issue is a mailout:
@@ -294,8 +297,7 @@ export function buildHtml(items, period = "day", opts = {}) {
       : `${items.length} new item${items.length === 1 ? "" : "s"}`;
   // The archived copy on the website: no unsubscribe furniture, and a link back
   // to the issue is pointless when you are already reading it.
-  const forWeb = !!opts.forWeb;
-  const archiveLink = !forWeb && opts.archiveUrl
+  const archiveLink = opts.archiveUrl
     ? `<div style="font:400 12px/1.5 Arial,sans-serif;color:#94a3b8;margin-top:10px;">
          <a href="${esc(opts.archiveUrl)}" style="color:#64748b;">Read this issue on the web →</a>
        </div>`
@@ -308,17 +310,7 @@ export function buildHtml(items, period = "day", opts = {}) {
     <tr><td><table role="presentation" cellpadding="0" cellspacing="0" width="100%">${g.items.map(itemHtml).join("")}</table></td></tr>`).join("");
   const body = topics.length ? topicsHtml(topics, period) : themeSections();
 
-  // The emailed copy stays head-less (mail clients ignore it); the archived copy
-  // gets a real head so it is shareable and indexable.
-  const head = forWeb
-    ? `<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(opts.issueTitle || label)} — UAV360 ${esc(label)}</title>
-<meta name="description" content="${esc(`UAV and counter-drone ${label.toLowerCase()}: ${total} stories, with the companies and themes that moved.`)}">
-<link rel="canonical" href="${esc(opts.archiveUrl || SITE_URL)}">
-</head>`
-    : "";
-
-  return `<!doctype html><html lang="en">${head}<body style="margin:0;background:#f1f5f9;">
+  return `<!doctype html><html lang="en"><body style="margin:0;background:#f1f5f9;">
   <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background:#f1f5f9;padding:24px 0;"><tr><td align="center">
     <table role="presentation" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;">
       <tr><td style="background:#0c0f14;padding:20px 24px;">
@@ -337,10 +329,10 @@ export function buildHtml(items, period = "day", opts = {}) {
       </td></tr>
       <tr><td style="background:#f8fafc;padding:16px 24px;border-top:1px solid #e2e8f0;">
         <div style="font:400 11px/1.5 Arial,sans-serif;color:#94a3b8;">${esc(filterNote)}Headlines aggregated from proven defence &amp; drone-industry media. Each link points to the original publisher. — UAV360</div>
-        ${forWeb ? "" : `<div style="font:400 11px/1.5 Arial,sans-serif;color:#94a3b8;margin-top:8px;">
+        <div style="font:400 11px/1.5 Arial,sans-serif;color:#94a3b8;margin-top:8px;">
           You're receiving this because you're on the UAV360 news list.
           <a href="${esc(unsubscribeUrl)}" style="color:#64748b;text-decoration:underline;">Unsubscribe</a>.
-        </div>`}
+        </div>
       </td></tr>
     </table>
   </td></tr></table></body></html>`;
@@ -516,8 +508,11 @@ async function main() {
   const archiveUrl = HAS_ARCHIVE && slug ? `${SITE_URL}/digest/${slug}/` : null;
 
   if (HAS_ARCHIVE && !SKIP_ARCHIVE) {
-    const page = buildHtml(items, PERIOD, {
-      trends, narrative, forWeb: true, archiveUrl, issueTitle: title, totalCount, topics: archiveTopics,
+    // The published page is rendered for the SITE (dark, site header and CSS),
+    // not reused from the email, which is light and table-based for Gmail.
+    const page = buildIssuePage({
+      period: PERIOD, title, slug, siteUrl: SITE_URL,
+      totalCount, trends, narrative, topics: archiveTopics,
     });
     if (DRY) {
       await mkdir(join(ROOT, "public"), { recursive: true });

@@ -18,11 +18,11 @@ on:
   workflow_dispatch:
     inputs:
       month:
-        description: "Month to publish as YYYY-MM (blank = the last 30 days)"
+        description: "Month to publish as YYYY-MM (blank = the month that just ended)"
         type: string
         required: false
   schedule:
-    - cron: "0 7 1 * *"      # 1st of the month 07:00 UTC
+    - cron: "0 7 1 * *"      # 1st of the month 07:00 UTC — covers the month just ended
 
 permissions:
   contents: write            # to commit the archive page
@@ -44,19 +44,19 @@ jobs:
         with:
           node-version: "20"
 
-      # Blank input = the rolling last 30 days; YYYY-MM backfills that calendar
-      # month against the one before it.
-      - name: Resolve arguments
+      # Scheduled runs fire on the 1st and report on the month that just ended,
+      # so "yesterday" is always the last day of that month — exact, and with no
+      # month-length edge cases. A YYYY-MM input backfills any past month.
+      - name: Resolve month
         id: a
         run: |
-          if [ -n "${{ github.event.inputs.month }}" ]; then
-            echo "args=--month ${{ github.event.inputs.month }}" >> "$GITHUB_OUTPUT"
-          else
-            echo "args=--period month" >> "$GITHUB_OUTPUT"
-          fi
+          MONTH="${{ github.event.inputs.month }}"
+          if [ -z "$MONTH" ]; then MONTH=$(date -u -d yesterday +%Y-%m); fi
+          echo "month=$MONTH" >> "$GITHUB_OUTPUT"
+          echo "Publishing the digest for $MONTH."
 
       - name: Write the archive page (no email yet)
-        run: node scripts/digest.mjs ${{ steps.a.outputs.args }} --skip-send
+        run: node scripts/digest.mjs --month ${{ steps.a.outputs.month }} --skip-send
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
@@ -106,16 +106,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Resolve arguments
+      - name: Resolve month
         id: a
         run: |
-          if [ -n "${{ github.event.inputs.month }}" ]; then
-            echo "args=--month ${{ github.event.inputs.month }}" >> "$GITHUB_OUTPUT"
-          else
-            echo "args=--period month" >> "$GITHUB_OUTPUT"
-          fi
+          MONTH="${{ github.event.inputs.month }}"
+          if [ -z "$MONTH" ]; then MONTH=$(date -u -d yesterday +%Y-%m); fi
+          echo "month=$MONTH" >> "$GITHUB_OUTPUT"
       - name: Send the monthly digest
-        run: node scripts/digest.mjs ${{ steps.a.outputs.args }} --skip-archive
+        run: node scripts/digest.mjs --month ${{ steps.a.outputs.month }} --skip-archive
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

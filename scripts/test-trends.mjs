@@ -128,13 +128,6 @@ const daily = buildHtml(sample, "day");
 assert.ok(daily.includes("Daily digest"), "daily label unchanged");
 assert.ok(!daily.includes("The numbers"), "daily carries no trends block");
 
-const web = buildHtml(sample, "week", {
-  trends, forWeb: true, archiveUrl: "https://uav360.xyz/digest/2026-w36/", issueTitle: "Week 36, 2026",
-});
-assert.ok(web.includes("<title>"), "archive page has a title tag");
-assert.ok(web.includes('rel="canonical"'), "archive page has a canonical link");
-assert.ok(!web.includes("Unsubscribe"), "archive page has no unsubscribe furniture");
-
 const mail = buildHtml(sample, "week", {
   trends, archiveUrl: "https://uav360.xyz/digest/2026-w36/", email: "a@b.com",
 });
@@ -148,7 +141,7 @@ assert.ok(weeklyMail.includes("Weekly digest"), "weekly is named Weekly digest")
 assert.ok(!weeklyMail.includes("Read this issue on the web"),
   "an unarchived issue offers no web link");
 
-assert.ok(!/undefined|NaN|\[object Object\]/.test(monthly + web + mail),
+assert.ok(!/undefined|NaN|\[object Object\]/.test(monthly + mail),
   "nothing leaked into the rendered output");
 
 console.log("✓ all trends checks passed");

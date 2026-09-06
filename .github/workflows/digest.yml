@@ -3,6 +3,12 @@ name: Email digest (daily & weekly)
 # Both are pure mailouts — nothing is written to the repo or the site.
 # The MONTHLY digest is different: it publishes an archive page, so it lives in
 # monthly-digest.yml with its own build-and-deploy stages.
+#
+# Only ONE digest goes out on any given day, longest period wins:
+#   1st of the month  → monthly only (no weekly, no daily)
+#   Sunday            → weekly only  (no daily)
+#   otherwise         → daily
+# Cron cannot express "not the 1st", so the skip is decided at run time below.
 
 on:
   workflow_dispatch:
@@ -15,7 +21,7 @@ on:
         required: true
   schedule:
     - cron: "0 8 * * *"      # every morning 08:00 UTC (GMT) — daily digest
-    - cron: "0 7 * * 1"      # Mondays 07:00 UTC — weekly digest
+    - cron: "0 7 * * 0"      # Sundays 07:00 UTC — weekly digest
 
 permissions:
   contents: read
@@ -29,18 +35,38 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Decide period
+      - name: Decide period, and whether a longer digest owns today
         id: p
         run: |
+          DOM=$(date -u +%d)      # day of month, zero padded
+          DOW=$(date -u +%u)      # 1 = Monday … 7 = Sunday
+
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # Manual runs always send: you asked for it explicitly.
             echo "period=${{ github.event.inputs.period }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "0 7 * * 1" ]; then
-            echo "period=week" >> "$GITHUB_OUTPUT"
+            echo "run=yes" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [ "${{ github.event.schedule }}" = "0 7 * * 0" ]; then
+            PERIOD=week
           else
-            echo "period=day" >> "$GITHUB_OUTPUT"
+            PERIOD=day
+          fi
+          echo "period=$PERIOD" >> "$GITHUB_OUTPUT"
+
+          if [ "$DOM" = "01" ]; then
+            echo "run=no" >> "$GITHUB_OUTPUT"
+            echo "1st of the month — the monthly digest covers today. Skipping $PERIOD."
+          elif [ "$PERIOD" = "day" ] && [ "$DOW" = "7" ]; then
+            echo "run=no" >> "$GITHUB_OUTPUT"
+            echo "Sunday — the weekly digest covers today. Skipping daily."
+          else
+            echo "run=yes" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Send digest
+        if: steps.p.outputs.run == 'yes'
         run: node scripts/digest.mjs --period ${{ steps.p.outputs.period }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
