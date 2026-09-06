@@ -150,13 +150,29 @@ export function buildTrends(current, previous) {
   const volumeCurrent = (current.items || []).length;
   const volumePrevious = (previous.items || []).length;
 
+  // If the feed itself was smaller in the comparison period, a percentage change
+  // measures our own ingest growing, not the market. Real case: May 2026 was
+  // covered by 14 outlets and June by 25, which would otherwise have reported
+  // "+272%" as if the industry had tripled. Flag it so the caller can say so
+  // instead of quoting a number that means nothing.
+  const outletsNow = current.outlets || 0;
+  const outletsBefore = previous.outlets || 0;
+  const baselineUnreliable = !!(outletsNow && outletsBefore && outletsBefore < outletsNow * 0.8);
+
   return {
     volume: {
       current: volumeCurrent,
       previous: volumePrevious,
       change: volumeCurrent - volumePrevious,
-      pct: pctChange(volumeCurrent, volumePrevious),
+      // Suppress the percentage outright when the baseline can't support it.
+      pct: baselineUnreliable ? null : pctChange(volumeCurrent, volumePrevious),
+      outlets: outletsNow,
+      previousOutlets: outletsBefore,
+      baselineUnreliable,
     },
+    baselineNote: baselineUnreliable
+      ? `Comparisons with the previous period are indicative only: it was covered by ${outletsBefore} outlets against ${outletsNow} now, so some of the change reflects the feed expanding rather than the market.`
+      : null,
     themes: themeRows
       .map((r) => ({ ...r, label: themeLabel(r.name) }))
       .sort((a, b) => b.current - a.current || a.name.localeCompare(b.name)),
@@ -251,11 +267,15 @@ export function buildNarrative(trends, topics = [], period = "week") {
   }
 
   // 4. Overall scale, last — context rather than headline.
-  if (v.previous) {
+  if (v.baselineUnreliable) {
+    out.push(`Across the ${unit} there were ${plural(v.current, "story", "stories")} in total, from ${plural(v.outlets, "outlet", "outlets")}.`);
+  } else if (v.previous) {
     const shift = v.pct === null || v.change === 0 ? "in line with the period before"
       : `${v.pct > 0 ? "up" : "down"} ${Math.abs(v.pct)}% on the ${unit} before`;
     out.push(`Across the ${unit} there were ${plural(v.current, "story", "stories")} in total, ${shift}.`);
   }
+
+  if (trends.baselineNote) out.push(trends.baselineNote);
 
   return out;
 }

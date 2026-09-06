@@ -121,6 +121,28 @@ assert.equal(boosted[0].mover, "Epirus");
 assert.ok(boosted[0].reason.includes("coverage up 6"), "explains the momentum in the reason");
 assert.equal(boosted[1].mover, null, "the steady story has no mover");
 
+// --- one outlet can never out-shout the industry -----------------------------
+// A real backfill month had one feed publish 206 near-identically-titled items,
+// which scored 21,600 and buried genuine three-outlet reporting at 3,408.
+// However many pieces one outlet files, two outlets on a story must win.
+const spam = Array.from({ length: 206 }, (_, i) =>
+  article(`UAV Coach | Commercial UAV News ${i}`, "Commercial UAV News", ["Anduril"]));
+const realStory = [
+  article("Air Force selects General Atomics and Anduril for CCA production", "Breaking Defense", ["Anduril"]),
+  article("Air Force selects General Atomics and Anduril for CCA production", "DefenseScoop", ["Anduril"]),
+];
+const mixed = rankTopics([...spam, ...realStory], { limit: 3 });
+assert.equal(mixed[0].outlets, 2, "the two-outlet story ranks first");
+assert.ok(mixed[0].title.startsWith("Air Force selects"), "and it is the real story");
+
+// The related-story pass must not chain one outlet's boilerplate into a blob.
+const sameOutlet = [
+  { ...article("Army trials new counter-drone jammer", "DroneLife"), resolved_companies: ["Anduril"] },
+  { ...article("Navy orders long-range reconnaissance drones", "DroneLife"), resolved_companies: ["Anduril"] },
+];
+assert.equal(rankTopics(sameOutlet, { limit: 5 }).length, 2,
+  "two stories from ONE outlet sharing a company stay separate");
+
 // --- reach ------------------------------------------------------------------
 const reach = companyReach(items);
 assert.equal(reach.get("Anduril"), 3, "Anduril appeared in three outlets");

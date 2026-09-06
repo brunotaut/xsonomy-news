@@ -30,12 +30,15 @@ import { splitByRelevance, withoutConsumerCompanies } from "./lib/relevance.mjs"
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
 const getArg = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : d; };
-const PERIOD = getArg("--period", "day");        // "day" | "week" | "month"
+const PERIOD = args.includes("--month") ? "month" : getArg("--period", "day");  // "day" | "week" | "month"
 const DRY = args.includes("--dry");
 // Roundups run in two passes in CI: write the archive page, publish the site,
 // then send the email — so the "read this online" link is live before it lands.
 const SKIP_SEND = args.includes("--skip-send");
 const SKIP_ARCHIVE = args.includes("--skip-archive");
+// Backfill a specific calendar month, e.g. --month 2026-07. Compared against the
+// month before it, and archived under that month's slug.
+const MONTH_ARG = getArg("--month", null);
 const PERIOD_HOURS = { day: 24, week: 24 * 7, month: 24 * 30 };
 const HOURS = PERIOD_HOURS[PERIOD] || 24;
 // A digest is a shortlist, not an archive. A week carries ~200 stories and a
@@ -219,6 +222,7 @@ export function trendsHtml(trends, period = "week") {
     <tr><td style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;">
       <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
         <tr><td style="font:400 13px/1.6 Arial,sans-serif;color:#334155;">${headline}</td></tr>
+        ${trends.baselineNote ? `<tr><td style="padding:8px 0 0;font:400 12px/1.5 Arial,sans-serif;color:#94a3b8;">${esc(trends.baselineNote)}</td></tr>` : ""}
         ${sections}
       </table>
     </td></tr>`;
@@ -354,18 +358,42 @@ async function sendResend(to, subject, html, unsubscribeUrl) {
   return body;
 }
 
+/**
+ * The window an issue covers, plus the window before it for comparison.
+ *
+ * Normally that is "the last N hours" and "the N hours before those". With
+ * --month YYYY-MM it is a specific calendar month compared against the one
+ * before, which is what backfilling the archive needs.
+ */
+export function periodWindow(monthArg = MONTH_ARG, hours = HOURS, period = PERIOD, now = Date.now()) {
+  if (monthArg) {
+    const m = /^(\d{4})-(\d{2})$/.exec(monthArg);
+    if (!m) throw new Error(`--month expects YYYY-MM, got "${monthArg}"`);
+    const [, y, mm] = m.map(Number);
+    if (mm < 1 || mm > 12) throw new Error(`--month has no month ${mm}`);
+    const curStart = new Date(Date.UTC(y, mm - 1, 1));
+    return {
+      curStart: curStart.toISOString(),
+      curEnd: new Date(Date.UTC(y, mm, 1)).toISOString(),
+      prevStart: new Date(Date.UTC(y, mm - 2, 1)).toISOString(),
+      slug: monthArg,
+      title: curStart.toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" }),
+    };
+  }
+  const ms = hours * 3600000;
+  return {
+    curStart: new Date(now - ms).toISOString(),
+    curEnd: new Date(now).toISOString(),
+    prevStart: new Date(now - ms * 2).toISOString(),
+    slug: issueSlug(period, new Date(now)),
+    title: issueTitle(period, new Date(now)),
+  };
+}
+
 // Fetch this period and the one immediately before it, plus the entity mentions
 // hanging off each, and reduce them to the trends payload. Read-only.
-async function loadRoundup(hours) {
-  const now = Date.now();
-  const ms = hours * 3600000;
-  const bounds = {
-    curStart: new Date(now - ms).toISOString(),
-    prevStart: new Date(now - ms * 2).toISOString(),
-    now: new Date(now).toISOString(),
-  };
-
-  const currentAll = await fetchArticlesBetween(bounds.curStart, bounds.now);
+async function loadRoundup(bounds) {
+  const currentAll = await fetchArticlesBetween(bounds.curStart, bounds.curEnd);
   const previousAll = await fetchArticlesBetween(bounds.prevStart, bounds.curStart);
 
   // Drop consumer and civil-mobility coverage before anything is measured, so
@@ -401,6 +429,7 @@ async function loadRoundup(hours) {
     }
     return {
       items,
+      outlets: new Set(items.map((a) => a.source).filter(Boolean)).size,
       companies: withoutConsumerCompanies(companyLinks.map((l) => l.name)),
       companyOutlets: new Map([...outlets].map(([n, set]) => [n, set.size])),
       products: await fetchEntityMentions(ids, "product"),
@@ -421,9 +450,12 @@ async function main() {
 
   // Daily keeps its original behaviour (new since we last ingested). Roundups use
   // the news date so the trend windows line up with when things were published.
+  const bounds = IS_ROUNDUP ? periodWindow() : null;
+  if (bounds) console.log(`Issue ${bounds.slug}: ${bounds.curStart.slice(0, 10)} to ${bounds.curEnd.slice(0, 10)}.`);
+
   let items, trends = null, momentum = new Map(), narrative = [];
   if (IS_ROUNDUP) {
-    ({ items, trends, momentum } = await loadRoundup(HOURS));
+    ({ items, trends, momentum } = await loadRoundup(bounds));
   } else {
     const since = new Date(Date.now() - HOURS * 3600000).toISOString();
     items = await fetchSince(since, 600);
@@ -451,8 +483,8 @@ async function main() {
   }
 
   // Archive page: the full, unfiltered issue, published at SITE_URL/digest/<slug>/.
-  const slug = IS_ROUNDUP ? issueSlug(PERIOD) : null;
-  const title = IS_ROUNDUP ? issueTitle(PERIOD) : null;
+  const slug = bounds ? bounds.slug : null;
+  const title = bounds ? bounds.title : null;
   const archiveUrl = slug ? `${SITE_URL}/digest/${slug}/` : null;
 
   if (IS_ROUNDUP && !SKIP_ARCHIVE) {

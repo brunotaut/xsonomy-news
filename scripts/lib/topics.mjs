@@ -83,7 +83,14 @@ function cluster(items, threshold, relatedThreshold) {
   for (let i = 0; i < items.length; i++) {
     for (let j = i + 1; j < items.length; j++) {
       const sim = similarityOf(grams[i], grams[j]);
-      if (sim >= threshold || (sim >= relatedThreshold && sharesName(i, j))) union(i, j);
+      if (sim >= threshold) { union(i, j); continue; }
+      // The related-story pass only ever merges ACROSS outlets. It exists to
+      // recognise one event reported by two newsrooms; a single outlet does not
+      // publish the same story twice under different wording. Without this,
+      // union-find chains boilerplate-heavy titles from one prolific feed into a
+      // single giant blob — a real backfill month produced a 206-article
+      // "topic" out of one outlet's headline furniture.
+      if (sim >= relatedThreshold && items[i].source !== items[j].source && sharesName(i, j)) union(i, j);
     }
   }
 
@@ -187,10 +194,14 @@ export function rankTopics(items, {
       reason,
       mover,
       moverGain,
-      // Outlet spread dominates — that is the difference between the industry
-      // talking and one publisher's house interest. Among single-outlet stories,
-      // rising coverage outranks steady background presence.
-      score: sources.length * 1000 + articles.length * 100 + moverGain * 5 + prominence,
+      // Outlet spread dominates ABSOLUTELY: every other term together cannot
+      // outweigh one additional outlet. Article count used to be unbounded, so a
+      // single feed repeating itself 206 times scored 21,600 and buried genuine
+      // three-outlet reporting at 3,408. It is now a tiebreak, not a lever.
+      score: sources.length * 1000
+        + Math.min(articles.length, 9) * 10
+        + Math.min(moverGain, 20) * 5
+        + Math.min(prominence, 50),
     };
   });
 

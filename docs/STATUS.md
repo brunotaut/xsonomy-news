@@ -13,6 +13,19 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 - `db/schema.sql` now mirrors the live database (19 tables, 3 views, 3 functions, 2 triggers,
   52 indexes, 15 RLS policies), verified against project `uobidcahmrmfdmfbrtkt` on 2026-09-05.
 
+## Digest archive
+Live issues in `archive/digests/`, published at `SITE_URL/digest/<slug>/` and indexed at
+`SITE_URL/digest/`:
+- `2026-06` June 2026 — 1,163 defence-relevant stories of 1,190
+- `2026-07` July 2026 — 860 of 990
+- `2026-08` August 2026 — 782 of 910
+
+Backfill any month with `node scripts/digest.mjs --month YYYY-MM --skip-send` (writes the archive
+page, sends nothing), or via the `roundup.yml` dispatch. These three were generated from the same
+library code but **outside** the pipeline, because there is no `.env` on the dev machine — the
+data was exported read-only from Supabase and fed to `buildTrends` / `rankTopics` / `buildHtml`
+directly. Regenerating them through `digest.mjs` should reproduce them.
+
 ## Resolved this session
 - **Is `resolve-entities.mjs` scheduled?** Yes — `ingest-and-deploy.yml:38` runs `npm run resolve`
   in the daily job. (Old task #3 is done; removed from the list.)
@@ -124,6 +137,16 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
   (`MIN_OUTLETS_FOR_MOVER`). DJI drew 32 mentions in a real week from 2 outlets and was leading
   "most talked about" purely on one publisher's volume. Same lesson as topic ranking, applied to
   the trends tables.
+- 2026-09-05 — Outlet spread now dominates topic ranking **absolutely**: every other term
+  together cannot outweigh one extra outlet (article count caps at 9). Backfilling June exposed
+  the flaw — one feed's boilerplate titles clustered into a 206-article "topic" scoring 21,600,
+  burying real three-outlet reporting at 3,408.
+- 2026-09-05 — The related-story clustering pass only merges across DIFFERENT outlets. One outlet
+  does not publish the same story twice under different wording, and allowing same-outlet merges
+  let union-find chain a single prolific feed into one blob.
+- 2026-09-05 — When the comparison period was covered by materially fewer outlets (<80%), the
+  percentage change is suppressed and a caveat is shown instead. June 2026 (25 outlets) against
+  May (14) would otherwise have announced "+272%" — that is our ingest growing, not the market.
 - 2026-09-05 — The lead paragraph is generated from the same numbers the tables show
   (`buildNarrative`), so the prose cannot drift from the data. If it should instead be
   LLM-written, that is a per-issue Anthropic call and a budget decision — not yet taken.
