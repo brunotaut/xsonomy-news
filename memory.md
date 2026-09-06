@@ -202,3 +202,51 @@ Saildrone Explorer / Spectre were already `surface-usv` — verified.
 **uncrewed cargo/logistics** aircraft have no correct home: Pyka **DropShip** (635 kg MTOW) and
 BETA **MV250** both fit none of the three. I left `weight_class` untagged for them rather than
 file a cargo aircraft as MALE. Consider adding a Class III "transport/logistics" option.
+
+---
+
+## Batch 4 — products 76–100 of the work list (20 tagged, 5 not)
+
+**Tagged (20), 139 rows:** H-07, Q12, Q250, Firefly, Shrike 10-F, Hitchhiker, Saboteur,
+FireAnt, AR6, DT61, Tiguar M, VQ1600, Vulcan SX, Vulcan YX, ABE 1.01, Aero Spirit, Apollo R,
+Behemoth, Black Recon, Bullet.
+
+**Domain correction applied:**
+- **FireAnt** (Swarmbotics AI) → `ground-ugv`. Confirms the queue's "likely UGV" flag: it is a
+  small ground swarm robot for anti-armour work, under $50k a unit, tested by the US Army.
+
+**Flag questions answered:**
+- **VQ1600** (flagged "check whether a UAV") — **it is a UAV.** Valqari is known for delivery
+  mailboxes, but the VQ1600 is its own in-house aircraft; it flew 303 medical specimen deliveries
+  at Northwestern Medicine Delnor with a 100% success rate. Tagged.
+
+**Not tagged (5):**
+- **E455** (TB2 Aerospace) — no such model and no such company. "TB2" is Baykar's Bayraktar TB2.
+  Probable fabricated row.
+- **Bandit**, **Beast+**, **C20**, **C26** — no manufacturer, no country, no summary in the DB and
+  nothing findable. "Beast+" only matches consumer ZLL SG906 "Beast" toy quadcopters, which is not
+  a confident match. These are the start of the 115-row no-manufacturer block and I expect a high
+  unidentifiable rate through it.
+
+### Corrections spotted (logged only, not fixed)
+Several rows in this batch have the **manufacturer attached to the wrong product**, and two of them
+are a clean swap:
+- **Firefly** is **Parallel Flight Technologies'** heavy-lift hybrid drone, not SiFly Aviation's.
+- **Ayre CX** (batch 3) is **EXEDY Globalparts'**, not Parallel Flight's.
+  The two rows appear to have exchanged manufacturers.
+- **DT61** is **Delair's**, not Thales'. (Delair's Aspik is already correctly attributed in batch 1.)
+- **Shrike 10-F** is made by **SkyFall (Ukraine)**; Skycutter (UK) provides logistics and engineering
+  support and Germany funds it. `hq_country` "Germany" is wrong on all counts.
+- **Q12 / Q250** — confirms the queue flag: SiFly is a **US** (Silicon Valley) company, not Chinese.
+- **Bullet** — same error as AIR Pro / AIR Speed: General Chereshnya is **Ukrainian**, not Croatian.
+  (Some coverage credits Degree Trans instead; the two are both named as developers.)
+- **AR6** — Tekever is Portuguese but the AR6 is described throughout as **UK-built** and was
+  launched at Farnborough.
+- Missing manufacturers now identified: **ABE 1.01** = US Army 101st Airborne Division (built
+  in-house at Fort Campbell); **Aero Spirit** = Ascent AeroSystems, and the product is just called
+  **Spirit**; **Apollo R** = Icarus **Apollo-R**; **Behemoth** = Culver Aerospace + GLEFA (Ukraine);
+  **Black Recon** = Teledyne FLIR Defense.
+
+### Second taxonomy gap
+`airframe` has quad / hex / octo but **no tricopter**. Vision Aerial's **Vulcan SX** is a tricopter,
+so I left its airframe untagged rather than file it as a quad.
