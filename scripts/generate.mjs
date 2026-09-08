@@ -11,7 +11,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadDotenv } from "./lib/http.mjs";
 import { fetchRecent, countArticles } from "./lib/supabase.mjs";
-import { siteFooter } from "./lib/chrome.mjs";
+import { siteFooter, analyticsTag } from "./lib/chrome.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = join(ROOT, "src");
@@ -134,7 +134,8 @@ async function publishDigestArchive() {
   await writeFile(join(OUT, "digest", "index.html"),
     template.replaceAll("__SITEURL__", SITE_URL)
       .replace("__ISSUES__", cards)
-      .replace("__FOOTER__", siteFooter()));
+      .replace("__FOOTER__", siteFooter())
+      .replace("__ANALYTICS__", analyticsTag()));
 
   console.log(`  digest archive — ${issues.length} issue(s) published under /digest/`);
   return issues;
@@ -176,7 +177,8 @@ async function main() {
     .replace("__SOURCECOUNT__", String(sourceCount))
     .replace("__COUNT__", total != null ? total.toLocaleString("en-US") : String(recent.length))
     .replace("__BUILT__", new Date().toISOString().slice(0, 10))
-    .replace("__FOOTER__", siteFooter());
+    .replace("__FOOTER__", siteFooter())
+    .replace("__ANALYTICS__", analyticsTag());
   await writeFile(join(OUT, "index.html"), html);
 
   // Digest archive: archive/digests/<slug>.html (written by digest.mjs and

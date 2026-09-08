@@ -7,6 +7,25 @@
 
 export const LINKEDIN_URL = "https://www.linkedin.com/in/nazarbegen/";
 
+// Google Analytics 4. The measurement ID is public — it ships in every page —
+// so it lives here rather than in secrets. Set GA_MEASUREMENT_ID to override it,
+// or to an empty string to build the site with no analytics at all.
+export const GA_MEASUREMENT_ID =
+  process.env.GA_MEASUREMENT_ID === undefined ? "G-WG7PSZKB78" : process.env.GA_MEASUREMENT_ID;
+
+export function analyticsTag(id = GA_MEASUREMENT_ID) {
+  if (!id) return "";
+  return `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=${id}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${id}');
+</script>`;
+}
+
 export function siteFooter() {
   return `<footer class="site-foot">
     <div class="wrap">

@@ -6,7 +6,7 @@
 // serve one HTML file as both gave a dark header sitting on top of a light email
 // card. Same data, two renderers.
 
-import { siteFooter } from "./chrome.mjs";
+import { siteFooter, analyticsTag } from "./chrome.mjs";
 
 const esc = (s) => String(s == null ? "" : s)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -93,6 +93,7 @@ export function buildIssuePage({
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  ${analyticsTag()}
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${esc(title)} — UAV360 ${esc(label)}</title>
   <meta name="description" content="${esc(description)}" />
