@@ -5,6 +5,9 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 ## Working now
 - Daily ingest + site deploy (05:00 UTC). Daily email digest via Resend (08:00 UTC).
 - **Weekly digest (Sun 07:00 UTC)** — `digest.yml`, alongside the daily. Email only.
+- Subscribers pick daily / weekly / monthly on the sign-up form; `digest.mjs` mails only the
+  people who asked for that period. A recipient with no preference recorded counts as opted IN,
+  which is what keeps `recipients.json` / `DIGEST_TO` entries receiving everything.
 - **Monthly digest (1st, 07:00 UTC)** — `monthly-digest.yml`. Email **plus** a permanent archive
   page, which is why it has its own build-and-deploy stages.
 - Both carry: a written lead in plain English → the trends numbers → a ranked shortlist of
@@ -40,13 +43,6 @@ page, sends nothing), or via the `monthly-digest.yml` dispatch, which takes a `m
 library code but **outside** the pipeline, because there is no `.env` on the dev machine — the
 data was exported read-only from Supabase and fed to `buildTrends` / `rankTopics` / `buildHtml`
 directly. Regenerating them through `digest.mjs` should reproduce them.
-
-## PENDING — one migration to apply
-`db/migrations/2026-09-07_subscriber_frequency.sql` adds `daily` / `weekly` / `monthly` to
-`subscribers`. **Not yet applied** (the Supabase write was blocked in the session that wrote it).
-Run it in the Supabase SQL editor. Until then the sign-up form still works and nobody loses email:
-`subscribe.js` retries without the columns and `fetchSubscribers` treats everyone as subscribed to
-all three — but a new subscriber's choice is silently ignored.
 
 ## Resolved this session
 - **Is `resolve-entities.mjs` scheduled?** Yes — `ingest-and-deploy.yml:38` runs `npm run resolve`
@@ -119,8 +115,11 @@ all three — but a new subscriber's choice is silently ignored.
 - 2026-07-02 — `entity_resolution` (tag_resolutions + articles.entities_resolved_at).
 - 2026-07-02 — `investors_institutions`.
 - 2026-09-05 — none. `db/schema.sql` was brought into line with the DB; the DB was not changed.
-- 2026-09-07 — `subscriber_frequency_preferences` — **WRITTEN, NOT APPLIED**. See the pending
-  section at the top of this file.
+- 2026-09-07 — `subscriber_frequency_preferences` — **applied 2026-09-08**. Adds
+  `daily`/`weekly`/`monthly` to `subscribers`, all `not null default true`, plus a partial index
+  on each. Verified afterwards: all 3 subscribers carry all three flags, and PostgREST serves the
+  new columns (a `select=daily,weekly,monthly` returns 200; a nonexistent column returns 42703).
+  Nobody was opted out. Source: `db/migrations/2026-09-07_subscriber_frequency.sql`.
 
 ## Decisions log
 - 2026-09-05 — Keep two repos (Pages constraint). All DB writes stay in xsonomy-news.

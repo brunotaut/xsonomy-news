@@ -1,8 +1,7 @@
 -- Per-subscriber choice of which digests to receive.
 --
--- Run once in the Supabase SQL editor (Dashboard → SQL Editor → New query → Run).
--- Safe to re-run. Until this is applied the sign-up form still works, but a
--- person's choice is ignored and everyone receives all three.
+-- APPLIED to the live database on 2026-09-08. Kept for the record and for
+-- rebuilding a database from scratch; safe to re-run.
 --
 -- Defaulting to true is deliberate: every EXISTING subscriber is subscribed to
 -- daily, weekly and monthly, which is what they signed up for before the choice
