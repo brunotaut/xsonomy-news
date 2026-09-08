@@ -26,6 +26,16 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 - `db/schema.sql` now mirrors the live database (19 tables, 3 views, 3 functions, 2 triggers,
   52 indexes, 15 RLS policies), verified against project `uobidcahmrmfdmfbrtkt` on 2026-09-05.
 
+## Analytics & consent
+Google Analytics 4 (`G-WG7PSZKB78`) on every page, gated by Consent Mode v2 in
+`scripts/lib/chrome.mjs`. `analytics_storage` and the ad signals start **denied**, so no cookie is
+written until the visitor accepts; the small bar at the bottom asks once and stores the answer in
+`localStorage` under `uav360-consent`. Declining leaves storage denied — GA still receives
+cookieless pings, which is how Consent Mode is designed to work, and is the usual reading of what
+consent requires. `GA_MEASUREMENT_ID=""` builds the site with neither analytics nor banner.
+Verified in a browser on a genuinely clean profile: no cookies before a choice, `_ga` +
+`_ga_<id>` after accepting, none after declining, and the choice persists across pages.
+
 ## Digest archive
 Catalogue page at `SITE_URL/digest/` — built from `src/digest.html` + the per-issue `.json`
 summaries, in the site's own dark theme, linked from the header nav on every page. Cards show

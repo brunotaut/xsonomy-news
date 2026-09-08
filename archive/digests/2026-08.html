@@ -7,6 +7,17 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied'
+  });
+  try {
+    if (localStorage.getItem('uav360-consent') === 'granted') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+  } catch (e) {}
   gtag('js', new Date());
 
   gtag('config', 'G-WG7PSZKB78');
@@ -264,5 +275,31 @@
       <p class="credit">Created by Nazar Begen, <a href="https://www.linkedin.com/in/nazarbegen/" target="_blank" rel="noopener">LinkedIn</a></p>
     </div>
   </footer>
+  <div id="consent" class="consent" role="dialog" aria-label="Cookie consent" hidden>
+    <p>We use Google Analytics to count visits. Nothing is stored until you agree.</p>
+    <div class="consent-actions">
+      <button type="button" id="consent-no">Decline</button>
+      <button type="button" id="consent-yes">Accept</button>
+    </div>
+  </div>
+  <script>
+  (function () {
+    var KEY = 'uav360-consent', el = document.getElementById('consent');
+    if (!el) return;
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    if (stored) return;                 // already answered — never ask twice
+    el.hidden = false;
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      if (value === 'granted' && typeof gtag === 'function') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+      el.hidden = true;
+    }
+    document.getElementById('consent-yes').addEventListener('click', function () { choose('granted'); });
+    document.getElementById('consent-no').addEventListener('click', function () { choose('denied'); });
+  })();
+  </script>
 </body>
 </html>

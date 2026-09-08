@@ -13,6 +13,15 @@ export const LINKEDIN_URL = "https://www.linkedin.com/in/nazarbegen/";
 export const GA_MEASUREMENT_ID =
   process.env.GA_MEASUREMENT_ID === undefined ? "G-WG7PSZKB78" : process.env.GA_MEASUREMENT_ID;
 
+export const CONSENT_KEY = "uav360-consent";
+
+// Google Analytics, gated on consent.
+//
+// Consent Mode v2 is what makes the banner mean something: analytics_storage is
+// denied by default, so no analytics cookie is written until the visitor agrees.
+// A banner shown after the cookies are already set is decoration, not consent.
+// A previous "granted" is restored here, before gtag('config'), so a returning
+// visitor is measured from the first pageview rather than the second.
 export function analyticsTag(id = GA_MEASUREMENT_ID) {
   if (!id) return "";
   return `<!-- Google tag (gtag.js) -->
@@ -20,10 +29,53 @@ export function analyticsTag(id = GA_MEASUREMENT_ID) {
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied'
+  });
+  try {
+    if (localStorage.getItem('${CONSENT_KEY}') === 'granted') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+  } catch (e) {}
   gtag('js', new Date());
 
   gtag('config', '${id}');
 </script>`;
+}
+
+// The consent bar. Hidden once a choice is stored, so it asks once and not again.
+// Pointless without analytics, so it disappears with them.
+export function consentBanner(id = GA_MEASUREMENT_ID) {
+  if (!id) return "";
+  return `<div id="consent" class="consent" role="dialog" aria-label="Cookie consent" hidden>
+    <p>We use Google Analytics to count visits. Nothing is stored until you agree.</p>
+    <div class="consent-actions">
+      <button type="button" id="consent-no">Decline</button>
+      <button type="button" id="consent-yes">Accept</button>
+    </div>
+  </div>
+  <script>
+  (function () {
+    var KEY = '${CONSENT_KEY}', el = document.getElementById('consent');
+    if (!el) return;
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    if (stored) return;                 // already answered — never ask twice
+    el.hidden = false;
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      if (value === 'granted' && typeof gtag === 'function') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+      el.hidden = true;
+    }
+    document.getElementById('consent-yes').addEventListener('click', function () { choose('granted'); });
+    document.getElementById('consent-no').addEventListener('click', function () { choose('denied'); });
+  })();
+  </script>`;
 }
 
 export function siteFooter() {

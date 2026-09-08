@@ -6,7 +6,7 @@
 // serve one HTML file as both gave a dark header sitting on top of a light email
 // card. Same data, two renderers.
 
-import { siteFooter, analyticsTag } from "./chrome.mjs";
+import { siteFooter, analyticsTag, consentBanner } from "./chrome.mjs";
 
 const esc = (s) => String(s == null ? "" : s)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -134,6 +134,7 @@ export function buildIssuePage({
   </main>
 
   ${siteFooter()}
+  ${consentBanner()}
 </body>
 </html>
 `;
