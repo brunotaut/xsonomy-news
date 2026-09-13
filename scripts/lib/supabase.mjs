@@ -15,6 +15,48 @@ export function sbConfig() {
   };
 }
 
+// ---------------------------------------------------------------------------
+// Every request goes through here so a transient gateway error does not kill a
+// whole run. The first live weekly digest died on two 504s in a row from
+// Supabase — on a 3-row table and a 200-row query — with the database perfectly
+// healthy 30 minutes later.
+//
+// Retries follow plain HTTP semantics:
+//   * GET / HEAD are idempotent, so 502/503/504 are retried freely.
+//   * Writes are retried ONLY when the request never reached the server (a
+//     network error). A 504 on a write means "unknown whether it committed",
+//     and a blind retry of a plain INSERT could duplicate. Those surface as-is.
+// ---------------------------------------------------------------------------
+const RETRIES = Number(process.env.SB_RETRIES ?? 4);
+const RETRY_BASE_MS = Number(process.env.SB_RETRY_BASE_MS ?? 1000);
+const RETRYABLE_STATUS = new Set([502, 503, 504]);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+export async function sbFetch(input, init = {}, { retries = RETRIES } = {}) {
+  const method = (init.method || "GET").toUpperCase();
+  const idempotent = method === "GET" || method === "HEAD";
+  const label = `${method} ${String(input).replace(/\?.*$/, "")}`;
+  for (let attempt = 0; ; attempt++) {
+    let res;
+    try {
+      res = await fetch(input, init);
+    } catch (e) {
+      if (attempt >= retries) throw e;
+      const wait = RETRY_BASE_MS * 2 ** attempt;
+      console.error(`supabase: ${label} — ${e.message}; retry ${attempt + 1}/${retries} in ${wait}ms`);
+      await sleep(wait);
+      continue;
+    }
+    if (idempotent && RETRYABLE_STATUS.has(res.status) && attempt < retries) {
+      const wait = RETRY_BASE_MS * 2 ** attempt;
+      console.error(`supabase: ${label} — HTTP ${res.status}; retry ${attempt + 1}/${retries} in ${wait}ms`);
+      await sleep(wait);
+      continue;
+    }
+    return res;
+  }
+}
+
 // Upsert rows on conflict(url). Chunks to keep request bodies reasonable.
 export async function upsertArticles(rows, { chunk = 200 } = {}) {
   const { url, serviceKey } = sbConfig();
@@ -22,7 +64,7 @@ export async function upsertArticles(rows, { chunk = 200 } = {}) {
   let written = 0;
   for (let i = 0; i < rows.length; i += chunk) {
     const batch = rows.slice(i, i + chunk);
-    const res = await fetch(`${url}/rest/v1/articles?on_conflict=url`, {
+    const res = await sbFetch(`${url}/rest/v1/articles?on_conflict=url`, {
       method: "POST",
       headers: {
         apikey: serviceKey,
@@ -55,7 +97,7 @@ export async function fetchAnalyzedUrls(urls, { chunk = 100 } = {}) {
     q.searchParams.set("select", "url");
     q.searchParams.set("analyzed_at", "not.is.null");
     q.searchParams.set("url", `in.(${inList})`);
-    const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+    const res = await sbFetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
     if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
     for (const row of await res.json()) done.add(row.url);
   }
@@ -74,7 +116,7 @@ export async function fetchUnanalyzedBatch(limit = 50) {
   q.searchParams.set("analyzed_at", "is.null");
   q.searchParams.set("order", "published_at.desc.nullslast");
   q.searchParams.set("limit", String(limit));
-  const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  const res = await sbFetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
   if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
   return res.json();
 }
@@ -83,7 +125,7 @@ export async function fetchUnanalyzedBatch(limit = 50) {
 export async function countUnanalyzed() {
   const { url, serviceKey, anonKey } = sbConfig();
   const key = serviceKey || anonKey;
-  const res = await fetch(`${url}/rest/v1/articles?select=id&analyzed_at=is.null`, {
+  const res = await sbFetch(`${url}/rest/v1/articles?select=id&analyzed_at=is.null`, {
     method: "HEAD",
     headers: { apikey: key, Authorization: `Bearer ${key}`, Prefer: "count=exact", Range: "0-0" },
   });
@@ -100,7 +142,7 @@ export async function patchAnalysis(articleUrl, { companies = [], products = [] 
   if (!serviceKey) throw new Error("SUPABASE_SERVICE_KEY is required for writes.");
   const q = new URL(`${url}/rest/v1/articles`);
   q.searchParams.set("url", `eq.${articleUrl}`);
-  const res = await fetch(q, {
+  const res = await sbFetch(q, {
     method: "PATCH",
     headers: {
       apikey: serviceKey,
@@ -130,7 +172,7 @@ export async function fetchUnenrichedCompanies(limit = 25) {
   q.searchParams.set("enrichment_status", "is.null");
   q.searchParams.set("order", "name.asc");
   q.searchParams.set("limit", String(limit));
-  const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  const res = await sbFetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
   if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
   return res.json();
 }
@@ -139,7 +181,7 @@ export async function fetchUnenrichedCompanies(limit = 25) {
 export async function countUnenriched() {
   const { url, serviceKey, anonKey } = sbConfig();
   const key = serviceKey || anonKey;
-  const res = await fetch(`${url}/rest/v1/companies?select=id&enrichment_status=is.null`, {
+  const res = await sbFetch(`${url}/rest/v1/companies?select=id&enrichment_status=is.null`, {
     method: "HEAD",
     headers: { apikey: key, Authorization: `Bearer ${key}`, Prefer: "count=exact", Range: "0-0" },
   });
@@ -157,7 +199,7 @@ export async function patchCompany(id, fields = {}, { confidence = null, status 
   q.searchParams.set("id", `eq.${id}`);
   const body = { ...fields, enrichment_status: status, updated_at: new Date().toISOString() };
   if (confidence) body.confidence = confidence;
-  const res = await fetch(q, {
+  const res = await sbFetch(q, {
     method: "PATCH",
     headers: {
       apikey: serviceKey,
@@ -182,7 +224,7 @@ export async function fetchCompaniesPage(limit = 50, offset = 0) {
   q.searchParams.set("order", "name.asc");
   q.searchParams.set("limit", String(limit));
   q.searchParams.set("offset", String(offset));
-  const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  const res = await sbFetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
   if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
   return res.json();
 }
@@ -195,7 +237,7 @@ export async function patchCompanyFields(id, fields = {}) {
   if (!serviceKey) throw new Error("SUPABASE_SERVICE_KEY is required for writes.");
   const q = new URL(`${url}/rest/v1/companies`);
   q.searchParams.set("id", `eq.${id}`);
-  const res = await fetch(q, {
+  const res = await sbFetch(q, {
     method: "PATCH",
     headers: {
       apikey: serviceKey, Authorization: `Bearer ${serviceKey}`,
@@ -249,7 +291,7 @@ export async function fetchRecent(limit = 500) {
     "url,title,summary,image_url,source,source_url,country,lang,tags,companies,products,published_at");
   q.searchParams.set("order", "published_at.desc.nullslast");
   q.searchParams.set("limit", String(limit));
-  const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  const res = await sbFetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
   if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
   return res.json();
 }
@@ -266,7 +308,7 @@ export async function fetchSince(sinceISO, limit = 500) {
   q.searchParams.set("scraped_at", `gte.${sinceISO}`);
   q.searchParams.set("order", "published_at.desc.nullslast");
   q.searchParams.set("limit", String(limit));
-  const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  const res = await sbFetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
   if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
   return res.json();
 }
@@ -295,7 +337,7 @@ export async function fetchUnresolvedArticles(limit = 150) {
   q.searchParams.set("entities_resolved_at", "is.null");
   q.searchParams.set("order", "published_at.desc.nullslast");
   q.searchParams.set("limit", String(limit));
-  const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  const res = await sbFetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
   if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
   return res.json();
 }
@@ -311,7 +353,7 @@ export async function fetchAllRows(table, select, { pageSize = 1000 } = {}) {
     q.searchParams.set("select", select);
     q.searchParams.set("limit", String(pageSize));
     q.searchParams.set("offset", String(offset));
-    const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+    const res = await sbFetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
     if (!res.ok) throw new Error(`Supabase read ${table} ${res.status}: ${await res.text()}`);
     const page = await res.json();
     rows.push(...page);
@@ -331,7 +373,7 @@ export async function insertRows(table, rows, { onConflict, ignoreDuplicates = f
     ignoreDuplicates ? "resolution=ignore-duplicates" : null,
     returning ? "return=representation" : "return=minimal",
   ].filter(Boolean).join(",");
-  const res = await fetch(q, {
+  const res = await sbFetch(q, {
     method: "POST",
     headers: writeHeaders(serviceKey, { Prefer: prefer }),
     body: JSON.stringify(rows),
@@ -347,7 +389,7 @@ export async function deleteTagResolutions(ids) {
   if (!serviceKey) throw new Error("SUPABASE_SERVICE_KEY is required for writes.");
   const q = new URL(`${url}/rest/v1/tag_resolutions`);
   q.searchParams.set("id", `in.(${ids.join(",")})`);
-  const res = await fetch(q, { method: "DELETE", headers: writeHeaders(serviceKey, { Prefer: "return=minimal" }) });
+  const res = await sbFetch(q, { method: "DELETE", headers: writeHeaders(serviceKey, { Prefer: "return=minimal" }) });
   if (!res.ok) throw new Error(`Supabase delete tag_resolutions ${res.status}: ${await res.text()}`);
 }
 
@@ -359,7 +401,7 @@ export async function stampEntitiesResolved(ids, { chunk = 100 } = {}) {
   for (let i = 0; i < ids.length; i += chunk) {
     const q = new URL(`${url}/rest/v1/articles`);
     q.searchParams.set("id", `in.(${ids.slice(i, i + chunk).join(",")})`);
-    const res = await fetch(q, {
+    const res = await sbFetch(q, {
       method: "PATCH",
       headers: writeHeaders(serviceKey, { Prefer: "return=minimal" }),
       body: JSON.stringify({ entities_resolved_at: new Date().toISOString() }),
@@ -397,7 +439,7 @@ export async function fetchArticlesBetween(sinceISO, untilISO, { pageSize = 1000
       q.searchParams.set("order", "published_at.desc.nullslast");
       q.searchParams.set("limit", String(pageSize));
       q.searchParams.set("offset", String(offset));
-      const res = await fetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+      const res = await sbFetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
       if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
       const rows = await res.json();
       out.push(...rows);
@@ -449,7 +491,7 @@ export async function fetchEntityLinks(articleIds, kind = "company", { chunk = 1
     q.searchParams.set("select", `article_id,${fk}`);
     q.searchParams.set("article_id", `in.(${articleIds.slice(i, i + chunk).join(",")})`);
     q.searchParams.set("limit", "10000");
-    const res = await fetch(q, { headers });
+    const res = await sbFetch(q, { headers });
     if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
     for (const row of await res.json()) {
       if (row[fk]) links.push({ article_id: row.article_id, entity_id: row[fk] });
@@ -465,7 +507,7 @@ export async function fetchEntityLinks(articleIds, kind = "company", { chunk = 1
     q.searchParams.set("select", "id,name");
     q.searchParams.set("id", `in.(${unique.slice(i, i + chunk).join(",")})`);
     q.searchParams.set("limit", "10000");
-    const res = await fetch(q, { headers });
+    const res = await sbFetch(q, { headers });
     if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
     for (const row of await res.json()) names.set(row.id, row.name);
   }
@@ -479,7 +521,7 @@ export async function fetchEntityLinks(articleIds, kind = "company", { chunk = 1
 export async function countArticles() {
   const { url, serviceKey, anonKey } = sbConfig();
   const key = serviceKey || anonKey;
-  const res = await fetch(`${url}/rest/v1/articles?select=id`, {
+  const res = await sbFetch(`${url}/rest/v1/articles?select=id`, {
     method: "HEAD",
     headers: { apikey: key, Authorization: `Bearer ${key}`, Prefer: "count=exact", Range: "0-0" },
   });

@@ -94,12 +94,19 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
 - **`digest-preview.html` is a committed build artefact.** `npm test` rewrites it every run, so it
   always shows up as modified. The repo has no `.gitignore` at all (which is also why `.DS_Store`
   keeps appearing). One small `.gitignore` would settle both.
-- **The roundup has never run end to end.** The clustering, ranking and trends maths were validated
-  against a real week (210 articles pulled read-only, ranked offline — the top 10 came out as ten
-  genuine multi-outlet stories), and the logic is covered by `test-trends.mjs` / `test-topics.mjs`.
-  But `digest.mjs --period week` itself has not run: there is no `.env` on the dev machine, so the
-  PostgREST queries in `fetchArticlesBetween` / `fetchEntityLinks` are still untested against a
-  live endpoint. Do `npm run digest:week:dry` before the first real send.
+- **The first live weekly (Sun 13 Sep, run 34757254039) failed on two Supabase 504s** — on a
+  3-row table and a ~200-row query, with the DB instantly healthy 30 minutes later. Infrastructure,
+  not code: the queries themselves were never reached. Fixed by routing every Supabase call through
+  `sbFetch()` (reads retry 502/503/504 with backoff; writes retry only on network errors, since a
+  5xx on a plain INSERT is ambiguous). `loadRecipients` also used to swallow a subscriber-fetch
+  failure and carry on with the base list — which would have sent that weekly to ONE address and
+  skipped all three subscribers under a green tick. It now fails loudly instead. The weekly still
+  has never completed end to end; the next scheduled attempt is Sun 20 Sep.
+- **Scheduled runs are hours late.** The 07:00 UTC weekly ran at 12:30; the 08:00 daily routinely
+  runs after 12:00. That is GitHub's cron queue, not a bug, but "Sunday 07:00" means "Sunday
+  afternoon" in practice.
+- **GitHub is deprecating the Node 20 action runtime.** `actions/checkout@v4` and
+  `actions/setup-node@v4` now warn on every run. Bump to `@v5` before it becomes a failure.
 - **Pushing needs the `workflow` token permission.** A push touching `.github/workflows/` is
   rejected unless the PAT grants Workflows: Read and write (fine-grained) or the `workflow` scope
   (classic). This blocked the first deploy attempt of everything built in session 1.

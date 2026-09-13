@@ -78,11 +78,17 @@ async function loadRecipients() {
   }
   // Merge website sign-ups from the Supabase `subscribers` table. They have no
   // tag filter, so they receive every theme. Deduped against base (base wins).
-  let subs = [];
+  //
+  // If the list cannot be loaded, STOP. This used to fall back to the base list
+  // alone, which on the first live weekly meant a 504 would have quietly sent
+  // the issue to one address and skipped every subscriber, with a green tick in
+  // Actions. Transient blips are absorbed by the retries in supabase.mjs; a
+  // failure that survives those deserves a red run that someone re-triggers.
+  let subs;
   try {
     subs = normaliseRecipients(await fetchSubscribers());
   } catch (e) {
-    console.error(`Could not load Supabase subscribers (${e.message}); using base recipients only.`);
+    throw new Error(`Could not load the subscriber list, so nothing was sent: ${e.message}`);
   }
   const seen = new Set(base.map((r) => r.email.toLowerCase()));
   const merged = [...base];
