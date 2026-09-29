@@ -26,6 +26,25 @@ _Last updated: 2026-09-05 (session 1 — schema sync + weekly/monthly roundups)_
 - `db/schema.sql` now mirrors the live database (19 tables, 3 views, 3 functions, 2 triggers,
   52 indexes, 15 RLS policies), verified against project `uobidcahmrmfdmfbrtkt` on 2026-09-05.
 
+## Monitored media
+`sources.json` — **87 outlets** (16 drone/UAS specialist, 71 general defence where a UAV keyword
+must match). Ids 1–55 came from the Laplace Dome tracker; **ids 56–87 were added 2026-09-29** from
+the owner's outlet list.
+
+Every added feed was verified live, not assumed: discovered by autodiscovery or path probing,
+parsed with `scripts/lib/feed.mjs`, and run through `isRelevant()` to confirm it yields on-topic
+items. Across the 32, 331 of 992 current feed items pass the gate (specialist sources 100%,
+general ones 0–40%).
+
+Of the owner's 75-entry list: 24 were already monitored, 32 added, 19 not added —
+- **no discoverable feed** (checked twice, incl. browser UA and per-site paths): C-UAS Hub,
+  Unmanned Aerial Online, Inside Unmanned Systems, GPS World, Defense Advancement, ASDNews,
+  Defence Online, European Defence Agency, NATO Review, European Defence Matters, FlightGlobal,
+  Aviation International News, AirMed & Rescue, IISS, Robotics 24/7, CSIS.
+- **feed exists but is abandoned**: Forces News (last item 2020), CSIS (2016),
+  Aviation Week (Mar 2026), Defence iQ (Aug 2024).
+These are candidates for the sitemap backfill path instead.
+
 ## Analytics & consent
 Google Analytics 4 (`G-WG7PSZKB78`) on every page, gated by Consent Mode v2 in
 `scripts/lib/chrome.mjs`. `analytics_storage` and the ad signals start **denied**, so no cookie is
