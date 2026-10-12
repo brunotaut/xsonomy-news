@@ -55,6 +55,15 @@ consent requires. `GA_MEASUREMENT_ID=""` builds the site with neither analytics 
 Verified in a browser on a genuinely clean profile: no cookies before a choice, `_ga` +
 `_ga_<id>` after accepting, none after declining, and the choice persists across pages.
 
+**Fixed 2026-10-12 — the buttons did nothing.** `.consent` sets `display: flex`, and an author
+rule always outranks the browser's own `[hidden] { display: none }`, so `el.hidden = true` never
+hid anything: the bar stayed on screen after a click, and for anyone with a stored answer the
+handlers were never attached at all (they sat after an early `return`). Two fixes: a global
+`[hidden] { display: none !important; }` in styles.css, and the click handlers now attach before
+the stored-choice check. `test-site.mjs` asserts both. The original verification missed this
+because it checked the `hidden` *property* rather than whether the element was actually visible —
+test visibility (`getBoundingClientRect().height`), not the attribute.
+
 ## Digest archive
 Catalogue page at `SITE_URL/digest/` — built from `src/digest.html` + the per-issue `.json`
 summaries, in the site's own dark theme, linked from the header nav on every page. Cards show

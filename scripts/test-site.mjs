@@ -35,6 +35,13 @@ assert.ok(tag.includes(`localStorage.getItem('${CONSENT_KEY}')`), "a previous gr
 assert.ok(tag.indexOf("'consent', 'update'") < tag.indexOf("gtag('config'"),
   "a returning visitor is granted before config, so their first pageview counts");
 
+// The `hidden` attribute is defeated by any author rule that sets display, and
+// `.consent` sets display:flex. Without this the bar stays on screen after a
+// choice and the buttons look broken — which is exactly what shipped once.
+const css = read("src/assets/styles.css");
+assert.ok(/\[hidden\]\s*\{[^}]*display:\s*none\s*!important/.test(css),
+  "styles.css re-asserts display:none for [hidden], overriding .consent's display:flex");
+
 const banner = consentBanner();
 assert.ok(banner.includes('id="consent-yes"') && banner.includes('id="consent-no"'),
   "the visitor can accept or decline");
@@ -42,7 +49,11 @@ assert.ok(banner.includes("hidden"), "starts hidden until the script decides to 
 assert.ok(banner.includes('role="dialog"') && banner.includes("aria-label"), "announced to screen readers");
 assert.ok(banner.includes("gtag('consent', 'update', { analytics_storage: 'granted' })"),
   "accepting turns analytics storage on without a reload");
-assert.ok(/if \(stored\) return;/.test(banner), "asks once, not on every page");
+assert.ok(banner.includes("if (!stored) el.hidden = false"), "asks once, not on every page");
+// Buttons must be wired before the stored-choice check, so a bar that is on
+// screen for any reason is always clickable.
+assert.ok(banner.indexOf("addEventListener") < banner.indexOf("localStorage.getItem"),
+  "click handlers attach before the script decides whether to show the bar");
 assert.equal(consentBanner(""), "", "no analytics means no banner to show");
 
 // --- the static templates carry a slot for it -------------------------------

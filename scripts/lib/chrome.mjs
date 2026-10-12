@@ -61,10 +61,7 @@ export function consentBanner(id = GA_MEASUREMENT_ID) {
   (function () {
     var KEY = '${CONSENT_KEY}', el = document.getElementById('consent');
     if (!el) return;
-    var stored = null;
-    try { stored = localStorage.getItem(KEY); } catch (e) {}
-    if (stored) return;                 // already answered — never ask twice
-    el.hidden = false;
+
     function choose(value) {
       try { localStorage.setItem(KEY, value); } catch (e) {}
       if (value === 'granted' && typeof gtag === 'function') {
@@ -72,8 +69,16 @@ export function consentBanner(id = GA_MEASUREMENT_ID) {
       }
       el.hidden = true;
     }
+
+    // Wire the buttons BEFORE deciding whether to show the bar. They used to be
+    // attached after an early return, so if the bar was ever on screen with a
+    // choice already stored, both buttons were dead.
     document.getElementById('consent-yes').addEventListener('click', function () { choose('granted'); });
     document.getElementById('consent-no').addEventListener('click', function () { choose('denied'); });
+
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    if (!stored) el.hidden = false;     // ask once; a stored answer is final
   })();
   </script>`;
 }
