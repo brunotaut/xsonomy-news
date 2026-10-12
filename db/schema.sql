@@ -530,6 +530,29 @@ alter table public.subscribers add column if not exists daily   boolean not null
 alter table public.subscribers add column if not exists weekly  boolean not null default true;
 alter table public.subscribers add column if not exists monthly boolean not null default true;
 
+-- Self-service unsubscribe token (migration 'unsubscribe_token', 2026-10-12).
+alter table public.subscribers add column if not exists unsub_token uuid not null default gen_random_uuid();
+create unique index if not exists subscribers_unsub_token_idx on public.subscribers (unsub_token);
+
+-- Switches every digest off for the holder of a token. SECURITY DEFINER so the
+-- public site can call it without anon holding any UPDATE on the table.
+create or replace function public.unsubscribe(token uuid)
+returns boolean
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare matched int;
+begin
+  update public.subscribers
+     set daily = false, weekly = false, monthly = false
+   where unsub_token = token;
+  get diagnostics matched = row_count;
+  return matched > 0;
+end $$;
+revoke all on function public.unsubscribe(uuid) from public;
+grant execute on function public.unsubscribe(uuid) to anon, authenticated;
+
 -- digest.mjs reads by period, so index the flag it filters on.
 create index if not exists subscribers_daily_idx   on public.subscribers (daily)   where daily;
 create index if not exists subscribers_weekly_idx  on public.subscribers (weekly)  where weekly;

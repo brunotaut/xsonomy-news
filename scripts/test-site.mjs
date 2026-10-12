@@ -57,7 +57,7 @@ assert.ok(banner.indexOf("addEventListener") < banner.indexOf("localStorage.getI
 assert.equal(consentBanner(""), "", "no analytics means no banner to show");
 
 // --- the static templates carry a slot for it -------------------------------
-for (const f of ["src/index.html", "src/digest.html"]) {
+for (const f of ["src/index.html", "src/digest.html", "src/unsubscribe.html"]) {
   const html = read(f);
   // A CSS fix behind the browser cache looks exactly like a CSS fix that never
   // deployed. Every stylesheet link carries the build's content hash.
@@ -72,8 +72,9 @@ for (const f of ["src/index.html", "src/digest.html"]) {
 
 // --- and generate.mjs actually fills them ------------------------------------
 const gen = read("scripts/generate.mjs");
-assert.equal((gen.match(/__ANALYTICS__/g) || []).length, 2, "both templates get the tag substituted");
-assert.equal((gen.match(/__FOOTER__/g) || []).length, 2, "both templates get the footer substituted");
+// index.html, digest.html and unsubscribe.html — every static template.
+assert.equal((gen.match(/__ANALYTICS__/g) || []).length, 3, "every template gets the tag substituted");
+assert.equal((gen.match(/__FOOTER__/g) || []).length, 3, "every template gets the footer substituted");
 
 // --- issue pages build it in directly ---------------------------------------
 const page = buildIssuePage({

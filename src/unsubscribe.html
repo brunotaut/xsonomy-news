@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  __ANALYTICS__
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unsubscribe — UAV360</title>
+  <meta name="description" content="Stop receiving the UAV360 newsletter." />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="../assets/styles.css?v=__CSSV__" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="../">UAV &amp; Counter-Drone News</a>
+      <nav>
+        <a href="../">News</a>
+        <a href="../digest/">Monthly Digest</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap unsub">
+    <h1>Unsubscribe</h1>
+    <div id="unsub-state" role="status" aria-live="polite">
+      <p class="unsub-msg">Checking your link…</p>
+    </div>
+    <p class="unsub-back"><a href="../">← Back to the news</a></p>
+  </main>
+
+  __FOOTER__
+  <script>
+  (function () {
+    var URL_BASE = "https://uobidcahmrmfdmfbrtkt.supabase.co";
+    var KEY = "__SUPABASE_ANON__";
+    var box = document.getElementById("unsub-state");
+    var say = function (html) { box.innerHTML = html; };
+
+    var token = new URLSearchParams(location.search).get("t") || "";
+    if (!/^[0-9a-f-]{36}$/i.test(token)) {
+      say('<p class="unsub-msg err">That link is not valid. Use the Unsubscribe link at the bottom of any UAV360 email.</p>');
+      return;
+    }
+
+    fetch(URL_BASE + "/rest/v1/rpc/unsubscribe", {
+      method: "POST",
+      headers: { apikey: KEY, Authorization: "Bearer " + KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ token: token })
+    }).then(function (r) {
+      if (!r.ok) throw new Error("http " + r.status);
+      return r.json();
+    }).then(function (ok) {
+      if (ok === true) {
+        say('<p class="unsub-msg ok">You are unsubscribed.</p>'
+          + '<p class="unsub-note">You will not receive the daily, weekly or monthly digest again. '
+          + 'Changed your mind? Sign up again on the <a href="../">front page</a>.</p>');
+      } else {
+        say('<p class="unsub-msg err">That link is not recognised — you may already be unsubscribed.</p>');
+      }
+    }).catch(function () {
+      say('<p class="unsub-msg err">Something went wrong. Please try again, or reply to the email you received.</p>');
+    });
+  })();
+  </script>
+  __CONSENT__
+</body>
+</html>

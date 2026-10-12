@@ -202,6 +202,19 @@ async function main() {
     .replace("__CSSV__", CSS_V);
   await writeFile(join(OUT, "index.html"), html);
 
+  // Unsubscribe landing page. Static, but it calls a SECURITY DEFINER function
+  // in Supabase with the publishable key, so it can act on a token without the
+  // browser having any write access to the subscribers table.
+  await mkdir(join(OUT, "unsubscribe"), { recursive: true });
+  await writeFile(join(OUT, "unsubscribe", "index.html"),
+    (await readFile(join(SRC, "unsubscribe.html"), "utf8"))
+      .replaceAll("__SITEURL__", SITE_URL)
+      .replace("__ANALYTICS__", analyticsTag())
+      .replace("__FOOTER__", siteFooter())
+      .replace("__CONSENT__", consentBanner())
+      .replace("__CSSV__", CSS_V)
+      .replace("__SUPABASE_ANON__", anonKey));
+
   // Digest archive: archive/digests/<slug>.html (written by digest.mjs and
   // committed) becomes /digest/<slug>/ here, plus an index listing every issue.
   const issues = await publishDigestArchive();

@@ -101,6 +101,20 @@ async function loadRecipients() {
     `${wanted.length} want the ${PERIOD === "day" ? "daily" : PERIOD === "week" ? "weekly" : "monthly"} digest.`);
   return wanted;
 }
+// Where "Unsubscribe" should point for one recipient.
+//
+// Website subscribers carry an unguessable token, so they get a real one-click
+// page that switches every digest off by itself. People on recipients.json /
+// DIGEST_TO have no row to act on, so they still get a mailto — but note that
+// uav360.xyz publishes no MX record, so that address receives nothing; it is a
+// placeholder until a real inbox exists.
+export function unsubscribeLinkFor(recipient, siteUrl = SITE_URL, mailTo = UNSUB_ADDR) {
+  if (recipient && recipient.unsub_token) {
+    return `${siteUrl}/unsubscribe/?t=${encodeURIComponent(recipient.unsub_token)}`;
+  }
+  return `mailto:${mailTo}?subject=${encodeURIComponent("Unsubscribe " + ((recipient && recipient.email) || ""))}`;
+}
+
 // A recipient carries per-theme tag filters and per-period opt-ins. Anything
 // unspecified counts as opted IN: people on the base list (recipients.json /
 // DIGEST_TO) predate the choice and should keep getting everything.
@@ -114,6 +128,7 @@ function normaliseRecipients(arr) {
           daily: r.daily !== false,
           weekly: r.weekly !== false,
           monthly: r.monthly !== false,
+          unsub_token: r.unsub_token || null,
         }))
     .filter((r) => r.email);
 }
@@ -372,7 +387,10 @@ async function sendResend(to, subject, html, unsubscribeUrl) {
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       from: FROM, to: [to], subject, html,
-      headers: { "List-Unsubscribe": `<${unsubscribeUrl}>`, "List-Unsubscribe-Post": "List-Unsubscribe=One-Click" },
+      // No List-Unsubscribe-Post: RFC 8058 one-click requires a URL that accepts
+      // a POST, and /unsubscribe/ is a static page. Advertising one-click we do
+      // not implement makes Gmail and Yahoo POST into a 404.
+      headers: { "List-Unsubscribe": `<${unsubscribeUrl}>` },
     }),
   });
   const body = await res.text();
@@ -567,7 +585,7 @@ async function main() {
   for (const r of recipients) {
     const mine = filterForRecipient(items, r.tags);
     if (!mine.length) { skipped++; console.log(`  – ${r.email}: 0 matching items, skipped`); continue; }
-    const unsubscribeUrl = `mailto:${UNSUB_ADDR}?subject=${encodeURIComponent("Unsubscribe " + r.email)}`;
+    const unsubscribeUrl = unsubscribeLinkFor(r);
     // A recipient with tag filters gets their own subset, so the "of N" note
     // only makes sense for people taking the unfiltered issue.
     const filtered = !!(r.tags && r.tags.length);

@@ -45,6 +45,26 @@ Of the owner's 75-entry list: 24 were already monitored, 32 added, 19 not added 
   Aviation Week (Mar 2026), Defence iQ (Aug 2024).
 These are candidates for the sitemap backfill path instead.
 
+## Unsubscribe
+The footer link used to be `mailto:news@uav360.xyz` — and **uav360.xyz publishes no MX record**, so
+that address can receive nothing. The link was a dead end for every subscriber since launch. The
+email also sent `List-Unsubscribe-Post: One-Click` alongside a mailto, which RFC 8058 does not
+allow (one-click requires a URL that accepts POST); Gmail and Yahoo would have POSTed into nothing.
+
+Now: every subscriber row carries an unguessable `unsub_token`, the footer links to
+`SITE_URL/unsubscribe/?t=<token>`, and that static page calls the `unsubscribe(uuid)` SECURITY
+DEFINER function with the publishable key. anon still has no read or write access to `subscribers`
+— verified: a direct SELECT returns `[]` and a direct PATCH changes nothing. `List-Unsubscribe`
+now carries the https URL and `List-Unsubscribe-Post` is gone.
+
+People on `recipients.json` / `DIGEST_TO` have no row to act on, so they still get the mailto —
+which still goes nowhere. Either add an MX record for uav360.xyz or point `DIGEST_UNSUBSCRIBE` at
+a mailbox that exists.
+
+Verified end to end against a throwaway subscriber: clicking the link flipped daily/weekly/monthly
+to false in the database; an unknown token says "not recognised"; a malformed one is rejected
+before any request. Test rows removed afterwards (3 real subscribers, all still subscribed).
+
 ## Analytics & consent
 Google Analytics 4 (`G-WG7PSZKB78`) on every page, gated by Consent Mode v2 in
 `scripts/lib/chrome.mjs`. `analytics_storage` and the ad signals start **denied**, so no cookie is

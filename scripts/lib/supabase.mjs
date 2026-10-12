@@ -264,13 +264,13 @@ export async function fetchSubscribers() {
   };
 
   // daily/weekly/monthly say which digests each person wants.
-  let res = await get("email,name,confirmed,daily,weekly,monthly");
+  let res = await get("email,name,confirmed,daily,weekly,monthly,unsub_token");
   if (!res.ok) {
     // Older database without the preference columns: fall back to the plain
     // shape and treat everyone as subscribed to everything, which is what they
     // were receiving before the choice existed.
     const detail = await res.text().catch(() => "");
-    if (res.status === 400 && /daily|weekly|monthly|column|PGRST/i.test(detail)) {
+    if (res.status === 400 && /daily|weekly|monthly|unsub_token|column|PGRST/i.test(detail)) {
       console.error("subscribers: no daily/weekly/monthly columns yet — treating everyone as subscribed to all.");
       res = await get("email,name,confirmed");
       if (!res.ok) throw new Error(`Supabase subscribers ${res.status}: ${await res.text()}`);
