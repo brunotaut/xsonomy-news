@@ -59,6 +59,9 @@ assert.equal(consentBanner(""), "", "no analytics means no banner to show");
 // --- the static templates carry a slot for it -------------------------------
 for (const f of ["src/index.html", "src/digest.html"]) {
   const html = read(f);
+  // A CSS fix behind the browser cache looks exactly like a CSS fix that never
+  // deployed. Every stylesheet link carries the build's content hash.
+  assert.ok(/styles\.css\?v=__CSSV__/.test(html), `${f} requests the stylesheet with a version`);
   assert.ok(html.includes("__ANALYTICS__"), `${f} has the analytics slot`);
   assert.ok(html.includes("__FOOTER__"), `${f} has the footer slot`);
   assert.ok(html.includes("__CONSENT__"), `${f} has the consent slot`);

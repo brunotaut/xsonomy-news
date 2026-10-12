@@ -6,9 +6,11 @@
 // Run after ingest. Reads from Supabase with the anon or service key.
 
 import { mkdir, rm, cp, writeFile, readFile, readdir } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createHash } from "node:crypto";
 import { loadDotenv } from "./lib/http.mjs";
 import { fetchRecent, countArticles } from "./lib/supabase.mjs";
 import { siteFooter, analyticsTag, consentBanner } from "./lib/chrome.mjs";
@@ -17,10 +19,21 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = join(ROOT, "src");
 const OUT = join(ROOT, "public");
 
+// Content hash of the stylesheet, appended to every <link> as ?v=. Without it a
+// CSS fix sits behind the browser cache (GitHub Pages sends max-age=600), which
+// is how a shipped consent-bar fix looked like it had not deployed at all.
+function cssVersion() {
+  try {
+    return createHash("sha1").update(readFileSync(join(SRC, "assets", "styles.css"))).digest("hex").slice(0, 8);
+  } catch { return "0"; }
+}
+
 const SITE_URL = (process.env.SITE_URL || "https://news.xsonomy.com").replace(/\/+$/, "");
 const HOME_URL = process.env.HOME_URL || "https://xsonomy.com/";
 const RECENT_SSR = Number(process.env.RECENT_SSR || 120);
 const PAGE_SIZE = Number(process.env.PAGE_SIZE || 24);
+
+const CSS_V = cssVersion();
 
 const esc = (s) => String(s == null ? "" : s)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -118,7 +131,11 @@ async function publishDigestArchive() {
         continue;
       }
       await mkdir(join(OUT, "digest", meta.slug), { recursive: true });
-      await cp(page, join(OUT, "digest", meta.slug, "index.html"));
+      // Stamp the current CSS version on copy, so an issue generated months ago
+      // still points at the freshest stylesheet.
+      const issueHtml = (await readFile(page, "utf8"))
+        .replace(/(href="\.\.\/\.\.\/assets\/styles\.css)(\?v=[^"]*)?"/, `$1?v=${CSS_V}"`);
+      await writeFile(join(OUT, "digest", meta.slug, "index.html"), issueHtml);
       issues.push(meta);
     } catch (e) {
       console.error(`WARN: could not publish digest ${f}: ${e.message}`);
@@ -136,7 +153,8 @@ async function publishDigestArchive() {
       .replace("__ISSUES__", cards)
       .replace("__FOOTER__", siteFooter())
       .replace("__ANALYTICS__", analyticsTag())
-      .replace("__CONSENT__", consentBanner()));
+      .replace("__CONSENT__", consentBanner())
+      .replace("__CSSV__", CSS_V));
 
   console.log(`  digest archive — ${issues.length} issue(s) published under /digest/`);
   return issues;
@@ -180,7 +198,8 @@ async function main() {
     .replace("__BUILT__", new Date().toISOString().slice(0, 10))
     .replace("__FOOTER__", siteFooter())
     .replace("__ANALYTICS__", analyticsTag())
-    .replace("__CONSENT__", consentBanner());
+    .replace("__CONSENT__", consentBanner())
+    .replace("__CSSV__", CSS_V);
   await writeFile(join(OUT, "index.html"), html);
 
   // Digest archive: archive/digests/<slug>.html (written by digest.mjs and
