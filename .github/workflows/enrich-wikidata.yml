@@ -20,10 +20,10 @@ jobs:
   enrich:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          node-version: "22"
       - name: Enrich from Wikidata
         run: node scripts/enrich-wikidata.mjs ${{ github.event.inputs.dry == 'true' && '--dry' || '' }} ${{ github.event.inputs.max && format('--max {0}', github.event.inputs.max) || '' }}
         env:

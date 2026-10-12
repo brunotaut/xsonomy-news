@@ -39,26 +39,32 @@ const DRY = args.includes("--dry-run");
 
 const SYSTEM = `You write one-paragraph catalogue entries for an unmanned-systems product directory.
 
-You are given a product name and a set of news article headlines and extracts that an
-automated extractor linked to that product. Those links are sometimes WRONG.
+You are given a product name and news headlines and extracts that an automated extractor
+linked to that product. The links are usually right but sometimes wrong.
 
-First decide: do these articles actually describe this specific product?
-- If they are about a different product, a parent company's other activities, or a general
-  industry roundup that never characterises this product, you cannot write an entry.
-- If the product name is a common word and the articles are about the ordinary meaning of
-  that word, you cannot write an entry.
+News reports EVENTS involving a product rather than describing it, so do not expect a
+specification. You can normally still write a good entry: take how the article characterises
+the thing in passing ("the MQ-9A Reaper, General Atomics' medium-altitude surveillance
+drone"), plus what is happening to it — orders, operators, deployments, variants, figures.
+That is exactly what a catalogue reader wants.
 
-If you can write one, use ONLY facts stated in the supplied extracts. Do not add anything
-from your own knowledge, do not guess specifications, and do not speculate about purpose.
-Prefer concrete detail that appears in the text: what the thing is, who makes it, what it is
-for, and any figures, contracts or operators actually mentioned.
+Refuse ONLY when the articles genuinely cannot support an entry:
+- they are about a different product, or only about the parent company's other activities;
+- the product name is an ordinary word and the articles use it in that ordinary sense
+  (a "Hornet" article about an F/A-18 or an insect, a "Bullet" article about ammunition);
+- nothing in them indicates what kind of thing this is.
+A thin-but-consistent picture is enough. Having only passing mentions is NOT a reason to refuse.
+
+Use ONLY what the extracts state. Never add specifications, history or purpose from your own
+knowledge, even for products you recognise — and you will recognise many of these. If the
+extracts do not give a figure, do not supply one.
 
 Style: 1-2 sentences, 25-60 words, plain declarative prose, no marketing language, no
-"according to reports", British spelling. Do not begin with the product name.
+"according to reports". British spelling, and write "US" not "U.S.".
 
 Reply with JSON only:
-{"ok": true, "summary": "..."}            when the articles support an entry
-{"ok": false, "reason": "..."}            when they do not (reason: under 15 words)`;
+{"ok": true, "summary": "..."}            when you can write an entry
+{"ok": false, "reason": "..."}            when you genuinely cannot (reason: under 15 words)`;
 
 // Three plain reads joined here, rather than one nested PostgREST embed. The foreign
 // keys exist so an embed would probably work, but this shape is already proven against
@@ -132,11 +138,19 @@ async function patchProduct(id, fields) {
 }
 
 function buildUser(row) {
+  // Rank the evidence: an article principally about the product beats a passing mention,
+  // and one that names the product in its own text beats one that does not. Heavily
+  // covered products (a Reaper has 34 articles) are mostly industry round-ups, so without
+  // this the six chosen can all be ones that never characterise the thing.
+  const needle = String(row.name || "").toLowerCase();
+  const names = (ap) => `${ap.articles.title || ""} ${ap.articles.summary || ""}`.toLowerCase().includes(needle);
   const links = (row.article_products || [])
     .filter((ap) => ap.articles)
-    // an article principally about the product is better evidence than a passing mention
-    .sort((a, b) => (b.mention_type === "primary") - (a.mention_type === "primary"))
-    .slice(0, 6);
+    .map((ap) => ({ ap, score: (ap.mention_type === "primary" ? 2 : 0) + (names(ap) ? 1 : 0) }))
+    .sort((a, b) => b.score - a.score ||
+      String(b.ap.articles.published_at || "").localeCompare(String(a.ap.articles.published_at || "")))
+    .slice(0, 8)
+    .map((x) => x.ap);
   const arts = links.map((ap, i) => {
     const a = ap.articles;
     return `[${i + 1}] ${ap.mention_type === "primary" ? "(mainly about this product) " : ""}` +
