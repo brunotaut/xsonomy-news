@@ -255,3 +255,38 @@ maths), trends rendering and a `--period month` in `digest.mjs`, an archive page
 `generate.mjs` at `/digest/<slug>/`, and `roundup.yml` to run it. Also found that the weekly
 digest had never actually been scheduled — `digest.yml` hard-coded `day` for every scheduled run,
 despite the docs claiming weekly was live.
+
+## 2026-10-13 — product summaries enriched from linked news (daily)
+
+**2,320 products had no summary, and every one of them already had news articles linked.**
+So this is synthesis from material already in the database — no web access, no model recall.
+
+`scripts/enrich-products.mjs` + `.github/workflows/enrich-products.yml`, daily 04:00 UTC
+(before the catalogue build at 06:00), ~60 products a run — about five weeks to clear the
+backlog. Manual runs accept `max`, `concurrency` and `dry_run`.
+
+**It is allowed to refuse.** The article↔product links come from entity extraction and are
+sometimes wrong. In a hand-reviewed sample of ten, two were unusable: *ARCHER AI*, whose
+linked articles were about Neros and Perennial and never mention it, and *AS21 Redback*,
+Hanwha's infantry fighting vehicle filed under Counter-UAS. The prompt asks the model to
+decide first whether the articles actually describe the product, and to decline otherwise.
+
+`products.enrichment_status` records the outcome and makes the job resumable:
+- `news-derived` — summary written, `source_urls` set to the articles used
+- `needs-review` — articles do not support a summary; left empty for a human
+
+Rows with either value are not fetched again, so re-runs always move forward and never
+re-spend tokens. Existing summaries are never overwritten (`summary=is.null` in the query).
+Best-covered products are handled first, so early runs produce the strongest entries.
+
+Reads use three plain selects joined in JS rather than a nested PostgREST embed — the FKs
+exist so an embed would likely work, but this shape is already proven against this database
+by the catalogue generator.
+
+**Seeded by hand from the catalogue session** (same method, 8 written / 2 refused): Alexa
+Spatium, Apollo, Archer, Bullfrog M240, Chaparral, Compact Laser Weapon System,
+DJI SDR Transmission 2, DragonFire.
+
+**Corrections spotted, not applied:** `Archer` has no company but the articles are clear it is
+**Neros Technologies**; `DJI SDR Transmission 2` is filed under Software but is hardware;
+`AS21 Redback` is miscategorised as Counter-UAS.
