@@ -518,3 +518,39 @@ because no source states where it is headquartered.
 `source_urls`, `confidence='medium'` (third-party directory, not the manufacturer), and
 `enrichment_status='web'`. None is verified against the company's own site yet — that is what
 `confidence='high'` would require.
+
+### 2026-10-22 — duplicate and country cleanup
+
+A `merge_companies(keep, dup)` function now lives in the database. It moves every junction —
+articles, products both ways, sectors, evidence, relationships, aliases — fills the keeper's
+empty fields from the duplicate without overwriting anything, records the duplicate's name as an
+alias so `resolve-entities.mjs` maps it correctly next time, and deletes the row. Junctions are
+moved insert-then-delete rather than updated, because each has a unique key an in-place update
+would collide with when both companies already link to the same article.
+
+**15 duplicates merged.** Eleven were spacing variants created by entity resolution —
+`DroneShield`/`Drone Shield`, `Drone Volt`/`DroneVolt`, `EagleNXT`/`Eagle NXT`,
+`Fire Point`/`FirePoint`, `MSI-Defence Systems`/`MSI Defence Systems`,
+`Overland AI`/`OverlandAI`, `Prodrone`/`Pro Drone`, `Smart Shooter`/`SmartShooter`,
+`Uralvagonzavod`/`Uralvagon Zavod`, `ZeroZero Robotics`/`Zero Zero Robotics`,
+`Harmattan AI`/`Harmattan`. Four were short-form variants: `AEVEX`, `Avidrone`, `Napatree`,
+`Rotron`, each merged into its full name.
+
+**Four look like duplicates and are not.** `Hanwha`/`Hanwha Aerospace`,
+`Honeywell`/`Honeywell Aerospace`, `KNDS`/`KNDS Robotics` and `HDT`/`HDT Robotics` are real
+parent-and-division pairs. Left alone — a wrong merge is harder to undo than a duplicate is to
+live with. They belong in `company_relationships` as `division_of` instead.
+
+**Country.** `Dedrone (Axon)` read `Germany/USA` and matched no country filter; set to
+`United States` with its Kassel origin moved into the description. It was the only malformed
+value — the other 2,042 are canonical names already.
+
+Companies 2,287 → 2,283 (seven added, fifteen merged away, one fixed). No orphaned article links
+or products afterwards.
+
+**One consequence worth knowing:** fifteen `/companies/<slug>/` URLs no longer exist and will
+404 after the next build. They were low-traffic duplicate pages, but if Search Console flags
+them, the fix is a redirect stub per dead slug emitted by the catalogue generator. Dead slugs:
+`drone-shield`, `dronevolt`, `eagle-nxt`, `firepoint`, `msi-defence-systems-2`, `overlandai`,
+`pro-drone`, `smartshooter`, `uralvagon-zavod`, `zero-zero-robotics`, `harmattan`, `aevex`,
+`avidrone`, `napatree`, `rotron`.
