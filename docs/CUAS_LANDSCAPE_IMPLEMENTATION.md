@@ -471,3 +471,50 @@ harder. That is the main reason not to follow the brief literally there.
 4. **Who may assign categories** — same answer as maturity (the LLM publishes), or stricter
    because a category is harder to walk back than a level?
 5. **Snapshot cadence** — quarterly, or on demand when a report is written?
+
+---
+
+## 16. Web research log
+
+### 2026-10-22 — first pass, European C-UAS
+
+Checked the existing 141 European C-UAS companies against three public sources: Drone
+Intelligence's 46-vendor list, FieldFaster's European C-UAS startup list, and 2026 funding
+coverage.
+
+**Every European company on Drone Intelligence's list was already in the database** — the
+primes and established players are well covered. The gaps are newer and smaller firms.
+
+**Added (7), all tagged and sourced:**
+
+| Company | Country | Tag |
+|---|---|---|
+| ALX Systems | Belgium | mitigation |
+| Delian Alliance Industries | Greece | detection |
+| EGIDE | France | mitigation |
+| OSIRIS AI | Ukraine | mitigation |
+| OVES Enterprise | Romania | integrated |
+| Qognifly | Romania | integrated |
+| Sensrad | Sweden | detection |
+
+European C-UAS coverage: 141 → 148.
+
+**Not added, deliberately:** Fly4Future (Czechia) — its EAGLE.ONE interceptor is already in the
+database as a company, and adding the parent as well would create a near-duplicate. Needs a
+`company_relationships` row instead once one of them is the canonical entry. Skapion was skipped
+because no source states where it is headquartered.
+
+**Data-quality findings, for later:**
+- **`Harmattan` and `Harmattan AI` are both in `companies`** — a duplicate. Not merged here;
+  merging touches `article_companies`, `product_companies` and `company_aliases` and deserves its
+  own pass.
+- `Dedrone (Axon)` has `hq_country = 'Germany/USA'`, which no country filter will match. It is
+  invisible to any European query despite being one of the best-known vendors. Symptom of a wider
+  problem: `hq_country` is free text (§8.4).
+- `Aerix Systems` had no country; set to France from the funding report. Fixed.
+
+**Method note.** Candidates came from directories, then each was checked against `companies`,
+`products` and `company_aliases` before insertion. Every row carries the URL it came from in
+`source_urls`, `confidence='medium'` (third-party directory, not the manufacturer), and
+`enrichment_status='web'`. None is verified against the company's own site yet — that is what
+`confidence='high'` would require.
