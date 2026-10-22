@@ -5,6 +5,10 @@ Audit of the existing system and a proposal for building the Landscape on top of
 
 Read alongside `DATA-MODEL.md` (the company data model) and `ARCHITECTURE.md` (both repos).
 
+> **Revision 2, 2026-10-22 — architecture approved with changes.** Sections 17-24 below
+> supersede parts of what follows: the Europe definition (§5), the taxonomy (§9), the
+> coverage approach (§12 risk 1) and the sequence (§13). Where they disagree, Revision 2 wins.
+
 ---
 
 ## 0. The short version
@@ -308,8 +312,8 @@ DETECTION              (cuas-detection, 52 companies already tagged)
   ├ RF Detection
   ├ Radar
   ├ EO/IR
-  ├ Acoustic Detection
-  └ Multi-Sensor Detection
+  └ Acoustic Detection
+       (Multi-Sensor Detection removed in Revision 2 — see §20)
 TRACKING / IDENTIFICATION   (new group)
   ├ Sensor Fusion
   ├ AI / Computer Vision
@@ -554,3 +558,286 @@ them, the fix is a redirect stub per dead slug emitted by the catalogue generato
 `drone-shield`, `dronevolt`, `eagle-nxt`, `firepoint`, `msi-defence-systems-2`, `overlandai`,
 `pro-drone`, `smartshooter`, `uralvagon-zavod`, `zero-zero-robotics`, `harmattan`, `aevex`,
 `avidrone`, `napatree`, `rotron`.
+
+---
+---
+
+# Revision 2 — approved architecture with changes
+
+Agreed 2026-10-22. Supersedes §5, §9, §12 risk 1 and §13 where they differ.
+
+---
+
+## 17. Europe, defined
+
+**In scope (32):** the 27 EU member states, plus the United Kingdom, Norway, Switzerland,
+Ukraine and Turkey.
+
+**Out of scope:** Israel, explicitly — 81 companies in the database, several of them major
+C-UAS vendors. Their absence is a scope decision, not a coverage gap, and the published
+Landscape should say so rather than leave readers to infer it.
+
+Dropped against the working list used earlier in this document: Serbia and Iceland (2 companies).
+
+Where this lives:
+
+- `countries` (§8.4) carries `is_eu`, `is_european` and similar flags, so the definition is data
+  rather than a list pasted into each script.
+- **Each snapshot stores the country list it actually used** in `landscape_snapshots.scope`. A
+  snapshot must remain readable after the definition changes; without this, comparing two
+  snapshots would silently compare two different Europes.
+
+Measured on this definition today:
+
+| | Companies |
+|---|---|
+| In scope, all sectors | **795** |
+| Already carrying a C-UAS tag (Group A) | **148** |
+| In scope, not yet classified (Group B) | **647** |
+
+---
+
+## 18. Coverage Gap Analysis
+
+The database is **not** accepted as a complete picture of the European C-UAS market. A Landscape
+cannot be published until a deliberate gap pass has run.
+
+### The stage
+
+1. Take the current candidate set (§19).
+2. Compare it against named external sources — vendor directories, trade-show exhibitor lists,
+   national defence-industry association registers, EDA/EU programme participant lists, recent
+   funding coverage.
+3. Record every candidate the comparison produces, **including the ones already present**, so the
+   check itself is auditable and repeatable next quarter.
+4. Output a file, not a database write.
+
+The first pass of this (2026-10-22, §16) found 7 missing companies against 3 sources and
+confirmed every European firm on the main industry list was already present. That is the shape
+the stage should keep: most checks confirm, a few find.
+
+### The import mechanism — smallest safe version
+
+No vendor submission system, and **no parallel company table**. Three pieces:
+
+**1. One new column.**
+
+```sql
+alter table companies add column discovery_source text;
+-- news | seed | research | import, null = unknown (the existing rows)
+```
+
+Without it there is no way to ask "how much of this Landscape came from research rather than
+press coverage", which is exactly the question the coverage stage exists to answer.
+
+**2. Import files, committed to the repo.**
+
+`data/company-imports/2026-q4-europe-cuas.json` — a list of
+`{name, hq_country, website, description, source_urls[], suggested_categories[]}`. Git is the
+audit trail: who added what, when, with what source, reviewable in a diff before it ever reaches
+the database. No new table, no new UI.
+
+**3. `scripts/import-companies.mjs`.**
+
+Reads a file, and for each entry:
+- normalises the name and checks it against `companies.name`, `company_aliases.alias` and
+  `products.name` — the same check done by hand in §16, which caught Dedrone, Harmattan and
+  Aerix Systems as already-present
+- refuses any entry with no `source_urls`
+- inserts with `discovery_source='research'`, `confidence='medium'`, `enrichment_status='web'`
+- prints a dry run by default, as every other write script here does
+
+A company imported this way is an ordinary `companies` row from that moment on, and goes through
+the same evidence and maturity pipeline as everything else.
+
+---
+
+## 19. The candidate set
+
+Three origins, one pipeline.
+
+| | Origin | Today | How it is found |
+|---|---|---|---|
+| **A** | European, already C-UAS tagged | **148** | `company_sectors` ∩ scope |
+| **B** | European, in the database, not yet classified | **647** | scope minus A |
+| **C** | Discovered during Coverage Gap Analysis | 7 so far | §18 |
+
+Group B is too large to hand to an LLM wholesale, and most of it is UAV makers. It narrows
+cheaply on signals already in the database:
+
+| Signal within Group B | Companies |
+|---|---|
+| Has a product categorised `Counter-UAS` or `Effector` | 43 |
+| Has an article whose title or summary matches counter-drone terms | 134 |
+| Has a `Sensor` product (weaker — most are not C-UAS) | 109 |
+| No articles and no products at all | 1 |
+
+Screening the union of the first two (~160) rather than all 647 is roughly a quarter of the cost
+for nearly all of the yield. The remainder stays on the list and can be screened later.
+
+### Where candidacy is recorded
+
+Candidacy is a working state, not a published fact, so it does not belong in a snapshot:
+
+```sql
+create table landscape_candidates (
+  landscape_slug   text not null,         -- 'europe-cuas-2026'
+  company_id       uuid not null references companies(id) on delete cascade,
+  origin           text not null,         -- 'A' | 'B' | 'C'
+  screening_status text not null default 'pending',
+                                          -- pending | in_scope | out_of_scope | needs_review
+  screened_at      timestamptz,
+  screening_note   text,
+  primary key (landscape_slug, company_id)
+);
+```
+
+Snapshots freeze the result; this table is the mutable working set behind it. Keeping them
+separate is what lets a snapshot stay true after the candidate list moves on.
+
+---
+
+## 20. Taxonomy change — Multi-Sensor Detection
+
+**Removed as an assignable leaf.** 14 leaves, not 15.
+
+It is derived: a company holds multi-sensor detection capability when it carries **two or more**
+of `RF Detection`, `Radar`, `EO/IR`, `Acoustic Detection`. Assigning it by hand alongside those
+leaves would record the same fact twice and let the two disagree.
+
+**`Integrated / Multi-Layer C-UAS` stays explicit and evidence-based.** Integration is a claim
+about a product working as one system — shared C2, cued handover between sensors and effectors —
+and cannot be inferred from a company happening to sell several things. A firm with a radar line
+and a jammer line is not thereby an integrator.
+
+Computed at snapshot time into `landscape_entries`, so a published Landscape carries the flag it
+was published with:
+
+```sql
+-- in the snapshot query
+(select count(*) from company_sectors cs join sectors s on s.id = cs.sector_id
+  where cs.company_id = c.id
+    and s.slug in ('rf-detection','radar','eo-ir','acoustic-detection')) >= 2
+  as multi_sensor_derived
+```
+
+---
+
+## 21. Products supporting a classification
+
+The public Landscape shows **companies**. Where a product justifies a company's category, the
+link should be kept:
+
+> Company X → Interceptor UAV → supported by Product Y → evidence
+
+Smallest thing that preserves it — one table, three columns, no product taxonomy required:
+
+```sql
+create table company_sector_products (
+  company_id uuid not null,
+  sector_id  uuid not null,
+  product_id uuid not null references products(id) on delete cascade,
+  primary key (company_id, sector_id, product_id),
+  foreign key (company_id, sector_id)
+    references company_sectors(company_id, sector_id) on delete cascade
+);
+```
+
+The FK to `company_sectors` is the point: a supporting product cannot exist without the
+classification it supports, and deleting the classification cleans up after itself.
+
+Optional and unused at first — a classification with no product is still valid, because plenty of
+categories are evidenced by a contract or a deployment rather than a catalogued product. This
+also leaves `product_sectors` (empty, §2) free for a real product-level taxonomy later without
+either getting in the other's way.
+
+---
+
+## 22. Targeted evidence extraction
+
+The nightly job takes ~6 weeks to work through 2,000 companies. The Landscape cannot wait, and
+does not need to: it needs ~160-800 specific companies done thoroughly.
+
+A second mode on `extract-evidence.mjs`:
+
+| | Nightly mode | Landscape mode |
+|---|---|---|
+| Selection | unscanned, most-covered first | an explicit candidate list |
+| Articles per company | 14 most recent | **all linked articles**, capped high (~60) |
+| Respects `evidence_scanned_at` | yes, skips scanned | no — re-reads on demand |
+| Ordering | by coverage | by candidate priority |
+
+### Relevance gating is mandatory, and must be measured
+
+**A link is not evidence.** `article_companies` is produced by entity extraction and is often
+wrong — Lockheed Martin's four most recent linked articles were a Ukrainian medevac drone, a UK
+policy question and Boeing's MQ-25 (§12 risk 2, §10).
+
+The extraction already instructs the model to reject those. Landscape mode makes it explicit and
+observable:
+
+1. **Stage one, relevance.** For each article: does it actually state something about *this
+   company*? Reject passing mentions, competitor stories and general industry commentary.
+2. **Stage two, extraction.** Only surviving articles produce evidence rows.
+3. **Report the refusal rate per company.** A company where 40 of 45 articles were rejected is
+   the system working. A company where none were rejected is a signal to look, not to celebrate.
+
+The hand-run in §10 gives the baseline to compare against: 4 rows from 40 articles, 10% yield.
+A Landscape run that comes back at 60% yield has stopped refusing and should be stopped.
+
+---
+
+## 23. Revised implementation sequence
+
+| # | Step | Depends on | Output |
+|---|---|---|---|
+| 1 | `countries` table, 32-country scope flags, backfill the 230 blank `hq_country` rows | — | Europe is queryable |
+| 2 | Insert the 14 taxonomy leaves under the existing 4 groups | — | vocabulary exists |
+| 3 | `company_sectors` provenance columns (§8.2) + `company_sector_products` (§21) | 2 | classifications can carry evidence |
+| 4 | `landscape_candidates` + build Groups A and B (§19) | 1, 2 | ~795 rows, A and B separated |
+| 5 | Screen Group B down to in-scope, using the cheap signals first | 4 | B becomes a real candidate list |
+| 6 | **Coverage Gap Analysis** + `discovery_source` + `import-companies.mjs` (§18) | 4 | Group C, and a measured gap |
+| 7 | Landscape-mode evidence extraction over A + B-screened + C (§22) | 5, 6 | evidence, with refusal rates |
+| 8 | Classify candidates into the 14 leaves, with sources and supporting products | 3, 7 | the Landscape's content |
+| 9 | Maturity over the classified set (built, currently manual) | 7, 8 | levels with rationale |
+| 10 | `landscape_snapshots` + `landscape_entries` + snapshot script, incl. derived multi-sensor (§20) | 8, 9 | a frozen, publishable version |
+| 11 | Frontend Landscape view, reading a published snapshot | 10 | the public product |
+| 12 | Snapshot diff view | 10, 11 | what changed since last time |
+
+Changes from the original sequence: coverage moved from a blocking question (step 0) to a real
+build step (6); Group B screening added (5); evidence extraction became targeted rather than a
+six-week wait (7).
+
+---
+
+## 24. Session 2 — exactly what to implement
+
+Six items, all schema and data plumbing. No classification, no LLM runs, no frontend.
+
+1. **`countries` table** — ISO code, name, aliases, region, `is_eu` / `is_european` /
+   `is_landscape_scope` flags, seeded with the 32-country definition from §17. Plus backfill of
+   the 230 companies with no `hq_country`, as far as the data allows.
+
+2. **14 taxonomy leaves** — insert as `sectors` rows, `kind='cuas_capability'`, `parent_id`
+   pointing at the four existing `cuas-*` rows. No `Multi-Sensor Detection`. Data only, no DDL.
+
+3. **Provenance on `company_sectors`** — `confidence`, `source_urls`, `assigned_by`,
+   `assigned_at`, `note`, with the same "no LLM assignment without a source" CHECK that the
+   maturity columns carry.
+
+4. **`company_sector_products`** — the three-column table from §21.
+
+5. **`landscape_candidates`** — the table from §19, populated with Group A (148) and Group B
+   (647), each marked with its origin and left `pending`.
+
+6. **`companies.discovery_source`** — the column from §18, backfilled where it is knowable
+   (`seed` for the first-week rows, `research` for the 7 added on 2026-10-22, `news` for the
+   rest).
+
+**Explicitly not in Session 2:** Group B screening, Coverage Gap Analysis, landscape-mode
+evidence extraction, any classification into leaves, snapshots, and the frontend. Those are
+steps 5 onward and each needs the session before it to have landed.
+
+**Done when:** the 32-country scope is queryable from the database, the 14 leaves exist under
+their groups, a classification can carry evidence and name a supporting product, and 795
+candidates are sitting in `landscape_candidates` waiting to be screened.
