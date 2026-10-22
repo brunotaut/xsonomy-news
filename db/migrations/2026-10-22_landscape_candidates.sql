@@ -1,0 +1,13 @@
+-- Landscape workflow staging
+--
+-- Applied 2026-10-22 as Supabase migration "landscape_candidates".
+-- The exact statements are held in supabase_migrations.schema_migrations and can be
+-- written back into this folder with `supabase db pull`. Recorded here so the repo
+-- shows what changed and when.
+--
+-- CREATE TABLE landscape_candidates (landscape_slug, company_id, status, priority, ...)
+--   status: candidate | screening | included | excluded | needs_review
+-- CREATE TABLE landscape_candidate_reasons (landscape_slug, company_id, reason, source_ref)
+--   reason: existing_cuas_tag | cuas_product | effector_product | counter_drone_article
+--         | in_scope_unclassified | external_research | manual
+-- Holds no company facts and no classifications — staging only.

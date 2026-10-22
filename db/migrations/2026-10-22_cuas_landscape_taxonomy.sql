@@ -1,0 +1,14 @@
+-- C-UAS Landscape taxonomy: 4 groups, 13 leaves
+--
+-- Applied 2026-10-22 as Supabase migration "cuas_landscape_taxonomy".
+-- The exact statements are held in supabase_migrations.schema_migrations and can be
+-- written back into this folder with `supabase db pull`. Recorded here so the repo
+-- shows what changed and when.
+--
+-- ALTER sectors_kind_check to allow 'cuas_capability'.
+-- INSERT sector 'cuas-tracking' (the one group with no existing row).
+-- INSERT 11 leaves: cuas-det-{rf,radar,eo-ir,acoustic},
+--   cuas-track-{fusion,ai-cv}, cuas-def-{rf-jamming,gnss,interceptor,kinetic,directed-energy}.
+-- UPDATE cuas-c2 -> leaf under cuas-tracking; cuas-integrated -> kind cuas_capability.
+-- No Multi-Sensor Detection: derived from holding 2+ detection leaves.
+-- All 215 existing company_sectors assignments untouched.

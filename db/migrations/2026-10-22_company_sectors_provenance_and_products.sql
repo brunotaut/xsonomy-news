@@ -1,0 +1,13 @@
+-- Provenance on classifications, and supporting products
+--
+-- Applied 2026-10-22 as Supabase migration "company_sectors_provenance_and_products".
+-- The exact statements are held in supabase_migrations.schema_migrations and can be
+-- written back into this folder with `supabase db pull`. Recorded here so the repo
+-- shows what changed and when.
+--
+-- ALTER company_sectors ADD confidence, source_urls[], assigned_by, assigned_at, note.
+--   CHECK company_sectors_llm_needs_source: assigned_by='llm' requires >=1 source_url
+--   and an assigned_at. The 623 legacy rows keep NULL provenance and stay valid.
+-- CREATE TABLE company_sector_products (company_id, sector_id, product_id)
+--   FK (company_id, sector_id) -> company_sectors ON DELETE CASCADE, so a supporting
+--   product cannot outlive the classification it supports.

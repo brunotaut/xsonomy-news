@@ -8,6 +8,10 @@ Read alongside `DATA-MODEL.md` (the company data model) and `ARCHITECTURE.md` (b
 > **Revision 2, 2026-10-22 — architecture approved with changes.** Sections 17-24 below
 > supersede parts of what follows: the Europe definition (§5), the taxonomy (§9), the
 > coverage approach (§12 risk 1) and the sequence (§13). Where they disagree, Revision 2 wins.
+>
+> **Session 2 is implemented.** What was actually built, with counts and tests, is in
+> `SESSION-2-REPORT.md`. Note one correction: removing Multi-Sensor Detection leaves
+> **13** assignable leaves, not 14 as §20 and §24 said.
 
 ---
 
@@ -699,7 +703,7 @@ separate is what lets a snapshot stay true after the candidate list moves on.
 
 ## 20. Taxonomy change — Multi-Sensor Detection
 
-**Removed as an assignable leaf.** 14 leaves, not 15.
+**Removed as an assignable leaf.** 13 leaves, not 14.
 
 It is derived: a company holds multi-sensor detection capability when it carries **two or more**
 of `RF Detection`, `Radar`, `EO/IR`, `Acoustic Detection`. Assigning it by hand alongside those
@@ -818,7 +822,7 @@ Six items, all schema and data plumbing. No classification, no LLM runs, no fron
    `is_landscape_scope` flags, seeded with the 32-country definition from §17. Plus backfill of
    the 230 companies with no `hq_country`, as far as the data allows.
 
-2. **14 taxonomy leaves** — insert as `sectors` rows, `kind='cuas_capability'`, `parent_id`
+2. **13 taxonomy leaves** — insert as `sectors` rows, `kind='cuas_capability'`, `parent_id`
    pointing at the four existing `cuas-*` rows. No `Multi-Sensor Detection`. Data only, no DDL.
 
 3. **Provenance on `company_sectors`** — `confidence`, `source_urls`, `assigned_by`,
@@ -838,6 +842,6 @@ Six items, all schema and data plumbing. No classification, no LLM runs, no fron
 evidence extraction, any classification into leaves, snapshots, and the frontend. Those are
 steps 5 onward and each needs the session before it to have landed.
 
-**Done when:** the 32-country scope is queryable from the database, the 14 leaves exist under
+**Done when:** the 32-country scope is queryable from the database, the 13 leaves exist under
 their groups, a classification can carry evidence and name a supporting product, and 795
 candidates are sitting in `landscape_candidates` waiting to be screened.

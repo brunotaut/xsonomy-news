@@ -1,0 +1,12 @@
+-- Fix merge_companies on self-relationships
+--
+-- Applied 2026-10-22 as Supabase migration "merge_companies_self_relationship_fix".
+-- The exact statements are held in supabase_migrations.schema_migrations and can be
+-- written back into this folder with `supabase db pull`. Recorded here so the repo
+-- shows what changed and when.
+--
+-- A duplicate often has a relationship TO its keeper (Leonardo S.p.A. is division_of
+-- Leonardo). Moving it made source = target, which company_relationships forbids, and
+-- the UPDATE failed before the cleanup could run. Those rows are now deleted first.
+-- Also: carries company_sectors provenance across a merge, moves discovery_source, and
+-- removes the duplicate's landscape_candidates row.

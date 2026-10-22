@@ -1,0 +1,13 @@
+-- Country reference table and Landscape scope
+--
+-- Applied 2026-10-22 as Supabase migration "countries_reference".
+-- The exact statements are held in supabase_migrations.schema_migrations and can be
+-- written back into this folder with `supabase db pull`. Recorded here so the repo
+-- shows what changed and when.
+--
+-- CREATE TABLE countries (code pk, name unique, aliases[], region,
+--   is_eu, is_european, is_nato, is_landscape_scope)
+-- 74 rows seeded. is_landscape_scope = true for 32: EU 27 + GB, NO, CH, UA, TR.
+-- Israel (IL) seeded but deliberately out of scope.
+-- CREATE FUNCTION resolve_country(text) -> char(2), matching name or alias.
+-- RLS: public read.

@@ -14,6 +14,7 @@
     "enrich:companies:dry": "node scripts/enrich-companies.mjs --dry --max 10",
     "resolve": "node scripts/resolve-entities.mjs",
     "resolve:dry": "node scripts/resolve-entities.mjs --dry --max 50",
+    "import:companies": "node scripts/import-companies.mjs",
     "evidence": "node scripts/extract-evidence.mjs",
     "evidence:dry": "node scripts/extract-evidence.mjs --dry-run --max 10",
     "maturity": "node scripts/assess-maturity.mjs",
@@ -27,7 +28,7 @@
     "digest:dry": "node scripts/digest.mjs --period day --dry",
     "digest:week:dry": "node scripts/digest.mjs --period week --dry",
     "digest:month:dry": "node scripts/digest.mjs --period month --dry",
-    "test": "node scripts/test-parser.mjs && node scripts/test-digest.mjs && node scripts/test-trends.mjs && node scripts/test-topics.mjs && node scripts/test-relevance.mjs && node scripts/test-subscribers.mjs && node scripts/test-site.mjs && node scripts/test-retry.mjs && node scripts/test-unsubscribe.mjs && node scripts/test-status.mjs && node scripts/test-evidence.mjs && node scripts/test-maturity.mjs"
+    "test": "node scripts/test-parser.mjs && node scripts/test-digest.mjs && node scripts/test-trends.mjs && node scripts/test-topics.mjs && node scripts/test-relevance.mjs && node scripts/test-subscribers.mjs && node scripts/test-site.mjs && node scripts/test-retry.mjs && node scripts/test-unsubscribe.mjs && node scripts/test-status.mjs && node scripts/test-evidence.mjs && node scripts/test-maturity.mjs && node scripts/test-company-match.mjs"
   },
   "engines": {
     "node": ">=20"

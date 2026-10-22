@@ -1,0 +1,10 @@
+-- How each company was discovered
+--
+-- Applied 2026-10-22 as Supabase migration "companies_discovery_source".
+-- The exact statements are held in supabase_migrations.schema_migrations and can be
+-- written back into this folder with `supabase db pull`. Recorded here so the repo
+-- shows what changed and when.
+--
+-- ALTER companies ADD discovery_source
+--   CHECK: news | seed | external_research | manual | import, or NULL when unknowable.
+-- Backfilled: 7 external_research, 419 seed, 1819 news, 34 left NULL.
