@@ -275,6 +275,20 @@ real data. Run the workflow with dry_run ticked, read the output, then add a cro
 **Stage 4 — maturity.** Products first, derived from the evidence rows; company roll-up after.
 Doing maturity before stage 3 means judging it from memory instead of from evidence.
 
+*Built 2026-10-22:* `scripts/assess-maturity.mjs` and the `Assess product maturity` workflow.
+**Not scheduled yet, on purpose** — the evidence job only started the same day, so until it has
+worked through a decent share of the 2,000 companies this would be judging products from their
+news coverage alone. Products with neither evidence nor linked articles are skipped outright
+rather than guessed at.
+
+Two structural guards beyond the database's own rule:
+
+- `scaled` is the only level defined by multiplicity, so it needs at least **two distinct
+  sources**. One large contract cannot make something scaled, whatever the rationale says.
+- Nothing overwrites a human. A product whose `maturity_assessed_by` is not `llm`, or a company
+  with `maturity_is_override`, is left alone — including under `--product`, which was the one
+  path that could otherwise have undone an editor's decision.
+
 ---
 
 ## 7. Decisions taken — 2026-10-22

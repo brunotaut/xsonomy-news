@@ -1,0 +1,83 @@
+name: Assess product maturity
+
+# Assigns the UAV360 Maturity Classification to products and rolls it up to
+# companies. See docs/DATA-MODEL.md §4.
+#
+# NO SCHEDULE YET, and this one is deliberate rather than cautious: maturity is
+# derived from company_evidence, and the evidence job only started on 2026-10-22.
+# Until it has worked through a meaningful share of the 2,000 companies, this
+# would be judging products off their news coverage alone — which is a thinner
+# basis than the design intends.
+#
+# Add the cron once evidence rows are accumulating. Until then run it by hand,
+# starting with dry_run, and read what it says.
+
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: "Products this run"
+        default: "40"
+        required: true
+      concurrency:
+        description: "Parallel LLM calls"
+        default: "3"
+        required: true
+      product:
+        description: "Only products matching this name (optional, for spot-checks)"
+        required: false
+      rollup_only:
+        description: "Skip the product pass, only recompute company maturity"
+        type: boolean
+        default: false
+      dry_run:
+        description: "Print judgements, write nothing"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: assess-maturity
+  cancel-in-progress: false
+
+jobs:
+  assess:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      # These rows publish unreviewed, so the rules that gate them run first.
+      - name: Check the validation rules
+        run: node scripts/test-maturity.mjs
+
+      - name: Assess
+        # Inputs travel by environment, never spliced into the command line.
+        run: |
+          set -o pipefail
+          ARGS=(--max "$IN_MAX" --concurrency "$IN_CONCURRENCY")
+          # Test for "true", not "not false": a scheduled run would send an empty
+          # string, and treating that as dry would make the job a silent no-op.
+          if [ "$IN_DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
+          if [ "$IN_ROLLUP_ONLY" = "true" ]; then ARGS+=(--rollup); fi
+          if [ -n "$IN_PRODUCT" ]; then ARGS+=(--product "$IN_PRODUCT"); fi
+          {
+            echo '## Maturity assessment'
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          node scripts/assess-maturity.mjs "${ARGS[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+        env:
+          IN_MAX: ${{ github.event.inputs.max || '40' }}
+          IN_CONCURRENCY: ${{ github.event.inputs.concurrency || '3' }}
+          IN_DRY_RUN: ${{ github.event.inputs.dry_run }}
+          IN_ROLLUP_ONLY: ${{ github.event.inputs.rollup_only }}
+          IN_PRODUCT: ${{ github.event.inputs.product }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
