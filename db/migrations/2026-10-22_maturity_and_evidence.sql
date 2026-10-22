@@ -1,8 +1,7 @@
 -- UAV360 Maturity Classification + evidence of real-world use
 --
--- PROPOSED — NOT YET APPLIED. Reasoning and open questions: docs/DATA-MODEL.md.
--- Run it in the Supabase SQL editor; it is wrapped in a transaction, so it either
--- applies completely or not at all. Re-running it is safe.
+-- APPLIED 2026-10-22. Reasoning: docs/DATA-MODEL.md.
+-- Kept here as the record of what was run. Re-running it is safe.
 --
 -- It adds columns and one table. It changes existing data in exactly one place:
 -- stage 5 rewrites the 225 products.use_class values to the new vocabulary. The
@@ -198,6 +197,17 @@ end $outer$;
 -- (c) status_detail keeps the original free text, which carries detail the
 --     vocabulary cannot ("Cancelled (program ended 2018)", "Superseded by Orlan-3M").
 -- ---------------------------------------------------------------------------
+
+-- Snapshot first: mapping the 41 Civil rows to NULL throws away which rows they
+-- were, and NULL is indistinguishable from the 3,160 that were never classified.
+-- Drop this table once they have been reclassified.
+create table if not exists public.use_class_migration_2026_10 as
+  select id, name, use_class as old_use_class, now() as snapshot_at
+    from public.products where use_class is not null;
+
+comment on table public.use_class_migration_2026_10 is
+  'One-off snapshot of products.use_class before the 2026-10-22 vocabulary change. '
+  'The old Civil rows are the ones to reclassify. Safe to drop once that is done.';
 
 alter table public.products drop constraint if exists products_use_class_check;
 

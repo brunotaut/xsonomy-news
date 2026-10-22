@@ -273,6 +273,9 @@ Doing maturity before stage 3 means judging it from memory instead of from evide
 
 ## 7. Decisions taken — 2026-10-22
 
+The schema migration is **applied**. `products.status` is still empty — that needs
+`npm run migrate:status`, which has not been run (§9).
+
 1. **`products.use_class` is redefined** to `uav` / `cuas` / `dual` (§8).
 2. **The LLM publishes maturity directly**, no editor queue (§4, "Who sets it").
 3. **Review horizon is 24 months.**
