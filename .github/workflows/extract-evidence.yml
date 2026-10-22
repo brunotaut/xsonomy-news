@@ -3,21 +3,24 @@ name: Extract company evidence
 # Builds company_evidence rows from the news articles already linked to each
 # company — contracts, deployments, customers, partnerships, funding.
 #
-# NO SCHEDULE ON PURPOSE. This writes to a public catalogue with no human review,
-# and the article-to-company links it reads are often wrong: Lockheed Martin's
-# four most recent linked articles, checked by hand, were about a Ukrainian
-# medevac drone, UK policy, and Boeing's MQ-25. The model is told to reject those,
-# but nobody has yet seen it do so on real data.
+# The links it reads are often wrong, so the refusals matter more than the
+# extractions. The rules were exercised by hand against 40 real articles from the
+# four most-covered companies before this was scheduled (docs/DATA-MODEL.md §10):
+# 4 rows from 40, and all four of Lockheed Martin's known-bad links rejected.
 #
-# Run it with dry_run ticked first and read the output. Add a cron here once the
-# refusals look right.
+# 50 companies a day clears the ~2,000 unscanned ones in about six weeks. Every
+# row written is listed in the run summary, and a bad batch reverts in one
+# statement because evidence_scanned_at marks exactly what was touched — see
+# docs/DATA-MODEL.md §10.
 
 on:
+  schedule:
+    - cron: "0 3 * * *"          # daily 03:00 UTC, clear of ingest, digest and the build
   workflow_dispatch:
     inputs:
       max:
         description: "Companies this run"
-        default: "10"
+        default: "50"
         required: true
       concurrency:
         description: "Parallel LLM calls"
@@ -61,7 +64,10 @@ jobs:
           # `if` rather than `[ x ] && y`: GitHub runs these with `bash -e`, where a
           # false test is a non-zero status and would end the step right here.
           ARGS=(--max "$IN_MAX" --concurrency "$IN_CONCURRENCY")
-          if [ "$IN_DRY_RUN" != "false" ]; then ARGS+=(--dry-run); fi
+          # A scheduled run carries no inputs, so IN_DRY_RUN arrives empty. Test for
+          # "true" rather than "not false", or the nightly job would quietly do
+          # nothing every night while reporting success.
+          if [ "$IN_DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
           if [ -n "$IN_COMPANY" ]; then ARGS+=(--company "$IN_COMPANY"); fi
           {
             echo '## Evidence extraction'
@@ -70,7 +76,7 @@ jobs:
           node scripts/extract-evidence.mjs "${ARGS[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
         env:
-          IN_MAX: ${{ github.event.inputs.max || '10' }}
+          IN_MAX: ${{ github.event.inputs.max || '50' }}
           IN_CONCURRENCY: ${{ github.event.inputs.concurrency || '3' }}
           IN_DRY_RUN: ${{ github.event.inputs.dry_run }}
           IN_COMPANY: ${{ github.event.inputs.company }}
