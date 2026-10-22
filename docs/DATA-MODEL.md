@@ -263,8 +263,14 @@ writing `last_reviewed_at` whenever any enrichment script touches a row. No migr
 **Stage 2 — the two new classification columns.** `offering_type` and `use_class` on companies.
 Small migration, can be back-filled largely from the products a company already has.
 
-**Stage 3 — `company_evidence`.** The table, then back-fill from the 6,100 articles already
-linked to companies — contract and deployment reporting is most of what the news pipeline ingests.
+**Stage 3 — `company_evidence`.** The table, then back-fill from the articles already linked to
+companies — contract and deployment reporting is most of what the news pipeline ingests.
+
+*Built 2026-10-22:* `scripts/extract-evidence.mjs` plus the `Extract company evidence` workflow.
+It has **no schedule**, on purpose. The article-to-company links are noisy — Lockheed Martin's
+four most recent linked articles were a Ukrainian medevac drone, a UK policy question and
+Boeing's MQ-25 — so the model is told to reject them, and nobody has yet watched it do that on
+real data. Run the workflow with dry_run ticked, read the output, then add a cron.
 
 **Stage 4 — maturity.** Products first, derived from the evidence rows; company roll-up after.
 Doing maturity before stage 3 means judging it from memory instead of from evidence.

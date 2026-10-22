@@ -185,7 +185,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Generic Anthropic Messages call with retry/backoff. Returns the text reply.
 // Shared by the article entity pass and the company-enrichment pipeline.
-export async function anthropicComplete({ system, user, maxTokens = 1024, retries = 4 } = {}) {
+// `model` lets a caller override the repo default per job: the entity pass is
+// cheap and high-volume, while a judgement that gets published unreviewed is
+// worth a stronger model.
+export async function anthropicComplete({ system, user, maxTokens = 1024, retries = 4, model } = {}) {
   const key = process.env.ANTHROPIC_API_KEY;
   let lastErr;
   for (let attempt = 0; attempt <= retries; attempt++) {
@@ -201,7 +204,7 @@ export async function anthropicComplete({ system, user, maxTokens = 1024, retrie
           "content-type": "application/json",
         },
         body: JSON.stringify({
-          model: MODEL,
+          model: model || MODEL,
           max_tokens: maxTokens,
           temperature: 0,
           system,
