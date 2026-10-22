@@ -273,8 +273,10 @@ Doing maturity before stage 3 means judging it from memory instead of from evide
 
 ## 7. Decisions taken — 2026-10-22
 
-The schema migration is **applied**. `products.status` is still empty — that needs
-`npm run migrate:status`, which has not been run (§9).
+Both are **applied** (2026-10-22). The schema migration ran, and all 408 products
+carry a normalised `status` with their original text in `status_detail`:
+in_production 207 · discontinued 84 · development 57 · prototype 48 · cancelled 9 ·
+unknown 3. `UAV · Production status` no longer exists in `specs`.
 
 1. **`products.use_class` is redefined** to `uav` / `cuas` / `dual` (§8).
 2. **The LLM publishes maturity directly**, no editor queue (§4, "Who sets it").
@@ -336,6 +338,11 @@ Vocabulary: `in_production` · `discontinued` · `prototype` · `development` ·
 
 After the backfill, `UAV · Production status` is removed from `specs` — nothing is lost, because
 the raw string is preserved in `status_detail`.
+
+**Done 2026-10-22.** The backfill ran as SQL rather than through `migrate-status.mjs`, because
+there was no local `.env` at the time; the mapping was a port of `lib/status.mjs` and produced
+exactly the counts the catalogue had been showing, which is the cross-check that the two agree.
+The script remains the right tool for any future rows.
 
 ### Status is not maturity
 
