@@ -33,8 +33,6 @@ import { loadDotenv } from "./lib/http.mjs";
 import { sbConfig, sbFetch, fetchAllRows } from "./lib/supabase.mjs";
 import { normaliseStatus } from "./lib/status.mjs";
 
-loadDotenv();
-
 const args = process.argv.slice(2);
 const flag = (name, dflt) => {
   const i = args.indexOf(`--${name}`);
@@ -63,6 +61,9 @@ async function patchProduct(id, fields) {
 }
 
 async function main() {
+  // await, not fire-and-forget: loadDotenv reads .env asynchronously, so calling it
+  // at module scope leaves sbConfig() reading an empty environment.
+  await loadDotenv();
   sbConfig();
   console.log(`Reading products…${DRY ? "  (dry run — nothing will be written)" : ""}`);
   const all = await fetchAllRows("products", "id,name,category,status,specs");

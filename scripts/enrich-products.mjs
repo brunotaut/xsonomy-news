@@ -26,8 +26,6 @@ import { loadDotenv } from "./lib/http.mjs";
 import { sbConfig, sbFetch } from "./lib/supabase.mjs";
 import { anthropicComplete, hasApiKey } from "./lib/analyze.mjs";
 
-loadDotenv();
-
 const args = process.argv.slice(2);
 const flag = (name, dflt) => {
   const i = args.indexOf(`--${name}`);
@@ -193,6 +191,7 @@ async function handle(row, stats) {
 }
 
 async function main() {
+  await loadDotenv();
   if (!hasApiKey()) throw new Error("ANTHROPIC_API_KEY is required.");
   sbConfig();
   const batch = await fetchBatch(MAX);
