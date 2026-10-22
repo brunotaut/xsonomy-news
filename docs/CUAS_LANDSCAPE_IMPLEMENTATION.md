@@ -117,9 +117,17 @@ All writes come from `xsonomy-news`. The catalogue repo only reads.
                         ◄── assess-maturity.mjs    maturity (manual for now)
 ```
 
-**Every company in the database arrived because it was named in a news article.** There is no
-directory import, no manual entry path, no vendor submission. That is the defining constraint
-for the Landscape, and §12 explains why it matters.
+**Two origins, not one.** The database was seeded first and has grown from news since:
+
+| | Companies | Products |
+|---|---|---|
+| Seeded, 2026-06-25 → 07-03 (Airtable import + bulk load) | ~560 | ~1,070 |
+| Accumulated from the news pipeline since | ~1,730 | ~2,330 |
+
+So the catalogue did not start from news — it started from a hand-built product list, and
+companies were extracted from those products. The pipeline has since become the main source of
+new rows. Both paths matter for the Landscape: the seed gives coverage of vendors who get no
+press, the pipeline gives recency.
 
 ---
 
@@ -383,12 +391,11 @@ The live tables stay the working copy. Snapshots are the record. Both are needed
 
 ## 12. Risks
 
-**1 — Coverage is the real risk, not schema.** 791 European companies are in the database and 141
-carry any C-UAS tag. The true European C-UAS landscape is larger, and every company here arrived
-by being named in a news article (§3). A vendor with no press coverage does not exist in this
-database. **A Landscape published from this data is a map of who gets written about.** Either
-accept and state that explicitly, or add a directory-import path before publishing. This should be
-decided before any schema work.
+**1 — Coverage.** 791 European companies are in the database and 141 carry a C-UAS tag. The true
+European C-UAS landscape is larger. The seeded portion (§3) covers vendors with no press, but
+everything added since came from news, which skews towards whoever gets written about. The gap is
+closed by deliberate web research against vendor directories and trade-show exhibitor lists —
+started 2026-10-22 — rather than by waiting for the pipeline.
 
 **2 — The entity links are noisy.** `article_companies` is produced by LLM extraction and is often
 wrong: Lockheed Martin's four most recent linked articles were a Ukrainian medevac drone, a UK
@@ -456,7 +463,7 @@ harder. That is the main reason not to follow the brief literally there.
 
 ## 15. Open questions
 
-1. **Coverage** (risk 1) — publish from news-derived data and say so, or build an import path first?
+1. **Coverage** (risk 1) — how complete does the first Landscape need to be before publishing?
 2. **Is Turkey European** for this Landscape? Israel? Ukraine is presumably yes. The `countries`
    table makes this one flag, but someone has to set it.
 3. **Products as well as companies?** `product_sectors` exists and is empty. The brief says
