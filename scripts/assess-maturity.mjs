@@ -147,6 +147,9 @@ async function fetchBatch() {
 
 async function patch(table, id, fields) {
   const { url, serviceKey } = sbConfig();
+  // Reads work with the anon key, writes do not. Say so plainly rather than
+  // sending `apikey: undefined` and getting a confusing 401 back.
+  if (!serviceKey) throw new Error("SUPABASE_SERVICE_KEY is required to write. Use --dry-run to read only.");
   const res = await sbFetch(`${url}/rest/v1/${table}?id=eq.${id}`, {
     method: "PATCH",
     headers: {
