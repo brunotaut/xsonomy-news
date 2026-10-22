@@ -175,6 +175,29 @@ Every maturity value stores:
 The "at least one source" rule is enforced in the database, not by convention. Without it the
 field decays into guesswork within a few months and cannot be audited afterwards.
 
+### Who sets it
+
+**The LLM publishes directly.** There is no editor queue: an assessment written by the
+enrichment pass goes live, recorded as `maturity_assessed_by = 'llm'`.
+
+That makes the evidence rule the *only* guard, so it has to be real. The enrichment script
+must cite source URLs it actually retrieved and read in that run — never a URL recalled from
+training, and never a plausible-looking link it has not fetched. A maturity value whose
+sources do not exist is worse than no maturity value, because it looks checked.
+
+Two things make this recoverable rather than permanent:
+
+- Every row records who assessed it, so a bad batch can be found and reverted in one
+  statement (`where maturity_assessed_by = 'llm' and maturity_assessed_at > …`).
+- Nothing overwrites an editor. `maturity_is_override` on companies, and a non-`llm`
+  `maturity_assessed_by` on products, mark human judgements the automation leaves alone.
+
+Worth knowing going in: twice on this project unreviewed automation has been confidently
+wrong on exactly the best-known items — the image search matched an F/A-18 to "Hornet", and
+the summary pass refused the MQ-9 Reaper and AMRAAM as unidentifiable. Maturity is a
+judgement published under the UAV360 name, so it is worth spot-checking the first live batch
+against twenty products you already know, and keeping the revert statement to hand.
+
 ### On the site
 
 Always labelled **"UAV360 maturity"**, never a bare word like "Deployed", with the rationale
@@ -183,9 +206,9 @@ to tell our judgement from a vendor's claim.
 
 ### Staleness
 
-`maturity_assessed_at` plus a review horizon (12 months is a sensible default) gives a report of
-what needs re-checking — the same mechanism as `last_reviewed_at`. A `deployed` judgement from
-three years ago is not the same claim as one from last month.
+`maturity_assessed_at` plus a **24-month** review horizon gives a report of what needs
+re-checking — the same mechanism as `last_reviewed_at`. A `deployed` judgement from three years
+ago is not the same claim as one from last month.
 
 ---
 
@@ -248,13 +271,75 @@ Doing maturity before stage 3 means judging it from memory instead of from evide
 
 ---
 
-## 7. Open questions for Nazar
+## 7. Decisions taken — 2026-10-22
 
-1. **`products.use_class`** currently holds `Civil` / `C-UAS` / `Dual-use` on 225 of 3,385 rows
-   (93% empty). Those values do not match the requested `UAV / C-UAS / Dual`. Redefine the
-   vocabulary, or keep both and map between them?
-2. **Who may set maturity?** Editor-only, or may the LLM propose a value for review — the way the
-   image search proposes candidates but never publishes?
-3. **Review horizon** — is 12 months right for re-checking a maturity judgement?
-4. **`products.status`** exists and is 100% empty; UAV production status lives in the `specs`
-   JSONB instead. Drop the column, or populate it and move production status out of `specs`?
+1. **`products.use_class` is redefined** to `uav` / `cuas` / `dual` (§8).
+2. **The LLM publishes maturity directly**, no editor queue (§4, "Who sets it").
+3. **Review horizon is 24 months.**
+4. **Production status moves out of `specs` into `products.status`** (§9).
+
+---
+
+## 8. Redefining `products.use_class`
+
+Old vocabulary: `Civil` / `C-UAS` / `Dual-use`, on 225 of 3,385 rows — and every one of those
+225 is a Sensor. It was only ever used to say what a *sensor* was for.
+
+New vocabulary: `uav` / `cuas` / `dual`.
+
+| Old | Rows | New | Why |
+|---|---|---|---|
+| `C-UAS` | 86 | `cuas` | same meaning |
+| `Dual-use` | 98 | `dual` | same meaning |
+| `Civil` | 41 | **NULL** | see below |
+
+The 41 `Civil` rows are agricultural satellite constellations, industrial LiDAR, hyperspectral
+crop analytics and acoustic cameras. They are neither UAV products nor counter-UAS products, so
+there is no honest value for them in `uav / cuas / dual`. Mapping them to `uav` would put crop
+sensors in the UAV column.
+
+They go to NULL, which already means "not classified on this axis" for the other 3,160 rows, and
+they can be reclassified by the enrichment pass under the new definition.
+
+**Worth flagging:** NULL means "unknown", but for these 41 the truth is "neither". If that
+distinction turns out to matter on the site, the fix is a fourth value (`civil` or `neither`)
+rather than leaving them ambiguous. Not doing that now, because it was not the decision.
+
+The same vocabulary is used by the new `companies.use_class`, so a company and its products can
+be compared directly.
+
+---
+
+## 9. Moving production status into `products.status`
+
+`products.status` exists, is unconstrained, and is empty on all 3,385 rows. Production status
+currently lives in `specs` under the key `UAV · Production status`, on 408 products.
+
+Those 408 rows hold about 160 distinct free-text values — `In production`, `in service`,
+`Prototype/limited`, `Cancelled (program ended 2018)`, `Discontinued (AscTec acquired by Intel
+2016)`, `Superseded by Orlan-3M`, and so on. The catalogue already normalises these at build
+time in `xSonomy/scripts/generate-supabase.mjs` (`normaliseStatus`); that logic moves into the
+database so the normalising happens once, not on every build.
+
+**Two columns, not one**, because the free text carries information the vocabulary cannot:
+
+| Column | Holds | Example |
+|---|---|---|
+| `products.status` | the normalised value — filterable | `cancelled` |
+| `products.status_detail` | the original text — readable | `Cancelled (program ended 2018)` |
+
+Vocabulary: `in_production` · `discontinued` · `prototype` · `development` · `cancelled` ·
+`unknown`.
+
+After the backfill, `UAV · Production status` is removed from `specs` — nothing is lost, because
+the raw string is preserved in `status_detail`.
+
+### Status is not maturity
+
+They answer different questions and both are worth having:
+
+- **status** — is it still being made? (`in_production`, `discontinued`, `cancelled`)
+- **maturity** — has it been used in the real world? (`emerging` … `deployed`, `scaled`)
+
+A discontinued system can be `deployed` — plenty are still in service. A product `in_production`
+can be `emerging` if nobody has bought one yet. Neither column can be derived from the other.

@@ -2,8 +2,12 @@
 --
 -- PROPOSED — NOT YET APPLIED. Reasoning and open questions: docs/DATA-MODEL.md.
 -- Run it in the Supabase SQL editor; it is wrapped in a transaction, so it either
--- applies completely or not at all. It adds columns and one table and changes no
--- existing data. Re-running it is safe.
+-- applies completely or not at all. Re-running it is safe.
+--
+-- It adds columns and one table. It changes existing data in exactly one place:
+-- stage 5 rewrites the 225 products.use_class values to the new vocabulary. The
+-- production-status backfill is NOT here — it is a script, scripts/migrate-status.mjs,
+-- because 408 free-text values need normalising rather than a SQL mapping.
 --
 -- This covers stages 2-4 of DATA-MODEL.md §6. Stage 1 — giving ~2,000 companies a
 -- primary category and a technology tag — needs no schema change and matters more.
@@ -175,6 +179,54 @@ begin
     end if;
   end loop;
 end $outer$;
+
+-- ---------------------------------------------------------------------------
+-- Stage 5 — redefined vocabularies on products
+--
+-- (a) use_class becomes uav / cuas / dual. The old values were Civil / C-UAS /
+--     Dual-use on 225 rows, every one of them a Sensor. C-UAS and Dual-use map
+--     straight across; the 41 Civil rows are agricultural satellites, industrial
+--     LiDAR and crop analytics — neither UAV nor counter-UAS — so they go to NULL
+--     for reclassification rather than being forced into a wrong bucket.
+--
+-- (b) status gains the vocabulary the site actually filters on. The existing
+--     constraint allowed in_production / prototype / retired / concept / unknown,
+--     which does not match the catalogue's Status filter; the column is empty on
+--     all 3,385 rows, so nothing is lost by replacing it. `retired` disappears —
+--     retired-from-service folds into `discontinued`, as the catalogue already does.
+--
+-- (c) status_detail keeps the original free text, which carries detail the
+--     vocabulary cannot ("Cancelled (program ended 2018)", "Superseded by Orlan-3M").
+-- ---------------------------------------------------------------------------
+
+alter table public.products drop constraint if exists products_use_class_check;
+
+update public.products set use_class =
+  case use_class
+    when 'C-UAS'    then 'cuas'
+    when 'Dual-use' then 'dual'
+    else null              -- 'Civil' and anything unexpected
+  end
+where use_class is not null;
+
+alter table public.products
+  add constraint products_use_class_check
+    check (use_class = any (array['uav','cuas','dual']));
+
+alter table public.products drop constraint if exists products_status_check;
+
+alter table public.products
+  add column if not exists status_detail text,
+  add constraint products_status_check
+    check (status = any (array[
+      'in_production','discontinued','prototype','development','cancelled','unknown']));
+
+comment on column public.products.status is
+  'Is it still being made? Normalised from the free text now in status_detail. '
+  'Not the same question as maturity, which is whether anyone uses it.';
+comment on column public.products.status_detail is
+  'The original production-status text, kept because it carries detail the vocabulary '
+  'cannot — "Cancelled (program ended 2018)", "Superseded by Orlan-3M".';
 
 create index if not exists products_maturity_idx  on public.products  (maturity) where maturity is not null;
 create index if not exists companies_maturity_idx on public.companies (maturity) where maturity is not null;
