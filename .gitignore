@@ -1,0 +1,9 @@
+# Secrets. This repo once committed a .env containing the Supabase service key
+# and the Anthropic key; it had no .gitignore at the time. Those keys were
+# rotated afterwards, but the file stays in git history, so never add another.
+.env
+.env.*
+!.env.example
+
+node_modules/
+.DS_Store
