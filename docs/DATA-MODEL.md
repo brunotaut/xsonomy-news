@@ -359,3 +359,41 @@ They answer different questions and both are worth having:
 
 A discontinued system can be `deployed` — plenty are still in service. A product `in_production`
 can be `emerging` if nobody has bought one yet. Neither column can be derived from the other.
+
+---
+
+## 10. The evidence dry run — 2026-10-22
+
+Run by hand against the four most-covered companies, 10 most recent linked articles each,
+applying the rules in `extract-evidence.mjs` exactly as written.
+
+**4 evidence rows from 40 articles.** A 10% yield is the expected shape: most drone-industry
+reporting is firmware notes, regulation and competitor news, none of which is evidence that
+somebody bought or used something.
+
+| Company | Articles | Rows | What was rejected, and why |
+|---|---|---|---|
+| DJI | 10 | **0** | Six firmware-update stories, an FCC waiver, a Swedish industry survey, an Amazon lobbying piece, and police drones that never name DJI. None is a customer, contract or deployment. |
+| Anduril | 10 | **3** | Ghost Shark launching drones (demonstration), an F-22 pilot directing an FQ-44 (demonstration, US Air Force), Australia's Ghost Shark payloads (customer, Australian DoD). Rejected: general USAF planning, a DIU prize challenge, and four further Ghost Shark stories repeating facts already captured. |
+| Lockheed Martin | 10 | **1** | Sikorsky's U-Hawk entering flight test. **All four known-bad links rejected** — the Ukrainian medevac hexacopter (twice), a UK policy question, and Boeing's MQ-25. Also rejected: Romanian F-16s downing drones, and the FQ-44 story, because an F-22 appearing in an article is not Lockheed doing something. |
+| Amazon | 10 | **0** | Three planning/moratorium stories, lobbying, a cancelled permit meeting, and four about Wing, Apian and Antigravity. A permit pending is not a deployment. |
+
+The Lockheed row is the one that mattered: those four articles are why this job is written to
+distrust its own input, and the rules rejected all four.
+
+### Not yet proven
+
+The *script* has not run against the live API — the judgement above was made by hand, and a
+hand-run validates the prompt, not the plumbing. The first real run should be a `dry_run`
+dispatch read end to end.
+
+### Reverting a bad batch
+
+Every row records where it came from and every company records when it was read, so one run
+undoes cleanly:
+
+```sql
+-- pick the window from the run's start time
+delete from company_evidence where created_at > '2026-10-22T03:00:00Z';
+update companies set evidence_scanned_at = null where evidence_scanned_at > '2026-10-22T03:00:00Z';
+```
