@@ -200,13 +200,34 @@ async function main() {
   if (!hasApiKey()) throw new Error("ANTHROPIC_API_KEY is required.");
 
   console.log(`Model ${MODEL}${DRY ? "  (dry run — nothing will be written)" : ""}`);
+
+  // One cheap call before spending a batch: if the model or key is wrong, say so here
+  // rather than 50 identical failures later.
+  try {
+    await anthropicComplete({ system: "Reply with the single word: ok",
+                              user: "ping", maxTokens: 8, model: MODEL, retries: 0 });
+  } catch (e) {
+    throw new Error(`model check failed for "${MODEL}": ${e.message}`);
+  }
   const batch = await fetchBatch();
   if (!batch.length) { console.log("Nothing to scan."); return; }
   console.log(`${batch.length} companies, ${batch.reduce((n, b) => n + b.articles.length, 0)} articles\n`);
 
-  const stats = { companies: 0, rows: 0, unparsable: 0, rejected: [] };
+  const stats = { companies: 0, rows: 0, unparsable: 0, rejected: [], errors: [] };
   await pool(batch, CONCURRENCY, (item) =>
-    handle(item, stats).catch((e) => console.error(`  ${item.company.name}: ${e.message}`)));
+    handle(item, stats).catch((e) => {
+      stats.errors.push(`${item.company.name}: ${e.message}`);
+      console.error(`  ${item.company.name}: ${e.message}`);
+    }));
+
+  // A run where every single company failed is a broken job, not an empty one. The
+  // first nightly run looked like a success — exit 0, no output, nothing written —
+  // because each failure was caught per company and then never counted. Fail loudly
+  // instead, and say what the API actually returned.
+  if (stats.errors.length === batch.length && batch.length > 0) {
+    console.error(`\nAll ${batch.length} companies failed. First error:\n  ${stats.errors[0]}`);
+    throw new Error(`extraction failed for every company in the batch (model: ${MODEL})`);
+  }
 
   console.log(`\n${stats.companies} companies scanned, ${stats.rows} evidence rows` +
     `${DRY ? " (not written)" : ""}.`);

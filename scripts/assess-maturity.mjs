@@ -243,7 +243,7 @@ async function pool(items, n, fn) {
 async function main() {
   await loadDotenv();
   sbConfig();
-  const stats = { assessed: 0, declined: 0, unparsable: 0, rolled: 0, rejected: [], levels: {} };
+  const stats = { assessed: 0, declined: 0, unparsable: 0, rolled: 0, rejected: [], levels: {}, errors: [] };
 
   if (!ROLLUP_ONLY) {
     if (!hasApiKey()) throw new Error("ANTHROPIC_API_KEY is required.");
@@ -254,7 +254,15 @@ async function main() {
     } else {
       console.log(`${batch.length} products\n`);
       await pool(batch, CONCURRENCY, (b) =>
-        assess(b, stats).catch((e) => console.error(`  ${b.product.name}: ${e.message}`)));
+        assess(b, stats).catch((e) => {
+          stats.errors.push(`${b.product.name}: ${e.message}`);
+          console.error(`  ${b.product.name}: ${e.message}`);
+        }));
+      // Same guard as the evidence job: all-failed is a broken run, not an empty one.
+      if (stats.errors.length === batch.length && batch.length > 0) {
+        console.error(`\nAll ${batch.length} products failed. First error:\n  ${stats.errors[0]}`);
+        throw new Error(`assessment failed for every product in the batch (model: ${MODEL})`);
+      }
       console.log(`\n${stats.assessed} assessed, ${stats.declined} declined` +
         `${stats.unparsable ? `, ${stats.unparsable} unparsable` : ""}.`);
       if (Object.keys(stats.levels).length) {
