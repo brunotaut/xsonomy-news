@@ -126,11 +126,77 @@ export function buildProductIndex(products) {
   return { exact, compact };
 }
 
-// Try to match one company tag. Returns { id, reason } or null.
-export function matchCompany(tag, index) {
+// --- ambiguous-name guard ------------------------------------------------------
+
+// Short, single-token or ordinary-language names are the ones that produce false
+// links: the Ukrainian company "EOS" collected nine articles about Australia's EOS
+// Defence Systems, and "UP Innovations" collected one about Upstate Medical. The
+// extractor was not wrong in either case — it resolved the name that was printed.
+// Two different real companies simply share a short string, so no amount of string
+// cleverness can separate them. Such a tag must be corroborated by something other
+// than itself before it may link.
+const ORDINARY_WORDS = new Set([
+  "air", "sky", "fly", "wing", "drone", "drones", "eagle", "falcon", "hawk", "vector",
+  "crown", "arrow", "shield", "sentinel", "horizon", "atlas", "apex", "orbit", "nova",
+  "pulse", "swift", "titan", "vista", "zenith", "origin", "summit", "spectre", "spectra",
+  "verity", "rift", "unity", "echo", "delta", "alpha", "omega", "prime", "core", "edge",
+]);
+
+// true when the tag is too weak to stand on its own.
+export function isAmbiguousName(tag) {
+  const c = clean(tag);
+  if (!c) return true;
+  const tokens = c.split(" ");
+  const compact = c.replace(/ /g, "");
+  if (compact.length <= 6) return true;                 // EOS, MDSI, ADS, Orqa, Rift…
+  if (tokens.length === 1 && ORDINARY_WORDS.has(c)) return true;   // Sky, Vector, Verity…
+  // A longer single-token name such as "AirRobot" or "Wingtra" is distinctive
+  // enough to stand alone; only ordinary words and short strings are refused.
+  return false;
+}
+
+// Does the article corroborate this specific company, beyond the bare name?
+// context = { text, productTags, company } where company = { name, website, hq_country }.
+export function corroboration(context, company) {
+  const signals = [];
+  if (!context || !company) return signals;
+  const text = String(context.text || "").toLowerCase();
+  const host = String(company.website || "")
+    .replace(/^https?:\/\/(www\.)?/, "").split("/")[0].toLowerCase();
+  // The domain only corroborates when it says something the name does not. For
+  // "Sol.One" at sol.one the host IS the name, so finding it in the text proves
+  // nothing beyond the name already matched.
+  const nameKey = clean(company.name).replace(/ /g, "");
+  // Suppress only when the host IS the name with nothing added — "Sol.One" at
+  // sol.one. Where the host carries a TLD the name does not ("MDSI" at mdsi.dk),
+  // seeing the full address in the text does identify that specific company.
+  const hostFull = host.replace(/[^a-z0-9]/g, "");                 // sol.one → solone
+  const hostIsName = hostFull === nameKey;
+  if (host && !hostIsName && text.includes(host)) signals.push("domain");
+  for (const pt of context.productTags || []) {
+    if ((company.productNames || []).some((pn) => normProduct(pn) === normProduct(pt))) {
+      signals.push("product"); break;
+    }
+  }
+  if (company.hq_country && text.includes(String(company.hq_country).toLowerCase())) signals.push("country");
+  // When two real companies share a short name, the one the news is about is
+  // almost always the established one. "EOS" resolved to a Ukrainian directory
+  // listing with no website and no products, while the articles were about EOS
+  // Defence Systems; "DJI" or "APS" resolve to records with a site and a product
+  // catalogue. A well-established record may therefore carry a short name on its
+  // own; a bare directory record may not.
+  if (company.website && (company.productNames || []).length) signals.push("established");
+  const legal = /\b(gmbh|a\.?s\.?|aps|oyj?|s\.?r\.?o\.?|sp\.? z o\.?o\.?|ltd|limited|llc|b\.?v\.?|s\.?a\.?s?\.?|ab|plc)\b/i;
+  if (legal.test(context.rawTag || "")) signals.push("legal-suffix");
+  return signals;
+}
+
+// Try to match one company tag. Returns { id, reason, confidence } or null.
+// `context` is optional; without it an ambiguous name can only ever be LOW.
+export function matchCompany(tag, index, context = null) {
   const lo = tag.toLowerCase();
   const hit = index.exact.get(lo);
-  if (hit) return { id: hit, reason: "exact" };
+  if (hit) return gate(tag, { id: hit, reason: "exact" }, index, context);
 
   const norm = normCompany(tag);
   const cands = normKeyOk(tag, norm) ? index.normed.get(norm) : null;
@@ -139,7 +205,7 @@ export function matchCompany(tag, index) {
     // candidate whose raw name is closest to the raw tag.
     const best = cands.length === 1 ? cands[0]
       : cands.reduce((a, b) => (dice(lo, a.name.toLowerCase()) >= dice(lo, b.name.toLowerCase()) ? a : b));
-    return { id: best.id, reason: "normalized" };
+    return gate(tag, { id: best.id, reason: "normalized" }, index, context);
   }
 
   // Token-prefix: "General Atomics Aeronautical Systems" ⊃ "General Atomics".
@@ -154,7 +220,7 @@ export function matchCompany(tag, index) {
       if (!prefix || key.length > prefix.key.length) prefix = { key, id: arr[0].id };
     }
   }
-  if (prefix) return { id: prefix.id, reason: "prefix" };
+  if (prefix) return gate(tag, { id: prefix.id, reason: "prefix" }, index, context);
 
   // Conservative fuzzy: very high bigram similarity AND same first token
   // (catches spelling variants, not different companies).
@@ -164,13 +230,32 @@ export function matchCompany(tag, index) {
     const s = dice(norm, key);
     if (s >= 0.9 && (!best || s > best.s)) best = { s, id: arr[0].id };
   }
-  if (best) return { id: best.id, reason: `fuzzy:${best.s.toFixed(2)}` };
+  if (best) return gate(tag, { id: best.id, reason: `fuzzy:${best.s.toFixed(2)}` }, index, context);
   return null;
+}
+
+
+// Assign a confidence to a candidate match and refuse the dangerous ones.
+//   high   — the name is specific enough to identify the company by itself
+//   medium — ambiguous name, but the article corroborates it (domain, product,
+//            country, legal suffix)
+//   null   — ambiguous name with nothing but the string. Never linked.
+function gate(tag, m, index, context) {
+  if (!m) return null;
+  const specific = !isAmbiguousName(tag);
+  const strong = m.reason === "exact" || m.reason === "normalized";
+  if (specific && strong) return { ...m, confidence: "high" };
+  if (specific) return { ...m, confidence: "medium" };
+
+  const company = (index.companies || []).find((c) => c.id === m.id);
+  const signals = corroboration({ ...(context || {}), rawTag: tag }, company);
+  if (signals.length) return { ...m, confidence: "medium", reason: `${m.reason}+${signals.join("/")}` };
+  return null;   // ambiguous and uncorroborated — the EOS case
 }
 
 export function matchProduct(tag, index) {
   const hit = index.exact.get(tag.toLowerCase());
-  if (hit) return { id: hit, reason: "exact" };
+  if (hit) return gate(tag, { id: hit, reason: "exact" }, index, context);
   const c = index.compact.get(normProduct(tag));
   if (c) return { id: c, reason: "normalized" };
   return null;

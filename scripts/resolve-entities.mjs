@@ -32,7 +32,7 @@ import {
   deleteTagResolutions, stampEntitiesResolved,
 } from "./lib/supabase.mjs";
 import {
-  buildCompanyIndex, buildProductIndex, matchCompany, matchProduct,
+  buildCompanyIndex, buildProductIndex, matchCompany, matchProduct, isAmbiguousName,
   isBlocklisted, llmGate, slugify,
 } from "./lib/resolve.mjs";
 import { hasApiKey } from "./lib/analyze.mjs";
@@ -45,6 +45,9 @@ const MAX_ARTICLES = maxIx >= 0 ? Number(args[maxIx + 1]) : Number(process.env.R
 const LLM_GATE_MAX = Number(process.env.LLM_GATE_MAX || 40);   // new names per kind per run
 const MAX_SOURCE_URLS = 3;
 
+// article_companies.confidence is a real; mention_type carries the label.
+const CONF_SCORE = { high: 0.9, medium: 0.6, low: 0.3 };
+
 async function main() {
   await loadDotenv();
 
@@ -54,12 +57,20 @@ async function main() {
 
   // --- load catalogue + cache into memory (a few thousand small rows) --------
   const [companies, aliases, products, cache] = await Promise.all([
-    fetchAllRows("companies", "id,name,slug"),
+    fetchAllRows("companies", "id,name,slug,website,hq_country"),
     fetchAllRows("company_aliases", "company_id,alias"),
     fetchAllRows("products", "id,name,slug,company_id"),
     fetchAllRows("tag_resolutions", "id,kind,tag,decision,entity_id"),
   ]);
-  const companyIndex = buildCompanyIndex(companies, aliases);
+  const productsByCompany = new Map();
+  for (const p of products) {
+    if (!p.company_id) continue;
+    const arr = productsByCompany.get(p.company_id) || [];
+    arr.push(p.name); productsByCompany.set(p.company_id, arr);
+  }
+  const companiesWithProducts = companies.map(
+    (c) => ({ ...c, productNames: productsByCompany.get(c.id) || [] }));
+  const companyIndex = buildCompanyIndex(companiesWithProducts, aliases);
   const productIndex = buildProductIndex(products);
   const slugsTaken = new Set([...companies.map((c) => c.slug), ...products.map((p) => p.slug)]);
   const companyIds = new Set(companies.map((c) => c.id));
@@ -71,11 +82,17 @@ async function main() {
   for (const r of cache) {
     const alive = r.decision === "rejected" ||
       (r.kind === "company" ? companyIds.has(r.entity_id) : productIds.has(r.entity_id));
-    if (alive) cached[r.kind].set(String(r.tag).toLowerCase(), r);
+    // A cached *match* on an ambiguous company name is exactly how a deleted false
+    // link came back: the junction row was removed but the cache still said
+    // "eos" → that company, so the next run relinked it without re-deciding.
+    // Those entries are dropped so the ambiguity gate runs again every time.
+    const resurrects = r.kind === "company" && r.decision === "matched" && isAmbiguousName(r.tag);
+    if (alive && !resurrects) cached[r.kind].set(String(r.tag).toLowerCase(), r);
+    else if (!alive) staleCache.push(r.id);
     else staleCache.push(r.id);
   }
   if (staleCache.length) {
-    console.log(`Healing ${staleCache.length} stale cache entrie(s) (entity deleted).`);
+    console.log(`Healing ${staleCache.length} cache entrie(s) (entity deleted, or an ambiguous-name match that must be re-decided).`);
     if (!DRY) await deleteTagResolutions(staleCache);
   }
 
@@ -97,15 +114,27 @@ async function main() {
 
         const hit = cached[kind].get(lo);
         if (hit) {
-          decisions[kind].set(lo, hit.decision === "rejected" ? { rejected: true } : { entityId: hit.entity_id });
+          decisions[kind].set(lo, hit.decision === "rejected" ? { rejected: true } : { entityId: hit.entity_id, confidence: hit.confidence || "high" });
           stats.cache++;
           continue;
         }
-        const m = kind === "company" ? matchCompany(tag, companyIndex) : matchProduct(tag, productIndex);
+        const ctx = kind === "company"
+          ? { text: `${art.title || ""} ${art.summary || ""} ${art.url || ""}`,
+              productTags: art.products || [] }
+          : null;
+        const m = kind === "company" ? matchCompany(tag, companyIndex, ctx) : matchProduct(tag, productIndex);
         if (m) {
-          decisions[kind].set(lo, { entityId: m.id });
+          decisions[kind].set(lo, { entityId: m.id, confidence: m.confidence || "high" });
           newCacheRows.push({ kind, tag, decision: "matched", entity_id: m.id, reason: m.reason });
           stats.matched++;
+          continue;
+        }
+        // An ambiguous name the article does not corroborate is refused outright and
+        // the refusal is cached, so it is not retried against every future article.
+        if (kind === "company" && isAmbiguousName(tag)) {
+          decisions[kind].set(lo, { rejected: true });
+          newCacheRows.push({ kind, tag, decision: "rejected", entity_id: null, reason: "ambiguous-name-uncorroborated" });
+          stats.ambiguous = (stats.ambiguous || 0) + 1;
           continue;
         }
         if (kind === "company" && isBlocklisted(tag)) {
@@ -342,7 +371,10 @@ async function main() {
     for (const raw of art.companies || []) {
       const d = decisions.company.get(String(raw).trim().toLowerCase());
       if (!d) { complete = false; continue; }
-      if (d.entityId) acRows.push({ article_id: art.id, company_id: d.entityId });
+      if (d.entityId) acRows.push({
+        article_id: art.id, company_id: d.entityId,
+        confidence: CONF_SCORE[d.confidence || "high"], mention_type: d.confidence || "high",
+      });
     }
     for (const raw of art.products || []) {
       const d = decisions.product.get(String(raw).trim().toLowerCase());
