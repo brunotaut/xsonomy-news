@@ -6,10 +6,10 @@
     "v2": 358
   },
   "current_batch": 3,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-03.csv",
-  "expected_output": "research-agent/researched/batch-03-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-03-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-03-reconciliation.csv",
   "human_decision_required": false,
   "blocker": null,
   "last_completed_batch": 2,
@@ -30,7 +30,8 @@
     "ukraine_cases": 5,
     "classified_but_unverified": 6,
     "unclassified": 34,
-    "recycled_from_earlier_batches": 0
+    "recycled_from_earlier_batches": 0,
+    "research_completed": true
   },
-  "notes": "Batch 02 reconciliation is complete: verified 389 -> 418 (+29), European-scope universe 1000 -> 997 after three out-of-scope country corrections. Results are in reconciled/batch-02-reconciliation.csv and reports/batch-02-reconciliation.md. Batch 03 is the regenerated queue from the post-Batch-02 database. Two cautions for this batch: P1 is now empty, so expect a lower hit rate than Batches 01 and 02; and only 6 classified-but-unverified cases are included because 49 of the 50 remaining are Ukrainian directory-only records, which are held separately in queue/ukraine-directory-verification-queue.csv for a dedicated single-country pass. Blickfeld and NL Acoustics were researched in both Batch 01 and Batch 02 with the same conclusion and are deliberately not recycled."
+  "notes": "ChatGPT completed external research for all 40 Batch 03 rows and committed research-agent/researched/batch-03-researched.csv. Claude should now reconcile against the live DB using research-agent/instructions/CLAUDE_RECONCILIATION.md, preserve V1=273 and V2=358, then regenerate the queue and hand Batch 04 back to ChatGPT. Important Batch 03 corrections include multiple maritime/ground/customer false positives, Bluebird Ukraine entity resolution to BlueBird Tech, Frost Unmanned country correction to Sweden, Vatn Systems US/out-of-scope, RSI Europe Lithuania confirmed, Thor Industries/Odin relationship and Shpak ownership correction, and product-domain corrections for ACUA, ANGATEC, SIREHNA, RENK and others."
 }
