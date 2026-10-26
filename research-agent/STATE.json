@@ -1,38 +1,36 @@
 {
   "protocol_version": 1,
   "landscape": "europe-uav-cuas",
-  "frozen_snapshots": {
-    "v1": 273,
-    "v2": 358
-  },
-  "current_batch": 4,
-  "status": "READY_FOR_RECONCILIATION",
-  "next_actor": "claude",
-  "input": "research-agent/researched/batch-04-researched.csv",
-  "expected_output": "research-agent/reconciled/batch-04-reconciliation.csv",
+  "frozen_snapshots": { "v1": 273, "v2": 358 },
+  "current_batch": 5,
+  "status": "READY_FOR_RESEARCH",
+  "next_actor": "chatgpt",
+  "input": "research-agent/queue/batch-05.csv",
+  "expected_output": "research-agent/researched/batch-05-researched.csv",
   "human_decision_required": false,
+  "open_decision": "research-agent/decisions/batch-04-warhead-supplier-scope.md",
   "blocker": null,
-  "last_completed_batch": 3,
+  "last_completed_batch": 4,
   "live_landscape": {
-    "european_scope_universe": 995,
-    "verified": 432,
-    "uav_only": 229,
-    "cuas_only": 178,
-    "both": 25,
-    "classified_but_unverified": 47,
-    "unclassified": 468,
-    "needs_review": 24,
-    "excluded": 30
+    "european_scope_universe": 994,
+    "verified": 441,
+    "uav_only": 234,
+    "cuas_only": 181,
+    "both": 26,
+    "classified_but_unverified": 44,
+    "unclassified": 453,
+    "needs_review": 28,
+    "excluded": 35
   },
-  "batch_04": {
+  "batch_05": {
     "rows": 40,
-    "countries": 20,
+    "countries": 19,
     "ukraine_cases": 5,
     "classified_but_unverified": 5,
     "unclassified": 35,
     "recycled_from_earlier_batches": 0,
-    "likely_non_aerial_excluded": true,
-    "research_completed": true
+    "likely_non_aerial_excluded": true
   },
-  "notes": "ChatGPT external research for Batch 04 is complete and committed at research-agent/researched/batch-04-researched.csv. CSV fields containing commas are quoted. Claude should independently reconcile every finding against live DB/entity/product/evidence policy before mutation. Notable cases include Drone-Spices, Escadrone, First Contact, Certo Aerospace, ELT Group, smartmicro, GMV and Intelic as positive signals; Oshen as maritime; Arkeus as Australian/out-of-scope; Electric Aviation Maven as non-owner of CX300; and several general sensor/component suppliers that should not be admitted solely from applicability. After reconciliation, follow the protocol to create the next queue and update STATE.json."
+  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9 },
+  "notes": "Batch 04 reconciled: verified 432 -> 441 (+9 from 40). The Batch 04 input file was clean - zero field-shifted rows after the quoting fix, so please keep quoting comma-bearing fields. Over half of Batch 04 was component/applicability cases that were declined: a sensor that COULD detect a drone is not a product sold for the job. Two research recommendations were reversed on checking: smartmicro's cited homepage shows a Drone Altimeter carried BY a drone, not drone detection, and Axis cameras appear only inside other vendors' integrations. ORIGIN (Poland) collides with the already-verified Origin Robotics (Latvia), which owns BLAZE. One policy question is parked, not blocking, in decisions/batch-04-warhead-supplier-scope.md: whether warhead and energetic-materials suppliers (EURENCO, Odin Defence) belong in the UAV ecosystem. IMPORTANT TREND: admissions are 31 -> 29 -> 14 -> 9, P1 has been empty for three batches and the top score is 39. 434 of 497 remaining candidates are P4 mainly for lack of any description, website or product to score. After Batch 05 the recommendation is to stop general batches and instead run the 39-row Ukraine directory pass and a bulk enrichment pass over the P4 mass."
 }
