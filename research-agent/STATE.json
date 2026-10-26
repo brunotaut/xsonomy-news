@@ -5,33 +5,34 @@
     "v1": 273,
     "v2": 358
   },
-  "current_batch": 3,
-  "status": "READY_FOR_RECONCILIATION",
-  "next_actor": "claude",
-  "input": "research-agent/researched/batch-03-researched.csv",
-  "expected_output": "research-agent/reconciled/batch-03-reconciliation.csv",
+  "current_batch": 4,
+  "status": "READY_FOR_RESEARCH",
+  "next_actor": "chatgpt",
+  "input": "research-agent/queue/batch-04.csv",
+  "expected_output": "research-agent/researched/batch-04-researched.csv",
   "human_decision_required": false,
   "blocker": null,
-  "last_completed_batch": 2,
+  "last_completed_batch": 3,
   "live_landscape": {
-    "european_scope_universe": 997,
-    "verified": 418,
-    "uav_only": 221,
-    "cuas_only": 175,
-    "both": 22,
-    "classified_but_unverified": 50,
-    "unclassified": 493,
-    "needs_review": 21,
-    "excluded": 20
+    "european_scope_universe": 995,
+    "verified": 432,
+    "uav_only": 229,
+    "cuas_only": 178,
+    "both": 25,
+    "classified_but_unverified": 47,
+    "unclassified": 468,
+    "needs_review": 24,
+    "excluded": 30
   },
-  "batch_03": {
+  "batch_04": {
     "rows": 40,
-    "countries": 14,
+    "countries": 20,
     "ukraine_cases": 5,
-    "classified_but_unverified": 6,
-    "unclassified": 34,
+    "classified_but_unverified": 5,
+    "unclassified": 35,
     "recycled_from_earlier_batches": 0,
-    "research_completed": true
+    "likely_non_aerial_excluded": true
   },
-  "notes": "ChatGPT completed external research for all 40 Batch 03 rows and committed research-agent/researched/batch-03-researched.csv. Claude should now reconcile against the live DB using research-agent/instructions/CLAUDE_RECONCILIATION.md, preserve V1=273 and V2=358, then regenerate the queue and hand Batch 04 back to ChatGPT. Important Batch 03 corrections include multiple maritime/ground/customer false positives, Bluebird Ukraine entity resolution to BlueBird Tech, Frost Unmanned country correction to Sweden, Vatn Systems US/out-of-scope, RSI Europe Lithuania confirmed, Thor Industries/Odin relationship and Shpak ownership correction, and product-domain corrections for ACUA, ANGATEC, SIREHNA, RENK and others."
+  "input_format_note": "Batch 03's researched CSV had 19 field-shifted rows caused by unescaped commas inside research_summary and research_notes, which attributed the wrong evidence URL to several companies. Rows were repaired by anchoring on the http field. Please quote any CSV field containing a comma in batch-04-researched.csv.",
+  "notes": "Batch 03 reconciled: verified 418 -> 432 (+14 from 40 findings). Results in reconciled/batch-03-reconciliation.csv and reports/batch-03-reconciliation.md. Batch 03 was mostly rejection, which was correct: 14 product records were ground, maritime, crewed or component systems catalogued as UAV, and nine companies were excluded on physical domain or supplier/customer role. Signal is thinning: P1 has been empty for two batches and the top score is now 39, down from 87 at Batch 01. All 47 remaining classified-but-unverified records are Ukrainian directory-only and are held in queue/ukraine-directory-verification-queue.csv (42 rows). Recommended after Batch 04: run the Ukraine directory pass as its own batch, and consider a bulk enrichment pass, since 444 of the 515 remaining candidates are P4 mainly for lack of any description, website or product to score."
 }
