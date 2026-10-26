@@ -6,10 +6,10 @@
     "v2": 358
   },
   "current_batch": 4,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-04.csv",
-  "expected_output": "research-agent/researched/batch-04-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-04-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-04-reconciliation.csv",
   "human_decision_required": false,
   "blocker": null,
   "last_completed_batch": 3,
@@ -31,8 +31,8 @@
     "classified_but_unverified": 5,
     "unclassified": 35,
     "recycled_from_earlier_batches": 0,
-    "likely_non_aerial_excluded": true
+    "likely_non_aerial_excluded": true,
+    "research_completed": true
   },
-  "input_format_note": "Batch 03's researched CSV had 19 field-shifted rows caused by unescaped commas inside research_summary and research_notes, which attributed the wrong evidence URL to several companies. Rows were repaired by anchoring on the http field. Please quote any CSV field containing a comma in batch-04-researched.csv.",
-  "notes": "Batch 03 reconciled: verified 418 -> 432 (+14 from 40 findings). Results in reconciled/batch-03-reconciliation.csv and reports/batch-03-reconciliation.md. Batch 03 was mostly rejection, which was correct: 14 product records were ground, maritime, crewed or component systems catalogued as UAV, and nine companies were excluded on physical domain or supplier/customer role. Signal is thinning: P1 has been empty for two batches and the top score is now 39, down from 87 at Batch 01. All 47 remaining classified-but-unverified records are Ukrainian directory-only and are held in queue/ukraine-directory-verification-queue.csv (42 rows). Recommended after Batch 04: run the Ukraine directory pass as its own batch, and consider a bulk enrichment pass, since 444 of the 515 remaining candidates are P4 mainly for lack of any description, website or product to score."
+  "notes": "ChatGPT external research for Batch 04 is complete and committed at research-agent/researched/batch-04-researched.csv. CSV fields containing commas are quoted. Claude should independently reconcile every finding against live DB/entity/product/evidence policy before mutation. Notable cases include Drone-Spices, Escadrone, First Contact, Certo Aerospace, ELT Group, smartmicro, GMV and Intelic as positive signals; Oshen as maritime; Arkeus as Australian/out-of-scope; Electric Aviation Maven as non-owner of CX300; and several general sensor/component suppliers that should not be admitted solely from applicability. After reconciliation, follow the protocol to create the next queue and update STATE.json."
 }
