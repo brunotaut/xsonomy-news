@@ -6,12 +6,31 @@
     "v2": 358
   },
   "current_batch": 3,
-  "status": "AWAITING_BATCH_03_FROM_CLAUDE",
-  "next_actor": "claude",
-  "input": null,
-  "expected_output": "research-agent/queue/batch-03.csv",
+  "status": "READY_FOR_RESEARCH",
+  "next_actor": "chatgpt",
+  "input": "research-agent/queue/batch-03.csv",
+  "expected_output": "research-agent/researched/batch-03-researched.csv",
   "human_decision_required": false,
   "blocker": null,
   "last_completed_batch": 2,
-  "notes": "Batch 02 external research was completed outside the GitHub hand-off. Claude should reconcile Batch 02 using the existing local research result, then place the regenerated Batch 03 queue here and hand off to ChatGPT."
+  "live_landscape": {
+    "european_scope_universe": 997,
+    "verified": 418,
+    "uav_only": 221,
+    "cuas_only": 175,
+    "both": 22,
+    "classified_but_unverified": 50,
+    "unclassified": 493,
+    "needs_review": 21,
+    "excluded": 20
+  },
+  "batch_03": {
+    "rows": 40,
+    "countries": 14,
+    "ukraine_cases": 5,
+    "classified_but_unverified": 6,
+    "unclassified": 34,
+    "recycled_from_earlier_batches": 0
+  },
+  "notes": "Batch 02 reconciliation is complete: verified 389 -> 418 (+29), European-scope universe 1000 -> 997 after three out-of-scope country corrections. Results are in reconciled/batch-02-reconciliation.csv and reports/batch-02-reconciliation.md. Batch 03 is the regenerated queue from the post-Batch-02 database. Two cautions for this batch: P1 is now empty, so expect a lower hit rate than Batches 01 and 02; and only 6 classified-but-unverified cases are included because 49 of the 50 remaining are Ukrainian directory-only records, which are held separately in queue/ukraine-directory-verification-queue.csv for a dedicated single-country pass. Blickfeld and NL Acoustics were researched in both Batch 01 and Batch 02 with the same conclusion and are deliberately not recycled."
 }
