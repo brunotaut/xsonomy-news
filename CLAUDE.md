@@ -30,6 +30,17 @@ The **data pipeline + news site** for xSonomy (UAV / counter-UAS intelligence). 
 - `db/schema.sql` — **incomplete**: covers `articles`, `tag_resolutions`, `investors`, `institutions` only. `companies`, `products`, junctions, `sectors`, `subscribers` exist in the DB but are not in the repo yet (see STATUS task #1).
 - `src/` — frontend template/CSS/JS. `public/` is a build artefact; never hand-edit.
 
+## ChatGPT ↔ Claude research hand-off
+`research-agent/` is the shared hand-off layer for European UAV & Counter-UAS landscape research.
+
+At the start of any landscape research/reconciliation task, read `research-agent/STATE.json` and `research-agent/README.md`.
+- If `next_actor` is `claude`, follow `research-agent/instructions/CLAUDE_RECONCILIATION.md` and complete the indicated hand-off.
+- If `next_actor` is `chatgpt`, do not reconcile that batch; ChatGPT owns the external research step.
+- If `next_actor` is `human`, stop and surface the decision note to Nazar.
+
+`STATE.json` is authoritative for which batch/file is next. Do not guess from filenames.
+Frozen landscape snapshots V1 (273) and V2 (358) remain immutable unless Nazar explicitly authorises a new snapshot operation.
+
 ## Env / secrets (GitHub → Settings → Secrets and variables)
 Secrets: `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_KEY`, `ANTHROPIC_API_KEY`, `RESEND_API_KEY`.
 Variables: `SITE_URL`, `HOME_URL`, `NEWS_CNAME`, `DIGEST_FROM`, `DIGEST_UNSUBSCRIBE`.
