@@ -3,10 +3,10 @@
   "landscape": "europe-uav-cuas",
   "frozen_snapshots": { "v1": 273, "v2": 358 },
   "current_batch": 8,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-08.csv",
-  "expected_output": "research-agent/researched/batch-08-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-08-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-08-reconciliation.csv",
   "batch_type": "enrichment_only",
   "human_decision_required": false,
   "open_decision": "research-agent/decisions/batch-04-warhead-supplier-scope.md",
@@ -34,31 +34,27 @@
     "admissions_from_verify_half": 5,
     "admissions_from_enrich_half": 10,
     "products_created": 14,
-    "taxonomy_rows_added": 23,
-    "corrections_claude_made_against_research": [
-      "Center of Unmanned Technologies merged into the already-verified General Cherry rather than admitted as new",
-      "PGZ and Polish Armaments Group both merged into the already-verified Polska Grupa Zbrojeniowa",
-      "Heavy Shot merged into Gurzuf Defence as a product line",
-      "TerMit product reassigned from Quantum Systems to Tencore and recategorised from Counter-UAS to Other",
-      "Motor-G recategorised from Effector to component; SPYS deliberately not created for any company",
-      "Fincantieri declined: EU Drone Alliance membership is not a capability and the group is already represented via IDS",
-      "Meta Bureau held for review: AUSA exhibitor self-description only, same standard as the Batch 06 directory listings"
-    ]
+    "taxonomy_rows_added": 23
   },
   "batch_08": {
     "rows": 40,
     "verify_rows": 0,
     "enrich_rows": 40,
-    "why": "No never-researched candidate scores above the P4 floor any more. 342 remain unresearched and 214 of those have no description, website or product on file. Verification batches have nothing left to verify; enrichment is the only productive work."
+    "research_completed": true,
+    "research_output": "research-agent/researched/batch-08-researched.csv",
+    "research_note": "External enrichment completed for all 40 rows. Claude must independently reconcile entity identity, country, products, taxonomy and eligibility. Several rows are clear non-aerial/noise records; several strong UAV candidates were found. TDW remains tied to the open warhead-supplier scope decision."
   },
   "remaining_queue_profile": {
     "backlog": 419,
     "never_researched": 342,
-    "p1": 0, "p2": 13, "p3": 7, "p4": 399,
+    "p1": 0,
+    "p2": 13,
+    "p3": 7,
+    "p4": 399,
     "never_researched_above_p4_floor": 0,
     "never_researched_with_no_data": 214
   },
   "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15 },
-  "open_question_for_human": "68 companies with landscape status 'excluded' or 'needs_review' have publication_status 'live' and are therefore on xsonomy.com, including T-Mobile Czech Republic, MSubs (submarines) and Vantor (US satellites). Verification does not change publication and Claude has changed none. Whether to unpublish them is Nazar's decision; see reports/batch-07-reconciliation.md.",
-  "notes": "Batch 07 was the first mixed VERIFY/ENRICH batch and the enrichment half outperformed the verification half (10 admissions vs 5, plus 3 duplicate resolutions). Three rows returned as new companies were in fact duplicates of already-verified records; importing the verdicts unchecked would have created phantom companies. Batch 08 is enrichment only. ENRICH field spec is in instructions/CHATGPT_RESEARCH.md. Please quote commas inside free-text CSV fields and do not add an extra empty column between research_products and researched_country."
+  "open_question_for_human": "68 companies with landscape status 'excluded' or 'needs_review' have publication_status 'live' and are therefore on xsonomy.com, including T-Mobile Czech Republic, MSubs and Vantor. Verification does not change publication. Whether to unpublish them is Nazar's decision; see reports/batch-07-reconciliation.md.",
+  "notes": "Batch 08 enrichment research complete and handed to Claude. Research found clear likely in-scope records including Cyberhawk, Lendurai, Dares Technology, Grupo Oesia, WZL-2, AndroMach, Aviation Design, Novadem and Airspection; clear non-aerial/noise records include DNV Cyber, WASS, Odense Robotics, European Air Transport Leipzig, GABLER, TKMS, LPP Holding, Couach, Dedienne Aerospace, Remazel, SEAir and WSense. Potential country corrections: Next Geosolutions France->Italy and WSense France->Italy. Entity-resolution holds include Dronery, Tulip Tech, CiS, Rheinmetall Kraken, Defcomm, Telson and Unmanned Technologies. Do not blind-import these findings."
 }
