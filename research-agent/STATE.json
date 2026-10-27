@@ -3,10 +3,10 @@
   "landscape": "europe-uav-cuas",
   "frozen_snapshots": { "v1": 273, "v2": 358 },
   "current_batch": 6,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-06-ukraine-directory.csv",
-  "expected_output": "research-agent/researched/batch-06-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-06-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-06-reconciliation.csv",
   "batch_type": "dedicated_single_country_pass",
   "human_decision_required": false,
   "open_decision": "research-agent/decisions/batch-04-warhead-supplier-scope.md",
@@ -28,9 +28,9 @@
     "type": "Ukraine directory verification pass",
     "country": "Ukraine",
     "all_classified_but_unverified": true,
-    "note": "43 rather than 40 because this is the entire remaining Ukrainian directory cluster; trimming to 40 would strand three."
+    "research_completed": true
   },
   "remaining_queue_profile": { "p1": 0, "p2": 45, "p3": 16, "p4": 419, "top_score": 39 },
   "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7 },
-  "notes": "Batch 05 reconciled: verified 441 -> 448 (+7 from 40). Input file was clean again. Three research claims were NOT applied and are explained in reports/batch-05-reconciliation.md: Frankenburg Technologies was already verified and is Estonian, not UK, and its Mark I is an interceptor MISSILE so the existing kinetic leaf stands rather than an interceptor-UAV leaf; Swarmer's 'Brave1' product was deleted because Brave1 is the Ukrainian government cluster; and Aura Aero's ENGINeUS was reassigned to Safran Electrical & Power. Manna existed four times and the three European records were merged. Component suppliers were admitted only where the maker explicitly markets for UAV use (Intelligent Energy, JetCat, Cubert, Specim) and declined on mere applicability (Thermoteknix, VIGO, Brolis, Valeo and others); Rotax vs JetCat is the worked example of that line. BATCH 06 IS NOT A GENERAL BATCH: the general pool is exhausted (P1 empty for four batches, top score 39, 419 of 480 candidates are P4 for lack of any description, website or product). Batch 06 is the dedicated Ukraine directory pass - the whole remaining 43-record cluster, each needing one registry lookup. After Batch 06 the recommendation is to stop research batches and run a bulk enrichment pass over the P4 mass instead."
+  "notes": "ChatGPT completed the dedicated 43-record Ukraine directory verification pass. The researched CSV is research-agent/researched/batch-06-researched.csv. Strong positive evidence was found for Global Mark, Huless, Ironflight UA, Kray Technologies, Pegasus Arms, SKYRIPER, Tactical Technologies, Tenebris, Triada Robotics, Tritel Electronics, Twist Robotics, Ukropter, UMO Ukraine, Vidar Systems and WARMAX, among others. Important corrections include ComBat Vision as coordination software rather than UAV maker; Iron Cluster as an association; Octopus Project and Pastka as product/program records rather than companies; TarGun as ground-only; TargetAI as Kazakhstan; VisionMap as Israel; Varangians as Swedish investor; VARDIAN as consultancy; Offset Labs as UK; Terminal Autonomy as US legal entity with Ukrainian manufacturing. Several records remain directory-only and should not be verified without stronger evidence. Claude should independently reconcile all findings against live DB/entity/product/evidence policy. After Batch 06, do not automatically create another general 40-row research batch; follow the prior recommendation to move to bulk enrichment of the P4 mass unless a targeted follow-up is justified."
 }
