@@ -2,59 +2,64 @@
   "protocol_version": 1,
   "landscape": "europe-uav-cuas",
   "frozen_snapshots": { "v1": 273, "v2": 358 },
-  "current_batch": 8,
-  "status": "READY_FOR_RECONCILIATION",
-  "next_actor": "claude",
-  "input": "research-agent/researched/batch-08-researched.csv",
-  "expected_output": "research-agent/reconciled/batch-08-reconciliation.csv",
+  "current_batch": 9,
+  "status": "READY_FOR_RESEARCH",
+  "next_actor": "chatgpt",
+  "input": "research-agent/queue/batch-09.csv",
+  "expected_output": "research-agent/researched/batch-09-researched.csv",
   "batch_type": "enrichment_only",
   "human_decision_required": false,
   "open_decision": "research-agent/decisions/batch-04-warhead-supplier-scope.md",
   "blocker": null,
-  "last_completed_batch": 7,
+  "last_completed_batch": 8,
   "live_landscape": {
     "rows": 994,
-    "verified": 478,
-    "uav_only": 257,
+    "verified": 485,
+    "uav_only": 264,
     "cuas_only": 186,
     "both": 35,
-    "candidates": 419,
-    "needs_review": 36,
-    "excluded": 61
-  },
-  "batch_07": {
-    "rows": 40,
-    "verify_rows": 11,
-    "enrich_rows": 29,
-    "admitted": 15,
-    "merged_into_existing": 5,
-    "excluded": 11,
-    "held_for_review": 1,
-    "declined": 8,
-    "admissions_from_verify_half": 5,
-    "admissions_from_enrich_half": 10,
-    "products_created": 14,
-    "taxonomy_rows_added": 23
+    "candidates": 385,
+    "needs_review": 47,
+    "excluded": 77
   },
   "batch_08": {
     "rows": 40,
+    "type": "pure enrichment",
+    "admitted": 7,
+    "excluded": 16,
+    "held_for_review": 11,
+    "declined": 6,
+    "descriptions_written": 33,
+    "websites_written": 30,
+    "products_created": 3,
+    "taxonomy_rows_added": 9,
+    "country_corrections": ["Next Geosolutions France -> Italy", "WSense France -> Italy"],
+    "corrections_claude_made_against_research": [
+      "Grupo Oesia declined: its UAV capability is UAV Navigation, which is ALREADY VERIFIED as its own record; admitting the parent would double count. Parent relationship recorded instead.",
+      "Skyports Infrastructure excluded: the already-verified Skyports record covers drone services; this is the vertiport arm. Relationship recorded.",
+      "MBDA Italia declined: MBDA group is already verified and no Italy-specific UAV product was established.",
+      "FLANQ declined: its confirmed unmanned product (Ranger) is a surface vessel; ORKA UAS is only a portfolio listing.",
+      "TDW held at the conservative default and added to the open warhead-supplier decision rather than admitted."
+    ]
+  },
+  "batch_09": {
+    "rows": 40,
     "verify_rows": 0,
     "enrich_rows": 40,
-    "research_completed": true,
-    "research_output": "research-agent/researched/batch-08-researched.csv",
-    "research_note": "External enrichment completed for all 40 rows. Claude must independently reconcile entity identity, country, products, taxonomy and eligibility. Several rows are clear non-aerial/noise records; several strong UAV candidates were found. TDW remains tied to the open warhead-supplier scope decision."
+    "instruction_added": "Say UNRESOLVED rather than guessing when the legal entity cannot be identified."
   },
   "remaining_queue_profile": {
-    "backlog": 419,
-    "never_researched": 342,
-    "p1": 0,
-    "p2": 13,
-    "p3": 7,
-    "p4": 399,
+    "backlog": 385,
+    "never_researched": 302,
+    "p1": 0, "p2": 3, "p3": 19, "p4": 363,
     "never_researched_above_p4_floor": 0,
-    "never_researched_with_no_data": 214
+    "backlog_with_no_data": 164,
+    "backlog_with_no_data_before_batch_08": 214
   },
-  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15 },
-  "open_question_for_human": "68 companies with landscape status 'excluded' or 'needs_review' have publication_status 'live' and are therefore on xsonomy.com, including T-Mobile Czech Republic, MSubs and Vantor. Verification does not change publication. Whether to unpublish them is Nazar's decision; see reports/batch-07-reconciliation.md.",
-  "notes": "Batch 08 enrichment research complete and handed to Claude. Research found clear likely in-scope records including Cyberhawk, Lendurai, Dares Technology, Grupo Oesia, WZL-2, AndroMach, Aviation Design, Novadem and Airspection; clear non-aerial/noise records include DNV Cyber, WASS, Odense Robotics, European Air Transport Leipzig, GABLER, TKMS, LPP Holding, Couach, Dedienne Aerospace, Remazel, SEAir and WSense. Potential country corrections: Next Geosolutions France->Italy and WSense France->Italy. Entity-resolution holds include Dronery, Tulip Tech, CiS, Rheinmetall Kraken, Defcomm, Telson and Unmanned Technologies. Do not blind-import these findings."
+  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7 },
+  "open_questions_for_human": [
+    "Warhead-supplier scope: now three companies (EURENCO, Odin Defence, TDW). TDW is the strongest case because its Gambit warhead is a delivered, named, drone-specific product. See decisions/batch-04-warhead-supplier-scope.md.",
+    "95 companies with landscape status 'excluded' or 'needs_review' have publication_status 'live' and are therefore on xsonomy.com, including LPP Holding (a fashion retailer). Up from 68 after Batch 07. Claude has changed no publication status; this is Nazar's decision."
+  ],
+  "notes": "First pure enrichment batch. It filled 33 descriptions and 30 websites into previously blank records and cut the no-data backlog from 214 to 164. Yield was 7 admissions and 16 clean exclusions, including a fashion retailer that had been sitting in the UAV backlog. Eleven rows were held for review: six are entity-resolution failures where the researcher correctly refused to guess, and five are genuine judgement calls (WITU as a state research institute, AndroMach's suborbital vehicle class, Asfat, Dynamit Nobel Defence, Rheinmetall Kraken as a likely composite record). Keep quoting commas in free-text fields; Batch 08's CSV was clean."
 }
