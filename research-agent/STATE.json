@@ -3,10 +3,10 @@
   "landscape": "europe-uav-cuas",
   "frozen_snapshots": { "v1": 273, "v2": 358 },
   "current_batch": 10,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-10.csv",
-  "expected_output": "research-agent/researched/batch-10-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-10-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-10-reconciliation.csv",
   "batch_type": "enrichment_only",
   "human_decision_required": false,
   "open_decision": "research-agent/decisions/batch-04-warhead-supplier-scope.md",
@@ -33,21 +33,14 @@
     "descriptions_written": 33,
     "products_created": 7,
     "taxonomy_rows_added": 13,
-    "country_corrections": ["Wayland Autonomy UK -> United States", "Brasa Defence Systems Finland -> Latvia", "Millog Latvia -> Finland", "Sentinel R&D Finland -> United States", "Componentas Portugal -> Czech Republic", "Ukrainian Defense Drones Ukraine -> United States"],
-    "corrections_claude_made_against_research": [
-      "Norma Precision merged into Norma, which was ALREADY VERIFIED under cuas-def-kinetic with the Norma AD-LER anti-drone cartridge. Not a new warhead-policy case.",
-      "UDD, UDD Tech Corp and Ukrainian Defense Drones consolidated into one US-registered record and excluded.",
-      "Unmanned Airspace excluded: it is the trade publication this project cites as an evidence source, not a company.",
-      "Eyeonix declined: the AV Eagle JV is described as intended, and a planned JV is not a present capability.",
-      "iCOMAT declined for consistency with Alloyed in Batch 08: a manufacturing supplier with no UAV-specific product.",
-      "DroneFlight held rather than admitted: operators have been admitted on their own sites, and this one has only a trade-press article about plans."
-    ]
+    "country_corrections": ["Wayland Autonomy UK -> United States", "Brasa Defence Systems Finland -> Latvia", "Millog Latvia -> Finland", "Sentinel R&D Finland -> United States", "Componentas Portugal -> Czech Republic", "Ukrainian Defense Drones Ukraine -> United States"]
   },
   "batch_10": {
     "rows": 40,
     "verify_rows": 0,
     "enrich_rows": 40,
-    "instruction_added": "Ask whether the record is actually a company, or a publication, an industry cluster, a government programme, a military unit or a product line. Five of the last eighty records were one of those."
+    "research_completed": true,
+    "research_notes": "ChatGPT externally researched all 40 rows with emphasis on legal/entity type and primary sources. Strong in-scope findings include Hyllus Systems, Orbion Technologies, Skeleton Technologies, Terra Inspectioneering, ELSON Space, AIViewgroup, Dronus, Swisscom Broadcast, SwissP Defence, Tekne, Unmanned4You, Venetz Aerospace, BLACKTEQ and Diehl Aerospace. Several entity/country corrections and parent/subsidiary duplicate risks are flagged. Claude must independently reconcile all findings before DB writes."
   },
   "remaining_queue_profile": {
     "backlog": 348,
@@ -59,8 +52,8 @@
   },
   "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7, "batch_09": 8 },
   "open_questions_for_human": [
-    "Warhead scope, now narrowed: ammunition made to shoot drones down is ALREADY in scope by precedent (Norma and Benelli are both verified under cuas-def-kinetic). The only open question is whether warheads that ARM drones count - EURENCO, Odin Defence, TDW. See decisions/batch-04-warhead-supplier-scope.md.",
-    "122 companies with landscape status 'excluded' or 'needs_review' have publication_status 'live' and are on xsonomy.com, up from 95 after Batch 08. The public catalogue currently lists a fashion retailer, a trade magazine, a submarine builder and an aircraft lessor as UAV companies. Claude has changed no publication status; this is Nazar's decision."
+    "Warhead scope, now narrowed: ammunition made to shoot drones down is already in scope by precedent. The open question is whether warheads that arm drones count - EURENCO, Odin Defence, TDW.",
+    "122 companies with landscape status excluded or needs_review have publication_status live and are on xsonomy.com. Claude has changed no publication status; this remains Nazar's decision."
   ],
-  "notes": "Second enrichment batch. The no-data backlog is down to 128 from 214 three batches ago, and the exclusion rate is rising as enrichment reaches records nobody ever checked. The standout finding is that Unmanned Airspace, the trade publication cited as an evidence source throughout this landscape, had been entered as a UAV company; Batch 10's queue now asks explicitly whether each record is a company at all. CSV hygiene was perfect this batch - keep it."
+  "notes": "Batch 10 research is complete and ready for Claude reconciliation. Research file preserves the queue schema plus enrichment fields. Unknown legal entities are marked UNKNOWN/UNRESOLVED rather than guessed."
 }
