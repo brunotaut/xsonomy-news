@@ -3,10 +3,10 @@
   "landscape": "europe-uav-cuas",
   "frozen_snapshots": { "v1": 273, "v2": 358 },
   "current_batch": 9,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-09.csv",
-  "expected_output": "research-agent/researched/batch-09-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-09-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-09-reconciliation.csv",
   "batch_type": "enrichment_only",
   "human_decision_required": false,
   "open_decision": "research-agent/decisions/batch-04-warhead-supplier-scope.md",
@@ -22,31 +22,13 @@
     "needs_review": 47,
     "excluded": 77
   },
-  "batch_08": {
-    "rows": 40,
-    "type": "pure enrichment",
-    "admitted": 7,
-    "excluded": 16,
-    "held_for_review": 11,
-    "declined": 6,
-    "descriptions_written": 33,
-    "websites_written": 30,
-    "products_created": 3,
-    "taxonomy_rows_added": 9,
-    "country_corrections": ["Next Geosolutions France -> Italy", "WSense France -> Italy"],
-    "corrections_claude_made_against_research": [
-      "Grupo Oesia declined: its UAV capability is UAV Navigation, which is ALREADY VERIFIED as its own record; admitting the parent would double count. Parent relationship recorded instead.",
-      "Skyports Infrastructure excluded: the already-verified Skyports record covers drone services; this is the vertiport arm. Relationship recorded.",
-      "MBDA Italia declined: MBDA group is already verified and no Italy-specific UAV product was established.",
-      "FLANQ declined: its confirmed unmanned product (Ranger) is a surface vessel; ORKA UAS is only a portfolio listing.",
-      "TDW held at the conservative default and added to the open warhead-supplier decision rather than admitted."
-    ]
-  },
   "batch_09": {
     "rows": 40,
     "verify_rows": 0,
     "enrich_rows": 40,
-    "instruction_added": "Say UNRESOLVED rather than guessing when the legal entity cannot be identified."
+    "research_completed": true,
+    "research_output": "research-agent/researched/batch-09-researched.csv",
+    "notes": "ChatGPT completed external enrichment for all 40 rows. Conservative UNRESOLVED used for ambiguous legal entities. Key likely in-scope findings include Hybrid Drones, WholeShip, Buntar Aerospace, Kolarms, 4iG/4iG SDT, Eyeonix, LV-Teh, NEWT21, DroneFlight Romania, Neramo Distribution, CTech and potentially Norma Precision subject to the open component/warhead-supplier policy. Multiple country/entity corrections and ground/maritime-only exclusions are flagged for Claude reconciliation."
   },
   "remaining_queue_profile": {
     "backlog": 385,
@@ -58,8 +40,8 @@
   },
   "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7 },
   "open_questions_for_human": [
-    "Warhead-supplier scope: now three companies (EURENCO, Odin Defence, TDW). TDW is the strongest case because its Gambit warhead is a delivered, named, drone-specific product. See decisions/batch-04-warhead-supplier-scope.md.",
-    "95 companies with landscape status 'excluded' or 'needs_review' have publication_status 'live' and are therefore on xsonomy.com, including LPP Holding (a fashion retailer). Up from 68 after Batch 07. Claude has changed no publication status; this is Nazar's decision."
+    "Warhead-supplier scope: now three companies (EURENCO, Odin Defence, TDW), with Norma Precision another analogous kinetic C-UAS component case from Batch 09 research. See decisions/batch-04-warhead-supplier-scope.md.",
+    "95 companies with landscape status 'excluded' or 'needs_review' have publication_status 'live' and are therefore on xsonomy.com. Claude has changed no publication status; this remains Nazar's decision."
   ],
-  "notes": "First pure enrichment batch. It filled 33 descriptions and 30 websites into previously blank records and cut the no-data backlog from 214 to 164. Yield was 7 admissions and 16 clean exclusions, including a fashion retailer that had been sitting in the UAV backlog. Eleven rows were held for review: six are entity-resolution failures where the researcher correctly refused to guess, and five are genuine judgement calls (WITU as a state research institute, AndroMach's suborbital vehicle class, Asfat, Dynamit Nobel Defence, Rheinmetall Kraken as a likely composite record). Keep quoting commas in free-text fields; Batch 08's CSV was clean."
+  "notes": "Batch 09 external research complete and handed to Claude for independent reconciliation. No Supabase or frozen snapshot mutations were made by ChatGPT."
 }
