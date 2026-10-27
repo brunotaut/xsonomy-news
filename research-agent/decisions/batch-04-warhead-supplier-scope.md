@@ -43,6 +43,21 @@ TDW is the strongest of the three: the Gambit warhead is a delivered, named, dro
 product, so option 3 (case by case) would now admit TDW while still excluding EURENCO and
 Odin Defence.
 
+## Narrowed by Batch 09
+
+Batch 09 returned **Norma Precision** as a fourth apparent case: it makes the cartridge for
+Benelli's A.I. Drone Guardian counter-UAV shotgun. It turned out to be a duplicate of **Norma**,
+which **has been verified in this landscape all along** under `cuas-def-kinetic`, with the
+Norma AD-LER anti-drone cartridge as its product. **Benelli** is verified on the same basis.
+
+That settles half the question by precedent. Ammunition made specifically to *shoot drones down*
+is already in scope and has been for some time. What remains open is narrower and cleaner:
+
+> **Do warheads that arm drones count, when ammunition that destroys drones already does?**
+
+EURENCO, Odin Defence and TDW are all on the arming side. Nothing in the landscape yet sets a
+precedent for them either way.
+
 ## What I need
 
 One of:
