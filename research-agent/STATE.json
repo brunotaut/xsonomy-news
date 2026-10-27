@@ -3,10 +3,10 @@
   "landscape": "europe-uav-cuas",
   "frozen_snapshots": { "v1": 273, "v2": 358 },
   "current_batch": 7,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-07.csv",
-  "expected_output": "research-agent/researched/batch-07-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-07-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-07-reconciliation.csv",
   "batch_type": "mixed_verify_and_enrich",
   "human_decision_required": false,
   "open_decision": "research-agent/decisions/batch-04-warhead-supplier-scope.md",
@@ -23,23 +23,13 @@
     "needs_review": 35,
     "excluded_in_scope": 40
   },
-  "batch_06": {
-    "rows": 44,
-    "type": "Ukraine directory verification pass",
-    "admitted": 15,
-    "excluded": 11,
-    "held_for_review": 4,
-    "declined": 14,
-    "classified_but_unverified_before": 43,
-    "classified_but_unverified_after": 13
-  },
   "batch_07": {
     "rows": 40,
     "verify_rows": 11,
     "enrich_rows": 29,
-    "why": "Only 11 never-researched candidates score above the P4 floor. 222 of the remaining 371 P4 records have no description, no website and no product on file, so they cannot be researched until the basics exist. Batch 07 therefore carries every remaining real lead as VERIFY plus a first 29-row ENRICH pass over the no-data mass.",
-    "task_type_column": true,
-    "duplicate_pairs_flagged": ["Vyriy / Vyriy Industry", "PGZ / Polish Armaments Group"]
+    "research_completed": true,
+    "notable_entity_resolutions": ["Heavy Shot -> Gurzuf Defence product", "Vyriy / Vyriy Industry duplicate", "PGZ / Polish Armaments Group duplicate", "Avengers Labs -> government platform", "Lasar's Group -> military unit", "Center of Unmanned Technologies -> General Cherry"],
+    "notable_country_corrections": ["Gurzuf Defence: Netherlands -> Ukraine", "ARX Robotics: Ukraine -> Germany", "Archer-LPP: Poland -> Czech Republic", "Vantor: Ukraine -> United States", "Brigantes Consulting: France -> United Kingdom"]
   },
   "remaining_queue_profile": {
     "backlog": 451,
@@ -49,5 +39,5 @@
     "top_score_never_researched": 35
   },
   "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15 },
-  "notes": "Batch 06 cut the directory-derived 'classified but unverified' block from 43 to 13 and added 15 verified companies (448 -> 463). Key corrections: ComBat Vision is coordination software, not a UAV maker; Pastka is UNWAVE's EW system, not a company; Tekhnary was declined because its evidence URL is an article about Wild Hornets (co-occurrence, not evidence); Iron Cluster is an association and VARDIAN a consultancy; five countries were wrong (TargetAI/Kazakhstan, VisionMap/Israel, Varangians/Sweden, Offset Labs/UK, Terminal Autonomy/US). Batch 07 changes shape: general verification batches have exhausted their leads, so it mixes 11 VERIFY rows with a 29-row ENRICH pass that asks only for website, one-sentence description, products and country. OUT_OF_SCOPE is an accepted ENRICH answer. See instructions/CHATGPT_RESEARCH.md for the ENRICH field spec. This direction change is flagged for Nazar in reports/batch-06-reconciliation.md and can be reverted to plain VERIFY batches on request."
+  "notes": "ChatGPT completed Batch 07 mixed VERIFY/ENRICH research. Claude should independently reconcile every row against live DB and ownership/entity policy. Strong positive signals include Frontline Robotics, Quantum WIY/WIY Drones, Odd Systems, Shield Systems, Ukrainian Armor, TAF Industries, F-Drones, Greentech Harvest, Vyriy Industry, Center of Unmanned Technologies/General Cherry, Greenjets, Meta Bureau, The Fourth Law and Steyr Motors. Strong exclusions/entity corrections include Heavy Shot as Gurzuf Defence product, DevDroid/ARX/Tencore ground-only, MSubs maritime, Avengers Labs government platform, Lasar's Group military unit, Vantor US/out-of-scope. PGZ/Polish Armaments Group and Vyriy/Vyriy Industry are duplicate pairs. After reconciliation, do not automatically resume plain general verification batches; use the enrichment-driven workflow recommended after Batch 06."
 }
