@@ -3,10 +3,10 @@
   "landscape": "europe-uav-cuas",
   "frozen_snapshots": { "v1": 273, "v2": 358 },
   "current_batch": 11,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-11.csv",
-  "expected_output": "research-agent/researched/batch-11-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-11-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-11-reconciliation.csv",
   "batch_type": "enrichment_only",
   "human_decision_required": false,
   "open_decisions": [
@@ -25,31 +25,13 @@
     "needs_review": 62,
     "excluded": 110
   },
-  "batch_10": {
-    "rows": 40,
-    "type": "enrichment",
-    "admitted": 11,
-    "excluded": 14,
-    "held_for_review": 7,
-    "declined": 7,
-    "merged_into_existing": 1,
-    "descriptions_written": 40,
-    "products_created": 12,
-    "taxonomy_rows_added": 19,
-    "country_corrections": ["Ex-Mil Recruitment Estonia -> United Kingdom", "Venetz Aerospace Switzerland -> United Kingdom", "Phoenix Air Unmanned Switzerland -> United States"],
-    "non_companies_caught_by_entity_type_question": ["Bartholet (ropeway manufacturer)", "Ex-Mil Recruitment (recruitment agency)", "Armira (investment holding)", "Avanti Air (charter airline)", "ARTEC (armoured vehicle JV)", "Fokker (historic brand, merged into GKN Aerospace)"],
-    "corrections_claude_made_against_research": [
-      "Beretta Defense Technologies declined: Benelli and SwissP Defence hold the counter-drone products in their own right.",
-      "Diehl Aviation declined: the unmanned contribution belongs to the Diehl Aerospace JV, which was admitted.",
-      "Skeleton Technologies, Odense Maritime Technology, Tekne and DroneVia declined: MoU, test-stage or partner-of-owner cases, announced rather than delivered.",
-      "Unmanned4you held: raises a new operator-scope question, written up as its own decision."
-    ]
-  },
   "batch_11": {
     "rows": 40,
     "verify_rows": 0,
     "enrich_rows": 40,
-    "instruction_added": "State explicitly when a capability is only planned - an MoU, a joint venture not yet operating, a demonstrator not yet qualified - rather than reporting it as current. Five of Batch 10's declines were this case."
+    "research_completed": true,
+    "research_output": "research-agent/researched/batch-11-researched.csv",
+    "research_notes": "External enrichment completed for all 40 rows. Strong current UAV/C-UAS findings include Germandrones, INFINTEQ, POLARIS, THYRA, WB Group and Artech'Drone. Planned/development-stage capability explicitly flagged for EKOLOT, Boryszew/Hornet and MBDA France. Entity/country corrections include Klau Geomatics -> Australia, SMOT Acquisition -> Austria acquisition vehicle, Bayards/Bayards Vertiports -> Netherlands, Gorgé -> historical Exail name. Extensee is held against the open operator-scope policy and Wolfram Europa against the open warhead-supplier policy. Claude must independently reconcile every finding against the live DB and product/entity ownership rules."
   },
   "remaining_queue_profile": {
     "backlog": 315,
@@ -59,13 +41,13 @@
     "backlog_with_no_data": 91,
     "never_researched_with_no_data": 94,
     "backlog_with_no_data_by_batch": { "after_07": 214, "after_08": 164, "after_09": 128, "after_10": 91 },
-    "enrichment_runway": "About two and a half more batches. After Batch 12 the blank-record pool is exhausted and the remaining ~315 records all have something on file but still score P3 or below - a different problem worth deciding on separately."
+    "enrichment_runway": "About two and a half more batches. After Batch 12 the blank-record pool is exhausted and the remaining records require a different research strategy."
   },
   "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7, "batch_09": 8, "batch_10": 11 },
   "open_questions_for_human": [
-    "Warhead scope: ammunition made to shoot drones down is already in scope by precedent (Norma, Benelli, now SwissP Defence). Open question is whether warheads that ARM drones count - EURENCO, Odin Defence, TDW.",
-    "Operator scope (NEW): are general commercial drone operators in the landscape, or only operators with a proprietary platform, network or regulatory first? Turns on Unmanned4you. See decisions/batch-10-drone-operator-scope.md. Claude recommends the latter.",
-    "143 companies with landscape status excluded or needs_review have publication_status live and are on xsonomy.com, up from 122 after Batch 09. The public catalogue currently lists a fashion retailer, a trade magazine, a ropeway maker, a military recruitment agency and a charter airline as UAV companies. Claude has changed no publication status."
+    "Warhead scope: whether warheads that ARM drones count - EURENCO, Odin Defence, TDW; Batch 11 also flags Wolfram Europa for this policy.",
+    "Operator scope: whether general commercial drone operators belong, or only operators with proprietary platform/network/regulatory first; Batch 11 flags Extensee for this policy.",
+    "143 companies with landscape status excluded or needs_review had publication_status live after Batch 10; Claude has not changed publication status without Nazar's decision."
   ],
-  "notes": "Best enrichment batch so far: verified crossed 500, all 40 records now have a description, and the entity-type question added after Batch 09 caught six records that were not companies at all. Five declines share one pattern - capability announced rather than delivered (MoU, unqualified demonstrator, partner of the owner) - so Batch 11 asks researchers to flag that explicitly. CSV hygiene remains perfect."
+  "notes": "Batch 11 external research is complete and handed to Claude. Preserve conservative ownership rules and distinguish announced demonstrators/MoUs from current delivered capability."
 }
