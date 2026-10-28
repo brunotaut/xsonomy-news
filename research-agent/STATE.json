@@ -3,10 +3,10 @@
   "landscape": "europe-uav-cuas",
   "frozen_snapshots": { "v1": 273, "v2": 358 },
   "current_batch": 12,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-12.csv",
-  "expected_output": "research-agent/researched/batch-12-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-12-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-12-reconciliation.csv",
   "batch_type": "enrichment_only",
   "human_decision_required": false,
   "open_decisions": [
@@ -25,54 +25,25 @@
     "needs_review": 72,
     "excluded": 131
   },
-  "batch_11": {
-    "rows": 40,
-    "type": "enrichment",
-    "admitted": 3,
-    "excluded": 21,
-    "held_for_review": 10,
-    "merged_into_existing": 4,
-    "declined": 2,
-    "descriptions_written": 36,
-    "products_created": 6,
-    "taxonomy_rows_added": 6,
-    "csv_defect": "One row (V4Smart) was missing its article_count field, shifting later columns by one. Repaired; nothing misattributed.",
-    "duplicates_of_already_verified_companies": [
-      "Grupa WB -> WB Group (WB Electronics), verified, with FLYEYE, WARMATE, FT-5",
-      "Polaris Raumflugzeug -> POLARIS Spaceplanes, verified, with four products",
-      "Gorge -> Exail (renamed 2022)",
-      "Grupa Boryszew -> Boryszew, whose drone work sits in the already-verified Hornet-Polskie Drony"
-    ],
-    "corrections_claude_made_against_research": [
-      "Four of six IN_SCOPE findings were duplicates of companies already in the landscape and were merged, not admitted.",
-      "INFINTEQ declined: the aerial evidence is a careers page and LinkedIn roles, not a product.",
-      "Bayards Vertiports excluded on the Skyports Infrastructure precedent: vertiports are not a UAV capability.",
-      "SMOT Acquisition excluded: an acquisition vehicle, not a company with products.",
-      "Look Up excluded: its radar tracks objects in low Earth orbit, not drones."
-    ],
-    "country_corrections": ["Klau Geomatics Germany -> Australia", "SMOT Acquisition Germany -> Austria", "Bayards France -> Netherlands", "Bayards Vertiports France -> Netherlands", "Wolfram Europa Germany -> Estonia"]
-  },
   "batch_12": {
     "rows": 40,
     "verify_rows": 0,
     "enrich_rows": 40,
-    "instruction_added": "When checking for duplicates, check against well-known European defence groups and their subsidiaries, not just the other names in the batch. Four of Batch 11's six in-scope findings were already in the landscape under another name."
+    "research_completed": true,
+    "research_file": "research-agent/researched/batch-12-researched.csv",
+    "research_notes": "External research completed for all 40 rows. Strong direct UAV/C-UAS findings include Survey Copter, Flarebright, SkyBound, Vizgard and Avilus. Eagle Eye Innovations is a specialist UAV training/test/services ecosystem case. Team UAV routes to the open operator-scope question. Teledyne Energetics routes to the open warhead/energetics scope question. Frenel Imaging has C-UAS technology but its laser integration is explicitly development-stage and unqualified. Important entity/country corrections: eSmart Systems -> Norway; Distance Technologies canonical parent -> Finland; Whisper Aero -> United States; Avilus -> Germany; Aerorozvidka is an NGO; Bullspike is a product/weapon rather than a verified company. Cohort should be checked against already-existing subsidiary Chess Dynamics before any admission."
   },
   "remaining_queue_profile": {
     "backlog": 277,
     "never_researched": 182,
     "never_researched_with_no_data": 54,
     "never_researched_with_no_description": 81,
-    "backlog_with_no_data": 53,
-    "backlog_with_no_data_by_batch": { "after_07": 214, "after_08": 164, "after_09": 128, "after_10": 91, "after_11": 53 },
-    "enrichment_runway": "Batch 12 takes 40 of the 54 remaining never-researched blanks. After that the pure-blank pool is gone, but 81 records have a website or product and no description and are still enrichable, so roughly three more useful batches remain."
+    "backlog_with_no_data": 53
   },
-  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7, "batch_09": 8, "batch_10": 11, "batch_11": 3 },
-  "exclusions_per_enrichment_batch": { "batch_08": 16, "batch_09": 19, "batch_10": 14, "batch_11": 21 },
   "open_questions_for_human": [
-    "Warhead scope: now four companies (EURENCO, Odin Defence, TDW, Wolfram Europa). Ammunition that shoots drones down is already in scope by precedent; the question is only about warheads that ARM drones.",
-    "Operator scope: now two companies (Unmanned4you, Extensee). Extensee flies heavy long-range UAVs and does its own data processing, so the recommended rule might admit it while excluding Unmanned4you.",
-    "174 companies with landscape status excluded or needs_review have publication_status live and are on xsonomy.com, up from 143 after Batch 10 - 31 more in one batch. Claude has changed no publication status; this remains Nazar's decision and is now the largest and fastest-growing data-quality problem in the project."
+    "Warhead scope remains open; Batch 12 adds Teledyne Energetics as another component/energetics case requiring the same policy boundary.",
+    "Operator scope remains open; Batch 12 adds Team UAV as a clear specialist drone-services/operator case, while SkyBound has proprietary control/intelligence software and deployed automated stations and is recommended in-scope independently of generic operator policy.",
+    "174 companies with landscape status excluded or needs_review had publication_status live after Batch 11; Claude has not changed publication status."
   ],
-  "notes": "Admissions are falling and exclusions rising, as expected: the unknown good companies were found first and what remains is mostly noise to clear. The duplicate check is now the highest-value step in reconciliation - four of six in-scope findings this batch were already in the landscape under another name, and without the check WB Group would have been split in two."
+  "notes": "ChatGPT completed Batch 12 and handed it to Claude for independent reconciliation. Preserve conservative ownership rules, distinguish current from planned capability, and check parent/subsidiary duplicates before admission."
 }
