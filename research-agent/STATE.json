@@ -5,11 +5,11 @@
     "v1": 273,
     "v2": 358
   },
-  "current_batch": 17,
-  "status": "READY_FOR_RECONCILIATION",
-  "next_actor": "claude",
-  "input": "research-agent/researched/batch-17-researched.csv",
-  "expected_output": "research-agent/reconciled/batch-17-reconciliation.csv",
+  "current_batch": 18,
+  "status": "READY_FOR_RESEARCH",
+  "next_actor": "chatgpt",
+  "input": "research-agent/queue/batch-18.csv",
+  "expected_output": "research-agent/researched/batch-18-researched.csv",
   "batch_type": "verification",
   "human_decision_required": false,
   "blocker": null,
@@ -17,13 +17,13 @@
     "research-agent/decisions/batch-04-warhead-supplier-scope.md",
     "research-agent/decisions/batch-10-drone-operator-scope.md"
   ],
-  "last_completed_batch": 16,
+  "last_completed_batch": 17,
   "live_landscape": {
     "rows": 977,
-    "verified": 548,
-    "candidates": 79,
-    "needs_review": 120,
-    "excluded": 230,
+    "verified": 560,
+    "candidates": 39,
+    "needs_review": 129,
+    "excluded": 249,
     "backlog_with_no_description": 0
   },
   "publication_mismatch": {
@@ -131,11 +131,11 @@
     "4. Discovery: add the six companies the external audit showed are genuinely absent."
   ],
   "open_questions_for_human": [
-    "Warhead and energetics scope: five companies. Still open and still keeping three otherwise-researchable candidates out of the verification batches.",
-    "Operator and services scope: eleven companies. FLANQ and Neramo from Batch 16 sit next to it as integration cases.",
-    "162 verified companies are now missing from the public landscape page, up from 158, because this batch verified eleven more and most of them are in draft. Not selected as this phase; no publication status has been changed."
+    "Warhead and energetics scope: five companies. Still open. After Batch 18 these will be the only backlog records without a disposition.",
+    "Operator and services scope: eleven companies.",
+    "162 verified companies are missing from the public landscape page. Not selected as this phase; no publication status has been changed."
   ],
-  "notes": "First verification batch. The per-row question field worked: 40 of 40 came back with a direct answer. Its biggest effect was structural - twelve Ukrainian records carrying a bare root UAV tag with no evidence were resolved, four into verified companies and eight into holds, and the meaningless tags were deleted. Claude declined two IN_SCOPE recommendations where the research's own wording contradicted the verdict.",
+  "notes": "Second verification batch and the closest agreement of the run, 39 of 40. The single difference upgraded a hold to an admission because the entity question it rested on was already answered in the database. Batch 17 also found a new kind of bad record: composite labels joining two organisations with a slash, which the extractor created from contract announcements.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -148,7 +148,7 @@
   ],
   "next_phase_decision": {
     "date": "2026-10-28",
-    "user_instruction": "закінчуємо перевірку",
+    "user_instruction": "\u0437\u0430\u043a\u0456\u043d\u0447\u0443\u0454\u043c\u043e \u043f\u0435\u0440\u0435\u0432\u0456\u0440\u043a\u0443",
     "selected": "Complete merits verification of remaining 119 candidates",
     "decision_file": "research-agent/decisions/batch-15-next-phase.md",
     "next_action": "Claude generates batch16 VERIFY queue from live backlog, P1 first, up to40 rows; then hands to ChatGPT. Continue verification/reconciliation until all remaining candidates have a disposition.",
@@ -199,46 +199,55 @@
     "sensor_rule_outcome": "smartmicro, PCO, Senop and AIM admitted on named drone-specific variants; Acconeer, Blickfeld and ams OSRAM excluded as general-purpose parts used in demonstrations. The Batch 13 rule separated them cleanly."
   },
   "verification_pool": {
-    "backlog_candidates": 79,
-    "verifiable_now": 75,
+    "backlog_candidates": 39,
+    "verifiable_now": 35,
     "held_for_open_scope_decisions": 4,
-    "bands_after_batch_16": {
-      "P1": 0,
-      "P2": 0,
-      "P3": 1,
-      "P4": 74
-    },
-    "note": "Batch 16 took every candidate above the P4 floor. What remains is the long tail, and the expected admission rate is low. Two batches of 40 and 35 should finish the pool."
+    "note": "Batch 18 takes all 35. After it every backlog candidate has an evidence-based disposition and the only records without one are the four waiting on the warhead decision."
   },
   "batch_17": {
     "rows": 40,
-    "task_type": "VERIFY",
-    "countries": 17,
-    "bands": {
-      "P3": 1,
-      "P4": 39
+    "type": "verification",
+    "verified": 12,
+    "excluded": 19,
+    "held_for_review": 9,
+    "merged": 0,
+    "research_recommended": {
+      "in_scope": 11,
+      "out_of_scope": 19,
+      "unknown": 10
     },
+    "agreement_with_research": "39 of 40 - the closest of the run",
+    "disagreements": [
+      "Liebherr Aerospace: UNKNOWN upgraded to verified. The hold was about entity mapping and the record is already filed as Germany, matching Liebherr-Aerospace Lindenberg GmbH. A contracted Eurodrone landing-gear programme is the same basis on which Avio Aero was admitted in Batch 15 for the Catalyst engine on the same aircraft."
+    ],
+    "products_created": 9,
+    "taxonomy_rows_added": 12,
+    "new_record_defect_found": "Composite labels. TUBITAK UZAY / ASELSAN and OHB Italia / Leonardo are programme and consortium labels joining two organisations with a slash, not companies. Both constituents already exist separately and ASELSAN is verified with fifty products. A question about composite labels was added to Batch 18.",
+    "ownership_discipline": [
+      "Quantum Frontline Industries attached to Frontline Robotics existing Linza product as a manufacturer rather than given a duplicate; the design credit stays with Frontline.",
+      "Hevi Optronics admitted for its own platform; the KENIS sensor stays with HENSOLDT.",
+      "Oxford Space Systems excluded partly because its drone testing uses Quadsat equipment, and Quadsat is verified separately."
+    ],
+    "exclusion_shape": "Nine of nineteen exclusions were space companies. The scoring model has no notion of altitude: a synthetic-aperture radar reads the same at 400 metres and 400 kilometres."
+  },
+  "batch_18": {
+    "rows": 35,
+    "task_type": "VERIFY",
+    "countries": 13,
+    "is_final_verification_batch": true,
     "question_mix": {
-      "tagged_only_under_general_sensors_domain": 34,
-      "website_but_no_product": 3,
-      "products_but_no_capability_assigned": 2,
+      "website_but_no_product": 21,
+      "tagged_only_under_general_sensors_domain": 9,
+      "products_but_no_capability_assigned": 4,
       "no_website_no_product_no_tag": 1
     },
-    "instruction_added": "Is this record a BRAND of another manufacturer rather than a company? Added after Bulba.",
+    "instruction_added": "Is this record a COMPOSITE LABEL joining two organisations? Added after Batch 17 found two.",
     "policy_held_excluded": [
       "Odin Defence",
       "EURENCO",
       "TDW",
       "Wolfram Europa",
       "Teledyne Energetics"
-    ],
-    "research_recommended": {
-      "in_scope": 11,
-      "out_of_scope": 19,
-      "unknown": 10
-    },
-    "research_report": "research-agent/reports/batch-17-research.md",
-    "research_validation": "40 unique company IDs; all 17 original columns and row order preserved; direct answers and evidence for every row; six optional factual description corrections. Exact GitHub readback verified.",
-    "research_note": "External research only; live counters unchanged pending Claude reconciliation. Brand/division identity holds for GeoSLAM and Liebherr; prototype and lifecycle holds explicit. Prepare final verification batch 18 after reconciliation."
+    ]
   }
 }
