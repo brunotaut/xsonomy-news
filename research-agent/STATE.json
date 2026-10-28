@@ -6,15 +6,14 @@
     "v2": 358
   },
   "current_batch": 15,
-  "status": "AWAITING_HUMAN_DECISION",
-  "next_actor": "human",
-  "input": null,
-  "expected_output": null,
-  "batch_type": null,
-  "human_decision_required": true,
-  "blocker": "The enrichment loop has no work left. The next phase is a choice, not a default: see research-agent/decisions/batch-15-next-phase.md. Do not queue another enrichment batch.",
+  "status": "READY_FOR_QUEUE_GENERATION",
+  "next_actor": "claude",
+  "input": "research-agent/decisions/batch-15-next-phase.md",
+  "expected_output": "research-agent/queue/batch-16.csv",
+  "batch_type": "verification",
+  "human_decision_required": false,
+  "blocker": null,
   "open_decisions": [
-    "research-agent/decisions/batch-15-next-phase.md",
     "research-agent/decisions/batch-04-warhead-supplier-scope.md",
     "research-agent/decisions/batch-10-drone-operator-scope.md"
   ],
@@ -132,7 +131,6 @@
     "4. Discovery: add the six companies the external audit showed are genuinely absent."
   ],
   "open_questions_for_human": [
-    "WHAT NEXT - blocking. See research-agent/decisions/batch-15-next-phase.md. Claude now recommends the 158 verified-but-unpublished companies first, and NOT a bulk unpublish.",
     "Warhead and energetics scope: five companies, raised in five separate batches. Not blocking.",
     "Operator and services scope: now eleven companies after Batch 15 added Marshall Aerospace, DSV and INECO. It grew in each of the last six batches. Not blocking.",
     "158 verified companies are missing from the public landscape page. Separately, about 21 entity-extraction errors are live in the wider catalogue and should come out of any catalogue; the other 271 out-of-scope records are legitimate companies in other industries and are not a landscape problem."
@@ -147,5 +145,16 @@
     "Sopra Steria / CS Group: CS Group's BOREADES is its own C-UAS system, deployed since 2015 with more than 50 operational systems. CS Group is already verified separately; the Sopra Steria parent-level hold stands, with the evidence recorded.",
     "SLM Solutions: the squeeze-out was registered 1 September 2023, not 4 September, which was the announcement. Description corrected.",
     "Ricardo: the exclusion and the Ricardo Mendes correction stand. A 2010 Wolverine UAV engine line existed at the US subsidiary Ricardo Inc; historical and not attached to the UK record."
-  ]
+  ],
+  "next_phase_decision": {
+    "date": "2026-10-28",
+    "user_instruction": "закінчуємо перевірку",
+    "selected": "Complete merits verification of remaining 119 candidates",
+    "decision_file": "research-agent/decisions/batch-15-next-phase.md",
+    "next_action": "Claude generates batch16 VERIFY queue from live backlog, P1 first, up to40 rows; then hands to ChatGPT. Continue verification/reconciliation until all remaining candidates have a disposition.",
+    "estimated_batches": 3,
+    "publication_changes_authorised": false,
+    "discovery_selected": false,
+    "existing_scope_decisions": "Remain nonblocking; hold affected cases explicitly rather than guessing."
+  }
 }
