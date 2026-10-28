@@ -1,12 +1,15 @@
 {
   "protocol_version": 1,
   "landscape": "europe-uav-cuas",
-  "frozen_snapshots": { "v1": 273, "v2": 358 },
+  "frozen_snapshots": {
+    "v1": 273,
+    "v2": 358
+  },
   "current_batch": 14,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-14.csv",
-  "expected_output": "research-agent/researched/batch-14-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-14-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-14-reconciliation.csv",
   "batch_type": "enrichment_only",
   "human_decision_required": false,
   "open_decisions": [
@@ -49,7 +52,9 @@
       "EURENCO: the DEMON attribution the research could not confirm does carry a French trade source in the existing product record.",
       "Seven large general-technology companies decided under the new scope rule: Ericsson and Deutsche Telekom admitted, Nordic Semiconductor, Axis, Rotax, Varjo, Eutelsat and OQ Technology excluded."
     ],
-    "country_corrections": ["Althimis Germany -> United States"],
+    "country_corrections": [
+      "Althimis Germany -> United States"
+    ],
     "known_issue_not_fixed": "Baykar now holds 15 product rows for about 6 aircraft (Akinci/Akinci/Bayraktar Akinci, four Kizilelma spellings, TB2/Bayraktar TB2, TB3/Bayraktar TB3). Product-level duplication predates this batch."
   },
   "batch_14": {
@@ -69,16 +74,55 @@
     "backlog": 199,
     "with_no_data": 9,
     "with_no_description": 80,
-    "with_no_data_by_batch": { "after_09": 128, "after_10": 91, "after_11": 53, "after_12": 19, "after_13": 9 },
+    "with_no_data_by_batch": {
+      "after_09": 128,
+      "after_10": 91,
+      "after_11": 53,
+      "after_12": 19,
+      "after_13": 9
+    },
     "enrichment_runway": "Batch 14 clears the last 9 blanks and 31 partials. About 40 records with no description remain after it, which is one more batch. The enrichment phase ends there; what follows must be either verifying the backlog on its merits or clearing the publication gap."
   },
-  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7, "batch_09": 8, "batch_10": 11, "batch_11": 3, "batch_12": 6, "batch_13": 11 },
-  "exclusions_per_enrichment_batch": { "batch_08": 16, "batch_09": 19, "batch_10": 14, "batch_11": 21, "batch_12": 23, "batch_13": 19 },
+  "admissions_per_batch": {
+    "batch_01": 31,
+    "batch_02": 29,
+    "batch_03": 14,
+    "batch_04": 9,
+    "batch_05": 7,
+    "batch_06": 15,
+    "batch_07": 15,
+    "batch_08": 7,
+    "batch_09": 8,
+    "batch_10": 11,
+    "batch_11": 3,
+    "batch_12": 6,
+    "batch_13": 11
+  },
+  "exclusions_per_enrichment_batch": {
+    "batch_08": 16,
+    "batch_09": 19,
+    "batch_10": 14,
+    "batch_11": 21,
+    "batch_12": 23,
+    "batch_13": 19
+  },
   "open_questions_for_human": [
     "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Wolfram Europa, Teledyne Energetics). Unchanged by Batch 13.",
     "Operator and services scope: five companies (Unmanned4you, Extensee, Team UAV, Eagle Eye Innovations, Randle Engineering). Unchanged by Batch 13.",
     "229 companies with landscape status excluded or needs_review have publication_status live and are on xsonomy.com, up from 206 after Batch 12. Claude has changed no publication status.",
     "New, from Batch 13: the component scope rule was applied without being asked for, because the queue reached large general-technology companies and the loop could not proceed without one. The rule is in the Batch 13 report. If Nazar disagrees, Ericsson and Deutsche Telekom come out and Nordic Semiconductor, Axis, Rotax, Varjo, Eutelsat and OQ Technology go in."
   ],
-  "notes": "The queue has moved past small unknown companies into large well-known ones with empty records, which changed the kind of judgement required: most calls this batch were scope and ownership, not evidence. Three of five duplicates were of already-verified companies, and the TUSAS merge exposed two Baykar aircraft filed under Turkish Aerospace."
+  "notes": "The queue has moved past small unknown companies into large well-known ones with empty records, which changed the kind of judgement required: most calls this batch were scope and ownership, not evidence. Three of five duplicates were of already-verified companies, and the TUSAS merge exposed two Baykar aircraft filed under Turkish Aerospace.",
+  "batch_14_research": {
+    "rows": 40,
+    "in_scope": 15,
+    "out_of_scope": 14,
+    "unknown": 11,
+    "research_date": "2026-10-28",
+    "report": "research-agent/reports/batch-14-research.md",
+    "original_columns_preserved": 12,
+    "research_columns_appended": 13,
+    "qa": "40 unique company IDs; original fields unchanged; CSV round-trip validated; both uploaded files read back exactly",
+    "notes": "Operating-country corrections, non-company exclusions, duplicate/parent ownership checks and maturity holds detailed in report. Existing human decisions remain nonblocking. No live DB/publication/snapshot changes."
+  }
 }
