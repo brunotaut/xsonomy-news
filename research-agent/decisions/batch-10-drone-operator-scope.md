@@ -36,9 +36,30 @@ Batch 11 produced the second case within a day:
 industrial and government missions with heavy and long-range UAVs, sensors and data processing.
 Real operations, no aircraft of its own.
 
+Batch 12 added two more, and one of them shows the question is wider than operators:
+
+**Team UAV** (United Kingdom) — drone inspection, survey and emergency-response services. UAV work
+is the whole business, but the aircraft are bought in and the only thing of its own is a set of GIS
+and data-delivery workflows.
+
+**Eagle Eye Innovations** (United Kingdom) — a CAA-approved drone training, test-and-evaluation and
+consultancy firm. It is not an operator in the Unmanned4you sense at all: its product is expertise,
+not flights. There is also a practical obstacle. **The taxonomy has no training or services leaf**,
+so even a decision to admit it would leave nothing to tag it with, and an untagged company cannot
+become verified. Admitting the services layer means adding a sector, not just saying yes.
+
+A third Batch 12 case sits next to these: **Randle Engineering**, an aerospace consultancy whose UAV
+work — including a thrust-vectoring mechanism for a passenger drone — is done for clients. Same
+shape: real UAV work, nothing owned.
+
+By contrast **SkyBound** was admitted outright in Batch 12 without waiting for this decision,
+because it owns its control, analytics and simulation software and runs its own automated stations.
+That is option 2 applied in practice.
+
 ## What I did
 
-Left Unmanned4you and Extensee as **needs_review**. Nothing is lost either way.
+Left Unmanned4you, Extensee, Team UAV, Eagle Eye Innovations and Randle Engineering as
+**needs_review**. Nothing is lost either way.
 
 ## What I need
 
@@ -55,4 +76,9 @@ One of:
 3. **No operators at all** — which would mean revisiting Manna, Apian, Cyberhawk, Airspection and
    Aiviewgroup. I do not recommend this; those five are genuinely part of the industry picture.
 
-Whichever you pick, I will apply it and record it as landscape policy.
+4. **Services and expertise are a separate question** — operators fly, trainers teach and
+   consultancies engineer. If you want any of them, the taxonomy needs a services leaf first.
+   Eagle Eye Innovations and Randle Engineering turn on this, not on the operator rule.
+
+Whichever you pick, I will apply it and record it as landscape policy. This has now come up in
+three consecutive batches and has grown from one company to five.
