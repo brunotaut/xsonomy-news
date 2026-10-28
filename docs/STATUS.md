@@ -290,3 +290,7 @@ DJI SDR Transmission 2, DragonFire.
 **Corrections spotted, not applied:** `Archer` has no company but the articles are clear it is
 **Neros Technologies**; `DJI SDR Transmission 2` is filed under Software but is hardware;
 `AS21 Redback` is miscategorised as Counter-UAS.
+
+## 2026-10-28 — external landscape audit continuation
+
+Saved `research-agent/audits/2026-10-28-external-landscape-audit-part-2.md`: three additional first-party-supported candidates (42 Solutions, Adevex, AURYN Aero), one historical lead on hold (Aeronautica SDLE), and duplicate/scope controls. Candidates require current full-database and alias reconciliation; cached public snapshots do not prove absence. No DB or publication changes. STATE remains Batch 15 READY_FOR_RESEARCH; this separate audit does not advance the batch workflow.
