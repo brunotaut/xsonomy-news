@@ -1,12 +1,15 @@
 {
   "protocol_version": 1,
   "landscape": "europe-uav-cuas",
-  "frozen_snapshots": { "v1": 273, "v2": 358 },
+  "frozen_snapshots": {
+    "v1": 273,
+    "v2": 358
+  },
   "current_batch": 13,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-13.csv",
-  "expected_output": "research-agent/researched/batch-13-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-13-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-13-reconciliation.csv",
   "batch_type": "enrichment_only",
   "human_decision_required": false,
   "open_decisions": [
@@ -45,7 +48,12 @@
       "Cohort excluded as a holding group; its counter-UAS products belong to the already-verified subsidiary Chess Dynamics.",
       "Ultra PCS held rather than excluded because the out-of-scope finding was only medium confidence."
     ],
-    "country_corrections": ["Avilus Ukraine -> Germany", "Distance Technologies United Kingdom -> Finland", "eSmart Systems United Kingdom -> Norway", "Whisper Aero United Kingdom -> United States"]
+    "country_corrections": [
+      "Avilus Ukraine -> Germany",
+      "Distance Technologies United Kingdom -> Finland",
+      "eSmart Systems United Kingdom -> Norway",
+      "Whisper Aero United Kingdom -> United States"
+    ]
   },
   "batch_13": {
     "rows": 40,
@@ -65,15 +73,52 @@
     "with_no_data": 19,
     "with_no_description": 120,
     "with_website_or_product_but_no_description": 101,
-    "with_no_data_by_batch": { "after_07": 214, "after_08": 164, "after_09": 128, "after_10": 91, "after_11": 53, "after_12": 19 },
+    "with_no_data_by_batch": {
+      "after_07": 214,
+      "after_08": 164,
+      "after_09": 128,
+      "after_10": 91,
+      "after_11": 53,
+      "after_12": 19
+    },
     "enrichment_runway": "Batch 13 clears the last 19 blanks. Roughly two more enrichment batches close the description gap, after which the loop needs a new shape."
   },
-  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7, "batch_09": 8, "batch_10": 11, "batch_11": 3, "batch_12": 6 },
-  "exclusions_per_enrichment_batch": { "batch_08": 16, "batch_09": 19, "batch_10": 14, "batch_11": 21, "batch_12": 23 },
+  "admissions_per_batch": {
+    "batch_01": 31,
+    "batch_02": 29,
+    "batch_03": 14,
+    "batch_04": 9,
+    "batch_05": 7,
+    "batch_06": 15,
+    "batch_07": 15,
+    "batch_08": 7,
+    "batch_09": 8,
+    "batch_10": 11,
+    "batch_11": 3,
+    "batch_12": 6
+  },
+  "exclusions_per_enrichment_batch": {
+    "batch_08": 16,
+    "batch_09": 19,
+    "batch_10": 14,
+    "batch_11": 21,
+    "batch_12": 23
+  },
   "open_questions_for_human": [
     "Warhead and energetics scope: now five companies (EURENCO, Odin Defence, TDW, Wolfram Europa, Teledyne Energetics). Ammunition that shoots drones down is already in scope by precedent; the question is only about warheads that ARM drones.",
     "Operator and services scope: now five companies (Unmanned4you, Extensee, Team UAV, Eagle Eye Innovations, Randle Engineering). Batch 12 showed this is wider than operators - training and engineering firms are a services layer the taxonomy cannot express, so admitting them would mean adding a sector leaf first. A fourth option was added to the decision document.",
     "206 companies with landscape status excluded or needs_review have publication_status live and are on xsonomy.com, up from 174 after Batch 11 - the largest jump yet, 32 in one batch. Claude has changed no publication status."
   ],
-  "notes": "Admissions rose slightly and exclusions kept climbing. The duplicate check remains the highest-value step: one of the two duplicates this batch converted an UNKNOWN verdict into an admission, and a product record was found attached to the wrong Airbus entity. The remaining backlog is now dominated by UK and French maritime and naval records."
+  "notes": "Batch 13 external research complete; Claude to reconcile 40 records. Existing scope decisions remain open and non-blocking. Read batch-13-research.md for parent/operating country distinction, product ownership and maturity caveats. Prior batch 12 notes and statistics preserved in their fields. No publication or frozen snapshot changes.",
+  "batch_13_research": {
+    "completed_date": "2026-10-28",
+    "rows": 40,
+    "in_scope": 25,
+    "out_of_scope": 6,
+    "unknown": 9,
+    "report": "research-agent/reports/batch-13-research.md",
+    "qa": "40 unique IDs; original 12 columns unchanged; 28-column CSV round-trip passed; GitHub readback matched",
+    "country_semantics": "researched_country follows confirmed parent HQ when known; research_operating_country preserves manufacturer HQ. Do not blindly overwrite DB country. See report.",
+    "verdict_semantics": "Research recommendations, not admissions. Unresolved entities, development-stage products, and existing scope holds require Claude reconciliation."
+  }
 }
