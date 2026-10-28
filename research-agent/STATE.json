@@ -1,12 +1,15 @@
 {
   "protocol_version": 1,
   "landscape": "europe-uav-cuas",
-  "frozen_snapshots": { "v1": 273, "v2": 358 },
+  "frozen_snapshots": {
+    "v1": 273,
+    "v2": 358
+  },
   "current_batch": 15,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-15.csv",
-  "expected_output": "research-agent/researched/batch-15-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-15-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-15-reconciliation.csv",
   "batch_type": "enrichment_only",
   "human_decision_required": false,
   "open_decisions": [
@@ -49,7 +52,11 @@
       "An orphaned SAMP/T NG product record with no company attached was given to Eurosam.",
       "Gilden Photonics set to status defunct: the legal entity was dissolved on 17 July 2026."
     ],
-    "country_corrections": ["Innokas Ukraine -> Finland", "KOVO Armor Ukraine -> Lithuania", "Farsight Vision Ukraine -> Estonia (registered entity FarsightVision OU; Ukrainian team noted in the description, not overwritten)"]
+    "country_corrections": [
+      "Innokas Ukraine -> Finland",
+      "KOVO Armor Ukraine -> Lithuania",
+      "Farsight Vision Ukraine -> Estonia (registered entity FarsightVision OU; Ukrainian team noted in the description, not overwritten)"
+    ]
   },
   "batch_15": {
     "rows": 40,
@@ -68,21 +75,68 @@
     "backlog": 159,
     "with_no_data": 0,
     "with_no_description": 40,
-    "p1": 18, "p2": 12, "p3": 19, "p4": 110,
-    "with_no_data_by_batch": { "after_07": 214, "after_08": 164, "after_09": 128, "after_10": 91, "after_11": 53, "after_12": 19, "after_13": 9, "after_14": 0 },
+    "p1": 18,
+    "p2": 12,
+    "p3": 19,
+    "p4": 110,
+    "with_no_data_by_batch": {
+      "after_07": 214,
+      "after_08": 164,
+      "after_09": 128,
+      "after_10": 91,
+      "after_11": 53,
+      "after_12": 19,
+      "after_13": 9,
+      "after_14": 0
+    },
     "enrichment_runway": "Batch 15 is the last enrichment batch. After it every backlog company has a description and there is nothing left to enrich."
   },
   "what_comes_after_batch_15": [
     "Verify the backlog on its merits: 159 described companies whose membership is still open, 18 of them P1.",
     "Clear the publication gap: 256 companies on xsonomy.com that this process has judged out of scope or unresolved. Larger, and the only one visitors see."
   ],
-  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7, "batch_09": 8, "batch_10": 11, "batch_11": 3, "batch_12": 6, "batch_13": 11, "batch_14": 9 },
-  "exclusions_per_enrichment_batch": { "batch_08": 16, "batch_09": 19, "batch_10": 14, "batch_11": 21, "batch_12": 23, "batch_13": 19, "batch_14": 15 },
+  "admissions_per_batch": {
+    "batch_01": 31,
+    "batch_02": 29,
+    "batch_03": 14,
+    "batch_04": 9,
+    "batch_05": 7,
+    "batch_06": 15,
+    "batch_07": 15,
+    "batch_08": 7,
+    "batch_09": 8,
+    "batch_10": 11,
+    "batch_11": 3,
+    "batch_12": 6,
+    "batch_13": 11,
+    "batch_14": 9
+  },
+  "exclusions_per_enrichment_batch": {
+    "batch_08": 16,
+    "batch_09": 19,
+    "batch_10": 14,
+    "batch_11": 21,
+    "batch_12": 23,
+    "batch_13": 19,
+    "batch_14": 15
+  },
   "open_questions_for_human": [
     "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Wolfram Europa, Teledyne Energetics). Unchanged by Batch 14.",
     "Operator and services scope: now eight companies. Batch 14 added Brigantes Consulting, Siemens Energy and Sener to Unmanned4you, Extensee, Team UAV, Eagle Eye Innovations and Randle Engineering. This is the fastest-growing of the two open decisions.",
     "256 companies with landscape status excluded or needs_review have publication_status live and are on xsonomy.com, up from 229 after Batch 13. It has grown every batch for five batches and has nearly doubled since Batch 10. Claude has changed no publication status.",
     "After Batch 15 the enrichment loop has no work left. The next phase needs a decision: verify the 159-record backlog on its merits, or clear the 256-record publication gap."
   ],
-  "notes": "The blank-record backlog reached zero. All four duplicates this batch were of already-verified companies, two of them the same company under its Ukrainian or Turkish name. The largest hold of the run (12) came from parent-and-subsidiary allocation questions rather than from missing evidence, which is what the remaining backlog looks like."
+  "notes": "The blank-record backlog reached zero. All four duplicates this batch were of already-verified companies, two of them the same company under its Ukrainian or Turkish name. The largest hold of the run (12) came from parent-and-subsidiary allocation questions rather than from missing evidence, which is what the remaining backlog looks like.",
+  "batch_15_research": {
+    "rows": 40,
+    "in_scope": 4,
+    "out_of_scope": 30,
+    "unknown": 6,
+    "research_date": "2026-10-28",
+    "report": "research-agent/reports/batch-15-research.md",
+    "original_columns_preserved": 12,
+    "research_columns_appended": 14,
+    "qa": "40 unique IDs; input fields and row order unchanged; CSV round-trip validated; uploaded CSV/report read back exactly",
+    "notes": "Final enrichment research complete; live reconciliation still required. Do not automatically queue another enrichment batch. Existing scope decisions and next-phase choice remain open; no publication or database mutation."
+  }
 }
