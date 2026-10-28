@@ -1,3 +1,24 @@
+# Next phase: merits verification authorised
+
+## RESOLVED — user decision, 2026-10-28
+
+Nazar instructed: **«закінчуємо перевірку»** in response to the choice between preparing 158 verified companies for publication and completing verification of 119 remaining candidates.
+
+Selected next phase: **finish merits verification of the remaining backlog** (option 3). The next-phase blocker is resolved. This authorisation persists across the following verification batches; do not ask for the same phase choice again.
+
+### Next action for Claude
+1. Read the current live candidate backlog and generate `research-agent/queue/batch-16.csv` with up to 40 VERIFY rows, starting with the 18 P1 candidates and then the highest-priority remaining candidates.
+2. Include existing evidence, canonical/related entities, products and the specific unresolved eligibility question for each row. These are merits checks, not another description-enrichment pass.
+3. Set STATE to batch16, READY_FOR_RESEARCH, next_actor chatgpt, with the actual queue path and expected research output.
+4. Continue the existing research/reconciliation handoff until all remaining candidates have an evidence-based disposition. At the current count this is approximately three batches (40/40/39); merges or refreshed counts may change that.
+5. Cases dependent on the two older scope decisions remain explicitly held; completion means an honest disposition, not forced admission/exclusion or repeated re-queuing without new evidence.
+
+Publication, broad catalogue cleanup and new-company discovery were not selected. Keep publication statuses and frozen snapshots unchanged. Finish with a report of verified/excluded/held outcomes and remaining policy-dependent cases.
+
+---
+
+## Historical decision request (superseded by resolution above)
+
 # Decision needed: what the loop does next
 
 Raised at the end of Batch 15, 2026-10-28. **This one is blocking.** The enrichment loop has run
