@@ -30,21 +30,28 @@ picture of the UAV industry and becomes a directory of drone service providers. 
 qualify, the line has to be drawn somewhere defensible.
 
 The current backlog still holds operators of this kind, so the answer will be applied more than once.
+Batch 11 produced the second case within a day:
+
+**Extensee** (France) — a currently operating drone-services company running turnkey civil,
+industrial and government missions with heavy and long-range UAVs, sensors and data processing.
+Real operations, no aircraft of its own.
 
 ## What I did
 
-Left Unmanned4you as **needs_review**. Nothing is lost either way.
+Left Unmanned4you and Extensee as **needs_review**. Nothing is lost either way.
 
 ## What I need
 
 One of:
 
-1. **All authorised operators count** — admit Unmanned4you and anything like it under
+1. **All authorised operators count** — admit Unmanned4you, Extensee and anything like them under
    `eco-integration`.
 2. **Only operators with something of their own** — a proprietary platform, aircraft, network or
    regulatory first. This is what the five admitted companies have in common, and it would exclude
    Unmanned4you. My recommendation, because it is the rule the landscape has been following
-   already without anyone writing it down.
+   already without anyone writing it down. Extensee is the harder case under this rule: it flies
+   heavy long-range UAVs and does its own data processing, which is closer to Cyberhawk than to a
+   DJI operator, so option 2 might well admit it and still exclude Unmanned4you.
 3. **No operators at all** — which would mean revisiting Manna, Apian, Cyberhawk, Airspection and
    Aiviewgroup. I do not recommend this; those five are genuinely part of the industry picture.
 

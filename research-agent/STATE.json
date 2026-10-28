@@ -2,11 +2,11 @@
   "protocol_version": 1,
   "landscape": "europe-uav-cuas",
   "frozen_snapshots": { "v1": 273, "v2": 358 },
-  "current_batch": 11,
-  "status": "READY_FOR_RECONCILIATION",
-  "next_actor": "claude",
-  "input": "research-agent/researched/batch-11-researched.csv",
-  "expected_output": "research-agent/reconciled/batch-11-reconciliation.csv",
+  "current_batch": 12,
+  "status": "READY_FOR_RESEARCH",
+  "next_actor": "chatgpt",
+  "input": "research-agent/queue/batch-12.csv",
+  "expected_output": "research-agent/researched/batch-12-researched.csv",
   "batch_type": "enrichment_only",
   "human_decision_required": false,
   "open_decisions": [
@@ -14,40 +14,65 @@
     "research-agent/decisions/batch-10-drone-operator-scope.md"
   ],
   "blocker": null,
-  "last_completed_batch": 10,
+  "last_completed_batch": 11,
   "live_landscape": {
-    "rows": 991,
-    "verified": 504,
-    "uav_only": 277,
-    "cuas_only": 188,
+    "rows": 987,
+    "verified": 507,
+    "uav_only": 279,
+    "cuas_only": 189,
     "both": 39,
-    "candidates": 315,
-    "needs_review": 62,
-    "excluded": 110
+    "candidates": 277,
+    "needs_review": 72,
+    "excluded": 131
   },
   "batch_11": {
     "rows": 40,
+    "type": "enrichment",
+    "admitted": 3,
+    "excluded": 21,
+    "held_for_review": 10,
+    "merged_into_existing": 4,
+    "declined": 2,
+    "descriptions_written": 36,
+    "products_created": 6,
+    "taxonomy_rows_added": 6,
+    "csv_defect": "One row (V4Smart) was missing its article_count field, shifting later columns by one. Repaired; nothing misattributed.",
+    "duplicates_of_already_verified_companies": [
+      "Grupa WB -> WB Group (WB Electronics), verified, with FLYEYE, WARMATE, FT-5",
+      "Polaris Raumflugzeug -> POLARIS Spaceplanes, verified, with four products",
+      "Gorge -> Exail (renamed 2022)",
+      "Grupa Boryszew -> Boryszew, whose drone work sits in the already-verified Hornet-Polskie Drony"
+    ],
+    "corrections_claude_made_against_research": [
+      "Four of six IN_SCOPE findings were duplicates of companies already in the landscape and were merged, not admitted.",
+      "INFINTEQ declined: the aerial evidence is a careers page and LinkedIn roles, not a product.",
+      "Bayards Vertiports excluded on the Skyports Infrastructure precedent: vertiports are not a UAV capability.",
+      "SMOT Acquisition excluded: an acquisition vehicle, not a company with products.",
+      "Look Up excluded: its radar tracks objects in low Earth orbit, not drones."
+    ],
+    "country_corrections": ["Klau Geomatics Germany -> Australia", "SMOT Acquisition Germany -> Austria", "Bayards France -> Netherlands", "Bayards Vertiports France -> Netherlands", "Wolfram Europa Germany -> Estonia"]
+  },
+  "batch_12": {
+    "rows": 40,
     "verify_rows": 0,
     "enrich_rows": 40,
-    "research_completed": true,
-    "research_output": "research-agent/researched/batch-11-researched.csv",
-    "research_notes": "External enrichment completed for all 40 rows. Strong current UAV/C-UAS findings include Germandrones, INFINTEQ, POLARIS, THYRA, WB Group and Artech'Drone. Planned/development-stage capability explicitly flagged for EKOLOT, Boryszew/Hornet and MBDA France. Entity/country corrections include Klau Geomatics -> Australia, SMOT Acquisition -> Austria acquisition vehicle, Bayards/Bayards Vertiports -> Netherlands, Gorgé -> historical Exail name. Extensee is held against the open operator-scope policy and Wolfram Europa against the open warhead-supplier policy. Claude must independently reconcile every finding against the live DB and product/entity ownership rules."
+    "instruction_added": "When checking for duplicates, check against well-known European defence groups and their subsidiaries, not just the other names in the batch. Four of Batch 11's six in-scope findings were already in the landscape under another name."
   },
   "remaining_queue_profile": {
-    "backlog": 315,
-    "never_researched": 222,
-    "p1": 0, "p2": 0, "p3": 22, "p4": 293,
-    "never_researched_above_p4_floor": 0,
-    "backlog_with_no_data": 91,
-    "never_researched_with_no_data": 94,
-    "backlog_with_no_data_by_batch": { "after_07": 214, "after_08": 164, "after_09": 128, "after_10": 91 },
-    "enrichment_runway": "About two and a half more batches. After Batch 12 the blank-record pool is exhausted and the remaining records require a different research strategy."
+    "backlog": 277,
+    "never_researched": 182,
+    "never_researched_with_no_data": 54,
+    "never_researched_with_no_description": 81,
+    "backlog_with_no_data": 53,
+    "backlog_with_no_data_by_batch": { "after_07": 214, "after_08": 164, "after_09": 128, "after_10": 91, "after_11": 53 },
+    "enrichment_runway": "Batch 12 takes 40 of the 54 remaining never-researched blanks. After that the pure-blank pool is gone, but 81 records have a website or product and no description and are still enrichable, so roughly three more useful batches remain."
   },
-  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7, "batch_09": 8, "batch_10": 11 },
+  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7, "batch_09": 8, "batch_10": 11, "batch_11": 3 },
+  "exclusions_per_enrichment_batch": { "batch_08": 16, "batch_09": 19, "batch_10": 14, "batch_11": 21 },
   "open_questions_for_human": [
-    "Warhead scope: whether warheads that ARM drones count - EURENCO, Odin Defence, TDW; Batch 11 also flags Wolfram Europa for this policy.",
-    "Operator scope: whether general commercial drone operators belong, or only operators with proprietary platform/network/regulatory first; Batch 11 flags Extensee for this policy.",
-    "143 companies with landscape status excluded or needs_review had publication_status live after Batch 10; Claude has not changed publication status without Nazar's decision."
+    "Warhead scope: now four companies (EURENCO, Odin Defence, TDW, Wolfram Europa). Ammunition that shoots drones down is already in scope by precedent; the question is only about warheads that ARM drones.",
+    "Operator scope: now two companies (Unmanned4you, Extensee). Extensee flies heavy long-range UAVs and does its own data processing, so the recommended rule might admit it while excluding Unmanned4you.",
+    "174 companies with landscape status excluded or needs_review have publication_status live and are on xsonomy.com, up from 143 after Batch 10 - 31 more in one batch. Claude has changed no publication status; this remains Nazar's decision and is now the largest and fastest-growing data-quality problem in the project."
   ],
-  "notes": "Batch 11 external research is complete and handed to Claude. Preserve conservative ownership rules and distinguish announced demonstrators/MoUs from current delivered capability."
+  "notes": "Admissions are falling and exclusions rising, as expected: the unknown good companies were found first and what remains is mostly noise to clear. The duplicate check is now the highest-value step in reconciliation - four of six in-scope findings this batch were already in the landscape under another name, and without the check WB Group would have been split in two."
 }

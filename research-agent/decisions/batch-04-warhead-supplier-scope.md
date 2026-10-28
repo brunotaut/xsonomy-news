@@ -5,7 +5,7 @@ Raised during Batch 04 reconciliation, 2026-10-26; a third company was added in 
 
 ## The question
 
-Three companies supply **warheads and energetic materials for drones**, and nothing else ties them
+Four companies supply **warheads and energetic materials for drones**, and nothing else ties them
 to the Landscape:
 
 | Company | Country | Evidence |
@@ -13,6 +13,7 @@ to the Landscape:
 | **EURENCO** | France | Energetic-materials and munitions supplier; its DEMON line is reported as arming drones. |
 | **Odin Defence** | Estonia | Explosives manufacturer; RagnaRasa is a joint industrial project for drone and loitering-munition warheads. |
 | **TDW** | Germany | Warhead and effector developer; supplies the warhead system for STARK's Gambit loitering munition. Added during Batch 08, 2026-10-27. |
+| **Wolfram Europa** | Estonia | Energetic materials (RDX, HMX, PBX) and warheads, with an effector-integration partnership with Harmattan AI. Added during Batch 11, 2026-10-28. |
 
 None of them builds an airframe, a sensor or a counter-drone system.
 
@@ -36,7 +37,7 @@ The evidence is clear in all three cases. What is unclear is the scope boundary.
 
 ## What I did
 
-Left all three as **candidates with no taxonomy** — the conservative default. Nothing is lost
+Left all four as **candidates with no taxonomy** — the conservative default. Nothing is lost
 either way and the decision is cheap to apply later.
 
 TDW is the strongest of the three: the Gambit warhead is a delivered, named, drone-specific
@@ -55,20 +56,20 @@ is already in scope and has been for some time. What remains open is narrower an
 
 > **Do warheads that arm drones count, when ammunition that destroys drones already does?**
 
-EURENCO, Odin Defence and TDW are all on the arming side. Nothing in the landscape yet sets a
+EURENCO, Odin Defence, TDW and Wolfram Europa are all on the arming side. Nothing in the landscape yet sets a
 precedent for them either way.
 
 ## What I need
 
 One of:
 
-1. **In scope** — admit all three under `eco-payloads`, and the rule becomes "UAV-specific munitions
+1. **In scope** — admit all four under `eco-payloads`, and the rule becomes "UAV-specific munitions
    components count".
-2. **Out of scope** — exclude all three, and the rule becomes "components must serve flight, sensing
+2. **Out of scope** — exclude all four, and the rule becomes "components must serve flight, sensing
    or counter-drone function, not weapons payload".
 3. **Case by case** — admit only where a delivered, named, drone-specific product exists, which
-   today would admit TDW and neither of the other two.
+   today would admit TDW alone.
 
-Whichever you pick, I will apply it to all three companies and record it as Landscape policy so
-future batches do not re-raise it. This has now come up in two separate batches; each new
+Whichever you pick, I will apply it to all four companies and record it as Landscape policy so
+future batches do not re-raise it. This has now come up in three separate batches; each new
 warhead supplier costs another round of this question.
