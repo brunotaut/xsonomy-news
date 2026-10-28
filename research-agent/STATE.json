@@ -1,142 +1,88 @@
 {
   "protocol_version": 1,
   "landscape": "europe-uav-cuas",
-  "frozen_snapshots": {
-    "v1": 273,
-    "v2": 358
-  },
+  "frozen_snapshots": { "v1": 273, "v2": 358 },
   "current_batch": 15,
-  "status": "READY_FOR_RECONCILIATION",
-  "next_actor": "claude",
-  "input": "research-agent/researched/batch-15-researched.csv",
-  "expected_output": "research-agent/reconciled/batch-15-reconciliation.csv",
-  "batch_type": "enrichment_only",
-  "human_decision_required": false,
+  "status": "AWAITING_HUMAN_DECISION",
+  "next_actor": "human",
+  "input": null,
+  "expected_output": null,
+  "batch_type": null,
+  "human_decision_required": true,
+  "blocker": "The enrichment loop has no work left. The next phase is a choice, not a default: see research-agent/decisions/batch-15-next-phase.md. Do not queue another enrichment batch.",
   "open_decisions": [
+    "research-agent/decisions/batch-15-next-phase.md",
     "research-agent/decisions/batch-04-warhead-supplier-scope.md",
     "research-agent/decisions/batch-10-drone-operator-scope.md"
   ],
-  "blocker": null,
-  "last_completed_batch": 14,
+  "last_completed_batch": 15,
   "live_landscape": {
     "rows": 977,
-    "verified": 533,
-    "candidates": 159,
-    "needs_review": 98,
-    "excluded": 187
+    "verified": 537,
+    "candidates": 119,
+    "needs_review": 103,
+    "excluded": 218,
+    "backlog_with_no_description": 0
   },
-  "batch_14": {
-    "rows": 40,
-    "type": "enrichment",
-    "admitted": 9,
-    "excluded": 15,
-    "held_for_review": 12,
-    "merged_into_existing": 4,
-    "descriptions_written": 36,
-    "products_created": 8,
-    "products_rehomed": 2,
-    "taxonomy_rows_added": 12,
-    "csv_defect": null,
-    "duplicates_of_already_verified_companies": [
-      "Tehavtofart Pivden -> TAF Industries (registered Ukrainian name of the same company)",
-      "Dropla (filed Ukraine) -> Dropla Tech (Denmark)",
-      "Meteksan Savunma -> METEKSAN Defence (same company in Turkish)",
-      "ECA Group -> ECA Group / Infotron (holds the IT180 UAV lineage)"
-    ],
-    "corrections_claude_made_against_research": [
-      "ECA Group merged into ECA Group / Infotron, not into Exail as advised: the landscape already separates the verified UAV lineage from the excluded maritime Exail record, and merging into Exail would have collapsed it.",
-      "Ratel Robotics held a product record called DOT-Chain Defence, which is the Ukrainian MoD procurement platform. Removed from Ratel and attached to the DOTChain record.",
-      "MBDA Deutschland upgraded from the Sky Warden concept to an admission: DefendAir is a counter-drone guided missile under a Bundeswehr contract signed November 2025 to arm the Skyranger 30.",
-      "Navantia declined despite IN_SCOPE: NAIAD integrates unmanned vehicles with naval combat systems and no source ties it to counter-UAS engagement; the counter-drone systems on its ships are Indra's.",
-      "Sener declined despite IN_SCOPE, on the Randle Engineering basis: UAV engineering done for programme primes.",
-      "An orphaned SAMP/T NG product record with no company attached was given to Eurosam.",
-      "Gilden Photonics set to status defunct: the legal entity was dissolved on 17 July 2026."
-    ],
-    "country_corrections": [
-      "Innokas Ukraine -> Finland",
-      "KOVO Armor Ukraine -> Lithuania",
-      "Farsight Vision Ukraine -> Estonia (registered entity FarsightVision OU; Ukrainian team noted in the description, not overwritten)"
-    ]
+  "publication_mismatch": {
+    "verified_and_published": 375,
+    "verified_not_published": 158,
+    "excluded_or_unresolved_but_published": 292,
+    "note": "Measured in both directions for the first time. Previous batches reported only the 292. No publication status has ever been changed by this process."
   },
   "batch_15": {
     "rows": 40,
-    "verify_rows": 0,
-    "enrich_rows": 40,
-    "countries_represented": 11,
-    "composition": "Every remaining backlog record with no description. There are no records left with no data at all.",
-    "instructions_added": [
-      "Is the legal entity still trading? If it has been dissolved, acquired or renamed, say so with the date. (Gilden Photonics was enriched into a company dissolved in July 2026.)",
-      "The duplicate question now also names local-language names, after three batches in which the duplicate was the same company in Ukrainian or Turkish.",
-      "The non-company list now includes government procurement platforms."
+    "type": "enrichment",
+    "was_final_enrichment_batch": true,
+    "admitted": 4,
+    "excluded": 31,
+    "held_for_review": 5,
+    "merged_into_existing": 0,
+    "descriptions_written": 40,
+    "products_created": 3,
+    "products_reassigned": 1,
+    "taxonomy_rows_added": 6,
+    "csv_defect": null,
+    "admitted_list": ["Heliguy (United Kingdom)", "Restube (Germany)", "SBG Systems (France)", "Avio Aero (Italy)"],
+    "corrections_claude_made_against_research": [
+      "INTEGRAL E was recorded under Safran Electrical & Power and is an AURA AERO crewed trainer; moved to the existing Aura Aero record.",
+      "Ricardo excluded with the reason recorded: the article behind the record names Ricardo Mendes, chief executive of TEKEVER, a person rather than this consultancy.",
+      "EE excluded rather than held, to avoid a second record for BT Drone SIM. One product, one owner.",
+      "Avio Aero domain corrected from avioacro.it to avioaero.com; country kept as Italy despite the GE Aerospace parent."
     ],
-    "is_final_enrichment_batch": true
+    "country_corrections": ["Silynx United Kingdom -> Israel", "Firecrest Aerospace United Kingdom -> United States", "HALO Aeronautics United Kingdom -> United States"]
   },
-  "remaining_queue_profile": {
-    "backlog": 159,
-    "with_no_data": 0,
-    "with_no_description": 40,
-    "p1": 18,
-    "p2": 12,
-    "p3": 19,
-    "p4": 110,
-    "with_no_data_by_batch": {
-      "after_07": 214,
-      "after_08": 164,
-      "after_09": 128,
-      "after_10": 91,
-      "after_11": 53,
-      "after_12": 19,
-      "after_13": 9,
-      "after_14": 0
-    },
-    "enrichment_runway": "Batch 15 is the last enrichment batch. After it every backlog company has a description and there is nothing left to enrich."
+  "external_audit_check": {
+    "source": ["research-agent/audits/2026-10-28-external-landscape-audit.md", "research-agent/audits/2026-10-28-external-landscape-audit-part-2.md"],
+    "checked_against_live_db": true,
+    "genuinely_absent": ["Fly4Future", "BizGarden", "GINA Software", "42 Solutions", "Adevex", "AURYN Aero"],
+    "absent_but_entity_unresolved": ["Aeronautica SDLE"],
+    "already_present": "Drone Band is already in the database, already verified, and sitting in draft. It is a publication gap, not a coverage gap.",
+    "companies_created": 0,
+    "note": "No company records were created. Discovery is one of the three next-phase options, not a reconciliation action."
   },
-  "what_comes_after_batch_15": [
-    "Verify the backlog on its merits: 159 described companies whose membership is still open, 18 of them P1.",
-    "Clear the publication gap: 256 companies on xsonomy.com that this process has judged out of scope or unresolved. Larger, and the only one visitors see."
+  "run_totals": {
+    "batches": 15,
+    "companies_researched_and_reconciled": 600,
+    "verified_start": 273,
+    "verified_end": 537,
+    "backlog_start": 634,
+    "backlog_end": 119,
+    "blank_records_start": 453,
+    "blank_records_end": 0
+  },
+  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7, "batch_09": 8, "batch_10": 11, "batch_11": 3, "batch_12": 6, "batch_13": 11, "batch_14": 9, "batch_15": 4 },
+  "exclusions_per_enrichment_batch": { "batch_08": 16, "batch_09": 19, "batch_10": 14, "batch_11": 21, "batch_12": 23, "batch_13": 19, "batch_14": 15, "batch_15": 31 },
+  "next_phase_options": [
+    "1. Publication reconciliation: unpublish the 292 excluded or unresolved companies that are live, publish the 158 verified ones that are not. Claude's recommendation. Needs no further research; every record already carries a written reason. It is a PUBLISH_STATUS change, so it is Nazar's decision under rule 4 of CLAUDE.md.",
+    "2. Merits verification of the remaining 119 backlog candidates, all of which now have descriptions. 18 score P1.",
+    "3. Discovery: add the six companies the external audit showed are genuinely absent."
   ],
-  "admissions_per_batch": {
-    "batch_01": 31,
-    "batch_02": 29,
-    "batch_03": 14,
-    "batch_04": 9,
-    "batch_05": 7,
-    "batch_06": 15,
-    "batch_07": 15,
-    "batch_08": 7,
-    "batch_09": 8,
-    "batch_10": 11,
-    "batch_11": 3,
-    "batch_12": 6,
-    "batch_13": 11,
-    "batch_14": 9
-  },
-  "exclusions_per_enrichment_batch": {
-    "batch_08": 16,
-    "batch_09": 19,
-    "batch_10": 14,
-    "batch_11": 21,
-    "batch_12": 23,
-    "batch_13": 19,
-    "batch_14": 15
-  },
   "open_questions_for_human": [
-    "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Wolfram Europa, Teledyne Energetics). Unchanged by Batch 14.",
-    "Operator and services scope: now eight companies. Batch 14 added Brigantes Consulting, Siemens Energy and Sener to Unmanned4you, Extensee, Team UAV, Eagle Eye Innovations and Randle Engineering. This is the fastest-growing of the two open decisions.",
-    "256 companies with landscape status excluded or needs_review have publication_status live and are on xsonomy.com, up from 229 after Batch 13. It has grown every batch for five batches and has nearly doubled since Batch 10. Claude has changed no publication status.",
-    "After Batch 15 the enrichment loop has no work left. The next phase needs a decision: verify the 159-record backlog on its merits, or clear the 256-record publication gap."
+    "WHAT NEXT - blocking. See research-agent/decisions/batch-15-next-phase.md. Three options, Claude recommends publication reconciliation first.",
+    "Warhead and energetics scope: five companies, raised in five separate batches. Not blocking.",
+    "Operator and services scope: now eleven companies after Batch 15 added Marshall Aerospace, DSV and INECO. It grew in each of the last six batches. Not blocking.",
+    "The publication mismatch is 292 published-but-rejected plus 158 verified-but-unpublished. No publication status has been changed."
   ],
-  "notes": "The blank-record backlog reached zero. All four duplicates this batch were of already-verified companies, two of them the same company under its Ukrainian or Turkish name. The largest hold of the run (12) came from parent-and-subsidiary allocation questions rather than from missing evidence, which is what the remaining backlog looks like.",
-  "batch_15_research": {
-    "rows": 40,
-    "in_scope": 4,
-    "out_of_scope": 30,
-    "unknown": 6,
-    "research_date": "2026-10-28",
-    "report": "research-agent/reports/batch-15-research.md",
-    "original_columns_preserved": 12,
-    "research_columns_appended": 14,
-    "qa": "40 unique IDs; input fields and row order unchanged; CSV round-trip validated; uploaded CSV/report read back exactly",
-    "notes": "Final enrichment research complete; live reconciliation still required. Do not automatically queue another enrichment batch. Existing scope decisions and next-phase choice remain open; no publication or database mutation."
-  }
+  "notes": "The enrichment phase is complete: no backlog record has an empty description. Batch 15 produced the lowest admission rate and the highest exclusion count of the run, which is what the bottom of a queue should look like. The external audit's headline candidate, Drone Band, turned out to be verified in the database and merely unpublished, which is the same problem as the publication mismatch seen from outside."
 }

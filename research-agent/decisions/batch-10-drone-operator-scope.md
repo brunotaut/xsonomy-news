@@ -63,10 +63,15 @@ Batch 14 added three more, and the shape is now unmistakable:
 it does not build. **Sener** (Spain) — contributes UAV engineering to Eurodrone and SIRTAP, which
 belong to the programme primes.
 
+Batch 15 added three more: **Marshall Aerospace** (assesses other companies aircraft for
+flightworthiness), **DSV** (offshore drone logistics flown with Skyways aircraft) and **INECO**
+(U-space engineering research). That makes **eleven**.
+
 ## What I did
 
-Left all eight as **needs_review**: Unmanned4you, Extensee, Team UAV, Eagle Eye Innovations,
-Randle Engineering, Brigantes Consulting, Siemens Energy and Sener. Nothing is lost either way.
+Left all eleven as **needs_review**: Unmanned4you, Extensee, Team UAV, Eagle Eye Innovations,
+Randle Engineering, Brigantes Consulting, Siemens Energy, Sener, Marshall Aerospace, DSV and
+INECO. Nothing is lost either way.
 
 ## What I need
 
@@ -88,6 +93,6 @@ One of:
    Eagle Eye Innovations and Randle Engineering turn on this, not on the operator rule.
 
 Whichever you pick, I will apply it and record it as landscape policy. This has now come up in
-**five consecutive batches and has grown from one company to eight** — it is the fastest-growing
+**six consecutive batches and has grown from one company to eleven** — it is the fastest-growing
 open question in the project, and it will keep growing because the remaining backlog is full of
 engineering firms, distributors and service providers.
