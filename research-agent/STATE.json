@@ -6,10 +6,10 @@
     "v2": 358
   },
   "current_batch": 16,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-16.csv",
-  "expected_output": "research-agent/researched/batch-16-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-16-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-16-reconciliation.csv",
   "batch_type": "verification",
   "human_decision_required": false,
   "blocker": null,
@@ -135,7 +135,7 @@
     "Operator and services scope: eleven companies. Still open and still growing.",
     "158 verified companies are missing from the public landscape page, and about 21 entity-extraction errors are live in the wider catalogue. Not selected as this phase; no publication status has been changed."
   ],
-  "notes": "Phase change. Enrichment is complete and merits verification is authorised. Batch 16 is the first VERIFY queue: each row carries the data already on file plus the single specific question blocking a decision on that company, instead of asking for a description that already exists.",
+  "notes": "Batch 16 external merits verification completed: 13 IN_SCOPE, 13 OUT_OF_SCOPE, 14 UNKNOWN. Claude reconciles live records, writes explicit held reasons and generates batch 17. Verification phase remains authorised; no publication or frozen snapshot changes. Live counts remain last reconciled batch 15 figures until Claude completes batch 16.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -148,7 +148,7 @@
   ],
   "next_phase_decision": {
     "date": "2026-10-28",
-    "user_instruction": "\u0437\u0430\u043a\u0456\u043d\u0447\u0443\u0454\u043c\u043e \u043f\u0435\u0440\u0435\u0432\u0456\u0440\u043a\u0443",
+    "user_instruction": "закінчуємо перевірку",
     "selected": "Complete merits verification of remaining 119 candidates",
     "decision_file": "research-agent/decisions/batch-15-next-phase.md",
     "next_action": "Claude generates batch16 VERIFY queue from live backlog, P1 first, up to40 rows; then hands to ChatGPT. Continue verification/reconciliation until all remaining candidates have a disposition.",
@@ -186,7 +186,20 @@
       "no_website_no_product_no_tag": 2,
       "products_but_no_capability_assigned": 2
     },
-    "notable": "Ukropter is the single candidate that already satisfies the eligibility rule mechanically (tagged, website, source URL). Its tag is the root UAV category rather than a capability leaf, so it needs a real capability before admission rather than an automatic pass."
+    "notable": "Ukropter is the single candidate that already satisfies the eligibility rule mechanically (tagged, website, source URL). Its tag is the root UAV category rather than a capability leaf, so it needs a real capability before admission rather than an automatic pass.",
+    "external_research": {
+      "completed_date": "2026-10-28",
+      "rows": 40,
+      "in_scope": 13,
+      "out_of_scope": 13,
+      "unknown": 14,
+      "report": "research-agent/reports/batch-16-research.md",
+      "input_columns_preserved": 17,
+      "research_columns_added": 16,
+      "optional_description_corrections": 7,
+      "validation": "40 unique company IDs, original order and every input value preserved; CSV round-trip and exact GitHub readback passed.",
+      "limits": "Recommendations, not live admissions. Claude must check live duplicates, canonical product ownership and real taxonomy leaves. Maturity/legal-status limitations are explicit per row."
+    }
   },
   "verification_pool": {
     "backlog_candidates": 119,
