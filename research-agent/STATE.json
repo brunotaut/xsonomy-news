@@ -5,11 +5,11 @@
     "v1": 273,
     "v2": 358
   },
-  "current_batch": 16,
-  "status": "READY_FOR_RECONCILIATION",
-  "next_actor": "claude",
-  "input": "research-agent/researched/batch-16-researched.csv",
-  "expected_output": "research-agent/reconciled/batch-16-reconciliation.csv",
+  "current_batch": 17,
+  "status": "READY_FOR_RESEARCH",
+  "next_actor": "chatgpt",
+  "input": "research-agent/queue/batch-17.csv",
+  "expected_output": "research-agent/researched/batch-17-researched.csv",
   "batch_type": "verification",
   "human_decision_required": false,
   "blocker": null,
@@ -17,13 +17,13 @@
     "research-agent/decisions/batch-04-warhead-supplier-scope.md",
     "research-agent/decisions/batch-10-drone-operator-scope.md"
   ],
-  "last_completed_batch": 15,
+  "last_completed_batch": 16,
   "live_landscape": {
     "rows": 977,
-    "verified": 537,
-    "candidates": 119,
-    "needs_review": 104,
-    "excluded": 217,
+    "verified": 548,
+    "candidates": 79,
+    "needs_review": 120,
+    "excluded": 230,
     "backlog_with_no_description": 0
   },
   "publication_mismatch": {
@@ -131,11 +131,11 @@
     "4. Discovery: add the six companies the external audit showed are genuinely absent."
   ],
   "open_questions_for_human": [
-    "Warhead and energetics scope: five companies. Still open, still non-blocking, but it now also keeps three P1-to-P2 candidates out of the verification batches.",
-    "Operator and services scope: eleven companies. Still open and still growing.",
-    "158 verified companies are missing from the public landscape page, and about 21 entity-extraction errors are live in the wider catalogue. Not selected as this phase; no publication status has been changed."
+    "Warhead and energetics scope: five companies. Still open and still keeping three otherwise-researchable candidates out of the verification batches.",
+    "Operator and services scope: eleven companies. FLANQ and Neramo from Batch 16 sit next to it as integration cases.",
+    "162 verified companies are now missing from the public landscape page, up from 158, because this batch verified eleven more and most of them are in draft. Not selected as this phase; no publication status has been changed."
   ],
-  "notes": "Batch 16 external merits verification completed: 13 IN_SCOPE, 13 OUT_OF_SCOPE, 14 UNKNOWN. Claude reconciles live records, writes explicit held reasons and generates batch 17. Verification phase remains authorised; no publication or frozen snapshot changes. Live counts remain last reconciled batch 15 figures until Claude completes batch 16.",
+  "notes": "First verification batch. The per-row question field worked: 40 of 40 came back with a direct answer. Its biggest effect was structural - twelve Ukrainian records carrying a bare root UAV tag with no evidence were resolved, four into verified companies and eight into holds, and the meaningless tags were deleted. Claude declined two IN_SCOPE recommendations where the research's own wording contradicted the verdict.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -148,7 +148,7 @@
   ],
   "next_phase_decision": {
     "date": "2026-10-28",
-    "user_instruction": "закінчуємо перевірку",
+    "user_instruction": "\u0437\u0430\u043a\u0456\u043d\u0447\u0443\u0454\u043c\u043e \u043f\u0435\u0440\u0435\u0432\u0456\u0440\u043a\u0443",
     "selected": "Complete merits verification of remaining 119 candidates",
     "decision_file": "research-agent/decisions/batch-15-next-phase.md",
     "next_action": "Claude generates batch16 VERIFY queue from live backlog, P1 first, up to40 rows; then hands to ChatGPT. Continue verification/reconciliation until all remaining candidates have a disposition.",
@@ -171,42 +171,66 @@
   },
   "batch_16": {
     "rows": 40,
-    "task_type": "VERIFY",
-    "composition": "17 P1, 10 P2, 13 P3, drawn by score from the 115 verifiable candidates. 14 countries.",
-    "policy_held_excluded_from_queue": [
-      "Odin Defence",
-      "EURENCO",
-      "TDW"
-    ],
-    "why_excluded": "They turn on the open warhead and energetics decision, not on evidence. Re-researching them would return the same answer. They will be dispositioned when that decision is made.",
-    "unresolved_question_breakdown": {
-      "tagged_only_under_general_sensors_domain": 18,
-      "tagged_with_root_uav_category_only": 12,
-      "website_but_no_product": 6,
-      "no_website_no_product_no_tag": 2,
-      "products_but_no_capability_assigned": 2
-    },
-    "notable": "Ukropter is the single candidate that already satisfies the eligibility rule mechanically (tagged, website, source URL). Its tag is the root UAV category rather than a capability leaf, so it needs a real capability before admission rather than an automatic pass.",
-    "external_research": {
-      "completed_date": "2026-10-28",
-      "rows": 40,
+    "type": "verification",
+    "verified": 11,
+    "excluded": 13,
+    "held_for_review": 16,
+    "merged": 0,
+    "research_recommended": {
       "in_scope": 13,
       "out_of_scope": 13,
-      "unknown": 14,
-      "report": "research-agent/reports/batch-16-research.md",
-      "input_columns_preserved": 17,
-      "research_columns_added": 16,
-      "optional_description_corrections": 7,
-      "validation": "40 unique company IDs, original order and every input value preserved; CSV round-trip and exact GitHub readback passed.",
-      "limits": "Recommendations, not live admissions. Claude must check live duplicates, canonical product ownership and real taxonomy leaves. Maturity/legal-status limitations are explicit per row."
-    }
+      "unknown": 14
+    },
+    "agreement_with_research": "38 of 40",
+    "disagreements": [
+      "Bulba: IN_SCOPE declined. The research itself calls it a manufacturer brand rather than an independent legal company, and the named manufacturer Servis Budtrans has no record here. Admitting it would repeat the Bullspike error from Batch 12.",
+      "Fulltime Robotics: IN_SCOPE declined. Maturity is prototype and demonstration, the same rule that held Frenel Imaging, Dryad and Asseco. Its only link was a LinkedIn post, not recorded as a website."
+    ],
+    "products_created": 16,
+    "taxonomy_rows_added": 13,
+    "aliases_added": 4,
+    "data_cleanup": "Twelve Ukrainian directory imports were tagged with the bare root UAV category and no evidence. Four proved real and were given capability leaves and named products; eight could not be confirmed. All unevidenced root UAV tags were deleted from remaining candidates.",
+    "ownership_checks": [
+      "Grupo Oesia excluded as a parent: the autopilots belong to UAV Navigation SLU, already verified with the alias UAV Navigation-Grupo Oesia.",
+      "FLANQ held: ORKA, ORKA Dock and ORKA Dock Mini are already recorded under CiS.",
+      "TNO excluded on entity type: Destinus and Robin Radar, its industrialisation partners, are already verified and own the products.",
+      "Twist Robotics OBRIY given a distinct slug; an unrelated Obriy 2.0 belongs to Kara Dag."
+    ],
+    "sensor_rule_outcome": "smartmicro, PCO, Senop and AIM admitted on named drone-specific variants; Acconeer, Blickfeld and ams OSRAM excluded as general-purpose parts used in demonstrations. The Batch 13 rule separated them cleanly."
   },
   "verification_pool": {
-    "backlog_candidates": 119,
-    "verifiable_now": 115,
+    "backlog_candidates": 79,
+    "verifiable_now": 75,
     "held_for_open_scope_decisions": 4,
-    "tagged_in_uav_or_cuas_tree": 13,
-    "tagged_only_outside_the_tree_or_untagged": 106,
-    "note": "Of the 13 tagged inside the tree, 12 are Ukrainian directory imports tagged with the root UAV category and carrying no website, product or source at all. Those tags are assertions, not evidence."
+    "bands_after_batch_16": {
+      "P1": 0,
+      "P2": 0,
+      "P3": 1,
+      "P4": 74
+    },
+    "note": "Batch 16 took every candidate above the P4 floor. What remains is the long tail, and the expected admission rate is low. Two batches of 40 and 35 should finish the pool."
+  },
+  "batch_17": {
+    "rows": 40,
+    "task_type": "VERIFY",
+    "countries": 17,
+    "bands": {
+      "P3": 1,
+      "P4": 39
+    },
+    "question_mix": {
+      "tagged_only_under_general_sensors_domain": 34,
+      "website_but_no_product": 3,
+      "products_but_no_capability_assigned": 2,
+      "no_website_no_product_no_tag": 1
+    },
+    "instruction_added": "Is this record a BRAND of another manufacturer rather than a company? Added after Bulba.",
+    "policy_held_excluded": [
+      "Odin Defence",
+      "EURENCO",
+      "TDW",
+      "Wolfram Europa",
+      "Teledyne Energetics"
+    ]
   }
 }
