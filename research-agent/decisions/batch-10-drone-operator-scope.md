@@ -56,10 +56,17 @@ By contrast **SkyBound** was admitted outright in Batch 12 without waiting for t
 because it owns its control, analytics and simulation software and runs its own automated stations.
 That is option 2 applied in practice.
 
+Batch 14 added three more, and the shape is now unmistakable:
+
+**Brigantes Consulting** (United Kingdom) — distributes and fields partner unmanned aircraft.
+**Siemens Energy** (Germany) — sells drone inspection of power infrastructure, flown with aircraft
+it does not build. **Sener** (Spain) — contributes UAV engineering to Eurodrone and SIRTAP, which
+belong to the programme primes.
+
 ## What I did
 
-Left Unmanned4you, Extensee, Team UAV, Eagle Eye Innovations and Randle Engineering as
-**needs_review**. Nothing is lost either way.
+Left all eight as **needs_review**: Unmanned4you, Extensee, Team UAV, Eagle Eye Innovations,
+Randle Engineering, Brigantes Consulting, Siemens Energy and Sener. Nothing is lost either way.
 
 ## What I need
 
@@ -81,4 +88,6 @@ One of:
    Eagle Eye Innovations and Randle Engineering turn on this, not on the operator rule.
 
 Whichever you pick, I will apply it and record it as landscape policy. This has now come up in
-three consecutive batches and has grown from one company to five.
+**five consecutive batches and has grown from one company to eight** — it is the fastest-growing
+open question in the project, and it will keep growing because the remaining backlog is full of
+engineering firms, distributors and service providers.

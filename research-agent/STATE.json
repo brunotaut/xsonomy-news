@@ -1,15 +1,12 @@
 {
   "protocol_version": 1,
   "landscape": "europe-uav-cuas",
-  "frozen_snapshots": {
-    "v1": 273,
-    "v2": 358
-  },
-  "current_batch": 14,
-  "status": "READY_FOR_RECONCILIATION",
-  "next_actor": "claude",
-  "input": "research-agent/researched/batch-14-researched.csv",
-  "expected_output": "research-agent/reconciled/batch-14-reconciliation.csv",
+  "frozen_snapshots": { "v1": 273, "v2": 358 },
+  "current_batch": 15,
+  "status": "READY_FOR_RESEARCH",
+  "next_actor": "chatgpt",
+  "input": "research-agent/queue/batch-15.csv",
+  "expected_output": "research-agent/researched/batch-15-researched.csv",
   "batch_type": "enrichment_only",
   "human_decision_required": false,
   "open_decisions": [
@@ -17,112 +14,75 @@
     "research-agent/decisions/batch-10-drone-operator-scope.md"
   ],
   "blocker": null,
-  "last_completed_batch": 13,
+  "last_completed_batch": 14,
   "live_landscape": {
-    "rows": 981,
-    "verified": 524,
-    "candidates": 199,
-    "needs_review": 86,
-    "excluded": 172
-  },
-  "batch_13": {
-    "rows": 40,
-    "type": "enrichment",
-    "admitted": 11,
-    "excluded": 19,
-    "held_for_review": 5,
-    "merged_into_existing": 5,
-    "left_as_candidate": 2,
-    "descriptions_written": 37,
-    "products_created": 18,
-    "taxonomy_rows_added": 17,
-    "csv_defect": null,
-    "scope_rule_applied": "A named offering built FOR unmanned aircraft or counter-UAS counts; a general-purpose product that somebody else put into a drone does not. This matches the already-verified component suppliers (Turkish Engine Industries, YellowScan, Volz Servos) and was needed because the queue reached a seam of large general-technology companies.",
-    "duplicates_of_already_verified_companies": [
-      "Frankenberg Technologies -> Frankenburg Technologies (Estonia), already verified with the Mark I interceptor; the duplicate was misspelled and filed as United Kingdom",
-      "TUSAS -> Turkish Aerospace (TAI), already verified with seven products",
-      "Santa Barbara Sistemas -> GDELS-Santa Barbara Sistemas, already verified",
-      "Qioptiq (Excelitas) -> Teledyne Qioptiq (Teledyne completed the purchase in February 2025)",
-      "Eutelsat OneWeb -> Eutelsat"
-    ],
-    "corrections_claude_made_against_research": [
-      "Country: the researched canonical-parent country was REJECTED for six companies (Teledyne Qioptiq, PZL Mielec, Santa Barbara, Rotax, Axis, Odin Defence). Applying it would have moved six European companies out of the landscape scope. Operating country applied; parent recorded in the description.",
-      "Product ownership: Turkish Aerospace held records for Kizilelma and Akinci, which are Baykar aircraft. Both reassigned to Baykar, sources folded into Baykar's existing records.",
-      "GRIM Tech admitted despite a charity-entity caution; Defense News coverage and a trade-fair exhibitor listing establish a manufacturer.",
-      "EURENCO: the DEMON attribution the research could not confirm does carry a French trade source in the existing product record.",
-      "Seven large general-technology companies decided under the new scope rule: Ericsson and Deutsche Telekom admitted, Nordic Semiconductor, Axis, Rotax, Varjo, Eutelsat and OQ Technology excluded."
-    ],
-    "country_corrections": [
-      "Althimis Germany -> United States"
-    ],
-    "known_issue_not_fixed": "Baykar now holds 15 product rows for about 6 aircraft (Akinci/Akinci/Bayraktar Akinci, four Kizilelma spellings, TB2/Bayraktar TB2, TB3/Bayraktar TB3). Product-level duplication predates this batch."
+    "rows": 977,
+    "verified": 533,
+    "candidates": 159,
+    "needs_review": 98,
+    "excluded": 187
   },
   "batch_14": {
     "rows": 40,
+    "type": "enrichment",
+    "admitted": 9,
+    "excluded": 15,
+    "held_for_review": 12,
+    "merged_into_existing": 4,
+    "descriptions_written": 36,
+    "products_created": 8,
+    "products_rehomed": 2,
+    "taxonomy_rows_added": 12,
+    "csv_defect": null,
+    "duplicates_of_already_verified_companies": [
+      "Tehavtofart Pivden -> TAF Industries (registered Ukrainian name of the same company)",
+      "Dropla (filed Ukraine) -> Dropla Tech (Denmark)",
+      "Meteksan Savunma -> METEKSAN Defence (same company in Turkish)",
+      "ECA Group -> ECA Group / Infotron (holds the IT180 UAV lineage)"
+    ],
+    "corrections_claude_made_against_research": [
+      "ECA Group merged into ECA Group / Infotron, not into Exail as advised: the landscape already separates the verified UAV lineage from the excluded maritime Exail record, and merging into Exail would have collapsed it.",
+      "Ratel Robotics held a product record called DOT-Chain Defence, which is the Ukrainian MoD procurement platform. Removed from Ratel and attached to the DOTChain record.",
+      "MBDA Deutschland upgraded from the Sky Warden concept to an admission: DefendAir is a counter-drone guided missile under a Bundeswehr contract signed November 2025 to arm the Skyranger 30.",
+      "Navantia declined despite IN_SCOPE: NAIAD integrates unmanned vehicles with naval combat systems and no source ties it to counter-UAS engagement; the counter-drone systems on its ships are Indra's.",
+      "Sener declined despite IN_SCOPE, on the Randle Engineering basis: UAV engineering done for programme primes.",
+      "An orphaned SAMP/T NG product record with no company attached was given to Eurosam.",
+      "Gilden Photonics set to status defunct: the legal entity was dissolved on 17 July 2026."
+    ],
+    "country_corrections": ["Innokas Ukraine -> Finland", "KOVO Armor Ukraine -> Lithuania", "Farsight Vision Ukraine -> Estonia (registered entity FarsightVision OU; Ukrainian team noted in the description, not overwritten)"]
+  },
+  "batch_15": {
+    "rows": 40,
     "verify_rows": 0,
     "enrich_rows": 40,
-    "countries_represented": 12,
-    "composition": "All 9 remaining records with no data at all (exempted from the country cap, which held 9 of them back in Batch 13 because the blanks cluster in Ukraine), plus 31 records with a website or product but no description, capped at 5 per country.",
-    "instructions_rewritten": [
-      "State the operating country of THIS company and name any parent group and its country separately. Do not replace the operating country with the parent country. (Batch 13 showed the previous canonical-parent question would have moved six European companies out of scope.)",
-      "Say whether the offering is built FOR unmanned aircraft or counter-UAS, or is a general-purpose product someone else put into a drone.",
-      "The duplicate question now names spelling variants and former names, not only subsidiaries.",
-      "The non-company list now includes investors and accelerators, and end users."
-    ]
+    "countries_represented": 11,
+    "composition": "Every remaining backlog record with no description. There are no records left with no data at all.",
+    "instructions_added": [
+      "Is the legal entity still trading? If it has been dissolved, acquired or renamed, say so with the date. (Gilden Photonics was enriched into a company dissolved in July 2026.)",
+      "The duplicate question now also names local-language names, after three batches in which the duplicate was the same company in Ukrainian or Turkish.",
+      "The non-company list now includes government procurement platforms."
+    ],
+    "is_final_enrichment_batch": true
   },
   "remaining_queue_profile": {
-    "backlog": 199,
-    "with_no_data": 9,
-    "with_no_description": 80,
-    "with_no_data_by_batch": {
-      "after_09": 128,
-      "after_10": 91,
-      "after_11": 53,
-      "after_12": 19,
-      "after_13": 9
-    },
-    "enrichment_runway": "Batch 14 clears the last 9 blanks and 31 partials. About 40 records with no description remain after it, which is one more batch. The enrichment phase ends there; what follows must be either verifying the backlog on its merits or clearing the publication gap."
+    "backlog": 159,
+    "with_no_data": 0,
+    "with_no_description": 40,
+    "p1": 18, "p2": 12, "p3": 19, "p4": 110,
+    "with_no_data_by_batch": { "after_07": 214, "after_08": 164, "after_09": 128, "after_10": 91, "after_11": 53, "after_12": 19, "after_13": 9, "after_14": 0 },
+    "enrichment_runway": "Batch 15 is the last enrichment batch. After it every backlog company has a description and there is nothing left to enrich."
   },
-  "admissions_per_batch": {
-    "batch_01": 31,
-    "batch_02": 29,
-    "batch_03": 14,
-    "batch_04": 9,
-    "batch_05": 7,
-    "batch_06": 15,
-    "batch_07": 15,
-    "batch_08": 7,
-    "batch_09": 8,
-    "batch_10": 11,
-    "batch_11": 3,
-    "batch_12": 6,
-    "batch_13": 11
-  },
-  "exclusions_per_enrichment_batch": {
-    "batch_08": 16,
-    "batch_09": 19,
-    "batch_10": 14,
-    "batch_11": 21,
-    "batch_12": 23,
-    "batch_13": 19
-  },
-  "open_questions_for_human": [
-    "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Wolfram Europa, Teledyne Energetics). Unchanged by Batch 13.",
-    "Operator and services scope: five companies (Unmanned4you, Extensee, Team UAV, Eagle Eye Innovations, Randle Engineering). Unchanged by Batch 13.",
-    "229 companies with landscape status excluded or needs_review have publication_status live and are on xsonomy.com, up from 206 after Batch 12. Claude has changed no publication status.",
-    "New, from Batch 13: the component scope rule was applied without being asked for, because the queue reached large general-technology companies and the loop could not proceed without one. The rule is in the Batch 13 report. If Nazar disagrees, Ericsson and Deutsche Telekom come out and Nordic Semiconductor, Axis, Rotax, Varjo, Eutelsat and OQ Technology go in."
+  "what_comes_after_batch_15": [
+    "Verify the backlog on its merits: 159 described companies whose membership is still open, 18 of them P1.",
+    "Clear the publication gap: 256 companies on xsonomy.com that this process has judged out of scope or unresolved. Larger, and the only one visitors see."
   ],
-  "notes": "The queue has moved past small unknown companies into large well-known ones with empty records, which changed the kind of judgement required: most calls this batch were scope and ownership, not evidence. Three of five duplicates were of already-verified companies, and the TUSAS merge exposed two Baykar aircraft filed under Turkish Aerospace.",
-  "batch_14_research": {
-    "rows": 40,
-    "in_scope": 15,
-    "out_of_scope": 14,
-    "unknown": 11,
-    "research_date": "2026-10-28",
-    "report": "research-agent/reports/batch-14-research.md",
-    "original_columns_preserved": 12,
-    "research_columns_appended": 13,
-    "qa": "40 unique company IDs; original fields unchanged; CSV round-trip validated; both uploaded files read back exactly",
-    "notes": "Operating-country corrections, non-company exclusions, duplicate/parent ownership checks and maturity holds detailed in report. Existing human decisions remain nonblocking. No live DB/publication/snapshot changes."
-  }
+  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7, "batch_09": 8, "batch_10": 11, "batch_11": 3, "batch_12": 6, "batch_13": 11, "batch_14": 9 },
+  "exclusions_per_enrichment_batch": { "batch_08": 16, "batch_09": 19, "batch_10": 14, "batch_11": 21, "batch_12": 23, "batch_13": 19, "batch_14": 15 },
+  "open_questions_for_human": [
+    "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Wolfram Europa, Teledyne Energetics). Unchanged by Batch 14.",
+    "Operator and services scope: now eight companies. Batch 14 added Brigantes Consulting, Siemens Energy and Sener to Unmanned4you, Extensee, Team UAV, Eagle Eye Innovations and Randle Engineering. This is the fastest-growing of the two open decisions.",
+    "256 companies with landscape status excluded or needs_review have publication_status live and are on xsonomy.com, up from 229 after Batch 13. It has grown every batch for five batches and has nearly doubled since Batch 10. Claude has changed no publication status.",
+    "After Batch 15 the enrichment loop has no work left. The next phase needs a decision: verify the 159-record backlog on its merits, or clear the 256-record publication gap."
+  ],
+  "notes": "The blank-record backlog reached zero. All four duplicates this batch were of already-verified companies, two of them the same company under its Ukrainian or Turkish name. The largest hold of the run (12) came from parent-and-subsidiary allocation questions rather than from missing evidence, which is what the remaining backlog looks like."
 }
