@@ -1,7 +1,10 @@
 {
   "protocol_version": 1,
   "landscape": "europe-uav-cuas",
-  "frozen_snapshots": { "v1": 273, "v2": 358 },
+  "frozen_snapshots": {
+    "v1": 273,
+    "v2": 358
+  },
   "current_batch": 15,
   "status": "AWAITING_HUMAN_DECISION",
   "next_actor": "human",
@@ -20,43 +23,67 @@
     "rows": 977,
     "verified": 537,
     "candidates": 119,
-    "needs_review": 103,
-    "excluded": 218,
+    "needs_review": 104,
+    "excluded": 217,
     "backlog_with_no_description": 0
   },
   "publication_mismatch": {
+    "landscape_page_is_correct": "The public landscape page (xsonomy.com/data/landscape.json) contains exactly the 375 verified-and-live companies. An independent check of 253 excluded/needs_review records found ZERO of them present in the landscape. The landscape gate works.",
     "verified_and_published": 375,
     "verified_not_published": 158,
-    "excluded_or_unresolved_but_published": 292,
-    "note": "Measured in both directions for the first time. Previous batches reported only the 292. No publication status has ever been changed by this process."
+    "excluded_or_unresolved_with_publication_status_live": 292,
+    "what_the_292_actually_means": "These are live in the WIDER general catalogue (companies.json, about 2,300 companies), not on the landscape page. Being out of scope for the europe-uav-cuas landscape is not by itself a reason to unpublish a legitimate company from a site-wide catalogue. Of the 292, roughly 21 carry screening notes identifying them as non-companies or entity-extraction errors (procurement platforms, publications, NGOs, accelerators, universities, product lines); the rest are real companies in other industries.",
+    "correction": "Batches 10-14 reported the growing number as companies wrongly on xsonomy.com. That framing was wrong: the landscape page never showed them. The genuine one-sided gap is the 158 verified companies that are NOT on the landscape page.",
+    "note": "No publication status has ever been changed by this process."
   },
   "batch_15": {
     "rows": 40,
     "type": "enrichment",
     "was_final_enrichment_batch": true,
     "admitted": 4,
-    "excluded": 31,
-    "held_for_review": 5,
+    "excluded": 30,
+    "held_for_review": 6,
     "merged_into_existing": 0,
     "descriptions_written": 40,
     "products_created": 3,
     "products_reassigned": 1,
     "taxonomy_rows_added": 6,
     "csv_defect": null,
-    "admitted_list": ["Heliguy (United Kingdom)", "Restube (Germany)", "SBG Systems (France)", "Avio Aero (Italy)"],
+    "admitted_list": [
+      "Heliguy (United Kingdom)",
+      "Restube (Germany)",
+      "SBG Systems (France)",
+      "Avio Aero (Italy)"
+    ],
     "corrections_claude_made_against_research": [
       "INTEGRAL E was recorded under Safran Electrical & Power and is an AURA AERO crewed trainer; moved to the existing Aura Aero record.",
       "Ricardo excluded with the reason recorded: the article behind the record names Ricardo Mendes, chief executive of TEKEVER, a person rather than this consultancy.",
       "EE excluded rather than held, to avoid a second record for BT Drone SIM. One product, one owner.",
       "Avio Aero domain corrected from avioacro.it to avioaero.com; country kept as Italy despite the GE Aerospace parent."
     ],
-    "country_corrections": ["Silynx United Kingdom -> Israel", "Firecrest Aerospace United Kingdom -> United States", "HALO Aeronautics United Kingdom -> United States"]
+    "country_corrections": [
+      "Silynx United Kingdom -> Israel",
+      "Firecrest Aerospace United Kingdom -> United States",
+      "HALO Aeronautics United Kingdom -> United States"
+    ]
   },
   "external_audit_check": {
-    "source": ["research-agent/audits/2026-10-28-external-landscape-audit.md", "research-agent/audits/2026-10-28-external-landscape-audit-part-2.md"],
+    "source": [
+      "research-agent/audits/2026-10-28-external-landscape-audit.md",
+      "research-agent/audits/2026-10-28-external-landscape-audit-part-2.md"
+    ],
     "checked_against_live_db": true,
-    "genuinely_absent": ["Fly4Future", "BizGarden", "GINA Software", "42 Solutions", "Adevex", "AURYN Aero"],
-    "absent_but_entity_unresolved": ["Aeronautica SDLE"],
+    "genuinely_absent": [
+      "Fly4Future",
+      "BizGarden",
+      "GINA Software",
+      "42 Solutions",
+      "Adevex",
+      "AURYN Aero"
+    ],
+    "absent_but_entity_unresolved": [
+      "Aeronautica SDLE"
+    ],
     "already_present": "Drone Band is already in the database, already verified, and sitting in draft. It is a publication gap, not a coverage gap.",
     "companies_created": 0,
     "note": "No company records were created. Discovery is one of the three next-phase options, not a reconciliation action."
@@ -71,18 +98,54 @@
     "blank_records_start": 453,
     "blank_records_end": 0
   },
-  "admissions_per_batch": { "batch_01": 31, "batch_02": 29, "batch_03": 14, "batch_04": 9, "batch_05": 7, "batch_06": 15, "batch_07": 15, "batch_08": 7, "batch_09": 8, "batch_10": 11, "batch_11": 3, "batch_12": 6, "batch_13": 11, "batch_14": 9, "batch_15": 4 },
-  "exclusions_per_enrichment_batch": { "batch_08": 16, "batch_09": 19, "batch_10": 14, "batch_11": 21, "batch_12": 23, "batch_13": 19, "batch_14": 15, "batch_15": 31 },
+  "admissions_per_batch": {
+    "batch_01": 31,
+    "batch_02": 29,
+    "batch_03": 14,
+    "batch_04": 9,
+    "batch_05": 7,
+    "batch_06": 15,
+    "batch_07": 15,
+    "batch_08": 7,
+    "batch_09": 8,
+    "batch_10": 11,
+    "batch_11": 3,
+    "batch_12": 6,
+    "batch_13": 11,
+    "batch_14": 9,
+    "batch_15": 4
+  },
+  "exclusions_per_enrichment_batch": {
+    "batch_08": 16,
+    "batch_09": 19,
+    "batch_10": 14,
+    "batch_11": 21,
+    "batch_12": 23,
+    "batch_13": 19,
+    "batch_14": 15,
+    "batch_15": 30
+  },
   "next_phase_options": [
-    "1. Publication reconciliation: unpublish the 292 excluded or unresolved companies that are live, publish the 158 verified ones that are not. Claude's recommendation. Needs no further research; every record already carries a written reason. It is a PUBLISH_STATUS change, so it is Nazar's decision under rule 4 of CLAUDE.md.",
-    "2. Merits verification of the remaining 119 backlog candidates, all of which now have descriptions. 18 score P1.",
-    "3. Discovery: add the six companies the external audit showed are genuinely absent."
+    "1. Publish the 158 verified companies that are missing from the landscape page. Smallest risk, clearest benefit, and the only purely one-sided gap. Claude's recommendation. Still a PUBLISH_STATUS change, so Nazar's decision under rule 4 of CLAUDE.md.",
+    "2. Remove the roughly 21 entity-extraction errors (procurement platforms, publications, NGOs, accelerators, universities, product lines) from the wider catalogue. These are wrong in any catalogue, not merely out of this landscape.",
+    "3. Merits verification of the remaining 119 backlog candidates, all of which now have descriptions. 18 score P1.",
+    "4. Discovery: add the six companies the external audit showed are genuinely absent."
   ],
   "open_questions_for_human": [
-    "WHAT NEXT - blocking. See research-agent/decisions/batch-15-next-phase.md. Three options, Claude recommends publication reconciliation first.",
+    "WHAT NEXT - blocking. See research-agent/decisions/batch-15-next-phase.md. Claude now recommends the 158 verified-but-unpublished companies first, and NOT a bulk unpublish.",
     "Warhead and energetics scope: five companies, raised in five separate batches. Not blocking.",
     "Operator and services scope: now eleven companies after Batch 15 added Marshall Aerospace, DSV and INECO. It grew in each of the last six batches. Not blocking.",
-    "The publication mismatch is 292 published-but-rejected plus 158 verified-but-unpublished. No publication status has been changed."
+    "158 verified companies are missing from the public landscape page. Separately, about 21 entity-extraction errors are live in the wider catalogue and should come out of any catalogue; the other 271 out-of-scope records are legitimate companies in other industries and are not a landscape problem."
   ],
-  "notes": "The enrichment phase is complete: no backlog record has an empty description. Batch 15 produced the lowest admission rate and the highest exclusion count of the run, which is what the bottom of a queue should look like. The external audit's headline candidate, Drone Band, turned out to be verified in the database and merely unpublished, which is the same problem as the publication mismatch seen from outside."
+  "notes": "The enrichment phase is complete: no backlog record has an empty description. Batch 15 produced the lowest admission rate and the highest exclusion count of the run. A concurrent ChatGPT check corrected the publication framing Claude had been reporting since Batch 10: the public landscape page contains none of the excluded records, so the real gap is one-sided - 158 verified companies are missing from it.",
+  "concurrent_chatgpt_work_merged": {
+    "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
+    "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
+  },
+  "supplementary_review_outcomes": [
+    "Safran Electrical & Power: a 2020 Safran announcement shows it manufactured the wiring harness for the XSun SX 1.2 pre-series drone. Historical UAV-specific work at the named subsidiary, so the categorical exclusion was softened to needs_review.",
+    "Sopra Steria / CS Group: CS Group's BOREADES is its own C-UAS system, deployed since 2015 with more than 50 operational systems. CS Group is already verified separately; the Sopra Steria parent-level hold stands, with the evidence recorded.",
+    "SLM Solutions: the squeeze-out was registered 1 September 2023, not 4 September, which was the announcement. Description corrected.",
+    "Ricardo: the exclusion and the Ricardo Mendes correction stand. A 2010 Wolverine UAV engine line existed at the US subsidiary Ricardo Inc; historical and not attached to the UK record."
+  ]
 }

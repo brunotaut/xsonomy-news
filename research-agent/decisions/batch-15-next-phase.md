@@ -18,44 +18,36 @@ Fifteen batches, 600 companies researched externally and reconciled independentl
 Every company in the backlog now has a description, a country and, where one exists, a website and
 products. There is nothing left to enrich.
 
-## The publication mismatch, measured properly for the first time
+## The publication picture, corrected
 
-I have been reporting one half of this number for five batches. Here is both halves.
+I reported for five batches that a growing number of rejected companies were live on xsonomy.com
+and called it the project's biggest problem. A concurrent check of the live site shows that was
+wrong, and the correction changes what I recommend.
+
+**The public landscape page is clean.** `xsonomy.com/data/landscape.json` holds exactly the 375
+verified-and-live companies. Of 253 excluded and needs_review records checked against it, **none
+appeared**. The build gate requires both landscape membership and `publication_status = live`, and
+it does its job.
+
+`publication_status = live` on a rejected record governs the **wider site catalogue** — about 2,300
+companies, not scoped to this landscape. A shipbuilder being out of scope for a European UAV
+landscape is not a reason to delete it from a site-wide catalogue.
 
 | | Count |
 |---|---:|
-| Verified companies **published** on xsonomy.com | 375 |
-| Verified companies **not published** | **158** |
-| Excluded or unresolved companies **published** | **292** |
+| Verified and on the landscape page | 375 |
+| **Verified but NOT on the landscape page** | **158** |
+| Out-of-scope records live in the wider catalogue | 292 |
+| — non-companies and extraction errors among them | about 21 |
+| — legitimate companies in other industries | about 271 |
 
-So of the 667 company pages the public site can show from this landscape, **292 are companies this
-process judged out of scope or unresolved**, and **158 companies it verified are missing**.
+The genuine, one-sided problem is the **158**. They passed the eligibility rule and are invisible
+on the landscape page. The external audit found one of them from outside without realising:
+**Drone Band** was flagged as a missing company and is in fact verified and sitting in draft.
 
-The site is not a smaller version of the landscape. It is a different set.
-
-This matters more than any remaining research. A visitor looking for European counter-drone
-companies currently finds a fire-equipment shop, four shipbuilders, two universities, a news
-publication and an accelerator — and does not find 158 companies that belong there.
-
-## The three candidates for the next phase
-
-**1. Publication reconciliation.** Bring the public site into line with the landscape: unpublish the
-292, publish the 158. Largest effect, entirely within this repository's data, and the only one
-visitors would notice. It is a `PUBLISH_STATUS` change, which under rule 4 of `CLAUDE.md` is Nazar's
-decision and must be logged — which is why it has never been done.
-
-**2. Merits verification of the 119.** Every remaining candidate now has a description, so they can
-be judged without more research. 18 score P1. This is the natural completion of the landscape, but
-it adds at most a few dozen companies.
-
-**3. Discovery.** The external audit found **six European companies absent from the database
-entirely**: Fly4Future (Czechia), BizGarden, GINA Software (Czechia), 42 Solutions (Netherlands),
-Adevex (Spain) and AURYN Aero (Italy), with Aeronautica SDLE unresolved. Those are real gaps, but
-six is a small return next to 292 and 158.
-
-A seventh audit candidate, **Drone Band**, turned out not to be a gap at all: it is already in the
-database, already verified, and simply **not published** — the same problem as option 1, found from
-the outside.
+The roughly 21 extraction errors — a government procurement platform, two news publications, an
+NGO, an accelerator, two universities, a grenade launcher recorded as a company — do not belong in
+any catalogue and are worth removing on their own merits.
 
 ## My recommendation
 

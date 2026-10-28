@@ -8,8 +8,8 @@ the final enrichment batch). Output: `research-agent/reconciled/batch-15-reconci
 | | Batch 12 | Batch 13 | Batch 14 | Batch 15 |
 |---|---:|---:|---:|---:|
 | Admitted | 6 | 11 | 9 | **4** |
-| Excluded | 23 | 19 | 15 | **31** |
-| Held for review | 9 | 5 | 12 | **5** |
+| Excluded | 23 | 19 | 15 | **30** |
+| Held for review | 9 | 5 | 12 | **6** |
 | Merged | 2 | 5 | 4 | **0** |
 
 Four admissions from forty rows is the lowest rate of the run, and it is the right shape for a
@@ -54,7 +54,7 @@ Drone SIM — belongs to **BT**, which was admitted last batch. Rather than hold
 record for the same product, EE was excluded with the allocation written into the note. One product,
 one owner.
 
-## Excluded (31) — the largest of the run
+## Excluded (30) — the largest of the run
 
 The composition says where the queue had got to:
 
@@ -69,11 +69,16 @@ Three country corrections, all of them moving a record out of Europe and therefo
 landscape view: **Silynx → Israel**, **Firecrest Aerospace → United States**, **HALO Aeronautics →
 United States**.
 
-## Held for review (5)
+## Held for review (6)
 
 BMT Global (SPARO is a co-developed demonstrator), Marshall Aerospace (it certifies other people's
 aircraft — the Extera it assessed is Flarebright's), DSV, INECO and Sopra Steria. The last three
 are operator-and-services cases, which takes that open decision to **eleven companies**.
+
+**Safran Electrical & Power was moved from excluded to held** after a concurrent supplementary
+review found a 2020 Safran announcement: it manufactured the wiring harness for the XSun SX 1.2
+pre-series drone. That is historical UAV-specific work at this exact subsidiary, which is more than
+a categorical exclusion allows. The INTEGRAL E correction stands.
 
 ## The external audit, checked against the live database
 
@@ -102,19 +107,42 @@ No companies were created. That is a next-phase decision, not a reconciliation o
 | Redundant unevidenced parent sectors | **0** |
 | Backlog records with no description | **0** |
 
-## The publication mismatch, measured in both directions
+## The publication mismatch — and a correction to how I have been reporting it
 
-For five batches I have reported one number: companies the landscape rejected that are live on the
-site. Here is the whole picture.
+For five batches I reported a growing number of companies the landscape had rejected that were
+"live on xsonomy.com", and described it as the project's largest data-quality problem. A concurrent
+check of the live site, run in parallel with this batch, shows **that framing was wrong**.
+
+The public landscape page at `xsonomy.com/data/landscape.json` contains **exactly 375 companies** —
+the verified-and-live set. Of 253 excluded and needs_review records checked against it, **zero were
+present**. The landscape gate requires both `included` membership and `publication_status = live`,
+and it works.
+
+What `publication_status = live` actually governs for those records is the **wider site catalogue**,
+about 2,300 companies and not scoped to this landscape. Being out of scope for a European UAV and
+counter-UAS landscape is not a reason to unpublish a real company from a site-wide catalogue.
+Dearsan is a genuine shipbuilder; Siemens is a genuine software company.
+
+So the number splits in two:
 
 | | Count |
 |---|---:|
-| Verified and published | 375 |
-| **Verified but not published** | **158** |
-| **Excluded or unresolved, but published** | **292** |
+| Verified and on the landscape page | 375 |
+| **Verified but NOT on the landscape page** | **158** |
+| Out-of-scope records live in the wider catalogue | 292 |
+| — of those, non-companies and extraction errors | about 21 |
+| — of those, legitimate companies in other industries | about 271 |
 
-The public site is not a subset of the landscape. It is a different set, overlapping in 375 places
-and differing in 450.
+**The real, one-sided gap is the 158.** Those companies passed the eligibility rule and do not
+appear on the landscape page at all. The audit found one of them from the outside without knowing
+it: **Drone Band**, flagged as a missing company, is verified in the database and sitting in draft.
+
+The roughly 21 extraction errors — a procurement platform, publications, NGOs, an accelerator, two
+universities, a grenade launcher — are wrong in any catalogue and are worth removing on their own
+merits. The other 271 are not a problem to fix.
+
+I was wrong to frame the growing number as companies wrongly on the public site, and I should have
+checked what the landscape page actually renders before reporting it five times.
 
 ## Where the run ends
 
@@ -124,11 +152,14 @@ There is no Batch 16 queued, because there is no enrichment work left and the ne
 decision rather than a default. The options are written up in
 **`research-agent/decisions/batch-15-next-phase.md`**:
 
-1. **Publication reconciliation** — unpublish the 292, publish the 158. My recommendation: it is the
-   largest effect, it needs no further research, and every one of those 450 records already carries
-   a written reason.
-2. **Merits verification** of the remaining 119, all of which now have descriptions.
-3. **Discovery** — the six companies the external audit showed are genuinely missing.
+1. **Publish the 158 verified companies missing from the landscape page.** My recommendation:
+   one-sided, needs no further research, and every record already passed the eligibility rule.
+2. **Remove the roughly 21 entity-extraction errors** from the wider catalogue. Wrong in any
+   catalogue, not merely out of this landscape.
+3. **Merits verification** of the remaining 119, all of which now have descriptions.
+4. **Discovery** — the six companies the external audit showed are genuinely missing.
+
+No bulk unpublish. The concurrent scope check is explicit that the 292 is not a list to act on.
 
 The backlog is listed with its evidence in `research-agent/queue/backlog-post-batch-15.csv`.
 
