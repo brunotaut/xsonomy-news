@@ -5,11 +5,11 @@
     "v1": 273,
     "v2": 358
   },
-  "current_batch": 15,
-  "status": "READY_FOR_QUEUE_GENERATION",
-  "next_actor": "claude",
-  "input": "research-agent/decisions/batch-15-next-phase.md",
-  "expected_output": "research-agent/queue/batch-16.csv",
+  "current_batch": 16,
+  "status": "READY_FOR_RESEARCH",
+  "next_actor": "chatgpt",
+  "input": "research-agent/queue/batch-16.csv",
+  "expected_output": "research-agent/researched/batch-16-researched.csv",
   "batch_type": "verification",
   "human_decision_required": false,
   "blocker": null,
@@ -131,11 +131,11 @@
     "4. Discovery: add the six companies the external audit showed are genuinely absent."
   ],
   "open_questions_for_human": [
-    "Warhead and energetics scope: five companies, raised in five separate batches. Not blocking.",
-    "Operator and services scope: now eleven companies after Batch 15 added Marshall Aerospace, DSV and INECO. It grew in each of the last six batches. Not blocking.",
-    "158 verified companies are missing from the public landscape page. Separately, about 21 entity-extraction errors are live in the wider catalogue and should come out of any catalogue; the other 271 out-of-scope records are legitimate companies in other industries and are not a landscape problem."
+    "Warhead and energetics scope: five companies. Still open, still non-blocking, but it now also keeps three P1-to-P2 candidates out of the verification batches.",
+    "Operator and services scope: eleven companies. Still open and still growing.",
+    "158 verified companies are missing from the public landscape page, and about 21 entity-extraction errors are live in the wider catalogue. Not selected as this phase; no publication status has been changed."
   ],
-  "notes": "The enrichment phase is complete: no backlog record has an empty description. Batch 15 produced the lowest admission rate and the highest exclusion count of the run. A concurrent ChatGPT check corrected the publication framing Claude had been reporting since Batch 10: the public landscape page contains none of the excluded records, so the real gap is one-sided - 158 verified companies are missing from it.",
+  "notes": "Phase change. Enrichment is complete and merits verification is authorised. Batch 16 is the first VERIFY queue: each row carries the data already on file plus the single specific question blocking a decision on that company, instead of asking for a description that already exists.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -148,7 +148,7 @@
   ],
   "next_phase_decision": {
     "date": "2026-10-28",
-    "user_instruction": "закінчуємо перевірку",
+    "user_instruction": "\u0437\u0430\u043a\u0456\u043d\u0447\u0443\u0454\u043c\u043e \u043f\u0435\u0440\u0435\u0432\u0456\u0440\u043a\u0443",
     "selected": "Complete merits verification of remaining 119 candidates",
     "decision_file": "research-agent/decisions/batch-15-next-phase.md",
     "next_action": "Claude generates batch16 VERIFY queue from live backlog, P1 first, up to40 rows; then hands to ChatGPT. Continue verification/reconciliation until all remaining candidates have a disposition.",
@@ -156,5 +156,44 @@
     "publication_changes_authorised": false,
     "discovery_selected": false,
     "existing_scope_decisions": "Remain nonblocking; hold affected cases explicitly rather than guessing."
+  },
+  "phase": {
+    "name": "merits verification",
+    "authorised_by": "Nazar, 2026-10-28, research-agent/decisions/batch-15-next-phase.md",
+    "goal": "An evidence-based disposition for every remaining backlog candidate: verified, excluded, or held with a written reason.",
+    "instructions": "research-agent/instructions/CLAUDE_VERIFY_PHASE.md",
+    "not_selected": [
+      "publication changes",
+      "wider catalogue cleanup",
+      "discovery of the six absent companies"
+    ],
+    "estimated_batches": 3
+  },
+  "batch_16": {
+    "rows": 40,
+    "task_type": "VERIFY",
+    "composition": "17 P1, 10 P2, 13 P3, drawn by score from the 115 verifiable candidates. 14 countries.",
+    "policy_held_excluded_from_queue": [
+      "Odin Defence",
+      "EURENCO",
+      "TDW"
+    ],
+    "why_excluded": "They turn on the open warhead and energetics decision, not on evidence. Re-researching them would return the same answer. They will be dispositioned when that decision is made.",
+    "unresolved_question_breakdown": {
+      "tagged_only_under_general_sensors_domain": 18,
+      "tagged_with_root_uav_category_only": 12,
+      "website_but_no_product": 6,
+      "no_website_no_product_no_tag": 2,
+      "products_but_no_capability_assigned": 2
+    },
+    "notable": "Ukropter is the single candidate that already satisfies the eligibility rule mechanically (tagged, website, source URL). Its tag is the root UAV category rather than a capability leaf, so it needs a real capability before admission rather than an automatic pass."
+  },
+  "verification_pool": {
+    "backlog_candidates": 119,
+    "verifiable_now": 115,
+    "held_for_open_scope_decisions": 4,
+    "tagged_in_uav_or_cuas_tree": 13,
+    "tagged_only_outside_the_tree_or_untagged": 106,
+    "note": "Of the 13 tagged inside the tree, 12 are Ukrainian directory imports tagged with the root UAV category and carrying no website, product or source at all. Those tags are assertions, not evidence."
   }
 }
