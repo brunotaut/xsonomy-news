@@ -294,3 +294,7 @@ DJI SDR Transmission 2, DragonFire.
 ## 2026-10-28 — external landscape audit continuation
 
 Saved `research-agent/audits/2026-10-28-external-landscape-audit-part-2.md`: three additional first-party-supported candidates (42 Solutions, Adevex, AURYN Aero), one historical lead on hold (Aeronautica SDLE), and duplicate/scope controls. Candidates require current full-database and alias reconciliation; cached public snapshots do not prove absence. No DB or publication changes. STATE remains Batch 15 READY_FOR_RESEARCH; this separate audit does not advance the batch workflow.
+
+## 2026-10-28 — Batch 15 supplementary review
+
+An independent review overlapped another session's completed Batch 15 submission. Preserved its CSV, counts and reconciliation handoff. Added `research-agent/audits/2026-10-28-batch-15-supplementary-review.md` and linked it from STATE: historical Safran Electrical & Power UAV wiring evidence; CS GROUP BOREADES operational evidence; Nikon SLM effective-date clarification; Ricardo historical US-engine attribution. No DB/publication mutations.
