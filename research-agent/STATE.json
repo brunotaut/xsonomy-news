@@ -6,11 +6,11 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "PUBLICATION_COMPLETE",
+  "status": "DRAFT_PRODUCT_REVIEW_READY_FOR_CHATGPT",
   "next_actor": "chatgpt",
-  "input": "research-agent/reports/2026-10-29-verified-publication.md",
-  "expected_output": "review of the publication outcome",
-  "batch_type": "publication",
+  "input": "research-agent/reports/2026-10-29-draft-product-review.md",
+  "expected_output": "ChatGPT review of the draft-product findings and proposed corrections",
+  "batch_type": "product review",
   "human_decision_required": false,
   "blocker": null,
   "open_decisions": [
@@ -138,10 +138,10 @@
   "open_questions_for_human": [
     "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Teledyne Energetics, Wolfram Europa). Open since Batch 04.",
     "Operator and services scope: eleven companies. Open since Batch 10; Batch 18 added DroneVia to the same pattern.",
-    "Products of the newly published companies: 26 companies have 36 draft product rows and will show empty product lists until a decision is made.",
+    "Draft products: 36 reviewed. 10 could be published as they stand, 23 need text or metadata corrections first, 3 should stay unpublished. Publishing any of them is a decision that has not been made.",
     "Wider catalogue: roughly 21 entity-extraction errors, and separately 966 product records with no company attached."
   ],
-  "notes": "Merits verification complete, the approved publication is live (landscape page 398 to 567, catalogue 2304 to 2466), and the pending C-UAS grouping-chip fix is merged and deployed. The chip fix moved Detection 18 to 118, Mitigation 31 to 180 and added Tracking at 52 without changing the 300-vendor registry or any specific capability chip. Its draft figures were stale and were re-measured before shipping. V1=273 and V2=358 untouched.",
+  "notes": "The 36 draft products belonging to the newly published companies have been reviewed read-only. Ownership is correct on all 36, but a quarter of them carry a company-level summary repeated across sibling products, and six cite a source page for a different product. 10 are ready, 23 need correction, 3 are held. Nothing was published or changed. V1=273 and V2=358 untouched.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -363,5 +363,43 @@
         "130a534 replace predicted counts with measured ones"
       ]
     }
+  },
+  "draft_product_review": {
+    "status": "COMPLETE_READ_ONLY",
+    "date": "2026-10-29",
+    "report": "research-agent/reports/2026-10-29-draft-product-review.md",
+    "manifest": "research-agent/reports/2026-10-29-draft-product-review-manifest.csv",
+    "scope": "Read-only. No product published, no database record changed, no research or candidate status touched.",
+    "count_rechecked": {
+      "cohort_companies": 162,
+      "companies_owning_products": 26,
+      "product_rows": 37,
+      "draft": 36,
+      "already_live": 1,
+      "companies_owning_drafts": 25
+    },
+    "recommendations": {
+      "ready_to_publish": 10,
+      "needs_correction": 23,
+      "hold": 3
+    },
+    "ownership": "All 36 sit under the correct company. No misattribution, unlike the five product-ownership errors found at company level earlier the same day.",
+    "name_collisions": "Three (ANDROMEDA, Komodo, HAWK), all genuinely distinct products with distinct slugs and different owners. The live HAWK that shares a name has no company at all and belongs to the separate 966-orphan defect.",
+    "dominant_defect": "Nine products carry a company-portfolio summary repeated verbatim across every product that company owns: HADES x4, TrackDeep x3 (its shared line names FoxHUNTER and is attached to CityDOME and Observer too), JISR x2. Six of the nine also cite a source page for a different product.",
+    "page_checks": "Per-product pages exist and return 200 for HAWK, SKADS, ML-HADS, ANDROMEDA, CityDOME, FoxHUNTER and Observer, so seven of the nine can be repointed. RP-24 and C4PER return 404 and are held.",
+    "second_pattern": "Five summaries are reconciliation notes published as descriptions (KSEON-L, Komodo, HILDR, LANDAR-C, S.EN.T.IN.EL). Eight more are 19-31 character stubs naming a category.",
+    "holds": [
+      "Shield X SkyBlock - the only product with no source URL at all, plus null country, no confidence, no enrichment",
+      "HADES RP-24 - shared summary, another product as its only source, no own page (404)",
+      "JISR C4PER - same shape, ANDROMEDA page as its only source, no own page (404)"
+    ],
+    "smaller_findings": [
+      "Eight Ukrainian product rows have a null country while their company has one",
+      "ArkeLink is filed as Software but is a mesh datalink; the catalogue files radios under Other. OBRIY and OSCAR are doubtful for the same reason but their summaries are too thin to decide",
+      "UKROPTER Drone reads as a placeholder built from the company name",
+      "BOMBUS summary names BeeTA Technologies while the record is BeetechUA"
+    ],
+    "false_alarms_checked": "All 36 have an empty description column, which does not matter: the generator publishes summary and never reads description. All 36 also have zero specs and no image, which is thin but consistent with other recent products.",
+    "proposed_corrections": "Seven grouped proposals in the report. None applied."
   }
 }
