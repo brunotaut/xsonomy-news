@@ -139,10 +139,9 @@
     "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Teledyne Energetics, Wolfram Europa). Open since Batch 04.",
     "Operator and services scope: eleven companies. Open since Batch 10; Batch 18 added DroneVia to the same pattern.",
     "Products of the newly published companies: 26 companies have 36 draft product rows and will show empty product lists until a decision is made.",
-    "Wider catalogue: roughly 21 entity-extraction errors, and separately 966 product records with no company attached.",
-    "Catalogue repo housekeeping: the local checkout has uncommitted C-UAS chip work and is two commits behind origin, which changed the same generator file. Not deployed, needs a merge, left untouched."
+    "Wider catalogue: roughly 21 entity-extraction errors, and separately 966 product records with no company attached."
   ],
-  "notes": "Merits verification is complete and the approved publication is live. 162 verified companies went from draft to live, the catalogue from 2304 to 2466, and the public landscape page from 398 to 567. All five post-deploy checks pass per ID. V1=273 and V2=358 untouched.",
+  "notes": "Merits verification complete, the approved publication is live (landscape page 398 to 567, catalogue 2304 to 2466), and the pending C-UAS grouping-chip fix is merged and deployed. The chip fix moved Detection 18 to 118, Mitigation 31 to 180 and added Tracking at 52 without changing the 300-vendor registry or any specific capability chip. Its draft figures were stale and were re-measured before shipping. V1=273 and V2=358 untouched.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -331,5 +330,38 @@
     "products_not_published": "Products were out of scope. 26 of the 162 have products, 36 of 37 rows still draft, so those 26 pages will render with empty product lists until that is decided separately.",
     "publication_changes_authorised": true,
     "deployment_authorised": true
+  },
+  "catalogue_interface_work": {
+    "cuas_grouping_chip_fix": {
+      "status": "MERGED_DEPLOYED_VERIFIED",
+      "date": "2026-10-29",
+      "repository": "brunotaut/xSonomy",
+      "scope": "Interface fix only. No database write, no publication change, no research status touched.",
+      "report": "research-agent/reports/2026-10-29-cuas-chip-fix-deployment.md",
+      "problem": "fetchCuasCapabilities selected sectors by the cuas- slug prefix, so the grouping cuas-detection was counted as if it were a capability and only appeared where a redundant parent row had been stored.",
+      "fix": "Walks parent_id from the counter-uas root and chips each company with its own capabilities plus every grouping above them. Nesting comes from parent_id, never the slug.",
+      "preserved_how": "The fix existed only as uncommitted edits in a checkout four commits behind origin/main, which had since changed the same generator file. The tree was backed up, committed to a branch at its original base (2f72465), then merged.",
+      "merge": "One conflict, docs/STATUS.md, where both sides appended entries; both kept in date order. The generator merged cleanly - landscape import, publication_status column and Landscape tab all coexist with the rewritten function.",
+      "checks": "node --check on both files; npm test 10 of 10 on the merged tree, re-run after the STATUS correction.",
+      "stale_figures_corrected": "The draft STATUS entry predicted 199 vendors and Detection 47-85, Mitigation 85-123, Tracking 0-35. Those predated the deletion of the stored parent rows and the publication of 162 companies. Both columns were re-measured on 2026-10-29 before shipping.",
+      "verified_live": {
+        "build": "2026-10-29T13:51:02.050Z",
+        "vendors_before": 300,
+        "vendors_after": 300,
+        "detection": "18 -> 118",
+        "mitigation": "31 -> 180",
+        "tracking": "absent -> 52 (new chip)",
+        "integrated": "51 unchanged",
+        "command_and_control": "29 unchanged",
+        "ten_leaf_chips": "unchanged and matching exactly; no unexpected chip appeared",
+        "no_regression": "landscape.json still 567, companies.json still 2466 on the same build",
+        "pages": "HTTP 200 for /cuas-systems/ (renders 300 vendors) and /landscape/"
+      },
+      "commits": [
+        "2f72465 derive chips from parent_id",
+        "4b4574c merge main",
+        "130a534 replace predicted counts with measured ones"
+      ]
+    }
   }
 }
