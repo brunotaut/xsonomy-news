@@ -6,30 +6,31 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "READY_FOR_RECONCILIATION",
-  "next_actor": "claude",
-  "input": "research-agent/researched/batch-18-researched.csv",
-  "expected_output": "research-agent/reconciled/batch-18-reconciliation.csv",
+  "status": "PHASE_COMPLETE",
+  "next_actor": "human",
+  "input": null,
+  "expected_output": null,
   "batch_type": "verification",
-  "human_decision_required": false,
-  "blocker": null,
+  "human_decision_required": true,
+  "blocker": "Merits verification is finished. The next move is one of Nazar’s decisions: publish the 162 verified-but-unpublished companies, answer the two open scope questions, or clean the wider catalogue. No batch 19 exists and none should be manufactured.",
   "open_decisions": [
     "research-agent/decisions/batch-04-warhead-supplier-scope.md",
     "research-agent/decisions/batch-10-drone-operator-scope.md"
   ],
-  "last_completed_batch": 17,
+  "last_completed_batch": 18,
   "live_landscape": {
     "rows": 977,
-    "verified": 560,
-    "candidates": 39,
-    "needs_review": 129,
-    "excluded": 249,
-    "backlog_with_no_description": 0
+    "verified": 567,
+    "candidates": 4,
+    "needs_review": 140,
+    "excluded": 266,
+    "backlog_with_no_description": 0,
+    "note": "Counts are over all landscape_candidates rows for europe-uav-cuas-2026, the same basis as earlier batches. Restricted to landscape-scope countries the excluded count is 245; the 21-row difference is excluded companies filed to non-scope countries."
   },
   "publication_mismatch": {
-    "landscape_page_is_correct": "The public landscape page (xsonomy.com/data/landscape.json) contains exactly the 375 verified-and-live companies. An independent check of 253 excluded/needs_review records found ZERO of them present in the landscape. The landscape gate works.",
-    "verified_and_published": 375,
-    "verified_not_published": 158,
+    "landscape_page_is_correct": "The public landscape page contains verified-and-live companies only. An independent check of 253 excluded/needs_review records found ZERO of them present. The landscape gate works. Figures above are live database counts on 2026-10-29; the published page is rebuilt daily and lagged at 375 when last fetched on 2026-10-28.",
+    "verified_and_published": 405,
+    "verified_not_published": 162,
     "excluded_or_unresolved_with_publication_status_live": 292,
     "what_the_292_actually_means": "These are live in the WIDER general catalogue (companies.json, about 2,300 companies), not on the landscape page. Being out of scope for the europe-uav-cuas landscape is not by itself a reason to unpublish a legitimate company from a site-wide catalogue. Of the 292, roughly 21 carry screening notes identifying them as non-companies or entity-extraction errors (procurement platforms, publications, NGOs, accelerators, universities, product lines); the rest are real companies in other industries.",
     "correction": "Batches 10-14 reported the growing number as companies wrongly on xsonomy.com. That framing was wrong: the landscape page never showed them. The genuine one-sided gap is the 158 verified companies that are NOT on the landscape page.",
@@ -88,14 +89,15 @@
     "note": "No company records were created. Discovery is one of the three next-phase options, not a reconciliation action."
   },
   "run_totals": {
-    "batches": 15,
-    "companies_researched_and_reconciled": 600,
+    "batches": 18,
+    "companies_researched_and_reconciled": 715,
     "verified_start": 273,
-    "verified_end": 537,
+    "verified_end": 567,
     "backlog_start": 634,
-    "backlog_end": 119,
+    "backlog_end": 4,
     "blank_records_start": 453,
-    "blank_records_end": 0
+    "blank_records_end": 0,
+    "backlog_end_note": "The four are EURENCO, Odin Defence, TDW and Teledyne Energetics, parked against the open warhead decision. Wolfram Europa is the fifth policy case and sits in needs_review."
   },
   "admissions_per_batch": {
     "batch_01": 31,
@@ -112,7 +114,10 @@
     "batch_12": 6,
     "batch_13": 11,
     "batch_14": 9,
-    "batch_15": 4
+    "batch_15": 4,
+    "batch_16": 11,
+    "batch_17": 12,
+    "batch_18": 7
   },
   "exclusions_per_enrichment_batch": {
     "batch_08": 16,
@@ -131,11 +136,12 @@
     "4. Discovery: add the six companies the external audit showed are genuinely absent."
   ],
   "open_questions_for_human": [
-    "Warhead and energetics scope: five companies. Still open. After Batch 18 these will be the only backlog records without a disposition.",
-    "Operator and services scope: eleven companies.",
-    "162 verified companies are missing from the public landscape page. Not selected as this phase; no publication status has been changed."
+    "Publish the 162 verified companies that are not published and therefore absent from the public landscape page. One-sided, lowest risk, Claude’s recommendation. A PUBLISH_STATUS change, so Nazar’s decision under rule 4 of CLAUDE.md.",
+    "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Teledyne Energetics, Wolfram Europa). Open since Batch 04.",
+    "Operator and services scope: eleven companies. Open since Batch 10; Batch 18 added DroneVia to the same pattern.",
+    "Wider catalogue: roughly 21 entity-extraction errors, and separately 966 product records with no company attached. Found in passing, outside this phase’s remit, not acted on."
   ],
-  "notes": "Second verification batch and the closest agreement of the run, 39 of 40. The single difference upgraded a hold to an admission because the entity question it rested on was already answered in the database. Batch 17 also found a new kind of bad record: composite labels joining two organisations with a slash, which the extractor created from contract announcements.",
+  "notes": "Merits verification is complete. Eighteen batches, 715 companies researched and reconciled, verified 273 to 567, backlog 634 to 4. Batch 18 found five product-ownership errors in the live database, the worst being a verified French counter-UAS company whose only recorded product was somebody else’s missile while its own system was missing. A third composite label turned up. No publication status has ever been changed by this process and V1=273 and V2=358 are untouched.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -159,15 +165,26 @@
   },
   "phase": {
     "name": "merits verification",
+    "status": "COMPLETE",
+    "completed": "2026-10-29",
     "authorised_by": "Nazar, 2026-10-28, research-agent/decisions/batch-15-next-phase.md",
-    "goal": "An evidence-based disposition for every remaining backlog candidate: verified, excluded, or held with a written reason.",
-    "instructions": "research-agent/instructions/CLAUDE_VERIFY_PHASE.md",
+    "goal_met": "Every backlog candidate has an evidence-based disposition: verified, excluded, or held with a written reason. The only records without one are the four waiting on the warhead decision.",
+    "final_report": "research-agent/reports/verification-phase-final.md",
+    "batches": [
+      16,
+      17,
+      18
+    ],
+    "rows": 115,
+    "verified": 30,
+    "excluded": 49,
+    "held": 36,
+    "agreement_with_research": "110 of 115",
     "not_selected": [
       "publication changes",
       "wider catalogue cleanup",
       "discovery of the six absent companies"
-    ],
-    "estimated_batches": 3
+    ]
   },
   "batch_16": {
     "rows": 40,
@@ -199,10 +216,9 @@
     "sensor_rule_outcome": "smartmicro, PCO, Senop and AIM admitted on named drone-specific variants; Acconeer, Blickfeld and ams OSRAM excluded as general-purpose parts used in demonstrations. The Batch 13 rule separated them cleanly."
   },
   "verification_pool": {
-    "backlog_candidates": 39,
-    "verifiable_now": 35,
-    "held_for_open_scope_decisions": 4,
-    "note": "Batch 18 takes all 35. After it every backlog candidate has an evidence-based disposition and the only records without one are the four waiting on the warhead decision."
+    "backlog_candidates": 4,
+    "verifiable_now": 0,
+    "note": "Empty. Do not manufacture a batch 19. The four remaining candidates need a human scope decision, not research."
   },
   "batch_17": {
     "rows": 40,
@@ -232,30 +248,36 @@
   },
   "batch_18": {
     "rows": 35,
-    "task_type": "VERIFY",
-    "countries": 13,
+    "type": "verification",
     "is_final_verification_batch": true,
-    "question_mix": {
-      "website_but_no_product": 21,
-      "tagged_only_under_general_sensors_domain": 9,
-      "products_but_no_capability_assigned": 4,
-      "no_website_no_product_no_tag": 1
-    },
-    "instruction_added": "Is this record a COMPOSITE LABEL joining two organisations? Added after Batch 17 found two.",
-    "policy_held_excluded": [
-      "Odin Defence",
-      "EURENCO",
-      "TDW",
-      "Wolfram Europa",
-      "Teledyne Energetics"
-    ],
+    "verified": 7,
+    "excluded": 17,
+    "held_for_review": 11,
+    "merged": 0,
     "research_recommended": {
       "in_scope": 6,
       "out_of_scope": 16,
       "unknown": 13
     },
-    "research_report": "research-agent/reports/batch-18-research.md",
-    "research_validation": "35 unique IDs, all 14 input columns and original order preserved; 16 appended research fields; every row answered with evidence; six optional factual description corrections. Exact GitHub readback verified.",
-    "research_note": "Final research queue complete, pending reconciliation. Live counters unchanged. Claude to reconcile, run QA and produce final verification-phase report, explaining the four remaining policy-held IDs against the five-name exclusion list. No automatic batch 19. Publication, cleanup, discovery and frozen snapshots unchanged."
+    "agreement_with_research": "33 of 35",
+    "disagreements": [
+      "Grupo Amper: UNKNOWN upgraded to verified. The hold was over which group entity owns the C-UAS C2 system; this catalogue holds exactly one Spanish Amper record and the product page is on its own domain, so there is no subsidiary here to duplicate.",
+      "Diehl Aviation: UNKNOWN downgraded to excluded. The hold was over which Diehl entity owns the cited ARES work; Diehl Aerospace and Diehl Defence are separate verified records here. What is left for the Aviation division is a demonstrator."
+    ],
+    "csv_defect": "The researched CSV arrived with a tool-output truncation banner written into the top of the file (three junk lines before the header) and row 18 (KNDS Robotics) truncated mid-cell so its columns shifted. The banner was stripped. The KNDS disposition was recovered from the batch-18 research report, not guessed, and the reconciliation CSV records the row as damaged.",
+    "products_created": 7,
+    "products_reassigned": 4,
+    "taxonomy_rows_added": 8,
+    "aliases_added": 1,
+    "product_ownership_corrections": [
+      "MISTRAL 3 moved from CS Group to MBDA France. CS Group is a C2 integrator and does not build missiles.",
+      "BOREADES created for CS Group, the counter-UAV system it has actually sold since 2015, which was missing. CS Group keeps its verified status either way.",
+      "Fulgur moved from Leonardo to MBDA Italia, which the Italian Defence Ministry names as the contracted developer.",
+      "Threat-Sense attached to Pearson Engineering. The product row had no company at all.",
+      "Tactical Core Middleware moved from Rheinmetall to blackned, whose own record already named it."
+    ],
+    "not_created": "GULL ONE E. A product called GULL already belongs to ARMMO Defense Technologies here and the original designer is unconfirmed, so INFINTEQ was admitted on its ground control stations alone.",
+    "third_composite_label": "Thales Alenia Space Italia / e-GEOS, matching the two found in Batch 17.",
+    "descriptions_corrected": 6
   }
 }
