@@ -39,9 +39,9 @@ Germany 48, Poland 46, Italy 24, Denmark 22, Switzerland 20, Czech Republic 19, 
 | Products created | 16 | 9 | 7 | **32** |
 | Taxonomy rows added | 13 | 12 | 8 | **33** |
 
-Five disagreements in 115 rows. Three declined an admission the research recommended (Bulba and
-Fulltime Robotics in Batch 16, where a brand and a prototype were being treated as companies;
-Diehl Aviation in Batch 18). Two **upgraded** a hold to an admission (Liebherr Aerospace, Grupo
+Five disagreements in 115 rows. Two declined admissions recommended by research (Bulba, a brand, and
+Fulltime Robotics, a prototype, in Batch 16). One changed a hold to exclusion
+(Diehl Aviation in Batch 18). Two **upgraded** a hold to an admission (Liebherr Aerospace, Grupo
 Amper) — in both cases because the entity question the hold rested on was already answered by the
 database, which the external research could not see.
 
