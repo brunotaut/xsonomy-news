@@ -3,8 +3,8 @@
 Date: 2026-10-29. Authorised by Nazar, `research-agent/decisions/2026-10-29-publish-verified-landscape.md`.
 Manifest: `research-agent/reports/2026-10-29-publication-manifest.csv` (captured before any write).
 
-**Database publication: complete. Public deployment: pending a build.** Those are two different
-things and this report keeps them apart.
+**Database publication: complete. Public deployment: complete and verified.** The build finished at
+12:57:45 UTC and all five post-deploy checks pass, per ID rather than by count.
 
 ## Baseline reconciliation
 
@@ -67,30 +67,36 @@ this is a publication, not a re-review.
 Prior statuses are retained in the manifest CSV, which is committed. Rollback is setting those 162
 IDs back to `draft`; no other field was touched, so nothing else would need undoing.
 
-## Deployment: pending
-
-**The public site has not yet been rebuilt, so none of this is visible to a visitor yet.**
+## Deployment: complete
 
 The catalogue deploys through `.github/workflows/deploy.yml`, which runs on push to `main`, on a
 daily 06:00 UTC schedule, and on manual dispatch. There is no `gh` CLI and no GitHub token in this
-environment, so I could not fire a manual dispatch; I did not go looking in the keychain for one.
+environment, so a manual dispatch was not possible; the keychain was not touched. Instead the
+`docs/STATUS.md` entry that rule 4 of CLAUDE.md requires anyway was committed and pushed to the
+catalogue repository (`a3f7a3c`), which fired the push build.
 
-A required `docs/STATUS.md` entry has been committed and pushed to the catalogue repository, which
-triggers the push build. If that build completes, the site refreshes within minutes. If it does
-not, the 06:00 UTC scheduled run publishes the same rows — it exists for exactly this.
+**Build output live at `generatedAt` 2026-10-29T12:57:45.399Z**, replacing the 11:53:09.565Z build.
 
-**Until a build finishes, treat the public figures as the old ones.**
+## Post-deploy verification
 
-## Post-deploy verification, to be run against the rebuilt site
+Per-ID membership, as the approval requires — not counts alone.
 
-Not counts alone — per-ID membership, as the approval requires:
+| # | Check | Expected | Actual | |
+|---|---|---:|---:|---|
+| 1 | `landscape.json` companies | 567 | **567** | PASS |
+| 2 | Manifest IDs present | 162 | **162** | PASS |
+| 3 | Pre-deploy IDs still present | 398 | **398** | PASS |
+| 4 | Batch 18 admissions present | 7 | **7** | PASS |
+| 5 | `companies.json` companies | 2,466 | **2,466** | PASS |
 
-1. `xsonomy.com/data/landscape.json` → `companies` length should be **567**.
-2. All **162** manifest IDs present.
-3. All **398** IDs from the pre-deploy page still present (captured; none should drop).
-4. No `excluded`, `needs_review` or `candidate` record present. The builder gates on `included`, so
-   this should hold structurally, but it is checked rather than assumed.
-5. `companies.json` → **2,466** companies.
+The three ID sets are disjoint and 162 + 398 + 7 = 567, which equals the page exactly. Since every
+member of all three sets is a reconciled `included` company, **no `excluded`, `needs_review` or
+`candidate` record is present on the page** — established by set equality, not assumed from the
+builder's gate.
+
+Five newly published company pages were fetched directly and all returned HTTP 200:
+`/companies/3dfense/`, `/companies/a-techsyn/`, `/companies/abtrion/`, `/companies/infinteq/`,
+`/companies/mbda-france/`.
 
 ## Two things this publication does not do
 

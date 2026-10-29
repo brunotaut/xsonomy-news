@@ -6,7 +6,7 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "PUBLICATION_APPLIED_DEPLOY_PENDING",
+  "status": "PUBLICATION_COMPLETE",
   "next_actor": "chatgpt",
   "input": "research-agent/reports/2026-10-29-verified-publication.md",
   "expected_output": "review of the publication outcome",
@@ -32,7 +32,7 @@
     "landscape_page_is_correct": "The public landscape page contains verified-and-live companies only; the gate works and was never the problem.",
     "verified_and_published": 567,
     "verified_not_published": 0,
-    "what_was_fixed": "The one-sided gap is closed in the database. 162 verified companies that existed but appeared nowhere public are now live. Public visibility follows the next build.",
+    "what_was_fixed": "The one-sided gap is closed and publicly live. 162 verified companies that existed but appeared nowhere public are on the landscape page, which now shows 567.",
     "excluded_or_unresolved_with_publication_status_live": "Unchanged. Those remain live in the wider catalogue, which is a different question from landscape membership and was not touched.",
     "correction": "Batches 10-14 reported the gap as companies wrongly ON the public site. That framing was wrong: the landscape page never showed them. The real gap was verified companies missing FROM it, and that is what was published."
   },
@@ -142,7 +142,7 @@
     "Wider catalogue: roughly 21 entity-extraction errors, and separately 966 product records with no company attached.",
     "Catalogue repo housekeeping: the local checkout has uncommitted C-UAS chip work and is two commits behind origin, which changed the same generator file. Not deployed, needs a merge, left untouched."
   ],
-  "notes": "Merits verification is complete and the approved publication is applied to the database: 162 verified companies went from draft to live, taking the catalogue from 2304 to 2466 live companies and the verified-but-unpublished count to zero. Public deployment is pending a build; until it finishes the public figures are still the old ones. V1=273 and V2=358 untouched.",
+  "notes": "Merits verification is complete and the approved publication is live. 162 verified companies went from draft to live, the catalogue from 2304 to 2466, and the public landscape page from 398 to 567. All five post-deploy checks pass per ID. V1=273 and V2=358 untouched.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -283,7 +283,7 @@
     "research_archive_repair": "2026-10-29: ChatGPT restored truncated KNDS Robotics row from intact local original. All 35 GitHub rows match validated originals with 30 columns each. Reconciliation outcomes unchanged. Final report corrected Diehl's disagreement from declined admission to hold-to-exclusion."
   },
   "publication_phase": {
-    "status": "DATABASE_COMPLETE_DEPLOY_PENDING",
+    "status": "COMPLETE",
     "date": "2026-10-29",
     "authorised_by": "Nazar: go, accepting publication of the 162 verified-but-unpublished companies",
     "decision_file": "research-agent/decisions/2026-10-29-publish-verified-landscape.md",
@@ -313,16 +313,20 @@
     "idempotent": "The update predicate includes publication_status is distinct from live, so a rerun matches nothing.",
     "rollback": "Set the 162 manifest IDs back to draft. No other field was changed.",
     "deployment": {
-      "status": "PENDING",
-      "trigger": "A required docs/STATUS.md entry was committed and pushed to brunotaut/xSonomy (a3f7a3c), which fires the push build. The daily 06:00 UTC schedule is the fallback.",
+      "status": "COMPLETE",
+      "build_generated_at": "2026-10-29T12:57:45.399Z",
+      "previous_build": "2026-10-29T11:53:09.565Z",
+      "trigger": "Push of the required docs/STATUS.md entry to brunotaut/xSonomy (a3f7a3c) fired the push build.",
       "why_not_dispatched": "No gh CLI and no GitHub token in this environment. Keychain credentials were not touched.",
-      "verify_after_build": [
-        "landscape.json companies length 567",
-        "all 162 manifest IDs present",
-        "all 398 pre-deploy IDs still present",
-        "no excluded/needs_review/candidate record present",
-        "companies.json 2466"
-      ]
+      "verified": {
+        "landscape_companies": 567,
+        "manifest_ids_present": 162,
+        "pre_deploy_ids_retained": 398,
+        "batch_18_admissions_present": 7,
+        "companies_json": 2466,
+        "no_non_included_present": "Proven by set equality: the three disjoint ID sets sum to exactly the 567 on the page, and every member of each is a reconciled included company.",
+        "spot_checked_pages": "HTTP 200 for /companies/3dfense/, a-techsyn, abtrion, infinteq, mbda-france"
+      }
     },
     "products_not_published": "Products were out of scope. 26 of the 162 have products, 36 of 37 rows still draft, so those 26 pages will render with empty product lists until that is decided separately.",
     "publication_changes_authorised": true,
