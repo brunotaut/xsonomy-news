@@ -6,10 +6,10 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "READY_FOR_RESEARCH",
-  "next_actor": "chatgpt",
-  "input": "research-agent/queue/batch-18.csv",
-  "expected_output": "research-agent/researched/batch-18-researched.csv",
+  "status": "READY_FOR_RECONCILIATION",
+  "next_actor": "claude",
+  "input": "research-agent/researched/batch-18-researched.csv",
+  "expected_output": "research-agent/reconciled/batch-18-reconciliation.csv",
   "batch_type": "verification",
   "human_decision_required": false,
   "blocker": null,
@@ -148,7 +148,7 @@
   ],
   "next_phase_decision": {
     "date": "2026-10-28",
-    "user_instruction": "\u0437\u0430\u043a\u0456\u043d\u0447\u0443\u0454\u043c\u043e \u043f\u0435\u0440\u0435\u0432\u0456\u0440\u043a\u0443",
+    "user_instruction": "закінчуємо перевірку",
     "selected": "Complete merits verification of remaining 119 candidates",
     "decision_file": "research-agent/decisions/batch-15-next-phase.md",
     "next_action": "Claude generates batch16 VERIFY queue from live backlog, P1 first, up to40 rows; then hands to ChatGPT. Continue verification/reconciliation until all remaining candidates have a disposition.",
@@ -248,6 +248,14 @@
       "TDW",
       "Wolfram Europa",
       "Teledyne Energetics"
-    ]
+    ],
+    "research_recommended": {
+      "in_scope": 6,
+      "out_of_scope": 16,
+      "unknown": 13
+    },
+    "research_report": "research-agent/reports/batch-18-research.md",
+    "research_validation": "35 unique IDs, all 14 input columns and original order preserved; 16 appended research fields; every row answered with evidence; six optional factual description corrections. Exact GitHub readback verified.",
+    "research_note": "Final research queue complete, pending reconciliation. Live counters unchanged. Claude to reconcile, run QA and produce final verification-phase report, explaining the four remaining policy-held IDs against the five-name exclusion list. No automatic batch 19. Publication, cleanup, discovery and frozen snapshots unchanged."
   }
 }
