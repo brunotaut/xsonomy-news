@@ -138,10 +138,10 @@
   "open_questions_for_human": [
     "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Teledyne Energetics, Wolfram Europa). Open since Batch 04.",
     "Operator and services scope: eleven companies. Open since Batch 10; Batch 18 added DroneVia to the same pattern.",
-    "Draft products: done. All 36 corrected and published on 2026-10-29, deployed and verified. One open item left behind: two company pages (Bionic System Solutions, HADES Defense Systems) link to the wrong product because the generator keys page URLs by product name. A one-line catalogue-repo fix, not yet made.",
+    "Draft products: done and closed. All 36 corrected and published on 2026-10-29, deployed and verified. The wrong-link exception it surfaced was fixed on 2026-10-30 and verified live; nothing is left open on this thread.",
     "Wider catalogue: roughly 21 entity-extraction errors, and separately 966 product records with no company attached."
   ],
-  "notes": "The 36 draft products were corrected and published on 2026-10-29 and are live on the site. Zero drift before the write, 36 rows updated, 0 skipped, guarded and idempotent. Products live 3,492 -> 3,528; companies live 2,466 and landscape 567 both unchanged; V1=273 and V2=358 untouched. All 36 product pages and all 25 company pages return 200 and the company pages now list their products. One exception: two company pages link to the wrong product, a name-keyed lookup in the generator that this publication surfaced. Reported, not fixed.",
+  "notes": "The 36 draft products were corrected and published on 2026-10-29 and are live on the site. Zero drift before the write, 36 rows updated, 0 skipped, guarded and idempotent. Products live 3,492 -> 3,528; companies live 2,466 and landscape 567 both unchanged; V1=273 and V2=358 untouched. All 36 product pages and all 25 company pages return 200 and the company pages now list their products. The one exception it surfaced - two company pages linking to a same-named product of another owner, caused by a name-keyed lookup in the generator - was fixed on 2026-10-30, deployed and verified: exactly those two links changed across all 567 landscape companies, with a regression test that fails against the old behaviour.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -503,7 +503,11 @@
       "surfaced_by": "This publication. Both were draft before, so neither company page linked them at all.",
       "not_affected": "Both products' own pages are correct and return 200 (/cuas/komodo/ and /cuas/hawk/). The database is correct; this is purely an interface defect.",
       "third_collision": "ANDROMEDA escapes only by letter case: JISR's is ANDROMEDA, High Lander's is Andromeda, so the map keys differ.",
-      "fix": "Key that map by product id rather than name. A code change in the catalogue repo, outside the scope of this instruction. Not applied; flagged for a decision."
+      "fix": "Applied. pageUrlByProduct is now keyed on the product id and filled while the pages are generated, the only point where the database id and the generated slug are both in hand; fetchCompanyProducts selects id to look it up. Commit 0fe2b77 in brunotaut/xSonomy, logged in docs/STATUS.md (d634a2c).",
+      "status": "FIXED_DEPLOYED_VERIFIED 2026-10-30",
+      "verified_live": "Build 2026-10-30T00:19:09.744Z. Bionic System Solutions' Komodo /other/komodo/ -> /cuas/komodo/ and HADES' HAWK /cuas/hawk-2/ -> /cuas/hawk/. Across all 567 landscape companies exactly those two links changed, none gained and none lost. DOK-ING keeps /other/komodo/ and the ANDROMEDA pair is untouched. No slug changed; products 3,528, companies 2,466, landscape 567 all unchanged; the 36 published products all still present.",
+      "also_fixed": "landscape.json is built from the same map and was wrong in the same two places; it is fixed with it.",
+      "regression_test": "scripts/test/company-product-links.test.mjs - end to end against a fake PostgREST server, covering a name shared across two buckets and one shared inside a single bucket where slugify appends -2. Confirmed to fail against the old name-keyed lookup. npm test 17 of 17."
     },
     "out_of_scope_not_done": "No company renamed (BeetechUA -> BeeTA remains a proposal). No product created; the recorded coverage gaps are still absent. No unrelated cleanup: the 966 ownerless products and the ~21 entity-extraction errors were not touched."
   }

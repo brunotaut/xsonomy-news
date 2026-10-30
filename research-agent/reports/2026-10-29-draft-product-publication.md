@@ -205,3 +205,36 @@ the C-UAS grouping-chip bug fixed earlier today.
 - Pages verified: **36 product pages + 25 company pages, all HTTP 200**.
 - Exceptions: **1** — two wrong cross-links from company pages, caused by a name-keyed lookup in
   the generator. Reported, not fixed.
+
+---
+
+## Follow-up, 2026-10-30 — the exception is fixed
+
+The wrong-link defect above was fixed in the catalogue repo (`0fe2b77`) and deployed.
+
+`pageUrlByProduct` is now keyed on the product **id** rather than the name. It is filled while the
+product pages are generated, which is the only point where the database id and the generated slug
+are both in hand — `reshape` does not carry the id into the row — and `fetchCompanyProducts` now
+selects `id` to look it up.
+
+Measured on build `2026-10-30T00:19:09.744Z`:
+
+| Company page | before | after |
+|---|---|---|
+| Bionic System Solutions → Komodo | `/other/komodo/` (DOK-ING's ground robot) | `/cuas/komodo/` |
+| HADES Defense Systems → HAWK | `/cuas/hawk-2/` (an unrelated HAWK) | `/cuas/hawk/` |
+
+Diffing every company's product links between the two builds, **exactly those two changed across
+all 567 landscape companies — none gained, none lost.** DOK-ING keeps `/other/komodo/` and the
+ANDROMEDA pair is untouched. No slug changed, so no URL moved: products 3,528, companies 2,466,
+landscape 567, and all 36 published products still present.
+
+`landscape.json` is built from the same map and was wrong in the same two places. It is fixed too.
+
+A regression test was added, `scripts/test/company-product-links.test.mjs`, running the real
+generator end to end against a fake PostgREST server. It covers both shapes — a name shared across
+two buckets, and one shared inside a single bucket where `slugify` appends `-2` — and asserts each
+owner's link resolves to a page that is actually that owner's product. It was confirmed to fail
+against the old name-keyed lookup before being kept. `npm test` passes 17 of 17.
+
+**Nothing is left open on this thread.**
