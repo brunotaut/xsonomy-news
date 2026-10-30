@@ -117,10 +117,21 @@ credentials were not touched.
 | landscape.json | generated 23:57:59.898Z, **567 companies** |
 | companies.json | **2,466** |
 
-An independent rebuild at 23:48:22Z, a few minutes before the push, was not triggered by this
-work. It is accounted for rather than ignored: it carried 3,492 products and 567 landscape
-companies, exactly the pre-publication state, so it establishes the baseline rather than
-disturbing it.
+The independent rebuild at 23:48:22Z, a few minutes before the push, was not triggered by this
+work. It is accounted for rather than left unexplained: it came from concurrent atlas UI work in
+the same repo, and it carried 3,492 products and 567 landscape companies — exactly the
+pre-publication state — so it establishes the baseline rather than disturbing it.
+
+That concurrent work continued. A later atlas commit (`7cbda93`, cache-busting content hashes for
+the atlas assets) landed on `origin/main` while this verification was running, and the follow-up
+`docs/STATUS.md` note was rebased onto it rather than pushed over it. The two entries conflicted
+only because both append to the end of the file; both were kept, in order. `npm test` passes
+16 of 16 on the rebased tree.
+
+**Final build after all of that: `2026-10-30T00:13:21.632Z`.** Re-verified on it: 3,528 products
+(uav 1,455 / cuas 798 / sensors 504 / software 399 / other 372), landscape 567, companies 2,466,
+and all 36 present with no mismatch on category, country or summary. The publication survives the
+concurrent work intact.
 
 **Per-category counts moved by exactly the expected amounts:**
 

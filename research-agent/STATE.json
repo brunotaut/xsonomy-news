@@ -490,10 +490,12 @@
     },
     "deployment": {
       "trigger": "Push of the rule-4 docs/STATUS.md entry to brunotaut/xSonomy (59bed3f) at 23:53:42Z",
-      "build": "2026-10-29T23:57:55.490Z",
-      "previous_build": "2026-10-29T23:48:22.412Z, an independent rebuild carrying the pre-publication state of 3,492 products and 567 landscape companies",
+      "build": "2026-10-30T00:13:21.632Z (final, after concurrent atlas work); first build carrying the publication was 2026-10-29T23:57:55.490Z",
+      "previous_build": "2026-10-29T23:48:22.412Z, an independent rebuild from concurrent atlas UI work in the same repo, carrying the pre-publication state of 3,492 products and 567 landscape companies",
       "category_deltas": "uav +10, cuas +19, sensors 0, software +5, other +2 = +36, matching the patch exactly",
-      "verified": "36 of 36 present in the deployed data with no mismatch on category, country, summary or source URLs; 36 product pages and 25 company pages all HTTP 200; all 25 company pages now show a populated product list; landscape still 567"
+      "verified": "36 of 36 present in the deployed data with no mismatch on category, country, summary or source URLs; 36 product pages and 25 company pages all HTTP 200; all 25 company pages now show a populated product list; landscape still 567",
+      "concurrent_work_preserved": "Atlas UI commits 2744cb3, 9048ef3 and 7cbda93 by others landed in brunotaut/xSonomy during this work. The follow-up docs/STATUS.md note was rebased onto 7cbda93, not pushed over it; the STATUS.md conflict was only that both sides append to the end of the file, and both entries were kept in order. npm test passes 16 of 16 on the rebased tree.",
+      "reverified_on_final_build": "3,528 products (uav 1,455 / cuas 798 / sensors 504 / software 399 / other 372), landscape 567, companies 2,466, 36 of 36 present with no mismatch."
     },
     "exception": {
       "what": "Two company pages link to the wrong product. Bionic System Solutions' Komodo links to /other/komodo/ (DOK-ING's ground robot) and HADES Defense Systems' HAWK links to /cuas/hawk-2/ (the ownerless HAWK).",
