@@ -6,9 +6,9 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "INVESTOR_RESEARCH_IMPORTED_AND_EXPORTED",
-  "next_actor": "nazar",
-  "input": "research-agent/reports/2026-10-30-investor-research-import.md",
+  "status": "RESEARCH_ACADEMIA_CORRECTIONS_APPLIED_AND_VERIFIED",
+  "next_actor": "chatgpt",
+  "input": "research-agent/reports/2026-10-30-research-academia-class-execution.md",
   "expected_output": "ChatGPT review of the 19 composite-name classifications and the Research & academia proposal, then Nazar's decisions on the six listed questions",
   "batch_type": "read-only review",
   "human_decision_required": false,
@@ -635,26 +635,55 @@
     "schema_change": false,
     "report": "research-agent/reports/2026-10-30-research-academia-class-adopted.md",
     "pending_sql": "research-agent/reports/2026-10-30-research-academia-class.sql",
-    "pending_sql_rows": 11,
-    "pending_sql_reason": "both database-write tools were refused; run in the Supabase SQL editor",
+    "pending_sql_rows": 0,
+    "pending_sql_reason": "applied 2026-10-30 via the permitted migration route; nothing pending",
     "site_counts": {
       "companies_before": 2447,
-      "companies_after": 2411,
-      "research_academia": 36,
+      "companies_after": 2410,
+      "research_academia": 37,
       "after_sql": {
         "companies": 2410,
         "research_academia": 37
       },
       "landscape": 567
     },
-    "rows_changed": 0,
+    "rows_changed": 11,
     "open_decisions": [
       "unpublish Pixhawk (extraction error)",
       "CyArk / WeRobotics / LMI out of scope or retype",
       "reinstate Rzeszow, Porto, Laser Zentrum Hannover, TUBITAK UZAY",
       "relevance test for academia",
       "review decisions 2-4 and 6 (ECA/Exail merge, Hunter, satellites)"
-    ]
+    ],
+    "applied": {
+      "applied_on": "2026-10-30",
+      "authorised_by": "nazar, for these exact 11 company_type corrections and the rebuild",
+      "migration": "research_academia_class_membership_corrections",
+      "rows_updated": 11,
+      "rows_skipped": 0,
+      "drift_found": 0,
+      "rerun_effect": 0,
+      "columns_written": [
+        "company_type",
+        "updated_at"
+      ],
+      "report": "research-agent/reports/2026-10-30-research-academia-class-execution.md",
+      "manifest": "research-agent/reports/2026-10-30-research-academia-class-applied.csv",
+      "rollback": "research-agent/reports/2026-10-30-research-academia-class-rollback.sql",
+      "catalogue_commit": "f70f4c2",
+      "verified": {
+        "suppliers": 2410,
+        "research_academia": 37,
+        "live_companies": 2447,
+        "live_products": 3521,
+        "landscape": 567,
+        "detail_pages_200": 11,
+        "product_links_changed": 0,
+        "urls_changed": 0,
+        "tests": "22/22",
+        "deployed_at": "2026-10-30T22:54:38Z"
+      }
+    }
   },
   "investor_research_import": {
     "imported_on": "2026-10-30",
@@ -713,6 +742,7 @@
       "fund vehicles not populated: the dataset names them in prose, extracting them would be invention",
       "the 21 approved records are the dataset’s own \"candidates, not completed editorial approval\" — revert to review with one statement if preferred",
       "no frontend consumes the export yet (out of scope for this task)"
-    ]
+    ],
+    "untouched_after_academia_fix": true
   }
 }
