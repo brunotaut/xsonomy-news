@@ -6,11 +6,11 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "ENTITY_ERRORS_REMOVED_READY_FOR_CHATGPT",
+  "status": "COMPOSITE_AND_ACADEMIA_REVIEW_READY_FOR_CHATGPT",
   "next_actor": "chatgpt",
-  "input": "research-agent/reports/2026-10-30-entity-error-removal.md",
-  "expected_output": "ChatGPT review of the removal, and a recommendation on the wider population it exposed: ~22 composite slash-name records and ~40 universities and research institutes still live",
-  "batch_type": "catalogue cleanup",
+  "input": "research-agent/reports/2026-10-30-composite-and-academia-review.md",
+  "expected_output": "ChatGPT review of the 19 composite-name classifications and the Research & academia proposal, then Nazar's decisions on the six listed questions",
+  "batch_type": "read-only review",
   "human_decision_required": false,
   "blocker": null,
   "open_decisions": [
@@ -139,9 +139,9 @@
     "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Teledyne Energetics, Wolfram Europa). Open since Batch 04.",
     "Operator and services scope: eleven companies. Open since Batch 10; Batch 18 added DroneVia to the same pattern.",
     "Draft products: done and closed. All 36 corrected and published on 2026-10-29, deployed and verified. The wrong-link exception it surfaced was fixed on 2026-10-30 and verified live; nothing is left open on this thread.",
-    "Wider catalogue: the entity-extraction errors are done - 19 removed on 2026-10-30, not the 21 estimated, because 4 of the candidates were real companies. Two questions remain open from the sweep that found them: whether universities and research institutes (~40 live) belong in a company catalogue at all, and a record-by-record read of the 22 live composite slash-name records, some of which are legitimate. Separately, 966 product records still have no company attached."
+    "Wider catalogue: the composite-name records and the academia population have now been reviewed read-only (research-agent/reports/2026-10-30-composite-and-academia-review.md). 19 composites, not 22; one is a genuine joint venture, eight are one organisation, eight wrongly combine independent ones, three are held for lack of evidence. 43 academia records, of which 4 sit in the published landscape and 5 are mistyped companies. Six decisions are listed in that report. Separately, 966 product records still have no company attached."
   ],
-  "notes": "19 entity-extraction errors were removed from the public catalogue on 2026-10-30 by unpublishing them and their 7 artefact products; nothing was deleted and a rollback is on file. Companies live 2,466 -> 2,447, products 3,528 -> 3,521, landscape 567 unchanged. The long-quoted 'roughly 21' turned out to be 19: four of the candidates were real companies excluded on merits. The sweep that produced the list also found the pattern is far wider - about 22 composite slash-name records and about 40 universities and research institutes are still live - which is a policy question for Nazar, not a task.",
+  "notes": "The 19 live composite-name records and the 43 academia records were reviewed read-only on 2026-10-30. Nothing was changed. Thales / Elbit Systems is a genuine joint venture and should be kept; the Guizhou record's second name turned out to be correct, overturning an earlier guess; ECA Group / Infotron is now Exail but merging it would drop a landscape member unless the landscape status moves with it. The Research & academia proposal needs no schema change, because company_type already permits university and research_institute - the gap is that the site counts them as companies. Four of the 19 records removed earlier that day would be reconsidered under that policy.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -556,5 +556,76 @@
       "open_question": "Does a university or non-profit research institute belong in a company catalogue at all? Answering that resolves the ~40 as a rule. The composite labels need a separate record-by-record read.",
       "not_done": "Neither was acted on. This removal was scoped to the 19 the research record had already identified with evidence."
     }
+  },
+  "composite_and_academia_review": {
+    "status": "COMPLETE_READ_ONLY",
+    "date": "2026-10-30",
+    "report": "research-agent/reports/2026-10-30-composite-and-academia-review.md",
+    "composite_manifest": "research-agent/reports/2026-10-30-composite-name-review-manifest.csv",
+    "academia_manifest": "research-agent/reports/2026-10-30-academia-inventory.csv",
+    "scope": "Read-only. No database change, no publication change, no merge, no deletion, no deployment.",
+    "population_rechecked": "19 live composite-name records, not the 22 previously flagged: three were unpublished in the 2026-10-30 removal. A sweep on any slash, not only ' / ', found no others.",
+    "composite_classification": {
+      "genuine_legal_entity": 1,
+      "one_organisation": 8,
+      "multiple_independent_organisations": 8,
+      "unresolved_no_source": 1,
+      "probable_rebrand_weak_evidence": 1,
+      "confidence": "11 high, 5 medium, 3 low"
+    },
+    "composite_recommendations": {
+      "keep_and_rename": 9,
+      "unpublish_and_reassign": 4,
+      "merge": 2,
+      "split": 1,
+      "hold": 3
+    },
+    "genuine_entity": "Thales / Elbit Systems (U-TacS joint venture) is UAV Tactical Systems Ltd, a registered UK company, 51% Elbit / 49% Thales UK. Keep and rename to its legal name. One source claims full Elbit ownership from January 2026; single-sourced, do not write ownership from it.",
+    "assumption_overturned": "The earlier report guessed 'Chengdu' was spurious in 'Guizhou Aircraft Industry Corporation / Chengdu (AVIC)'. It is not: Chengdu designed the WZ-7 and Guizhou built it. Two separate AVIC subsidiaries.",
+    "critical_dependency": "ECA Group / Infotron is the former parent and an absorbed subsidiary of what is now Exail. Exail is live with 18 products but reconciled EXCLUDED, while ECA Group / Infotron is INCLUDED in the published landscape. Merging the obvious way would drop a landscape member, 567 to 566. The landscape status must move with the merge. The record also carries the alias 'ECA Group' and the redirect eca-group -> eca-group-infotron, which must survive.",
+    "held_for_lack_of_evidence": [
+      "NPKC Novik (Novik-XXI Vek) / Kyshtym Radio Plant - no authoritative source found for the GrANT UAV or this pairing.",
+      "NESCOM / GIDS (with Pakistan Air Force) - sources conflict on Burraq design ownership and one questions whether it is indigenous at all.",
+      "Spotter Global / SpotterRF - almost certainly one company but the /about page 404s and no rebranding announcement exists."
+    ],
+    "duplicate_flagged_not_resolved": "KB Luch (part of Vega Concern / Rostec) and Vega Radio Engineering Corporation (Luch Design Bureau, Rybinsk) may be the same Rybinsk bureau twice, or parent and subsidiary. They hold different products. Not settled in this pass.",
+    "academia_inventory": {
+      "total": 43,
+      "retain": 25,
+      "retain_and_in_landscape": 3,
+      "mistyped_as_research_actually_companies": 5,
+      "out_of_scope_or_retype": 3,
+      "typing_unverified": 4,
+      "entity_extraction_error": 1,
+      "false_positive": 1,
+      "in_published_landscape": [
+        "Delft University of Technology (MAVLab)",
+        "Fraunhofer IDMT",
+        "NPTs 'Virazh', National Aviation University (NAU)",
+        "Roke Manor Research"
+      ],
+      "notable": "Roke Manor Research is a Chemring-owned commercial firm, not academia - the clearest mistyping and the best argument against matching on names. Pixhawk is an open hardware standard, not an organisation, and is an entity-extraction error of the kind removed on 2026-10-30."
+    },
+    "proposal": {
+      "key_finding": "No schema change is needed. company_type is text with a CHECK constraint that already permits research_institute and university; 24 and 12 live records use them. What is missing is that the site still counts and presents them as companies.",
+      "rule": "Define Research & academia as company_type IN ('research_institute','university'); exclude it from the headline company count; keep the pages and products; give the class its own registry filter, defaulted off; leave landscape membership on the existing merits rule so the four current members stay and nothing new is admitted; fix the typing first.",
+      "typing_gap": "Seven universities carry no company_type at all; five records are mistyped as research when they are companies; one is not an organisation.",
+      "what_it_does_not_solve": "It does not decide whether Harvard or Yale School of Public Health belong in a UAV catalogue on relevance grounds. The class makes them harmless to the count, not useful."
+    },
+    "would_reconsider_from_the_19": [
+      "Rzeszow University of Technology",
+      "University of Porto",
+      "Laser Zentrum Hannover",
+      "TUBITAK UZAY"
+    ],
+    "would_reconsider_note": "Four of the 19 removed on 2026-10-30 were taken out on entity type alone and the policy would retain them. Reversing is one publication_status update against the rollback file already on record, and only if the policy is adopted. The other fifteen are unaffected.",
+    "decisions_needed": [
+      "Adopt the Research & academia counting rule? No migration required.",
+      "ECA Group / Infotron -> Exail: approve the merge AND the landscape-status move, or leave it. It cannot be half-done.",
+      "The Hunter products: assign to IAI as originator, or keep them attributed jointly?",
+      "Satellites: does the rule that unpublished PRISMA and COSMO-SkyMed also apply to TecSAR/Ofeq and TUBITAK UZAY's IMECE/GOKTURK?",
+      "Reinstate the four academic records removed on 2026-10-30, if the policy is adopted?",
+      "Relevance test for academia: keep Harvard and Yale School of Public Health, or require a product or an in-scope article?"
+    ]
   }
 }
