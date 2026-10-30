@@ -6,9 +6,9 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "COMPOSITE_AND_ACADEMIA_REVIEW_READY_FOR_CHATGPT",
-  "next_actor": "chatgpt",
-  "input": "research-agent/reports/2026-10-30-composite-and-academia-review.md",
+  "status": "RESEARCH_ACADEMIA_CLASS_CREATED",
+  "next_actor": "nazar",
+  "input": "research-agent/reports/2026-10-30-research-academia-class-adopted.md",
   "expected_output": "ChatGPT review of the 19 composite-name classifications and the Research & academia proposal, then Nazar's decisions on the six listed questions",
   "batch_type": "read-only review",
   "human_decision_required": false,
@@ -626,6 +626,34 @@
       "Satellites: does the rule that unpublished PRISMA and COSMO-SkyMed also apply to TecSAR/Ofeq and TUBITAK UZAY's IMECE/GOKTURK?",
       "Reinstate the four academic records removed on 2026-10-30, if the policy is adopted?",
       "Relevance test for academia: keep Harvard and Yale School of Public Health, or require a product or an in-scope article?"
+    ]
+  },
+  "research_academia_class": {
+    "decided_on": "2026-10-30",
+    "decision": "Research & academia adopted as its own organisation class, outside the company count.",
+    "definition": "company_type IN ('research_institute','university')",
+    "schema_change": false,
+    "report": "research-agent/reports/2026-10-30-research-academia-class-adopted.md",
+    "pending_sql": "research-agent/reports/2026-10-30-research-academia-class.sql",
+    "pending_sql_rows": 11,
+    "pending_sql_reason": "both database-write tools were refused; run in the Supabase SQL editor",
+    "site_counts": {
+      "companies_before": 2447,
+      "companies_after": 2411,
+      "research_academia": 36,
+      "after_sql": {
+        "companies": 2410,
+        "research_academia": 37
+      },
+      "landscape": 567
+    },
+    "rows_changed": 0,
+    "open_decisions": [
+      "unpublish Pixhawk (extraction error)",
+      "CyArk / WeRobotics / LMI out of scope or retype",
+      "reinstate Rzeszow, Porto, Laser Zentrum Hannover, TUBITAK UZAY",
+      "relevance test for academia",
+      "review decisions 2-4 and 6 (ECA/Exail merge, Hunter, satellites)"
     ]
   }
 }
