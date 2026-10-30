@@ -6,11 +6,11 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "DRAFT_PRODUCT_CORRECTIONS_READY_FOR_CHATGPT",
+  "status": "DRAFT_PRODUCTS_PUBLISHED_READY_FOR_CHATGPT",
   "next_actor": "chatgpt",
-  "input": "research-agent/reports/2026-10-29-draft-product-corrections.md",
-  "expected_output": "ChatGPT review of the source-backed correction package before any database write is proposed to Nazar",
-  "batch_type": "product correction package",
+  "input": "research-agent/reports/2026-10-29-draft-product-publication.md",
+  "expected_output": "ChatGPT review of the applied publication, and a decision on the one exception: two company pages linking to the wrong product",
+  "batch_type": "product correction and publication",
   "human_decision_required": false,
   "blocker": null,
   "open_decisions": [
@@ -138,10 +138,10 @@
   "open_questions_for_human": [
     "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Teledyne Energetics, Wolfram Europa). Open since Batch 04.",
     "Operator and services scope: eleven companies. Open since Batch 10; Batch 18 added DroneVia to the same pattern.",
-    "Draft products: 36 reviewed against their actual sources. All 3 holds lifted - none was a missing product. 27 need a correction before publication, 9 are publishable as they stand, 0 remain on hold. Two separate decisions are open: apply the corrections, and publish any of the 36.",
+    "Draft products: done. All 36 corrected and published on 2026-10-29, deployed and verified. One open item left behind: two company pages (Bionic System Solutions, HADES Defense Systems) link to the wrong product because the generator keys page URLs by product name. A one-line catalogue-repo fix, not yet made.",
     "Wider catalogue: roughly 21 entity-extraction errors, and separately 966 product records with no company attached."
   ],
-  "notes": "The 36 draft products were re-reviewed by reading every official source rather than status-checking it. All three holds fell: two were wrong URL guesses and one was an unrecorded source. Two rows previously marked ready turned out to be unsupported by the page they cite. OBRIY and STEZHKA carry each other's descriptions. One proposed category change is confirmed and one withdrawn. beeta.tech is dead. Nothing was published or changed. V1=273 and V2=358 untouched.",
+  "notes": "The 36 draft products were corrected and published on 2026-10-29 and are live on the site. Zero drift before the write, 36 rows updated, 0 skipped, guarded and idempotent. Products live 3,492 -> 3,528; companies live 2,466 and landscape 567 both unchanged; V1=273 and V2=358 untouched. All 36 product pages and all 25 company pages return 200 and the company pages now list their products. One exception: two company pages link to the wrong product, a name-keyed lookup in the generator that this publication surfaced. Reported, not fixed.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -446,5 +446,63 @@
     "null_countries": "BOMBUS, WireDO, LAURUS FPV, Shield X SkyBlock, OBRIY, OSCAR, STEZHKA, UKROPTER Drone - all Ukrainian rows whose company already has a country.",
     "coverage_gaps_noticed": "Products of already published companies that the catalogue does not hold: HADES EAGLE, CONDOR and its passive RF sensor; BZB UAS BX4 and BX8; Twist Robotics DZHERELO, CYCLOP, SNODE, CBPH; Ukropter BLACK CAT and RETRIX DRONE; Argonian Flux; Robotto Strike; twelve further VirtuaLabs radars. Recorded only; adding them is a separate discovery decision.",
     "decision_still_unmade": "Publishing any of the 36 is a PUBLISH_STATUS decision for Nazar under rule 4 of CLAUDE.md. Applying the corrections is a database write that belongs in this repo or the SQL editor, and has not been authorised."
+  },
+  "draft_product_publication": {
+    "status": "APPLIED_DEPLOYED_VERIFIED",
+    "date": "2026-10-29",
+    "authorised_by": "Nazar, 2026-10-29, for the exact 36 product IDs in the reviewed correction manifest",
+    "report": "research-agent/reports/2026-10-29-draft-product-publication.md",
+    "applied_manifest": "research-agent/reports/2026-10-29-draft-product-publication-applied.csv",
+    "rollback": "research-agent/reports/2026-10-29-draft-product-publication-rollback.sql",
+    "source_package": "research-agent/reports/2026-10-29-draft-product-corrections.md",
+    "amendments_applied_before_write": [
+      "WireDO: the absolute 'cannot be jammed or intercepted' claim replaced with the supplied wording, 'Carries control and video over optical fibre rather than a radio link.'",
+      "Development status preserved: Fenix 'still in development', HILDR 'pilot order from the Swedish FMV, with series development ongoing', FoxHUNTER 'Not yet in general availability: offered pre-sale, with deliveries planned from spring 2027'.",
+      "Source attribution retained on every performance claim; six summaries tightened beyond the reviewed package for this (LAURUS FPV, Eter, TUNDRA 2, STEZHKA, Ukropter Complex, HILDR).",
+      "'(unchanged)' markers and category annotations read as instructions, never written as values."
+    ],
+    "drift_before_write": "Zero on all six fields across all 36 rows. One apparent source_urls discrepancy was a text-vs-array rendering artefact in the check itself and returned zero when compared array to array.",
+    "dry_run": {
+      "rows": 36,
+      "summary": 36,
+      "source_urls": 15,
+      "country": 8,
+      "name": 2,
+      "category": 1,
+      "publish": 36,
+      "guard_matches": 36,
+      "slug_changes": 0,
+      "invalid_values": 0
+    },
+    "rows_updated": 36,
+    "rows_skipped": 0,
+    "idempotent": "The guard requires publication_status='draft' and a real value difference, so a rerun matches nothing.",
+    "fields_written": "name, category, country, summary, source_urls, publication_status, updated_at. Nothing else.",
+    "ownership_and_slugs": "Company ownership unchanged on all 36. No products.slug was modified, including on the two renamed products.",
+    "public_url_note": "The site slug is derived from the product name by slugify, not read from products.slug (generate-supabase.mjs:332). It cost nothing here: all 36 were draft and had no public page, so every URL is new and none moved.",
+    "after": {
+      "products_live": 3528,
+      "products_live_before": 3492,
+      "companies_live": 2466,
+      "landscape_companies": 567,
+      "v1": 273,
+      "v2": 358
+    },
+    "deployment": {
+      "trigger": "Push of the rule-4 docs/STATUS.md entry to brunotaut/xSonomy (59bed3f) at 23:53:42Z",
+      "build": "2026-10-29T23:57:55.490Z",
+      "previous_build": "2026-10-29T23:48:22.412Z, an independent rebuild carrying the pre-publication state of 3,492 products and 567 landscape companies",
+      "category_deltas": "uav +10, cuas +19, sensors 0, software +5, other +2 = +36, matching the patch exactly",
+      "verified": "36 of 36 present in the deployed data with no mismatch on category, country, summary or source URLs; 36 product pages and 25 company pages all HTTP 200; all 25 company pages now show a populated product list; landscape still 567"
+    },
+    "exception": {
+      "what": "Two company pages link to the wrong product. Bionic System Solutions' Komodo links to /other/komodo/ (DOK-ING's ground robot) and HADES Defense Systems' HAWK links to /cuas/hawk-2/ (the ownerless HAWK).",
+      "cause": "pageUrlByProduct at scripts/generate-supabase.mjs:1237 keys product page URLs by product name, so when two live products share a name the last bucket processed wins for both owners.",
+      "surfaced_by": "This publication. Both were draft before, so neither company page linked them at all.",
+      "not_affected": "Both products' own pages are correct and return 200 (/cuas/komodo/ and /cuas/hawk/). The database is correct; this is purely an interface defect.",
+      "third_collision": "ANDROMEDA escapes only by letter case: JISR's is ANDROMEDA, High Lander's is Andromeda, so the map keys differ.",
+      "fix": "Key that map by product id rather than name. A code change in the catalogue repo, outside the scope of this instruction. Not applied; flagged for a decision."
+    },
+    "out_of_scope_not_done": "No company renamed (BeetechUA -> BeeTA remains a proposal). No product created; the recorded coverage gaps are still absent. No unrelated cleanup: the 966 ownerless products and the ~21 entity-extraction errors were not touched."
   }
 }
