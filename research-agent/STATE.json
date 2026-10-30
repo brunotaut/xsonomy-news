@@ -6,11 +6,11 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "DRAFT_PRODUCTS_PUBLISHED_READY_FOR_CHATGPT",
+  "status": "ENTITY_ERRORS_REMOVED_READY_FOR_CHATGPT",
   "next_actor": "chatgpt",
-  "input": "research-agent/reports/2026-10-29-draft-product-publication.md",
-  "expected_output": "ChatGPT review of the applied publication, and a decision on the one exception: two company pages linking to the wrong product",
-  "batch_type": "product correction and publication",
+  "input": "research-agent/reports/2026-10-30-entity-error-removal.md",
+  "expected_output": "ChatGPT review of the removal, and a recommendation on the wider population it exposed: ~22 composite slash-name records and ~40 universities and research institutes still live",
+  "batch_type": "catalogue cleanup",
   "human_decision_required": false,
   "blocker": null,
   "open_decisions": [
@@ -139,9 +139,9 @@
     "Warhead and energetics scope: five companies (EURENCO, Odin Defence, TDW, Teledyne Energetics, Wolfram Europa). Open since Batch 04.",
     "Operator and services scope: eleven companies. Open since Batch 10; Batch 18 added DroneVia to the same pattern.",
     "Draft products: done and closed. All 36 corrected and published on 2026-10-29, deployed and verified. The wrong-link exception it surfaced was fixed on 2026-10-30 and verified live; nothing is left open on this thread.",
-    "Wider catalogue: roughly 21 entity-extraction errors, and separately 966 product records with no company attached."
+    "Wider catalogue: the entity-extraction errors are done - 19 removed on 2026-10-30, not the 21 estimated, because 4 of the candidates were real companies. Two questions remain open from the sweep that found them: whether universities and research institutes (~40 live) belong in a company catalogue at all, and a record-by-record read of the 22 live composite slash-name records, some of which are legitimate. Separately, 966 product records still have no company attached."
   ],
-  "notes": "The 36 draft products were corrected and published on 2026-10-29 and are live on the site. Zero drift before the write, 36 rows updated, 0 skipped, guarded and idempotent. Products live 3,492 -> 3,528; companies live 2,466 and landscape 567 both unchanged; V1=273 and V2=358 untouched. All 36 product pages and all 25 company pages return 200 and the company pages now list their products. The one exception it surfaced - two company pages linking to a same-named product of another owner, caused by a name-keyed lookup in the generator - was fixed on 2026-10-30, deployed and verified: exactly those two links changed across all 567 landscape companies, with a regression test that fails against the old behaviour.",
+  "notes": "19 entity-extraction errors were removed from the public catalogue on 2026-10-30 by unpublishing them and their 7 artefact products; nothing was deleted and a rollback is on file. Companies live 2,466 -> 2,447, products 3,528 -> 3,521, landscape 567 unchanged. The long-quoted 'roughly 21' turned out to be 19: four of the candidates were real companies excluded on merits. The sweep that produced the list also found the pattern is far wider - about 22 composite slash-name records and about 40 universities and research institutes are still live - which is a policy question for Nazar, not a task.",
   "concurrent_chatgpt_work_merged": {
     "publication_scope_review": "research-agent/audits/2026-10-28-publication-scope-review.md - checked 253 excluded/needs_review records against the live public landscape and catalogue. Found 0 present in the landscape. This corrected Claude's framing of the publication gap and is the reason no bulk unpublish is recommended.",
     "batch_15_supplementary_review": "research-agent/audits/2026-10-28-batch-15-supplementary-review.md - four evidence additions, three of which were acted on."
@@ -510,5 +510,51 @@
       "regression_test": "scripts/test/company-product-links.test.mjs - end to end against a fake PostgREST server, covering a name shared across two buckets and one shared inside a single bucket where slugify appends -2. Confirmed to fail against the old name-keyed lookup. npm test 17 of 17."
     },
     "out_of_scope_not_done": "No company renamed (BeetechUA -> BeeTA remains a proposal). No product created; the recorded coverage gaps are still absent. No unrelated cleanup: the 966 ownerless products and the ~21 entity-extraction errors were not touched."
+  },
+  "entity_error_removal": {
+    "status": "APPLIED_DEPLOYED_VERIFIED",
+    "date": "2026-10-30",
+    "asked_for_by": "Nazar, 2026-10-30",
+    "report": "research-agent/reports/2026-10-30-entity-error-removal.md",
+    "manifest": "research-agent/reports/2026-10-30-entity-error-removal-manifest.csv",
+    "rollback": "research-agent/reports/2026-10-30-entity-error-removal-rollback.sql",
+    "there_was_no_list": "'Roughly 21' had been carried since Batch 15 as an estimate; no enumerated list existed. Rebuilding it from the reconciliation history of all 17 batches gave 23 candidates, of which 4 proved to be real companies excluded on merits. The true figure is 19.",
+    "removed_companies": 19,
+    "removed_products": 7,
+    "kept_deliberately": [
+      "ams OSRAM",
+      "Aston Harald Composite",
+      "JFG Composites",
+      "Klaveness"
+    ],
+    "kept_reason": "Real companies excluded from the landscape on merits, not records that are wrong. A company catalogue should keep them.",
+    "method": "publication_status live -> draft on companies and their artefact products. Nothing deleted, no other field touched. Guarded to rows that were live AND reconciled as excluded, so no verified company could be caught; a rerun matches nothing.",
+    "why_products_too": "Unpublishing a company while leaving its products live would have added seven more ownerless products to the public site, worsening the 966-orphan defect instead of cleaning up.",
+    "before": {
+      "companies_live": 2466,
+      "products_live": 3528,
+      "landscape": 567
+    },
+    "after": {
+      "companies_live": 2447,
+      "products_live": 3521,
+      "landscape": 567,
+      "verified_still_published": 567,
+      "the_36_products_still_live": 36
+    },
+    "deployment": {
+      "build": "2026-10-30T00:31:41.383Z",
+      "verified": "All 19 company pages return 404 and are gone from companies.json; all 7 artefact products gone from the category data; the 4 kept companies return 200.",
+      "key_safety_check": "The real entities behind the removed composite labels and institutes survive: ASELSAN, Leonardo, Thales and INLEAP Photonics all return 200."
+    },
+    "redirects": "None created. A slug_redirects row points a reader at a replacement; there is no correct replacement for a record that should not exist, so 404 is right. No existing redirect pointed at any of the 19 slugs.",
+    "wider_population_found": {
+      "composite_slash_names_live": 22,
+      "composite_caveat": "Not all are errors. Thales / Elbit Systems (U-TacS joint venture) is a real legal entity; Brolis Semiconductors / Brolis Defence, IAI (Tamam / MALAT) and Spotter Global / SpotterRF are single organisations written with a slash. Each needs reading, not a pattern match.",
+      "universities_and_institutes_live": "about 40, including Harvard, Duke, Yale School of Public Health, University of Tokyo, Peking University, Delft (MAVLab), DLR, TNO and Fraunhofer IDMT",
+      "inconsistency": "Removing Rzeszow, Porto, TUBITAK UZAY and Laser Zentrum Hannover while Harvard and DLR stay live is inconsistent. It predates this removal - only European records were ever screened - but this makes it visible.",
+      "open_question": "Does a university or non-profit research institute belong in a company catalogue at all? Answering that resolves the ~40 as a rule. The composite labels need a separate record-by-record read.",
+      "not_done": "Neither was acted on. This removal was scoped to the 19 the research record had already identified with evidence."
+    }
   }
 }
