@@ -6,9 +6,9 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "RESEARCH_ACADEMIA_CLASS_CREATED",
+  "status": "INVESTOR_RESEARCH_IMPORTED_AND_EXPORTED",
   "next_actor": "nazar",
-  "input": "research-agent/reports/2026-10-30-research-academia-class-adopted.md",
+  "input": "research-agent/reports/2026-10-30-investor-research-import.md",
   "expected_output": "ChatGPT review of the 19 composite-name classifications and the Research & academia proposal, then Nazar's decisions on the six listed questions",
   "batch_type": "read-only review",
   "human_decision_required": false,
@@ -654,6 +654,65 @@
       "reinstate Rzeszow, Porto, Laser Zentrum Hannover, TUBITAK UZAY",
       "relevance test for academia",
       "review decisions 2-4 and 6 (ECA/Exail merge, Hunter, satellites)"
+    ]
+  },
+  "investor_research_import": {
+    "imported_on": "2026-10-30",
+    "source": "research-agent/data/2026-10-30-european-defence-investors.json",
+    "dataset": "European Defence & UAV Investor Research research-1",
+    "report": "research-agent/reports/2026-10-30-investor-research-import.md",
+    "reproduce": "research-agent/imports/README-investor-research.md",
+    "counts": {
+      "records_imported": 106,
+      "records_updated": 0,
+      "records_skipped": 0,
+      "locations": 41,
+      "sources": 202,
+      "unique_source_urls": 149,
+      "country_associations": 124,
+      "country_reviews": 32,
+      "vehicles": 0
+    },
+    "deduplication": {
+      "linked_to_existing_investors": 12,
+      "merges": 0,
+      "existing_investors_unchanged": 200
+    },
+    "map_candidates": {
+      "flagged": 21,
+      "validated": 21,
+      "blocked": 0,
+      "approved": 21,
+      "approved_locations": 38
+    },
+    "export": {
+      "path": "https://xsonomy.com/data/landscape-investors.json",
+      "pointer": "https://xsonomy.com/data/landscape.json -> investors",
+      "views": [
+        "v_landscape_investors",
+        "v_landscape_investor_locations",
+        "v_investor_country_reviews"
+      ],
+      "verified_live": true
+    },
+    "migrations": [
+      "20261030222722_investor_research_staging_schema",
+      "20261030223032_investor_research_staging_additions",
+      "20261030223130_investor_research_ticket_columns",
+      "20261030223328_investor_research_loaders",
+      "20261030224217_investor_research_dedupe_and_validation",
+      "20261030224259_investor_research_landscape_projection"
+    ],
+    "catalogue_commit": "7d91efa",
+    "untouched": {
+      "live_companies": 2447,
+      "landscape": 567,
+      "investors_table": 200
+    },
+    "open_items": [
+      "fund vehicles not populated: the dataset names them in prose, extracting them would be invention",
+      "the 21 approved records are the dataset’s own \"candidates, not completed editorial approval\" — revert to review with one statement if preferred",
+      "no frontend consumes the export yet (out of scope for this task)"
     ]
   }
 }
