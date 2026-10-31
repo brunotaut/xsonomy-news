@@ -166,9 +166,31 @@ row was touched.
    (`30 rpm / 1 s (IRIS); ELVIRA 1.3 s`). It is the source of this contamination and the
    obvious next split. Also `EchoGuard / EchoShield (MESA)` (`d3eb02d7-…`, Echodyne), which
    does the same thing (`EchoGuard 10 Hz`, two SWaP figures in one string).
-2. **Where else did the copy-paste land?** This was found by chance. A sweep for products
-   whose numeric specs match another vendor's row would be worth running across all 3,522
-   live products — the same keystroke that produced this one is unlikely to have struck once.
+2. **Where else did the copy-paste land?** Two sweeps were run over the 50-odd live radar
+   records before closing this out.
+
+   *Exact duplicate spec strings across different companies:* **none.** Worth knowing that
+   this would not have caught the Spotter case either — the pasted values had been partly
+   edited (`IRIS 29 kg upmast; 200 W nominal / 336 W max` became
+   `29 kg; 550 mm dia x 630 mm; 2x 12 W`), so string matching is the wrong detector. What
+   exposed it was the record contradicting *itself*.
+
+   *Self-contradiction (a rotating scan type alongside a solid-state or AESA architecture):*
+   4 hits, 3 of them legitimate — ELDIS RL-2000, Robin IRIS and Thales Ground Master all
+   genuinely rotate a solid-state or AESA antenna. The fourth is a real defect:
+
+   > **`MAVERICK Fortress-3D` (Silentium Defence)** — its `Radar · Architecture` field is not
+   > a specification at all, it is an unresolved analyst note that has been **published**:
+   > *"Note: 'MAVERICK/Fortress-3D' is a Silentium Defence passive radar; DeTect's drone radar
+   > is HARRIER S-band solid-state Doppler"*. The record also carries
+   > `Radar · Scan type: Rotating (mechanical)` against `Sensor modality: SDR PCL 3D` —
+   > passive coherent location has no rotating transmitter, and `Passive` is an existing
+   > value in that field. This looks like the same class of two-vendors-one-row confusion as
+   > Spotter/Robin, between **Silentium Defence and DeTect**, and it needs a re-screen rather
+   > than a tidy-up. Not touched here.
+
+   A sweep across all 3,522 live products, on the self-contradiction signature rather than
+   string equality, is still worth running.
 3. **Should the GAX500-3D stay `live`?** It is a March 2026 product documented only by
    Spotter's own material and trade coverage of the launch; there is no independent test data.
    It is published here because it already was.

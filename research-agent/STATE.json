@@ -905,11 +905,14 @@
     "open_items": [
       "IRIS · ELVIRA (fed75c9b-fe2e-4bff-a996-058da1bef4c9, Robin Radar) is the same two-products-one-row shape and is the source of this contamination — the obvious next split",
       "EchoGuard / EchoShield (MESA) (d3eb02d7-d179-4e15-bb6a-beeee2b64d6a, Echodyne) has the same shape",
-      "sweep all 3,522 live products for other copy-paste spec contamination — this one was found by chance",
       "the other ~114 products with ' · ' in the name are mostly deliberate vendor-portfolio entries, not split failures; wholesale splitting is a separate editorial decision",
       "products.slug is NOT NULL and nothing reads it (the public URL comes from the product name) — it should either drive the URL or be dropped",
-      "GAX500-3D rests on Spotter's own material plus launch trade coverage; no independent test data"
+      "GAX500-3D rests on Spotter's own material plus launch trade coverage; no independent test data",
+      "sweep all 3,522 live products on the self-contradiction signature (not string equality) for further copy-paste contamination",
+      "re-screen MAVERICK Fortress-3D (Silentium Defence) -- published analyst note in a spec field plus a probable Silentium/DeTect mix-up"
     ],
-    "rebased_onto": "611e47f 'Expand investor directory with labelled candidates and Ukraine-linked funds', which landed upstream mid-task. STATUS.md conflict resolved by keeping both sections; the new test also copies scripts/lib/investor-directory.json, which landscape.mjs now reads at build time."
+    "rebased_onto": "611e47f 'Expand investor directory with labelled candidates and Ukraine-linked funds', which landed upstream mid-task. STATUS.md conflict resolved by keeping both sections; the new test also copies scripts/lib/investor-directory.json, which landscape.mjs now reads at build time.",
+    "sweeps_run": "Over the live radar records: (a) exact duplicate spec strings across companies -> none, and this would NOT have caught the Spotter case because the pasted values had been partly edited, so string equality is the wrong detector; (b) self-contradiction, a rotating scan type alongside a solid-state/AESA architecture -> 4 hits, 3 legitimate (ELDIS RL-2000, Robin IRIS, Thales Ground Master all rotate a solid-state or AESA antenna).",
+    "new_defect_found": "products 'MAVERICK Fortress-3D' (Silentium Defence): Radar · Architecture holds a PUBLISHED unresolved analyst note -- \"Note: 'MAVERICK/Fortress-3D' is a Silentium Defence passive radar; DeTect's drone radar is HARRIER S-band solid-state Doppler\" -- and Radar · Scan type 'Rotating (mechanical)' contradicts Sensor modality 'SDR PCL 3D' (passive coherent location has no rotating transmitter; 'Passive' is an existing value in that field). Same class of two-vendors-one-row confusion as Spotter/Robin, between Silentium Defence and DeTect. Needs a re-screen, not a tidy-up. Not touched."
   }
 }
