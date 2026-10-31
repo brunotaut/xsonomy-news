@@ -6,7 +6,7 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "RENAMES_APPLIED_AND_DEPLOYED_EXAIL_RESCREEN_READY_FOR_CHATGPT",
+  "status": "EXAIL_MERGE_PACKAGE_PREPARED_AWAITING_CHATGPT_REVIEW",
   "next_actor": "chatgpt",
   "input": "research-agent/reports/2026-10-31-exail-rescreen.md",
   "expected_output": "ChatGPT review of the Exail re-screen, then Nazar's decisions on the five listed questions. The 13 renames are done and need nothing further.",
@@ -914,5 +914,54 @@
     "rebased_onto": "611e47f 'Expand investor directory with labelled candidates and Ukraine-linked funds', which landed upstream mid-task. STATUS.md conflict resolved by keeping both sections; the new test also copies scripts/lib/investor-directory.json, which landscape.mjs now reads at build time.",
     "sweeps_run": "Over the live radar records: (a) exact duplicate spec strings across companies -> none, and this would NOT have caught the Spotter case because the pasted values had been partly edited, so string equality is the wrong detector; (b) self-contradiction, a rotating scan type alongside a solid-state/AESA architecture -> 4 hits, 3 legitimate (ELDIS RL-2000, Robin IRIS, Thales Ground Master all rotate a solid-state or AESA antenna).",
     "new_defect_found": "products 'MAVERICK Fortress-3D' (Silentium Defence): Radar · Architecture holds a PUBLISHED unresolved analyst note -- \"Note: 'MAVERICK/Fortress-3D' is a Silentium Defence passive radar; DeTect's drone radar is HARRIER S-band solid-state Doppler\" -- and Radar · Scan type 'Rotating (mechanical)' contradicts Sensor modality 'SDR PCL 3D' (passive coherent location has no rotating transmitter; 'Passive' is an existing value in that field). Same class of two-vendors-one-row confusion as Spotter/Robin, between Silentium Defence and DeTect. Needs a re-screen, not a tidy-up. Not touched."
+  },
+  "exail_merge_package": {
+    "status": "PREPARED_NOT_APPLIED",
+    "date": "2026-10-31",
+    "authorised_by": "Nazar, 2026-10-31: 'This instruction authorises preparation and read-only validation, not execution.' Requires ChatGPT review then Nazar's approval before execution.",
+    "database_written": "NO. Verified unchanged at the end of validation: live companies 2,447, Exail sectors 0, Exail excluded, ECA live and included, IT180 still owned by ECA, no new redirect, no new relationship.",
+    "review": "research-agent/reports/2026-10-31-exail-merge-review.md",
+    "manifest": "research-agent/reports/2026-10-31-exail-merge-manifest.csv",
+    "sql": "research-agent/reports/2026-10-31-exail-merge.sql",
+    "rollback": "research-agent/reports/2026-10-31-exail-merge-rollback.sql",
+    "implements": "research-agent/reports/2026-10-31-exail-rescreen.md decisions 1 and 2",
+    "transaction": "One atomic transaction, 14 steps: 2 company_sectors rows on Exail (eco-navigation primary + eco-components, editor/high, 2 source_urls each); Exail landscape verdict excluded -> included with a source-backed note; IT180 STH-U (3b53c4ed-299e-4621-9d1a-a93d0ba47354) moved to Exail in both products.company_id and product_companies; ECA Group + Infotron aliases added to Exail as former_name and ECA's own ECA Group alias deleted; slug_redirects eca-group repointed to exail and eca-group-infotron -> exail added; ECA publication_status -> draft; ECA landscape rows -> excluded in BOTH editions; a merged_with lineage relationship.",
+    "evidence_attribution_confirmed": "Re-fetched both primary sources 2026-10-31. The SIRTAP release (12 May 2025) names Exail (the operating company) and Grafinta as suppliers of the UmiX-40 IMU to Airbus's SIRTAP, described as a tactical unmanned aerial system. 'Exail Technologies' appears only in an investor-site link, NOT as the supplier, and iXblue is not mentioned. The product range carries a Defense category 'Land and air navigation & pointing' (INS, IMU, stabilised platforms) and NO UAV/aerial category, so the admission is correctly on the navigation limb and the screening note is worded so it cannot be read as an aircraft claim.",
+    "schema_corrections": [
+      "company_relationships uses source_company_id / target_company_id -- corrected",
+      "product_companies PK is (product_id, company_id, role), three columns not two",
+      "landscape_candidates note column is screening_note; PK (landscape_slug, company_id)",
+      "company_aliases.alias is citext, UNIQUE per company and NOT globally unique"
+    ],
+    "plan_corrections": [
+      "The ECA Group alias must MOVE, not be copied. resolve-entities.mjs fetches companies and aliases with no publication_status filter and buildCompanyIndex's exact map is first-write-wins, so the alias on both records would route future news non-deterministically, possibly onto the retired draft record. Section 7 of the re-screen omitted this.",
+      "The ECA row is retired (publication_status draft + landscape excluded), NOT deleted as section 7 said. The instruction requires the audit history preserved, and the instruction wins."
+    ],
+    "found_during_validation": [
+      "A SECOND landscape edition, europe-cuas-2026, which the re-screen never discussed: all four cluster records hold unscreened candidate rows there. ECA is excluded there too so the retired duplicate cannot be re-admitted by a later C-UAS pass. Exail's own candidate row is deliberately untouched.",
+      "The re-screen was wrong that iXblue has 0 products: it owns Qinertia (86629aac-c160-4338-a7a8-19abb607b49b, Software, live), Exail's GNSS-INS post-processing software.",
+      "Exail's description is EMPTY, and buildLandscape emits description: c.description || ''. The merge therefore loses a described landscape member (ECA has a real description) and gains a blank one. Proposed wording is in section 8.1 of the review; NOT in the SQL because it is outside the seven authorised operations.",
+      "ECA's single linked article is already linked to Exail, so no article link needs moving.",
+      "Neither company_relationships nor company_aliases is read by the catalogue generator -- aliases matter only to the news entity resolver."
+    ],
+    "expected_counts": "landscape 567 -> 568 (admit Exail) -> 567 (retire ECA), net 567; live companies 2,447 -> 2,446; suppliers 2,410 -> 2,409; research orgs 37 unchanged; live products 3,522 unchanged (IT180 changes owner, not status); Exail products 18 -> 19; redirect stubs 53 -> 54. If only the admission is approved the honest number is 568; if only the merge, 566. Correctness over the number.",
+    "validation": "Landscape gate reproduced in SQL and returns 567, matching the live site, so the simulation is trustworthy. Exail fails exactly two gates (excluded, 0 domained sectors). Both sector ancestries resolve eco-* -> uav-ecosystem -> uav so Exail keeps domains:['uav']. SBG Systems verified as an exact field-for-field precedent, included with these two rows and NO uav row. 0 collisions across 7 checks. Step-0 guard block executed read-only and passes. All 18 DML shapes PREPAREd against the live schema: 18/18 parse and analyse clean, 0 executed. Quote/$$/begin-commit balance checked in both files. No stale schema references.",
+    "url_safety": "/uav/it180-sth-u/ does not move (product slug comes from the product name; only the owner changes). /companies/eca-group-infotron/ stops being built because the companies fetch is gated publication_status=eq.live, which is REQUIRED: the generator skips any redirect stub whose directory already holds an index.html, so if ECA stayed live the stub would be silently skipped and the URL would keep serving the duplicate. /companies/eca-group/ is repointed straight to exail because the generator emits a canonical plus meta-refresh, not a 301, and GitHub Pages cannot chain.",
+    "unresolved_dependencies": [
+      "Exail's empty description -- the most user-visible consequence; recommended to fix in the same release",
+      "The 12 mis-categorised UAV products stay live and wrong, and buildLandscape publishes a company's product list on its landscape row, so admitting Exail makes its bad product data newly prominent on the public map. Strong recommendation to approve re-screen decision 3 in the same release.",
+      "iXblue remains needs_review, so after this transaction the database records that ECA merged into Exail while iXblue did not -- the cluster stays half-merged and a later iXblue merge repeats this pattern",
+      "The ECA record's NAME stays an exact-match key in buildCompanyIndex because the resolver does not filter drafts; the general fix (filter drafts, or prefer live on a tie) belongs in the news repo and would protect every merge",
+      "The parent-entity conflation stays: Exail will hold 6 aliases including Exail Technologies, Gorgé, Gorgé SA and Groupe Gorge",
+      "Thales's 35.51% controlling stake in Exail Technologies (July 2026) still unrecorded",
+      "2026-10-31-composite-merges-and-reassignments.sql (Tier B/C) STILL uses source/target and will fail as written -- out of scope here, must be corrected before its own dry run"
+    ],
+    "decisions_needed": [
+      "Approve the 14-step transaction as prepared (net landscape 567)?",
+      "Approve or strike step 14, the merged_with lineage row (added during preparation, not in the original plan)?",
+      "Approve the proposed Exail description, or supply different wording?",
+      "Approve the ECA europe-cuas-2026 exclusion, which was not in the original plan?",
+      "Run the product corrections in the same release, or accept publishing Exail with 12 mis-categorised products on its landscape row?"
+    ]
   }
 }
