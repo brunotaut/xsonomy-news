@@ -1,4 +1,5 @@
--- TIER A — the 12 evidence-backed composite-name renames. READY, pending approval.
+-- TIER A — the 12 evidence-backed composite-name renames, plus the dependent row F
+-- (Vega Radio Engineering Corporation). APPROVED 2026-10-31 and applied the same day.
 --
 -- Scope: companies.name and new company_aliases rows. Nothing else.
 --   * IDs preserved.
@@ -16,10 +17,11 @@
 -- optional enrichment in the report.
 --
 -- Guarded and idempotent: `is distinct from` and ON CONFLICT DO NOTHING mean a rerun
--- changes nothing. Expected: 12 name rows, 10 alias rows; 0 on any rerun.
+-- changes nothing. Expected: 13 name rows, 11 alias rows; 0 on any rerun.
 --
--- Dry run recorded 2026-10-31: all 12 before-values match the review exactly (zero
--- drift), all 12 live, no exact or normalised name collisions, products retained.
+-- Dry run re-run before applying, 2026-10-31: all 13 before-values match the review
+-- exactly (zero drift), all 13 live, no exact or normalised name collision, no alias
+-- clash with any other company or alias, products and landscape rows retained.
 
 begin;
 
@@ -35,7 +37,11 @@ with ren(id, new_name) as (values
   ('e6eab384-fcd9-44e1-b566-085d61a89243', 'Spotter Global'),
   ('21335b89-b9e4-4088-bd10-1a691ee4b314', 'UAV Tactical Systems (U-TacS)'),
   ('adc51ccb-73b8-4fff-84b5-eff6520b9d83', 'United Instrument Manufacturing Corporation (UIMC)'),
-  ('a49e3a30-2fb2-4597-991d-3ec16b817a62', 'Unmanned Systems Group')
+  ('a49e3a30-2fb2-4597-991d-3ec16b817a62', 'Unmanned Systems Group'),
+  -- Row F, outside the 19: KB Luch, Rybinsk is Vega's subsidiary, not a duplicate of it,
+  -- so the subsidiary wrongly appended to the parent's name comes off. No alias: the
+  -- appended fragment was an error, not a name this organisation was ever known by.
+  ('5832034b-04c2-4115-9a47-7abf551d9960', 'Vega Radio Engineering Corporation')
 )
 update companies c set name = r.new_name, updated_at = now()
 from ren r
@@ -62,14 +68,15 @@ insert into company_aliases (company_id, alias, type) values
   ('a49e3a30-2fb2-4597-991d-3ec16b817a62', 'Supercam',              'brand')
 on conflict (company_id, alias) do nothing;
 
--- Expected: 12 renames applied, suppliers 2,410 and research 37 unchanged,
--- landscape 567 unchanged.
+-- Expected: 13 renames applied, suppliers 2,410 and research 37 unchanged,
+-- landscape 567 unchanged, composites with ' / ' 19 -> 7.
 select (select count(*) from companies where publication_status='live'
           and name in ('Brolis Defence Group','China Academy of Aerospace Aerodynamics (CAAA)',
             'Chengdu Aircraft Industry Group (CAIG)','Guizhou Aircraft Industry Corporation (GAIC)',
             'KB Luch, Rybinsk','Meridian (S.P. Korolev Meridian)','MIT Lincoln Laboratory',
             'Shahed Aviation Industries','Spotter Global','UAV Tactical Systems (U-TacS)',
-            'United Instrument Manufacturing Corporation (UIMC)','Unmanned Systems Group')) as renamed,
+            'United Instrument Manufacturing Corporation (UIMC)','Unmanned Systems Group',
+            'Vega Radio Engineering Corporation')) as renamed,
        (select count(*) from companies where publication_status='live' and name like '% / %') as composites_left,
        (select count(*) from landscape_candidates
           where landscape_slug='europe-uav-cuas-2026' and status='included') as landscape_included;

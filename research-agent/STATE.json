@@ -6,11 +6,11 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "COMPOSITE_CORRECTION_PACKAGE_READY_FOR_CHATGPT",
+  "status": "RENAMES_APPLIED_AND_DEPLOYED_EXAIL_RESCREEN_READY_FOR_CHATGPT",
   "next_actor": "chatgpt",
-  "input": "research-agent/reports/2026-10-31-composite-correction-package.md",
-  "expected_output": "ChatGPT review of the 19 composite-name classifications and the Research & academia proposal, then Nazar's decisions on the six listed questions",
-  "batch_type": "read-only review",
+  "input": "research-agent/reports/2026-10-31-exail-rescreen.md",
+  "expected_output": "ChatGPT review of the Exail re-screen, then Nazar's decisions on the five listed questions. The 13 renames are done and need nothing further.",
+  "batch_type": "applied renames + read-only re-screen",
   "human_decision_required": false,
   "blocker": null,
   "open_decisions": [
@@ -804,6 +804,83 @@
       "ECA/Exail: option E1 (merge, landscape 566) or E2 (re-screen Exail first)",
       "a separate Exail data-quality pass"
     ],
-    "corrects_earlier_report": "the 2026-10-30 review proposed moving the landscape status with the ECA/Exail merge; this pass declines that and explains why"
+    "corrects_earlier_report": "the 2026-10-30 review proposed moving the landscape status with the ECA/Exail merge; this pass declines that and explains why",
+    "superseded_in_part": "The ECA/Exail section is superseded by research-agent/reports/2026-10-31-exail-rescreen.md. Tier A plus row F is applied; Tiers B, C, D and E are untouched and still need decisions."
+  },
+  "composite_renames_applied": {
+    "status": "APPLIED_DEPLOYED_VERIFIED",
+    "date": "2026-10-31",
+    "authorised_by": "Nazar, 2026-10-31: the 12 Tier A renames plus the dependent row F (Vega), with the reviewed aliases",
+    "migration": "composite_name_renames_tier_a_and_vega",
+    "report": "research-agent/reports/2026-10-31-composite-renames-execution.md",
+    "sql": "research-agent/reports/2026-10-31-composite-renames.sql",
+    "rollback": "research-agent/reports/2026-10-31-composite-renames-rollback.sql",
+    "catalogue_commit": "4c6e6cc",
+    "recheck": "zero drift: all 13 current names matched the manifest exactly, all 13 live, none carried any alias; collision dry run empty on all five checks",
+    "written": "companies.name on 13 rows and 11 company_aliases rows. Nothing else.",
+    "idempotent": "a rerun matches 0 rows and inserts 0 aliases",
+    "verified_live": {
+      "suppliers": 2410,
+      "research_organisations": 37,
+      "live_companies": 2447,
+      "landscape_included": 567,
+      "live_products": 3521,
+      "composite_names_with_slash": "19 -> 7",
+      "urls": "unchanged - slugs were not touched, so no page moved and no redirect was needed",
+      "landscape_members_renamed": "Meridian (S.P. Korolev Meridian) and UAV Tactical Systems (U-TacS) both still included"
+    },
+    "not_done": "no publication change, no reinstatement, no merge, no deletion, no ownership change, no slug change",
+    "remaining_composites": "7: Tier B (1 merge), Tier C (3 unpublish/reassign), Tier D (2 held), Tier E (ECA Group / Infotron)",
+    "found_not_fixed": "Spotter Global holds one product record literally named \"AX250 - GAX500-3D\": two radars in one row. Needs its own approval.",
+    "schema_correction": "company_relationships columns are source_company_id / target_company_id. The Tier B and C SQL in 2026-10-31-composite-merges-and-reassignments.sql was written against source / target and will fail as written."
+  },
+  "exail_rescreen": {
+    "status": "COMPLETE_READ_ONLY",
+    "date": "2026-10-31",
+    "option_chosen": "E2 - do not merge ECA Group / Infotron into Exail yet; re-screen Exail first",
+    "report": "research-agent/reports/2026-10-31-exail-rescreen.md",
+    "rows_changed": 0,
+    "cluster_is_four_records": {
+      "exail": "8517768e-5a14-4ac2-8296-692a39e2a0a0 - excluded, 0 sectors, 18 products",
+      "eca_group_infotron": "92299e36-58f5-4c27-9486-20bae0ab2d26 - included, sector uav, 1 product (IT180 STH-U)",
+      "ixblue": "e99326a6-0edb-4920-bfe2-814b2e36281c - needs_review, 0 sectors, 0 products",
+      "exail_robotics_belgium": "ffa0380d-6768-4846-a396-49d7faca91c9 - excluded, 0 sectors, 0 products"
+    },
+    "finding": "Exail was excluded on the test \"is it an aerial UAV OEM\". That is not the landscape test: the UAV Ecosystem branch already admits Navigation / GNSS and Components suppliers who build no aircraft, including SBG Systems (France, inertial navigation, included) and Civitanavi (Italy, whose own record reads \"an ecosystem supplier, not a UAV OEM\", included).",
+    "corrections_to_the_earlier_package": [
+      "WRONG: \"the newest IT180 material on exail.com is a 2015 ECA press release\". An Exail newsroom item of 1 July 2023 calls the IT180-60 \"its\" aerial drone and quotes the Director of the Land and Air robotics division at Exail.",
+      "WRONG: \"UMIS integrates third-party UAVs rather than establishing Exail as an aerial UAV OEM\". The Exail-branded UMIS datasheet (2022-07-29) lists Unmanned Aerial Vehicles among the toolbox vehicles and says Exail provides unmanned systems \"at sea and in the air\". Third-party integration is an additional open-architecture capability, not the basis of the UAV listing.",
+      "HALF RIGHT: \"the current robotics page lists no aerial family\". No aerial platform page, but the Defense range carries a \"Land and air navigation & pointing\" category.",
+      "RIGHT: the 12 UAV-categorised products are all maritime, and Exail has zero company_sectors rows."
+    ],
+    "primary_aerial_evidence": [
+      "Airbus SIRTAP tactical UAS, 12 May 2025: Exail UmiX-40 IMU supplied for the navigation system of a named unmanned aerial system. This is exactly the \"Exail-owned aerial evidence\" the exclusion note was waiting for.",
+      "AIR & LAND DEFENSE ROBOTIC SOLUTIONS brochure, Exail-branded, 2023-01-29: UAVs listed as an Exail solution line; C2 system controls multiple UGVs and UAVs.",
+      "UMIS datasheet, Exail-branded, 2022-07-29: unmanned systems \"at sea and in the air\"; UAV among the toolbox vehicles.",
+      "Neptis, 9 October 2026: Counter-Uncrewed Aerial Systems (C-UAS) listed among mission areas. Secondary."
+    ],
+    "product_defects": {
+      "miscategorised_as_uav": 12,
+      "duplicates": "3 bare-designation records: H-8, H-9, O-16",
+      "family_names_held_as_products": "2: DriX, Oryx",
+      "unverified": "1: Exail A27 - no source found",
+      "false_attribution": "DORCUS 17f660ef-102d-4998-82b6-88174c68af1b is a SOFRAME / MAC JEE armoured fire-support vehicle, not an Exail product",
+      "families_vs_variants": "DriX is the civil USV series (H-8, H-9, O-16). Oryx is a new defence USV family unveiled 9 Oct 2026 reusing the same designations. DriX H-8 and Oryx H-8 would be genuine distinct products; the bare designations are ambiguous duplicates."
+    },
+    "taxonomy_blocker": "Exail has zero company_sectors rows and the landscape build skips any company with no explicit assignment, so flipping status alone would not put it on the page. Proposed: eco-navigation 157db255-fce0-48ca-bf3a-6724f67aba5d (primary) and eco-components e73703e1-38b0-4bee-beea-ac1a3d8d2582, mirroring SBG Systems.",
+    "recommendation": "Admit Exail as a Navigation / GNSS + Components ecosystem supplier, not as a UAV OEM, adding the sector rows in the same change.",
+    "count_effect": "Admitting Exail: 567 -> 568. Merging ECA Group / Infotron into Exail afterwards: 568 -> 567. Merging without admitting Exail: 567 -> 566. The 567 that falls out of the first two is a coincidence of two independent decisions, not a target.",
+    "also_found": [
+      "The Exail record conflates three legal entities: it holds aliases Exail Technologies, Gorge, Gorge SA and former name Groupe Gorge. Groupe Gorge is the listed parent, Exail Technologies the holding company, Exail the operating company.",
+      "iXblue is still needs_review with 0 sectors and 0 products and should be resolved in the same pass.",
+      "Thales agreed in July 2026 to a 35.51% controlling stake in Exail Technologies, heading to full ownership by 2028. Recorded, not written."
+    ],
+    "decisions_pending": [
+      "Admit Exail to the landscape as a Navigation / GNSS + Components supplier, adding the two sector rows? (567 -> 568)",
+      "Then merge ECA Group / Infotron into Exail, per section 7 of the report? (568 -> 567)",
+      "Approve the product corrections: 12 recategorisations, 3 duplicates, 2 family-name records, 1 unverified product, 1 false attribution?",
+      "Resolve iXblue and re-check Exail Robotics against the same widened criteria?",
+      "Record the Groupe Gorge / Exail Technologies / Exail ownership structure instead of carrying it as aliases?"
+    ]
   }
 }

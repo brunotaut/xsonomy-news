@@ -1,5 +1,5 @@
--- Rollback for TIER A. Restores the exact pre-rename names and removes the aliases the
--- rename added. Guarded and idempotent; changes companies.name and company_aliases only.
+-- Rollback for the 13 applied renames (Tier A plus row F). Restores the exact
+-- pre-rename names captured before the apply, and removes the 11 aliases it added. Guarded and idempotent; changes companies.name and company_aliases only.
 
 begin;
 
@@ -15,7 +15,8 @@ with undo(id, old_name) as (values
   ('e6eab384-fcd9-44e1-b566-085d61a89243', 'Spotter Global / SpotterRF'),
   ('21335b89-b9e4-4088-bd10-1a691ee4b314', 'Thales / Elbit Systems (U-TacS joint venture)'),
   ('adc51ccb-73b8-4fff-84b5-eff6520b9d83', 'United Instrument Manufacturing Corporation (OPK / Rostec)'),
-  ('a49e3a30-2fb2-4597-991d-3ec16b817a62', 'Unmanned Systems Group (Supercam / BAS)')
+  ('a49e3a30-2fb2-4597-991d-3ec16b817a62', 'Unmanned Systems Group (Supercam / BAS)'),
+  ('5832034b-04c2-4115-9a47-7abf551d9960', 'Vega Radio Engineering Corporation (Luch Design Bureau, Rybinsk)')
 )
 update companies c set name = u.old_name, updated_at = now()
 from undo u where c.id = u.id and c.name is distinct from u.old_name;
