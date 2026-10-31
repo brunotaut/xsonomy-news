@@ -1,0 +1,106 @@
+-- TIER E — ECA Group / Infotron and Exail. NOT READY. Needs a reconciliation decision.
+--
+-- WHY EXAIL IS EXCLUDED, in its own screening note:
+--   "Batch 01: queued products (DriX, A-18M, DORCUS) are maritime/underwater. UMIS
+--    integrates third-party UAVs rather than establishing Exail as an aerial UAV OEM.
+--    Outside the aerial Landscape until Exail-owned aerial evidence appears."
+--
+-- WHY ECA GROUP / INFOTRON IS INCLUDED, in its own screening note:
+--   "Batch 14: the duplicate record ECA Group was merged into this one, which holds the
+--    IT180 UAV lineage. ECA Group joined iXblue to form Exail in 2022; Exail is recorded
+--    separately and excluded as maritime, and that distinction was kept."
+--
+-- So the split was deliberate, not an accident: one record carries the aerial lineage and
+-- is included, the other is the maritime successor and is excluded.
+--
+-- WHAT THIS PASS FOUND, which the earlier report did not:
+--
+--   1. Exail's current robotics page lists uncrewed surface vessels, AUVs, ROVs and
+--      unmanned ground vehicles — and NO aerial drone or UAV family, and no IT180.
+--   2. The newest IT180 material on exail.com is a press release dated 7 December 2015,
+--      issued as ECA Group with ecagroup.com links. It is legacy content rehosted after
+--      the rebrand, not current Exail aerial evidence.
+--   3. Exail's 12 products categorised 'UAV' in this database are ALL maritime or
+--      underwater — DriX and its H-8/H-9/O-16/Oryx variants, A-18M, K-Ster, Neptis,
+--      Inspector, Exail A27 — several of them duplicates of each other. They are
+--      mis-categorised, and they are not aerial evidence.
+--   4. Exail has ZERO company_sectors rows. The landscape build skips any company with
+--      no explicit taxonomy assignment, so setting Exail to 'included' would NOT put it
+--      in the landscape. The count would fall to 566 anyway.
+--
+-- CONSEQUENCE: moving 'included' onto Exail cannot be justified on the merits, and point
+-- 4 means it would not even work. That is the "transfer status merely to preserve a
+-- count" case, and it is declined here. This corrects the earlier report, which proposed
+-- moving the status with the merge.
+--
+-- The identity question and the landscape question therefore come apart:
+--   * IDENTITY: ECA Group and Infotron are both inside Exail. The merge is correct.
+--   * LANDSCAPE: the merged entity has no current aerial UAV evidence. 567 -> 566.
+--
+-- Pick ONE option. Both are atomic.
+
+-- =====================================================================
+-- OPTION E1 (recommended) — merge on identity, let the landscape fall to 566.
+-- Honest: it records that the surviving entity has no current aerial UAV evidence.
+-- =====================================================================
+-- begin;
+--
+-- -- The IT180 is a real product with real evidence; it survives the merge.
+-- update products set company_id='8517768e-5a14-4ac2-8296-692a39e2a0a0', updated_at=now()
+--  where id='3b53c4ed-299e-4621-9d1a-a93d0ba47354' and company_id='92299e36-58f5-4c27-9486-20bae0ab2d26';
+-- update product_companies set company_id='8517768e-5a14-4ac2-8296-692a39e2a0a0'
+--  where product_id='3b53c4ed-299e-4621-9d1a-a93d0ba47354' and company_id='92299e36-58f5-4c27-9486-20bae0ab2d26';
+--
+-- -- Both names are documented former identities of Exail.
+-- insert into company_aliases (company_id, alias, type) values
+--   ('8517768e-5a14-4ac2-8296-692a39e2a0a0','ECA Group','former_name'),
+--   ('8517768e-5a14-4ac2-8296-692a39e2a0a0','Infotron','former_name')
+-- on conflict (company_id, alias) do nothing;
+--
+-- -- The sector assignment is the aerial evidence, and it belongs with the product.
+-- -- Without this, Exail still has no taxonomy row and cannot ever enter the landscape.
+-- insert into company_sectors (company_id, sector_id, source_urls)
+-- select '8517768e-5a14-4ac2-8296-692a39e2a0a0', s.sector_id, s.source_urls
+--   from company_sectors s where s.company_id='92299e36-58f5-4c27-9486-20bae0ab2d26'
+-- on conflict do nothing;
+--
+-- -- REDIRECT CHAIN: eca-group currently points at eca-group-infotron, which this merge
+-- -- retires. GitHub Pages cannot chain redirects, so repoint it as well as adding the new one.
+-- update slug_redirects set to_slug='exail', reason='ECA Group became Exail; merged'
+--  where from_slug='eca-group' and to_slug<>'exail';
+-- insert into slug_redirects (from_slug, to_slug, kind, reason)
+--  values ('eca-group-infotron','exail','company','ECA Group and Infotron are both inside Exail')
+--  on conflict (from_slug) do nothing;
+--
+-- -- Removing the source from the landscape is explicit, not a side effect.
+-- delete from landscape_candidates
+--  where landscape_slug='europe-uav-cuas-2026' and company_id='92299e36-58f5-4c27-9486-20bae0ab2d26';
+--
+-- update companies set publication_status='draft', updated_at=now()
+--  where id='92299e36-58f5-4c27-9486-20bae0ab2d26' and publication_status='live';
+--
+-- -- Expect: Exail 18 -> 19 products, landscape 567 -> 566.
+-- select (select count(*) from products where company_id='8517768e-5a14-4ac2-8296-692a39e2a0a0' and publication_status='live') as exail_products,
+--        (select count(*) from landscape_candidates where landscape_slug='europe-uav-cuas-2026' and status='included') as landscape;
+-- commit;
+
+-- =====================================================================
+-- OPTION E2 — do not merge yet. Re-screen Exail first, on its own evidence.
+-- Nothing is written here. The landscape stays at 567 and the composite record stays,
+-- which is the status quo; the work is the re-screen, not the SQL.
+--
+-- The re-screen has to answer three things that are wrong on Exail today, none of which
+-- a merge would fix:
+--   * are the 12 'UAV' products actually maritime, and which are duplicates;
+--   * does Exail market any aerial UAV today, the IT180 included;
+--   * what taxonomy assignment Exail should carry, since it has none.
+-- Only after that is a landscape verdict for the merged entity meaningful.
+-- =====================================================================
+
+-- =====================================================================
+-- NOT PROPOSED — the naive version, recorded so it is not reached for later:
+--   update landscape_candidates set status='included' where company_id='<Exail>';
+-- This preserves 567 on paper. It is declined: no current aerial evidence supports it,
+-- and with no company_sectors row the build would drop Exail anyway, so the count would
+-- read 566 while the database claimed 567.
+-- =====================================================================

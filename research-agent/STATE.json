@@ -6,9 +6,9 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "RESEARCH_ACADEMIA_CORRECTIONS_APPLIED_AND_VERIFIED",
+  "status": "COMPOSITE_CORRECTION_PACKAGE_READY_FOR_CHATGPT",
   "next_actor": "chatgpt",
-  "input": "research-agent/reports/2026-10-30-research-academia-class-execution.md",
+  "input": "research-agent/reports/2026-10-31-composite-correction-package.md",
   "expected_output": "ChatGPT review of the 19 composite-name classifications and the Research & academia proposal, then Nazar's decisions on the six listed questions",
   "batch_type": "read-only review",
   "human_decision_required": false,
@@ -744,5 +744,66 @@
       "no frontend consumes the export yet (out of scope for this task)"
     ],
     "untouched_after_academia_fix": true
+  },
+  "composite_correction_package": {
+    "prepared_on": "2026-10-31",
+    "scope": "preparation only; 0 database rows changed",
+    "report": "research-agent/reports/2026-10-31-composite-correction-package.md",
+    "manifest": "research-agent/reports/2026-10-31-composite-correction-manifest.csv",
+    "sql": {
+      "renames_ready": "research-agent/reports/2026-10-31-composite-renames.sql",
+      "renames_rollback": "research-agent/reports/2026-10-31-composite-renames-rollback.sql",
+      "merges_and_reassignments": "research-agent/reports/2026-10-31-composite-merges-and-reassignments.sql",
+      "eca_exail": "research-agent/reports/2026-10-31-eca-exail.sql"
+    },
+    "recheck": {
+      "records": 19,
+      "drift": 0,
+      "all_live": true,
+      "stale_review_notes_corrected": [
+        "CASC/CAAA is now state_owned, no longer academia",
+        "Chengdu Aircraft Design and Research Institute is now division"
+      ]
+    },
+    "tiers": {
+      "A_ready_renames": 12,
+      "B_merge_decision": 1,
+      "C_unpublish_reassign_decision": 3,
+      "D_hold": 2,
+      "E_eca_exail_decision": 1,
+      "F_dependent_outside_the_19": 1
+    },
+    "dry_run": {
+      "renames_rows": 12,
+      "name_collisions": 0,
+      "fuzzy_collisions": 0,
+      "urls_changed": 0,
+      "publication_changes": 0,
+      "landscape_effect": "none",
+      "product_moves_prepared": 5,
+      "destination_name_clashes": 0,
+      "product_url_moves": 0
+    },
+    "findings": [
+      "Spotter Global upgraded low -> high: the 24 March 2022 rename announcement exists, so SpotterRF is a documented former_name",
+      "KB Luch is NOT a duplicate of the Vega record: parent and subsidiary, both legitimate; needs the dependent Vega rename",
+      "product ownership is stored twice (products.company_id and product_companies); both must move together",
+      "product URLs come from the product name, so reassignment moves no page and needs no product redirect",
+      "ECA/Exail: moving the landscape status to Exail is DECLINED — no current aerial evidence, and Exail has 0 company_sectors so it would not enter the landscape anyway",
+      "Exail data-quality defect found: 12 products mis-categorised UAV (all maritime), several duplicates, no taxonomy assignment",
+      "Thales agreed July 2026 to a 35.51% controlling stake in Exail Technologies — recorded, not written"
+    ],
+    "decisions_needed": [
+      "approve the 12 renames",
+      "approve the dependent Vega Radio Engineering Corporation rename (outside the 19)",
+      "whether to record parents as ownership or relationship rows (optional enrichment)",
+      "merge B1: IAI (Tamam / MALAT) into IAI",
+      "unpublish C1: BUAA / HAIG, BZK-005 to Harbin",
+      "unpublish C2: Northrop Grumman / IAI, and whether the Hunters go to IAI as originator",
+      "the satellite-scope rule, which decides C3a vs C3b",
+      "ECA/Exail: option E1 (merge, landscape 566) or E2 (re-screen Exail first)",
+      "a separate Exail data-quality pass"
+    ],
+    "corrects_earlier_report": "the 2026-10-30 review proposed moving the landscape status with the ECA/Exail merge; this pass declines that and explains why"
   }
 }
