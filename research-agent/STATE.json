@@ -882,5 +882,33 @@
       "Resolve iXblue and re-check Exail Robotics against the same widened criteria?",
       "Record the Groupe Gorge / Exail Technologies / Exail ownership structure instead of carrying it as aliases?"
     ]
+  },
+  "spotter_global_product_split": {
+    "status": "APPLIED_DEPLOYED_VERIFIED",
+    "date": "2026-10-31",
+    "authorised_by": "Nazar, 2026-10-31: spawned task 'Split the Spotter Global composite product record'",
+    "migrations": [
+      "split_spotter_global_composite_product_record",
+      "split_spotter_global_product_companies_row"
+    ],
+    "report": "research-agent/reports/2026-10-31-spotter-global-product-split.md",
+    "sql": "research-agent/reports/2026-10-31-spotter-global-product-split.sql",
+    "rollback": "research-agent/reports/2026-10-31-spotter-global-product-split-rollback.sql",
+    "defect": "products.27ac953c-be35-4642-8f7d-67b8b7cc7f94 'AX250 · GAX500-3D' held two radars AND a third spec profile belonging to neither: 29 kg / 550 mm dia x 630 mm / 2x 12 W / rotating 30 rpm / 1.0 s / 5 km are Robin Radar Systems' IRIS, copy-pasted in with the IRIS labels stripped. The catalogue published a competitor's radar as Spotter's at 20x the real detection range (AX250 is 250 m radius, not 5 km). Robin's own row fed75c9b-fe2e-4bff-a996-058da1bef4c9 is undamaged.",
+    "written": "products: 1 update (27ac953c-be35-4642-8f7d-67b8b7cc7f94 -> 'AX250', id preserved, specs rebuilt from the SpotterRF AX-250-3D datasheet REV011) and 1 insert (7a4aec82-262b-487f-af69-db12f3f00ec8 'GAX500-3D', live); 1 product_companies row; 1 slug_redirects row ax250-gax500-3d -> ax250 kind=product. Nothing else.",
+    "preflight": "target row exactly as reviewed; 0 name collisions, 0 slug collisions, 0 existing redirects for either slug, 0 article_products / product_sectors / product_taxonomy / company_sector_products / company_evidence rows to re-point",
+    "publication": "both rows live. Status-quo preserving, not a publication change: the GAX500-3D content was already published inside the composite row, so a draft row would have removed live content. PUBLISH_STATUS untouched.",
+    "left_blank_deliberately": "GAX500-3D Radar · Band (no published frequency) and Radar · Scan type (Spotter never states whether CH3D has moving parts); Radar · Micro-Doppler dropped from both (mechanism never named); the unsourced 'est. mid five-figures/unit' price estimate dropped. No new filter vocabulary introduced.",
+    "catalogue_fix": "generate-supabase.mjs wrote EVERY product redirect stub to /uav/ regardless of the product's section, and pointed it at /uav/<to>/. For a sensor that is a dead page pointing at a dead page. All 52 pre-existing redirects are kind=company so this had never executed; this split is the first product redirect in the table. Section is now resolved from the target product's own built page, and a product redirect with no live target is skipped with a warning rather than guessed into a section.",
+    "new_test": "scripts/test/product-redirects.test.mjs in the catalogue repo. Redirects previously had zero coverage (all three generator fixtures passed slug_redirects: []). Verified to fail against the pre-fix generator and pass against the fix.",
+    "verified": "live products 3,521 -> 3,522; sensors 500 -> 501; Spotter Global live products 1 -> 2; redirect stubs 52 -> 53; landscape unchanged at 567 (keyed on companies, not products); no Robin IRIS value on either Spotter page; /sensors/ax250-gax500-3d/ stub canonicalises to https://xsonomy.com/sensors/ax250/; nothing under /uav/ax250-gax500-3d/; tests 30/30; migration rerun changes 0 rows",
+    "open_items": [
+      "IRIS · ELVIRA (fed75c9b-fe2e-4bff-a996-058da1bef4c9, Robin Radar) is the same two-products-one-row shape and is the source of this contamination — the obvious next split",
+      "EchoGuard / EchoShield (MESA) (d3eb02d7-d179-4e15-bb6a-beeee2b64d6a, Echodyne) has the same shape",
+      "sweep all 3,522 live products for other copy-paste spec contamination — this one was found by chance",
+      "the other ~114 products with ' · ' in the name are mostly deliberate vendor-portfolio entries, not split failures; wholesale splitting is a separate editorial decision",
+      "products.slug is NOT NULL and nothing reads it (the public URL comes from the product name) — it should either drive the URL or be dropped",
+      "GAX500-3D rests on Spotter's own material plus launch trade coverage; no independent test data"
+    ]
   }
 }
