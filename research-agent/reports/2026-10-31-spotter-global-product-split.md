@@ -144,7 +144,7 @@ Local build with the public anon key, then the deployed site.
 | Sensors section | 500 → 501 rows |
 | Live products | 3,521 → 3,522 |
 | Spotter Global live products | 1 → 2 |
-| Test suite | 30/30 pass (29 before, +1 new) |
+| Test suite | 31/31 pass (30 before, +1 new) |
 | Rerun of the migration | 0 rows changed, 0 inserted |
 
 Landscape membership is unaffected — it is keyed on companies, not products, and no company

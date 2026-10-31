@@ -901,7 +901,7 @@
     "left_blank_deliberately": "GAX500-3D Radar · Band (no published frequency) and Radar · Scan type (Spotter never states whether CH3D has moving parts); Radar · Micro-Doppler dropped from both (mechanism never named); the unsourced 'est. mid five-figures/unit' price estimate dropped. No new filter vocabulary introduced.",
     "catalogue_fix": "generate-supabase.mjs wrote EVERY product redirect stub to /uav/ regardless of the product's section, and pointed it at /uav/<to>/. For a sensor that is a dead page pointing at a dead page. All 52 pre-existing redirects are kind=company so this had never executed; this split is the first product redirect in the table. Section is now resolved from the target product's own built page, and a product redirect with no live target is skipped with a warning rather than guessed into a section.",
     "new_test": "scripts/test/product-redirects.test.mjs in the catalogue repo. Redirects previously had zero coverage (all three generator fixtures passed slug_redirects: []). Verified to fail against the pre-fix generator and pass against the fix.",
-    "verified": "live products 3,521 -> 3,522; sensors 500 -> 501; Spotter Global live products 1 -> 2; redirect stubs 52 -> 53; landscape unchanged at 567 (keyed on companies, not products); no Robin IRIS value on either Spotter page; /sensors/ax250-gax500-3d/ stub canonicalises to https://xsonomy.com/sensors/ax250/; nothing under /uav/ax250-gax500-3d/; tests 30/30; migration rerun changes 0 rows",
+    "verified": "live products 3,521 -> 3,522; sensors 500 -> 501; Spotter Global live products 1 -> 2; redirect stubs 52 -> 53; landscape unchanged at 567 (keyed on companies, not products); no Robin IRIS value on either Spotter page; /sensors/ax250-gax500-3d/ stub canonicalises to https://xsonomy.com/sensors/ax250/; nothing under /uav/ax250-gax500-3d/; tests 31/31; migration rerun changes 0 rows",
     "open_items": [
       "IRIS · ELVIRA (fed75c9b-fe2e-4bff-a996-058da1bef4c9, Robin Radar) is the same two-products-one-row shape and is the source of this contamination — the obvious next split",
       "EchoGuard / EchoShield (MESA) (d3eb02d7-d179-4e15-bb6a-beeee2b64d6a, Echodyne) has the same shape",
@@ -909,6 +909,7 @@
       "the other ~114 products with ' · ' in the name are mostly deliberate vendor-portfolio entries, not split failures; wholesale splitting is a separate editorial decision",
       "products.slug is NOT NULL and nothing reads it (the public URL comes from the product name) — it should either drive the URL or be dropped",
       "GAX500-3D rests on Spotter's own material plus launch trade coverage; no independent test data"
-    ]
+    ],
+    "rebased_onto": "611e47f 'Expand investor directory with labelled candidates and Ukraine-linked funds', which landed upstream mid-task. STATUS.md conflict resolved by keeping both sections; the new test also copies scripts/lib/investor-directory.json, which landscape.mjs now reads at build time."
   }
 }
