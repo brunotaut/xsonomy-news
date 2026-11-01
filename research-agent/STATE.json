@@ -1288,5 +1288,62 @@
       "hub_research.matched_investor_id still has its foreign key to investors. Repointing it at investor_research would be cleaner but is a schema change to a reviewed research table, and the bridge makes it unnecessary.",
       "The hub subsystem is still absent from db/schema.sql, like the investor staging schema (STATUS task #1)."
     ]
+  },
+  "investor_semantics_and_coverage": {
+    "status": "APPLIED_AND_DEPLOYED_PARTIAL_RESEARCH",
+    "date": "2026-11-01",
+    "report": "research-agent/reports/2026-11-02-investor-semantics-and-coverage.md",
+    "ledger": "research-agent/reports/2026-11-02-investor-financial-ledger.md",
+    "supersedes": "research-agent/reports/2026-11-01-investor-financial-ledger.md",
+    "catalogue_commits": "a2a3066",
+    "counts_before_after": {
+      "investor_records": "118 -> 118 (none added, merged or lost)",
+      "ukraine_linked": "26 -> 26",
+      "investors_with_financial_figures": "23 -> 55",
+      "ukraine_linked_with_figures": "13 -> 23",
+      "financial_observations": "49 -> 100",
+      "named_fund_vehicles": "19 -> 36",
+      "relationship_rows": "74 -> 100",
+      "unique_companies_behind_them": "61 -> 70",
+      "rows_linking_a_published_profile": "58 -> 82",
+      "unresolved_holdings": "13 -> 7",
+      "fund_positions": "9 -> 13",
+      "retired_relationships_never_exported": "2 -> 3",
+      "live_catalogue_companies": "2457 -> 2464",
+      "tests": "59 -> 72",
+      "landscape": "567 -> 567"
+    },
+    "migrations": [
+      "investor_metric_types_vehicle_nav_grants_average - adds vehicle_nav, average_investment_size, grant_funding_disbursed, grant_count and follow_on_investment_range; extends the shape CHECK so grant_count is a count type; adds a CHECK requiring a vehicle for vehicle_nav.",
+      "investor_companies_retired_kind - distinguishes unsupported_evidence from holding_ended, so an exit is not recorded as a withdrawal.",
+      "investor_financial_research_log - the research queue and audit trail as a table, so an unresearched investor is identifiable from the data."
+    ],
+    "semantic_corrections": "Seraphim manager_aum -> vehicle_nav with the Seraphim Space Investment Trust plc vehicle; DTCP initial_investment_range -> average_investment_size with no upper bound; Brave1 cumulative_capital_invested -> grant_funding_disbursed and investment_count -> grant_count; Flyer One fund_size_target -> fund_size_stated after re-reading the source, which says Fund V was \"launched at EUR50 million\" and states no target and no close. Two checks produced NO change and are recorded as such: NIF EUR1bn stays manager_aum because its own page says \"assets under management\", and Bpifrance 6 deals (2018) stays investment_count with the single-year basis in its scope.",
+    "interface_change_required_by_the_retyping": "The list card picks each figure by metric type, so retyping would have silently emptied the slot it used to fill - Seraphim from the AUM line, DTCP from the ticket line, Brave1 from the invested line - while the data was still there. Each slot now reads every type that belongs in it (SCALE_METRICS, TICKET_METRICS, DEPLOYED_METRICS) and labels the corrected ones as Vehicle NAV, Average ticket, Grants disbursed and Own capital invested. A test forbids any slot being keyed on a single bare type again. atlas.js ASSERTED-style duplication of the rule was avoided by keeping the decision in the export.",
+    "schema_documentation": "All eight investor tables are now mirrored in db/schema.sql, generated from the live database, with every CHECK vocabulary. The block was replayed against the live database with 0 rows changed. The four views are deliberately not mirrored and the file says why: they are rebuilt by migration whenever a column is added, because adding one changes column order and create-or-replace-view refuses it.",
+    "relationships_added": "26. The seven authorised (Front Ventures to SkyHunter, Aeromotors, ABX Dynamics, Molfar, Trinity Robotics and Scandinavian X; EIFO to Acodyne), plus Defence Builder's seven own-portfolio companies and twelve more found during the financial research. SWEBAL was deliberately NOT recorded: Front Ventures lists it under a separate strategic-partnership heading, and a partner is not a holding.",
+    "companies_created": "8, none given a sector or landscape row: sky-hunter (live), scandinavian-x (live), abx-dynamics (DRAFT - its product range is confidential by its investor's own statement, so no UAV or C-UAS activity is established), vrgineers, eu-motors, vermeer, teltronic, exotrail (all live).",
+    "unresolved_resolved": "6 of 13, every one by finding a source other than the unreachable Czech directory: Purple Ventures->VRgineers (investor's own portfolio page, read directly); N1->VRgineers (lupa.cz names \"fondem Nation 1\"); Sunfish Partners->EU Motors (identity resolved to EU Motors Sp. z o.o., Poland); Rockaway Ventures->Vermeer (Vermeer's own announcement, quoting Rockaway's GP); Bpifrance->Exotrail (through its SPI fund and Fonds Innovation Defense, NOT Definvest); Nazca Capital->Teltronic (fully evidenced but HISTORICAL - Amper completed the purchase from Nazca on 15 June 2026, so it is stored retired with kind holding_ended).",
+    "urc_systems_resolved_as_a_fact_not_a_decision": "The previous note said \"announced ... pending competition-authority review ... needs a human decision\". Wrong on the facts and wrong to ask. The Czech competition office PERMITTED the transaction in simplified proceedings in 2024, naming Piombino Group a.s. - of the same business grouping as Rockaway Group a.s. - as taking sole control of URC Systems spol. s r.o. (IC 25547526, Prostejov). The commercial register then records Piombino Group being merged INTO URC Systems during 2025. So it completed, in 2024, through a different vehicle; Rockaway Alpha Defense is not evidenced as the holder and the directory has no Rockaway Capital or Rockaway Group record for it to attach to. Nothing is asserted and no decision is needed - the evidence names a different acquirer.",
+    "research_coverage": {
+      "found": "55",
+      "researched_no_usable_figure": "23",
+      "never_researched": "40",
+      "total": "118",
+      "baseline": "23 found / 19 researched-nothing / 76 never researched",
+      "worked_through_this_pass": "36 of the 76",
+      "all_ten_priority_ukraine_records": "researched - 8 produced figures, and Defender Ventures and R-G.AI produced findings instead"
+    },
+    "figures_deliberately_not_stored": "12, listed in the ledger. The classes: a listed investment company's share capital (Front Ventures EUR5m rights issue - the clearest case for a future share_capital_raised type); an institution's budget (Invest-NL ~EUR3bn); activity targets and guarantee budgets (EIFO); single-year flows (Tesi EUR425m); a figure with no establishable as-of date (Speedinvest); portfolio companies' own capital (HTGF EUR7.1bn follow-on, Radius Capital $55.5m); a state programme's size (ScaleWolf EUR13.5m MILInvest); a team's prior track record (Defence Builder $55m+); a typo (Angel One \"$300 mln\"); irreconcilable counts (In-Q-Tel); and approvals and intentions presented as commitments (Ukraine Phoenix Tech Fund EUR32.5m, of which only EUR2.5m is actually committed).",
+    "card_change": "The unverified-candidate notice read \"Unverified candidate. Limited information is available; inclusion is not confirmation of investment activity\" directly above sourced figures and sourced holdings. It now states that what is unestablished is the investor's DEFENCE RELEVANCE, not its existence, and where the record carries sourced figures or holdings it says they are sourced facts in their own right. The softer fallback survives for a record that genuinely has nothing.",
+    "live_verification": "Deployed 2026-11-01T17:40Z. Export: 118 records, 100 metrics, 55 with metrics, all new types present. 100 relationship rows over 70 unique companies, 82 linking a published profile. Every exported company url is /companies/<slug>/ and every one returns 200. Zero retired rows exported (Nazca->Teltronic and the old EIFO fund_of_funds row both absent). Zero amounts rendered as zero. Verified in the rendered cards: Seraphim shows \"Vehicle NAV\", DTCP \"Average ticket\", Brave1 \"Grants disbursed\" with \"Fund size: not established\", Flyer One \"stated size\" plus the reworded notice, EIF a separate \"Fund positions (4)\" section. Mobile at 375x812: no horizontal scroll, all six Front Ventures portfolio links resolve, ABX Dynamics shows \"Company profile not published\". Landscape 567.",
+    "flagged_not_fixed": [
+      "R-G.AI entity type: a US defence technology company, not a fund.",
+      "Defender Ventures identity: no fund of that name exists in any reviewed source.",
+      "Two suspected duplicate company pairs, both predating this pass: JISR / JISR Institute, and Kara Dag / Kara Dag Technologies. Flagged, not merged.",
+      "A share_capital_raised metric type for listed investment companies (Front Ventures, Varangians).",
+      "ABX Dynamics stays a draft until its products are publicly established."
+    ],
+    "remaining": "40 investors never researched financially, named in the ledger and identifiable from the data as those with no investor_financial_research_log row and no current metric. 7 unresolved holdings with exact reasons. This pass does NOT claim completion of part 2."
   }
 }

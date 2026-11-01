@@ -725,10 +725,8 @@ create policy subscribers_anon_insert on public.subscribers
 -- Applied to the live DB as migrations 'investor_relationship_retirement_and_fund_positions'
 -- and 'investor_landscape_projection_with_fund_positions_v2' on 2026-11-01.
 --
--- NOTE: the rest of the investor research staging schema (investor_research,
--- investor_companies, investor_portfolio_unresolved, investor_financial_metrics,
--- investor_research_* and the v_landscape_investor* views) was applied by migration in the
--- 2026-10-30/31 passes and is still not mirrored here. That gap predates this change.
+-- The whole investor research schema is now mirrored below, under "Investor research
+-- staging schema", generated from the live database on 2026-11-01. That gap is closed.
 -- ---------------------------------------------------------------------------
 
 -- A relationship whose cited source turns out not to support the specific investor and
@@ -819,4 +817,327 @@ begin
 end $$;
 
 -- Make sure PostgREST picks up the new table/columns immediately.
+notify pgrst, 'reload schema';
+
+-- ===========================================================================
+-- Investor research staging schema
+--
+-- Generated from the live database on 2026-11-01 and idempotent, closing the gap this
+-- file used to record. Eight tables, applied by migration across the 2026-10-30,
+-- 10-31 and 11-01 passes. As everywhere else here, column and constraint definitions
+-- are inline in `create table`, so on an existing database the `create table if not
+-- exists` is a no-op and the `alter table` blocks after it are what re-apply; the
+-- CHECK vocabularies are therefore repeated in those blocks rather than only inline.
+--
+-- The three organisation classes stay separate and are never summed: catalogue
+-- `companies`, `investor_research` records, and hub research records. `investors` is the
+-- older pipeline table that `resolve-entities.mjs` writes; `investor_research` is the
+-- researched directory that the public map publishes, and `investor_research.
+-- matched_investor_id` is the only bridge between them.
+-- ===========================================================================
+
+create table if not exists public.investor_research (
+  id uuid primary key default gen_random_uuid(),
+  research_id text not null unique,
+  slug citext not null unique,
+  name text not null,
+  entity_type text,
+  -- deal | mandate | adjacent | watchlist | programme. `watchlist` means the DEFENCE
+  -- RELEVANCE is unestablished; it says nothing about whether the organisation exists.
+  evidence_status text not null check (evidence_status in
+    ('deal','mandate','adjacent','watchlist','programme')),
+  evidence_basis text,
+  priority_for_uav_review text,
+  stages text[] not null default '{}',
+  focus text[] not null default '{}',
+  selected_portfolio text[] not null default '{}',
+  investment_geography text[] not null default '{}',
+  -- free-text legacy field; typed figures live in investor_financial_metrics
+  fund_size text,
+  legal_domicile_country text,
+  legal_domicile_precision text check (legal_domicile_precision is null
+    or legal_domicile_precision in ('country_only','city','exact_entity')),
+  legal_domicile_note text,
+  research_note text,
+  missing_fields text[] not null default '{}',
+  verified_as_of date,
+  map_ready boolean not null default false,
+  publication_status text not null default 'research_staging'
+    check (publication_status in ('research_staging','review','approved','rejected')),
+  source_dataset text not null,
+  source_dataset_version text,
+  evidence_status_label text,
+  country_association_meaning text,
+  -- the bridge to the older `investors` table; see the note above
+  matched_investor_id uuid references public.investors(id) on delete set null,
+  match_key text,
+  map_validation_errors text[] not null default '{}',
+  approved_at timestamptz,
+  ticket_currency char(3),
+  ticket_minimum numeric,
+  ticket_maximum numeric,
+  ticket_basis text,
+  ticket_source_url text,
+  ukraine_related boolean not null default false,
+  source_reference text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create table if not exists public.investor_research_vehicles (
+  id uuid primary key default gen_random_uuid(),
+  investor_id uuid not null references public.investor_research(id) on delete cascade,
+  name text not null,
+  vehicle_kind text,
+  note text,
+  created_at timestamptz not null default now(),
+  unique (investor_id, name)
+);
+
+create table if not exists public.investor_research_locations (
+  id uuid primary key default gen_random_uuid(),
+  investor_id uuid not null references public.investor_research(id) on delete cascade,
+  city text not null,
+  country text not null,
+  latitude double precision,
+  longitude double precision,
+  -- a published contact city, a meeting venue, an occupied office and a legal
+  -- registration are four different things and are never interchangeable
+  location_kind text not null check (location_kind in
+    ('published_office_or_contact_city','published_meeting_location',
+     'operational_office','legal_registration')),
+  precision text not null default 'approximate_city_centroid'
+    check (precision in ('approximate_city_centroid','street_address','exact')),
+  created_at timestamptz not null default now(),
+  unique (investor_id, city, country, location_kind)
+);
+
+create table if not exists public.investor_companies (
+  id uuid primary key default gen_random_uuid(),
+  investor_research_id uuid not null references public.investor_research(id) on delete cascade,
+  investor_id uuid references public.investors(id) on delete set null,
+  company_id uuid not null references public.companies(id) on delete cascade,
+  vehicle_id uuid references public.investor_research_vehicles(id) on delete set null,
+  relationship_type text not null check (relationship_type in
+    ('direct_investment','fund_of_funds','limited_partner','portfolio_listed',
+     'accelerator_participant','undisclosed')),
+  evidence_status text not null check (evidence_status in
+    ('investor_published_portfolio','investor_announcement','third_party_reported',
+     'research_record','unverified')),
+  source_url text not null,
+  reviewed_at date not null,
+  investment_date date,
+  investment_round text,
+  investor_role text check (investor_role is null
+    or investor_role in ('lead','co_investor','participant','undisclosed')),
+  -- an investor's own cheque and the whole round are separate facts; either may be null
+  investor_contribution_amount numeric,
+  investor_contribution_currency char(3),
+  round_total_amount numeric,
+  round_total_currency char(3),
+  portfolio_name_as_published text not null,
+  match_method text not null check (match_method in
+    ('unique_exact_name','alias','legal_name','draft_company','verified_new_record',
+     'manual','unresolved')),
+  match_note_en text,
+  -- retirement: not exported, kept for audit. See retired_kind for the two reasons.
+  retired_at date,
+  retired_reason text,
+  retired_kind text check (retired_kind is null
+    or retired_kind in ('unsupported_evidence','holding_ended')),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (investor_research_id, company_id, relationship_type),
+  constraint investor_companies_contribution_currency
+    check ((investor_contribution_amount is null) = (investor_contribution_currency is null)),
+  constraint investor_companies_round_currency
+    check ((round_total_amount is null) = (round_total_currency is null)),
+  -- a contribution cannot exceed the round it was part of, when both are in one currency
+  constraint investor_companies_contribution_within_round
+    check (investor_contribution_amount is null or round_total_amount is null
+           or investor_contribution_currency is distinct from round_total_currency
+           or investor_contribution_amount <= round_total_amount),
+  constraint investor_companies_retired_reason
+    check ((retired_at is null) = (retired_reason is null)),
+  constraint investor_companies_retired_kind_with_retirement
+    check ((retired_at is null) = (retired_kind is null))
+);
+
+create table if not exists public.investor_portfolio_unresolved (
+  id uuid primary key default gen_random_uuid(),
+  investor_research_id uuid not null references public.investor_research(id) on delete cascade,
+  portfolio_name_as_published text not null,
+  reason text not null,
+  candidate_company_id uuid references public.companies(id) on delete set null,
+  source_url text,
+  reviewed_at date not null,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (investor_research_id, portfolio_name_as_published)
+);
+
+create table if not exists public.investor_financial_metrics (
+  id uuid primary key default gen_random_uuid(),
+  investor_research_id uuid not null references public.investor_research(id) on delete cascade,
+  vehicle_id uuid references public.investor_research_vehicles(id) on delete set null,
+  -- WHAT the figure is, not merely how large. The interface reads this, not the prose.
+  metric_type text not null check (metric_type in
+    ('fund_size_target','fund_size_stated',
+     'fund_close_first','fund_close_interim','fund_close_final','fund_close_announced',
+     'committed_capital','manager_aum','vehicle_nav',
+     'cumulative_capital_invested','grant_funding_disbursed','grant_count',
+     'initial_investment_range','follow_on_investment_range','average_investment_size',
+     'investment_count','portfolio_company_count')),
+  amount_min numeric,
+  amount_max numeric,
+  currency char(3),
+  count_value integer,
+  bound text not null default 'exact'
+    check (bound in ('exact','approximate','minimum','maximum','range')),
+  scope_en text not null,
+  -- as_of for a real date; as_of_text when the source gives only a year or month, so a
+  -- year is never invented into a date
+  as_of date,
+  as_of_text text,
+  source_url text not null,
+  verification_status text not null
+    check (verification_status in ('source_confirmed','reported','unverified')),
+  checked_at date not null,
+  -- a newer figure becomes a new row; the old one stays with is_current false
+  is_current boolean not null default true,
+  display_en text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (investor_research_id, metric_type, scope_en, source_url),
+  constraint investor_financial_metrics_range
+    check (amount_max is null or amount_min is null or amount_min <= amount_max),
+  -- count types carry a count and no money; money types carry an amount and a currency
+  constraint investor_financial_metrics_shape check (case
+    when metric_type in ('investment_count','portfolio_company_count','grant_count')
+      then count_value is not null and amount_min is null and amount_max is null and currency is null
+    else count_value is null and amount_min is not null and currency is not null end),
+  -- a net asset value with no named vehicle is the ambiguity this type exists to remove
+  constraint investor_financial_metrics_vehicle_nav_needs_vehicle
+    check (metric_type <> 'vehicle_nav' or vehicle_id is not null)
+);
+
+create table if not exists public.investor_fund_positions (
+  id uuid primary key default gen_random_uuid(),
+  investor_research_id uuid not null references public.investor_research(id) on delete cascade,
+  target_investor_research_id uuid references public.investor_research(id) on delete set null,
+  target_vehicle_id uuid references public.investor_research_vehicles(id) on delete set null,
+  target_name_as_published text not null,
+  position_type text not null check (position_type in
+    ('limited_partner','fund_of_funds_commitment','anchor_investor','undisclosed')),
+  commitment_amount numeric,
+  commitment_currency char(3),
+  bound text check (bound in ('exact','approximate','minimum','maximum')),
+  announced_at date,
+  as_of_text text,
+  evidence_status text not null check (evidence_status in
+    ('investor_announcement','investor_published_portfolio','third_party_reported',
+     'research_record','unverified')),
+  source_url text,
+  reviewed_at date,
+  note_en text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (investor_research_id, target_name_as_published, position_type),
+  constraint investor_fund_positions_currency
+    check ((commitment_amount is null) = (commitment_currency is null)),
+  constraint investor_fund_positions_not_self
+    check (target_investor_research_id is null
+           or target_investor_research_id <> investor_research_id)
+);
+
+-- The financial research queue and audit trail. An investor with NO row here has not
+-- been researched, which is not the same as researched and yielding nothing.
+create table if not exists public.investor_financial_research_log (
+  id uuid primary key default gen_random_uuid(),
+  investor_research_id uuid not null references public.investor_research(id) on delete cascade,
+  outcome text not null check (outcome in
+    ('sourced_figures_found','researched_no_usable_figure','explicitly_undisclosed','blocked')),
+  sources_checked text[] not null default '{}',
+  researched_at date not null default current_date,
+  note_en text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (investor_research_id, researched_at)
+);
+
+-- Re-apply the parts that an existing database already has, so this file is idempotent
+-- rather than only correct on a fresh one.
+do $$ begin
+  if to_regclass('public.investor_financial_metrics') is not null then
+    alter table public.investor_financial_metrics
+      add column if not exists display_en text;
+    alter table public.investor_financial_metrics
+      drop constraint if exists investor_financial_metrics_metric_type_check;
+    alter table public.investor_financial_metrics
+      add constraint investor_financial_metrics_metric_type_check check (metric_type in
+        ('fund_size_target','fund_size_stated','fund_close_first','fund_close_interim',
+         'fund_close_final','fund_close_announced','committed_capital','manager_aum',
+         'vehicle_nav','cumulative_capital_invested','grant_funding_disbursed','grant_count',
+         'initial_investment_range','follow_on_investment_range','average_investment_size',
+         'investment_count','portfolio_company_count'));
+    alter table public.investor_financial_metrics
+      drop constraint if exists investor_financial_metrics_shape;
+    alter table public.investor_financial_metrics
+      add constraint investor_financial_metrics_shape check (case
+        when metric_type in ('investment_count','portfolio_company_count','grant_count')
+          then count_value is not null and amount_min is null and amount_max is null and currency is null
+        else count_value is null and amount_min is not null and currency is not null end);
+    alter table public.investor_financial_metrics
+      drop constraint if exists investor_financial_metrics_vehicle_nav_needs_vehicle;
+    alter table public.investor_financial_metrics
+      add constraint investor_financial_metrics_vehicle_nav_needs_vehicle
+      check (metric_type <> 'vehicle_nav' or vehicle_id is not null);
+  end if;
+
+  if to_regclass('public.investor_companies') is not null then
+    alter table public.investor_companies add column if not exists retired_kind text;
+    alter table public.investor_companies
+      drop constraint if exists investor_companies_retired_kind_check;
+    alter table public.investor_companies
+      add constraint investor_companies_retired_kind_check check (retired_kind is null
+        or retired_kind in ('unsupported_evidence','holding_ended'));
+    alter table public.investor_companies
+      drop constraint if exists investor_companies_retired_kind_with_retirement;
+    alter table public.investor_companies
+      add constraint investor_companies_retired_kind_with_retirement
+      check ((retired_at is null) = (retired_kind is null));
+  end if;
+end $$;
+
+-- Deny by default, like every other base table here: the build reads the views, which
+-- bypass RLS, and no browser reads these tables directly.
+alter table if exists public.investor_research enable row level security;
+alter table if exists public.investor_research_vehicles enable row level security;
+alter table if exists public.investor_research_locations enable row level security;
+alter table if exists public.investor_companies enable row level security;
+alter table if exists public.investor_portfolio_unresolved enable row level security;
+alter table if exists public.investor_financial_metrics enable row level security;
+alter table if exists public.investor_fund_positions enable row level security;
+alter table if exists public.investor_financial_research_log enable row level security;
+
+create index if not exists investor_companies_investor_idx
+  on public.investor_companies (investor_research_id);
+create index if not exists investor_companies_company_idx
+  on public.investor_companies (company_id);
+create index if not exists investor_financial_metrics_investor_idx
+  on public.investor_financial_metrics (investor_research_id);
+create index if not exists investor_financial_research_log_investor_idx
+  on public.investor_financial_research_log (investor_research_id);
+create index if not exists investor_financial_research_log_outcome_idx
+  on public.investor_financial_research_log (outcome);
+
+-- NOTE on the views. v_landscape_investors, v_investor_country_reviews, v_landscape_hubs
+-- and v_hub_country_reviews are deliberately NOT mirrored here. They are rebuilt by
+-- migration whenever a column is added, because adding one changes the column order and
+-- `create or replace view` refuses that, and a stale copy in this file would be worse
+-- than none. Their current definitions are in the live database; `pg_get_viewdef` prints
+-- them. The investor projection filters `investor_companies.retired_at is null`, so no
+-- retired relationship can reach the public export.
+
+-- Make sure PostgREST picks up the new tables/columns immediately.
 notify pgrst, 'reload schema';

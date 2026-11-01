@@ -104,6 +104,54 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
 
 ## Resolved this session
 
+### 2026-11-01 — investor figures labelled by what they are, and coverage more than doubled
+Full write-up: `research-agent/reports/2026-11-02-investor-semantics-and-coverage.md`;
+per-investor ledger alongside it, superseding the 1 November one.
+
+- **A note never reaches a label.** Four figures had careful prose and the wrong type, so
+  the card showed them wrong anyway: a listed trust's net asset value was stored as the
+  manager's **total** assets (Seraphim), an average cheque as a published **range** (DTCP),
+  and grant money and grant counts as **equity invested** and **investments made**
+  (Brave1). Flyer One's €50M was a **target** when its own source says Fund V was
+  "launched at €50 million" — no target claimed, no close reported. All five corrected.
+- **Two checks produced no change, which is also a result:** NIF's €1B stays manager AUM
+  because its own page says "assets under management", and Bpifrance's 6 deals stays an
+  investment count with the single-year basis in its scope.
+- **The interface had to move with the data.** The list card picks figures by type, so
+  retyping would have silently emptied the slot each one used to fill while the data sat
+  there. Each slot now reads every type that belongs in it.
+- **Coverage: 23 → 55 investors with figures**, and **13 → 23 of the 26 Ukraine-linked**.
+  All ten priority Ukraine-linked records were researched; eight produced figures and two
+  produced findings instead — **Defender Ventures** does not exist under that name in any
+  reviewed source, and **R-G.AI is not a fund** but a US defence technology company that
+  led Swarmer's 2024 seed.
+- **Twelve figures were found and deliberately not stored**, each with its reason: a
+  listed company's share capital, an institution's budget, an activity target, a guarantee
+  budget, a single-year flow, a figure with no as-of date, portfolio companies' own
+  follow-on capital, a state programme's size, a team's prior track record, a typo,
+  irreconcilable counts, and approvals and intentions presented as commitments.
+- **Relationships 74 → 100 rows over 70 unique companies** (those are different numbers),
+  with 82 linking a published profile. All seven authorised additions are in, plus Defence
+  Builder's seven own-portfolio companies. **SWEBAL was deliberately left out**: Front
+  Ventures lists it under a separate partnership heading, and a partner is not a holding.
+- **Unresolved holdings 13 → 7**, every resolution found by going somewhere other than the
+  unreachable Czech directory. **Nazca → Teltronic** turned out to be fully evidenced but
+  *historical* — Amper completed the purchase from Nazca in June 2026 — which is why
+  retirement now distinguishes an ended holding from a withdrawn one.
+- **URC Systems is now a fact, not a question.** The Czech competition office permitted the
+  deal in **2024**, the acquirer it names is **Piombino Group** of the Rockaway grouping,
+  and the register shows Piombino then merged *into* URC Systems. So it completed, in 2024,
+  through a different vehicle — Rockaway Alpha Defense is not the holder, and no human
+  decision was needed to establish that.
+- **Eight companies created, none given a landscape category.** ABX Dynamics is a draft on
+  purpose: its product range is confidential by its own investor's statement, so nothing
+  about UAV or C-UAS activity is established.
+- Tests **72/72**. Landscape **567**. Verified live, including on a 375px viewport.
+- **Not complete, and not claimed as such: 40 investors have still never been researched
+  financially.** They are named in the ledger and identifiable from the data as those with
+  no research-log row and no current metric.
+
+
 ### 2026-11-01 — hub cards now link to the profiles their matches point at
 DLR and MITS Capital were both **confirmed** catalogue matches that the landscape page
 still rendered as plain text. Two unrelated causes, both now fixed; full write-up in
@@ -296,6 +344,21 @@ applied in one guarded 17-step transaction and deployed. Full write-up:
   looked the label up in the landscape company payload, the very lookup that cannot find a
   research institute, so the DLR link rendered as "dlr-german-aerospace-center — company
   profile". The label now travels with the link from the row that resolved it.
+
+- 2026-11-01 — three investor migrations.
+  `investor_metric_types_vehicle_nav_grants_average` adds `vehicle_nav`,
+  `average_investment_size`, `grant_funding_disbursed`, `grant_count` and
+  `follow_on_investment_range`, extends the shape CHECK so `grant_count` is a count type,
+  and adds a CHECK requiring a named vehicle for a `vehicle_nav` — a net asset value with
+  no vehicle is the ambiguity the type exists to remove.
+  `investor_companies_retired_kind` distinguishes `unsupported_evidence` from
+  `holding_ended`, so an exit is not filed as "we were wrong".
+  `investor_financial_research_log` makes the financial research queue a table: an
+  investor with no row has not been researched, which is not the same as researched and
+  yielding nothing. **All eight investor tables are now mirrored in `db/schema.sql`**,
+  generated from the live database and replayed against it with 0 rows changed, closing
+  the gap this file used to record. Rollback:
+  `research-agent/reports/2026-11-02-investor-financial-ledger.md`.
 
 ## Decisions log
 - 2026-09-05 — Keep two repos (Pages constraint). All DB writes stay in xsonomy-news.
