@@ -375,3 +375,33 @@ No coverage moved — one observation was re-typed, not added or withdrawn. No c
 was needed: `fund_size_stated` already carries the label "Fund size (stated)" and sits in
 `FUND_METRICS`, so it has a card slot. The standing test that every type the database can
 store has a label and exactly one slot still passes.
+
+### Verified live
+
+```
+Tech Horizons  (domicile LU)
+  fund_size_stated          €150M announced at launch  exact  reported          Tech Horizons SCSp
+  initial_investment_range  €1M-€5M per deal           range  source_confirmed  Tech Horizons SCSp
+```
+
+Whole export unchanged where it should be: **118** investors, **102** with figures, **207**
+observations, **26** Ukraine-linked, **100** holdings, **0** unattributed. Type totals moved
+exactly as intended: `fund_size_target` **40**, `fund_size_stated` **27**.
+
+### A correction to this report's own earlier verification
+
+The main closeout said `300000` "occurs nowhere in the export", offered as evidence that the
+superseded €300K–€3M range is not published. **That was the wrong test, and it no longer
+passes:** the raw substring `300000` appears **24 times** in the live export — in
+Archangel's €300K–€800K, Defence Builder's and Double Tap's $100–300K, Sunfish's €150–300K,
+and inside larger numbers such as `3000000`, `300000000` and `421300000`.
+
+A substring search over a JSON document was never going to isolate one investor's figure.
+The claim that actually matters is narrower and does hold, checked per record: **Tech
+Horizons publishes exactly two observations, and neither is the withheld range.** The
+superseded row is `is_current = false`, the view reads only current rows, and the generator
+drops anything not `attributed` — three independent reasons it cannot travel, none of which
+depend on a text search.
+
+`parsers.vc` genuinely does occur nowhere, and that one is a safe substring test because the
+string is a domain unique to the mis-sourced citation.
