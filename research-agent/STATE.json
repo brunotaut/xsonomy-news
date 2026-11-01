@@ -6,7 +6,7 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "EXAIL_MERGE_PACKAGE_PREPARED_AWAITING_CHATGPT_REVIEW",
+  "status": "UAV_HUB_RESEARCH_IMPORTED_REVIEWED_AND_EXPORTED",
   "next_actor": "chatgpt",
   "input": "research-agent/reports/2026-10-31-exail-rescreen.md",
   "expected_output": "ChatGPT review of the Exail re-screen, then Nazar's decisions on the five listed questions. The 13 renames are done and need nothing further.",
@@ -962,6 +962,111 @@
       "Approve the proposed Exail description, or supply different wording?",
       "Approve the ECA europe-cuas-2026 exclusion, which was not in the original plan?",
       "Run the product corrections in the same release, or accept publishing Exail with 12 mis-categorised products on its landscape row?"
+    ]
+  },
+  "uav_hub_research_import": {
+    "status": "IMPORTED_REVIEWED_EXPORTED_DEPLOYED_VERIFIED",
+    "date": "2026-10-31",
+    "source": "research-agent/data/2026-10-31-european-uav-hubs.json",
+    "companion_report": "research-agent/data/2026-10-31-european-uav-hubs-report.md",
+    "dataset": "European UAV and Counter-UAS Hubs Research research-1",
+    "report": "research-agent/reports/2026-10-31-uav-hub-research-import.md",
+    "reproduce": "research-agent/imports/README-uav-hubs.md",
+    "prepare_script": "research-agent/imports/prepare_uav_hubs.py",
+    "counts": {
+      "records_imported": 61,
+      "records_updated": 0,
+      "records_skipped": 0,
+      "blocked_by_validation": 0,
+      "record_units": "58 organisation / 1 site / 2 programme",
+      "locations": 43,
+      "source_rows": 111,
+      "unique_source_urls": 110,
+      "relationships": 4,
+      "country_reviews": 32,
+      "countries": 32
+    },
+    "derived_not_copied": "All counts computed from the file and the database, never from the dataset header; they agree with it on all six figures (61 records, 32 countries, 40 map candidates, 43 candidate points, 110 unique URLs, record-unit split).",
+    "review": {
+      "recommended_by_research": 40,
+      "approved_records": 38,
+      "approved_organisations": 37,
+      "approved_sites": 1,
+      "approved_programmes": 0,
+      "approved_locations": 40,
+      "approved_countries": 25,
+      "held_in_staging": 23,
+      "rule": "map_candidate=true treated as a recommendation only. Approval additionally required documented evidence, a relevant UAV/C-UAS technology focus, a public locality with a coordinate, and a web source.",
+      "not_approved_despite_recommendation": "palladion-defence-accelerator (DE) and tehnopol-nato-diana-estonian-accelerator (EE): both documented and both recommended, but neither carries a UAV or C-UAS focus term, and each record's own note says UAV-specific capability is not established. NATO DIANA affiliation is not a UAV/C-UAS capability.",
+      "relabelled": "Tehnopol's Tallinn and Tartu localities were marked published_campus_or_test_locality by the dataset but describe one accelerator programme delivered from two cities; relabelled programme_delivery_city during review.",
+      "staging_breakdown": "2 documented+recommended (no UAV focus), 6 documented without a mappable locality, 5 location_pending, 4 candidate, 3 planned, 2 historical_evidence, 1 in_development. All 23 carry a reason in map_validation_errors; none is blank."
+    },
+    "matching": {
+      "automated_exact_matches": 0,
+      "why": "Exact normalised-name matching (investor_name_key) across all 61 hub names against every company, company alias and investor returned zero: hub names are facility names, catalogue names are organisation names.",
+      "substring_pass": "Run and deliberately discarded. It matched Systematic A/S (Danish software) to Systematic Paris Region (French cluster), iNTACT to INTA, Atlas Dynamics to ATLAS Flight Centers, and four Mitsubishi/MITS companies to MITS Capital.",
+      "links_made": {
+        "catec-research-centre": "company b09d94cc-1282-4a96-9331-aa1c83eed878 CATEC - same_organisation",
+        "dlr-national-experimental-test-center-for-uas": "company a738c1ae-f87d-4c74-94e2-8bd9260753b9 DLR - facility_of_matched_organisation",
+        "mits-accelerator": "investor d9a3a6ad-7ad7-4a27-a6f7-c326343fbf0e MITS Capital - related_organisation_different_function",
+        "bofors-test-center": "company 97ddc40d-858f-4b67-8363-f9c5cb5830d7 Bofors - needs_review; that record is the BAE Systems artillery business, the hub publishes at testcenter.se",
+        "eth-d-fall-flying-arena": "company ac4b7cbb-65b1-4644-b1da-5a798000ad71 ASL ETH Zurich - needs_review; a different ETH laboratory",
+        "systematic-hub-drones-cedif": "rejected_false_positive, recorded so the wrong match is not made later"
+      },
+      "merges": 0
+    },
+    "relationship_cases": {
+      "atlas": "One hub record with two site localities, not two records. operated_by -> CATEC, which is in staging, so the relationship exports with published:false.",
+      "airlabs": "Two records, site_of. Graz is network_office_city; Steinalpl is record_unit=site so it does not add to the organisation count.",
+      "navispot_psnc": "Two records, two operators, shares_geographic_campus, both approved, identical Kakolewo coordinates; NaviHub additionally holds Poznan as simulation_lab_city.",
+      "selonia_selija": "relationship_to_resolve. Existing facility is documented without a site point, the EU centre is planned. Both held in staging separately so neither publishes and they cannot be double counted.",
+      "mits": "Hub linked to the existing MITS Capital investor with role related_organisation_different_function, so the accelerator and the fund are not counted as one."
+    },
+    "export": {
+      "path": "https://xsonomy.com/data/landscape-hubs.json",
+      "pointer": "https://xsonomy.com/data/landscape.json -> hubs",
+      "edition": "european-uav-cuas-hubs",
+      "views": [
+        "v_landscape_hubs",
+        "v_hub_country_reviews"
+      ],
+      "bytes": 75267,
+      "schema": "edition, generatedAt, membership, counts{organisations,sites,programmes,records,locations,countries}, caveats{13}, countryReviews[32], hubs[38]{id,researchId,slug,name,country,countryName,localityText,hubType,recordUnit,evidenceStatus,technologyFocus[],summary,researchNote,operationalStatus,accessModel,bvlosStatus,cuasEvidence,reviewedAt,matchedCompanyId,matchedInvestorId,matchRole,matchNote,relationships[],sources[],locations[]}",
+      "separate_counts": "counts.organisations (37) excludes record_unit=site; counts.records (38) includes it. Reported separately, never summed.",
+      "verified_live": true
+    },
+    "migrations": [
+      "uav_hub_research_staging_schema",
+      "uav_hub_research_loaders",
+      "uav_hub_research_loader_defaults",
+      "uav_hub_research_loader_drop_old_overload",
+      "uav_hub_research_matching_and_review",
+      "uav_hub_research_landscape_projection"
+    ],
+    "idempotency": "All five loaders returned 0 rows changed when the database's own content was replayed back through them, with row counts unchanged (61/43/111/4/32).",
+    "checks": "Prepare-script validation 0 errors. Country review sums reconcile 61/40. 0 hubs without a source, 0 candidates without a location, 0 non-candidates with a location, 0 staging rows without a reason, 0 approved hubs without an approved location, 0 approved locations on unapproved hubs. RLS enabled with 0 policies on all five staging tables, matching investor_research*. Test suite 40/40 (32 before, +8 new).",
+    "deliberate_differences_from_investor_layer": [
+      "hub_research_sources has a real uniqueness key (unique nulls not distinct on hub_id, location_id, url). investor_research_sources is unique only on its surrogate id, so the on-conflict-do-nothing in investor_research_load_locations can never fire and a replay would duplicate every location source. Not replayed to date (202 rows, 0 duplicate groups), so no duplicates exist there now.",
+      "Location-level sources are not stored: all 43 localities carry a source set identical to their record's, so per-location rows would add bytes and no information. The location_id column remains for a wave where they differ, and caveats.locationEvidence says so.",
+      "Country names come from the catalogue's countries table, not the dataset: Czech Republic over Czechia, Turkey over Turkiye."
+    ],
+    "untouched": {
+      "live_companies": 2447,
+      "investors": 200,
+      "approved_investor_research": 21,
+      "landscape": 567,
+      "note": "No write to companies, investors, products, landscape_candidates or any taxonomy table."
+    },
+    "catalogue_commit": "ed0cb60",
+    "open_items": [
+      "catec-research-centre is in staging while ATLAS, which it operates, is published; resolving its office/site identity would publish the operator too",
+      "two needs_review matches to decide: Bofors Test Center vs BAE Systems Bofors, and ETH D-FaLL vs ASL ETH Zurich",
+      "Drone Center Sweden vs Vastervik Drone Science Park needs entity matching before merging or adding a second record",
+      "Swiss Drone Base Camp is a related project label at Lodrino whose relationship needs checking",
+      "the 5 location_pending records need only a verified locality to become publishable",
+      "CEOM was approved on Uncrewed systems plus documented aerial participation in REPMUS though it is maritime-led; worth revisiting",
+      "investor_research_sources replay hazard not fixed - it needs a unique index on a populated table",
+      "frontend integration is the next task; no map UI was changed"
     ]
   }
 }
