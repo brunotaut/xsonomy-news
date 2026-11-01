@@ -1400,7 +1400,7 @@
     "catalogue_commits": "dc2dbb7"
   },
   "non_aerial_product_batch_2": {
-    "status": "PARTIALLY_APPLIED — authorised subset applied and deployed; the rest held",
+    "status": "COMPLETE — all decisions taken and applied; editorial flag count is zero",
     "date": "2026-11-01",
     "authorised": "Preparation only. The brief says explicitly: do not apply these product or taxonomy changes yet. Nothing was written to the database; the three transactions were dry-run with begin ... rollback and the database was confirmed unchanged afterwards.",
     "report": "research-agent/reports/2026-11-01-non-aerial-product-batch-2.md",
@@ -1425,12 +1425,10 @@
     "validation": "Three dry runs, all returning exactly the predicted values, and the database confirmed unchanged afterwards (UAV 1,416, Other 410, taxonomy 11,133 rows, redirects 95, flagged 31). ROLLBACK PROVEN rather than asserted: all three transactions were applied forward and then reversed inside one transaction and compared row by row against a before-snapshot - 0 taxonomy rows differing, 0 missing, 11,133 = 11,133, 0 category differences, 0 redirect differences. That covers the two hardest reversals: the regexp inverse restoring six stripped-and-re-appended notes, and the delete-and-re-insert of rMCM domain row with its original option_id, source, confidence and note.",
     "rollback_limit": "products carries a BEFORE UPDATE set_updated_at trigger, so a reversal cannot restore the original updated_at; the literal previous values are recorded in the rollback files. product_taxonomy has no surrogate key and no updated_at, so its statements are keyed on (product_id, option_id) or on exact text and guarded by expected current values. CORRECTION to the prepared batch 2 note: product_taxonomy DOES carry a created_at, set by a column default rather than a trigger, so a deleted taxonomy row creation time CAN be restored on re-insert. That matters only for the retirement proposal, whose rollback now restores it explicitly.",
     "decisions_for_nazar": [
-      "MMCM, rMCM, XLUUV: retire (recommended, proposal prepared) or recategorise via the old TX B? Run one, never both.",
-      "rMCM false surface-usv row: delete it regardless of the retirement decision? It is false, not merely unsourced.",
-      "Ghost Shark source_urls still cites an article about Albacore Ghostfin. One statement, in section 2 of the applied report. Not authorised, so not changed.",
-      "LUNA-2 and satellites: does a LoRa IoT nanosatellite belong in this catalogue at all? Same question as Dot the sidewalk delivery robot from batch 1. LUNA-2 keeps its flag until this is answered.",
-      "Cassio S 6fb1094b and DA 15-N.ISS c0fca03f: does a domain row describe what a product IS or what it FLIES ON? Two records now, more later.",
-      "Dire WOLF company link to hdt-global - available, not done. Beware the name match on Blade (Horizon Hobby), an unrelated hobby brand."
+      "STILL OPEN, not answered: Cassio S 6fb1094b and DA 15-N.ISS c0fca03f - does a domain row describe what a product IS or what it FLIES ON? A piloted light aircraft and a servo actuator, both categorised Other yet holding an AERIAL domain row. A taxonomy-semantics question affecting more than these two records.",
+      "Watch item, not a question: if a SECOND space-orbital record appears, the satellite scope question becomes a class question. The LUNA-2 note says so and the SQL guard enforces it - the next pass to touch a space-orbital row will abort rather than assume.",
+      "Available, not done: Dire WOLF company link to hdt-global. Beware the name match on Blade (Horizon Hobby), an unrelated hobby brand.",
+      "Available, not done: OCCAR, Thales, Naval Group and Exail as links if the two retired programmes ever return as reference entries rather than product records."
     ],
     "superseded_by": "research-agent/reports/2026-11-01-non-aerial-product-batch-2-applied.md",
     "applied_2026_11_01": {
@@ -1454,7 +1452,7 @@
       ]
     },
     "mmcm_rmcm_xluuv_retirement_proposal": {
-      "status": "PREPARED_NOT_APPLIED",
+      "status": "APPLIED 2026-11-01 - see decisions_applied_2026_11_01",
       "report": "research-agent/reports/2026-11-01-mmcm-rmcm-xluuv-retirement-proposal.md",
       "sql": "research-agent/reports/2026-11-01-mmcm-rmcm-xluuv-retirement.sql",
       "rollback": "research-agent/reports/2026-11-01-mmcm-rmcm-xluuv-retirement-rollback.sql",
@@ -1464,6 +1462,23 @@
       "expected_impact": "live UAV 1413 -> 1410, live total 3521 -> 3518, taxonomy 11133 -> 11132, redirects unchanged at 97, verify-category notes 4 -> 1 (LUNA-2 only), not-an-aerial-system notes 3 -> 0, three public pages removed with no redirect created.",
       "alternative_still_open": "The prepared TX B recategorises them UAV -> Other instead. Run ONE of the two, never both. Recommendation: retire, because the provenance makes these extraction artefacts rather than incomplete records, and an extraction artefact does not get better with a better category.",
       "not_dry_run": "The round-trip proof is to be run at the point of application, not against a change nobody has authorised."
-    }
+    },
+    "decisions_applied_2026_11_01": {
+      "decisions": "Nazar answered: (1) retire MMCM/rMCM/XLUUV, (2) delete rMCM false domain row, (3) yes to the Ghost Shark source_urls fix, (4) LUNA-2 left to my judgement. Question 5 (Cassio S / DA 15-N.ISS domain semantics) was NOT answered and remains open.",
+      "rows_changed": "13, in three independent transactions: TX R (retire 3 + 2 notes + 1 delete), TX S (Ghost Shark source_urls + note), TX L (LUNA-2 to Other + redirect + note).",
+      "retired": "MMCM ccfd9d18, rMCM 5d6c6ab3, XLUUV 9d80e014 -> publication_status draft. The prepared TX B (recategorise to Other) is NOT run and is superseded. Nothing deleted except rMCM false row: five of six foreign keys into products are ON DELETE CASCADE, so a hard delete would have taken three article links and seven taxonomy rows with it. Verified surviving: 3 article links, XLUUV 5 taxonomy rows, article_products unchanged at 10284.",
+      "rmcm_false_row_deleted": "(5d6c6ab3, option 9624877b surface-usv) deleted. The programme delivers TWELVE CREWED City/Vlissingen-class vessels that CARRY uncrewed systems; the row asserted the programme IS a USV. rMCM now carries no domain assertion at all, which is honest. Done independently of the retirement because a false claim is worth removing either way.",
+      "ghost_shark_sources_fixed": "source_urls dronexl.co/.../navy-albacore-ghostfin-drone-submarines-philadelphia -> anduril.com/news/first-ghost-shark-debuts-in-australia + defence.gov.au/news-events/news/2022-12-14/ghost-shark-stealthy-game-changer. That single before-value IS the explanation of the original misattribution: the record was seeded from an article about Albacore GHOSTFIN, a different vehicle with a similar name, and the company came along with it. The taxonomy note was updated in the same transaction to record the sequence rather than warn about it.",
+      "luna2_decision": "MOVED TO OTHER, KEPT PUBLISHED. Two checks decided it, not opinion. (a) LUNA-2 is the ONLY space-orbital record in the catalogue, so this was never a scope policy - one record to place. A guard in the SQL asserts that count is 1 and ABORTS if it is not, so the next pass to touch a space-orbital row cannot assume. (b) Dot, the sidewalk delivery robot that raised the identical doubt in batch 1, is already Other/live - the house answer exists. NOT retired because unlike Exail A27 it demonstrably exists (ASELSAN own announcement, SpaceX launch 30 March 2026, web/high domain row with a real citation); unpublishing a well-sourced real product to dodge a scope question would trade a small ambiguity for a plain inaccuracy. /uav/luna-2/ preserved by redirect.",
+      "counts_before_after": "live UAV 1413 -> 1409 (three retired, one moved), live Other 412 -> 413, live total 3521 -> 3518, drafts 111 -> 115, taxonomy 11133 -> 11132, redirects 97 -> 98, verify-category notes 4 -> 0, not-an-aerial-system notes 3 -> 0.",
+      "flag_count_zero": "31 at the start of the day, 4 after the applied batch, 0 now. It reached zero by every flagged record being ANSWERED or RETIRED - not by a fix that quotes the instruction it retires, which is the defect that kept the population at 31 while 26 of those rows were already correct.",
+      "validation": "Dry run forward and round trip inside begin...rollback against live. All 13 affected-row counts matched and EVERY predicted figure matched this time. Round trip diffed to 0 differences across product_taxonomy (INCLUDING created_at), products (INCLUDING source_urls), product_companies, article_products and slug_redirects. Two things this run proved that the morning pass could not: the re-insert of rMCM deleted row restored created_at exactly (2026-09-05 16:56:47.583515+00), because that column takes its value from a default rather than a trigger; and article_products was snapshotted and diffed, so the claim that retirement preserves article links is measured rather than asserted. Tests catalogue 75/75, news 48/48.",
+      "files": [
+        "research-agent/reports/2026-11-01-batch-2-decisions-applied.md",
+        "research-agent/reports/2026-11-01-batch-2-decisions-applied.sql",
+        "research-agent/reports/2026-11-01-batch-2-decisions-applied-rollback.sql"
+      ]
+    },
+    "the_failure_mode": "All four bad records in this batch share one shape. MMCM, rMCM AND Exail A27 came from ONE article - opex360, 2026-08-04, on French mine-warfare drone orders: two programme names and one invented product from a single extraction. XLUUV is the same failure in its other form, a CLASS TERM read as a model name, from an article about a DIU programme FOR XLUUVs. And Ghost Shark misattribution came from being seeded off an article about a DIFFERENT VEHICLE WITH A SIMILAR NAME (Albacore Ghostfin). An article that names several programmes, vendors and vehicles in one breath, read as if each name were a product. That is a property of the source shape, not of these records - worth knowing before the next extraction pass rather than after."
   }
 }

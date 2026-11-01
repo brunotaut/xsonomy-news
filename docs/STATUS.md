@@ -745,3 +745,64 @@ breath is where this class of error comes from.
 all". It has no `updated_at`, but it does carry a `created_at` set by a column default
 rather than a trigger — so a deleted taxonomy row's creation time *can* be restored on
 re-insert, and the retirement rollback now does.
+
+## 1 November 2026 — batch 2 closed out: four decisions applied, flag count zero
+
+**13 rows, three transactions, deployed and verified.** Report:
+`research-agent/reports/2026-11-01-batch-2-decisions-applied.md`.
+
+**MMCM, rMCM and XLUUV retired** (`live → draft`). The prepared TX B, which would have
+recategorised them, is superseded and not run. **Nothing deleted but rMCM's false row** —
+five of the six foreign keys into `products` are `ON DELETE CASCADE`, so a hard delete
+would have taken three article links and seven taxonomy rows with it. Verified surviving:
+3 article links, XLUUV's 5 taxonomy rows, `article_products` unchanged at 10,284.
+
+**rMCM's `surface-usv` row deleted.** Wrong, not merely unsourced: the programme delivers
+twelve *crewed* vessels that carry uncrewed systems. rMCM now carries no domain assertion
+at all, which is the honest state — and worth doing independently of the retirement,
+because a false claim is worth removing whether or not the record is published.
+
+**Ghost Shark's sources corrected**, and the before-value *is* the explanation of the
+original error: its only source was an article about **Albacore's Ghostfin**, a different
+vehicle with a similar name, so when the record was seeded the company came along with it.
+Replaced with anduril.com and defence.gov.au — the two sources the maker correction rests
+on.
+
+**LUNA-2 → Other, kept published.** My call, decided by two checks rather than a view.
+It is the **only `space-orbital` record in the catalogue**, so this was never a scope policy
+— one record to place; a guard in the SQL asserts that count is 1 and **aborts if it is
+not**, so the next pass cannot quietly assume. And **Dot**, which raised the identical
+doubt in batch 1, is already `Other`/`live` — the house answer existed. Not retired,
+because unlike Exail A27 it demonstrably exists (ASELSAN's own announcement, SpaceX launch
+30 March 2026, a `web`/`high` row with a real citation); unpublishing a well-sourced real
+product to dodge a scope question trades a small ambiguity for a plain inaccuracy.
+
+**Counts.** Live UAV 1,413 → **1,409** (three retired, one moved), Other 412 → **413**,
+total 3,521 → **3,518**, drafts 111 → **115**, redirects 97 → **98**.
+
+### The flag count reached zero, and honestly
+
+31 at the start of the day → 4 after the applied batch → **0**. Every flagged record was
+**answered or retired**, not papered over. The defect that kept the number at 31 while 26
+of those rows were already correct was fixes that quoted the instruction they retired; no
+note written today contains either phrase.
+
+**Validation.** Forward and round-trip dry run; all 13 counts matched and **every predicted
+figure matched** this time. The round trip diffed to 0 differences across five tables —
+`product_taxonomy` **including `created_at`**, `products` **including `source_urls`**,
+`product_companies`, `article_products` and `slug_redirects`. Two things this proved that
+the morning's run could not: the re-insert of rMCM's deleted row restored its original
+`created_at` exactly, and the claim that retirement preserves article links is now
+measured rather than asserted. Tests **75/75** and **48/48**.
+
+**Still open, and not answered by anything here:** Cassio S and DA 15-N.ISS — a *piloted*
+light aircraft and a servo *actuator*, both categorised `Other` yet holding an **aerial**
+domain row. They need a ruling on whether a domain row describes what a product **is** or
+what it **flies on**, which affects more than two records.
+
+**The failure mode, which is the part worth keeping.** All four bad records in this batch
+share one shape. MMCM, rMCM **and Exail A27** came from **one article** — opex360,
+2026-08-04, on French mine-warfare drone orders. XLUUV is a **class term** read as a model
+name. Ghost Shark was seeded off an article about a **different vehicle with a similar
+name**. An article that names several programmes, vendors and vehicles in one breath, read
+as if each name were a product.
