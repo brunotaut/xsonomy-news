@@ -1360,7 +1360,8 @@
     "nothing_rewritten": "No cached decision and no historical article link was touched, per the authorisation. Both retired records carry 0 cached tag decisions, so the cache is unaffected. ECA's one remaining article_companies link is left alone - the merge review established the same article is already linked to Exail.",
     "tests": "35/35, including 14 new cases in scripts/test/resolve-mergers.test.mjs covering the three ECA tags, a live merged_with source, an ordinary draft, a retired company with no live successor, a missing successor row, the two-successor DefSecIntel case, a chain, a cycle, a self-merge, name-over-alias precedence in both row orders, same-rank name and alias collisions, a missing publication_status, and every non-merged_with relationship type.",
     "activation": "On main, so the daily ingest-and-deploy.yml run uses it. The two new reads were validated against the live REST API first: companies?select=...,publication_status and company_relationships?select=source_company_id,target_company_id,type both 200, while a deliberately bogus column returns 400 - which is what makes those 200s mean the columns resolve.",
-    "decision_for_nazar": "One pre-existing cached row, \"Teledyne FLIR OEM -> Teledyne FLIR Defense\", differs from what the new code decides (Teledyne FLIR). It stays cached and changes nothing unless that row is healed. Cosmetic either way."
+    "decision_for_nazar": "One pre-existing cached row, \"Teledyne FLIR OEM -> Teledyne FLIR Defense\", differs from what the new code decides (Teledyne FLIR). It stays cached and changes nothing unless that row is healed. Cosmetic either way.",
+    "reverified_2026_11_01": "Re-checked on the later pass of 2026-11-01 at the request of a repeat brief. Still APPLIED_AND_ACTIVE: scripts/resolve-entities.mjs reads companies.publication_status and company_relationships and calls buildSuccessorMap, and scripts/test/resolve-mergers.test.mjs passes 14/14 inside a suite of 48/48. No code change was needed and none was made."
   },
   "non_aerial_product_batch": {
     "status": "APPLIED_THE_28",
@@ -1396,5 +1397,40 @@
     ],
     "rollback_is_live": "research-agent/reports/2026-11-02-non-aerial-product-rollback.sql now reverses a real change rather than a hypothetical one.",
     "catalogue_commits": "dc2dbb7"
+  },
+  "non_aerial_product_batch_2": {
+    "status": "PREPARED_NOT_APPLIED",
+    "date": "2026-11-01",
+    "authorised": "Preparation only. The brief says explicitly: do not apply these product or taxonomy changes yet. Nothing was written to the database; the three transactions were dry-run with begin ... rollback and the database was confirmed unchanged afterwards.",
+    "report": "research-agent/reports/2026-11-01-non-aerial-product-batch-2.md",
+    "manifest": "research-agent/reports/2026-11-01-non-aerial-product-batch-2-manifest.csv",
+    "sql": "research-agent/reports/2026-11-01-non-aerial-product-batch-2.sql",
+    "rollback": "research-agent/reports/2026-11-01-non-aerial-product-batch-2-rollback.sql",
+    "candidate_set": "7, which is batch 1 eight holds minus Katana. No new candidates have appeared, and UAV 1,416 / Other 410 still match batch 1 applied figures, so nothing has drifted.",
+    "verdict": "6 ready across two separately runnable transactions, 1 held.",
+    "groups": {
+      "A_ready_identity_settled": "Dire WOLF d77e3215 (BLADE, ex-HDT Global, six-wheeled hybrid logistics UGV, US Army Project Sustainment July 2026 - NOW FULLY SOURCED where it was a bare seed), Ghost Shark 0c420e85 (Anduril XL-AUV, RAN Project SEA 1200), LUNA-2 8a28d7c5 (ASELSAN LoRa IoT nanosatellite, SpaceX 30 Mar 2026).",
+      "B_ready_category_certain_identity_open": "MMCM ccfd9d18 (OCCAR FR/UK programme, Thales-led), rMCM 5d6c6ab3 (Belgian-Dutch programme, 12 CREWED City/Vlissingen-class vessels), XLUUV 9d80e014 (US Navy class term above 84 in diameter; Boeing Orca is the product). None is a product; none is aerial either. Separate transaction so it can be declined without blocking A.",
+      "C_held": "Exail A27 3515b298 - searched again; Exail AUV range is A9-M, A18-M, A6K-M and Ulyx and NO source names an A27. The only record where the CATEGORY is also unsupported, since its underwater domain row is itself a bare seed. Recommend unpublication, which this task excludes."
+    },
+    "the_real_finding": "The editorial flag count has been lying. A catalogue-wide search for the instruction verify category returns 31 rows when only 5 are genuinely open: 17 already-moved records keep the full flag text, 6 keep a shorter variant, 2 (DriX and DriX O-16) were corrected by the Exail pass with a replacement note that QUOTES the retired instruction, and 1 (HALIA) is answered by leaving it alone. A fix that quotes the instruction it retires re-creates the searchable string, so the population can never shrink. My own first draft of TX T reproduced the defect on all 26 rows; the dry run reported 17 stale rows remaining after an update that had in fact run, which is how it surfaced. Every replacement note now contains neither phrase, and the DriX pair is corrected as part of the same fix. After all three transactions a search for either phrase returns ZERO.",
+    "rmcm_third_error": "rMCM surface-usv domain row is WRONG, not merely unsourced: the programme delivers CREWED mine countermeasures vessels that carry uncrewed systems (two Exail Inspector 125 USVs, three A-18 AUVs, two Saab V200 Skeldar air vehicles each). The SQL DELETES the row rather than re-wording it, leaving the record with no domain assertion at all - the honest state while the programme-vs-product question is open. MMCM surface-usv row is defensible on the same evidence, because MMCM deliverable genuinely is a USV.",
+    "halia_reverse_case": "HALIA 4d80bcae (LeVanta Tech) is amphibious float-and-fly and holds an aerial domain row alongside its surface one, which is why it never entered the candidate set. Its category is UAV and that is CORRECT. Note-only change; the one record here where the right action on the data is nothing.",
+    "exail_11_taxonomy_review": "Batch 1 called this narrower than expected; it is narrower in one respect and wider in another. ZERO of Exail 13 Other products carry any specs, so there is nothing to preserve or strip, and every domain row is already correct. But TWO carry upgradeable seeds that batch 1 missed: A-18M 1de976af (domain, control, origin upgraded to web/high; mission_military=isr NOT upgraded, because mine countermeasures is not ISR) and K-Ster 6efaadb9 (domain, origin upgraded; control=tethered NOT upgraded, no source confirms a wire or fibre link). Nine taxonomy rows upgraded in total, three left as seeds, each named.",
+    "noted_not_proposed": "Two live products are categorised Other yet carry an AERIAL domain row - the reverse error. Cassio S 6fb1094b (VoltAero Cassio is a PILOTED hybrid-electric light aircraft; also Cassio S matches no published designation) and DA 15-N.ISS c0fca03f (a brushless servo ACTUATOR, flying on Textron Aerosonde Mk4.7 since 2010). Both need a decision about whether a domain row describes what a product IS or what it FLIES ON, which affects more than two records.",
+    "wolf_cluster_closed": "Batch 1 flagged the Hunter WOLF / WOLF-X / Dire WOLF cluster for possible deduplication. The sources say these are THREE DISTINCT vehicles from one maker: Hunter WOLF in service with the 10th Mountain Division, the Marine Corps, Australia and Ukraine; WOLF-X the combat vehicle; Dire WOLF the logistics derivative. No deduplication needed - that worry can be closed.",
+    "company_linkup_trap": "Dire WOLF has no company linked and its maker BLADE (formerly HDT Global) is already live as hdt-global. A name match on BLADE will instead find Blade (Horizon Hobby), an unrelated radio-control hobby brand.",
+    "urls": "All six moves keep their slug and change section only. Verified in both directions: 6 of 6 slugs free in /other/, 0 of 6 namesakes left in /uav/, 0 of 6 existing redirects. Six slug_redirects rows with from_section=uav preserve the old urls. Exail A27 does not move.",
+    "validation": "Three dry runs, all returning exactly the predicted values, and the database confirmed unchanged afterwards (UAV 1,416, Other 410, taxonomy 11,133 rows, redirects 95, flagged 31). ROLLBACK PROVEN rather than asserted: all three transactions were applied forward and then reversed inside one transaction and compared row by row against a before-snapshot - 0 taxonomy rows differing, 0 missing, 11,133 = 11,133, 0 category differences, 0 redirect differences. That covers the two hardest reversals: the regexp inverse restoring six stripped-and-re-appended notes, and the delete-and-re-insert of rMCM domain row with its original option_id, source, confidence and note.",
+    "rollback_limit": "products carries a BEFORE UPDATE set_updated_at trigger, so a reversal cannot restore the original updated_at on the six moved rows. product_taxonomy has no surrogate key and no timestamp at all, so its statements are keyed on (product_id, option_id) and guarded by expected current values.",
+    "decisions_for_nazar": [
+      "Apply TX A? Dire WOLF, Ghost Shark, LUNA-2 - identity settled and sourced.",
+      "Apply TX B? MMCM, rMCM, XLUUV - the category is certainly wrong today, but these records may deserve retirement rather than recategorisation. Moving them is reversible; retiring them is a decision.",
+      "Apply TX T? Note hygiene only. It is what makes the flag count mean something again.",
+      "Exail A27 - recommend unpublication; nothing names this product anywhere.",
+      "LUNA-2 and satellites: does a LoRa IoT nanosatellite belong in this catalogue at all? Same question as Dot the sidewalk delivery robot from batch 1.",
+      "Ghost Shark maker: reattribute from Albacore to Anduril? Held here as an ownership change.",
+      "Cassio S and DA 15-N.ISS: does a domain row describe what a product IS or what it FLIES ON?"
+    ]
   }
 }

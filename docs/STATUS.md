@@ -625,3 +625,47 @@ figure cannot be `is_current`. Proven by statements expected to fail; nothing wr
 
 Tests **48/48** — up from 41, one of which had been failing on the committed tree since the
 coverage pass regenerated the ledger and dropped its manifest pointer.
+
+## 1 November 2026 (later still) — resolver re-verified, and non-aerial batch 2 prepared
+
+**The resolver fix needed no work.** A repeat brief asked for it; it was already applied and
+active (commit `55a95f1`). Re-checked rather than assumed: `scripts/resolve-entities.mjs`
+reads `companies.publication_status` and `company_relationships` and calls
+`buildSuccessorMap`, and `scripts/test/resolve-mergers.test.mjs` passes 14/14 inside a suite
+of **48/48**. No code change was needed and none was made.
+
+**Non-aerial batch 2 is prepared and NOT applied.** The candidate set is **7** — batch 1's
+eight holds minus Katana — and nothing new has appeared: UAV 1,416 / Other 410 still match
+batch 1's applied figures. Verdict **6 ready, 1 held**, across two separately runnable
+transactions so group B can be declined without blocking group A.
+
+- **Dire WOLF is now fully sourced** where it was a bare model seed: BLADE (formerly HDT
+  Global), a six-wheeled diesel-electric hybrid logistics UGV derived from WOLF-X, put to
+  the U.S. Army's Project Sustainment effort in July 2026.
+- **Ghost Shark** is Anduril's XL-AUV for the Royal Australian Navy, not Albacore's —
+  Albacore's own vehicle is **Ghostfin**, a separate record. Underwater either way, so the
+  category moves and the ownership fix is held.
+- **MMCM, rMCM and XLUUV** are two programmes and a class term. Not products — but not
+  aerial either, so the category is wrong today whatever is decided about the records.
+- **rMCM carries a third error:** its `surface-usv` row is wrong, not just unsourced. The
+  programme delivers **crewed** vessels that carry uncrewed systems. The row is deleted.
+- **Exail A27 stays held.** Exail's AUV range is A9-M, A18-M, A6K-M and Ulyx; no source
+  names an A27. It is the one record whose *category* is also unsupported.
+
+**The more useful finding: the editorial flag count has been lying.** A catalogue-wide
+search for `verify category` returns **31** rows when only **5** are genuinely open. A fix
+that quotes the instruction it retires re-creates the searchable string, so the population
+can never shrink — the Exail pass did this to DriX and DriX O-16, and my own first draft of
+the cleanup did it to 26 more rows. The dry run caught it by reporting rows still stale
+after an update that had run. Every replacement note now contains neither phrase; after all
+three transactions a search for either returns **zero**.
+
+**Validation.** Three dry runs, all exactly as predicted, database confirmed unchanged
+afterwards. **The rollback is proven, not asserted:** applied forward and reversed inside
+one transaction and compared against a before-snapshot — 0 taxonomy rows differing, 0
+missing, 11,133 = 11,133, 0 category differences, 0 redirect differences. That covers the
+regexp inverse on six notes and the delete-and-re-insert of rMCM's row with its original
+`option_id`. Nothing was written to production.
+
+**Closed:** the "Hunter WOLF / WOLF-X / Dire WOLF cluster" is not a duplicate problem — the
+sources show three distinct vehicles from one maker.
