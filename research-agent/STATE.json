@@ -1345,5 +1345,54 @@
       "ABX Dynamics stays a draft until its products are publicly established."
     ],
     "remaining": "40 investors never researched financially, named in the ledger and identifiable from the data as those with no investor_financial_research_log row and no current metric. 7 unresolved holdings with exact reasons. This pass does NOT claim completion of part 2."
+  },
+  "resolver_merger_policy": {
+    "status": "APPLIED_AND_ACTIVE",
+    "date": "2026-11-01",
+    "report": "research-agent/reports/2026-11-02-resolver-merger-policy.md",
+    "commit": "55a95f1",
+    "problem": "The 2026-11-01 Exail merge moved ECA Group aliases to Exail and retired the duplicate to draft, but resolve-entities.mjs fetched companies with no publication-status filter and buildCompanyIndex was first-write-wins, so the retired record's own NAME stayed an exact key. An article mentioning \"ECA Group / Infotron\" relinked to a draft with no public page, and which record won depended on row order.",
+    "policy": "A company that is the SOURCE of a merged_with edge and is no longer live receives no new matches: it resolves to its single live successor, or owns no index key at all. Chains are followed, cycles terminate, missing successors and self-merges are no-ops, and non-merged_with relationship types are not retirements. LIVE merged_with sources (EADS, BlueHalo, AAI Corporation, WB Electronics) are deliberately untouched - 5 of the 7 edges have a live source. Ordinary drafts still resolve; only merged-away ones are excluded.",
+    "row_order_removed": "One rule on the normalized, prefix and fuzzy paths alike: a company's own name outranks another company's alias; otherwise the candidate whose raw name is closest to the raw tag wins; a genuine tie between two different companies is refused. Plus an AMBIGUOUS sentinel for two companies claiming one exact string at the same rank, which fires on no current data (zero same-rank exact collisions across 2,539 companies and 351 aliases) and guards future data.",
+    "crash_fixed": "matchProduct called the confidence gate with an undeclared `context`, so EVERY exact product-name match threw a ReferenceError and aborted the resolve run. Only the cache hid it - a tag already decided never reaches that line, so it fired on new tags only. The gate had no business there: it exists for ambiguous company names and the normalized branch never used it.",
+    "comparison_method": "The key space was enumerated in SQL, not sampled. Across every company name and alias exactly FOUR normalised keys are claimed by two companies (eos, kara dag, teledyne flir, knds france); every other key maps to one company, where old and new behave identically by construction. With the two retired records that is the complete set of places the versions can differ.",
+    "changed_resolutions": "4 of 23 tags in the affected families, all corrections: \"ECA Group / Infotron\" retired-draft -> Exail; \"DefSecIntel · Origin Robotics\" retired-draft -> unresolved (two live successors, nothing picks); \"EOS Defence Systems\" EOS (an unrelated Ukrainian draft) -> EOS Defence; \"Kara Dag Tech\" Kara Dag -> Kara Dag Technologies. Row-order dependence was demonstrated directly: the same tag under the old code returns Teledyne FLIR or Teledyne FLIR Defense depending purely on which row came back first.",
+    "nothing_rewritten": "No cached decision and no historical article link was touched, per the authorisation. Both retired records carry 0 cached tag decisions, so the cache is unaffected. ECA's one remaining article_companies link is left alone - the merge review established the same article is already linked to Exail.",
+    "tests": "35/35, including 14 new cases in scripts/test/resolve-mergers.test.mjs covering the three ECA tags, a live merged_with source, an ordinary draft, a retired company with no live successor, a missing successor row, the two-successor DefSecIntel case, a chain, a cycle, a self-merge, name-over-alias precedence in both row orders, same-rank name and alias collisions, a missing publication_status, and every non-merged_with relationship type.",
+    "activation": "On main, so the daily ingest-and-deploy.yml run uses it. The two new reads were validated against the live REST API first: companies?select=...,publication_status and company_relationships?select=source_company_id,target_company_id,type both 200, while a deliberately bogus column returns 400 - which is what makes those 200s mean the columns resolve.",
+    "decision_for_nazar": "One pre-existing cached row, \"Teledyne FLIR OEM -> Teledyne FLIR Defense\", differs from what the new code decides (Teledyne FLIR). It stays cached and changes nothing unless that row is healed. Cosmetic either way."
+  },
+  "non_aerial_product_batch": {
+    "status": "PREPARED_NOT_APPLIED",
+    "date": "2026-11-01",
+    "authorised": "Preparation only: \"Do not apply these product or taxonomy changes yet.\"",
+    "database_written": "NO. The whole transaction was executed and rolled back; the database was re-checked afterwards and is unchanged (UAV 1,444, Other 382, redirects 65, Katana domain still Surface (USV), 24 flagged notes).",
+    "report": "research-agent/reports/2026-11-02-non-aerial-product-batch.md",
+    "manifest": "research-agent/reports/2026-11-02-non-aerial-product-manifest.csv",
+    "sql": "research-agent/reports/2026-11-02-non-aerial-product-batch.sql",
+    "rollback": "research-agent/reports/2026-11-02-non-aerial-product-rollback.sql",
+    "candidate_set": "36, not the 19 the previous report named. That 19 came from matching one NOTE PHRASING; defining the set from the taxonomy's own domain facet finds 36. Eleven of the extra records carry a non-aerial domain row and no such note at all: ARES, Dire WOLF, Dot, GULL, K3 Scout, K5 Kraken, K7 Sabre, Lionfish, Mako, SEASTRIKE, Surveyor.",
+    "verdict": "28 ready, 8 held.",
+    "katana_false_positive": "7a1ed9b6 Katana (Avidrone Aerospace) is flagged non-aerial and the flag is WRONG: it is a single-main-rotor helicopter drone that won the DARPA Lift Challenge in August 2026, 51 kg payload on a 13.3 kg airframe. Its own taxonomy contradicts itself - airframe \"Single-rotor / helicopter\" (web/high) beside a knowledge-seeded domain row. A catalogue-wide sweep for that contradiction (an airframe row with every domain row non-aerial) returns KATANA ALONE, which is what makes the other 28 credible. It stays UAV and step 3 of the SQL corrects its domain row.",
+    "held_with_reasons": {
+      "Katana": "flag disproved; it is aerial",
+      "Exail A27": "no source names the product anywhere; bare LLM seed; consistent with the 2026-11-01 hold",
+      "MMCM": "a programme (French SLAM-F/MMCM), not a product",
+      "rMCM": "the Belgian-Dutch mine-countermeasures vessel programme, not a product",
+      "XLUUV": "a class term for extra-large uncrewed undersea vehicles, not a product name",
+      "LUNA-2": "a LoRa IoT nanosatellite; non-aerial but neither maritime nor ground, so Other would be a placement decision",
+      "Ghost Shark": "identity conflated: Ghost Shark is ANDURIL's XL-AUV while the record is attributed to Albacore, whose actual vehicle Ghostfin is a separate record in the same batch. Both candidates are underwater, so the category is not the open question - the identity is.",
+      "Dire WOLF": "no company, no summary, one source, bare seed, and a name in the Hunter WOLF / WOLF-X cluster"
+    },
+    "urls": "Each of the 28 moves from /uav/<slug>/ to /other/<slug>/. Verified beforehand: every slug free in /other/ (28 of 28) and no namesake left behind in /uav/ (0 of 28). Old urls preserved by 28 slug_redirects rows with from_section=uav, the mechanism added in the Exail pass.",
+    "taxonomy_review": "Narrower than expected. NO specifications to preserve or strip: none of the eleven Exail products moved on 2026-11-01 carries any specs at all, and the only Exail product with UAV-prefixed spec fields is the IT180 STH-U, which is correctly a UAV. NO incompatible taxonomy values: the four with rows are all domain-correct (A-18M and K-Ster underwater, DriX and DriX O-16 surface) and seven carry no taxonomy. Just TWO stale notes - DriX and DriX O-16 still carry the instruction \"verify category\" on their domain rows. Total proposed taxonomy changes: 3 (Katana's wrong domain row plus the two notes).",
+    "also_noted": "Five already-Other products outside the Exail set carry the same stale instruction and are NOT in this batch: GhostFoiler, Pioneer, Sea Lancer, Sea Sabre, TEC800. Twelve of the 36 have no company linked, and in several cases the maker is already in the catalogue (Kongsberg Discovery, HII, Seasats, Uforce) so these are link-ups rather than new records.",
+    "dry_run_value": "The dry run caught a generated-SQL defect PREPARE would not have shown: a trailing comma sat inside an \"-- comment\", silently truncating the id in (...) list and commenting out its closing bracket.",
+    "decisions_for_nazar": [
+      "Apply the 28? SQL, rollback and manifest are ready and dry-run clean.",
+      "LUNA-2 (a satellite) and Dot (a DoorDash sidewalk delivery robot) - do they belong in this catalogue at all? If not the answer is removal, not recategorisation.",
+      "MMCM, rMCM, XLUUV are programmes and a class term - retire, convert or leave?",
+      "The Hunter WOLF / WOLF-X / Dire WOLF cluster and the Ghost Shark / Ghostfin conflation: deduplication and ownership, both out of scope here."
+    ]
   }
 }

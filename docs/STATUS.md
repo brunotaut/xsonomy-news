@@ -104,6 +104,61 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
 
 ## Resolved this session
 
+### 2026-11-01 — a retired company no longer captures article matches
+Commit `55a95f1`. Write-up: `research-agent/reports/2026-11-02-resolver-merger-policy.md`.
+
+- **Moving the aliases was not enough.** When ECA Group / Infotron was retired into Exail,
+  the draft record's own *name* stayed an exact key in the resolver's index, because
+  `resolve-entities.mjs` fetched companies with no publication-status filter and the exact
+  map was first-write-wins. An article mentioning "ECA Group / Infotron" relinked to a
+  draft nobody can open.
+- **Row order was deciding matches.** Proven directly: the same tag, the same old code,
+  two row orders — "Teledyne FLIR OEM" comes back as Teledyne FLIR or Teledyne FLIR
+  Defense depending on which row arrived first, and "EOS Defence Systems" landed on an
+  unrelated **Ukrainian draft called EOS**, which is the exact false-link family the test
+  file was written to document.
+- **The policy.** A company that is the source of a `merged_with` edge and is no longer
+  live resolves to its single live successor, or to nothing. Chains are followed, cycles
+  terminate, missing successors are safe. **Live** `merged_with` sources — EADS, BlueHalo,
+  AAI Corporation, WB Electronics — are deliberately untouched: five of the seven edges
+  have a live source, where the edge records history, not retirement. **Ordinary drafts
+  still resolve**; only merged-away ones are excluded.
+- **One rule everywhere else:** a company's own name beats another company's alias, the
+  closest name wins a shared key, and a genuine tie is refused rather than guessed.
+- **A crash, found on the way.** `matchProduct` called the confidence gate with an
+  undeclared variable, so **every exact product-name match threw a ReferenceError and
+  aborted the run**. Only the cache hid it — the error fired on new tags only.
+- **Comparison before activation** was an enumeration, not a sample: across all 2,539
+  company names and 351 aliases exactly four normalised keys are claimed by two companies,
+  and every other key maps to one. 4 of 23 tags in those families change, all four
+  corrections. No cached decision and no article link was rewritten.
+- Tests **35/35**, with 14 new merger cases. Live REST reads validated before activation.
+
+### 2026-11-01 — non-aerial product batch prepared, not applied
+`research-agent/reports/2026-11-02-non-aerial-product-batch.md` + manifest, SQL, rollback.
+**Nothing was written**: the whole transaction was run and rolled back, and the database
+re-checked afterwards.
+
+- **The candidate set is 36, not 19.** The earlier count came from matching one note
+  phrasing; defining it from the taxonomy's own `domain` facet finds 36, eleven of which
+  carry no such note at all. **28 ready, 8 held.**
+- **One flag was simply wrong.** Katana is a single-rotor helicopter that won DARPA's Lift
+  Challenge, and its own taxonomy contradicted itself — a web-sourced "Single-rotor /
+  helicopter" airframe beside a knowledge-seeded "Surface (USV)" domain. A catalogue-wide
+  sweep for that contradiction returns **Katana alone**, which is what makes the other 28
+  credible. It stays a UAV and the bad row is corrected instead.
+- **Held with reasons:** Katana; Exail A27 (no source names it); MMCM, rMCM and XLUUV
+  (programmes and a class term, not products); LUNA-2 (a satellite); Ghost Shark (the name
+  is Anduril's vehicle while the record is Albacore's, whose real product Ghostfin is a
+  separate record); Dire WOLF (part of the Hunter WOLF / WOLF-X cluster).
+- **The taxonomy review came out narrower than feared:** no specs to preserve or strip
+  anywhere, no incompatible taxonomy values, and exactly **two** stale notes. Three
+  taxonomy changes proposed in total.
+- URLs checked for all 28: every slug free in `/other/`, none left behind in `/uav/`.
+- The dry run earned its keep — it caught a generated-SQL defect where a trailing comma
+  sat inside a `--` comment, truncating the `id in (…)` list. `PREPARE` would not show that.
+
+
 ### 2026-11-01 — investor figures labelled by what they are, and coverage more than doubled
 Full write-up: `research-agent/reports/2026-11-02-investor-semantics-and-coverage.md`;
 per-investor ledger alongside it, superseding the 1 November one.
