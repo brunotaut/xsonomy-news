@@ -255,3 +255,33 @@ if unwanted**, nothing else depends on it.
 - Live schema, constraints and row state, Supabase project `uobidcahmrmfdmfbrtkt`, read-only, 2026-10-31
 - `scripts/lib/landscape.mjs` and `scripts/generate-supabase.mjs` (catalogue repo) — the membership gate, the slug derivation and the redirect-collision rule
 - `scripts/lib/resolve.mjs`, `scripts/resolve-entities.mjs` (this repo) — the alias index behaviour in §3
+
+---
+
+## Re-validation — 1 November 2026
+
+The package was re-checked against the live database **after** the European hub import and
+the investor portfolio reconciliation had both written to it. **Zero drift.** Every value
+in the manifest still matches the database, so the prepared SQL and rollback need no change.
+
+| Checked today | Result |
+|---|---|
+| Four cluster records — id, name, slug, country, status | identical to 31 Oct |
+| Exail | live, `excluded`, **0 sectors**, 18 products, description still **EMPTY** |
+| ECA Group / Infotron | live, `included`, 1 sector, 1 product, 134-char description |
+| IT180 STH-U `3b53c4ed…` | still ECA in `products.company_id` **and** `product_companies` (manufacturer) |
+| Sector ids | `157db255…`=`eco-navigation`, `e73703e1…`=`eco-components` |
+| `ECA Group` alias | on ECA only · `Infotron` on no company · no collision |
+| Redirects | only `eca-group → eca-group-infotron` and the pre-existing `gorge → exail` |
+| Relationships | only `1d4a81cd… → Exail` (`jv_partner`) — nothing to preserve or move |
+| Landscape gate, re-simulated on today's rows | **567 → 568 → 567** |
+
+**Nothing was written.** Every statement in this pass was a `SELECT`.
+
+One false alarm worth recording: my ad-hoc probe query used `alias_type` and
+`relationship_type` and errored. The **prepared SQL is correct** — both tables name the
+column `type`, and the package already writes
+`company_aliases (company_id, alias, type)` and
+`company_relationships (source_company_id, target_company_id, type)`.
+
+Status unchanged: **PREPARED, NOT APPLIED.** Awaiting ChatGPT's review, then Nazar's go-ahead.

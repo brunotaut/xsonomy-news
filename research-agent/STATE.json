@@ -962,7 +962,9 @@
       "Approve the proposed Exail description, or supply different wording?",
       "Approve the ECA europe-cuas-2026 exclusion, which was not in the original plan?",
       "Run the product corrections in the same release, or accept publishing Exail with 12 mis-categorised products on its landscape row?"
-    ]
+    ],
+    "revalidated_2026_11_01": "Re-ran the full read-only dry run on 2026-11-01, after the hub import and the investor portfolio reconciliation had both written to the database. ZERO DRIFT: all four cluster records hold the exact IDs, names, slugs, countries and statuses recorded on 2026-10-31; Exail still live/excluded with 0 sectors, 18 products and an EMPTY description; ECA still live/included with 1 sector, 1 product and a 134-character description; IT180 STH-U (3b53c4ed-299e-4621-9d1a-a93d0ba47354) still owned by ECA in products.company_id and in product_companies (role=manufacturer); both sector ids still resolve to eco-navigation and eco-components; 'ECA Group' is still an alias on ECA alone and 'Infotron' on no company; the only redirects in play are eca-group -> eca-group-infotron and the pre-existing gorge -> exail; the only relationship touching either record is 1d4a81cd -> Exail jv_partner. Landscape gate re-simulated on today's data: 567 now -> 568 with Exail admitted -> 567 with ECA retired. Nothing was written; every statement in this pass was a SELECT. Still PREPARED_NOT_APPLIED.",
+    "false_alarm_note": "During this re-validation my own ad-hoc probe used alias_type and relationship_type and failed. The PREPARED SQL is correct -- it writes company_aliases(company_id, alias, type) and company_relationships(source_company_id, target_company_id, type). Both tables name the column 'type'. The package needs no change."
   },
   "uav_hub_research_import": {
     "status": "IMPORTED_REVIEWED_EXPORTED_DEPLOYED_VERIFIED",
