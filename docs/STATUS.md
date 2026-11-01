@@ -822,3 +822,31 @@ conclusion stands; the arithmetic was too generous.
 **And the number that matters more than the flag count:** live UAV products whose every
 `domain` row is non-aerial is now **0**. That is the condition this work existed to fix,
 measured directly rather than through the flag text.
+
+## 1 November 2026 — the Tech Horizons €150M was typed as a target it never claimed
+
+**One row.** `fund_size_target` → **`fund_size_stated`**.
+
+The scope note already read "an announced launch size, not a reported close" — but the
+*type* said target, and that type renders on the live card as **"Fund size (announced
+target)"**. The prose and the published label disagreed, and the label was making the
+stronger claim.
+
+I rechecked the cited source instead of reasoning from the note. Vestbee says Presto
+Ventures **"has launched a €150 million Presto Tech Horizons fund"** — and uses **no target
+language anywhere**: no "target", no "aims to raise", no commitment, first-close or raised
+figure. A stated size. So the type was wrong, not the wording. It is not a close either —
+the manager publishes no fund size — so `fund_close_announced` would have been the opposite
+error.
+
+**Two things I did not change, both after checking rather than assuming.** `display_en`
+stays "€150M announced at launch", because it never claimed a target and there was nothing
+to align. And `scope_en` keeps `EUR150m` rather than `€150m`: the corpus convention is the
+symbol in `display_en` (33 of 41 target rows) and the **word** in `scope_en` (only 1 of 26
+stated rows uses the symbol), so "aligning" it would have broken the convention.
+
+Coverage did not move — 207 observations and 118 investors, unchanged, because one
+observation was re-typed rather than added or withdrawn. `fund_size_target` 41 → 40,
+`fund_size_stated` 26 → 27. No code change: `fund_size_stated` already has a label and a
+card slot, and the standing test that every storable type has exactly one of each still
+passes. The complete before-image and reversal SQL are in the closeout report's addendum.

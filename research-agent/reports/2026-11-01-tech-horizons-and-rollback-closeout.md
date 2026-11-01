@@ -306,3 +306,72 @@ metrics, and of R-G.AI's and Defender Ventures' notes. Whether `Kara Dag`'s
 guards and dependency checks; passes A and B do not, and nine specific reversals across all
 five are marked unavailable. A partial historical manifest is what exists, and that is what
 this report says exists.
+
+---
+
+## Addendum, 1 November 2026 — the €150M was typed as a target it never claimed to be
+
+**One row changed.** `6586f235-e556-473c-8592-62465887ae82`,
+`metric_type` `fund_size_target` → **`fund_size_stated`**.
+
+The scope note already described the figure correctly — "an announced launch size, not a
+reported close" — but the **type** said `fund_size_target`, and on the live card that type
+renders as the caption **"Fund size (announced target)"**. So the prose and the published
+label disagreed, and the label was the one making the stronger claim.
+
+**I rechecked the cited source rather than reasoning from the note.**
+`vestbee.com/insights/articles/presto-ventures-launches-a-150-m-fund` says:
+
+> "Czech Presto Ventures launches a €150M Presto Tech Horizons fund to invest in defence
+> tech" — headline
+>
+> "Prague-based venture capital firm Presto Ventures has launched a €150 million Presto Tech
+> Horizons fund in collaboration with Czechoslovak Group (CSG)" — lead
+
+**No target language anywhere in it**: no "target", no "aims to raise", no "plans to raise",
+and no commitment, first-close or raised figure. It reports a fund *launched at* €150M.
+That is a stated size. `fund_size_target` asserted an intention the source does not
+attribute to anyone, so the type is corrected rather than the wording.
+
+It is still not a close, either — the manager's own site publishes no fund size — so
+`fund_close_announced` would have been the opposite error. `verification_status` stays
+`reported`: a trade outlet reporting a launch, not the manager confirming a number.
+
+### What was deliberately not changed
+
+- **`display_en` stays `€150M announced at launch`.** It never claimed a target, so there
+  was nothing to align; "announced at launch" is exactly what the source supports.
+- **`scope_en` keeps `EUR150m`, not `€150m`.** I checked the corpus convention before
+  touching it: `display_en` uses the symbol (33 of 41 target rows, 21 of 26 stated rows)
+  while `scope_en` uses the word (only 1 of 26 stated rows uses the symbol). The existing
+  text was already right, and "aligning" it would have broken the convention.
+- **Amount, currency, bound, vehicle, attribution, `is_current` and the source URL**: all
+  untouched.
+- **No research was rerun and no rollback work was touched.**
+
+### Reversal
+
+```sql
+update investor_financial_metrics
+   set metric_type = 'fund_size_target',
+       scope_en = 'EUR150m announced at the fund''s launch in June 2024 by Presto Ventures with Czechoslovak Group (CSG) as industrial partner and anchor investor, for defence, security and deep tech across NATO countries and their allies. An announced launch size, not a reported close: the manager''s own site states no fund size. Announced under the fund''s former name, Presto Tech Horizons; the Luxembourg vehicle Tech Horizons SCSp is the same fund, matched on RCS Luxembourg B282214.'
+ where id = '6586f235-e556-473c-8592-62465887ae82'
+   and metric_type = 'fund_size_stated';          -- expected current value; expect 1 row
+```
+
+That is the complete before-image. `investor_financial_metrics` carries no trigger on
+`updated_at`, so nothing else moves.
+
+### Counts
+
+| | Before | After |
+|---|---:|---:|
+| Current observations | 207 | **207** |
+| Landscape investors | 118 | **118** |
+| `fund_size_target`, current | 41 | **40** |
+| `fund_size_stated`, current | 26 | **27** |
+
+No coverage moved — one observation was re-typed, not added or withdrawn. No code change
+was needed: `fund_size_stated` already carries the label "Fund size (stated)" and sits in
+`FUND_METRICS`, so it has a card slot. The standing test that every type the database can
+store has a label and exactly one slot still passes.
