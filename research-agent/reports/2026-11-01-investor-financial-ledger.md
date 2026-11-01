@@ -1,14 +1,14 @@
 # Investor financial-coverage ledger — 1 November 2026
 
 Every one of the **118** directory records appears here exactly once, with a status that
-says what was actually done. The point of the ledger is that the gap is measurable: 24
-investors carry figures, 18 were researched and produced nothing usable, and 76 have not
+says what was actually done. The point of the ledger is that the gap is measurable: 23
+investors carry figures, 19 were researched and produced nothing usable, and 76 have not
 been researched yet.
 
 | Status | Records | Meaning |
 |---|---:|---|
-| **found** | **24** | At least one typed, sourced observation is stored |
-| **not found** | **18** | Researched this pass; no usable figure in the sources reviewed |
+| **found** | **23** | At least one typed, sourced observation is stored |
+| **not found** | **19** | Researched this pass; no usable figure in the sources reviewed |
 | **not researched** | **76** | Not yet researched. Not the same as "nothing to find" |
 | | **118** | |
 
@@ -19,7 +19,7 @@ figure's own scope rather than as a status.
 Columns: **UA** = Ukraine-linked · **Rel** = stored portfolio relationships · **Uns** =
 unresolved holdings · **Pos** = fund positions · **Met** = current financial observations.
 
-## Found (24)
+## Found (23)
 
 | Investor | UA | Evidence | Rel | Uns | Pos | Met |
 |---|---|---|---:|---:|---:|---:|
@@ -35,7 +35,6 @@ unresolved holdings · **Pos** = fund positions · **Met** = current financial o
 | NATO Innovation Fund | yes | deal | 2 | 0 | 3 | 2 |
 | Shield Capital | yes | watchlist | 0 | 0 | 0 | 3 |
 | UA1 VC | yes | watchlist | 0 | 0 | 0 | 1 |
-| Varangians | yes | watchlist | 0 | 0 | 0 | 1 |
 | Vsquared Ventures | yes | adjacent | 0 | 0 | 0 | 2 |
 | Bpifrance | | mandate | 2 | 1 | 0 | 3 |
 | BSV Ventures | | deal | 1 | 0 | 0 | 1 |
@@ -48,13 +47,14 @@ unresolved holdings · **Pos** = fund positions · **Met** = current financial o
 | Sienna Investment Managers | | deal | 2 | 0 | 0 | 2 |
 | Sunfish Partners | | deal | 1 | 1 | 0 | 1 |
 
-**14 of the 26 Ukraine-linked records** now carry figures, against 7 of 26 before.
+**13 of the 26 Ukraine-linked records** now carry figures, against 7 of 26 before.
 
-## Not found (18) — researched, nothing usable
+## Not found (19) — researched, nothing usable
 
 | Investor | UA | What was checked and why nothing was stored |
 |---|---|---|
 | Freedom Fund VC | yes | Only aggregator profiles (about 30 investments, $100–200K cheques). No official page or announcement found. |
+| Varangians | yes | A €9.1M (SEK 100M) close was reported in June 2026 and **the only source for it now returns 404**. The figure was stored, then removed when every source URL was link-checked. Reachable coverage gives only a *plan* to invest €10M and describes the firm as "structured as an investment company – not a fund", which also makes a "close" the wrong frame. |
 | ZAS Ventures | yes | A $15M raise appears in third-party headlines, but the article body covers CEE seed investing, not a defence fund. No defence fund size is established. |
 | Airbus Ventures / AV | | Portfolio page read for the evidence audit; no fund size or AUM stated. |
 | Change Ventures | | Portfolio page read for the evidence audit; it carries no fund figure. |
@@ -100,13 +100,13 @@ The public programmes in that list (EIF / Defence Equity Facility, NSSIF, SFPIM 
 SNCI, HBOR, SecFund / BOM, DOVOS, Invest-NL, Investinor) are the most likely to have
 published budgets, and are the obvious next tranche after the Ukraine-linked ten.
 
-## What the 50 observations are
+## What the 49 observations are
 
 | Type | Rows | Example |
 |---|---:|---|
 | `fund_size_target` | 10 | DTCP €500M defence fund target; UA1 VC's $50M announced raise |
 | `initial_investment_range` | 9 | Iron Wolf €0.5–5M; DTCP's ~€20M *average*, flagged approximate |
-| `fund_close_final` | 7 | Shield Capital $186M; PSV Hafnium €60M; Varangians €9.1M |
+| `fund_close_final` | 6 | Shield Capital $186M; PSV Hafnium €60M; MITS' more-than-$20M |
 | `investment_count` | 6 | Brave1's 1,000+ grants; MITS' 11; Bpifrance's 6 deals in 2018 |
 | `manager_aum` | 5 | DTCP €4.5B; OTB over €323M; Seraphim's £421.3M trust net assets |
 | `portfolio_company_count` | 4 | Coinvest 43; PSV Hafnium 9; Shield 30+ |
@@ -117,6 +117,14 @@ published budgets, and are the obvious next tranche after the Ukraine-linked ten
 
 Two types remain unused — `fund_close_interim` and `committed_capital` — because no source
 read this pass used that language.
+
+### One figure was stored and then withdrawn
+
+Every one of the 65 distinct source URLs written this pass was link-checked. All but one
+resolve (eight return 403 to a command-line client but serve a browser normally). The
+exception was the only source for **Varangians'** €9.1M close, which returns a genuine 404,
+so that observation was deleted rather than published with a dead citation. It is the
+reason this ledger says 23 and not 24.
 
 ### Where the ambiguity is written down rather than resolved
 

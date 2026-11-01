@@ -347,12 +347,16 @@ counter-UAS directory. **None has a taxonomy or candidate row, so none can enter
 including URC, whose identity is evidenced as URC Systems but whose transaction is a pending
 acquisition by a different group vehicle, and which **needs Nazar's decision**.
 
-**Financial coverage 7 investors → 24**, 50 observations across 10 of the 12 metric types, and
-**14 of the 26 Ukraine-linked records** now carry figures. The ledger lists all 118 records in
-three honest states: 24 found, 18 researched with nothing usable, **76 not yet researched**. Two
+**Financial coverage 7 investors → 23**, 49 observations across 10 of the 12 metric types, and
+**13 of the 26 Ukraine-linked records** now carry figures. The ledger lists all 118 records in
+three honest states: 23 found, 19 researched with nothing usable, **76 not yet researched**. Two
 figures were deliberately not stored — Coinvest's €44.6m, which it describes as co-invested with
 partners rather than its own deployed capital, and D3's "$50m", which is a combined total for two
 funds.
+
+**Every new source URL was link-checked**, and the one that did not resolve was deleted rather
+than published: Varangians' €9.1m close had a single source, which now returns 404. That is why
+the count is 23 and not 24.
 
 **No probe rows in production this time.** The previous pass inserted a test company and a
 scheduled deploy picked it up; this pass used fixtures and proved idempotency by checking that

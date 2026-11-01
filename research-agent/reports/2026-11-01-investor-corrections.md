@@ -12,9 +12,9 @@
 | Unresolved holdings | 26 | **13** |
 | Fund positions | — | **9** |
 | Retired relationships (kept for audit) | — | **2** |
-| Financial observations | 14 | **50** |
-| Investors with financial figures | 7 | **24** |
-| Ukraine-linked investors with figures | 7 | **14** |
+| Financial observations | 14 | **49** |
+| Investors with financial figures | 7 | **23** |
+| Ukraine-linked investors with figures | 7 | **13** |
 | Landscape | 567 | **567** |
 
 Every one of the original 87 edges is still accounted for: 74 live relationships + 13
@@ -191,16 +191,16 @@ listing *cannot* enter it. Verified: **567 before and after**.
 | **JISR** | Rockaway Alpha Defense | Withdrawn from the portfolio this pass (above). |
 | **Wayren** · **Vermeer** · **VRgineers** ×2 | Depo, Rockaway Ventures, N1, Purple Ventures | The Czech government investors directory has refused connections across **two** passes. VRgineers is a known Czech VR-headset maker; the relationship is what is unevidenced. |
 
-## 5. Financial coverage: 7 investors → 24
+## 5. Financial coverage: 7 investors → 23
 
-**50 current observations across 24 investors**, up from 14 across 7, using **10 of the 12
+**49 current observations across 23 investors**, up from 14 across 7, using **10 of the 12
 metric types**. The per-investor ledger is a separate file, because the gap matters as much
-as the coverage: 24 found, **18 researched and nothing usable**, **76 not yet researched**.
+as the coverage: 23 found, **19 researched and nothing usable**, **76 not yet researched**.
 Those three states are deliberately distinct.
 
-**14 of the 26 Ukraine-linked records** now carry figures, against 7 before: Brave1,
+**13 of the 26 Ukraine-linked records** now carry figures, against 7 before: Brave1,
 Coinvest Capital, D3, Darkstar, Expeditions, Flyer One, Green Flag, Keen, MITS Capital,
-NATO Innovation Fund, Shield Capital, UA1 VC, Varangians, Vsquared.
+NATO Innovation Fund, Shield Capital, UA1 VC, Vsquared.
 
 ### The distinctions the vocabulary exists for
 
@@ -215,6 +215,10 @@ NATO Innovation Fund, Shield Capital, UA1 VC, Varangians, Vsquared.
   backer calls it an initial close. The ambiguity is preserved rather than resolved.
 - **Brave1** is a grant programme: **₴6.2 billion** disbursed since 2023 and **1,000+
   grants**, both labelled as grants to developers rather than investments in companies.
+- **Varangians'** €9.1M close was stored and then **withdrawn**: the only source for it
+  returns 404, and reachable coverage describes the firm as an investment company rather
+  than a closed-end fund, which makes "close" the wrong frame as well. It is in the ledger
+  as *not found*, with the reasoning.
 - **Shield Capital** records both sides of an oversubscription: **$186M final close**
   against a **$120M target**.
 - **DTCP's** "~€20M average investment" is stored as an `initial_investment_range` with
@@ -265,6 +269,7 @@ it states none.
 | Unpublished profiles exposed | **0** — the 7 drafts get `published: false` and `url: null`; no page is generated for them |
 | Retired rows reaching the export | **0** — the projection filters `retired_at is null` |
 | Fund positions appearing as holdings | **0** — separate array, separate count, separate caveat |
+| Source URLs that do not resolve | **1 of 65**, found by link-checking every new source and deleted rather than published |
 | Test rows written to production | **0** (see below) |
 | Tests | **59/59** (41 → 55 → 59; 4 new) |
 | Idempotency | every replay guard verified closed, read-only |
@@ -298,8 +303,10 @@ writing anything.
    records with no verified web presence, so identity confirmation precedes any figure.
    The public programmes (EIF, NSSIF, SFPIM, SNCI, HBOR, SecFund/BOM, DOVOS, Invest-NL,
    Investinor) are the most likely to have published budgets.
-2. **18 researched with nothing usable** — not the same as nothing existing. Gungnir
+2. **19 researched with nothing usable** — not the same as nothing existing. Gungnir
    Capital is the clearest case: it is mid-raise and third-party figures conflict.
+   Varangians is the other kind: the figure exists in reporting, but its only source is
+   gone.
 3. **URC → URC Systems needs Nazar's decision.** Identity evidenced, transaction pending
    under competition review, and by a different group vehicle than the record we hold.
 4. **The Czech government investors directory is still unreachable** (connection refused,
