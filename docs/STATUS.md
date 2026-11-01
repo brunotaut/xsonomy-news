@@ -103,6 +103,47 @@ data was exported read-only from Supabase and fed to `buildTrends` / `rankTopics
 directly. Regenerating them through `digest.mjs` should reproduce them.
 
 ## Resolved this session
+
+### 2026-11-01 — Exail admitted, ECA Group / Infotron merged into it, 11 product categories corrected
+Nazar authorised three things: the reviewed admission and merge, the Exail description, and
+**category-only** corrections for the products whose maritime identity is evidenced. All three
+applied in one guarded 17-step transaction and deployed. Full write-up:
+`research-agent/reports/2026-11-01-exail-merge-applied.md`; SQL and rollback alongside it.
+
+- **Exail is in the landscape** as a UAV-*ecosystem* supplier on the Navigation / GNSS limb — two
+  `company_sectors` rows (`eco-navigation` primary + `eco-components`, both with sources), not as
+  an aerial UAV OEM, and the screening note says so explicitly so nobody later reads it as an
+  aircraft claim. It mirrors SBG Systems, its French competitor, which was already included.
+- **ECA Group / Infotron is retired, not deleted** — `publication_status` → `draft`, both
+  landscape rows → `excluded` with explanatory notes, and a `merged_with` lineage row records the
+  2022 merger. Its article link and screening history survive. The IT180 STH-U moved to Exail in
+  both places ownership is stored, keeping all 14 of its taxonomy rows and its URL.
+- **Landscape stays 567** — +1 Exail, −1 ECA. That is a coincidence of two independent decisions,
+  not a target; both were authorised, so both landed. Live companies 2,458 → 2,457.
+- **Exail had no description**, so the merge would have swapped a described member for a blank
+  one. Now 335 characters.
+- **11 of 12 mis-categorised products corrected** UAV → Other. Category only: no renames, no
+  retirements, no deduplication, no ownership or publication changes, `product_taxonomy`
+  untouched. Held back and reported: **Exail A27** (no source anywhere names it, so its identity
+  cannot be established) and **DORCUS** (not an Exail product at all — an ownership question,
+  explicitly pending). The three bare designations H-8 / H-9 / O-16 *were* corrected, because
+  every candidate identity is an uncrewed surface vessel — the ambiguity is about which family
+  and whether they are duplicates, neither of which touches the category.
+- **Those 11 pages changed URL** (`/uav/drix-h-8/` → `/other/drix-h-8/`), which needed a schema
+  and generator change to keep the old URLs alive — see the migration above. Collisions were
+  checked in both directions across all 3,522 live products before applying.
+- **A dry run caught what `PREPARE` cannot.** Four triggers exist on these tables that the
+  31 October validation never saw: `set_updated_at` on `companies` and `products` (so a rollback
+  cannot restore the original timestamps — the old rollback file claimed it could, wrongly), and
+  two on `company_sectors` that can silently drop or delete sector rows. Neither fired, but
+  either could have left the landscape verdict without the taxonomy that makes it count.
+- Catalogue tests **60/60**, including a new one for the cross-section redirect. Investors
+  (118 / 26 Ukraine-linked), hubs (37 + 1) and the 37 research & academic organisations are
+  untouched and verified live.
+- **Flagged, not fixed:** 101 live landscape companies still have an empty description; and the
+  same "filed under category UAV but is not an aerial system" taxonomy flag sits on 19 further
+  products outside Exail that are still categorised UAV. Both deserve their own pass.
+
 - **Is `resolve-entities.mjs` scheduled?** Yes — `ingest-and-deploy.yml:38` runs `npm run resolve`
   in the daily job. (Old task #3 is done; removed from the list.)
 - **`subscribers` table or `recipients.json`?** Both. `digest.mjs` loads `recipients.json` as the
@@ -193,6 +234,17 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
   `investor_landscape_projection_with_fund_positions_v2`. The new columns and table are mirrored
   in `db/schema.sql`; the rest of the investor staging schema, applied in the 2026-10-30/31
   passes, is still not. Rollback: `research-agent/imports/README-investor-corrections.md`.
+
+- 2026-11-01 — `slug_redirects_from_section`. Adds `slug_redirects.from_section` (nullable) and
+  relaxes the not-self CHECK to `from_slug <> to_slug or from_section is not null`. A product
+  page lives at `/<section>/<slug>/`, where the section comes from `products.category` and the
+  slug from the product *name* — so correcting a category moves the url without changing the
+  slug, and the redirect table could not express that at all: the catalogue generator wrote every
+  stub into the section of its **target**, so a same-slug stub landed on top of the live page it
+  pointed at. NULL keeps the old behaviour, so all 53 pre-existing rows are unaffected. Mirrored
+  idempotently in `db/schema.sql`. Rollback:
+  `research-agent/reports/2026-11-01-exail-merge-rollback.sql` (header explains why the column
+  itself is deliberately not reverted).
 
 ## Decisions log
 - 2026-09-05 — Keep two repos (Pages constraint). All DB writes stay in xsonomy-news.

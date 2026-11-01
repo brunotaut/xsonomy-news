@@ -916,7 +916,7 @@
     "new_defect_found": "products 'MAVERICK Fortress-3D' (Silentium Defence): Radar · Architecture holds a PUBLISHED unresolved analyst note -- \"Note: 'MAVERICK/Fortress-3D' is a Silentium Defence passive radar; DeTect's drone radar is HARRIER S-band solid-state Doppler\" -- and Radar · Scan type 'Rotating (mechanical)' contradicts Sensor modality 'SDR PCL 3D' (passive coherent location has no rotating transmitter; 'Passive' is an existing value in that field). Same class of two-vendors-one-row confusion as Spotter/Robin, between Silentium Defence and DeTect. Needs a re-screen, not a tidy-up. Not touched."
   },
   "exail_merge_package": {
-    "status": "PREPARED_NOT_APPLIED",
+    "status": "APPLIED_2026-11-01",
     "date": "2026-10-31",
     "authorised_by": "Nazar, 2026-10-31: 'This instruction authorises preparation and read-only validation, not execution.' Requires ChatGPT review then Nazar's approval before execution.",
     "database_written": "NO. Verified unchanged at the end of validation: live companies 2,447, Exail sectors 0, Exail excluded, ECA live and included, IT180 still owned by ECA, no new redirect, no new relationship.",
@@ -964,7 +964,9 @@
       "Run the product corrections in the same release, or accept publishing Exail with 12 mis-categorised products on its landscape row?"
     ],
     "revalidated_2026_11_01": "Re-ran the full read-only dry run on 2026-11-01, after the hub import and the investor portfolio reconciliation had both written to the database. ZERO DRIFT: all four cluster records hold the exact IDs, names, slugs, countries and statuses recorded on 2026-10-31; Exail still live/excluded with 0 sectors, 18 products and an EMPTY description; ECA still live/included with 1 sector, 1 product and a 134-character description; IT180 STH-U (3b53c4ed-299e-4621-9d1a-a93d0ba47354) still owned by ECA in products.company_id and in product_companies (role=manufacturer); both sector ids still resolve to eco-navigation and eco-components; 'ECA Group' is still an alias on ECA alone and 'Infotron' on no company; the only redirects in play are eca-group -> eca-group-infotron and the pre-existing gorge -> exail; the only relationship touching either record is 1d4a81cd -> Exail jv_partner. Landscape gate re-simulated on today's data: 567 now -> 568 with Exail admitted -> 567 with ECA retired. Nothing was written; every statement in this pass was a SELECT. Still PREPARED_NOT_APPLIED.",
-    "false_alarm_note": "During this re-validation my own ad-hoc probe used alias_type and relationship_type and failed. The PREPARED SQL is correct -- it writes company_aliases(company_id, alias, type) and company_relationships(source_company_id, target_company_id, type). Both tables name the column 'type'. The package needs no change."
+    "false_alarm_note": "During this re-validation my own ad-hoc probe used alias_type and relationship_type and failed. The PREPARED SQL is correct -- it writes company_aliases(company_id, alias, type) and company_relationships(source_company_id, target_company_id, type). Both tables name the column 'type'. The package needs no change.",
+    "superseded_by": "exail_merge_applied",
+    "rollback_superseded": "research-agent/reports/2026-10-31-exail-merge-rollback.sql covers only steps 1-14. Use research-agent/reports/2026-11-01-exail-merge-rollback.sql."
   },
   "uav_hub_research_import": {
     "status": "IMPORTED_REVIEWED_EXPORTED_DEPLOYED_VERIFIED",
@@ -1214,5 +1216,56 @@
       "ad08ba9",
       "d2b7f16"
     ]
+  },
+  "exail_merge_applied": {
+    "status": "APPLIED_AND_DEPLOYED",
+    "date": "2026-11-01",
+    "authorised_by": "Nazar, 2026-11-01: the reviewed admission and merge including the merged_with lineage row and retirement of ECA's duplicate entries in both landscape editions, preserving historical notes; the Exail description proposed in section 8.1; and category-only corrections for products whose maritime/non-aerial identity is supported by evidence, with 'do not assume all 12 flagged records are resolved'.",
+    "report": "research-agent/reports/2026-11-01-exail-merge-applied.md",
+    "sql": "research-agent/reports/2026-11-01-exail-merge-applied.sql",
+    "rollback": "research-agent/reports/2026-11-01-exail-merge-rollback.sql",
+    "transaction": "One atomic transaction, 17 steps. Steps 1-14 are the 2026-10-31 package verbatim. Step 15 sets the Exail description (335 chars, from section 8.1). Step 16 corrects 11 product categories UAV -> Other. Step 17 adds 11 product redirects with from_section=uav so the old /uav/ urls keep working.",
+    "migration": "slug_redirects_from_section - adds slug_redirects.from_section (nullable) and relaxes the not-self CHECK to (from_slug <> to_slug or from_section is not null). Mirrored idempotently in db/schema.sql. Needed because a product page lives at /<section>/<slug>/ and correcting a category moves the url without changing the slug, which the redirect table could not express.",
+    "catalogue_commits": "c4b3555 (generator writes a product stub into from_section when set, plus a test for the cross-section case)",
+    "counts_before_after": {
+      "landscape_europe_uav_cuas_2026": "567 -> 567 (+1 Exail admitted, -1 ECA retired)",
+      "live_companies": "2458 -> 2457",
+      "suppliers": "2421 -> 2420",
+      "research_and_academic_organisations": "37 -> 37",
+      "live_products": "3522 -> 3522",
+      "products_categorised_uav": "1455 -> 1444",
+      "products_categorised_other": "371 -> 382",
+      "exail_products": "18 -> 19 (2 UAV, 13 Other, 2 Sensor, 1 Software, 1 Counter-UAS)",
+      "exail_description": "empty -> 335 chars",
+      "slug_redirects": "53 -> 65",
+      "investor_records": "118 -> 118 (untouched)",
+      "hub_records": "38 -> 38 (untouched)"
+    },
+    "landscape_candidate_rows_unchanged": "included 567, excluded 266, needs_review 140, candidate 4, total 977 - identical before and after, because ECA moved included->excluded and Exail moved excluded->included.",
+    "category_corrections_applied": "11 of 12: A-18M 1de976af, DriX c87b1319, DriX H-8 b9f83dc2, DriX O-16 2dbd66ec, H-8 e38073ce, H-9 9511089c, Inspector 3e1dcc70, K-Ster 6efaadb9, Neptis b9dbf15b, O-16 0aa9487c, Oryx 8b1f6503. Category only - no rename, no retirement, no deduplication, no ownership or publication change, product_taxonomy untouched.",
+    "category_corrections_held": {
+      "exail_a27": "3515b298-4a7d-4cff-a1f4-ec6a7bf24726 - no source anywhere names this product, so its identity and therefore its category cannot be established. Still live and categorised UAV. This is why Exail shows 2 UAV products, not 1.",
+      "dorcus": "17f660ef-102d-4998-82b6-88174c68af1b - categorised Counter-UAS and not an Exail product (SOFRAME / MAC JEE vehicle in which Exail supplies navigation). An ownership question, explicitly left pending."
+    },
+    "ambiguity_resolved_without_overreach": "H-8, H-9 and O-16 are bare designations, genuinely ambiguous between the DriX and Oryx families and almost certainly prefix-stripped duplicates. Both of those questions are untouched. But every candidate identity is an uncrewed SURFACE vessel, so the non-aerial fact is settled whichever family they belong to - the ambiguity bears on the name and the duplicate question, not the category. Same reasoning for the DriX and Oryx family records: maritime either way, so recategorised and kept rather than retired.",
+    "triggers_found_that_prepare_cannot_exercise": [
+      "companies and products each carry BEFORE UPDATE set_updated_at, which overwrites updated_at with now(). Consequence: a rollback cannot restore the original timestamps. The 2026-10-31 rollback file claimed byte-identical restoration including timestamps; that claim was wrong and the new rollback header says so.",
+      "company_sectors carries BEFORE INSERT company_sectors_skip_derivable (silently drops a sector row implied by a more specific one) and AFTER INSERT company_sectors_prune_implied (deletes an implied ancestor row). Either could have swallowed one of the two admission rows. Neither fired: the skip function returns early when source_urls is non-empty, Exail had no existing rows to prune, and the two new rows are siblings. Dry run confirmed exail_sectors = 2."
+    ],
+    "validation": "Full-transaction dry run (begin ... rollback) returned all 23 verification values exactly as predicted, and the database was confirmed unchanged afterwards. The applied transaction returned the same 23 values. Slug collisions checked in both directions across all 3,522 live products before applying: each of the 11 slugs unique within /uav/ (no namesake renumbered on departure) and free within /other/ (none landed on a -2 suffix). Catalogue tests 60/60, including a new cross-section redirect test. Schema mirror replayed against the live database with no change.",
+    "live_verification": "xsonomy.com rebuilt 2026-11-01T16:26:23Z. Landscape 567 with Exail present (domains [uav], sectors eco-navigation + eco-components under uav-ecosystem, 335-char description, 19 products) and zero ECA rows. /companies/exail/ 200. /companies/eca-group/ and /companies/eca-group-infotron/ both canonical to /companies/exail/. /uav/it180-sth-u/ 200. All 11 moved products: /other/<slug>/ 200 as a real page, /uav/<slug>/ 200 as a stub canonical to the new url. uav.json 1444, other.json 382. Investors 118/26 Ukraine-linked and hubs 37+1 unchanged.",
+    "pending": [
+      "iXblue e99326a6 - still needs_review, 0 sectors, owns Qinertia (Exail own GNSS-INS software). The database now records that ECA merged into Exail while iXblue did not.",
+      "Exail Robotics (BE) ffa0380d - excluded on inherited maritime grounds, never re-tested against the widened criteria.",
+      "Parent-company restructuring - Exail now holds 6 aliases including Exail Technologies, Gorge, Gorge SA and Groupe Gorge, with a gorge -> exail redirect. More right, not right.",
+      "Thales's 35.51% stake in Exail Technologies (July 2026, heading to full ownership by 2028) still unrecorded.",
+      "DORCUS ownership; Exail A27 identity or unpublication.",
+      "H-8 / H-9 / O-16 duplicate resolution and the DriX / Oryx family records.",
+      "product_taxonomy cleanup on the 11 corrected records - the stale \"verify category\" notes on DriX and DriX O-16 now describe a fixed problem, and UAV-flavoured taxonomy fields still render on the new /other/ pages.",
+      "The same \"filed under category UAV but is not an aerial system\" taxonomy flag sits on 24 products, only 3 of them Exail's. 19 others are still categorised UAV (Saildrone Explorer and Spectre, MAGURA V5, Sea Baby, REMUS 100/130, Hugin, Gavia, XLUUV, WOLF-X, Hunter WOLF, Ghost Shark and more); 3 were already moved to Other by an earlier pass. The obvious next batch, out of scope here.",
+      "resolve-entities.mjs does not filter drafts, so the retired name \"ECA Group / Infotron\" remains an exact-match key in buildCompanyIndex. Moving the alias fixes the likely case; the general fix belongs in this repo.",
+      "2026-10-31-composite-merges-and-reassignments.sql still uses source / target and will fail as written."
+    ],
+    "flagged_separately": "101 live included landscape companies have an empty description, so they render with a blank description on the public map. Exail was one of them until today. Not caused by this change and not in scope; worth its own pass. STATE live_landscape.backlog_with_no_description still reads 0 from an earlier, narrower measurement."
   }
 }

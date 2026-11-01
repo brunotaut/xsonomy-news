@@ -786,5 +786,37 @@ create index if not exists investor_fund_positions_investor_idx
 create index if not exists investor_fund_positions_target_idx
   on public.investor_fund_positions (target_investor_research_id);
 
+-- ---------------------------------------------------------------------------
+-- slug_redirects.from_section  (migration slug_redirects_from_section, 2026-11-01)
+--
+-- A product's public url is /<section>/<slug>/, where the section comes from
+-- products.category and the slug from the product name. Correcting a category
+-- therefore moves the url even though the slug does not change. The redirect table
+-- could not express that: the catalogue generator wrote every stub into the section
+-- of its TARGET, so a same-slug redirect landed on top of the live page it pointed
+-- at, and CHECK (from_slug <> to_slug) rejected the row outright.
+--
+-- from_section records the section the OLD url lived in. NULL keeps the previous
+-- behaviour (stub written beside its target), so every pre-existing row is
+-- unaffected, and the relaxed not-self CHECK is strictly more permissive.
+--
+-- NOTE: the slug_redirects table itself is still not mirrored here, nor is most of
+-- the companies / products / landscape schema (see STATUS task #1). Only this
+-- migration is recorded, idempotently, so it is not lost.
+-- ---------------------------------------------------------------------------
+alter table if exists public.slug_redirects
+  add column if not exists from_section text;
+
+do $$
+begin
+  if to_regclass('public.slug_redirects') is not null then
+    comment on column public.slug_redirects.from_section is
+      'Section the old url lived under (uav|cuas|sensors|software|other|companies). Set only when a redirect crosses sections - a product whose category was corrected. NULL means the stub is written beside its target, which is the behaviour for every ordinary merged-slug redirect.';
+    alter table public.slug_redirects drop constraint if exists slug_redirects_not_self;
+    alter table public.slug_redirects add constraint slug_redirects_not_self
+      check (from_slug <> to_slug or from_section is not null);
+  end if;
+end $$;
+
 -- Make sure PostgREST picks up the new table/columns immediately.
 notify pgrst, 'reload schema';
