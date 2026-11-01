@@ -1,6 +1,12 @@
 # Non-aerial products, batch 2 — review. PREPARED, NOT APPLIED
 
-**Date:** 2026-11-01 · **Status:** PREPARED — nothing applied · **Next actor:** Nazar
+**Date:** 2026-11-01 · **Status:** SUPERSEDED — see below · **Next actor:** —
+
+> **Superseded 2026-11-01.** The authorised subset of this review was applied: see
+> [the applied report](2026-11-01-non-aerial-product-batch-2-applied.md). TX A was **not**
+> run as written (LUNA-2 excluded) and TX B was **not** run at all — MMCM, rMCM and XLUUV
+> went to [a retirement proposal](2026-11-01-mmcm-rmcm-xluuv-retirement-proposal.md)
+> instead. This file is kept as the research record, not as an execution plan.
 
 Deliverables: [manifest](2026-11-01-non-aerial-product-batch-2-manifest.csv) ·
 [SQL](2026-11-01-non-aerial-product-batch-2.sql) ·
@@ -225,8 +231,11 @@ its original `option_id`, `source`, `confidence` and note.
 
 **One limit stands.** `products` carries a `BEFORE UPDATE set_updated_at` trigger, so a
 reversal cannot restore the original `updated_at` on the six moved rows. `product_taxonomy`
-has no surrogate key and no timestamp at all, so its statements are keyed on
-`(product_id, option_id)` and guarded by expected current values instead.
+has no surrogate key and no `updated_at`, so its statements are keyed on
+`(product_id, option_id)` and guarded by expected current values instead. (Correction,
+made when the authorised subset was applied: it does carry a `created_at`, set by a column
+default rather than a trigger — so a deleted taxonomy row's creation time *can* be restored
+on re-insert, and the retirement rollback now does.)
 
 ## 8. Decisions for Nazar
 

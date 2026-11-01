@@ -680,3 +680,68 @@ WB Electronics — corporate history, not retirements); ECA Group / Infotron, JI
 Dag Technologies each resolve to their single live successor; `DefSecIntel · Origin
 Robotics` has **two** live successors, so it owns no index key at all. That is the general
 rule working, rather than the ECA case having been special-cased.
+
+## 1 November 2026 — non-aerial batch 2: the authorised subset applied
+
+**43 rows changed, three transactions, deployed and verified live.** The authorised subset
+only: the prepared TX A was **not** run as written (LUNA-2 excluded, so a two-record TX A′
+replaced it) and TX B was **not** run at all. Report:
+`research-agent/reports/2026-11-01-non-aerial-product-batch-2-applied.md`.
+
+**Order mattered, and it was the opposite of the obvious one.** TX T's first statement
+rewrites every note containing `not an aerial system` on a record no longer categorised
+UAV. Ghost Shark carries exactly that note and was being moved out of UAV — so had the
+category fix run first, Ghost Shark would have been swept into the generic rewrite and lost
+the note written for it. TX T ran first, while Ghost Shark was still out of its reach.
+
+**Dire WOLF and Ghost Shark** → Other, old URLs preserved by redirect. Four of Dire WOLF's
+five seed rows upgraded to `web`/`high`; the fifth, `control`, is **not**, because no source
+states the control mode.
+
+**Ghost Shark's maker was wrong and the record's own source says why.** It was attributed to
+Albacore, whose site names exactly one vehicle — Ghostfin. Its single `source_urls` entry is
+a dronexl article *about Albacore's Ghostfin*: the record was seeded from a piece about a
+different vehicle with a similar name and the company came along with it. Corrected to
+**Anduril** at both ends, role unchanged. All 17 article links preserved, and they
+corroborate Anduril unanimously. Ghostfin kept separate. **The stale `source_urls` was not
+authorised and was not changed — the taxonomy note now says so in as many words,** and the
+one-statement fix is in the report. I also **withdrew a claim of my own**: the batch 2
+review said "Project SEA 1200", which Anduril's and the Australian Department of Defence's
+own material did not confirm, so it appears nowhere in the data.
+
+**Exail A27 unpublished** (`live → draft`). Nothing deleted — record, 4 taxonomy rows, Exail
+link, article link and sources all verified surviving. **A hard delete would have been
+destructive:** five of the six foreign keys into `products` are `ON DELETE CASCADE`.
+
+**The flag count: 31 → 4.** The four left are LUNA-2, MMCM, rMCM and XLUUV, every one
+pending by instruction — a pending record keeps its flag, which is why it is 4 and not 0.
+Three upgrades were **refused**, each named: A-18M `mission_military = isr` (mine
+countermeasures is not ISR), K-Ster `control = tethered`, Dire WOLF `control`.
+
+**Counts.** Live UAV 1,416 → **1,413** (two moved, A27 unpublished — three, not two), Other
+410 → **412**, total 3,522 → **3,521**, redirects 95 → **97**, taxonomy unchanged at 11,133.
+Tests: catalogue **75/75**, news **48/48**.
+
+**Validation.** Two dry runs inside `begin … rollback`. All 43 affected-row counts matched;
+the round trip diffed to **0 differences** across `product_taxonomy`, `products`,
+`product_companies` and `slug_redirects`. Three of my *predicted* figures were wrong and the
+measurements were right — corrected from the data, not the other way round.
+
+### Prepared, not applied: retire MMCM, rMCM and XLUUV
+
+`research-agent/reports/2026-11-01-mmcm-rmcm-xluuv-retirement-proposal.md`.
+`live → draft` on all three, retirement notes on MMCM's and XLUUV's domain rows, and
+**deletion of rMCM's `surface-usv` row** — false, not merely unsourced, since the programme
+delivers twelve *crewed* vessels. Eleven rows. Nothing else deleted.
+
+**The provenance is the finding.** MMCM, rMCM **and Exail A27** all came from **one
+article** — opex360, 2026-08-04, on French mine-warfare drone orders. Two programme names
+and one invented product from a single extraction. XLUUV is the same failure in its other
+form: a **class term** read as a model name. That is a property of the source shape, not of
+these four records — an article naming several programmes, vendors and vehicles in one
+breath is where this class of error comes from.
+
+**A correction to the batch 2 review:** it said `product_taxonomy` has "no timestamp at
+all". It has no `updated_at`, but it does carry a `created_at` set by a column default
+rather than a trigger — so a deleted taxonomy row's creation time *can* be restored on
+re-insert, and the retirement rollback now does.

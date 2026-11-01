@@ -1400,7 +1400,7 @@
     "catalogue_commits": "dc2dbb7"
   },
   "non_aerial_product_batch_2": {
-    "status": "PREPARED_NOT_APPLIED",
+    "status": "PARTIALLY_APPLIED — authorised subset applied and deployed; the rest held",
     "date": "2026-11-01",
     "authorised": "Preparation only. The brief says explicitly: do not apply these product or taxonomy changes yet. Nothing was written to the database; the three transactions were dry-run with begin ... rollback and the database was confirmed unchanged afterwards.",
     "report": "research-agent/reports/2026-11-01-non-aerial-product-batch-2.md",
@@ -1423,15 +1423,47 @@
     "company_linkup_trap": "Dire WOLF has no company linked and its maker BLADE (formerly HDT Global) is already live as hdt-global. A name match on BLADE will instead find Blade (Horizon Hobby), an unrelated radio-control hobby brand.",
     "urls": "All six moves keep their slug and change section only. Verified in both directions: 6 of 6 slugs free in /other/, 0 of 6 namesakes left in /uav/, 0 of 6 existing redirects. Six slug_redirects rows with from_section=uav preserve the old urls. Exail A27 does not move.",
     "validation": "Three dry runs, all returning exactly the predicted values, and the database confirmed unchanged afterwards (UAV 1,416, Other 410, taxonomy 11,133 rows, redirects 95, flagged 31). ROLLBACK PROVEN rather than asserted: all three transactions were applied forward and then reversed inside one transaction and compared row by row against a before-snapshot - 0 taxonomy rows differing, 0 missing, 11,133 = 11,133, 0 category differences, 0 redirect differences. That covers the two hardest reversals: the regexp inverse restoring six stripped-and-re-appended notes, and the delete-and-re-insert of rMCM domain row with its original option_id, source, confidence and note.",
-    "rollback_limit": "products carries a BEFORE UPDATE set_updated_at trigger, so a reversal cannot restore the original updated_at on the six moved rows. product_taxonomy has no surrogate key and no timestamp at all, so its statements are keyed on (product_id, option_id) and guarded by expected current values.",
+    "rollback_limit": "products carries a BEFORE UPDATE set_updated_at trigger, so a reversal cannot restore the original updated_at; the literal previous values are recorded in the rollback files. product_taxonomy has no surrogate key and no updated_at, so its statements are keyed on (product_id, option_id) or on exact text and guarded by expected current values. CORRECTION to the prepared batch 2 note: product_taxonomy DOES carry a created_at, set by a column default rather than a trigger, so a deleted taxonomy row creation time CAN be restored on re-insert. That matters only for the retirement proposal, whose rollback now restores it explicitly.",
     "decisions_for_nazar": [
-      "Apply TX A? Dire WOLF, Ghost Shark, LUNA-2 - identity settled and sourced.",
-      "Apply TX B? MMCM, rMCM, XLUUV - the category is certainly wrong today, but these records may deserve retirement rather than recategorisation. Moving them is reversible; retiring them is a decision.",
-      "Apply TX T? Note hygiene only. It is what makes the flag count mean something again.",
-      "Exail A27 - recommend unpublication; nothing names this product anywhere.",
-      "LUNA-2 and satellites: does a LoRa IoT nanosatellite belong in this catalogue at all? Same question as Dot the sidewalk delivery robot from batch 1.",
-      "Ghost Shark maker: reattribute from Albacore to Anduril? Held here as an ownership change.",
-      "Cassio S and DA 15-N.ISS: does a domain row describe what a product IS or what it FLIES ON?"
-    ]
+      "MMCM, rMCM, XLUUV: retire (recommended, proposal prepared) or recategorise via the old TX B? Run one, never both.",
+      "rMCM false surface-usv row: delete it regardless of the retirement decision? It is false, not merely unsourced.",
+      "Ghost Shark source_urls still cites an article about Albacore Ghostfin. One statement, in section 2 of the applied report. Not authorised, so not changed.",
+      "LUNA-2 and satellites: does a LoRa IoT nanosatellite belong in this catalogue at all? Same question as Dot the sidewalk delivery robot from batch 1. LUNA-2 keeps its flag until this is answered.",
+      "Cassio S 6fb1094b and DA 15-N.ISS c0fca03f: does a domain row describe what a product IS or what it FLIES ON? Two records now, more later.",
+      "Dire WOLF company link to hdt-global - available, not done. Beware the name match on Blade (Horizon Hobby), an unrelated hobby brand."
+    ],
+    "superseded_by": "research-agent/reports/2026-11-01-non-aerial-product-batch-2-applied.md",
+    "applied_2026_11_01": {
+      "what": "The authorised subset only. 43 rows changed across three transactions: TX T (26 stale notes + 5 evidence upgrades), TX A-prime (Dire WOLF and Ghost Shark to Other, 2 redirects, Ghost Shark maker Albacore -> Anduril, 4 Dire WOLF upgrades), TX C (Exail A27 -> draft).",
+      "tx_a_was_not_run_as_written": "LUNA-2 was EXCLUDED from the authorisation, so the prepared TX A - which moved three records - was replaced by a two-record TX A-prime. TX B was not run at all.",
+      "order_dependency": "TX T ran FIRST, and this is not the obvious order. T1 rewrites every note containing \"not an aerial system\" on a record no longer categorised UAV. Ghost Shark carries exactly that note and was being moved out of UAV, so had TX A-prime run first, Ghost Shark would have been swept into the generic rewrite and lost the note written for it, including the record of the maker correction.",
+      "ghost_shark_maker": "Corrected Albacore 67acfba0-d73f-455f-ab06-f4476b5ef473 -> Anduril 5e2751f3-e686-4264-b72a-d5b58ed8f3dc, at both ends (products.company_id and the one product_companies row, role unchanged at manufacturer). albacore.inc names exactly ONE vehicle, Ghostfin. All 17 Ghost Shark article links preserved and they corroborate Anduril unanimously. Ghostfin kept separate and still Albacore live record.",
+      "ghost_shark_source_url_still_wrong": "HELD, not authorised: the record single source_urls entry is dronexl.co/2026/08/27/navy-albacore-ghostfin-drone-submarines-philadelphia - an article about Albacore GHOSTFIN. That is how the misattribution got in. The taxonomy note now says so explicitly, and the one-statement fix is in section 2 of the applied report.",
+      "sea_1200_claim_withdrawn": "The batch 2 review said Ghost Shark is built under Project SEA 1200. Anduril own and Australian Department of Defence material did not confirm that programme number, so the note cites RAN/DSTG co-development and the September 2025 production contract instead. SEA 1200 appears nowhere in the data.",
+      "a27_unpublished": "3515b298-4a7d-4cff-a1f4-ec6a7bf24726 publication_status live -> draft. Nothing deleted: record, 4 taxonomy rows, 1 Exail link, 1 article link and source_urls all verified surviving. A hard delete would have been destructive - five of the six foreign keys into products are ON DELETE CASCADE. Site established retirement behaviour verified in the generator, which filters at fetch on publication_status=eq.live, so /uav/exail-a27/ is a 404 and NO redirect was invented.",
+      "flag_count": "31 -> 4. The four remaining are LUNA-2, MMCM, rMCM and XLUUV, every one pending by instruction. A pending record keeps its flag, which is why the number is 4 and not 0.",
+      "upgrades_refused": "Three, each named: A-18M mission_military=isr (mine countermeasures is not ISR), K-Ster control=tethered (no source confirms a wire or fibre link), Dire WOLF control=semi-autonomous-human-on-the-loop (no source states the control mode).",
+      "counts_before_after": "live UAV 1416 -> 1413 (two moved, A27 unpublished), live Other 410 -> 412, live total 3522 -> 3521, taxonomy 11133 -> 11133, redirects 95 -> 97, verify-category notes 31 -> 4, not-an-aerial-system notes 21 -> 3, Anduril live products 28 -> 29, Albacore 2 -> 1.",
+      "validation": "Two dry runs inside begin...rollback against live. Forward: all 43 affected-row counts matched. Round trip: applied forward, reversed with the rollback file, diffed against temp-table snapshots - 0 differences across product_taxonomy, products, product_companies and slug_redirects; 11133/11133 and 95/95. Database confirmed unchanged after both, before anything was applied. Tests: catalogue 75/75, news 48/48, no test changes needed.",
+      "my_predictions_were_wrong_three_times": "The SQL was right and my predicted values were not: live UAV 1413 not 1414 (A27 leaves the UAV count too), Anduril 29 not 30 (it held 28), not-an-aerial-system 3 not 0 (TX B was not running). Corrected from the measurements, not the other way round.",
+      "files": [
+        "research-agent/reports/2026-11-01-non-aerial-product-batch-2-applied.md",
+        "research-agent/reports/2026-11-01-non-aerial-product-batch-2-applied.sql",
+        "research-agent/reports/2026-11-01-non-aerial-product-batch-2-applied-manifest.csv",
+        "research-agent/reports/2026-11-01-non-aerial-product-batch-2-applied-rollback.sql"
+      ]
+    },
+    "mmcm_rmcm_xluuv_retirement_proposal": {
+      "status": "PREPARED_NOT_APPLIED",
+      "report": "research-agent/reports/2026-11-01-mmcm-rmcm-xluuv-retirement-proposal.md",
+      "sql": "research-agent/reports/2026-11-01-mmcm-rmcm-xluuv-retirement.sql",
+      "rollback": "research-agent/reports/2026-11-01-mmcm-rmcm-xluuv-retirement-rollback.sql",
+      "proposal": "publication_status live -> draft on all three, plus a retirement note on MMCM and XLUUV domain rows, plus DELETION of rMCM false surface-usv row. Eleven rows. NOTHING else deleted.",
+      "why_not_delete": "Five of the six foreign keys into products are ON DELETE CASCADE, so a hard delete would silently take three article links and seven taxonomy rows with it.",
+      "provenance_finding": "MMCM, rMCM AND Exail A27 all came from ONE article: opex360.com 2026-08-04 on French mine-warfare drone orders. Two programme names and one invented product from a single extraction. XLUUV is the same failure in its other form - a CLASS TERM read as a model name, from a dronesworldmag article about a DIU CAMP programme FOR XLUUVs. This is a property of the source shape, not of these four records: an article naming several programmes, vendors and vehicles in one breath is where this class of error comes from.",
+      "expected_impact": "live UAV 1413 -> 1410, live total 3521 -> 3518, taxonomy 11133 -> 11132, redirects unchanged at 97, verify-category notes 4 -> 1 (LUNA-2 only), not-an-aerial-system notes 3 -> 0, three public pages removed with no redirect created.",
+      "alternative_still_open": "The prepared TX B recategorises them UAV -> Other instead. Run ONE of the two, never both. Recommendation: retire, because the provenance makes these extraction artefacts rather than incomplete records, and an extraction artefact does not get better with a better category.",
+      "not_dry_run": "The round-trip proof is to be run at the point of application, not against a change nobody has authorised."
+    }
   }
 }
