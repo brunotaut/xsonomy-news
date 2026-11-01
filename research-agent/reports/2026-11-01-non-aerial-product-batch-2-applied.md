@@ -245,18 +245,34 @@ push to the catalogue repo triggers `deploy.yml`, which rebuilds from Supabase w
 
 ## 8. Verified live
 
+Measured on `https://xsonomy.com` after the rebuild landed:
+
 | Check | Result |
 |---|---|
-| `/other/dire-wolf/` | 200 |
-| `/other/ghost-shark/` | 200, manufacturer **Anduril** |
-| `/uav/dire-wolf/` | 200, redirect stub → `/other/dire-wolf/` |
-| `/uav/ghost-shark/` | 200, redirect stub → `/other/ghost-shark/` |
+| `/other/dire-wolf/` · `/other/ghost-shark/` | **200** · **200** |
+| `/uav/dire-wolf/` → `/other/dire-wolf/` | **200**, stub redirects correctly |
+| `/uav/ghost-shark/` → `/other/ghost-shark/` | **200**, stub redirects correctly |
 | `/uav/exail-a27/` | **404** |
-| `/companies/anduril/` | 200, Ghost Shark listed |
-| `/companies/albacore/` | 200, Ghostfin listed, Ghost Shark absent |
-| `/companies/exail/` | 200, A27 absent |
-| `/uav/luna-2/`, `/uav/mmcm/`, `/uav/rmcm/`, `/uav/xluuv/` | 200, all unchanged |
-| Landscape / investor data | unaffected |
+| Ghost Shark page, manufacturer | **Anduril** — "Albacore" appears nowhere on it |
+| `/companies/albacore/` | **200**, lists **Ghostfin only** |
+| `/companies/anduril/` | **200**, Ghost Shark present |
+| `/companies/exail/` | **200**, **no A27** |
+| `/other/ghostfin/` | **200**, untouched |
+| `/uav/luna-2/` · `/uav/mmcm/` · `/uav/rmcm/` · `/uav/xluuv/` | **200** each, all unchanged |
+| Sitemap: `exail-a27` | **0 occurrences** |
+| Sitemap: dire-wolf, ghost-shark | present under `/other/` only |
+| `/data/uav.json` · `/data/other.json` | **1,413** · **412** — matching the database exactly |
+| `/landscape/` | **200** |
+| `/data/landscape-investors.json` | **118** investors, **102** with figures, **207** observations, **26** Ukraine-linked, **100** holdings — every figure identical to the verified baseline |
+
+The last row is the one that matters for "unrelated work unaffected": the investor and
+landscape layer went through this build untouched. Confirmed in the database too — 118
+pool, 118 projected, 207 current metrics, 100 live holdings, 104 vehicles — and
+`frozen_snapshots` V1=273 / V2=358 unchanged.
+
+**Deployment:** news `c5c982a`, catalogue `6e3629b`. The catalogue commit was rebased over
+concurrent UI work (`1328d50`, landscape menu) with no file overlap; tests re-run at
+**75/75** after the pull.
 
 ## 9. Held, and why
 
