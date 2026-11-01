@@ -173,7 +173,7 @@ rather than left to chain through a retired slug, which GitHub Pages cannot do.
 | **Full-transaction dry run** (`begin … rollback`) | **all 23 verification values exactly as predicted** |
 | Database state after the dry run | **unchanged** — sectors 0, ECA live, description NULL, UAV products 1,455, redirects 53 |
 | Applied transaction | same 23 values, committed |
-| Idempotency | every statement guarded by its own `WHERE` / `ON CONFLICT`; the step-0 guard tests identity invariants only, so it does not fire on a rerun |
+| Idempotency | **proved read-only after the apply:** all 15 mutating statements' `WHERE` clauses now match **0 rows**, and the four insert guards are at full count (2 sectors, 2 aliases, 1 relationship, 11 redirects). A second run changes nothing. The step-0 guard tests identity invariants only, so it does not fire on a rerun either. |
 | Schema mirror replayed against the live DB | no change (65 redirects, 11 with a section, CHECK intact) |
 | Tests | **60/60 pass**, including a new one for the cross-section redirect |
 
