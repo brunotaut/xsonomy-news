@@ -1,11 +1,18 @@
 # Non-aerial products still categorised UAV — review, PREPARED NOT APPLIED
 
-**Date:** 2026-11-01 · **Status:** PREPARED, NOT APPLIED · **Next actor:** ChatGPT, then Nazar
+**Date:** 2026-11-01 · **Status:** APPLIED — the 28 only · **Next actor:** ChatGPT
 
-Authorised for preparation only: *"Do not apply these product or taxonomy changes yet."*
-**Nothing was written.** Every statement was validated by running the whole transaction and
-rolling it back; the database was re-checked afterwards and is unchanged (UAV 1,444,
-Other 382, redirects 65, Katana's domain row still its original value).
+Prepared under an authorisation for preparation only, then **applied on Nazar's go-ahead
+("1-yes") to decision 1 of §8**: the 28 ready corrections and the 3 taxonomy changes. The
+8 held records are untouched, and decisions 2 to 4 of §8 remain open.
+
+Applied after re-checking the guard for drift (28 of 28 still matched). Result: products
+categorised UAV **1,444 → 1,416**, Other **382 → 410**, live products unchanged at 3,522,
+redirect rows **65 → 93**, flagged notes **24 → 21**, Katana still UAV with its domain row
+corrected to *Aerial (UAV/UAS)*, and all 8 held records still UAV.
+
+Everything below was written before the apply and is left as the review that supported it.
+The dry-run figures it reports are the pre-apply state.
 
 Deliverables: [manifest](2026-11-02-non-aerial-product-manifest.csv) ·
 [SQL](2026-11-02-non-aerial-product-batch.sql) ·

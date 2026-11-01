@@ -134,10 +134,14 @@ Commit `55a95f1`. Write-up: `research-agent/reports/2026-11-02-resolver-merger-p
   corrections. No cached decision and no article link was rewritten.
 - Tests **35/35**, with 14 new merger cases. Live REST reads validated before activation.
 
-### 2026-11-01 — non-aerial product batch prepared, not applied
+### 2026-11-01 — non-aerial product batch: 28 applied, 8 held
 `research-agent/reports/2026-11-02-non-aerial-product-batch.md` + manifest, SQL, rollback.
-**Nothing was written**: the whole transaction was run and rolled back, and the database
-re-checked afterwards.
+Prepared under a preparation-only authorisation, dry-run clean, then **applied on Nazar's
+go-ahead** to the first of the four decisions it raised. Products categorised UAV
+**1,444 → 1,416**, Other **382 → 410**, live products unchanged at 3,522, redirect rows
+**65 → 93**. The guard was re-checked for drift first (28 of 28 still matched). The other
+three decisions — LUNA-2 and Dot's scope, the three programme names, and the WOLF /
+Ghostfin clusters — remain open.
 
 - **The candidate set is 36, not 19.** The earlier count came from matching one note
   phrasing; defining it from the taxonomy's own `domain` facet finds 36, eleven of which

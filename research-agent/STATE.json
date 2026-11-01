@@ -1363,10 +1363,10 @@
     "decision_for_nazar": "One pre-existing cached row, \"Teledyne FLIR OEM -> Teledyne FLIR Defense\", differs from what the new code decides (Teledyne FLIR). It stays cached and changes nothing unless that row is healed. Cosmetic either way."
   },
   "non_aerial_product_batch": {
-    "status": "PREPARED_NOT_APPLIED",
+    "status": "APPLIED_THE_28",
     "date": "2026-11-01",
-    "authorised": "Preparation only: \"Do not apply these product or taxonomy changes yet.\"",
-    "database_written": "NO. The whole transaction was executed and rolled back; the database was re-checked afterwards and is unchanged (UAV 1,444, Other 382, redirects 65, Katana domain still Surface (USV), 24 flagged notes).",
+    "authorised": "Prepared under an authorisation for preparation only, then applied on Nazar's go-ahead (\"1-yes\") to decision 1. The 8 held records were not touched and decisions 2-4 remain open.",
+    "database_written": "YES, on 2026-11-01, after re-checking the guard for drift (28 of 28 still matched). Products categorised UAV 1,444 -> 1,416; Other 382 -> 410; live products unchanged at 3,522; redirect rows 65 -> 93; flagged notes 24 -> 21; Katana still UAV with its domain row corrected to Aerial (UAV/UAS); all 8 held records still UAV.",
     "report": "research-agent/reports/2026-11-02-non-aerial-product-batch.md",
     "manifest": "research-agent/reports/2026-11-02-non-aerial-product-manifest.csv",
     "sql": "research-agent/reports/2026-11-02-non-aerial-product-batch.sql",
@@ -1393,6 +1393,8 @@
       "LUNA-2 (a satellite) and Dot (a DoorDash sidewalk delivery robot) - do they belong in this catalogue at all? If not the answer is removal, not recategorisation.",
       "MMCM, rMCM, XLUUV are programmes and a class term - retire, convert or leave?",
       "The Hunter WOLF / WOLF-X / Dire WOLF cluster and the Ghost Shark / Ghostfin conflation: deduplication and ownership, both out of scope here."
-    ]
+    ],
+    "rollback_is_live": "research-agent/reports/2026-11-02-non-aerial-product-rollback.sql now reverses a real change rather than a hypothetical one.",
+    "catalogue_commits": "dc2dbb7"
   }
 }

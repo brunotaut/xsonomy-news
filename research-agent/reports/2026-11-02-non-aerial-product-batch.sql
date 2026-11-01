@@ -1,6 +1,7 @@
 -- =============================================================================
--- Non-aerial product correction batch.  PREPARED 2026-11-01.  NOT APPLIED.
--- Authorised for preparation only: "Do not apply these product or taxonomy changes yet."
+-- Non-aerial product correction batch.  APPLIED 2026-11-01.
+-- Prepared under an authorisation for preparation only, then applied on Nazar's
+-- go-ahead to decision 1 of the review report. The 8 held candidates were not touched.
 --
 -- Scope: 28 products whose category is UAV but whose identity is not aerial.
 -- 8 further candidates are deliberately HELD - see the review report.

@@ -1,6 +1,8 @@
 -- =============================================================================
 -- Rollback for the non-aerial product correction batch.
--- Pairs with 2026-11-02-non-aerial-product-batch.sql, which is PREPARED, NOT APPLIED.
+-- Pairs with 2026-11-02-non-aerial-product-batch.sql, which was APPLIED on 2026-11-01
+-- (the 28 ready corrections and the 3 taxonomy changes; the 8 held records were not touched).
+-- This file is therefore a live rollback, not a hypothetical one.
 -- =============================================================================
 --
 -- Run as one transaction. Guarded and idempotent: a second run changes 0 rows.
