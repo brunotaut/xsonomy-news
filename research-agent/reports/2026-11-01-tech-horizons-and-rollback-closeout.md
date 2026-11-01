@@ -237,10 +237,49 @@ removed it fails on "the unresolved figure must not travel", and passes with it 
 
 ### Live verification
 
-See the deployment section below for the measured values. Live checks: Tech Horizons shows
-two observations, both against `Tech Horizons SCSp`; investor and portfolio counts are
-unchanged; and `/companies/jisr/` and `/companies/kara-dag-technologies/` still resolve
-through their redirects, so the merges broke no indexed URL.
+Deployed by push to `main`; the daily workflow also runs the same build. Commits:
+catalogue **`cb68123`** "Refuse to publish a figure whose owner is not established"
+(rebased onto three concurrent landscape-page commits, `a33803f`, `aeb9bbc`, `81cc2c1`,
+which it does not touch), news **`fdafe62`** "Settle the Tech Horizons identity and finish
+making rollback safe". Live URL: **https://xsonomy.com/landscape/** · export:
+**https://xsonomy.com/data/landscape-investors.json**
+
+Measured on the deployed file, against the brief's verified baseline:
+
+| | Baseline | Live after deploy |
+|---|---:|---:|
+| Investors | 118 | **118** |
+| With financial figures | 102 | **102** |
+| Observations | 207 | **207** |
+| Ukraine-linked / with figures | 26 / 23 | **26 / 23** |
+| Portfolio relationships | 100 | **100** |
+| Linked to published profiles | 82 | **82** |
+| Fund positions | 14 | **14** |
+
+**Nothing disappeared.** One observation was withdrawn and one inserted, which is why the
+total is unmoved rather than merely close.
+
+Live, on the deployed export:
+
+- Tech Horizons shows **two** observations, both against the vehicle `Tech Horizons SCSp`:
+  `€150M announced at launch` (`fund_size_target`, `reported`, as-of 2024-06, vestbee) and
+  `€1M-€5M per deal` (`initial_investment_range`, **`source_confirmed`**, techhorizons.eu).
+  Its `legalDomicile` reads country `LU`, precision `exact_entity`, with the SCSp, the
+  Capellen address, the GP and `RCS Luxembourg B282214` in the note.
+- The withdrawn figure is **gone from the file, not merely hidden**: the string `300000`
+  does not occur anywhere in the Tech Horizons record, and `parsers.vc` does not occur
+  anywhere in the whole export.
+- **0 of 207** observations carry an attribution other than `attributed`.
+- **0 true zeros.** No `amountMin`, `amountMax` or `count` is 0. (A loose first regex
+  flagged six rows; all six are genuine `€0.5–3M`-style ranges with `amountMin = 500000`.
+  The requirement that an unknown amount never displays as zero holds.)
+- **0** observations missing a scope note; **0** missing a source; **136** name a vehicle.
+- `/companies/jisr/` → `/companies/jisr-institute/` and
+  `/companies/kara-dag-technologies/` → `/companies/kara-dag/`, all four returning 200, so
+  the coverage pass's duplicate merges broke no indexed URL. A sample of the 52 distinct
+  published portfolio profile links returned 200 with no breakage.
+- The new export caveat is live: *"A figure is published only against the organisation it
+  is established to belong to, and only against a fund of that organisation."*
 
 ### One limitation, stated again because it bounds the word "validated"
 
