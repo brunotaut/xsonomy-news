@@ -6,7 +6,7 @@
     "v2": 358
   },
   "current_batch": 18,
-  "status": "UAV_HUB_RESEARCH_IMPORTED_REVIEWED_AND_EXPORTED",
+  "status": "INVESTOR_PORTFOLIO_RECONCILED_AND_DEPLOYED",
   "next_actor": "chatgpt",
   "input": "research-agent/reports/2026-10-31-exail-rescreen.md",
   "expected_output": "ChatGPT review of the Exail re-screen, then Nazar's decisions on the five listed questions. The 13 renames are done and need nothing further.",
@@ -1067,6 +1067,86 @@
       "CEOM was approved on Uncrewed systems plus documented aerial participation in REPMUS though it is maritime-led; worth revisiting",
       "investor_research_sources replay hazard not fixed - it needs a unique index on a populated table",
       "frontend integration is the next task; no map UI was changed"
+    ]
+  },
+  "investor_portfolio_reconciliation": {
+    "status": "APPLIED_DEPLOYED_VERIFIED",
+    "date": "2026-11-01",
+    "report": "research-agent/reports/2026-11-01-investor-portfolio-reconciliation.md",
+    "reproduce_and_rollback": "research-agent/imports/README-investor-portfolio.md",
+    "catalogue_commits": [
+      "6b2db2d",
+      "01a5dee"
+    ],
+    "counts": {
+      "edges_processed": 87,
+      "existing_companies_matched_edges": 45,
+      "existing_companies_distinct": 29,
+      "matched_by_alias_added_here": 2,
+      "matched_to_unpublished_company": 1,
+      "new_companies_created": 16,
+      "new_published": 8,
+      "new_draft_out_of_scope": 8,
+      "relationships_stored": 61,
+      "unresolved_edges": 26,
+      "unresolved_names": 21,
+      "duplicate_companies_created": 0,
+      "unsupported_landscape_admissions": 0
+    },
+    "key_finding": "The 38 'unresolved' names were not 38 missing companies. Delian Alliance Industries already existed as a DRAFT, which is exactly why the build-time matcher (which filtered to publication_status==='live') could not see it. Two more were spelling variants resolved by alias: the investor publishes 'Unmanned Defense Systems' where the company is 'Unmanned Defence Systems', and MD One publishes 'Milvus' where the company is 'Milvus Advanced'.",
+    "publication_judgement": "/companies/ describes itself as a directory of UAV and counter-UAS companies, so 8 verified holdings outside that scope (therapeutics, nanomaterials, rocket launch, satellite analytics, ground logistics autonomy, enterprise security, aerospace test equipment, ramjet munitions) were created as DRAFT. The relationship is stored and the holding is shown; only the profile is unpublished, so the public directory and its stated count stay true.",
+    "landscape_protection": "None of the 16 created companies has a company_sectors row or a landscape_candidates row. The landscape build skips any company without an explicit taxonomy assignment, so a company created from a portfolio listing cannot enter it. Landscape verified 567 before and after.",
+    "matching": "Curated, not automated. A substring pass matched Systematic Paris Region (French cluster) to Systematic A/S (Danish software) and INTA to the startup iNTACT; it was discarded. Resolution uses exact normalised name, alias and legal name only, across all companies including drafts.",
+    "amounts": "investor_contribution_* and round_total_* are separate nullable pairs with a CHECK that a contribution cannot exceed its round. Three disclosed: Coinvest Capital EUR0.9M own share of the EUR3.2M round it led into Unmanned Defence Systems; Sienna IM EUR7M (Turgis & Gaillard) and EUR11.8M (Spherea) with no round total published and therefore none recorded. EIFO -> Six Robotics stored as fund_of_funds because the cited source is about EIFO investing in the D3 FUND, not in that company.",
+    "financial_metrics": {
+      "investors": 7,
+      "observations": 14,
+      "vehicles_created": 5,
+      "types_used": "fund_close_final, fund_close_first, fund_close_announced, fund_size_stated, fund_size_target, manager_aum, cumulative_capital_invested, initial_investment_range, investment_count, portfolio_company_count",
+      "by_type": "fund closes 3, fund sizes (target/stated) 2, manager AUM 2, cumulative capital invested 1, initial investment ranges 4, investment count 1, portfolio company count 1",
+      "critical_distinctions": "Flyer One's EUR50M is an announced LAUNCH SIZE = fund_size_target, not a close. Dark Star's '9' is investment_count; Flyer One's '97 companies' is portfolio_company_count. Keen's 'More than EUR150M' has bound='minimum' and Vsquared's AUM bound='approximate', so neither renders as exact. A CHECK forbids a count row carrying money fields and vice versa.",
+      "workbook_not_trusted": "No financial claim was taken from the supplied workbook as a verified fact; the 12 workbook records carry no financial figures at all."
+    },
+    "supplement_retired": "scripts/lib/investor-directory.json and scripts/lib/investor-profiles.mjs DELETED after parity was proved: 118 records in and out, no slug lost or gained, Ukraine count unchanged at 26, zero populated fields emptied once case-insensitive holding names and relationship sources were accounted for, both portfolioSource URLs still present. Old export carried 78 portfolio entries; the new one represents 87.",
+    "projection_broadened": "From the 21 deal/mandate records that had a city location to all 118, each keeping its own evidence label (16 watchlist, 3 programmes). 94 records have no city at all and are placed only by country association - which is why a JSON supplement had to exist beside the database. The companies publication gate was NOT touched.",
+    "new_tables": [
+      "investor_companies",
+      "investor_portfolio_unresolved",
+      "investor_financial_metrics",
+      "investor_portfolio_import_payload"
+    ],
+    "new_columns": [
+      "investor_research.ukraine_related",
+      "investor_research.source_reference",
+      "investor_financial_metrics.display_en"
+    ],
+    "migrations": [
+      "investor_portfolio_and_financial_metrics_schema",
+      "investor_financial_metrics_import",
+      "investor_directory_supplement_migration",
+      "investor_companies_loader",
+      "investor_companies_loader_dedupe_methods",
+      "investor_companies_loader_unresolved_fix",
+      "investor_companies_loader_respect_verified_upgrades",
+      "investor_portfolio_company_creation",
+      "investor_landscape_projection_with_portfolio_and_metrics"
+    ],
+    "validation": "87 edges fully accounted for (61 + 26). 0 duplicate normalised company names across 2,455 live companies. AMBIGUITY: a second company named Helsing was inserted and the loader re-run - it created 0 links to it, recorded all 7 affected investors as unresolved with the ambiguity reason, and kept the 7 pre-existing Helsing relationships; then rolled back. UNPUBLISHED LINK: Marathon VC -> Delian stored with url null, published false, method draft_company. IDEMPOTENCY: loader returns 0 on replay, twice, with all three verified upgrades intact. The loader cannot downgrade a verified relationship: it skips a portfolio_listed write where a precise type exists and refreshes only match_method on conflict. Tests 41/41.",
+    "mistake_recorded": "The ambiguity test inserted a probe company into the PRODUCTION database. It was rolled back, but the scheduled deploy built while it was in place, so the live export briefly carried 7 spurious Helsing unresolved entries. Commit 01a5dee forced a clean rebuild. The test should have run against a branch database, or at least not while a deploy was pending.",
+    "untouched": {
+      "landscape": 567,
+      "investors_table": 200,
+      "hub_records": 61,
+      "approved_hubs": 38,
+      "note": "No change to company landscape eligibility, to the companies publication gate, or to the map."
+    },
+    "remaining_blockers": [
+      "17 portfolio names still unverified, plus Airvolve (unverifiable; its own cited source does not mention it; may be a variant of Airvolute but treating them as one would be a guess), Wayren and Vermeer (Czech government directory unreachable - connection refused), and URC (candidate URC Systems recorded, identity unconfirmed)",
+      "URC -> URC Systems needs a human decision; candidate_company_id already recorded",
+      "round totals absent for 58 of 61 relationships because the sources do not disclose them - the correct state, not a gap to fill by arithmetic",
+      "Fernride reported acquired by Quantum Systems, which is in the catalogue: an ownership relationship worth recording separately",
+      "Tiberius Aerospace and Spherea are defence-adjacent drafts whose catalogue scope is a judgement call worth revisiting",
+      "the investors table (200 rows) has never been reconciled with investor_research (118); only 8 relationships carry a catalogue investor link"
     ]
   }
 }
