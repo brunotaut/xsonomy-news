@@ -1139,5 +1139,108 @@ create index if not exists investor_financial_research_log_outcome_idx
 -- them. The investor projection filters `investor_companies.retired_at is null`, so no
 -- retired relationship can reach the public export.
 
+-- ---------------------------------------------------------------------------
+-- 2026-11-01, the three migrations this file had not caught up with.
+-- ---------------------------------------------------------------------------
+
+-- A directory record that is a technology company rather than a fund bridges to its
+-- catalogue company row, so the same organisation is not presented as two unrelated
+-- things. Independent of matched_investor_id, which bridges to the legacy investors table.
+alter table public.investor_research
+  add column if not exists matched_company_id uuid references public.companies(id) on delete set null;
+
+-- "Unresolved" was one queue holding five different findings. disposition records which
+-- applies, while the row keeps the original assertion and its reason for audit.
+alter table public.investor_portfolio_unresolved
+  add column if not exists disposition text;
+do $$
+begin
+  if to_regclass('public.investor_portfolio_unresolved') is not null then
+    alter table public.investor_portfolio_unresolved
+      drop constraint if exists investor_portfolio_unresolved_disposition_check;
+    alter table public.investor_portfolio_unresolved
+      add constraint investor_portfolio_unresolved_disposition_check
+      check (disposition is null or disposition = any (array[
+        'relationship_unverified', 'wrong_group_vehicle', 'facility_acquisition',
+        'historical_exited', 'organisation_unidentified']));
+  end if;
+end $$;
+
+-- cumulative_capital_raised = total LP capital raised across all vehicles since inception.
+-- NOT assets under management (point-in-time, net of realisations) and NOT
+-- cumulative_capital_invested (capital deployed into companies).
+do $$
+begin
+  if to_regclass('public.investor_financial_metrics') is not null then
+    alter table public.investor_financial_metrics
+      drop constraint if exists investor_financial_metrics_metric_type_check;
+    alter table public.investor_financial_metrics
+      add constraint investor_financial_metrics_metric_type_check
+      check (metric_type = any (array[
+        'fund_size_target','fund_size_stated','fund_close_first','fund_close_interim',
+        'fund_close_final','fund_close_announced','committed_capital','manager_aum',
+        'vehicle_nav','cumulative_capital_raised','cumulative_capital_invested',
+        'grant_funding_disbursed','grant_count','initial_investment_range',
+        'follow_on_investment_range','average_investment_size','investment_count',
+        'portfolio_company_count']));
+  end if;
+end $$;
+
+-- Two attribution guards. A vehicle belongs to exactly one investor record, so naming
+-- another investor's vehicle on your own observation - the mechanical form of an identity
+-- conflation - is made impossible rather than reviewable. And an observation whose
+-- recipient is not established cannot be is_current, so it cannot reach the public view:
+-- a prose caveat does not stop an export, but a CHECK does.
+alter table public.investor_financial_metrics
+  add column if not exists attribution_status text not null default 'attributed';
+do $$
+begin
+  if to_regclass('public.investor_research_vehicles') is not null then
+    alter table public.investor_research_vehicles
+      drop constraint if exists investor_research_vehicles_id_investor_key;
+    alter table public.investor_research_vehicles
+      add constraint investor_research_vehicles_id_investor_key unique (id, investor_id);
+
+    alter table public.investor_financial_metrics
+      drop constraint if exists investor_financial_metrics_vehicle_belongs_to_investor;
+    alter table public.investor_financial_metrics
+      add constraint investor_financial_metrics_vehicle_belongs_to_investor
+      foreign key (vehicle_id, investor_research_id)
+      references public.investor_research_vehicles (id, investor_id);
+
+    alter table public.investor_companies
+      drop constraint if exists investor_companies_vehicle_belongs_to_investor;
+    alter table public.investor_companies
+      add constraint investor_companies_vehicle_belongs_to_investor
+      foreign key (vehicle_id, investor_research_id)
+      references public.investor_research_vehicles (id, investor_id);
+
+    alter table public.investor_fund_positions
+      drop constraint if exists investor_fund_positions_vehicle_belongs_to_target;
+    alter table public.investor_fund_positions
+      add constraint investor_fund_positions_vehicle_belongs_to_target
+      foreign key (target_vehicle_id, target_investor_research_id)
+      references public.investor_research_vehicles (id, investor_id);
+
+    alter table public.investor_fund_positions
+      drop constraint if exists investor_fund_positions_vehicle_needs_target;
+    alter table public.investor_fund_positions
+      add constraint investor_fund_positions_vehicle_needs_target
+      check (target_vehicle_id is null or target_investor_research_id is not null);
+
+    alter table public.investor_financial_metrics
+      drop constraint if exists investor_financial_metrics_attribution_status_check;
+    alter table public.investor_financial_metrics
+      add constraint investor_financial_metrics_attribution_status_check
+      check (attribution_status = any (array['attributed', 'unresolved_identity']));
+
+    alter table public.investor_financial_metrics
+      drop constraint if exists investor_financial_metrics_unresolved_is_not_published;
+    alter table public.investor_financial_metrics
+      add constraint investor_financial_metrics_unresolved_is_not_published
+      check (attribution_status = 'attributed' or is_current = false);
+  end if;
+end $$;
+
 -- Make sure PostgREST picks up the new tables/columns immediately.
 notify pgrst, 'reload schema';

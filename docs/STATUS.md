@@ -586,3 +586,42 @@ the count is 23 and not 24.
 **No probe rows in production this time.** The previous pass inserted a test company and a
 scheduled deploy picked it up; this pass used fixtures and proved idempotency by checking that
 every replay guard is closed. Tests 59/59.
+
+## 1 November 2026 (later) — the Tech Horizons identity, and rollback finished properly
+
+**Resolved on a registration number.** `techhorizons.eu` prints `RCS Luxembourg B282214`;
+the register's entry for B282214 runs Presto GP III Sàrl (Dec 2023) → Presto Tech Horizons
+GP Sàrl (Oct 2024) → Tech Horizons GP Sàrl (Apr 2026). The Prague-launched "Presto Tech
+Horizons" and the Luxembourg "Tech Horizons" are one organisation; the fund vehicle was
+formerly Presto Ventures III SCSp, which matches the launch coverage calling it Presto
+Ventures' third fund. Domicile Luxembourg (Capellen), office Prague, CSG the anchor
+investor. Vehicle renamed to `Tech Horizons SCSp`.
+
+**Two figures were wrong in ways the identity question had hidden.** The €150M was sourced
+to an article about *Keen Venture Partners'* €150M first close. The €300K–€3M ticket range
+is contradicted by the manager's own €1M–€5M. Both corrected; counts unchanged at
+118 / 102 / 207. The manager's ten published portfolio companies were deliberately **not**
+added: that is research, not correction.
+
+**Rollback.** The unscoped `retired_kind` update is replaced with exact ids and
+expected-current-value guards. It would have touched `fa0fec40`, which the *coverage* pass
+retired at 18:39 — and would then have failed `retired_kind_with_retirement`. A provenance
+finding behind it: **there is no trigger on these tables**, so `updated_at` moves only when
+a statement sets it, and `788055c2`'s equals its `created_at` despite a later update — so
+nothing in the database says which pass retired it. Marked unavailable.
+
+New manifest `README-investor-rollback-manifest-2026-11-01-coverage-and-correction.md`
+covers the 18:43 coverage pass (107 metrics, 68 vehicles, 63 log rows, 1 fund position,
+2 redirects, every update with a before-image) and the 21:05 correction pass (5 rows, all
+complete). Passes A and B are declared to have no exact-id manifest. The dependency check
+immediately caught a real cross-pass reference. Scenario A (original checkpoint) and
+scenario B (selective, today) are now distinguished everywhere, because in B the three
+pass-C migrations must not be reverted at all.
+
+**Two constraints now enforce what prose could not**: a composite FK tying a metric's
+vehicle to its own investor, and `attribution_status` with a CHECK that an unresolved
+figure cannot be `is_current`. Proven by statements expected to fail; nothing written.
+`db/schema.sql` is caught up on the three migrations it had missed.
+
+Tests **48/48** — up from 41, one of which had been failing on the committed tree since the
+coverage pass regenerated the ledger and dropped its manifest pointer.

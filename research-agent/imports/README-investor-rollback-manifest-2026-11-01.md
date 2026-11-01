@@ -1,7 +1,26 @@
-# Exact rollback manifest — investor semantics and coverage pass, 2026-11-01
+# Exact rollback manifest — investor semantics pass, 2026-11-01 17:02–17:40 UTC
 
 **Replaces the date-scoped delete commands in
 `research-agent/reports/2026-11-02-investor-financial-ledger.md`, which were unsafe.**
+
+**This manifest covers ONE of four passes that wrote to these tables on 2026-11-01.** The
+coverage pass of 18:43–19:05 and the Tech Horizons correction that followed it have their
+own manifest, `README-investor-rollback-manifest-2026-11-01-coverage-and-correction.md`.
+Reversing this pass alone, against a database that now carries both later passes, is the
+*selective* scenario below — not the one the row counts in §4 describe.
+
+## Two scenarios, and they are not interchangeable
+
+| | **A — at the original checkpoint** | **B — selectively, against today's database** |
+|---|---|---|
+| Assumed state | Nothing has been written since 17:40 | Two later passes have been applied |
+| Migrations | May be reverted (§3) | **Must not be reverted.** The three migrations add shared objects the later passes depend on: the `metric_type` vocabulary now carries `cumulative_capital_raised`, 107 later metric rows are typed against it, `investor_financial_research_log` holds 63 later rows, and `retired_kind` is set on a row this pass did not touch |
+| §2 re-typings | Reversible for `metric_type`; see the per-field notes | Same, and the same fields stay unrecoverable |
+| `retired_kind` | Column disappears with the migration | See §2 — one of the two rows belongs to another pass |
+| §4 assertions | Hold | **Do not hold.** They describe the database as it stood at 17:40 |
+
+Everything below is written for **B** unless a line says otherwise, because B is the only
+scenario that still exists.
 
 ## Why the old instructions were dangerous
 
@@ -177,32 +196,115 @@ b5fcdccf-9e5f-4b19-b3e8-a8f5275ed206  VRgineers, Inc.
 
 ## 2. Updated rows — before-images
 
-### The five metric re-typings — expect 1 row each
-| Metric id | Restore `metric_type` | Also restore |
-|---|---|---|
-| `73fc025e-739c-4472-b015-790075232879` | `manager_aum` | `vehicle_id = null`; scope and display per the superseded report |
-| `0f58d997-2207-4311-9b20-a4eed83f766c` | `initial_investment_range` | `bound='approximate'`, `amount_max = 20000000` |
-| `e505f068-8ceb-4d36-ac9d-abf1cf61bcfc` | `cumulative_capital_invested` | scope and display |
-| `59ebaf8f-067e-4d71-a1a9-60fa7d6246a7` | `investment_count` | scope and display |
-| `fb2f357e-56e4-4118-ae8b-ebb309b2a10a` | `fund_size_target` | `vehicle_id = null`; scope `'Fund V — announced launch size'` |
+### The five metric re-typings — expect 1 row each, with a guard
 
-Restore the **CHECK constraints last**: the old `metric_type` CHECK rejects
-`vehicle_nav`, `grant_funding_disbursed`, `grant_count` and `average_investment_size`, so
-re-typing these five must happen **before** the migration is reverted.
+Each statement carries the value to restore **and** the value the row must currently hold.
+If the expected current value does not match, the row has been changed since and the
+statement must affect 0 rows — which is an abort, not a success.
+
+| Metric id | Restore `metric_type` | Expect current `metric_type` | Also restore | Guard on |
+|---|---|---|---|---|
+| `73fc025e-739c-4472-b015-790075232879` | `manager_aum` | `vehicle_nav` | `vehicle_id = null` | `amount_min = 421300000`, `currency = 'GBP'` |
+| `0f58d997-2207-4311-9b20-a4eed83f766c` | `initial_investment_range` | `average_investment_size` | `bound = 'approximate'`, `amount_max = 20000000` | `amount_min = 20000000`, `amount_max is null` |
+| `e505f068-8ceb-4d36-ac9d-abf1cf61bcfc` | `cumulative_capital_invested` | `grant_funding_disbursed` | — | `amount_min = 6200000000`, `currency = 'UAH'` |
+| `59ebaf8f-067e-4d71-a1a9-60fa7d6246a7` | `investment_count` | `grant_count` | — | `count_value = 1000` |
+| `fb2f357e-56e4-4118-ae8b-ebb309b2a10a` | `fund_size_target` | `fund_size_stated` | **see below** | `amount_min = 50000000`, `currency = 'EUR'` |
+
+The shape, with the guard in the `where` clause so a changed row is skipped rather than
+overwritten:
+
+```sql
+update investor_financial_metrics
+   set metric_type = 'manager_aum', vehicle_id = null
+ where id = '73fc025e-739c-4472-b015-790075232879'
+   and metric_type = 'vehicle_nav'                   -- expected current value
+   and amount_min = 421300000 and currency = 'GBP';  -- and it is still the same figure
+-- expect 1 row. 0 rows means someone else has edited it: stop, do not force.
+```
+
+**`scope_en` and `display_en` for all five: AUTOMATIC ROLLBACK UNAVAILABLE.** The previous
+instruction said "scope and display per the superseded report". No report records them.
+Those ids appear nowhere in this repository except this manifest and its test, the reports
+record only the `metric_type` changes, and there is no audit table and no trigger, so the
+prior text is not recoverable from the database either. A reversal therefore restores the
+type, the vehicle, the bound and the amounts, and **leaves the scope and display text as
+this pass rewrote it**. That is a partial reversal and is recorded as one. Inventing the
+prior wording would be worse than saying so.
+
+**`fb2f357e`'s `vehicle_id`: do not null it.** The previous instruction said to restore
+`vehicle_id = null`. The vehicle it points at, `31363d2b-2631-46bf-a31b-eca20d3f52d6`
+(Flyer One Ventures Fund V), was created at **00:16** — by the first pass of the day, not
+this one. Nothing establishes that *this* pass attached it, so nulling it may destroy the
+00:16 pass's attribution. Leave `vehicle_id` alone and revert only `metric_type`.
+
+Contrast `73fc025e`, where nulling the vehicle **is** safe: its vehicle
+`0c001d9b-8750-437d-85a5-dc644de91fd6` (Seraphim Space Investment Trust plc) was created at
+17:02, inside this pass, so it did not exist before and the metric cannot have pointed at
+it. That is the test: a metric's `vehicle_id` may be reverted to null only when the vehicle
+itself is in this manifest's insert list.
+
+Restore the **CHECK constraints last**, and in scenario B not at all: the old `metric_type`
+CHECK rejects `vehicle_nav`, `grant_funding_disbursed`, `grant_count` and
+`average_investment_size`, so re-typing these five must happen **before** the migration is
+reverted — and the migration cannot be reverted at all while later rows depend on the
+vocabulary it added.
 
 One further metric, `fcbfda07-7b90-480f-be87-78f99d8e86c1` (Flyer One cumulative), had
-only its `scope_en` sharpened. Prior text:
+only its `scope_en` sharpened. Prior text, recorded verbatim and therefore the one scope
+reversal that **is** available:
 `'Cumulative investment over seven years; manager-wide, all sectors'`.
+Guard: `amount_min = 46000000 and currency = 'USD'`.
 
 ### The MITS bridge — expect 1 row
 `update investor_research set matched_investor_id = null where id = '51ea94a6-1aee-4f49-9255-11fb92d0055f';`
 (before-image: `null`.)
 
-### The `retired_kind` backfill — expect 2 rows
-`update investor_companies set retired_kind = null where retired_kind = 'unsupported_evidence';`
-Both were `null` before. Do this **before** dropping the
-`investor_companies_retired_kind_with_retirement` CHECK, which requires the column to be
-non-null whenever `retired_at` is set.
+### The `retired_kind` backfill — ONE row, not a predicate
+
+The previous instruction here was, in words rather than as runnable SQL so that it cannot
+be copied by accident: *update `investor_companies`, setting `retired_kind` to null
+wherever `retired_kind` equalled `'unsupported_evidence'`* — with an expectation of 2 rows. That was wrong three times over, and the evidence is in the
+rows themselves:
+
+| id | investor → company | `created_at` | `updated_at` | Whose change? |
+|---|---|---|---|---|
+| `788055c2-87e8-4ff5-9163-b488dcc18c11` | EIFO → Six Robotics | 00:21 | 00:21 | **Not determinable** |
+| `fa0fec40-56f8-472e-8cf8-f01d1058c461` | Rockaway Alpha Defense → JISR Institute | 00:21 | **18:39** | the 18:43 pass, not this one |
+
+1. **The predicate reaches another pass's work.** `fa0fec40` was retired at 18:39, by the
+   coverage pass. It is not this batch's row and must not be touched here.
+2. **`retired_kind = null` is not the before-image anyway.** For `fa0fec40` the whole
+   retirement — `retired_at`, `retired_reason` and `retired_kind` — was applied in one
+   statement, so nulling only the kind leaves a half-retired row.
+3. **It would fail.** `investor_companies_retired_kind_with_retirement` requires the kind
+   to be non-null whenever `retired_at` is set, so `set retired_kind = null` on a row with
+   `retired_at = '2026-11-01'` is rejected. The safe sequence clears the three columns in
+   one statement:
+
+```sql
+-- scenario B: this pass's own row only. Expect 1 row; abort if 0.
+update investor_companies
+   set retired_at = null, retired_reason = null, retired_kind = null
+ where id = '788055c2-87e8-4ff5-9163-b488dcc18c11'
+   and retired_kind = 'unsupported_evidence'          -- concurrency guard
+   and retired_at = '2026-11-01';
+```
+
+**And even that one is not safe to run — see the next section.** `788055c2`'s
+`updated_at` equals its `created_at`, which means the statement that set its `retired_kind`
+did not touch `updated_at`. There is no trigger on this table (verified: no non-internal
+triggers on `investor_companies`), so `updated_at` is maintained only when a statement sets
+it explicitly, and it therefore cannot attribute this change to a pass. Its own
+`retired_reason` cites a fund position that has existed since **14:38**, so the retirement
+happened at or after 14:38 — in the 14:38 pass, this one, or the 18:43 pass. Nothing in the
+database distinguishes them.
+
+### `788055c2` — AUTOMATIC ROLLBACK UNAVAILABLE
+
+Its pre-retirement values are not recorded and its authorship cannot be established.
+Reverting it might restore a row the 14:38 pass deliberately withdrew. The retirement
+reason is preserved verbatim in the row itself; a human decision, not a script, should
+decide whether EIFO → Six Robotics belongs back in the portfolio.
 
 ### The six resolved unresolved-holdings — AUTOMATIC ROLLBACK UNAVAILABLE
 
@@ -217,20 +319,71 @@ Rockaway Ventures → Vermeer · Bpifrance → Exotrail · Nazca Capital → Tel
 **This is marked unavailable rather than papered over with a broad delete.** Re-creating
 them restores content, not the original ids.
 
-### The two re-worded unresolved rows — before-images in the superseded report
-`Rockaway Alpha Defense → URC` and `Verve Ventures → ANYbotics` had `reason`,
-`source_url` and `reviewed_at` rewritten. Their prior `reason` text is quoted verbatim in
-`research-agent/reports/2026-11-01-investor-portfolio-reconciliation.md`. Match them by
-`(investor_research_id, portfolio_name_as_published)`, which is their unique key.
+### The two re-worded unresolved rows — exact ids
 
-## 3. Migrations — revert last, in reverse order
+| id | investor → published name | Prior `reason` |
+|---|---|---|
+| `d1c22105-1ef4-4fd1-af76-8b07fc84dbb5` | Rockaway Alpha Defense → URC | quoted verbatim in `research-agent/reports/2026-11-01-investor-portfolio-reconciliation.md` |
+| `d28640fb-0bc8-42d2-aa78-d415a827c8bf` | Verve Ventures → ANYbotics | same |
+
+`reason`, `source_url` and `reviewed_at` were rewritten. The previous instruction said to
+match them by `(investor_research_id, portfolio_name_as_published)`; the ids above are
+better, because that pair is a natural key and natural keys move. Note that **both rows
+were also written to again at 18:39** by the coverage pass, which set their `disposition` —
+so in scenario B a reversal here must not also clear `disposition`, which belongs to the
+other manifest.
+
+## 3. Migrations — scenario A only
+
+In **scenario B these three must not be reverted.** Each one adds a shared object that
+later passes now use, so dropping it destroys work this manifest does not cover:
+
+| Migration | Shared object | Who depends on it now |
+|---|---|---|
+| `investor_financial_research_log` | the whole table | **63** rows written by the 18:43 pass, plus this pass's 55 |
+| `investor_companies_retired_kind` | `retired_kind` + two CHECKs | set on `fa0fec40`, retired by the 18:43 pass, and on `f63cfc40` |
+| `investor_metric_types_vehicle_nav_grants_average` | the `metric_type` CHECK vocabulary | later migration `investor_metric_cumulative_capital_raised` rewrote the same constraint, and **107** later metric rows are typed against it |
+
+In scenario A, revert last and in reverse order:
+
 1. `investor_financial_research_log` → `drop table public.investor_financial_research_log;`
 2. `investor_companies_retired_kind` → drop the two CHECKs, then the column.
 3. `investor_metric_types_vehicle_nav_grants_average` → restore the prior `metric_type`
    and `shape` CHECKs and drop `investor_financial_metrics_vehicle_nav_needs_vehicle`.
    **The five re-typings in §2 must be reverted first** or this fails.
 
-## 4. Assertions after a full reversal
+A fourth migration, `investor_metric_attribution_guards` (2026-11-01, the correction pass),
+added a composite foreign key from `investor_financial_metrics` and `investor_companies` to
+`investor_research_vehicles (id, investor_id)`. It does not block any delete in this
+manifest — deleting a metric and then its vehicle still satisfies it — but it does mean a
+vehicle cannot be deleted while a metric still points at it, so the order in §"Reversal
+order" is now enforced by the database rather than merely recommended.
+
+## 4. Dependency checks — run these BEFORE any delete
+
+Exact ids do not make a delete safe on their own: a row inserted later may reference one of
+them. Each query must return **0**.
+
+```sql
+-- a later metric pointing at a vehicle this manifest deletes
+select count(*) from investor_financial_metrics
+ where created_at >= '2026-11-01 18:00:00+00' and vehicle_id in (<the 17 vehicle ids>);
+-- a later holding pointing at a company this manifest deletes
+select count(*) from investor_companies
+ where created_at >= '2026-11-01 18:00:00+00' and company_id in (<the 8 company ids>);
+-- a later fund position pointing at one of those vehicles
+select count(*) from investor_fund_positions
+ where created_at >= '2026-11-01 18:00:00+00' and target_vehicle_id in (<the 17 vehicle ids>);
+```
+
+Measured on 2026-11-01 after the coverage pass: **0, 0, 0.** The 107 later metric rows and
+68 later vehicles are disjoint from this manifest, so no later row blocks it today. Re-run
+the checks rather than trusting that sentence: it was true at one moment.
+
+## 5. Assertions — scenario A only
+These describe the database as it stood at 17:40 on 2026-11-01. **They are not expected to
+hold in scenario B**, where two later passes remain applied; they are kept because they are
+the only record of that checkpoint.
 ```
 investor_financial_metrics where is_current            = 49
 distinct investors with a current metric                = 23
@@ -241,7 +394,20 @@ companies where publication_status='live'               = 2456
 landscape_candidates included, europe-uav-cuas-2026     = 567  (unchanged throughout)
 ```
 
-## 5. Not executed
+For scenario B the only assertion that can be stated in advance is per-statement: every
+delete and update above carries its own expected affected-row count, and a mismatch aborts.
+
+## 6. Unavailable reversals, collected
+1. **The six deleted `investor_portfolio_unresolved` rows** — ids not captured; content
+   preserved in the reconciliation report; re-creatable by hand with new ids.
+2. **`scope_en` and `display_en` of the five re-typed metrics** — prior text recorded
+   nowhere.
+3. **`fb2f357e`'s `vehicle_id`** — cannot be shown to have been set by this pass.
+4. **`788055c2`'s retirement** — authorship not determinable; pre-retirement values not
+   recorded.
+
+## 7. Not executed
 This manifest has **not been run**. Nothing in it was executed against production. The
-delete-by-id and update-by-id shapes were exercised against fixtures only; see
-`scripts/test/rollback-manifest.test.mjs`.
+delete-by-id and update-by-id shapes, the concurrency guards, the dependency checks and the
+constraint ordering were exercised against fixtures only; see
+`scripts/test/rollback-manifest.test.mjs` and `scripts/test/rollback-scenarios.test.mjs`.

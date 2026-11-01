@@ -97,3 +97,23 @@ Four of these are worth separating, because the reason is not "no figure publish
   figure cannot drift onto it.
 - Unknown amounts are stored as `null` and rendered as unknown. **No unknown amount is stored
   or displayed as zero** — there is a test for this.
+
+---
+
+## Reversing any of this
+
+The date-scoped delete commands that earlier versions of this ledger carried are gone, and
+they are not coming back: three — now five — separate passes wrote to these tables on
+2026-11-01, so `where created_at::date = '2026-11-01'` was always far wider than the batch
+it claimed to reverse. Exact row ids, before-images, concurrency guards and dependency
+checks live in two manifests:
+
+- `research-agent/imports/README-investor-rollback-manifest-2026-11-01.md` — the semantics
+  pass of 17:02–17:40 UTC.
+- `research-agent/imports/README-investor-rollback-manifest-2026-11-01-coverage-and-correction.md`
+  — the coverage pass of 18:43–19:05 that produced the 102 figures counted above, and the
+  Tech Horizons correction that followed it.
+
+Both distinguish a rollback **at the original checkpoint** from a **selective** rollback
+against today's database, and both name what cannot be reversed instead of guessing at a
+before-image. Neither has been executed against production.
