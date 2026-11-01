@@ -1150,5 +1150,66 @@
       "Tiberius Aerospace and Spherea are defence-adjacent drafts whose catalogue scope is a judgement call worth revisiting",
       "the investors table (200 rows) has never been reconciled with investor_research (118); only 8 relationships carry a catalogue investor link"
     ]
+  },
+  "investor_corrections_and_financial_expansion": {
+    "status": "APPLIED_DEPLOYED_VERIFIED",
+    "date": "2026-11-01",
+    "report": "research-agent/reports/2026-11-01-investor-corrections.md",
+    "ledger": "research-agent/reports/2026-11-01-investor-financial-ledger.md",
+    "reproduce_and_rollback": "research-agent/imports/README-investor-corrections.md",
+    "counts": {
+      "investor_records_before": 118,
+      "investor_records_after": 118,
+      "ukraine_linked_before": 26,
+      "ukraine_linked_after": 26,
+      "portfolio_relationships_before": 61,
+      "portfolio_relationships_after": 74,
+      "unresolved_before": 26,
+      "unresolved_after": 13,
+      "fund_positions": 9,
+      "retired_relationships": 2,
+      "financial_observations_before": 14,
+      "financial_observations_after": 50,
+      "investors_with_metrics_before": 7,
+      "investors_with_metrics_after": 24,
+      "ukraine_linked_with_metrics_before": 7,
+      "ukraine_linked_with_metrics_after": 14,
+      "companies_created": 10,
+      "companies_published": 3,
+      "companies_draft": 7,
+      "duplicate_companies_created": 0,
+      "landscape_before": 567,
+      "landscape_after": 567
+    },
+    "airvolve_correction": "Airvolve (Lithuania, airvolve UAB, Vilnius, Airlift-U500 autonomous VTOL) created and published as its own company, separate from Airvolute (Slovakia, DroneCore autopilots). Coinvest Capital EUR510,000 contribution within a EUR825,000 round total; BSV Ventures recorded as a participant with no invented contribution; no investment date inferred from the 3 September 2024 announcement. BSV Ventures confirmed as the former Baltic Sandbox Ventures, one record not two.",
+    "eifo_correction": "The mis-sourced EIFO -> Six Robotics row is retired in place with a reason. Two separate facts replace it: a fund position EIFO -> D3 (US$5m, 4 July 2025, from EIFO own announcement) and a direct participation in the Six Robotics EUR12m seed, sourced to the lead investor announcement that names EIFO. Fund positions never appear in the portfolio array or count.",
+    "audit_outcome": "All 61 relationships and 26 unresolved entries re-read against their cited sources. 6 re-sourced (cited source did not support the pair), 5 typed precisely with disclosed amounts, 1 retired as unsupported (Rockaway Alpha Defense -> JISR), 11 evidence labels corrected upward where the source is the investor own portfolio page. Both flagged edges survived: PSV Hafnium -> Acodyne and Tesi -> Kelluu rest on a page that names the investors in that specific round, not on a bare portfolio listing; Tesi was additionally re-sourced to the lead investor own announcement.",
+    "new_schema": [
+      "investor_companies.retired_at",
+      "investor_companies.retired_reason",
+      "investor_fund_positions"
+    ],
+    "migrations": [
+      "investor_relationship_retirement_and_fund_positions",
+      "investor_eifo_correction_and_fund_positions",
+      "investor_airvolve_identity_and_round",
+      "investor_relationship_evidence_audit",
+      "investor_unresolved_holdings_resolution",
+      "investor_landscape_projection_with_fund_positions_v2"
+    ],
+    "human_decisions_open": [
+      "URC -> URC Systems: identity evidenced (Prostejov, id recorded), but the transaction is an announced 100% acquisition by Rockaway Capital via Piombino Group, pending competition review, and by a different group vehicle than the record held. Needs Nazar.",
+      "Whether to harvest the six further Front Ventures holdings with published amounts (SkyHunter, Aeromotors, ABX Dynamics, Molfar Defence Technologies, Trinity Robotics, Scandinavian X; four Ukrainian) and the evidenced EIFO -> Acodyne edge. Both are new edges, outside the 87 this pass audited."
+    ],
+    "remaining": [
+      "76 of 118 investors not yet financially researched; the Ukraine-linked ten are the priority queue and eight of them are workbook watchlist records needing identity confirmation first.",
+      "18 investors researched with no usable figure, listed with reasons in the ledger.",
+      "The Czech government investors directory has refused connections across two passes; four unresolved holdings depend on it.",
+      "EU Motors identity disputed by a trade outlet; resolving it needs a Polish KRS registry check.",
+      "The investors table (200) is still unreconciled with investor_research (118); only 8 relationships link to a catalogue investor row.",
+      "fund_close_interim and committed_capital remain unused metric types.",
+      "The investor staging schema is still not mirrored in db/schema.sql beyond this pass own additions."
+    ],
+    "catalogue_commit": "PENDING"
   }
 }

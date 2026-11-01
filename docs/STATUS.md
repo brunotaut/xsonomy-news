@@ -185,6 +185,14 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
   on each. Verified afterwards: all 3 subscribers carry all three flags, and PostgREST serves the
   new columns (a `select=daily,weekly,monthly` returns 200; a nonexistent column returns 42703).
   Nobody was opted out. Source: `db/migrations/2026-09-07_subscriber_frequency.sql`.
+- 2026-11-01 — investor corrections, in six MCP migrations:
+  `investor_relationship_retirement_and_fund_positions` (adds `investor_companies.retired_at` /
+  `retired_reason` and the new `investor_fund_positions` table, RLS on with no policies),
+  `investor_eifo_correction_and_fund_positions`, `investor_airvolve_identity_and_round`,
+  `investor_relationship_evidence_audit`, `investor_unresolved_holdings_resolution`,
+  `investor_landscape_projection_with_fund_positions_v2`. The new columns and table are mirrored
+  in `db/schema.sql`; the rest of the investor staging schema, applied in the 2026-10-30/31
+  passes, is still not. Rollback: `research-agent/imports/README-investor-corrections.md`.
 
 ## Decisions log
 - 2026-09-05 — Keep two repos (Pages constraint). All DB writes stay in xsonomy-news.
@@ -302,3 +310,50 @@ An independent review overlapped another session's completed Batch 15 submission
 ## 2026-10-28 — public scope check
 
 Saved `research-agent/audits/2026-10-28-publication-scope-review.md` and companion CSV. Fetched public landscape contains 375 companies; zero matches by UUID among 253 excluded/needs_review records from latest reconciliation rows across batches 02–14. General catalogue has 235 exact-name matches from that subset. This supports treating catalogue scope separately from landscape eligibility, not bulk unpublishing from the STATE headline. No DB/site/state changes; Batch 15 still awaits Claude reconciliation.
+
+## 2026-11-01 — investor corrections, fund positions and financial expansion
+
+Report `research-agent/reports/2026-11-01-investor-corrections.md`; per-investor ledger
+`research-agent/reports/2026-11-01-investor-financial-ledger.md`; rollback
+`research-agent/imports/README-investor-corrections.md`. Catalogue commit recorded in STATE.
+
+**Airvolve is its own company.** Lithuanian (airvolve, UAB, Vilnius, 2024), building the
+Airlift-U500 autonomous VTOL tactical transport — not a misspelling of Airvolute of Slovakia,
+which builds DroneCore autopilots. Both are published, and each record says the other exists and
+is different. Coinvest Capital's **€510,000** contribution and the **€825,000** round total are
+separate fields; Baltic Sandbox Ventures' share is not invented, and no investment date is
+inferred from the 3 September 2024 announcement. **BSV Ventures is the former Baltic Sandbox
+Ventures** — one record, with the old name noted where the 2024 announcement uses it.
+
+**EIFO had two facts collapsed into one bad row.** The commitment to the D3 *fund* (US$5m,
+4 July 2025) is now a **fund position** in a new table and a separate export array, never a
+holding. EIFO's participation in the Six Robotics €12m seed is real but needed the lead
+investor's announcement as its source. The original row is **retired in place** with a reason, so
+the audit history survives while the projection stops publishing it.
+
+**The evidence audit found three kinds of defect.** Six relationships had a cited source that did
+not support the pair — including one sourced to a page where the company appeared only as a
+sidebar headline, one sourced to a news item about a different company, and one whose URL now
+404s. Five said more than was recorded and are now typed with their disclosed amounts. One
+(Rockaway Alpha Defense → JISR) had no supporting source at all and is retired and listed as
+unresolved. Eleven evidence labels were corrected upward where the source is the investor's own
+portfolio page. **Both flagged edges survived**: PSV Hafnium → Acodyne and Tesi → Kelluu rest on a
+page that names the investors in that specific round, which is evidence, unlike a bare listing.
+
+**Unresolved holdings 26 → 13.** Ten companies created, none a duplicate, **three published**
+(Airvolve, Kelluu, Mutable Tactics) and seven kept as drafts because `/companies/` is a UAV and
+counter-UAS directory. **None has a taxonomy or candidate row, so none can enter the landscape**:
+567 before and after. Thirteen remain unresolved with reasons that now say what was checked —
+including URC, whose identity is evidenced as URC Systems but whose transaction is a pending
+acquisition by a different group vehicle, and which **needs Nazar's decision**.
+
+**Financial coverage 7 investors → 24**, 50 observations across 10 of the 12 metric types, and
+**14 of the 26 Ukraine-linked records** now carry figures. The ledger lists all 118 records in
+three honest states: 24 found, 18 researched with nothing usable, **76 not yet researched**. Two
+figures were deliberately not stored — Coinvest's €44.6m, which it describes as co-invested with
+partners rather than its own deployed capital, and D3's "$50m", which is a combined total for two
+funds.
+
+**No probe rows in production this time.** The previous pass inserted a test company and a
+scheduled deploy picked it up; this pass used fixtures and proved idempotency by checking that
+every replay guard is closed. Tests 59/59.

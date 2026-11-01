@@ -720,5 +720,71 @@ create policy subscribers_anon_insert on public.subscribers
 -- recreating it needs superuser, so leave it to the platform.
 -- ---------------------------------------------------------------------------
 
+-- ---------------------------------------------------------------------------
+-- Investor relationship retirement and fund positions
+-- Applied to the live DB as migrations 'investor_relationship_retirement_and_fund_positions'
+-- and 'investor_landscape_projection_with_fund_positions_v2' on 2026-11-01.
+--
+-- NOTE: the rest of the investor research staging schema (investor_research,
+-- investor_companies, investor_portfolio_unresolved, investor_financial_metrics,
+-- investor_research_* and the v_landscape_investor* views) was applied by migration in the
+-- 2026-10-30/31 passes and is still not mirrored here. That gap predates this change.
+-- ---------------------------------------------------------------------------
+
+-- A relationship whose cited source turns out not to support the specific investor and
+-- company stops being a public holding, but its history is part of the audit trail.
+alter table if exists public.investor_companies
+  add column if not exists retired_at date,
+  add column if not exists retired_reason text;
+
+do $$ begin
+  if to_regclass('public.investor_companies') is not null then
+    alter table public.investor_companies drop constraint if exists investor_companies_retired_reason;
+    alter table public.investor_companies add constraint investor_companies_retired_reason
+      check ((retired_at is null) = (retired_reason is null));
+  end if;
+end $$;
+
+-- Capital committed by one investor to another manager's fund. Never a portfolio holding:
+-- the fund's own investments are not this investor's companies, and storing them in
+-- investor_companies would present indirect exposure as a direct cheque.
+create table if not exists public.investor_fund_positions (
+  id uuid primary key default gen_random_uuid(),
+  investor_research_id uuid not null references public.investor_research(id) on delete cascade,
+  target_investor_research_id uuid references public.investor_research(id) on delete set null,
+  target_vehicle_id uuid references public.investor_research_vehicles(id) on delete set null,
+  target_name_as_published text not null,
+  position_type text not null check (position_type in
+    ('limited_partner','fund_of_funds_commitment','anchor_investor','undisclosed')),
+  commitment_amount numeric,
+  commitment_currency char(3),
+  bound text check (bound in ('exact','approximate','minimum','maximum')),
+  announced_at date,
+  as_of_text text,
+  evidence_status text not null check (evidence_status in
+    ('investor_announcement','investor_published_portfolio','third_party_reported',
+     'research_record','unverified')),
+  source_url text,
+  reviewed_at date,
+  note_en text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (investor_research_id, target_name_as_published, position_type),
+  constraint investor_fund_positions_currency
+    check ((commitment_amount is null) = (commitment_currency is null)),
+  constraint investor_fund_positions_not_self
+    check (target_investor_research_id is null
+           or target_investor_research_id <> investor_research_id)
+);
+
+-- Deny by default, like every other base table here: the build reads the view, which
+-- bypasses RLS, and no browser ever reads this table directly.
+alter table if exists public.investor_fund_positions enable row level security;
+
+create index if not exists investor_fund_positions_investor_idx
+  on public.investor_fund_positions (investor_research_id);
+create index if not exists investor_fund_positions_target_idx
+  on public.investor_fund_positions (target_investor_research_id);
+
 -- Make sure PostgREST picks up the new table/columns immediately.
 notify pgrst, 'reload schema';
