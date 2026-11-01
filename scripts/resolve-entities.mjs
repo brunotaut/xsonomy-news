@@ -33,6 +33,7 @@ import {
 } from "./lib/supabase.mjs";
 import {
   buildCompanyIndex, buildProductIndex, matchCompany, matchProduct, isAmbiguousName,
+  buildSuccessorMap, addExactName,
   isBlocklisted, llmGate, slugify,
 } from "./lib/resolve.mjs";
 import { hasApiKey } from "./lib/analyze.mjs";
@@ -56,11 +57,14 @@ async function main() {
   console.log(`Resolving entities for ${articles.length} article(s)…`);
 
   // --- load catalogue + cache into memory (a few thousand small rows) --------
-  const [companies, aliases, products, cache] = await Promise.all([
-    fetchAllRows("companies", "id,name,slug,website,hq_country"),
+  // publication_status and the merger edges are read so a company retired INTO another
+  // stops capturing matches under its own name: see buildSuccessorMap in lib/resolve.mjs.
+  const [companies, aliases, products, cache, relationships] = await Promise.all([
+    fetchAllRows("companies", "id,name,slug,website,hq_country,publication_status"),
     fetchAllRows("company_aliases", "company_id,alias"),
     fetchAllRows("products", "id,name,slug,company_id"),
     fetchAllRows("tag_resolutions", "id,kind,tag,decision,entity_id"),
+    fetchAllRows("company_relationships", "source_company_id,target_company_id,type"),
   ]);
   const productsByCompany = new Map();
   for (const p of products) {
@@ -70,7 +74,19 @@ async function main() {
   }
   const companiesWithProducts = companies.map(
     (c) => ({ ...c, productNames: productsByCompany.get(c.id) || [] }));
-  const companyIndex = buildCompanyIndex(companiesWithProducts, aliases);
+  const companyIndex = buildCompanyIndex(companiesWithProducts, aliases, relationships);
+  // Say out loud what the merger policy did, so a run is auditable without a diff.
+  const successors = buildSuccessorMap(companiesWithProducts, relationships);
+  if (successors.size) {
+    const byName = new Map(companiesWithProducts.map((c) => [c.id, c.name]));
+    for (const [retired, v] of successors) {
+      const what = v.id ? `redirects to ${byName.get(v.id) || v.id}`
+        : v.ambiguous ? "has more than one live successor — left unresolved"
+        : v.cycle ? "is part of a merger cycle — left unresolved"
+        : "has no live successor — left unresolved";
+      console.log(`  Merged away: ${byName.get(retired) || retired} ${what}`);
+    }
+  }
   const productIndex = buildProductIndex(products);
   const slugsTaken = new Set([...companies.map((c) => c.slug), ...products.map((p) => p.slug)]);
   const companyIds = new Set(companies.map((c) => c.id));
@@ -321,7 +337,7 @@ async function main() {
       }
       for (const alias of meta.aliases) aliasRows.push({ company_id: row.id, alias, type: "aka" });
       // Extend the in-memory index so product maker links can hit new companies.
-      companyIndex.exact.set(row.name.toLowerCase(), row.id);
+      addExactName(companyIndex, row.name, row.id);
     });
     stats.created += created.length;
     console.log(`Created ${created.length} company row(s).`);

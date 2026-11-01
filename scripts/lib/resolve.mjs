@@ -80,38 +80,144 @@ export const isBlocklisted = (name) => BLOCK_RE.test(String(name));
 
 // --- indexes + matching --------------------------------------------------------
 
-// companies: [{id,name}], aliases: [{company_id,alias}]
-export function buildCompanyIndex(companies, aliases) {
-  const exact = new Map();       // lower(name|alias) → id
+// --- merged-away companies -----------------------------------------------------
+//
+// A company that is the SOURCE of a `merged_with` edge and is no longer live has been
+// retired INTO its successor. Its name must stop capturing matches. Moving its aliases
+// to the survivor is not enough: the record's own name stays an exact key, so an
+// article mentioning "ECA Group / Infotron" relinked to a draft nobody can open, and
+// which one won depended on the order the rows came back.
+//
+// A LIVE source is a different thing and is deliberately left alone. "EADS (now Airbus
+// Defence and Space)", "BlueHalo (AeroVironment)", "AAI Corporation (Textron Systems)"
+// and "WB Electronics" are all published records with their own pages, where
+// `merged_with` records corporate history rather than a retirement.
+//
+// Returns retiredId → { id } (resolve to this live successor) | { ambiguous } |
+// { unresolvable } | { cycle }. Only the first form redirects; the others mean the
+// retired record is indexed under nothing at all, because guessing is worse than
+// leaving the tag for the LLM gate to decide.
+export function buildSuccessorMap(companies, relationships) {
+  const byId = new Map((companies || []).map((c) => [c.id, c]));
+  const isLive = (id) => byId.get(id)?.publication_status === "live";
+  // Only drafts/review rows count as retired. A company whose publication_status we
+  // were not given is treated as live, so a caller that forgets to select the column
+  // changes nothing rather than silently un-indexing the whole catalogue.
+  const isRetiredSource = (id) => byId.has(id) && byId.get(id).publication_status !== undefined
+    && !isLive(id);
+
+  const edges = new Map();            // retiredId → [targetId…]
+  for (const r of relationships || []) {
+    if (r.type !== "merged_with") continue;
+    const src = r.source_company_id, tgt = r.target_company_id;
+    if (!src || !tgt || src === tgt) continue;
+    if (!isRetiredSource(src)) continue;
+    edges.set(src, [...(edges.get(src) || []), tgt]);
+  }
+
+  const out = new Map();
+  for (const start of edges.keys()) {
+    let cur = start;
+    const seen = new Set([start]);
+    let verdict = { unresolvable: true };
+    for (;;) {
+      const next = edges.get(cur);
+      // No further edge: the chain ends here. It only helps if this row is live.
+      if (!next) { verdict = isLive(cur) ? { id: cur } : { unresolvable: true }; break; }
+      // Two successors is the DefSecIntel case: one composite draft merged into both
+      // DefSecIntel Solutions and Origin Robotics. Nothing picks between them.
+      if (next.length > 1) { verdict = { ambiguous: true }; break; }
+      const n = next[0];
+      if (!byId.has(n)) { verdict = { unresolvable: true }; break; }   // successor is gone
+      if (seen.has(n)) { verdict = { cycle: true }; break; }           // A → B → A
+      seen.add(n);
+      cur = n;
+      if (isLive(cur)) { verdict = { id: cur }; break; }
+      // a retired row pointing at another retired row: keep walking
+    }
+    out.set(start, verdict);
+  }
+  return out;
+}
+
+// A key two different companies both claim at the same precedence. Refused rather
+// than decided by row order.
+export const AMBIGUOUS = Symbol("ambiguous-company-key");
+
+// Exact-key precedence. A tag that is literally one company's NAME must not be
+// captured by a different company's ALIAS: "KNDS France" is both, and the company of
+// that name is the better answer. Equal rank and different companies is the only
+// genuine ambiguity, and that key is then refused.
+const RANK_NAME = 0, RANK_ALIAS = 1;
+
+// Add one exact key to an existing index, applying the same precedence and ambiguity
+// rules as the initial build. Exported so the resolver can extend the index with
+// companies it creates mid-run without reintroducing first-write-wins.
+export function addExactName(index, name, id, rank = RANK_NAME) {
+  const key = String(name || "").toLowerCase();
+  if (!key || id == null) return;
+  const prev = index.exact.get(key);
+  if (prev === undefined) { index.exact.set(key, id); index.exactRank.set(key, rank); return; }
+  if (prev === AMBIGUOUS) return;
+  const prevRank = index.exactRank.get(key);
+  if (rank < prevRank) { index.exact.set(key, id); index.exactRank.set(key, rank); return; }
+  if (rank > prevRank) return;
+  if (prev !== id) index.exact.set(key, AMBIGUOUS);
+}
+
+// companies: [{id,name,publication_status?}], aliases: [{company_id,alias}],
+// relationships: [{source_company_id,target_company_id,type}]
+export function buildCompanyIndex(companies, aliases, relationships = []) {
+  const exact = new Map();       // lower(name|alias) → id | AMBIGUOUS
+  const exactRank = new Map();   // lower(name|alias) → RANK_NAME | RANK_ALIAS
   const normed = new Map();      // normCompany(name|alias) → [{id, name}]
-  const add = (map, key, val, srcName) => {
-    if (!key) return;
-    if (map === exact) { if (!exact.has(key)) exact.set(key, val); return; }
+  const index = { exact, exactRank, normed, companies };
+
+  const successor = buildSuccessorMap(companies, relationships);
+  // Where a key belongs: a retired merged company's keys point at its live successor,
+  // and a retired company with no single live successor owns no keys at all.
+  const target = (id) => {
+    const v = successor.get(id);
+    if (!v) return id;
+    return v.id ?? null;
+  };
+
+  const addNormed = (key, val, srcName) => {
+    // val.rank says whether this entry came from a company's name or from an alias
+    if (!key || val.id == null) return;
     if (srcName && !normKeyOk(srcName, key)) return;   // too generic to trust
     const arr = normed.get(key) || [];
-    arr.push(val);
+    // The same company can reach one normalised key by several routes (its name, an
+    // alias, a parenthetical). Keep one entry per company so a collision count means
+    // "two companies", not "two spellings of one".
+    if (!arr.some((x) => x.id === val.id)) arr.push(val);
     normed.set(key, arr);
   };
+
   for (const c of companies) {
-    add(exact, c.name.toLowerCase(), c.id);
-    add(normed, normCompany(c.name), { id: c.id, name: c.name }, c.name);
+    const id = target(c.id);
+    addExactName(index, c.name, id, RANK_NAME);
+    addNormed(normCompany(c.name), { id, name: c.name, rank: RANK_NAME }, c.name);
   }
   for (const a of aliases) {
-    add(exact, String(a.alias).toLowerCase(), a.company_id);
-    add(normed, normCompany(a.alias), { id: a.company_id, name: String(a.alias) }, String(a.alias));
+    const id = target(a.company_id);
+    addExactName(index, a.alias, id, RANK_ALIAS);
+    addNormed(normCompany(a.alias), { id, name: String(a.alias), rank: RANK_ALIAS }, String(a.alias));
   }
   // Catalogue names often carry parenthetical notes — "Raytheon (RTX)",
   // "BlueHalo (AeroVironment)", "Wing (Alphabet Inc.)". Index the part before
   // the parens, and the inside as a weak alias when it isn't already a company
   // of its own (so "Insitu (Boeing)" never captures the tag "Boeing").
   for (const c of companies) {
+    const id = target(c.id);
+    if (id == null) continue;
     const m = c.name.match(/^([^(]{2,}?)\s*\(([^)]+)\)/);
     if (!m) continue;
-    add(normed, normCompany(m[1]), { id: c.id, name: m[1].trim() }, m[1]);
+    addNormed(normCompany(m[1]), { id, name: m[1].trim(), rank: RANK_NAME }, m[1]);
     const innerLo = m[2].trim().toLowerCase();
-    if (!exact.has(innerLo)) add(normed, normCompany(m[2]), { id: c.id, name: m[2].trim() }, m[2]);
+    if (!exact.has(innerLo)) addNormed(normCompany(m[2]), { id, name: m[2].trim(), rank: RANK_ALIAS }, m[2]);
   }
-  return { exact, normed, companies };
+  return index;
 }
 
 export function buildProductIndex(products) {
@@ -193,9 +299,34 @@ export function corroboration(context, company) {
 
 // Try to match one company tag. Returns { id, reason, confidence } or null.
 // `context` is optional; without it an ambiguous name can only ever be LOW.
+// One company behind a shared key, chosen the same way on every path.
+// The candidate whose raw name is closest to the raw tag wins; a genuine tie between
+// two DIFFERENT companies is refused, because breaking it would mean using row order.
+// Used by the normalized, prefix and fuzzy paths so all three behave alike.
+function pickOne(cands, lo) {
+  if (!cands || !cands.length) return null;
+  if (new Set(cands.map((c) => c.id)).size === 1) return cands[0];
+  const scored = cands.map((c) => ({ c, s: dice(lo, String(c.name).toLowerCase()) }));
+  const top = Math.max(...scored.map((x) => x.s));
+  let winners = scored.filter((x) => x.s === top);
+  // Same tie-break as the exact map: a company's own NAME beats another company's
+  // ALIAS. "KNDS France" is both, and the company of that name is the better answer,
+  // so "KNDS France SAS" resolves rather than being refused over a 1.00/1.00 tie.
+  if (new Set(winners.map((x) => x.c.id)).size > 1) {
+    const bestRank = Math.min(...winners.map((x) => x.c.rank ?? RANK_NAME));
+    winners = winners.filter((x) => (x.c.rank ?? RANK_NAME) === bestRank);
+  }
+  if (new Set(winners.map((x) => x.c.id)).size > 1) return null;   // genuine tie
+  return winners[0].c;
+}
+
 export function matchCompany(tag, index, context = null) {
   const lo = tag.toLowerCase();
   const hit = index.exact.get(lo);
+  // AMBIGUOUS means two different companies claim this exact string at the same
+  // precedence. Refusing is the point: the tag goes to the LLM gate instead of being
+  // awarded to whichever row the fetch happened to return first.
+  if (hit === AMBIGUOUS) return null;
   if (hit) return gate(tag, { id: hit, reason: "exact" }, index, context);
 
   const norm = normCompany(tag);
@@ -203,8 +334,8 @@ export function matchCompany(tag, index, context = null) {
   if (cands?.length) {
     // On collision (e.g. parent + subsidiary normalising alike) pick the
     // candidate whose raw name is closest to the raw tag.
-    const best = cands.length === 1 ? cands[0]
-      : cands.reduce((a, b) => (dice(lo, a.name.toLowerCase()) >= dice(lo, b.name.toLowerCase()) ? a : b));
+    const best = pickOne(cands, lo);
+    if (!best) return null;
     return gate(tag, { id: best.id, reason: "normalized" }, index, context);
   }
 
@@ -217,7 +348,10 @@ export function matchCompany(tag, index, context = null) {
     const [shorter, longer] = keyTok.length <= tagTok.length ? [keyTok, tagTok] : [tagTok, keyTok];
     if (shorter.length < 2) continue;
     if (shorter.every((t, i) => longer[i] === t)) {
-      if (!prefix || key.length > prefix.key.length) prefix = { key, id: arr[0].id };
+      // A shared key means several companies, and arr[0] would be row order.
+      const pick = pickOne(arr, lo);
+      if (!pick) continue;
+      if (!prefix || key.length > prefix.key.length) prefix = { key, id: pick.id };
     }
   }
   if (prefix) return gate(tag, { id: prefix.id, reason: "prefix" }, index, context);
@@ -227,8 +361,10 @@ export function matchCompany(tag, index, context = null) {
   let best = null;
   for (const [key, arr] of index.normed) {
     if (key.split(" ")[0] !== tagTok[0]) continue;
+    const pick = pickOne(arr, lo);
+    if (!pick) continue;                                   // shared key, no clear winner
     const s = dice(norm, key);
-    if (s >= 0.9 && (!best || s > best.s)) best = { s, id: arr[0].id };
+    if (s >= 0.9 && (!best || s > best.s)) best = { s, id: pick.id };
   }
   if (best) return gate(tag, { id: best.id, reason: `fuzzy:${best.s.toFixed(2)}` }, index, context);
   return null;
@@ -254,8 +390,13 @@ function gate(tag, m, index, context) {
 }
 
 export function matchProduct(tag, index) {
+  // This used to call gate() with an undeclared `context`, so an exact product-name
+  // match threw a ReferenceError and aborted the whole resolve run. Only the cache
+  // hid it: a tag already decided never reaches here, so it fired on new tags only.
+  // The gate was wrong here anyway — it exists for ambiguous COMPANY names, and the
+  // normalized branch below never used it.
   const hit = index.exact.get(tag.toLowerCase());
-  if (hit) return gate(tag, { id: hit, reason: "exact" }, index, context);
+  if (hit) return { id: hit, reason: "exact" };
   const c = index.compact.get(normProduct(tag));
   if (c) return { id: c, reason: "normalized" };
   return null;
