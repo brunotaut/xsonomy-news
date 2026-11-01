@@ -104,6 +104,40 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
 
 ## Resolved this session
 
+### 2026-11-01 — hub cards now link to the profiles their matches point at
+DLR and MITS Capital were both **confirmed** catalogue matches that the landscape page
+still rendered as plain text. Two unrelated causes, both now fixed; full write-up in
+`research-agent/reports/2026-11-01-hub-profile-links.md`.
+
+- **DLR** — the page resolved a company match by searching the landscape payload, which
+  holds only the 567 landscape members. DLR is a research institute, counted *outside* that
+  list, so its id was never there to find. Its profile existed all along.
+- **MITS Capital** — `hub_research.matched_investor_id` points at the **legacy `investors`
+  table**, while the published investor records are `investor_research` rows keyed on their
+  own ids. The page was comparing ids from two different tables, so *no* investor match
+  could ever have resolved. `investor_research.matched_investor_id` is the bridge, and for
+  MITS it was null.
+- **The fix.** `v_landscape_hubs` now resolves both ids to a published profile slug in SQL
+  — by id, never by name, and never by building a slug. The export emits
+  `matchedCompanySlug` / `matchedCompanyUrl` / `matchedInvestorSlug` only when the
+  relationship is a reviewed conclusion **and** the target has a published profile, and the
+  page renders what it is given. `atlas.js`'s own duplicate copy of the role list is gone —
+  that duplication is what let the rule drift.
+- **The MITS link is evidence, not a name guess.** The names differ, which is why the
+  resolver had not linked them. MITS Capital's own site — also the published record's own
+  ticket source — carries the Lightning Fund under the heading "MITS Capital Portfolio" and
+  lists MITS Accelerator as the same group's programme, which confirms both the identity
+  and the hub's "related, different function" role.
+- **Bofors Test Center stays text.** Its matched company is published, but the match is
+  only `needs_review`, so the export withholds the slug entirely. That is why "confirmed"
+  and "published" are two independent conditions rather than one.
+- **One thing the first pass got wrong**, caught by checking the rendered page rather than
+  the export: the link worked but its *label* was still looked up in the landscape payload,
+  so DLR read as `dlr-german-aerospace-center`. The name now travels with the slug.
+- Tests **66/66**. Hub eligibility, locations, approvals, counts and filters untouched; 118
+  approved investor records unchanged.
+
+
 ### 2026-11-01 — Exail admitted, ECA Group / Infotron merged into it, 11 product categories corrected
 Nazar authorised three things: the reviewed admission and merge, the Exail description, and
 **category-only** corrections for the products whose maritime identity is evidenced. All three
@@ -245,6 +279,23 @@ applied in one guarded 17-step transaction and deployed. Full write-up:
   idempotently in `db/schema.sql`. Rollback:
   `research-agent/reports/2026-11-01-exail-merge-rollback.sql` (header explains why the column
   itself is deliberately not reverted).
+
+- 2026-11-01 — `hub_matched_profile_slugs`. Redefines `v_landscape_hubs` to resolve each hub's
+  stored catalogue match to a published profile slug **by id**: `matched_company_slug` from
+  `companies` (gated `publication_status='live'` with a slug, which is exactly when
+  `/companies/<slug>/` is built) and `matched_investor_slug` from the `approved`
+  `investor_research` row whose `matched_investor_id` equals the hub's. The view had to be
+  dropped and recreated — adding columns changes the column order and `create or replace`
+  refuses it. Plus one data write: `investor_research.matched_investor_id` set on
+  `mits-capital-lightning-fund`, the bridge that was missing. No `db/schema.sql` change —
+  the hub subsystem is not mirrored there at all (see the note on the investor staging
+  schema above; same gap, task #1). Report and rollback:
+  `research-agent/reports/2026-11-01-hub-profile-links.md`.
+- 2026-11-01 — `hub_matched_profile_names`. Adds `matched_company_name` /
+  `matched_investor_name` to the same view. The slug alone was not enough: the panel still
+  looked the label up in the landscape company payload, the very lookup that cannot find a
+  research institute, so the DLR link rendered as "dlr-german-aerospace-center — company
+  profile". The label now travels with the link from the row that resolved it.
 
 ## Decisions log
 - 2026-09-05 — Keep two repos (Pages constraint). All DB writes stay in xsonomy-news.
