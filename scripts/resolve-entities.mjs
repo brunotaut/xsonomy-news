@@ -36,6 +36,9 @@ import {
   buildSuccessorMap, addExactName,
   isBlocklisted, llmGate, slugify,
 } from "./lib/resolve.mjs";
+import {
+  OUTCOMES, buildRetiredProductIndex, retiredMatch, mergeEvidence,
+} from "./lib/identity.mjs";
 import { hasApiKey } from "./lib/analyze.mjs";
 
 const args = process.argv.slice(2);
@@ -62,7 +65,7 @@ async function main() {
   const [companies, aliases, products, cache, relationships] = await Promise.all([
     fetchAllRows("companies", "id,name,slug,website,hq_country,publication_status"),
     fetchAllRows("company_aliases", "company_id,alias"),
-    fetchAllRows("products", "id,name,slug,company_id"),
+    fetchAllRows("products", "id,name,slug,company_id,publication_status"),
     fetchAllRows("tag_resolutions", "id,kind,tag,decision,entity_id"),
     fetchAllRows("company_relationships", "source_company_id,target_company_id,type"),
   ]);
@@ -88,6 +91,14 @@ async function main() {
     }
   }
   const productIndex = buildProductIndex(products);
+  // Rows retired as extraction artefacts must not come back. The name index
+  // already stops an exact or normalised repeat, but not a differently-worded
+  // duplicate of the same thing ("Maritime Mine Counter Measures" for a retired
+  // "MMCM"), so this index is keyed more loosely and routes a hit to review.
+  const retiredProducts = buildRetiredProductIndex(products);
+  if (retiredProducts.size) {
+    console.log(`  Retired product guard: ${retiredProducts.size} non-live product name(s) protected from recreation.`);
+  }
   const slugsTaken = new Set([...companies.map((c) => c.slug), ...products.map((p) => p.slug)]);
   const companyIds = new Set(companies.map((c) => c.id));
   const productIds = new Set(products.map((p) => p.id));
@@ -119,6 +130,20 @@ async function main() {
   const unknown = { company: new Map(), product: new Map() };  // lowerTag → {name, seen_in[], urls[]}
 
   const stats = { cache: 0, matched: 0, blocked: 0, created: 0, llmRejected: 0, undecided: 0 };
+
+  // Identity evidence captured at analysis time, keyed by lowercased tag. The
+  // resolver no longer judges what a name IS — that was decided where the
+  // article body was still available. See scripts/lib/identity.mjs.
+  const evidenceByTag = new Map();
+  for (const art of articles) {
+    for (const e of Array.isArray(art.entity_evidence) ? art.entity_evidence : []) {
+      if (!e || typeof e.name !== "string") continue;
+      const lo = e.name.trim().toLowerCase();
+      if (!lo) continue;
+      evidenceByTag.set(lo, mergeEvidence(evidenceByTag.get(lo), { ...e, articleUrl: art.url }));
+    }
+  }
+  const evidenceSeen = evidenceByTag.size;
 
   for (const kind of ["company", "product"]) {
     for (const art of articles) {
@@ -267,6 +292,25 @@ async function main() {
       stats.llmRejected++;
       continue;
     }
+
+    // IDENTITY. The gate judges whether a name belongs in a defence catalogue
+    // at all, and what category it would take. It does NOT get to decide what
+    // the name denotes, because it only ever sees the name and some headlines.
+    // That decision was made at analysis time against the article text and is
+    // carried in articles.entity_evidence.
+    const ev = evidenceByTag.get(lo) || null;
+    const outcome = ev ? ev.outcome : OUTCOMES.REVIEW;
+    const evReason = ev ? ev.reason : "no_evidence_captured";
+
+    if (outcome === OUTCOMES.REJECT) {
+      // Positively classified as something other than a product — a programme,
+      // a class term, a contract, an organisation.
+      decisions.product.set(lo, { rejected: true });
+      newCacheRows.push({ kind: "product", tag: u.name, decision: "rejected", entity_id: null, reason: `evidence:${evReason}` });
+      stats.evidenceRejected = (stats.evidenceRejected || 0) + 1;
+      continue;
+    }
+
     const existing = matchProduct(v.canonical, productIndex);
     if (existing) {
       decisions.product.set(lo, { entityId: existing.id });
@@ -279,14 +323,31 @@ async function main() {
     const canonLo = v.canonical.toLowerCase();
     const dup = prodCanonSeen.get(canonLo);
     if (dup) { dup.tags.push({ lo, tag: u.name }); continue; }
+    // Would this resurrect something retired as an extraction artefact? Not an
+    // outright refusal: a genuine new product could normalise to the same key.
+    // It goes to review so a person sees it, and never straight to live.
+    const revived = retiredMatch(v.canonical, retiredProducts) || retiredMatch(u.name, retiredProducts);
+    const needsReview = outcome !== OUTCOMES.CREATE || Boolean(revived);
+    const reviewReason = revived ? `would_revive_retired:${revived.name}` : evReason;
+
     const plan = {
-      tags: [{ lo, tag: u.name }], makerName: v.maker,
+      tags: [{ lo, tag: u.name }],
+      // The maker comes from verified joint evidence, never from the gate's
+      // `maker` field. That field is what turned co-occurrence in one article
+      // into an ownership claim, so it is deliberately not read here.
+      makerName: needsReview ? null : (ev && ev.maker) || null,
+      needsReview, reviewReason, evidenceReason: evReason,
+      makerClaimed: (ev && ev.makerClaimed) || v.maker || null,
       row: {
         name: v.canonical,
         slug: uniqueSlug(v.canonical),
         category: v.category,
         country: v.country,
-        publication_status: "live",
+        // Unverified candidates are kept and made reviewable rather than
+        // published. 'review' is already in the products CHECK and the site
+        // build fetches publication_status=eq.live only, so a review row
+        // cannot reach xsonomy.com.
+        publication_status: needsReview ? "review" : "live",
         confidence: "low",
         source_urls: u.urls.slice(0, MAX_SOURCE_URLS),
       },
@@ -301,8 +362,16 @@ async function main() {
     for (const c of companyInserts) console.log(`  + ${c.name}  [${c.company_type || "?"}, ${c.hq_country || "?"}]  /${c.slug}`);
   }
   if (productPlans.length) {
-    console.log(`\nNew products (${productPlans.length}):`);
-    for (const p of productPlans) console.log(`  + ${p.row.name}  [${p.row.category}]  maker: ${p.makerName || "—"}`);
+    const live = productPlans.filter((p) => !p.needsReview);
+    const review = productPlans.filter((p) => p.needsReview);
+    console.log(`\nNew products (${productPlans.length}: ${live.length} live, ${review.length} held for review):`);
+    for (const p of live) {
+      const dropped = !p.makerName && p.makerClaimed ? `  (maker "${p.makerClaimed}" dropped: no single span named both)` : "";
+      console.log(`  + ${p.row.name}  [${p.row.category}]  maker: ${p.makerName || "—"}${dropped}`);
+    }
+    for (const p of review) {
+      console.log(`  ? ${p.row.name}  [${p.row.category}]  HELD → review: ${p.reviewReason}`);
+    }
   }
   for (const table of ["investors", "institutions"]) {
     if (!sideRows[table].size) continue;
@@ -355,12 +424,19 @@ async function main() {
       const plan = productPlans[ix];
       for (const { lo, tag } of plan.tags) {
         decisions.product.set(lo, { entityId: row.id });
-        newCacheRows.push({ kind: "product", tag, decision: "created", entity_id: row.id, reason: "llm" });
+        newCacheRows.push({
+          kind: "product", tag, decision: "created", entity_id: row.id,
+          reason: plan.needsReview ? `llm+review:${plan.reviewReason}` : `llm+evidence:${plan.evidenceReason}`,
+        });
       }
       if (row.company_id) pcRows.push({ product_id: row.id, company_id: row.company_id, role: "manufacturer" });
     });
     stats.created += created.length;
-    console.log(`Created ${created.length} product row(s) (${pcRows.length} maker link(s)).`);
+    stats.heldForReview = (stats.heldForReview || 0) + productPlans.filter((p) => p.needsReview).length;
+    stats.makerDropped = (stats.makerDropped || 0) +
+      productPlans.filter((p) => !p.makerName && p.makerClaimed).length;
+    console.log(`Created ${created.length} product row(s) (${pcRows.length} maker link(s), ` +
+      `${productPlans.filter((p) => p.needsReview).length} held as review).`);
   }
 
   // 4c. persist the decision cache FIRST (ignore races on unique (kind, tag)).
@@ -410,6 +486,7 @@ async function main() {
 
   console.log(`\nDone. ${doneIds.length}/${articles.length} article(s) resolved; ` +
     `${acRows.length} company link(s), ${apRows.length} product link(s). ` +
+    `Identity evidence for ${evidenceSeen} name(s). ` +
     JSON.stringify(stats));
 }
 

@@ -850,3 +850,91 @@ observation was re-typed rather than added or withdrawn. `fund_size_target` 41 �
 `fund_size_stated` 26 → 27. No code change: `fund_size_stated` already has a label and a
 card slot, and the standing test that every storable type has exactly one of each still
 passes. The complete before-image and reversal SQL are in the closeout report's addendum.
+
+## 1 November 2026 — stopping the extraction errors at source
+
+**The five bad rows had one cause, and the decision cache proves it.** Every one is
+`decision='created', reason='llm'` in `tag_resolutions` — all through the LLM gate, none
+through name matching or the blocklist. **Ghost Shark, Ghostfin and the Albacore company
+share a single timestamp**, `2026-08-28 17:12:28.084217+00`: one batched gate call from one
+article, and the only company in the batch was Albacore. Co-occurrence became ownership,
+visible in the data.
+
+**Why the gate could not have known better.** Its instruction was *"judge from the name and
+the article titles it appeared in"* — and `articles` **has no body column**. The body is
+fetched at analysis time and thrown away, so by the time the gate ran it was deciding what
+a name *denoted* from a name and a headline. A programme acronym and a model designation
+look identical from there. Then `publication_status: 'live'` on insert, unreviewed.
+
+**The fix is three rules in code, not a prompt and not a blacklist** (nothing matches on
+any of the five names):
+
+1. **Positive classification** — `kind` must be exactly `product`. Programme, class,
+   family, contract and organisation are refused, and an *absent or unrecognised* kind goes
+   to review, so the default is never "publish".
+2. **Quote verification** — the model returns a verbatim span and code checks it is really
+   in the article text.
+3. **Joint evidence** — a maker is accepted only when **one span names both the product and
+   the maker**. The product is still created; only the ownership claim is dropped.
+
+Evidence is captured and verified **at analysis time, where the body still exists**, and
+only the verdict is stored (one additive column, `articles.entity_evidence`). Unverified
+candidates become `publication_status='review'` — kept, reviewable, and unreachable by the
+site build. A retired artefact can no longer be recreated under a differently worded name.
+
+**Two of my own counterexample tests failed, and both bugs were in the fix.**
+`mentionsName` used a plain substring, so **"Ghostfin" matched the name "Ghost Shark"**
+through the shared "ghost" — the exact error class the module exists to prevent,
+reproduced inside the prevention. And a ≥4-character token floor silently dropped **"BAE"**.
+Both fixed, both now pinned by their own tests. 70/70 passing.
+
+**Read-only comparison against the real sources** (I could not call the model — no `.env`,
+the key lives only in CI — so this exercised the model-free half): on the real dronexl
+article, Ghost Shark is mentioned but **no span names both it and Albacore, so the maker is
+dropped**. The misattribution is prevented on the actual article — which, incidentally,
+says "**Anduril's** Ghost Shark". Body available on **15 of 16** recent articles (94%); the
+one failure is `defence-blog.com`, the source Dire WOLF came from, so ~6% of articles will
+hold new products for review.
+
+**A correction to the batch 2 review.** It said *"No source names an A27"*. **Wrong.** The
+opex360 article says *"trois drones sous-marins [AUV] **Exail A27 [ou A-18M]**"* — a
+bracketed alternative designation for the A-18M. Unpublishing it was still right, but
+because it is an **alias of an existing product**, not because it does not exist. And rule 2
+would *not* have caught it, since the quote verifies — an honest limit of the fix.
+
+**Activation: activated, not yet exercised.** `ingest-and-deploy.yml` runs `ingest` then
+`resolve` in one job, so new articles are analysed and resolved in a single pass. I have
+**not** seen a production run and will not claim one. Before that run: **719 backlog
+articles carry no evidence**, so **1,041 genuinely new product names would be held for
+review** — safe, nothing reaches the site, but the catalogue stops auto-growing from the
+backlog. `analyze-backfill.mjs --missing-evidence` fills it, writing *only*
+`entity_evidence` for names already stored. Not run: that is a production ingestion pass.
+
+### Reviewed: the Albacore article links are all supported — I was wrong
+
+The batch 2 report called Ghost Shark's link "spurious" and MAGURA V7's "doubtful". Reading
+the article, **all three are supported.** Ghost Shark gets a full comparison paragraph
+(A$1.7bn contract, Royal Australian Navy, Sydney factory, contrasted with Albacore's
+cheaper approach); Magura V7 is a specific factual claim in the business-case section.
+**Zero corrections proposed.** I had inferred the error from Ghost Shark not being the
+article's main subject — exactly the inference to avoid. A news link means "this article
+discusses this product"; a source URL means "this is where the record's facts come from".
+The same URL can be the first and not the second.
+
+### Prepared, not applied: `domain` means what the product *is*
+
+Not a semantics problem. **1,009 of the 1,055 domain rows are `source='rule'`,
+`note='category=UAV'`** — a mechanical copy of `products.category`, not an assertion about
+the product. Only 46 were ever observed. And **zero** Sensor, Counter-UAS, Effector or
+Software products carry a domain row: components are not tagged at all.
+
+So `domain` means what the product is, with *absence* as the convention for a component —
+consistent across 1,053 of 1,055 rows. **Cassio S and DA 15-N.ISS are stale derivations**:
+derived when the category was UAV, and left behind when it was corrected to `Other`. The
+same shape as the flag count that kept lying — a derived value outliving its basis.
+
+Proposed: delete those 2 rows. Dry-run clean, round trip exact including `created_at`
+(read from the live rows, not assumed). Both products then carry no taxonomy at all, which
+is consistent but worth knowing. **No live code writes `product_taxonomy`**, so nothing
+regenerates them — but nothing keeps derivations in step with a category change either, and
+the report gives a standing check for that.

@@ -13,6 +13,7 @@
 
 import { fetchText } from "./http.mjs";
 import { decodeEntities } from "./feed.mjs";
+import { IDENTITY_KINDS, decideIdentity } from "./identity.mjs";
 
 const API_URL = "https://api.anthropic.com/v1/messages";
 const MODEL = process.env.ANTHROPIC_MODEL || "claude-haiku-4-5-20251001";
@@ -119,6 +120,34 @@ const SYSTEM = [
   "  munitions, missiles, weapon systems, or named software. Include adversary/",
   "  competitor products mentioned in passing (e.g. Shahed-136, Orlan-10).",
   "",
+  "evidence: one entry per name you put in `products`, carrying what the ARTICLE",
+  "  says about it. This is the part that gets checked, so do not guess here.",
+  "  - kind: what the name actually denotes, judged from this article:",
+  "      'product'      a distinct named model you could field or buy",
+  "      'programme'    a procurement or development programme, even when its",
+  "                     acronym looks like a model designation",
+  "      'class'        a size or capability class, or a generic designator,",
+  "                     even when written as an acronym",
+  "      'family'       a product range or family rather than one model",
+  "      'contract'     a contract, framework agreement or lot",
+  "      'organisation' a company, agency, service or consortium",
+  "      'unclear'      the article does not settle which of these it is",
+  "    If the article does not make the name a specific model, it is NOT",
+  "    'product'. Prefer 'unclear' over guessing.",
+  "  - quote: a VERBATIM span of at least 12 characters, copied exactly from the",
+  "    article text above, in which this name appears. Copy it character for",
+  "    character; do not paraphrase, translate or tidy it. If you cannot find",
+  "    the name in the text, use null.",
+  "  - maker: the organisation the ARTICLE states makes this product, or null.",
+  "    Null is the correct answer whenever the article does not say. Do not use",
+  "    your own knowledge here, and do not infer a maker from a company being",
+  "    mentioned in the same article or from the names resembling each other.",
+  "  - makerQuote: a VERBATIM span, copied exactly from the article, that names",
+  "    BOTH this product and that maker and states the relationship. One span,",
+  "    naming both. If no single span does that, both maker and makerQuote must",
+  "    be null — an article that mentions a company and a product separately is",
+  "    not evidence that the company makes it.",
+  "",
   "STRICT EXCLUSIONS (never output these):",
   "  - Governments, militaries, agencies, programs, labs: U.S. Army, Navy, Air",
   "    Force, Pentagon, DoD, Department of War, DARPA, NATO, EU, ministries, DEVCOM.",
@@ -133,7 +162,9 @@ const SYSTEM = [
   "Normalise each name to a single canonical form; do not duplicate variants.",
   "If nothing qualifies for a field, return an empty array.",
   "Respond with a single JSON object and nothing else:",
-  '{"companies": string[], "products": string[]}',
+  '{"companies": string[], "products": string[],',
+  '  "evidence": [{"name": string, "kind": string, "quote": string|null,',
+  '               "maker": string|null, "makerQuote": string|null}]}',
 ].join("\n");
 
 function buildUserContent({ title, summary, body }) {
@@ -179,6 +210,44 @@ function cleanList(arr) {
   }
   return out;
 }
+
+// Evidence is only useful if it is shaped right, so it is normalised hard and
+// anything malformed becomes absent rather than wrong. An unrecognised `kind`
+// is kept verbatim: identity.mjs treats a kind it does not know as "unknown",
+// which routes to review, and silently rewriting it to "unclear" here would
+// hide a drifting prompt.
+const MAX_QUOTE_LEN = 400;
+function cleanEvidence(arr, productNames) {
+  if (!Array.isArray(arr)) return [];
+  const want = new Set(productNames.map((n) => n.toLowerCase()));
+  const out = [];
+  const seen = new Set();
+  for (const e of arr) {
+    if (!e || typeof e !== "object") continue;
+    const name = typeof e.name === "string" ? e.name.trim().replace(/\s+/g, " ").slice(0, MAX_ITEM_LEN) : "";
+    if (!name) continue;
+    const key = name.toLowerCase();
+    // Only keep evidence for names that actually made it into products[], so a
+    // model cannot smuggle an extra entity in through this field.
+    if (!want.has(key) || seen.has(key)) continue;
+    seen.add(key);
+    const str = (v) => (typeof v === "string" && v.trim() ? v.trim().slice(0, MAX_QUOTE_LEN) : null);
+    out.push({
+      name,
+      kind: typeof e.kind === "string" && e.kind.trim() ? e.kind.trim().toLowerCase().slice(0, 24) : null,
+      quote: str(e.quote),
+      maker: typeof e.maker === "string" && e.maker.trim() ? e.maker.trim().slice(0, MAX_ITEM_LEN) : null,
+      makerQuote: str(e.makerQuote),
+    });
+    if (out.length >= MAX_ITEMS) break;
+  }
+  return out;
+}
+
+// Exported so a caller can tell a prompt that has drifted from one that is
+// simply reporting uncertainty.
+export const unknownKinds = (evidence) =>
+  [...new Set((evidence || []).map((e) => e.kind).filter((k) => k && !IDENTITY_KINDS.includes(k)))];
 
 const RETRY_STATUS = new Set([429, 500, 502, 503, 529]);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -249,8 +318,13 @@ const callClaude = (userContent) => anthropicComplete({ system: SYSTEM, user: us
 
 // Analyze one article. Returns { companies, products, ok, usedBody, error? }.
 // `prefetchedBody` lets a caller pass text it already has (skips the fetch).
-export async function analyzeArticle({ url, title, summary }, { prefetchedBody } = {}) {
-  if (!hasApiKey()) return { companies: [], products: [], ok: false, usedBody: false, error: "no ANTHROPIC_API_KEY" };
+// `evidenceFor` restricts the evidence records to a given set of names instead
+// of the names this call just extracted. The evidence backfill uses it to fill
+// in evidence for products ALREADY stored on an article without touching the
+// stored companies/products lists — adding what was missing rather than
+// rewriting history.
+export async function analyzeArticle({ url, title, summary }, { prefetchedBody, evidenceFor } = {}) {
+  if (!hasApiKey()) return { companies: [], products: [], evidence: [], verifiedAgainst: "", ok: false, usedBody: false, error: "no ANTHROPIC_API_KEY" };
 
   let body = prefetchedBody || "";
   if (!body && url) body = await fetchBodyText(url);
@@ -260,14 +334,41 @@ export async function analyzeArticle({ url, title, summary }, { prefetchedBody }
     const reply = await callClaude(buildUserContent({ title, summary, body }));
     const parsed = parseEntities(reply);
     if (!parsed) return { companies: [], products: [], ok: false, usedBody, error: "unparseable response" };
+    const products = cleanList(parsed.products);
+    // `verifiedAgainst` is the text the quotes were taken from, and it is the
+    // only thing a quote can be checked against later. The article body is not
+    // stored anywhere, so if this is not carried forward now it is gone: that
+    // is exactly why the gate used to decide from headlines alone.
+    const verifiedAgainst = body || [title, summary].filter(Boolean).join("\n");
+    // Verify HERE, while the text is still in hand, and store only the verdict.
+    // The alternative — carrying 12k of body text per article so a later stage
+    // can check a quote — buys nothing and costs a column of article bodies.
+    const evidenceNames = Array.isArray(evidenceFor) && evidenceFor.length ? evidenceFor : products;
+    const evidence = cleanEvidence(parsed.evidence, evidenceNames).map((e) => {
+      const d = decideIdentity(e, verifiedAgainst, { haveArticleText: Boolean(verifiedAgainst) });
+      return {
+        name: e.name,
+        kind: e.kind,
+        outcome: d.outcome,
+        reason: d.reason,
+        quote: e.quote,              // the span itself, so a reviewer can read it
+        maker: d.maker,              // null unless ONE span named both sides
+        makerClaimed: e.maker,       // what the model said, kept so a dropped
+                                     // ownership claim is auditable rather than
+                                     // silently vanishing
+        quotedFromBody: usedBody,
+      };
+    });
     return {
       companies: cleanList(parsed.companies),
-      products: cleanList(parsed.products),
+      products,
+      evidence,
+      verifiedAgainst,
       ok: true,
       usedBody,
     };
   } catch (e) {
-    return { companies: [], products: [], ok: false, usedBody, error: e.message };
+    return { companies: [], products: [], evidence: [], verifiedAgainst: "", ok: false, usedBody, error: e.message };
   }
 }
 

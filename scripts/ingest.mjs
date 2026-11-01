@@ -138,7 +138,7 @@ async function analyzeNew(rows) {
         if (!res.ok) { llmErr++; return; }   // leave analyzed_at null → retried next run
         if (res.usedBody) bodies++;
         try {
-          await patchAnalysis(item.url, { companies: res.companies, products: res.products });
+          await patchAnalysis(item.url, { companies: res.companies, products: res.products, evidence: res.evidence });
           ok++;
         } catch {
           writeErr++;

@@ -137,7 +137,7 @@ export async function countUnanalyzed() {
 // Patch a single article's analysis result by URL. Uses HTTP PATCH (= UPDATE),
 // not upsert, so NOT NULL columns we don't touch are never disturbed. Always
 // stamps analyzed_at so the row won't be re-analyzed on the next run.
-export async function patchAnalysis(articleUrl, { companies = [], products = [] } = {}) {
+export async function patchAnalysis(articleUrl, { companies = [], products = [], evidence = null } = {}) {
   const { url, serviceKey } = sbConfig();
   if (!serviceKey) throw new Error("SUPABASE_SERVICE_KEY is required for writes.");
   const q = new URL(`${url}/rest/v1/articles`);
@@ -150,7 +150,12 @@ export async function patchAnalysis(articleUrl, { companies = [], products = [] 
       "Content-Type": "application/json",
       Prefer: "return=minimal",
     },
-    body: JSON.stringify({ companies, products, analyzed_at: new Date().toISOString() }),
+    body: JSON.stringify({
+      companies, products,
+      // Null would wipe evidence captured by an earlier run; omit instead.
+      ...(evidence ? { entity_evidence: evidence } : {}),
+      analyzed_at: new Date().toISOString(),
+    }),
   });
   if (!res.ok) throw new Error(`Supabase patch ${res.status}: ${await res.text()}`);
   return true;
@@ -327,12 +332,53 @@ function writeHeaders(serviceKey, extra = {}) {
 }
 
 // Fetch analyzed-but-unresolved articles (tags present, junctions not built).
+// Articles already analysed but carrying no identity evidence, limited to the
+// ones still waiting to be resolved — the only ones where missing evidence can
+// still change an outcome. Used by `analyze-backfill --missing-evidence`.
+export async function fetchMissingEvidenceBatch(limit = 50) {
+  const { url, serviceKey, anonKey } = sbConfig();
+  const key = serviceKey || anonKey;
+  if (!key) throw new Error("Need SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY to read.");
+  const q = new URL(`${url}/rest/v1/articles`);
+  q.searchParams.set("select", "id,url,title,summary,products");
+  q.searchParams.set("analyzed_at", "not.is.null");
+  q.searchParams.set("entities_resolved_at", "is.null");
+  q.searchParams.set("entity_evidence", "is.null");
+  q.searchParams.set("products", "neq.{}");
+  q.searchParams.set("order", "published_at.desc.nullslast");
+  q.searchParams.set("limit", String(limit));
+  const res = await sbFetch(q, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  if (!res.ok) throw new Error(`Supabase read ${res.status}: ${await res.text()}`);
+  return res.json();
+}
+
+// Write ONLY entity_evidence. Deliberately does not touch companies, products
+// or analyzed_at: this adds evidence that was never captured, it does not
+// re-extract or rewrite an article's stored entity lists.
+export async function patchEvidenceOnly(articleUrl, evidence) {
+  const { url, serviceKey } = sbConfig();
+  if (!serviceKey) throw new Error("SUPABASE_SERVICE_KEY is required for writes.");
+  const q = new URL(`${url}/rest/v1/articles`);
+  q.searchParams.set("url", `eq.${articleUrl}`);
+  const res = await sbFetch(q, {
+    method: "PATCH",
+    headers: {
+      apikey: serviceKey,
+      Authorization: `Bearer ${serviceKey}`,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal",
+    },
+    body: JSON.stringify({ entity_evidence: evidence }),
+  });
+  if (!res.ok) throw new Error(`Supabase evidence patch ${res.status}: ${await res.text()}`);
+}
+
 export async function fetchUnresolvedArticles(limit = 150) {
   const { url, serviceKey, anonKey } = sbConfig();
   const key = serviceKey || anonKey;
   if (!key) throw new Error("Need SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY to read.");
   const q = new URL(`${url}/rest/v1/articles`);
-  q.searchParams.set("select", "id,url,title,companies,products");
+  q.searchParams.set("select", "id,url,title,companies,products,entity_evidence");
   q.searchParams.set("analyzed_at", "not.is.null");
   q.searchParams.set("entities_resolved_at", "is.null");
   q.searchParams.set("order", "published_at.desc.nullslast");
