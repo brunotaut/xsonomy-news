@@ -806,3 +806,19 @@ share one shape. MMCM, rMCM **and Exail A27** came from **one article** — opex
 name. Ghost Shark was seeded off an article about a **different vehicle with a similar
 name**. An article that names several programmes, vendors and vehicles in one breath, read
 as if each name were a product.
+
+**A residual limb, found while verifying the fix.** Chasing a `dronexl.co` link on the
+Ghost Shark page — which turned out to be a *different*, correct article about Anduril —
+showed that the **original wrong source is still attached as a news link**, and to two
+other products: Ghostfin (correct, it is Albacore's article), Ghost Shark (spurious, the
+same name confusion) and MAGURA V7 (doubtful). So the misattribution had two limbs:
+`company_id` and `source_urls`, now fixed, and an article link, which is not. Removing it
+was not authorised, so it is reported with ready SQL rather than changed.
+
+That also corrects a count of mine: Ghost Shark's "17 article links, which corroborate
+Anduril unanimously" was **16 that corroborate it and 1 that caused the problem.** The
+conclusion stands; the arithmetic was too generous.
+
+**And the number that matters more than the flag count:** live UAV products whose every
+`domain` row is non-aerial is now **0**. That is the condition this work existed to fix,
+measured directly rather than through the flag text.

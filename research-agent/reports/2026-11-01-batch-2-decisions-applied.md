@@ -166,14 +166,61 @@ Measured on `https://xsonomy.com` after the rebuild:
 |---|---|
 | `/other/luna-2/` | **200** |
 | `/uav/luna-2/` | **200**, stub redirects to `/other/luna-2/` |
-| `/uav/mmcm/` · `/uav/rmcm/` · `/uav/xluuv/` | **404** each |
-| Sitemap: mmcm, rmcm, xluuv, exail-a27 | **0 occurrences** |
-| Sitemap: luna-2 | under `/other/` only |
-| Ghost Shark page | manufacturer **Anduril**, sources now anduril.com and defence.gov.au |
+| `/uav/mmcm/` · `/uav/rmcm/` · `/uav/xluuv/` | **404** · **404** · **404** |
+| `/uav/exail-a27/` | **404** (this morning's) |
+| Sitemap: `mmcm`, `rmcm`, `xluuv`, `exail-a27` | **0 occurrences each** |
+| Sitemap: `luna-2` | under `/other/` only |
 | `/other/dire-wolf/` · `/other/ghost-shark/` · `/other/ghostfin/` | **200** each |
-| `/companies/albacore/` · `/companies/anduril/` · `/companies/exail/` | **200** each, correct |
+| `/companies/anduril/` · `/companies/albacore/` · `/companies/exail/` | **200** each |
+| Ghost Shark, company | **Anduril** |
+| Ghost Shark, `Source URLs` in `/data/other.json` | **anduril.com** and **defence.gov.au** |
 | `/data/uav.json` · `/data/other.json` | **1,409** · **413**, matching the database |
-| `/data/landscape-investors.json` | 118 / 102 / 207 / 26 / 100 — identical to baseline |
+| `/landscape/` | **200** |
+
+**One thing to note about the source fix, so it is not mistaken for a failure.** The
+corrected URLs do **not** appear on the product page, and that is deliberate generator
+behaviour, not a lost change: `"Source URLs"` is in `generate-supabase.mjs`'s `HIDDEN` set,
+kept off the spec tables and surfaced only through the data feed and the "analyst note"
+path. The data feed carries both new URLs and the corrected company. I verified this in the
+generator rather than concluding the deploy had failed when the page still showed a
+`dronexl.co` link — which turned out to be a *different*, correct dronexl article about
+Anduril's Ghost Shark.
+
+**The database closure is stronger than the flag count.** Live UAV products whose every
+`domain` row is non-aerial: **0**. That is the condition the batch existed to fix, measured
+directly rather than through the flag text. The only remaining domain/category mismatches
+are the two reverse cases in §8. Investor and landscape layer untouched: 118 projected
+investors, 207 current observations, 100 live holdings, 104 vehicles, 2,462 live companies.
+
+### A residual limb of the Ghost Shark error, found while verifying the fix
+
+Chasing that `dronexl.co` link turned up something the morning's pass missed. The
+*original* wrong source — `dronexl.co/2026/08/27/navy-albacore-ghostfin-drone-submarines-philadelphia`,
+"Navy Buys Attack Drone Subs Built in a Philly Marble Showroom" — is still attached to
+Ghost Shark as a **news link**, and to two other products:
+
+| Linked product | Company | Verdict |
+|---|---|---|
+| **Ghostfin** | Albacore | **correct** — it is Albacore's article |
+| **Ghost Shark** | Anduril | **spurious** — the same name confusion, in the article links |
+| **MAGURA V7** | Uforce | **doubtful** — a Ukrainian USV; not obviously in scope for this piece |
+
+So the misattribution had two limbs: `company_id` plus `source_urls`, which are fixed, and
+an **article link**, which is not. Removing it was not authorised — the standing instruction
+has been to preserve historical article links — so it is reported, not changed. The fix when
+you want it:
+
+```sql
+delete from article_products
+ where product_id = '0c420e85-28c1-4c88-acab-436348b91ec3'
+   and article_id = (select id from articles
+                      where url = 'https://dronexl.co/2026/08/27/navy-albacore-ghostfin-drone-submarines-philadelphia');
+-- expect 1. Leaves Ghostfin's correct link intact. MAGURA V7 needs reading the article first.
+```
+
+This also says something about the earlier count: Ghost Shark's "17 article links, which
+corroborate Anduril unanimously" was **16 that corroborate it and 1 that caused the
+problem.** The conclusion stands; the arithmetic was too generous.
 
 ## 8. What is left open
 
@@ -184,6 +231,7 @@ Measured on `https://xsonomy.com` after the rebuild:
 | **Dire WOLF's company link** | BLADE is live as `hdt-global`; a name match on "BLADE" also finds **`Blade (Horizon Hobby)`**, an unrelated hobby brand |
 | **The two retired programmes as reference entries** | OCCAR, Thales, Naval Group and Exail are all candidate links if these ever return as something other than product records |
 | **Exail's parent relationships, iXblue, DORCUS, renames, deduplication** | excluded throughout, untouched |
+| **The Albacore/Ghostfin article still linked to Ghost Shark** | §7. One statement, ready. Not authorised, so not run — and **MAGURA V7** carries the same doubtful link |
 
 ## 9. The finding worth keeping
 
