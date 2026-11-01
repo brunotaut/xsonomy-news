@@ -669,3 +669,14 @@ regexp inverse on six notes and the delete-and-re-insert of rMCM's row with its 
 
 **Closed:** the "Hunter WOLF / WOLF-X / Dire WOLF cluster" is not a duplicate problem — the
 sources show three distinct vehicles from one maker.
+
+**A read-only check worth recording.** The merger edge population has grown since the
+resolver fix — **9 `merged_with` edges, not 7** — because the coverage pass merged
+`JISR → JISR Institute` and `Kara Dag Technologies → Kara Dag`. **The policy covers both
+with no change:** each retired draft has exactly one live successor and resolves to it,
+where the original bug would have left both capturing matches under their retired names.
+Current outcomes: four **live** sources keep their keys (EADS, BlueHalo, AAI Corporation,
+WB Electronics — corporate history, not retirements); ECA Group / Infotron, JISR and Kara
+Dag Technologies each resolve to their single live successor; `DefSecIntel · Origin
+Robotics` has **two** live successors, so it owns no index key at all. That is the general
+rule working, rather than the ECA case having been special-cased.
