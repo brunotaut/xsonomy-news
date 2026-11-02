@@ -1462,3 +1462,8 @@ comment on table public.ecosystem_events is 'Researched event editions and expli
 comment on view public.v_ecosystem_events is 'Server-only integration projection. Consumers choose their date window. No frontend is deployed by this migration.';
 notify pgrst, 'reload schema';
 
+
+-- Research can be open-ended. Historical fixed-window runs retain their end dates.
+alter table public.ecosystem_event_research_runs alter column window_end drop not null;
+comment on column public.ecosystem_event_research_runs.window_end is 'Null means open-ended discovery with no future upper cutoff. A non-null date describes a historical bounded research run.';
+

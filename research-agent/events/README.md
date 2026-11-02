@@ -1,26 +1,31 @@
 # European UAV & Counter-UAS events
 
-Research checkpoint: **2 November 2026**. Calendar window: **2 November 2026–1 November 2027**, inclusive.
+Current scope: future European events from 2 November 2026, **with no upper date cutoff**. Add all relevant future editions found, regardless of year; do not extrapolate dates from annual/biennial cycles. Research checkpoint: 2 November 2026.
 
-## Database result
+## Current result
 
-- **49 dated events, 19 countries:** 27 core UAV/C-UAS events and 22 adjacent defence, aerospace, autonomy or geospatial events.
-- **8 undated watch items**, excluded from the integration projection.
-- **72 source observations**, including organiser announcements, institutional listings and resolved conflicting dates.
-- Data is in Supabase project `uobidcahmrmfdmfbrtkt`: `ecosystem_events`, `ecosystem_event_sources`, `ecosystem_event_research_runs`.
-- Server integration view: `v_ecosystem_events`. No website interface, navigation or event pages have been deployed.
-- RLS is enabled; anonymous/authenticated clients have no grants. The existing server build can use service_role when the UI is designed.
+- **72 records:** 57 events with confirmed dates across 20 countries, plus 15 undated watch items.
+- Dated events: 27 core UAV/C-UAS and 30 adjacent defence/aerospace/geospatial events.
+- **90 source observations.** Latest confirmed event currently ends 13 September 2029; that is an observed date, not an import limit.
+- Added in the open-horizon expansion: 8 dated editions and 7 watch items. Original 49 dated records retained.
+- Supabase tables: `ecosystem_events`, `ecosystem_event_sources`, `ecosystem_event_research_runs`. Server-only integration view: `v_ecosystem_events`.
+- No website UI has been added. RLS and server-only access remain in force.
 
-This is a broad first researched edition, **not a guarantee that every European event is covered**. Private events, new announcements and country-specific smaller events may be absent. Thirteen countries in the current company landscape have no confirmed event in this pass; this is not a no-events finding. Watchlist records preserve gaps rather than invent dates.
+This is a researched broad database, not a guarantee that every European event has been identified. Private events, new announcements and local events may be missing. Future dates can change. A watch item has no manufactured start/end date.
 
-## Files and import
+## Files and import order
 
-- `european-events-2026-2027.json`: canonical researched dataset, exclusions and methodology.
-- `../../db/migrations/20261102_ecosystem_events.sql`: schema, grants and integration view.
-- `import-events.sql`: idempotent source-backed upserts. No existing company/investor/hub data is changed.
-- `validate-events.py`: structural and research-quality checks.
+- `european-events.json`: **current combined canonical dataset**, open-ended scope.
+- `european-events-2026-2027.json`: preserved initial bounded research checkpoint; historical, not current scope.
+- `open-horizon-additions-2026-11-02.json`: the 15 new records and scope change.
+- `extend-open-horizon.py`: reproduce the combined dataset.
+- `validate-events.py`: validate the current open-ended dataset. No maximum future date check.
+- `import-events.sql`: original 49 dated + 8 watch item import.
+- `import-open-horizon.sql`: idempotent expansion, updated scope note and open-ended research run.
 
-Apply the schema with Supabase migrations. Dry run the import inside `BEGIN; ... ROLLBACK;`, inspect counts, then import in a transaction. This checkpoint was dry-run before the live import; counts and access were verified afterwards. Repeated imports retain stable event IDs via unique slugs. Sources are upserted by event ID + URL and not silently deleted.
+For a clean database, first apply `db/migrations/20261102_ecosystem_events.sql` and `db/migrations/20261102_events_open_horizon.sql`, then import the original SQL followed by the open-horizon SQL in transactions. For the existing database, the first migration and import are already applied. Both research checkpoints remain in the database: `window_end = NULL` on the current run means no upper cutoff. The historical run retains 1 November 2027 as its original research boundary.
+
+The current migration and expansion import were tested with rollback before the live write. Dates, counts, provenance, stable event IDs and no-duplicate reruns were checked. Anonymous/authenticated clients still have no access.
 
 ## Field dictionary
 
@@ -50,24 +55,18 @@ Apply the schema with Supabase migrations. Dry run the import inside `BEGIN; ...
 | sources (separate table) | URL, source type, supported fields, short finding, checked date. |
 | research runs | Window, method, limitations, counts, coverage notes and exclusions. |
 
-## Editorial decisions
+## Source and integration decisions
 
-- Physical venue decides European geography. The existing 32-country company landscape is the baseline, not a prohibition on other European events (Serbia watch item retained).
-- Broad defence/geospatial events are **adjacent**; dedicated UAV/C-UAS and explicitly relevant unmanned systems events are **core**.
-- AERO and Expert Security have confirmed edition dates but no verified dedicated 2027 UAV track. They are labelled adjacent with that limitation.
-- UAS Norway's combined UNC + energy programme is one 16–18 February record; its internal programme dates are noted.
-- European Drone Forum is separately attendable and kept apart from XPONENTIAL.
-- DLR November launch symposium and April competition are separate dated events.
-- The EU U-space stakeholder meeting is part of EU Drone Summit and is not counted twice.
-- Organiser dates override older directories for Dronitaly, European Drone Forum, Drone World Expo, DroneTech World Meeting, Loitering Munitions, BEDEX, FEINDEF and DRONExpo. Competing sources are retained as research-status evidence.
-- Amsterdam Drone Week is discontinued, not an expected 2027 event.
-- International Security Expo's 24–25 November 2027 dates are outside this window.
-- ICUAS/IMAV 2027 are in Brazil; Drone Warfare Summit is in the Philippines. They are excluded geographically.
-- Generic templated conference-alert listings without corroborated organisers are not admitted.
-
-## Integration contract
-
-The future server build should read `v_ecosystem_events`, filter the desired date window (`end_date >= start` and `start_date <= end`), and display all provenance and date qualifications correctly. Do not read watchlist records as confirmed event dates. No automatic external research or refresh schedule is configured by this task.
+- The view has no future date ceiling. The future UI may offer date filters, but these must not prevent database collection of later editions.
+- Each recurring edition has its own slug and shares a `series_key`. Exact dates require organiser or institutional evidence; directory-only placeholders remain watch items.
+- International Security Expo 2027 is now included; its former date-window exclusion remains only in the historical v1 checkpoint.
+- INTERGEO 2029 is confirmed for 11–13 September in Hamburg. INTERGEO 2028 remains undated: the later 2026 organiser partnership supersedes the 2024 Frankfurt plan. The old exact dates are retained as superseded evidence, not current dates.
+- Future Forces 2028 is announced by the organiser without exact dates. HEMUS, IDEB and SAHA next-edition timing is unverified. C-UAS 2028 directory placeholders are explicitly unconfirmed.
+- Amsterdam Drone Week remains excluded because the organiser says it is discontinued. ICUAS/IMAV 2027 and Drone Warfare Summit 2027 remain excluded geographically.
+- Broad defence/aerospace/geospatial shows are adjacent; classification does not promise a dedicated UAV track in a future programme.
+- Earlier discrepancy resolutions (Dronitaly, EDF, Drone World Expo, DroneTech, Loitering Munitions, BEDEX, FEINDEF, DRONExpo) remain in event notes and sources.
+- Co-located programme deduplication remains: UNC + energy programme is one combined record; EU U-space stakeholders meeting is part of EU Drone Summit. EDF and the two DLR challenge stages are separately attendable events.
+- No automatic external research schedule is configured.
 
 ## Confirmed calendar
 
@@ -94,19 +93,19 @@ The future server build should read `v_ecosystem_events`, filter the desired dat
 | 2027-03-09 – 2027-03-12 | [DSEI Germany](https://www.dsei-germany.com/) | Germany | adjacent |
 | 2027-03-12 – 2027-03-14 | [European Defense Tech Hackathon — Hannover](https://events.eurodefense.tech/hannover-2027) | Germany | adjacent |
 | 2027-03-15 | [European Drone Forum](https://eudroneforum.org/) | Germany | core |
-| 2027-03-16 – 2027-03-18 | [XPONENTIAL Europe](https://www.xponential-europe.com/) | Germany | core |
 | 2027-03-16 – 2027-03-18 | [Security & Policing](https://www.securityandpolicing.co.uk/visit/apply-to-attend/) | United Kingdom | adjacent |
+| 2027-03-16 – 2027-03-18 | [XPONENTIAL Europe](https://www.xponential-europe.com/) | Germany | core |
 | 2027-04-06 – 2027-04-08 | [Military Robotics & Autonomous Systems](https://www.smgconferences.com/defence) | United Kingdom | adjacent |
 | 2027-04-07 – 2027-04-09 | [Dronitaly](https://www.dronitaly.it/en/) | Italy | core |
 | 2027-04-12 – 2027-04-14 | [BEDEX](https://www.bedex.brussels/en/news/10_bedex-2027-save-the-date-12-14th-of-april-2027) | Belgium | adjacent |
 | 2027-04-13 – 2027-04-15 | [Counter UAS Technology Europe](https://www.smgconferences.com/defence/uk/conference/counter-uas-europe) | United Kingdom | core |
 | 2027-04-14 – 2027-04-17 | [AERO Friedrichshafen](https://www.aero-expo.com/) | Germany | adjacent |
-| 2027-04-27 – 2027-04-29 | [Drone Challenge Brunswick](https://www.dlr.de/en/site/drone-challenge-brunswick) | Germany | core |
 | 2027-04-27 – 2027-04-29 | [ASDA — Adriatic Sea Defense & Aerospace](https://adriaticseadefense.com/home-store-copy-2/) | Croatia | adjacent |
+| 2027-04-27 – 2027-04-29 | [Drone Challenge Brunswick](https://www.dlr.de/en/site/drone-challenge-brunswick) | Germany | core |
 | 2027-05-03 – 2027-05-09 | [IDEF](https://www.idef.com.tr/fuar-kunyesi) | Turkey | adjacent |
 | 2027-05-04 – 2027-05-06 | [AOC Europe](https://aoceurope.org/) | Portugal | adjacent |
-| 2027-05-18 – 2027-05-20 | [FEINDEF](https://www.feindef.com/index.php/en) | Spain | adjacent |
 | 2027-05-18 – 2027-05-20 | [DEFEA](https://defea.gr/) | Greece | adjacent |
+| 2027-05-18 – 2027-05-20 | [FEINDEF](https://www.feindef.com/index.php/en) | Spain | adjacent |
 | 2027-05-20 | [DroneVation & Defence](https://dronevationdefence.com/) | Austria | core |
 | 2027-05-25 – 2027-05-27 | [Airspace World](https://airspaceworld.com/plan-your-visit/) | Portugal | adjacent |
 | 2027-05-25 – 2027-05-27 | [Expert Security](https://expert-security.com.ua/en/the-exhibition/zvitmainen/reporten-2026.html) | Ukraine | adjacent |
@@ -122,25 +121,31 @@ The future server build should read `v_ecosystem_events`, filter the desired dat
 | 2027-09-22 – 2027-09-23 | [Counter UAS Homeland Security Europe](https://www.smgconferences.com/defence) | United Kingdom | core |
 | 2027-09-28 – 2027-09-29 | [DroneX — Uncrewed Tech Expo](https://dronexpo.co.uk/) | United Kingdom | core |
 | 2027-10-12 – 2027-10-14 | [INTERGEO](https://dvw.de/intergeo/en/) | Germany | adjacent |
+| 2027-11-16 – 2027-11-19 | [Milipol Paris](https://milipol.com/en) | France | adjacent |
+| 2027-11-24 – 2027-11-25 | [International Security Expo](https://www.nineteengroup.com/events-media/international-security-expo/) | United Kingdom | adjacent |
+| 2027-11-29 – 2027-12-02 | [CEAS Aerospace Europe Conference](https://aec2027.dglr.de/) | Germany | adjacent |
+| 2028-05-17 – 2028-05-19 | [BSDA — Black Sea Defense & Aerospace](https://www.bsda.ro/) | Romania | adjacent |
+| 2028-05-17 – 2028-05-21 | [ILA Berlin](https://ila-berlin.com/en/public-visitors/ila-2028) | Germany | adjacent |
+| 2028-06-19 – 2028-06-23 | [Eurosatory](https://www.eurosatory.com/) | France | adjacent |
+| 2028-07-17 – 2028-07-21 | [Farnborough International Airshow](https://www.farnboroughairshow.com/) | United Kingdom | adjacent |
+| 2029-09-11 – 2029-09-13 | [INTERGEO](https://www.cch.de/en/news-details/article/intergeo-eine-weitere-leitmesse-fuer-hamburg) | Germany | adjacent |
 
 ## Watchlist
 
-| Series | Finding |
+| Series / edition | Finding |
 |---|---|
-| [UAV Show](https://www.uavshow.com/) | Organiser announces a return in autumn 2027, but exact dates are not published; may fall outside the 12-month window. |
-| [Drone Summit](https://dronesummit.lv/) | 2027 date not confirmed in reviewed sources; organiser page blocked retrieval. Swiss drone association states intention to return in 2027. |
+| [Counter UAS Homeland Security Europe 2028](https://www.showsbee.com/fairs/104095-Counter-UAS-Homeland-Security-Europe-2028.html) | Directory placeholder for 2028 only. No 2028 organiser dates verified; do not reuse 2027 dates. |
+| [Counter UAS Technology Europe 2028](https://www.showsbee.com/fairs/96164-Tiny-House-Show-2026.html) | Directory placeholder for 2028 only. No 2028 organiser dates verified; do not reuse 2027 dates. |
 | [DRONTEX](https://www.drontex.eu/) | Official page still describes 14–15 October 2026. No next-edition date verified. |
-| [Drone Security Expo](https://dronesecurityexpo.pl/) | Official site reports the completed 7–8 October 2026 edition. No next-edition date verified. |
-| [UAS Forum Sweden](https://uasforumsweden.se/) | Reviewed organiser pages still describe the 2026 edition. No 2027 date verified. |
-| [Inter Drone Expo](https://interdroneexpo.bg/) | 2026 edition is corroborated by Inter Expo Center and Sofia city calendar. No next-edition date verified. |
 | [Defense Tech Valley](https://www.brave1.gov.ua/en/investors) | 2026 postponement reported; some directories incorrectly treat it as held. No replacement date or 2027 edition verified. |
+| [Drone Security Expo](https://dronesecurityexpo.pl/) | Official site reports the completed 7–8 October 2026 edition. No next-edition date verified. |
+| [Drone Summit](https://dronesummit.lv/) | 2027 date not confirmed in reviewed sources; organiser page blocked retrieval. Swiss drone association states intention to return in 2027. |
+| [Future Forces Exhibition & Forum 2028](https://future-forces-forum.com/events/registration?id=159&isFirstSite=1) | Official registration page says the next edition is in 2028; exact dates not published in reviewed sources. |
+| [HEMUS](https://www.hemusbg.org/en) | Organiser page still presents June 2026; directories expect 2028 from the biennial cycle, but exact next-edition dates remain unverified. |
+| [IDEB](https://www.eventseye.com/fairs/f-ideb-7605-1.html) | Directory lists an expected 2028 edition; no organiser-confirmed next-edition dates established. |
+| [INTERGEO 2028](https://www.cch.de/en/news-details/article/intergeo-eine-weitere-leitmesse-fuer-hamburg) | Organiser confirms the 2028 edition under a new partnership, but dates and venue are not confirmed. The 2024 Frankfurt plan and dates are superseded. |
+| [Inter Drone Expo](https://interdroneexpo.bg/) | 2026 edition is corroborated by Inter Expo Center and Sofia city calendar. No next-edition date verified. |
 | [PARTNER — International Defence Exhibition](https://warsight.com/calendar/partner-belgrade/) | Directories estimate September 2027 but explicitly say unconfirmed. Serbia extends beyond the current 32-country company scope; retained as a European event watch item. |
-
-## Coverage
-
-Confirmed countries: Austria, Belgium, Croatia, Czech Republic, Denmark, Finland, France, Germany, Greece, Italy, Norway, Poland, Portugal, Spain, Sweden, Switzerland, Turkey, Ukraine, United Kingdom.
-
-Company-scope countries without a confirmed record in this pass: Bulgaria, Cyprus, Estonia, Hungary, Ireland, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Romania, Slovakia, Slovenia.
-
-Those countries need further local-language discovery and checks as organisers announce their programmes. No claim of exhaustive country coverage is made.
-
+| [SAHA EXPO](https://www.sahaexpo.com/en/exhibition-information) | Official site still describes May 2026. Next-edition dates not verified; directory 2028 estimates are not treated as confirmation. |
+| [UAS Forum Sweden](https://uasforumsweden.se/) | Reviewed organiser pages still describe the 2026 edition. No 2027 date verified. |
+| [UAV Show 2027](https://www.uavshow.com/) | Organiser announces autumn 2027; exact dates not yet published. Retained under the open-ended scope. |

@@ -4,9 +4,11 @@ from pathlib import Path
 from collections import Counter
 from zoneinfo import ZoneInfo
 
-p = Path(__file__).with_name('european-events-2026-2027.json')
+p = Path(__file__).with_name('european-events.json')
 d = json.loads(p.read_text())
 rows = d['events']
+assert d['horizon_mode'] == 'open_ended' and d['window_end'] is None
+assert max(r['end_date'] for r in rows if r['end_date']) == d['latest_confirmed_event_end']
 assert len({r['slug'] for r in rows}) == len(rows), 'Duplicate event key'
 for r in rows:
     assert r['sources'], r['slug']
@@ -14,7 +16,7 @@ for r in rows:
     if r['timezone']:
         ZoneInfo(r['timezone'])
     if r['publication_status'] == 'ready':
-        assert d['window_start'] <= r['start_date'] <= r['end_date'] <= d['window_end'], r['slug']
+        assert d['window_start'] <= r['start_date'] <= r['end_date'], r['slug']
         assert r['date_status'] == 'confirmed' and r['date_precision'] == 'day', r['slug']
         assert any('dates' in s['supported_fields'] and s['source_type'] in ('organizer', 'institution') for s in r['sources']), r['slug']
     else:

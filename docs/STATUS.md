@@ -104,6 +104,10 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
 
 ## Resolved this session
 
+### 2026-11-02 — events database expanded without an upper date cutoff
+
+Nazar removed the 1 November 2027 limit. Current canonical data is `research-agent/events/european-events.json`: 72 records, comprising 57 dated events across 20 countries and 15 undated watch items, with 90 source observations. Added 8 confirmed editions and 7 watch items. Latest dated edition is INTERGEO Hamburg, 11–13 September 2029; this is not a collection boundary. ISE 2027 is admitted after its former window-only exclusion. INTERGEO 2028 stays undated because a later organiser partnership superseded the old Frankfurt plan. Research runs now permit null `window_end` for open-ended discovery; original v1 remains historical. Migration, idempotent expansion, validation and detailed sources committed. No frontend work.
+
 ### 2026-11-02 — European events research module (data only)
 
 Created and populated `ecosystem_events`, `ecosystem_event_sources`, and `ecosystem_event_research_runs`; server-only `v_ecosystem_events`. Research window 2 Nov 2026–1 Nov 2027: 49 dated events in 19 countries (27 core, 22 adjacent), 8 undated watch items, 72 source observations. Migration and idempotent import are in `research-agent/events/` and `db/migrations/20261102_ecosystem_events.sql`; schema mirrored in `db/schema.sql`. Dry-run rollback passed, then live counts, date bounds, provenance and access controls verified. RLS enabled with no anonymous/authenticated grants. No website UI or publication change. This is a broad initial research edition, not an exhaustive calendar; unknown dates remain null. Full field dictionary, source decisions and coverage gaps: `research-agent/events/README.md`. Investment research and frozen snapshots untouched.
