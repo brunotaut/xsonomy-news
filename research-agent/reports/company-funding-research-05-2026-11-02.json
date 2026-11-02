@@ -1,0 +1,90 @@
+{
+  "dataset": "company-funding-research-05-2026-11-02",
+  "checked_at": "2026-11-02",
+  "status": "checkpoint_complete_programme_in_progress",
+  "identities_reviewed": 21,
+  "reviewed_public_sources_dispositions": 21,
+  "imported_companies": 15,
+  "imported_events": 19,
+  "imported_participations": 46,
+  "imported_investor_profiles_created": 39,
+  "corrected_existing_events": 2,
+  "approved_totals_after_import": {
+    "events": 170,
+    "participations": 504,
+    "investor_profiles": 434,
+    "partial_companies": 95
+  },
+  "validation": {
+    "tests_passed": 154,
+    "rollback_rehearsal": true,
+    "rollback_baseline_restored": true,
+    "idempotent_import_rerun": true,
+    "invalid_approved_events": 0,
+    "participant_source_mismatches": 0,
+    "orphan_extensions": 0
+  },
+  "reviewed_company_slugs": [
+    "acodyne", "advanced-protection-systems-aps", "aerix-systems", "airspection",
+    "alloyed", "alias-robotics", "alpha-unmanned-systems", "amazing-drones",
+    "angard-microwave", "archangel-imaging", "argonian", "asterodyn",
+    "arke-telekom", "certo-aerospace", "deltaquad", "dod-solution", "donecle",
+    "drone-volt", "dronus", "egide", "elistair"
+  ],
+  "imported_company_slugs": [
+    "acodyne", "advanced-protection-systems-aps", "aerix-systems", "airspection",
+    "alloyed", "alias-robotics", "alpha-unmanned-systems", "amazing-drones",
+    "angard-microwave", "archangel-imaging", "asterodyn", "donecle",
+    "drone-volt", "dronus", "egide"
+  ],
+  "existing_histories_reaudited": [
+    "arke-telekom", "certo-aerospace", "deltaquad", "dod-solution", "elistair"
+  ],
+  "corrections": [
+    {
+      "company_slug": "arke-telekom",
+      "field": "announced_date",
+      "before": "2026-10-14",
+      "after": "2026-10-22",
+      "basis": "The issuer page timestamp and dated financing coverage both establish 22 October 2026."
+    },
+    {
+      "company_slug": "deltaquad",
+      "field": "closing_status",
+      "before": "closed",
+      "after": "announced",
+      "basis": "The issuer and investor announcements explicitly state that the transaction remained subject to regulatory approvals."
+    }
+  ],
+  "source_holds": [
+    {
+      "company_slug": "argonian",
+      "status": "bounded_public_research_complete_source_limitation",
+      "finding": "A secondary Romanian ecosystem overview reports more than EUR550k cumulative financing, but no issuer or transaction-party source split that cumulative figure into attributable events, dates and participants.",
+      "sources": [
+        "https://argonian.com/",
+        "https://www.startarium.com/articol/startup-scaleup-defense-tech-romania?from=idei-business"
+      ]
+    },
+    {
+      "company_slug": "asterodyn",
+      "status": "bounded_public_research_complete_source_limitation",
+      "finding": "A secondary database reports a September 2025 seed event, but primary issuer and investor searches did not establish its amount or roles. The separately verified EUR30k Pass Drones grant was imported.",
+      "sources": [
+        "https://asterodyn.com/",
+        "https://hautsdefrance.ccibusiness.fr/sous-traitance-industrielle/communique-de-presse-lancement-du-pass-drones-pour-structurer-une",
+        "https://www.caplight.com/company/asterodyn"
+      ]
+    }
+  ],
+  "reconciliation_notes": [
+    {"company_slug": "acodyne", "disposition": "Preserved EIFO's up-to EUR2.5m qualifier rather than converting the pre-seed maximum into exact proceeds."},
+    {"company_slug": "advanced-protection-systems-aps", "disposition": "Separated the undisclosed 2023 minority equity transaction from the PLN450m 2026 revolving-credit and guarantee facility; excluded the uncommitted PLN150m option."},
+    {"company_slug": "aerix-systems", "disposition": "Recorded the 2024 equity round and the 2026 EUR5m mixed financing; did not assign unnamed co-lead or lender identities."},
+    {"company_slug": "alias-robotics", "disposition": "Recorded the exact EIC grant contribution; excluded the separately scheduled EUR5m investment because the checked sources did not establish a close."},
+    {"company_slug": "amazing-drones", "disposition": "Attributed the investment to the named investing subsidiary Terra Inspectioneering, not automatically to the parent company."},
+    {"company_slug": "airspection", "disposition": "Stored the GBP300k company allocation, not the GBP772k aggregate invested across three accelerator companies."},
+    {"company_slug": "drone-volt", "disposition": "Recorded the gross EUR3.85m capital increase without inventing identities for the unnamed subscribers."}
+  ],
+  "next_priority": "Continue bounded public-source research for unreviewed published-landscape identities and reconcile the seven explicit source limitations when stronger issuer or transaction-party evidence appears."
+}
