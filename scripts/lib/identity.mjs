@@ -162,6 +162,46 @@ const NOT_A_MAKER_RELATION = new RegExp(
 // maker: the bridge began with a possessive, and the possessive belonged to the
 // intervening product. A test caught it.
 const DET = "(?:the\\s+|a\\s+|an\\s+|its\\s+|new\\s+|latest\\s+|first\\s+)*";
+
+// A bounded, conjunction-free run of plain words. It lets a locative or a short
+// aside sit between the company and its verb — "Teal Drones in South Salt Lake
+// builds 1,000 Black Widow" is one manufacturing claim — while the stop list
+// keeps a SECOND company out of the bridge, so "Boeing beat Anduril and built
+// the X" can never bind Boeing to Anduril's product. Commas are excluded by the
+// character class, because a comma starts a new clause.
+const MID_STOP = "(?:and|or|but|while|whereas|versus|vs|than|which|who|that|after|before)";
+const MID = `(?:(?!${MID_STOP}\\b)[a-z0-9.'-]+\\s+){0,4}?`;
+// "builds 1,000 Black Widow" — a quantity is not a determiner. Repeated
+// because normText splits a thousands separator, so "1,000" reaches here as
+// two number groups and a single group left "000" stranded before the product.
+const QTY = "(?:[0-9][0-9,.]*\\s+){0,3}";
+
+// Words that may sit between a possessive and the product it governs:
+// "Palantir's AI-enabled Maven Smart System", "Wisk's second Generation 6",
+// "OpenWorks' modular optical sensor, Vision Flex". The stop list is the whole
+// point — it keeps PREPOSITIONS out, so "SpaceX's rendering OF Starlink
+// satellites", where the possessive belongs to the rendering and not to
+// Starlink, is still refused.
+// Determiners belong here too, not just prepositions. A determiner appearing
+// AFTER the modifiers starts a fresh noun phrase, so the possessive has stopped
+// governing: in "unlike Anduril's Ghost Shark, the Ghostfin is smaller" the
+// modifier run would otherwise swallow "ghost shark the" and hand Ghostfin to
+// Anduril. A regression test caught exactly that.
+const POSS_STOP = "(?:of|for|with|by|to|from|in|on|at|as|and|or|than|that|which|who|" +
+  "the|a|an|its|their|his|her|our|version|versions)";
+const MOD = `(?:(?!${POSS_STOP}\\b)[a-z0-9.'-]+\\s+){0,3}(?:,\\s*)?`;
+
+// A company name can be QUALIFYING SOMEONE ELSE. "built by a Brave1
+// participant" means a participant in Brave1 built it, not Brave1 — Brave1 is
+// a defence-technology cluster, and the pilot backfill assigned it as the
+// manufacturer of a drone it did not make. "by an Acme supplier" is the same
+// shape, and it walks straight past the supply-is-not-manufacture rule.
+// Its own staff are a different matter: "built by Acme engineers" is Acme.
+const PARTY_NOUN = new RegExp(
+  "^['\u2019]?s?\\s+(?:participants?|partners?|suppliers?|subcontractors?|contractors?|" +
+  "customers?|clients?|licensees?|resellers?|distributors?|subsidiar(?:y|ies)|" +
+  "affiliates?|members?|competitors?|rivals?|investors?|shareholders?|" +
+  "spin-?offs?|startups?|portfolio\\s+compan(?:y|ies))\\b", "i");
 // MANUFACTURE only. `supplies`, `delivers` and `provides` used to live here;
 // they are now SUPPLY_VERB, because supplying a system is not building it — a
 // prime integrator, a reseller and a sustainment contractor all "supply".
@@ -183,9 +223,9 @@ const MAKER_FIRST_OK = new RegExp(
     // mandatory, so a company whose name already ends in s took a bare
     // apostrophe and was missed: "Thales' Martlet" and "Kratos' Firejet"
     // each lost a correct manufacturer.
-    "|\\s*(?:'s?|s')\\s*" + DET +                                 // "Anduril's <product>"
+    "|\\s*(?:'s?|s')\\s*" + DET + MOD +                           // "Anduril's <product>"
     "|\\s*(?:has |have |had )?(?:been )?(?:awarded|won)\\s+[^.,;]{0,40}?\\bits\\s*" + DET +
-    "|\\s*[-,]?\\s*(?:has |have |had )?(?:been )?" + MAKER_VERB + "\\s*" + DET +
+    "|\\s*[-,]?\\s*" + MID + "(?:has |have |had )?(?:been )?" + MAKER_VERB + "\\s*" + QTY + DET +
     // "Kongsberg, which builds the Protector"
     "|\\s*,?\\s*(?:which|who|that)\\s+(?:also\\s+)?" + MAKER_VERB + "\\s*" + DET +
     // "Anduril is the manufacturer of Ghost Shark"
@@ -256,25 +296,62 @@ function occurrences(hay, name) {
   return out;
 }
 
-// Which tokens of a name can stand for it (same rule as mentionsName).
-const nameVariants = (name) => {
-  const n = normText(name);
-  const toks = n.split(" ").filter((w) => w.length >= 3 && !WEAK_TOKENS.has(w));
-  return [n, ...toks];
-};
-
-const allOccurrences = (hay, name) =>
-  nameVariants(name).flatMap((v) => occurrences(hay, v))
-    .sort((a, b) => a.start - b.start);
-
 // Does this span actually say the maker MAKES the product? Returns the cue name
 // or null, so a decision is auditable rather than a bare boolean.
+// Mention sets to try, most specific first: the whole name, then each of its
+// own distinctive tokens, longest token first.
+//
+// This ordering IS the fix for a measured defect. A generic word that happens
+// to be a token of the company name must not outrank the company name itself.
+// In "Teal Drones in South Salt Lake builds 1,000 Black Widow and 2,000 Fang
+// FPV drones a month" the word `drones` sits right beside the product while
+// the real "Teal Drones" mention is eight words away, and the closest-pairing
+// rule below dutifully picked the wrong one — so an explicit manufacturing
+// statement produced no maker at all. Same for "Rheinmetall Air Defence AG",
+// where the stray `air` in "Skynex Air Defence System" beat `rheinmetall`.
+//
+// The token fallback itself has to stay: the model routinely returns a full
+// legal name ("General Atomics Aeronautical Systems") for an article that only
+// ever says "General Atomics".
+function mentionTiers(t, name) {
+  const n = normText(name);
+  const tiers = [];
+  const full = occurrences(t, n);
+  if (full.length) tiers.push({ at: full, full: true });
+  const toks = n.split(" ")
+    .filter((w) => w.length >= 3 && !WEAK_TOKENS.has(w))
+    .sort((a, b) => b.length - a.length);
+  for (const w of toks) {
+    if (w === n) continue;
+    const o = occurrences(t, w);
+    if (o.length) tiers.push({ at: o, full: false });
+  }
+  return tiers;
+}
+
 export function makerRelationship(span, productName, makerName) {
   const t = normText(span);
-  const prod = allOccurrences(t, productName);
-  const mak = allOccurrences(t, makerName);
-  if (!prod.length || !mak.length) return null;
+  const prodTiers = mentionTiers(t, productName);
+  const makTiers = mentionTiers(t, makerName);
+  if (!prodTiers.length || !makTiers.length) return null;
+  // Most specific pairing that yields any cue wins; a vaguer mention of the
+  // same name never gets to overrule it.
+  for (const mak of makTiers) {
+    for (const prod of prodTiers) {
+      // At least one side must be the complete name. Pairing a loose token of
+      // the company with a loose token of the product relates two fragments
+      // and nothing else: it read "Blue Marble Geographics" and "Blue Marble
+      // Hub" out of "The new Blue Marble Hub provides..." by putting `marble`
+      // next to `hub` and calling them adjacent.
+      if (!mak.full && !prod.full) continue;
+      const cue = cueFromPairing(t, prod.at, mak.at);
+      if (cue) return cue;
+    }
+  }
+  return null;
+}
 
+function cueFromPairing(t, prod, mak) {
   // Take the closest pairing; a distant mention is not the relationship.
   let best = null;
   for (const p of prod) {
@@ -297,6 +374,11 @@ export function makerRelationship(span, productName, makerName) {
   // A disqualifying frame beats any positive cue: "Anduril competitor X" is not
   // a maker claim however it is phrased.
   if (NOT_A_MAKER_RELATION.test(bridge)) return null;
+
+  // ...and a name that is only qualifying another party is not the maker,
+  // however well the bridge reads. The disqualifier above only sees the text
+  // BETWEEN the names, so "built by a Brave1 participant" sailed through it.
+  if (PARTY_NOUN.test(t.slice(best.m.end, best.m.end + 40))) return QUALIFIED_PARTY;
 
   if (best.makerFirst && MAKER_FIRST_OK.test(bridge)) {
     return /\b(?:awarded|won)\b/i.test(bridge) ? "possessive_its"
@@ -321,7 +403,15 @@ export function makerRelationship(span, productName, makerName) {
 // makerFromEvidence assigns no maker for it, so the candidate goes to review
 // with the cue recorded rather than silently acquiring an owner.
 export const SUPPLY_ONLY = "supply_only";
-export const isMakerCue = (cue) => Boolean(cue) && cue !== SUPPLY_ONLY;
+
+// "built by a Brave1 participant" / "by an Acme supplier": the span names both
+// sides and states a building relationship, but the company is qualifying
+// someone else who did the building. Recorded as its own cue so the near-miss
+// is auditable instead of looking like silence.
+export const QUALIFIED_PARTY = "qualified_party";
+
+export const isMakerCue = (cue) =>
+  Boolean(cue) && cue !== SUPPLY_ONLY && cue !== QUALIFIED_PARTY;
 
 // Rule 3. A maker is evidenced only when ONE span names both sides, that span
 // is really in the article, AND the span states a making relationship between

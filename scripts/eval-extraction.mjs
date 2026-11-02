@@ -26,7 +26,7 @@ import { writeFileSync } from "node:fs";
 import { loadDotenv } from "./lib/http.mjs";
 import { analyzeArticle, fetchBody, hasApiKey } from "./lib/analyze.mjs";
 import { fetchAllRows } from "./lib/supabase.mjs";
-import { OUTCOMES, SUPPLY_ONLY, decideIdentity } from "./lib/identity.mjs";
+import { OUTCOMES, SUPPLY_ONLY, decideIdentity, QUALIFIED_PARTY } from "./lib/identity.mjs";
 
 const args = process.argv.slice(2);
 const has = (f) => args.includes(f);
@@ -312,7 +312,12 @@ async function main() {
     claimedByModel: claimed.length,
     assigned: evAll.filter((e) => e.maker).length,
     droppedAmbiguousSupply: claimed.filter((e) => !e.maker && e.makerCue === SUPPLY_ONLY).length,
-    droppedNoRelation: claimed.filter((e) => !e.maker && e.makerCue !== SUPPLY_ONLY).length,
+    // Its own column, not folded into "no stated relation": the span DID state
+    // building, by a party the company was merely qualifying. Burying it would
+    // be the same mistake as hiding missing makers inside a "prevented" total.
+    droppedQualifiedParty: claimed.filter((e) => !e.maker && e.makerCue === QUALIFIED_PARTY).length,
+    droppedNoRelation: claimed.filter((e) =>
+      !e.maker && e.makerCue !== SUPPLY_ONLY && e.makerCue !== QUALIFIED_PARTY).length,
   };
   // Precision and recall over the REQUIRED maker assertions only, because only
   // those have a known right answer.
@@ -339,7 +344,9 @@ async function main() {
   console.log(`  extracted ${retention.extracted}  created ${retention.created}  review ${retention.review}  rejected ${retention.rejected}`);
   console.log("── manufacturer attribution ──");
   console.log(`  model claimed ${maker.claimedByModel}  assigned ${maker.assigned}`);
-  console.log(`  dropped as supply-only ${maker.droppedAmbiguousSupply}  dropped, no stated relation ${maker.droppedNoRelation}`);
+  console.log(`  dropped as supply-only ${maker.droppedAmbiguousSupply}` +
+    `  dropped as a qualified party ${maker.droppedQualifiedParty}` +
+    `  dropped, no stated relation ${maker.droppedNoRelation}`);
   console.log(`  required maker assertions ${maker.requiredCorrect}/${maker.requiredAssertions} correct` +
     (maker.recall === null ? "" : ` (recall ${(maker.recall * 100).toFixed(0)}%)`) +
     `, wrong makers ${maker.precisionErrors}`);

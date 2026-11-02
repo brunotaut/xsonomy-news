@@ -14,7 +14,7 @@ import assert from "node:assert/strict";
 import {
   htmlToText, parseJsonDetailed, validateEntities, PARSE_FAILURES, BODY_FAILURES,
 } from "../lib/analyze.mjs";
-import { makerRelationship, isMakerCue, SUPPLY_ONLY, normText, quoteSupports } from "../lib/identity.mjs";
+import { makerRelationship, isMakerCue, SUPPLY_ONLY, QUALIFIED_PARTY, normText, quoteSupports } from "../lib/identity.mjs";
 import { judge, AFFECTED } from "../eval-extraction.mjs";
 import { OUTCOMES } from "../lib/identity.mjs";
 
@@ -384,4 +384,135 @@ test("trademark entities are decoded, so a quote can be verified", () => {
   assert.ok(!text.includes("&reg;"));
   assert.ok(text.includes("20°C") && text.includes("QinetiQ™"));
   assert.equal(quoteSupports("The MQ-9B SkyGuardian® and SeaGuardian® aircraft are in service", text), true);
+});
+
+// --- the two defects the 2026-11-02 evidence-backfill pilot exposed ----------
+//
+// The pilot wrote 33 evidence rows over 9 articles and assigned exactly one
+// manufacturer — a wrong one. Auditing it turned up a precision hole and a
+// recall bug, both measured against every maker claim the model has actually
+// made in production (scripts/test/fixtures/maker-claims-production.json).
+
+test("a company qualifying another party is not the maker", () => {
+  // The real one: Brave1 is a Ukrainian defence-technology cluster. A
+  // PARTICIPANT in it built the drone. The pilot credited Brave1.
+  assert.equal(
+    makerRelationship(
+      "A Heavy Shot Ayudag-6 hexacopter built by a Brave1 participant flew the mission",
+      "Heavy Shot Ayudag-6", "Brave1"),
+    QUALIFIED_PARTY);
+
+  for (const noun of ["participant", "subsidiary", "supplier", "partner",
+                      "contractor", "customer", "reseller", "licensee"]) {
+    assert.equal(
+      makerRelationship(`The Widget was built by an Acme ${noun}`, "Widget", "Acme"),
+      QUALIFIED_PARTY, `by an Acme ${noun}`);
+  }
+  // `supplier` matters most: it reaches the same wrong answer by a route that
+  // walks straight past the supply-is-not-manufacture rule.
+  assert.equal(
+    isMakerCue(makerRelationship("The Widget was built by an Acme supplier", "Widget", "Acme")),
+    false);
+});
+
+test("the guard does not swallow a company's own work or its own staff", () => {
+  assert.equal(makerRelationship("The Widget was built by Acme", "Widget", "Acme"), "made_by");
+  // Acme's engineers building it IS Acme building it.
+  assert.equal(
+    makerRelationship("The Widget was built by Acme engineers", "Widget", "Acme"), "made_by");
+});
+
+test("a generic word cannot outrank the company name it came from", () => {
+  // The bug: `drones` is a token of "Teal Drones" and sits beside the product,
+  // while the real mention is eight words away. Closest-pairing took the stray
+  // word and the manufacturing statement produced no maker at all.
+  assert.equal(
+    makerRelationship(
+      "Teal Drones in South Salt Lake builds 1,000 Black Widow and 2,000 Fang FPV drones a month",
+      "Black Widow", "Teal Drones"),
+    "maker_verb");
+  // Same shape, same answer, with and without the trailing generic word.
+  assert.equal(
+    makerRelationship("Teal Drones builds Black Widow", "Black Widow", "Teal Drones"),
+    "maker_verb");
+  assert.equal(
+    makerRelationship("Teal Drones builds Black Widow drones", "Black Widow", "Teal Drones"),
+    "maker_verb");
+  // And `air` out of "Skynex Air Defence System" must not beat `rheinmetall`.
+  assert.equal(
+    makerRelationship("passive threat detection in Rheinmetall's Skynex Air Defence System",
+      "Skynex Air Defence System", "Rheinmetall Air Defence AG"),
+    "possessive");
+});
+
+test("two loose tokens do not make a relationship", () => {
+  // `marble` beside `hub` is not "Blue Marble Geographics makes Blue Marble Hub".
+  assert.equal(
+    makerRelationship(
+      "The new Blue Marble Hub provides centralized license management, seat assignments and training.",
+      "Blue Marble Hub", "Blue Marble Geographics"),
+    null);
+});
+
+test("a possessive still governs the product through a describing word or two", () => {
+  const cases = [
+    ["NATO bought its own version of Palantir's AI-enabled Maven Smart System in 2025",
+      "Maven Smart System", "Palantir"],
+    ["N607WA, Wisk's second Generation 6 aircraft, sat on the pad during the ceremony.",
+      "Generation 6", "Wisk Aero"],
+    ["OpenWorks' modular optical sensor, Vision Flex, adds surveillance and tracking",
+      "Vision Flex", "OpenWorks"],
+    ["Ondas' U.S.-manufactured Dronebuster handheld systems provide non-kinetic mitigation",
+      "Dronebuster", "Ondas Inc."],
+  ];
+  for (const [quote, name, maker] of cases) {
+    assert.equal(makerRelationship(quote, name, maker), "possessive", quote.slice(0, 40));
+  }
+});
+
+test("the modifier run stops at a preposition or a new determiner", () => {
+  // The possessive belongs to the rendering, not to Starlink.
+  assert.equal(
+    makerRelationship("SpaceX's rendering of Starlink satellites labeled V1 and V2",
+      "Starlink", "SpaceX"),
+    null);
+  // A determiner starts a fresh noun phrase, so the possessive has stopped.
+  assert.equal(
+    makerRelationship("unlike Anduril's Ghost Shark, the Ghostfin is smaller",
+      "Ghostfin", "Anduril"),
+    null);
+});
+
+test("measured against every maker claim production has actually made", () => {
+  const { cases } = JSON.parse(
+    readFileSync(new URL("./fixtures/maker-claims-production.json", import.meta.url), "utf8"));
+
+  let recalled = 0, wanted = 0;
+  const falsePositives = [];
+  for (const c of cases) {
+    const assigned = isMakerCue(makerRelationship(c.q, c.n, c.m));
+    if (c.want === "make") { wanted++; if (assigned) recalled++; }
+    else if (c.want === "no" && assigned) falsePositives.push(`${c.n} <- ${c.m}`);
+  }
+
+  // Precision is the hard line: claiming a maker the article does not state is
+  // the failure that put Albacore on Ghost Shark in the first place.
+  assert.deepEqual(falsePositives, [], "a maker was assigned where the span does not state one");
+
+  // Recall is a floor, not a target — it may rise, and it must not silently
+  // fall back to where it was (23/31) when these two defects were live.
+  assert.ok(recalled >= 30,
+    `manufacturer recall fell to ${recalled}/${wanted} on the production corpus`);
+});
+
+test("the one case left unfixed is the conjunction list, on purpose", () => {
+  // "...builds 1,000 Black Widow and 2,000 Fang FPV drones" assigns Black Widow
+  // and not Fang FPV. Reaching across `and` is the risky widening: in "Boeing
+  // beat Anduril and its Ghost Shark" the conjunction introduces a DIFFERENT
+  // company, so a list rule has to tell those apart before it is worth having.
+  assert.equal(
+    makerRelationship(
+      "Teal Drones in South Salt Lake builds 1,000 Black Widow and 2,000 Fang FPV drones a month",
+      "Fang FPV", "Teal Drones"),
+    null);
 });

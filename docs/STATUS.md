@@ -1367,3 +1367,59 @@ The daily pipeline ran at 13:00 UTC and wrote 46 analysed articles and 24 new pr
 Whether a dropped ownership claim should force `review`. Whether to fix name-variant matching before
 or after the backfill — it is precision-safe, since a relationship cue is still required, and
 recoverable either way.
+
+## 2026-11-02 (night) — the two defects the pilot exposed, fixed and measured
+
+The evidence-backfill pilot (run [41488875093](https://github.com/brunotaut/xsonomy-news/actions/runs/41488875093),
+after a clean dry run) wrote **33 evidence rows over 9 articles**. Audit of every row:
+33/33 quotes verified against the article body, every name a genuine product, Italian and French
+bodies included. It assigned exactly **one** manufacturer — and it was wrong.
+
+**Defect 1, precision.** *"A Heavy Shot Ayudag-6 hexacopter built by **a Brave1 participant**"* →
+Brave1 credited as the maker. Brave1 is a Ukrainian defence-technology cluster; a participant in it
+built the drone. The same shape held for `by an Acme subsidiary / supplier / partner` — and the
+`supplier` case reaches a wrong maker by a route that walks straight past the
+supply-is-not-manufacture rule. Cause: the disqualifier only ever read the text *between* the two
+names, and the qualifying noun sits *after* the company. Fixed with a new `qualified_party` cue, so
+the near-miss is auditable rather than looking like silence. Its own staff still count:
+*"built by Acme engineers"* is Acme.
+
+**Defect 2, recall.** *"Teal Drones in South Salt Lake builds 1,000 Black Widow..."* produced no
+maker, because `drones` is a token of `Teal Drones`, sat beside the product, and the closest-pairing
+rule preferred it to the real mention eight words away. Same for the stray `air` in `Skynex Air
+Defence System` beating `rheinmetall`. Fixed by trying the complete name first and its own tokens
+after, longest first, and by refusing a pairing where **both** sides are loose tokens — that last
+one caught a false positive the fix had just introduced (`marble` next to `hub`).
+
+Also widened, because I had cited it as part of defect 2: a possessive now governs its product
+through a describing word or two — `Palantir's AI-enabled Maven Smart System`, `Wisk's second
+Generation 6`, `OpenWorks' modular optical sensor, Vision Flex`. The stop list is the substance:
+prepositions **and determiners** end the run, so `SpaceX's rendering of Starlink satellites` is
+still refused. My own earlier regression test caught the determiner case
+(`unlike Anduril's Ghost Shark, the Ghostfin`) when the first version was too greedy.
+
+### Measured, not asserted
+
+New fixture `scripts/test/fixtures/maker-claims-production.json` — **91 cases**: every maker claim
+the model made in the 13:00 production run and the pilot, with the span it cited, plus 5 synthetic
+controls. Labelled `make` / `no` / `amb`, where `amb` is genuinely arguable and scored neither way.
+
+| | before | after |
+|---|---|---|
+| recall (`want=make`) | 23/31 | **30/31** |
+| false positives (`want=no`) | **4** | **0** |
+
+154 tests pass from a clean `npm ci --include=dev`. The eval now prints `dropped as a qualified
+party` as its own column, so this class cannot hide inside the generic total.
+
+**Left unfixed on purpose:** the conjunction list. `builds 1,000 Black Widow and 2,000 Fang FPV`
+credits Black Widow only. Reaching across `and` is the risky widening — in *"Boeing beat Anduril and
+its Ghost Shark"* the conjunction introduces a different company — so a list rule needs to tell
+those apart before it earns a place. There is a test asserting it stays refused.
+
+### Not done, and needing a decision
+
+The Brave1 row is still in the database with its wrong maker. The clean correction is a **replay**:
+re-derive maker and cue for all stored evidence from the `makerClaimed` + `quote` already on each
+row, at zero model cost and without refetching anything. That is a write to `articles.entity_evidence`,
+so it waits for Nazar. The remainder of the backfill is unblocked either way.
