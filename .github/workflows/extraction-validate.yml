@@ -17,6 +17,13 @@ name: Validate extraction safeguards
 #   mode = backfill        Evidence backfill for the remaining backlog, capped
 #                          by `max_articles`. Writes ONLY entity_evidence.
 #
+#   mode = replay-dry      Re-applies today's maker rules to evidence already
+#                          stored. NO model calls, NO writes — reports only.
+#
+#   mode = replay          The same, applied. Writes ONLY entity_evidence, and
+#                          only ever adds a maker, except where the row stores
+#                          the makerQuote its maker was decided from.
+#
 # None of these resolve entities, create products, publish anything, clear the
 # decision cache or touch article links.
 
@@ -24,7 +31,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "eval | backfill-dry | backfill-pilot | backfill"
+        description: "eval | backfill-dry | backfill-pilot | backfill | replay-dry | replay"
         required: true
         default: "eval"
       sample:
@@ -126,6 +133,22 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      # No model calls: the verdict is recomputed from the evidence already on
+      # the row, so a rule change costs nothing to apply to past extractions.
+      - name: Maker-rule replay — DRY (no writes)
+        if: github.event.inputs.mode == 'replay-dry'
+        run: node scripts/replay-maker-rules.mjs --dry
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+
+      - name: Maker-rule replay — APPLY (writes entity_evidence only)
+        if: github.event.inputs.mode == 'replay'
+        run: node scripts/replay-maker-rules.mjs
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
 
       - name: Derived-taxonomy check (read-only, always)
         continue-on-error: true

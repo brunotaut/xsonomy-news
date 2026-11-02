@@ -1505,3 +1505,58 @@ pool ends the run, and an all-stuck pool terminates instead of looping on spend.
 
 **Next run finishes the job:** `mode=backfill`, `max_articles=400` covers the 323 that remain, and
 the stuck ones will be listed by URL at the end of the log.
+
+## 2026-11-02 (later still) — the backfill finished, and the replay turned out to be only half possible
+
+The `max_articles=400` run cleared the backlog. Evidence went **358 → 626 articles**
+(2,345 evidence rows); candidates fell **323 → 55**, and the paging fix held: every
+candidate was offered exactly once.
+
+The 55 left are not failures. They are rows whose stored `products` should never
+have been there — `ChatGPT`, `Tomahawk`, `FPV goggles`, `MILSATCOM`, `Virginia-class`,
+`P-51 Mustang`, the ANRA software platforms, a Messerschmitt Me 163 history piece.
+The extractor declines to evidence them because they are not UAV or sensor products,
+which is the right answer. They will sit as candidates forever; that is a stored-data
+problem, not an extraction one.
+
+### The replay cannot do what I said it would
+
+I told Nazar the replay was "a pure function of stored data". **It is not, and that
+was my error.** The maker decision is made from the model's `makerQuote` — and that
+span was never written to the evidence row. Only the product-mention `quote` was.
+So for all 2,345 existing rows, the evidence the rule actually judged is gone.
+
+Measured, rather than assumed:
+
+| | rows |
+|---|---|
+| maker claims the model made | 1,477 |
+| makers currently stored | 411 |
+| …whose `quote` does name the maker | 373 |
+| …**whose `quote` does not name it at all** | **38** |
+| dropped claims whose `quote` does name the maker | 428 |
+| dropped claims whose `quote` is silent on the maker | 638 |
+
+Those **38** are the whole argument. They were accepted on a `makerQuote` the replay
+cannot see, so a quote-only replay would strip 38 good makers as "unevidenced". The
+638 are simply unreachable. The honest ceiling on recovery is 428, and the real figure
+will be well below it.
+
+**Two changes, both pushed.**
+
+1. `analyze.mjs` now stores `makerQuote` on every evidence row. One line. Without it
+   the pipeline records verdicts whose evidence is discarded, so rules can be improved
+   but never re-applied — every rule change would mean paying the model again.
+2. `scripts/replay-maker-rules.mjs`, additive-only by construction. A null maker may
+   become a maker on any span the row has. An existing maker is cleared **only** when
+   the row stores the `makerQuote` it was decided from and today's rules reject that
+   very span. Nine tests pin the asymmetry, including the 38-row case and the real
+   Brave1 row. Rows written from today carry `makerQuote` and are fully replayable
+   both ways.
+
+New workflow modes: `replay-dry` (reads, reports, writes nothing, no model calls) and
+`replay` (applies). **Run `replay-dry` first** — it costs nothing and prints exactly
+what would change.
+
+Still untouched: nothing has resolved since **26 October**. 765 articles queued, 397
+of them over a week old. That is the actual blockage, and it is a separate decision.

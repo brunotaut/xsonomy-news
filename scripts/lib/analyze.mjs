@@ -574,6 +574,12 @@ export async function analyzeArticle({ url, title, summary }, { prefetchedBody, 
         outcome: d.outcome,
         reason: d.reason,
         quote: e.quote,              // the span itself, so a reviewer can read it
+        // The maker span, stored because the maker decision is made from THIS
+        // text and not from `quote`. Without it the row records a verdict whose
+        // evidence is gone: rules can be improved but never re-applied to what
+        // was already extracted, so every rule change would mean paying the
+        // model again. That is exactly the hole the 2026-11-02 replay hit.
+        makerQuote: e.makerQuote,
         maker: d.maker,              // null unless a span SAYS the maker makes it
         // The cue is recorded even when no maker is assigned, so a relationship
         // we judged ambiguous (e.g. `supply_only`) is auditable rather than
