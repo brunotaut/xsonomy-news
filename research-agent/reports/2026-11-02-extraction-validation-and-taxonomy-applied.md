@@ -219,6 +219,22 @@ differing and 0 missing including `created_at`**, 11132/11132), then applied:
 
 Category, publication status, ownership, names and every other field preserved.
 
+### A finding from verifying the URLs
+
+`/other/da-15-niss/` **404s**, and did so before this change. The product's stored slug is
+`da-15-niss`, but its published URL is `/other/da-15-n-iss/`.
+
+**A product's public URL is generated from its Name, not from `products.slug`** —
+`generate-supabase.mjs:1203`: `row.slug = slugify(row.Name || "item", bucket)`. The stored
+slug column does not drive product pages at all.
+
+That is worth recording because `CLAUDE.md` says *"Keep product/company URLs stable
+(`slug`) — they are indexed by Google"*, and for products the lever is actually the **name**:
+renaming a product moves its page, while editing the stored slug changes nothing. Nothing
+is broken — the earlier batches' `slug_redirects` rows worked because the stored and
+generated slugs happened to coincide for those products — but it inverts where the care is
+needed. Not acted on; renames are excluded from this task.
+
 ## 7. Stale derivations: a read-only check, wired in
 
 `scripts/lib/derived-taxonomy.mjs` + `scripts/check-derived-taxonomy.mjs`, added to
