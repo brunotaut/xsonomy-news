@@ -1265,3 +1265,8 @@ Report: `research-agent/reports/2026-11-02-extraction-eval-hardening.md`.
 ## 2026-11-02 — company funding structure and source-verified pilot
 
 Nazar authorised direct implementation after the coverage audit. Four additive tables and two service-only security-invoker views separate rounds from portfolio membership. Five 2026 rounds / 35 participations were imported after local PostgreSQL and production rollback dry runs; 29 minimally sourced investors added (118 -> 147). All 103 legacy relationship rows remain unchanged. Every company research status is partial; no total_funding is fabricated. See `research-agent/reports/2026-11-02-company-funding-pilot.md` for sources, semantics, validation and rollback. Catalogue integration is in the sister repo. No schedules, frozen snapshots or company publication gates changed. This is a new funding workstream, independent of the older landscape reconciliation batches in STATE.json.
+
+
+### 2026-11-02 — primary-source funding histories and next-25 queue
+
+Expanded five-company pilot from 5 to 24 financing events and 35 to 110 participations; 177 investors, 105 generic relationships (original 103 preserved). Applied `company_funding_history_event_types`; supports unknown dates, round extensions, credit facilities, lender/grantor roles and separate investor contributions. Final production rollback rehearsal passed before commit. 137 tests pass. See `research-agent/reports/2026-11-02-company-funding-history.md`, the versioned history manifest and next-25 queue. Coverage remains partial; queue companies have not been marked researched. Legacy research STATE and automation unchanged.
