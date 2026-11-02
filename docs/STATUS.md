@@ -1304,3 +1304,58 @@ Verified from a clean install: `rm -rf node_modules && npm ci --include=dev && n
 **145 pass, 0 fail**, lockfile unchanged. The failure reproduces exactly without `node_modules`
 (143 pass, 1 fail — that one file). No other workflow runs `npm test` or imports a package, so
 none needed the step.
+
+## 2026-11-02 (evening) — the evaluation is green, and backfill is ready
+
+Run [41485716264](https://github.com/brunotaut/xsonomy-news/actions/runs/41485716264) on commit
+`a3e5c05` (one commit past the CI fix `87ba9db`; that commit touched no extraction code, no tests
+and no dependencies). **All four required cases PASS.** The eval step ran — not skipped.
+
+**Bodies, which is what the last two failures were really about.** All 16 articles returned HTTP 200
+with a real body, 1,221–8,578 chars. No fetch failures, no title mismatches. The XLUUV body is
+2,248 chars with all four rail names absent. The breakingdefense gallery products are gone.
+SkyGuardian and SeaGuardian now `create` rather than `review`, so the `&reg;` decode holds.
+
+Retention: extracted 84 · created 72 · review 7 · rejected 5. Cost $0.0798.
+**Zero writes**, verified by query, not by assumption: 0 products created or updated in the run
+window, 0 articles analysed, `max(entities_resolved_at)` unchanged at 2026-10-26 10:45:30.
+
+### The remaining defect is manufacturer recall, not precision
+
+37 claims, 11 assigned, 26 dropped for no stated relation, **0 wrong makers**, 0 dropped as
+supply-only. Measured against 73 real claims stored in `articles.entity_evidence`, the dominant
+cause is **company name variants**: the model returns the full legal name (`General Atomics
+Aeronautical Systems, Inc.`, `Kratos Defense & Security Solutions`, `Ondas Inc.`) while the article
+uses the short form or acronym (`GA-ASI`, `Kratos'`, `Ondas'`). `mentionsName` fails, so the
+relationship is never even tested. Secondary causes: announcement verbs (`reveals`, `announced`,
+`introduced`) missing from `MAKER_VERB`; conjunction lists after one possessive (`Elistair's Safe-T
+and Ligh-T` assigns only Safe-T); `from <firm>`; a long appositive bridge before `by`.
+
+About half the drops are **correct** — coreference (`it`, `its`, `the company`), the maker absent
+from the span, contract awards, purchases. Including a good one: *"Talon Avionics made the same
+silence argument"*, where `made` is not manufacture.
+
+### Why this does not block the backfill
+
+`entity_evidence` stores `makerClaimed`, the verbatim quote and `quotedFromBody`, so the maker
+decision is a pure function of data already on the row. Proven, not argued: replaying
+`makerRelationship` over 24 stored production records offline reproduced 19 verdicts and **recovered
+5 real manufacturers** the pre-fix 13:00 run had dropped — Sentrycs, Silvus Technologies, Ondas,
+General Atomics and Malloy Aeronautics, four of them the bare-apostrophe possessive fixed earlier
+today. A later rules improvement can therefore be replayed over stored evidence at **zero model cost
+and without refetching a single body**. Backfilling now does not lock the loss in.
+
+**Backfill is ready.** Sequence unchanged: `backfill-dry` → `backfill-pilot` (`pilot_size=10`) →
+verify → `backfill` (`max_articles=100`, repeat). It writes `entity_evidence` only, and only for
+product names already on the row.
+
+### Also noticed
+
+The daily pipeline ran at 13:00 UTC and wrote 46 analysed articles and 24 new products (23 live,
+1 review) — on the pre-fix code. Pending resolution is now 765.
+
+### Still Nazar's call
+
+Whether a dropped ownership claim should force `review`. Whether to fix name-variant matching before
+or after the backfill — it is precision-safe, since a relationship cue is still required, and
+recoverable either way.

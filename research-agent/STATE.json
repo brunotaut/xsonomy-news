@@ -1648,5 +1648,48 @@
     "open": "30 of 45 maker claims were dropped. Several drops are correct, but a dropped claim still does not force review, so the loss is invisible. Routing proposal remains Nazar's decision.",
     "backfill_ready": false,
     "next": "re-run extraction-validate.yml with mode=eval, sample=12 on the new commit"
+  },
+  "extraction_eval_run_3": {
+    "date": "2026-11-02",
+    "status": "green — all four required cases PASS",
+    "run": "https://github.com/brunotaut/xsonomy-news/actions/runs/41485716264",
+    "commit_tested": "a3e5c05",
+    "fix_commit": "87ba9db",
+    "ci_cause": "No workflow ever installed dependencies. The repo had none until @electric-sql/pglite arrived as a devDependency, so npm test ran off a bare checkout. package.json and the lockfile were both correct.",
+    "ci_fix": "extraction-validate.yml now runs `npm ci --include=dev` before `npm test`, with cache: npm. --include=dev is explicit so NODE_ENV=production cannot silently drop them.",
+    "verified_clean_install": "rm -rf node_modules && npm ci --include=dev && npm test -> 146 pass, 0 fail, lockfile unchanged. Failure reproduces without node_modules (143 pass, 1 fail).",
+    "required_cases": [
+      "opex360-mmcm-rmcm PASS",
+      "dronexl-ghostfin PASS",
+      "dronesworldmag-xluuv PASS",
+      "defence-blog-dire-wolf PASS"
+    ],
+    "bodies": "16 articles, every one HTTP 200 with a real body (1221-8578 chars). No fetch failures, no mismatches. XLUUV body 2248 chars with all four rail names absent. Breakingdefense gallery products gone. SkyGuardian/SeaGuardian now create, not review, so the &reg; decode fix holds.",
+    "retention": {
+      "extracted": 84,
+      "created": 72,
+      "review": 7,
+      "rejected": 5
+    },
+    "maker_attribution": {
+      "claimed": 37,
+      "assigned": 11,
+      "dropped_supply_only": 0,
+      "dropped_no_stated_relation": 26,
+      "required_assertions": "1/1 correct, recall 100%",
+      "wrong_makers": 0
+    },
+    "cost": "$0.0798 — 35790 input + 8811 output tokens",
+    "writes": "None. Verified by query: 0 products created or updated in the run window, 0 articles analysed, max(entities_resolved_at) unchanged at 2026-10-26 10:45:30.",
+    "remaining_defect": "Manufacturer RECALL, not precision. 26 of 37 claims dropped for no stated relation; 0 wrong makers assigned. Measured against 73 real claims stored in articles.entity_evidence, the dominant cause is COMPANY NAME VARIANTS: the model returns the full legal name (General Atomics Aeronautical Systems, Inc.; Kratos Defense & Security Solutions; Ondas Inc.) while the article uses the short form or acronym (GA-ASI, Kratos', Ondas'), so mentionsName fails and the relationship is never even tested. Secondary: announcement verbs (reveals/announced/introduced) absent from MAKER_VERB; conjunction lists after one possessive (Elistair's Safe-T and Ligh-T assigns only the first); `from <firm>`; long appositive bridge before `by`. Roughly half the drops are CORRECT (coreference it/its/the company, maker absent from the span, contract awards, purchases) — including 'Talon Avionics made the same silence argument', where `made` is not manufacture.",
+    "recall_gap_is_recoverable": "DECISIVE for backfill readiness. entity_evidence stores makerClaimed, the verbatim quote and quotedFromBody, so the maker decision is a pure function of data already on the row. Proven by replaying makerRelationship over 24 stored production records offline: it reproduced 19 verdicts and recovered 5 real manufacturers the 13:00 pre-fix run had dropped (Sentrycs, Silvus Technologies, Ondas Inc., General Atomics, Malloy Aeronautics) — four of them the bare-apostrophe possessive this session fixed. So a later rules improvement can be replayed over stored evidence at zero model cost and without refetching bodies. Backfilling now does NOT lock in the loss.",
+    "backfill_ready": true,
+    "backfill_sequence": "backfill-dry -> backfill-pilot (pilot_size=10) -> verify -> backfill (max_articles=100, repeat). Writes entity_evidence only, and only for product names already stored on the row.",
+    "open_decisions": [
+      "Whether a dropped ownership claim should force review (publication routing — Nazar's call).",
+      "Whether to fix company-name-variant matching before or after the backfill. It is precision-safe (a relationship cue is still required) and recoverable either way.",
+      "Headline-only articles now yield review instead of live; volume unmeasured.",
+      "Chronic resolve backlog: 765 pending, 458 predate 27 October."
+    ]
   }
 }
