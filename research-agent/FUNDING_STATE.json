@@ -8,14 +8,14 @@
   "published_landscape_companies": 567,
   "partial_companies": 54,
   "fully_reviewed_companies": 0,
-  "next_action": "Continue autonomous primary-source research across all remaining queue companies; do not request batch approvals.",
+  "next_action": "Continue autonomously: first reconcile the known October 2026 Buntar financing claim from company/investor sources, then prioritise remaining public-company histories and full cohort review.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
   "updated_at": "2026-11-02",
   "source_reconciliation_companies": 2,
   "approved_funding_events": 101,
   "round_participations": 306,
   "investor_profiles": 287,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/company-funding-research-02-2026-11-02.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -23,8 +23,29 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "id": "initial-interactive-funding-programme",
-    "expires_at": "2026-11-02T16:48:28.071763+00:00"
-  }
+  "active_run": null,
+  "last_verified_publication": {
+    "site_commit": "4af6c23d3a0767138b07a7421234975f54a1fffc",
+    "generated_at": "2026-11-02T14:49:23.649Z",
+    "events": 101,
+    "companies_with_events": 54,
+    "participations": 306,
+    "investor_profiles": 287,
+    "checked_at": "2026-11-02T14:52:37.649933+00:00"
+  },
+  "known_financing_claims_to_reconcile": [
+    {
+      "company_slug": "buntar-aerospace",
+      "claim": "Possible additional USD16m October 2026 financing; discovery candidate, not yet verified or imported. Distinguish from confirmed March USD10.4m round.",
+      "source_candidate": "https://www.linkedin.com/posts/buntar-aerospace_buntar-aerospace-raises-16m-to-scale-weve-activity-7512787475535269888-wqDM"
+    },
+    {
+      "company_slug": "cambridge-aerospace",
+      "claim": "Earlier financing history before the confirmed Series C remains to be reconciled with issuer/transaction-party evidence."
+    },
+    {
+      "company_slug": "dronamics",
+      "claim": "Reported USD40m pre-Series-A figure may aggregate earlier transactions; reconcile before assigning a new round."
+    }
+  ]
 }

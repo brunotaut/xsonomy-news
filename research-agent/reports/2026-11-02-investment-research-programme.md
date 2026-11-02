@@ -37,3 +37,10 @@ An additional 33 verified events across 26 further companies, with 91 participat
 Discovery queries have now run for all 567 public companies: the initial 30 investigations plus 537 remaining identities. The discovery ledger contains 7,068 unique candidate URLs with search groups and an explicit not-verified status. This is discovery completion, not completion of the investment audit. No candidate headline is imported without source review. The wider 2,564-company programme continues using the durable state and queue.
 
 Further examples: original SEK, CHF, PLN and CZK amounts are preserved; Specim equity/R&D support and Sol.One equity/debt packages are typed mixed. Perceptual Robotics January–September 2023 financing is one event rather than multiple invented rounds. OSL GBP11.5m cumulative BGF investment is represented as separate GBP8m and GBP3.5m contributions. Newly read sources for OpenWorks describe its own R&D expenditure rather than an equity raise and are not imported. Avalor/Intelic continuity and aggregated Dronamics pre-Series-A history require further reconciliation.
+
+
+## Live verification and autonomous continuation
+
+Catalogue deployment `4af6c23d3a0767138b07a7421234975f54a1fffc` completed successfully. Cache-busted public JSON generated at 14:49 UTC was checked at 567 companies, 54 financing-backed companies, 101 events, 306 participations and 287 investor records. All approved events have evidence sources. Security-invoker and restricted view permissions were verified; funding-table advisor messages are informational RLS-without-public-policy notices consistent with service-only access.
+
+An enabled hourly ChatGPT continuation now reads the durable state, uses a short branch lease, advances source research and validated imports, and notifies Nazar only for completion or indispensable blockers. This adds no repository cron schedule or paid API backfill. The programme remains incomplete; the state records explicit next claims for reconciliation.

@@ -1280,3 +1280,8 @@ Nazar authorises the entire investment research programme without per-batch appr
 ### 2026-11-02 — public landscape discovery complete; further verified financing
 
 Completed discovery queries for all 537 remaining public landscape companies, after 30 initial company investigations (all 567 now searched). Saved 7,068 unique candidate URLs under `research-agent/discovery/funding-landscape-2026-11-02/`; these remain explicitly unverified and are not imported as financial facts. Added 33 source-reviewed events across 26 further companies: production now 101 events / 54 companies / 306 participations / 287 investor profiles. PostgreSQL dry run and rollback passed before committed import; rerun/tests verify idempotency. Full database programme remains in progress; no-public-round conclusions have not been assigned from search absence. Autonomous continuation instructions are in `research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md`.
+
+
+### 2026-11-02 — continuation enabled and current publication verified
+
+Dedicated ChatGPT continuation enabled hourly, with no routine batch notifications and no changes to repository cron schedules. Its ID is stored privately in FUNDING_STATE.json for completion/pause handling. Released initial run lease after verifying successful catalogue deploy `4af6c23d3a0767138b07a7421234975f54a1fffc`: live JSON at 14:49 UTC contains 567 companies, 54 with 101 sourced events, 306 participations and 287 investor profiles. Every approved event has a source; funding view remains security-invoker with no anon read access. Full programme is still in progress.
