@@ -16,6 +16,7 @@ test('funding schema and import run in PostgreSQL, rerun cleanly and keep differ
  insert into public.companies(slug) values ('alta-ares'),('helsing'),('quantum-systems'),('tekever'),('harmattan-ai');`);
  await db.exec(await readFile(new URL('db/company-funding-schema.sql',root),'utf8'));
  await db.exec(await readFile(new URL('db/company-funding-history-schema.sql',root),'utf8'));
+ await db.exec(await readFile(new URL('db/company-funding-amount-qualifier-schema.sql',root),'utf8'));
  await db.exec(prepareFundingSql(fixture));
  const before=(await db.query(`select (select count(*)::int from company_funding_rounds) rounds,(select count(*)::int from company_funding_round_investors) participants,(select count(*)::int from investor_research_sources) sources`)).rows[0];
  assert.equal(before.rounds,5);assert.equal(before.participants,35);
@@ -42,6 +43,18 @@ test('funding schema and import run in PostgreSQL, rerun cleanly and keep differ
  const harmattan=(await db.query(`select announced_date,amount from company_funding_rounds f join companies c on c.id=f.company_id where c.slug='harmattan-ai' and f.round_key='seed-undated'`)).rows[0];assert.equal(harmattan.announced_date,null);assert.equal(harmattan.amount,null);
  const linked=(await db.query(`select f.company_id=p.company_id same_company,p.round_key from company_funding_rounds f join company_funding_rounds p on p.id=f.parent_round_id where f.round_key='series-c-extension-2025'`)).rows[0];assert.deepEqual(linked,{same_company:true,round_key:'series-c-2025'});
  await db.exec("update company_funding_rounds set amount=180000001 where round_key='series-c-extension-2025'");await assert.rejects(db.exec(prepareFundingSql(history)),/Manifest conflicts with stored event/);assert.equal((await db.query("select amount from company_funding_rounds where round_key='series-c-extension-2025'")).rows[0].amount,'180000001');
+
+
+ const expansion=JSON.parse(await readFile(new URL('research-agent/imports/company-funding-expansion-2026-11-02.json',root),'utf8'));
+ for(const slug of new Set(expansion.rounds.map(r=>r.company_slug)))await db.query('insert into companies(slug) values($1) on conflict do nothing',[slug]);
+ await db.exec(prepareFundingSql(expansion));
+ const newCounts=(await db.query('select (select count(*)::int from v_company_funding_rounds) events,(select count(*)::int from company_funding_round_investors) participations,(select count(*)::int from investor_research_sources) sources')).rows[0];
+ assert.equal(newCounts.events,24+expansion.rounds.length);
+ await db.exec(prepareFundingSql(expansion));
+ assert.deepEqual((await db.query('select (select count(*)::int from v_company_funding_rounds) events,(select count(*)::int from company_funding_round_investors) participations,(select count(*)::int from investor_research_sources) sources')).rows[0],newCounts);
+ const swiss=(await db.query("select amount,amount_qualifier from v_company_funding_rounds f join companies c on c.id=f.company_id where c.slug='swissdrones' and round_key='series-b-2024'")).rows[0];assert.equal(swiss.amount_qualifier,'more_than');assert.equal(swiss.amount,'10000000');
+ const frank=(await db.query("select contribution_amount from company_funding_round_investors p join company_funding_rounds f on f.id=p.round_id join companies c on c.id=f.company_id where c.slug='frankenburg-technologies' and contribution_amount is not null")).rows[0];assert.equal(frank.contribution_amount,'7000000');
+ const badQualifier=structuredClone(expansion);badQualifier.rounds[0].amount_qualifier='made-up';assert.throws(()=>validateFundingPilot(badQualifier),/Invalid amount qualifier/);
 
  }finally{await db.close()}
 });

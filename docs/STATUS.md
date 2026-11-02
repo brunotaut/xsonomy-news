@@ -1270,3 +1270,8 @@ Nazar authorised direct implementation after the coverage audit. Four additive t
 ### 2026-11-02 — primary-source funding histories and next-25 queue
 
 Expanded five-company pilot from 5 to 24 financing events and 35 to 110 participations; 177 investors, 105 generic relationships (original 103 preserved). Applied `company_funding_history_event_types`; supports unknown dates, round extensions, credit facilities, lender/grantor roles and separate investor contributions. Final production rollback rehearsal passed before commit. 137 tests pass. See `research-agent/reports/2026-11-02-company-funding-history.md`, the versioned history manifest and next-25 queue. Coverage remains partial; queue companies have not been marked researched. Legacy research STATE and automation unchanged.
+
+
+### 2026-11-02 — autonomous full database financing research
+
+Nazar authorises the entire investment research programme without per-batch approvals. All 2,564 identities queued (567 published landscape first). FUNDING_STATE.json tracks this separately from legacy STATE.json. Expansion adds 44 primary-source events / 105 participations across 23 more companies; production 68 events / 215 participations / 235 investor profiles. Applied `company_funding_amount_qualifiers`; 146 news and 88 catalogue tests pass. See `research-agent/reports/2026-11-02-investment-research-programme.md`. Full programme remains in progress; no API spending or schedule changes.
