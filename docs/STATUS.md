@@ -1560,3 +1560,22 @@ what would change.
 
 Still untouched: nothing has resolved since **26 October**. 765 articles queued, 397
 of them over a week old. That is the actual blockage, and it is a separate decision.
+
+## 2026-11-02 (late) — a green run that did nothing, and the guard that stops the next one
+
+Run [41538174199](https://github.com/brunotaut/xsonomy-news/actions/runs/41538174199)
+was dispatched as the replay dry run. It reported **success** in 40 seconds and
+**did nothing at all**: checkout, install, 169 unit tests, taxonomy check — and
+every one of the six mode steps `skipped`, the replay among them. The commit it ran
+(`a51a42b`) did contain the replay script, so the code was there; the `mode` input
+simply matched no step's `if:`, so every branch was false and the job sailed through.
+
+This is the same failure shape as the first production run that "succeeded" while a
+required article came back unparseable: **a green tick that means nothing happened.**
+The workflow now validates `mode` against the six it actually implements and fails
+the job on anything else, before any step that could spend money or write.
+
+Nothing was written — all write steps were skipped — so the database is exactly as
+the backfill left it: 626 articles with evidence, 2,345 evidence rows, 55 candidates.
+
+**Re-dispatch with `mode` exactly `replay-dry`** (hyphen, lower case, no spaces).

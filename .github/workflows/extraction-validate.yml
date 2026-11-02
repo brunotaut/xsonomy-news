@@ -72,6 +72,23 @@ jobs:
       - name: Install dependencies from the lockfile (devDependencies included)
         run: npm ci --include=dev
 
+      # A mode that matches no step below produces a FULLY GREEN run that does
+      # absolutely nothing — every `if:` is false, the job succeeds, and the
+      # only clue is in the skipped-step list. That already happened once
+      # (run 41538174199, dispatched as a replay and silently a no-op), so an
+      # unrecognised mode is now a hard failure instead of a quiet success.
+      - name: The mode must be one this workflow actually runs
+        run: |
+          mode="${{ github.event.inputs.mode }}"
+          case "$mode" in
+            eval|backfill-dry|backfill-pilot|backfill|replay-dry|replay) ;;
+            *)
+              echo "::error::mode '$mode' matches no step."
+              echo "Valid: eval | backfill-dry | backfill-pilot | backfill | replay-dry | replay"
+              exit 1 ;;
+          esac
+          echo "mode = $mode"
+
       - name: Unit tests must pass before anything touches the model or the database
         run: npm test
 
