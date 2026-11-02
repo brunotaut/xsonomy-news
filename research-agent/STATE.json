@@ -1691,5 +1691,23 @@
       "Headline-only articles now yield review instead of live; volume unmeasured.",
       "Chronic resolve backlog: 765 pending, 458 predate 27 October."
     ]
+  },
+  "maker_recall_fix": {
+    "date": "2026-11-02",
+    "commit": "281f581",
+    "found_by": "Auditing the 33 evidence rows the backfill pilot wrote (run 41488875093).",
+    "defect_1_precision": "A company name qualifying ANOTHER party was read as the maker: 'built by a Brave1 participant' credited Brave1, a defence-tech cluster. Same for 'by an Acme subsidiary / supplier / partner' — the supplier case defeats the supply-is-not-manufacture rule by another route. The disqualifier only read the text BETWEEN the names; the qualifying noun sits after the company. New `qualified_party` cue, excluded from isMakerCue and given its own column in the eval metrics. 'built by Acme engineers' still assigns Acme.",
+    "defect_2_recall": "A generic token of the company's own name outranked the name itself. 'Teal Drones in South Salt Lake builds 1,000 Black Widow' gave no maker because `drones` sat beside the product and closest-pairing preferred it; likewise `air` in 'Skynex Air Defence System' beating `rheinmetall'. Fixed by trying the full name first, then its own tokens longest-first, and by refusing a pairing where BOTH sides are loose tokens.",
+    "also_widened": "A possessive now governs its product through one or two describing words (Palantir's AI-enabled Maven Smart System; Wisk's second Generation 6; OpenWorks' modular optical sensor, Vision Flex). Prepositions AND determiners end the run, so \"SpaceX's rendering of Starlink satellites\" stays refused.",
+    "corpus": "scripts/test/fixtures/maker-claims-production.json — 91 cases: every maker claim the model made in the 13:00 production run and the pilot, with its cited span, plus 5 synthetic controls. Labelled make/no/amb; amb is scored neither way.",
+    "measured": {
+      "recall_before": "23/31",
+      "recall_after": "30/31",
+      "false_positives_before": 4,
+      "false_positives_after": 0,
+      "tests": "154 pass from a clean npm ci --include=dev"
+    },
+    "left_unfixed_deliberately": "The conjunction list: 'builds 1,000 Black Widow and 2,000 Fang FPV' credits Black Widow only. Reaching across `and` is risky — in 'Boeing beat Anduril and its Ghost Shark' the conjunction introduces a different company — so a list rule must distinguish those first. A test asserts it stays refused.",
+    "pending_decision": "Replay: re-derive maker and cue for all stored evidence from the makerClaimed + quote already on each row, at zero model cost and without refetching. It would correct the Brave1 row and recover the makers these fixes now find. It writes to articles.entity_evidence, so it needs Nazar's go. The backfill remainder is unblocked regardless."
   }
 }
