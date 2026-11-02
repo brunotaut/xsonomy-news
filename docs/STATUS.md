@@ -1017,3 +1017,84 @@ product's current category, wired into the daily workflow as a **non-blocking** 
 Reports only — it never deletes and never touches an observed row, because an observed row
 is research and a category is not grounds to overrule it. Tested against both a stale
 derivation and HALIA, the legitimately amphibious record that must *not* be flagged.
+
+## 2 November 2026 — the resolver stall, diagnosed from the logs
+
+**First, a correction.** Yesterday's report said there was "no Actions access" and treated
+the run logs as unreachable. **That was wrong, and it cost a day.** Both repositories are
+**public**, so the Actions REST API answers with no credential at all. I had inferred
+unavailability from one missing binary (`gh`) instead of trying the API.
+
+### Six consecutive failures, and the database agrees
+
+`ingest-and-deploy.yml`, scheduled runs:
+
+| Started | Commit | Result |
+|---|---|---|
+| 1 Nov 11:37 | `796dc5e` | **failure** |
+| 31 Oct · 30 Oct · 29 Oct · 28 Oct | | **failure** |
+| **27 Oct 10:09** | `dd22e18` | **failure — first** |
+| **26 Oct 10:42** | `fb8036e` | success — last |
+
+`max(entities_resolved_at)` is **26 Oct 10:45:30**, three minutes after that successful run
+started. The logs and the data corroborate each other exactly.
+
+**Step level, identical on the first and last failure:** ingest **succeeded**, resolve
+**failed**, and build, the Pages upload and the deploy job were all **skipped** behind it.
+So it was not skipped, not a timeout, and not a run that completed without progress —
+**resolve failed outright.**
+
+**It also killed the daily rebuild.** The build sits behind the failing step, so no
+scheduled run has rebuilt the site since 27 October. The site was never stale only because
+pushes trigger the same workflow — **73 successful push runs** in that window kept it
+current. The daily path was dead and ordinary activity hid it.
+
+### The cause
+
+```js
+export function matchProduct(tag, index) {
+  const hit = index.exact.get(tag.toLowerCase());
+  if (hit) return gate(tag, { id: hit, reason: "exact" }, index, context);
+  //                                                            ^^^^^^^ not a parameter
+```
+
+`ReferenceError: context is not defined`, thrown out of the resolve step. It stayed hidden
+for two days because it only fires on a tag that *both* exactly matches an existing product
+name *and* is not already cached — and the 26 October run used a commit that predates the
+bug, verified with `git merge-base`. **55 such tags are still pending**, which is why it
+would fire again today.
+
+**It is already fixed.** Commit `55a95f1` (1 Nov 18:08 UTC) removed the bad call as a side
+effect. Every failing run predates that fix, and **no scheduled run has happened since it
+landed** — so the correction is deployed and has never been exercised. The next cron is its
+first test. No new fix was needed.
+
+### What let it through: no test at all
+
+**`matchProduct` had zero coverage.** One call with an exact hit would have caught it
+immediately. Added `resolve-product-match.test.mjs` — 7 tests including an arity assertion
+— and **mutation-checked it**: reintroducing the original line fails 4 tests with the exact
+`ReferenceError`. **107/107** with the file restored.
+
+### Still blocked, and now precisely
+
+Read access to Actions works unauthenticated; **`workflow_dispatch` does not** —
+`POST …/dispatches` returns **401 Requires authentication**. `extraction-validate.yml` has
+**0 runs** and I am not presenting it as a result. **Zero model spend.**
+
+To unblock: open
+`https://github.com/brunotaut/xsonomy-news/actions/workflows/extraction-validate.yml`,
+press **Run workflow**, and pick `eval` → `backfill-dry` → `backfill-pilot` (10) →
+`backfill`. Every mode runs the tests first.
+
+### One decision before the next cron
+
+**Because the resolver now works, the next run will start consuming the
+evidence-incomplete backlog** — 635 articles with no evidence, whose new product names
+become `review` rows that a later backfill will *not* retry. Either pause only the resolve
+step for a day and backfill first, or let it run and reconcile with the retry proposal.
+**I applied neither:** re-disabling resolve the moment it recovers should be your call, not
+a side effect of mine.
+
+Also offered and not taken: `if: always()` on the build step, so a resolver bug can never
+freeze the daily rebuild again while still failing the run visibly.
