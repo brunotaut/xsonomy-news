@@ -1098,3 +1098,71 @@ a side effect of mine.
 
 Also offered and not taken: `if: always()` on the build step, so a resolver bug can never
 freeze the daily rebuild again while still failing the run visibly.
+
+## 2026-11-02 — Extraction evaluation hardened; the first green run was hiding failures
+
+The first production eval run ([41438189153](https://github.com/brunotaut/xsonomy-news/actions/runs/41438189153),
+commit `cc2c6b8`) finished green while one required article was never parsed and
+three required cases were never tested. Four causes, all confirmed:
+
+- **"Unparseable response" was truncation.** `max_tokens` was 1024; an
+  evidence-heavy French article needs ~900–1,200 output tokens for its evidence
+  array alone, so the JSON was cut off mid-object. `stop_reason` was never read,
+  so truncation looked identical to malformed output. Now 4096 (retry 8192),
+  with `empty_reply` / `no_json_object` / `invalid_json` / `truncated_json` /
+  `schema_violation` reported separately, a shape check, and a bounded retry for
+  the recoverable cases only. A malformed reply is never a confident empty
+  extraction again.
+- **The XLUUV article had two body bugs.** The junk-class strip ran before
+  region selection and, being non-greedy, deleted the opening `<article>` tag —
+  so the whole page was kept and a leading rail of *other* headlines supplied
+  DroneSentry-X Mk2, Mission Master SP, FUSE and Chaparral. Separately, the bare
+  word `comments` was a cut marker, so "…for OCEANEERING, comments:" truncated
+  the real body at 2,292 of 5,018 characters, mid-quote. Region selection now
+  runs first and cut markers match only at the start of a line. The body is now
+  the complete story with none of the four rail products.
+- **Nine real manufacturer-pattern gaps** (relative clause, "a product of",
+  appositive, "said its", "is the manufacturer of", `X-built`/`X-made`), found
+  by measuring a battery of phrasings rather than by looking at the two named
+  pairs. Fixed: 0 gaps, 0 leaks, with customers, operators, competitors,
+  partners and integrators still refused.
+- **The evaluation could not fail.** It counted errors and exited 0, and its
+  Ghost Shark expectation was inverted — a *missing* maker printed "PREVENTED"
+  while the correct `maker=Anduril` printed as a failure.
+
+**Supply is no longer manufacture.** `supplies` / `delivers` / `provides` /
+`integrates` and their French, Italian, Spanish and German equivalents now give
+a `supply_only` cue that assigns **no** maker. This deliberately reverses an
+earlier change of mine that made `fournis par Exail` ("supplied by") assign
+Exail as maker; one test was updated on purpose, with the reason in the test.
+
+**Ghostfin → Albacore is a documented recall limit, not a bug.** Albacore does
+build Ghostfin, but the article only says so across sentences; all three spans
+naming both describe publishing specs, crediting a battery design and naming a
+use case. Cross-sentence inference is exactly what attached Albacore to Ghost
+Shark originally, so the one-span rule stays and the miss is counted in maker
+recall instead of hidden in a "prevented" total.
+
+**`defence-blog.com` blocks every non-browser client** (403 to plain `curl` too)
+while its robots.txt disallows only `/wp-admin/`. That article's body has never
+been available, so the Dire WOLF record came from its headline alone. No browser
+masquerade was used; the case now asserts safe degradation. Relatedly, only the
+real body counts as article text now — a headline-only article yields `review`,
+not live.
+
+The evaluation reports PASS/FAIL/BLOCKED per case with exit codes 0/1/2/3,
+measures retention and maker precision/recall separately, asserts the four
+contamination names absent, and writes `eval-results.json` uploaded on failure
+too. `set -o pipefail` was needed because `| tee` would otherwise have masked a
+failing eval — the same defect being repaired.
+
+**134 tests pass** (was 107); 27 new in `scripts/test/extraction-robustness.test.mjs`.
+Verified end-to-end against a mocked model, including the truncation retry, and
+a mock that attributes Ghost Shark to Albacore correctly exits 1. **Zero
+database writes** — live 3,518, review 0, taxonomy 11,130, evidence 0, pending
+719, `max(entities_resolved_at)` still 2026-10-26, identical to the start.
+
+**Backfill is NOT ready.** It needs a new read-only eval run on the new commit,
+and authenticated dispatch is unavailable here (`POST .../dispatches` → 401).
+Run `extraction-validate.yml` with `mode=eval`, `sample=12`. Report:
+`research-agent/reports/2026-11-02-extraction-eval-hardening.md`.

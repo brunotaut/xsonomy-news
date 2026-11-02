@@ -1570,5 +1570,36 @@
     "the_gap_that_let_it_through": "matchProduct had NO TEST COVERAGE AT ALL. One call with an exact hit would have caught it on the first run of the suite. Added scripts/test/resolve-product-match.test.mjs - 7 tests: exact path, case insensitivity, normalized branch, genuine miss, every fixture product reachable by its own name, an arity assertion (matchProduct.length === 2), and a malformed index failing as a data error rather than a ReferenceError. MUTATION-CHECKED: reintroducing the original line fails 4 tests with \"ReferenceError: context is not defined\". 107/107 with the file restored.",
     "decision_before_the_next_cron": "The next scheduled run will now SUCCEED and will start consuming the evidence-incomplete backlog: 635 articles carry no evidence, so their new product names become publication_status=review with reason no_evidence_captured. Safe (nothing reaches the site) but it fills the review queue with exactly the candidates the backfill was meant to resolve first, and a cached candidate is not retried by a later backfill. OPTION A backfill first: pause ONLY the resolve step for one day (if: false on that step), run the backfill, restore. Touches nothing else. OPTION B let it run and reconcile with the retry proposal, which is needed anyway. NEITHER APPLIED - re-disabling resolve the moment it recovers should be a deliberate choice.",
     "also_offered_not_taken": "Making the Build step if: always() would stop a resolver bug freezing the daily rebuild, while resolve still fails the run visibly. One line, but it changes what a red run means, so it is offered rather than taken."
+  },
+  "extraction_eval_hardening": {
+    "date": "2026-11-02",
+    "trigger": "First production eval run 41438189153 (job 125253146071) on cc2c6b8 finished GREEN while hiding real failures.",
+    "status": "code fixed, tests added, pushed; a NEW eval run on the new commit is required before any backfill",
+    "causes_confirmed": {
+      "unparseable_response": "max_tokens was 1024. An evidence-heavy French article needs ~900-1200 output tokens for its evidence array alone, so the JSON was cut off; the truncated object failed JSON.parse and surfaced as the catch-all 'unparseable response'. stop_reason was never read, so truncation was indistinguishable from malformed output.",
+      "xluuv_contamination": "TWO bugs. (1) The junk-class strip ran BEFORE region selection; being single-level and non-greedy it deleted the opening <article> tag (count 1->0 while </article> stayed), region selection then found nothing, the whole page was kept, and a LEADING RAIL of other headlines supplied DroneSentry-X Mk2, Mission Master SP, FUSE and Chaparral. Confirmed by inspection, not assumed. (2) The bare word 'comments' was a cut marker, so 'Bill Merz ... comments:' truncated the real body at 2292 of 5018 chars, mid-quote.",
+      "maker_false_negatives": "The relationship patterns had 9 real gaps (relative clause, 'a product of', appositive, 'said its', 'is the manufacturer of', hyphenated X-built/X-made) measured against a battery of real phrasings: 9 gaps, 0 leaks. Separately, supply verbs were being treated as manufacture.",
+      "green_despite_failure": "eval-extraction.mjs counted errors but never affected its exit status, and its Ghost Shark expectation marked the CORRECT answer (maker=Anduril) as a failure while printing 'PREVENTED' for a missing maker."
+    },
+    "changes": [
+      "analyze.mjs: MAX_OUTPUT_TOKENS 1024->4096 (retry 8192); parseJsonDetailed distinguishes empty/no_object/invalid_json/truncated_json/schema_violation; validateEntities shape check; bounded retry for truncation and invalid JSON only; a malformed reply is now ok:false, never a confident empty extraction.",
+      "analyze.mjs: region selection moved BEFORE the junk strip and taken first-open to last-close; cut markers matched only at line start; several <article> elements pick the longest.",
+      "analyze.mjs/http.mjs: fetchPage + fetchBody report finalUrl, status and a typed failure (fetch_failed / body_too_short / body_mismatch) with a loose headline-agreement check.",
+      "analyze.mjs: only the real body counts as article text (haveArticleText: usedBody), so a headline-only article yields REVIEW rather than live.",
+      "identity.mjs: 9 maker patterns added; supply/delivery/integration split out as the SUPPLY_ONLY cue which assigns NO maker; German decided from the participle after the name, bare 'von' no longer a maker cue; the cue is recorded even when no maker is assigned.",
+      "eval-extraction.mjs: rewritten. PASS/FAIL/BLOCKED per required case with evidence; exit 0/1/3 (2 = cannot run); product retention and maker precision/recall measured separately; machine-readable eval-results.json; contamination names asserted absent; cost computed from reported usage.",
+      "extraction-validate.yml: eval runs --affected AND a host-diverse --sample including non-English hosts, with `set -o pipefail` (without it tee's status masked a failing eval) and artifact upload on failure too."
+    ],
+    "deliberate_reversal": "'fournis par Exail' (supplied by) previously assigned Exail as maker. Supply is not manufacture, so it now yields SUPPLY_ONLY and no maker. The identity-extraction test asserting maker='Exail' was changed on purpose; the product itself still survives.",
+    "ghostfin_albacore_finding": "Albacore does build Ghostfin, but the dronexl article never says so in ONE span: all three spans naming both are 'publishes Ghostfin's numbers', 'credits for the range', 'names coastal defense as its lead use case'. The link is carried across sentences ('The company is Albacore' + 'is building weaponized undersea drones'). The one-span rule is what stops Albacore attaching to Ghost Shark, so this is a documented recall limit, not a bug. Measured in maker recall rather than hidden in a 'prevented' total.",
+    "defence_blog_finding": "defence-blog.com answers 403 to every non-browser client (plain curl too) while robots.txt disallows only /wp-admin/. That article's body has never been available, so the Dire WOLF record was created from its headline alone. No browser masquerade was used; the case now asserts safe degradation instead.",
+    "tests": "134 pass (was 107). New file scripts/test/extraction-robustness.test.mjs, 27 tests, built from the observed failures plus negative counterexamples.",
+    "open_decisions": [
+      "A dropped ownership claim does NOT currently force review in resolve-entities. Proposed, not applied: route a refused maker claim to review so the recall loss is visible. Publication routing is Nazar's call.",
+      "haveArticleText: usedBody means articles whose body cannot be fetched now yield review rather than live. Volume impact unmeasured; affects new resolutions only, never existing records.",
+      "Pre-cron coordination from the previous session is still unresolved: backfill first (pause only the resolve step) or let the cron run and accept review rows."
+    ],
+    "backfill_ready": false,
+    "backfill_blocked_on": "A new read-only eval run on the new commit must pass first. Authenticated workflow_dispatch is unavailable to this session (POST .../dispatches -> 401); read access is fine."
   }
 }

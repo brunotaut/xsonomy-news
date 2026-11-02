@@ -56,18 +56,40 @@ jobs:
       - name: Unit tests must pass before anything touches the model or the database
         run: npm test
 
+      # This step FAILS the job when a required case gives the wrong answer
+      # (exit 1) or was never actually tested (exit 3). The first production
+      # run reported success while one required article came back unparseable
+      # and three cases went untested; a green run must now mean the
+      # acceptance checks passed.
       - name: Read-only evaluation (real model, no writes)
+        id: eval
         if: github.event.inputs.mode == 'eval'
         run: |
-          if [ -n "${{ github.event.inputs.sample }}" ]; then
-            node scripts/eval-extraction.mjs --sample "${{ github.event.inputs.sample }}"
-          else
-            node scripts/eval-extraction.mjs --affected
-          fi
+          # pipefail is essential: without it the exit status of the pipeline is
+          # tee's, so a failing evaluation would report success — the very bug
+          # being fixed here.
+          set -o pipefail
+          node scripts/eval-extraction.mjs \
+            --affected \
+            --sample "${{ github.event.inputs.sample || '12' }}" \
+            --out eval-results.json \
+            | tee eval-log.txt
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      # Uploaded on failure too — the diagnostics are the point when it fails.
+      - name: Upload evaluation result and log
+        if: always() && github.event.inputs.mode == 'eval'
+        uses: actions/upload-artifact@v4
+        with:
+          name: extraction-eval
+          path: |
+            eval-results.json
+            eval-log.txt
+          if-no-files-found: warn
+          retention-days: 30
 
       - name: Evidence backfill — DRY RUN (no writes)
         if: github.event.inputs.mode == 'backfill-dry'

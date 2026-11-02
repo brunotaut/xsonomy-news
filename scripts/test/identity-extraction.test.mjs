@@ -14,8 +14,16 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
-  OUTCOMES, decideIdentity, mergeEvidence, quoteSupports, mentionsName,
-  makerFromEvidence, buildRetiredProductIndex, retiredMatch, normProductKey,
+  OUTCOMES,
+  decideIdentity,
+  mergeEvidence,
+  quoteSupports,
+  mentionsName,
+  makerFromEvidence,
+  buildRetiredProductIndex,
+  retiredMatch,
+  normProductKey,
+  SUPPLY_ONLY,
 } from "../lib/identity.mjs";
 
 // --- real article text, close enough to the originals to be a fair test -------
@@ -173,7 +181,17 @@ test("a real product named alongside a programme is still created", () => {
   }, body);
   assert.equal(programme.outcome, OUTCOMES.REJECT, "the programme is refused");
   assert.equal(product.outcome, OUTCOMES.CREATE, "the product beside it is not");
-  assert.equal(product.maker, "Exail", "and keeps its evidenced maker");
+  // DELIBERATE REVERSAL. This assertion used to expect maker "Exail" from
+  // "fournis par Exail" — supplied by Exail. Supplying a system is not building
+  // it: a prime integrator, a reseller and a sustainment contractor all supply.
+  // So the relationship is now reported as the `supply_only` cue, which assigns
+  // no maker and routes the candidate to review. The product itself still
+  // survives, which is what this counterexample exists to protect.
+  assert.equal(product.maker, null, "supply is not manufacture, so no maker is assigned");
+  assert.equal(
+    makerRelationship("deux drones de surface Inspector 125 fournis par Exail", "Inspector 125", "Exail"),
+    SUPPLY_ONLY,
+    "but the relationship is recorded rather than discarded");
 });
 
 test("an ordinary well-evidenced product is unaffected by any of this", () => {

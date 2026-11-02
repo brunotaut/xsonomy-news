@@ -153,16 +153,38 @@ const NOT_A_MAKER_RELATION = new RegExp(
 // maker: the bridge began with a possessive, and the possessive belonged to the
 // intervening product. A test caught it.
 const DET = "(?:the\\s+|a\\s+|an\\s+|its\\s+|new\\s+|latest\\s+|first\\s+)*";
+// MANUFACTURE only. `supplies`, `delivers` and `provides` used to live here;
+// they are now SUPPLY_VERB, because supplying a system is not building it — a
+// prime integrator, a reseller and a sustainment contractor all "supply".
 const MAKER_VERB = "(?:builds?|built|makes?|made|manufactures?|manufactured|produces?|" +
-  "produced|develops?|developed|designs?|designed|unveiled|unveils|launched|" +
-  "launches|delivers?|delivered|supplies|supplied|is building|are building|will build)";
+  "produced|develops?|developed|designs?|designed|unveiled|unveils|" +
+  "assembles?|assembled|engineers?|engineered|" +
+  "is building|are building|will build|has built|have built)";
+
+// Supply / delivery / integration. These are real relationships but they do
+// NOT establish manufacture, so they resolve to the `supply_only` cue, which
+// assigns no maker and sends the candidate to review instead.
+const SUPPLY_VERB = "(?:supplies|supplied|supplying|delivers?|delivered|delivering|" +
+  "provides?|provided|integrates?|integrated|fits?|fitted|installs?|installed|" +
+  "sells?|sold|offers?|offered|markets?|marketed|distributes?|distributed)";
 const MAKER_FIRST_OK = new RegExp(
   "^(?:" +
     "\\s{0,2}" +                                              // adjacency
     "|\\s*'?s'?\\s*" + DET +                                 // "Anduril's <product>"
     "|\\s*(?:has |have |had )?(?:been )?(?:awarded|won)\\s+[^.,;]{0,40}?\\bits\\s*" + DET +
-    "|\\s*(?:has |have |had )?(?:been )?" + MAKER_VERB + "\\s*" + DET +
+    "|\\s*[-,]?\\s*(?:has |have |had )?(?:been )?" + MAKER_VERB + "\\s*" + DET +
+    // "Kongsberg, which builds the Protector"
+    "|\\s*,?\\s*(?:which|who|that)\\s+(?:also\\s+)?" + MAKER_VERB + "\\s*" + DET +
+    // "Anduril is the manufacturer of Ghost Shark"
+    "|\\s*,?\\s*(?:is|was|remains)\\s+the\\s+(?:maker|manufacturer|builder|developer|" +
+      "designer|producer|creator)\\s+of\\s*" + DET +
   ")$", "i");
+
+// "Anduril said its Ghost Shark …" — a short bridge ending in `its` is an
+// ownership claim. Conjunction-free on purpose: in "Boeing beat Anduril and
+// its Ghost Shark" the `its` belongs to Anduril, not to Boeing.
+const MAKER_FIRST_ITS = new RegExp(
+  "^(?!.*\\b(?:and|or|but|while|versus|vs)\\b)\\s*,?\\s*[a-z' ]{0,30}?\\bits\\s*" + DET + "$", "i");
 
 // product FIRST: "Ghost Shark, built by Anduril", "the TB2 from Baykar".
 //
@@ -173,18 +195,39 @@ const MAKER_FIRST_OK = new RegExp(
 // rejected, losing a perfectly good maker relationship.
 const PRODUCT_FIRST_OK = new RegExp(
   // English
-  "\\b(?:built|made|manufactured|produced|developed|designed|supplied|delivered)\\s+by\\b|" +
+  "\\b(?:(?:supplied|delivered|provided)\\s+and\\s+)?(?:built|made|manufactured|produced|developed|designed|assembled)(?:\\s+and\\s+(?:supplied|delivered|provided|sold|marketed|integrated))?\\s+by\\b|" +
   "^\\s*,?\\s*(?:a|an|the)?\\s*(?:new\\s+)?from\\b|^\\s*from\\b|" +
   // French
-  "\\b(?:fournis?|fournies?|fabriqu\u00e9e?s?|construits?|construites?|d\u00e9velopp\u00e9e?s?|" +
-  "developpee?s?|con\u00e7ue?s?|concue?s?|produits?|produites?|livr\u00e9e?s?)\\s+par\\b|" +
+  "\\b(?:fabriqu\u00e9e?s?|construits?|construites?|d\u00e9velopp\u00e9e?s?|" +
+  "developpee?s?|con\u00e7ue?s?|concue?s?|produits?|produites?)\\s+par\\b|" +
   // Italian
-  "\\b(?:fornit[oaie]|prodott[oaie]|costruit[oaie]|svilupat[oaie]|sviluppat[oaie])\\s+da\\b|" +
+  "\\b(?:prodott[oaie]|costruit[oaie]|svilupat[oaie]|sviluppat[oaie])\\s+da\\b|" +
   // Spanish / Portuguese
-  "\\b(?:fabricad[oa]s?|producid[oa]s?|construid[oa]s?|desarrollad[oa]s?|fornecid[oa]s?)\\s+por\\b|" +
-  // German: "… von Rheinmetall gebaut/entwickelt/hergestellt/geliefert"
-  "\\bvon\\b[^.]{0,40}?\\b(?:gebaut|entwickelt|hergestellt|geliefert|gefertigt)\\b|" +
-  "\\bvon\\s*$", "i");
+  "\\b(?:fabricad[oa]s?|producid[oa]s?|construid[oa]s?|desarrollad[oa]s?)\\s+por\\b|" +
+  // "the Protector, a product of Kongsberg"
+  "^\\s*,?\\s*(?:is|was)?\\s*(?:a|an|the)\\s+(?:product|design|creation|offering|brainchild)\\s+of\\s*$|" +
+  // appositive attribution: "the MQ-9, a General Atomics aircraft",
+  // "Ghost Shark is an Anduril product". Deliberately tight — the bridge must
+  // be nothing but the article, so a descriptive phrase cannot slip through.
+  "^\\s*,?\\s*(?:is|was|are|were)?\\s*(?:a|an|the)\\s*$", "i");
+
+// German puts the deciding participle AFTER the maker name ("von Rheinmetall
+// gebaut" / "von Rheinmetall geliefert"), so it is never inside the bridge and
+// cannot be matched there. A bare "von" means only "from", so on its own it is
+// not a maker cue — it used to be one, and that reported Rheinmetall as the
+// maker of a system it had merely delivered.
+const DE_BRIDGE = /\bvon\s*$/i;
+const DE_MAKE = /\b(?:gebaut|entwickelt|hergestellt|gefertigt|produziert|konstruiert)\b/i;
+const DE_SUPPLY = /\b(?:geliefert|bereitgestellt|vertrieben|verkauft|beschafft)\b/i;
+
+// Supply-side equivalents, in every language the feed carries. Matched AFTER
+// the manufacture patterns, so "built and supplied by X" is still a maker.
+const PRODUCT_FIRST_SUPPLY = new RegExp(
+  "\\b(?:supplied|delivered|provided|integrated|installed|sold|marketed|distributed)\\s+by\\b|" +
+  "\\b(?:fournis?|fournies?|livr\\u00e9e?s?)\\s+par\\b|" +
+  "\\b(?:fornit[oaie]|consegnat[oaie])\\s+da\\b|" +
+  "\\b(?:suministrad[oa]s?|entregad[oa]s?|fornecid[oa]s?)\\s+por\\b|" +
+  "\\bvon\\b[^.]{0,40}?\\b(?:geliefert|bereitgestellt)\\b", "i");
 
 // All positions at which `name` occurs, on word boundaries.
 function occurrences(hay, name) {
@@ -233,6 +276,10 @@ export function makerRelationship(span, productName, makerName) {
   const bridge = best.makerFirst
     ? t.slice(best.m.end, best.p.start)
     : t.slice(best.p.end, best.m.start);
+  // Text just past the later of the two names, for languages that put the
+  // deciding participle there rather than between them.
+  const after = Math.max(best.m.end, best.p.end);
+  const tail = t.slice(after, after + 60);
 
   // A disqualifying frame beats any positive cue: "Anduril competitor X" is not
   // a maker claim however it is phrased.
@@ -243,9 +290,25 @@ export function makerRelationship(span, productName, makerName) {
       : /^\s{0,2}$/.test(bridge) ? "adjacent"
       : /'/.test(bridge) ? "possessive" : "maker_verb";
   }
+  if (best.makerFirst && MAKER_FIRST_ITS.test(bridge)) return "possessive_its";
+  if (!best.makerFirst && DE_BRIDGE.test(bridge)) {
+    if (DE_MAKE.test(tail)) return "made_by";
+    if (DE_SUPPLY.test(tail)) return SUPPLY_ONLY;
+    return null;                      // "von X" alone says nothing about making
+  }
   if (!best.makerFirst && PRODUCT_FIRST_OK.test(bridge)) return "made_by";
+  // Supply is checked last so a span that states manufacture wins.
+  const supplyFirst = new RegExp("^\\s*[-,]?\\s*(?:has |have |had )?(?:been )?" + SUPPLY_VERB + "\\s*" + DET + "$", "i");
+  if (best.makerFirst && supplyFirst.test(bridge)) return SUPPLY_ONLY;
+  if (!best.makerFirst && PRODUCT_FIRST_SUPPLY.test(bridge)) return SUPPLY_ONLY;
   return null;
 }
+
+// A cue meaning "these two are related, but not as maker and product".
+// makerFromEvidence assigns no maker for it, so the candidate goes to review
+// with the cue recorded rather than silently acquiring an owner.
+export const SUPPLY_ONLY = "supply_only";
+export const isMakerCue = (cue) => Boolean(cue) && cue !== SUPPLY_ONLY;
 
 // Rule 3. A maker is evidenced only when ONE span names both sides, that span
 // is really in the article, AND the span states a making relationship between
@@ -256,7 +319,7 @@ export function makerFromEvidence({ name, maker, makerQuote } = {}, articleText 
   if (!quoteSupports(makerQuote, articleText)) return null;
   if (!mentionsName(makerQuote, name)) return null;     // the span must be about THIS product
   if (!mentionsName(makerQuote, maker)) return null;    // and must actually name the maker
-  if (!makerRelationship(makerQuote, name, maker)) return null;   // and SAY it makes it
+  if (!isMakerCue(makerRelationship(makerQuote, name, maker))) return null;   // and SAY it makes it
   return maker;
 }
 

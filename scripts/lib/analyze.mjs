@@ -11,11 +11,16 @@
 //
 // Env: ANTHROPIC_API_KEY (required to do anything), ANTHROPIC_MODEL (optional).
 
-import { fetchText } from "./http.mjs";
+import { fetchPage } from "./http.mjs";
 import { decodeEntities } from "./feed.mjs";
 import { IDENTITY_KINDS, decideIdentity, makerCue } from "./identity.mjs";
 
-const API_URL = "https://api.anthropic.com/v1/messages";
+// Overridable so the evaluation can be exercised end-to-end against a local
+// mock before it is pointed at the real model. Deliberately NOT named
+// ANTHROPIC_BASE_URL: that variable is commonly already set in a developer's
+// shell for other Anthropic tooling, and inheriting it here would silently
+// retarget a local ingest run. Unset in CI and in production.
+const API_URL = `${process.env.XSONOMY_ANTHROPIC_BASE_URL || "https://api.anthropic.com"}/v1/messages`;
 const MODEL = process.env.ANTHROPIC_MODEL || "claude-haiku-4-5-20251001";
 const ANTHROPIC_VERSION = "2023-06-01";
 
@@ -23,15 +28,29 @@ const MAX_BODY_CHARS = 12000;   // plenty for entity extraction; keeps tokens lo
 const MAX_ITEMS = 40;           // hard cap per field, defensive
 const MAX_ITEM_LEN = 80;        // a single name shouldn't exceed this
 
+// Output budget. This was 1024, which truncated the model mid-JSON on
+// evidence-heavy articles: one French opex360 story with ~8 products needed
+// roughly 900-1200 output tokens for its evidence array alone, and a truncated
+// object fails JSON.parse and surfaced as the catch-all "unparseable response".
+// A retry at the larger budget then costs nothing on the common case.
+const MAX_OUTPUT_TOKENS = 4096;
+const RETRY_OUTPUT_TOKENS = 8192;
+
 export function hasApiKey() {
   return Boolean(process.env.ANTHROPIC_API_KEY);
 }
 
 // --- HTML → readable text --------------------------------------------------
 
-// Boilerplate headings that mark the end of the story and the start of
+// Boilerplate HEADINGS that mark the end of the story and the start of
 // related-links / recommended / comment sections. We cut the text here so
 // entities from sidebars (e.g. a "More in Drones" rail) don't leak in.
+//
+// Matched ONLY at the start of a line, because that is what these are:
+// headings and link labels. Matching them anywhere in the text truncated real
+// articles — "Bill Merz, Senior Vice President of Aerospace and Defense
+// Technologies for OCEANEERING, comments:" cut the XLUUV story at 2,292 of its
+// 5,018 characters, discarding more than half the body mid-quote.
 const CUT_MARKERS = [
   "related articles", "related stories", "related posts", "more like this",
   "more in", "more from", "latest in", "latest news", "most read", "most popular",
@@ -41,6 +60,52 @@ const CUT_MARKERS = [
   "follow us", "about the author", "in this story", "©", "all rights reserved",
 ];
 const CUT_MIN = 400;   // never cut before this much real text has accumulated
+
+// Index of the first line at or after CUT_MIN that BEGINS with a boilerplate
+// marker, or -1. A marker in mid-sentence is prose, not a heading.
+function firstMarkerLine(s) {
+  const lower = s.toLowerCase();
+  let best = -1;
+  for (const mk of CUT_MARKERS) {
+    for (let from = 0; ; ) {
+      const i = lower.indexOf(mk, from);
+      if (i === -1) break;
+      if ((i === 0 || lower[i - 1] === "\n") && i >= CUT_MIN) {
+        if (best === -1 || i < best) best = i;
+        break;
+      }
+      from = i + 1;
+    }
+  }
+  return best;
+}
+
+// Isolate the story region. <article> when the page has exactly one, else
+// <main>, else the longest <article> when there are several (index/rail pages),
+// else the whole document.
+//
+// Spans are taken from the FIRST opening tag to the LAST matching close rather
+// than by a non-greedy match, so a nested element of the same name cannot end
+// the region early.
+function selectRegion(html) {
+  const opens = (html.match(/<article\b/gi) || []).length;
+  const lower = html.toLowerCase();
+  if (opens === 1) {
+    const i = html.search(/<article\b/i);
+    const j = lower.lastIndexOf("</article>");
+    if (i !== -1 && j > i) return html.slice(i, j + "</article>".length);
+  }
+  const mi = html.search(/<main\b/i);
+  if (mi !== -1) {
+    const mj = lower.lastIndexOf("</main>");
+    if (mj > mi) return html.slice(mi, mj + "</main>".length);
+  }
+  if (opens > 1) {
+    const parts = html.match(/<article\b[\s\S]*?<\/article>/gi) || [];
+    if (parts.length) return parts.reduce((a, b) => (b.length > a.length ? b : a));
+  }
+  return html;
+}
 
 // Strip boilerplate and pull the human-readable text out of an article page.
 // Not a full readability port — just enough signal for entity extraction.
@@ -56,6 +121,14 @@ export function htmlToText(html) {
        .replace(/<footer[\s\S]*?<\/footer>/gi, " ")
        .replace(/<aside[\s\S]*?<\/aside>/gi, " ")
        .replace(/<form[\s\S]*?<\/form>/gi, " ");
+  // Pick the story region BEFORE stripping junk containers. That strip is
+  // single-level and non-greedy, so on a page with nested <div>s it can delete
+  // an opening <article> tag and leave its </article> behind. That is exactly
+  // what happened to the XLUUV story: <article> went 1 → 0 while </article>
+  // stayed, region selection then found nothing, the whole page was kept, and a
+  // leading rail of OTHER headlines (DroneSentry-X Mk2, Mission Master SP,
+  // FUSE, Chaparral) was fed to the model as if it were the article.
+  s = selectRegion(s);
   // Drop containers whose class/id smells like chrome: related rails, sharing,
   // recommendations, comments, sidebars, newsletters, menus. Non-greedy and
   // single-level, but catches the common WordPress/news-CMS patterns.
@@ -70,36 +143,73 @@ export function htmlToText(html) {
   // Remove list blocks that are mostly links (menus / related rails).
   s = s.replace(/<(ul|ol)[^>]*>[\s\S]*?<\/\1>/gi, (m) =>
     (m.match(/<a\b/gi) || []).length >= 3 ? " " : m);
-  // Prefer the <main> region, then <article>; either usually isolates the story.
-  const main = s.match(/<main[\s\S]*?<\/main>/i);
-  if (main) s = main[0];
-  else { const art = s.match(/<article[\s\S]*?<\/article>/i); if (art) s = art[0]; }
   // Block tags → newlines so sentences don't run together.
   s = s.replace(/<\/(p|div|li|h[1-6]|br|tr|section)>/gi, "\n");
   s = s.replace(/<[^>]+>/g, " ");
   s = decodeEntities(s);
   // Collapse whitespace; keep paragraph breaks.
   s = s.replace(/[ \t\f\v]+/g, " ").replace(/\s*\n\s*/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
-  // Truncate at the first boilerplate marker that appears after CUT_MIN chars.
-  const lower = s.toLowerCase();
-  let cut = -1;
-  for (const mk of CUT_MARKERS) {
-    const idx = lower.indexOf(mk, CUT_MIN);
-    if (idx !== -1 && (cut === -1 || idx < cut)) cut = idx;
-  }
+  // Truncate at the first boilerplate HEADING that starts a line after CUT_MIN
+  // characters. Line-anchored on purpose — see CUT_MARKERS.
+  const cut = firstMarkerLine(s);
   if (cut !== -1) s = s.slice(0, cut).trim();
   return s;
 }
 
-// Fetch the article page and return clean text, or "" if it can't be had.
-export async function fetchBodyText(url) {
+// Why a body could not be used. An article analysed without its body is not a
+// tested article, and the evaluation has to be able to say which it was.
+export const BODY_FAILURES = {
+  FETCH: "fetch_failed",        // network error, 403/404, timeout
+  SHORT: "body_too_short",      // block page, consent wall, JS-only shell
+  MISMATCH: "body_mismatch",    // fetched page is not the article we asked for
+};
+
+const MIN_BODY_CHARS = 200;
+
+// Fetch the article page and report what happened, not just the text.
+// Returns { text, finalUrl, status, failure, detail }.
+export async function fetchBody(url, { expectTitle } = {}) {
+  let res;
   try {
-    const html = await fetchText(url, { timeout: 15000, retries: 1 });
-    const text = htmlToText(html);
-    return text.length >= 200 ? text : "";   // too short = likely a block page
-  } catch {
-    return "";
+    res = await fetchPage(url, { timeout: 15000, retries: 1 });
+  } catch (e) {
+    return { text: "", finalUrl: url, status: 0, failure: BODY_FAILURES.FETCH, detail: e.message.slice(0, 160) };
   }
+  const text = htmlToText(res.html);
+  if (text.length < MIN_BODY_CHARS) {
+    return {
+      text: "", finalUrl: res.finalUrl, status: res.status,
+      failure: BODY_FAILURES.SHORT, detail: `${text.length} chars after cleanup`,
+    };
+  }
+  // A redirect to a section front or a soft 404 returns a real page that is not
+  // the story. When we know the expected headline, require some of it to
+  // survive in the fetched text before trusting the body.
+  if (expectTitle && !titleAgrees(expectTitle, text)) {
+    return {
+      text: "", finalUrl: res.finalUrl, status: res.status,
+      failure: BODY_FAILURES.MISMATCH, detail: `fetched page does not contain the expected headline`,
+    };
+  }
+  return { text, finalUrl: res.finalUrl, status: res.status, failure: null };
+}
+
+// Loose headline agreement: at least half of the headline's distinctive words
+// appear in the fetched text. Deliberately tolerant — publishers rewrite
+// headlines — but enough to catch a redirect to an unrelated page.
+function titleAgrees(title, text) {
+  const stop = new Set(["the","a","an","and","or","of","for","to","in","on","with","by","at","as","is","are","from","its","new","after","over","into"]);
+  const words = String(title).toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .split(/\s+/).filter((w) => w.length >= 4 && !stop.has(w));
+  if (words.length < 3) return true;          // too little to judge on
+  const hay = text.toLowerCase();
+  const hits = words.filter((w) => hay.includes(w)).length;
+  return hits / words.length >= 0.5;
+}
+
+// Back-compat: text or "" — used where only the text matters.
+export async function fetchBodyText(url) {
+  return (await fetchBody(url)).text;
 }
 
 // --- LLM call --------------------------------------------------------------
@@ -134,10 +244,11 @@ const SYSTEM = [
   "      'unclear'      the article does not settle which of these it is",
   "    If the article does not make the name a specific model, it is NOT",
   "    'product'. Prefer 'unclear' over guessing.",
-  "  - quote: a VERBATIM span of at least 12 characters, copied exactly from the",
-  "    article text above, in which this name appears. Copy it character for",
-  "    character; do not paraphrase, translate or tidy it. If you cannot find",
-  "    the name in the text, use null.",
+  "  - quote: a VERBATIM span of at least 12 and at most 200 characters, copied",
+  "    exactly from the article text above, in which this name appears. Copy it",
+  "    character for character; do not paraphrase, translate or tidy it. One",
+  "    sentence is usually right; never copy a whole paragraph. If you cannot",
+  "    find the name in the text, use null.",
   "  - maker: the organisation the ARTICLE states makes this product, or null.",
   "    Null is the correct answer whenever the article does not say. Do not use",
   "    your own knowledge here, and do not infer a maker from a company being",
@@ -146,7 +257,7 @@ const SYSTEM = [
   "    BOTH this product and that maker and states the relationship. One span,",
   "    naming both. If no single span does that, both maker and makerQuote must",
   "    be null — an article that mentions a company and a product separately is",
-  "    not evidence that the company makes it.",
+  "    not evidence that the company makes it. Keep it under 200 characters.",
   "",
   "STRICT EXCLUSIONS (never output these):",
   "  - Governments, militaries, agencies, programs, labs: U.S. Army, Navy, Air",
@@ -160,6 +271,7 @@ const SYSTEM = [
   "    A product must be a distinct branded/model name, not a capability or category.",
   "",
   "Normalise each name to a single canonical form; do not duplicate variants.",
+  "Keep the whole reply compact: no prose, no markdown, no code fence.",
   "If nothing qualifies for a field, return an empty array.",
   "Respond with a single JSON object and nothing else:",
   '{"companies": string[], "products": string[],',
@@ -176,22 +288,53 @@ function buildUserContent({ title, summary, body }) {
   return parts.join("\n");
 }
 
-// Pull the first JSON object out of a model response, defensively.
-function parseEntities(text) {
-  if (!text) return null;
+// Why a reply could not be turned into entities. Kept distinct because the
+// right response differs: truncation is worth another call at a bigger budget,
+// invalid JSON is worth one re-ask, and a schema violation means the prompt has
+// drifted and a human should look. Collapsing all of them into one
+// "unparseable response" is what hid the opex360 failure.
+export const PARSE_FAILURES = {
+  EMPTY: "empty_reply",
+  NO_OBJECT: "no_json_object",
+  INVALID_JSON: "invalid_json",
+  TRUNCATED: "truncated_json",
+  SCHEMA: "schema_violation",
+};
+
+// Pull the first JSON object out of a model response and say what went wrong.
+// Returns { value } or { failure, detail }.
+export function parseJsonDetailed(text, { stopReason } = {}) {
+  if (!text || !text.trim()) {
+    return { failure: stopReason === "max_tokens" ? PARSE_FAILURES.TRUNCATED : PARSE_FAILURES.EMPTY };
+  }
   let raw = text.trim();
-  // Strip ```json fences if present.
   const fence = raw.match(/```(?:json)?\s*([\s\S]*?)```/i);
   if (fence) raw = fence[1].trim();
-  // Isolate the outermost {...}.
   const start = raw.indexOf("{");
   const end = raw.lastIndexOf("}");
-  if (start === -1 || end === -1 || end < start) return null;
-  try {
-    return JSON.parse(raw.slice(start, end + 1));
-  } catch {
-    return null;
+  if (start === -1) return { failure: PARSE_FAILURES.NO_OBJECT, detail: raw.slice(0, 120) };
+  // No closing brace, or the model stopped at the token ceiling: the object is
+  // cut off rather than malformed. Say so, because it is recoverable.
+  if (end < start || stopReason === "max_tokens") {
+    return { failure: PARSE_FAILURES.TRUNCATED, detail: `stop_reason=${stopReason ?? "unknown"}` };
   }
+  try {
+    return { value: JSON.parse(raw.slice(start, end + 1)) };
+  } catch (e) {
+    return { failure: PARSE_FAILURES.INVALID_JSON, detail: e.message.slice(0, 160) };
+  }
+}
+
+// Shape check. The parse succeeding says nothing about the object being the one
+// we asked for, and a wrong shape must not become a confident empty answer.
+export function validateEntities(obj) {
+  const bad = [];
+  if (!obj || typeof obj !== "object" || Array.isArray(obj)) return ["reply is not a JSON object"];
+  for (const f of ["companies", "products"]) {
+    if (!Array.isArray(obj[f])) bad.push(`${f} is ${obj[f] === undefined ? "missing" : "not an array"}`);
+  }
+  if (obj.evidence !== undefined && !Array.isArray(obj.evidence)) bad.push("evidence is not an array");
+  return bad;
 }
 
 function cleanList(arr) {
@@ -257,7 +400,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // `model` lets a caller override the repo default per job: the entity pass is
 // cheap and high-volume, while a judgement that gets published unreviewed is
 // worth a stronger model.
-export async function anthropicComplete({ system, user, maxTokens = 1024, retries = 4, model } = {}) {
+export async function anthropicMessage({ system, user, maxTokens = 1024, retries = 4, model } = {}) {
   const key = process.env.ANTHROPIC_API_KEY;
   let lastErr;
   for (let attempt = 0; attempt <= retries; attempt++) {
@@ -283,7 +426,12 @@ export async function anthropicComplete({ system, user, maxTokens = 1024, retrie
       clearTimeout(t);
       if (res.ok) {
         const data = await res.json();
-        return (data.content || []).map((b) => b.text || "").join("");
+        return {
+          text: (data.content || []).map((b) => b.text || "").join(""),
+          stopReason: data.stop_reason || null,
+          usage: data.usage || null,
+          model: data.model || null,
+        };
       }
       const detail = await res.text().catch(() => "");
       // Retry on rate limits / transient server errors, honoring Retry-After.
@@ -309,10 +457,52 @@ export async function anthropicComplete({ system, user, maxTokens = 1024, retrie
   throw lastErr;
 }
 
-// Also export the defensive JSON-object parser so other pipelines can reuse it.
-export { parseEntities as parseJsonObject };
+// Text-only wrapper. Six callers (company enrichment, product enrichment,
+// maturity assessment, evidence extraction, the resolver gate) want just the
+// reply, so their signature is unchanged.
+export async function anthropicComplete(opts) {
+  return (await anthropicMessage(opts)).text;
+}
 
-const callClaude = (userContent) => anthropicComplete({ system: SYSTEM, user: userContent, maxTokens: 1024 });
+// Back-compat: object-or-null parse, for callers that only branch on null.
+export const parseJsonObject = (text) => parseJsonDetailed(text).value ?? null;
+
+// One extraction call, with a bounded retry for the recoverable failures.
+//
+// Recoverable means the model produced something we could not use but a second
+// call plausibly fixes: a truncated object (retry at a bigger budget) or
+// invalid JSON (one re-ask). A schema violation is NOT retried — the prompt has
+// drifted and repeating the call just spends money twice. Returns
+// { parsed, attempts, usage } or { failure, detail, attempts, usage }.
+async function extractEntities(userContent) {
+  const attempts = [];
+  let usage = null;
+  let budget = MAX_OUTPUT_TOKENS;
+
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const reply = await anthropicMessage({
+      system: SYSTEM,
+      user: attempt === 0 ? userContent : `${userContent}\n\nReply with compact JSON only. Keep every quote under 200 characters.`,
+      maxTokens: budget,
+    });
+    usage = reply.usage || usage;
+    const got = parseJsonDetailed(reply.text, { stopReason: reply.stopReason });
+    if (got.value) {
+      const bad = validateEntities(got.value);
+      if (!bad.length) return { parsed: got.value, attempts, usage };
+      attempts.push({ failure: PARSE_FAILURES.SCHEMA, detail: bad.join("; "), stopReason: reply.stopReason });
+      return { failure: PARSE_FAILURES.SCHEMA, detail: bad.join("; "), attempts, usage };
+    }
+    attempts.push({ failure: got.failure, detail: got.detail, stopReason: reply.stopReason });
+    const recoverable = got.failure === PARSE_FAILURES.TRUNCATED || got.failure === PARSE_FAILURES.INVALID_JSON;
+    if (!recoverable || attempt === 1) {
+      return { failure: got.failure, detail: got.detail, attempts, usage };
+    }
+    if (got.failure === PARSE_FAILURES.TRUNCATED) budget = RETRY_OUTPUT_TOKENS;
+  }
+  // Unreachable: the loop always returns.
+  return { failure: PARSE_FAILURES.EMPTY, attempts, usage };
+}
 
 // --- public API ------------------------------------------------------------
 
@@ -324,16 +514,35 @@ const callClaude = (userContent) => anthropicComplete({ system: SYSTEM, user: us
 // stored companies/products lists — adding what was missing rather than
 // rewriting history.
 export async function analyzeArticle({ url, title, summary }, { prefetchedBody, evidenceFor } = {}) {
-  if (!hasApiKey()) return { companies: [], products: [], evidence: [], verifiedAgainst: "", ok: false, usedBody: false, error: "no ANTHROPIC_API_KEY" };
+  if (!hasApiKey()) return { companies: [], products: [], evidence: [], verifiedAgainst: "", ok: false, usedBody: false, error: "no ANTHROPIC_API_KEY", errorKind: "no_api_key" };
 
   let body = prefetchedBody || "";
-  if (!body && url) body = await fetchBodyText(url);
+  let bodyFailure = null, bodyDetail = null, finalUrl = url || null, status = null;
+  if (!body && url) {
+    const got = await fetchBody(url, { expectTitle: title });
+    body = got.text;
+    bodyFailure = got.failure;
+    bodyDetail = got.detail || null;
+    finalUrl = got.finalUrl;
+    status = got.status;
+  }
   const usedBody = body.length > 0;
+  const bodyInfo = { usedBody, bodyFailure, bodyDetail, finalUrl, status, bodyChars: body.length };
 
   try {
-    const reply = await callClaude(buildUserContent({ title, summary, body }));
-    const parsed = parseEntities(reply);
-    if (!parsed) return { companies: [], products: [], ok: false, usedBody, error: "unparseable response" };
+    const got = await extractEntities(buildUserContent({ title, summary, body }));
+    if (got.failure) {
+      // A malformed or truncated reply is a FAILURE, never a confident empty
+      // extraction. Returning ok:true with empty arrays here would have let
+      // the opex360 article count as "analysed, nothing found".
+      return {
+        companies: [], products: [], evidence: [], verifiedAgainst: "",
+        ok: false, ...bodyInfo,
+        error: `${got.failure}${got.detail ? `: ${got.detail}` : ""}`,
+        errorKind: got.failure, attempts: got.attempts, usage: got.usage,
+      };
+    }
+    const parsed = got.parsed;
     const products = cleanList(parsed.products);
     // `verifiedAgainst` is the text the quotes were taken from, and it is the
     // only thing a quote can be checked against later. The article body is not
@@ -345,7 +554,13 @@ export async function analyzeArticle({ url, title, summary }, { prefetchedBody, 
     // can check a quote — buys nothing and costs a column of article bodies.
     const evidenceNames = Array.isArray(evidenceFor) && evidenceFor.length ? evidenceFor : products;
     const evidence = cleanEvidence(parsed.evidence, evidenceNames).map((e) => {
-      const d = decideIdentity(e, verifiedAgainst, { haveArticleText: Boolean(verifiedAgainst) });
+      // Only the real article body counts as article text. A headline and an
+      // RSS summary are not the article: a quote "verified" against them is
+      // verified against the one sentence the model was already shown, which
+      // is how the gate used to judge identity from headlines alone. With no
+      // body every candidate becomes REVIEW, which is where an unverifiable
+      // product belongs — reviewable, not published.
+      const d = decideIdentity(e, verifiedAgainst, { haveArticleText: usedBody });
       return {
         name: e.name,
         kind: e.kind,
@@ -353,7 +568,10 @@ export async function analyzeArticle({ url, title, summary }, { prefetchedBody, 
         reason: d.reason,
         quote: e.quote,              // the span itself, so a reviewer can read it
         maker: d.maker,              // null unless a span SAYS the maker makes it
-        makerCue: d.maker ? makerCue(e) : null,   // which relationship cue fired
+        // The cue is recorded even when no maker is assigned, so a relationship
+        // we judged ambiguous (e.g. `supply_only`) is auditable rather than
+        // indistinguishable from "the article said nothing".
+        makerCue: makerCue(e),
         makerClaimed: e.maker,       // what the model said, kept so a dropped
                                      // ownership claim is auditable rather than
                                      // silently vanishing
@@ -366,10 +584,15 @@ export async function analyzeArticle({ url, title, summary }, { prefetchedBody, 
       evidence,
       verifiedAgainst,
       ok: true,
-      usedBody,
+      ...bodyInfo,
+      attempts: got.attempts,
+      usage: got.usage,
     };
   } catch (e) {
-    return { companies: [], products: [], evidence: [], verifiedAgainst: "", ok: false, usedBody, error: e.message };
+    return {
+      companies: [], products: [], evidence: [], verifiedAgainst: "",
+      ok: false, ...bodyInfo, error: e.message, errorKind: "api_failure",
+    };
   }
 }
 
