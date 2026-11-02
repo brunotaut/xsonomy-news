@@ -1,0 +1,127 @@
+{
+  "dataset": "company-funding-research-03-2026-11-02",
+  "checked_at": "2026-11-02",
+  "status": "checkpoint_complete_programme_in_progress",
+  "identities_reviewed": 20,
+  "imported_companies": 13,
+  "imported_events": 22,
+  "imported_participations": 70,
+  "imported_investor_profiles_created": 55,
+  "approved_totals_after_import": {
+    "events": 123,
+    "participations": 376,
+    "investor_profiles": 342,
+    "partial_companies": 65
+  },
+  "validation": {
+    "tests_passed": 146,
+    "rollback_rehearsal": true,
+    "rollback_baseline_restored": true,
+    "idempotent_rerun": true,
+    "approved_events_without_sources": 0,
+    "participant_source_mismatches": 0
+  },
+  "imported_company_slugs": [
+    "buntar-aerospace",
+    "creotech-instruments",
+    "dronamics",
+    "aalto-airbus-subsidiary",
+    "4ig",
+    "mydefence",
+    "stirlingx",
+    "intelic",
+    "manna-drone-delivery",
+    "unifly",
+    "skyports",
+    "wingtra",
+    "volocopter"
+  ],
+  "source_holds": [
+    {
+      "company_slug": "altitude-angel",
+      "status": "source_reconciliation_pending",
+      "finding": "Company-distributed release confirms a GBP4m Series A follow-on led by Octopus Ventures alongside Seraphim, but the earlier 2020 parent event and later strategic financing need one coherent history before import.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/global-drone-super-highways-a-step-closer-as-octopus-ventures-back-altitude-angel-301198253.html",
+        "https://octopusventures.com/blog/our-investment-altitude-angel/"
+      ]
+    },
+    {
+      "company_slug": "apian",
+      "status": "source_reconciliation_pending",
+      "finding": "Discovery results report seed and grant financing, but no issuer or transaction-party source establishing the precise event terms was verified in this run.",
+      "sources": [
+        "https://www.apian.aero"
+      ]
+    },
+    {
+      "company_slug": "kitemill",
+      "status": "source_reconciliation_pending",
+      "finding": "Company pages confirm strategic investment, grants and crowdfunding, but the Expanding Dreams page combines investment, smaller investors and tax relief into a EUR2m runway rather than a clean round amount; award dates also require reconciliation.",
+      "sources": [
+        "https://www.kitemill.com/news/expanding-dreams-invests-in-kitemill",
+        "https://www.kitemill.com/eic-round-interest"
+      ]
+    },
+    {
+      "company_slug": "milrem-robotics",
+      "status": "source_reconciliation_pending",
+      "finding": "The company states EUR5.5m was contributed across 2019 and 2020, so it cannot be imported as one fresh round. Later KMW and EDGE transactions are ownership changes with undisclosed primary-versus-secondary proceeds.",
+      "sources": [
+        "https://milremrobotics.com/milrem-robotics-raised-5-5-million-euros/",
+        "https://milremrobotics.com/krauss-maffei-wegmann-acquires-stake-in-milrem-robotics/",
+        "https://milremrobotics.com/edge-acquires-majority-stake-in-milrem-robotics-europes-leading-developer-of-robotics-and-autonomous-systems/"
+      ]
+    },
+    {
+      "company_slug": "nordic-air-defence",
+      "status": "source_reconciliation_pending",
+      "finding": "Investor portfolio evidence and secondary reports indicate financing, but issuer announcements and exact closing chronology were not established sufficiently for event import.",
+      "sources": [
+        "https://www.nordicairdefence.com",
+        "https://inflection.fund/portfolio"
+      ]
+    },
+    {
+      "company_slug": "openworks-engineering",
+      "status": "source_reconciliation_pending",
+      "finding": "Company sources describe internal R&D spending and partially grant-funded expansion, not a disclosed external financing round or company grant amount.",
+      "sources": [
+        "https://openworksengineering.com/openworks-secures-place-in-growing-defence-sector-with-continued-investment/",
+        "https://openworksengineering.com/new-move-proves-key-in-2024-targets-for-openworks/"
+      ]
+    },
+    {
+      "company_slug": "uforce",
+      "status": "source_reconciliation_pending",
+      "finding": "Company materials and Lakestar's portfolio establish backing, but widely reported round amounts and dates were not confirmed by an issuer or transaction-party financing announcement in this run.",
+      "sources": [
+        "https://www.uforce.com/newsroom",
+        "https://www.lakestar.com/resiliencepress"
+      ]
+    }
+  ],
+  "reconciliation_notes": [
+    {
+      "company_slug": "dronamics",
+      "claim": "USD40m pre-Series-A",
+      "disposition": "Not imported as a new event because the company describes it as total financing from investors in 12 countries; confirmed EIC grant and equity transactions are recorded separately."
+    },
+    {
+      "company_slug": "buntar-aerospace",
+      "claim": "October 2026 USD16m financing",
+      "disposition": "Confirmed as a distinct round from March 2026. Named participants imported; unnamed international private-equity co-lead remains unnamed."
+    },
+    {
+      "company_slug": "aalto-airbus-subsidiary",
+      "claim": "USD100m Japanese consortium investment",
+      "disposition": "Recorded against AALTO, not Airbus Defence and Space, through the named HAPS JAPAN Corporation vehicle and with announced closing status."
+    },
+    {
+      "company_slug": "skyports",
+      "claim": "Series C USD110m",
+      "disposition": "Recorded as more than USD110m and attributed to ACS-owned Iridium, preserving the disclosed lower-bound qualifier."
+    }
+  ],
+  "next_priority": "Continue published-landscape identities with strong primary financing candidates, then reconcile the seven source holds without treating missing data as zero funding."
+}
