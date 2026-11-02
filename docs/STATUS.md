@@ -1423,3 +1423,56 @@ The Brave1 row is still in the database with its wrong maker. The clean correcti
 re-derive maker and cue for all stored evidence from the `makerClaimed` + `quote` already on each
 row, at zero model cost and without refetching anything. That is a write to `articles.entity_evidence`,
 so it waits for Nazar. The remainder of the backfill is unblocked either way.
+
+## 2026-11-02 (late) — backfill remainder ran clean; the drop rate was misleading
+
+Run [41497085215](https://github.com/brunotaut/xsonomy-news/actions/runs/41497085215) on `780484e`
+(contains the maker fix `60cc29c`) wrote **88 more articles** in 3 minutes. Total backfilled: **97
+articles, 353 evidence rows.** No products created or updated, `entities_resolved_at` untouched.
+
+Quality of what was written:
+
+- **348 of 353 quotes verified against the article body.** The other 5 had no body, and **all 5
+  went to `review`** with reason `no_article_text_to_verify` — the headline-only rule doing its job.
+- creates 323 · reviews 15 · rejects 15. The pilot's 0 reviews / 0 rejects was a small-sample
+  artefact, not a stuck classifier. Rejects are 6 family, 6 programme, 3 class. Reviews include
+  **6 firings of the new "the quote calls it a series/family" rule** on real articles.
+- **Zero `qualified_party` cues** — the Brave1 shape did not recur.
+
+### I was reading the maker numbers wrong
+
+I had been quoting "26 of 37 claims dropped" as a recall figure. Decomposing all 217 claims in the
+backfilled set shows that is the wrong denominator:
+
+| | |
+|---|---|
+| claims where the span **does not name the maker at all** | **102** (47%) |
+| claims where the maker **is** named | 115 |
+| → assigned | **54** |
+| → named but no relationship found | 61 |
+
+Those 102 are the model attaching a manufacturer it knew from elsewhere rather than from the span it
+cited. Refusing them is the safeguard working, not recall being lost.
+
+Inspecting the 61: 28 are co-mention only (`a Neros Archer drone` in a photo caption), 12 are
+contract awards or lists (`AEVEX Corp. said its Maritime Systems division was awarded two
+contracts`), 8 are possessives that are not manufacture (`the drone Verizon's Frontline Crisis
+Response Team made its primary aircraft`), 10 turn on an announcement verb (`Applied Aeronautics
+today introduced Fleet`), and 3 have a real make verb across too long a bridge (`Griffon also
+developed a derivative of the Gen 1 design ... called the Outlaw`).
+
+So the genuinely addressable residue is roughly **13 of 217**, not 163. The announcement-verb group
+is the only one worth a rule, and it is a judgement call: introducing a product is not always
+building it.
+
+### State
+
+**538 candidates remain** (`analyzed_at` set, not resolved, no evidence, has products) — about six
+more runs at `max_articles=100`, roughly $2.50–3.00 in total at the observed ~$0.005 per article.
+
+The pilot's 33 rows were written **before** the maker fix and the remainder's 320 after, so the set
+is not uniform. The replay would normalise it and correct the Brave1 row, which still reads
+`maker=Brave1, cue=made_by`. Still waiting on Nazar.
+
+Cosmetic: one review reason renders as `quote_calls_it_a_-series`, from a hyphen ahead of the
+marker. Harmless label wart, not fixed.
