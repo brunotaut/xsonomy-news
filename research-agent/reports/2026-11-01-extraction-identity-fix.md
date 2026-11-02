@@ -1,7 +1,18 @@
 # Preventing the batch 2 extraction errors — implemented and activated
 
-**Date:** 2026-11-01 · **Status:** code committed and activated; **not yet exercised in a
-production run** (see §7) · **Tests:** 70/70
+**Date:** 2026-11-01 · **Status:** SUPERSEDED IN PART — two claims below were wrong, and
+both were found by a later review. See
+[the validation report](2026-11-02-extraction-validation-and-taxonomy-applied.md).
+· **Tests at the time:** 70/70
+
+> **Corrections, 2026-11-02.**
+> 1. §2 rule 3 and §4 said the Albacore misattribution was "prevented on the real
+>    article". It was prevented only for the span a sentence splitter happened to
+>    produce. Given the wider passage as one span, the both-names test **accepted
+>    Albacore**. Rule 3 now requires an explicit making relationship.
+> 2. §2 implied the retired guard stopped a differently worded duplicate. It did not —
+>    collapsing punctuation does not equate an acronym with its expansion. Acronym
+>    detection was added separately, routing to review.
 
 Follows [batch 2 decisions applied](2026-11-01-batch-2-decisions-applied.md).
 
@@ -57,6 +68,8 @@ five names**, and an unseen programme is handled the same way.
 3. **Joint evidence for a relationship.** A maker is accepted only when **one span names
    both the product and the maker**. Two names in the same article is not a relationship.
    The product is still created — it is the ownership claim that is dropped, not the row.
+   **(Insufficient as written — see the correction at the top. One span naming both is
+   also not a relationship; the span must now state one.)**
 
 **Evidence is captured where the body still exists.** `analyze.mjs` now asks for, and
 verifies, per-product evidence at analysis time and stores the verdict in a new additive
@@ -79,6 +92,11 @@ The product index is keyed on exact and normalised names, which stops an exact r
 **not a differently-worded duplicate** — "Maritime Mine Counter Measures" would not have
 matched a retired "MMCM". Added `buildRetiredProductIndex` with a looser key that also
 drops spaces and punctuation, and a hit routes to review rather than creating a second row.
+
+> **Correction:** that looser key catches punctuation and spacing variants only
+> (`M.M.C.M.`, `mm cm`, `MMCM programme`). It did **not** catch the expansion, so the gap
+> this paragraph names was not actually closed. Acronym↔expansion detection was added on
+> 2026-11-02 and routes to review.
 Verified separately: **no code path anywhere sets a product back to `live`**, so
 republication was never possible; recreation was.
 
@@ -118,6 +136,9 @@ own `fetchBodyText`.
 
 **The Albacore misattribution is prevented on the real article**, not on a fixture. And the
 same article says "**Anduril's** Ghost Shark" — the right answer was in the source all along.
+
+> **Correction:** prevented *for that span*, not by the rule. Handing the wider passage to
+> the same test as one span accepts Albacore. Fixed on 2026-11-02.
 
 **What the body gives you, and only the body:** opex360 glosses MMCM as
 *"le programme SLAM-F … repose sur quatre nouvelles capacités, dont … MMCM [pour Maritime

@@ -1,0 +1,101 @@
+name: Validate extraction safeguards
+
+# Manual only. Two jobs, both opt-in, because one calls the model and the other
+# writes to the database.
+#
+#   mode = eval            READ-ONLY. Runs the real extraction model over the
+#                          four known-bad sources, or a sample, and prints what
+#                          the identity rules decide. Writes nothing: no
+#                          products, no article links, no article patches.
+#
+#   mode = backfill-dry    Evidence backfill in dry mode. Calls the model,
+#                          writes NOTHING.
+#
+#   mode = backfill-pilot  Evidence backfill for `pilot_size` articles only.
+#                          Writes ONLY articles.entity_evidence.
+#
+#   mode = backfill        Evidence backfill for the remaining backlog, capped
+#                          by `max_articles`. Writes ONLY entity_evidence.
+#
+# None of these resolve entities, create products, publish anything, clear the
+# decision cache or touch article links.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "eval | backfill-dry | backfill-pilot | backfill"
+        required: true
+        default: "eval"
+      sample:
+        description: "eval only: how many recent pending articles (blank = the 4 affected sources)"
+        required: false
+        default: ""
+      pilot_size:
+        description: "backfill-pilot only: articles in the pilot"
+        required: false
+        default: "10"
+      max_articles:
+        description: "backfill only: cap for this run"
+        required: false
+        default: "100"
+      concurrency:
+        description: "parallel model calls"
+        required: false
+        default: "3"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Unit tests must pass before anything touches the model or the database
+        run: npm test
+
+      - name: Read-only evaluation (real model, no writes)
+        if: github.event.inputs.mode == 'eval'
+        run: |
+          if [ -n "${{ github.event.inputs.sample }}" ]; then
+            node scripts/eval-extraction.mjs --sample "${{ github.event.inputs.sample }}"
+          else
+            node scripts/eval-extraction.mjs --affected
+          fi
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Evidence backfill — DRY RUN (no writes)
+        if: github.event.inputs.mode == 'backfill-dry'
+        run: node scripts/analyze-backfill.mjs --missing-evidence --dry --max 25 --concurrency ${{ github.event.inputs.concurrency }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Evidence backfill — PILOT (writes entity_evidence only)
+        if: github.event.inputs.mode == 'backfill-pilot'
+        run: node scripts/analyze-backfill.mjs --missing-evidence --max ${{ github.event.inputs.pilot_size }} --batch 10 --concurrency ${{ github.event.inputs.concurrency }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Evidence backfill — REMAINDER (writes entity_evidence only)
+        if: github.event.inputs.mode == 'backfill'
+        run: node scripts/analyze-backfill.mjs --missing-evidence --max ${{ github.event.inputs.max_articles }} --batch 25 --concurrency ${{ github.event.inputs.concurrency }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Derived-taxonomy check (read-only, always)
+        continue-on-error: true
+        run: npm run check:taxonomy
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

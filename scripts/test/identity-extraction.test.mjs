@@ -273,3 +273,151 @@ test("word boundaries do not break possessives or punctuation", () => {
   assert.equal(mentionsName("Exail-built vehicles", "Exail"), true);
   assert.equal(mentionsName("Exailed praise from the navy", "Exail"), false);
 });
+
+// --- rule 3 hardened: co-mention is not a relationship ------------------------
+//
+// The first version of rule 3 only required ONE span naming both sides. That is
+// not enough, and it failed on the real article: given the dronexl passage as a
+// single span, it accepted ALBACORE as Ghost Shark's maker. It had only
+// appeared to work because a sentence splitter cut between the two names — luck,
+// not a rule. These tests pin down the relationship requirement that replaced it.
+
+import { makerRelationship, acronymOf } from "../lib/identity.mjs";
+
+const DRONEXL_PASSAGE =
+  "Australia got there first with a partner. Anduril's Ghost Shark went from concept to a " +
+  "A$1.7 billion five-year contract with the Royal Australian Navy in roughly three years, " +
+  "and the company opened a Sydney factory to build them. Albacore is aiming much smaller " +
+  "and much cheaper, which is the entire argument for buying hundreds instead of dozens.";
+
+test("THE REGRESSION: the real passage must not make Albacore the maker", () => {
+  const d = decideIdentity({
+    name: "Ghost Shark", kind: "product",
+    quote: "Anduril's Ghost Shark went from concept to a",
+    maker: "Albacore", makerQuote: DRONEXL_PASSAGE,
+  }, DRONEXL_PASSAGE);
+  assert.equal(d.maker, null, "both names in one span is not a maker relationship");
+  assert.equal(d.outcome, OUTCOMES.CREATE, "the product itself is still fine");
+});
+
+test("the same passage DOES establish Anduril, from the possessive", () => {
+  const d = decideIdentity({
+    name: "Ghost Shark", kind: "product",
+    quote: "Anduril's Ghost Shark went from concept to a",
+    maker: "Anduril", makerQuote: DRONEXL_PASSAGE,
+  }, DRONEXL_PASSAGE);
+  assert.equal(d.maker, "Anduril");
+});
+
+test("negative: a customer is not a manufacturer", () => {
+  for (const span of [
+    "The Royal Australian Navy ordered the Ghost Shark",
+    "Ghost Shark is operated by the Royal Australian Navy",
+    "the Royal Australian Navy, the customer for Ghost Shark, confirmed delivery",
+    "Ghost Shark was selected by the Royal Australian Navy",
+  ]) {
+    assert.equal(makerRelationship(span, "Ghost Shark", "Royal Australian Navy"), null, span);
+  }
+});
+
+test("negative: a comparison or competitor is not a manufacturer", () => {
+  for (const span of [
+    "Albacore is aiming smaller than Anduril's Ghost Shark",
+    "Anduril competitor Albacore builds a cheaper vehicle than Ghost Shark",
+    "Unlike Ghost Shark, Albacore's design is expendable",
+    "Ghost Shark versus Albacore: two approaches to undersea autonomy",
+    "Ghost Shark, compared with Albacore's offering, is far larger",
+  ]) {
+    assert.equal(makerRelationship(span, "Ghost Shark", "Albacore"), null, span);
+  }
+});
+
+test("negative: a partner or integrator is not stated as the manufacturer", () => {
+  for (const span of [
+    "Ghost Shark was developed alongside partner Albacore",
+    "Ghost Shark, in collaboration with Albacore, completed trials",
+    "Albacore teamed with the programme behind Ghost Shark",
+  ]) {
+    assert.equal(makerRelationship(span, "Ghost Shark", "Albacore"), null, span);
+  }
+});
+
+test("negative: a competing manufacturer named in the same breath", () => {
+  const span = "Boeing's Orca and Anduril's Ghost Shark are the two XL-AUVs in service";
+  assert.equal(makerRelationship(span, "Ghost Shark", "Boeing"), null,
+    "Boeing makes the other one");
+  assert.equal(makerRelationship(span, "Ghost Shark", "Anduril"), "possessive");
+  assert.equal(makerRelationship(span, "Orca", "Boeing"), "possessive");
+});
+
+test("positive cues, and each is labelled so a decision is auditable", () => {
+  assert.equal(makerRelationship("Anduril's Ghost Shark completed trials", "Ghost Shark", "Anduril"), "possessive");
+  assert.equal(makerRelationship("Albacore has been awarded a contract for its Ghostfin", "Ghostfin", "Albacore"), "possessive_its");
+  assert.equal(makerRelationship("The Ghost Shark, built by Anduril, entered service", "Ghost Shark", "Anduril"), "made_by");
+  assert.equal(makerRelationship("The Anduril Ghost Shark completed trials", "Ghost Shark", "Anduril"), "adjacent");
+  assert.equal(makerRelationship("Baykar develops the Bayraktar TB2", "Bayraktar TB2", "Baykar"), "maker_verb");
+});
+
+test("distance matters: a maker mentioned far away is not the relationship", () => {
+  const far = "Ghost Shark completed trials. " + "Filler text about procurement. ".repeat(6) + "Albacore raised a round.";
+  assert.equal(makerRelationship(far, "Ghost Shark", "Albacore"), null);
+});
+
+test("the relationship rule is not English-only", () => {
+  // The feed carries French, German and Italian sources. An English-only rule
+  // would silently drop the maker for all of them — which a counterexample
+  // caught when "fournis par Exail" started returning null.
+  assert.ok(makerRelationship("deux drones de surface Inspector 125 fournis par Exail", "Inspector 125", "Exail"));
+  assert.ok(makerRelationship("le chasseur de mines rMCM construit par Naval Group", "rMCM", "Naval Group"));
+  assert.ok(makerRelationship("il drone Falco prodotto da Leonardo", "Falco", "Leonardo"));
+  assert.ok(makerRelationship("die Drohne Luna von Rheinmetall gebaut", "Luna", "Rheinmetall"));
+  assert.equal(makerRelationship("la Marine nationale a commandé le drone A-18M", "A-18M", "Marine nationale"), null,
+    "a French customer is still not a maker");
+});
+
+// --- the retired guard: what it actually catches ------------------------------
+//
+// An earlier report implied the guard stopped any differently worded duplicate.
+// It did not: collapsing punctuation does not equate an acronym with its
+// expansion. These tests state the real boundary.
+
+test("the key test catches punctuation and spacing variants only", () => {
+  const ix = buildRetiredProductIndex([{ id: "r1", name: "MMCM", publication_status: "draft" }]);
+  for (const n of ["MMCM", "M.M.C.M.", "mm cm", "m-m-c-m", "MMCM programme"]) {
+    assert.equal(retiredMatch(n, ix).how, "key", n);
+  }
+});
+
+test("an acronym's EXPANSION is now caught, and flagged as the weaker test", () => {
+  const ix = buildRetiredProductIndex([{ id: "r1", name: "MMCM", publication_status: "draft" }]);
+  const hit = retiredMatch("Maritime Mine Counter Measures", ix);
+  assert.equal(hit.id, "r1");
+  assert.equal(hit.how, "acronym", "plausible, not proven — belongs in review");
+  assert.equal(retiredMatch("Maritime Mine Counter-Measures", ix).how, "acronym");
+});
+
+test("acronym matching works both ways and skips connectives either way", () => {
+  assert.equal(acronymOf("MMCM", "Maritime Mine Counter Measures"), true);
+  assert.equal(acronymOf("MOD", "Ministry of Defence"), true, "some acronyms keep the connective");
+  assert.equal(acronymOf("MCM", "Mine Counter Measures"), true);
+  assert.equal(acronymOf("TB2", "Bayraktar TB2"), false, "not an initialism");
+  assert.equal(acronymOf("ABC", "Alpha Bravo"), false, "wrong length");
+});
+
+test("a LIMIT, stated: a phonetic acronym is not caught", () => {
+  // XLUUV expands to "extra-large uncrewed undersea vehicle", whose initials are
+  // ELUUV. The X is a sound. This rule catches true initialisms only, and
+  // anything it misses still has to pass the `kind` rule, where a class term is
+  // refused anyway.
+  assert.equal(acronymOf("XLUUV", "Extra Large Uncrewed Undersea Vehicle"), false);
+});
+
+test("unrelated new products are not swept up by the acronym test", () => {
+  const ix = buildRetiredProductIndex([
+    { id: "r1", name: "MMCM", publication_status: "draft" },
+    { id: "r2", name: "XLUUV", publication_status: "draft" },
+  ]);
+  for (const n of ["Inspector 125", "Bayraktar TB2", "Mine Counter Measures", "Ghost Shark"]) {
+    assert.equal(retiredMatch(n, ix), null, n);
+  }
+});

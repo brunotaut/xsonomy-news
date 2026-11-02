@@ -13,7 +13,7 @@
 
 import { fetchText } from "./http.mjs";
 import { decodeEntities } from "./feed.mjs";
-import { IDENTITY_KINDS, decideIdentity } from "./identity.mjs";
+import { IDENTITY_KINDS, decideIdentity, makerCue } from "./identity.mjs";
 
 const API_URL = "https://api.anthropic.com/v1/messages";
 const MODEL = process.env.ANTHROPIC_MODEL || "claude-haiku-4-5-20251001";
@@ -352,7 +352,8 @@ export async function analyzeArticle({ url, title, summary }, { prefetchedBody, 
         outcome: d.outcome,
         reason: d.reason,
         quote: e.quote,              // the span itself, so a reviewer can read it
-        maker: d.maker,              // null unless ONE span named both sides
+        maker: d.maker,              // null unless a span SAYS the maker makes it
+        makerCue: d.maker ? makerCue(e) : null,   // which relationship cue fired
         makerClaimed: e.maker,       // what the model said, kept so a dropped
                                      // ownership claim is auditable rather than
                                      // silently vanishing

@@ -41,6 +41,18 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
+      # Read-only tripwire: a rule-derived taxonomy row whose recorded basis no
+      # longer matches the product's category. Reports only - it never deletes a
+      # row and never touches an observed one. Non-blocking on purpose: a stale
+      # derivation is a data question and must not stop the site deploying.
+      - name: Check for stale derived taxonomy rows (read-only)
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: npm run check:taxonomy
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+
       - name: Build static site
         run: npm run build
         env:

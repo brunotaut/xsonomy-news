@@ -328,7 +328,11 @@ async function main() {
     // It goes to review so a person sees it, and never straight to live.
     const revived = retiredMatch(v.canonical, retiredProducts) || retiredMatch(u.name, retiredProducts);
     const needsReview = outcome !== OUTCOMES.CREATE || Boolean(revived);
-    const reviewReason = revived ? `would_revive_retired:${revived.name}` : evReason;
+    // `how` distinguishes a near-certain name collision from a merely plausible
+    // acronym match, so the review queue says which it is.
+    const reviewReason = revived
+      ? `would_revive_retired:${revived.how}:${revived.name}`
+      : evReason;
 
     const plan = {
       tags: [{ lo, tag: u.name }],

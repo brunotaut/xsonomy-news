@@ -938,3 +938,82 @@ Proposed: delete those 2 rows. Dry-run clean, round trip exact including `create
 is consistent but worth knowing. **No live code writes `product_taxonomy`**, so nothing
 regenerates them — but nothing keeps derivations in step with a category change either, and
 the report gives a standing check for that.
+
+## 2 November 2026 — the safeguards reviewed, two defects found and fixed
+
+**Both criticisms of my fix were correct.** Reported here because they mattered.
+
+**1. Naming both sides is not a relationship.** Reproduced on the real article: given the
+wider dronexl passage as *one span*, my maker rule returned **"Albacore"** for Ghost Shark
+— the original error — and accepted a **customer** ("the Navy ordered the Ghost Shark") as a
+manufacturer. My 1 November claim that the misattribution was "prevented on the real
+article" was **wrong**: it was prevented by a sentence splitter cutting between the two
+names, not by the rule.
+
+Now a maker needs an explicit making relationship: the names within 120 characters, the
+text *between* them classified as manufacture (possessive, "built by", maker verb,
+adjacency), and a **disqualifying frame beats any positive cue** — comparison, competitor,
+customer, operator, purchaser, partner, integrator. The accepted cue is stored, so a
+published maker link records which relationship justified it.
+
+Two more defects fell out of the counterexamples. **`"Boeing's Orca and Anduril's Ghost
+Shark"` made Boeing the maker of Ghost Shark** — the possessive belonged to the intervening
+product; cues are now anchored. And **the rule was English-only**: `"Inspector 125 fournis
+par Exail"` started returning null, silently dropping makers for every French, German and
+Italian source. Now covers FR/DE/IT/ES.
+
+**2. Collapsing punctuation does not equate an acronym with its expansion.** Also right.
+Measured: the guard caught `M.M.C.M.` and `mm cm` but **missed both `MMCM programme` and
+`Maritime Mine Counter Measures`**. My claim that it stopped differently worded duplicates
+was wrong. Acronym matching added, both directions, with and without connectives. **Hits go
+to review, never refusal**, and are labelled: a name collision is near-certain, an **acronym
+match is plausible, not proven**. A *phonetic* acronym is still not caught — XLUUV's
+initials are ELUUV — and that limit is written down rather than hidden.
+
+**Tests 100/100**, up from 70.
+
+### The production run has not happened, and something else has been broken for a week
+
+The first qualifying run is **05:00 UTC today**; at the time of writing it was ~5 hours
+away. My push *did* trigger the workflow, but ingest and resolve both skip on a code push,
+so **deployment happened and execution did not**. There is no run URL to give.
+
+**Separately: the resolver has not stamped an article since 26 October.** Not the model
+budget — 47 of the 150 most recent unresolved articles need no model call at all and would
+have been stamped. It wrote nothing. I cannot see why: there is no `gh` CLI and no Actions
+access here, so the run log — the one piece of evidence that matters — is out of reach.
+**That log is the thing to read**, and it covers both the new code and the week-old failure.
+
+### Real-model evaluation and evidence backfill: blocked, not done
+
+Both need `ANTHROPIC_API_KEY`, which exists only as a GitHub secret, and I can neither read
+it nor dispatch a workflow. **Zero model spend; I am not claiming validation.** Instead I
+built them to be run by someone who can: `extraction-validate.yml` with `eval`,
+`backfill-dry`, `backfill-pilot` and `backfill` modes, every one gated on `npm test`. The
+eval is read-only by construction and a test asserts that against the code, not the
+comments.
+
+Backfill safety verified and pinned by tests: writes restricted to
+`articles.entity_evidence`, nothing else touched, dry mode returns before the write.
+Re-measured backlog: **635 articles** (719 counted articles with no products), 2,001
+distinct tags, 1,039 genuinely new. **Attempted 0, completed 0, failed 0.**
+
+One consequence worth knowing: once resolve runs, a held candidate gets cached as `created`
+pointing at a `review` product, so a later backfill will **not** retry or promote it. That
+is correct, but review products will accumulate and need a deliberate pass — a separate
+proposal, not attempted.
+
+### Applied: the two stale taxonomy rows are gone
+
+Cassio S and DA 15-N.ISS no longer assert an aerial-UAV domain. `product_taxonomy`
+11,132 → **11,130**; aerial rows on non-UAV products **2 → 0**. Both products unchanged
+otherwise — `Other`/`live`, companies and article links intact. Round trip proven before
+applying, including `created_at`.
+
+### And a tripwire so it cannot happen quietly again
+
+`npm run check:taxonomy` flags rule-derived rows whose recorded basis contradicts the
+product's current category, wired into the daily workflow as a **non-blocking** step.
+Reports only — it never deletes and never touches an observed row, because an observed row
+is research and a category is not grounds to overrule it. Tested against both a stale
+derivation and HALIA, the legitimately amphibious record that must *not* be flagged.
