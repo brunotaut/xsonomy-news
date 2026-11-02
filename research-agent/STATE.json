@@ -1623,5 +1623,30 @@
       "one-off oldest-first drain pass",
       "accept that pre-October articles stay unlinked"
     ]
+  },
+  "extraction_eval_run_2": {
+    "date": "2026-11-02",
+    "run": "https://github.com/brunotaut/xsonomy-news/actions/runs/41449704934",
+    "commit_tested": "a9810f0",
+    "exit": "1 — two required cases wrong; unit tests passed, all backfill steps skipped, artifact uploaded anyway",
+    "confirmed_fixed": [
+      "truncation: the French article needed 1236 output tokens vs the old 1024 cap, and parsed first time at 4096 with no retry",
+      "XLUUV returned only CAMP (programme) and XLUUV (class), both refused; all four rail names absent",
+      "Ghost Shark took Anduril via the possessive and never Albacore"
+    ],
+    "findings_fixed": {
+      "normtext_accents": "NFKD decomposed accents and the punctuation strip turned each combining mark into a SPACE: developpe->'de veloppe', confiee->'confie e', concu->'conc u'. No accented pattern could ever match; production dropped a correct manufacturer from 'ELIT AI developpe par Eviden'. Marks are now folded.",
+      "s_possessive": "The possessive pattern required a literal s in the gap, so \"Thales' Martlet\" and \"Kratos' Firejet\" lost correct manufacturers.",
+      "photo_gallery": "breakingdefense.com appends the same 'PHOTOS: Farnborough 2026' block to unrelated stories; A-400M, Sea King, JAS-39 Gripen, C-390 Millennium, Astore Levante and MV250 came from captions. 36-45% of the extracted text.",
+      "reg_entity": "&reg; was never decoded, so the body held 'SkyGuardian&reg;' while the model quoted 'SkyGuardian®'; the verbatim check failed and two real products went to review.",
+      "kind_is_a_claim": "MMCM and rMCM were created as products. The kind is now verified against the quote: a type/class/programme/family marker beside the name, or award framing ('a ete confiee a Thales'), routes to review. Measured over all 78 real product claims: type rule flags exactly rMCM and Ghadir, award rule flags exactly MMCM, zero false positives.",
+      "dire_wolf_expectation": "CORRECTION of my own earlier claim: defence-blog.com 403s plain curl from a local machine but answers normally from CI, which fetched 6,480 chars. My statement that the body 'has never been available' was concluded from a local 403 and was wrong. The case now asserts the product, with degradation only as a fallback."
+    },
+    "verification": "Replaying the real model output through the fixed code passes all four required cases. 143 tests pass (was 136).",
+    "corpus": "scripts/test/fixtures/eval-run-41449704934.json — 83 real (name, kind, outcome, quote) tuples, so identity and maker rules are measured against real model output.",
+    "cost": "$0.0884 for 16 articles; no database writes",
+    "open": "30 of 45 maker claims were dropped. Several drops are correct, but a dropped claim still does not force review, so the loss is invisible. Routing proposal remains Nazar's decision.",
+    "backfill_ready": false,
+    "next": "re-run extraction-validate.yml with mode=eval, sample=12 on the new commit"
   }
 }

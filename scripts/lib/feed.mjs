@@ -11,6 +11,16 @@ const ENTITIES = {
   amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ",
   "#39": "'", "#34": '"', "#38": "&", "#60": "<", "#62": ">", mdash: "—",
   ndash: "–", hellip: "…", rsquo: "’", lsquo: "‘", ldquo: "“", rdquo: "”",
+  // Trademark and degree marks matter more than they look: an undecoded
+  // "SkyGuardian&reg;" in the body meant the model quoted "SkyGuardian®" and
+  // the verbatim check could not find it, so two real products were sent to
+  // review as mention_not_found_in_source.
+  reg: "®", trade: "™", copy: "©", deg: "°", middot: "·", bull: "•",
+  sbquo: "‚", bdquo: "„", prime: "′", Prime: "″", minus: "−", times: "×",
+  eacute: "é", egrave: "è", agrave: "à", ccedil: "ç", uuml: "ü", ouml: "ö",
+  auml: "ä", szlig: "ß", ntilde: "ñ", iacute: "í", oacute: "ó", uacute: "ú",
+  acirc: "â", ecirc: "ê", icirc: "î", ocirc: "ô", ucirc: "û", euro: "€",
+  pound: "£", shy: "", zwnj: "", zwj: "", ensp: " ", emsp: " ", thinsp: " ",
 };
 export function decodeEntities(s) {
   if (!s) return "";

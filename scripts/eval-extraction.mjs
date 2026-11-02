@@ -89,16 +89,20 @@ const AFFECTED = [
     id: "defence-blog-dire-wolf",
     url: "https://defence-blog.com/blade-picked-for-u-s-armys-autonomous-logistics-program",
     lang: "en",
-    // defence-blog.com answers 403 to every non-browser client — plain curl is
-    // refused too — while its robots.txt disallows only /wp-admin/. So this
-    // article's body has never been available to the pipeline, and the Dire
-    // WOLF record was created from its headline alone. We do not pretend to be
-    // a browser to get around a WAF, so the testable property here is not
-    // extraction quality but SAFE DEGRADATION: with no body, nothing may be
-    // created live.
-    expectUnfetchable: true,
-    note: "Body is blocked by the publisher's WAF; asserts that an unverifiable article creates nothing live.",
-    expect: [{ name: "Dire WOLF", want: "not-created-live" }],
+    // A legitimate product that must survive the new rules.
+    //
+    // CORRECTION: this host 403s non-browser clients from SOME networks — it
+    // refuses plain curl from a local machine — but it answers normally from
+    // the CI runner, where the pipeline actually runs. An earlier note here
+    // claimed the body "has never been available"; that was wrong, concluded
+    // from a local 403 alone. The production run fetched 6,480 characters.
+    //
+    // So the assertion is the original intent, with a fallback for the case
+    // where a run really cannot fetch it: then the testable property is safe
+    // degradation rather than extraction quality.
+    note: "A legitimate product that must survive. 403s from some networks; falls back to asserting safe degradation.",
+    expect: [{ name: "Dire WOLF", want: "product" }],
+    ifUnfetchable: [{ name: "Dire WOLF", want: "not-created-live" }],
   },
 ];
 
@@ -178,27 +182,25 @@ async function runOne(target) {
   const body = await fetchBody(target.url, { expectTitle: target.title });
   rec.body = { chars: body.text.length, finalUrl: body.finalUrl, status: body.status, failure: body.failure || null, detail: body.detail || null };
 
-  // A case declared unfetchable asserts degradation, not extraction. The
-  // assertion is deterministic and needs no model call: with no article text,
-  // identity cannot be verified, so every candidate must come back REVIEW.
-  if (target.expectUnfetchable && body.failure) {
+  // A case with a declared fallback asserts DEGRADATION when its body cannot
+  // be had: the assertion is deterministic and needs no model call, because
+  // with no article text identity cannot be verified and every candidate must
+  // come back REVIEW. Without such a fallback an unfetchable body is BLOCKED.
+  if (body.failure && target.ifUnfetchable) {
     rec.degraded = true;
     const probe = decideIdentity(
-      { name: target.expect[0].name, kind: "product", quote: "a quote that cannot be checked" },
+      { name: target.ifUnfetchable[0].name, kind: "product", quote: "a quote that cannot be checked" },
       "", { haveArticleText: false });
     const safe = probe.outcome !== OUTCOMES.CREATE;
     rec.status = safe ? "PASS" : "FAIL";
-    rec.reason = `body unavailable as expected (${body.failure}: ${body.detail}); unverifiable candidate → ${probe.outcome} (${probe.reason})`;
-    rec.cases = target.expect.map((e) => ({
+    rec.reason = `body unavailable (${body.failure}: ${body.detail}); unverifiable candidate → ${probe.outcome} (${probe.reason})`;
+    rec.cases = target.ifUnfetchable.map((e) => ({
       ...e,
       verdict: safe ? "PASS" : "FAIL",
       reason: safe ? `nothing created live: ${probe.outcome} (${probe.reason})`
-                   : `would be created live despite no article body`,
+                   : "would be created live despite no article body",
     }));
     return rec;
-  }
-  if (target.expectUnfetchable && !body.failure) {
-    rec.note = `${rec.note || ""} NOTE: this body is now fetchable (${body.text.length} chars) — the publisher block has lifted.`.trim();
   }
   if (body.failure) {
     rec.status = "BLOCKED";

@@ -14,7 +14,7 @@ import assert from "node:assert/strict";
 import {
   htmlToText, parseJsonDetailed, validateEntities, PARSE_FAILURES, BODY_FAILURES,
 } from "../lib/analyze.mjs";
-import { makerRelationship, isMakerCue, SUPPLY_ONLY } from "../lib/identity.mjs";
+import { makerRelationship, isMakerCue, SUPPLY_ONLY, normText, quoteSupports } from "../lib/identity.mjs";
 import { judge, AFFECTED } from "../eval-extraction.mjs";
 import { OUTCOMES } from "../lib/identity.mjs";
 
@@ -274,15 +274,114 @@ test("an unverifiable article creates nothing live", () => {
   assert.match(bad.reason, /created live/);
 });
 
-test("the WAF-blocked article is declared unfetchable rather than silently passing", () => {
-  const blocked = AFFECTED.find((c) => c.url.includes("defence-blog.com"));
-  assert.ok(blocked, "the case is still in the required set");
-  assert.equal(blocked.expectUnfetchable, true);
-  assert.equal(blocked.expect[0].want, "not-created-live");
+test("the sometimes-blocked article asserts the product, with a degradation fallback", () => {
+  // It 403s plain curl from some networks but answers normally from CI, where
+  // the pipeline runs — the production run fetched 6,480 characters. So the
+  // primary assertion is the original intent (a legitimate product survives),
+  // and the fallback only applies when a run genuinely cannot fetch it.
+  const c = AFFECTED.find((x) => x.url.includes("defence-blog.com"));
+  assert.ok(c, "the case is still in the required set");
+  assert.equal(c.expect[0].want, "product");
+  assert.equal(c.ifUnfetchable[0].want, "not-created-live");
 });
 
 test("the contamination names are asserted absent, not merely unexpected", () => {
   const xl = AFFECTED.find((c) => c.id === "dronesworldmag-xluuv");
   const absent = xl.expect.filter((e) => e.want === "absent").map((e) => e.name).sort();
   assert.deepEqual(absent, ["Chaparral", "DroneSentry-X Mk2", "FUSE", "Mission Master SP"]);
+});
+
+// --- 5. measured against real model output ----------------------------------
+//
+// The identity rules below are checked against every evidence entry the
+// production evaluation actually returned (run 41449704934), not against
+// invented examples. The point is the false-positive count: a rule that sends
+// genuine products to review is worse than no rule.
+
+import { readFileSync } from "node:fs";
+import { kindMarkerInQuote, awardFramingInQuote } from "../lib/identity.mjs";
+
+const CORPUS = JSON.parse(
+  readFileSync(new URL("./fixtures/eval-run-41449704934.json", import.meta.url), "utf8"),
+).evidence;
+
+test("the corpus is the real thing and covers both languages", () => {
+  assert.ok(CORPUS.length >= 80, "a meaningful sample");
+  assert.ok(CORPUS.some((e) => /[éàçô]/.test(e.quote)), "includes accented French");
+});
+
+test("the type/class rule flags exactly the type terms in real output", () => {
+  const flagged = CORPUS.filter((e) => e.kind === "product" && kindMarkerInQuote(e.name, e.quote))
+    .map((e) => e.name).sort();
+  // rMCM: "chasseurs de mines de type rMCM [ou classe City]" — a ship class.
+  // Ghadir: "sous-marin de poche de type Ghadir" — an Iranian submarine class.
+  // Both correct. Everything else in 78 product claims is left alone.
+  assert.deepEqual(flagged, ["Ghadir", "rMCM"]);
+});
+
+test("the award-framing rule flags exactly MMCM in real output", () => {
+  const flagged = CORPUS.filter((e) => e.kind === "product" && awardFramingInQuote(e.name, e.quote))
+    .map((e) => e.name).sort();
+  assert.deepEqual(flagged, ["MMCM"]);
+});
+
+test("a company being awarded a contract is NOT the product being awarded", () => {
+  // Direction matters. This span must never trip the award rule.
+  assert.equal(
+    awardFramingInQuote("Ghostfin", "Albacore has been awarded a contract for its Ghostfin expeditionary drone"),
+    null);
+  assert.equal(
+    awardFramingInQuote("Dire WOLF", "BLADE was selected as one of five industry partners for the U.S. Army's Project Sustainment contract on July 23, 2026, offering its Dire WOLF vehicle."),
+    null);
+});
+
+test("accents fold, so French maker patterns can actually match", () => {
+  // normText used to turn each combining mark into a space, splitting accented
+  // words in two ("de veloppe"), so no accented pattern could ever match. A
+  // correct manufacturer was dropped in production because of it.
+  assert.equal(normText("développé par Eviden"), "developpe par eviden");
+  assert.equal(normText("confiée à Thales"), "confiee a thales");
+  assert.equal(normText("conçu par Dassault"), "concu par dassault");
+  assert.equal(
+    makerRelationship("le capteur ELIT AI développé par Eviden, la filiale du groupe ATOS", "ELIT AI", "Eviden"),
+    "made_by",
+    "the exact relationship production lost");
+  assert.equal(makerRelationship("le drone fabriqué par Exail", "drone", "Exail"), "made_by");
+  assert.equal(makerRelationship("le drone livré par Exail", "drone", "Exail"), SUPPLY_ONLY,
+    "and delivery is still only delivery");
+});
+
+// --- 6. the gallery and the entity ------------------------------------------
+
+test("an appended photo gallery does not contribute products", () => {
+  // breakingdefense.com tacks the same "PHOTOS: Farnborough 2026" block onto
+  // unrelated stories. Its captions were extracted as products of those
+  // stories: A-400M, Sea King, JAS-39 Gripen, C-390 Millennium, Astore
+  // Levante and MV250 all came from captions, not from the articles.
+  const page = `<html><body><article>
+    <h1>Anduril reveals Thunder</h1>
+    <p>${"Anduril and Archer unveiled the Group 5 Thunder drone for helicopters. ".repeat(8)}</p>
+    <h2>PHOTOS: Farnborough 2026</h2>
+    <p>13. An Airbus A-400M Airlifter sits on display at the airshow.</p>
+    <p>26. A Sea King helicopter on display at the 2026 Farnborough airshow.</p>
+    </article></body></html>`;
+  const text = htmlToText(page);
+  assert.ok(text.includes("Thunder"), "the story survives");
+  for (const stray of ["A-400M", "Sea King", "Airbus", "Farnborough 2026"]) {
+    assert.ok(!text.includes(stray), `${stray} comes from a photo caption`);
+  }
+});
+
+test("trademark entities are decoded, so a quote can be verified", () => {
+  // "SkyGuardian&reg;" survived undecoded in the body, so the model quoted
+  // "SkyGuardian®" and the verbatim check failed: two real products were sent
+  // to review as mention_not_found_in_source.
+  const page = `<html><body><article><p>${"Filler about uncrewed aircraft. ".repeat(14)}
+    The MQ-9B SkyGuardian&reg; and SeaGuardian&reg; aircraft are in service.
+    Laser output measured at 20&deg;C by QinetiQ&trade;.</p></article></body></html>`;
+  const text = htmlToText(page);
+  assert.ok(text.includes("SkyGuardian®"), "decoded, not left as &reg;");
+  assert.ok(!text.includes("&reg;"));
+  assert.ok(text.includes("20°C") && text.includes("QinetiQ™"));
+  assert.equal(quoteSupports("The MQ-9B SkyGuardian® and SeaGuardian® aircraft are in service", text), true);
 });

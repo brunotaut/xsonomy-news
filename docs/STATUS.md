@@ -1201,3 +1201,65 @@ Pre-existing and unrelated to the resolver stall or to the extraction work — n
 action taken. It needs its own decision: raise `LLM_GATE_MAX` / `RESOLVE_MAX`,
 drain the old tail oldest-first in a one-off pass, or accept that old articles
 go unlinked.
+
+## 2026-11-02 (later) — The evaluation did its job: red, with six real findings
+
+Run [41449704934](https://github.com/brunotaut/xsonomy-news/actions/runs/41449704934)
+on `a9810f0` exited **1**. Unit tests passed, the eval failed, every backfill
+step was skipped, and the diagnostics were still uploaded. This morning the same
+situation came back green.
+
+**Confirmed fixed, with proof.** The French article needed **1,236 output
+tokens**; the old cap was 1,024 — the truncation diagnosis was exactly right,
+and it parsed first time at 4,096 (`attempts: []`). The XLUUV article returned
+only `CAMP` (programme) and `XLUUV` (class), both refused, with all four rail
+names absent. Ghost Shark took **Anduril** via the possessive and never
+Albacore.
+
+**Six findings from the run, all fixed:**
+
+1. **`normText` was destroying accents.** `NFKD` decomposed every accented
+   letter and the punctuation strip then turned each combining mark into a
+   *space*: `développé` → `de veloppe`, `confiée` → `confie e`, `conçu` →
+   `conc u`. No pattern containing an accent could ever match, so French maker
+   detection was partly dead — production dropped a correct manufacturer from
+   "le capteur ELIT AI développé par Eviden". Marks are now folded away, which
+   also makes matching accent-insensitive.
+2. **A possessive on a name ending in s was missed.** The pattern required a
+   literal `s` in the gap, so `Thales' Martlet` and `Kratos' Firejet` both lost
+   a correct manufacturer. Two instances in sixteen articles.
+3. **An appended photo gallery was supplying products.** breakingdefense.com
+   tacks the same "PHOTOS: Farnborough 2026" block onto unrelated stories;
+   A-400M, Sea King, JAS-39 Gripen, C-390 Millennium, Astore Levante and MV250
+   all came from **captions**. The gallery was 36–45% of the extracted text.
+4. **`&reg;` was never decoded**, so the body held `SkyGuardian&reg;` while the
+   model quoted `SkyGuardian®`; the verbatim check failed and two real products
+   went to review as `mention_not_found_in_source`. The entity map now covers
+   the trademark, degree and accented-letter entities.
+5. **MMCM and rMCM were created as products** — the two required failures. The
+   model returned `kind=product` for a programme and a ship class while its own
+   quotes said otherwise. The `kind` is now treated as a *claim* and verified
+   against the quote: a type/class/programme/family marker beside the name, or
+   award framing ("a été **confiée à** Thales"), sends it to **review**.
+   Measured against all 78 product claims the real model made: the type rule
+   flags exactly `rMCM` and `Ghadir` (both genuine classes) and the award rule
+   flags exactly `MMCM`. **Zero false positives.**
+6. **The Dire WOLF expectation was wrong, and so was I.** I wrote that
+   defence-blog.com "has never been available" to the pipeline, concluding that
+   from a local 403. It 403s plain curl from this machine but answers normally
+   from CI — the run fetched 6,480 characters. The case now asserts the original
+   intent (a legitimate product survives) with the degradation check only as a
+   fallback.
+
+Replaying the real model output through the fixed code: **all four required
+cases pass.** 143 tests pass (was 136). The real evidence corpus is kept at
+`scripts/test/fixtures/eval-run-41449704934.json` so an identity or maker rule
+can be measured against real output instead of invented examples.
+
+Cost of the run: **$0.0884** for 16 articles. No database writes.
+
+Still open: of 45 maker claims the model made, 15 were assigned and 30 dropped.
+Several drops are correct (contract awards, coreference like "the company's X"
+where the company is not in the span), but a dropped claim still does **not**
+force review, so the loss is invisible. That proposal remains Nazar's call.
+Report: `research-agent/reports/2026-11-02-extraction-eval-hardening.md`.

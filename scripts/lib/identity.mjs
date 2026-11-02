@@ -67,6 +67,15 @@ const WEAK_TOKENS = new Set([
 export function normText(s) {
   return String(s ?? "")
     .normalize("NFKD")
+    // FOLD the combining marks NFKD just produced, instead of letting the
+    // punctuation strip below turn each one into a SPACE. It used to do exactly
+    // that, splitting every accented word in two:
+    //   "de veloppe" for developpe, "confie e" for confiee, "conc u" for concu
+    // so no pattern containing an accent could ever match normalised text. In
+    // production that silently dropped a correct manufacturer from "le capteur
+    // ELIT AI developpe par Eviden". Folding also makes matching
+    // accent-insensitive, which is what we wanted from NFKD in the first place.
+    .replace(/\p{M}+/gu, "")
     .replace(/[‐-―−]/g, "-")        // dashes → hyphen
     .replace(/[‘’‛′]/g, "'")   // curly → straight
     .replace(/[“”‟″]/g, '"')
@@ -170,7 +179,11 @@ const SUPPLY_VERB = "(?:supplies|supplied|supplying|delivers?|delivered|deliveri
 const MAKER_FIRST_OK = new RegExp(
   "^(?:" +
     "\\s{0,2}" +                                              // adjacency
-    "|\\s*'?s'?\\s*" + DET +                                 // "Anduril's <product>"
+    // "Anduril's <product>" AND "Thales' <product>". The `s` used to be
+    // mandatory, so a company whose name already ends in s took a bare
+    // apostrophe and was missed: "Thales' Martlet" and "Kratos' Firejet"
+    // each lost a correct manufacturer.
+    "|\\s*(?:'s?|s')\\s*" + DET +                                 // "Anduril's <product>"
     "|\\s*(?:has |have |had )?(?:been )?(?:awarded|won)\\s+[^.,;]{0,40}?\\bits\\s*" + DET +
     "|\\s*[-,]?\\s*(?:has |have |had )?(?:been )?" + MAKER_VERB + "\\s*" + DET +
     // "Kongsberg, which builds the Protector"
@@ -198,7 +211,7 @@ const PRODUCT_FIRST_OK = new RegExp(
   "\\b(?:(?:supplied|delivered|provided)\\s+and\\s+)?(?:built|made|manufactured|produced|developed|designed|assembled)(?:\\s+and\\s+(?:supplied|delivered|provided|sold|marketed|integrated))?\\s+by\\b|" +
   "^\\s*,?\\s*(?:a|an|the)?\\s*(?:new\\s+)?from\\b|^\\s*from\\b|" +
   // French
-  "\\b(?:fabriqu\u00e9e?s?|construits?|construites?|d\u00e9velopp\u00e9e?s?|" +
+  "\\b(?:fabriquee?s?|construits?|construites?|d\u00e9velopp\u00e9e?s?|" +
   "developpee?s?|con\u00e7ue?s?|concue?s?|produits?|produites?)\\s+par\\b|" +
   // Italian
   "\\b(?:prodott[oaie]|costruit[oaie]|svilupat[oaie]|sviluppat[oaie])\\s+da\\b|" +
@@ -224,7 +237,7 @@ const DE_SUPPLY = /\b(?:geliefert|bereitgestellt|vertrieben|verkauft|beschafft)\
 // the manufacture patterns, so "built and supplied by X" is still a maker.
 const PRODUCT_FIRST_SUPPLY = new RegExp(
   "\\b(?:supplied|delivered|provided|integrated|installed|sold|marketed|distributed)\\s+by\\b|" +
-  "\\b(?:fournis?|fournies?|livr\\u00e9e?s?)\\s+par\\b|" +
+  "\\b(?:fournis?|fournies?|livree?s?)\\s+par\\b|" +
   "\\b(?:fornit[oaie]|consegnat[oaie])\\s+da\\b|" +
   "\\b(?:suministrad[oa]s?|entregad[oa]s?|fornecid[oa]s?)\\s+por\\b|" +
   "\\bvon\\b[^.]{0,40}?\\b(?:geliefert|bereitgestellt)\\b", "i");
@@ -347,6 +360,69 @@ export const OUTCOMES = { CREATE: "create", REVIEW: "review", REJECT: "reject" }
 //
 // Nothing here matches on a specific name, so a new programme or class term
 // the pipeline has never seen is handled the same way as MMCM was.
+// Words that, sitting immediately beside the name in its own quote, say the
+// name denotes a TYPE of thing rather than one model: a class, a type, a
+// programme, a family, a series, a production lot. Multilingual, because the
+// failure that prompted this was French.
+const KIND_MARKER = "(?:programmes?|programa|programma|programm|projets?|project|" +
+  "classes?|clase|klasse|types?|tipo|typ|famille|family|famiglia|familia|" +
+  "serie|series|s\u00e9rie|tranche|lot)";
+// marker, then at most two intervening words, then the name. Two, not three:
+// widening it to three flagged the genuine product Gambit 6 because of "the
+// Gambit family of systems is Gambit 6". Precision is worth more than recall
+// here — a false positive sends a real product to review for nothing, while a
+// miss just leaves today's behaviour unchanged. The cost of that choice is
+// that a designator between marker and name ("de classe 636.3 'Varchavyanka'")
+// is not caught.
+const MARKER_BEFORE = new RegExp(`\\b${KIND_MARKER}\\s+(?:\\S+\\s+){0,2}$`, "i");
+// the name itself ends in a marker: "Gambit Series", "MQ-9 family"
+const MARKER_IS_SUFFIX = new RegExp(`\\s${KIND_MARKER}$`, "i");
+// the name, then the marker right after it ("… rMCM class", "X-class")
+const MARKER_AFTER = new RegExp(`^[-\\s]*${KIND_MARKER}\\b`, "i");
+
+// Does the name's own quote contradict a `product` claim? Returns the marker
+// found, or null. Uses the FULL name only, never its individual tokens: on
+// "the Gambit family of systems is Gambit 6", a token match would flag the
+// genuine product Gambit 6 because of the family it belongs to.
+export function kindMarkerInQuote(name, quote) {
+  const t = normText(quote), n = normText(name);
+  if (!t || !n) return null;
+  const suffix = n.match(MARKER_IS_SUFFIX);
+  if (suffix) return suffix[0].trim();
+  for (const o of occurrences(t, n)) {
+    const before = t.slice(Math.max(0, o.start - 40), o.start);
+    const after = t.slice(o.end, o.end + 24);
+    const m = before.match(MARKER_BEFORE) || after.match(MARKER_AFTER);
+    if (m) return m[0].trim();
+  }
+  return null;
+}
+
+// Contract-award framing: the name was awarded, entrusted or assigned TO a
+// company. Work packages and programmes are awarded to firms; products are
+// bought from them. Note the direction — "Albacore has been awarded a contract
+// for its Ghostfin" is the company being awarded, not the name, and must not
+// match.
+const AWARD_FRAMING = new RegExp(
+  "\\b(?:confiee?s?\\s+a|attribuee?s?\\s+a|notifiee?s?\\s+a|" +
+  "awarded\\s+to|entrusted\\s+to|assigned\\s+to|" +
+  "adjudicad[oa]s?\\s+a|assegnat[oaie]\\s+a|vergeben\\s+an)\\b", "i");
+const AWARD_WINDOW = 60;
+
+// Is the name itself framed as something awarded to a company? Returns the
+// phrase found, or null. Measured against the 78 product-claimed evidence
+// entries of production run 41449704934: it flags exactly one, MMCM, and
+// nothing else — see scripts/test/fixtures/eval-run-41449704934.json.
+export function awardFramingInQuote(name, quote) {
+  const t = normText(quote), n = normText(name);
+  if (!t || !n) return null;
+  for (const o of occurrences(t, n)) {
+    const m = t.slice(o.end, o.end + AWARD_WINDOW).match(AWARD_FRAMING);
+    if (m) return m[0].trim();
+  }
+  return null;
+}
+
 export function decideIdentity(evidence, articleText = "", { haveArticleText = true } = {}) {
   const ev = evidence || {};
   const kind = ev.kind;
@@ -368,6 +444,27 @@ export function decideIdentity(evidence, articleText = "", { haveArticleText = t
   }
   if (!hasVerifiedMention(ev, articleText)) {
     return { outcome: OUTCOMES.REVIEW, reason: "mention_not_found_in_source", maker: null };
+  }
+
+  // Rule 2b. The `kind` is the model's CLAIM; the quote is the evidence. When
+  // the quote itself calls the name a type, class, programme or family, a
+  // `product` claim is contradicted by the very span offered to support it.
+  // That is not enough to reject outright — the marker can belong to a
+  // neighbouring phrase — so it becomes reviewable.
+  //
+  // This is what the real model got wrong on "chasseurs de mines de type rMCM
+  // [ou classe City]": it returned kind=product for a ship class while its own
+  // quote said "de type" and "classe".
+  const marker = kindMarkerInQuote(ev.name, ev.quote);
+  if (marker) {
+    return { outcome: OUTCOMES.REVIEW, reason: `quote_calls_it_a_${marker.replace(/\s+/g, "_")}`, maker: null };
+  }
+  // Same idea, different evidence: the quote frames the name as work awarded to
+  // a company. That is how the real model's quote for MMCM read — "appelee
+  // MMCM [...], a ete confiee a Thales" — while it claimed kind=product.
+  const award = awardFramingInQuote(ev.name, ev.quote);
+  if (award) {
+    return { outcome: OUTCOMES.REVIEW, reason: `quote_says_it_was_${award.replace(/\s+/g, "_")}`, maker: null };
   }
 
   // Rule 3. A product with an unevidenced maker is still a product — it is the

@@ -58,6 +58,13 @@ const CUT_MARKERS = [
   "recommended", "post navigation", "previous post", "next post", "share this",
   "sign up", "subscribe to our", "newsletter", "leave a comment", "comments",
   "follow us", "about the author", "in this story", "©", "all rights reserved",
+  // A numbered photo gallery appended to the story. On breakingdefense.com the
+  // same "PHOTOS: Farnborough 2026" block is tacked onto unrelated articles,
+  // and its captions were extracted as products of those articles: A-400M,
+  // Sea King, JAS-39 Gripen, C-390 Millennium, Astore Levante and MV250 all
+  // came from photo captions, not from the stories.
+  "photos:", "photo gallery", "in pictures", "presented by", "image gallery",
+  "slideshow", "more photos", "view gallery",
 ];
 const CUT_MIN = 400;   // never cut before this much real text has accumulated
 

@@ -24,6 +24,7 @@ import {
   retiredMatch,
   normProductKey,
   SUPPLY_ONLY,
+  kindMarkerInQuote,
 } from "../lib/identity.mjs";
 
 // --- real article text, close enough to the originals to be a fair test -------
@@ -40,8 +41,8 @@ const DRONEXL_GHOSTFIN = [
   "Navy Buys Attack Drone Subs Built in a Philly Marble Showroom.",
   "Albacore has been awarded a contract for its Ghostfin expeditionary drone",
   "submarine, assembled in a former marble showroom in Philadelphia. The company",
-  "is one of several pursuing undersea autonomy; Australia's Ghost Shark programme",
-  "has drawn attention to the extra-large end of the market.",
+  "is one of several pursuing undersea autonomy; Australia's Ghost Shark has",
+  "drawn attention to the extra-large end of the market.",
 ].join("\n");
 
 const KONGSBERG_XLUUV = [
@@ -129,13 +130,49 @@ test("co-occurrence in one article does not make an ownership claim", () => {
   const d = decideIdentity({
     name: "Ghost Shark",
     kind: "product",
-    quote: "Australia's Ghost Shark programme has drawn attention to the extra-large end",
+    quote: "Australia's Ghost Shark has drawn attention to the extra-large end",
     maker: "Albacore",
     makerQuote: "Albacore has been awarded a contract for its Ghostfin expeditionary drone",
   }, DRONEXL_GHOSTFIN);
   assert.equal(d.outcome, OUTCOMES.CREATE, "the product itself is fine — it was mentioned");
   assert.equal(d.maker, null, "but the maker must be dropped");
   assert.equal(d.reason, "verified_no_maker_evidence");
+});
+
+test("a quote that calls the name a type or class contradicts a product claim", () => {
+  // The real model returned kind=product for a ship CLASS while its own quote
+  // said "de type rMCM [ou classe City]". The kind is the model's claim; the
+  // quote is the evidence, and here the evidence contradicts the claim. Review,
+  // not rejection — the marker could belong to a neighbouring phrase.
+  const body = "Les chasseurs de mines de type rMCM [ou classe City], construits par Naval Group, arrivent.";
+  const d = decideIdentity({
+    name: "rMCM", kind: "product",
+    quote: "chasseurs de mines de type rMCM [ou classe City], construits par Naval Group",
+    maker: "Naval Group",
+    makerQuote: "chasseurs de mines de type rMCM [ou classe City], construits par Naval Group",
+  }, body);
+  assert.equal(d.outcome, OUTCOMES.REVIEW);
+  assert.match(d.reason, /^quote_calls_it_a_/);
+  assert.equal(d.maker, null, "and no maker is attached to something that may not be a product");
+});
+
+test("the type/class check is precise: genuine products are not swept up", () => {
+  // Measured against the real quotes from the production evaluation run.
+  const keep = [
+    ["Dire WOLF", "BLADE was selected as one of five industry partners for the U.S. Army's Project Sustainment contract on July 23, 2026, offering its Dire WOLF vehicle."],
+    ["Gambit 6", "Perhaps the most relevant iteration of the Gambit family of systems is Gambit 6."],
+    ["APKWS", "The AGR-20 Advanced Precision Kill Weapon System (APKWS), a guided rocket system capable of taking on swarms"],
+    ["Ghost Shark", "Anduril's Ghost Shark went from concept to a five-year contract with the Royal Australian Navy"],
+    ["Mirage 2000D RMV", "permettre au Rafale et/ou au Mirage 2000D RMV d'emporter des munitions"],
+    ["Giraffe 1X", "combines Saab's Giraffe 1X radar with a launcher for Martlet missiles"],
+  ];
+  for (const [name, quote] of keep) {
+    assert.equal(kindMarkerInQuote(name, quote), null, `${name} must not be flagged`);
+  }
+  // and the ones that should be
+  assert.equal(kindMarkerInQuote("rMCM", "chasseurs de mines de type rMCM [ou classe City]"), "type");
+  assert.equal(kindMarkerInQuote("Gambit Series", "its Gambit Series of Collaborative Combat Aircraft"), "series",
+    "a name that IS a family label");
 });
 
 test("a single span naming both sides DOES establish the maker", () => {
