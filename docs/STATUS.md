@@ -1275,3 +1275,8 @@ Expanded five-company pilot from 5 to 24 financing events and 35 to 110 particip
 ### 2026-11-02 — autonomous full database financing research
 
 Nazar authorises the entire investment research programme without per-batch approvals. All 2,564 identities queued (567 published landscape first). FUNDING_STATE.json tracks this separately from legacy STATE.json. Expansion adds 44 primary-source events / 105 participations across 23 more companies; production 68 events / 215 participations / 235 investor profiles. Applied `company_funding_amount_qualifiers`; 146 news and 88 catalogue tests pass. See `research-agent/reports/2026-11-02-investment-research-programme.md`. Full programme remains in progress; no API spending or schedule changes.
+
+
+### 2026-11-02 — public landscape discovery complete; further verified financing
+
+Completed discovery queries for all 537 remaining public landscape companies, after 30 initial company investigations (all 567 now searched). Saved 7,068 unique candidate URLs under `research-agent/discovery/funding-landscape-2026-11-02/`; these remain explicitly unverified and are not imported as financial facts. Added 33 source-reviewed events across 26 further companies: production now 101 events / 54 companies / 306 participations / 287 investor profiles. PostgreSQL dry run and rollback passed before committed import; rerun/tests verify idempotency. Full database programme remains in progress; no-public-round conclusions have not been assigned from search absence. Autonomous continuation instructions are in `research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md`.

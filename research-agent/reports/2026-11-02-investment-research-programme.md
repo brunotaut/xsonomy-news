@@ -28,3 +28,12 @@ Applied `company_funding_amount_qualifiers` migration after local PostgreSQL tes
 ## Continuing work
 
 Research every queued identity using its website, dated company and investor releases, government records and legal transaction announcements. Check exact issuer, original currency, event versus cumulative totals, primary versus secondary proceeds, announced versus closed sums, lead roles and historical participants. Do not mark no-public-round from an empty database, search snippet, aggregator omission or an inaccessible site. Unknowns remain unknown. Keep source-level holds in the ledger and continue other companies autonomously.
+
+
+## Subsequent progress in the same execution
+
+An additional 33 verified events across 26 further companies, with 91 participations, were imported from `company-funding-research-02-2026-11-02.json`. Production totals: 101 approved events across 54 companies, 306 participations and 287 investor profiles. Dry run returned these totals; rollback was checked at 68 events before the committed apply. All 146 news tests pass with the second manifest included. The existing 88 catalogue tests cover the unchanged rendering/export path.
+
+Discovery queries have now run for all 567 public companies: the initial 30 investigations plus 537 remaining identities. The discovery ledger contains 7,068 unique candidate URLs with search groups and an explicit not-verified status. This is discovery completion, not completion of the investment audit. No candidate headline is imported without source review. The wider 2,564-company programme continues using the durable state and queue.
+
+Further examples: original SEK, CHF, PLN and CZK amounts are preserved; Specim equity/R&D support and Sol.One equity/debt packages are typed mixed. Perceptual Robotics January–September 2023 financing is one event rather than multiple invented rounds. OSL GBP11.5m cumulative BGF investment is represented as separate GBP8m and GBP3.5m contributions. Newly read sources for OpenWorks describe its own R&D expenditure rather than an equity raise and are not imported. Avalor/Intelic continuity and aggregated Dronamics pre-Series-A history require further reconciliation.

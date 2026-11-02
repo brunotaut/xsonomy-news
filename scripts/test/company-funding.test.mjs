@@ -54,6 +54,12 @@ test('funding schema and import run in PostgreSQL, rerun cleanly and keep differ
  assert.deepEqual((await db.query('select (select count(*)::int from v_company_funding_rounds) events,(select count(*)::int from company_funding_round_investors) participations,(select count(*)::int from investor_research_sources) sources')).rows[0],newCounts);
  const swiss=(await db.query("select amount,amount_qualifier from v_company_funding_rounds f join companies c on c.id=f.company_id where c.slug='swissdrones' and round_key='series-b-2024'")).rows[0];assert.equal(swiss.amount_qualifier,'more_than');assert.equal(swiss.amount,'10000000');
  const frank=(await db.query("select contribution_amount from company_funding_round_investors p join company_funding_rounds f on f.id=p.round_id join companies c on c.id=f.company_id where c.slug='frankenburg-technologies' and contribution_amount is not null")).rows[0];assert.equal(frank.contribution_amount,'7000000');
+ const next=JSON.parse(await readFile(new URL('research-agent/imports/company-funding-research-02-2026-11-02.json',root),'utf8'));
+ for(const slug of new Set(next.rounds.map(r=>r.company_slug)))await db.query('insert into companies(slug) values($1) on conflict do nothing',[slug]);
+ await db.exec(prepareFundingSql(next));
+ assert.equal((await db.query('select count(*)::int n from v_company_funding_rounds')).rows[0].n,24+expansion.rounds.length+next.rounds.length);
+ const secondCounts=(await db.query('select (select count(*)::int from company_funding_rounds) events,(select count(*)::int from company_funding_round_investors) participations,(select count(*)::int from investor_research_sources) sources')).rows[0];
+ await db.exec(prepareFundingSql(next));assert.deepEqual((await db.query('select (select count(*)::int from company_funding_rounds) events,(select count(*)::int from company_funding_round_investors) participations,(select count(*)::int from investor_research_sources) sources')).rows[0],secondCounts);
  const badQualifier=structuredClone(expansion);badQualifier.rounds[0].amount_qualifier='made-up';assert.throws(()=>validateFundingPilot(badQualifier),/Invalid amount qualifier/);
 
  }finally{await db.close()}
