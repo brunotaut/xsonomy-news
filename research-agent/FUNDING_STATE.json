@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 95,
-  "fully_reviewed_companies": 21,
-  "next_action": "Continue autonomously with unreviewed published-company histories, prioritising strong primary and transaction-party sources; keep the seven documented source limitations visible without treating absence of an event as zero funding.",
+  "partial_companies": 98,
+  "fully_reviewed_companies": 42,
+  "next_action": "Continue autonomously with unreviewed published-company histories after checkpoint 06; 42 of 567 published identities now have bounded public-source dispositions. Keep the thirteen documented source limitations visible without treating absence of an event as zero funding.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
   "updated_at": "2026-11-02",
-  "source_reconciliation_companies": 7,
-  "approved_funding_events": 170,
-  "round_participations": 504,
-  "investor_profiles": 434,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/company-funding-research-05-2026-11-02.json",
+  "source_reconciliation_companies": 13,
+  "approved_funding_events": 175,
+  "round_participations": 507,
+  "investor_profiles": 436,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/company-funding-research-06-2026-11-02.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -67,6 +67,30 @@
     {
       "company_slug": "asterodyn",
       "claim": "A secondary database reports a 2025 seed round, but no issuer or investor announcement supporting its amount and participant roles was found; the verified EUR30k regional grant is recorded separately."
+    },
+    {
+      "company_slug": "abtrion",
+      "claim": "A secondary deal database reports an EIFO equity deal on 20 September 2025, but no issuer, EIFO or transaction-party source supporting the event was located."
+    },
+    {
+      "company_slug": "accurision-gmbh",
+      "claim": "A secondary database reports a September 2015 investment without a supported amount, participant or original transaction source."
+    },
+    {
+      "company_slug": "advanced-radar-technologies",
+      "claim": "Amper confirmed only non-binding acquisition negotiations in October 2026; a reported purchase price and completed transaction are not established."
+    },
+    {
+      "company_slug": "agentfly-technologies",
+      "claim": "A secondary CORDIS-derived profile aggregates EUR1.7m across eleven public projects; individual company allocations, dates and instruments have not been reconciled."
+    },
+    {
+      "company_slug": "aim-infrarot-module",
+      "claim": "A secondary CORDIS-derived profile aggregates EUR16.7m across four EU projects; project-level beneficiary allocations and dates have not been reconciled."
+    },
+    {
+      "company_slug": "airnamics-d-o-o",
+      "claim": "A secondary ecosystem profile names Kolektor Digital as an investor without a dated event, amount or original announcement."
     }
   ]
 }
