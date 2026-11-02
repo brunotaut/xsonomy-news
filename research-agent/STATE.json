@@ -1709,5 +1709,26 @@
     },
     "left_unfixed_deliberately": "The conjunction list: 'builds 1,000 Black Widow and 2,000 Fang FPV' credits Black Widow only. Reaching across `and` is risky — in 'Boeing beat Anduril and its Ghost Shark' the conjunction introduces a different company — so a list rule must distinguish those first. A test asserts it stays refused.",
     "pending_decision": "Replay: re-derive maker and cue for all stored evidence from the makerClaimed + quote already on each row, at zero model cost and without refetching. It would correct the Brave1 row and recover the makers these fixes now find. It writes to articles.entity_evidence, so it needs Nazar's go. The backfill remainder is unblocked regardless."
+  },
+  "maker_replay": {
+    "date": "2026-11-02",
+    "backfill_complete": {
+      "articles_with_evidence": 626,
+      "evidence_rows": 2345,
+      "candidates_remaining": 55,
+      "note": "the 55 are rows whose stored products are not UAV/sensor products (ChatGPT, Tomahawk, FPV goggles, Virginia-class); extraction correctly declines to evidence them"
+    },
+    "finding": "makerQuote was never persisted on evidence rows, so a replay can only judge the product-mention quote; 38 of 411 stored makers have a quote that does not name the maker and would have been wrongly stripped",
+    "claims": 1477,
+    "makers_stored": 411,
+    "recovery_ceiling": 428,
+    "unreachable": 638,
+    "fixes": [
+      "analyze.mjs stores makerQuote",
+      "scripts/replay-maker-rules.mjs is additive-only"
+    ],
+    "commit": "54b8cd5",
+    "tests": 169,
+    "next": "run workflow mode=replay-dry (no writes, no model calls) before mode=replay"
   }
 }
