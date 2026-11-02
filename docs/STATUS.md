@@ -1166,3 +1166,38 @@ database writes** — live 3,518, review 0, taxonomy 11,130, evidence 0, pending
 and authenticated dispatch is unavailable here (`POST .../dispatches` → 401).
 Run `extraction-validate.yml` with `mode=eval`, `sample=12`. Report:
 `research-agent/reports/2026-11-02-extraction-eval-hardening.md`.
+
+### Decision (2026-11-02): let the cron run, accept review rows
+
+Nazar's call: do **not** pause the resolve step. The scheduled run on 2026-11-03
+05:00 UTC proceeds normally. Nothing was changed to the schedule or the workflow.
+
+What that run does, measured beforehand:
+
+- It fetches the **newest 150** unresolved articles (`RESOLVE_MAX`, default 150),
+  ordered `published_at desc`.
+- The LLM gate vets at most **40 new product names and 40 new company names per
+  run** (`LLM_GATE_MAX`), so cost and blast radius are bounded.
+- No article has stored `entity_evidence` yet (0 of 719), so every new product
+  this run creates lands as **`review`**, not live, with reason
+  `no_evidence_captured`. That is the accepted trade of this decision.
+- **Nothing is silently dropped.** A tag with no verdict leaves the article
+  `complete = false`, so it is not stamped `entities_resolved_at` and comes back
+  next run. Names beyond the 40-per-run cap are deferred, not lost.
+
+Once those candidates are cached as `review`, a later evidence backfill will not
+retry them, so a separate exact-ID retry/promotion proposal will be prepared
+after the run — prepared, not executed.
+
+### Finding (2026-11-02): the resolve backlog is chronic, not the outage
+
+The 719 pending articles are **not** six days of outage. **458 of them predate
+27 October**, and the oldest pending article is from **30 June 2026**; only 261
+fall in the outage window. Because `fetchUnresolvedArticles` orders newest-first
+and the gate decides only ~40 names per run while new articles keep arriving,
+the June–October tail sits at the back of the queue and may never be reached.
+
+Pre-existing and unrelated to the resolver stall or to the extraction work — no
+action taken. It needs its own decision: raise `LLM_GATE_MAX` / `RESOLVE_MAX`,
+drain the old tail oldest-first in a one-off pass, or accept that old articles
+go unlinked.

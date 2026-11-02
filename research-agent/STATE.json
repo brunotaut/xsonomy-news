@@ -1601,5 +1601,27 @@
     ],
     "backfill_ready": false,
     "backfill_blocked_on": "A new read-only eval run on the new commit must pass first. Authenticated workflow_dispatch is unavailable to this session (POST .../dispatches -> 401); read access is fine."
+  },
+  "cron_coordination_decision": {
+    "date": "2026-11-02",
+    "decision": "Let the scheduled resolve run; do not pause it. Accept review rows.",
+    "decided_by": "Nazar",
+    "action_taken": "none — the schedule and workflow were left exactly as they are",
+    "expected_first_run": "2026-11-03 05:00 UTC",
+    "bounds": "RESOLVE_MAX 150 articles/run, newest first; LLM_GATE_MAX 40 new product + 40 new company names/run",
+    "expected_outcome": "new products created as publication_status=review with reason no_evidence_captured, because 0 of 719 pending articles have entity_evidence",
+    "no_data_loss": "an undecided tag leaves the article complete=false, so entities_resolved_at is not stamped and the article is retried next run",
+    "follow_up": "prepare (not execute) an exact-ID retry/promotion proposal for the review rows after the run"
+  },
+  "resolve_backlog_chronic": {
+    "date": "2026-11-02",
+    "finding": "719 pending articles are not the 6-day outage: 458 predate 27 Oct and the oldest is 2026-06-30; only 261 are from the outage window.",
+    "cause": "fetchUnresolvedArticles orders published_at desc and the gate decides ~40 names/run, so new arrivals keep jumping the queue ahead of the old tail.",
+    "status": "reported only, no action taken — pre-existing and unrelated to the resolver stall or the extraction work",
+    "options": [
+      "raise LLM_GATE_MAX / RESOLVE_MAX",
+      "one-off oldest-first drain pass",
+      "accept that pre-October articles stay unlinked"
+    ]
   }
 }
