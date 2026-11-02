@@ -1167,10 +1167,8 @@ and authenticated dispatch is unavailable here (`POST .../dispatches` → 401).
 Run `extraction-validate.yml` with `mode=eval`, `sample=12`. Report:
 `research-agent/reports/2026-11-02-extraction-eval-hardening.md`.
 
-### Decision (2026-11-02): let the cron run, accept review rows
 
-Nazar's call: do **not** pause the resolve step. The scheduled run on 2026-11-03
-05:00 UTC proceeds normally. Nothing was changed to the schedule or the workflow.
+### Decision (2026-11-02): let the cron run, accept review rows
 
 What that run does, measured beforehand:
 
@@ -1263,3 +1261,7 @@ Several drops are correct (contract awards, coreference like "the company's X"
 where the company is not in the span), but a dropped claim still does **not**
 force review, so the loss is invisible. That proposal remains Nazar's call.
 Report: `research-agent/reports/2026-11-02-extraction-eval-hardening.md`.
+
+## 2026-11-02 — company funding structure and source-verified pilot
+
+Nazar authorised direct implementation after the coverage audit. Four additive tables and two service-only security-invoker views separate rounds from portfolio membership. Five 2026 rounds / 35 participations were imported after local PostgreSQL and production rollback dry runs; 29 minimally sourced investors added (118 -> 147). All 103 legacy relationship rows remain unchanged. Every company research status is partial; no total_funding is fabricated. See `research-agent/reports/2026-11-02-company-funding-pilot.md` for sources, semantics, validation and rollback. Catalogue integration is in the sister repo. No schedules, frozen snapshots or company publication gates changed. This is a new funding workstream, independent of the older landscape reconciliation batches in STATE.json.
