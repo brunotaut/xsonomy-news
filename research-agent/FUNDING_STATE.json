@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 65,
+  "partial_companies": 81,
   "fully_reviewed_companies": 0,
-  "next_action": "Continue autonomously with remaining published-company histories, prioritising strong primary-source candidates and the seven documented source holds from research checkpoint 03; Cambridge Aerospace earlier financing remains a known reconciliation priority.",
+  "next_action": "Continue autonomously with remaining published-company histories, prioritising primary and transaction-party sources; reconcile the five documented source holds without treating absence of an event as zero funding.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
   "updated_at": "2026-11-02",
-  "source_reconciliation_companies": 8,
-  "approved_funding_events": 123,
-  "round_participations": 376,
-  "investor_profiles": 342,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/company-funding-research-03-2026-11-02.json",
+  "source_reconciliation_companies": 5,
+  "approved_funding_events": 151,
+  "round_participations": 458,
+  "investor_profiles": 395,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/company-funding-research-04-2026-11-02.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -40,9 +40,10 @@
     "checked_at": "2026-11-02T16:03:11.826646+00:00"
   },
   "known_financing_claims_to_reconcile": [
-    {
-      "company_slug": "cambridge-aerospace",
-      "claim": "Earlier financing history before the confirmed Series C remains to be reconciled with issuer/transaction-party evidence."
-    }
+    {"company_slug": "openworks-engineering", "claim": "Checked company sources describe internal R&D and partially grant-funded expansion but no externally attributable financing event."},
+    {"company_slug": "orqa", "claim": "No sufficiently attributable primary or transaction-party financing event was established in checkpoint 04."},
+    {"company_slug": "rigitech", "claim": "No sufficiently attributable primary or transaction-party financing event was established in checkpoint 04."},
+    {"company_slug": "yellowscan", "claim": "No sufficiently attributable primary or transaction-party financing event was established in checkpoint 04."},
+    {"company_slug": "dronehub", "claim": "A consortium-level grant cannot be assigned to Dronehub without a company-specific allocation; the existing 2020 event remains unchanged."}
   ]
 }

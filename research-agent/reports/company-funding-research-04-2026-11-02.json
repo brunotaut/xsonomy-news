@@ -1,0 +1,62 @@
+{
+  "dataset": "company-funding-research-04-2026-11-02",
+  "checked_at": "2026-11-02",
+  "status": "checkpoint_complete_programme_in_progress",
+  "identities_reviewed": 21,
+  "imported_companies": 17,
+  "imported_events": 28,
+  "imported_participations": 82,
+  "imported_investor_profiles_created": 53,
+  "approved_totals_after_import": {
+    "events": 151,
+    "participations": 458,
+    "investor_profiles": 395,
+    "partial_companies": 81
+  },
+  "validation": {
+    "tests_passed": 146,
+    "rollback_rehearsal": true,
+    "rollback_baseline_restored": true,
+    "idempotent_rerun": true,
+    "invalid_approved_events": 0,
+    "participant_source_mismatches": 0,
+    "orphan_extensions": 0
+  },
+  "imported_company_slugs": [
+    "cambridge-aerospace", "altitude-angel", "nordic-air-defence", "apian",
+    "kitemill", "milrem-robotics", "cerbair", "flarebright", "farsight-vision",
+    "frontline-robotics", "krattworks", "sensusq", "ubiq-aerospace", "verity",
+    "scoutdi", "zuri", "uforce"
+  ],
+  "source_holds": [
+    {
+      "company_slug": "orqa",
+      "status": "source_reconciliation_pending",
+      "finding": "No primary, investor or transaction-party source establishing a clean attributable financing event was verified in this checkpoint."
+    },
+    {
+      "company_slug": "rigitech",
+      "status": "source_reconciliation_pending",
+      "finding": "No primary, investor or transaction-party source establishing a clean attributable financing event was verified in this checkpoint."
+    },
+    {
+      "company_slug": "yellowscan",
+      "status": "source_reconciliation_pending",
+      "finding": "No primary, investor or transaction-party source establishing a clean attributable financing event was verified in this checkpoint."
+    },
+    {
+      "company_slug": "dronehub",
+      "status": "source_reconciliation_pending",
+      "finding": "A consortium-level USD1.9m grant was not assigned to Dronehub because the checked source does not disclose a company-specific allocation. The existing PLN2m 2020 event remains unchanged."
+    }
+  ],
+  "reconciliation_notes": [
+    {"company_slug": "cambridge-aerospace", "disposition": "Added the confirmed USD100m Series A and USD200m Series B; retained the existing Series C as a separate event."},
+    {"company_slug": "milrem-robotics", "disposition": "Recorded the KMW and EDGE ownership investments with undisclosed transaction values; did not turn the EUR5.5m aggregate across 2019 and 2020 into an artificial round."},
+    {"company_slug": "kitemill", "disposition": "Recorded the NOK6.5m crowdfunding close and EUR2.5m EIC grant; excluded eligibility for up to EUR8m as unreceived financing."},
+    {"company_slug": "nordic-air-defence", "disposition": "Kept the initial pre-seed amount undisclosed because public currency presentations conflict; recorded the separately supported USD3m extension."},
+    {"company_slug": "zuri", "disposition": "Stored the concluded EUR4.4m pre-Series A once, not both that total and the EUR3m incremental amount."},
+    {"company_slug": "uforce", "disposition": "Recorded the supported USD50m seed and named roles; excluded the reported valuation from funding."}
+  ],
+  "next_priority": "Continue the published-landscape cohort using strong primary financing candidates, then resolve the five remaining source holds without interpreting empty structured data as no public funding."
+}
