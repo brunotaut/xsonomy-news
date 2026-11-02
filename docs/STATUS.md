@@ -104,6 +104,10 @@ directly. Regenerating them through `digest.mjs` should reproduce them.
 
 ## Resolved this session
 
+### 2026-11-02 — European events research module (data only)
+
+Created and populated `ecosystem_events`, `ecosystem_event_sources`, and `ecosystem_event_research_runs`; server-only `v_ecosystem_events`. Research window 2 Nov 2026–1 Nov 2027: 49 dated events in 19 countries (27 core, 22 adjacent), 8 undated watch items, 72 source observations. Migration and idempotent import are in `research-agent/events/` and `db/migrations/20261102_ecosystem_events.sql`; schema mirrored in `db/schema.sql`. Dry-run rollback passed, then live counts, date bounds, provenance and access controls verified. RLS enabled with no anonymous/authenticated grants. No website UI or publication change. This is a broad initial research edition, not an exhaustive calendar; unknown dates remain null. Full field dictionary, source decisions and coverage gaps: `research-agent/events/README.md`. Investment research and frozen snapshots untouched.
+
 ### 2026-11-01 — a retired company no longer captures article matches
 Commit `55a95f1`. Write-up: `research-agent/reports/2026-11-02-resolver-merger-policy.md`.
 
