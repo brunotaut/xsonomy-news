@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "xSonomy UAV/C-UAS news feed \u2014 daily RSS ingest into Supabase, static site on GitHub Pages.",
+  "description": "xSonomy UAV/C-UAS news feed — daily RSS ingest into Supabase, static site on GitHub Pages.",
   "scripts": {
     "ingest": "node scripts/ingest.mjs",
     "ingest:dry": "node scripts/ingest.mjs --dry",
@@ -37,5 +37,8 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.14"
   }
 }
