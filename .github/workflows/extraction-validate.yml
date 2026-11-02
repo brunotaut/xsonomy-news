@@ -52,6 +52,18 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: "22"
+          cache: npm
+
+      # This repo had no dependencies at all until the company funding work added
+      # @electric-sql/pglite as a devDependency, so no workflow ever installed
+      # anything and `npm test` ran straight off a bare checkout. The moment one
+      # test imported a package, the whole suite failed to load it.
+      #
+      # `--include=dev` is explicit on purpose: devDependencies are what the tests
+      # need, and `npm ci` omits them whenever NODE_ENV=production is set in the
+      # environment, which would reintroduce exactly this failure silently.
+      - name: Install dependencies from the lockfile (devDependencies included)
+        run: npm ci --include=dev
 
       - name: Unit tests must pass before anything touches the model or the database
         run: npm test

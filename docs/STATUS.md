@@ -1285,3 +1285,22 @@ Completed discovery queries for all 537 remaining public landscape companies, af
 ### 2026-11-02 — continuation enabled and current publication verified
 
 Dedicated ChatGPT continuation enabled hourly, with no routine batch notifications and no changes to repository cron schedules. Its ID is stored privately in FUNDING_STATE.json for completion/pause handling. Released initial run lease after verifying successful catalogue deploy `4af6c23d3a0767138b07a7421234975f54a1fffc`: live JSON at 14:49 UTC contains 567 companies, 54 with 101 sourced events, 306 participations and 287 investor profiles. Every approved event has a source; funding view remains security-invoker with no anon read access. Full programme is still in progress.
+
+## 2026-11-02 (later still) — CI never installed dependencies
+
+Run [41484197287](https://github.com/brunotaut/xsonomy-news/actions/runs/41484197287) failed in
+`npm test`: `company-funding.test.mjs` could not import `@electric-sql/pglite`.
+
+Cause: until the company funding work, this repo had **no dependencies at all**, so no workflow
+ever ran an install step — `npm test` worked straight off a bare checkout. `package.json` and
+`package-lock.json` were both correct and committed; nothing was ever installed in CI.
+
+Fix: `extraction-validate.yml` now runs `npm ci --include=dev` before `npm test`, with
+`cache: npm` on `setup-node`. `--include=dev` is explicit so a `NODE_ENV=production` environment
+cannot silently drop the devDependencies and reintroduce the failure. The funding tests are
+untouched — none skipped, none removed.
+
+Verified from a clean install: `rm -rf node_modules && npm ci --include=dev && npm test` →
+**145 pass, 0 fail**, lockfile unchanged. The failure reproduces exactly without `node_modules`
+(143 pass, 1 fail — that one file). No other workflow runs `npm test` or imports a package, so
+none needed the step.
