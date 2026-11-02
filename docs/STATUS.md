@@ -1476,3 +1476,32 @@ is not uniform. The replay would normalise it and correct the Brave1 row, which 
 
 Cosmetic: one review reason renders as `quote_calls_it_a_-series`, from a hyphen ahead of the
 marker. Harmless label wart, not fixed.
+
+## 2026-11-02 (later) — the 600-cap run exposed a paging bug that wastes money
+
+Run [41503115561](https://github.com/brunotaut/xsonomy-news/actions/runs/41503115561) succeeded in
+14 minutes, and evidence went 143 → **358 articles**. But **323 candidates remain**, not 0 — so a
+cap of 600 wrote only 215 articles.
+
+**Cause.** An article that yields no usable evidence is never marked, so it stays in the candidate
+query — and `fetchMissingEvidenceBatch` always returns the *first N candidates in the same order*,
+with no offset and no exclusion. The next page therefore re-fetched the same stuck rows and re-sent
+them to the model. They accumulated at the head of the ordering and progressively crowded out the
+articles that had never been tried. 600 analyses, 215 articles written: roughly **385 wasted model
+calls, about $1.90**, and the waste grows with every run because the stuck set never shrinks.
+
+**Fix.** The paging is now an exported generator, `candidateBatches`, which offers each candidate
+**at most once per run**: it over-fetches past everything already attempted, filters, and stops when
+a page holds nothing new. The run also now *names* the stuck articles at the end instead of letting
+them quietly reappear forever. `analyze-backfill.mjs` got an `import.meta.url` run-guard so the
+paging is importable without the script executing.
+
+**Tested against a pool that behaves like the real query** — ordered, and a row only leaves once it
+is written. 538 candidates with every 8th permanently stuck and a cap of 600: all 538 offered, none
+twice, 471 written, where the old paging reached 215. Also covered: the cap still caps, an exhausted
+pool ends the run, and an all-stuck pool terminates instead of looping on spend.
+
+159 tests pass.
+
+**Next run finishes the job:** `mode=backfill`, `max_articles=400` covers the 323 that remain, and
+the stuck ones will be listed by URL at the end of the log.

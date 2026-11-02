@@ -97,6 +97,40 @@ async function main() {
 }
 
 // Evidence-only pass. Same extraction call, but the ONLY thing written is
+// Pages of candidates, each article offered AT MOST ONCE per run.
+//
+// This exists because of a measured waste. An article that yields no usable
+// evidence is never marked, so it stays in the candidate query — and the query
+// always returns the first N candidates in the same order. The next page
+// therefore fetched the same stuck rows again. The 2026-11-02 run with
+// max_articles=600 paid for 600 analyses and wrote 215 articles: the stuck rows
+// accumulated at the head of the ordering and progressively crowded out the
+// articles that had never been tried.
+//
+// `fetchPage(n)` is the candidate query. `processed()` reports how many results
+// the caller has handled, so the cap counts work done rather than rows offered.
+export async function* candidateBatches(fetchPage, { max, batch, processed }) {
+  const attempted = new Set();
+  while (processed() < max) {
+    const want = Math.min(batch, max - processed());
+    if (want <= 0) return;
+    // Over-fetch past everything already tried, so rows we cannot use cannot
+    // squeeze out rows we have not seen.
+    const requested = Math.min(want + attempted.size, 1000);
+    const page = await fetchPage(requested);
+    const fresh = page.filter((r) => !attempted.has(r.url));
+    if (!fresh.length) {
+      if (page.length >= requested) {
+        console.log(`  NOTE a page of ${requested} held nothing new; re-run to continue.`);
+      }
+      return;                        // nothing left that this run has not tried
+    }
+    const rows = fresh.slice(0, want);
+    for (const r of rows) attempted.add(r.url);
+    yield rows;
+  }
+}
+
 // entity_evidence, and the evidence is restricted to the product names already
 // stored on the article. Nothing historical is rewritten.
 async function backfillEvidence() {
@@ -106,10 +140,15 @@ async function backfillEvidence() {
   console.log(`Evidence backfill${DRY ? " [DRY]" : ""}: batch=${BATCH} concurrency=${CONCURRENCY}` +
     (Number.isFinite(MAX) ? `  cap=${MAX}` : ""));
 
-  while (processed < MAX) {
-    const want = Math.min(BATCH, MAX - processed);
-    const rows = await fetchMissingEvidenceBatch(want);
-    if (!rows.length) break;
+  // An article that yields no usable evidence is never marked, so it stays in
+  // the candidate query and the NEXT page fetches it again. The 2026-11-02 run
+  // with max_articles=600 paid for that: 600 analyses produced 215 written
+  // articles, because the same stuck rows sat at the head of the ordering and
+  // were re-sent to the model page after page, crowding out fresh ones.
+  const stuck = [];
+
+  for await (const rows of candidateBatches(fetchMissingEvidenceBatch,
+    { max: MAX, batch: BATCH, processed: () => processed })) {
     const byUrl = new Map(rows.map((r) => [r.url, r]));
 
     await analyzeBatch(
@@ -124,19 +163,30 @@ async function backfillEvidence() {
           const ev = (res.evidence || []).filter((e) =>
             stored.some((n) => String(n).toLowerCase() === e.name.toLowerCase()));
           for (const e of ev) if (counts[e.outcome] !== undefined) counts[e.outcome]++;
-          if (!ev.length) { noEvidence++; return; }
+          // Nothing matched the names already on the row. It will be a
+          // candidate forever, so name it rather than letting it quietly
+          // reappear in every future run.
+          if (!ev.length) { noEvidence++; stuck.push(item.url); return; }
           if (DRY) { wrote++; return; }
           try { await patchEvidenceOnly(item.url, ev); wrote++; }
           catch (e) { writeErr++; console.log(`  WARN write ${item.url}: ${e.message}`); }
         },
       });
-    if (rows.length < want) break;
   }
 
   const secs = ((Date.now() - t0) / 1000).toFixed(0);
   console.log(`\nEvidence backfill done in ${secs}s: ${processed} article(s), ${wrote} written, ` +
     `${noEvidence} with no usable evidence, ${llmErr} LLM error(s), ${writeErr} write error(s).`);
   console.log(`  Verdicts: create=${counts.create} review=${counts.review} reject=${counts.reject}`);
+  if (stuck.length) {
+    console.log(`  ${stuck.length} article(s) yielded no evidence for the names stored on them, and`);
+    console.log(`  will keep reappearing as candidates. First few:`);
+    for (const u of stuck.slice(0, 10)) console.log(`    ${u}`);
+  }
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+// Only run when invoked directly, so the paging above can be imported and
+// tested without the script executing and exiting on a missing API key.
+if (process.argv[1] && import.meta.url === new URL(`file://${process.argv[1]}`).href) {
+  main().catch((e) => { console.error(e); process.exit(1); });
+}
