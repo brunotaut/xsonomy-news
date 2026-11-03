@@ -74,19 +74,30 @@ jobs:
 
       # A mode that matches no step below produces a FULLY GREEN run that does
       # absolutely nothing — every `if:` is false, the job succeeds, and the
-      # only clue is in the skipped-step list. That already happened once
-      # (run 41538174199, dispatched as a replay and silently a no-op), so an
-      # unrecognised mode is now a hard failure instead of a quiet success.
-      - name: The mode must be one this workflow actually runs
+      # only clue is in the skipped-step list. That happened once already
+      # (run 41538174199, dispatched as a replay and silently a no-op).
+      #
+      # The cause both times was a trailing space pasted into the dispatch box,
+      # which no `if:` comparison can match. So this step TRIMS the input and
+      # every step below keys off the trimmed value, not the raw one. A mode
+      # that is still unrecognised after trimming fails the job here, before
+      # any step that spends money or writes.
+      - name: Normalise the mode, and fail if it is not one this workflow runs
+        id: mode
         run: |
-          mode="${{ github.event.inputs.mode }}"
+          raw="${{ github.event.inputs.mode }}"
+          # Strip whitespace and lower-case it: a pasted mode arrives with a
+          # trailing space or a capital more often than it arrives misspelled.
+          mode="$(printf '%s' "$raw" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')"
           case "$mode" in
             eval|backfill-dry|backfill-pilot|backfill|replay-dry|replay) ;;
             *)
-              echo "::error::mode '$mode' matches no step."
+              echo "::error::mode '$raw' matches no step."
               echo "Valid: eval | backfill-dry | backfill-pilot | backfill | replay-dry | replay"
               exit 1 ;;
           esac
+          [ "$raw" = "$mode" ] || echo "::notice::trimmed mode '$raw' to '$mode'"
+          echo "value=$mode" >> "$GITHUB_OUTPUT"
           echo "mode = $mode"
 
       - name: Unit tests must pass before anything touches the model or the database
@@ -99,7 +110,7 @@ jobs:
       # acceptance checks passed.
       - name: Read-only evaluation (real model, no writes)
         id: eval
-        if: github.event.inputs.mode == 'eval'
+        if: steps.mode.outputs.value == 'eval'
         run: |
           # pipefail is essential: without it the exit status of the pipeline is
           # tee's, so a failing evaluation would report success — the very bug
@@ -117,7 +128,7 @@ jobs:
 
       # Uploaded on failure too — the diagnostics are the point when it fails.
       - name: Upload evaluation result and log
-        if: always() && github.event.inputs.mode == 'eval'
+        if: always() && steps.mode.outputs.value == 'eval'
         uses: actions/upload-artifact@v4
         with:
           name: extraction-eval
@@ -128,7 +139,7 @@ jobs:
           retention-days: 30
 
       - name: Evidence backfill — DRY RUN (no writes)
-        if: github.event.inputs.mode == 'backfill-dry'
+        if: steps.mode.outputs.value == 'backfill-dry'
         run: node scripts/analyze-backfill.mjs --missing-evidence --dry --max 25 --concurrency ${{ github.event.inputs.concurrency }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -136,7 +147,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Evidence backfill — PILOT (writes entity_evidence only)
-        if: github.event.inputs.mode == 'backfill-pilot'
+        if: steps.mode.outputs.value == 'backfill-pilot'
         run: node scripts/analyze-backfill.mjs --missing-evidence --max ${{ github.event.inputs.pilot_size }} --batch 10 --concurrency ${{ github.event.inputs.concurrency }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -144,7 +155,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Evidence backfill — REMAINDER (writes entity_evidence only)
-        if: github.event.inputs.mode == 'backfill'
+        if: steps.mode.outputs.value == 'backfill'
         run: node scripts/analyze-backfill.mjs --missing-evidence --max ${{ github.event.inputs.max_articles }} --batch 25 --concurrency ${{ github.event.inputs.concurrency }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -154,14 +165,14 @@ jobs:
       # No model calls: the verdict is recomputed from the evidence already on
       # the row, so a rule change costs nothing to apply to past extractions.
       - name: Maker-rule replay — DRY (no writes)
-        if: github.event.inputs.mode == 'replay-dry'
+        if: steps.mode.outputs.value == 'replay-dry'
         run: node scripts/replay-maker-rules.mjs --dry
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
 
       - name: Maker-rule replay — APPLY (writes entity_evidence only)
-        if: github.event.inputs.mode == 'replay'
+        if: steps.mode.outputs.value == 'replay'
         run: node scripts/replay-maker-rules.mjs
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

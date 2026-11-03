@@ -1589,3 +1589,17 @@ Nazar authorised retrying rollback rehearsal, atomic import and hourly continuat
 ### Checkpoint 08 recovery closed — 3 November 2026
 
 Catalogue build and deployment succeeded (run 41551680894, site commit 71adb0c26c11c0d64ef0e216b5fc86754715bdec). Live cache-busted landscape and investor exports generated at 00:17 UTC verified: 567 companies, 203 sourced events across 106 companies, 541 participations, 457 investor profiles. FlyingBasket EUR1.5m is explicitly approximate; its EUR2m follow-on remains separate and Leonardo consideration remains null. All 170 writer tests pass. Existing hourly continuation was re-enabled and read back as enabled; its schedule and prompt are unchanged. Lease cleared after saving this checkpoint; full database research continues.
+## 2026-11-03 — it was a trailing space, both times
+
+The new guard fired on the re-dispatch: `mode 'replay-dry ' matches no step`. So the
+silent green no-op the day before was the same thing — **a trailing space pasted into
+the dispatch box**, which no `if:` comparison can ever match.
+
+Rejecting it loudly was right, but making Nazar retype it is not a fix. The workflow
+now strips whitespace and lower-cases the input, and all seven mode-gated steps key
+off that trimmed value rather than the raw one. `replay-dry `, ` replay-dry` and
+`Replay-Dry` all run; `replay dry`, a misspelling and an empty box still fail the job
+before anything can spend money or write.
+
+Exercised against each of those nine inputs before pushing. Still 626 articles with
+evidence, 2,345 evidence rows, 55 candidates — the replay has not yet run.
