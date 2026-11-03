@@ -6,7 +6,7 @@
     "approved_new_events": 15,
     "existing_events_enriched": 1,
     "reviewed_corrections": 1,
-    "production_import_status": "pending"
+    "production_import_status": "applied"
   },
   "method": "Broad dated searches, company history, official programme records, investor/acquirer sources and local-language reporting were reconciled. Cumulative totals, unclosed offerings, consortium budgets and secondary consideration are not mislabelled as primary proceeds.",
   "dispositions": [
@@ -93,10 +93,13 @@
   ],
   "validation": {
     "manifest_validation": "passed locally before workspace expiry",
-    "repository_tests": "154 of 154 passed",
-    "production_rollback_rehearsal": "connector execution timed out twice; production was rechecked at the exact 188/525/447/99 baseline with FlyingBasket amount null",
-    "atomic_import": "not run",
-    "live_publication": "not triggered"
+    "repository_tests": "169/169 existing tests plus checkpoint-specific PostgreSQL regression passed",
+    "production_rollback_rehearsal": "Passed: 203 events / 541 participations / 457 investors / 106 companies; all seven table fingerprints restored to exact baseline 188/525/447/99",
+    "atomic_import": "Applied atomically; verified 203/541/457/106",
+    "live_publication": "pending",
+    "recovered_at": "2026-11-03",
+    "idempotency": "Manifest rerun in rollback subtransaction passed; seven fingerprints preserved",
+    "source_integrity": "272 event-source links; zero events without sources; zero duplicate event keys; legacy relationship fingerprint unchanged"
   },
   "source_holds": [
     {

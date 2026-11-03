@@ -1579,3 +1579,8 @@ Nothing was written — all write steps were skipped — so the database is exac
 the backfill left it: 626 articles with evidence, 2,345 evidence rows, 55 candidates.
 
 **Re-dispatch with `mode` exactly `replay-dry`** (hyphen, lower case, no spaces).
+
+
+## 2026-11-03 — funding checkpoint 08 recovery
+
+Nazar authorised retrying rollback rehearsal, atomic import and hourly continuation. Prepared manifest adds 15 events, enriches one existing event and adds ten investor identities. Guarded FlyingBasket correction replaces its undisclosed 2022 amount with approximately EUR1.5m; before-image and reversal record committed. Production rehearsal matched all seven table fingerprints after rollback. Atomic apply: 203 events, 106 companies, 541 participations, 457 investors, 272 event-source links. No duplicate keys or events without sources; legacy relationships unchanged. Existing 169 tests and checkpoint-specific PostgreSQL rollback/idempotency/guard regression passed. Catalogue publication and scheduler resumption are being verified. Programme remains incomplete at 82 source-reviewed cohort identities.
