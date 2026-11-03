@@ -1,0 +1,141 @@
+{
+  "dataset": "company-funding-research-09-2026-11-03",
+  "checked_at": "2026-11-03",
+  "scope": {
+    "published_identities_reviewed": 20,
+    "approved_new_events": 10,
+    "production_import_status": "applied",
+    "companies_with_new_events": 9
+  },
+  "method": "Broad dated searches, official company and transaction-party releases, exchange disclosures, programme records and local-language sources were reconciled. Unclosed offerings, authorised capital, consortium totals, contracts and secondary consideration are not mislabelled as primary proceeds.",
+  "dispositions": [
+    {
+      "company_slug": "armmo-defense-technologies",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "arquus",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "artech-drone",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "aselsan",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "atarna",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "atechsys",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "athlon-avia",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "atreyd",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "autonomous-flight-technologies",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "avartek",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "aveillant-thales",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "aviation-design",
+      "status": "reviewed_public_sources",
+      "approved_events": 2
+    },
+    {
+      "company_slug": "avilus",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "avio-aero",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "awedyne",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "b4-limits",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "bae-systems",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "baltic-viper",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "baykar",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "beesagainstmines",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    }
+  ],
+  "validation": {
+    "manifest_validation": "passed with the repository's tested prepare-funding-pilot importer",
+    "production_rollback_rehearsal": "Passed: import reached 213 events / 550 participations / 463 investors / 115 companies, then all seven table counts restored to exact baseline 203/541/457/106/272/728/106",
+    "atomic_import": "Applied atomically; verified 213 events / 550 participations / 463 investors / 115 companies",
+    "idempotency": "Manifest rerun preserved 213/550/463/115/284",
+    "source_integrity": "284 event-source links; zero events without sources; zero duplicate event keys",
+    "live_publication": {
+      "status": "pending"
+    }
+  },
+  "source_holds": [
+    {
+      "company_slug": "armmo-defense-technologies",
+      "claim": "A third-party profile names Zone II Ventures and an official-data aggregator lists small 2026 subsidies, but issuer/transaction-party evidence and award-level official records were not established."
+    },
+    {
+      "company_slug": "atarna",
+      "claim": "Registry sources show UAH600,000 authorised capital, which is incorporation capital rather than an attributable external financing event."
+    },
+    {
+      "company_slug": "atreyd",
+      "claim": "A 2026 investor-call post describes a USD100m raise being sought; no closed financing event was established."
+    },
+    {
+      "company_slug": "aveillant-thales",
+      "claim": "Secondary databases report earlier venture rounds, but original issuer or investor announcements sufficient for event-level attribution were not located."
+    }
+  ]
+}
