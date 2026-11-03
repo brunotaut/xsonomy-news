@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 153,
-  "fully_reviewed_companies": 182,
-  "next_action": "Continue autonomously after checkpoint 13. Thirteen verified events for eleven companies were imported and both live landscape datasets were verified on 3 November; retain source holds and continue the remaining published and full-database cohort.",
+  "partial_companies": 161,
+  "fully_reviewed_companies": 186,
+  "next_action": "Publish checkpoint 14, verify both live landscape datasets, clear the short lease, then continue the remaining published and full-database cohort.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
   "updated_at": "2026-11-03",
-  "source_reconciliation_companies": 63,
-  "approved_funding_events": 277,
-  "round_participations": 619,
-  "investor_profiles": 510,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/company-funding-research-13-2026-11-03.json",
+  "source_reconciliation_companies": 69,
+  "approved_funding_events": 286,
+  "round_participations": 629,
+  "investor_profiles": 516,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/company-funding-research-14-2026-11-03.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -292,6 +292,30 @@
     {
       "company_slug": "ericsson",
       "claim": "The company confirms its 1919 Stockholm listing, but no source-supported primary proceeds amount or transaction structure was established, so the listing is not represented as a financing event."
+    },
+    {
+      "company_slug": "escadrone",
+      "claim": "Public reporting describes founder self-funding, donations, private supporters and charities, but no dated company-level financing event with attributable amount and participant roles was established."
+    },
+    {
+      "company_slug": "eurotech-pl",
+      "claim": "Search results are contaminated by the unrelated Italian listed Eurotech identity; no attributable financing event for the Polish defence company was established."
+    },
+    {
+      "company_slug": "exail",
+      "claim": "The 2022 iXblue acquisition financing was raised by Exail Holding and its parent structure; those loans, equity and ICG instruments are not assigned to the operating Exail identity."
+    },
+    {
+      "company_slug": "firebolt-engineering",
+      "claim": "The sparse UK identity and same-name companies produced no attributable issuer or transaction-party financing record."
+    },
+    {
+      "company_slug": "first-parsec",
+      "claim": "Reporting describes founder funding, BRAVE1 grants and two seed rounds, but award amounts, dates, investor identities and exact instruments are not publicly reconciled; a USD5,000 charitable seed contribution is not treated as a priced company round."
+    },
+    {
+      "company_slug": "fixar-fixar-aero-llc",
+      "claim": "Secondary funding databases conflict on FIXAR dates and amounts, and no issuer or transaction-party announcement sufficient to resolve the history was located."
     }
   ]
 }
