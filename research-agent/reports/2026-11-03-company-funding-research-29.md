@@ -32,4 +32,6 @@ Database totals after the atomic import: 554 approved funding events, 312 compan
 
 Active work through database verification was 8.56 minutes for 20 identities, or 140.2 identities per active hour. This includes current-database reconciliation, source validation, rollback rehearsal, atomic import and integrity verification, and excludes waiting between scheduled runs. Five read-only research lanes were used; no causal speedup is claimed without a serial control.
 
-Publication verification will be added after the catalogue rebuild.
+## Publication verification
+
+Catalogue commit 2c25fe3ca3835807ff44180b31ac0f6ad95205e5 rebuilt successfully. Live landscape.json generated at 2026-11-03T19:59:13.430Z contains 554 events across 312 companies and 949 participations. Live landscape-investors.json generated at 2026-11-03T19:59:14.291Z contains 689 investor profiles.
