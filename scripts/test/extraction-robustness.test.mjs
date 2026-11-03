@@ -14,7 +14,7 @@ import assert from "node:assert/strict";
 import {
   htmlToText, parseJsonDetailed, validateEntities, PARSE_FAILURES, BODY_FAILURES,
 } from "../lib/analyze.mjs";
-import { makerRelationship, isMakerCue, SUPPLY_ONLY, QUALIFIED_PARTY, normText, quoteSupports } from "../lib/identity.mjs";
+import { makerRelationship, isMakerCue, SUPPLY_ONLY, QUALIFIED_PARTY, normText, quoteSupports, NAME_SELF_REFERENCE, nameInsideName } from "../lib/identity.mjs";
 import { judge, AFFECTED } from "../eval-extraction.mjs";
 import { OUTCOMES } from "../lib/identity.mjs";
 
@@ -515,4 +515,58 @@ test("the one case left unfixed is the conjunction list, on purpose", () => {
       "Teal Drones in South Salt Lake builds 1,000 Black Widow and 2,000 Fang FPV drones a month",
       "Fang FPV", "Teal Drones"),
     null);
+});
+
+
+// --- the company name inside the product name ----------------------------------
+//
+// Found by auditing what a maker-rule replay would ADD across the 2,345 stored
+// evidence rows, rather than by reading the rules: the largest single class of
+// accepted claims was a quote consisting of nothing but the product's own name.
+
+test("a quote that is only the product name does not evidence its own brand", () => {
+  for (const [product, maker] of [
+    ["DJI Mavic 3", "DJI"], ["DJI Mini 3 Pro", "DJI"], ["Ford F-250", "Ford"],
+    ["Boeing 737 MAX", "Boeing"], ["Agisoft Metashape", "Agisoft"],
+  ]) {
+    const cue = makerRelationship(product, product, maker);
+    assert.equal(cue, NAME_SELF_REFERENCE, `${maker} -> ${product}`);
+    assert.equal(isMakerCue(cue), false);
+  }
+});
+
+test("a brand prefix in a longer sentence is still refused on adjacency alone", () => {
+  const cue = makerRelationship(
+    "Natilus pitches the Horizon as a 200-seat competitor to the Boeing 737 MAX and Airbus A321neo",
+    "Boeing 737 MAX", "Boeing");
+  assert.equal(isMakerCue(cue), false);
+});
+
+test("a stated relationship still wins when the brand is in the product name", () => {
+  // The guard must not cost recall: these spans DO say it, so they still pass.
+  for (const span of [
+    "DJI manufactures the DJI Mavic 3 in Shenzhen",
+    "DJI's DJI Mavic 3 ships Tuesday",
+  ]) {
+    assert.equal(isMakerCue(makerRelationship(span, "DJI Mavic 3", "DJI")), true, span);
+  }
+  assert.equal(isMakerCue(makerRelationship("DJI builds the Mavic 3", "Mavic 3", "DJI")), true);
+});
+
+test("adjacency is untouched when the names are genuinely different", () => {
+  // A designator pairing like "the Lockheed F-94 Starfire" is still evidence.
+  assert.equal(
+    makerRelationship("The Lockheed F-94 Starfire is a first-generation interceptor.",
+      "F-94 Starfire", "Lockheed"),
+    "adjacent");
+});
+
+test("nameInsideName matches whole words in both directions, not substrings", () => {
+  assert.equal(nameInsideName("DJI Mavic 3", "DJI"), true);
+  assert.equal(nameInsideName("Ondas", "Ondas Inc."), true);        // either direction
+  assert.equal(nameInsideName("Black Widow", "Teal Drones"), false);
+  assert.equal(nameInsideName("Dronebuster REACH", "Ondas"), false);
+  assert.equal(nameInsideName("Global Mapper", "Blue Marble Geographics"), false);
+  // Not a substring match: "Ford" must not be found inside "Fordham".
+  assert.equal(nameInsideName("Fordham Systems X1", "Ford"), false);
 });

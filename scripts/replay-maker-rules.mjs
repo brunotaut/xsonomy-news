@@ -27,7 +27,7 @@
 
 import { loadDotenv } from "./lib/http.mjs";
 import { sbConfig, sbFetch } from "./lib/supabase.mjs";
-import { makerRelationship, isMakerCue } from "./lib/identity.mjs";
+import { makerRelationship, isMakerCue, NAME_SELF_REFERENCE } from "./lib/identity.mjs";
 
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry");
@@ -108,7 +108,7 @@ async function main() {
   await loadDotenv();
   console.log(`Maker-rule replay over stored evidence${DRY ? "  [DRY — no writes]" : ""}`);
 
-  const stats = { articles: 0, rows: 0, added: 0, cleared: 0, cueOnly: 0, blocked: 0, written: 0, writeErr: 0 };
+  const stats = { articles: 0, rows: 0, added: 0, cleared: 0, cueOnly: 0, blocked: 0, selfRef: 0, written: 0, writeErr: 0 };
   const examples = { added: [], cleared: [] };
 
   for (let offset = 0; ; offset += 200) {
@@ -119,6 +119,7 @@ async function main() {
       const { next, changes } = replayEvidence(a.entity_evidence);
       let touched = false;
       for (const c of changes) {
+        if (c.cue === NAME_SELF_REFERENCE) stats.selfRef++;
         if (c.blocked) { stats.blocked++; continue; }
         touched = true;
         if (c.change === "add") {
@@ -141,6 +142,7 @@ async function main() {
   console.log(`makers ADDED        ${stats.added}`);
   console.log(`makers CLEARED      ${stats.cleared}`);
   console.log(`cue corrected only  ${stats.cueOnly}`);
+  console.log(`self-reference refusals (brand is part of the product name): ${stats.selfRef}`);
   console.log(`removals refused because the row has no stored makerQuote: ${stats.blocked}`);
   console.log(`articles ${DRY ? "that would be written" : "written"} ${stats.written}  writeErr ${stats.writeErr}`);
   if (examples.added.length) console.log(`\n--- added (first ${examples.added.length}) ---\n ` + examples.added.join("\n "));

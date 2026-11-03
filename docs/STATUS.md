@@ -1603,3 +1603,41 @@ before anything can spend money or write.
 
 Exercised against each of those nine inputs before pushing. Still 626 articles with
 evidence, 2,345 evidence rows, 55 candidates — the replay has not yet run.
+
+## 2026-11-03 — the replay dry run ran, and auditing what it wanted to add found a rule defect
+
+Run [41596894241](https://github.com/brunotaut/xsonomy-news/actions/runs/41596894241):
+the mode guard normalised the input, `Maker-rule replay — DRY` ran for 5 seconds and
+`APPLY` was correctly skipped. (The job log needs admin rights, so the printed report
+is not readable from here; the numbers below come from querying the database directly.)
+
+**Do not apply the replay yet.** Auditing the 428 rows it could add a maker to — rather
+than trusting the rules — turned up the largest false-positive class yet found:
+
+> `DJI -> DJI Mavic 3`, on a quote that is the four words **`DJI Mavic 3`**.
+
+The company's name is *part of the product's name*, so the two are trivially adjacent
+and the `adjacent` cue fires on **the name sitting next to itself**. Checked against
+real stored spans, the same shape gave `Ford -> Ford F-250`, `Boeing -> Boeing 737 MAX`
+(from a sentence about Natilus), `Agisoft -> Agisoft Metashape` (from a list of file
+formats) and well over a hundred DJI rows. Six of the seven adjacency acceptances in a
+16-row probe were this.
+
+DJI does of course make the Mavic 3 — but **not because that span says so**, and the
+whole contract of rule 3 is that one span must say it. Inferring a maker from a brand
+prefix is a reasonable thing to want; it belongs in its own deliberate rule, where it
+can be measured, not smuggled in through adjacency. **That is Nazar's call, separately.**
+
+Fixed: bare adjacency is now refused when either name contains the other as whole
+words, recorded as the cue `name_self_reference` so it shows up in reports instead of
+vanishing. Only *bare* adjacency is affected — `DJI manufactures the DJI Mavic 3` and
+`DJI's DJI Mavic 3` still pass through the verb and the possessive, and
+`Lockheed -> F-94 Starfire` (different names, genuine designator) is untouched.
+
+Six new tests, and the 91-case production fixture still holds its hard
+`falsePositives = []` with recall unchanged. **175 tests pass.** The new cue has its
+own column in both the eval report and the replay report.
+
+The replay has still written nothing: 626 articles with evidence, 2,345 evidence rows,
+55 candidates. **Re-run `mode=replay-dry`** — the count it reports now will be the one
+worth applying.

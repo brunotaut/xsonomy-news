@@ -313,6 +313,17 @@ function occurrences(hay, name) {
 // The token fallback itself has to stay: the model routinely returns a full
 // legal name ("General Atomics Aeronautical Systems") for an article that only
 // ever says "General Atomics".
+// Is one name contained in the other, as whole words? "DJI" is inside "DJI
+// Mavic 3"; "Teal Drones" is not inside "Black Widow". Whole words on purpose:
+// "Ondas" must not count as inside "Dronebuster REACH" via a stray substring.
+export function nameInsideName(productName, makerName) {
+  const p = normText(productName), m = normText(makerName);
+  if (!p || !m) return false;
+  const inside = (hay, needle) =>
+    hay === needle || new RegExp(`(?:^|\\s)${needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:\\s|$)`).test(hay);
+  return inside(p, m) || inside(m, p);
+}
+
 function mentionTiers(t, name) {
   const n = normText(name);
   const tiers = [];
@@ -334,6 +345,7 @@ export function makerRelationship(span, productName, makerName) {
   const prodTiers = mentionTiers(t, productName);
   const makTiers = mentionTiers(t, makerName);
   if (!prodTiers.length || !makTiers.length) return null;
+  let selfRef = false;
   // Most specific pairing that yields any cue wins; a vaguer mention of the
   // same name never gets to overrule it.
   for (const mak of makTiers) {
@@ -345,10 +357,32 @@ export function makerRelationship(span, productName, makerName) {
       // next to `hub` and calling them adjacent.
       if (!mak.full && !prod.full) continue;
       const cue = cueFromPairing(t, prod.at, mak.at);
-      if (cue) return cue;
+      if (!cue) continue;
+      // Bare adjacency is worthless when the company's name is PART of the
+      // product's name. "DJI Mavic 3" contains "DJI", so a quote that is
+      // nothing but the product name — literally `DJI Mavic 3` — pairs the
+      // loose token `mavic` with the company name beside it and calls that a
+      // stated relationship. It is the name matching itself. On the stored
+      // evidence this was the single largest source of maker claims a replay
+      // would have accepted: Ford/Ford F-250, Boeing/Boeing 737 MAX,
+      // Agisoft/Agisoft Metashape, and well over a hundred DJI rows.
+      //
+      // DJI does of course make the Mavic 3 — but not because this span says
+      // so, and the rule's whole contract is that one span must SAY it. A
+      // brand-prefix inference is a reasonable thing to want; it belongs in
+      // its own deliberate rule, not smuggled in through adjacency.
+      //
+      // Only bare adjacency is affected. "DJI makes the DJI Mavic 3" still
+      // resolves through the verb, so the cue is held as a fallback and a
+      // better pairing elsewhere in the span still wins.
+      if (cue === "adjacent" && nameInsideName(productName, makerName)) {
+        selfRef = true;
+        continue;
+      }
+      return cue;
     }
   }
-  return null;
+  return selfRef ? NAME_SELF_REFERENCE : null;
 }
 
 function cueFromPairing(t, prod, mak) {
@@ -409,9 +443,13 @@ export const SUPPLY_ONLY = "supply_only";
 // someone else who did the building. Recorded as its own cue so the near-miss
 // is auditable instead of looking like silence.
 export const QUALIFIED_PARTY = "qualified_party";
+// The company's name is already inside the product's name, so the two being
+// "adjacent" is the name sitting next to itself. See makerRelationship.
+export const NAME_SELF_REFERENCE = "name_self_reference";
 
 export const isMakerCue = (cue) =>
-  Boolean(cue) && cue !== SUPPLY_ONLY && cue !== QUALIFIED_PARTY;
+  Boolean(cue) && cue !== SUPPLY_ONLY && cue !== QUALIFIED_PARTY
+    && cue !== NAME_SELF_REFERENCE;
 
 // Rule 3. A maker is evidenced only when ONE span names both sides, that span
 // is really in the article, AND the span states a making relationship between

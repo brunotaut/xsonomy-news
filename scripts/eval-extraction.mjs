@@ -26,7 +26,7 @@ import { writeFileSync } from "node:fs";
 import { loadDotenv } from "./lib/http.mjs";
 import { analyzeArticle, fetchBody, hasApiKey } from "./lib/analyze.mjs";
 import { fetchAllRows } from "./lib/supabase.mjs";
-import { OUTCOMES, SUPPLY_ONLY, decideIdentity, QUALIFIED_PARTY } from "./lib/identity.mjs";
+import { OUTCOMES, SUPPLY_ONLY, decideIdentity, QUALIFIED_PARTY, NAME_SELF_REFERENCE } from "./lib/identity.mjs";
 
 const args = process.argv.slice(2);
 const has = (f) => args.includes(f);
@@ -316,8 +316,13 @@ async function main() {
     // building, by a party the company was merely qualifying. Burying it would
     // be the same mistake as hiding missing makers inside a "prevented" total.
     droppedQualifiedParty: claimed.filter((e) => !e.maker && e.makerCue === QUALIFIED_PARTY).length,
+    // Also its own column: the span named both sides and they were even
+    // adjacent, but only because the company's name is part of the product's.
+    // Watched separately because it is by far the commonest shape.
+    droppedSelfReference: claimed.filter((e) => !e.maker && e.makerCue === NAME_SELF_REFERENCE).length,
     droppedNoRelation: claimed.filter((e) =>
-      !e.maker && e.makerCue !== SUPPLY_ONLY && e.makerCue !== QUALIFIED_PARTY).length,
+      !e.maker && e.makerCue !== SUPPLY_ONLY && e.makerCue !== QUALIFIED_PARTY
+      && e.makerCue !== NAME_SELF_REFERENCE).length,
   };
   // Precision and recall over the REQUIRED maker assertions only, because only
   // those have a known right answer.
@@ -346,6 +351,7 @@ async function main() {
   console.log(`  model claimed ${maker.claimedByModel}  assigned ${maker.assigned}`);
   console.log(`  dropped as supply-only ${maker.droppedAmbiguousSupply}` +
     `  dropped as a qualified party ${maker.droppedQualifiedParty}` +
+    `  dropped as name self-reference ${maker.droppedSelfReference}` +
     `  dropped, no stated relation ${maker.droppedNoRelation}`);
   console.log(`  required maker assertions ${maker.requiredCorrect}/${maker.requiredAssertions} correct` +
     (maker.recall === null ? "" : ` (recall ${(maker.recall * 100).toFixed(0)}%)`) +
