@@ -22,6 +22,8 @@ Torquing Group reward crowdfunding; TEI TÜBİTAK and two EU grants; Twist Robot
 
 ## Pilot timing
 
-Second-pass active time was 9.83 minutes, including evidence validation, reconciliation, rollback rehearsal, import and database verification, and excluding waiting between hourly runs. Measured throughput was 250.3 companies per active hour. Five read-only research lanes were used; no causal concurrency speedup is claimed because there is no serial control measurement.
+Second-pass active time was 12.92 minutes, including evidence validation, reconciliation, rollback rehearsal, import, writer checkpoint, catalogue rebuild and live publication verification, and excluding waiting between hourly runs. Measured throughput was 190.4 companies per active hour. Five read-only research lanes were used; no causal concurrency speedup is claimed because there is no serial control measurement.
 
-Publication verification is recorded separately after the catalogue rebuild.
+## Publication verification
+
+Catalogue commit c017a34fda10aa8297bd74f28a0140161ece5f16 rebuilt successfully. Live landscape.json generated at 2026-11-03T19:04:21.639Z contains 514 events across 312 companies and 911 participations. Live landscape-investors.json generated at 2026-11-03T19:04:22.709Z contains 681 investor profiles.
