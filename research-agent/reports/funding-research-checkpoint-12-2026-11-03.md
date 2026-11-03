@@ -39,3 +39,7 @@ The existing importer was validated, rehearsed inside a transaction and rolled b
 - Manifest: `research-agent/imports/company-funding-research-12-2026-11-03.json`
 - Queue: `research-agent/queues/company-funding-all.csv`
 - State: `research-agent/FUNDING_STATE.json`
+
+## Publication verification
+
+The catalogue rebuild from site commit `a53b3f89467eebe7ebb3612774eb6d0e6d720f36` generated the live landscape dataset at `2026-11-03T03:53:44.428Z`. The public JSON exposes all 567 landscape companies and the new DefendEye rounds, source links and investor roles at [xsonomy.com/landscape/](https://xsonomy.com/landscape/).
