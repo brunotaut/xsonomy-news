@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 161,
-  "fully_reviewed_companies": 186,
-  "next_action": "Continue autonomously after checkpoint 14. Twenty identities were source-audited, nine verified events for eight companies were imported, and both live landscape datasets were verified on 3 November; retain source holds and continue the remaining published and full-database cohort.",
+  "partial_companies": 171,
+  "fully_reviewed_companies": 193,
+  "next_action": "Publish checkpoint 15, verify both live landscape datasets, clear the short lease, then continue the remaining published and full-database cohort.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
   "updated_at": "2026-11-03",
-  "source_reconciliation_companies": 69,
-  "approved_funding_events": 286,
-  "round_participations": 629,
-  "investor_profiles": 516,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/company-funding-research-14-2026-11-03.json",
+  "source_reconciliation_companies": 72,
+  "approved_funding_events": 298,
+  "round_participations": 649,
+  "investor_profiles": 535,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/company-funding-research-15-2026-11-03.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -316,6 +316,18 @@
     {
       "company_slug": "fixar-fixar-aero-llc",
       "claim": "Secondary funding databases conflict on FIXAR dates and amounts, and no issuer or transaction-party announcement sufficient to resolve the history was located."
+    },
+    {
+      "company_slug": "flytech-uav",
+      "claim": "A secondary startup database attributes an undisclosed 2014 seed investment to SATUS, but no issuer, investor or transaction-party announcement sufficient to confirm the event was located."
+    },
+    {
+      "company_slug": "futurology",
+      "claim": "The company says its US expansion coincided with securing investments and that it continues attracting investment, but no attributable event amount, date, instrument or named investor was publicly established."
+    },
+    {
+      "company_slug": "godwit-systems",
+      "claim": "A startup directory labels the company at seed stage, but no closed financing event, amount, date or investor source was established; registry equity is not treated as external funding."
     }
   ]
 }
