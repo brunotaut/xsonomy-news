@@ -1,0 +1,154 @@
+{
+  "dataset": "company-funding-research-11-2026-11-03",
+  "checked_at": "2026-11-03",
+  "scope": {
+    "published_identities_reviewed": 20,
+    "approved_new_events": 19,
+    "production_import_status": "applied",
+    "companies_with_new_events": 9
+  },
+  "method": "Broad dated financing searches, company sites, investor and acquirer releases, official exchange records, CORDIS beneficiary allocations, national transparency portals and local-language sources were reconciled. Group acquisition consideration, consortium budgets, prospective accelerator support and unsupported secondary profiles were held rather than converted into company financing facts.",
+  "dispositions": [
+    {
+      "company_slug": "blighter-surveillance-systems",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "buntar-aerospace",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "cambridge-aerospace",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "cambridge-pixel",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "catec",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "catuav",
+      "status": "reviewed_public_sources",
+      "approved_events": 4
+    },
+    {
+      "company_slug": "cavok-engineering",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "cavok-uas",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "cdds",
+      "status": "reviewed_public_sources",
+      "approved_events": 2
+    },
+    {
+      "company_slug": "celebra-llc",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "centaurium-uas",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "cerbair",
+      "status": "reviewed_public_sources",
+      "approved_events": 4
+    },
+    {
+      "company_slug": "chess-dynamics",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "cilas",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "civitanavi-systems",
+      "status": "reviewed_public_sources",
+      "approved_events": 2
+    },
+    {
+      "company_slug": "cloudless",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "code380",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "connect-robotics",
+      "status": "reviewed_public_sources",
+      "approved_events": 2
+    },
+    {
+      "company_slug": "copenhagen-sensor-technology",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "creotech-instruments",
+      "status": "reviewed_public_sources",
+      "approved_events": 2
+    }
+  ],
+  "validation": {
+    "manifest_validation": "passed with the repository's tested prepare-funding-pilot importer",
+    "production_rollback_rehearsal": "Passed: import reached 247 events / 586 participations / 481 investors / 131 companies, then all seven table counts restored to exact baseline 228/568/472/124/304/755/106",
+    "atomic_import": "Applied atomically; verified 247 events / 586 participations / 481 investors / 131 companies / 325 event sources",
+    "idempotency": "Manifest rerun preserved all seven post-import counters",
+    "source_integrity": "325 event-source links; zero events without sources; zero participant-source mismatches; zero duplicate event keys"
+  },
+  "source_holds": [
+    {
+      "company_slug": "buntar-aerospace",
+      "claim": "Current 2026 company-confirmed rounds are retained; secondary profiles name earlier F4 Fund, Sandwater, BRAVE1 and other backing without source-supported event dates, amounts and roles."
+    },
+    {
+      "company_slug": "cambridge-aerospace",
+      "claim": "The company confirmed USD136m across three pre-Series-B financings, while the structured history contains a USD100m Series A; the residual early financing cannot be split into source-supported event(s) from current public materials."
+    },
+    {
+      "company_slug": "catec",
+      "claim": "ECO-AERO exposes a EUR1.112994m consortium budget but not a CATEC beneficiary allocation, so it is not assigned as company proceeds."
+    },
+    {
+      "company_slug": "catuav",
+      "claim": "Four beneficiary-specific CORDIS grants are imported; further RAWFIE, REALITY, IOPES and national-project participation needs authoritative beneficiary-level allocations before event attribution."
+    },
+    {
+      "company_slug": "cavok-uas",
+      "claim": "A secondary state-aid aggregator lists EUR150,000 of French RDI support as a loan/recoverable advance, but an original award record establishing terms and date was not located."
+    },
+    {
+      "company_slug": "chess-dynamics",
+      "claim": "Cohort acquired the parent Chess Technologies group for an initial GBP20.1m in 2018; that group-level consideration is not assigned to the Chess Dynamics subsidiary."
+    },
+    {
+      "company_slug": "cloudless",
+      "claim": "A company social post describes approximately EUR70,000 of accelerator financial support after selection, but the original programme award and exact instrument were not established."
+    },
+    {
+      "company_slug": "connect-robotics",
+      "claim": "The two beneficiary-specific PRR grants are imported; NATO DIANA cohort selection describes standard initial programme funding but no company-specific executed or paid award record was established."
+    }
+  ]
+}
