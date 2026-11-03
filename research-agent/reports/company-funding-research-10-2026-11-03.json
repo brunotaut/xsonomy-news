@@ -1,0 +1,157 @@
+{
+  "dataset": "company-funding-research-10-2026-11-03",
+  "checked_at": "2026-11-03",
+  "scope": {
+    "published_identities_reviewed": 20,
+    "approved_new_events": 15,
+    "production_import_status": "applied",
+    "companies_with_new_events": 9
+  },
+  "method": "Broad dated searches, issuer and investor releases, official financial/registry disclosures, programme records and local-language sources were reconciled. Unclosed raises, consortium totals, project values, public-market sale proceeds and secondary consideration are not mislabelled as company proceeds.",
+  "dispositions": [
+    {
+      "company_slug": "autonomous-systems-lab-asl-eth-zurich",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "beetechua",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "bellare",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "benelli",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "besomar",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "beyond-vision",
+      "status": "reviewed_public_sources",
+      "approved_events": 3
+    },
+    {
+      "company_slug": "beyron",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "bionic-system-solutions",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "bittium",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "black-forest-systems",
+      "status": "reviewed_public_sources",
+      "approved_events": 3
+    },
+    {
+      "company_slug": "blackteq",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "bluebird-tech",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "bluespace-technology",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "boxo",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "bravex-aero",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "bt",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "bzb-uas",
+      "status": "reviewed_public_sources",
+      "approved_events": 1
+    },
+    {
+      "company_slug": "c-astral-aerospace",
+      "status": "reviewed_public_sources",
+      "approved_events": 2
+    },
+    {
+      "company_slug": "cafa-tech",
+      "status": "reviewed_public_sources",
+      "approved_events": 0
+    },
+    {
+      "company_slug": "callen-lenz",
+      "status": "reviewed_public_sources",
+      "approved_events": 2
+    }
+  ],
+  "validation": {
+    "manifest_validation": "passed with the repository's tested prepare-funding-pilot importer",
+    "production_rollback_rehearsal": "Passed: import reached 228 events / 568 participations / 472 investors / 124 companies, then all seven table counts restored to exact baseline 213/550/463/115/284/737/106",
+    "atomic_import": "Applied atomically; verified 228/568/472/124/304",
+    "idempotency": "Manifest rerun preserved all five published counters",
+    "source_integrity": "304 event-source links; zero events without sources; zero participant-source mismatches; zero duplicate event keys",
+    "live_publication": {
+      "status": "pending"
+    }
+  },
+  "source_holds": [
+    {
+      "company_slug": "autonomous-systems-lab-asl-eth-zurich",
+      "claim": "The record is an ETH Zurich research laboratory, not a separately financed company; project acknowledgements do not establish company-level proceeds."
+    },
+    {
+      "company_slug": "besomar",
+      "claim": "Public reporting says Besomar received Brave1/ECDI support and a regional project was approved for 50% co-financing, but the exact legal beneficiary and closed award-level split were not established."
+    },
+    {
+      "company_slug": "beyond-vision",
+      "claim": "The 2024 ActiveCap capital increase amount remains undisclosed; later Banco Português de Fomento statements about a deal-by-deal investment are not reconciled to that event without a dated transaction source."
+    },
+    {
+      "company_slug": "beyron",
+      "claim": "The company confirms a 2024 investment deal but does not disclose the investor, amount or instrument."
+    },
+    {
+      "company_slug": "bluespace-technology",
+      "claim": "Later AIR_NAVY_SYS and quantum-communications project pages expose consortium or requested budgets; beneficiary-level closed allocations require further reconciliation."
+    },
+    {
+      "company_slug": "bravex-aero",
+      "claim": "The 2025 EUR315k round is verified; a 2026 second round was still being negotiated or sought and is not recorded as closed."
+    },
+    {
+      "company_slug": "bzb-uas",
+      "claim": "The PLN870k EU project contribution is verified, while any distinct ERC VC capital component and earlier accelerator grant amount remain undisclosed."
+    },
+    {
+      "company_slug": "cafa-tech",
+      "claim": "Secondary databases and state-aid aggregators list multiple grants, but original award records and company-specific EU consortium allocations were not established in this checkpoint."
+    }
+  ]
+}
