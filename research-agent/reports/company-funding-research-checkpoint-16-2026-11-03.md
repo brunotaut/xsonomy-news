@@ -48,4 +48,6 @@ Greentech Harvest, Grim Tech, HADES Defense Systems, HERAKLES Defense, Hertz New
 - Queue: `research-agent/queues/company-funding-all.csv`
 - State: `research-agent/FUNDING_STATE.json`
 
-Publication is pending the catalogue rebuild and live verification.
+## Publication verification
+
+Catalogue commit `0d06829e0998da1ec1b5b39120b16e7fd6027722` triggered the read-only production build. The live exports report `generatedAt=2026-11-03T07:03:54.091Z` and investor `generatedAt=2026-11-03T07:03:55.147Z`, with 321 funding events across 183 companies, 672 participations and 549 investor profiles. Live spot checks confirmed Griff Aviation (3 events), Grupo Amper (6) and Hellion Tech (3), and the landscape UI loaded the 567-company catalogue.
