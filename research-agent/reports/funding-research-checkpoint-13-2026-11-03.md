@@ -36,3 +36,7 @@ The importer validated 13 events. The first rollback rehearsal correctly exposed
 - Manifest: `research-agent/imports/company-funding-research-13-2026-11-03.json`
 - Queue: `research-agent/queues/company-funding-all.csv`
 - State: `research-agent/FUNDING_STATE.json`
+
+## Publication verification
+
+Catalogue commit `2451ef7f78718586072952165b9bec8ec1c8339c` rebuilt the live company dataset at `2026-11-03T04:02:57.425Z` and investor dataset at `2026-11-03T04:02:58.676Z`. The live company JSON exposes Dronamics' Asia Air Survey event and EOS Technologie's Audacia Series A; the investor JSON contains both new investor profiles. See [xsonomy.com/landscape/](https://xsonomy.com/landscape/).
