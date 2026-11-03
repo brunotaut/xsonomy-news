@@ -1,5 +1,5 @@
 {
-  "status": "reconciled_with_second_pass_holds",
+  "status": "second_pass_complete",
   "baseline": {
     "reviewed": 346,
     "events": 449,
@@ -1957,16 +1957,16 @@
   "reconciliation": {
     "completed_at": "2026-11-03T17:54:20.866Z",
     "pilot_companies": 100,
-    "fully_reviewed_companies": 59,
+    "fully_reviewed_companies": 100,
     "newly_fully_reviewed_companies": 48,
-    "second_pass_holds": 41,
-    "imported_events": 46,
-    "imported_participations": 52,
+    "second_pass_holds": 0,
+    "imported_events": 65,
+    "imported_participations": 68,
     "database_after_import": {
-      "events": 495,
-      "companies_with_events": 299,
-      "participations": 895,
-      "investor_profiles": 675
+      "events": 514,
+      "companies_with_events": 312,
+      "participations": 911,
+      "investor_profiles": 681
     },
     "first_pass_lane_timing_recorded": false,
     "concurrency_speedup_claimed": false,
@@ -1976,6 +1976,31 @@
     "investor_generated_at": "2026-11-03T17:53:37.085Z",
     "active_finalization_minutes": 7.99,
     "active_finalization_throughput_companies_per_hour": 360.3,
-    "timing_scope": "verification, reconciliation, rollback rehearsal, atomic import, writer checkpoint, catalogue rebuild and live publication verification"
+    "timing_scope": "verification, reconciliation, rollback rehearsal, atomic import, writer checkpoint, catalogue rebuild and live publication verification",
+    "second_pass_completed_at": "2026-11-03T19:02:38.077Z"
+  },
+  "second_pass": {
+    "completed_at": "2026-11-03T19:02:38.077Z",
+    "reviewed_companies": 41,
+    "fully_disposed_companies": 41,
+    "verified_events": 19,
+    "companies_with_verified_events": 13,
+    "imported_participations": 16,
+    "bounded_no_event_companies": 14,
+    "source_hold_companies": 14,
+    "database_after_import": {
+      "events": 514,
+      "companies_with_events": 312,
+      "participations": 911,
+      "investor_profiles": 681
+    },
+    "rollback_rehearsal": "passed",
+    "idempotency_check": "passed",
+    "active_minutes": 9.83,
+    "active_throughput_companies_per_hour": 250.3,
+    "timing_scope": "second-pass evidence validation, reconciliation, rollback rehearsal, atomic import and database verification; excludes waiting between scheduled runs",
+    "parallel_read_only_lanes_used": 5,
+    "concurrency_speedup_claimed": false,
+    "disposition_note": "A source hold is a completed bounded public-source disposition, not evidence of zero funding. Consortium totals and unallocated programme budgets remain excluded."
   }
 }
