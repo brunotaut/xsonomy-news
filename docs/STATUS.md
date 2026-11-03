@@ -1584,3 +1584,8 @@ the backfill left it: 626 articles with evidence, 2,345 evidence rows, 55 candid
 ## 2026-11-03 — funding checkpoint 08 recovery
 
 Nazar authorised retrying rollback rehearsal, atomic import and hourly continuation. Prepared manifest adds 15 events, enriches one existing event and adds ten investor identities. Guarded FlyingBasket correction replaces its undisclosed 2022 amount with approximately EUR1.5m; before-image and reversal record committed. Production rehearsal matched all seven table fingerprints after rollback. Atomic apply: 203 events, 106 companies, 541 participations, 457 investors, 272 event-source links. No duplicate keys or events without sources; legacy relationships unchanged. Existing 169 tests and checkpoint-specific PostgreSQL rollback/idempotency/guard regression passed. Catalogue publication and scheduler resumption are being verified. Programme remains incomplete at 82 source-reviewed cohort identities.
+
+
+### Checkpoint 08 recovery closed — 3 November 2026
+
+Catalogue build and deployment succeeded (run 41551680894, site commit 71adb0c26c11c0d64ef0e216b5fc86754715bdec). Live cache-busted landscape and investor exports generated at 00:17 UTC verified: 567 companies, 203 sourced events across 106 companies, 541 participations, 457 investor profiles. FlyingBasket EUR1.5m is explicitly approximate; its EUR2m follow-on remains separate and Leonardo consideration remains null. All 170 writer tests pass. Existing hourly continuation was re-enabled and read back as enabled; its schedule and prompt are unchanged. Lease cleared after saving this checkpoint; full database research continues.

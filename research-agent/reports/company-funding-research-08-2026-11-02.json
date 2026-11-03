@@ -93,13 +93,49 @@
   ],
   "validation": {
     "manifest_validation": "passed locally before workspace expiry",
-    "repository_tests": "169/169 existing tests plus checkpoint-specific PostgreSQL regression passed",
+    "repository_tests": "170 of 170 passed, including checkpoint-specific PostgreSQL rollback/idempotency/guard regression",
     "production_rollback_rehearsal": "Passed: 203 events / 541 participations / 457 investors / 106 companies; all seven table fingerprints restored to exact baseline 188/525/447/99",
     "atomic_import": "Applied atomically; verified 203/541/457/106",
-    "live_publication": "pending",
+    "live_publication": {
+      "status": "verified",
+      "workflow_run": "https://github.com/brunotaut/xSonomy/actions/runs/41551680894",
+      "site_commit": "71adb0c26c11c0d64ef0e216b5fc86754715bdec",
+      "generatedAt": "2026-11-03T00:17:30.479Z",
+      "investorsGeneratedAt": "2026-11-03T00:17:31.314Z",
+      "companies": 567,
+      "events": 203,
+      "companiesWithEvents": 106,
+      "participations": 541,
+      "investorProfiles": 457,
+      "eventsWithoutSources": 0,
+      "flyingbasket": [
+        {
+          "key": "cysero-follow-on-2023",
+          "amount": {
+            "amount": 2000000,
+            "currency": "EUR"
+          },
+          "amountQualifier": "exact"
+        },
+        {
+          "key": "leonardo-investment-2023",
+          "amount": null,
+          "amountQualifier": "exact"
+        },
+        {
+          "key": "cysero-investment-2022",
+          "amount": {
+            "amount": 1500000,
+            "currency": "EUR"
+          },
+          "amountQualifier": "approximate"
+        }
+      ]
+    },
     "recovered_at": "2026-11-03",
     "idempotency": "Manifest rerun in rollback subtransaction passed; seven fingerprints preserved",
-    "source_integrity": "272 event-source links; zero events without sources; zero duplicate event keys; legacy relationship fingerprint unchanged"
+    "source_integrity": "272 event-source links; zero events without sources; zero duplicate event keys; legacy relationship fingerprint unchanged",
+    "automation_resumption": "Existing hourly task re-enabled and independently read back as enabled on 2026-11-03; schedule and prompt unchanged"
   },
   "source_holds": [
     {
