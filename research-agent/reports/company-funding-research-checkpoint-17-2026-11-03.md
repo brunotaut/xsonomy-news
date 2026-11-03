@@ -45,4 +45,7 @@ Hyllus Systems, INFINTEQ, Ironflight UA, ITWL, JetCat, JISR Institute and JSW No
 - Queue: `research-agent/queues/company-funding-all.csv`
 - State: `research-agent/FUNDING_STATE.json`
 
-Publication is pending the catalogue rebuild and live verification.
+
+## Publication verification
+
+Catalogue commit `86132d8891aa5c4fe23905c9969e5b80792f8856` triggered the read-only production build, which completed successfully. The live exports report `generatedAt=2026-11-03T07:55:59.912Z` and investor `generatedAt=2026-11-03T07:56:00.857Z`, with 340 funding events across 193 companies, 686 participations and 556 investor profiles. Live spot checks confirmed IDS (2 events), Impianti (2), Innov'ATM (3), Intelligent Energy (5), Inzpire (2), Jenoptik (1), Kaedra Technologies (1) and Kara Dag (1).
