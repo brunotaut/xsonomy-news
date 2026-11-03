@@ -10,12 +10,12 @@
   "fully_reviewed_companies": 394,
   "next_action": "Complete the 41 independent second-pass holds from the 100-company pilot, then continue the remaining published landscape identities and full 2,564-company cohort.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-03T17:51:36.830Z",
+  "updated_at": "2026-11-03T17:54:20.866Z",
   "source_reconciliation_companies": 260,
   "approved_funding_events": 495,
   "round_participations": 895,
   "investor_profiles": 675,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/company-funding-research-27-2026-11-03.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -23,22 +23,16 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "id": "automation-6ae8a29260108191a57ab58c00ff5894-20261103T174621272Z",
-    "owner": "chatgpt",
-    "started_at": "2026-11-03T17:46:21.272Z",
-    "expires_at": "2026-11-03T19:46:21.272Z",
-    "purpose": "Finish 100-company four-lane funding pilot reconciliation"
-  },
+  "active_run": null,
   "last_verified_publication": {
-    "site_commit": "43cc7e4a7aa3ae6848a41006420f43735e0d618e",
-    "generated_at": "2026-11-03T16:54:55.899Z",
-    "investor_generated_at": "2026-11-03T16:54:56.891Z",
-    "events": 449,
-    "companies_with_events": 270,
-    "participations": 843,
-    "investor_profiles": 652,
-    "checked_at": "2026-11-03T16:56:42.628Z"
+    "site_commit": "967248de021cd60316d93ab2497db629199b28d7",
+    "generated_at": "2026-11-03T17:53:36.047Z",
+    "investor_generated_at": "2026-11-03T17:53:37.085Z",
+    "events": 495,
+    "companies_with_events": 299,
+    "participations": 895,
+    "investor_profiles": 675,
+    "checked_at": "2026-11-03T17:54:20.866Z"
   },
   "known_financing_claims_to_reconcile": [
     {
@@ -889,5 +883,20 @@
       "company_slug": "solone",
       "claim": "The EUR2.5m Drone Volt cross-investment is added as a closed extension; EUR5.5m SOLFORGE financing commitments are recorded as announced and conditional, with no investor role inferred for transaction adviser Leviora Capital."
     }
-  ]
+  ],
+  "parallel_pilot": {
+    "scope_companies": 100,
+    "fully_reviewed_companies": 59,
+    "newly_fully_reviewed_companies": 48,
+    "second_pass_holds": 41,
+    "imported_events": 46,
+    "imported_participations": 52,
+    "active_finalization_minutes": 7.99,
+    "active_finalization_throughput_companies_per_hour": 360.3,
+    "timing_scope": "verification, reconciliation, rollback rehearsal, atomic import, writer checkpoint, catalogue rebuild and live publication verification",
+    "first_pass_lane_timing_recorded": false,
+    "concurrency_speedup_claimed": false,
+    "audit_report": "research-agent/reports/2026-11-03-funding-parallel-pilot.md",
+    "completed_at": "2026-11-03T17:54:20.866Z"
+  }
 }
