@@ -1,6 +1,6 @@
 {
   "checked_at": "2026-11-05",
-  "status": "imported_publication_pending",
+  "status": "imported_publication_verified",
   "groups": {
     "a": {
       "dataset": "company-funding-continuation-a",
@@ -501,6 +501,75 @@
           "status": "existing_event_reconciliation",
           "events": [
             {
+              "existing_round_id": "a53d975a-8398-4ff2-b245-f5164951f674",
+              "name": "Series A",
+              "date": "2016-11-21",
+              "amount": 5000000,
+              "currency": "EUR",
+              "instrument": "equity",
+              "participants": [
+                {
+                  "name": "Terra Drone",
+                  "role": "lead",
+                  "contribution_amount": 4000000,
+                  "contribution_currency": "EUR"
+                },
+                {
+                  "name": "Qbic",
+                  "role": "participant"
+                },
+                {
+                  "name": "PMV",
+                  "role": "participant"
+                }
+              ],
+              "sources": [
+                "https://higherlogicdownload.s3.amazonaws.com/AUVSI/b657da80-1a58-4f8f-9971-7877b707e5c8/UploadedImages/Member%20Press%20Releases/Unifly_pressrelease.pdf",
+                "https://www.pmv.eu/en/case/unifly/",
+                "https://terra-drone.net/global/2023/08/22/terra-drone-acquires-a-majority-share-of-unifly-the-worlds-leading-provider-of-unmanned-aircraft-system-traffic-management-utm-technology-with-a-strategic-aim-to-enhance-global-drone-and-urban-a/"
+              ],
+              "notes": "Issuer press release confirms €5m raised, of which 80% from Terra Drone, signing 17 Nov, announcement 21 Nov. Terra Drone itself explicitly identifies lead role. €6.3m is cumulative funding, not round."
+            },
+            {
+              "existing_round_id": "5affd9d7-cca2-4236-9841-f712dc326aa8",
+              "name": "Series B",
+              "date": "2019-07",
+              "amount": 17000000,
+              "currency": "EUR",
+              "instrument": "equity",
+              "participants": [
+                {
+                  "name": "Terra Drone",
+                  "role": "participant"
+                },
+                {
+                  "name": "Deutsche Flugsicherung",
+                  "role": "participant"
+                },
+                {
+                  "name": "Federal Holding and Investment Company (FPIM/SFPIM)",
+                  "role": "participant",
+                  "contribution_amount": 2000000,
+                  "contribution_currency": "EUR"
+                },
+                {
+                  "name": "Qbic",
+                  "role": "participant"
+                },
+                {
+                  "name": "PMV",
+                  "role": "participant"
+                }
+              ],
+              "sources": [
+                "https://medias.bryangarnier.com/marketing/old/en/blog/theme/deal/index.html",
+                "https://terra-drone.net/global/2019/07/04/terra-drone-corporation-adds-to-uniflys-19-3-million-series-b/",
+                "https://www.pmv.eu/en/case/unifly/",
+                "https://sfpim.be/uploads/2022/05/sfpi_ra2019_web.pdf"
+              ],
+              "notes": "Advisor published €17m round as of July 1; Terra Drone confirms its own participation and USD equivalent; PMV verifies remaining named participants, SFPIM annual report verifies contribution. July month precision avoids conflating dates."
+            },
+            {
               "name": "Series B+ funding",
               "date": "2022-05",
               "currency": "EUR",
@@ -522,7 +591,43 @@
                 "https://www.atc-network.com/atc-news/unifly/unifly-raises-10-0-million-from-terra-drone-and-join",
                 "https://tech.eu/2022/05/03/belgian-drone-traffic-management-platform-rakes-in-eur10-million-from-japanese-government"
               ],
-              "notes": "Issuer confirms round/year and investors; contemporaneous apparent issuer release carried by ATC Network gives exact €10m on May 4, reports already carried May 3. May 3 is earliest identified press reporting date, May month is safe announcement precision absent original issuer timestamp. March 1 JOIN approval is distinct. Investor's up-to-JPY2.5bn approved amount is not amount invested in this round."
+              "notes": "Issuer confirms round/year and investors; contemporaneous apparent issuer release carried by ATC Network gives exact €10m on May 4, reports already carried May 3. May 3 is earliest identified press reporting date, May month is safe announcement precision absent original issuer timestamp. March 1 JOIN approval is distinct. Investor's up-to-JPY2.5bn approved amount is not amount invested in this round.",
+              "existing_round_id": "a7a4f98c-629e-4c37-ba53-202ec40bcc9e"
+            }
+          ],
+          "id": "f451d727-ffcd-40e5-99ac-2f5167b7d4fb",
+          "stored_rounds": [
+            {
+              "round_id": "a53d975a-8398-4ff2-b245-f5164951f674",
+              "round_key": "series-a-2016",
+              "announced_date": "2016",
+              "amount": null,
+              "currency": null,
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "5affd9d7-cca2-4236-9841-f712dc326aa8",
+              "round_key": "series-b-2019",
+              "announced_date": "2019",
+              "amount": null,
+              "currency": null,
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "a7a4f98c-629e-4c37-ba53-202ec40bcc9e",
+              "round_key": "series-b-plus-2022",
+              "announced_date": "2022",
+              "amount": null,
+              "currency": null,
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "46b46afc-0698-47af-8a60-e29600d21107",
+              "round_key": "terra-majority-acquisition-2023",
+              "announced_date": "2023-08-22",
+              "amount": null,
+              "currency": null,
+              "amount_qualifier": "exact"
             }
           ]
         },
@@ -535,7 +640,35 @@
               "first_invested": "2018-03",
               "type": "minority growth capital",
               "source": "https://www.helvetica-capital.ch/en/portfolio/verity",
-              "notes": "First investment month verified by investor. Portfolio gives no cheque, lead role or named round. Add or retain generic participation only unless original named-round source proves linkage."
+              "notes": "First investment month verified by investor. Portfolio gives no cheque, lead role or named round. Add or retain generic participation only unless original named-round source proves linkage.",
+              "stored_match": "No Helvetica investor_research or legacy investors row, or Verity investor_companies row found. Existing Series A has Airbus Ventures, Fontinalis Partners, Kitty Hawk and Sony Innovation Fund."
+            }
+          ],
+          "id": "7b5d12d8-2586-403e-ab2b-1ff48edd92b2",
+          "stored_rounds": [
+            {
+              "round_id": "1ec8712d-889f-4050-9f5b-3e466cf0e3ad",
+              "round_key": "series-a-2018",
+              "announced_date": "2018-06-05",
+              "amount": "18000000",
+              "currency": "USD",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "559b2820-ded2-4ee7-9f58-e7148a28a5fa",
+              "round_key": "series-b-2023",
+              "announced_date": "2023-03-14",
+              "amount": "30000000",
+              "currency": "CHF",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "031a0af9-702c-4b4b-92f2-ca7e6fe8d618",
+              "round_key": "series-b-extension-2023",
+              "announced_date": "2023-07-11",
+              "amount": "11000000",
+              "currency": "USD",
+              "amount_qualifier": "exact"
             }
           ]
         },
@@ -574,11 +707,46 @@
                 "https://www.eqs-news.com/news/ad-hoc/hensoldt-ag-hensoldt-schliesst-kapitalerhoehung-gegen-bareinlagen-im-wege-eines-accelerated-bookbuilding-erfolgreich-ab/16424949-8509-4f1e-8cce-7b09921aba4e",
                 "https://annualreport2023.hensoldt.net/resource/PDF/HENSOLDT_GB_Finance_E_2023.pdf"
               ],
-              "notes": "10.5m new shares. Accelerated bookbuilding without existing shareholders' rights; not a rights issue. Do not infer Leonardo participation."
+              "notes": "10.5m new shares. Accelerated bookbuilding without existing shareholders' rights; not a rights issue. Do not infer Leonardo participation. Issue price €22.94 × 10.5m shares implies €240.87m exactly; company reports approximate €241m."
             }
           ],
           "holds": [
             "2024 report describes €620m term loan and €370m revolver under existing syndicated agreement. Reconcile origination, extensions and drawn amounts before import: https://annualreport.hensoldt.net/resource/PDF/HENSOLDT_AG_Annual_Report_2024.pdf"
+          ],
+          "id": "e6bb0dfa-d960-4fa5-b784-512289438314",
+          "stored_rounds": [
+            {
+              "round_id": "8e6a78df-891f-44b6-8347-2972e983c0f0",
+              "round_key": "ipo-primary-issuance-2020",
+              "announced_date": "2020-09-25",
+              "amount": "300000000",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "c2affc25-13c5-489f-9257-338c61c4e0a1",
+              "round_key": "cash-capital-increase-2023",
+              "announced_date": "2023-12-07",
+              "amount": "241000000",
+              "currency": "EUR",
+              "amount_qualifier": "approximate"
+            },
+            {
+              "round_id": "6f2db7b3-1006-41d8-b2e6-9b4b83aab335",
+              "round_key": "syndicated-refinancing-2025",
+              "announced_date": "2025-04",
+              "amount": "1800000000",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "d0a5b1f0-ae1a-4ab9-8cb8-8446ce163761",
+              "round_key": "promissory-note-loan-2025",
+              "announced_date": "2025-07",
+              "amount": "300000000",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            }
           ]
         },
         {
@@ -602,11 +770,23 @@
                 "https://ir.carlyle.com/static-files/71b8ccfc-4e4f-41fa-81e1-f9249d20fd5d",
                 "https://www.carlyle.com/media-room/news-release-archive/carlyle-enters-exclusive-discussions-theon-international-sale"
               ],
-              "notes": "Carlyle Q3 investor release confirms quarter; 2026 seller release verifies majority stake, not price or direct issuer proceeds."
+              "notes": "Carlyle Q3 investor release confirms quarter; 2026 seller release verifies majority stake, not price or direct issuer proceeds.",
+              "existing_round_id": "a9d61967-7f52-48a8-b455-4c60cabb34f6"
             }
           ],
           "holds": [
             "THEON June 17, 2026 signed exclusivity only for SAS Stéropès, HGH's holding company, at about €300m enterprise value. No confirmed closing. THEON July update expected closing by beginning of 2027. https://theon.com/en/news/2026/theon-enters-into-exclusivity-agreement-for-the-acquisition-of-hgh-systemes-infrarouges-accelerating-expansion-into-multi-domain-isr-counter-uas-solutions ; https://theon.com/en/news/2026/theon-announces-q2-2026-h1-2026-trading-update"
+          ],
+          "id": "ef7b388b-9f94-4675-b8ec-00c15492007e",
+          "stored_rounds": [
+            {
+              "round_id": "a9d61967-7f52-48a8-b455-4c60cabb34f6",
+              "round_key": "carlyle-majority-acquisition-2018",
+              "announced_date": "2018",
+              "amount": null,
+              "currency": null,
+              "amount_qualifier": "exact"
+            }
           ]
         },
         {
@@ -624,7 +804,8 @@
                 "https://www.grupoamper.com/en/shareholders-and-investors-capitalincrease/",
                 "https://www.boe.es/borme/dias/2023/11/10/pdfs/BORME-C-2023-6628.pdf"
               ],
-              "notes": "Issuer confirms fully subscribed and paid; official gazette gives exact issue price and aggregate. Do not promote standby commitments to actual subscriptions."
+              "notes": "Issuer confirms fully subscribed and paid; official gazette gives exact issue price and aggregate. Do not promote standby commitments to actual subscriptions.",
+              "existing_round_id": "a4d9c343-9db9-4630-9c24-2e72be48958c"
             },
             {
               "name": "Amper S.A. 2025 rights issue",
@@ -685,6 +866,97 @@
               ],
               "notes": "Actual placed issuance. The €75m is aggregate across all three tranches, not a separate deal."
             }
+          ],
+          "id": "d00ec272-8196-4b94-9b70-cbf6db477aaa",
+          "stored_rounds": [
+            {
+              "round_id": "1574e55e-2e9b-42e0-b21d-79f225a1de6c",
+              "round_key": "amper-cash-2015-june",
+              "announced_date": "2015-06-12",
+              "amount": "19940758.75",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "161a9159-8b06-4384-a605-cc0e860d7b0c",
+              "round_key": "amper-cash-2015-august",
+              "announced_date": "2015-08-18",
+              "amount": "7382502.15",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "681df554-7361-428a-b502-e4e506deb128",
+              "round_key": "amper-cash-2016-april",
+              "announced_date": "2016-04-21",
+              "amount": "4994903.2",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "0afcccbe-e926-440d-adae-da02b765e4b8",
+              "round_key": "amper-cash-2016-september",
+              "announced_date": "2016-09-23",
+              "amount": "838787.12",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "f4fec8b1-47da-46bd-9440-426725dfb27a",
+              "round_key": "amper-cash-2018-march",
+              "announced_date": "2018-03-13",
+              "amount": "4973801.3",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "a4d9c343-9db9-4630-9c24-2e72be48958c",
+              "round_key": "capital-increase-2023",
+              "announced_date": "2023-11-30",
+              "amount": "31000000",
+              "currency": "EUR",
+              "amount_qualifier": "approximate"
+            },
+            {
+              "round_id": "1d926c13-1b93-458d-83fd-3b06a57f1ff8",
+              "round_key": "sustainability-bond-2024",
+              "announced_date": "2024-07-23",
+              "amount": "30700000",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "49eb4ca4-1cdb-4c1c-9eca-d89058bc4466",
+              "round_key": "institutional-note-2024",
+              "announced_date": "2024-11",
+              "amount": "20000000",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "47af68ab-79af-4dd2-bbe8-86920783845c",
+              "round_key": "sustainability-bond-tap-2024",
+              "announced_date": "2024-12-20",
+              "amount": "12000000",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "cbef41c4-dea5-4d70-b41d-7b0230a4feec",
+              "round_key": "sustainability-bond-tap-2025",
+              "announced_date": "2025-03-13",
+              "amount": "32300000",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            },
+            {
+              "round_id": "b757373a-36ce-4d1a-9f72-631355f2069b",
+              "round_key": "capital-increase-2025",
+              "announced_date": "2025-07-22",
+              "amount": "77165308.35",
+              "currency": "EUR",
+              "amount_qualifier": "exact"
+            }
           ]
         },
         {
@@ -711,6 +983,17 @@
                 "https://forbes.ua/news/ukrainskiy-rozrobnik-privyaznikh-droniv-huless-zaluchiv-ponad-1-mln-na-shcho-pidut-groshi-30012025-26734"
               ],
               "notes": "Issuer says over $1m. Brave1 confirms combined private angels, state-bank loan tied to government contract and Brave1 grant. No amount or exact identities for other participants; no equity-only amount or round label. If existing individual events found, prevent aggregate overlap."
+            }
+          ],
+          "id": "6d98a6c3-edad-4031-803a-83aa6d59ead0",
+          "stored_rounds": [
+            {
+              "round_id": "78bc4095-f3a3-4293-9bb5-d581660e9b3b",
+              "round_key": "aggregate-financing-disclosure-2025",
+              "announced_date": "2025-01-30",
+              "amount": "1000000",
+              "currency": "USD",
+              "amount_qualifier": "more_than"
             }
           ]
         }
@@ -825,7 +1108,7 @@
           "id": "e84345e1-a502-4abd-85ef-fb2730632efe",
           "existing_events": 5,
           "status": "verified_attribution_and_operating_issuer_events",
-          "notes": "Legal operating issuer Intelligent Energy Limited, 03958217. The listed holding Intelligent Energy Holdings plc/LB-shell was the £55m July 2014 IPO issuer and £30m May 2016 secured convertible notes issuer. On 25 October 2017 Meditor Energy Limited acquired the operating company along with the SMILE JV stake and remaining assets for £19.5m aggregate, directed to holding CLN discharge. Record Meditor as operating-company buyer but do not assign aggregate as operating-company primary financing or individual opco value; compare existing curated records and require expected-old/reversal for edits. Audited 2022 opco accounts note 25 confirms two direct 2023 events. HEIGHTS is separately an opco-led grant: UKRI record £10,215,090, while consortium programme £17m; participant-level allocation not yet established.",
+          "notes": "Legal operating issuer Intelligent Energy Limited, 03958217. The listed holding Intelligent Energy Holdings plc/LB-shell was the £55m July 2014 IPO issuer and £30m May 2016 secured convertible notes issuer. On 25 October 2017 Meditor Energy Limited acquired the operating company along with the SMILE JV stake and remaining assets for £19.5m aggregate, directed to holding CLN discharge. Record Meditor as operating-company buyer but do not assign aggregate as operating-company primary financing or individual opco value; compare existing curated records and require expected-old/reversal for edits. Audited 2022 opco accounts note 25 confirms two direct 2023 events. HEIGHTS is separately an opco-led grant: UKRI record £10,215,090, while consortium programme £17m; participant-level allocation not yet established. Notes 15 and 23 of operating-company audited FY2022 accounts also establish £25m received in 2021 and £10m in 2022 under interest-free secured on-demand borrowing. These are disbursement-year values, not facility face amount or individual dated tranches.",
           "sources": [
             "https://find-and-update.company-information.service.gov.uk/company/03958217/persons-with-significant-control",
             "https://shareprices.com/rns/results-for-14-months-ended-30-november-2017-65royhwpc3mvfis/",
@@ -857,6 +1140,30 @@
               ],
               "source": "https://uploads3.craft.co/uploads/unified_record/source/document/2105304/a3ea636555ecf865.pdf",
               "note": "Company audited accounts, note 25; loan provided to group by named entity."
+            },
+            {
+              "name": "Meditor secured on-demand operating-company loan proceeds 2021",
+              "date": "2021",
+              "type": "debt",
+              "amount": 25000000,
+              "currency": "GBP",
+              "parties": [
+                "Meditor European Master Fund Limited"
+              ],
+              "source": "https://uploads3.craft.co/uploads/unified_record/source/document/2105304/a3ea636555ecf865.pdf",
+              "note": "Annual proceeds confirmed in FY2022 note 15. Interest free, secured by charge over company assets, repayable on demand. Compare existing events and seek exact tranche date if required."
+            },
+            {
+              "name": "Meditor secured on-demand operating-company loan proceeds 2022",
+              "date": "2022",
+              "type": "debt",
+              "amount": 10000000,
+              "currency": "GBP",
+              "parties": [
+                "Meditor European Master Fund Limited"
+              ],
+              "source": "https://uploads3.craft.co/uploads/unified_record/source/document/2105304/a3ea636555ecf865.pdf",
+              "note": "Annual proceeds confirmed in FY2022 note 15. Interest free, secured by charge over company assets, repayable on demand. Compare existing events and seek exact tranche date if required."
             }
           ]
         },
@@ -864,8 +1171,8 @@
           "slug": "fixar-fixar-aero-llc",
           "id": "af596be1-755a-44bb-84b3-d6087a58ba81",
           "existing_events": 0,
-          "status": "portfolio_confirmed_award_candidates",
-          "notes": "The Untitled Ventures original portfolio links FIXAR, confirming generic portfolio association, but no amount/date or legal recipient. Latvian SIA FIXAR-AERO was registered 26 Jul 2019 (40203222201), later than Dec 2018 Dealroom claim; don't assign the purported Dec 2018 $600k seed without continuity and instrument proof. Conflicting secondary $2m August 2020 and $4m October 2021 remain unresolved. Public register-data mirror displays 2024-11-19 direct EUR1,650 grant from Latvian Information Technology Cluster plus other state assistance classifications. Retrieve Latvian official de minimis dataset before import; two large rows classify as tax measures and cannot be treated as cash grants.",
+          "status": "verified_direct_awards_and_portfolio_association",
+          "notes": "The Untitled Ventures original portfolio links FIXAR, confirming generic portfolio association, but no amount/date or legal recipient. Latvian SIA FIXAR-AERO was registered 26 Jul 2019 (40203222201), later than Dec 2018 Dealroom claim; don't assign the purported Dec 2018 $600k seed without continuity and instrument proof. Conflicting secondary $2m August 2020 and $4m October 2021 remain unresolved. Public register-data mirror displays 2024-11-19 direct EUR1,650 grant from Latvian Information Technology Cluster plus other state assistance classifications. Retrieve Latvian official de minimis dataset before import; two large rows classify as tax measures and cannot be treated as cash grants. Official Finance Ministry CKAN query returned eight records, six labeled direct-payment grants now listed. The official query did not reproduce the later EUR1,650 award, which remains excluded pending verification. Distinct registry IDs are assigned aid events; confirm whether importer should represent small export grant separately and company funding total should omit tax relief.",
           "sources": [
             "https://www.theuntitled.vc/portfolio",
             "https://investinlatvia.org/en/success-stories/stories/fixar",
@@ -873,9 +1180,83 @@
             "https://saraksts.lv/40203222201",
             "https://company.lursoft.lv/en/40203222201",
             "https://app.dealroom.co/companies/fixar",
-            "https://www.cbinsights.com/company/fixar/financials"
+            "https://www.cbinsights.com/company/fixar/financials",
+            "https://data.gov.lv/dati/eng/api/3/action/datastore_search?resource_id=6253edd2-17d1-4a9a-bd48-3dd5b9ce5ff4&filters=%7B%22person_reg_nr%22%3A%2240203222201%22%7D"
           ],
-          "events": []
+          "events": [
+            {
+              "name": "Eksporta atbalsta darbības 2022.g. (Latvian de minimis record 29235)",
+              "date": "2022-10-28",
+              "type": "grant",
+              "amount": 642.97,
+              "currency": "EUR",
+              "parties": [
+                "Latvijas Investīciju un attīstības aģentūra"
+              ],
+              "source": "https://data.gov.lv/dati/eng/api/3/action/datastore_search?resource_id=6253edd2-17d1-4a9a-bd48-3dd5b9ce5ff4&filters=%7B%22person_reg_nr%22%3A%2240203222201%22%7D",
+              "note": "Starptautiskās konkurētspējas veicināšana (SAM 3.2.1.2.); designated direct payment grant. Beneficiary legal registration no. 40203222201."
+            },
+            {
+              "name": "Atbalsts jaunuzņēmumiem (Latvian de minimis record 35511)",
+              "date": "2022-04-28",
+              "type": "grant",
+              "amount": 16970.92,
+              "currency": "EUR",
+              "parties": [
+                "Latvijas Investīciju un attīstības aģentūra"
+              ],
+              "source": "https://data.gov.lv/dati/eng/api/3/action/datastore_search?resource_id=6253edd2-17d1-4a9a-bd48-3dd5b9ce5ff4&filters=%7B%22person_reg_nr%22%3A%2240203222201%22%7D",
+              "note": "Atbalsts tehnoloģiju pārnese sistēmas pilnveidošanai (jaunuzņēmumu atbalsta programma) (SAM 1.2.1.2); designated direct payment grant. Beneficiary legal registration no. 40203222201."
+            },
+            {
+              "name": "Atbalsts jaunuzņēmumiem (Latvian de minimis record 39708)",
+              "date": "2022-01-25",
+              "type": "grant",
+              "amount": 7799.1,
+              "currency": "EUR",
+              "parties": [
+                "Latvijas Investīciju un attīstības aģentūra"
+              ],
+              "source": "https://data.gov.lv/dati/eng/api/3/action/datastore_search?resource_id=6253edd2-17d1-4a9a-bd48-3dd5b9ce5ff4&filters=%7B%22person_reg_nr%22%3A%2240203222201%22%7D",
+              "note": "Atbalsts tehnoloģiju pārnese sistēmas pilnveidošanai (jaunuzņēmumu atbalsta programma) (SAM 1.2.1.2); designated direct payment grant. Beneficiary legal registration no. 40203222201."
+            },
+            {
+              "name": "Atbalsts jaunuzņēmumiem (Latvian de minimis record 41900)",
+              "date": "2021-11-05",
+              "type": "grant",
+              "amount": 17976.66,
+              "currency": "EUR",
+              "parties": [
+                "Latvijas Investīciju un attīstības aģentūra"
+              ],
+              "source": "https://data.gov.lv/dati/eng/api/3/action/datastore_search?resource_id=6253edd2-17d1-4a9a-bd48-3dd5b9ce5ff4&filters=%7B%22person_reg_nr%22%3A%2240203222201%22%7D",
+              "note": "Atbalsts tehnoloģiju pārnese sistēmas pilnveidošanai (jaunuzņēmumu atbalsta programma) (SAM 1.2.1.2); designated direct payment grant. Beneficiary legal registration no. 40203222201."
+            },
+            {
+              "name": "Atbalsts jaunuzņēmumiem (Latvian de minimis record 47434)",
+              "date": "2021-06-17",
+              "type": "grant",
+              "amount": 45169.72,
+              "currency": "EUR",
+              "parties": [
+                "Latvijas Investīciju un attīstības aģentūra"
+              ],
+              "source": "https://data.gov.lv/dati/eng/api/3/action/datastore_search?resource_id=6253edd2-17d1-4a9a-bd48-3dd5b9ce5ff4&filters=%7B%22person_reg_nr%22%3A%2240203222201%22%7D",
+              "note": "Atbalsts tehnoloģiju pārnese sistēmas pilnveidošanai (jaunuzņēmumu atbalsta programma) (SAM 1.2.1.2); designated direct payment grant. Beneficiary legal registration no. 40203222201."
+            },
+            {
+              "name": "Atbalsts jaunuzņēmumiem (Latvian de minimis record 50712)",
+              "date": "2021-04-20",
+              "type": "grant",
+              "amount": 107982.34,
+              "currency": "EUR",
+              "parties": [
+                "Latvijas Investīciju un attīstības aģentūra"
+              ],
+              "source": "https://data.gov.lv/dati/eng/api/3/action/datastore_search?resource_id=6253edd2-17d1-4a9a-bd48-3dd5b9ce5ff4&filters=%7B%22person_reg_nr%22%3A%2240203222201%22%7D",
+              "note": "Atbalsts tehnoloģiju pārnese sistēmas pilnveidošanai (jaunuzņēmumu atbalsta programma) (SAM 1.2.1.2); designated direct payment grant. Beneficiary legal registration no. 40203222201."
+            }
+          ]
         },
         {
           "slug": "flytech-uav",
@@ -996,6 +1377,17 @@
     "sources": 824,
     "profiles": 719,
     "sourceless": 0
+  },
+  "publication": {
+    "site_commit": "8d8f32add9c04a7338bbbd936cba75a0d5f4e2e2",
+    "workflow_run_id": 42104072968,
+    "generated_at": "2026-11-05T20:31:37.188Z",
+    "investor_generated_at": "2026-11-05T20:31:38.316Z",
+    "events": 638,
+    "participations": 1049,
+    "investor_profiles": 719,
+    "companies_with_events": 313,
+    "checked_at": "2026-11-05T20:34:05.955Z"
   },
   "verification": "Existing importer validation, atomic rollback rehearsal with seven unchanged table fingerprints, repeated manifest inside rehearsal, exact-old guards, atomic import, and post-import source completeness. Only the eight manifest events and two documented corrections were imported; other candidates remain to reconcile."
 }
