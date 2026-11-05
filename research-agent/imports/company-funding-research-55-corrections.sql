@@ -1,0 +1,12 @@
+do $correction$
+declare affected integer;
+begin
+update public.company_funding_rounds set stage='Series B', amount=10000000, currency='CHF', amount_basis='closed_amount', amount_qualifier='approximate', announced_date='2024-04-11', note_en='Fotokite announced that it closed its latest Series B financing of around CHF 10 million on 11 April 2024.', checked_at='2026-11-05',updated_at=now() where id='3c41dd60-9bf3-4338-a9c8-05b518735d99' and updated_at='2026-11-02 14:42:36.854566+00' and stage is not distinct from 'Growth financing' and amount is not distinct from null and currency is not distinct from null and amount_basis is not distinct from 'undisclosed' and amount_qualifier is not distinct from 'exact' and announced_date is not distinct from '2024-04-11' and note_en is not distinct from 'Company announcement confirms completion but does not disclose a round amount or Series C label.' and checked_at is not distinct from '2026-11-02';
+get diagnostics affected=row_count;
+if affected<>1 then raise exception 'Expected old values not found for fotokite'; end if;
+
+update public.company_funding_rounds set stage='Series B+', amount=10000000, currency='EUR', amount_basis='closed_amount', amount_qualifier='exact', announced_date='2022-05', note_en='Unifly announced EUR 10 million of Series B+ funding from Terra Drone and JOIN in May 2022. Individual amounts and lead roles were not disclosed.', checked_at='2026-11-05',updated_at=now() where id='a7a4f98c-629e-4c37-ba53-202ec40bcc9e' and updated_at='2026-11-02 15:56:55.550055+00' and stage is not distinct from 'Series B+' and amount is not distinct from null and currency is not distinct from null and amount_basis is not distinct from 'undisclosed' and amount_qualifier is not distinct from 'exact' and announced_date is not distinct from '2022' and note_en is not distinct from 'The company identifies Terra Drone and JOIN as participants; amount and lead roles are not disclosed.' and checked_at is not distinct from '2026-11-02';
+get diagnostics affected=row_count;
+if affected<>1 then raise exception 'Expected old values not found for unifly'; end if;
+insert into public.company_funding_round_sources(round_id,url,title,source_type,checked_at) values ('a7a4f98c-629e-4c37-ba53-202ec40bcc9e','https://www.atc-network.com/atc-news/unifly/unifly-raises-10-0-million-from-terra-drone-and-join','Unifly announcement via ATC Network confirms EUR 10 million Series B+ funding','third_party_report','2026-11-05') on conflict(round_id,url) do nothing;
+end $correction$;
