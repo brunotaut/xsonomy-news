@@ -1649,3 +1649,8 @@ Source-audited18new events and24participations;605approved events,1008participat
 
 
 Checkpoint 53 publication verified: workflow 42031512224 succeeded; live data generated 2026-11-05T12:58:10.713Z and 2026-11-05T12:58:11.669Z. Verified 605 events, 1,008 participations and 705 profiles; all manifest facts and correction matched. Active elapsed 12.22 minutes; zero newly completed bounded histories. Lease released.
+
+
+### Funding checkpoint54 — 2026-11-05
+
+25 identities reconciled;25 new events and34 participations safely imported after rollback rehearsal.630 events,1,042 participations,719 profiles. Helsing bounded review complete; source holds preserved. Current queue completed count338 replaces legacy aggregate455, which is retained separately. Publication pending.

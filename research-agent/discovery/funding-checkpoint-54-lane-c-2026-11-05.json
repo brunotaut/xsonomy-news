@@ -1,0 +1,471 @@
+{
+  "batch": 54,
+  "lane": "c",
+  "checked_at": "2026-11-05",
+  "read_only": true,
+  "identities_researched": 6,
+  "newly_completed_bounded_reviews": 0,
+  "partial_reviews": 6,
+  "pilot_reconciliation": "Current main instructions/FUNDING_STATE/pilot read first. None of six slugs in pilot groups. Production events, sources and participant rows queried before discovery. Parent owns writer lease; no DB or repository writes.",
+  "companies": [
+    {
+      "slug": "jenoptik",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "frankfurt-ipo-1998"
+      ],
+      "search_coverage": [
+        "Broaddatedfinancinghistory",
+        "Issuerannual2021andlaterreportcandidates",
+        "DebtissuerAGvsGroupreconciliation"
+      ],
+      "sources": [
+        {
+          "url": "https://www.jenoptik.com/-/media/websitedocuments/ir/berichte-und-tabellen/2021/online-gb/jenoptik-annual-report-2021.pdf",
+          "date": "2021",
+          "kind": "issuer_annual_report",
+          "finding": "Lines4388and5159confirmDecember2021refinancedsyndicatedfacilityincreasedEUR230mtoEUR400m. Sevenbanksunnamed; optionalEUR600mceilingnotcommittedamount. AGnotesidentifyJENOPTIKAGasborrower. SeparateMarch2021promissoryplacementEUR400mequivalentincludesUSD59mtranches,soaggregatecannotbealloriginalEUR.",
+          "opened": true
+        }
+      ],
+      "candidates": [
+        {
+          "ready_for_writer_validation": true,
+          "round_key": "syndicated-credit-facility-2021",
+          "date": "2021-12",
+          "date_precision": "month",
+          "amount": 400000000,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "financing_type": "debt",
+          "record_kind": "credit_facility",
+          "closing_status": "signed",
+          "investors": [],
+          "source_index": 0,
+          "note": "Refinanced revolving facility, commitment EUR400m; utilisation is separate. Optional increase toEUR600m not included. Seven lendingbanks not named in checked paragraph."
+        }
+      ],
+      "holds": [
+        "Originalcurrencytranchesof2021Schuldscheinneedreconciliation;do not assign EUR400m equivalent plusUSD59masadditionaldouble-count. Earlierfacilitiesand2026drawdownsnotfullyaudited."
+      ]
+    },
+    {
+      "slug": "kara-dag",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "green-flag-ventures-investment-2024"
+      ],
+      "search_coverage": [
+        "UkrainianEnglishbroadfundinghistory2024-2026",
+        "Currentinvestorportfolio",
+        "Secondaryleadroleclaimsheld"
+      ],
+      "sources": [
+        {
+          "url": "https://www.greenflag.vc/portfolio/karadag",
+          "date": null,
+          "kind": "investor",
+          "finding": "CurrentportfolioheadernamesKaraDagwithinvestmentdates24Q2/25Q1. Profilevintage2024Q2.2025follow-ondatequarteronly;amountundisclosed. ExistingAugust2024announcementmaypostdateactualQ2investmentandisnotautomaticallywrong.",
+          "opened": true
+        },
+        {
+          "url": "https://inventure.com.ua/en/news/world/green-flag-ventures-invests-in-ukraines-startup-karadag-to-revolutionize-counter-drone-warfare",
+          "date": "2024",
+          "kind": "secondary_index",
+          "finding": "SyndicatedreleaseclaimsGreenFlaglead;notoriginalleadroleverification.",
+          "opened": false
+        }
+      ],
+      "candidates": [
+        {
+          "ready_for_writer_validation": true,
+          "round_key": "green-flag-follow-on-2025",
+          "date": "2025",
+          "date_precision": "year",
+          "source_date_precision": "quarter_2025_Q1",
+          "amount": null,
+          "currency": null,
+          "amount_basis": "undisclosed",
+          "financing_type": "equity",
+          "record_kind": "investment_disclosure",
+          "closing_status": "closed",
+          "investors": [
+            {
+              "name": "Green Flag Ventures",
+              "slug": "green-flag-ventures",
+              "role": "participant"
+            }
+          ],
+          "source_index": 0,
+          "note": "Currentinvestorportfolioexplicitlylistsadditionalinvestmentin2025Q1;amountandtermsundisclosed. Yearprecisionretainedbecauseimporterdatescannotencodequarter;Q1statedinnote. Noamountorleadroleinferred."
+        }
+      ],
+      "holds": [
+        "2024investmentquartervsAugustannouncementsemanticsneedretain;source-indexleadclaimnotupgradedwithoutoriginal. NoexhaustiveBrave1awardhistory."
+      ]
+    },
+    {
+      "slug": "kirintec",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "bae-systems-acquisition-2024"
+      ],
+      "search_coverage": [
+        "Broadhistoricalfinancingandownership",
+        "Issuerabout/legalidentity",
+        "CompaniesHouserecordssearch",
+        "BAEfilingreconciliation"
+      ],
+      "sources": [
+        {
+          "url": "https://www.kirintec.com/about/",
+          "date": null,
+          "kind": "issuer",
+          "finding": "Founded2008;ownedbyBAESystems;legalKirintecLtdcompany06699502. Noearlierfinancingeventdisclosed.",
+          "opened": true
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/06699502/filing-history",
+          "date": null,
+          "kind": "registry_index",
+          "finding": "BAESystemsHoldingsPSCeffective3Sep2024;nooriginalfinancingeventestablishedfromindex.",
+          "opened": false
+        },
+        {
+          "url": "https://www.investegate.co.uk/announcement/rns/bae-systems--ba./final-results/8742430",
+          "date": "2025",
+          "kind": "issuer_regulatory_index",
+          "finding": "TotalGBP282mincludesGBP30mcontingentconsideration;existingGBP252mgrosscashconsiderationpreserved,notreplacewithcontingenttotal.",
+          "opened": false
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "Earliercapitaleventsnotestablished;ownershipregistryaloneisnotround. ExistinggrossGBP252mnotnetGBP212morcontingentGBP282m."
+      ]
+    },
+    {
+      "slug": "rinicom",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "atom-innovate-uk-grant-2022",
+        "escort-horizon-guarantee-award-2024",
+        "sureal-innovate-uk-grant-2021"
+      ],
+      "search_coverage": [
+        "Prior3UKRIawardsreconciled",
+        "BroadEUgrantsearch",
+        "EUACCusedonlyfordiscovery",
+        "3originalCORDIScurrentbeneficiaryallocationsopened"
+      ],
+      "sources": [
+        {
+          "url": "https://cordis.europa.eu/project/id/101309528",
+          "date": "2026-09-09",
+          "kind": "grantor_registry",
+          "finding": "REASON:ECsignature9Sep2026;RINICOMLIMITEDnetEUcontributionEUR463312.50,costEUR661875notgrant;consortiumEUtotalEUR4996997.63excluded.",
+          "opened": true
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101293242",
+          "date": "2026-04-29",
+          "kind": "grantor_registry",
+          "finding": "PIONEERS6G:ECsignature29Apr2026;RINICOMLIMITEDnetEUcontributionEUR356400,cost396000excluded.",
+          "opened": true
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101236387",
+          "date": "2025-08-06",
+          "kind": "grantor_registry",
+          "finding": "INSTANT:ECsignature6Aug2025;RINICOMLIMITEDnetEUcontributionEUR170340;projectstarts1Jan2026notawarddate.",
+          "opened": true
+        },
+        {
+          "url": "https://www.euacc.ai/organisations/rinicom-limited-999721189",
+          "date": null,
+          "kind": "discovery_aggregator",
+          "finding": "20projectcandidates,notverifiedaggregateEUR6.8m;older17needoriginaleventreview.",
+          "opened": true
+        },
+        {
+          "url": "https://gtr.ukri.org/organisation/E5540B68-DE9F-4D20-B982-F06F31C3586A?fetchSize=100&fields=&page=1&selectedFacets=&selectedSortOrder=ASC&selectedSortableField=score&term=&type=",
+          "date": null,
+          "kind": "grantor_redirect",
+          "finding": "LegacyorganisationURLnowredirectstogenericallorganisations;notproofexistingawardfactswrong;awardindividualrecordretrievalneeded.",
+          "opened": true
+        }
+      ],
+      "candidates": [
+        {
+          "ready_for_writer_validation": true,
+          "round_key": "eu-reason-101309528",
+          "date": "2026-09-09",
+          "amount": 463312.5,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "financing_type": "grant",
+          "record_kind": "round",
+          "closing_status": "signed",
+          "investors": [
+            {
+              "name": "European Union",
+              "slug": "european-union",
+              "role": "grantor"
+            }
+          ],
+          "source_index": 0,
+          "note": "Beneficiary-specificnetEUallocation,notconsortiumtotalorprovenpaidcash. DateisECsignature. RINICOMLIMITEDaddressMorecambeRoadRiverwayHouseLancastermatchesissuer."
+        },
+        {
+          "ready_for_writer_validation": true,
+          "round_key": "eu-pioneers-6g-101293242",
+          "date": "2026-04-29",
+          "amount": 356400,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "financing_type": "grant",
+          "record_kind": "round",
+          "closing_status": "signed",
+          "investors": [
+            {
+              "name": "European Union",
+              "slug": "european-union",
+              "role": "grantor"
+            }
+          ],
+          "source_index": 1,
+          "note": "Beneficiary-specificnetEUallocation,notconsortiumtotalorprovenpaidcash. DateisECsignature. RINICOMLIMITEDaddressMorecambeRoadRiverwayHouseLancastermatchesissuer."
+        },
+        {
+          "ready_for_writer_validation": true,
+          "round_key": "eu-instant-101236387",
+          "date": "2025-08-06",
+          "amount": 170340,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "financing_type": "grant",
+          "record_kind": "round",
+          "closing_status": "signed",
+          "investors": [
+            {
+              "name": "European Union",
+              "slug": "european-union",
+              "role": "grantor"
+            }
+          ],
+          "source_index": 2,
+          "note": "Beneficiary-specificnetEUallocation,notconsortiumtotalorprovenpaidcash. DateisECsignature. RINICOMLIMITEDaddressMorecambeRoadRiverwayHouseLancastermatchesissuer."
+        }
+      ],
+      "holds": [
+        "Remaining17EUprojectoriginalsnotaudited;existingUKRIprojectstartdatesmightnotbeawarddates,soflagdate-semanticsreviewinstead ofsilentcorrection."
+      ]
+    },
+    {
+      "slug": "saab",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "revolving-credit-facility-2025",
+        "rights-issue-2018"
+      ],
+      "search_coverage": [
+        "Existingrights/RCFreconciled",
+        "Latestissuerdebtmarket",
+        "Original2026signednoteterms",
+        "NIBlenderloanrecord2025",
+        "Annual2025drawdownsemantics"
+      ],
+      "sources": [
+        {
+          "url": "https://www.saab.com/contentassets/325fb0f8ee2b4a428bec4f53238e09ca/project-century---pricing-supplement-signed.pdf",
+          "date": "2026-09-21",
+          "kind": "issuer_signed_pricing_supplement",
+          "finding": "SaabAB(publ)issuer;EUR300mnominal;issue23Sep2026;price99.982%;maturity23Sep2033. JointLeadManagersdistributionrolesnotinvestmentleadroles.",
+          "opened": true
+        },
+        {
+          "url": "https://www.saab.com/investors/debt-market",
+          "date": null,
+          "kind": "issuer",
+          "finding": "ListedEUR300mEMTN140confirmsissuedbond;EUR2bnprogrammelimitnotfinancing. Lists11relationshipbanksinexisting2025SEK6bnRCF.",
+          "opened": true
+        },
+        {
+          "url": "https://www.mannheimerswartling.se/en/assignment/saab-establishes-an-emtn-programme-and-issues-its-first-eur-denominated-notes/",
+          "date": "2026-09-21",
+          "kind": "transaction_counsel",
+          "finding": "Advisedissuer;confirmsEUR300mSeptembernotes.",
+          "opened": true
+        },
+        {
+          "url": "https://www.nib.int/loan/saab-ab-78681",
+          "date": "2025-12-18",
+          "kind": "lender",
+          "finding": "Signed9yrSaabABloanSEK1200m;EUR109.4mconvertedsummarynotseparatecurrencyamount.",
+          "opened": true
+        },
+        {
+          "url": "https://www.nib.int/news/nibs-first-defence-loan-in-sweden-to-finance-saab-rd",
+          "date": "2025-12-18",
+          "kind": "lender",
+          "finding": "OriginalcurrencySEK1.2bnloanagreementforNordicR&D.",
+          "opened": true
+        },
+        {
+          "url": "https://www.saab.com/globalassets/corporate/investor-relations/annual-report/2026/saab-ar25-eng.pdf",
+          "date": "2025",
+          "kind": "issuer_annual_report",
+          "finding": "NIBSEK600mdrawnDecember2025and600mexpectedJan2026partofsame1.2bnfacility;notduplicateevent.",
+          "opened": true
+        }
+      ],
+      "candidates": [
+        {
+          "ready_for_writer_validation": true,
+          "round_key": "eurobond-xs3515071101-2026",
+          "date": "2026-09-23",
+          "date_kind": "issue_date",
+          "amount": 300000000,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "financing_type": "debt",
+          "record_kind": "round",
+          "closing_status": "closed",
+          "investors": [],
+          "source_index": 0,
+          "note": "EUR300maggregateNOMINALnotesissued23Sep2026at99.982%issueprice;notclaimofnetcashproceeds.4.25%coupon,maturity23Sep2033. Managersnotshownasfundinginvestors."
+        },
+        {
+          "ready_for_writer_validation": true,
+          "round_key": "nib-rd-loan-2025",
+          "date": "2025-12-18",
+          "amount": 1200000000,
+          "currency": "SEK",
+          "amount_basis": "announced_round_size",
+          "financing_type": "debt",
+          "record_kind": "credit_facility",
+          "closing_status": "signed",
+          "investors": [
+            {
+              "name": "Nordic Investment Bank",
+              "role": "lender"
+            }
+          ],
+          "source_index": 3,
+          "note": "Signed9yrSEK1.2bnfacility. EUR109.4misconvertedsummaryandnotasecondloan. December600mdrawandJanuary600mremainingtranchepartofsamefacility."
+        }
+      ],
+      "participant_candidates": {
+        "existing_round_key": "revolving-credit-facility-2025",
+        "role": "lender",
+        "source_index": 1,
+        "names": [
+          "BNP Paribas",
+          "Citibank",
+          "Commerzbank",
+          "Crédit Agricole",
+          "Danske Bank",
+          "Deutsche Bank",
+          "Handelsbanken",
+          "JP Morgan",
+          "OP Group",
+          "Skandinaviska Enskilda Banken",
+          "Swedbank"
+        ],
+        "note": "IssuerexplicitRCFbankgroup;individualcommitmentsandarrangerrolesunknown. Matchcuratedprofilesfirst."
+      },
+      "holds": [
+        "EarlierSEKMTN/privateplacementsandhistoricalNIBfacilitiesnotfullyreconciled;programmeceilingsnotissuedamounts. Nominalbondamountmustremainlabelledasnominal."
+      ]
+    },
+    {
+      "slug": "ubiq-aerospace",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "statkraft-financing-2023"
+      ],
+      "search_coverage": [
+        "2020Lupaholdcheckedwithoutinventingamount",
+        "Issuernewspage/currentgrants",
+        "Issuer2020ResearchCouncilgrantoriginal",
+        "Broadfundinghistorycandidatecomparison"
+      ],
+      "sources": [
+        {
+          "url": "https://www.ubiqaerospace.com/news/ubiq-aerospace-launches-uav-mission-planning-project-with-support-from-research-council-of-norway",
+          "date": "2020-09-29",
+          "kind": "issuer",
+          "finding": "ResearchCouncilNorwaygrantedNOK14.9mtoUbiqAerospace;programmeNOK480mexcluded;NTNUcollaborationnotdeductedorassignedwithoutallocation.",
+          "opened": true
+        },
+        {
+          "url": "https://www.ubiqaerospace.com/news/ubiq-aerospace-secures-nok-9-1-million-grant-for-ice-protection-technology-in-zero-emission-aircraft",
+          "date": "2024-05-07",
+          "kind": "issuer",
+          "finding": "AwardedNOK9.1mresearchgrantfromNorwegianResearchCouncilforzeroemissionaircrafticeprotection.",
+          "opened": true
+        },
+        {
+          "url": "https://www.ubiqaerospace.com/news",
+          "date": null,
+          "kind": "issuer_news",
+          "finding": "Currentnewspageshowsgrants,partnercontractsand2023Statkraftinvestment;partnerprocurementnotinvestment.",
+          "opened": true
+        },
+        {
+          "url": "https://www.auvsi.org/news/ubiq-aerospace-secures-financing-to-continue-development-of-autonomous-icing-protection-solution-for-uas/",
+          "date": "2020-11-03",
+          "kind": "secondary_index",
+          "finding": "SecondseedLupaInvestmentHoldingsreported;stillnotoriginalissuer/investorfinancingrelease.",
+          "opened": false
+        }
+      ],
+      "candidates": [
+        {
+          "ready_for_writer_validation": true,
+          "round_key": "research-council-mission-planning-grant-2020",
+          "date": "2020-09-29",
+          "amount": 14900000,
+          "currency": "NOK",
+          "amount_basis": "announced_round_size",
+          "financing_type": "grant",
+          "record_kind": "round",
+          "closing_status": "announced",
+          "investors": [
+            {
+              "name": "Research Council of Norway",
+              "role": "grantor"
+            }
+          ],
+          "source_index": 0,
+          "note": "IssuerstatesNOK14.9mhasbeengrantedtoUbiq;dateissuerannouncement,notprojectstart. NOK480mprogrammeexcluded;notpaidcashclaim."
+        },
+        {
+          "ready_for_writer_validation": true,
+          "round_key": "research-council-zero-emission-grant-2024",
+          "date": "2024-05-07",
+          "amount": 9100000,
+          "currency": "NOK",
+          "amount_basis": "announced_round_size",
+          "financing_type": "grant",
+          "record_kind": "round",
+          "closing_status": "announced",
+          "investors": [
+            {
+              "name": "Research Council of Norway",
+              "role": "grantor"
+            }
+          ],
+          "source_index": 1,
+          "note": "IssuerawardannouncementNOK9.1m;paymenttimingnotpublic."
+        }
+      ],
+      "holds": [
+        "2019/2020Lupaseedprimarysourcesnotlocated;EUgrantandInnovationNorwayawardsfromaggregatorsneedoriginals;Statkraft2023amountstillunknown."
+      ]
+    }
+  ],
+  "timing": {
+    "note": "Parentmeasuresoverallrunandpublication;noend-to-endthroughputorspeedupclaim."
+  }
+}

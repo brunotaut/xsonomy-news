@@ -1,0 +1,367 @@
+{
+  "batch": 54,
+  "lane": "b",
+  "checked_at": "2026-11-05",
+  "read_only": true,
+  "identities_reconciled": 6,
+  "newly_completed_bounded_reviews": 0,
+  "partial_reviews": 6,
+  "baseline": "Current main dedicated instructions, funding state and pilot evidence read first. Current DB rounds, participant sources and company research notes queried and reconciled before discovery. Existing facts preserved; no DB/repo writes.",
+  "companies": [
+    {
+      "slug": "impianti",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "euronext-growth-ipo-2022 EUR1750000",
+        "ipo-greenshoe-2023 EUR250000"
+      ],
+      "searches": [
+        "Impianti SpA aumento capitale finanziamento2026 2025 warrant2024",
+        "site.impianti.eu 2025 300.000"
+      ],
+      "sources": [
+        {
+          "url": "https://impianti.eu/en/financial-press-releases/",
+          "opened": true,
+          "finding": "Issuer timeline identifies latest2026results, earliercapital andwarrant disclosures; contractawards excluded."
+        },
+        {
+          "url": "https://impianti.eu/wp-content/uploads/Impianti-comunicato-29_09_2025.pdf",
+          "opened": true,
+          "date": "2025-09-29",
+          "type": "issuer_financial_release",
+          "finding": "Issuer reports paidEUR300000 by shareholdersSimoneLoRusso andSimonaCastelli in advanceoffuturecapital increase. Separate furtherup-to300000 is conditionalcommitment, excluded."
+        },
+        {
+          "url": "https://impianti.eu/wp-content/uploads/18.12.2023_CS_Impianti_Chiusura-Primo-Periodo-Warrant.pdf",
+          "opened": true,
+          "date": "2023-12-18",
+          "type": "issuer",
+          "finding": "375warrants exercised,375newshares subscribed atEUR1.32/share. Derivedcash375*1.32=EUR495. No investor names."
+        },
+        {
+          "url": "https://impianti.eu/wp-content/uploads/CS_Impianti_Chiusura-Secondo-Periodo-di-Esercizio-Warrant_def-1.pdf",
+          "opened": true,
+          "date": "2024-12-16",
+          "type": "issuer",
+          "finding": "No2024warrants exercised. Scoped explicitnonexercise, notzerootherfunding."
+        },
+        {
+          "url": "https://impianti.eu/wp-content/uploads/CS_Impianti-Variazione-Capitale-Sociale_ENG-1.pdf",
+          "opened": true,
+          "date": "2026-01-15",
+          "type": "issuer",
+          "finding": "375newshares paidatEUR1.60/share consequent2025warrantexercise; refers22December2025release. DerivedproceedsEUR600, notnominalcapital7.5."
+        },
+        {
+          "url": "https://impianti.eu/wp-content/uploads/CS_Impianti_1H2026.pdf",
+          "opened": true,
+          "date": "2026-09-24",
+          "type": "issuer",
+          "finding": "Current2026results stilldescribeconditionalup-toEUR300000 shareholdercommitment; not evidenceofadditionalpayment. 2025cashflow paidcapital300599 roundedaccountingnotfreshfinancing."
+        }
+      ],
+      "candidates": [
+        {
+          "event_key": "warrant-exercise-2023",
+          "financing_type": "equity",
+          "record_kind": "round",
+          "announced_date": "2023-12-18",
+          "stage": "Warrant exercise",
+          "amount": 495,
+          "currency": "EUR",
+          "amount_basis": "closed_amount",
+          "closing_status": "closed",
+          "participants": [],
+          "source_url": "https://impianti.eu/wp-content/uploads/18.12.2023_CS_Impianti_Chiusura-Primo-Periodo-Warrant.pdf",
+          "ready_for_import": true,
+          "note": "Derivedcash375newshares*EUR1.32subscriptionprice. Subscriberidentitiesnotdisclosed."
+        },
+        {
+          "event_key": "shareholder-capital-advance-2025",
+          "financing_type": "undisclosed",
+          "record_kind": "investment_disclosure",
+          "announced_date": "2025-09-29",
+          "stage": "Shareholder advance toward future capital increase",
+          "amount": 300000,
+          "currency": "EUR",
+          "amount_basis": "closed_amount",
+          "closing_status": "closed",
+          "participants": [
+            {
+              "name": "Simone Lo Russo",
+              "role": "participant"
+            },
+            {
+              "name": "Simona Castelli",
+              "role": "participant"
+            }
+          ],
+          "source_url": "https://impianti.eu/wp-content/uploads/Impianti-comunicato-29_09_2025.pdf",
+          "ready_for_import": true,
+          "note": "Paidadvance in conto futuro aumento capitale, not yetnewshareissuance. Announcementdateused; actualpaymentdayunknown. Individualcontributionsundisclosed. Additionalconditionalup-toEUR300000excluded. Financingtypeleftundisclosedtoavoidinventingrepaymentorconversionterms."
+        },
+        {
+          "event_key": "warrant-exercise-2025",
+          "financing_type": "equity",
+          "record_kind": "round",
+          "announced_date": "2025-12",
+          "stage": "Warrant exercise",
+          "amount": 600,
+          "currency": "EUR",
+          "amount_basis": "closed_amount",
+          "closing_status": "closed",
+          "participants": [],
+          "source_url": "https://impianti.eu/wp-content/uploads/CS_Impianti-Variazione-Capitale-Sociale_ENG-1.pdf",
+          "ready_for_import": true,
+          "note": "375newshares*EUR1.60, paid. Source15Jan2026refers22Dec2025release; monthprecisionretainedwithoutconfusingregistrationwithcashdate."
+        }
+      ],
+      "holds": [
+        "Needoriginal22Dec2025closureandearlierbankfacilityreviewbeforeboundedcomplete.",
+        "Unconditional300kpaid versusadditionalconditional300k keptdistinct; don'tdoublecount latestcashfloworcontractawards."
+      ]
+    },
+    {
+      "slug": "infozahyst",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "foreign-investment-2021 EUR2000000 undisclosedinstrument"
+      ],
+      "searches": [
+        "Infozahyst investment financing grants2026 2025 2021",
+        "Infozahyst інвестиції2025 2026 грант",
+        "site.mits.capital Infozahyst investmentIndustries"
+      ],
+      "sources": [
+        {
+          "url": "https://infozahyst.com/en/infozahyst-received-2-mln-euros-of-foreign-investment/",
+          "opened": true,
+          "date": "2021-04-20",
+          "type": "issuer",
+          "finding": "ExistingEUR2m isdevelopmentfunds receivedaroundIDEX2021, notacquisition/exclusiverights; investorunnamed."
+        },
+        {
+          "url": "https://mits.capital/news/mits-capital-launches-new-danish-ukrainian-defence-company-mits-industries-to-strengthen-european-security/",
+          "opened": true,
+          "date": "2025-09-19",
+          "type": "investment_group_original",
+          "finding": "Infozahyst includedinproposedMITSIndustries mergerplatform; MITSCapitalcoordinator/catalyst/investor. Explicitfootnotesays transactionremainssubjecttodefinitiveagreements. Notclosedcompanyround."
+        },
+        {
+          "url": "https://dou.ua/lenta/interviews/infozahyst-interview-defence/?from=similar_posts_blogs",
+          "opened": false,
+          "access": "search_index",
+          "finding": "CEOinterviewmention largerholdingfunding andplannedjoiningMITSIndustries; preciseissuerinvestmentinstrument/date/amountnotestablished."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "MITSIndustries formation/proposedmergerdoesnotestablishcompletedInfozahystfinancing; parentplatformrevenueprojectionUSD200m isnotfunding.",
+        "2021investor andinstrumentremainunknown; nore-labelingtobankedventureequity.",
+        "Needlaterdefinitiveagreement/closingandholdingcontributionevidence."
+      ]
+    },
+    {
+      "slug": "innov-atm",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "irdinov-equity-2016 EUR500000",
+        "groupe-adp-irdinov-round-2018 EUR1000000",
+        "dronemed-financing-2025 EUR5000000"
+      ],
+      "searches": [
+        "InnovATM financement levéefonds2026 2025 5millions2020 2023"
+      ],
+      "sources": [
+        {
+          "url": "https://www.innov-atm.com/about-us/",
+          "opened": true,
+          "type": "issuer_history",
+          "finding": "First2016 andsecond2018equityrounds corroborated; current2025USSPmilestoneisnotfinancing."
+        },
+        {
+          "url": "https://www.irdi.fr/innovatm/",
+          "opened": true,
+          "date": "2019-01-09",
+          "type": "investor",
+          "finding": "SameEUR1m2018round:IRDInov,Bpifrance,ADP. PageJanuary2019islaterpublication, notdistinctround."
+        },
+        {
+          "url": "https://presse.groupeadp.fr/wp-content/uploads/2018/12/dd534f66a03fe19998ab0cab3e08d7d9.pdf",
+          "opened": true,
+          "date": "2018-11-03",
+          "type": "investor",
+          "finding": "PDFbodyexplicitly3novembre2018despiteDecemberuploadpath. ExistingdateNov3supported; norewritefromsecondaryDecemberdates."
+        },
+        {
+          "url": "https://www.innov-atm.com/innovatm-securise-5-me-pour-accelerer-le-deploiement-de-dronemed-au-coeur-des-etablissements-de-sante/",
+          "opened": true,
+          "type": "issuer",
+          "finding": "ExistingEUR5mclosedfinancingverified, nofinancier/instrumentsplitnamed."
+        },
+        {
+          "url": "https://www.touleco.fr/Drone-Les-ambitions-d-Innov-ATM-a-l-international%2C38707",
+          "opened": false,
+          "access": "search_index",
+          "date": "2023-07-09",
+          "finding": "Thirdfundraiseexpected/boucléeàlafindelannéeuncleartense; originalcompany/transactionpartyandamountneeded."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "2023thirdroundsecondaryclaimnotreconciledto2025EUR5mclose; preserveholdinsteadofduplicating.",
+        "2025sourcefinanciersanddebt/equity/grantcomponentsremainundisclosed."
+      ]
+    },
+    {
+      "slug": "inster",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "grupo-oesia-acquisition-2022 undisclosedconsideration"
+      ],
+      "searches": [
+        "Inster GrupoOesia financiación subvención2026 2025 ampliacióncapital",
+        "site.grupooesia.com Insterfinanciaciónsubvención2026",
+        "site.inster.es ayudasfinanciacion"
+      ],
+      "sources": [
+        {
+          "url": "https://grupooesia.com/wp-content/uploads/dossier-corporativo-grupo-oesia-2022.pdf",
+          "opened": false,
+          "access": "403",
+          "finding": "Existingcuratedsourcepreserved, failedfetchnotevidencetorejectevent."
+        },
+        {
+          "url": "https://www.europapress.es/economia/noticia-grupo-oesia-crece-comunicaciones-defensa-compra-inster-20220706133515.html",
+          "opened": false,
+          "access": "search_index",
+          "date": "2022-07-06",
+          "finding": "ExistingacquisitionfromCPSreconfirmedbysearch."
+        },
+        {
+          "url": "https://www.eib.org/en/press/all/2025-530-eib-and-grupo-oesia-sign-eur30-million-loan-to-boost-european-research-development-and-innovation-in-security-and-defence?lang=es%3Futm_source%3Dsocialmedia",
+          "opened": false,
+          "access": "search_index",
+          "finding": "EUR30mEIBborrowerGrupoOesia; Insterlistedasbranddoesnotassignparentloanproceeds tosubsidiary."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "Originalparentcorporatedossierunavailabletoday; preserve2022acquisitionandunknownconsideration.",
+        "Completelegalentitygrantregisterandoriginalbeneficiaryallocationreview; similarlynamedInsterMantenimentsexcluded.",
+        "ParentEIBloan/groupcapexnotInsterfinancing."
+      ]
+    },
+    {
+      "slug": "intelligent-energy",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "convertible-loan-notes-2013 GBP32500000",
+        "gic-equity-placement-2014 approxGBP37800000",
+        "gic-warrant-exercise-2014 GBP16600000",
+        "london-ipo-2014 GBP55000000",
+        "meditor-acquisition-2017 GBP19500000 secondary"
+      ],
+      "searches": [
+        "IntelligentEnergy fundinginvestment2016 2017 Meditor30million2026",
+        "site.intelligent-energy.com 2016 30million",
+        "site.intelligent-energy.com 17million2025"
+      ],
+      "sources": [
+        {
+          "url": "https://shareprices.com/rns/results-for-14-months-ended-30-november-2017-65royhwpc3mvfis/",
+          "opened": true,
+          "date": "2018-03-29",
+          "type": "historical_issuer_RNS",
+          "finding": "OldIntelligentEnergyHoldingsplc(nowLB-shell)issuedGBP30m13%securedconvertibleredeemablenotes17May2016. 2017businesssaleleftlistedparentasstandalonecompany; currentIE Ltdisdistinctoperatingissuer."
+        },
+        {
+          "url": "https://www.intelligent-energy.com/news/hydrogen-lift-off-intelligent-energy-secures-17m-to-power-zero-emission-flight/",
+          "opened": true,
+          "date": "2025-06-17",
+          "type": "issuer",
+          "finding": "HEIGHTS£17mprogramme governmentATIbacked withuniversity/MTCpartners; exactIEbeneficiaryshareversusprogrammebudgetsnotexplicitlyestablished."
+        },
+        {
+          "url": "https://www.intelligent-energy.com/about-ie-intelligent-energy/our-history/",
+          "opened": false,
+          "access": "search_index",
+          "finding": "CurrenthistoryMeditorownershipsinceOctober2017 confirmsoperatingbusinesscontinuity, notlegalidentityofoldlistedfinancingissuer."
+        }
+      ],
+      "candidates": [
+        {
+          "event_key": "secured-convertible-notes-2016",
+          "financing_type": "convertible",
+          "record_kind": "round",
+          "announced_date": "2016-05-17",
+          "amount": 30000000,
+          "currency": "GBP",
+          "amount_basis": "closed_amount",
+          "closing_status": "closed",
+          "issuer": "Intelligent Energy Holdings plc (later LB-shell plc), not automatically current Intelligent Energy Ltd",
+          "participants": [],
+          "source_url": "https://shareprices.com/rns/results-for-14-months-ended-30-november-2017-65royhwpc3mvfis/",
+          "ready_for_import": false,
+          "note": "Holdexacteconomic/legalissuerattributionbeforeassigningtocurrentcohortrecord. Meditorfundisreportedbutexactparticipantallocationneedsoriginalnotesreview."
+        }
+      ],
+      "holds": [
+        "OldlistedHoldingsplc versuscurrentoperatingLtdissuerrequireslegacyrecordmappingreview; don'tblindlyadd2016financing.",
+        "2025HEIGHTSprogramme17mnotassignedalltoIE; UKRIbeneficiaryawardsneeded.",
+        "Numeroushistoricalgrants/earlierventure2005/2007/2012claimsremainunreconciled."
+      ]
+    },
+    {
+      "slug": "inzpire",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "qinetiq-majority-acquisition-2018 GBP22900000 secondary",
+        "qinetiq-remaining-stake-2020 GBP3900000 secondary"
+      ],
+      "searches": [
+        "Inzpire investmentfunding acquisitiongrantsQinetiq2026 2025",
+        "Inzpire grantfundingDASA2016",
+        "Inzpire456grant"
+      ],
+      "sources": [
+        {
+          "url": "https://www.inzpire.com/news/inzpire-wins-funding-for-next-generation-training-solutions",
+          "opened": true,
+          "date": "2016-11-17",
+          "type": "issuer",
+          "finding": "GHOSTphase1support2015 andphase2support2016; nopreciseamount; pagedate17NovbutbodysaysFarnboroughannouncement."
+        },
+        {
+          "url": "https://www.gov.uk/government/news/winners-announced-for-defence-growth-partnership-innovation-challenge",
+          "opened": true,
+          "date": "2016-06-29",
+          "type": "government_award",
+          "finding": "Phase2GHOSTfundingforInzpireandCloseAirSolutionscombinedalmostGBP1m,explicitSBRIcontractsnotgrants. Do notassigncombinedbudgetorsecondaryGBP456kwithoutoriginalaward."
+        },
+        {
+          "url": "https://www.gov.uk/government/news/a-graphically-hosted-objective-solution-for-training",
+          "opened": false,
+          "access": "search_index",
+          "finding": "CDEfunded2016case studyestablishessupportbutnoindividualamount."
+        },
+        {
+          "url": "https://www.inzpire.com/who-we-are",
+          "opened": false,
+          "access": "search_index",
+          "finding": "WhollyownedQinetiqoperatingcompany; customertrainingcontractsnotexternalfinancing."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "2015/2016GHOSTsupportisSBRIR&Dcontract, notautomaticallygrant/equity; legaldatamodelandcompanyamountneeded.",
+        "SecondaryGBP456kgrantlabelunverified; consortium/programmebudgetexcluded.",
+        "Customercontractawardsincluding2022SAGEgunnerysimulatornotautomaticallyinvestmentrounds."
+      ]
+    }
+  ],
+  "timing": {
+    "note": "Parentmeasuresoverallactiveend-to-endtime. No concurrency/speedupclaim."
+  }
+}

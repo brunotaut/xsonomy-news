@@ -1,0 +1,365 @@
+{
+  "batch": 54,
+  "lane": "d",
+  "checked_at": "2026-11-05",
+  "read_only": true,
+  "identities_researched": 6,
+  "newly_completed_bounded_reviews": 0,
+  "source_review_partial": 6,
+  "prior_evidence": "Read current main autonomous instructions, FUNDING_STATE, pilot JSON before discovery; no direct pilot identity among six. Production events, source URLs, participants and coverage notes queried first. Existing independent dispositions preserved. No DB or repository writes.",
+  "companies": [
+    {
+      "slug": "uforce",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "seed-2026 USD50000000, Shield/Lakestar co-lead and Ballistic participant"
+      ],
+      "sources": [
+        {
+          "url": "https://shieldcap.com/newsroom/investing-in-uforce",
+          "opened": true,
+          "kind": "investor_original",
+          "date": "2026-03-05",
+          "finding": "Confirms co-lead Shield and Lakestar. Does not disclose additional investor set or later financing."
+        },
+        {
+          "url": "https://www.caplight.com/company/uforce",
+          "opened": false,
+          "access": "search_index",
+          "kind": "aggregator_candidate",
+          "finding": "Indexed claim Series A8September2026 and Valor Equity Partners; not original verified."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "Later September2026 SeriesA candidate requires original issuer/investor confirmation; source index not fact. D3/Expeditions/IronWolf generic reported backing not assigned to seed without event evidence.",
+        "Consolidated nine-company platform funding does not automatically describe subsidiaries' standalone financing."
+      ]
+    },
+    {
+      "slug": "unifly",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "series-a-2016 amountnull Terra participant",
+        "series-b-2019 amountnull DFS/FPIM",
+        "series-b-plus-2022 amountnull Terra/JOIN"
+      ],
+      "sources": [
+        {
+          "url": "https://terra-drone.net/global/2023/08/22/terra-drone-acquires-a-majority-share-of-unifly-the-worlds-leading-provider-of-unmanned-aircraft-system-traffic-management-utm-technology-with-a-strategic-aim-to-enhance-global-drone-and-urban-a/",
+          "opened": true,
+          "kind": "acquirer_original",
+          "date": "2023-08-22",
+          "finding": "Acquired majority to51%. Original2016 SeriesA leadTerra withQBIC/PMV. Retrospective calls SeriesB2018 versus issuerhistory2019; preserve date conflict pending close/extension reconciliation."
+        },
+        {
+          "url": "https://terra-drone.net/global/2019/07/04/terra-drone-corporation-adds-to-uniflys-19-3-million-series-b/",
+          "opened": true,
+          "kind": "investor_original",
+          "date": "2019-07-04",
+          "finding": "Confirms SeriesB completedUSD19.3m andTerra continued investment. USD7.1m historicalSeriesA aggregate andUSD5.6mTerra wording not standalone exacteventcheque. Linked issuerSeriesB URL404."
+        },
+        {
+          "url": "https://www.unifly.aero/news/global-drone-traffic-leader-unifly-raises-17m-19.3m-in-b-round",
+          "opened": false,
+          "access": "404",
+          "kind": "issuer_original_candidate",
+          "finding": "Cannot retrieve primaryoriginalcurrencyEUR17m/precisedate from this address."
+        },
+        {
+          "url": "https://www.atc-network.com/atc-news/unifly/unifly-raises-10-0-million-from-terra-drone-and-join",
+          "opened": true,
+          "kind": "issuer_submitted_release",
+          "date": "2022-05-04",
+          "finding": "Page From/ContactUnifly saysEUR10m funding fromTerra/JOIN. Would enrich existingSeriesB+nullamount with expected-old check, not createanotherround. Wording JOINapproveddecision not proof individualpayment."
+        }
+      ],
+      "candidates": [
+        {
+          "round_key": "terra-majority-acquisition-2023",
+          "stage": "Majority ownership acquisition",
+          "financing_type": "undisclosed",
+          "announced_date": "2023-08-22",
+          "amount": null,
+          "currency": null,
+          "amount_basis": "undisclosed",
+          "closing_status": "closed",
+          "record_kind": "investment_disclosure",
+          "investors": [
+            {
+              "slug": "terra-drone",
+              "name": "Terra Drone",
+              "role": "participant"
+            }
+          ],
+          "source_url": "https://terra-drone.net/global/2023/08/22/terra-drone-acquires-a-majority-share-of-unifly-the-worlds-leading-provider-of-unmanned-aircraft-system-traffic-management-utm-technology-with-a-strategic-aim-to-enhance-global-drone-and-urban-a/",
+          "note": "51% resultingstake; purchaseconsiderationundisclosed. Ownershipacquisition notprimarycompanyproceeds."
+        },
+        {
+          "existing_round_key": "series-a-2016",
+          "action": "nonconflicting_participant_additions",
+          "participants": [
+            {
+              "name": "Qbic",
+              "role": "participant"
+            },
+            {
+              "name": "PMV",
+              "role": "participant"
+            }
+          ],
+          "source_url": "https://terra-drone.net/global/2023/08/22/terra-drone-acquires-a-majority-share-of-unifly-the-worlds-leading-provider-of-unmanned-aircraft-system-traffic-management-utm-technology-with-a-strategic-aim-to-enhance-global-drone-and-urban-a/",
+          "note": "Sourceexplicitlypairswith2016SeriesA; currentTerra participant→lead requires explicit expected-old correction rather than silentupdate."
+        }
+      ],
+      "correction_candidates": [
+        {
+          "existing_round_key": "series-b-plus-2022",
+          "expected_old": {
+            "amount": null,
+            "currency": null,
+            "announced_date": "2022"
+          },
+          "supported_new": {
+            "amount": 10000000,
+            "currency": "EUR",
+            "announced_date": "2022-05-04"
+          },
+          "source_url": "https://www.atc-network.com/atc-news/unifly/unifly-raises-10-0-million-from-terra-drone-and-join",
+          "note": "Issuer-submittedrelease. Dateisannouncementnotclosing. Independentlycheckexactannouncedsource/correctionsemantics."
+        }
+      ],
+      "holds": [
+        "2018/2019SeriesB firstclose-versusfinalclose notyetfullyreconciled; amount enrichmentcannotbe duplicated asnewround.",
+        "EUR37mcumulativehistory notnewround.2015seed andgovernmentawards remainunreconciled."
+      ]
+    },
+    {
+      "slug": "verity",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "series-a-2018 USD18m",
+        "series-b-2023 CHF30m",
+        "series-b-extension-2023 USD11m"
+      ],
+      "sources": [
+        {
+          "url": "https://www.helvetica-capital.ch/en/portfolio/verity",
+          "opened": true,
+          "kind": "investor_original",
+          "finding": "HelveticaCapital minoritygrowthcapital firstinvestedMarch2018; amountundisclosed. Possibleoverlapwithexisting2018SeriesA, donotmanufactureseparateround."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20180605006104/en/",
+          "opened": false,
+          "access": "inaccessible",
+          "kind": "issuer_release_candidate",
+          "finding": "SyndicatedreleasecopiesexplicitlyFontinalislead2018; existingDBparticipantrolecanbecorrectedafterprimaryretrieval."
+        },
+        {
+          "url": "https://www.top100startups.swiss/Verity",
+          "opened": false,
+          "access": "search_index",
+          "kind": "ecosystem_candidate",
+          "finding": "CHF7.5mfunding30November2020candidate; secondarydataindicatesconvertiblenote; issuer/investorinstrumentoriginalrequired."
+        }
+      ],
+      "candidates": [
+        {
+          "action": "generic_relationship",
+          "investor_name": "Helvetica Capital",
+          "company_slug": "verity",
+          "source_url": "https://www.helvetica-capital.ch/en/portfolio/verity",
+          "note": "InvestorconfirmsminoritygrowthcapitalrelationshipsinceMarch2018. Do notattributeasJuneSeriesAparticipantwithoutsource."
+        }
+      ],
+      "holds": [
+        "2020CHF7.5mroundneedsoriginalandcurrency/instrumentconfirmation.",
+        "2026EICDELTAgrantselectionindexed; officialgrantagreementexactamount/date/beneficiarynotyetverified.",
+        "Fontinalislead2018andgenericHelveticaentryrequirecarefulrelationship/roundreconciliation; nofullexhaustionclaim."
+      ]
+    },
+    {
+      "slug": "vizgard",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "seed-2025 GBP1.5m"
+      ],
+      "sources": [
+        {
+          "url": "https://www.svv.ai/news/investmentvizgard",
+          "opened": true,
+          "kind": "investor_original",
+          "date": "2025-12-10",
+          "finding": "Selected2026DIANAcohort; companywillreceiveEUR100000. Futureawardstatementnotexecutedcashreceipt, exactagreement/legalinstrumentnotestablished."
+        },
+        {
+          "url": "https://www.fundingspotter.com/company/vizgard-ltd-13033810",
+          "opened": false,
+          "access": "search_index",
+          "kind": "registry_aggregator_candidate",
+          "finding": "ClaimsGBP652kJanuary2026seed; originalsubscriptiondocuments/proceedsnotchecked."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "DIANAcompanyspecificEUR100kannouncedfundingoriginalexistsbutexecutionandgrantinstrumentrequiregrantor/issuerconfirmation.",
+        "EarlierUKRI/2022awardsand2026shareallotmentsrequireoriginalaward/proceedsreview; GBP12mconsortiumbudgetnotassignedtocompany."
+      ]
+    },
+    {
+      "slug": "volocopter",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "series-c-first-close-2019",
+        "series-c-extension-2020",
+        "series-d-2021",
+        "series-e-first-signing-2022",
+        "series-e-second-signing-2022"
+      ],
+      "sources": [
+        {
+          "url": "https://www.volocopter.com/en/newsroom/flying-air-taxis-from-germany-conquer-the-world",
+          "opened": true,
+          "kind": "issuer_original",
+          "date": "2017-08-01",
+          "finding": "EUR25mfinancingagreedJuly2017; DaimlerandLukaszGadowskinamedwithoutleadroles. PublicationAugust1notinventedclosingdate."
+        },
+        {
+          "url": "https://www.volocopter.com/en/newsroom/vc-reorganization-success",
+          "opened": true,
+          "kind": "issuer_original",
+          "date": "2025-03-20",
+          "finding": "DiamondAircraftGroupAustria integratedVolocopter followinginsolvency. Consideration/instrumentnotdisclosedonissuerpage. Potentialassetpurchaseandnewlegalvehiclehold; notprimaryfunding."
+        },
+        {
+          "url": "https://tech.eu/2017/11/06/volocopter-new-funding",
+          "opened": false,
+          "access": "search_index",
+          "kind": "secondary_candidate",
+          "finding": "FurtherEUR5mIntel/btovclaimedNovember2017; originalconfirmationneeded."
+        }
+      ],
+      "candidates": [
+        {
+          "round_key": "financing-2017-07",
+          "stage": "Strategic financing",
+          "financing_type": "undisclosed",
+          "announced_date": "2017-08-01",
+          "amount": 25000000,
+          "currency": "EUR",
+          "amount_qualifier": "exact",
+          "amount_basis": "announced_round_size",
+          "closing_status": "signed",
+          "record_kind": "round",
+          "investors": [
+            {
+              "slug": "daimler",
+              "name": "Daimler",
+              "role": "participant"
+            },
+            {
+              "slug": "lukasz-gadowski",
+              "name": "Lukasz Gadowski",
+              "role": "participant"
+            }
+          ],
+          "source_url": "https://www.volocopter.com/en/newsroom/flying-air-taxis-from-germany-conquer-the-world",
+          "note": "Announcement1August2017describesJulyfinancingagreement. Stage/instrumentnotexplicitonthissource; nolead/individualchequesinferred."
+        }
+      ],
+      "holds": [
+        "2013crowdfundingand2017EUR5mextensionunverifiedoriginals.",
+        "2025reorganisationprimaryconfirmsintegrationbutbuyerlegalvehicle,assetperimeterandEUR10mreportedconsiderationneedofficialfilingbeforeattribution."
+      ]
+    },
+    {
+      "slug": "wingtra",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "series-a-2019 USD10m",
+        "series-b-2023 USD22m"
+      ],
+      "sources": [
+        {
+          "url": "https://cordis.europa.eu/project/id/832161",
+          "opened": true,
+          "kind": "grantor_registry",
+          "date": "2018-12-04",
+          "finding": "WingtraAGnetEUgrantEUR50000; ECsignature4December2018, projectstart1November2018notawarddate."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/967019",
+          "opened": true,
+          "kind": "grantor_registry",
+          "date": "2021-05-21",
+          "finding": "WingtraAGnetEUgrantEUR2478829.50; ECsignature21May2021. ProjectstartFebruary2021andOctober2020cutoffnotsignature. EUR3541185projectcostexcluded."
+        },
+        {
+          "url": "https://www.venturelab.swiss/Wingtra-Secures-a-23-Million-Series-B1-Funding-to-Revolutionize-Aerial-Data-Solutions",
+          "opened": false,
+          "access": "search_index",
+          "kind": "ecosystem_candidate",
+          "date": "2024-08-20",
+          "finding": "EUR23mSeriesB1nineparticipantsclaimed; amountvariessecondaryoverEUR23m/USD25m. Originalinvestorannouncementneeded."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/symbiavc_perspectives-symbiavc-activity-7229412238837661696-CIh0",
+          "opened": false,
+          "access": "search_index",
+          "kind": "investor_original_candidate",
+          "finding": "SymbiaVCindexedconfirmsB1participationbutnotamount/allsindicate; retrieveoriginalbeforeeventimport."
+        }
+      ],
+      "candidates": [
+        {
+          "round_key": "eu-wingtraone-832161-2018",
+          "stage": "EU SME phase1 grant",
+          "financing_type": "grant",
+          "announced_date": "2018-12-04",
+          "amount": 50000,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "closing_status": "signed",
+          "record_kind": "round",
+          "investors": [
+            {
+              "slug": "european-union",
+              "name": "European Union",
+              "role": "grantor"
+            }
+          ],
+          "source_url": "https://cordis.europa.eu/project/id/832161",
+          "note": "ECsignaturedate; beneficiarynetallocationnotpaymentdate orprojectcost."
+        },
+        {
+          "round_key": "eu-wingtraone-967019-2021",
+          "stage": "EU SME phase2 grant",
+          "financing_type": "grant",
+          "announced_date": "2021-05-21",
+          "amount": 2478829.5,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "closing_status": "signed",
+          "record_kind": "round",
+          "investors": [
+            {
+              "slug": "european-union",
+              "name": "European Union",
+              "role": "grantor"
+            }
+          ],
+          "source_url": "https://cordis.europa.eu/project/id/967019",
+          "note": "ECsignaturedate; originalgrantonly. EICFundequity/SeriesB2023keptseparate; nopaymentdateinferred."
+        }
+      ],
+      "holds": [
+        "2016/2018seedhistoryand2024B1originalsremainunreconciled; broadfundingdatabasesnotverifiedfacts.",
+        "No2026newroundestablished; absenceofindexedannouncementnotzerofunding."
+      ]
+    }
+  ],
+  "timing": {
+    "note": "Parentownsmeasuredactiveelapsedandpublicationduration. No numericthroughputorconcurrencyspeedupclaimed."
+  }
+}
