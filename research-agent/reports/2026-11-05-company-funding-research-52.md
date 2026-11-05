@@ -7,3 +7,6 @@ ASTEROID 730161: EUR1,901,741.25 net EU beneficiary allocation, EC signature 25 
 Production transaction rollback passed: 585 approved events, 982 participations, 702 profiles, zero candidate rows after rollback. Atomic import and idempotency passed: 587 events, 984 participations, 702 profiles. Lynred now has three events. Remaining EU/EDF allocations remain held. Queue review disposition unchanged.
 
 Checkpoint51 live publication verified at 2026-11-05T11:52:22.346Z (585 events), investor catalogue 11:52:23.397Z. Checkpoint52 rebuild pending. Latest follow-up reconciled two identities and three imported facts; zero newly completed company histories. No concurrency speedup or total-throughput claim.
+
+
+Publication verified: workflow 42022745511 completed successfully. Live landscape generated 2026-11-05T11:55:29.808Z; investor catalogue 11:55:31.082Z. Verified 587 events, 984 participations, 702 profiles and 312 companies with events. Both Lynred allocations, EUR currency, signature dates, signed status and grantor links match manifest. No completed-company counter advanced. Checkpoint52 duration excludes final publication overhead; no end-to-end throughput claimed.
