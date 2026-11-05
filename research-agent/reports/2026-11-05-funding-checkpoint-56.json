@@ -76,7 +76,115 @@
       "event_sources": 834,
       "investor_sources": 1240,
       "candidate_events": 7
-    }
+    },
+    "exact_database_events": [
+      {
+        "round_key": "general-dynamics-acquisition-2001",
+        "announced_date": "2001-07-25",
+        "amount": null,
+        "currency": null,
+        "financing_type": "equity",
+        "roles": [
+          "general-dynamics/participant"
+        ],
+        "source_count": 2
+      },
+      {
+        "round_key": "latvia-de-minimis-29235",
+        "announced_date": "2022-10-28",
+        "amount": "642.97",
+        "currency": "EUR",
+        "financing_type": "grant",
+        "roles": [
+          "investment-and-development-agency-of-latvia/grantor"
+        ],
+        "source_count": 1
+      },
+      {
+        "round_key": "latvia-de-minimis-35511",
+        "announced_date": "2022-04-28",
+        "amount": "16970.92",
+        "currency": "EUR",
+        "financing_type": "grant",
+        "roles": [
+          "investment-and-development-agency-of-latvia/grantor"
+        ],
+        "source_count": 1
+      },
+      {
+        "round_key": "latvia-de-minimis-39708",
+        "announced_date": "2022-01-25",
+        "amount": "7799.1",
+        "currency": "EUR",
+        "financing_type": "grant",
+        "roles": [
+          "investment-and-development-agency-of-latvia/grantor"
+        ],
+        "source_count": 1
+      },
+      {
+        "round_key": "latvia-de-minimis-41900",
+        "announced_date": "2021-11-05",
+        "amount": "17976.66",
+        "currency": "EUR",
+        "financing_type": "grant",
+        "roles": [
+          "investment-and-development-agency-of-latvia/grantor"
+        ],
+        "source_count": 1
+      },
+      {
+        "round_key": "latvia-de-minimis-47434",
+        "announced_date": "2021-06-17",
+        "amount": "45169.72",
+        "currency": "EUR",
+        "financing_type": "grant",
+        "roles": [
+          "investment-and-development-agency-of-latvia/grantor"
+        ],
+        "source_count": 1
+      },
+      {
+        "round_key": "latvia-de-minimis-50712",
+        "announced_date": "2021-04-20",
+        "amount": "107982.34",
+        "currency": "EUR",
+        "financing_type": "grant",
+        "roles": [
+          "investment-and-development-agency-of-latvia/grantor"
+        ],
+        "source_count": 1
+      },
+      {
+        "round_key": "neo-autonomy-investment-2026",
+        "announced_date": "2026-02-17",
+        "amount": null,
+        "currency": null,
+        "financing_type": "undisclosed",
+        "roles": [
+          "neo-autonomy/participant"
+        ],
+        "source_count": 2
+      },
+      {
+        "round_key": "pre-series-a-2024",
+        "announced_date": null,
+        "amount": "7000000",
+        "currency": "USD",
+        "financing_type": "undisclosed",
+        "roles": [
+          "7percent-ventures/participant",
+          "ac-hammer/participant",
+          "fuller-family-ventures/participant",
+          "jalex-futures/participant",
+          "md-one-ventures/participant",
+          "spacewalk-vc/participant",
+          "tanglin-venture-partners/lead",
+          "z21-ventures/participant"
+        ],
+        "source_count": 2
+      }
+    ]
   },
   "paths": {
     "manifest": "research-agent/imports/company-funding-research-56-2026-11-05.json",
@@ -110,9 +218,12 @@
       "status": "source_review_partial",
       "note_en": "Seven eligible EU grants already imported in intervening checkpoint 55. Maintain operating-issuer distinction from the parent and holding companies.",
       "sources": [
-        "https://www.exail.com/privacy-policy"
+        "https://www.exail.com/privacy-policy",
+        "https://www.exail.com/media-file/6300/7542-exail-rapport-sur-la-parite-signe.pdf",
+        "https://www.exail-technologies.com/wp-content/uploads/2025/06/urd2024exail-technologiesen.pdf"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "source_hold"
     },
     {
       "slug": "fadron",
@@ -121,7 +232,8 @@
       "sources": [
         "https://www.issuewire.com/neo-ventures-team-launches-neo-autonomy-a-new-investment-fund-focused-on-transport-logistics-and-autonomous-systems-1857373980204693"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "confirmed_candidate"
     },
     {
       "slug": "fire-point",
@@ -131,7 +243,8 @@
         "https://firepoint.technology",
         "https://suspilne.media/1308527-investori-z-oae-ne-ponovluvali-sprob-pridbati-castku-u-kompanii-fire-point-amku/"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "hold_parent_attribution"
     },
     {
       "slug": "firebolt-engineering",
@@ -150,9 +263,11 @@
       "sources": [
         "https://resiliencemedia.co/how-first-parsec-plans-to-outproduce-moscow-with-cheap-engines/",
         "https://firstparsec.space/",
-        "https://www.linkedin.com/company/first-parsec"
+        "https://www.linkedin.com/company/first-parsec",
+        "https://opendatabot.ua/c/44795471"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "hold_event_details"
     },
     {
       "slug": "fixar-fixar-aero-llc",
@@ -162,7 +277,8 @@
         "https://data.gov.lv/dati/eng/api/3/action/datastore_search?resource_id=6253edd2-17d1-4a9a-bd48-3dd5b9ce5ff4&filters=%7B%22person_reg_nr%22%3A%2240203222201%22%7D",
         "https://cancham.lv/docs/961/Presentations/220530_LCCI_FIXAR_Way_to_Canada.pdf"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "verified_direct_awards_and_portfolio_association"
     },
     {
       "slug": "flytech-uav",
@@ -171,7 +287,8 @@
       "sources": [
         "https://www.itu.int/en/ITU-D/Innovation/Documents/Documents_Events_Presentations/2017_WSIS/MON_WSIS17/07%20Flytech%20UAV.pdf"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "entity_and_issuer_allocation_hold"
     },
     {
       "slug": "futurology",
@@ -182,7 +299,8 @@
         "https://drone.ua/en/blogs/news/under-the-futurology-brand-droneua-celebrated-the-anniversary-of-its-work-in-the-usa",
         "https://farmfleet.io/en/valerii-iakovenko-will-chair-the-agricultural-committee-of-pennsylvania-drone-association"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "hold_distinct_issuer"
     },
     {
       "slug": "gdels-santa-barbara-sistemas",
@@ -200,7 +318,8 @@
       "sources": [
         "https://accordbank.com.ua/ua/about/news/e462e1687a1859b752604e2e295d55081cd14bb2/"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "confirmed_candidate"
     },
     {
       "slug": "germandrones",
@@ -209,7 +328,8 @@
       "sources": [
         "https://www.germandrones.com/en/contact"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "likely_existing_event_verified"
     },
     {
       "slug": "godwit-systems",
@@ -217,9 +337,14 @@
       "note_en": "Innovation Fund programme describes testing, mentoring and investor access. Directory seed label has no attributable terms. No attributable public financing event identified in this bounded review.",
       "sources": [
         "https://www.linkedin.com/company/godwit-systems",
-        "https://danmarksinnovationsfond.dk/da/artikler/startknappen-er-trykket-ind-defence-tech/"
+        "https://danmarksinnovationsfond.dk/da/artikler/startknappen-er-trykket-ind-defence-tech/",
+        "https://godwit.systems/",
+        "https://defencetechdenmark.com/defence-tech-denmark-now-brings-the-first-companies-into-the-defence-industry/",
+        "https://dtusciencepark.com/article/danish-tech-challenge-2025-is-beginning-meet-the-15-hardware-startups/",
+        "https://www.dtu.dk/english/news/all-news/Startup-colors-wood-without-paint-and-wins-the-Danish-Tech-Challenge-2026?id=452afdc2-4984-477f-b8a1-f22d3933e34a"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "no_attributable_public_event"
     },
     {
       "slug": "gurzuf-defence",
@@ -228,14 +353,20 @@
       "sources": [
         "https://nv.ua/ukr/amp/droni-finansist-pro-vkladannya-u-bezpilotniki-problemi-opk-i-perspektivi-novini-ukrajini-50396283.html"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "hold_investment_attribution"
     },
     {
       "slug": "fotokite",
       "status": "source_review_partial",
       "note_en": "Approximate CHF10m and stage already reconciled in intervening checkpoint 55. No duplicate changes.",
-      "sources": [],
-      "previous_queue_status": "source_review_partial"
+      "sources": [
+        "https://fotokite.com/fotokite-secures-investment-round-achieves-strong-growth-and-expands-global-reach/",
+        "https://fotokite.com/elevated-tethered-drones/about-fotokite/",
+        "https://fotokite.com/fotokite-announces-first-closing-financing-market-expansion-and-executive-team-appointments/"
+      ],
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "source_hold"
     },
     {
       "slug": "frequentis",
@@ -245,7 +376,8 @@
         "https://www.frequentis.com/en/support-download-file/annual-report-2020",
         "https://cordis.europa.eu/project/id/807081"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "source_hold"
     },
     {
       "slug": "greenjets",
@@ -255,7 +387,8 @@
         "https://www.linkedin.com/posts/greenjetsltd_we-are-delighted-to-announce-the-successful-activity-7307342048737517569-fkxh",
         "https://www.md-one.com/news/greenjets-fundung-round"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "source_hold"
     },
     {
       "slug": "griff-aviation",
@@ -264,14 +397,16 @@
       "sources": [
         "https://www.griffaviation.com/posts"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "source_hold"
     },
     {
       "slug": "grupo-amper",
       "status": "source_review_partial",
       "note_en": "EUR30.6m aggregate covers multiple medium/long-term note issuances and existing taps. No artificial aggregate event; individual tranches need primary reconciliation.",
       "sources": [],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "events_verified_reconciliation_pending"
     },
     {
       "slug": "verity",
@@ -280,7 +415,13 @@
       "sources": [
         "https://www.helvetica-capital.ch/en/portfolio/verity"
       ],
-      "previous_queue_status": "source_review_partial"
+      "previous_queue_status": "source_review_partial",
+      "reconciled_prior_disposition": "generic_investor_relationship_verified"
     }
-  ]
+  ],
+  "publication": {
+    "site_commit": "cad28000f70d3e92c2bee3ad98aac731ae14781f",
+    "workflow_run_id": 42113973065,
+    "status": "in_progress"
+  }
 }
