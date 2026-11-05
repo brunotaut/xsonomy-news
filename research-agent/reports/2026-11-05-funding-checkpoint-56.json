@@ -1,0 +1,286 @@
+{
+  "checked_at": "2026-11-05T21:34:54.219Z",
+  "status": "production_imported_publication_pending",
+  "reconciled_against_checkpoint": 55,
+  "prior_evidence": "research-agent/reports/2026-11-05-funding-checkpoint-55.json",
+  "metrics": {
+    "identities_reconciled": 21,
+    "newly_completed_bounded_reviews": 5,
+    "source_review_partial": 16,
+    "imported_events": 7,
+    "imported_participations": 14,
+    "new_profiles": 10,
+    "generic_relationships_added": 5,
+    "reviewed_corrections": 2,
+    "publication_verified": false,
+    "active_minutes_since_reacquired_lease": 4.15,
+    "timing_scope": "Active continuation measured from the new checkpoint 56 lease through import and publication. Earlier research work preceded a tool interruption and intervening checkpoint 55. Elapsed time across that interruption and unmeasured earlier research are excluded. Full-process throughput and comparative speedup are unavailable."
+  },
+  "counts": {
+    "events": 645,
+    "companies": 314,
+    "participations": 1063,
+    "profiles": 729,
+    "relationships": 114,
+    "event_sources": 834,
+    "investor_sources": 1240,
+    "candidate_events": 7
+  },
+  "verification": {
+    "baseline": {
+      "events": 638,
+      "companies": 313,
+      "participations": 1049,
+      "profiles": 719,
+      "relationships": 109,
+      "event_sources": 824,
+      "investor_sources": 1226,
+      "candidate_events": 0
+    },
+    "dry_run": {
+      "events": 645,
+      "companies": 314,
+      "participations": 1063,
+      "profiles": 729,
+      "relationships": 114,
+      "event_sources": 834,
+      "investor_sources": 1240,
+      "candidate_events": 7
+    },
+    "rollback_baseline": {
+      "events": 638,
+      "companies": 313,
+      "participations": 1049,
+      "profiles": 719,
+      "relationships": 109,
+      "event_sources": 824,
+      "investor_sources": 1226,
+      "candidate_events": 0
+    },
+    "atomic_result": {
+      "events": 645,
+      "companies": 314,
+      "participations": 1063,
+      "profiles": 729,
+      "relationships": 114,
+      "event_sources": 834,
+      "investor_sources": 1240,
+      "candidate_events": 7
+    },
+    "idempotent_rollback_reapply": {
+      "events": 645,
+      "companies": 314,
+      "participations": 1063,
+      "profiles": 729,
+      "relationships": 114,
+      "event_sources": 834,
+      "investor_sources": 1240,
+      "candidate_events": 7
+    }
+  },
+  "paths": {
+    "manifest": "research-agent/imports/company-funding-research-56-2026-11-05.json",
+    "corrections": "research-agent/imports/company-funding-research-56-corrections.sql",
+    "reversal": "research-agent/imports/company-funding-research-56-reversal.json",
+    "report": "research-agent/reports/2026-11-05-funding-checkpoint-56.json"
+  },
+  "company_dispositions": [
+    {
+      "slug": "escadrone",
+      "status": "reviewed_public_sources",
+      "note_en": "Ukrainian FPV team distinguished from the French namesake. Wartime interviews describe self-funding, donations and procurement. No attributable public financing event identified in this bounded review. A founder interview could not be directly retrieved.",
+      "sources": [
+        "https://t.me/s/escadrone",
+        "https://euromaidanpress.com/2024/01/25/how-fpv-drones-became-ukraine-top-weapon/"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "eurotech-pl",
+      "status": "source_review_partial",
+      "note_en": "Mielec company identity verified. SAT figures are consortium-level. HybriDrive financing remains a hold until an attributable Eurotech share and instrument can be established.",
+      "sources": [
+        "https://polishdefenceindustry.gov.pl/company/eurotech-sp-z-o-o/",
+        "https://www.clean-aviation.eu/clean-sky-2/demonstrators/key-demonstrators/affordable-aerostructures-for-sat"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "exail",
+      "status": "source_review_partial",
+      "note_en": "Seven eligible EU grants already imported in intervening checkpoint 55. Maintain operating-issuer distinction from the parent and holding companies.",
+      "sources": [
+        "https://www.exail.com/privacy-policy"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "fadron",
+      "status": "source_review_partial",
+      "note_en": "Earlier public announcement confirmed by investor release. Preserve existing event and participant. Amount and exact instrument unconfirmed.",
+      "sources": [
+        "https://www.issuewire.com/neo-ventures-team-launches-neo-autonomy-a-new-investment-fund-focused-on-transport-logistics-and-autonomous-systems-1857373980204693"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "fire-point",
+      "status": "source_review_partial",
+      "note_en": "EDGE proposed stake application was returned. No closed USD760m transaction established. Existing founder financing retained.",
+      "sources": [
+        "https://firepoint.technology",
+        "https://suspilne.media/1308527-investori-z-oae-ne-ponovluvali-sprob-pridbati-castku-u-kompanii-fire-point-amku/"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "firebolt-engineering",
+      "status": "source_review_partial",
+      "note_en": "Grenadyr transaction lead remains a hold until party source and legal issuer are resolved. Fund-wide cheque ranges do not establish issuer proceeds.",
+      "sources": [
+        "https://aequo.ua/en/news/grenadyr-invests-in-five-ukrainian-defence-tech-startups",
+        "https://grenadyr.com"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "first-parsec",
+      "status": "reviewed_public_sources",
+      "note_en": "Company and CEO sources describe seed backing and Brave1 support. Public disclosure does not support event-by-event allocation, amounts or exact dates. A charitable payment is separate. Preserve database partial coverage.",
+      "sources": [
+        "https://resiliencemedia.co/how-first-parsec-plans-to-outproduce-moscow-with-cheap-engines/",
+        "https://firstparsec.space/",
+        "https://www.linkedin.com/company/first-parsec"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "fixar-fixar-aero-llc",
+      "status": "source_review_partial",
+      "note_en": "Six direct-payment award entries verified at beneficiary registration 40203222201. Exclude tax measure entry 7625 and other aid entry 35057. Retain 2024 EUR1650 mirror claim and private rounds as holds. Untitled portfolio link is separate from the grants.",
+      "sources": [
+        "https://data.gov.lv/dati/eng/api/3/action/datastore_search?resource_id=6253edd2-17d1-4a9a-bd48-3dd5b9ce5ff4&filters=%7B%22person_reg_nr%22%3A%2240203222201%22%7D",
+        "https://cancham.lv/docs/961/Presentations/220530_LCCI_FIXAR_Way_to_Canada.pdf"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "flytech-uav",
+      "status": "source_review_partial",
+      "note_en": "Issuer presentation identifies programme participation without an attributable award amount. SATUS secondary-source claim and legal continuity unresolved.",
+      "sources": [
+        "https://www.itu.int/en/ITU-D/Innovation/Documents/Documents_Events_Presentations/2017_WSIS/MON_WSIS17/07%20Flytech%20UAV.pdf"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "futurology",
+      "status": "reviewed_public_sources",
+      "note_en": "Issuer and DroneUA sources tie Futurology to the US representation. The reported FarmFleet pre-seed belongs to FarmFleet. No attributable public financing event identified in this bounded review.",
+      "sources": [
+        "https://futurology.tech/blogs/news/celebrating-the-first-anniversary-of-futurology-in-the-usa",
+        "https://drone.ua/en/blogs/news/under-the-futurology-brand-droneua-celebrated-the-anniversary-of-its-work-in-the-usa",
+        "https://farmfleet.io/en/valerii-iakovenko-will-chair-the-agricultural-committee-of-pennsylvania-drone-association"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "gdels-santa-barbara-sistemas",
+      "status": "source_review_partial",
+      "note_en": "Buyer annual report fixes the combined predecessor acquisition completion date. The secondary reported consideration remains unverified at the same scope.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/40533/000095013302001284/w58696ex13.htm"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "general-cherry",
+      "status": "source_review_partial",
+      "note_en": "Lender announcement supports existing USD5m financing. Draw-level allocations undisclosed. Patria letter of intent is not a closed financing.",
+      "sources": [
+        "https://accordbank.com.ua/ua/about/news/e462e1687a1859b752604e2e295d55081cd14bb2/"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "germandrones",
+      "status": "source_review_partial",
+      "note_en": "Two issuer-confirmed generic investors. No dated rounds or cheque size inferred.",
+      "sources": [
+        "https://www.germandrones.com/en/contact"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "godwit-systems",
+      "status": "reviewed_public_sources",
+      "note_en": "Innovation Fund programme describes testing, mentoring and investor access. Directory seed label has no attributable terms. No attributable public financing event identified in this bounded review.",
+      "sources": [
+        "https://www.linkedin.com/company/godwit-systems",
+        "https://danmarksinnovationsfond.dk/da/artikler/startknappen-er-trykket-ind-defence-tech/"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "gurzuf-defence",
+      "status": "reviewed_public_sources",
+      "note_en": "Resist UA co-owner's original interview confirms portfolio relationship. Exact instrument, amount and date remain unconfirmed. No discrete round assigned.",
+      "sources": [
+        "https://nv.ua/ukr/amp/droni-finansist-pro-vkladannya-u-bezpilotniki-problemi-opk-i-perspektivi-novini-ukrajini-50396283.html"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "fotokite",
+      "status": "source_review_partial",
+      "note_en": "Approximate CHF10m and stage already reconciled in intervening checkpoint 55. No duplicate changes.",
+      "sources": [],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "frequentis",
+      "status": "source_review_partial",
+      "note_en": "2020 issuer report cash-flow and discounted share-price arithmetic do not reconcile for a single asserted amount. CORDIS signature date retained as distinct from project name/date.",
+      "sources": [
+        "https://www.frequentis.com/en/support-download-file/annual-report-2020",
+        "https://cordis.europa.eu/project/id/807081"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "greenjets",
+      "status": "source_review_partial",
+      "note_en": "Earlier completed USD7m Pre-Series A and named investor roles verified. Issuer and investor timing references conflict. Existing Series A and grants retained.",
+      "sources": [
+        "https://www.linkedin.com/posts/greenjetsltd_we-are-delighted-to-announce-the-successful-activity-7307342048737517569-fkxh",
+        "https://www.md-one.com/news/greenjets-fundung-round"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "griff-aviation",
+      "status": "source_review_partial",
+      "note_en": "Owner's NOK200m cumulative financing claim does not establish a discrete round. Historic grants and convertible conversion retained.",
+      "sources": [
+        "https://www.griffaviation.com/posts"
+      ],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "grupo-amper",
+      "status": "source_review_partial",
+      "note_en": "EUR30.6m aggregate covers multiple medium/long-term note issuances and existing taps. No artificial aggregate event; individual tranches need primary reconciliation.",
+      "sources": [],
+      "previous_queue_status": "source_review_partial"
+    },
+    {
+      "slug": "verity",
+      "status": "source_review_partial",
+      "note_en": "Investor portfolio confirms minority growth capital first invested March 2018. Do not assign it to an existing named round.",
+      "sources": [
+        "https://www.helvetica-capital.ch/en/portfolio/verity"
+      ],
+      "previous_queue_status": "source_review_partial"
+    }
+  ]
+}
