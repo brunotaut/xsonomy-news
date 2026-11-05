@@ -8,15 +8,15 @@
   "published_landscape_companies": 567,
   "partial_companies": 312,
   "fully_reviewed_companies": 455,
-  "next_action": "Continue lane49 holds: MC2 legal issuer identity now opened and confirmed; verify original three CORDIS allocations then import under new lease. Kitemill rounded existing grant requires explicit expected-old correction, not duplicate. Full programme incomplete.",
+  "next_action": "Verify checkpoint53 publication, then continue 24 remaining legacy partial published identities and unresolved source-level histories. Prioritise original award/issuer facts; do not re-run completed discovery. Root correction/reversal and lane53 dispositions saved.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-05T11:56:36.196Z",
+  "updated_at": "2026-11-05T12:57:06.626Z",
   "source_reconciliation_companies": 321,
-  "approved_funding_events": 587,
-  "round_participations": 984,
-  "investor_profiles": 702,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/company-funding-research-52-2026-11-05.json",
+  "approved_funding_events": 605,
+  "round_participations": 1008,
+  "investor_profiles": 705,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/company-funding-research-53-2026-11-05.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -920,22 +920,25 @@
   },
   "queue_disposition_counts": {
     "reviewed_public_sources": 337,
-    "source_review_partial": 186,
-    "partial": 44,
+    "source_review_partial": 206,
+    "partial": 24,
     "queued": 1997
   },
   "last_execution_metrics": {
-    "identities_researched": 20,
-    "newly_completed_bounded_reviews": 1,
-    "source_review_partial": 19,
-    "imported_events": 2,
-    "active_minutes_to_checkpoint": 4.83,
-    "timing_scope": "research, verification, rollback rehearsal, atomic import, durable checkpoint, rebuild and live publication verification; scheduled idle excluded",
+    "identities_researched": 22,
+    "parallel_read_only_identities": 20,
+    "newly_completed_bounded_reviews": 0,
+    "source_review_partial": 22,
+    "imported_events": 18,
+    "existing_events_with_new_participation": 1,
+    "imported_participations": 24,
+    "reviewed_corrections": 1,
+    "new_profiles": 3,
+    "active_minutes_to_checkpoint": 9.21,
+    "timing_scope": "Source review, writer verification, rollback rehearsal, explicit reversal test, atomic import and idempotency through writer checkpoint; final rebuild/publication still pending; scheduled idle excluded.",
     "fully_published_throughput": null,
     "concurrency_speedup_claimed": false,
-    "publication_verified": true,
-    "active_minutes_total": 4.83,
-    "timing_limitation": "Final publication-check overhead not included in numeric checkpoint duration; no total-throughput claim."
+    "publication_verified": false
   },
   "latest_followup_metrics": {
     "identities_reconciled": 2,
@@ -948,5 +951,6 @@
     "concurrency_speedup_claimed": false,
     "publication_verified": true,
     "timing_limitation": "Checkpoint52 numeric duration stops at writer checkpoint; publication overhead is not included. No end-to-end throughput claimed."
-  }
+  },
+  "fully_reviewed_count_note": "Legacy fully_reviewed_companies=455 is not reconciled to current queue. Current queue has337 reviewed_public_sources; checkpoint53 adds zero newly completed bounded histories. Do not treat source_review_partial as complete."
 }

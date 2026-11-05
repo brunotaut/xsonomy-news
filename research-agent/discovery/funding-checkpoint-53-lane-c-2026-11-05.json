@@ -1,0 +1,355 @@
+{
+  "batch": 53,
+  "lane": "c",
+  "checked_at": "2026-11-05",
+  "read_only": true,
+  "pilot_reconciliation": "Current main pilot second_pass_complete evidence read first; none of these five slugs in pilot groups. Current production rounds/participants read before research. Existing events preserved. No DB writes.",
+  "identities_researched": 5,
+  "newly_completed_bounded_reviews": 0,
+  "partial_reviews": 5,
+  "companies": [
+    {
+      "slug": "patria",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "ealliance-business-finland-grant-2024"
+      ],
+      "search_coverage": [
+        "Broad Patria financing/loan/ownership history",
+        "Issuer 2026 interim report and eALLIANCE release",
+        "Kongsberg transaction-party 2016 final-price filing"
+      ],
+      "sources": [
+        {
+          "url": "https://www.patriagroup.com/newsroom/news/2016/norwegian-kongsberg-to-acquire-a-minority-stake-of-499-in-patria",
+          "date": "2016-03-17",
+          "kind": "issuer",
+          "opened": true,
+          "finding": "State selling49.9% to Kongsberg Defence & Aerospace; aboutEUR270m preliminary, not final."
+        },
+        {
+          "url": "https://www.kongsberg.com/contentassets/6f7ef753431e419a9d1dd8e308ee58b8/quarterlyreport_kog_q2-2016.pdf",
+          "date": "2016",
+          "kind": "buyer_filing",
+          "opened": true,
+          "finding": "Completed24May2016; final purchase priceEUR283.5m, source lines215-216. Seller State of Finland; secondary shares not primary issuer cash."
+        },
+        {
+          "url": "https://www.patriagroup.com/newsroom/news/2026/patria-led-ealliance-receives-business-finland-funding-to-expand-the-programme",
+          "date": "2026-06-18",
+          "kind": "issuer",
+          "opened": true,
+          "finding": "Programme additional support, nearlyEUR300m combined R&D ambition not Patria award."
+        },
+        {
+          "url": "https://www.businessfinland.fi/en/whats-new/news/2026/leading-company-activity-grows-to-record-levels/",
+          "date": "2026",
+          "kind": "grantor",
+          "opened": true,
+          "finding": "Programme expansion confirmed, company allocation not established."
+        },
+        {
+          "url": "https://www.patriagroup.com/newsroom/news/2026/patria-groups-interim-report-for-1-january-30-june-2026",
+          "date": "2026",
+          "kind": "issuer",
+          "opened": true,
+          "finding": "EUR79m FAMOUS3 EU contribution is consortium total, not Patria-specific."
+        }
+      ],
+      "candidates": [
+        {
+          "ready_for_import": true,
+          "round_key": "kongsberg-stake-acquisition-2016",
+          "date": "2016-05-24",
+          "amount": 283500000,
+          "currency": "EUR",
+          "amount_qualifier": "exact",
+          "financing_type": "equity",
+          "record_kind": "investment_disclosure",
+          "closing_status": "closed",
+          "amount_basis": "closed_amount",
+          "participant": {
+            "name": "Kongsberg Defence & Aerospace AS",
+            "role": "participant"
+          },
+          "note": "Final consideration for49.9% secondary stake sold by State of Finland. Not primary Patria proceeds. Retain buyer vehicle and map only after existing-profile matching."
+        }
+      ],
+      "holds": [
+        "Earlier borrowing and grant histories not exhausted;2026 additional eALLIANCE award needs company-level allocation;FAMOUS consortium total excluded."
+      ]
+    },
+    {
+      "slug": "perceptual-robotics",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "funding-2021",
+        "funding-2023"
+      ],
+      "search_coverage": [
+        "Broad historical funding search2016-2026",
+        "Issuer news2026",
+        "Metavallon and Loggerhead investor originals"
+      ],
+      "sources": [
+        {
+          "url": "https://metavallon.vc/blog/welcome-perceptual-robotics-an-ai-and-robotics-startup-developing-autonomous-drones-and-computer-vision-algorithms-for-infrastructure-inspections/",
+          "date": "2019-06-19",
+          "kind": "investor",
+          "opened": true,
+          "finding": "EUR600K seed investment explicitly led by Metavallon."
+        },
+        {
+          "url": "https://loggerhead.vc/perceptual-robotics-raises-funding-to-automate-wind-turbine-maintenance/",
+          "date": "2026-05-05",
+          "kind": "investor",
+          "opened": true,
+          "finding": "Funding secured with Loggerhead and follow-on One Planet Capital, amount undisclosed, no lead role stated."
+        },
+        {
+          "url": "https://www.perceptual-robotics.com/perceptual-robotics-secures-over-4-million-to-expand-wind-turbine-inspection-and-maintenance-technology/",
+          "date": "2026-07-28",
+          "kind": "issuer",
+          "opened": true,
+          "finding": "More thanGBP4m funding so far this year combines shareholder investment and Innovate UK support. NamesInvestingForPurpose,Loggerhead,OnePlanet. Aggregate must not become twoGBP4m events or single homogeneous equity round."
+        },
+        {
+          "url": "https://registry.elevategreece.gov.gr/company/perceptual-robotics-limited/",
+          "date": null,
+          "kind": "official_startup_registry",
+          "opened": true,
+          "finding": "Reports2019EUR600k;2016EUR120k family/friends and2021EUR1.9m converted summary. Preserve originalGBP2021event; do not substituteconverted figures."
+        },
+        {
+          "url": "https://www.gov.uk/government/news/robotics-and-ai-projects-to-create-safer-work-for-people",
+          "date": "2017-11-08",
+          "kind": "government",
+          "opened": true,
+          "finding": "Perceptual featured among funding recipients butGBP68m programme total not beneficiary grant."
+        }
+      ],
+      "candidates": [
+        {
+          "ready_for_import": true,
+          "round_key": "seed-metavallon-2019",
+          "date": "2019-06-19",
+          "amount": 600000,
+          "currency": "EUR",
+          "financing_type": "equity",
+          "closing_status": "closed",
+          "amount_basis": "closed_amount",
+          "stage": "Seed",
+          "participants": [
+            {
+              "name": "Metavallon VC",
+              "slug": "metavallon-vc",
+              "role": "lead"
+            }
+          ],
+          "source_index": 0,
+          "note": "Investor announcement givesEUR600k seed investment led by Metavallon; other cheques not inferred."
+        },
+        {
+          "ready_for_import": true,
+          "round_key": "loggerhead-funding-2026",
+          "date": "2026-05-05",
+          "amount": null,
+          "currency": null,
+          "amount_basis": "undisclosed",
+          "financing_type": "equity",
+          "closing_status": "closed",
+          "stage": "Funding round",
+          "participants": [
+            {
+              "name": "Loggerhead Ventures",
+              "role": "participant"
+            },
+            {
+              "name": "One Planet Capital",
+              "slug": "one-planet-capital",
+              "role": "participant"
+            }
+          ],
+          "source_index": 1,
+          "note": "Amount and lead role undisclosed. July2026>GBP4mYTD aggregate includes equity and Innovate UK and must not be assigned to this round."
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Investing for Purpose",
+          "source_index": 2,
+          "relationship": "company-published investor",
+          "note": "July2026issuer names as shareholder; do not assign to Mayround without event evidence."
+        }
+      ],
+      "holds": [
+        "2016family/friends event and2017/2018/2021grants need originalaward records; Jul2026aggregate components not reconciled; aggregatorJul24separategrant/equityGBP4m-sized entries risk duplicating issuerYTDtotal."
+      ]
+    },
+    {
+      "slug": "piaggio-aerospace",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "capital-increase-2013"
+      ],
+      "search_coverage": [
+        "Historical ownership/financing2006-2026",
+        "Issuer2017plan and2025closing",
+        "Mubadala and Baykar original announcements"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mubadala.com/en/news/new-piaggio-aero-shareholder-underpins-future-growth",
+          "date": "2006-04-19",
+          "kind": "investor",
+          "opened": true,
+          "finding": "Acquired35% with both existing and newlyissuedshares. Financial terms undisclosed."
+        },
+        {
+          "url": "https://www.piaggioaerospace.it/en/news/piaggio-aerospace-approves-five-year-industrial-plan",
+          "date": "2017-12-21",
+          "kind": "issuer",
+          "opened": true,
+          "finding": "Plan includesEUR255m shareholdercashinjection plusbankdebt repurchase/conversion; source does not establish completed transfer or split instrument."
+        },
+        {
+          "url": "https://www.piaggioaerospace.it/en/news/baykar-completes-acquisition-of-piaggio-aerospaces-business-complexes",
+          "date": "2025-06-30",
+          "kind": "issuer",
+          "opened": true,
+          "finding": "Closed transfer of PiaggioAeroIndustries andPiaggioAviation businesscomplexes toBaykar, priceundisclosed."
+        },
+        {
+          "url": "https://www.baykartech.com/en/press/baykar-finalizes-acquisition-of-italian-aviation-giant-piaggio/",
+          "date": "2025-06-30",
+          "kind": "buyer",
+          "opened": true,
+          "finding": "Completed acquisition corroborated; amountundisclosed."
+        },
+        {
+          "url": "https://piaggio-pre.baykartech.com/en/news/one-year-on-baykar-stabilizes-and-relaunches-piaggio-aerospace",
+          "date": "2026-07-01",
+          "kind": "issuer",
+          "opened": true,
+          "finding": "Operating asBaykarPiaggioAerospaceSpA since1July2025. Shareholder cashinjections exceededplannedcommitment byApril2026; no amount or discreteeventbreakdown."
+        }
+      ],
+      "candidates": [
+        {
+          "ready_for_import": true,
+          "round_key": "mubadala-investment-2006",
+          "date": "2006-04-19",
+          "amount": null,
+          "currency": null,
+          "amount_basis": "undisclosed",
+          "financing_type": "equity",
+          "record_kind": "investment_disclosure",
+          "closing_status": "closed",
+          "participant": {
+            "name": "Mubadala Development Company",
+            "slug": "mubadala",
+            "role": "participant"
+          },
+          "note": "Acquisition of35% includes both newandexistingshares; primary/secondarysplitandamountundisclosed."
+        },
+        {
+          "ready_for_import": true,
+          "round_key": "baykar-business-acquisition-2025",
+          "date": "2025-06-30",
+          "amount": null,
+          "currency": null,
+          "amount_basis": "undisclosed",
+          "financing_type": "undisclosed",
+          "record_kind": "investment_disclosure",
+          "closing_status": "closed",
+          "participant": {
+            "name": "Baykar",
+            "role": "participant"
+          },
+          "note": "Businesscomplextransfer ofPiaggioAeroIndustriesandPiaggioAviation toBaykar; acquisitionpriceundisclosed, notnewprimaryissuerproceeds. Brandcontinuitybutlegalbusinessassetscopeexplicit."
+        }
+      ],
+      "holds": [
+        "2014ownershipconsolidation and2017EUR255mcashinjection need execution/instrumentreconciliation;2026ownerinjectionaggregatenotdiscreteround;PiaggioGroup motorvehicledebt excluded."
+      ]
+    },
+    {
+      "slug": "polaris-spaceplanes",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "bridge-2024",
+        "dienes-investment-2024",
+        "mbb-investment-2023",
+        "seed-top-up-2025"
+      ],
+      "search_coverage": [
+        "Broad fundinghistory",
+        "Current issuerhomepage andnews",
+        "ExistingJune2025primaryamount preserved"
+      ],
+      "sources": [
+        {
+          "url": "https://www.polaris-raumflugzeuge.de/",
+          "date": null,
+          "kind": "issuer",
+          "opened": true,
+          "finding": "Homepage metricJune2026EUR20mraised cumulative, not event."
+        },
+        {
+          "url": "https://www.polaris-raumflugzeuge.de/news",
+          "date": "2026-01-27",
+          "kind": "issuer",
+          "opened": true,
+          "finding": "BAAINBw manufacturing/operationcontract notfinancing; Diehlcooperationannouncement notinvestment."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/polaris-spaceplanes_polaris-secures-an-oversubscribed-53-million-activity-7339197786627747842-1dZs",
+          "date": "2025-06-13",
+          "kind": "issuer_index_reconciled_existing",
+          "opened": false,
+          "finding": "ExistingEUR5.3mtopup retained; nochangefromsecondaryrounded5.4m.",
+          "access": "search_index_only_current_lane; existing DB primary URL retained"
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "EUR20mcumulativeraisedinJune2026notgranularlyreconciled toearlierEUR12.4m; do notsubtractandcreateEUR7.6mround. Earlier2022seed andfurtherESAawards requireoriginals; currentlyraisingSeriesA isnotclosed."
+      ]
+    },
+    {
+      "slug": "polska-grupa-zbrojeniowa",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "treasury-capital-increase-2015"
+      ],
+      "search_coverage": [
+        "Polishdatedcapitalisation/financingsearch",
+        "GovernmentMinistryofStateAssetsoriginalJuly2025allocationandlaterstatus",
+        "Subsidiaryversusparentreview"
+      ],
+      "sources": [
+        {
+          "url": "https://www.gov.pl/web/aktywa-panstwowe/24-mld-zl-dla-pgz-na-dofinansowanie-produkcji-amunicji-155-mm",
+          "date": "2025-07-02",
+          "kind": "government",
+          "opened": true,
+          "finding": "Four investmentagreementsMAP-PGZ;fundsallocatedtosubsidiaries:DEZAMET1,358mPLN,MESKO887.2m,NitroChem113.3043m,Gamrat66.17m;firsttranchesfuture. Totalnotparentoperatingproceeds."
+        },
+        {
+          "url": "https://www.gov.pl/web/aktywa-panstwowe/strategia-aktywnego-wlasciciela--bezpieczenstwo-synergia-local-content-100-dni-ministra-wojciecha-balczuna",
+          "date": "2025",
+          "kind": "government",
+          "opened": true,
+          "finding": "States ammunitioncompanyfundsreceivedAugust2025;OctoberPGZsignedPLN3bnFIKNarewagreementsforJelcz,PIT-RADWAR,WZU,ZMTarnow. Legalroutingmustbereconciled; donotassignallsubsidiaryawardsasparentcash."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "Parentcontractingvehicleversussubsidiarybeneficiaries andcashversussharesinstrument needfinalagreements;2.4bn/3bnprogrammepackagesnotassignedasPGZproceeds;December2025NarewandBELMAfundingcandidateoriginalstillunreviewed."
+      ]
+    }
+  ],
+  "timing": {
+    "note": "Laneactiveelapsedreportedbyparent; noend-to-endthroughputorconcurrencyspeedupclaim."
+  }
+}

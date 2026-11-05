@@ -1,0 +1,324 @@
+{
+  "checkpoint": 53,
+  "lane": "a",
+  "checked_at": "2026-11-05",
+  "read_only": true,
+  "pilot_reconciliation": "Current main pilot JSON read before discovery. None of five assigned slugs appears in its company groups. Current production funding events and participants read before searches.",
+  "companies_researched": 5,
+  "fully_bounded_complete": 0,
+  "partial_reviews": 5,
+  "companies": [
+    {
+      "slug": "milrem-robotics",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "kmw-minority-investment-2021",
+        "edge-majority-investment-2023"
+      ],
+      "searches": [
+        "Milrem Robotics investment funding 2019 2020 2025 2026 investors grant",
+        "Milrem Robotics 2019 3 million investors"
+      ],
+      "sources": [
+        {
+          "url": "https://milremrobotics.com/milrem-robotics-raised-5-5-million-euros/",
+          "kind": "issuer",
+          "access": "opened",
+          "finding": "10 June2020 company announcement says EUR5.5m contributed over2019 and2020. Names ten investors plus unnamed key employees. Not one separable dated round."
+        },
+        {
+          "url": "https://milremrobotics.com/milrem-robotics-led-consortium-to-start-the-development-of-the-european-standard-unmanned-ground-system/",
+          "kind": "issuer",
+          "access": "search_index_only",
+          "finding": "Search-indexed EUR32.6m iMUGS consortium grant; no company-specific share established."
+        }
+      ],
+      "supported_new_events": [],
+      "generic_relationship_candidates": {
+        "source_url": "https://milremrobotics.com/milrem-robotics-raised-5-5-million-euros/",
+        "names": [
+          "Jüri Käo",
+          "Peeter Mänd",
+          "Heldur Meerits",
+          "Taavi Veskimägi",
+          "Gunnar Kraft",
+          "Toomas Bergmann",
+          "Urmas Past",
+          "Juhan Kolk",
+          "Ahti Aho",
+          "Alari Aho"
+        ],
+        "note": "Named investment contributors in2019/2020 aggregate, no individual dates or cheques. Existing Sinrob ownership is not independently treated as new financing."
+      },
+      "holds": [
+        "Do not import EUR5.5m as one round. Secondary BalticCourse split2019/2020 not corroborated in checked original.",
+        "iMUGS/iMUGS2 consortium totals need beneficiary allocations; outbound procurement contracts are not funding."
+      ]
+    },
+    {
+      "slug": "monava",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "gungnir-pre-seed-2026"
+      ],
+      "searches": [
+        "Monava funding investment pre seed 2026 Gungnir Hede Foundry",
+        "site.monava.se investment funding Gungnir"
+      ],
+      "sources": [
+        {
+          "url": "https://www.fylgia.se/nyheter/fylgia-har-foretratt-monava-i-finansieringsrunda-med-gungnir-capital-som-huvudinvesterare",
+          "kind": "transaction_counsel",
+          "access": "opened",
+          "finding": "10 August2026 confirms financing with Gungnir largest investor, Foundry Ventures and Hede Capital; no amount."
+        },
+        {
+          "url": "https://gungnir.vc/",
+          "kind": "investor",
+          "access": "opened_no_readable_text",
+          "finding": "Search index says led preseed with Foundry/Hede, consistent with DB. Direct open returns no readable lines."
+        },
+        {
+          "url": "https://monava.se/",
+          "kind": "issuer",
+          "access": "opened_no_readable_text",
+          "finding": "Redirects monava.io, no readable text."
+        }
+      ],
+      "supported_new_events": [],
+      "holds": [
+        "Secondary EUR0.5m/USD565k is not corroborated by opened counsel or readable issuer source; keep amount undisclosed.",
+        "Earlier financing history not fully bounded due unreadable issuer site; preserve partial."
+      ]
+    },
+    {
+      "slug": "mydefence",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "bridgepoint-majority-investment-2024"
+      ],
+      "searches": [
+        "MyDefence funding investment 2018 2024 2025 2026 Bridgepoint",
+        "site.mydefence.com funding grant 2016 2019 2026",
+        "site.innovationsfonden.dk MyDefence 2018 2,7 millioner",
+        "site.cordis.europa.eu MYDEFENCE"
+      ],
+      "sources": [
+        {
+          "url": "https://cordis.europa.eu/project/id/719382",
+          "kind": "grantor_registry",
+          "access": "opened",
+          "finding": "DAPS, EUR50,000 sole-beneficiary net contribution, MYDEFENCE AS, EC signature20March2016. Project start1Jan2016 is not signature."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/768242",
+          "kind": "grantor_registry",
+          "access": "opened",
+          "finding": "KNOX, EUR1,258,775 sole-beneficiary net contribution, MYDEFENCE AS, signature9August2017. Project costEUR1,822,000 excluded."
+        },
+        {
+          "url": "https://www.mynewsdesk.com/mydefence-communication-aps/pressreleases/mydefence-receives-funding-to-develop-next-gen-anti-drone-technology-2721180",
+          "kind": "issuer_press_release",
+          "access": "opened",
+          "finding": "27Sep2018 confirms Innobooster award USD425k/EUR362k from Innovation Fund Denmark, fifteen-month project; full project budgetUSD1.29m excluded. OriginalDKK amount not stated."
+        },
+        {
+          "url": "https://innovationsfonden.dk/da/investeringer/investeringsoversigt?field_area_target_id=All&field_program_target_id=82&order=field_project_headline&page=271&sort=desc",
+          "kind": "grantor_registry",
+          "access": "search_index_only_fetch_failed",
+          "finding": "Search-indexed Beskyttelse af vores udsendte soldater imod droner, MyDefence CommunicationApS, investment2.7m and budget8.2m. Direct fetch redirects to inaccessible new domain."
+        },
+        {
+          "url": "https://mydefence.com/mydefence-doubles-earnings-and-strengthens-global-position/",
+          "kind": "issuer",
+          "access": "opened",
+          "finding": "Current company MYDEFENCE A/S at BouetMollevej5 matches CORDIS beneficiary.2024 substantial capacity spending is own capex; Bridgepoint liquidity backing is same existing deal, no new amount. Current news links extend through15Oct2026."
+        }
+      ],
+      "supported_new_events": [
+        {
+          "round_key": "eu-daps-719382-2016",
+          "stage": "DAPS EU project grant",
+          "financing_type": "grant",
+          "announced_date": "2016-03-20",
+          "date_kind": "EC_signature",
+          "amount": 50000,
+          "currency": "EUR",
+          "amount_qualifier": "exact",
+          "amount_basis": "announced_round_size",
+          "closing_status": "signed",
+          "source_url": "https://cordis.europa.eu/project/id/719382",
+          "participant": {
+            "name": "European Union",
+            "role": "grantor"
+          },
+          "issuer": "MYDEFENCE AS",
+          "note": "Beneficiary allocation; not representation of cash paid on signature."
+        },
+        {
+          "round_key": "eu-knox-768242-2017",
+          "stage": "KNOX EU project grant",
+          "financing_type": "grant",
+          "announced_date": "2017-08-09",
+          "date_kind": "EC_signature",
+          "amount": 1258775,
+          "currency": "EUR",
+          "amount_qualifier": "exact",
+          "amount_basis": "announced_round_size",
+          "closing_status": "signed",
+          "source_url": "https://cordis.europa.eu/project/id/768242",
+          "participant": {
+            "name": "European Union",
+            "role": "grantor"
+          },
+          "issuer": "MYDEFENCE AS",
+          "note": "Beneficiary allocation; own project costs excluded."
+        }
+      ],
+      "holds": [
+        "Innobooster2018 DKK original amount needs direct original registry retrieval; do not silently convert USD425k to DKK.",
+        "Other grant history incl2021Volasense DKK799k indexed officialregistry requires original opening; no comprehensive completion claimed.",
+        "June2026 press considers possible sale valuedUSD1bn; not closed transaction or issuer funding."
+      ]
+    },
+    {
+      "slug": "neuron-soundware",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "funding-2019"
+      ],
+      "searches": [
+        "Neuron Soundware funding investment seed 2017 2019 2025 2026",
+        "site.neuronsw.com grant EIC 7 million 2023 Neuron",
+        "site.neuronsw.com NEURONSW SE contact privacy",
+        "site.jtventures.cz Neuron 2017"
+      ],
+      "sources": [
+        {
+          "url": "https://startupyard.com/sy-alum-neuron-soundware-closes-e600k-investment-from-jt-ventures/",
+          "kind": "accelerator_original",
+          "access": "opened",
+          "finding": "19June2017 reports closed EUR600k investment announced by companyCEO and J&T Ventures. J&T plus unnamed private investor; no lead or individual amount. Source does not explicitly specify equity instrument."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/190167814",
+          "kind": "grantor_registry",
+          "access": "opened",
+          "finding": "Neuron Soundware(NSW) project, ECsignature25Jan2023, sole coordinatorNEURONSW SE, EUR2.5m EU contribution, EUR3,655,813.75 projectcost excluded."
+        },
+        {
+          "url": "https://www.neuronsw.com/ai-effectively-predicts-machinery-malfunctions/",
+          "kind": "issuer",
+          "access": "search_index_only_fetch_failed",
+          "finding": "Search index describes EUR7m combined EUHorizon andTAČR support. Direct open403. Aggregate is not one separable award."
+        },
+        {
+          "url": "https://www.neuronsw.com/imprint/",
+          "kind": "issuer_legal",
+          "access": "search_index_only_fetch_failed",
+          "finding": "Indexed NEURONSW SE, directopen403."
+        },
+        {
+          "url": "https://www.neuronsw.com/company-billing-information/",
+          "kind": "issuer_legal",
+          "access": "search_index_only_fetch_failed",
+          "finding": "Indexed NEURONSW SE accountname, directopen403."
+        },
+        {
+          "url": "https://www.eit.europa.eu/news-events/news/eit-manufacturing-backed-neuron-soundware-are-revolutionising-machine-maintenance",
+          "kind": "programme_original",
+          "access": "search_index_only",
+          "finding": "Indexed31Aug2023 says EUR7m EIC support; not imported whole because CORDIS grant allocation2.5m and issuer says combined programmes."
+        }
+      ],
+      "supported_new_events": [
+        {
+          "round_key": "jt-ventures-seed-2017",
+          "stage": "Seed investment",
+          "financing_type": "undisclosed",
+          "announced_date": "2017-06-19",
+          "date_kind": "announcement",
+          "amount": 600000,
+          "currency": "EUR",
+          "amount_qualifier": "exact",
+          "amount_basis": "closed_amount",
+          "closing_status": "closed",
+          "source_url": "https://startupyard.com/sy-alum-neuron-soundware-closes-e600k-investment-from-jt-ventures/",
+          "participant": {
+            "name": "J&T Ventures",
+            "slug": "jt-ventures",
+            "role": "participant"
+          },
+          "note": "Joint investment with unnamed private investor. No individual cheque or lead inferred; exact instrument not specified."
+        },
+        {
+          "round_key": "eic-nsw-190167814-2023",
+          "stage": "EIC project grant",
+          "financing_type": "grant",
+          "announced_date": "2023-01-25",
+          "date_kind": "EC_signature",
+          "amount": 2500000,
+          "currency": "EUR",
+          "amount_qualifier": "exact",
+          "amount_basis": "announced_round_size",
+          "closing_status": "signed",
+          "source_url": "https://cordis.europa.eu/project/id/190167814",
+          "participant": {
+            "name": "European Union",
+            "role": "grantor"
+          },
+          "issuer": "NEURONSW SE",
+          "note": "CORDIS project name explicitly NeuronSoundware(NSW), legalbeneficiaryNEURONSW SE; directissuerlegalpages403, parent may independently attach legalcontinuity beforeimport."
+        }
+      ],
+      "holds": [
+        "Original EUR7m EU+TAČR composite requires grant/investment-level decomposition; residual not invented.",
+        "Secondary2017 SiemensGroup participant conflicts original merely client/partnership mention; not add Siemens.",
+        "StartupYard2016 initial investment exists in secondary reports; amount and instrument not established.",
+        "Broad2025 acceleratorselection and grants could be noncash; not import standardprogrammebudget."
+      ]
+    },
+    {
+      "slug": "nordic-air-defence",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "pre-seed-2024",
+        "pre-seed-extension-2025"
+      ],
+      "searches": [
+        "Nordic Air Defence funding investment 2026 2025 Inflection SNÖ",
+        "site.nordicairdefence.com funding 2026 2025 Inflection",
+        "site.inflection.xyz Nordic Air Defence 2025"
+      ],
+      "sources": [
+        {
+          "url": "https://www.nordicairdefence.com/",
+          "kind": "issuer",
+          "access": "opened",
+          "finding": "Current sparse site identifies Kreuger100 product and organisation, no financialnews."
+        },
+        {
+          "url": "https://sno.vc/",
+          "kind": "investor",
+          "access": "opened",
+          "finding": "Portfolio identifies NAD and co-investors Inflection,NoamPerski,FredrikHjelm,JanGurander,JorgenBladh. Undated list is generic, not proof all belong2024round."
+        },
+        {
+          "url": "https://www.breakit.se/artikel/47908/forlusten-rusar-for-nordic-air-defence-narmar-sig-storrunda",
+          "kind": "secondary_candidate",
+          "access": "search_index_only",
+          "finding": "3Nov2026 reporting suggests approaching largerround; not proof closed."
+        }
+      ],
+      "supported_new_events": [],
+      "holds": [
+        "2024 EUR1.2m vsothercurrency representations remain unresolved. Keep amountnull; no new amount from aggregator.",
+        "Current SNÖ undated coinvestor list supports generic backing but exactround attribution needs source; existing2024 participant attribution should not be upgraded.",
+        "No closed2026round established; VCPedia20m Apr2026 may contaminatedunrelatedcryptoentity, not verified."
+      ]
+    }
+  ],
+  "timing": {
+    "note": "Parent measures overall read-only parallel lane duration; no speedup or full-throughput claim."
+  }
+}

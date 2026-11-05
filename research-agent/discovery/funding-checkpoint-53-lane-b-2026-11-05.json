@@ -1,0 +1,333 @@
+{
+  "batch": 53,
+  "lane": "b",
+  "checked_at": "2026-11-05",
+  "read_only": true,
+  "scope_companies": 5,
+  "newly_completed_bounded_reviews": 0,
+  "partial_reviews": 5,
+  "baseline": "Current-main pilot evidence and instructions read; current Supabase rounds and participants reconciled before new discovery. Pilot Occam/Oko/Orbion dispositions preserved; no previously imported event duplicated.",
+  "companies": [
+    {
+      "slug": "occam-industries",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "pre-seed-2026 EUR3000000 2026-02-11",
+        "seed-2026 EUR3800000 2026-09-30"
+      ],
+      "searches": [
+        "Occam Industries funding investment September 2026 North Ventures Soapbox 2.6 million",
+        "site.northventures.dk Occam 2026 investment",
+        "site.sparkmind.vc Occam 2026",
+        "site.occam.industries funding 2026 3.8"
+      ],
+      "sources": [
+        {
+          "url": "https://www.soapbox.vc/feed/occam-3m-pre-seed",
+          "opened": true,
+          "date": "2026-02-11",
+          "type": "issuer_investor_release_distribution",
+          "finding": "GBP2.6m pre-seed, Presto Tech Horizons lead; Antler, Freedom Fund, TYR participants. Same February event as stored EUR3m, not another round."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "Original currency representation differs GBP2.6m vs EUR3m; do not silently replace original stored event without explicit correction review. Existing company/investor-supplied EUR3m evidence retained.",
+        "September new round remains existing EUR3.8m; no new transaction-party page located in targeted searches. Search results' cumulative EUR7m is rounded and not third financing.",
+        "Stage varies seed/seed-extension/SeriesA in secondary summaries; no change without original."
+      ]
+    },
+    {
+      "slug": "oko-camera",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "it-arena-defense-grant-2024 USD15000",
+        "mits-investment-2024 amount undisclosed"
+      ],
+      "searches": [
+        "Oko Camera investment round closed 2026 MITS Brave1 grant",
+        "site.oko.camera Brave1 grant investment MITS 2026",
+        "site.brave1.gov.ua Oko grant 2024"
+      ],
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/posts/oko-camera_madeinukraine-thermaiimaging-thermalcamera-activity-7290720113295564801-1zaX",
+          "opened": true,
+          "type": "company_announcement",
+          "finding": "Issuer explicitly says received a Brave1 grant and separately lists IT Arena2024 win; cash grant is distinct from mere BRV1 status."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/brave1ukraine_ukrainian-defense-tech-has-long-moved-beyond-activity-7350530886326534144-J3PA",
+          "opened": true,
+          "type": "grantor_announcement",
+          "finding": "Brave1 explicitly confirms company received grant support in2024 and separately won Defense Tech Startup Competition. No amount."
+        },
+        {
+          "url": "https://oko.camera/en/about-us",
+          "opened": true,
+          "type": "issuer",
+          "finding": "Identity company founded2022; published2026 media links; statusBRV1 alone not cash award."
+        },
+        {
+          "url": "https://thedefender.media/en/2026/06/oko-camera-story/",
+          "opened": true,
+          "date": "2026-06-01",
+          "type": "ceo_interview_linked_by_company",
+          "finding": "CEO interview says Brave1 grant2023, MITS investment and ITArena prize separately. New round planned by end2026, not closed. Two unnamed original investors Ukraine/Germany; loans and credits nonspecific."
+        },
+        {
+          "url": "https://ain.ua/2026/10/08/interviu-z-ceo-oko-kamera/",
+          "opened": false,
+          "access": "403",
+          "finding": "Issuer-linked latest CEO interview unavailable; not evidence of close."
+        }
+      ],
+      "candidates": [
+        {
+          "event_key": "brave1-grant-undated",
+          "financing_type": "grant",
+          "amount": null,
+          "currency": null,
+          "amount_basis": "undisclosed",
+          "announced_date": null,
+          "date_note": "Issuer confirms grant but no precise date; grantor says2024, CEO interview says2023. Preserve conflict; do not add two events.",
+          "closing_status": "closed",
+          "issuer": "Oko Camera",
+          "participants": [
+            {
+              "slug": "brave1",
+              "name": "Brave1",
+              "role": "grantor"
+            }
+          ],
+          "source_url": "https://www.linkedin.com/posts/oko-camera_madeinukraine-thermaiimaging-thermalcamera-activity-7290720113295564801-1zaX",
+          "ready_for_import": "root_review_required",
+          "note": "Amount undisclosed; received grant distinct from ITArena prize. Date conflict2023/2024 should remain visible."
+        }
+      ],
+      "holds": [
+        "2026 round remains planned, no closing evidence.",
+        "Original unnamed investor financings, loans and credits lack dated instruments; do not invent rounds or participants.",
+        "Resolve Brave1 date conflict before any year precision; candidate can retain null date with explicit conflict."
+      ]
+    },
+    {
+      "slug": "orbion-technologies",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "pre-seed-package-2026 mixed undisclosed 2026-10-30"
+      ],
+      "searches": [
+        "Orbion Technologies MIT grant Rabobank funding 2026 preseed"
+      ],
+      "sources": [
+        {
+          "url": "https://www.brabantstartupfonds.nl/news/orbion-pre-seedfinanciering",
+          "opened": true,
+          "access": "page returned no readable lines; search index confirms existing announcement",
+          "date": "2026-10-30",
+          "finding": "Same BSF/imec/Rabobank financing package already imported. No new separate loan event."
+        },
+        {
+          "url": "https://saqurateq.com/silencio/",
+          "opened": true,
+          "type": "project_originator",
+          "finding": "Silencio project secured MIT R&D Stimulus and Metropolitan Regio Eindhoven R&D grants before migration into newly constituted Orbion Technologies BV in late2025. Project migration does not establish which legal issuer received awards."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/orbiontechnologies_bluemagicnetherlands-droneport-bluemagic-activity-7406237847231283200-3yUH",
+          "opened": false,
+          "access": "search_index",
+          "finding": "Issuer lists MIT RD grant and MRE award; original grant registers/amounts not checked."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "Do not split Rabobank debt from existing mixed package without explicit revision/reversal to avoid double event.",
+        "MIT/MRE grants need legal recipient and original award date/amount records; do not assign predecessor project financing automatically."
+      ]
+    },
+    {
+      "slug": "osl-technology-operational-solutions-ltd",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "bgf-investment-2021 GBP8000000",
+        "bgf-follow-on-2023 GBP3500000"
+      ],
+      "searches": [
+        "OSL Technology Operational Solutions acquired Terma investment funding2025 2026"
+      ],
+      "sources": [
+        {
+          "url": "https://www.terma.com/news-events/news/news-archive/2025/terma-acquires-osl-technology-powering-a-market-leading-counter-uas-and-critical-infrastructure-protection-capability/",
+          "opened": true,
+          "date": "2025-11-27",
+          "type": "acquirer_announcement",
+          "finding": "Acquirer explicitly states completed acquisition of OSL Technology. No consideration disclosed."
+        },
+        {
+          "url": "https://www.bgf.co.uk/posts/news/osl-exit/",
+          "opened": true,
+          "date": "2025-11-27",
+          "type": "selling_investor_announcement",
+          "finding": "BGF explicitly completed exit of Operational Solutions Limited via Terma acquisition. Not new primary financing."
+        },
+        {
+          "url": "https://www.osltechnology.com/resources/operational-solutions-ltd-gains-8m-investment-from-bgf",
+          "opened": false,
+          "access": "search_index",
+          "finding": "Body dates firstGBP8m investment13December2021; page metadataApril2025 is republishing. Expected-old date enrichment requires writer original check."
+        }
+      ],
+      "candidates": [
+        {
+          "event_key": "terma-acquisition-2025",
+          "financing_type": "equity",
+          "record_kind": "investment_disclosure",
+          "stage": "Acquisition by Terma",
+          "announced_date": "2025-11-27",
+          "amount": null,
+          "currency": null,
+          "amount_basis": "undisclosed",
+          "closing_status": "closed",
+          "participants": [
+            {
+              "slug": "terma",
+              "name": "Terma",
+              "role": "participant"
+            }
+          ],
+          "source_url": "https://www.terma.com/news-events/news/news-archive/2025/terma-acquires-osl-technology-powering-a-market-leading-counter-uas-and-critical-infrastructure-protection-capability/",
+          "ready_for_import": true,
+          "note": "Completed secondary ownership acquisition; consideration undisclosed, not primary OSL proceeds. BGF exit corroborates. Preserve existing2021/2023 rounds."
+        }
+      ],
+      "holds": [
+        "Company original page sometimes says signed subjectconditions, while acquirer current original and seller say completed. Preserve source revision ambiguity in notes; acquisition price unknown.",
+        "Project HADO and UK R&D awards require company-specific award allocations, not consortium total."
+      ]
+    },
+    {
+      "slug": "parrot",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "rights-issue-2015 approxEUR300000000"
+      ],
+      "searches": [
+        "site.parrot.com investors capital increase2026 2025 2024 financing",
+        "site.parrot.com 2013 2014 2006 initial public offering2015 capital increase",
+        "Parrot2026 first half earnings Horizon advance loan2026 financing",
+        "site.parrot.com 2026 2025 loan Horizon"
+      ],
+      "sources": [
+        {
+          "url": "https://www.parrot.com/en/corporate/operations-related-parties",
+          "opened": true,
+          "type": "issuer_legal_disclosure",
+          "finding": "PARROT SA/Horizon SAS shareholder current-account agreement dated15Nov2024, up-toEUR5m, max15months; EURIBOR12m+40bps. Art loans/labour loans are not financial funding."
+        },
+        {
+          "url": "https://www.parrot.com/assets/s3fs-public/media-public/2026/PARROT_CP_FY-2025_20250327_EN_DEF.pdf",
+          "opened": true,
+          "date": "2026-03-27",
+          "type": "issuer_financial_release",
+          "finding": "Same facility EUR2.5m drawnDecember2024, furtherEUR2.5m during2025, outstandingEUR5m yearend. Board12Dec2025 extended capEUR20m,maturityendFebruary2028. Do not add cap20m to actualdraw5m."
+        },
+        {
+          "url": "https://www.parrot.com/assets/s3fs-public/media-public/PARROT_CP_S1-2025_20250801_EN_DEF.pdf",
+          "opened": true,
+          "date": "2025-08-01",
+          "type": "issuer_financial_release",
+          "finding": "After30June2025 GroupsecuredEUR1.7m bank research-tax-credit financing and drewfurtherEUR2.5m Horizon. Intermediate board31July2025 facilitycapEUR10m. Bank lender and exactlegalborrower notnamed."
+        },
+        {
+          "url": "https://live.euronext.com/en/ipo-showcase/parrot",
+          "opened": false,
+          "access": "search_index",
+          "finding": "27June2006 IPO primarynew1,130,782shares plus secondary shares; do not use entireoffer as primaryproceeds before finalresultsoriginal."
+        },
+        {
+          "url": "https://www.parrot.com/en/corporate/financial-publications",
+          "opened": false,
+          "access": "UnexpectedStatusCode",
+          "finding": "Searchindex lists October28 2026 Q3 and July31 H1; pagefetchfailed."
+        }
+      ],
+      "candidates": [
+        {
+          "event_key": "horizon-shareholder-current-account-facility-2024",
+          "financing_type": "debt",
+          "record_kind": "credit_facility",
+          "stage": "Shareholder current-account facility",
+          "announced_date": "2024-11-15",
+          "amount": 5000000,
+          "currency": "EUR",
+          "amount_qualifier": "up_to",
+          "amount_basis": "announced_round_size",
+          "closing_status": "signed",
+          "participants": [
+            {
+              "slug": "horizon-henri-seydoux",
+              "name": "Horizon SAS",
+              "role": "lender"
+            }
+          ],
+          "source_url": "https://www.parrot.com/en/corporate/operations-related-parties",
+          "ready_for_import": "root_choose_facility_vs_drawdown_representation",
+          "note": "OriginalPARROTSA agreement up-toEUR5m. Later cap10m July2025 then20mDecember2025 are amendments of samefacility; actualdraws2.5mDec2024+2.5m2025. Do not count limits as cashraised."
+        },
+        {
+          "event_key": "horizon-actual-drawdown-2024",
+          "financing_type": "debt",
+          "record_kind": "round",
+          "stage": "Shareholder loan drawdown",
+          "announced_date": "2024-12",
+          "amount": 2500000,
+          "currency": "EUR",
+          "amount_basis": "closed_amount",
+          "closing_status": "closed",
+          "participants": [
+            {
+              "slug": "horizon-henri-seydoux",
+              "name": "Horizon SAS",
+              "role": "lender"
+            }
+          ],
+          "source_url": "https://www.parrot.com/assets/s3fs-public/media-public/2026/PARROT_CP_FY-2025_20250327_EN_DEF.pdf",
+          "ready_for_import": "alternative_actual_proceeds_do_not_double_count_facility",
+          "note": "Actualpaid December2024. Samefacility cap5/10/20m should not be counted as additionalpaid proceeds."
+        },
+        {
+          "event_key": "horizon-actual-drawdown-2025",
+          "financing_type": "debt",
+          "record_kind": "round",
+          "stage": "Shareholder loan drawdown",
+          "announced_date": "2025",
+          "amount": 2500000,
+          "currency": "EUR",
+          "amount_basis": "closed_amount",
+          "closing_status": "closed",
+          "participants": [
+            {
+              "slug": "horizon-henri-seydoux",
+              "name": "Horizon SAS",
+              "role": "lender"
+            }
+          ],
+          "source_url": "https://www.parrot.com/assets/s3fs-public/media-public/2026/PARROT_CP_FY-2025_20250327_EN_DEF.pdf",
+          "ready_for_import": "alternative_actual_proceeds_do_not_double_count_facility",
+          "note": "Additional2025draw, exactdateunknown. H12025release saysafterJune30, beforeAug1 release; retainyear precision ratherthan inventedday. Samefacility capamendments notadditionalcash."
+        }
+      ],
+      "holds": [
+        "Choose one facility/actual-proceeds model and preventdoublecount; alternative candidates explicitlymutuallyexclusive.",
+        "2006 IPO primaryproceeds and all historicalshareissues need originalfinalresults; employeeoptions not automatically externalround.",
+        "EUR1.7m taxcreditbank financing source is Group, lender/borrowerentity unknown: hold issuerattribution.",
+        "Latest2026 financialreleases and facilitycapextensions needfinalreview; no completedhistoryclaim."
+      ]
+    }
+  ],
+  "timing": {
+    "note": "Parent measures end-to-end active time; no concurrency/speedup claim."
+  }
+}

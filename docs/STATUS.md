@@ -1641,3 +1641,8 @@ own column in both the eval report and the replay report.
 The replay has still written nothing: 626 articles with evidence, 2,345 evidence rows,
 55 candidates. **Re-run `mode=replay-dry`** — the count it reports now will be the one
 worth applying.
+
+
+### Company funding checkpoint53 — 2026-11-05
+
+Source-audited18new events and24participations;605approved events,1008participations,705profiles. Explicit Kitemill precision correction and reversal tested;20parallel read-only reviews plus2writer followups remain partial. Publication pending. Dedicated state/report contain evidence and next actions; legacy STATE and snapshots untouched.

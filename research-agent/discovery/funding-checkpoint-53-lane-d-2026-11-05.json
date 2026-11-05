@@ -1,0 +1,256 @@
+{
+  "batch": 53,
+  "lane": "d",
+  "checked_at": "2026-11-05",
+  "read_only": true,
+  "pilot_reconciliation": "Read current main pilot evidence before discovery; none of the five slugs appears as a direct pilot identity. Existing DB events queried before discovery. No DB or repository writes.",
+  "company_identities_researched": 5,
+  "fully_source_audited_complete": 0,
+  "partial_reviews": 5,
+  "companies": [
+    {
+      "slug": "primoco-uav",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "ipo-2018 CZK63125000",
+        "follow-on-subscription-2021 CZK40534000"
+      ],
+      "sources": [
+        {
+          "url": "https://www.pse.cz/en/pribehy/CZ0005135970",
+          "opened": true,
+          "kind": "exchange_original",
+          "finding": "Existing issuer subscriptions retained; current Prime Market identity."
+        },
+        {
+          "url": "https://www.uav-stol.com/en/for-investors",
+          "opened": true,
+          "kind": "issuer_original",
+          "finding": "Issuer identity Primoco UAV SE, ID03794393, ISIN CZ0005135970; financial/regulatory page lists 2026 filings and prior IPO prospectuses. Financial balance-sheet equity/registered share count is not new proceeds."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "Annual/interim financing notes and primary-versus-secondary 2024 market transfer prospectus require full reconciliation before a complete-history disposition. No absence-of-funding claim."
+      ]
+    },
+    {
+      "slug": "quadsat",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "series-a-2023 EUR9000000",
+        "series-a-extension-2025 EUR5000000"
+      ],
+      "sources": [
+        {
+          "url": "https://quadsat.com/the-largest-drone-tech-investment-in-denmark-of-e2-million/",
+          "opened": true,
+          "kind": "issuer_original",
+          "source_date": "2020-09-10",
+          "finding": "Closed EUR2m Pre-Series A. Source says round led by Seraphim Capital, Vaekstfonden and angel Helge Munk; earlier seed at start2019. ESA development contracts mentioned without award proceeds."
+        },
+        {
+          "url": "https://via.ritzau.dk/pressemeddelelse/13567031/lovende-dansk-startup-henter-millioner-til-ny-droneteknologi?publisherId=9770657",
+          "opened": true,
+          "kind": "investor_original",
+          "source_date": "2019-01-16",
+          "finding": "Vækstfonden release: overDKK5m seed from Vækstfonden, Seraphim Capital, existing investors including Helge Munk. Vækstfonden portion explicitly Early Engagement convertible loan; undisclosed component split. Secondary GBP700k not substituted for original."
+        }
+      ],
+      "candidates": [
+        {
+          "round_key": "seed-2019",
+          "announced_date": "2019-01-16",
+          "amount": 5000000,
+          "currency": "DKK",
+          "amount_qualifier": "more_than",
+          "financing_type": "mixed",
+          "stage": "Seed financing including convertible loan",
+          "amount_basis": "closed_amount",
+          "closing_status": "closed",
+          "participants": [
+            {
+              "name": "Vækstfonden",
+              "map_to_existing_slug": "eifo",
+              "role": "participant",
+              "instrument": "convertible loan"
+            },
+            {
+              "name": "Seraphim Capital",
+              "map_to_existing_slug": "seraphim-space",
+              "role": "participant"
+            },
+            {
+              "name": "Helge Munk",
+              "map_to_existing_slug": "helge-munk",
+              "role": "participant"
+            }
+          ],
+          "source_url": "https://via.ritzau.dk/pressemeddelelse/13567031/lovende-dansk-startup-henter-millioner-til-ny-droneteknologi?publisherId=9770657",
+          "note": "Exact instrument of other portions not stated; do not label total as all equity or all convertible. No lead role claimed. Vaekstfonden successor mapping must retain source name; company not zero-funded."
+        },
+        {
+          "round_key": "pre-series-a-2020",
+          "announced_date": "2020-09-10",
+          "amount": 2000000,
+          "currency": "EUR",
+          "amount_qualifier": "exact",
+          "financing_type": "equity",
+          "stage": "Pre-Series A",
+          "amount_basis": "closed_amount",
+          "closing_status": "closed",
+          "participants": [
+            {
+              "name": "Seraphim Capital",
+              "map_to_existing_slug": "seraphim-space",
+              "role": "co_lead"
+            },
+            {
+              "name": "Vækstfonden",
+              "map_to_existing_slug": "eifo",
+              "role": "co_lead"
+            },
+            {
+              "name": "Helge Munk",
+              "map_to_existing_slug": "helge-munk",
+              "role": "co_lead"
+            }
+          ],
+          "source_url": "https://quadsat.com/the-largest-drone-tech-investment-in-denmark-of-e2-million/",
+          "note": "Source names the three as leaders. Helge personal profile retained as publication names individual; biography mentions holding vehicle but not separate cheque."
+        }
+      ],
+      "holds": [
+        "ESA development contracts and accelerator support need exact instrument/beneficiary amounts before import. Full non-dilutive history not exhausted."
+      ]
+    },
+    {
+      "slug": "quantum-systems",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "eib-debt-2021",
+        "series-a-2022",
+        "financing-2022-10",
+        "series-b-2023",
+        "series-b-extension-2024",
+        "series-c-2025",
+        "series-c-extension-2025",
+        "european-debt-2026",
+        "series-d-2026"
+      ],
+      "sources": [
+        {
+          "url": "https://quantum-systems.com/news/bayern-kapital-invests-in-quantum-systems/",
+          "opened": true,
+          "kind": "issuer_original",
+          "source_date": "2022-06-08",
+          "finding": "Completed Series A funding rounds total USD32m equity plus venture debt, including EIB. This is plural aggregate, not isolated new round proceeds; preserve existing event amount null."
+        },
+        {
+          "url": "https://quantum-systems.com/news/quantum-systems-triples-valuation/",
+          "opened": false,
+          "access": "search_index",
+          "kind": "issuer_original",
+          "finding": "Issuer HTML date27November2025 whereas issuer PDF search date28November; month precision in existing extension avoids conflict."
+        },
+        {
+          "url": "https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/",
+          "opened": false,
+          "access": "search_index",
+          "kind": "issuer_original",
+          "finding": "Current July2026 USD1.2bn signing indexed and already in DB."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "USD32m historical composite cannot be added to existing2021 debt without double count. October2022 USD17.5m secondary claims still need exact primary split/source. No full-history completion claimed."
+      ]
+    },
+    {
+      "slug": "stirlingx",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "seed-extension-2025 USD11000000 convertible SAFE total",
+        "series-a-2026 USD20000000"
+      ],
+      "sources": [
+        {
+          "url": "https://www.stirlingx.io/content-hub",
+          "opened": true,
+          "kind": "issuer_original",
+          "source_date": "2026-07-02",
+          "finding": "Series A issuer text explicitly says Ventura and RCM led, preserving existing co-lead roles. Seed totalUSD11m includes earlier summer seed, not separate extraUSD11m. Company incubated within GALLOS."
+        },
+        {
+          "url": "https://www.burges-salmon.com/burges-salmon-advises-stirlingx-on-20m-series-a-investment/",
+          "opened": true,
+          "kind": "transaction_counsel_original",
+          "source_date": "2026-07-02",
+          "finding": "Counsel confirms USD20m Series A, Ventura lead, RCM and GALLOS participants. GALLOS participation is absent current DB event; issuer explicitly supports RCM co-lead so do not downgrade solely due counsel wording."
+        }
+      ],
+      "candidates": [
+        {
+          "existing_round_key": "series-a-2026",
+          "action": "add_participation_and_source_only",
+          "investor_slug": "gallos-technologies",
+          "investor_name": "GALLOS Technologies",
+          "role": "participant",
+          "source_url": "https://www.burges-salmon.com/burges-salmon-advises-stirlingx-on-20m-series-a-investment/",
+          "note": "Preserve existing USD20m event and co-lead roles; do not create new round. Existing field conflicts require expected-old correction; participant addition is nonconflicting."
+        }
+      ],
+      "holds": [
+        "Earlier summer seed component is part of existing total; historical incubation/registered capital not imported as cash financing. Separate exact component/date not reconciled, so partial history remains."
+      ]
+    },
+    {
+      "slug": "tekever",
+      "disposition": "source_review_partial",
+      "existing_events": [
+        "funding-2022 EUR20000000",
+        "series-b-2024 EUR70000000",
+        "funding-2025-05 undisclosed",
+        "series-d-2026 USD580000000 first_close"
+      ],
+      "sources": [
+        {
+          "url": "https://www.tekever.com/news/tekever-raises-70-millions-euros-and-brings-strategic-investors-on-board/",
+          "opened": true,
+          "kind": "issuer_original",
+          "source_date": "2024-11-20",
+          "finding": "Header Baillie lead/NIF backed but body wording can read both leading. Existing participants and amount retained; note source-level role ambiguity rather than silent change."
+        },
+        {
+          "url": "https://www.tekever.com/news/tekever-raises-us580-million-reaching-us6-4-billion-valuation-in-series-d-round-led-by-uc-investments-and-baillie-gifford/",
+          "opened": true,
+          "kind": "issuer_original",
+          "source_date": "2026-09-23",
+          "finding": "First close covers majority of announcedUSD580m, further closings expected; preserve DB first_close not entire sum closed. UC/Baillie co-lead and Merlyn/Crescent/Ventura/Iberis match DB. CORVUS up-toGBP400m is contract, not funding."
+        },
+        {
+          "url": "https://www.tekever.com/news/",
+          "opened": false,
+          "access": "search_index",
+          "kind": "issuer_original",
+          "finding": "News through2November2026 lists deployments/contracts after September round, not later new financing."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "Funded R&D projects may involve distinct Tekever subsidiaries; require exact beneficiary allocations and identity mapping. Earlier financing and primary grant history not exhausted. No complete-history claim."
+      ]
+    }
+  ],
+  "searches": [
+    "QuadSAT funding 2018 2020 2 million funding Danish Growth Fund Seraphim",
+    "Quantum Systems funding series A 2016 2021 2022 17.5 million 2026 financing",
+    "StirlingX funding seed 2023 2024 Gallos 2026",
+    "site.uav-stol.com Primoco capital increase shares financing 2025 2026",
+    "site.tekever.com funding investment 2014 2018 2026 September",
+    "site.burges-salmon.com StirlingX July2026 Gallos SeriesA"
+  ],
+  "timing": {
+    "note": "Parent owns overall timing. No concurrency speedup or completed-company throughput claimed."
+  }
+}
