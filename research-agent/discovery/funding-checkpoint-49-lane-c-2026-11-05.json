@@ -1,0 +1,416 @@
+{
+  "lane": "funding49_c",
+  "reviewed_at": "2026-11-05",
+  "read_only": true,
+  "prior_evidence": {
+    "path": "research-agent/discovery/funding-parallel-pilot-2026-11-03.json",
+    "read_before_discovery": true,
+    "matching_company_dispositions_found": 0
+  },
+  "timing": {
+    "active_seconds": null,
+    "reason": "Lane start timestamp was not recorded; no concurrency speedup claimed."
+  },
+  "companies": [
+    {
+      "slug": "lyocon",
+      "disposition": "source_review_partial",
+      "db_existing": [
+        {
+          "event_key": "nuburu-acquisition-2026",
+          "date": "2026-01-15",
+          "amount": 2000000,
+          "currency": "USD",
+          "note": "Seller cash and notes; preserve acquisition event, distinguish from primary issuer funding."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1814215/000119312526016802/buru-20260113.htm",
+          "source_type": "issuer_regulatory",
+          "date": "2026-01",
+          "opened": true,
+          "summary": "Acquisition closed Jan15; seller consideration separate from $1m operational funding commitment, of which $500k paid at closing."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1814215/000119312526232836/buru-20260331.htm",
+          "source_type": "issuer_regulatory",
+          "date": "2026-05-20",
+          "opened": true,
+          "summary": "Signed May20 quarterly filing; acquisitions note explicitly classifies $500k closing payment to Lyocon as debt facility."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1814215/000119312526232836/R15.htm",
+          "source_type": "issuer_regulatory_note",
+          "date": "2026-05-20",
+          "opened": true,
+          "summary": "Note4, Lyocon acquisition paragraph: $500k paid as debt facility Jan15, remaining two $250k funding instalments future due. Acquisition $2m excludes contingent earnout."
+        }
+      ],
+      "new_supported_events": [
+        {
+          "proposed_event_key": "nuburu-operational-debt-2026",
+          "event_date": "2026-01-15",
+          "date_precision": "day",
+          "date_basis": "closing_date",
+          "issuer": "Lyocon",
+          "amount": 500000,
+          "currency": "USD",
+          "amount_qualifier": "exact",
+          "instrument": "debt",
+          "event_type": "credit_facility",
+          "status": "closed",
+          "capital_flow": "primary",
+          "investors": [
+            {
+              "name": "NUBURU, Inc.",
+              "role": "lender",
+              "role_explicit": true
+            }
+          ],
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1814215/000119312526232836/buru-20260331.htm",
+            "https://www.sec.gov/Archives/edgar/data/1814215/000119312526232836/R15.htm"
+          ],
+          "notes": "Only actual $500k paid included. Separate from purchase consideration paid to sellers. $1m overall commitment is not fully drawn; future $250k+250k excluded. Exact underlying lending entity should retain source wording if source names parent versus acquisition subsidiary."
+        }
+      ],
+      "holds": [
+        {
+          "topic": "Earlier private financing",
+          "reason": "Broad company funding/history searches found acquisition documentation; no source-audited exhaustive earlier-round history."
+        }
+      ],
+      "searches_completed": [
+        "Lyocon financing/funding history",
+        "Nuburu Lyocon acquisition funding SEC filings",
+        "SEC Lyocon $500000 loan"
+      ]
+    },
+    {
+      "slug": "malloy-aeronautics",
+      "disposition": "source_review_partial",
+      "db_existing": [
+        {
+          "event_key": "bae-systems-acquisition-2024",
+          "date": "2024-01-31",
+          "amount": 60000000,
+          "currency": "GBP",
+          "capital_flow": "secondary",
+          "note": "Retain; working-capital adjustments and contingent amounts unquantified."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://investors.baesystems.com/dam/jcr%3Aa02e71fc-5906-4d10-80c5-2ddbbceb11ae/fy24-half-yearly-report.2024-11-01-11-59-00.pdf",
+          "source_type": "issuer_report",
+          "date": "2024",
+          "opened": false,
+          "summary": "Search discovery confirms Jan31 acquisition date; full PDF not reopened within lane."
+        },
+        {
+          "url": "https://www.baesystems.com/en/article/uk-defence-drone-strategy-launched-at-malloy-aeronautics",
+          "source_type": "acquirer_original",
+          "date": "2024-02-22",
+          "opened": false,
+          "summary": "UK defence drone programme is not Malloy funding."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/07993563/persons-with-significant-control",
+          "source_type": "registry",
+          "date": null,
+          "opened": false,
+          "summary": "Discovery corroborates BAE holding ownership beginning Jan31 2024."
+        }
+      ],
+      "new_supported_events": [],
+      "holds": [
+        {
+          "topic": "Possible 2020 grant",
+          "reason": "Aggregator discovery only; original award source and exact issuer/amount not validated. Do not import."
+        },
+        {
+          "topic": "Historical primary funding",
+          "reason": "No independently verified new primary funding; acquisition and contract/programme amounts must remain separate."
+        }
+      ],
+      "searches_completed": [
+        "Malloy Aeronautics funding investment grant history",
+        "BAE original Malloy acquisition consideration and date",
+        "Malloy registry ownership"
+      ]
+    },
+    {
+      "slug": "manna-drone-delivery",
+      "disposition": "source_review_partial",
+      "db_existing": [
+        {
+          "event_key": "series-b-2026",
+          "date": "2026-04-01",
+          "amount": 50000000,
+          "currency": "USD",
+          "note": "Latest original company announcement corroborates; $110m cumulative is not another event; no lead supported."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.moltenventures.com/news/draper-esprit-leads-25m-series-a-in-drone-delivery-company-manna",
+          "source_type": "investor_original",
+          "date": "2021-04-29",
+          "opened": true,
+          "summary": "USD25m SeriesA; Draper Esprit lead; Team Europe, DST Global, Dynamo Ventures, Atlantic Bridge and Elkstone participation."
+        },
+        {
+          "url": "https://www.manna.aero/blog/series-b",
+          "source_type": "issuer_original",
+          "date": "2026-04-01",
+          "opened": true,
+          "summary": "USD50m SeriesB; ARK Invest, ISIF, Schooner Capital, continuing Coca-Cola HBC, Molten Ventures, Enterprise Ireland; no explicit lead."
+        },
+        {
+          "url": "https://www.coca-colahellenic.com/en/media/news/sustainability_news/2023/next-generation-delivery-drones-manna-aero",
+          "source_type": "investor_original",
+          "date": "2023-10-25",
+          "opened": true,
+          "summary": "Confirms Ventures-arm investment, amount undisclosed; does not by itself establish exact investment close date."
+        },
+        {
+          "url": "https://www.aquaapartners.com/insights/news/march-2023-coca-cola-hellenic-bottling-company-hbc-agrees-to-make-a-strategic-investment-in-manna/",
+          "source_type": "transaction_adviser",
+          "date": "2023-03-16",
+          "opened": false,
+          "summary": "Discovery: definitive agreement, undisclosed amount; requires page validation and date/status reconciliation."
+        },
+        {
+          "url": "https://www.irishtimes.com/business/2025/03/26/manna-raises-30m-in-funding-to-further-grow-drone-delivery-service/",
+          "source_type": "secondary_discovery",
+          "date": "2025-03-26",
+          "opened": false,
+          "summary": "USD30m reported; Molten and Tapestry lead. Need original issuer/investor or full corroboration before import."
+        },
+        {
+          "url": "https://www.engineersireland.ie/Engineers-Journal/manna-completes-30m-funding-round",
+          "source_type": "professional_association_reporting",
+          "date": "2025-03",
+          "opened": false,
+          "summary": "Discovery corroborates 2025 USD30m; candidate not primary evidence."
+        },
+        {
+          "url": "https://www.irishtimes.com/business/technology/drone-delivery-company-manna-raises-3m-in-seed-round-1.4119280",
+          "source_type": "secondary_discovery",
+          "date": "2019",
+          "opened": false,
+          "summary": "Incremental USD3m reported bringing seed total USD5.2m; avoid cumulative double count."
+        }
+      ],
+      "new_supported_events": [
+        {
+          "proposed_event_key": "series-a-2021",
+          "event_date": "2021-04-29",
+          "date_precision": "day",
+          "date_basis": "announcement_date",
+          "issuer": "Manna Drone Delivery",
+          "amount": 25000000,
+          "currency": "USD",
+          "amount_qualifier": "exact",
+          "instrument": "equity",
+          "event_type": "funding_round",
+          "round_type": "series_a",
+          "status": "closed",
+          "capital_flow": "primary",
+          "investors": [
+            {
+              "name": "Draper Esprit",
+              "map_existing_slug": "molten-ventures",
+              "role": "lead",
+              "historical_name": true
+            },
+            {
+              "name": "Team Europe",
+              "role": "participant"
+            },
+            {
+              "name": "DST Global",
+              "role": "participant"
+            },
+            {
+              "name": "Dynamo Ventures",
+              "role": "participant"
+            },
+            {
+              "name": "Atlantic Bridge",
+              "role": "participant"
+            },
+            {
+              "name": "Elkstone",
+              "role": "participant"
+            }
+          ],
+          "source_urls": [
+            "https://www.moltenventures.com/news/draper-esprit-leads-25m-series-a-in-drone-delivery-company-manna"
+          ],
+          "notes": "Use current Molten profile with historical Draper Esprit label in notes, no duplicate profile. No individual cheque sizes supported."
+        }
+      ],
+      "holds": [
+        {
+          "topic": "2019 seed",
+          "reason": "USD3m incremental vs USD5.2m cumulative distinction; original dates and investor evidence still needed."
+        },
+        {
+          "topic": "2023 Coca-Cola strategic",
+          "reason": "Investment confirmed, exact close date and transaction adviser page need reconciliation; amount remains undisclosed."
+        },
+        {
+          "topic": "2025 USD30m financing",
+          "reason": "Strong candidates found but issuer/investor original page not located in this bounded pass."
+        },
+        {
+          "topic": "HSBC debt",
+          "reason": "Secondary 2026 reporting suggests debt; primary facility details/date/instrument not validated."
+        }
+      ],
+      "searches_completed": [
+        "Manna all funding rounds history",
+        "Molten Manna SeriesA original",
+        "Manna company SeriesB original",
+        "Coca-Cola HBC Manna original",
+        "Manna 2025 30m Molten Tapestry NovaUCD original",
+        "Manna 2019 seed Dynamo history"
+      ]
+    },
+    {
+      "slug": "marlborough-communications",
+      "disposition": "source_review_partial",
+      "db_existing": [
+        {
+          "event_key": "cohort-majority-acquisition-2014",
+          "date": "2014-07-09",
+          "amount": 8847000,
+          "currency": "GBP",
+          "capital_flow": "secondary",
+          "note": "Actual initial plus earnout consideration should not be replaced by original up-to target."
+        },
+        {
+          "event_key": "cohort-remaining-stake-acquisition-2017",
+          "date": "2017-01-31",
+          "amount": 5100000,
+          "currency": "GBP",
+          "amount_qualifier": "approx",
+          "capital_flow": "secondary"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cohortplc.com/news/press-release/cohort-plc-acquires-marlborough-communications",
+          "source_type": "acquirer_original",
+          "date": "2014-07-09",
+          "opened": true,
+          "summary": "50% plus one share of Marlborough Communications (Holdings) Ltd, operating MCL subsidiary; initial GBP6m cash plus up-to GBP2m earnout."
+        },
+        {
+          "url": "https://www.cohortplc.com/news/press-release/cohort-completes-acquisition-100-marlborough-communications-ltd-mcl",
+          "source_type": "acquirer_original",
+          "date": "2017-02-01",
+          "opened": true,
+          "summary": "Remaining 49.999% acquired for GBP5.1m cash; GBP12.1m cumulative paid-to-date; further approximately GBP2m expected includes earnout and cash surplus. Not separate primary financing."
+        },
+        {
+          "url": "https://www.cohortplc.com/download_file/force/84/241",
+          "source_type": "issuer_annual_report",
+          "date": "2017",
+          "opened": false,
+          "summary": "Discovery candidate exact GBP5,080,344 for Jan31 remaining stake; validate report before precision correction."
+        },
+        {
+          "url": "https://www.cohortplc.com/download_file/force/106/241",
+          "source_type": "issuer_annual_report",
+          "date": "2015",
+          "opened": false,
+          "summary": "Discovery candidate GBP7.864m closing plus GBP983k earnout paid Mar30 2015 = GBP8.847m; retain current curated record pending full report check."
+        }
+      ],
+      "new_supported_events": [],
+      "holds": [
+        {
+          "topic": "Acquisition reconciliation",
+          "reason": "Operating company versus holding-company issuer and actual-final consideration chronology should retain curated accounting notes; don't sum original targets and later paid amounts."
+        },
+        {
+          "topic": "Exact remaining stake price",
+          "reason": "Annual report candidate suggests precise GBP5,080,344; full report not opened; preserve current approximate5.1m."
+        }
+      ],
+      "excluded": [
+        {
+          "type": "contracts",
+          "reason": "2025/2026 GBP14m and GBP21.4m contract awards are revenue, not funding."
+        }
+      ],
+      "searches_completed": [
+        "Marlborough Communications financing investment acquisition history",
+        "Cohort MCL original 2014 2017 announcements",
+        "Cohort annual reports consideration",
+        "Marlborough recent grants funding versus contracts"
+      ]
+    },
+    {
+      "slug": "marshall-land-systems",
+      "disposition": "bounded_public_source_review_no_new_event",
+      "db_existing": [
+        {
+          "event_key": "flowing-river-acquisition-2025",
+          "date": "2025-11-24",
+          "amount": null,
+          "note": "Announcement date; actual completion21Nov2025. Amount undisclosed."
+        },
+        {
+          "event_key": "eden-rock-credit-debt-raise-2026",
+          "date": "2026-07-24",
+          "amount": null,
+          "instrument": "debt",
+          "note": "Kroll corroborates closedJuly24; original publicationSept24; amount undisclosed."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://marshalllandsystems.com/news/marshall-land-systems-acquired-by-flowing-river-capital-partners",
+          "source_type": "issuer_original",
+          "date": "2025-11-24",
+          "opened": true,
+          "summary": "Acquisition announcement explicitly says completion21Nov2025; amount not stated."
+        },
+        {
+          "url": "https://www.kroll.com/en/transactions/financial-advisor-marshall-land-systems",
+          "source_type": "transaction_adviser_original",
+          "date": "2026-09-24",
+          "opened": true,
+          "summary": "ClosedJuly24 2026 debt raise led by EdenRockCredit; amount not disclosed."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/02661432/filing-history",
+          "source_type": "registry_discovery",
+          "date": "2026-07-27",
+          "opened": false,
+          "summary": "Charge created23July registered27July; do not substitute registration for financing close date."
+        }
+      ],
+      "new_supported_events": [],
+      "holds": [],
+      "review_limits": "Bounded public source review only; no assertion of zero undisclosed finance. Parent Marshall Group transactions are not assigned to Land Systems.",
+      "searches_completed": [
+        "Marshall Land Systems funding loan investment history",
+        "Marshall FlowingRiver acquisition original seller and adviser",
+        "Kroll EdenRock Marshall debt raise",
+        "Marshall Land Systems registry charge"
+      ]
+    }
+  ],
+  "summary": {
+    "identities_reviewed": 5,
+    "fully_source_reviewed_no_unresolved_history": 1,
+    "partial_dispositions": 4,
+    "new_supported_event_candidates": 2,
+    "mutations": 0
+  }
+}

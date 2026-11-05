@@ -1,0 +1,329 @@
+{
+  "schema_version": 1,
+  "lane": "funding49_b",
+  "checked_at": "2026-11-05",
+  "read_only": true,
+  "pilot_reconciliation": "Current main pilot evidence read before discovery; none of these five company slugs was present. Current production events read and reconciled; no mutation performed.",
+  "company_identities_reviewed": 5,
+  "fully_source_audited_complete": 0,
+  "partial_reviews": 5,
+  "companies": [
+    {
+      "company_slug": "leica-geosystems-hexagon",
+      "disposition": "partial_review_hold_historical_issuer",
+      "searches": [
+        "Leica Geosystems funding financing IPO history Investcorp 1998 2000 Hexagon 2005",
+        "site.leica-geosystems.com history IPO",
+        "site.sec.gov Leica Geosystems Finance 2003 IPO bonds",
+        "site.hexagon.com Leica 2005 acquisition"
+      ],
+      "existing_events": [
+        {
+          "round_key": "hexagon-full-control-2005",
+          "finding": "Preserve existing 2005 acquisition disclosure. Referenced Hexagon page returned 404; search still indexes consideration terms. Competing Danaher announced bid is not final Hexagon consideration."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1092916/000115697303000894/u46285e6vk.htm",
+          "source_type": "regulator_original_issuer_filing",
+          "source_date": "2003-06",
+          "access": "opened",
+          "finding": "Form 6-K for Leica Geosystems Finance PLC embeds group annual report: IPO completed 12 July 2000; CHF65m vendor note retired from IPO proceeds; EUR100m high-yield notes originally in place since 1998. Financing/holding entities differ from operating company."
+        },
+        {
+          "url": "https://leica-geosystems.com/en-gb/about-us/summary/history",
+          "source_type": "issuer",
+          "source_date": null,
+          "access": "search_index",
+          "finding": "History identifies 2000 Swiss listing."
+        },
+        {
+          "url": "https://hexagon.com/company/newsroom/press-releases/2005/acquisition-of-leica-shares-and-resolution-on-new-issue",
+          "source_type": "transaction_party",
+          "source_date": "2005",
+          "access": "404",
+          "finding": "Existing evidence URL currently unavailable."
+        },
+        {
+          "url": "https://investors.danaher.com/2005-07-26-Danaher-Announces-Recommended-Tender-Offer-for-the-Shares-of-Leica-Geosystems-Holdings-AG",
+          "source_type": "competing_bidder",
+          "source_date": "2005-07-26",
+          "access": "search_index",
+          "finding": "Competing tender offer excluded from completed Hexagon acquisition."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "Verify historical holdings-versus-operating issuer before adding IPO or acquisition debt; do not assign finance subsidiary borrowing to this identity.",
+        "Locate working original final Hexagon completion disclosure. Bounded search is not evidence of no other funding."
+      ]
+    },
+    {
+      "company_slug": "liebherr-aerospace",
+      "disposition": "partial_review_holds",
+      "searches": [
+        "Liebherr Aerospace funding financing investment grant Toulouse France Relance history",
+        "Liebherr Aerospace Campsas 2026 grant France2030 Occitanie",
+        "site.liebherr.com 2.4 2021 relance"
+      ],
+      "existing_events": [
+        {
+          "round_key": "france-relance-support-2021",
+          "finding": "Issuer 27 January 2021 corroborates EUR2.4m state cofunding for fluid-pump project; project cost ~EUR5m is not funding. Source includes SME partners AKIRA and 2E WINDINGS; beneficiary allocation should be explicitly reviewed."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.liebherr.com/en-us/n/france%E2%80%99s-minister-of-the-economy-finance-and-recovery-visits-liebherr-in-connection-with-the-recovery-plan-for-the-aviation-industry-26136-3782185",
+          "source_type": "issuer",
+          "source_date": "2021-01-27",
+          "access": "opened",
+          "finding": "Separate compressor project also receives EUR1.25m state cofunding, EUR4.9m project investment; partners 2E WINDINGS and Danielson Engineering, Centum Adeneo subcontractor. Individual company allocation unstated."
+        },
+        {
+          "url": "https://www.liebherr.com/en-gb/n/liebherr-aerospace-opens-new-industrial-center-of-excellence-for-aerospace-heat-transfer-equipment-in-france-293376-4715716",
+          "source_type": "issuer",
+          "source_date": "2026-10-19",
+          "access": "opened",
+          "finding": "More than EUR40m Campsas industrial capex is not external financing. Regional and Adour-Garonne support mentioned without amounts; DGAC/CORAC DIGIFab support mentioned."
+        },
+        {
+          "url": "https://gazette-du-midi.fr/au-sommaire/entreprises/liebherr-aerospace-investit-40-meur-dans-son-usine-de-tarn-et-garonne",
+          "source_type": "secondary_candidate",
+          "source_date": "2026-10",
+          "access": "search_index",
+          "finding": "Claims EUR350k France2030 and EUR500k region; requires primary award verification."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "2021 EUR1.25m compressor project support is distinct from existing fluid-pump grant, but exact beneficiary amount is not established. Hold rather than assign consortium project support wholly to company.",
+        "Find original 2026 award amounts and enumerate EU projects with company-specific contributions. Do not import aggregate EU grant totals or own capex."
+      ]
+    },
+    {
+      "company_slug": "livelink-aerospace",
+      "disposition": "partial_review_new_supported_grant",
+      "searches": [
+        "LiveLink Aerospace funding financing investment investors grants history",
+        "site.livelinkaerospace.com DASA funding",
+        "LiveLink OWGP grant 2021",
+        "site.gov.uk Defying drones LiveLink"
+      ],
+      "existing_events": [
+        {
+          "round_key": "desnz-radar-mitigation-grant-2023",
+          "finding": "Existing GBP1,331,505 event remains; issuer describes a two-company shared GBP3.2m pot, not new individual grant amount."
+        },
+        {
+          "round_key": "windfarm-mitigation-phase-2-grant-2024",
+          "finding": "Official government award list corroborates GBP505,938 dated 24 April 2024."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://owgp.org.uk/insights/news/five-uk-companies-to-benefit-from-a-share-of-1-5m-grant-funding-from-the-offshore-wind-growth-partnership",
+          "source_type": "grantor",
+          "source_date": "2021-07",
+          "source_date_note": "Page metadata says 4 July; body release date 5 July. Use month precision.",
+          "access": "opened",
+          "finding": "LiveLink named as winner in OWGP Development Grant Funding Competition for offshore aviation/environmental monitoring. Individual amount undisclosed; GBP1.5m is five-company pot, GBP500k is maximum award."
+        },
+        {
+          "url": "https://www.gov.uk/government/publications/windfarm-mitigation-for-uk-air-defence-successful-projects/windfarm-mitigation-for-uk-air-defence-details-of-successful-projects-phase-2",
+          "source_type": "grantor",
+          "source_date": "2024-04-24",
+          "access": "opened",
+          "finding": "Existing LiveLink project GBP505,938."
+        },
+        {
+          "url": "https://www.livelinkaerospace.com/latest-news/defence-and-security-accelerator",
+          "source_type": "issuer",
+          "source_date": null,
+          "access": "opened",
+          "finding": "Shared 2023 competition funding, not individual additional round."
+        },
+        {
+          "url": "https://www.gov.uk/government/case-studies/defying-drones-dasa-funded-anti-drone-sensor-is-purchased-by-the-royal-navy",
+          "source_type": "grantor",
+          "source_date": "2024-08-16",
+          "access": "opened",
+          "finding": "Confirms LiveLink consortium secured 2020 Countering Drones Phase2 competition funding; amount and contract-versus-grant legal form not disclosed. Later Royal Navy procurement is a customer purchase, not a financing round."
+        }
+      ],
+      "candidates": [
+        {
+          "event_key": "owgp-development-grant-2021",
+          "instrument_type": "grant",
+          "funding_type": "grant",
+          "announced_date": "2021-07",
+          "date_precision": "month",
+          "amount_original": null,
+          "currency": "GBP",
+          "amount_qualifier": "undisclosed",
+          "issuer": "LiveLink Aerospace",
+          "participants": [
+            {
+              "name": "Offshore Wind Growth Partnership",
+              "role": "grantor"
+            }
+          ],
+          "source_url": "https://owgp.org.uk/insights/news/five-uk-companies-to-benefit-from-a-share-of-1-5m-grant-funding-from-the-offshore-wind-growth-partnership",
+          "source_date": "2021-07",
+          "support": "primary_grantor_verified",
+          "notes": "Individual award not disclosed. Do not use programme total or maximum award."
+        }
+      ],
+      "holds": [
+        "Find 2020 Countering Drones contract award and instrument; article only supports historical competition funding, not precise date/amount/legal form.",
+        "No source-audited comprehensive equity history; absence in searches is not zero funding."
+      ]
+    },
+    {
+      "company_slug": "lmt-latvijas-mobilais-telefons",
+      "disposition": "partial_review_existing_confirmed",
+      "searches": [
+        "Latvijas Mobilais Telefons LMT funding financing loan investors history EIB",
+        "LMT 2025 Telia buyout financing",
+        "site.lmt.lv EIB 50 million 2023 financing loan"
+      ],
+      "existing_events": [
+        {
+          "round_key": "eib-network-development-loan-2023",
+          "finding": "Confirmed actual issuer Latvijas Mobilais Telefons SIA signed EUR50m EIB loan 24 November 2023. EUR101m is project cost, not loan; 2025 completion sheet is not another round."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.eib.org/en/projects/all/20220072",
+          "source_type": "lender",
+          "source_date": "2023-11-24",
+          "access": "opened",
+          "finding": "Signed loan EUR50m, exact promoter named."
+        },
+        {
+          "url": "https://www.eib.org/en/press/all/2023-527-eib-and-lmt-sign-agreement-to-finance-5g-rollout-in-latvia",
+          "source_type": "lender",
+          "source_date": "2023",
+          "access": "search_index",
+          "finding": "Loan EUR50m supports EUR101m telecom infrastructure project."
+        },
+        {
+          "url": "https://www.lmt.lv/preses-relizes/lmt-pern-attistijis-inovativus-5g-risinajumus-un-eksportu",
+          "source_type": "issuer",
+          "source_date": "2024",
+          "access": "opened",
+          "finding": "2023 annual results confirms same EIB financing. EUR31.6m network investment is capex, not new external funding."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "LMT Finance outbound subsidiary and Telia stake purchase discussions must not be assigned as operating issuer financing.",
+        "Complete grant/project programme and earlier borrowing review; bounded searches do not establish complete history."
+      ]
+    },
+    {
+      "company_slug": "lynred",
+      "disposition": "partial_review_new_supported_grants",
+      "searches": [
+        "Lynred funding financing investors grant history Sofradir ULIS",
+        "site.lynred.com France2030 IPCEI grant",
+        "site.cordis.europa.eu Lynred ASTEROID HELIAUS",
+        "Lynred SPIRIT EDF 2026 funding"
+      ],
+      "existing_events": [
+        {
+          "round_key": "france-2030-ipcei-mect-grant-2023",
+          "finding": "Issuer confirms support 7 September 2023; EUR111m is planned company investment, not disclosed award. Preserve amount null."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.lynred.com/news/lynred-chosen-france-2030-investment-plan-its-ipcei-mect-2026-project",
+          "source_type": "issuer",
+          "source_date": "2023-09-07",
+          "access": "opened",
+          "finding": "France2030/IPCEI support without beneficiary amount."
+        },
+        {
+          "url": "https://www.lynred.com/sites/default/files/2021-02/Sofradir_ULIS_Merge_Lynred.pdf",
+          "source_type": "issuer",
+          "source_date": "2019-06-04",
+          "access": "opened",
+          "finding": "Sofradir and subsidiary ULIS merged and adopted Lynred name; US entity remains subsidiary. EUR150m Nano2022 spending is own investment, not external award."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/730161",
+          "source_type": "grantor_registry",
+          "source_date": "2017-04-25",
+          "source_date_kind": "EC_signature",
+          "access": "opened",
+          "finding": "ASTEROID 730161, current beneficiary/coordinator LYNRED. Company net EU contribution EUR1,901,741.25; consortium EU total EUR4,995,493.50 excluded."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/826131",
+          "source_type": "grantor_registry",
+          "source_date": "2019-05-10",
+          "source_date_kind": "EC_signature",
+          "access": "opened",
+          "finding": "HELIAUS 826131, current coordinator LYNRED. Net EU contribution EUR2,121,019.69; company project cost EUR8,484,078.75 and consortium contribution EUR8,192,593.44 are not company funding."
+        }
+      ],
+      "candidates": [
+        {
+          "event_key": "eu-asteroid-730161-2017",
+          "instrument_type": "grant",
+          "funding_type": "grant",
+          "announced_date": "2017-04-25",
+          "date_kind": "EC_signature",
+          "date_precision": "day",
+          "amount_original": 1901741.25,
+          "currency": "EUR",
+          "amount_qualifier": "exact_beneficiary_net_EU_contribution",
+          "issuer": "LYNRED (predecessor Sofradir; registry current name)",
+          "participants": [
+            {
+              "name": "European Union",
+              "role": "grantor"
+            }
+          ],
+          "source_url": "https://cordis.europa.eu/project/id/730161",
+          "source_date": "2017-04-25",
+          "support": "primary_grantor_registry_verified",
+          "notes": "Registry contribution allocation, not representation of cash payment on signature. Historical legal-name continuity corroborated by issuer merger release."
+        },
+        {
+          "event_key": "eu-heliaus-826131-2019",
+          "instrument_type": "grant",
+          "funding_type": "grant",
+          "announced_date": "2019-05-10",
+          "date_kind": "EC_signature",
+          "date_precision": "day",
+          "amount_original": 2121019.69,
+          "currency": "EUR",
+          "amount_qualifier": "exact_beneficiary_net_EU_contribution",
+          "issuer": "LYNRED (predecessor entity; registry current name)",
+          "participants": [
+            {
+              "name": "European Union",
+              "role": "grantor"
+            }
+          ],
+          "source_url": "https://cordis.europa.eu/project/id/826131",
+          "source_date": "2019-05-10",
+          "support": "primary_grantor_registry_verified",
+          "notes": "Project began April2019 before May signature; do not substitute start date for signature or consortium totals."
+        }
+      ],
+      "holds": [
+        "Remaining EU grants/projects and SPIRIT EDF2026 require beneficiary allocations; consortium total must not be assigned to coordinator.",
+        "Own EUR85m/EUR100m campus capex and Nano2022 EUR150m planned investment excluded from financing.",
+        "Historical predecessor name should be retained in event notes; exact current registry beneficiary is LYNRED."
+      ]
+    }
+  ],
+  "timing": {
+    "note": "Parent owns measured overall lane timing and throughput; do not infer speedup from this report."
+  }
+}

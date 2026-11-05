@@ -1,0 +1,335 @@
+{
+  "batch": 49,
+  "lane": "d",
+  "researched_at": "2026-11-05",
+  "read_only": true,
+  "baseline": "Current Supabase rounds queried before discovery; current main pilot JSON read, none of five slugs present in pilot groups",
+  "fully_reviewed_count": 0,
+  "partial_review_count": 5,
+  "companies": [
+    {
+      "slug": "marss-group",
+      "disposition": "partial_hold",
+      "existing_events": [
+        {
+          "id": "eos-acquisition-2026",
+          "amount": 36000000,
+          "currency": "USD",
+          "date": "2026-05-20",
+          "assessment": "Upfront acquisition consideration; secondary business/assets sale, not new primary growth funding. Preserve existing."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://eos-aus.com/news/completion-of-marss-acquisition/",
+          "date": "2026-05-21",
+          "kind": "acquirer_original",
+          "opened": true,
+          "finding": "Completion of MARSS acquisition."
+        },
+        {
+          "url": "https://graphenevc.com/blog/eos-acquisition-of-marss-marks-successful-exit-for-graphene-ventures",
+          "date": "2026-01-20",
+          "kind": "investor_original",
+          "opened": true,
+          "finding": "Graphene confirms investor exit; deal announced January12. US$36m upfront and contingent earnout do not identify original Graphene investment date or amount."
+        },
+        {
+          "url": "https://marss.com/about/news/marss-secures-uk-export-finance-support-for-a-landmark-african-nation-surveillance/",
+          "date": "2025-09-18",
+          "kind": "issuer_original",
+          "opened": true,
+          "finding": "Letter of Intent for African surveillance programme backed by UKEF; >US$175m is programme value. No executed borrower instrument or actual financing amount."
+        }
+      ],
+      "new_events": [],
+      "holds": [
+        {
+          "reason": "Graphene backing supported generically but original entry financing date/amount unavailable; no invented dated round."
+        },
+        {
+          "reason": "UKEF programme financing candidate requires issuer/borrower, instrument, execution date and financing amount; programme value excluded."
+        }
+      ],
+      "search_coverage": "Broad dated financing history, MARSS news history, Graphene investor original, EOS acquisition original; current2026 integration/contract announcements checked."
+    },
+    {
+      "slug": "mc2-technologies",
+      "disposition": "partial_hold",
+      "identity": "MICROWAVE CHARACTERIZATION CENTER, SIREN452386121; issuer legal notice identifies MC2 Technologies legal entity",
+      "existing_events": [
+        {
+          "id": "andera-bpifrance-acquisition-financing-2021",
+          "date": "2021-07-22",
+          "amount": 50000000,
+          "currency": "EUR",
+          "qualifier": "more_than",
+          "assessment": "Preserve mixed acquisition financing: Andera/Bpifrance equity plus Tikehau unitranche; cannot treat entire amount as primary equity."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.anderapartners.com/en/andera-expansion-acquires-mc2-technologies/",
+          "date": "2021-07-22",
+          "kind": "investor_original",
+          "opened": true,
+          "finding": "Acquisition with Bpifrance and management; prior Bpifrance innovation support mentioned without amounts/dates."
+        },
+        {
+          "url": "https://www.societex.fr/transaction/mc2-technologies/",
+          "date": null,
+          "kind": "transaction_adviser_original",
+          "opened": true,
+          "finding": "Acquisition financing >EUR50m equity and unitranche combined."
+        },
+        {
+          "url": "https://www.mc2-technologies.com/en/legal-notice/",
+          "date": null,
+          "kind": "issuer_legal",
+          "opened": false,
+          "finding": "Search identifies legal MICROWAVE CHARACTERIZATION CENTER name; final identity attachment should be opened before grant imports."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/280516",
+          "date": null,
+          "kind": "funder_original",
+          "opened": true,
+          "finding": "V-SMMART NANO, start2012-03-01 end2015-02-28; beneficiary MICROWAVE CHARACTERIZATION CENTER EU contribution EUR343400. Announcement/signature date not established; not date at end of project."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/821270",
+          "date": "2018-10-25",
+          "kind": "funder_original",
+          "opened": true,
+          "finding": "GRACE signature2018-10-25; start2018-11-01; beneficiary MICROWAVE CHARACTERIZATION CENTER net EU contribution EUR150400, not consortium EUR1742815."
+        },
+        {
+          "url": "https://www.cordis.europa.eu/project/id/101096256",
+          "date": "2022-12-09",
+          "kind": "funder_original",
+          "opened": true,
+          "finding": "SHIFT signature2022-12-09; start2022-12-01; beneficiary MICROWAVE CHARACTERIZATION CENTER net EU contribution EUR353250, total beneficiary project cost EUR1177500 is not grant."
+        },
+        {
+          "url": "https://prod-mel2022.eolas-services.com/sites/default/files/2025-10/B1710_RECUEIL_DEFINITIF.pdf",
+          "date": "2025-10-17",
+          "kind": "local_government_original",
+          "opened": false,
+          "finding": "MEL financing candidate search; PDF retrieval timeout/503. Snippet project budget EUR1590000 and company request do not establish award amount."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/mc2_technologies",
+          "date": null,
+          "kind": "aggregator_candidate",
+          "opened": false,
+          "finding": "Search candidate October2015 EUR816k grant, not primary verified."
+        }
+      ],
+      "new_events": [],
+      "holds": [
+        {
+          "reason": "CORDIS three beneficiary-specific grant amounts verified but identity original and event/date semantics require writer reconciliation before import; exact signature established only2018/2022. These are research grants, not equity."
+        },
+        {
+          "reason": "Additional EU-funded projects indicated by search aggregation (11 projects); not exhausted, so incomplete grant history."
+        },
+        {
+          "reason": "2015 EUR816k grant and2025 MEL proposal remain unverified candidates."
+        }
+      ],
+      "search_coverage": "Broad MC2 funding/acquisition history, investor Andera, adviser Societex, issuer legal name, government grant search, CORDIS legal entity search; found additional non-dilutive grants."
+    },
+    {
+      "slug": "mesko",
+      "disposition": "partial_hold",
+      "existing_events": [
+        {
+          "id": "reprivatisation-fund-project-400-2019",
+          "amount": 400000000,
+          "currency": "PLN",
+          "date": "2019",
+          "assessment": "Amount/year supported, but original issuer describes recapitalisation (dokapitalizowanie); existing grant instrument deserves review rather than blind preservation of taxonomy."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://ww.mesko.com.pl/aktualnosci/prezydent-andrzej-duda-w-mesko",
+          "date": null,
+          "kind": "issuer_original",
+          "opened": true,
+          "finding": "Retrospective explicitly says at end2019 government recapitalisation400m; do not include procurement orders as financing."
+        },
+        {
+          "url": "https://mesko.com.pl/aktualnosci/24-mld-zl-dla-pgz-na-dofinansowanie-produkcji-amunicji-155-mm",
+          "date": "2025-07-02",
+          "kind": "issuer_original",
+          "opened": true,
+          "finding": "Four MAP-PGZ investment agreements; explicit MESKO allocation PLN887200000 from Capital Investment Fund programme, PGZ subsidiary agreements/transfers still forthcoming."
+        },
+        {
+          "url": "https://www.pb.pl/mesko-ma-887-mln-zl-na-rozbudowanie-mocy-produkcyjnych-amunicji-155-mm-1247135",
+          "date": "2025-08-21",
+          "kind": "secondary_PAP_candidate",
+          "opened": false,
+          "finding": "Search indicates received decision; investment agreement expected coming days, not proof already closed."
+        }
+      ],
+      "new_events": [
+        {
+          "candidate_key": "capital-investment-fund-ammunition-allocation-2025",
+          "amount": 887200000,
+          "currency": "PLN",
+          "qualifier": "exact",
+          "date": "2025-07-02",
+          "status": "announced_allocation",
+          "financing_type": "undisclosed",
+          "ready_for_import": false,
+          "reason": "Company-specific amount verified, but instrument and legal subsidiary agreement/transfer not yet established. Programme >PLN2.4bn belongs PGZ aggregate and must not be assigned to MESKO."
+        }
+      ],
+      "holds": [
+        {
+          "reason": "Confirm final PGZ→MESKO instrument, execution date/status; preserve announced allocation separately from closed funding."
+        },
+        {
+          "reason": "Existing2019 grant classification inconsistent with issuer recapitalisation terminology; no mutation by lane."
+        }
+      ],
+      "search_coverage": "Broad MESKO financing/investment history, issuer2019 recapitalisation retrospective, issuer2025 public programme, later Aug2025 reports; projects own contribution and orders excluded."
+    },
+    {
+      "slug": "meteomatics",
+      "disposition": "partial_hold",
+      "existing_events": [
+        {
+          "id": "series-b-2022",
+          "amount": 13500000,
+          "currency": "CHF",
+          "date": "2022-06-01",
+          "assessment": "Matches original body01.06.2022 despite header05/31; Klima lead, unnamed US utility participant. Alantra/Enagas fund sponsors not inferred direct cheques."
+        },
+        {
+          "id": "series-c-2025",
+          "amount": 22000000,
+          "currency": "USD",
+          "date": "2025-01-29",
+          "assessment": "Closed SeriesC led Armira Growth, existing investors unnamed."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.meteomatics.com/en/news/meteomatics-raises-13-5m-chf-in-a-series-b-financing-round-led-by-klima-energy-transition-fund/",
+          "date": "2022-06-01",
+          "kind": "issuer_original",
+          "opened": true,
+          "finding": "Successful CHF13.5m SeriesB led Klima; unnamed leading US renewables/utility participant."
+        },
+        {
+          "url": "https://www.meteomatics.com/en/news/lockheed-martin-ventures-makes-strategic-investment-in-meteomatics/",
+          "date": "2024-02-01",
+          "kind": "issuer_original",
+          "opened": true,
+          "finding": "Close of strategic funding round from Lockheed Martin Ventures; amount undisclosed; no explicit lead claim."
+        },
+        {
+          "url": "https://www.meteomatics.com/en/news/meteomatics-series-c-funding-22-million-dollars/",
+          "date": "2025-01-29",
+          "kind": "issuer_original",
+          "opened": true,
+          "finding": "Close$22m SeriesC led Armira Growth; existing investors participated unnamed."
+        },
+        {
+          "url": "https://www.preqin.com/data/profile/asset/meteomatics-ag/484657",
+          "date": null,
+          "kind": "aggregator_candidate",
+          "opened": false,
+          "finding": "September2019 undisclosed venture funding from FortyOne Group; no original2019 located."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/meteomatics/financials",
+          "date": null,
+          "kind": "aggregator_candidate",
+          "opened": false,
+          "finding": "2019-09-12 private equity candidate; conflicting stage label, original required."
+        }
+      ],
+      "new_events": [
+        {
+          "candidate_key": "lockheed-martin-ventures-strategic-2024",
+          "date": "2024-02-01",
+          "date_precision": "day",
+          "amount": null,
+          "currency": null,
+          "stage": "Strategic funding",
+          "financing_type": "undisclosed",
+          "status": "closed",
+          "investors": [
+            {
+              "name": "Lockheed Martin Ventures",
+              "role": "participant"
+            }
+          ],
+          "ready_for_import": true,
+          "source_url": "https://www.meteomatics.com/en/news/lockheed-martin-ventures-makes-strategic-investment-in-meteomatics/",
+          "writer_update": "Root reports verified/imported through rollback rehearsal and atomic idempotency checks; lane made no DB writes."
+        }
+      ],
+      "holds": [
+        {
+          "reason": "Earlier September2019 FortyOne funding remains original-source hold; therefore full history partial despite2024 import."
+        }
+      ],
+      "search_coverage": "Broad latest/earlier round searches, issuer2022/2024/2025 originals and news archive,2019 FortyOne primary searches, Preqin/CBInsights candidates. No later2026 financing original located; this is not evidence zero newer funding."
+    },
+    {
+      "slug": "kongsberg-defence-and-aerospace",
+      "disposition": "partial_hold",
+      "existing_events": [
+        {
+          "id": "eu-asap-missile-capacity-grant-2024",
+          "date": "2024-03-15",
+          "amount": 10000000,
+          "currency": "EUR",
+          "assessment": "Original supports company-specific EU ASAP support."
+        },
+        {
+          "id": "norwegian-authorities-missile-capacity-grant-2024",
+          "date": "2024-03-15",
+          "amount": 200000000,
+          "currency": "NOK",
+          "assessment": "Original supports company-specific Norwegian authorities support; NOK640m is TOTAL programme, not extra own contribution."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.kongsberg.com/news/news-archive/2024/kongsberg-investing-in-increased-missile-production-capacity/",
+          "date": "2024-03-15",
+          "kind": "issuer_original",
+          "opened": true,
+          "finding": "KDA plans totalNOK640m; governmentNOK200m and EU ASAP EUR10m contributions. Two existing grants preserved, no conversion/aggregation."
+        },
+        {
+          "url": "https://www.regjeringen.no/en/documents/roadmap-for-expanding-production-capacity-in-the-defence-industry/id3058492/?ch=4",
+          "date": null,
+          "kind": "government_candidate",
+          "opened": false,
+          "finding": "Search sixASAP grants across KDA,Chemring,Nammo; cross-company aggregate cannot be assigned to KDA."
+        },
+        {
+          "url": "https://www.euacc.ai/organisations/kongsberg-defence-aerospace-as-903174373",
+          "date": null,
+          "kind": "aggregator_candidate",
+          "opened": false,
+          "finding": "26EU projects since2018,€41.5m aggregate candidate; requires official project-specific beneficiary amounts; do not import aggregate."
+        }
+      ],
+      "new_events": [],
+      "holds": [
+        {
+          "reason": "EU beneficiary/project grant history unresolved; requires CORDIS/EDF official project rows. No parent Kongsberg debt/equity attributed to KDA."
+        }
+      ],
+      "search_coverage": "Broad financing and2024/2025/2026 searches, KDA issuer production investment original, government roadmap candidate, EU project aggregation candidate. Contract awards/procurement excluded."
+    }
+  ]
+}

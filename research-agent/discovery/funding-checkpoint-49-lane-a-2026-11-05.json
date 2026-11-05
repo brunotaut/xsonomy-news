@@ -1,0 +1,324 @@
+{
+  "lane": "funding49_a",
+  "checked_at": "2026-11-05",
+  "mode": "read_only",
+  "prior_evidence_read": "research-agent/discovery/funding-parallel-pilot-2026-11-03.json",
+  "database_read": true,
+  "summary": {
+    "identities_reviewed": 5,
+    "fully_resolved": 0,
+    "partial": 5,
+    "new_manifest_ready_events": 3,
+    "notes": "Bounded reviews include outstanding earlier-history and identity checks; no claim that absence of more public events means zero funding."
+  },
+  "companies": [
+    {
+      "slug": "kitemill",
+      "disposition": "partial",
+      "existing_events": [
+        "crowdfunding-2016: NOK6500000 equity, announced2016-12-22",
+        "eic-accelerator-grant-2024: EUR2500000 grant, year2024"
+      ],
+      "sources": [
+        {
+          "url": "https://www.kitemill.com/news/expanding-dreams-invests-in-kitemill",
+          "title": "Expanding Dreams invests in Kitemill",
+          "type": "issuer",
+          "published_at": null,
+          "opened": true,
+          "finding": "Investment by Expanding Dreams (Polderman family investment vehicle) confirmed. EUR2m is combined runway from this investment, smaller investors and tax relief grant; not this investment amount. Context covers planned2024 operations."
+        },
+        {
+          "url": "https://www.kitemill.com/news/kitemill-secures-eu2-5-million-funding-from-eic-to-accelerate-commercialization",
+          "title": "Kitemill secures EUR2.5 million funding from EIC to accelerate commercialization",
+          "type": "issuer",
+          "published_at": null,
+          "opened": true,
+          "finding": "Confirms existing EIC grant at roundedEUR2.5m; up toEUR8m blended eligibility is not receipt. Mentions previousEU supportEUR3.35m2019 andEUR2.4m2022 needing beneficiary verification."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101189207",
+          "title": "Airborne Wind Energy: Innovative KM2 AWE System by Kitemill",
+          "type": "government_registry",
+          "published_at": "2024-12-09",
+          "opened": true,
+          "finding": "AWE-KM2 grant101189207, KITEMILL AS net contributionEUR2499000. EC signature2024-11-28; project2024-10-01–2026-09-30. This is the existing EIC2024 event, not a new round."
+        },
+        {
+          "url": "https://www.kitemill.com/investinkitemill",
+          "title": "Invest in Kitemill",
+          "type": "issuer",
+          "published_at": null,
+          "opened": true,
+          "finding": "Fundraising invitation, aggregateEUR6m project support and project links. Does not evidence a closed financing event."
+        }
+      ],
+      "candidates": [
+        {
+          "status": "supported_amount_unknown_date_hold",
+          "event": "Expanding Dreams investment",
+          "amount": null,
+          "currency": null,
+          "date": null,
+          "investors": [
+            {
+              "name": "Expanding Dreams",
+              "role": "investor"
+            }
+          ],
+          "note": "Instrument and close date unresolved. Do not assign mixedEUR2m runway to this event."
+        }
+      ],
+      "existing_event_enrichment": [
+        {
+          "event_key": "eic-accelerator-grant-2024",
+          "recommended_action": "preserve_existing_and_review_precision",
+          "official_exact_amount": 2499000,
+          "currency": "EUR",
+          "grant_signature_date": "2024-11-28",
+          "note": "ExistingEUR2.5m derives rounded issuer release; curated precision change requires explicit expected-old update; do not duplicate."
+        }
+      ],
+      "holds": [
+        "Verify2019/2022 EU grants and NAWEP recipient allocations; consortium/project totals must not be assigned wholesale.",
+        "Planned late2025 EIC round and SeriesA demonstrations are not closed rounds."
+      ]
+    },
+    {
+      "slug": "krattworks",
+      "disposition": "partial",
+      "existing_events": [
+        "seed-2022: equity amount undisclosed, year2022"
+      ],
+      "sources": [
+        {
+          "url": "https://www.krattworks.com/grants",
+          "title": "Grants",
+          "type": "issuer",
+          "published_at": null,
+          "opened": true,
+          "finding": "Lists three company grants with exact project allocations and periods; publication and award dates not given."
+        },
+        {
+          "url": "https://www.krattworks.com/2022wrapped",
+          "title": "2022 wrapped",
+          "type": "issuer",
+          "published_at": null,
+          "opened": true,
+          "finding": "Closed2022 seed namedJohnLonghurst,IvoMägi,TaaviKotka and unnamed investors; Agmis separately described investor/partner. PlannedEUR300k bridge not closure; EUR15m contract is revenue."
+        },
+        {
+          "url": "https://www.balticvc.com/2025/01/lemonade-stand-invests-in-four-estonian.html",
+          "title": "Lemonade Stand invests in four Estonian startups",
+          "type": "secondary",
+          "published_at": "2025-01-09",
+          "opened": false,
+          "finding": "Search result reportsLemonadeStand invested2024, amount undisclosed. Primary investor corroboration still needed."
+        }
+      ],
+      "candidates": [
+        {
+          "status": "supported_ready_for_writer_validation",
+          "event_key": "eas-navigation-re-5-04-23-0333",
+          "funding_type": "grant",
+          "amount": 121234.4,
+          "currency": "EUR",
+          "amount_qualifier": "exact",
+          "announced_date": null,
+          "date_precision": null,
+          "issuer": "KrattWorks",
+          "project_id": "RE.5.04.23-0333",
+          "project_period": "2023-08 through2025-02",
+          "participants": [
+            {
+              "name": "EAS",
+              "role": "grantor"
+            }
+          ],
+          "source_url": "https://www.krattworks.com/grants",
+          "source_title": "Grants",
+          "source_type": "issuer",
+          "notes": "Development of novel navigation solution for KrattWorks ISR drone platform. Project period is not award date."
+        },
+        {
+          "status": "supported_ready_for_writer_validation",
+          "event_key": "erdf-marketing-2014-2020-5-01-19-1215",
+          "funding_type": "grant",
+          "amount": 13536,
+          "currency": "EUR",
+          "amount_qualifier": "exact",
+          "announced_date": null,
+          "date_precision": null,
+          "issuer": "KrattWorks",
+          "project_id": "2014-2020.5.01.19-1215",
+          "project_period": "2020-11 through2022-04",
+          "participants": [
+            {
+              "name": "European Regional Development Fund",
+              "role": "grantor"
+            }
+          ],
+          "source_url": "https://www.krattworks.com/grants",
+          "source_title": "Grants",
+          "source_type": "issuer",
+          "notes": "Marketing rapid situational awareness solution for rescue teams. Do not use project start as award."
+        },
+        {
+          "status": "supported_ready_for_writer_validation",
+          "event_key": "digitisation-roadmap-2021-2027-1-02-25-0419",
+          "funding_type": "grant",
+          "amount": 5000,
+          "currency": "EUR",
+          "amount_qualifier": "exact",
+          "announced_date": null,
+          "date_precision": null,
+          "issuer": "KrattWorks",
+          "project_id": "2021-2027.1.02.25-0419",
+          "project_period": "2025-04 through2025-06",
+          "participants": [],
+          "source_url": "https://www.krattworks.com/grants",
+          "source_title": "Grants",
+          "source_type": "issuer",
+          "notes": "Digitisation roadmap project; grantor not explicitly named in this paragraph. Do not infer grantor or use project start as award."
+        }
+      ],
+      "holds": [
+        "2024 LemonadeStand investment primary corroboration outstanding; secondary estimates and SacraSeriesA2025 conflict, not verified.",
+        "2026 Estonia development support recipient appears inERR; individual allocation unspecified; ministry original inaccessible in this review."
+      ]
+    },
+    {
+      "slug": "kseonics-technology",
+      "disposition": "partial",
+      "existing_events": [
+        "brave1-drone-detector-grant-2023: grant amount null, announced2023-11-24"
+      ],
+      "sources": [
+        {
+          "url": "https://kseonics.com.ua",
+          "title": "Kseonics Technology",
+          "type": "issuer",
+          "published_at": null,
+          "opened": true,
+          "finding": "Issuer claims fiveBrave1 grants. No grant dates, individual amounts or project allocations."
+        },
+        {
+          "url": "https://www.defenseone.com/threats/2023/12/ukraines-soldiers-use-cheap-tech-hide-russias-deadly-drones/392957/",
+          "title": "Ukraine’s soldiers use cheap tech to hide from Russia’s deadly drones",
+          "type": "original_reporting_company_statement",
+          "published_at": "2023-12-21",
+          "opened": true,
+          "finding": "ReportsKseonics said it had receivedUSD25000 Brave1 grant. Amount is actual grant, no lead/equity role. Likely overlaps existing2023 record; identity link needs explicit check."
+        },
+        {
+          "url": "https://mind.ua/publications/20266019-vid-pauerbankiv-do-dron-detektoriv-yak-kseonics-technology-oblashtuvala-virobnictvo-ta-zvidki-bere-ko",
+          "title": "Від павербанків до дрон-детекторів: як Kseonics Technology облаштувала виробництво та звідки бере кошти",
+          "type": "original_reporting",
+          "published_at": "2023-11-24",
+          "opened": false,
+          "finding": "Existing2023 grant source; founderUAH30000 business credit lacks lender/date/actual corporate issuer. Not imported as external round."
+        }
+      ],
+      "existing_event_enrichment": [
+        {
+          "event_key": "brave1-drone-detector-grant-2023",
+          "status": "identity_match_hold",
+          "candidate_amount": 25000,
+          "currency": "USD",
+          "amount_qualifier": "reported_exact",
+          "date": null,
+          "note": "Do not useDefenseOne publication date as award; do not duplicate existing grant. Confirm whether this is same grant before expected-old update."
+        }
+      ],
+      "holds": [
+        "Five grant aggregate claim cannot create five artificial events.",
+        "Founder loan and charter capital are not safely evidenced company fundraising."
+      ]
+    },
+    {
+      "slug": "lba-systems",
+      "disposition": "partial",
+      "existing_events": [
+        "leonardo-baykar-joint-venture-2025: equity amount undisclosed, announced2025-06-16"
+      ],
+      "sources": [
+        {
+          "url": "https://www.baykartech.com/en/press/baykar-and-leonardo-announce-new-joint-venture-lba-systems-at-the-paris-air-show/",
+          "title": "Baykar and Leonardo announce new joint venture LBA Systems at the Paris Air Show",
+          "type": "transaction_party",
+          "published_at": "2025-06-16",
+          "opened": true,
+          "finding": "Established50:50JV headquarteredItaly, UAS development/design/production/maintenance. No announced capital contribution or raised amount."
+        },
+        {
+          "url": "https://www.publicnow.com/view/9AA5DEF5A1BF50C03AEE9FFF4B90C0D2A2AD667F",
+          "title": "LBA Systems becomes fully operational",
+          "type": "syndicated_issuer",
+          "published_at": "2026-07-21",
+          "opened": false,
+          "finding": "Search result only; page403. Operational readiness and regulatory approvals, no demonstrated financing amount."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "Formation/ownership is not evidence of a quantified fundraising round; preserve existing curatedJV record.",
+        "Latest2026 operating update original inaccessible; no claim of exhaustive history completion."
+      ]
+    },
+    {
+      "slug": "lendurai",
+      "disposition": "partial",
+      "existing_events": [
+        "seed-2025: EUR5570000 equity, date2025-06"
+      ],
+      "sources": [
+        {
+          "url": "https://ellex.legal/project/expeditions-fund-hcvc-and-vsquared-ventures/",
+          "title": "Expeditions Fund, HCVC and Vsquared Ventures invest in Lendurai",
+          "type": "transaction_counsel",
+          "published_at": "2025-06-16",
+          "opened": true,
+          "finding": "ConfirmsEUR5.57m seed andExpeditionsFund,HCVC,VsquaredVentures participation. Does not explicitly support lead roles."
+        },
+        {
+          "url": "https://www.lendurai.com",
+          "title": "Lendurai",
+          "type": "issuer",
+          "published_at": null,
+          "opened": true,
+          "finding": "Company16918651. Links2025seed and2026Estonian development support reporting."
+        },
+        {
+          "url": "https://news.err.ee/1609934306/12-estonian-defense-firms-picked-for-1-8-million-development-support",
+          "title": "12 Estonian defense firms picked for EUR1.8 million development support",
+          "type": "public_broadcaster",
+          "published_at": "2026-02",
+          "opened": true,
+          "finding": "Lendurai andKrattworks among12recipient companies; grants eachEUR95k–200k cover30–40% costs, totalEUR1.8m. No company-specific allocation; cannot assign total or exact amount."
+        },
+        {
+          "url": "https://www.balticvc.com/2025/01/lemonade-stand-invests-in-four-estonian.html",
+          "title": "Lemonade Stand invests in four Estonian startups",
+          "type": "secondary",
+          "published_at": "2025-01-09",
+          "opened": false,
+          "finding": "Search report saysLendurai investment closed2024, undisclosed amount. Earlier investment needs original corroboration."
+        },
+        {
+          "url": "https://www.publicnow.com/view/6F83D2BF87E90EE1448DD52FCEF1ED8351F0226B",
+          "title": "Kaitseministeeriumi2025.aasta kaitsetööstuse arendusprojektide teises voorus osutusid edukaks12ettevõtet",
+          "type": "syndicated_government",
+          "published_at": "2026-02-05",
+          "opened": false,
+          "finding": "403; search result identifiesLenduraiOÜ Orion autonomous attack drone development. Ministry original not yet retrieved."
+        }
+      ],
+      "candidates": [],
+      "holds": [
+        "Verify2024LemonadeStand event via transaction party original.",
+        "2026MoD grant actual award corroborated inpublic broadcaster, amount unknown; sourceoriginal still needed. Do not assign recipient range to exact amount.",
+        "Existing seed date remains month precision; press dates differ and do not establish actual close day."
+      ]
+    }
+  ]
+}
