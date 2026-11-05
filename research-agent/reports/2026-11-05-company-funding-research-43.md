@@ -1,0 +1,3 @@
+# Funding checkpoint43
+
+INLEAP and Intelic original issuer pages checked against current DB. Existing seed events corroborated. Earlier INLEAP pre-seed needs accessible original source; HTGF unsupported markdown/403 and mirror429 preserved as fetch holds. Intelic June2024 timeline supports month precision; exact stored day requires original evidence check. EUR30m+ MoD contract excluded from financing. Hybrid and Kaedra remain discovery-only in this checkpoint. No DB mutation, full-company completion increment or throughput claim. Durable ledger records source URLs and next steps; no user access blocker.
