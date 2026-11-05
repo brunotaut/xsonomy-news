@@ -1654,3 +1654,6 @@ Checkpoint 53 publication verified: workflow 42031512224 succeeded; live data ge
 ### Funding checkpoint54 — 2026-11-05
 
 25 identities reconciled;25 new events and34 participations safely imported after rollback rehearsal.630 events,1,042 participations,719 profiles. Helsing bounded review complete; source holds preserved. Current queue completed count338 replaces legacy aggregate455, which is retained separately. Publication pending.
+
+
+Checkpoint54 publication verified: deployment 42040331723 succeeded. Live catalogue 2026-11-05T13:57:52.659Z; investor catalogue 2026-11-05T13:57:53.591Z. All27 manifest representations matched.630 events,1,042 participations,719 profiles. Active elapsed 14.34 minutes;1 newly completed bounded review. Writer lease released; full programme remains in progress.
