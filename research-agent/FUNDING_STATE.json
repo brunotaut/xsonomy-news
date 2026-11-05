@@ -8,14 +8,14 @@
   "published_landscape_companies": 567,
   "partial_companies": 312,
   "fully_reviewed_companies": 455,
-  "next_action": "Verify checkpoint49 publication. Validate/import supported candidates from four lane49 source ledgers: KrattWorks grants, Lynred CORDIS, LiveLink OWGP, Lyocon debt. Preserve exact issuer, unknown dates and taxonomy holds. Do not repeat twenty-company discovery.",
+  "next_action": "Validate/import supported candidates from four lane49 source ledgers: KrattWorks grants, Lynred CORDIS, LiveLink OWGP, Lyocon debt. Preserve exact issuer, unknown dates and taxonomy holds. Do not repeat twenty-company discovery.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-05T09:56:57.842Z",
+  "updated_at": "2026-11-05T09:57:35.947Z",
   "source_reconciliation_companies": 321,
   "approved_funding_events": 580,
   "round_participations": 978,
   "investor_profiles": 701,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/company-funding-research-49-2026-11-05.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -25,14 +25,14 @@
   "automation_cadence": "hourly",
   "active_run": null,
   "last_verified_publication": {
-    "site_commit": "e18f3d5c5e3403d5351728638577d2cda865a367",
-    "generated_at": "2026-11-05T05:51:58.189Z",
-    "investor_generated_at": "2026-11-05T05:51:59.061Z",
-    "events": 578,
+    "site_commit": "d59fc22017e1fb9625cac7faa0960e7ded49d96d",
+    "generated_at": "2026-11-05T09:56:19.934Z",
+    "investor_generated_at": "2026-11-05T09:56:21.008Z",
+    "events": 580,
     "companies_with_events": 312,
-    "participations": 971,
-    "investor_profiles": 697,
-    "checked_at": "2026-11-05T06:47:49.089Z"
+    "participations": 978,
+    "investor_profiles": 701,
+    "checked_at": "2026-11-05T09:57:35.947Z"
   },
   "known_financing_claims_to_reconcile": [
     {
@@ -926,8 +926,11 @@
     "source_review_partial": 19,
     "imported_events": 2,
     "active_minutes_to_checkpoint": 4.83,
-    "timing_scope": "source research, verification, rollback rehearsal, atomic import, checkpoint and rebuild trigger; live verification pending",
+    "timing_scope": "research, verification, rollback rehearsal, atomic import, durable checkpoint, rebuild and live publication verification; scheduled idle excluded",
     "fully_published_throughput": null,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "publication_verified": true,
+    "active_minutes_total": 4.83,
+    "timing_limitation": "Final publication-check overhead not included in numeric checkpoint duration; no total-throughput claim."
   }
 }
