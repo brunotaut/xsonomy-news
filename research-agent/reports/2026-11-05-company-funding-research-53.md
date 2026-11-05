@@ -1,25 +1,33 @@
-# Funding checkpoint53 — 5 November2026
+# Funding checkpoint 53 — 5 November 2026
 
-Twenty published identities reviewed in four independent read-only lanes; MC2 and Kitemill reconciled by the single writer. Existing pilot dispositions were read and preserved. All22 remain partial; zero new fully bounded histories are claimed. Lane evidence records checked originals, inaccessible sources and specific holds. No concurrency speedup claimed.
+Reviewed 20 published identities in four independent read-only lanes, plus MC2 and Kitemill writer follow-ups. All 22 retain specific source-level holds; **zero new fully bounded company histories** are claimed. Existing pilot dispositions and legacy research files were preserved.
 
-## Confirmed changes
+## Imported and corrected facts
 
-18 new events,24 new participations (including GALLOS added to an existing StirlingX event),3 new profiles. Approved database now605events,1008participations,705profiles;312companies have events.
+18 new events and 24 participations were imported. One participation adds GALLOS to an existing StirlingX Series A; it does not create another round. Three new participant profiles were needed.
 
-- MC2: three beneficiary-specific EU allocations, with MICROWAVE CHARACTERIZATION CENTER legal issuer matched; unknown V-SMMART award date remains null.
-- MyDefence: DAPS and KNOX beneficiary grants; Neuron Soundware:2017investment and2023EIC grant. Programme aggregates and unnamed cheques excluded.
-- Perceptual:2019seed and amount-undisclosed2026investment. July year-to-date equity/grant composite not duplicated.
-- Piaggio:2006Mubadala mixed new/existing share acquisition;2025Baykar business transfer. Both amounts unknown.
-- Patria: finalEUR283.5m secondary49.9%purchase, excluding tax/direct-cost carrying amountEUR284.9m. Not primary proceeds.
-- Quadsat:2019more-thanDKK5m mixed seed and2020EUR2m pre-SeriesA. Historical investor names retained in notes alongside existing successor mappings; precise2020instrument unknown.
-- OSL: completed Terma acquisition, undisclosed consideration. Parrot: two actualEUR2.5m debt drawdowns, avoiding duplicate ceiling5/10/20m events.
-- Oko: received Brave1 grant separate from prize; amount/date unknown and2023/2024conflict preserved.
-- StirlingX: GALLOS participant added; issuer-supported two existing co-leads preserved.
+- **MC2:** three company-specific EU project allocations, matched to legal issuer MICROWAVE CHARACTERIZATION CENTER. The V-SMMART award date remains unknown.
+- **MyDefence and Neuron Soundware:** DAPS/KNOX grants; Neuron's 2017 investment and 2023 EIC grant. Composite programme totals and unnamed cheques excluded.
+- **Perceptual Robotics:** 2019 seed and amount-undisclosed 2026 funding. Later year-to-date equity/grant totals are not duplicated.
+- **Piaggio:** 2006 Mubadala acquisition of new/existing shares and 2025 Baykar business transfer, both with consideration unknown.
+- **Patria:** final EUR283.5m secondary stake purchase. The EUR284.9m carrying acquisition cost includes taxes and direct costs and is excluded; this is not primary issuer proceeds.
+- **Quadsat:** seed exceeding DKK5m in 2019, including a convertible-loan component, and EUR2m pre-Series A in 2020. Historical participant names retained alongside existing successor profiles.
+- **OSL:** completed Terma acquisition, price unknown. **Parrot:** two actual EUR2.5m shareholder-loan drawdowns, avoiding duplicate EUR5m/10m/20m facility ceilings.
+- **Oko:** received Brave1 grant separate from IT Arena prize. Amount unknown; 2023/2024 date conflict retained with null event date.
+- **StirlingX:** GALLOS participation added while both issuer-supported co-lead roles remain intact.
 
-Kitemill existing EIC grant corrected from issuer-roundedEUR2.5m/year2024closed record to officialEUR2,499,000allocation and ECsignature28November2024,signed. Expected-old-value guard, explicit before/after/reversal record, production rollback rehearsal and reversal test passed. No duplicate event; original issuer source retained. Correction does not imply cash payment on signature.
+**Kitemill correction:** the existing EIC grant was refined from issuer-rounded EUR2.5m/year 2024 to the official EUR2,499,000 allocation and EC signature of 28 November 2024. Status/basis now describe a signed allocation, not proven cash payment. Expected-old-value checks and an explicit reversal record protect the correction; the original source remains. No duplicate event.
 
-## Validation
+Manifests and source URLs: [import manifest](../imports/company-funding-research-53-2026-11-05.json), [correction and before/after values](../corrections/funding-checkpoint-53-kitemill-2026-11-05.json). Four lane ledgers preserve independent dispositions, checked pages and holds.
 
-Rollback restored587events984participations702profiles, zero checked candidate rows and originalKitemillEUR2.5m. Atomic import then identical idempotent reapplication passed. Final605/1008/705. Kitemill retains2events; StirlingX retains two co-leads. Approved events without sources:0. Curated investor profiles and legacy links preserved by importer on-conflict behaviour.
+## Verification and publication
 
-Publication pending at writer checkpoint. Numeric active duration stops at checkpoint; end-to-end timing will be saved after build and live validation. Queue:337reviewed_public_sources,206source_review_partial,24partial,1997queued. Legacy455fully_reviewed aggregate remains flagged as unreconciled rather than substituted for completed queue reviews.
+Production rollback restored 587 events, 984 participations, 702 profiles, zero checked candidate rows and the original Kitemill value. The correction reversal was also tested inside a rolled-back transaction. Atomic import and identical idempotent reapplication passed.
+
+Final database and live catalogue: **605 events, 1,008 participations, 705 investor profiles, 312 companies with events**. Approved events without sources: zero. Kitemill retains two events; StirlingX retains its two co-leads. Existing curated profiles and legacy relationships are preserved.
+
+Deployment [42031512224](https://github.com/brunotaut/xSonomy/actions/runs/42031512224) succeeded. Live landscape generated **2026-11-05T12:58:10.713Z**, investor catalogue **2026-11-05T12:58:11.669Z**. All 19 manifest event representations, participant roles, original currencies, dates, sources and the Kitemill correction matched live publication. Nineteen includes one existing event enriched with a participant.
+
+Measured active elapsed time: **12.22 minutes**, including verification, imports, rebuild and live publication checks; scheduled idle between executions excluded. New fully completed company reviews: **0**; completed-review throughput: **0 per active hour**. Twenty-two partial reconciliations are not presented as completed histories. Per-lane timing was not recorded, so no concurrency or speedup claim is made.
+
+Queue dispositions: 337 reviewed_public_sources, 206 source_review_partial, 24 partial, 1,997 queued (2,564 total). The legacy aggregate of 455 fully reviewed companies is explicitly flagged as unreconciled and must not replace the queue-based count. Programme remains in progress; writer lease released.

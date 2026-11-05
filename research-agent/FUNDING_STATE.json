@@ -8,14 +8,14 @@
   "published_landscape_companies": 567,
   "partial_companies": 312,
   "fully_reviewed_companies": 455,
-  "next_action": "Verify checkpoint53 publication, then continue 24 remaining legacy partial published identities and unresolved source-level histories. Prioritise original award/issuer facts; do not re-run completed discovery. Root correction/reversal and lane53 dispositions saved.",
+  "next_action": "Continue remaining24 legacy-partial published identities, then finish source-level holds before full programme audit. Prioritise verifiable original awards and historical round disclosures. Checkpoint53 published and lease released; preserve pilot completion and legacy stream.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-05T12:57:06.626Z",
+  "updated_at": "2026-11-05T13:00:07.115Z",
   "source_reconciliation_companies": 321,
   "approved_funding_events": 605,
   "round_participations": 1008,
   "investor_profiles": 705,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/company-funding-research-53-2026-11-05.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -23,20 +23,17 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "id": "funding-20261105-1247-cp53",
-    "started_at": "2026-11-05T12:48:14.421Z",
-    "lease_expires_at": "2026-11-05T14:48:14.421Z"
-  },
+  "active_run": null,
   "last_verified_publication": {
-    "site_commit": "cd691e46b83d62554720da56d5e0859ad2296c8a",
-    "generated_at": "2026-11-05T11:55:29.808Z",
-    "investor_generated_at": "2026-11-05T11:55:31.082Z",
-    "events": 587,
+    "site_commit": "4020b81bff8853b9f247c554f440cbcac7d06e2c",
+    "workflow_run_id": 42031512224,
+    "generated_at": "2026-11-05T12:58:10.713Z",
+    "investor_generated_at": "2026-11-05T12:58:11.669Z",
+    "events": 605,
     "companies_with_events": 312,
-    "participations": 984,
-    "investor_profiles": 702,
-    "checked_at": "2026-11-05T11:56:36.196Z"
+    "participations": 1008,
+    "investor_profiles": 705,
+    "checked_at": "2026-11-05T13:00:07.115Z"
   },
   "known_financing_claims_to_reconcile": [
     {
@@ -935,10 +932,13 @@
     "reviewed_corrections": 1,
     "new_profiles": 3,
     "active_minutes_to_checkpoint": 9.21,
-    "timing_scope": "Source review, writer verification, rollback rehearsal, explicit reversal test, atomic import and idempotency through writer checkpoint; final rebuild/publication still pending; scheduled idle excluded.",
-    "fully_published_throughput": null,
+    "timing_scope": "Measured elapsed time from current queue/manifest reconciliation through source review, verification, rollback rehearsal, reversal test, atomic import, idempotency, writer checkpoint, catalogue rebuild and successful live publication verification. Scheduled hours between executions excluded.",
+    "fully_published_throughput": 0,
     "concurrency_speedup_claimed": false,
-    "publication_verified": false
+    "publication_verified": true,
+    "active_minutes_total": 12.22,
+    "fully_published_throughput_basis": "New fully bounded company reviews per active hour; zero completed in this checkpoint.22 identities were reconciled but all retain source-level holds.",
+    "lane_timing_limitation": "Four independent read-only lanes used; per-lane active duration not separately recorded. No measured concurrency or speedup claim."
   },
   "latest_followup_metrics": {
     "identities_reconciled": 2,
