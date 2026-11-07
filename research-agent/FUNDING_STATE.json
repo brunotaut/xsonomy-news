@@ -8,14 +8,14 @@
   "published_landscape_companies": 567,
   "partial_companies": 224,
   "fully_reviewed_companies": 343,
-  "next_action": "Publish prepared Unifly Series A correction from research-agent/imports/unifly-correction-2026-11-07.sql, then verify live event. Production rollback restored original null amount and year-only date. Atomic correction and idempotent reapplication succeeded. Continue PMV and QBIC Series B participation reconciliation and remaining landscape reviews.",
+  "next_action": "Unifly Series A correction is live and verified. Continue prepared PMV and QBIC Series B participation reconciliation, then remaining partial landscape histories. Review Intelligent Energy operating borrower accounts and legacy holding-company attribution before further imports.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-07T20:45:25.198Z",
+  "updated_at": "2026-11-07T21:44:54.482Z",
   "source_reconciliation_companies": 321,
   "approved_funding_events": 645,
   "round_participations": 1063,
   "investor_profiles": 729,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/company-funding-research-56-2026-11-05.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -972,5 +972,16 @@
     "source_count": 834,
     "evidence": "research-agent/reports/2026-11-05-funding-checkpoint-56.json",
     "publication_verified": true
+  },
+  "latest_correction_publication": {
+    "site_commit": "e31b7088afd71a693fcf29d070203b0d60f8bb24",
+    "workflow_run_id": 42412589876,
+    "generated_at": "2026-11-07T20:46:30.129Z",
+    "investor_generated_at": "2026-11-07T20:46:31.407Z",
+    "verified_event": "unifly/series-a-2016",
+    "amount": 5000000,
+    "currency": "EUR",
+    "date": "2016-11-21",
+    "checked_at": "2026-11-07T21:44:54.482Z"
   }
 }
