@@ -8,12 +8,12 @@
   "published_landscape_companies": 567,
   "partial_companies": 221,
   "fully_reviewed_companies": 346,
-  "next_action": "Verify publication of Indra signed EUR385m EIB facility and HTGF lead in INLEAP pre-seed. Both imported after production rollback and idempotent atomic application. Then continue remaining partial landscape companies, preserving Hybrid Drones conflict.",
+  "next_action": "Infini FlyTech relationship publication verified. Twenty distinct identities reviewed in four read-only groups, three bounded reviews completed. Prioritize Indra signed EUR385m EIB loan and missing HTGF lead for INLEAP from group D evidence. Preserve Hybrid Drones GBP100k/200k original-source conflict. Continue remaining landscape partials.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-08T15:46:37.684Z",
+  "updated_at": "2026-11-08T14:48:53.631Z",
   "source_reconciliation_companies": 321,
-  "approved_funding_events": 647,
-  "round_participations": 1064,
+  "approved_funding_events": 648,
+  "round_participations": 1066,
   "investor_profiles": 730,
   "publication_pending": false,
   "last_import": "research-agent/imports/eurotech-eu-grant-20261108-prepared.json",
@@ -23,7 +23,11 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": null,
+  "active_run": {
+    "id": "indra-inleap-20261108",
+    "started_at": "2026-11-08T15:45:00.162Z",
+    "expires_at": "2026-11-08T17:45:00.162Z"
+  },
   "last_verified_publication": {
     "site_commit": "cad28000f70d3e92c2bee3ad98aac731ae14781f",
     "workflow_run_id": 42113973065,
@@ -945,15 +949,13 @@
     "lane_timing_limitation": "Per-lane timing not separately recorded; no concurrency or speedup comparison."
   },
   "latest_followup_metrics": {
-    "identities_reconciled": 20,
-    "newly_completed_bounded_reviews": 3,
-    "partial_reviews": 17,
-    "new_events": 0,
-    "new_generic_relationships": 1,
-    "active_minutes": 2.45,
-    "publication_verified": true,
-    "concurrency_speedup_claimed": false,
-    "completed_reviews_per_active_hour": 73.47
+    "identities_reconciled": 2,
+    "new_events": 1,
+    "added_participations": 2,
+    "completed_bounded_reviews": 0,
+    "publication_verified": false,
+    "active_minutes_so_far": 2.2,
+    "throughput": null
   },
   "fully_reviewed_count_note": "Counted current queue reviewed_public_sources rows:338, including1 newly bounded Helsing review incheckpoint54. Prior unreconciled aggregate455 retained separately as legacy_reported_fully_reviewed_companies.229 source_review_partial are not complete.",
   "legacy_reported_fully_reviewed_companies": 455,
@@ -1011,5 +1013,13 @@
     "expected_relationship": "infini/flytech-uav",
     "generated_at": "2026-11-08T14:48:47.661Z",
     "verified_at": "2026-11-08T14:49:22.610Z"
+  },
+  "pending_publication": {
+    "site_commit": "92f05ce52a02b5f0a7b3e7b12b6aa99a60f0115b",
+    "expected_events": [
+      "indra/eib-rdi-technology-center-2025",
+      "inleap-photonics/pre-seed-2025 HTGF lead"
+    ],
+    "writer_commit": "8630bff89ed4db1589fd3a71587313da8dd83f81"
   }
 }
