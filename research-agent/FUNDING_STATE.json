@@ -6,28 +6,24 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 224,
-  "fully_reviewed_companies": 343,
-  "next_action": "EUROTECH beneficiary grant is live and verified. Continue prepared Infini/FlyTech investor relationship and remaining partial landscape histories. Preserve grant date uncertainty and avoid repeating imported events.",
+  "partial_companies": 221,
+  "fully_reviewed_companies": 346,
+  "next_action": "Verify Infini FlyTech relationship publication from pending_publication. Twenty distinct identities reviewed in four read-only groups, three bounded reviews completed. Prioritize Indra signed EUR385m EIB loan and missing HTGF lead for INLEAP from group D evidence. Preserve Hybrid Drones GBP100k/200k original-source conflict. Continue remaining landscape partials.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-08T12:51:12.502Z",
+  "updated_at": "2026-11-08T14:48:53.631Z",
   "source_reconciliation_companies": 321,
   "approved_funding_events": 647,
   "round_participations": 1064,
   "investor_profiles": 729,
   "publication_pending": true,
-  "last_import": "research-agent/imports/infini-flytech-20261108.json",
+  "last_import": "research-agent/imports/eurotech-eu-grant-20261108-prepared.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "id": "parallel-review-nov8",
-    "started_at": "2026-11-08T14:46:55.788Z",
-    "expires_at": "2026-11-08T16:46:55.788Z"
-  },
+  "active_run": null,
   "last_verified_publication": {
     "site_commit": "cad28000f70d3e92c2bee3ad98aac731ae14781f",
     "workflow_run_id": 42113973065,
@@ -920,9 +916,8 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 343,
-    "source_review_partial": 224,
-    "partial": 0,
+    "reviewed_public_sources": 346,
+    "source_review_partial": 221,
     "queued": 1997
   },
   "last_execution_metrics": {
@@ -950,19 +945,14 @@
     "lane_timing_limitation": "Per-lane timing not separately recorded; no concurrency or speedup comparison."
   },
   "latest_followup_metrics": {
-    "identities_reconciled": 21,
-    "newly_completed_bounded_reviews": 5,
-    "source_review_partial": 16,
-    "imported_events": 7,
-    "imported_participations": 14,
-    "new_profiles": 10,
-    "generic_relationships_added": 5,
-    "reviewed_corrections": 2,
-    "publication_verified": true,
-    "active_minutes_since_reacquired_lease": 4.15,
-    "timing_scope": "Active continuation measured from the new checkpoint 56 lease through import and publication. Earlier research work preceded a tool interruption and intervening checkpoint 55. Elapsed time across that interruption and unmeasured earlier research are excluded. Full-process throughput and comparative speedup are unavailable.",
-    "active_minutes_through_publication": 8.49,
-    "full_process_throughput_companies_per_hour": null
+    "identities_reconciled": 20,
+    "newly_completed_bounded_reviews": 3,
+    "partial_reviews": 17,
+    "new_events": 0,
+    "new_generic_relationships": 1,
+    "active_minutes": 1.96,
+    "publication_verified": false,
+    "concurrency_speedup_claimed": false
   },
   "fully_reviewed_count_note": "Counted current queue reviewed_public_sources rows:338, including1 newly bounded Helsing review incheckpoint54. Prior unreconciled aggregate455 retained separately as legacy_reported_fully_reviewed_companies.229 source_review_partial are not complete.",
   "legacy_reported_fully_reviewed_companies": 455,
@@ -1013,5 +1003,10 @@
     "amount": 587479.98,
     "currency": "EUR",
     "announcement_date": null
+  },
+  "pending_publication": {
+    "site_commit": "857189c0d69808c595adfca2453f746adb96bb77",
+    "workflow_run_id": 42491553361,
+    "expected_relationship": "infini/flytech-uav"
   }
 }

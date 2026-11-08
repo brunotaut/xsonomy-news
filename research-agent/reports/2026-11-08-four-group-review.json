@@ -1,0 +1,351 @@
+{
+  "checked_at": "2026-11-08T14:48:53.631Z",
+  "status": "research_checkpoint_import_applied_publication_pending",
+  "metrics": {
+    "identities_reconciled": 20,
+    "newly_completed_bounded_reviews": 3,
+    "partial_reviews": 17,
+    "new_events": 0,
+    "new_generic_relationships": 1,
+    "active_minutes": 1.96,
+    "publication_verified": false,
+    "concurrency_speedup_claimed": false
+  },
+  "groups": [
+    {
+      "checked_at": "2026-11-08T14:47:12.952Z",
+      "companies": [
+        {
+          "slug": "general-cherry",
+          "status": "reviewed_public_sources",
+          "new_facts": [],
+          "sources": [
+            "https://gencherry.com/news/kredytna-liniia-na-5-milioniv-akordbank-accordbank-pidtrymuie-nash-nastupnyi-etap-rozvytku"
+          ],
+          "note": "Issuer 13 July 2026 confirms existing USD5m Accordbank credit line. Patria/Alta Ares collaborations and investor networking provide no additional funded event. Bounded public review may be completed while drawn amount remains unknown."
+        },
+        {
+          "slug": "germandrones",
+          "status": "source_review_partial",
+          "new_facts": [
+            {
+              "kind": "date_precision_review",
+              "round_key": "condor-capital-increase-2017",
+              "stored_date": "2017-08-15",
+              "original_investor_announcement_date": "2017-08-21",
+              "source": "https://www.condor-sicherheit.de/condor-group/aktuelles/aktuelle-meldung/detail/condor-gruppe-beteiligt-sich-am-berliner-drohnenhersteller-germandrones-1",
+              "note": "Do not overwrite until existing source supports whether 15 August is execution date. Release explicitly describes both CONDOR and management subscriptions."
+            }
+          ],
+          "note": "Historical grant allocations unresolved. Existing generic Klaus Scho/Cornelius Toussaint links remain supported."
+        },
+        {
+          "slug": "greenjets",
+          "status": "source_review_partial",
+          "new_facts": [],
+          "sources": [
+            "https://www.greenjets.com/news",
+            "https://www.greenjets.com/news-articles/series-a",
+            "https://www.greenjets.com/news-articles/project-safari-launched"
+          ],
+          "note": "Current issuer news checked through October 2026. Project Safari access and xTech finalist recognition disclose no beneficiary award. Existing USD40m July2026 and USD7m earlier Pre-SeriesA retained. Conflicting timing of earlier round remains hold."
+        },
+        {
+          "slug": "griff-aviation",
+          "status": "source_review_partial",
+          "new_facts": [],
+          "sources": [
+            "https://www.griffaviation.com/posts",
+            "https://rati.no/bedrift/griff-aviation-as-916540892"
+          ],
+          "candidate": {
+            "claim": "Rati reports six Innovation Norway awards totalling NOK21.6m, five grants and one loan, latest29 June2026",
+            "status": "unverified_original_records_needed"
+          },
+          "note": "Do not treat shareholder changes or cumulative owner NOK200m as separate financing. Registry mirror financing claim needs original Innovation Norway/Brreg rows. Existing six/seven historical records retained."
+        },
+        {
+          "slug": "grupo-amper",
+          "status": "source_review_partial",
+          "new_facts": [
+            {
+              "kind": "precise_existing_round_amount",
+              "round_key": "capital-increase-2023",
+              "candidate_amount": 31041899.84,
+              "currency": "EUR",
+              "sources": [
+                "https://www.grupoamper.com/en/shareholders-and-investors-capitalincrease/",
+                "https://www.grupoamper.com/wp-content/uploads/2023/12/OIR-04_12_2023.pdf"
+              ],
+              "note": "Execution deed confirms388023748 new shares and EUR19401187.40 nominal. Need confirm EUR0.08 subscription price in rights prospectus before exact gross proceeds correction. Issuer closing release explicitly confirms actual four commitment-party subscriptions, so don't remove existing investor records."
+            }
+          ],
+          "note": "Existing2024/2025 bond tranches match historical reporting. Additional debt and older primary issue reconciliation remains open."
+        }
+      ],
+      "completed_bounded_reviews": 1,
+      "read_only": true
+    },
+    {
+      "checked_at": "2026-11-08T14:47:24.675Z",
+      "identities": 5,
+      "new_supported_events": [],
+      "companies": [
+        {
+          "slug": "harmattan-ai",
+          "status": "source_review_partial",
+          "existing_events": 3,
+          "decision": "Keep early Seed and Series A undisclosed amounts/date. Primary issuer Series B and investor portfolios do not split USD42m. Secondary Dealroom USD12m/30m and exact months remain candidates.",
+          "sources": [
+            "https://harmattan.ai/blog/harmattan-ai-200-million-series-b-led-by-dassault-aviation/",
+            "https://atlantic.vc/portfolio/harmattan-ai",
+            "https://firstmark.com/story/harmattan-ai-raises-200m-series-b-led-by-dassault-aviation-becomes-defense-unicorn/"
+          ]
+        },
+        {
+          "slug": "hecto-drone",
+          "status": "source_review_partial",
+          "existing_events": 3,
+          "decision": "No new discrete round verified. ESA official directory confirms incubation2022–2023, not cash amount. Secondary USD54k grant, USD89k APUS and Jan2026 accelerator not importable from generic programme thresholds. Existing Maj Invest and APUS event already stored.",
+          "new_supported_generic": "ESA BIC Denmark programme participation 2022–2023, no cheque.",
+          "sources": [
+            "https://commercialisation.esa.int/?esa-startups=hecto-drone",
+            "https://esastar-emr.sso.esa.int/StartUps/StartUpsList?grid-column=EntityCode&grid-dir=1&grid-page=13",
+            "https://www.linkedin.com/posts/odense-robotics_apus-unmannedsystems-activity-7338545476524253185-Zeul",
+            "https://www.linkedin.com/posts/hecto-drone_majinvest-hectodrone-dronetechnology-activity-7310948761726279682-uKAf"
+          ]
+        },
+        {
+          "slug": "hensoldt",
+          "status": "source_review_partial",
+          "existing_events": 4,
+          "decision": "Existing IPO,2023 cash increase,2025 EUR1.8bn refinancing and EUR300m promissory notes cover retrieved sources. Further historical2023/24 term and revolver facilities require origination/extension/draw reconciliation. Do not duplicate refinanced balances.",
+          "sources": [
+            "https://investors.hensoldt.net/news/hensoldt-with-growing-revenue-and-strong-order-intake-in-the-first-half-of-2025/cda78167-c757-40a4-8571-76f2875d84a1",
+            "https://annualreport2023.hensoldt.net/resource/PDF/HENSOLDT_GB_Finance_E_2023.pdf",
+            "https://investors.hensoldt.net/news/financial-year-2025-hensoldt-achieves-record-order-intake-and-confirms-structural-growth-path/7f15c9a0-04e9-4f26-91d4-fcdf9af6db2d"
+          ]
+        },
+        {
+          "slug": "hexadrone",
+          "status": "source_review_partial",
+          "existing_events": 1,
+          "decision": "Official history does not resolve conflicting EUR800k May2018 versus nearEUR200k July2018 descriptions. Both may concern different closes but no original documents to establish. Later2021/2023 raises described as planned. AIRLOGMED remains selected project without beneficiary amount.",
+          "sources": [
+            "https://www.hexadrone.fr/entreprise/lequipe/",
+            "https://www.lejournaldesentreprises.com/article/hexadrone-leve-des-fonds-pour-financer-son-centre-de-production-125724",
+            "https://www.lejournaldesentreprises.com/article/les-investissements-prevus-en-2019-en-auvergne-rhone-alpes-135523",
+            "https://www.latribune.fr/innovation/2020-06-08/hexadrone-veut-gagner-ses-galons-de-constructeur-de-drone-849359.html"
+          ]
+        },
+        {
+          "slug": "hgh-infrared-systems",
+          "status": "reviewed_public_sources",
+          "existing_events": 1,
+          "decision": "Bounded public-source followup complete. Carlyle2018 majority investment retained. THEON's current latest original news and July27 update still describe pending holding-company acquisition, expected beginning2027. EUR300m is proposed enterprise value, bridge debt is buyer funding. No closed2026 HGH financing verified.",
+          "sources": [
+            "https://theon.com/en/news/2026/theon-announces-q2-2026-h1-2026-trading-update",
+            "https://theon.com/en/news",
+            "https://theon.com/en/news/2026/theon-enters-into-exclusivity-agreement-for-the-acquisition-of-hgh-systemes-infrarouges-accelerating-expansion-into-multi-domain-isr-counter-uas-solutions"
+          ]
+        }
+      ],
+      "limitations": "No new event import recommended. Primary pages were opened for Harmattan and Hexadrone, issuer/investor original search text for other citations. Old reports and current DB read first. No comparative speedup measured."
+    },
+    {
+      "checked_at": "2026-11-08T14:48:09.581Z",
+      "read_only": true,
+      "identities_researched": 5,
+      "companies": [
+        {
+          "slug": "hornet-polskie-drony",
+          "id": "418dc2d7-d421-435b-a304-f7e71fdc157e",
+          "disposition": "source_review_partial",
+          "existing_events": 0,
+          "new_importable_events": [],
+          "findings": "Original July 2026 production-line announcement confirms trial production but restates planned Boryszew financing rather than a disclosed paid contribution. Conditional October 2025 share transfer and November UOKiK approval remain separate from funded proceeds. No cash amount or instrument established.",
+          "sources": [
+            "https://www.boryszew.com.pl/en/reports/27-2025-contract-with-the-air-force-institute-of-technology-a-new-business-segment/",
+            "https://www.boryszew.com.pl/en/reports/30-2025-consent-of-the-president-of-the-office-of-competition-and-consumer-protection-to-concentration/",
+            "https://www.boryszew.com.pl/prezentacja-linii-produkcyjnej-hornet-polskie-drony-bezzalogowy-powietrzny-system-uzbrojenia-bpsu-hornet-wkracza-w-faze-przemyslowa-projektu/"
+          ]
+        },
+        {
+          "slug": "huless",
+          "id": "6d98a6c3-edad-4031-803a-83aa6d59ead0",
+          "disposition": "source_review_partial",
+          "existing_events": 1,
+          "new_importable_events": [],
+          "findings": "Reopened issuer post and embedded Brave1 grantor announcement. Existing aggregate above USD1m is supported, but it combines equity, state-bank debt and grant. Named angels, individual amounts and exact borrower remain undisclosed. UK HULESS LTD 15989703 filings are a potential legal-issuer followup, not automatically all Ukrainian operating proceeds.",
+          "sources": [
+            "https://www.linkedin.com/posts/huless_on-the-waves-of-defense-tech-valley-ukrainian-activity-7290723173644304384-udT9",
+            "https://find-and-update.company-information.service.gov.uk/company/15989703/filing-history"
+          ]
+        },
+        {
+          "slug": "hybrid-drones",
+          "id": "b1faf3ec-b3e4-4a90-b504-2edc58f630d6",
+          "disposition": "source_review_partial",
+          "existing_events": 2,
+          "new_importable_events": [],
+          "correction_hold": {
+            "round_key": "s-ventures-investment-2026",
+            "stored_amount": 200000,
+            "currency": "GBP",
+            "conflicting_amount": 100000,
+            "later_disclosure_date": "2026-09-22",
+            "period_end": "2026-06-30",
+            "note": "April RNS says GBP200k strategic investment for 2.67%. Later original exchange interim report explicitly says GBP100k invested in period. No explanation of tranche, commitment or error. Preserve as material source conflict and avoid silently overwriting or adding a second GBP100k event."
+          },
+          "findings": "MBDA March2026 update confirms 2025 shareholding and resource support, without new financing amount. Existing MBDA event supported.",
+          "sources": [
+            "https://www.aquis.eu/stock-exchange/announcements/5705586",
+            "https://embed.aquis.eu/stock-exchange/announcements/5933829",
+            "https://www.mbda-systems.com/mbda-backed-sme-marks-successful-first-flight-innovative-drone"
+          ]
+        },
+        {
+          "slug": "ids-fincantieri-nextech",
+          "id": "a3654ce0-0999-4b13-9057-917ec24c5b1e",
+          "disposition": "source_review_partial",
+          "existing_events": 4,
+          "new_importable_events": [],
+          "findings": "Reopened NexTech 2023 100% ownership announcement, confirming existing acquisition without consideration. Latest Fincantieri June2026 Eni/IDS agreement is technology/commercial collaboration. Parent 2026 capital increase does not belong to IDS. Broader beneficiary grant history remains unresolved.",
+          "sources": [
+            "https://www.fincantierinextech.com/2023/03/02/fincantieri-nextech-now-owns-100-of-ids-2/",
+            "https://www.fincantieri.com/en/newsroom/press-releases/2026/eni-and-fincantieri-group-sign-a-strategic-agreement-to-enhance-innovative-underwater-monitoring-technologies"
+          ]
+        },
+        {
+          "slug": "impianti",
+          "id": "0f7bb655-14ab-4b36-b26d-66a616430eec",
+          "disposition": "reviewed_public_sources",
+          "existing_events": 5,
+          "new_importable_events": [],
+          "findings": "Current issuer press-release archive and September2026 interim release reviewed against existing five events. No additional executed funding identified. September2026 shareholders' up-to-EUR300k support remains conditional on board need over following12 months, not new paid proceeds. Existing2025 paid advance is distinct. January2026 capital notice source already matches existing warrant event. Preserve unknown lenders and individual shareholder splits.",
+          "sources": [
+            "https://impianti.eu/en/financial-press-releases/",
+            "https://impianti.eu/wp-content/uploads/CS_Impianti_1H2026.pdf",
+            "https://impianti.eu/wp-content/uploads/CS_Impianti-Variazione-Capitale-Sociale_ENG-1.pdf"
+          ]
+        }
+      ],
+      "newly_completed_bounded_review_recommendation": 1,
+      "notes": "No DB or repository writes. Queue completion is parent decision. Individual inaccessible/private terms remain holds."
+    },
+    {
+      "checked_at": "2026-11-08T14:48:17.318Z",
+      "lane": "d",
+      "read_only": true,
+      "identities": 5,
+      "completed_reviews": 0,
+      "companies": [
+        {
+          "slug": "incas",
+          "id": "1374599f-f40f-4f9e-98e8-5c854b2f028f",
+          "disposition": "source_review_partial",
+          "existing_events": 0,
+          "findings": "Official identity remains Romanian national aerospace R&D institute. New official project candidates RO-ACTRIS-ERIC and BRACE-MY support public research activity but no extracted beneficiary allocation. Do not use institute revenue budgets or consortium totals as grants.",
+          "sources": [
+            "https://www.incas.ro/contact-us/",
+            "https://www.incas.ro/proiecte/supporting-the-operation-of-facilities-in-romania-within-actris-eric/",
+            "https://www.brace-my.ro/"
+          ],
+          "new_events": []
+        },
+        {
+          "slug": "indra",
+          "id": "ad88aced-579d-45f5-949c-4df263c0b4c3",
+          "disposition": "source_review_partial",
+          "existing_events": 0,
+          "new_events": [
+            {
+              "round_key": "eib-rdi-technology-center-2025",
+              "financing_type": "debt",
+              "record_kind": "credit_facility",
+              "amount": 385000000,
+              "currency": "EUR",
+              "amount_basis": "announced_round_size",
+              "amount_qualifier": "exact",
+              "closing_status": "signed",
+              "announced_date": "2025-07-15",
+              "borrower": "INDRA SISTEMAS SA",
+              "lender": "European Investment Bank",
+              "note": "EIB original press release confirms signed EUR385m loan agreement on 15 July2025, project signature register records14 July2025. Use public announcement15July and note register14July. Proceeds not confirmed drawn. No inference from EUR1012m project budget.",
+              "sources": [
+                "https://www.eib.org/en/press/all/2025-288-spanish-company-indra-group-to-step-up-research-and-development-of-defence-and-space-technologies-with-eur385-million-in-eib-financing",
+                "https://www.eib.org/en/projects/all/20240383",
+                "https://www.indracompany.com/sites/default/files/250715_pr_eib_indra_group.pdf"
+              ]
+            }
+          ],
+          "holds": "Historical issuer bond and loan financing remains to review. Programme prefinancing of EUR4248m to group and EUR3629m to temporary consortiums needs original executed loan/recipient evidence."
+        },
+        {
+          "slug": "infozahyst",
+          "id": "5422e6d4-a39a-4f53-9cc0-095e96e40cfb",
+          "disposition": "source_review_partial",
+          "existing_events": [
+            "foreign-investment-2021 EUR2m"
+          ],
+          "new_events": [],
+          "sources": [
+            "https://infozahyst.com/en/infozahyst-received-2-mln-euros-of-foreign-investment/",
+            "https://infozahyst.com/en/ukraines-new-intelligence-gathering-drone-took-to-the-sky-for-the-first-time/"
+          ],
+          "findings": "Original issuer confirms existing EUR2m financing at IDEX2021, publicly disclosed20April2021. January2022 retrospective repeats same event, not new round. Investor/instrument undisclosed."
+        },
+        {
+          "slug": "inleap-photonics",
+          "id": "c950d937-810b-4cd0-b774-38b69f25a945",
+          "disposition": "source_review_partial",
+          "existing_events": [
+            "pre-seed-2025",
+            "seed-2026 EUR20m approximate"
+          ],
+          "corrections": [
+            {
+              "round_key": "pre-seed-2025",
+              "add_participant": "HTGF",
+              "role": "lead",
+              "source": "https://www.htgf.de/en/inleap-photonics-pre-seed-funding/",
+              "finding": "Direct original HTML retrieved via urllib after web open rejected markdown content type. Explicit HTGF lead and Ventis participant. DB currently has only ventis-capital participant. Closed summer2025, announced11Feb2026, amount remains undisclosed."
+            }
+          ],
+          "sources": [
+            "https://www.htgf.de/en/inleap-photonics-pre-seed-funding/",
+            "https://www.htgf.de/en/inleap-photonics-financing/"
+          ],
+          "holds": "No amount disclosed in pre-seed. Unnamed private investors not created."
+        },
+        {
+          "slug": "innov-atm",
+          "id": "db545905-4557-4b90-bf27-6fd105c19b45",
+          "disposition": "source_review_partial",
+          "existing_events": [
+            "irdinov-equity-2016 EUR500k",
+            "groupe-adp-irdinov-round-2018 EUR1m",
+            "dronemed-financing-2025 EUR5m"
+          ],
+          "sources": [
+            "https://www.innov-atm.com/fr/about-us/",
+            "https://www.innov-atm.com/fr/innovatm-securise-5-me-pour-accelerer-le-deploiement-de-dronemed-au-coeur-des-etablissements-de-sante/",
+            "https://www.innov-atm.com/fr/innovatm-takes-part-into-a-european-project-to-test-cross-border-air-corridors-with-drones-with-a-consortium-lead-by-airports-of-catalunya/"
+          ],
+          "new_events": [],
+          "findings": "Original company confirms EUR5m closed financing and prior2016/2018 events. Provider/instrument undisclosed. Current release body has no date and news page republished2026 labels conflict with existing25Nov2025 date, leave date correction on hold. Niu.Link EUR1961442.65 is consortium funding, no beneficiary allocation."
+        }
+      ]
+    }
+  ],
+  "import": {
+    "manifest": "research-agent/imports/eurotech-eu-grant-20261108-prepared.json",
+    "rollback_restored_absence": true,
+    "atomic_and_idempotency_verified": true
+  },
+  "publication": {
+    "site_commit": "857189c0d69808c595adfca2453f746adb96bb77",
+    "workflow_run_id": 42491553361,
+    "expected_relationship": "infini/flytech-uav"
+  }
+}
