@@ -1,0 +1,688 @@
+{
+  "checked_at": "2026-11-08T23:57:03.911Z",
+  "status": "checkpoint_and_publication_verified",
+  "metrics": {
+    "identities_reconciled": 20,
+    "prepared_company_followup": 1,
+    "newly_completed_bounded_reviews": 0,
+    "source_review_partial": 20,
+    "new_generic_relationships": 2,
+    "new_profiles": 2,
+    "new_events": 0,
+    "active_minutes": 2.93,
+    "completed_reviews_per_active_hour": 0,
+    "concurrency_speedup_claimed": false,
+    "publication_verified": true
+  },
+  "groups": [
+    {
+      "checked_at": "2026-11-08T23:54:37.513Z",
+      "started_at": "2026-11-08T23:53:51.972Z",
+      "active_minutes": 0.76,
+      "identities": 5,
+      "read_only": true,
+      "completed_reviews": 0,
+      "companies": [
+        {
+          "slug": "kseonics-technology",
+          "status": "source_review_partial",
+          "sources": [
+            "https://www.defenseone.com/threats/2023/12/ukraines-soldiers-use-cheap-tech-hide-russias-deadly-drones/392957/",
+            "https://mind.ua/publications/20266019-vid-pauerbankiv-do-dron-detektoriv-yak-kseonics-technology-oblashtuvala-virobnictvo-ta-zvidki-bere-ko"
+          ],
+          "new_supported_fact": {
+            "existing_round_key": "brave1-drone-detector-grant-2023",
+            "amount": 25000,
+            "currency": "USD",
+            "source_date": "2023-12-21",
+            "evidence": "Original Defense One interview explicitly says Kseonics received USD25000 Brave1 grant. Existing earlier issuer interview confirms grant with unknown amount. Reconcile same award before guarded correction."
+          },
+          "holds": "No exact award execution date disclosed. No second event recommended."
+        },
+        {
+          "slug": "lba-systems",
+          "status": "source_review_partial",
+          "sources": [
+            "https://www.baykartech.com/en/press/baykar-and-leonardo-announce-new-joint-venture-lba-systems-at-the-paris-air-show/",
+            "https://www.emarketstorage.it/sites/default/files/comunicati/2026-07/20260721_187059.pdf"
+          ],
+          "finding": "June2025 formation event already stored. July2026 original exchange release confirms regulatory authorisations and operational readiness. No capital contribution amount established. Do not turn operational readiness into additional financing."
+        },
+        {
+          "slug": "lehmann-aviation",
+          "status": "source_review_partial",
+          "sources": [
+            "https://www.pappers.fr/entreprise/lehmann-aviation-428768923",
+            "https://www.pappers.fr/entreprise/lehmann-aviation-424553766",
+            "https://leman-aviation.com/growth-for-leman-aviation-new-investors-join-the-capital-swcfpc1/"
+          ],
+          "finding": "Registry links indicate historical merger between 424553766 and 428768923 and later2025 capital modifications. Similar-name Léman Aviation helicopter investment belongs to unrelated issuer. Nominal capital is not proceeds.",
+          "holds": "Need original2025 subscription deed to establish cash proceeds, premium, instrument and participants."
+        },
+        {
+          "slug": "leica-geosystems-hexagon",
+          "status": "source_review_partial",
+          "sources": [
+            "https://hexagon.com/company/newsroom/press-releases/2005/acquisition-of-leica-shares-and-resolution-on-new-issue",
+            "https://hexagon.com/company/newsroom/press-releases/2006/squeeze-out-of-shares-in-leica-geosystems-ag"
+          ],
+          "finding": "Existing2005 control acquisition retained. Original2006 squeeze-out specifies same CHF440 plus five B shares with additional CHF28.11 dilution compensation per residual share. Do not aggregate unsupported total or treat buyer shares as issuer primary financing.",
+          "holds": "Exact residual consideration and distinct completion-date reconciliation remain open."
+        },
+        {
+          "slug": "lendurai",
+          "status": "source_review_partial",
+          "sources": [
+            "https://ellex.legal/project/expeditions-fund-hcvc-and-vsquared-ventures/",
+            "https://www.linkedin.com/posts/maivel_we-have-hit-a-major-milestone-with-lendurai-activity-7336303355725545473-TzX-",
+            "https://ll.hcvc.co/"
+          ],
+          "finding": "Existing EUR5.57m seed is confirmed by counsel. Founder original post corroborates closed approximatelyEUR5.5m and all three investors. HCVC original indexed homepage says co-led by HCVC, conflicting secondary coverage labels Expeditions lead. Direct HCVC homepage502. Retain participant roles pending original article.",
+          "holds": "Do not infer exact date from aggregator claims June1/5/6 or co-lead from secondary sources."
+        }
+      ]
+    },
+    {
+      "run_id": "nov8-late-b",
+      "read_only": true,
+      "started_at": "2026-11-08T23:53:56.141Z",
+      "finished_at": "2026-11-08T23:55:44.177Z",
+      "active_seconds": 108.036,
+      "fully_reviewed_company_count": 0,
+      "partial_company_count": 5,
+      "timing_scope": "Read dedicated current FUNDING_STATE and current DB rounds; original-source historical/latest searches and verification. No import/publication performed by this read-only lane.",
+      "companies": [
+        {
+          "slug": "leonardo",
+          "disposition": "source_review_partial",
+          "database_events_before": [],
+          "new_supported_events": [
+            {
+              "suggested_round_key": "esg-term-loan-2026",
+              "issuer": "Leonardo",
+              "announced_date": "2026-03-10",
+              "stage": "ESG-linked amortizing term loan",
+              "financing_type": "debt",
+              "record_kind": "credit_facility",
+              "amount": 600000000,
+              "currency": "EUR",
+              "amount_qualifier": "exact",
+              "closing_status": "signed",
+              "drawdown_status": "not specified",
+              "source_url": "https://www.leonardo.com/documents/15646808/0/LDO_PressRelease_Term%2BLoan_10_03_2026_ENG.pdf?t=1773163611914",
+              "source_publication_date": "2026-03-10",
+              "notes": "Five-year loan, two-year grace period, amortization from third year, maturity 2031. Refinances debt matured and repaid in January 2026; do not describe as incremental net growth capital. Subscription oversubscription is not the facility amount.",
+              "participants_with_explicit_roles": {
+                "mandated_lead_arrangers_and_bookrunners": [
+                  "Banco Bilbao Vizcaya Argentaria S.A., Milan Branch",
+                  "Banco BPM S.p.A.",
+                  "Banco Santander S.A. / Banco Santander S.A., Milan Branch",
+                  "BNP Paribas, Italian Branch / Banca Nazionale del Lavoro S.p.A.",
+                  "BPER Banca S.p.A.",
+                  "CaixaBank S.A., Succursale in Italia",
+                  "Commerzbank Aktiengesellschaft Filiale di Milano",
+                  "Crédit Agricole Corporate and Investment Bank – Milan Branch",
+                  "Deutsche Bank Luxembourg S.A.",
+                  "Intesa Sanpaolo S.p.A.",
+                  "Société Générale – Milan Branch",
+                  "UniCredit S.p.A."
+                ],
+                "esg_coordinators": [
+                  "Crédit Agricole Corporate and Investment Bank",
+                  "BNP Paribas"
+                ],
+                "documentation_and_facility_agent": [
+                  "UniCredit S.p.A."
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.leonardo.com/documents/15646808/0/LDO_PressRelease_Term%2BLoan_10_03_2026_ENG.pdf?t=1773163611914",
+              "type": "original issuer PDF",
+              "verification": "opened full two-page release"
+            },
+            {
+              "url": "https://www.leonardo.com/documents/15646808/28608338/LDO_bilanciointegrato2024_ENG_web_SINGOLE_23.05.2025.pdf",
+              "type": "issuer annual report",
+              "verification": "indexed original source candidate",
+              "claims": "EUR200m EIB subscribed December 2020 and used January 2021; EUR300m EIB subscribed 2018; EUR600m ESG term loan raised/used December 2021; EUR100m CDP loan entered 2020."
+            },
+            {
+              "url": "https://www.leonardo.com/documents/15646808/24920204/ComLDO_2022%2BResults_09_03_2023_ENG.pdf?t=1678381110335",
+              "type": "issuer results",
+              "verification": "indexed original source candidate",
+              "claims": "November 2022 sustainability-linked EIB EUR260m loan, twelve years with four-year grace."
+            },
+            {
+              "url": "https://www.leonardo.com/documents/15646808/0/LDO_bilanciointegrato2025_ENG_INDICIZZATO_07.05.2026.pdf/0fb2a026-ece3-a715-a41b-06c9f85bbf76?t=1778570798981",
+              "type": "issuer annual report",
+              "verification": "indexed original source candidate"
+            }
+          ],
+          "holds": [
+            "Historical parent bond/loan chronology remains incomplete; original event releases needed for dated terms.",
+            "October 2025 EUR1.8bn RCF candidate needs original execution release; EMTN programme capacity is not executed financing.",
+            "Subsidiary and JV proceeds must not be assigned to parent.",
+            "Map bank aliases and preserve debt arranger/agent roles without inferred equity roles or allocations."
+          ]
+        },
+        {
+          "slug": "liebherr-aerospace",
+          "disposition": "source_review_partial",
+          "database_events_before": [
+            {
+              "round_key": "france-relance-support-2021",
+              "amount": 2400000,
+              "currency": "EUR",
+              "year": 2021,
+              "issuer": "Liebherr-Aerospace Toulouse"
+            }
+          ],
+          "new_supported_events": [
+            {
+              "suggested_round_key": "fui-ngturb-support-2015",
+              "issuer": "Liebherr-Aerospace Toulouse SAS",
+              "announced_date": "2015-03-25",
+              "financing_type": "grant",
+              "amount": null,
+              "currency": null,
+              "amount_qualifier": "undisclosed",
+              "closing_status": "received",
+              "source_url": "https://www.liebherr.com/en-ph/n/liebherr-obtains-funding-for-two-rt-projects-accredited-by-aerospace-valley-19746-5934641",
+              "source_publication_date": "2015-03-25",
+              "notes": "Original issuer confirms recently received FUI funding for New Generation Turbomachine (NGTURB), project to end 2018. Individual award date and amount undisclosed."
+            },
+            {
+              "suggested_round_key": "fui-acapulco-support-2015",
+              "issuer": "Liebherr-Aerospace Toulouse SAS",
+              "announced_date": "2015-03-25",
+              "financing_type": "grant",
+              "amount": null,
+              "currency": null,
+              "amount_qualifier": "undisclosed",
+              "closing_status": "received",
+              "source_url": "https://www.liebherr.com/en-ph/n/liebherr-obtains-funding-for-two-rt-projects-accredited-by-aerospace-valley-19746-5934641",
+              "source_publication_date": "2015-03-25",
+              "notes": "Original issuer confirms recently received FUI funding for ACAPULCO thermoplastic composite project, to end 2018. Individual award date and amount undisclosed."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.liebherr.com/en-ph/n/liebherr-obtains-funding-for-two-rt-projects-accredited-by-aerospace-valley-19746-5934641",
+              "verification": "opened original issuer release",
+              "date": "2015-03-25"
+            },
+            {
+              "url": "https://www.liebherr.com/en-us/n/liebherr-aerospace-lindenberg-gmbh-leading-innovation-in-lufo-vii-projects-218944-3782185",
+              "verification": "indexed original source candidate",
+              "date": "2026-02-06"
+            },
+            {
+              "url": "https://www.liebherr.com/en-id/n/aviation-research-projects-with-participation-of-liebherraAerospace-lindenberg-gmbh-238720-5290562",
+              "verification": "indexed original source candidate",
+              "date": "2026-03-17"
+            }
+          ],
+          "holds": [
+            "Confirm broad catalogue identity can represent named Toulouse subsidiary, consistent with existing event; retain explicit subsidiary issuer.",
+            "2026 LuFo VII Lindenberg participation is separate issuer; beneficiary award amounts and execution need verification.",
+            "Clean Sky 2 founding membership or programme totals do not establish individual proceeds.",
+            "Historical/latest award chronology incomplete."
+          ]
+        },
+        {
+          "slug": "livelink-aerospace",
+          "disposition": "source_review_partial",
+          "database_events_before": [
+            {
+              "round_key": "desnz-radar-mitigation-grant-2023",
+              "amount": 1331505,
+              "currency": "GBP",
+              "date": "2023-08-01"
+            },
+            {
+              "round_key": "owgp-development-grant-2021",
+              "amount": null,
+              "date": "2021-07"
+            },
+            {
+              "round_key": "windfarm-mitigation-phase-2-grant-2024",
+              "amount": 505938,
+              "currency": "GBP",
+              "date": "2024-04-24"
+            }
+          ],
+          "new_supported_events": [],
+          "sources": [
+            {
+              "url": "https://www.livelinkaerospace.com/latest-news/defence-and-security-accelerator",
+              "verification": "opened original issuer article",
+              "claims": "Company one of two sharing GBP3.2m government funding; day/month October 2 displayed without year. No company-specific new allocation confirmed."
+            },
+            {
+              "url": "https://www.livelinkaerospace.com/latest-news",
+              "verification": "original current news index searched",
+              "claims": "News through May 28 2026 found; no new financing event verified."
+            }
+          ],
+          "holds": [
+            "Do not assign entire GBP3.2m joint pot to company or duplicate existing 2023/2024 awards.",
+            "Grant chronology and equity/other-finance history remain incomplete; no funding absence conclusion."
+          ]
+        },
+        {
+          "slug": "lmt-latvijas-mobilais-telefons",
+          "disposition": "source_review_partial",
+          "database_events_before": [
+            {
+              "round_key": "eib-network-development-loan-2023",
+              "amount": 50000000,
+              "currency": "EUR",
+              "date": "2023-11-24"
+            }
+          ],
+          "new_supported_events": [],
+          "sources": [
+            {
+              "url": "https://lmt.lmt.lv/bizness/preses-relizes/2024-rezultati",
+              "verification": "indexed original issuer source",
+              "date": "2025-01-30",
+              "claims": "EUR33.6m network investment in 2024 is company expenditure, not evidence of a new financing round."
+            }
+          ],
+          "holds": [
+            "Historical/latest financing search incomplete; use full Latvian legal name to avoid Lockheed Martin ticker contamination.",
+            "Existing EIB loan retained; do not treat capital expenditure as fundraising."
+          ]
+        },
+        {
+          "slug": "lv-teh",
+          "disposition": "source_review_partial",
+          "database_events_before": [
+            {
+              "round_key": "latvian-mod-demining-grant-2024",
+              "amount": 64425,
+              "currency": "EUR",
+              "year": 2024
+            }
+          ],
+          "new_supported_events": [],
+          "sources": [
+            {
+              "url": "https://www.lvteh.lv/about/",
+              "verification": "opened original issuer page",
+              "claims": "By end 2025 SIA LV-Teh had received three Ministry of Defence grants; database currently contains one."
+            },
+            {
+              "url": "https://www.mod.gov.lv/lv/uznemejiem/atbalsts-uznemejiem/grantu-programma/2024-gada-grantu-projektu-konkursa-rezultati",
+              "verification": "indexed official award results",
+              "claims": "EUR64425 remote-controlled demining grant, already recorded."
+            },
+            {
+              "url": "https://www.lvteh.lv/our-projects/",
+              "verification": "indexed original issuer page",
+              "claims": "April 13 2026 NBS supply contract is procurement, not fundraising."
+            },
+            {
+              "url": "https://saraksts.lv/41203069553",
+              "verification": "secondary registry mirror candidate only",
+              "claims": "Candidate LIAA EUR597.6 award May 5 2026; requires official award verification."
+            },
+            {
+              "url": "https://vissviena.lv/uznemums/41203069553/sia-lv-teh/",
+              "verification": "secondary registry mirror candidate only",
+              "claims": "Aggregate aid records are not verified event evidence."
+            }
+          ],
+          "holds": [
+            "Resolve two additional MoD grants with original beneficiary-specific award records before import.",
+            "Official Latvian aid dataset registry ID candidate 41203069553; CKAN resource candidate 6253edd2-17d1-4a9a-bd48-3dd5b9ce5ff4 may support original lookup.",
+            "Do not import secondary mirror totals or award candidates without official verification."
+          ]
+        }
+      ]
+    },
+    {
+      "group": "nov8-late-c",
+      "started_at": "2026-11-08T23:54:04.350Z",
+      "completed_at": "2026-11-08T23:56:25.250Z",
+      "active_elapsed_seconds": 141,
+      "mode": "read_only",
+      "identities_reviewed": 5,
+      "fully_source_audited_identities": 0,
+      "checks": [
+        "Current dedicated FUNDING_STATE read",
+        "Existing DB events reconciled before web discovery",
+        "Original issuer, buyer, funder and transaction sources checked"
+      ],
+      "results": [
+        {
+          "slug": "lynred",
+          "disposition": "source_review_partial",
+          "existing_db_events": [
+            "eu-asteroid-730161-2017",
+            "eu-heliaus-826131-2019",
+            "france-2030-ipcei-mect-grant-2023"
+          ],
+          "supported_missing_facts": [],
+          "sources": [
+            {
+              "url": "https://www.lynred.com/sites/default/files/2026-05/LYNRED%20launches%20SPIRIT%2C%20a%20strategic%20European%20project%20to%20prepare%20the%20next%20generation%20of%20sovereign%20Infrared%20detectors.pdf",
+              "source_date": "2026-05-26",
+              "finding": "SPIRIT: Lynred coordinator; 15 partners, nine countries; EUR39.16m total project cost and nearly EUR29m maximum EU contribution. Planned end-2026 start."
+            }
+          ],
+          "holds": [
+            "SPIRIT consortium budget and maximum EU contribution cannot be assigned to Lynred; no issuer allocation established.",
+            "Existing ASTEROID and HELIAUS beneficiary allocations must retain historical Sofradir/ULIS continuity qualifications; France2030 EUR111m own investment is not grant amount."
+          ]
+        },
+        {
+          "slug": "lyocon",
+          "disposition": "source_review_partial",
+          "existing_db_events": [
+            "nuburu-acquisition-2026",
+            "nuburu-operational-debt-2026"
+          ],
+          "supported_missing_facts": [],
+          "sources": [
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1814215/000119312526396895/R15.htm",
+              "source_date": "2026-06-30",
+              "finding": "Buyer SEC notes repeat USD2m acquisition consideration and USD500k debt facility funded at closing."
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1814215/000119312526016802/buru-20260113.htm",
+              "source_date": "2026-01-15",
+              "finding": "Original closing disclosure."
+            }
+          ],
+          "holds": [
+            "USD750k cash plus two USD625k seller notes are seller consideration, not operating funding.",
+            "Up-to-USD1m earnout not actual funded round.",
+            "Future USD250k plus USD250k operating support tranches remain unconfirmed; no import."
+          ]
+        },
+        {
+          "slug": "malloy-aeronautics",
+          "disposition": "source_review_partial",
+          "existing_db_events": [
+            "bae-systems-acquisition-2024"
+          ],
+          "supported_missing_facts": [],
+          "sources": [
+            {
+              "url": "https://www.baesystems.com/investors/dam/jcr%3Aa11fecb5-7737-4488-b304-69bcdd2bad58/final-offering-memorandum-march-2024.pdf",
+              "source_date": "2024-03",
+              "finding": "GBP60m cash acquisition on 31 Jan 2024, subject adjustments/contingent consideration."
+            },
+            {
+              "url": "https://www.malloyaeronautics.com/about",
+              "finding": "Issuer confirms wholly owned BAE Systems/FalconWorks status."
+            },
+            {
+              "url": "https://investors.baesystems.com/dam/jcr%3A105fe9f2-cff7-4960-9d99-956aba996540/BAE-Systems-Annual-Report-2025.2026-03-24-10-33-48.pdf",
+              "source_date": "2026-03-24",
+              "finding": "Combined Malloy/Callen-Lenz acquisition figures cannot isolate Malloy."
+            }
+          ],
+          "holds": [
+            "Unquantified contingent consideration excluded.",
+            "2017 DASA GBP67.8k secondary candidate and 2020 candidate require original award identifiers before funding import."
+          ]
+        },
+        {
+          "slug": "manna-drone-delivery",
+          "disposition": "source_review_partial",
+          "existing_db_events": [
+            "series-a-2021",
+            "series-b-2026"
+          ],
+          "supported_missing_facts": [
+            {
+              "event_type": "strategic investment",
+              "amount": null,
+              "currency": null,
+              "transaction_date": null,
+              "source_date": "2023-10-25",
+              "date_qualifier": "investment completed by publication date; exact investment date not disclosed here",
+              "investor": "Coca-Cola HBC through Ventures arm",
+              "role": "participant; lead not stated",
+              "url": "https://www.coca-colahellenic.com/en/media/news/sustainability_news/2023/next-generation-delivery-drones-manna-aero",
+              "import_status": "supported party confirmation; writer must reconcile dated March-2023 source or preserve announcement-date qualifier before event creation"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.manna.aero/blog/series-b",
+              "source_date": "2026-04-01",
+              "finding": "Issuer confirms USD50m SeriesB, existing event."
+            },
+            {
+              "url": "https://www.mccannfitzgerald.com/news/mccann-fitzgerald-llp-advises-coca-cola-hbc-on-its-participation-in-a-50m-series-b-investment-round-in-manna-air-delivery",
+              "source_date": "2026-04-17",
+              "finding": "Counsel indexed headline says EUR50m for same SeriesB while issuer says USD50m; original issuer amount retained, counsel direct fetch403."
+            }
+          ],
+          "holds": [
+            "2019 USD5.2m seed from Tech.eu is cumulative final-close total; earlier seed components and original party evidence needed.",
+            "2020 undisclosed round secondary candidate unresolved.",
+            "2023 CocaCola investment amount, exact date and syndicate not inferred.",
+            "2026 USD110m lifetime total excluded; no lead inferred."
+          ]
+        },
+        {
+          "slug": "marble-aerospace",
+          "disposition": "source_review_partial",
+          "existing_db_events": [],
+          "supported_missing_facts": [
+            {
+              "event_type": "R&D procurement contract",
+              "transaction_date": "2025-03-03",
+              "amount": 2508000,
+              "currency": "GBP",
+              "amount_qualifier": "contract value, 24 months; not cash paid",
+              "issuer": "Marble Aerospace Limited",
+              "counterparty": "Advanced Research and Invention Agency",
+              "programme": "Forecasting Tipping Points",
+              "url": "https://www.aria.org.uk/media/wuebqa5w/transparencydata-end-of-q4fy24-25.pdf",
+              "source_location": "page9 (zero-index8), lines609–617; contract-award table",
+              "import_status": "hold outside financing importer: source explicitly labels CONTRACT, not grant or equity"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://swffiz.co.uk/wp-content/uploads/2024/11/Innovate-UK-.pdf",
+              "source_date": "2024-11",
+              "finding": "Innovate UK Business Growth presentation reports two R&D grants collectively GBP530k; no event dates or award-specific allocations."
+            },
+            {
+              "url": "https://aria.org.uk/media/0usfmzui/aria-end-of-q2-fy25-26.pdf",
+              "finding": "Research-project payments GBP62007,66543,57765,76353 in Aug/Sep2025. Hold as contract payments, not standalone financing events."
+            },
+            {
+              "url": "https://app.dealroom.co/companies/marble_aerospace_1",
+              "finding": "Secondary early grants/seed candidate list; no event promoted to verified."
+            }
+          ],
+          "holds": [
+            "Retain existing early-round holds; secondary 2017/2018/2019/2021/2023/2024 amounts are not verified funding.",
+            "Two InnovateUK awards GBP530k aggregate needs UKRI individual award rows/date/recipient attribution.",
+            "ARIA procurement contract and later payments must not be mislabeled grant, equity or multiple rounds.",
+            "NATO DIANA standard programme award amount cannot be assumed paid to company."
+          ]
+        }
+      ]
+    },
+    {
+      "group": "nov8-late-d",
+      "read_only": true,
+      "started_at": "2026-11-08T23:54:11.158Z",
+      "finished_at": "2026-11-08T23:56:17.715Z",
+      "active_elapsed_seconds": 126.557,
+      "fully_reviewed_count": 0,
+      "source_review_partial_count": 5,
+      "notes": [
+        "Current main FUNDING_STATE and current database rounds read before source checks.",
+        "No repository/database mutations. All five remain partial; source candidates do not prove zero funding.",
+        "Elapsed is this continuous read-only lane, excludes writer import/publication work."
+      ],
+      "companies": [
+        {
+          "slug": "marlborough-communications",
+          "disposition": "source_review_partial",
+          "database_baseline": [
+            "2014-07-09 Cohort majority secondary acquisition GBP8,847,000",
+            "2017-01-31 remaining stake secondary acquisition approx GBP5,100,000"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cohortplc.com/news/press-release/cohort-completes-acquisition-100-marlborough-communications-ltd-mcl",
+              "source_date": "2017-02-01",
+              "validation": "Opened original buyer release: remaining49.999% GBP5.1m; total consideration paid to date GBP12.1m; further approxGBP2m expected by31Jul2017 includes earnout and minority surplus cash."
+            },
+            {
+              "url": "https://www.cohortplc.com/news/press-release/cohort-plc-acquires-marlborough-communications",
+              "validation": "Search indexed original majority acquisition agreement; holding-company transaction, up to GBP8m initial wording."
+            },
+            {
+              "url": "https://www.cohortplc.com/our-businesses/mcl",
+              "validation": "Current buyer portfolio page candidate."
+            }
+          ],
+          "missing_facts": [],
+          "holds": [
+            "No new primary issuer financing supported.",
+            "Preserve final accounting GBP8.847m; initial agreement up-toGBP8m is not contradictory final consideration.",
+            "Future settlement and operating-company versus holding-company history require reconciliation; no new round."
+          ]
+        },
+        {
+          "slug": "marss-group",
+          "disposition": "source_review_partial",
+          "database_baseline": [
+            "EOS acquisition completed2026-05-20 USD36m upfront cash; secondary acquisition already stored."
+          ],
+          "sources": [
+            {
+              "url": "https://eos-aus.com/news/completion-of-marss-acquisition/",
+              "source_date": "2026-05-21",
+              "validation": "Original buyer completion release search result."
+            },
+            {
+              "url": "https://investorhub.eos-aus.com/announcements/zXYOYX-quarterly-activity-report-and-appendix-4c-sept-2026-qtr",
+              "source_date": "2026-10-26",
+              "validation": "Opened original quarterly report; search indexed EUR120.3m first earnout tranche August2026 but rendered body did not expose passage; PDF validation outstanding."
+            },
+            {
+              "url": "https://investorhub.eos-aus.com/announcements/XNNMKq-investor-presentation",
+              "validation": "Original issuer indexed presentation says USD36m upfront, earnout capEUR140m, shares/cash with cash up toEUR20m and3tranches; needs PDF verification."
+            },
+            {
+              "url": "https://eos-aus.com/news/electro-optic-systems-to-establish-european-c2-ai-hub-in-france/",
+              "source_date": "2026-06-15",
+              "validation": "More thanEUR10m hub investment is buyer spending, not external MARSS round."
+            }
+          ],
+          "missing_facts": [],
+          "holds": [
+            "Potential later earnout amendment/payment requires original PDF verification before supplementing secondary transaction.",
+            "EOS own A$190m capital raise is not MARSS financing.",
+            "Do not treat earnout consideration as primary MARSS proceeds."
+          ]
+        },
+        {
+          "slug": "maxon-systems",
+          "disposition": "source_review_partial",
+          "database_baseline": [
+            "2025-08-20 Freedom Fund pre-seed USD300,000 stored.",
+            "2026-02-20 Green Flag/Brave1 round undisclosed amount stored."
+          ],
+          "sources": [],
+          "missing_facts": [],
+          "holds": [
+            "Current checkpoint flags secondary USD350,000 versus investor USD300,000; preserve investor-supported stored amount.",
+            "No new original-source closure beyond current database evidence in this lane; historical/latest completeness unresolved."
+          ]
+        },
+        {
+          "slug": "mbda-italia",
+          "disposition": "source_review_partial",
+          "database_baseline": [
+            "No funding events stored."
+          ],
+          "sources": [
+            {
+              "url": "https://www.mimit.gov.it/it/notizie-stampa/tecnologie-per-la-difesa-il-mimit-autorizza-accordo-di-sviluppo-con-mbda",
+              "source_date": "2023-12-21",
+              "validation": "Official indexed development agreement ~EUR96m; checkpoint EUR17.7m proposed support subject positive appraisal. Direct page fetch timed out."
+            },
+            {
+              "url": "https://www.mimit.gov.it/images/stories/trasparenza/2022/Erogazioni_in_corso_legge_808_85_MOD_31-08-2022.pdf",
+              "source_date": "2022-08-31",
+              "validation": "Official indexed aerospace law808/85 disbursement register contains MBDA Italia S.p.A.; exact beneficiary row/instrument/amount not verified."
+            }
+          ],
+          "missing_facts": [],
+          "holds": [
+            "No closed EUR17.7m award established.",
+            "Potential historical law808/85 public financing requires exact beneficiary-row extraction, date and repayable/nonrepayable instrument before import.",
+            "Group and other-country subsidiary contracts cannot be assigned to MBDA Italia."
+          ]
+        },
+        {
+          "slug": "mbf-group",
+          "disposition": "source_review_partial",
+          "database_baseline": [
+            "No funding events stored; checkpoint target at leastPLN20m Iryda Plus not closed."
+          ],
+          "sources": [
+            {
+              "url": "https://mbfgroup.pl/en/first-customers-new-capital-and-global-ambitions-groundbreaking-day-for-iryda-x1-project/",
+              "source_date": "2026-06-08",
+              "validation": "Opened issuer release: binding declarations signed6&8June to subscribe new shares after shareholder resolutions; final issue price and scale under discussion."
+            },
+            {
+              "url": "https://mbfgroup.pl/relacje-inwestorskie/czat-inwestorski-2026/",
+              "validation": "Search indexed investor question mentions~PLN4.3m; question is not issuer confirmation."
+            },
+            {
+              "url": "https://mbfgroup.pl/iryda-x1-gotowa-na-europejski-debiut-podczas-mspo-2026/",
+              "validation": "Current operational product update; not financing evidence."
+            }
+          ],
+          "missing_facts": [
+            {
+              "kind": "conditional_subscription_declarations",
+              "date": "2026-06-08",
+              "amount": null,
+              "currency": null,
+              "closed": false,
+              "importable_as_round": false,
+              "detail": "Checkpoint no-binding-agreements language is stale relative to issuer June8 signed declarations, but issuance/payment remains conditional."
+            }
+          ],
+          "holds": [
+            "Verify subsequent ESPI/EBI shareholder resolutions, allotment and cash receipt.",
+            "PLN20m target and investor question~PLN4.3m cannot be entered as closed funding.",
+            "Egypt20system customer declarations are not closed finance."
+          ]
+        }
+      ]
+    }
+  ],
+  "publication": {
+    "site_commit": "49ccaee821bc3053567ccec0fd458cd6fc75d933",
+    "workflow_run_id": 42537468196,
+    "generated_at": "2026-11-08T23:56:02.290Z",
+    "relationships_verified": 2
+  },
+  "import_validation": {
+    "tested_importer": true,
+    "production_rollback_restored_absence": true,
+    "atomic_idempotent_application": true
+  },
+  "queue_dispositions": "All20 retain source_review_partial. No completed count increment."
+}
