@@ -1,5 +1,5 @@
 {
-  "status": "imported_pending_publication",
+  "status": "imported_and_live_verified",
   "started_at": "2026-11-09T12:50:30Z",
   "manifest": "research-agent/imports/funding-issuer-awards-20261109.json",
   "groups": [
@@ -549,5 +549,72 @@
   },
   "site_commit": "8bea49a0a3ec0eab750be06dbb0038fe7b0c5c0c",
   "database_verified_rows": 91,
-  "writer_import_commit": "5d59feeedd1af0e89ea96892f275acf405835c19"
+  "writer_import_commit": "5d59feeedd1af0e89ea96892f275acf405835c19",
+  "prepared_next": [
+    {
+      "slug": "krattworks",
+      "status": "source_confirmed_candidate_pending_import",
+      "note": "Ministry of Defence announced beneficiary-specific Dart-X grant of EUR 125,775 on 23 August 2024, 45% of total project cost. Check signed award date, then stage once against production. The Ministry separately named KrattWorks as a 2025 first-call and 2020 grant recipient. Find those signed allocations.",
+      "sources": [
+        "https://kaitseministeerium.ee/uudised/kaitseministeeriumi-kaitsetoostuse-konkursil-osales-rekordarv-ettevotjaid",
+        "https://kaitseministeerium.ee/uudised/kaitseministeerium-kuulutab-valja-aegade-suurima-kaitsetoostuse-arendusprojektide-konkursi",
+        "https://kaitseministeerium.ee/kaitsetoostuse-arendusprojektide-konkurss"
+      ]
+    },
+    {
+      "slug": "hecto-drone",
+      "status": "overlap_hold",
+      "note": "CVR-derived records show MIEI ApS (45400565) was formed 7 February 2025 and wholly owned by Maj Invest Holding, and is currently recorded as a Hecto shareholder. That makes overlap plausible. Inspect MIEI issuer annual report and historical Hecto legal ownership transaction before modifying existing 2025 event or assigning proceeds to one investor.",
+      "sources": [
+        "https://cvrbase.dk/virksomhed/45400565/miei-aps",
+        "https://regnskaber.virk.dk/56500454/amNsb3VkczovLzAzLzEyL2I0LzExL2NhL2FmYmMtNDUwNC1iY2U3LTdlOTUyZTAzOThmYg.xhtml"
+      ]
+    },
+    {
+      "slug": "jenoptik",
+      "status": "source_confirmed_candidate_pending_import",
+      "note": "2009 annual report confirms September four long-term loan agreements EUR 87m and separate H1 three long-term loans EUR 23m. The EUR 44m guarantee relates to September loans. Establish date precision, per-agreement grouping and compare stored facilities first.",
+      "sources": [
+        "https://www.jenoptik.com/-/media/websitedocuments/ir/berichte-und-tabellen/archiv/jenoptik-annual-report-2009.pdf"
+      ]
+    },
+    {
+      "slug": "kitemill",
+      "status": "scope_hold",
+      "note": "Issuer identifies separate En-Vision Europe EUR 1m financing. Establish public date and compare other 2021 disclosures. 3D-CIRCULAR project 101226256 participant inclusion was verified, but scope of company proceeds and award terms remains open.",
+      "sources": [
+        "https://www.kitemill.com/news/kitemill-continues-consolidation-drive-and-gears-up-for-fully-automatic-flights-with-new-strategic-investor",
+        "https://radon.nauka.gov.pl/dane/profil/68c93b750dd8784b92cd6ac9"
+      ]
+    }
+  ],
+  "publication": {
+    "generated_at": "2026-11-09T13:01:34.599Z",
+    "investor_generated_at": "2026-11-09T13:01:35.727Z",
+    "events": 925,
+    "participations": 1131,
+    "profiles": 752,
+    "companies_with_events": 336,
+    "verified_manifest_rows": 91,
+    "verified_investor_links": 10,
+    "workflow_run_id": 42621757263,
+    "site_commit": "8bea49a0a3ec0eab750be06dbb0038fe7b0c5c0c",
+    "checked_at": "2026-11-09T13:02:17.187621+00:00"
+  },
+  "checked_at": "2026-11-09T13:02:17.187621+00:00",
+  "metrics": {
+    "identities_reconciled": 24,
+    "source_review_partial": 24,
+    "newly_completed_bounded_reviews": 0,
+    "imported_events": 91,
+    "new_participations": 10,
+    "new_investor_profiles": 3,
+    "active_minutes": 11.79,
+    "reconciled_identities_per_active_hour": 122.2,
+    "completed_reviews_per_active_hour": 0,
+    "timing_scope": "Active wall time from current-state read through source verification, production rollback rehearsal, atomic import, rebuild and live data verification. Between-run waiting excluded. Parallel lane durations are not summed.",
+    "publication_verified": true,
+    "concurrency_speedup_claimed": false
+  },
+  "writer_checkpoint_before_final": "9be7e4efc4ce407df7f4f6543af6f26f6e840dda"
 }

@@ -8,14 +8,14 @@
   "published_landscape_companies": 567,
   "partial_companies": 219,
   "fully_reviewed_companies": 348,
-  "next_action": "Prioritize the prepared Hecto Drone cash-equity reconciliation and FlyTech regional award agreements. Continue bounded public-source completion for remaining partial published companies. The wider cohort remains queued.",
+  "next_action": "Reconcile prepared KrattWorks grants, Hecto Drone cash capital/Maj Invest overlap, FlyTech beneficiary identity, and Kitemill and Jenoptik follow-ups against production. Continue bounded published-landscape source reviews in parallel before wider cohort.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-09T13:01:12.985Z",
+  "updated_at": "2026-11-09T13:03:04.281Z",
   "source_reconciliation_companies": 321,
   "approved_funding_events": 925,
   "round_participations": 1131,
   "investor_profiles": 752,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/funding-issuer-awards-20261109.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -23,23 +23,19 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "id": "funding-issuer-awards-20261109-1250",
-    "started_at": "2026-11-09T12:51:44.107Z",
-    "expires_at": "2026-11-09T14:51:44.107Z"
-  },
+  "active_run": null,
   "last_verified_publication": {
-    "generated_at": "2026-11-09T11:58:23.524Z",
-    "investor_generated_at": "2026-11-09T11:58:24.338Z",
-    "events": 834,
-    "participations": 1121,
-    "profiles": 749,
-    "companies_with_events": 333,
-    "verified_manifest_rows": 35,
-    "verified_investor_links": 8,
-    "workflow_run_id": 42613093614,
-    "site_commit": "9f045c067ef8dd1afaba6a40efae9b170fde1517",
-    "checked_at": "2026-11-09T11:59:05.898Z"
+    "generated_at": "2026-11-09T13:01:34.599Z",
+    "investor_generated_at": "2026-11-09T13:01:35.727Z",
+    "events": 925,
+    "participations": 1131,
+    "profiles": 752,
+    "companies_with_events": 336,
+    "verified_manifest_rows": 91,
+    "verified_investor_links": 10,
+    "workflow_run_id": 42621757263,
+    "site_commit": "8bea49a0a3ec0eab750be06dbb0038fe7b0c5c0c",
+    "checked_at": "2026-11-09T13:02:17.187621+00:00"
   },
   "known_financing_claims_to_reconcile": [
     {
@@ -340,19 +336,19 @@
     },
     {
       "company_slug": "hornet-polskie-drony",
-      "claim": "Boryszew and ITWL disclosed a conditional 52% share transfer and planned future financing/know-how contributions; approval was reported, but no executed investment agreement, funded amount or issuer proceeds were established."
+      "claim": "Boryszew’s founding subscription and separate intercompany loan are recorded. The ITWL transfer concerns existing shares and no primary proceeds are attributed to it."
     },
     {
       "company_slug": "incas",
-      "claim": "INCAS is a Romanian state aerospace research institute with public and consortium project activity; no company-specific external financing event was established, and project-wide budgets are not assigned without beneficiary-level allocations."
+      "claim": "Twelve exact CORDIS participant allocations are recorded. Remaining public project allocations need project-level reconciliation."
     },
     {
       "company_slug": "indra",
-      "claim": "Indra is a long-listed Spanish issuer with historical capital changes; current official material does not yet reconcile those changes into dated primary proceeds, so no event is imported from registry capital alone."
+      "claim": "Historical issuer bond placements and EIB/Club Deal debt are recorded separately. The 2020 tap still requires matching to the 2019 parent issue."
     },
     {
       "company_slug": "john-cockerill",
-      "claim": "Large 2024-2026 financings located in public sources belong to John Cockerill Hydrogen or other subsidiaries; they are not assigned to the parent identity without issuer-level attribution."
+      "claim": "Fifteen historical cash capital increases of the parent are recorded. Subsidiary financings, in-kind reorganisations and secondary transfers are separate."
     },
     {
       "company_slug": "knds",
@@ -930,15 +926,13 @@
     "identities_reconciled": 24,
     "source_review_partial": 24,
     "newly_completed_bounded_reviews": 0,
-    "imported_events": 32,
-    "corrected_existing_events": 2,
-    "enriched_existing_events": 1,
-    "new_participations": 8,
-    "new_investor_profiles": 0,
-    "active_minutes": 8.18,
-    "reconciled_identities_per_active_hour": 176,
+    "imported_events": 91,
+    "new_participations": 10,
+    "new_investor_profiles": 3,
+    "active_minutes": 11.79,
+    "reconciled_identities_per_active_hour": 122.2,
     "completed_reviews_per_active_hour": 0,
-    "timing_scope": "Current active wall time from current-state read through source checks, production rollback, atomic import, rebuild and live verification. Between-run waiting excluded. Parallel lane times are not summed.",
+    "timing_scope": "Active wall time from current-state read through source verification, production rollback rehearsal, atomic import, rebuild and live data verification. Between-run waiting excluded. Parallel lane durations are not summed.",
     "publication_verified": true,
     "concurrency_speedup_claimed": false
   },
@@ -1265,32 +1259,35 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_funding_followups": {
-    "stage": "site_build_triggered",
-    "manifest": "research-agent/imports/funding-issuer-awards-20261109.json",
+  "latest_issuer_awards": {
     "report": "research-agent/reports/2026-11-09-funding-issuer-awards.json",
-    "baseline": {
-      "events": 834,
-      "participations": 1121,
-      "profiles": 749,
-      "sources": 1126
-    },
-    "expected_after": {
+    "manifest": "research-agent/imports/funding-issuer-awards-20261109.json",
+    "publication": {
+      "generated_at": "2026-11-09T13:01:34.599Z",
+      "investor_generated_at": "2026-11-09T13:01:35.727Z",
       "events": 925,
       "participations": 1131,
       "profiles": 752,
-      "sources": 1227
+      "companies_with_events": 336,
+      "verified_manifest_rows": 91,
+      "verified_investor_links": 10,
+      "workflow_run_id": 42621757263,
+      "site_commit": "8bea49a0a3ec0eab750be06dbb0038fe7b0c5c0c",
+      "checked_at": "2026-11-09T13:02:17.187621+00:00"
     },
-    "manifest_rounds": 91,
-    "checked_at": "2026-11-09T12:59:23.820Z",
-    "after": {
-      "events": 925,
-      "participations": 1131,
-      "profiles": 752,
-      "sources": 1227
-    },
-    "imported_at": "2026-11-09T13:00:30.886Z",
-    "site_commit": "8bea49a0a3ec0eab750be06dbb0038fe7b0c5c0c",
-    "writer_import_commit": "5d59feeedd1af0e89ea96892f275acf405835c19"
+    "metrics": {
+      "identities_reconciled": 24,
+      "source_review_partial": 24,
+      "newly_completed_bounded_reviews": 0,
+      "imported_events": 91,
+      "new_participations": 10,
+      "new_investor_profiles": 3,
+      "active_minutes": 11.79,
+      "reconciled_identities_per_active_hour": 122.2,
+      "completed_reviews_per_active_hour": 0,
+      "timing_scope": "Active wall time from current-state read through source verification, production rollback rehearsal, atomic import, rebuild and live data verification. Between-run waiting excluded. Parallel lane durations are not summed.",
+      "publication_verified": true,
+      "concurrency_speedup_claimed": false
+    }
   }
 }
