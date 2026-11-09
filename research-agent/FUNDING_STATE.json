@@ -8,14 +8,14 @@
   "published_landscape_companies": 567,
   "partial_companies": 221,
   "fully_reviewed_companies": 346,
-  "next_action": "Continue the Liebherr Toulouse issuer and Kseonics award reconciliations, then the remaining partial landscape queue.",
+  "next_action": "Continue remaining partial published-landscape identities. Prioritize prepared Safran historical securities, RIFT France 2030 instrument and Quantum Systems earlier growth financing. Keep Liebherr Toulouse issuer mapping and Kseonics award currency on hold pending exact evidence.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-09T00:51:52.598Z",
+  "updated_at": "2026-11-09T02:01:09.000Z",
   "source_reconciliation_companies": 321,
   "approved_funding_events": 675,
   "round_participations": 1071,
   "investor_profiles": 734,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/published-funding-followups-20261109.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -23,21 +23,19 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "id": "funding-followups-20261109-0150",
-    "started_at": "2026-11-09T01:52:11.000Z",
-    "expires_at": "2026-11-09T03:52:11.000Z"
-  },
+  "active_run": null,
   "last_verified_publication": {
-    "site_commit": "cad28000f70d3e92c2bee3ad98aac731ae14781f",
-    "workflow_run_id": 42113973065,
-    "generated_at": "2026-11-05T21:35:55.251Z",
-    "investor_generated_at": "2026-11-05T21:35:56.146Z",
-    "events": 645,
-    "participations": 1063,
-    "companies_with_events": 314,
-    "investor_profiles": 729,
-    "checked_at": "2026-11-05T21:39:14.686Z"
+    "generated_at": "2026-11-09T02:00:04.483Z",
+    "investor_generated_at": "2026-11-09T02:00:05.353Z",
+    "events": 675,
+    "participations": 1071,
+    "profiles": 734,
+    "companies_with_events": 318,
+    "verified_manifest_rows": 27,
+    "verified_investor_links": 4,
+    "site_commit": "2f8ae5be59b5c65f2fbb65e39e0f1e71bca2eb7c",
+    "workflow_run_id": 42548410496,
+    "checked_at": "2026-11-09T02:01:09.000Z"
   },
   "known_financing_claims_to_reconcile": [
     {
@@ -678,7 +676,7 @@
     },
     {
       "company_slug": "rinicom",
-      "claim": "Three company-specific UKRI awards are recorded; EUACC reports a wider 20-project EUR6.8m history that still requires project-by-project official reconciliation."
+      "claim": "Six historical Horizon 2020 beneficiary grants were added to the existing research awards. The terminated Reaching out award needs settlement verification and the wider project history remains partial."
     },
     {
       "company_slug": "riseport-europe",
@@ -694,7 +692,7 @@
     },
     {
       "company_slug": "robotto",
-      "claim": "The signed amount-undisclosed Final Frontier investment is recorded; EIFO support is confirmed but its exact instrument and amount are not public."
+      "claim": "The Final Frontier investment is recorded separately. EIFO’s CEO confirmed a 2022 growth loan, with amount and original legal lending vehicle undisclosed. EIFO confirms its 2026 support was an investment guarantee, with guarantee amount undisclosed."
     },
     {
       "company_slug": "rohde-and-schwarz",
@@ -726,7 +724,7 @@
     },
     {
       "company_slug": "safran",
-      "claim": "The approximately EUR756m issue-price proceeds of Safran's 2021 OCEANEs are recorded; later conversions and redemption are not new financing."
+      "claim": "The 2021 OCEANE, two rated senior bond tranches and the March 2021 EIB loan are recorded. Other historical debt securities remain to be reconciled."
     },
     {
       "company_slug": "safran-electronics-and-defense",
@@ -754,7 +752,7 @@
     },
     {
       "company_slug": "scoutdi",
-      "claim": "Beam Global's signed USD24m base-price acquisition agreement is recorded as announced secondary consideration, with contingent earn-outs excluded; it had not closed by the checked date."
+      "claim": "Beam Global confirmed termination of the proposed USD24m acquisition on 6 November 2026 without closing or termination liability. The historical announced terms remain qualified on the existing event."
     },
     {
       "company_slug": "scr-sistemas-de-control-remoto",
@@ -925,28 +923,20 @@
     "queued": 1997
   },
   "last_execution_metrics": {
-    "identities_researched": 25,
-    "read_only_lane_identities": 24,
-    "newly_completed_bounded_reviews": 1,
-    "source_review_partial": 24,
-    "imported_events": 25,
-    "existing_events_enriched": 2,
-    "imported_participations": 34,
-    "new_profiles": 14,
-    "reviewed_corrections": 0,
-    "queue_counter_reconciliation": {
-      "prior_legacy_aggregate": 455,
-      "actual_reviewed_queue_count": 338,
-      "not_a_retroactive_reaudit": true
-    },
-    "active_minutes_to_checkpoint": 11.33,
-    "publication_verified": true,
-    "fully_published_throughput": 4.18,
+    "identities_reconciled": 20,
+    "newly_completed_bounded_reviews": 0,
+    "source_review_partial": 20,
+    "imported_events": 23,
+    "corrected_existing_events": 2,
+    "enriched_existing_events": 1,
+    "new_participations": 4,
+    "new_investor_profiles": 2,
+    "active_minutes": 10.67,
+    "reconciled_identities_per_active_hour": 112.5,
+    "completed_reviews_per_active_hour": 0,
+    "timing_scope": "Active elapsed time from start through current-state read, source checks, verification, rollback, import, rebuild and live verification. Excludes waiting between scheduled executions. Lane durations are not summed.",
     "concurrency_speedup_claimed": false,
-    "timing_scope": "Measured active elapsed time from current-state read through research, original-source verification, rollback rehearsal, atomic import, idempotency, writer checkpoint, catalogue rebuild and successful live publication verification. Scheduled waiting between executions excluded.",
-    "active_minutes_total": 14.34,
-    "fully_published_throughput_basis": "New completed bounded public-source company reviews per active elapsed hour:1 Helsing review;24 other reconciliations remain partial.",
-    "lane_timing_limitation": "Per-lane timing not separately recorded; no concurrency or speedup comparison."
+    "publication_verified": true
   },
   "latest_followup_metrics": {
     "identities_reconciled": 20,
@@ -1076,12 +1066,36 @@
     "concurrency_speedup_claimed": false,
     "publication_verified": true
   },
-  "pending_funding_followups": {
-    "manifest": "research-agent/imports/published-funding-followups-20261109.json",
+  "latest_published_funding_followups": {
     "report": "research-agent/reports/2026-11-09-published-funding-followups.json",
-    "status": "atomic_import_verified_publication_pending",
-    "expected_new_events": 23,
-    "site_commit": "2f8ae5be59b5c65f2fbb65e39e0f1e71bca2eb7c",
-    "writer_commit": "55b43853f160118a0ebb34cd5bcc9c2b8dd9d7da"
+    "publication": {
+      "generated_at": "2026-11-09T02:00:04.483Z",
+      "investor_generated_at": "2026-11-09T02:00:05.353Z",
+      "events": 675,
+      "participations": 1071,
+      "profiles": 734,
+      "companies_with_events": 318,
+      "verified_manifest_rows": 27,
+      "verified_investor_links": 4,
+      "site_commit": "2f8ae5be59b5c65f2fbb65e39e0f1e71bca2eb7c",
+      "workflow_run_id": 42548410496,
+      "checked_at": "2026-11-09T02:01:09.000Z"
+    },
+    "metrics": {
+      "identities_reconciled": 20,
+      "newly_completed_bounded_reviews": 0,
+      "source_review_partial": 20,
+      "imported_events": 23,
+      "corrected_existing_events": 2,
+      "enriched_existing_events": 1,
+      "new_participations": 4,
+      "new_investor_profiles": 2,
+      "active_minutes": 10.67,
+      "reconciled_identities_per_active_hour": 112.5,
+      "completed_reviews_per_active_hour": 0,
+      "timing_scope": "Active elapsed time from start through current-state read, source checks, verification, rollback, import, rebuild and live verification. Excludes waiting between scheduled executions. Lane durations are not summed.",
+      "concurrency_speedup_claimed": false,
+      "publication_verified": true
+    }
   }
 }
