@@ -1,5 +1,5 @@
 {
-  "status": "rollback_verified_import_pending",
+  "status": "atomic_import_verified_publication_pending",
   "started_at": "2026-11-09T03:48:47Z",
   "manifest": "research-agent/imports/funding-published-evidence-20261109.json",
   "groups": [
@@ -39,7 +39,10 @@
         "trumpf",
         "twentyfour-industries",
         "uav-navigation"
-      ]
+      ],
+      "started_at": "2026-11-09T03:49:39Z",
+      "finished_at": "2026-11-09T03:54:34Z",
+      "active_seconds": 295
     },
     {
       "lane": "land_u",
@@ -178,7 +181,7 @@
     },
     "uav-navigation": {
       "status": "source_review_partial",
-      "note": "Two exact direct grants verified. 2006 award lines conflict, so hold amount and scope.",
+      "note": "Two exact grants verified and imported. The 2006 SKY-EYE discrepancy was resolved in original gazette annex headings, with separate grant and loan prepared for the next manifest. 2026 NAVISP consortium amount has no beneficiary split.",
       "sources": []
     },
     "uavionics": {
@@ -339,5 +342,14 @@
         "2026-11-03"
       ]
     ]
-  }
+  },
+  "after": {
+    "events": 774,
+    "participations": 1100,
+    "profiles": 742,
+    "sources": 1035,
+    "manifest_rows": 44
+  },
+  "rollback_restored_baseline": true,
+  "importer_replayed_idempotently": true
 }
