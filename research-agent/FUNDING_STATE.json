@@ -8,14 +8,14 @@
   "published_landscape_companies": 567,
   "partial_companies": 221,
   "fully_reviewed_companies": 346,
-  "next_action": "Verify publication for Leonardo and Manna. Then continue the Liebherr Toulouse issuer and Kseonics award reconciliations and the remaining landscape queue.",
+  "next_action": "Continue the Liebherr Toulouse issuer and Kseonics award reconciliations, then the remaining partial landscape queue.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-09T00:49:32.055Z",
+  "updated_at": "2026-11-09T00:51:52.598Z",
   "source_reconciliation_companies": 321,
   "approved_funding_events": 652,
   "round_participations": 1067,
   "investor_profiles": 732,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/leonardo-manna-20261109.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -23,11 +23,7 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "id": "leonardo-manna-20261109",
-    "started_at": "2026-11-09T00:48:22.641Z",
-    "expires_at": "2026-11-09T02:48:22.641Z"
-  },
+  "active_run": null,
   "last_verified_publication": {
     "site_commit": "cad28000f70d3e92c2bee3ad98aac731ae14781f",
     "workflow_run_id": 42113973065,
@@ -1047,9 +1043,33 @@
     "generated_at": "2026-11-08T23:56:02.290Z",
     "relationships_verified": 2
   },
-  "pending_publication": {
+  "latest_leonardo_manna_publication": {
     "site_commit": "a39f14dd752061325d9c727749a7fd1ba158a1db",
-    "writer_commit": "f310ec85983437edf295f3be7d3e1eddfa29c9b2",
-    "manifest": "research-agent/imports/leonardo-manna-20261109.json"
+    "workflow_run_id": 42542287069,
+    "checked_at": "2026-11-09T00:51:52.598Z",
+    "generated_at": "2026-11-09T00:50:29.735Z",
+    "investor_generated_at": "2026-11-09T00:50:30.518Z",
+    "landscape_events": 652,
+    "landscape_participations": 1067,
+    "landscape_companies_with_events": 317,
+    "landscape_investor_profiles": 732,
+    "events_verified": [
+      "leonardo/esg-term-loan-2026",
+      "manna-drone-delivery/coca-cola-hbc-strategic-investment-disclosed-2023"
+    ],
+    "investor_profile_link_verified": true
+  },
+  "latest_leonardo_manna_metrics": {
+    "identities_reconciled": 4,
+    "newly_completed_bounded_reviews": 0,
+    "partial_identities": 4,
+    "events_imported": 2,
+    "participations_imported": 1,
+    "active_minutes": 3.5,
+    "reconciled_identities_per_active_hour": 68.59,
+    "completed_reviews_per_active_hour": 0,
+    "timing_scope": "Elapsed time from writer lease acquisition through source validation, rollback rehearsal, atomic import, checkpoint, rebuild and live verification. Pre-lease checks and time between scheduled runs excluded.",
+    "concurrency_speedup_claimed": false,
+    "publication_verified": true
   }
 }
