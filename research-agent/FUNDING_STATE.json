@@ -6,16 +6,16 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 221,
-  "fully_reviewed_companies": 346,
-  "next_action": "Prioritize prepared UAV Navigation SKY-EYE grant and loan, Threod Prepreg grant, Thales August 2026 notes, Svantek PARP selection and UCANDRONE first stake. Continue remaining partial landscape identities, including bounded closure checks for supported dispositions, then the wider cohort.",
+  "partial_companies": 219,
+  "fully_reviewed_companies": 348,
+  "next_action": "Prioritize Weles Acoustics and WinnyLab issuer-specific transactions, XSun regional round overlap, and the Svantek Stage II selection. Complete bounded closure checks for the remaining partial landscape identities before moving to the wider cohort.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-09T03:57:16.878Z",
+  "updated_at": "2026-11-09T10:50:06.606Z",
   "source_reconciliation_companies": 321,
   "approved_funding_events": 802,
   "round_participations": 1113,
   "investor_profiles": 749,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/funding-recovered-landscape-20261109.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -23,23 +23,19 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "id": "funding-recovered-landscape-20261109-1043",
-    "started_at": "2026-11-09T10:44:51.973Z",
-    "expires_at": "2026-11-09T12:44:51.973Z"
-  },
+  "active_run": null,
   "last_verified_publication": {
-    "generated_at": "2026-11-09T03:56:18.078Z",
-    "investor_generated_at": "2026-11-09T03:56:18.924Z",
-    "events": 774,
-    "participations": 1100,
-    "profiles": 742,
-    "companies_with_events": 326,
-    "verified_manifest_rows": 44,
-    "verified_investor_links": 12,
-    "workflow_run_id": 42558986151,
-    "site_commit": "5fadc68b2472de44bb43d3434f5fb6dac9b22f1b",
-    "checked_at": "2026-11-09T03:57:16.878Z"
+    "generated_at": "2026-11-09T10:49:11.580Z",
+    "investor_generated_at": "2026-11-09T10:49:12.650Z",
+    "events": 802,
+    "participations": 1113,
+    "profiles": 749,
+    "companies_with_events": 330,
+    "verified_manifest_rows": 28,
+    "verified_investor_links": 13,
+    "workflow_run_id": 42603876708,
+    "site_commit": "b2f2c60a7c243bedc3df0b8ef88ae8d6c5808030",
+    "checked_at": "2026-11-09T10:50:06.606Z"
   },
   "known_financing_claims_to_reconcile": [
     {
@@ -922,22 +918,21 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 346,
-    "source_review_partial": 221,
+    "reviewed_public_sources": 348,
+    "source_review_partial": 219,
     "queued": 1997
   },
   "last_execution_metrics": {
-    "identities_reconciled": 26,
-    "source_review_partial": 26,
-    "newly_completed_bounded_reviews": 0,
-    "imported_events": 43,
-    "corrected_existing_events": 1,
-    "new_participations": 12,
-    "new_investor_profiles": 5,
-    "active_minutes": 8.5,
-    "reconciled_identities_per_active_hour": 183.57,
-    "completed_reviews_per_active_hour": 0,
-    "timing_scope": "Active elapsed from current-state read through original-source checks, rollback rehearsal, atomic import, rebuild and live verification. Between-run waiting excluded. Overlapping lane durations are not summed.",
+    "identities_reconciled": 22,
+    "source_review_partial": 20,
+    "newly_completed_bounded_reviews": 2,
+    "imported_events": 28,
+    "new_participations": 13,
+    "new_investor_profiles": 7,
+    "active_minutes": 6.24,
+    "reconciled_identities_per_active_hour": 211.42,
+    "completed_reviews_per_active_hour": 19.22,
+    "timing_scope": "Current recovery execution elapsed from state read through reconciliation, rehearsal, import, deployment and live verification. This is recovery throughput. Original research from the interrupted run is not included in the current execution elapsed time. Known original lane timings are recorded separately.",
     "publication_verified": true,
     "concurrency_speedup_claimed": false
   },
@@ -954,7 +949,7 @@
     "concurrency_speedup_claimed": false,
     "publication_verified": true
   },
-  "fully_reviewed_count_note": "Counted current queue reviewed_public_sources rows:338, including1 newly bounded Helsing review incheckpoint54. Prior unreconciled aggregate455 retained separately as legacy_reported_fully_reviewed_companies.229 source_review_partial are not complete.",
+  "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
   "source_reviewed_or_partial_companies": 567,
   "latest_manual_checkpoint": {
@@ -1200,12 +1195,35 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_funding_followups": {
-    "manifest": "research-agent/imports/funding-recovered-landscape-20261109.json",
+  "latest_recovered_landscape": {
     "report": "research-agent/reports/2026-11-09-funding-recovered-landscape.json",
-    "status": "atomic_import_verified_publication_pending",
-    "expected_new_events": 28,
-    "site_commit": "b2f2c60a7c243bedc3df0b8ef88ae8d6c5808030",
-    "writer_commit": "9fd1b149e13867fd7205cb6d106147c64c6f638c"
+    "manifest": "research-agent/imports/funding-recovered-landscape-20261109.json",
+    "publication": {
+      "generated_at": "2026-11-09T10:49:11.580Z",
+      "investor_generated_at": "2026-11-09T10:49:12.650Z",
+      "events": 802,
+      "participations": 1113,
+      "profiles": 749,
+      "companies_with_events": 330,
+      "verified_manifest_rows": 28,
+      "verified_investor_links": 13,
+      "workflow_run_id": 42603876708,
+      "site_commit": "b2f2c60a7c243bedc3df0b8ef88ae8d6c5808030",
+      "checked_at": "2026-11-09T10:50:06.606Z"
+    },
+    "metrics": {
+      "identities_reconciled": 22,
+      "source_review_partial": 20,
+      "newly_completed_bounded_reviews": 2,
+      "imported_events": 28,
+      "new_participations": 13,
+      "new_investor_profiles": 7,
+      "active_minutes": 6.24,
+      "reconciled_identities_per_active_hour": 211.42,
+      "completed_reviews_per_active_hour": 19.22,
+      "timing_scope": "Current recovery execution elapsed from state read through reconciliation, rehearsal, import, deployment and live verification. This is recovery throughput. Original research from the interrupted run is not included in the current execution elapsed time. Known original lane timings are recorded separately.",
+      "publication_verified": true,
+      "concurrency_speedup_claimed": false
+    }
   }
 }
