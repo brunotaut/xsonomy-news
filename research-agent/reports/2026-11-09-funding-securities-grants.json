@@ -380,5 +380,198 @@
   "rollback_restored_baseline": true,
   "importer_replayed_idempotently": true,
   "site_commit": "73d543afb7f552f8f235a198e9294d17905dc04e",
-  "writer_commit": "a0698c02d56fe8ed497b406660bcda81de9c5861"
+  "writer_commit": "a0698c02d56fe8ed497b406660bcda81de9c5861",
+  "prepared_reconciliations": [
+    {
+      "company": "septentrio",
+      "issuer": "Septentrio NV",
+      "items": [
+        {
+          "project": "DRONIC",
+          "amount": 52875,
+          "currency": "EUR",
+          "project_start": "2014-01-01",
+          "announcement_date": null,
+          "source": "https://cordis.europa.eu/project/id/611428"
+        },
+        {
+          "project": "LS4P",
+          "amount": 153948,
+          "currency": "EUR",
+          "project_start": "2010-01-01",
+          "announcement_date": null,
+          "source": "https://cordis.europa.eu/project/id/247983"
+        },
+        {
+          "project": "I2GPS",
+          "amount": 77336,
+          "currency": "EUR",
+          "project_start": "2010-01-01",
+          "announcement_date": null,
+          "source": "https://cordis.europa.eu/project/id/248181"
+        },
+        {
+          "project": "SAFAR",
+          "amount": 483220,
+          "currency": "EUR",
+          "project_start": "2008-04-01",
+          "announcement_date": null,
+          "source": "https://cordis.europa.eu/project/id/213374"
+        }
+      ]
+    },
+    {
+      "company": "sensefly-ageagle-aerial-systems",
+      "issuer": "senseFly SA",
+      "instrument": "grant",
+      "stage": "Venture Kick Stage III",
+      "reported_amount": 100000,
+      "currency": "CHF",
+      "public_disclosure_candidate": "2010-07-09",
+      "sources": [
+        "https://www.venturekick.ch/Le-drone-de-senseFly-distingue-par-venture-kick",
+        "https://www.venturekick.ch/demandit/files/M_BB941CC4DCEF687AD98/dms/File/VKAnnualReport_20101.pdf"
+      ],
+      "hold": "Verify stage terms and timing. Do not treat all stages as one award."
+    },
+    {
+      "company": "silixcon",
+      "issuer": "siliXcon s.r.o.",
+      "reviewed_candidates": [
+        {
+          "key": "no-code-controller-platform-grant-2024",
+          "amount": 8618400,
+          "currency": "CZK",
+          "signature_date": "2024-03-22",
+          "published": "2024-03-28",
+          "source": "https://smlouvy.gov.cz/smlouva/28159219"
+        },
+        {
+          "key": "compact-electric-drive-grant-2024",
+          "amount": 8759007,
+          "currency": "CZK",
+          "amount_qualifier": "up_to",
+          "signature_date": "2024-02-27",
+          "published": "2024-03-05",
+          "source": "https://smlouvy.gov.cz/smlouva/28028831"
+        }
+      ],
+      "hold": "Confirm recipient scope, contract caps and reconcile stored date semantics."
+    },
+    {
+      "company": "sensofusion",
+      "issuer": "Sensofusion Plc",
+      "source": "https://investors.sensofusion.com/files/documents/Sensofusion%20Plc%20-%20EU%20Offering%20Circular.pdf",
+      "candidates": [
+        {
+          "event": "Series B",
+          "subscription_amount": 44966000,
+          "currency": "EUR",
+          "subscription_date": "2025-12-22",
+          "payment_dates": [
+            "2026-01-19",
+            "2026-01-20"
+          ],
+          "lifeline_ventures_fund_vi_scsp_subscription": 22483000
+        },
+        {
+          "event": "May 2024 directed issuance",
+          "amount": null,
+          "known_subscriber": "Lifeline Ventures Fund V Ky"
+        },
+        {
+          "event": "April 2026 Series B extension",
+          "amount": null,
+          "known_subscriber": "British Technology Investments Ltd (NSSIF)"
+        }
+      ],
+      "hold": "Reconcile individual sources, exact vehicle roles and extension parent before further changes."
+    },
+    {
+      "company": "sky-watch",
+      "issuer": "Sky-Watch A/S",
+      "candidates": [
+        {
+          "event": "AIRO secondary acquisition",
+          "date": "2022-03-28",
+          "source": "https://www.sec.gov/Archives/edgar/data/1927958/000164117225015147/form424b4.htm",
+          "hold": "Keep accounting fair value separate from cash consideration."
+        },
+        {
+          "event": "Noncash shareholder debt waiver",
+          "date": "2022-03-28",
+          "reported_amount": 99072000,
+          "currency": "DKK",
+          "source": "https://regnskaber.cvrapi.dk/74835623/amNsb3VkczovLzAzLzQ4LzUyLzI4LzkzLzUxNmMtNGJhNC05NTNiLTg5YzA0NmEzZjY3NQ.pdf",
+          "hold": "Reported in DKK thousands. Confirm appropriate noncash presentation."
+        }
+      ]
+    }
+  ],
+  "precision_reconciliation": {
+    "status": "rollback_verified_correction_pending",
+    "manifest": "research-agent/imports/seesai-ukri-precision-20261109.json",
+    "before": [
+      {
+        "slug": "seesai",
+        "fields": {
+          "id": "96618204-315b-4dcd-ae2a-51122ea36c89",
+          "stage": "Atypical Airspace BVLOS Solution grant",
+          "amount": 688454,
+          "note_en": "UKRI attributes this grant offer to SEESAI LIMITED for the closed project. The amount is the beneficiary offer and does not establish individual disbursement. Consortium totals are excluded.",
+          "currency": "GBP",
+          "round_key": "innovate-uk-grant-10021134",
+          "checked_at": "2026-11-09",
+          "created_at": "2026-11-09T02:58:10.210165+00:00",
+          "updated_at": "2026-11-09T02:58:10.210165+00:00",
+          "record_kind": "round",
+          "amount_basis": "announced_round_size",
+          "announced_date": "2022-07-28",
+          "closing_status": "closed",
+          "financing_type": "grant",
+          "parent_round_id": null,
+          "amount_qualifier": "exact",
+          "publication_status": "approved"
+        }
+      },
+      {
+        "slug": "seesai",
+        "fields": {
+          "id": "90ae5fdf-8151-4594-8f09-dce7073c3172",
+          "stage": "Drone inspection and monitoring grant",
+          "amount": 244758,
+          "note_en": "UKRI attributes this grant offer to SEESAI LIMITED for the closed project. The amount is the beneficiary offer and does not establish individual disbursement. Consortium totals are excluded.",
+          "currency": "GBP",
+          "round_key": "innovate-uk-grant-83903",
+          "checked_at": "2026-11-09",
+          "created_at": "2026-11-09T02:58:10.210165+00:00",
+          "updated_at": "2026-11-09T02:58:10.210165+00:00",
+          "record_kind": "round",
+          "amount_basis": "announced_round_size",
+          "announced_date": null,
+          "closing_status": "closed",
+          "financing_type": "grant",
+          "parent_round_id": null,
+          "amount_qualifier": "exact",
+          "publication_status": "approved"
+        }
+      }
+    ],
+    "actual_workbook_amounts": {
+      "83903": 244758.5,
+      "10021134": 688453.99
+    },
+    "initial_publication": {
+      "generated_at": "2026-11-09T02:59:19.184Z",
+      "investor_generated_at": "2026-11-09T02:59:20.028Z",
+      "events": 701,
+      "participations": 1078,
+      "profiles": 735,
+      "companies_with_events": 319,
+      "verified_manifest_rows": 30,
+      "verified_investor_links": 7,
+      "workflow_run_id": 42553806825
+    },
+    "note": "Gateway to Research exposes whole-pound values. The Innovate UK workbook gives exact participant offers to the penny."
+  }
 }
