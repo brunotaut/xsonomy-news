@@ -1,5 +1,5 @@
 {
-  "status": "imported_pending_publication",
+  "status": "imported_and_live_verified",
   "started_at": "2026-11-09T13:51:02Z",
   "manifest": "research-agent/imports/funding-award-followups-20261109.json",
   "groups": [
@@ -590,5 +590,62 @@
   },
   "database_verified_rows": 47,
   "site_commit": "2841b64cb9ed3380c43d925cd2ce69a336acd3b4",
-  "writer_import_commit": "7e3ba9ee1ca58e2faa18526cb8abe48af339dc93"
+  "writer_import_commit": "7e3ba9ee1ca58e2faa18526cb8abe48af339dc93",
+  "prepared_next": [
+    {
+      "slug": "krattworks",
+      "kind": "source_enrichment_and_possible_date_refinement",
+      "note": "Signed 2025 award order 1-3/25/121 names KrattWorks and EUR 161,776. The current row uses the public announcement date 5 September. Verify the order date and source details, then consider the consistent date convention used for the 2020 and 2024 decisions.",
+      "sources": [
+        "https://adr-docs.karlerss.com/G8bTuMALvDXGmrfPbbJl12fjQmEvk3Tm/Avalik_20250901_KM_1-3_25_121_%C3%9Cldk%C3%A4skkiri.pdf"
+      ]
+    },
+    {
+      "slug": "osl-technology-operational-solutions-ltd",
+      "kind": "beneficiary_allocation_hold",
+      "note": "Innovate UK confirms lead participation on HADO. Indexed totals are project-wide. Locate the award’s participant-level grant offer before adding.",
+      "sources": [
+        "https://iuk-business-connect.org.uk/projects/future-flight/hado/"
+      ]
+    },
+    {
+      "slug": "nordic-air-defence",
+      "kind": "issuer_filing_hold",
+      "note": "Investigate parent company 559474-7809 filed accounts for financing instrument and amount in original currency, overlaps with Inflection and the announced 2024 second close. Do not write a second 2025 event without a distinct transaction.",
+      "sources": [
+        "https://www.breakit.se/artikel/47908/forlusten-rusar-for-nordic-air-defence-narmar-sig-storrunda"
+      ]
+    }
+  ],
+  "publication": {
+    "generated_at": "2026-11-09T14:02:58.991Z",
+    "investor_generated_at": "2026-11-09T14:03:00.315Z",
+    "events": 972,
+    "participations": 1139,
+    "profiles": 755,
+    "companies_with_events": 339,
+    "verified_manifest_rows": 47,
+    "verified_investor_links": 8,
+    "verified_corrections": 1,
+    "workflow_run_id": 42630760121,
+    "site_commit": "2841b64cb9ed3380c43d925cd2ce69a336acd3b4",
+    "checked_at": "2026-11-09T14:03:48.977214+00:00"
+  },
+  "checked_at": "2026-11-09T14:03:48.977214+00:00",
+  "metrics": {
+    "identities_reconciled": 24,
+    "source_review_partial": 6,
+    "newly_completed_bounded_reviews": 18,
+    "imported_events": 47,
+    "corrected_existing_events": 1,
+    "new_participations": 8,
+    "new_investor_profiles": 3,
+    "active_minutes": 12.78,
+    "reconciled_identities_per_active_hour": 112.7,
+    "completed_reviews_per_active_hour": 84.5,
+    "timing_scope": "Active wall time from current-state read through evidence research, production rollback rehearsal, atomic import, build and live verification. Between-run waiting excluded. Lane durations are not summed.",
+    "publication_verified": true,
+    "concurrency_speedup_claimed": false
+  },
+  "writer_checkpoint_before_final": "c2ff117c77273cf9b7f1bde6bab887790e533a7b"
 }
