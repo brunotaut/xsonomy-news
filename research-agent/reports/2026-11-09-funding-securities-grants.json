@@ -1,5 +1,5 @@
 {
-  "status": "rollback_verified_import_pending",
+  "status": "atomic_import_verified_publication_pending",
   "started_at": "2026-11-09T02:51:34Z",
   "manifest": "research-agent/imports/funding-securities-grants-20261109.json",
   "groups": [
@@ -13,7 +13,9 @@
         "sensrad"
       ],
       "mode": "read_only",
-      "timing": "Exact lane elapsed not yet recorded"
+      "started_at": "2026-11-09T02:52:32Z",
+      "finished_at": "2026-11-09T02:58:00Z",
+      "active_seconds": 328
     },
     {
       "id": "b",
@@ -63,7 +65,9 @@
       "status": "source_review_partial",
       "note": "Original Sener integration release retains the acquisition disclosure. Consideration and historical capitalization remain unresolved.",
       "sources": [
-        "https://www.group.sener/en/"
+        "https://www.cnmc.es/sites/default/files/5315675.pdf",
+        "https://www.group.sener/wp-content/uploads/2025/05/Sener-EINF-2024-Informe-de-verificacion.pdf",
+        "https://www.lamoncloa.gob.es/consejodeministros/referencias/Paginas/2015/refc20150227.aspx"
       ]
     },
     "seesai": {
@@ -73,8 +77,11 @@
     },
     "sensefly-ageagle-aerial-systems": {
       "status": "source_review_partial",
-      "note": "Two distinct Parrot transactions verified. 2012 sources conflict on original currency and 2016 original CHF payment is not established.",
-      "sources": []
+      "note": "Two distinct Parrot transactions verified. 2012 sources conflict on original currency and 2016 original CHF payment is not established. A separately sourced final CHF100,000 Venture Kick grant is prepared for the next manifest.",
+      "sources": [
+        "https://www.venturekick.ch/demandit/files/M_BB941CC4DCEF687AD98/dms/File/VKAnnualReport_20101.pdf",
+        "https://www.venturekick.ch/sensefly"
+      ]
     },
     "sensofusion": {
       "status": "source_review_partial",
@@ -362,5 +369,14 @@
         "2026-11-03"
       ]
     ]
-  }
+  },
+  "after": {
+    "events": 701,
+    "participations": 1078,
+    "profiles": 735,
+    "sources": 924,
+    "manifest_rows": 30
+  },
+  "rollback_restored_baseline": true,
+  "importer_replayed_idempotently": true
 }
