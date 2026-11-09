@@ -1,5 +1,5 @@
 {
-  "status": "rollback_verified_import_pending",
+  "status": "atomic_import_verified_publication_pending",
   "started_at": "2026-11-09T01:50:29Z",
   "manifest": "research-agent/imports/published-funding-followups-20261109.json",
   "scope": "Targeted follow-ups within the published landscape queue. These checks do not close the full company histories.",
@@ -275,5 +275,40 @@
         "2026-11-03"
       ]
     ]
-  }
+  },
+  "after": {
+    "events": 675,
+    "participations": 1071,
+    "profiles": 734,
+    "sources": 883,
+    "manifest_rows": 27,
+    "roles": [
+      {
+        "slug": "quantum-systems",
+        "round_key": "series-c-extension-2025",
+        "investor": "t-capital-tech-fund",
+        "role": "participant"
+      },
+      {
+        "slug": "rigitech",
+        "round_key": "fit-tech-seed-loan-2019",
+        "investor": "fondation-pour-linnovation-technologique",
+        "role": "lender"
+      },
+      {
+        "slug": "roke-manor-research",
+        "round_key": "innovate-uk-road-accident-reconstruction-grant-2016",
+        "investor": "innovate-uk",
+        "role": "grantor"
+      },
+      {
+        "slug": "safran",
+        "round_key": "eib-propulsion-research-loan-2021",
+        "investor": "european-investment-bank",
+        "role": "lender"
+      }
+    ]
+  },
+  "rollback_restored_baseline": true,
+  "importer_replayed_idempotently": true
 }
