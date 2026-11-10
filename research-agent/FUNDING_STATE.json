@@ -6,16 +6,16 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 189,
-  "fully_reviewed_companies": 378,
-  "next_action": "Continue the remaining 189 published-landscape bounded reviews before the wider cohort. Reconcile Malloy statutory cash allotments, Marble shareholder source evidence, OSL PRESERVE award offer revision and the remaining documented issuer and grant allocation holds.",
+  "partial_companies": 182,
+  "fully_reviewed_companies": 385,
+  "next_action": "Complete the staged atomic import, trigger the existing catalogue rebuild, verify the live funding and investor datasets, then continue the remaining published-landscape reviews.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-09T23:52:35.405Z",
+  "updated_at": "2026-11-10T00:00:47.196Z",
   "source_reconciliation_companies": 321,
   "approved_funding_events": 1030,
   "round_participations": 1153,
   "investor_profiles": 757,
-  "publication_pending": false,
+  "publication_pending": true,
   "last_import": "research-agent/imports/funding-industry-reviews-20261109.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -1363,5 +1363,17 @@
       "publication_verified": true,
       "concurrency_speedup_claimed": false
     }
+  },
+  "pending_import": {
+    "manifest": "research-agent/imports/funding-published-reconciliations-20261109.json",
+    "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
+    "expected_events": 8,
+    "baseline": {
+      "events": 1030,
+      "participations": 1153,
+      "profiles": 757,
+      "sources": 1370
+    },
+    "rollback_rehearsal": "passed"
   }
 }

@@ -1,0 +1,101 @@
+{
+  "status": "validated_checkpoint_pending_import",
+  "started_at": "2026-11-09T23:52:35.405Z",
+  "checked_at": "2026-11-09",
+  "manifest": "research-agent/imports/funding-published-reconciliations-20261109.json",
+  "identities_reconciled": 20,
+  "parallel_read_only_groups": 4,
+  "concurrency_speedup_claimed": false,
+  "groups": [
+    {
+      "lane": "A",
+      "companies": [
+        "eurotech-pl",
+        "exail",
+        "fadron",
+        "fire-point",
+        "firebolt-engineering"
+      ]
+    },
+    {
+      "lane": "B",
+      "companies": [
+        "fixar-fixar-aero-llc",
+        "flytech-uav",
+        "fotokite",
+        "frequentis",
+        "gdels-santa-barbara-sistemas"
+      ]
+    },
+    {
+      "lane": "C",
+      "companies": [
+        "germandrones",
+        "greenjets",
+        "griff-aviation",
+        "grupo-amper",
+        "harmattan-ai"
+      ]
+    },
+    {
+      "lane": "D",
+      "companies": [
+        "hecto-drone",
+        "hensoldt",
+        "hexadrone",
+        "hornet-polskie-drony",
+        "huless"
+      ]
+    }
+  ],
+  "dispositions": {
+    "newly_completed_bounded_reviews": [
+      "frequentis",
+      "gdels-santa-barbara-sistemas",
+      "germandrones",
+      "griff-aviation",
+      "harmattan-ai",
+      "hensoldt",
+      "hornet-polskie-drony"
+    ],
+    "source_review_partial": [
+      "eurotech-pl",
+      "exail",
+      "fadron",
+      "fire-point",
+      "firebolt-engineering",
+      "fixar-fixar-aero-llc",
+      "flytech-uav",
+      "fotokite",
+      "greenjets",
+      "grupo-amper",
+      "hecto-drone",
+      "hexadrone",
+      "huless"
+    ]
+  },
+  "supported_import": {
+    "events": 8,
+    "companies": 7,
+    "investor_links": 7,
+    "rollback_rehearsal": "passed",
+    "rollback_baseline_verified": {
+      "events": 1030,
+      "participations": 1153,
+      "profiles": 757,
+      "sources": 1370
+    }
+  },
+  "holds": [
+    "Fire Point DKK750m EIFO financing belongs to the Danish subsidiary and is not assigned to the Ukrainian parent.",
+    "Exail parent/group financing is not assigned to Exail SAS without legal-beneficiary evidence.",
+    "Fadron and Firebolt secondary amount claims remain unverified.",
+    "Hecto Drone capital filings are not linked to named investors without source support.",
+    "Greenjets pre-Series A instrument/date and Grupo Amper subsidiary financings remain separate holds.",
+    "Hexadrone 2024 investor identities remain undisclosed."
+  ],
+  "timing": {
+    "active_minutes_to_checkpoint": 8.2,
+    "scope": "Wall time from lease acquisition through current-state reconciliation, four parallel read-only groups, validation and production rollback rehearsal. Waiting between scheduled runs excluded; lane durations are not summed."
+  }
+}
