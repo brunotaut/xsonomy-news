@@ -8,9 +8,9 @@
   "published_landscape_companies": 567,
   "partial_companies": 181,
   "fully_reviewed_companies": 386,
-  "next_action": "Rebuild and verify both already committed manifests on the live site, then advance screened published identities.",
+  "next_action": "Check the next fresh existing catalogue workflow and live datasets for both committed manifests, including three excluded draft records. Do not retry the duplicate-artifact run. Continue the prepared Leica, Manna and Leonardo reconciliations and the screened published identities under a fresh writer lease.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-10T10:54:53.524Z",
+  "updated_at": "2026-11-10T10:55:49.817Z",
   "source_reconciliation_companies": 341,
   "approved_funding_events": 1094,
   "round_participations": 1183,
@@ -23,14 +23,7 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "run_id": "funding-20261110-1047",
-    "owner": "chatgpt",
-    "started_at": "2026-11-10T10:51:55.595Z",
-    "lease_expires_at": "2026-11-10T12:51:55.595Z",
-    "parent_commit": "41e169a83ff440af136cc158628bde029d471b08",
-    "purpose": "Atomic funding follow-up and three reversible issuer-attribution corrections"
-  },
+  "active_run": null,
   "last_verified_publication": {
     "generated_at": "2026-11-10T00:04:00.850Z",
     "investor_generated_at": "2026-11-10T00:04:01.797Z",
@@ -1382,11 +1375,18 @@
       "approved_links": 1183,
       "correction_targets_still_approved": 0
     },
-    "status": "rebuild_in_progress",
+    "status": "fresh_build_succeeded_deploy_failed_duplicate_artifact",
     "site_commit": "0ce481330c58f1081bcdc9cb01e26421422c4a62",
     "workflow_run_id": 42795281022,
     "workflow_attempt": 3,
-    "checked_at": "2026-11-10T10:54:53.524Z"
+    "checked_at": "2026-11-10T10:55:49.817Z",
+    "expected_live": {
+      "events": 1094,
+      "links": 1183,
+      "profiles": 764,
+      "manifest_rows": 56
+    },
+    "failure": "Attempt 3 rebuilt current production data but the existing run now has two artifacts named github-pages. A fresh run is needed."
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -1425,6 +1425,18 @@
   },
   "latest_followup_reconciliation": {
     "report": "research-agent/reports/2026-11-10-funding-landscape-followup.json",
-    "manifest": "research-agent/imports/funding-landscape-20261110-followup.json"
+    "manifest": "research-agent/imports/funding-landscape-20261110-followup.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_source_reconciled": 9,
+      "additional_identities_screened": 14,
+      "newly_completed_bounded_reviews": 0,
+      "concurrency_speedup_claimed": false,
+      "active_minutes": 9,
+      "reconciled_identities_per_active_hour": 60.02,
+      "completed_reviews_per_active_hour": 0,
+      "timing_scope": "Wall time from state read through evidence checks, rollback rehearsal, import, build and deployment verification attempt. Waiting between scheduled runs excluded. Live publication remains unverified.",
+      "publication_verified": false
+    }
   }
 }

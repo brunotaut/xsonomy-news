@@ -246,7 +246,12 @@
     "identities_source_reconciled": 9,
     "additional_identities_screened": 14,
     "newly_completed_bounded_reviews": 0,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "active_minutes": 9,
+    "reconciled_identities_per_active_hour": 60.02,
+    "completed_reviews_per_active_hour": 0,
+    "timing_scope": "Wall time from state read through evidence checks, rollback rehearsal, import, build and deployment verification attempt. Waiting between scheduled runs excluded. Live publication remains unverified.",
+    "publication_verified": false
   },
   "publication": {
     "workflow_run_id": 42795281022,
@@ -257,8 +262,14 @@
       "deploy timed out",
       "deploy timed out"
     ],
-    "status": "rebuild_in_progress",
-    "checked_at": "2026-11-10T10:54:53.524Z"
+    "status": "fresh_build_succeeded_deploy_failed_duplicate_artifact",
+    "checked_at": "2026-11-10T10:55:49.817Z",
+    "build_job_id": 129784933532,
+    "build_artifact_id": 13756034400,
+    "built_investor_profiles": 764,
+    "last_observed_live": "2026-11-10T00:04:00.850Z",
+    "verified": false,
+    "next": "Verify the next fresh workflow run on the existing schedule. Same-run retries currently find two github-pages artifacts, so leave both artifacts untouched and use a fresh run."
   },
   "prepared_reconciliations": [
     {
