@@ -10,12 +10,12 @@
   "fully_reviewed_companies": 386,
   "next_action": "Check the next fresh existing catalogue run and verify all four pending manifests plus in-place corrections and four draft exclusions against live data. Continue prepared Parrot, QuadSAT, PZL Defence, OSL, Leica and Leonardo reconciliations, then remaining published-landscape partial identities.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-10T13:53:46.606Z",
+  "updated_at": "2026-11-10T13:55:11.915Z",
   "source_reconciliation_companies": 341,
   "approved_funding_events": 1145,
   "round_participations": 1214,
   "investor_profiles": 774,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/funding-landscape-20261110-afternoon.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -32,18 +32,29 @@
     "purpose": "Source-audited funding reconciliation and scheduled publication verification"
   },
   "last_verified_publication": {
-    "generated_at": "2026-11-10T00:04:00.850Z",
-    "investor_generated_at": "2026-11-10T00:04:01.797Z",
-    "events": 1038,
-    "participations": 1160,
-    "profiles": 761,
-    "companies_with_events": 345,
-    "verified_manifest_rows": 8,
-    "verified_investor_links": 7,
-    "workflow_run_id": 42725276104,
-    "workflow_attempt": 2,
-    "site_commit": "d31d443bcb013bc42f7805ef700a0db3f209ee28",
-    "checked_at": "2026-11-10T00:55:33.482Z"
+    "generated_at": "2026-11-10T13:52:10.085Z",
+    "investor_generated_at": "2026-11-10T13:52:11.204Z",
+    "events": 1145,
+    "links": 1214,
+    "profiles": 774,
+    "manifest_rows": 108,
+    "corrected": 5,
+    "draft_exclusions": 4,
+    "roles": 55,
+    "sources": 127,
+    "superseded_manifest_values": 1,
+    "verified_approved_rows": 108,
+    "checked_at": "2026-11-10T13:55:11.915Z",
+    "workflow_run_id": 42828359177,
+    "workflow_event": "schedule",
+    "site_commit": "0ce481330c58f1081bcdc9cb01e26421422c4a62",
+    "manifests": [
+      "research-agent/imports/funding-landscape-20261110-morning.json",
+      "research-agent/imports/funding-landscape-20261110-followup.json",
+      "research-agent/imports/funding-landscape-20261110-noon.json",
+      "research-agent/imports/funding-landscape-20261110-afternoon.json"
+    ],
+    "manifest_corrections_verified": 9
   },
   "known_financing_claims_to_reconcile": [
     {
@@ -1392,74 +1403,7 @@
     }
   },
   "pending_import": null,
-  "pending_publication": {
-    "manifest": "research-agent/imports/funding-landscape-20261110-afternoon.json",
-    "previous_manifest": "research-agent/imports/funding-landscape-20261110-noon.json",
-    "report": "research-agent/reports/2026-11-10-funding-landscape-afternoon.json",
-    "database": {
-      "events": 1149,
-      "approved_events": 1145,
-      "links": 1218,
-      "approved_links": 1214,
-      "profiles": 774,
-      "sources": 1522,
-      "companies": 348
-    },
-    "status": "committed_pending_fresh_workflow",
-    "site_commit": "0ce481330c58f1081bcdc9cb01e26421422c4a62",
-    "workflow_run_id": 42795281022,
-    "workflow_attempt": 3,
-    "checked_at": "2026-11-10T12:56:20.203Z",
-    "expected_live": {
-      "events": 1145,
-      "links": 1214,
-      "profiles": 774,
-      "manifest_rows": 108,
-      "withheld_draft_rows": 4,
-      "corrections_to_verify": 6
-    },
-    "failure": "Last catalogue run 42795281022 failed deployment after timeouts and a duplicate github-pages artifact. No later fresh run was visible. The existing daily catalogue workflow remains the next publication path within read-only catalogue scope. This execution did not retry the failed run.",
-    "manifests": [
-      "research-agent/imports/funding-landscape-20261110-morning.json",
-      "research-agent/imports/funding-landscape-20261110-followup.json",
-      "research-agent/imports/funding-landscape-20261110-noon.json",
-      "research-agent/imports/funding-landscape-20261110-afternoon.json"
-    ],
-    "previous_report": "research-agent/reports/2026-11-10-funding-landscape-noon.json",
-    "observed_live": {
-      "generated_at": "2026-11-10T00:04:00.850Z",
-      "investor_generated_at": "2026-11-10T00:04:01.797Z",
-      "events": 1038,
-      "links": 1160,
-      "profiles": 761
-    },
-    "observed_workflow_runs": [
-      {
-        "id": 42795281022,
-        "event": "push",
-        "created_at": "2026-11-10T09:59:20Z",
-        "status": "completed",
-        "conclusion": "failure",
-        "attempt": 3
-      },
-      {
-        "id": 42725276104,
-        "event": "push",
-        "created_at": "2026-11-10T00:03:04Z",
-        "status": "completed",
-        "conclusion": "success",
-        "attempt": 2
-      },
-      {
-        "id": 42660730284,
-        "event": "schedule",
-        "created_at": "2026-11-09T17:02:36Z",
-        "status": "completed",
-        "conclusion": "success",
-        "attempt": 1
-      }
-    ]
-  },
+  "pending_publication": null,
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
     "manifest": "research-agent/imports/funding-published-reconciliations-20261109.json",
@@ -1545,5 +1489,6 @@
       "concurrency_speedup_claimed": false,
       "timing_scope": "Wall time from current state read through source reconciliation, production rollback rehearsal, atomic import, independent post-commit checks, deployment and live checks to the checkpoint. Time between scheduled runs excluded. Live verification of new data remains pending."
     }
-  }
+  },
+  "latest_publication_audit": "research-agent/reports/2026-11-10-funding-publication-verification.json"
 }
