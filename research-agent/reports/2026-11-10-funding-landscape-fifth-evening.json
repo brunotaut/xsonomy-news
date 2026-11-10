@@ -1,20 +1,741 @@
 {
   "run_id": "funding-20261110-1950",
   "started_at": "2026-11-10T19:50:19Z",
-  "checked_at": "2026-11-10T19:58:34.581Z",
+  "checked_at": "2026-11-10T20:01:58.740Z",
   "manifest": "research-agent/imports/funding-landscape-20261110-fifth-evening.json",
-  "status": "staged_before_rehearsal",
-  "previous_pending_manifest_rows_confirmed": 231,
-  "baseline": {
-    "events": 1375,
-    "approved_events": 1366,
-    "links": 1335,
-    "approved_links": 1327,
-    "profiles": 814,
-    "sources": 1849,
-    "companies": 353
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 28,
+    "import_bearing_identities": 13,
+    "corrected_identities": 3,
+    "newly_completed_bounded_reviews": 7,
+    "source_review_partial": 20,
+    "previously_reviewed_followups": 1,
+    "active_minutes": 11.66,
+    "checked_identities_per_active_hour": 144.05,
+    "completed_reviews_per_active_hour": 36.01,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed from current main state read through source work, rollback rehearsal, atomic import and independent production and live checks. Waiting between runs excluded."
   },
-  "planned_new_events": 38,
-  "planned_round_corrections": 3,
-  "planned_participation_corrections": 6
+  "queue_dispositions": [
+    {
+      "id": "1c732a8b-7233-4696-8d9d-42c6a8dec79a",
+      "slug": "thales",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 26,
+      "approved_events_after": 28,
+      "new_events": 2,
+      "corrected_events": 1,
+      "evidence": "Added separate 2010 and 2014 committed facilities. The 2020 replacement now has precise signature and announcement dates. Latest audited EUR1.5bn line has December 2028 maturity, but origination or amendment still needs separate evidence.",
+      "source_urls": [
+        "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2011/02/FCECO019616_20110224.pdf",
+        "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2014/12/FCECO035480_20141222.pdf",
+        "https://www.thalesgroup.com/sites/default/files/2025-08/Thales-Universal-Registration-Document-2024-EN.pdf",
+        "https://www.thalesgroup.com/sites/default/files/investor/documents/Thales_signs_%E2%82%AC1.5_bn_climate-linked_revolving_credit_facility_-_Press_release_-_14_December_2020_1.pdf"
+      ]
+    },
+    {
+      "id": "8b695453-03f0-456c-bc74-ae6d480a1419",
+      "slug": "trumpf",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "corrected_events": 1,
+      "evidence": "Audited FY2025/26 documents extension to May 2031 of the same EUR500m line. Earlier 2015 facility and 2020 replacement retained. CORDIS and operating-unit grants excluded where subsidiary is recipient.",
+      "source_urls": [
+        "https://www.trumpf.com/filestorage/TRUMPF_Master/Corporate/Annual_report/Current/TRUMPF-Annual-Report-2025-26.pdf",
+        "https://cordis.europa.eu/project/id/314410"
+      ]
+    },
+    {
+      "id": "b244baa4-e351-4ea6-ac18-4ad0fa74f698",
+      "slug": "twentyfour-industries",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 1,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "Luxembourg notarised deed proves EUR878 primary cash subscription by named Lakestar vehicle. Headline EUR versus USD reporting conflicts, and relationship of nominal subscription to larger seed requires reconciliation.",
+      "source_urls": [
+        "https://gd.lu/resa/1HWfc9",
+        "https://gd.lu/rcsl/4PtCdx",
+        "https://startupluxembourg.com/news/luxembourg-based-twentyfour-industries-raises-%E2%82%AC11-8m"
+      ]
+    },
+    {
+      "id": "67ed978b-54e5-443c-903b-6ece46b1bbd4",
+      "slug": "uavionics",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "V-FLEX selected A1HQ/25 differs from rejected A136/25. Consortium recommendation gives no executed award or participant-specific amount. Existing Sauron Eye recorded without allocating consortium total.",
+      "source_urls": [
+        "https://www.uavionics.com.pl/projekty",
+        "https://www.gov.pl/attachment/55fe8520-9636-492e-ae35-9a1a277d6ecc",
+        "https://www.gov.pl/attachment/1209a28e-fefb-4295-a71f-c577c41c6eb9"
+      ]
+    },
+    {
+      "id": "b11b4942-83dc-4307-8316-9debf6807ff8",
+      "slug": "topview",
+      "previous_disposition": "reviewed_public_sources",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 14,
+      "approved_events_after": 14,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer confirms CINEA agreement and project role. Official project sources and Italian award title leave TopView amount unresolved; secondary rounded EUR181k held. Prior bounded review remains closed.",
+      "source_urls": [
+        "https://www.topview.it/en/project/u-elcome-u-space-uas-integration/",
+        "https://www.sesarju.eu/projects/U-ELCOME",
+        "https://trasparenza.mit.gov.it/archivio27_normativa_0_4356.html"
+      ]
+    },
+    {
+      "id": "e89fd447-2acc-4b60-b0fc-1a00bb289c32",
+      "slug": "wingtra",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 5,
+      "approved_events_after": 5,
+      "new_events": 0,
+      "corrected_events": 1,
+      "evidence": "Original Series B issuer release confirms USD22m and six named participants. Existing links repointed to exact original. Later 2024 B1 is separate; earliest seed amount and EIC grant/equity distinctions remain open.",
+      "source_urls": [
+        "https://wingtra.com/wingtra-lands-22m-funding-round-as-their-commercial-drones-take-off-to-new-heights/",
+        "https://www.equitypitcher.com/stories/financing-round-wingtra",
+        "https://www.grstiftung.ch/en/funding/portfolio~grs-087-14~.html"
+      ]
+    },
+    {
+      "id": "21df5ecb-38fe-472b-bd2e-99f699be7989",
+      "slug": "tanglewood-group",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact Companies House issuer 12404419 has existing 2020 allotment, later share variation and unchanged 2024/25 nominal capital. Arkeus manufacturing partnership is operating, not a Tanglewood round. No additional attributable public financing found in scope.",
+      "source_urls": [
+        "https://find-and-update.company-information.service.gov.uk/company/12404419/filing-history",
+        "https://arkeus.com/news/arkeus-and-tanglewood-group-announce-uk-partnership-and-new-manufacturing-engineering-and-customer-support-facility"
+      ]
+    },
+    {
+      "id": "68c7206e-5579-415e-ab3e-8303edd8cdac",
+      "slug": "saab",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 14,
+      "approved_events_after": 25,
+      "new_events": 11,
+      "corrected_events": 0,
+      "evidence": "Eleven historical issuer-original MTN issues or issuance packages added. Excluded limits, tender purchases and net flows. Individual final terms for additional MTNs still require dedupe.",
+      "source_urls": [
+        "https://www.saab.com/investors/debt-market",
+        "https://www.saab.com/newsroom/press-releases/2018/saab-ab-raises-msek-1250-in-the-bond-market",
+        "https://www.saab.com/newsroom/press-releases/2015/saab-increases-mtn-programme-and-issues-floating-rate-notes",
+        "https://www.saab.com/newsroom/press-releases/2009/saab-issues-sek-1.1-billion-under-the-newly-established-mtn-programme",
+        "https://www.saab.com/newsroom/press-releases/2018/saab-ab-raises-msek-500-in-the-bond-market",
+        "https://www.saab.com/newsroom/press-releases/2017/saab-ab-publ-announces-final-tender-results-for-medium-term-notes-and-issue-of-new-medium-term-notes",
+        "https://www.saab.com/globalassets/cision/documents/2015/20150904-saab-har-emitterat-4-arigt-frn-lan-sv-0-1972160.pdf",
+        "https://www.globenewswire.com/Attachment/DownloadAttachment?articleid=776032&fileId=360775&filename=10147323.pdf&filetype=3&islogo=0"
+      ]
+    },
+    {
+      "id": "75687679-41b6-442f-b83f-f370ff0e5724",
+      "slug": "safran",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 19,
+      "approved_events_after": 28,
+      "new_events": 9,
+      "corrected_events": 0,
+      "evidence": "Nine positive parent-level CORDIS awards added, excluding operating subsidiaries and two linked-party allocations held for intermediary treatment. FY2026 March EUR700m was redemption, not issuance.",
+      "source_urls": [
+        "https://www.safran-group.com/pressroom/safran-reports-its-first-half-2026-results-2026-07-28",
+        "https://cordis.europa.eu/project/id/807097",
+        "https://cordis.europa.eu/project/id/945583",
+        "https://cordis.europa.eu/project/id/101006771",
+        "https://cordis.europa.eu/project/id/101112370",
+        "https://cordis.europa.eu/project/id/875538",
+        "https://cordis.europa.eu/project/id/101102007",
+        "https://cordis.europa.eu/project/id/101120172",
+        "https://cordis.europa.eu/project/id/101101961",
+        "https://cordis.europa.eu/project/id/101006854",
+        "https://cordis.europa.eu/project/id/807085",
+        "https://cordis.europa.eu/project/id/824350"
+      ]
+    },
+    {
+      "id": "32ed110f-3cec-481a-8da1-4aa8ccf19d1b",
+      "slug": "safran-vectronix",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Confirmed existing draft excludes CHF60m seller consideration for Swiss and US assets. FHGR export-control project and procurement offset listings do not establish direct issuer financing.",
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1092916/000115697303000894/u46285e6vk.htm",
+        "https://www.ar.admin.ch/en/offset-register-2",
+        "https://www.fhgr.ch/en/uas-grisons/unternehmerisches-handeln/swiss-institute-for-entrepreneurship-sife/projekte/export-control-for-smes-project/"
+      ]
+    },
+    {
+      "id": "941da904-efd5-431d-adc4-2c5f09d14754",
+      "slug": "samel-90",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 7,
+      "approved_events_after": 9,
+      "new_events": 2,
+      "corrected_events": 0,
+      "evidence": "Two separately referenced exact Bulgarian grants added from issuer notices. Project budgets and implementation dates are distinct from grant award dates. Earlier C01 contracts still need exact original allocations.",
+      "source_urls": [
+        "https://samel90.com/bg/projects/samel-90-plc-launches-implementation-of-a-project-under-the-operational-programme-competitiveness-and-innovation-in-enterprises-2021-2027",
+        "https://samel90.com/uploads/%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F%20%D1%81%D0%B0%D0%B9%D1%82-%D0%B2%D0%BD%D0%B5%D0%B4%D1%80%D1%8F%D0%B2%D0%B0%D0%BD%D0%B5.docx",
+        "https://samel90.com/uploads/%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F%20%D1%81%D0%B0%D0%B9%D1%82-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B2%D0%B0%D0%BD%D0%B5.docx"
+      ]
+    },
+    {
+      "id": "32aad67a-b220-4239-a072-bd47ead6eed4",
+      "slug": "sapient-perception",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact CVR 45568849 rebrand from Apex Imaging. Issuer and investor confirm EUR2m pre-seed and two co-leads. Existing APUS programme financing separate, and no support found for a USD7m candidate.",
+      "source_urls": [
+        "https://www.prnewswire.com/news-releases/sapient-perception-secures-2m-to-advance-10k-sensor-systems-for-mission-critical-uav-operations-302741101.html",
+        "https://www.forward.one/news/sapient-perception-raises-eu2-million-to-bring-real-time-intelligence-to-uav-operations"
+      ]
+    },
+    {
+      "id": "8b2d3b1b-1ead-4588-8541-f7876b866bfb",
+      "slug": "scoutdi",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 8,
+      "approved_events_after": 10,
+      "new_events": 2,
+      "corrected_events": 0,
+      "evidence": "SEC contract documents NOK15m seller convertible; CORDIS gives exact ScoutDI AUTOASSESS allocation. Terminated Beam deal already draft with correct note. Separate Innovation Norway offer and guarantee require contract and date checks.",
+      "source_urls": [
+        "https://beamforall.com/beam-global-announces-termination-of-agreement-to-acquire-scoutdi/",
+        "https://www.sec.gov/Archives/edgar/data/1398805/000143774926032264/ex_1023317.htm",
+        "https://cordis.europa.eu/project/id/101120732"
+      ]
+    },
+    {
+      "id": "9a34c6f4-f7fe-41a3-a56c-ad314e739591",
+      "slug": "scr-sistemas-de-control-remoto",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 3,
+      "new_events": 2,
+      "corrected_events": 0,
+      "evidence": "CORDIS attributes SGAN-Next directly and GAUSS as separate linked-party net allocation. BOE project selection is not a funding award. Regulatory change of ownership held separately.",
+      "source_urls": [
+        "https://cordis.europa.eu/project/id/101082611",
+        "https://cordis.europa.eu/project/id/776293",
+        "https://boe.es/diario_boe/txt.php?id=BOE-A-2025-25764",
+        "https://www.cnmc.es/sites/default/files/5315729.pdf"
+      ]
+    },
+    {
+      "id": "c1f2d0fe-6317-45b6-8522-a25e9d7a2fea",
+      "slug": "seesai",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 4,
+      "approved_events_after": 5,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "Issuer and Aerospace Xelerated verify earlier investment occurrence. Programme-wide GBP and transaction reporting USD figures are unresolved. Recent UK share allotment filings still need exact paid consideration.",
+      "source_urls": [
+        "https://find-and-update.company-information.service.gov.uk/company/10143962/filing-history",
+        "https://xelerated.aero/portfolio-2/",
+        "https://www.british-business-bank.co.uk/case-studies/seesai",
+        "https://www.sees.ai/2022/01/19/sees-ai-joins-boeings-aerospace-xelerated/",
+        "https://www.telcotitans.com/vodafonewatch/seesai-flies-high-with-boeing-backing/4905.article"
+      ]
+    },
+    {
+      "id": "3128388e-389a-424c-8617-94488ed802bb",
+      "slug": "sensefly-ageagle-aerial-systems",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 5,
+      "approved_events_after": 5,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "FIT loan and 2010 grant already present. Vaud discusses other support without award allocations. 2012 currency sources and primary/secondary split differ, no second event. 2021 secondary buyer transaction retained.",
+      "source_urls": [
+        "https://www.invest-vaud.ch/success/success-stories/sensefly",
+        "https://actu.epfl.ch/news/sensefly-obtains-major-investment/"
+      ]
+    },
+    {
+      "id": "392f87d4-1a01-4d5a-8c72-d5b3aa686770",
+      "slug": "sensofusion",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 5,
+      "approved_events_after": 6,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "Issuer circular confirms Business Finland research grant; financial-year receipts are not original award. Related-party balances not discrete proceeds. IPO cash and secondary placement kept separate.",
+      "source_urls": [
+        "https://investors.sensofusion.com/files/documents/Sensofusion%20Plc%20-%20EU%20Offering%20Circular.pdf",
+        "https://investors.sensofusion.com/en/ipo"
+      ]
+    },
+    {
+      "id": "0dcadf2e-820d-498c-b809-bc70e9d4b169",
+      "slug": "sensrad",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 2,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "Vinnova occurrence supported and individual allocation unknown. Annual lender loan aggregates, noncash conversions and Gapwaves-specific grant excluded.",
+      "source_urls": [
+        "https://storage.mfn.se/bd1d3f65-607a-41e7-9fb0-ae487e8dc421/gapwaves-ab-publ-annual-report-2025.pdf",
+        "https://www.vinnova.se/en/p/advanced-radar-sensor-front-end-modules-and-solutions-for-increased-road-safety",
+        "https://research.chalmers.se/en/project/11844",
+        "https://www.gapwaves.com/mfn_news/gapwaves-awarded-funding-by-vinnova-for-advanced-radar-sensor-front-end-modules-and-solutions/"
+      ]
+    },
+    {
+      "id": "4318f4ab-d47d-4734-baf0-e109b9184840",
+      "slug": "sensusq",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 9,
+      "approved_events_after": 9,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Investor confirms 2020 relationship and 2024 EUR3.8m. Unverified trade claims and 2026 rejected grant excluded, and Quantum acquisition remains ownership. Exact dated 2024 industry association source prepared.",
+      "source_urls": [
+        "https://startupwiseguys.com/news/sensusq-secures-major-funding-to-enhance-ai-powered-defense-solutions/",
+        "https://quantum-systems.com/news/quantum-systems-expands-estonia/",
+        "https://www.estvca.ee/news/estonian-sensusq-raises-eur3-8m-for-defence-intelligence-software"
+      ]
+    },
+    {
+      "id": "622be9fe-5d3a-45bc-a0f5-9686deec7b64",
+      "slug": "septentrio",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 10,
+      "approved_events_after": 13,
+      "new_events": 3,
+      "corrected_events": 0,
+      "evidence": "Two separate historical rounds added at original BEF reported precision, and exact 2021 EUSPA award. STARGATE and FANTASTIC consortium amounts remain unallocated, and Hexagon terms undisclosed.",
+      "source_urls": [
+        "https://www.fdc.fr/oregin/workshop/European_High-tech_Ventures_P_GROGNARD.pdf",
+        "https://www.euspa.europa.eu/sites/default/files/euspa_grants_list_2021.pdf",
+        "https://www.septentrio.com/en/company/news/hexagon-completes-acquisition-septentrio-expanding-reach-mission-critical-navigation",
+        "https://www.researchgate.net/publication/255964310_Het_fenomeen_spin-off_in_Belgie"
+      ]
+    },
+    {
+      "id": "eb5f23c7-9058-492b-8655-bb38ba912fdb",
+      "slug": "shotling",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact CVR 45129195. Transaction-party release confirms EUR700k mixed event and existing role evidence; no cheque splits. NATO shortlist is not cash.",
+      "source_urls": [
+        "https://ownr.dk/companies/public-profile/45129195",
+        "https://www.ipo.club/deals/shotling",
+        "https://www.act.nato.int/article/innovation-challenge-fibre-optic-drones/"
+      ]
+    },
+    {
+      "id": "bc859999-2e84-49ba-aaeb-71618ebe01bd",
+      "slug": "silixcon",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 4,
+      "approved_events_after": 4,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer confirms two founder owners. Published GaN contract already recorded; marketing and creative aid candidates need direct instrument and beneficiary proof. Official exact CZK782,399 export marketing contribution prepared for next import.",
+      "source_urls": [
+        "https://silixcon.com/company/",
+        "https://smlouvy.gov.cz/smlouva/34742785",
+        "https://www.hlidacstatu.cz/subjekt/DalsiDatabaze/06185657"
+      ]
+    },
+    {
+      "id": "26c8dd32-5e49-4a21-88e1-c63092afe5db",
+      "slug": "siralab-robotics",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 4,
+      "approved_events_after": 4,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact issuer 01371700558 and existing MEDIUM award verified. Other regional amount is requested, ANDROS is procurement, and aggregate state aid is not new award-level evidence.",
+      "source_urls": [
+        "https://siralab.it/contatti/",
+        "https://www.sviluppumbria.it/documents/d/svilumbria/graduatoria-avviso-medium-2023-21-11-2025",
+        "https://op.europa.eu/en/web/public-procurement/procurement-details/-/procurement/dce8fdd1-83dd-3ad1-93c7-c453e6a9fd42"
+      ]
+    },
+    {
+      "id": "cdae4645-78fd-47cf-bece-c07ead47e715",
+      "slug": "sistemi-dinamici-leonardo",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 4,
+      "new_events": 2,
+      "corrected_events": 0,
+      "evidence": "Audited 2019 accounts confirm 2017 credit account and separate OCEAN grant accrual. Shareholder and OCEAN loan balance disclosures lack original principal certainty; 2020 merger, 2016 acquisition and 2018 refinancing remain separate.",
+      "source_urls": [
+        "https://www.leonardo.com/documents/15646808/16737434/Bilancio%2BSistemi%2BDinamici%2B2019%2Binglese%2Bper%2Bsito%2Bcon%2Bopinion.pdf?t=1585899772535"
+      ]
+    },
+    {
+      "id": "0710df4f-22e6-4088-8c6b-6d1f5658d1db",
+      "slug": "six-robotics",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact Norwegian issuer 932478102. Company describes older friends-and-family financing without amount or date, latest EUR12m and Innovation Norway offer retained. FFI explicitly denies 2023 grant. Registry accounts subsequently identified exact NOK750k share issue and NOK10m SLIP financing in 2024, queued as distinct prepared events.",
+      "source_urls": [
+        "https://virksomhet.brreg.no/nn/oppslag/enheter/932478102",
+        "https://sixrobotics.com/news/six-robotics-raises-%E2%82%AC12-million-to-scale-autonomy-for-unmanned-systems",
+        "https://www.ffi.no/aktuelt/nyheter/nar-forskning-skal-bli-forsvarsevne-om-ffi-six-robotics-og-habilitet",
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/932478102/2024",
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/932478102/2025"
+      ]
+    },
+    {
+      "id": "31060ca1-8a1b-4e06-9862-9d5044509702",
+      "slug": "sky-drones",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact issuer 12538870 and all three Innovate UK workbook rows reconciled. Connected Places Catapult and issuer describe a new hydrogen demo; confirm exact grant instrument and beneficiary before adding. Brinc accelerator participation is not an issuer-level funding event.",
+      "source_urls": [
+        "https://sky-drones.com/contact-us",
+        "https://find-and-update.company-information.service.gov.uk/company/12538870/filing-history",
+        "https://www.ukri.org/wp-content/uploads/2022/03/IUK-031126-FundedProjectsFinancialYear2016To2017ToPresent.xlsx",
+        "https://cp.catapult.org.uk/news/five-hydrogen-technology-demos-green-lit/",
+        "https://hydrogeninnovation.co.uk/demonstrations/sky-drones-h2-fuel-cell-uav-refueling-demonstration-project/"
+      ]
+    },
+    {
+      "id": "51b6c966-7cee-4ac7-b975-f5d576dc64f0",
+      "slug": "sky-fortress",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Military technical record and NGO coverage establish project, not corporate award recipient. Reuters-sourced Brave1 claim lacks legal beneficiary, dated event or award instrument.",
+      "source_urls": [
+        "https://www.janes.com/defence-intelligence-insights/defence-news/weapons/ukraine-conflict-ukrainian-air-defence-employs-passive-sensors-for-detection-and-tracking",
+        "https://www.army.mil/article/292099/listening_to_the_sky_acoustic_drone_detection_systems_ukraine_emerging_technologies",
+        "https://www.internazionale.it/ultime-notizie-reuters/2026/04/22/exclusive-us-turns-to-ukrainian-counter-drone-tech-after-iran-attacks-sources-say"
+      ]
+    },
+    {
+      "id": "e3615a50-35ae-45b5-8e83-ad9bf2638610",
+      "slug": "sky-watch",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 13,
+      "approved_events_after": 14,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "FY2012 identifies separate Nordea facility; 2026 Danske legal borrower remains ambiguous in parent SEC filing. Deferred grants and accumulated shareholder loan changes not discrete events.",
+      "source_urls": [
+        "https://regnskaber.cvrapi.dk/74835623/eGJybHN0b3JlOi8vWC1FQ0M3MERDNi0yMDEzMDYyNl8xNDIyMzlfMTkwL3BkZg.pdf",
+        "https://www.sec.gov/Archives/edgar/data/1927958/000149315226037753/form10-q.htm"
+      ]
+    }
+  ],
+  "database": {
+    "before": {
+      "events": 1375,
+      "approved_events": 1366,
+      "links": 1335,
+      "approved_links": 1327,
+      "profiles": 814,
+      "sources": 1849,
+      "companies": 353
+    },
+    "rollback_rehearsal": {
+      "events": 1413,
+      "approved_events": 1404,
+      "links": 1350,
+      "approved_links": 1342,
+      "profiles": 814,
+      "sources": 1897,
+      "companies": 354
+    },
+    "rollback_baseline_verified": {
+      "events": 1375,
+      "approved_events": 1366,
+      "links": 1335,
+      "approved_links": 1327,
+      "profiles": 814,
+      "sources": 1849,
+      "companies": 353
+    },
+    "importer_replayed_inside_rollback": true,
+    "after": {
+      "events": 1413,
+      "approved_events": 1404,
+      "links": 1350,
+      "approved_links": 1342,
+      "profiles": 814,
+      "sources": 1897,
+      "companies": 354
+    },
+    "independent_manifest_verification": {
+      "new_events": 38,
+      "corrections": 3,
+      "matched_sources": 48,
+      "new_roles": 15,
+      "corrected_roles": 6
+    },
+    "prior_pending_manifest_rows_confirmed": 231
+  },
+  "publication": {
+    "manifest": "research-agent/imports/funding-landscape-20261110-fifth-evening.json",
+    "previous_manifest": "research-agent/imports/funding-landscape-20261110-fourth-evening.json",
+    "manifests": [
+      "research-agent/imports/funding-landscape-20261110-second-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-late-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-evening.json",
+      "research-agent/imports/funding-landscape-20261110-second-evening.json",
+      "research-agent/imports/funding-landscape-20261110-third-evening.json",
+      "research-agent/imports/funding-landscape-20261110-fourth-evening.json",
+      "research-agent/imports/funding-landscape-20261110-fifth-evening.json"
+    ],
+    "report": "research-agent/reports/2026-11-10-funding-landscape-fifth-evening.json",
+    "previous_report": "research-agent/reports/2026-11-10-funding-landscape-fourth-evening.json",
+    "database": {
+      "events": 1413,
+      "approved_events": 1404,
+      "links": 1350,
+      "approved_links": 1342,
+      "profiles": 814,
+      "sources": 1897,
+      "companies": 354
+    },
+    "status": "committed_awaiting_fresh_catalogue_run",
+    "expected_live": {
+      "events": 1404,
+      "links": 1342,
+      "profiles": 814,
+      "manifest_rows": 269,
+      "withheld_draft_rows": 5,
+      "approved_corrections": 26,
+      "participation_corrections": 9,
+      "additional_existing_round_participations": 3
+    },
+    "checked_at": "2026-11-10T20:01:58.740Z",
+    "observed_live": {
+      "generated_at": "2026-11-10T13:52:10.085Z",
+      "investor_generated_at": "2026-11-10T13:52:11.204Z",
+      "events": 1145,
+      "links": 1214,
+      "profiles": 774
+    },
+    "observed_workflow_runs": [
+      [
+        42828359177,
+        "schedule",
+        "2026-11-10T13:51:22Z",
+        "success",
+        "completed",
+        "0ce481330c58f1081bcdc9cb01e26421422c4a62"
+      ],
+      [
+        42795281022,
+        "push",
+        "2026-11-10T09:59:20Z",
+        "failure",
+        "completed",
+        "0ce481330c58f1081bcdc9cb01e26421422c4a62"
+      ],
+      [
+        42725276104,
+        "push",
+        "2026-11-10T00:03:04Z",
+        "success",
+        "completed",
+        "d31d443bcb013bc42f7805ef700a0db3f209ee28"
+      ],
+      [
+        42640842391,
+        "push",
+        "2026-11-09T15:04:00Z",
+        "success",
+        "completed",
+        "b9799770775a866a8d0d1a818e16068acd2f3eec"
+      ]
+    ],
+    "workflow_schedule": "0 6 * * * UTC",
+    "reason": "Latest successful catalogue run predates all seven pending imports. Existing scheduled build is the publication path under read-only catalogue scope. Verify all manifests and latest guarded values after the next build."
+  },
+  "prepared_followups": [
+    {
+      "company_slug": "saab",
+      "round_key": "mtn-124-tranche-1",
+      "amount": 200000000,
+      "currency": "SEK",
+      "settlement_date": "2020-12-22",
+      "source": "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/slutliga-villkor-saab-ab-mtn-124---signed.pdf",
+      "note": "Loan 124 base tranche, ISIN SE0012676252. Dates listed are documented transaction/settlement dates; reconcile public announcement dates and existing rows before import."
+    },
+    {
+      "company_slug": "saab",
+      "round_key": "mtn-124-tranche-2",
+      "amount": 100000000,
+      "currency": "SEK",
+      "settlement_date": "2021-06-15",
+      "source": "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/mtn-programme-jun-2021-term-sheet-loan-124-tranche-2.pdf",
+      "note": "Same ISIN as tranche 1. Incremental nominal only. Use parent extension or keep exact tranches separate without aggregate duplication. Dates listed are documented transaction/settlement dates; reconcile public announcement dates and existing rows before import."
+    },
+    {
+      "company_slug": "saab",
+      "round_key": "mtn-125-tranche-1",
+      "amount": 250000000,
+      "currency": "SEK",
+      "settlement_date": "2021-05-05",
+      "source": "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/mtn-programme-apr-2021-term-sheet-loan-125.pdf",
+      "note": "ISIN SE0014783080, first separately specified tranche. Dates listed are documented transaction/settlement dates; reconcile public announcement dates and existing rows before import."
+    },
+    {
+      "company_slug": "saab",
+      "round_key": "mtn-125-tranche-2",
+      "amount": 100000000,
+      "currency": "SEK",
+      "settlement_date": "2021-05-05",
+      "source": "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/mtn-programme-apr-2021-term-sheet-loan-125-tranche-2.pdf",
+      "note": "ISIN SE0014783080, incremental distinct tranche. Dates listed are documented transaction/settlement dates; reconcile public announcement dates and existing rows before import."
+    },
+    {
+      "company_slug": "saab",
+      "round_key": "mtn-133",
+      "amount": 1050000000,
+      "currency": "SEK",
+      "settlement_date": "2023-11-20",
+      "source": "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/final-terms-133.pdf",
+      "note": "Fixed note SE0019176967. Dates listed are documented transaction/settlement dates; reconcile public announcement dates and existing rows before import."
+    },
+    {
+      "company_slug": "saab",
+      "round_key": "mtn-134",
+      "amount": 200000000,
+      "currency": "SEK",
+      "settlement_date": "2023-11-20",
+      "source": "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/final-terms-134.pdf",
+      "note": "Floating note SE0019176975. Dates listed are documented transaction/settlement dates; reconcile public announcement dates and existing rows before import."
+    },
+    {
+      "company_slug": "six-robotics",
+      "round_key": "share-issue-2024",
+      "announced_date": "2024",
+      "amount": 750000,
+      "currency": "NOK",
+      "financing_type": "equity",
+      "sources": [
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/932478102/2024",
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/932478102/2025",
+        "https://w2.brreg.no/kunngjoring/hent_en.jsp?kid=20240000636621&sokeverdi=932478102&spraak=nb",
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/932481332/2024"
+      ],
+      "note": "Registry accounts Note 4 identifies NOK75k nominal plus NOK675k premium, separate from SLIP. Investors and exact date unknown. Exact registered change date, with closing day unverified. Parent SR Equity AS separate filed accounts show exact NOK750k rise in carrying cost, matching sole subsidiary's issue. No attribution to SLIP.",
+      "registration_date": "2024-07-02"
+    },
+    {
+      "company_slug": "six-robotics",
+      "round_key": "slip-early-stage-financing-2024",
+      "announced_date": "2024",
+      "amount": 10000000,
+      "currency": "NOK",
+      "financing_type": "convertible",
+      "sources": [
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/932478102/2024",
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/932478102/2025"
+      ],
+      "note": "Distinct paid-in SLIP financing; planned conversion is not a new round and 2026 institutional seed is separate."
+    },
+    {
+      "company_slug": "sky-drones",
+      "sources": [
+        "https://cp.catapult.org.uk/news/five-hydrogen-technology-demos-green-lit/",
+        "https://hydrogeninnovation.co.uk/demonstrations/sky-drones-h2-fuel-cell-uav-refueling-demonstration-project/"
+      ],
+      "note": "January 2026 programme launch names beneficiary project; verify if the instrument is grant, procurement or in-kind."
+    },
+    {
+      "company_slug": "sensusq",
+      "round_key": "funding-2024-06",
+      "source": "https://www.estvca.ee/news/estonian-sensusq-raises-eur3-8m-for-defence-intelligence-software",
+      "announced_date": "2024-06-05",
+      "note": "Trade association contemporary exact date, no change of amount or lead."
+    },
+    {
+      "company_slug": "scoutdi",
+      "source": "https://no.linkedin.com/posts/innovasjonnorge_drone-teknologi-activity-7523376801897947136-I4sw",
+      "note": "Innovation Norway reports NOK15m loan offer and NOK3m guarantee. Reconcile dated underlying agreement and amount overlap, no payout inference."
+    },
+    {
+      "company_slug": "uavionics",
+      "source": "https://www.gov.pl/attachment/55fe8520-9636-492e-ae35-9a1a277d6ecc",
+      "note": "V-FLEX A1HQ/25 recommended under consortium call. Verify executed award and recipient allocation."
+    },
+    {
+      "company_slug": "topview",
+      "sources": [
+        "https://www.topview.it/en/project/u-elcome-u-space-uas-integration/",
+        "https://trasparenza.mit.gov.it/archivio27_normativa_0_4356.html"
+      ],
+      "note": "U-ELCOME signed project under agreement 101079171. Beneficiary allocation still needs grant annex."
+    },
+    {
+      "company_slug": "silixcon",
+      "round_key": "eu-marketing-export-fairs-0005972",
+      "amount": 782399,
+      "currency": "CZK",
+      "announced_date": null,
+      "financing_type": "grant",
+      "source": "https://www.risy.cz/cs/vyhledavace/projekty-eu?TypProgramu=2&page=12105&stranka=64",
+      "note": "Official Czech Risy project CZ.01.02.01/04/24_044/0005972, sole applicant ID 06185657. Exact EU contribution, not separate payment or private cofinance."
+    }
+  ]
 }
