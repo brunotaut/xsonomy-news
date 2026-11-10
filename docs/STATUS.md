@@ -1657,3 +1657,10 @@ Checkpoint 53 publication verified: workflow 42031512224 succeeded; live data ge
 
 
 Checkpoint54 publication verified: deployment 42040331723 succeeded. Live catalogue 2026-11-05T13:57:52.659Z; investor catalogue 2026-11-05T13:57:53.591Z. All27 manifest representations matched.630 events,1,042 participations,719 profiles. Active elapsed 14.34 minutes;1 newly completed bounded review. Writer lease released; full programme remains in progress.
+
+
+## Investment research checkpoint — 2026-11-10T23:04:56.345Z
+
+Checked 27 published company identities in four read-only lanes. Imported 14 supported events and applied three expected-value-guarded corrections after production rollback and repeated-import idempotency rehearsal. Independently verified 1,485 approved events, 1,362 approved round participations and 815 investor profiles; curated profiles and legacy relationships are unchanged. Six bounded reviews closed; queue now 429 reviewed, 138 partial, 1,997 queued. Source manifest staged at 229a64da113036d93551edd092e8fff3d2eb24a9.
+
+Audit: `research-agent/reports/2026-11-10-funding-landscape-third-late-night.json`; manifest: `research-agent/imports/funding-landscape-20261110-third-late-night.json`. Database committed; fresh catalogue publication pending under explicit read-only catalogue scope. Live remains generated 2026-11-10T13:52:10.085Z with 1,145 events. Existing daily catalogue schedule and hourly continuation remain unchanged. Legacy research STATE.json and frozen snapshots were preserved.
