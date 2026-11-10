@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 386,
   "next_action": "Check the next fresh catalogue workflow and live datasets for all three committed manifests, including exclusion of three draft events. Avoid rerunning the duplicate-artifact workflow. Reconcile prepared Leica, Manna, Leonardo, LMT and LiveLink items before continuing the remaining published companies.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-10T12:47:04.259Z",
+  "updated_at": "2026-11-10T12:53:18.454Z",
   "source_reconciliation_companies": 341,
   "approved_funding_events": 1110,
   "round_participations": 1207,
@@ -1367,7 +1367,22 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "manifest": "research-agent/imports/funding-landscape-20261110-afternoon.json",
+    "report": "research-agent/reports/2026-11-10-funding-landscape-afternoon.json",
+    "stage": "staged_before_production_rehearsal",
+    "baseline": {
+      "events": 1113,
+      "approved_events": 1110,
+      "links": 1210,
+      "approved_links": 1207,
+      "profiles": 768,
+      "sources": 1474,
+      "companies": 346
+    },
+    "expected_new_events": 36,
+    "expected_corrections": 6
+  },
   "pending_publication": {
     "manifest": "research-agent/imports/funding-landscape-20261110-noon.json",
     "previous_manifest": "research-agent/imports/funding-landscape-20261110-followup.json",
