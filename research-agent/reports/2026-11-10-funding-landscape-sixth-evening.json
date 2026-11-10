@@ -1,19 +1,851 @@
 {
   "run_id": "funding-20261110-2043",
   "started_at": "2026-11-10T20:43:16Z",
-  "checked_at": "2026-11-10T20:49:27.817Z",
+  "checked_at": "2026-11-10T20:55:58.388Z",
   "manifest": "research-agent/imports/funding-landscape-20261110-sixth-evening.json",
-  "status": "staged_before_rehearsal",
-  "previous_pending_manifest_rows_confirmed": 269,
-  "baseline": {
-    "events": 1413,
-    "approved_events": 1404,
-    "links": 1350,
-    "approved_links": 1342,
-    "profiles": 814,
-    "sources": 1897,
-    "companies": 354
+  "correction_manifest": "research-agent/imports/funding-landscape-20261110-sixth-evening-award-guard.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 29,
+    "import_bearing_identities": 8,
+    "corrected_identities": 4,
+    "newly_completed_bounded_reviews": 8,
+    "source_review_partial": 19,
+    "previously_reviewed_followups": 2,
+    "new_events_written": 25,
+    "new_approved_events": 24,
+    "new_events_withheld": 1,
+    "active_minutes": 12.71,
+    "checked_identities_per_active_hour": 136.94,
+    "completed_reviews_per_active_hour": 37.78,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed from current main state read through evidence checks, production rehearsal and atomic import, separately guarded late evidence correction, and independent production and live checks. Waiting between runs excluded."
   },
-  "planned_new_events": 25,
-  "planned_round_corrections": 3
+  "queue_dispositions": [
+    {
+      "id": "68c7206e-5579-415e-ab3e-8303edd8cdac",
+      "slug": "saab",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 25,
+      "approved_events_after": 31,
+      "new_events": 6,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Six issuer-signed exact MTN tranches were added. Taps are linked to base notes by ISIN, and settlement dates are labelled separately from unverified announcement dates. Additional debt-market terms remain to check.",
+      "source_urls": [
+        "https://www.saab.com/investors/debt-market",
+        "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/slutliga-villkor-saab-ab-mtn-124---signed.pdf",
+        "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/mtn-programme-jun-2021-term-sheet-loan-124-tranche-2.pdf",
+        "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/mtn-programme-apr-2021-term-sheet-loan-125.pdf",
+        "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/mtn-programme-apr-2021-term-sheet-loan-125-tranche-2.pdf",
+        "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/final-terms-133.pdf",
+        "https://www.saab.com/globalassets/corporate/investor-relations/credit-market/medium-term-note-program/final-terms-134.pdf"
+      ]
+    },
+    {
+      "id": "0710df4f-22e6-4088-8c6b-6d1f5658d1db",
+      "slug": "six-robotics",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 4,
+      "new_events": 2,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Statutory issuer and shareholder accounts confirm separate NOK750k share subscription and NOK10m SLIP financing in 2024. The capital register provides the share filing date. Planned conversion and earlier unspecified friends-and-family support are not separately counted.",
+      "source_urls": [
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/932478102/2024",
+        "https://sixrobotics.com/news/six-robotics-raises-%E2%82%AC12-million-to-scale-autonomy-for-unmanned-systems",
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/932478102/2025",
+        "https://w2.brreg.no/kunngjoring/hent_en.jsp?kid=20240000636621&sokeverdi=932478102&spraak=nb",
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/932481332/2024"
+      ]
+    },
+    {
+      "id": "4318f4ab-d47d-4734-baf0-e109b9184840",
+      "slug": "sensusq",
+      "previous_disposition": "reviewed_public_sources",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 9,
+      "approved_events_after": 9,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 1,
+      "evidence": "Existing EUR3.8m round date refined using contemporary EstVCA publication. Original investor and buyer disclosures reviewed. No additional round or lead inferred.",
+      "source_urls": [
+        "https://startupwiseguys.com/news/sensusq-secures-major-funding-to-enhance-ai-powered-defense-solutions/",
+        "https://quantum-systems.com/news/quantum-systems-expands-estonia/",
+        "https://www.estvca.ee/news/estonian-sensusq-raises-eur3-8m-for-defence-intelligence-software"
+      ]
+    },
+    {
+      "id": "bc859999-2e84-49ba-aaeb-71618ebe01bd",
+      "slug": "silixcon",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 4,
+      "approved_events_after": 5,
+      "new_events": 1,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact EU export-marketing grant allocation confirmed for sole applicant. Private cofinancing and payment amounts excluded. Other aid entries require original award-level evidence.",
+      "source_urls": [
+        "https://silixcon.com/company/",
+        "https://www.risy.cz/cs/vyhledavace/projekty-eu?TypProgramu=2&page=12105&stranka=64"
+      ]
+    },
+    {
+      "id": "31060ca1-8a1b-4e06-9862-9d5044509702",
+      "slug": "sky-drones",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer and Catapult confirm funded 2026 hydrogen demonstration, but grant versus procurement or in-kind instrument remains unresolved. Historical Brinc accelerator listing is not issuer funding.",
+      "source_urls": [
+        "https://cp.catapult.org.uk/news/five-hydrogen-technology-demos-green-lit/",
+        "https://hydrogeninnovation.co.uk/demonstrations/sky-drones-h2-fuel-cell-uav-refueling-demonstration-project/"
+      ]
+    },
+    {
+      "id": "8b2d3b1b-1ead-4588-8541-f7876b866bfb",
+      "slug": "scoutdi",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 10,
+      "approved_events_after": 18,
+      "new_events": 8,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Innovation Norway primary export establishes seven dated grant decisions and separate NOK15m credit offer. The earlier NOK3m guarantee is excluded from loans, and the subsequent seller convertible and terminated acquisition are separate.",
+      "source_urls": [
+        "https://indatapublic.blob.core.windows.net/tildelingsrapport/Tildelinger.csv",
+        "https://www.sec.gov/Archives/edgar/data/1398805/000143774926032264/ex_1023317.htm",
+        "https://businessnorway.com/solutions/the-scout-137-gen-3-drone-lets-asset-inspectors-see-in-the-dark"
+      ]
+    },
+    {
+      "id": "67ed978b-54e5-443c-903b-6ece46b1bbd4",
+      "slug": "uavionics",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Official A1HQ/25 recommendation names company and consortium total, but no executed recipient-specific award. Kept separate from rejected application and recorded Sauron Eye occurrence.",
+      "source_urls": [
+        "https://www.gov.pl/attachment/55fe8520-9636-492e-ae35-9a1a277d6ecc",
+        "https://www.uavionics.com.pl/projekty"
+      ]
+    },
+    {
+      "id": "b11b4942-83dc-4307-8316-9debf6807ff8",
+      "slug": "topview",
+      "previous_disposition": "reviewed_public_sources",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 14,
+      "approved_events_after": 14,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "U-ELCOME consortium project and agreement confirmed. Exact TopView allocation unavailable in issuer or SESAR project records. Prior bounded disposition retained.",
+      "source_urls": [
+        "https://www.topview.it/en/project/u-elcome-u-space-uas-integration/",
+        "https://www.sesarju.eu/projects/U-ELCOME"
+      ]
+    },
+    {
+      "id": "1d220f53-1ed6-4792-b1b7-5e67caab5fa2",
+      "slug": "skyassist",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact entity 44744495. Founder says negotiations with first prospective investor failed and describes informal founder, friends and charity support without a discrete company financing event. Donations and procurement separate.",
+      "source_urls": [
+        "https://speka.ua/miltech/bezpilotniki-sirko-istoriya-stvorennya-ta-vikliki-virobnictva-intervyu-iz-spivzasnovnikom-93lqy1",
+        "https://www.skyassist.com.ua/donate/",
+        "https://opendatabot.ua/c/44744495"
+      ]
+    },
+    {
+      "id": "99ee1d8a-0518-4c30-b4b1-a94a5407c25a",
+      "slug": "skybound",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 8,
+      "approved_events_after": 8,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Six cash SH01s and two UKRI offers were already present. Latest confirmation statement is not allotment. Issuer names Daniel Hook as first investor in late 2021 without mapping exact cash to a specific filed allotment.",
+      "source_urls": [
+        "https://find-and-update.company-information.service.gov.uk/company/10350286/filing-history",
+        "https://www.linkedin.com/posts/skyboundrescuer_meet-our-new-director-daniel-hook-dan-activity-7064866779935744000-ZBR6"
+      ]
+    },
+    {
+      "id": "684dc418-0868-494e-aa7e-b28c1c343bd6",
+      "slug": "skycorp-technologies",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact Estonian issuer 16782217. Share premium movement lacks transaction breakdown, and consortium records may concern older 14211211. 2023 EUR305k already retained. Aid candidates await exact official rows.",
+      "source_urls": [
+        "https://ariregister.rik.ee/eng/company/16782217/file/9014087755",
+        "https://cordis.europa.eu/project/id/101114855",
+        "https://eac.ee/news/skycorp-technologies-secures-e305000-in-pre-seed-funding-to-revolutionise-emergency-response-with-hydrogen-drones/"
+      ]
+    },
+    {
+      "id": "6d1757e3-08b3-4db6-a111-fbfd61610d90",
+      "slug": "skycutter",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer and first-person press report describe proposed 2026 fundraising and US procurement, without closed amount or named participant. Exact legal vehicle remains unresolved.",
+      "source_urls": [
+        "https://skycutteruas.co.uk/",
+        "https://observer.co.uk/news/business/article/british-drone-maker-ignored-by-mod-set-to-fly-overseas",
+        "https://questions-statements.parliament.uk/written-questions/detail/2026-03-12/120426/"
+      ]
+    },
+    {
+      "id": "6dcc6362-37d4-47c3-8581-8bf81ff105b2",
+      "slug": "skyports",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 10,
+      "approved_events_after": 12,
+      "new_events": 2,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Two distinct cash SH01s added. Bulk Series C preferred allotment overlaps existing Series C and noncash issues excluded. Latest confirmation statement is not a cash issue.",
+      "source_urls": [
+        "https://find-and-update.company-information.service.gov.uk/company/10755230/filing-history",
+        "https://find-and-update.company-information.service.gov.uk/company/10755230/filing-history/MzQ4NjkxNTU1MmFkaXF6a2N4/document?format=pdf&download=0",
+        "https://find-and-update.company-information.service.gov.uk/company/10755230/filing-history/MzQ0NTMyMzU1OGFkaXF6a2N4/document?format=pdf&download=0"
+      ]
+    },
+    {
+      "id": "d056bd14-02f7-4fa0-9aa9-6e543baa591a",
+      "slug": "softblue",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 14,
+      "approved_events_after": 15,
+      "new_events": 1,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer ESPI confirms separate measurement oversight grant and amendment to PLN264,852.81. InventionMed loans flow from SoftBlue to the counterparty and are not SoftBlue proceeds. Separate 2016 exact UAV R&D grant and final ViMA adjustment were prepared after staging.",
+      "source_urls": [
+        "https://www.parkiet.com/komunikaty-espi/art27088911-softblue-s-a-informacja-o-zawarciu-istotnej-umowy",
+        "https://www.parkiet.com/komunikaty-espi/art37129351-inventionmed-s-a-zawarcie-umowy-pozyczki",
+        "https://softblue.pl/wp-content/uploads/2024/03/Uproszczony_DI_SoftBlue_20170706.pdf",
+        "https://www.pb.pl/gielda/softblue-s-a-zakonczenie-realizacji-projektu-dofinansowanego-przez-agencje-badan-medycznych-9172610",
+        "https://www.pb.pl/gielda/softblue-s-a-zawarcie-aneksu-do-umowy-na-dofinansowanie-projektu-pod-nazwa-specjalistyczny-system-nadrzedny-do-urzadzen-pomiarowych-firmy-softblue-s-a-8540306"
+      ]
+    },
+    {
+      "id": "45b008f2-4bba-43b1-80ab-930bd93034e5",
+      "slug": "solone",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Flemish parliamentary record confirms EUR404k brand-level award. Old NV and current BV have different registration numbers and exact recipient remains unresolved. EDF iMEDCAP consortium split and other reported aid held. EC iMEDCAP factsheet names the old NV. No grant novation to current BV established.",
+      "source_urls": [
+        "https://www.vlaamsparlement.be/nl/parlementair-werk/commissies/commissievergaderingen/1966314/verslag/1968544",
+        "https://www.sol.one",
+        "https://defence-industry-space.ec.europa.eu/system/files/2023-06/iMEDCAP-Factsheet_EDF22.pdf"
+      ]
+    },
+    {
+      "id": "0789f6e0-ce30-4233-bdbe-1d8e02d9ef23",
+      "slug": "spaitech",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact issuer 39797655. Director describes earlier Sparrow support and recoupment but issuer event dates, instrument and amounts remain unverified. UAH53.3m repair is procurement.",
+      "source_urls": [
+        "https://opendatabot.ua/c/39797655",
+        "https://www.unian.ua/politics/10268730-tayemnici-ukrajinskogo-oboronnogo-zamovlennya-skilki-zaroblyaye-privatna-platforma-yaka-neshchodavno-bula-derzhavnoyu.html",
+        "https://youcontrol.com.ua/catalog/court-document/135992231/"
+      ]
+    },
+    {
+      "id": "e8ca4cab-714f-40a9-8648-ff258ec91854",
+      "slug": "specim-spectral-imaging-oy",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 7,
+      "approved_events_after": 7,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 1,
+      "evidence": "Issuer release dates existing EUR3.5m Bocap financing to 23 August 2017. Earlier mixed support remains separate. 2020 acquisition is secondary, and distinct Nordic Option event was not established.",
+      "source_urls": [
+        "https://ins-news.com/?ls-art1=670",
+        "https://www.specim.com/specim-a-global-leader-in-hyperspectral-imaging-granted-53-me-growth-financing/",
+        "https://www.specim.com/konica-minolta-signs-definitive-agreement-to-acquire-specim/",
+        "https://optics.org/news/8/8/40"
+      ]
+    },
+    {
+      "id": "67dd578c-a6fc-4279-87a7-f93bbd25561c",
+      "slug": "spectre-solutions",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Existing two signed grants and later AVIATOR preserved. PARP PLN296,584 recommendation has no executed agreement in checked records. A different 2024 application was rejected.",
+      "source_urls": [
+        "https://spectre.solutions/eu-projects/",
+        "https://www.gov.pl/attachment/d7cfd612-b439-4d0d-b523-4dccb8bd6973",
+        "https://poir.parp.gov.pl/storage/grants/documents/146/Lista1_Projekty-wybrane-do-dofinansowania--wersja-na-stron-www_201006.pdf"
+      ]
+    },
+    {
+      "id": "a22f99c8-b2d0-4226-90b5-a6f196445bd6",
+      "slug": "sph-engineering",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Legal SIA 50103629321. Existing CORDIS grant retained. Parent ownership and nominal capital do not establish proceeds, and agency contractor role and pandemic allowance are separate.",
+      "source_urls": [
+        "https://www.sphengineering.com/contacts",
+        "https://cordis.europa.eu/project/id/101081783",
+        "https://www.pilnabilde.lv/projekti/1.1.1.1--21--A--040/"
+      ]
+    },
+    {
+      "id": "45d07606-1536-4db4-9109-9854f7e2f3af",
+      "slug": "sphere-defense",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact Belgian issuer. Existing notarised Axon EUR10m is a commitment unpaid on issue. Founder reporting concerns same transaction. No distinct source-supported financing event found in checked records.",
+      "source_urls": [
+        "https://www.ejustice.just.fgov.be/tsv_pdf/2026/02/17/26311351.pdf",
+        "https://hightechsystems.nl/artikel/belgisch-sphere-defense-ontwikkelt-interceptordrone-met-straalmotor/"
+      ]
+    },
+    {
+      "id": "496e146a-2760-4886-a589-796dbacec478",
+      "slug": "squadron",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact KRS 597784. Counterparty filings describe technology cooperation and project coordination without attributable corporate financing. No discrete round found in checked sources. MBF terminated the consortium in August 2026, and financing annex paid against engineering invoices.",
+      "source_urls": [
+        "https://squadron.pl/",
+        "https://rejestr.io/krs/597784/squadron",
+        "https://financialfilings.com/filings/mbf-group-spolka-akcyjna/interim-quarterly-report/2025/60552121/",
+        "https://www.parkiet.com/komunikaty-espi/art45016731-mbf-group-spolka-akcyjna-wypowiedzenie-umowy-konsorcjum-ochrona-praw-emitenta-oraz-rozpoczecie-przygotowan-do-nowej-formuly-wspolpracy",
+        "https://www.money.pl/gielda/komunikaty/7206487351387777.html"
+      ]
+    },
+    {
+      "id": "47ecf300-34d2-4cc8-bb17-083c6212fc06",
+      "slug": "squarehead-technology",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 4,
+      "approved_events_after": 7,
+      "new_events": 4,
+      "withheld_events": 1,
+      "corrected_events": 3,
+      "evidence": "Three exact Research Council project-preparation award decisions retained. SPECTRE public card reports NOK0 while official decision export reports NOK400,000; withheld pending source-basis resolution. Small differences on two other cards documented alongside original award-decision amounts. Early equity and BIA consortium allocation remain pending. Guarantees are separate. FY2023 audited overdraft capacity prepared. Annual cash-flow equity proceeds are not individual rounds.",
+      "source_urls": [
+        "https://raw.githubusercontent.com/Forskningsradet/open-data/main/datasets/soknader2/dataset.csv",
+        "https://indatapublic.blob.core.windows.net/tildelingsrapport/Tildelinger.csv",
+        "https://w2.brreg.no/kunngjoring/hent_en.jsp?kid=20260000819712&sokeverdi=987307749&spraak=nb",
+        "https://prosjektbanken.forskningsradet.no/project/FORISS/361782",
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/987307749/2023",
+        "https://prosjektbanken.forskningsradet.no/project/FORISS/349744",
+        "https://prosjektbanken.forskningsradet.no/project/FORISS/341606"
+      ]
+    },
+    {
+      "id": "713cde23-2917-4d2f-ad00-84c7113206ab",
+      "slug": "staaker-as",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Official RCN export verifies exact NOK966,352 awarded to company 914079527 for DroneSAFE, prepared after staging. NOK13,152,000 requested is excluded. SINTEF confirms early conclusion in 2019.",
+      "source_urls": [
+        "https://www.khrono.no/files/2018/02/11/forskningsradet.pdf",
+        "https://www.sintef.no/en/projects/2018/dronesafe-drones-that-make-safe-aerial-filming-easy/",
+        "https://raw.githubusercontent.com/Forskningsradet/open-data/main/datasets/soknader2/dataset.csv"
+      ]
+    },
+    {
+      "id": "c0590e8f-ffb4-43a0-a606-dc0bd0d71842",
+      "slug": "steelrock-technologies",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 3,
+      "new_events": 1,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact UK issuer 10141298. SH01 confirms March 2024 paid cash and separately larger unpaid amount. Earlier charges and allotments require consideration review. Amount is paid at allotment only. FY2024 accounts report shares fully paid by year end, but date and means of remaining consideration have not been established.",
+      "source_urls": [
+        "https://find-and-update.company-information.service.gov.uk/company/10141298/filing-history",
+        "https://find-and-update.company-information.service.gov.uk/company/10141298/filing-history/MzQ0OTQ4OTAwMGFkaXF6a2N4/document?format=xhtml&download=1",
+        "https://find-and-update.company-information.service.gov.uk/company/10141298/filing-history/MzQxNTIxOTk5NmFkaXF6a2N4/document?format=pdf&download=0"
+      ]
+    },
+    {
+      "id": "f9421edb-c526-4b96-8647-8aca596e3cd3",
+      "slug": "steyr-motors",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Audited report confirms EUR553k government project advance fully returned after withdrawal. Kept out of live awards. Existing 2024 and 2025 facilities retained. Current voluntary tender is conditional and involves existing shares. H1 accounts show same factoring limit, with distinct balance outstanding.",
+      "source_urls": [
+        "https://financialfilings.com/filings/steyr-motors-ag/annual-report/2026/32927910/",
+        "https://ir.steyr-motors.com/wp-content/uploads/2026/08/Steyr-Motors-AG_H1-2026_EN.pdf",
+        "https://ir.steyr-motors.com/en/2026/11/02/management-board-and-supervisory-board-of-steyr-motors-ag-recommend-acceptance-of-red-cats-purchase-offer/"
+      ]
+    },
+    {
+      "id": "d822a730-0c7e-49bc-b78b-49dcae97519f",
+      "slug": "stirlingx",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 1,
+      "evidence": "Issuer exact November release clarifies USD6m second close and reported USD25m cumulative Series A. Existing July amount retained independently and no implied revision. No new cash assigned to unrelated registry entries.",
+      "source_urls": [
+        "https://www.stirlingx.io/content-hub/stirlingx-closes-oversubscribed-6m-series-a"
+      ]
+    },
+    {
+      "id": "2d11fbe3-d475-4d68-bfcc-a0ed61390d19",
+      "slug": "stm-defense",
+      "previous_disposition": "source_review_partial",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Turkish government registration identifies exact parent. Three CORDIS grants already present. Latest issuer and government announcements refer to procurement, with no distinct attributable financing established.",
+      "source_urls": [
+        "https://turkiye.gov.tr/stm-savunma-teknojileri-muhendislik-ve-ticaret-anonim-sirketi-genel-mudurlugu",
+        "https://cordis.europa.eu/project/id/318355"
+      ]
+    },
+    {
+      "id": "46665635-1042-40ad-b2b4-8a61b7f770f0",
+      "slug": "svantek",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 7,
+      "approved_events_after": 7,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Official PARP distinguishes existing approved dosimetry and Smart City projects from rejected application. Earlier press-reported acoustic award awaits original authority allocation.",
+      "source_urls": [
+        "https://www.parp.gov.pl/storage/grants/documents/743/LISTA-DO-PUBLIKACJI-NA-STRONIE-INTERNETOWEJ-nabor-2-2023_20092024.pdf"
+      ]
+    },
+    {
+      "id": "04357615-c707-4e62-bacb-db6f05b8a533",
+      "slug": "tekever",
+      "previous_disposition": "source_review_partial",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 5,
+      "approved_events_after": 5,
+      "new_events": 0,
+      "withheld_events": 0,
+      "corrected_events": 0,
+      "evidence": "Transaction parties corroborate EUR70m and later EIFO commitment. Issuer headline/body and NIF descriptions differ on lead roles. Group subsidiary awards and unclosed commitments remain separated. January 2022 month refinement prepared separately.",
+      "source_urls": [
+        "https://www.tekever.com/news/tekever-raises-70-millions-euros-and-brings-strategic-investors-on-board/",
+        "https://www.nif.fund/news/nato-innovation-fund-invests-in-tekever-as-part-of-e70-million-funding-round-alongside-baillie-gifford/"
+      ]
+    }
+  ],
+  "database": {
+    "before": {
+      "events": 1413,
+      "approved_events": 1404,
+      "links": 1350,
+      "approved_links": 1342,
+      "profiles": 814,
+      "sources": 1897,
+      "companies": 354
+    },
+    "rollback_rehearsal": {
+      "events": 1438,
+      "approved_events": 1429,
+      "links": 1363,
+      "approved_links": 1355,
+      "profiles": 815,
+      "sources": 1931,
+      "companies": 354
+    },
+    "rollback_baseline_verified": {
+      "events": 1413,
+      "approved_events": 1404,
+      "links": 1350,
+      "approved_links": 1342,
+      "profiles": 814,
+      "sources": 1897,
+      "companies": 354
+    },
+    "importer_replayed_inside_rollback": true,
+    "after_base_import": {
+      "events": 1438,
+      "approved_events": 1429,
+      "links": 1363,
+      "approved_links": 1355,
+      "profiles": 815,
+      "sources": 1931,
+      "companies": 354
+    },
+    "independent_base_manifest_verification": {
+      "new_events": 25,
+      "corrections": 3,
+      "matched_sources": 34,
+      "new_roles": 13
+    },
+    "late_award_corrections": {
+      "rollback_rehearsal": {
+        "events": 1438,
+        "approved_events": 1428,
+        "links": 1363,
+        "approved_links": 1354,
+        "profiles": 815,
+        "sources": 1934,
+        "companies": 354
+      },
+      "rollback_baseline_verified": {
+        "events": 1438,
+        "approved_events": 1429,
+        "links": 1363,
+        "approved_links": 1355,
+        "profiles": 815,
+        "sources": 1931,
+        "companies": 354
+      },
+      "independent_verification": {
+        "new_events": 0,
+        "corrections": 3,
+        "matched_sources": 3,
+        "new_roles": 0
+      },
+      "rows": [
+        {
+          "round_key": "research-council-341606-grant",
+          "amount": "200000",
+          "publication_status": "approved"
+        },
+        {
+          "round_key": "research-council-349744-grant",
+          "amount": "75000",
+          "publication_status": "approved"
+        },
+        {
+          "round_key": "research-council-361782-grant",
+          "amount": "400000",
+          "publication_status": "draft"
+        }
+      ]
+    },
+    "after": {
+      "events": 1438,
+      "approved_events": 1428,
+      "links": 1363,
+      "approved_links": 1354,
+      "profiles": 815,
+      "sources": 1934,
+      "companies": 354
+    },
+    "prior_pending_manifest_rows_confirmed": 269
+  },
+  "publication": {
+    "manifest": "research-agent/imports/funding-landscape-20261110-sixth-evening.json",
+    "previous_manifest": "research-agent/imports/funding-landscape-20261110-fifth-evening.json",
+    "manifests": [
+      "research-agent/imports/funding-landscape-20261110-second-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-late-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-evening.json",
+      "research-agent/imports/funding-landscape-20261110-second-evening.json",
+      "research-agent/imports/funding-landscape-20261110-third-evening.json",
+      "research-agent/imports/funding-landscape-20261110-fourth-evening.json",
+      "research-agent/imports/funding-landscape-20261110-fifth-evening.json",
+      "research-agent/imports/funding-landscape-20261110-sixth-evening.json"
+    ],
+    "correction_manifests": [
+      "research-agent/imports/funding-landscape-20261110-sixth-evening-award-guard.json"
+    ],
+    "draft_exclusions": [
+      {
+        "company_slug": "squarehead-technology",
+        "round_key": "research-council-361782-grant"
+      }
+    ],
+    "report": "research-agent/reports/2026-11-10-funding-landscape-sixth-evening.json",
+    "previous_report": "research-agent/reports/2026-11-10-funding-landscape-fifth-evening.json",
+    "database": {
+      "events": 1438,
+      "approved_events": 1428,
+      "links": 1363,
+      "approved_links": 1354,
+      "profiles": 815,
+      "sources": 1934,
+      "companies": 354
+    },
+    "status": "committed_awaiting_fresh_catalogue_run",
+    "expected_live": {
+      "events": 1428,
+      "links": 1354,
+      "profiles": 815,
+      "manifest_rows": 293,
+      "manifest_keys_including_withheld": 294,
+      "withheld_draft_rows": 6,
+      "approved_corrections": 31,
+      "participation_corrections": 9,
+      "additional_existing_round_participations": 3
+    },
+    "checked_at": "2026-11-10T20:55:58.388Z",
+    "observed_live": {
+      "generated_at": "2026-11-10T13:52:10.085Z",
+      "investor_generated_at": "2026-11-10T13:52:11.204Z",
+      "events": 1145,
+      "links": 1214,
+      "profiles": 774,
+      "disputed_record_live": false
+    },
+    "observed_workflow_runs": [
+      [
+        42828359177,
+        "schedule",
+        "2026-11-10T13:51:22Z",
+        "success",
+        "completed",
+        "0ce481330c58f1081bcdc9cb01e26421422c4a62"
+      ],
+      [
+        42795281022,
+        "push",
+        "2026-11-10T09:59:20Z",
+        "failure",
+        "completed",
+        "0ce481330c58f1081bcdc9cb01e26421422c4a62"
+      ],
+      [
+        42725276104,
+        "push",
+        "2026-11-10T00:03:04Z",
+        "success",
+        "completed",
+        "d31d443bcb013bc42f7805ef700a0db3f209ee28"
+      ],
+      [
+        42640842391,
+        "push",
+        "2026-11-09T15:04:00Z",
+        "success",
+        "completed",
+        "b9799770775a866a8d0d1a818e16068acd2f3eec"
+      ]
+    ],
+    "workflow_schedule": "0 6 * * * UTC",
+    "reason": "Latest successful catalogue run predates all eight pending imports. Existing scheduled build is the publication path under read-only catalogue scope. Apply correction manifests as latest expected values and exclude the documented draft keys before checking live."
+  },
+  "prepared_followups": [
+    {
+      "company_slug": "squarehead-technology",
+      "round_key": "research-council-361782-grant",
+      "priority": "before_publication",
+      "sources": [
+        "https://raw.githubusercontent.com/Forskningsradet/open-data/main/datasets/soknader2/dataset.csv",
+        "https://prosjektbanken.forskningsradet.no/project/FORISS/361782",
+        "https://www.forskningsradet.no/indikatorrapporten/fokusartikler-og-dypdykk/2026/tildelinger-forskningsradet-vedtaksar/"
+      ],
+      "note": "SPECTRE withheld before live publication because official decision export records NOK400,000 while the project card states NOK0. General Research Council methodology distinguishes payouts and decision amounts, but exact card field/issuer award status is not established. Review direct grant record to resolve before restoring publication."
+    },
+    {
+      "company_slug": "staaker-as",
+      "round_key": "rcn-282223-dronesafe-grant",
+      "amount": 966352,
+      "currency": "NOK",
+      "announced_date": null,
+      "financing_type": "grant",
+      "sources": [
+        "https://raw.githubusercontent.com/Forskningsradet/open-data/main/datasets/soknader2/dataset.csv",
+        "https://www.sintef.no/en/projects/2018/dronesafe-drones-that-make-safe-aerial-filming-easy/"
+      ],
+      "note": "Exact awarded tildelt_belop for responsible issuer org 914079527, separate from NOK13,152,000 requested. Project ended in 2019. Award date and payment unknown."
+    },
+    {
+      "company_slug": "squarehead-technology",
+      "round_key": "share-capital-financing-2021",
+      "amount": 35000000,
+      "currency": "NOK",
+      "sources": [
+        "https://www.finansavisen.no/nyheter/teknologi/2021/11/11/7769335/stig-nyvold-i-squarehead-leverte-underskudd-og-hentet-mer-kapital-vi-kom-i-en-cash-skvis",
+        "https://w2.brreg.no/kunngjoring/hent_alle.jsp?kid=20260000819712&sokeverdi=987307749&spraak=nb"
+      ],
+      "note": "Contemporary issuer CEO reports NOK35m from existing shareholders in summer 2021. Registry dates capital change. Reconcile with audited accounts; no investor-specific cash."
+    },
+    {
+      "company_slug": "squarehead-technology",
+      "round_key": "share-capital-financing-2023",
+      "sources": [
+        "https://www.finansavisen.no/teknologi/2023/12/30/8076310/60-prosent-okning-for-squarehead-og-stig-nyvold-salgsboom-for-norske-dronejegere",
+        "https://w2.brreg.no/kunngjoring/hent_alle.jsp?kid=20260000819712&sokeverdi=987307749&spraak=nb"
+      ],
+      "note": "NOK20m stated aggregate includes NOK10m debt conversion. Establish exact cash and event date from original audited accounts before entry."
+    },
+    {
+      "company_slug": "softblue",
+      "round_key": "uav-rd-centre-grant-2016",
+      "amount": 3641825,
+      "currency": "PLN",
+      "announced_date": "2016-04-13",
+      "sources": [
+        "https://www.parkiet.com/komunikaty-ebi/art34111281-softblue-informacja-o-przyznaniu-spolce-dofinansowania-w-ramach-programu-operacyjnego-inteligentny-rozwoj-2014-2020-departamentu-innowacji-w-ministerstwie-rozwoju",
+        "https://softblue.pl/wp-content/uploads/2024/03/Uproszczony_DI_SoftBlue_20170706.pdf"
+      ],
+      "note": "Award list dated 8 April 2016, issuer published 13 April, prospectus reports separate 24 August 2016 signed agreement. Total project cost excluded."
+    },
+    {
+      "company_slug": "softblue",
+      "round_key": "vima-medical-assistant-grant-2022",
+      "amount": 7271190.62,
+      "currency": "PLN",
+      "source": "https://www.pb.pl/gielda/softblue-s-a-zakonczenie-realizacji-projektu-dofinansowanego-przez-agencje-badan-medycznych-9172610",
+      "note": "Guard existing amount. Issuer ESPI dated 23 July 2026 confirms final approved grant, versus original signed PLN10,842,623.79. Last PLN637,424.91 payment is only reimbursement."
+    },
+    {
+      "company_slug": "sky-drones",
+      "sources": [
+        "https://cp.catapult.org.uk/news/five-hydrogen-technology-demos-green-lit/",
+        "https://hydrogeninnovation.co.uk/demonstrations/sky-drones-h2-fuel-cell-uav-refueling-demonstration-project/"
+      ],
+      "note": "January 2026 programme launch names beneficiary project; verify if the instrument is grant, procurement or in-kind."
+    },
+    {
+      "company_slug": "uavionics",
+      "source": "https://www.gov.pl/attachment/55fe8520-9636-492e-ae35-9a1a277d6ecc",
+      "note": "V-FLEX A1HQ/25 recommended under consortium call. Verify executed award and recipient allocation."
+    },
+    {
+      "company_slug": "topview",
+      "sources": [
+        "https://www.topview.it/en/project/u-elcome-u-space-uas-integration/",
+        "https://trasparenza.mit.gov.it/archivio27_normativa_0_4356.html"
+      ],
+      "note": "U-ELCOME signed project under agreement 101079171. Beneficiary allocation still needs grant annex."
+    },
+    {
+      "company_slug": "tekever",
+      "round_key": "funding-2022",
+      "announced_date": "2022-01",
+      "sources": [
+        "https://tecnico.ulisboa.pt/pt/noticias/campus-e-comunidade/tekever-garante-financiamento-de-20-milhoes-de-euros/",
+        "https://techcrunch.com/2022/01/24/tekever-raises-23m-for-industrial-drone-technology-optimized-for-maritime-surveillance/"
+      ],
+      "note": "Issuer EUR20m primary confirmed; historical sources establish January 2022 public disclosure, no exact signing or closing date. USD headline is conversion."
+    },
+    {
+      "company_slug": "softblue",
+      "round_key": "innolot-beneficiary-allocation-2015",
+      "amount": 7250269.4,
+      "currency": "PLN",
+      "announced_date": "2015-11-13",
+      "sources": [
+        "https://www.bankier.pl/wiadomosc/SOFTBLUE-Otrzymanie-rekomendacji-do-dofinansowania-projektu-7285867.html",
+        "https://softblue.pl/wp-content/uploads/2023/08/Softblue_Dokument_Informacyjny.pdf",
+        "https://i.gremicdn.pl/file/fca2307cd16525037f8e747ac02c491e/sprawozdanie-zarzadu-z-dzialalnosci-softblue-za-okres-od-01-01-2021-do-31-12-2021.pdf"
+      ],
+      "note": "Original prospectus specifies company share at recommendation stage. Later management report confirms 2016 funding but gives consortium total only. Verify signed allocation before treating the recommended amount as final."
+    },
+    {
+      "company_slug": "steelrock-technologies",
+      "round_key": "share-allotment-paid-cash-2024-03-19",
+      "source": "https://find-and-update.company-information.service.gov.uk/company/10141298/filing-history/MzQ0OTQ4OTAwMGFkaXF6a2N4/document?format=xhtml&download=1",
+      "note": "£1,867.31 paid cash at allotment. FY2024 subsequently reports the shares fully paid and higher premium; check timing and consideration of remaining balance before any further event."
+    },
+    {
+      "company_slug": "squarehead-technology",
+      "round_key": "overdraft-facility-fy2022-disclosure",
+      "amount": 3000000,
+      "currency": "NOK",
+      "amount_qualifier": "up_to",
+      "financing_type": "debt",
+      "source": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/987307749/2022",
+      "note": "Audited Note 14 in FY2022 already confirms the same NOK3m overdraft as undrawn; FY2023 repeats it. Verify earliest signed/public date, lender unknown, secured charge not facility size."
+    },
+    {
+      "company_slug": "squarehead-technology",
+      "round_key": "shareholder-loan-2022",
+      "amount": 4044000,
+      "currency": "NOK",
+      "announced_date": "2022",
+      "financing_type": "debt",
+      "sources": [
+        "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/987307749/2022",
+        "https://uploads1.craft.co/uploads/unified_record/source/document/2097358/b00fc48af1253da0.pdf"
+      ],
+      "note": "Cash flow gives exact proceeds from new current liabilities and Note 10 names same total as shareholder loan. Individual lenders and signing date undisclosed."
+    }
+  ]
 }
