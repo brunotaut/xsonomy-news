@@ -629,18 +629,30 @@
   "publication": {
     "site_commit": "0ce481330c58f1081bcdc9cb01e26421422c4a62",
     "workflow_run_id": 42795281022,
-    "status": "in_progress",
-    "triggered_at": "2026-11-10T09:59:19.486Z"
+    "status": "build_succeeded_deployment_failed_twice",
+    "triggered_at": "2026-11-10T09:59:19.486Z",
+    "verified": false,
+    "workflow_attempt": 2,
+    "build": "success",
+    "deploy": "failure",
+    "live_investors_observed": {
+      "generatedAt": "2026-11-10T00:04:01.797Z",
+      "profiles": 761
+    },
+    "live_landscape_check": "connection timeout",
+    "recovery": "Read actual production and live counts first. This import is already committed. Retry the deployment only if the live data is still behind and no newer deployment already contains the manifest.",
+    "checked_at": "2026-11-10T10:21:46.488Z"
   },
   "metrics": {
     "identities_reconciled": 20,
     "newly_completed_bounded_reviews": 1,
     "retained_partial": 19,
     "active_minutes_through_checkpoint": 9.52,
-    "reconciled_identities_per_active_hour": 125.99,
-    "completed_reviews_per_active_hour": 6.3,
+    "reconciled_identities_per_active_hour": 40.92,
+    "completed_reviews_per_active_hour": 2.05,
     "publication_verified": false,
-    "timing_scope": "Wall time since execution start through source checks, rollback rehearsal, import, and pending deployment verification. Excludes time between scheduled runs. Read-only lane durations are not added together.",
-    "concurrency_speedup_claimed": false
+    "timing_scope": "Wall time for current head read, research, production rehearsal, atomic import and deployment checks to this checkpoint. Live verification remains pending; waiting between scheduled runs excluded.",
+    "concurrency_speedup_claimed": false,
+    "active_minutes": 29.32
   }
 }
