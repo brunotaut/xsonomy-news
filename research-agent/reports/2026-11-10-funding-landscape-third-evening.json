@@ -1,21 +1,662 @@
 {
   "run_id": "funding-20261110-1751",
   "started_at": "2026-11-10T17:51:14Z",
-  "checked_at": "2026-11-10T17:58:48.971Z",
+  "checked_at": "2026-11-10T18:03:20.367Z",
   "manifest": "research-agent/imports/funding-landscape-20261110-third-evening.json",
-  "status": "staged_before_rehearsal",
-  "previous_pending_manifest_rows_confirmed": 166,
-  "baseline": {
-    "events": 1310,
-    "approved_events": 1301,
-    "links": 1295,
-    "approved_links": 1287,
-    "profiles": 807,
-    "sources": 1745,
-    "companies": 352
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 28,
+    "import_bearing_identities": 9,
+    "corrected_identities": 4,
+    "newly_completed_bounded_reviews": 0,
+    "source_review_partial": 28,
+    "previously_reviewed_followups": 0,
+    "active_minutes": 12.11,
+    "checked_identities_per_active_hour": 138.77,
+    "completed_reviews_per_active_hour": 0,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed from current main state read through source work, production rollback rehearsal, atomic import, independent production check and live publication check. Waiting between runs excluded."
   },
-  "planned_new_events": 20,
-  "planned_round_corrections": 4,
-  "planned_participation_corrections": 2,
-  "planned_additional_participations": 3
+  "queue_dispositions": [
+    {
+      "id": "50533e03-72f8-4a26-a2fb-778d5cb9b78b",
+      "slug": "terma",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 4,
+      "approved_events_after": 8,
+      "new_events": 4,
+      "corrected_events": 0,
+      "evidence": "Four direct CORDIS beneficiary awards imported. PEONEER participation has no public allocation. E-CAB 30815 and ASSERT 004033 list Terma with contribution unavailable. VICTORIA 740754 does not name the company."
+    },
+    {
+      "id": "04357615-c707-4e62-bacb-db6f05b8a533",
+      "slug": "tekever",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 5,
+      "approved_events_after": 5,
+      "new_events": 0,
+      "corrected_events": 1,
+      "evidence": "EIFO's individual commitment described as just under DKK100m; note enriched with original source, with no total or cash assumption. Portuguese +SOR.UAV and ILAN VR sources name distinct group entities. Earlier EUR20m release confirms Ventura lead and Iberis participant; placement agent excluded."
+    },
+    {
+      "id": "b43cbc96-ff10-4aeb-9df5-488c3a15994c",
+      "slug": "tekne",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Investor filings support existing EUR3.692m event and additional advances of EUR11.001m in aggregate. The latter lacks discrete payment allocations and dates. EUR7m is included in cumulative advances."
+    },
+    {
+      "id": "714352d3-de7d-4746-9e14-75527ec3b894",
+      "slug": "threod-systems",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 7,
+      "approved_events_after": 7,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "2018-12-13 MoD decree 500 grants EUR199,899 jointly to Threod and Eesti Arsenal, issuer allocation unavailable. 2024 award decision and announcement are distinct dates for one existing event. FY2025 EUR750k parent advances have no tranche split. The EUR500k 2025 award names Threod Defence OÜ."
+    },
+    {
+      "id": "b8fc344f-6af2-4860-80c1-8dde233b777a",
+      "slug": "uav-navigation",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 7,
+      "approved_events_after": 8,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "Contemporary issuer states closed EUR850k financing. ENISA register names EUR350k participating loan included in the financing, no Bullnet amount inferred. Oesía's 2020 four-year programme is not attributable cash, and its 2021 audited acquisition consideration is secondary."
+    },
+    {
+      "id": "1f70eae1-ca64-4c01-8aef-00df217e7ef9",
+      "slug": "uavision",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "EDA EUR30k is a competition prize. AQUASENSE EUR5,479.55 is a payment instalment, full award undisclosed. PRR payments are part of existing grant. SOCO-DRONE and QuadMission require company award splits."
+    },
+    {
+      "id": "d000348b-c7ff-43e3-b1a2-614f4d3da906",
+      "slug": "uavsave",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Existing SARIO EUR3,592.17 aid ceiling retained. FY2025 audited absence of subsidy receipt for that period is not a company financing history."
+    },
+    {
+      "id": "0edbfb12-c767-47b9-90b8-eda7cb82aa45",
+      "slug": "ubiq-aerospace",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 7,
+      "approved_events_after": 11,
+      "new_events": 4,
+      "corrected_events": 0,
+      "evidence": "Four separate Research Council Norway grant allocations imported. NTNU direct 2019 CEO interview and AUVSI-linked 2020 original issuer release document separate Lupa seed events prepared for next import. Ministry ice protection announcements may overlap a development contract. EDF EUR4m is consortium-wide."
+    },
+    {
+      "id": "5f73ae1d-0e9a-45d5-8660-52c39b904ebe",
+      "slug": "ucandrone",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "corrected_events": 1,
+      "evidence": "EFA interim report shows EUR85k paid into the issuer for the same initial stake whose FY2022 aggregate cost basis is EUR235k. Existing event and investor contribution corrected. Separate 2024 EUR235k acquisition unchanged. NAVISENSE-X consortium allocation unknown."
+    },
+    {
+      "id": "e4880b6d-42e5-4441-856d-1ec6c091c4d9",
+      "slug": "uforce",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Shield confirms joint lead role with Lakestar for existing USD50m seed. Expeditions portfolio is direct, but its round link points to external reporting. November fundraising announcement does not establish close."
+    },
+    {
+      "id": "88b9ef24-4b9b-481c-a39c-d9de701eb03a",
+      "slug": "ukropter",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Founder interview discusses self-financing of a project before issuer/instrument clear, with grant applications only. Charitable fund 45059850 and procurement records are separate."
+    },
+    {
+      "id": "2a5569d0-4bdd-4d10-8125-6495970cf117",
+      "slug": "umag-solutions",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 5,
+      "new_events": 4,
+      "corrected_events": 0,
+      "evidence": "Innovation Fund Denmark confirms four exact grants in DKK, including MineMap. Bridgepoint majority acquisition stands separately with no disclosed proceeds. State aid registry date can be reconciled with 2024-02-13 public disclosure."
+    },
+    {
+      "id": "0352f23b-cc3b-463f-9ac1-5ee4854569be",
+      "slug": "umo-ua",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer and procurement sources corroborate UMO Ukraine 45274055. Product contracts and attendance at Brave1 forum are not attributable financing."
+    },
+    {
+      "id": "217d80fb-d2d5-4ba7-b636-dd1ac016cd58",
+      "slug": "ums-skeldar",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "GSA 2019 award list confirms EUR112,350 for exact Swiss UMS Skeldar AG, prepared for next import. Noncash 2015 JV formation and 2024 remainder stake retained. Separately bought Swedish subsidiaries excluded."
+    },
+    {
+      "id": "f451d727-ffcd-40e5-99ac-2f5167b7d4fb",
+      "slug": "unifly",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 5,
+      "approved_events_after": 8,
+      "new_events": 3,
+      "corrected_events": 1,
+      "evidence": "PMV 2016 report shows EUR1.2m first capital round, separate from Series A. EUR17m Series B and three additional named participants verified. GSA award and CORDIS USIS grant imported. Fourteen additional CORDIS issuer awards prepared for import. Adviser archive for 1 July, one day earlier than issuer syndication, was found after the staged import."
+    },
+    {
+      "id": "f9df351c-7f33-4477-9916-7fb16e4d7d20",
+      "slug": "unwave",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer and Ukrainian ТОВ Анвейв identity reviewed. Public funding and grant searches did not establish an attributable event."
+    },
+    {
+      "id": "d0f7aa66-dfe1-450b-8dcb-9ba974bc4afe",
+      "slug": "urc-systems",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Contract 975677 is an IED grant with Czech Technical University as an additional recipient. Full CZK7.529m passed through URC and includes partner amount. NEOCLASSIG consortium split unresolved. Contract 1890546 is procurement. Exact digitalisation award allocation CZK2,614,870 is prepared separately with project-start date identified and signature date unknown."
+    },
+    {
+      "id": "7b5d12d8-2586-403e-ab2b-1ff48edd92b2",
+      "slug": "verity",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 4,
+      "approved_events_after": 5,
+      "new_events": 1,
+      "corrected_events": 1,
+      "evidence": "CHF7.5m convertible and contemporaneous participants recorded. Original Series A release corrects Fontinalis Partners to lead; other participants and amounts preserved."
+    },
+    {
+      "id": "48795ca9-df21-49e8-824e-ac05bb019720",
+      "slug": "vidar-systems",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "IT Arena confirms USD10k defence-track prize and USD200k MITS investment. Prize held for classification. Fund portfolio verifies relationship; possible overlap with November Presto financing requires deal-level dedupe."
+    },
+    {
+      "id": "843141f9-8ef0-4b6b-9f09-ef480c6e9c40",
+      "slug": "vizgard",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 3,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "NATO DIANA official cohort and investment-company disclosures corroborate EUR100k programme funding ceiling. No payment or equity assumed. Seed allotment is separate."
+    },
+    {
+      "id": "30a4d458-89e2-4b8f-94fb-553cf3ff8afe",
+      "slug": "vluchnyk",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Founders and investors confirm 2025 Skylen and Hede equity, amount undisclosed. Brave1 award and separately reported municipal grant need instrument and source review. Swedish Front Ventures JV and founders' personal spending are separate."
+    },
+    {
+      "id": "a38cbb98-9c08-41b7-9859-59106423dced",
+      "slug": "volocopter",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 9,
+      "approved_events_after": 10,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "Osaka prefecture confirms company-specific award, amount undisclosed. USD or JPY caps not assigned. Issuer names Sumitomo and SITA as subsequent Series E participants, with distinct disclosures and no tranche amounts. Prepare round relationship without double-counting."
+    },
+    {
+      "id": "9f5f85f4-56fa-4608-98f1-6c0b5d7eb8bf",
+      "slug": "warmax",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer's strategic DrOnarium agreement describes operating and R&D collaboration. No attributable financing found in bounded Ukrainian source search."
+    },
+    {
+      "id": "a0320f36-766e-41a1-9420-407f8769a1a3",
+      "slug": "wb-group-wb-electronics",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 5,
+      "approved_events_after": 6,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "Issuer ESPI allocation reports 60,000 notes at PLN1,000 each in October 2020, separate from 2017 refinancing. Procurement awards are excluded."
+    },
+    {
+      "id": "889ed7e6-b445-4cc6-b07b-77ea5969adb4",
+      "slug": "weibel-radars",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Audited FY2024/25 Weibel Scientific A/S report identifies Danske Bank facilities at aggregate level. DTU SAR project lists a partner without issuer allocation. Defence radar procurement is excluded."
+    },
+    {
+      "id": "1a8cfa83-31f3-44ad-b68a-413133b99b5b",
+      "slug": "welles-acoustics-quantum-systems",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer confirms majority accession to Quantum Systems, with no consideration or issuer proceeds disclosed. Parent Series D not attributed. Regional grant amount still requires original award source."
+    },
+    {
+      "id": "ce38c975-259d-419f-92a9-139aa66d125d",
+      "slug": "wholeship",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Companies House 10153257 confirms the Whole Ship Consulting rename and existing SH01 cash allotment. Royal Navy contracts and self-reported facilities investment are procurement and expenditure."
+    },
+    {
+      "id": "0bc1a888-0ce4-486c-96eb-efe5b4769d71",
+      "slug": "wild-hornets",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer and charitable fund 45364185 are separate. Donations and military purchases do not establish financing for the commercial issuer."
+    }
+  ],
+  "database": {
+    "before": {
+      "events": 1310,
+      "approved_events": 1301,
+      "links": 1295,
+      "approved_links": 1287,
+      "profiles": 807,
+      "sources": 1745,
+      "companies": 352
+    },
+    "rollback_rehearsal": {
+      "events": 1330,
+      "approved_events": 1321,
+      "links": 1313,
+      "approved_links": 1305,
+      "profiles": 808,
+      "sources": 1780,
+      "companies": 352
+    },
+    "rollback_baseline_verified": {
+      "events": 1310,
+      "approved_events": 1301,
+      "links": 1295,
+      "approved_links": 1287,
+      "profiles": 807,
+      "sources": 1745,
+      "companies": 352
+    },
+    "importer_replayed_inside_rollback": true,
+    "after": {
+      "events": 1330,
+      "approved_events": 1321,
+      "links": 1313,
+      "approved_links": 1305,
+      "profiles": 808,
+      "sources": 1780,
+      "companies": 352
+    },
+    "independent_manifest_verification": {
+      "new_events": 20,
+      "corrections": 4,
+      "matched_sources": 35,
+      "new_importer_roles": 15,
+      "extra_roles": 5
+    },
+    "prior_pending_manifest_rows_confirmed": 166
+  },
+  "publication": {
+    "manifest": "research-agent/imports/funding-landscape-20261110-third-evening.json",
+    "previous_manifest": "research-agent/imports/funding-landscape-20261110-second-evening.json",
+    "manifests": [
+      "research-agent/imports/funding-landscape-20261110-second-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-late-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-evening.json",
+      "research-agent/imports/funding-landscape-20261110-second-evening.json",
+      "research-agent/imports/funding-landscape-20261110-third-evening.json"
+    ],
+    "report": "research-agent/reports/2026-11-10-funding-landscape-third-evening.json",
+    "previous_report": "research-agent/reports/2026-11-10-funding-landscape-second-evening.json",
+    "database": {
+      "events": 1330,
+      "approved_events": 1321,
+      "links": 1313,
+      "approved_links": 1305,
+      "profiles": 808,
+      "sources": 1780,
+      "companies": 352
+    },
+    "status": "committed_awaiting_fresh_catalogue_run",
+    "expected_live": {
+      "events": 1321,
+      "links": 1305,
+      "profiles": 808,
+      "manifest_rows": 186,
+      "withheld_draft_rows": 5,
+      "approved_corrections": 19,
+      "participation_corrections": 3,
+      "additional_existing_round_participations": 3
+    },
+    "checked_at": "2026-11-10T18:03:20.367Z",
+    "observed_live": {
+      "generated_at": "2026-11-10T13:52:10.085Z",
+      "investor_generated_at": "2026-11-10T13:52:11.204Z",
+      "events": 1145,
+      "links": 1214,
+      "profiles": 774
+    },
+    "observed_workflow_runs": [
+      [
+        42828359177,
+        "schedule",
+        "2026-11-10T13:51:22Z",
+        "success",
+        "completed",
+        "0ce481330c58f1081bcdc9cb01e26421422c4a62"
+      ],
+      [
+        42795281022,
+        "push",
+        "2026-11-10T09:59:20Z",
+        "failure",
+        "completed",
+        "0ce481330c58f1081bcdc9cb01e26421422c4a62"
+      ],
+      [
+        42725276104,
+        "push",
+        "2026-11-10T00:03:04Z",
+        "success",
+        "completed",
+        "d31d443bcb013bc42f7805ef700a0db3f209ee28"
+      ],
+      [
+        42640842391,
+        "push",
+        "2026-11-09T15:04:00Z",
+        "success",
+        "completed",
+        "b9799770775a866a8d0d1a818e16068acd2f3eec"
+      ]
+    ],
+    "workflow_schedule": "0 6 * * * UTC",
+    "reason": "Latest successful catalogue run predates all five pending imports. Current connection exposes no fresh workflow dispatch. Keep the existing read-only catalogue schedule and verify every manifest, with latest guarded values superseding older ones."
+  },
+  "automation": {
+    "id": "6ae8a29260108191a57ab58c00ff5894",
+    "is_enabled": true,
+    "schedule": "BEGIN:VEVENT\nDTSTART:20261102T144746Z\nRRULE:FREQ=HOURLY\nEND:VEVENT",
+    "current_run": {
+      "id": "64ecb81f-ec30-8323-9e44-ed687786becf",
+      "recorded_status": "in_progress",
+      "scheduled_for": "2026-11-10T17:47:46Z",
+      "started_at": "2026-11-10T17:51:11.388024Z",
+      "completed_at": null,
+      "chat_ref": null
+    }
+  },
+  "prepared_followups": [
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-687352-grant",
+      "project": "SKYOPENER",
+      "ec_signature_date": "2016-04-01",
+      "amount": 166031.25,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/687352",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-763551-grant",
+      "project": "CORUS",
+      "ec_signature_date": "2017-05-29",
+      "amount": 170000,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/763551",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-763599-grant",
+      "project": "SECOPS",
+      "ec_signature_date": "2017-04-20",
+      "amount": 245300,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/763599",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-763719-grant",
+      "project": "CLASS",
+      "ec_signature_date": "2017-05-11",
+      "amount": 190000,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/763719",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-783211-grant",
+      "project": "SAFEDRONE",
+      "ec_signature_date": "2018-05-29",
+      "amount": 151427.5,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/783211",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-783230-grant",
+      "project": "PODIUM",
+      "ec_signature_date": "2017-12-21",
+      "amount": 265881,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/783230",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-824292-grant",
+      "project": "AW-Drones",
+      "ec_signature_date": "2018-12-03",
+      "amount": 125400,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/824292",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-892928-grant",
+      "project": "Metropolis 2",
+      "ec_signature_date": "2020-10-05",
+      "amount": 200125,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/892928",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-101017682-grant",
+      "project": "CORUS-XUAM",
+      "ec_signature_date": "2020-12-16",
+      "amount": 172662.88,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/101017682",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-101017701-grant",
+      "project": "SAFIR-Med",
+      "ec_signature_date": "2020-12-10",
+      "amount": 158049.5,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/101017701",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-101082484-grant",
+      "project": "CERTIFLIGHT",
+      "ec_signature_date": "2022-10-17",
+      "amount": 240668.75,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/101082484",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-101114674-grant",
+      "project": "SPATIO",
+      "ec_signature_date": "2023-06-15",
+      "amount": 402500,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/101114674",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-101114732-grant",
+      "project": "ENSURE",
+      "ec_signature_date": "2023-06-13",
+      "amount": 439031.25,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/101114732",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "cordis-101114799-grant",
+      "project": "EUREKA",
+      "ec_signature_date": "2023-06-15",
+      "amount": 233800,
+      "currency": "EUR",
+      "source": "https://cordis.europa.eu/project/id/101114799",
+      "amount_scope": "Exact beneficiary net EU contribution. Check for overlap and existing event before import."
+    },
+    {
+      "company_slug": "ums-skeldar",
+      "announced_date": "2019",
+      "amount": 112350,
+      "currency": "EUR",
+      "financing_type": "grant",
+      "source": "https://www.euspa.europa.eu/sites/default/files/gsa_grants_list_2019.pdf",
+      "note": "GSA/GRANT/06/2017/13 exact UMS Skeldar AG Möhlin beneficiary. Award-list year; payment unverified."
+    },
+    {
+      "company_slug": "ubiq-aerospace",
+      "announced_date": "2019-08-05",
+      "financing_type": "equity",
+      "amount": null,
+      "source": "https://www.ntnutto.no/ubiq-aerospace-far-stor-amerikansk-investor-med-pa-laget/",
+      "note": "CEO discloses individual Lupa Systems investment exceeds NOK5m, total financing amount and lead undisclosed."
+    },
+    {
+      "company_slug": "ubiq-aerospace",
+      "announced_date": "2020-11-03",
+      "amount": null,
+      "sources": [
+        "https://www.auvsi.org/news/ubiq-aerospace-secures-financing-to-continue-development-of-autonomous-icing-protection-solution-for-uas/",
+        "https://drive.google.com/file/d/1KSc7E5ias1KfKLxkSfbefX4RhTA-WWnk/view"
+      ],
+      "note": "Separate closed second seed. Lupa Investment Holdings name; verify investor alias before participant link."
+    },
+    {
+      "company_slug": "vluchnyk",
+      "announced_date": "2025",
+      "amount": null,
+      "financing_type": "equity",
+      "source": "https://thedefender.media/en/2026/09/vluchnyk-zorelit-story/",
+      "note": "Direct founders and investors confirm Skylen and Hede equity. Verify source scope and dates. Keep Swedish joint venture separate."
+    },
+    {
+      "company_slug": "vluchnyk",
+      "announced_date": "2025",
+      "amount": null,
+      "financing_type": "grant",
+      "source": "https://thedefender.media/en/2026/09/vluchnyk-zorelit-story/",
+      "note": "Founder-reported Brave1 award distinct from Lviv City Council grant; confirm award-specific amounts and original record."
+    },
+    {
+      "company_slug": "volocopter",
+      "sources": [
+        "https://www.volocopter.com/en/newsroom/japan-series-e-regulatory-pathway",
+        "https://www.volocopter.com/en/newsroom/sita-vc-digital-vertiport-infra"
+      ],
+      "note": "Sumitomo 2023-02-21 and SITA 2023-03-14 Series E participant disclosures. No allocated cash/tranche size. Preserve both sources and avoid assigning to a 2022 signing without evidence."
+    },
+    {
+      "company_slug": "vidar-systems",
+      "sources": [
+        "https://itarena.ua/revolutionary-medical-solutions-and-cutting-edge-defense-innovations-startups-that-stood-out-at-the-it-arena-startup-competition/",
+        "https://mits.capital/portfolio/vidar-systems/"
+      ],
+      "note": "MITS USD200k competition attribution, possible overlap with November Presto financing. Verify round mapping and separate prize classification."
+    },
+    {
+      "company_slug": "urc-systems",
+      "source": "https://smlouvy.gov.cz/smlouva/975677",
+      "note": "2017-01-06 public IED targeted support contract, CZK7.529m is joint with Czech Technical University. Identify URC allocation before adding amount."
+    },
+    {
+      "company_slug": "urc-systems",
+      "round_key": "erdf-digitalisation-0027632",
+      "amount": 2614870,
+      "currency": "CZK",
+      "financing_type": "grant",
+      "announced_date": null,
+      "source": "https://www.risy.cz/cs/vyhledavace/projekty-eu?CisloProjektu=CZ.1.07%2F1.4.00%2F21.1864&page=3519",
+      "note": "Exact sole applicant IČ25547526. Project started 2021-09-24; announcement and award signature date unavailable. Programme EU contribution differs from payment total, do not combine."
+    },
+    {
+      "company_slug": "unifly",
+      "round_key": "series-b-2019",
+      "source": "https://medias.bryangarnier.com/marketing/old/en/blog/theme/article/index.html",
+      "note": "Transaction adviser archive dated 2019-07-01 predates staged 2019-07-02 issuer syndication, verify source dating for guarded refinement."
+    }
+  ]
 }
