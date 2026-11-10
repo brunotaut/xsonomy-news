@@ -8,9 +8,9 @@
   "published_landscape_companies": 567,
   "partial_companies": 182,
   "fully_reviewed_companies": 385,
-  "next_action": "Continue the next 20 published-landscape partial reviews under the current writer lease, consolidate supported facts, rehearse rollback, import atomically and verify publication.",
+  "next_action": "Verify whether staged manifest is present in production before retrying. Rehearse rollback before atomic import and verify publication.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-10T00:55:33.482Z",
+  "updated_at": "2026-11-10T09:57:43.819Z",
   "source_reconciliation_companies": 341,
   "approved_funding_events": 1038,
   "round_participations": 1160,
@@ -24,12 +24,12 @@
   "automation_enabled": true,
   "automation_cadence": "hourly",
   "active_run": {
-    "run_id": "funding-20261110-0053",
+    "run_id": "funding-20261110-0952",
     "owner": "chatgpt",
-    "started_at": "2026-11-10T00:53:21.411Z",
-    "lease_expires_at": "2026-11-10T02:53:21.411Z",
-    "parent_commit": "feb33f63206e5832a3bb9bc93698aedbc1945e3d",
-    "purpose": "Recover failed Pages deployment and continue published-landscape funding review"
+    "started_at": "2026-11-10T09:57:43.819Z",
+    "lease_expires_at": "2026-11-10T11:57:43.819Z",
+    "parent_commit": "10a251d00d361e78c8adb89cc99c6993e1fd427a",
+    "purpose": "Production rehearsal and import for published landscape"
   },
   "last_verified_publication": {
     "generated_at": "2026-11-10T00:04:00.850Z",
@@ -926,8 +926,8 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 378,
-    "source_review_partial": 189,
+    "reviewed_public_sources": 385,
+    "source_review_partial": 182,
     "queued": 1997
   },
   "last_execution_metrics": {
@@ -1367,7 +1367,24 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "manifest": "research-agent/imports/funding-landscape-20261110-morning.json",
+    "report": "research-agent/reports/2026-11-10-funding-landscape-morning.json",
+    "stage": "staged_before_production_rehearsal",
+    "baseline": {
+      "events": 1038,
+      "links": 1160,
+      "profiles": 761,
+      "sources": 1386,
+      "companies": 345
+    },
+    "expected_delta": {
+      "events": 24,
+      "links": 21,
+      "profiles": 2,
+      "sources": 26
+    }
+  },
   "pending_publication": null,
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
