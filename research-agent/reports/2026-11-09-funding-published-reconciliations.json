@@ -1,5 +1,5 @@
 {
-  "status": "imported_pending_live_publication",
+  "status": "imported_deployment_in_progress",
   "started_at": "2026-11-09T23:52:35.405Z",
   "checked_at": "2026-11-09",
   "manifest": "research-agent/imports/funding-published-reconciliations-20261109.json",
@@ -108,5 +108,32 @@
     "companies_with_events": 345,
     "manifest_events_verified": 8,
     "manifest_participations_verified": 7
+  },
+  "publication": {
+    "site_commit": "d31d443bcb013bc42f7805ef700a0db3f209ee28",
+    "workflow_run_id": 42725276104,
+    "build_status": "succeeded",
+    "deployment_status": "in_progress",
+    "live_before": {
+      "generated_at": "2026-11-09T15:04:46.327Z",
+      "events": 1030,
+      "participations": 1153,
+      "profiles": 757
+    },
+    "checked_at": "2026-11-10T00:12:48.637Z"
+  },
+  "metrics": {
+    "identities_reconciled": 20,
+    "newly_completed_bounded_reviews": 7,
+    "source_review_partial": 13,
+    "imported_events": 8,
+    "new_participations": 7,
+    "new_investor_profiles": 4,
+    "active_minutes": 20.22,
+    "reconciled_identities_per_active_hour": 59.35,
+    "completed_reviews_per_active_hour": 20.77,
+    "timing_scope": "Wall time from lease acquisition through research, rollback rehearsal, atomic import, build completion and deployment-status verification. Waiting between scheduled runs excluded; lane durations are not summed.",
+    "publication_verified": false,
+    "concurrency_speedup_claimed": false
   }
 }
