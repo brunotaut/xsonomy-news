@@ -8,15 +8,15 @@
   "published_landscape_companies": 567,
   "partial_companies": 182,
   "fully_reviewed_companies": 385,
-  "next_action": "Verify whether staged manifest is present in production before retrying. Rehearse rollback before atomic import and verify publication.",
+  "next_action": "Publish the verified production import and validate both live funding datasets.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-10T09:57:43.819Z",
+  "updated_at": "2026-11-10T09:58:58.633Z",
   "source_reconciliation_companies": 341,
-  "approved_funding_events": 1038,
-  "round_participations": 1160,
-  "investor_profiles": 761,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-published-reconciliations-20261109.json",
+  "approved_funding_events": 1062,
+  "round_participations": 1181,
+  "investor_profiles": 763,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261110-morning.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -1367,25 +1367,19 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": {
+  "pending_import": null,
+  "pending_publication": {
     "manifest": "research-agent/imports/funding-landscape-20261110-morning.json",
     "report": "research-agent/reports/2026-11-10-funding-landscape-morning.json",
-    "stage": "staged_before_production_rehearsal",
-    "baseline": {
-      "events": 1038,
-      "links": 1160,
-      "profiles": 761,
-      "sources": 1386,
+    "database": {
+      "events": 1062,
+      "links": 1181,
+      "profiles": 763,
+      "sources": 1412,
       "companies": 345
     },
-    "expected_delta": {
-      "events": 24,
-      "links": 21,
-      "profiles": 2,
-      "sources": 26
-    }
+    "status": "verified_import_build_not_yet_triggered"
   },
-  "pending_publication": null,
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
     "manifest": "research-agent/imports/funding-published-reconciliations-20261109.json",
