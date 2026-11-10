@@ -1,5 +1,5 @@
 {
-  "status": "validated_checkpoint_pending_import",
+  "status": "imported_pending_live_publication",
   "started_at": "2026-11-09T23:52:35.405Z",
   "checked_at": "2026-11-09",
   "manifest": "research-agent/imports/funding-published-reconciliations-20261109.json",
@@ -96,6 +96,17 @@
   ],
   "timing": {
     "active_minutes_to_checkpoint": 8.2,
-    "scope": "Wall time from lease acquisition through current-state reconciliation, four parallel read-only groups, validation and production rollback rehearsal. Waiting between scheduled runs excluded; lane durations are not summed."
+    "scope": "Wall time from lease acquisition through current-state reconciliation, four parallel read-only groups, validation and production rollback rehearsal. Waiting between scheduled runs excluded; lane durations are not summed.",
+    "active_minutes_through_import": 10.21
+  },
+  "imported_at": "2026-11-10T00:02:48.240Z",
+  "database_verification": {
+    "events": 1038,
+    "participations": 1160,
+    "profiles": 761,
+    "sources": 1386,
+    "companies_with_events": 345,
+    "manifest_events_verified": 8,
+    "manifest_participations_verified": 7
   }
 }
