@@ -8,9 +8,9 @@
   "published_landscape_companies": 567,
   "partial_companies": 182,
   "fully_reviewed_companies": 385,
-  "next_action": "Recover pending publication for workflow 42725276104, verify the live landscape and investor datasets against 1038 events / 1160 participations / 761 profiles, then continue remaining published-landscape reviews.",
+  "next_action": "Retry failed Pages deployment for the already imported reconciliation, verify live data, then continue the next published-landscape review group.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-10T00:12:48.637Z",
+  "updated_at": "2026-11-10T00:53:21.411Z",
   "source_reconciliation_companies": 341,
   "approved_funding_events": 1038,
   "round_participations": 1160,
@@ -23,7 +23,14 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": null,
+  "active_run": {
+    "run_id": "funding-20261110-0053",
+    "owner": "chatgpt",
+    "started_at": "2026-11-10T00:53:21.411Z",
+    "lease_expires_at": "2026-11-10T02:53:21.411Z",
+    "parent_commit": "feb33f63206e5832a3bb9bc93698aedbc1945e3d",
+    "purpose": "Recover failed Pages deployment and continue published-landscape funding review"
+  },
   "last_verified_publication": {
     "generated_at": "2026-11-09T15:04:46.327Z",
     "investor_generated_at": "2026-11-09T15:04:47.202Z",
@@ -1374,7 +1381,7 @@
     },
     "site_commit": "d31d443bcb013bc42f7805ef700a0db3f209ee28",
     "workflow_run_id": 42725276104,
-    "status": "build_succeeded_deployment_in_progress",
-    "checked_at": "2026-11-10T00:12:48.637Z"
+    "status": "deployment_failed_timeout_retry_started",
+    "checked_at": "2026-11-10T00:53:21.411Z"
   }
 }
