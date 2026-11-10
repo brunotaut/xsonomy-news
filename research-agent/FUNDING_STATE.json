@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 386,
   "next_action": "Check the next fresh existing catalogue workflow and live datasets for both committed manifests, including three excluded draft records. Do not retry the duplicate-artifact run. Continue the prepared Leica, Manna and Leonardo reconciliations and the screened published identities under a fresh writer lease.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-10T10:55:49.817Z",
+  "updated_at": "2026-11-10T11:49:21.269Z",
   "source_reconciliation_companies": 341,
   "approved_funding_events": 1094,
   "round_participations": 1183,
@@ -23,7 +23,14 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": null,
+  "active_run": {
+    "run_id": "funding-20261110-1144",
+    "owner": "chatgpt",
+    "started_at": "2026-11-10T11:49:21.269Z",
+    "lease_expires_at": "2026-11-10T13:49:21.269Z",
+    "parent_commit": "3043c70d2f37bfd48f6ecca54341b2ac6cf01ab7",
+    "purpose": "Consolidated approved funding import"
+  },
   "last_verified_publication": {
     "generated_at": "2026-11-10T00:04:00.850Z",
     "investor_generated_at": "2026-11-10T00:04:01.797Z",
@@ -1360,7 +1367,27 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "manifest": "research-agent/imports/funding-landscape-20261110-noon.json",
+    "report": "research-agent/reports/2026-11-10-funding-landscape-noon.json",
+    "stage": "staged_before_production_rehearsal",
+    "baseline": {
+      "events": 1097,
+      "links": 1186,
+      "profiles": 764,
+      "sources": 1451,
+      "companies": 345,
+      "approved_events": 1094,
+      "approved_links": 1183,
+      "present": 59
+    },
+    "expected_delta": {
+      "events": 16,
+      "links": 24,
+      "profiles": 4,
+      "sources": 22
+    }
+  },
   "pending_publication": {
     "manifest": "research-agent/imports/funding-landscape-20261110-followup.json",
     "previous_manifest": "research-agent/imports/funding-landscape-20261110-morning.json",
