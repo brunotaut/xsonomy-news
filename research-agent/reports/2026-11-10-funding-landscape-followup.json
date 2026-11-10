@@ -1,0 +1,251 @@
+{
+  "status": "imported_pending_publication",
+  "manifest": "research-agent/imports/funding-landscape-20261110-followup.json",
+  "started_at": "2026-11-10T10:46:50Z",
+  "checked_at": "2026-11-10",
+  "imported_at": "2026-11-10T10:53:01.024Z",
+  "prior_manifest_verified_in_production": 24,
+  "prior_pending_publication": {
+    "manifest": "research-agent/imports/funding-landscape-20261110-morning.json",
+    "report": "research-agent/reports/2026-11-10-funding-landscape-morning.json",
+    "database": {
+      "events": 1062,
+      "links": 1181,
+      "profiles": 763,
+      "sources": 1412,
+      "companies": 345
+    },
+    "status": "build_succeeded_deployment_failed_twice",
+    "site_commit": "0ce481330c58f1081bcdc9cb01e26421422c4a62",
+    "workflow_run_id": 42795281022,
+    "checked_at": "2026-11-10T10:21:46.488Z",
+    "workflow_attempt": 2
+  },
+  "database_before": {
+    "events": 1062,
+    "links": 1181,
+    "profiles": 763,
+    "sources": 1412,
+    "companies": 345,
+    "approved_events": 1062,
+    "approved_links": 1181,
+    "correction_targets_still_approved": 3
+  },
+  "database_after": {
+    "events": 1097,
+    "links": 1186,
+    "profiles": 764,
+    "sources": 1451,
+    "companies": 345,
+    "approved_events": 1094,
+    "approved_links": 1183,
+    "correction_targets_still_approved": 0
+  },
+  "production_rollback": {
+    "passed": true,
+    "baseline_restored": true,
+    "exact_source_and_role_checks": true,
+    "import_idempotence_rehearsed": true
+  },
+  "import": {
+    "new_events": 35,
+    "new_links": 5,
+    "new_profiles": 1,
+    "reversible_draft_holds": 3
+  },
+  "company_dispositions": [
+    {
+      "slug": "ids-fincantieri-nextech",
+      "company_id": "a3654ce0-0999-4b13-9057-917ec24c5b1e",
+      "disposition": "source_review_partial",
+      "work": "source_reconciliation"
+    },
+    {
+      "slug": "incas",
+      "company_id": "1374599f-f40f-4f9e-98e8-5c854b2f028f",
+      "disposition": "source_review_partial",
+      "work": "source_reconciliation"
+    },
+    {
+      "slug": "hybrid-drones",
+      "company_id": "b1faf3ec-b3e4-4a90-b504-2edc58f630d6",
+      "disposition": "source_review_partial",
+      "work": "source_reconciliation"
+    },
+    {
+      "slug": "indra",
+      "company_id": "ad88aced-579d-45f5-949c-4df263c0b4c3",
+      "disposition": "source_review_partial",
+      "work": "source_reconciliation"
+    },
+    {
+      "slug": "inster",
+      "company_id": "3c1a6cf2-d7ed-455e-93ea-16b8c78bc9cc",
+      "disposition": "source_review_partial",
+      "work": "source_reconciliation"
+    },
+    {
+      "slug": "intelligent-energy",
+      "company_id": "e84345e1-a502-4abd-85ef-fb2730632efe",
+      "disposition": "source_review_partial",
+      "work": "source_reconciliation"
+    },
+    {
+      "slug": "jenoptik",
+      "company_id": "6e952ed3-9275-4610-bd25-19152f226a7b",
+      "disposition": "source_review_partial",
+      "work": "source_reconciliation"
+    },
+    {
+      "slug": "kseonics-technology",
+      "company_id": "97ee5b29-8e8e-44ae-90c1-d23d9a81b2f8",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "Existing Brave1 grant corroborated by issuer interview. Amount and additional awards not established.",
+      "source_url": "https://mind.ua/publications/20266019-vid-pauerbankiv-do-dron-detektoriv-yak-kseonics-technology-oblashtuvala-virobnictvo-ta-zvidki-bere-ko"
+    },
+    {
+      "slug": "lba-systems",
+      "company_id": "7619bd99-47ec-492d-bbca-09027f35dde5",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "Leonardo/Baykar 50:50 formation already recorded. Operational launch gives no additional financing amount.",
+      "source_url": "https://www.baykartech.com/en/press/baykar-and-leonardo-announce-new-joint-venture-lba-systems-at-the-paris-air-show/"
+    },
+    {
+      "slug": "lehmann-aviation",
+      "company_id": "e421397b-5aea-4bdc-a87a-a3a4b2e8314a",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "French entity 428768923 appears to have an exact 2019 nominal capital change, but issuance terms and cash/in-kind basis need an original filing. Similar Léman Aviation is a namesake.",
+      "source_url": "https://entreprises.lefigaro.fr/lehmann-aviation-75/entreprise-428768923"
+    },
+    {
+      "slug": "leica-geosystems-hexagon",
+      "company_id": "f8ca2a8c-d923-4cf6-aa04-2fb9d9cf723a",
+      "disposition": "source_review_partial",
+      "work": "source_reconciliation",
+      "note": "Issuer IPO confirmed and imported without guessing proceeds. 1998/2001/2003 financing and legal-issuer relationships remain for follow-up. Hexagon equity in exchange for Leica shares is separate.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1092916/000115697303000894/u46285e6vk.htm"
+    },
+    {
+      "slug": "lendurai",
+      "company_id": "8a621718-3ffb-4556-aec5-31fa036a5c22",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "Existing seed corroborated by counsel. Counsel descriptions of co-lead roles differ from trade press, requiring role reconciliation.",
+      "source_url": "https://ellex.legal/project/expeditions-fund-hcvc-and-vsquared-ventures/"
+    },
+    {
+      "slug": "leonardo",
+      "company_id": "3bc6154e-f173-4efe-9fba-d057b2a8a95c",
+      "disposition": "source_review_partial",
+      "work": "source_reconciliation",
+      "note": "Imported two non-additive revolving facilities and exact EIB loan. Older bond history and bank-vehicle mappings remain for next pass.",
+      "source_url": "https://www.eib.org/en/projects/all/20200620"
+    },
+    {
+      "slug": "liebherr-aerospace",
+      "company_id": "e03035a9-991b-4b7c-89f0-fad6866db061",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "Candidate EU projects require exact Toulouse/Lindenberg beneficiary and continuity checks before any import.",
+      "source_url": "https://www.euacc.ai/organisations/liebherr-aerospace-toulouse-sas-999958257"
+    },
+    {
+      "slug": "livelink-aerospace",
+      "company_id": "97a64bae-ea26-46c0-b931-4133d4758e05",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "Operating entity Companies House 10393504. Reconcile SH01 filings and older grant records; similar LiveLink Limited is separate.",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/10393504/filing-history"
+    },
+    {
+      "slug": "lmt-latvijas-mobilais-telefons",
+      "company_id": "11521407-22a3-4a82-bb10-ee412ca45023",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "Existing EIB loan retained. Proposed Telia exit is shareholder activity, not established primary financing.",
+      "source_url": "https://www.mk.gov.lv/lv/jaunums/valdiba-aicina-lmt-un-tet-izvertet-iespejas-izpirkt-savas-kapitala-dalas-no-telia-company"
+    },
+    {
+      "slug": "lv-teh",
+      "company_id": "094451e8-745a-4998-8a29-1a4f7eee861c",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "April 2026 delivery awards are procurement. No additional confirmed grant from this source.",
+      "source_url": "https://www.mil.lv/en/node/6954"
+    },
+    {
+      "slug": "lynred",
+      "company_id": "9ab0b7de-eb34-4ee1-b7cc-eb202abfbe3c",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "Needs award-level reconciliation of public programme totals and entity legal names; existing rows retained.",
+      "source_url": null
+    },
+    {
+      "slug": "lyocon",
+      "company_id": "3160d757-5dd6-408e-89ab-a28e23bee6ee",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "USD500k first tranche exists. Further tranches are contingent on business-plan requirements; require drawdown evidence.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1814215/000119312526044061/buru-ex10_90.htm"
+    },
+    {
+      "slug": "malloy-aeronautics",
+      "company_id": "e8d73ed6-630c-47ef-be95-f6ca2216ff26",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "Potential additional UKRI grant identified as discovery-only; no amount attributed without beneficiary record.",
+      "source_url": "https://app.dealroom.co/companies/malloy_aeronautics"
+    },
+    {
+      "slug": "manna-drone-delivery",
+      "company_id": "f448cd8e-36de-4054-86f7-30df7b070ee3",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "Issuer corroborates 2026 Series B and confirms cumulative total. 2019 seed and 2025 reported financing remain open for issuer/transaction-party source validation.",
+      "source_url": "https://www.manna.aero/blog/series-b"
+    },
+    {
+      "slug": "marble-aerospace",
+      "company_id": "bc818fbf-228b-4474-a181-e7c9581c80d2",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "Issuer registry reviewed as candidate for additional allotments; existing eight historic allotments preserved.",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/10183391/filing-history"
+    },
+    {
+      "slug": "marlborough-communications",
+      "company_id": "ed9712b3-4ee5-46a9-ad60-3f9e3b807063",
+      "disposition": "source_review_partial",
+      "work": "initial_screen",
+      "note": "Cohort identifies MCL as subsidiary. Government order values are procurement, not financing.",
+      "source_url": "https://www.cohortplc.com/our-businesses/mcl"
+    }
+  ],
+  "prepared_holds": [
+    {
+      "slug": "ids-fincantieri-nextech",
+      "project": 731796,
+      "note": "CORDIS linked third party; no direct grant signature. Three analogous previously approved records moved to draft with reversal details in manifest."
+    },
+    {
+      "slug": "indra",
+      "note": "July 2020 €35m tap verified, but parent linkage is inferred from ISIN and CNMV compared with conflicting issuer narrative. Pending dedicated extension manifest."
+    },
+    {
+      "slug": "intelligent-energy",
+      "note": "2012-02-29 issuer release confirms completed share placement at GBP 2.30/share, in excess of USD 35m (GBP 22m stated alongside). Confirm original-currency qualifier before import; Canaccord was agent.",
+      "source": "https://menewswire.blogspot.com/2012/02/"
+    }
+  ],
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_source_reconciled": 9,
+    "additional_identities_screened": 14,
+    "newly_completed_bounded_reviews": 0,
+    "concurrency_speedup_claimed": false
+  }
+}

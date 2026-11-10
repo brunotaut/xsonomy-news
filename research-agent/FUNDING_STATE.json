@@ -8,15 +8,15 @@
   "published_landscape_companies": 567,
   "partial_companies": 181,
   "fully_reviewed_companies": 386,
-  "next_action": "Reconcile staged manifest against production before any retry, then verify publication.",
+  "next_action": "Rebuild and verify both already committed manifests on the live site, then advance screened published identities.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-10T10:51:55.595Z",
+  "updated_at": "2026-11-10T10:53:43.189Z",
   "source_reconciliation_companies": 341,
-  "approved_funding_events": 1062,
-  "round_participations": 1181,
-  "investor_profiles": 763,
+  "approved_funding_events": 1094,
+  "round_participations": 1183,
+  "investor_profiles": 764,
   "publication_pending": true,
-  "last_import": "research-agent/imports/funding-landscape-20261110-morning.json",
+  "last_import": "research-agent/imports/funding-landscape-20261110-followup.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -1367,40 +1367,24 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": {
-    "manifest": "research-agent/imports/funding-landscape-20261110-followup.json",
-    "report": "research-agent/reports/2026-11-10-funding-landscape-followup.json",
-    "stage": "staged_before_production_rehearsal",
-    "baseline": {
-      "events": 1062,
-      "links": 1181,
-      "profiles": 763,
-      "sources": 1412,
-      "companies": 345
-    },
-    "expected_delta": {
-      "events": 35,
-      "links": 5,
-      "profiles": 1,
-      "sources": 39
-    },
-    "approved_to_draft": 3
-  },
+  "pending_import": null,
   "pending_publication": {
-    "manifest": "research-agent/imports/funding-landscape-20261110-morning.json",
-    "report": "research-agent/reports/2026-11-10-funding-landscape-morning.json",
+    "manifest": "research-agent/imports/funding-landscape-20261110-followup.json",
+    "previous_manifest": "research-agent/imports/funding-landscape-20261110-morning.json",
+    "report": "research-agent/reports/2026-11-10-funding-landscape-followup.json",
     "database": {
-      "events": 1062,
-      "links": 1181,
-      "profiles": 763,
-      "sources": 1412,
-      "companies": 345
+      "events": 1097,
+      "links": 1186,
+      "profiles": 764,
+      "sources": 1451,
+      "companies": 345,
+      "approved_events": 1094,
+      "approved_links": 1183,
+      "correction_targets_still_approved": 0
     },
-    "status": "build_succeeded_deployment_failed_twice",
+    "status": "verified_import_build_not_yet_triggered",
     "site_commit": "0ce481330c58f1081bcdc9cb01e26421422c4a62",
-    "workflow_run_id": 42795281022,
-    "checked_at": "2026-11-10T10:21:46.488Z",
-    "workflow_attempt": 2
+    "workflow_run_id": 42795281022
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
