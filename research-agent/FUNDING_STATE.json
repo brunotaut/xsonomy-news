@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 386,
   "next_action": "Rebuild and verify both already committed manifests on the live site, then advance screened published identities.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-10T10:53:43.189Z",
+  "updated_at": "2026-11-10T10:54:53.524Z",
   "source_reconciliation_companies": 341,
   "approved_funding_events": 1094,
   "round_participations": 1183,
@@ -1382,9 +1382,11 @@
       "approved_links": 1183,
       "correction_targets_still_approved": 0
     },
-    "status": "verified_import_build_not_yet_triggered",
+    "status": "rebuild_in_progress",
     "site_commit": "0ce481330c58f1081bcdc9cb01e26421422c4a62",
-    "workflow_run_id": 42795281022
+    "workflow_run_id": 42795281022,
+    "workflow_attempt": 3,
+    "checked_at": "2026-11-10T10:54:53.524Z"
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -1420,5 +1422,9 @@
       "concurrency_speedup_claimed": false,
       "active_minutes": 29.32
     }
+  },
+  "latest_followup_reconciliation": {
+    "report": "research-agent/reports/2026-11-10-funding-landscape-followup.json",
+    "manifest": "research-agent/imports/funding-landscape-20261110-followup.json"
   }
 }
