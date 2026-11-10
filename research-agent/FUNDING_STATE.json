@@ -6,11 +6,11 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 182,
-  "fully_reviewed_companies": 385,
-  "next_action": "Publish the verified production import and validate both live funding datasets.",
+  "partial_companies": 181,
+  "fully_reviewed_companies": 386,
+  "next_action": "Verify pending deployment and live manifest rows, then validate the prepared source-level reconciliations in the latest report before any new searches.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-10T09:58:58.633Z",
+  "updated_at": "2026-11-10T10:01:58.462Z",
   "source_reconciliation_companies": 341,
   "approved_funding_events": 1062,
   "round_participations": 1181,
@@ -926,8 +926,8 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 385,
-    "source_review_partial": 182,
+    "reviewed_public_sources": 386,
+    "source_review_partial": 181,
     "queued": 1997
   },
   "last_execution_metrics": {
@@ -1378,7 +1378,10 @@
       "sources": 1412,
       "companies": 345
     },
-    "status": "verified_import_build_not_yet_triggered"
+    "status": "in_progress",
+    "site_commit": "0ce481330c58f1081bcdc9cb01e26421422c4a62",
+    "workflow_run_id": 42795281022,
+    "checked_at": "2026-11-10T10:01:58.462Z"
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -1396,6 +1399,22 @@
       "workflow_attempt": 2,
       "site_commit": "d31d443bcb013bc42f7805ef700a0db3f209ee28",
       "checked_at": "2026-11-10T00:55:33.482Z"
+    }
+  },
+  "latest_morning_reconciliation": {
+    "report": "research-agent/reports/2026-11-10-funding-landscape-morning.json",
+    "manifest": "research-agent/imports/funding-landscape-20261110-morning.json",
+    "prepared_candidates": 34,
+    "metrics": {
+      "identities_reconciled": 20,
+      "newly_completed_bounded_reviews": 1,
+      "retained_partial": 19,
+      "active_minutes_through_checkpoint": 9.52,
+      "reconciled_identities_per_active_hour": 125.99,
+      "completed_reviews_per_active_hour": 6.3,
+      "publication_verified": false,
+      "timing_scope": "Wall time since execution start through source checks, rollback rehearsal, import, and pending deployment verification. Excludes time between scheduled runs. Read-only lane durations are not added together.",
+      "concurrency_speedup_claimed": false
     }
   }
 }
