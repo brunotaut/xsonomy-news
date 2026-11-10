@@ -1,19 +1,660 @@
 {
   "run_id": "funding-20261110-1849",
   "started_at": "2026-11-10T18:49:22Z",
-  "checked_at": "2026-11-10T18:56:31.391Z",
+  "checked_at": "2026-11-10T18:59:57.225Z",
   "manifest": "research-agent/imports/funding-landscape-20261110-fourth-evening.json",
-  "status": "staged_before_rehearsal",
-  "previous_pending_manifest_rows_confirmed": 186,
-  "baseline": {
-    "events": 1330,
-    "approved_events": 1321,
-    "links": 1313,
-    "approved_links": 1305,
-    "profiles": 808,
-    "sources": 1780,
-    "companies": 352
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 28,
+    "import_bearing_identities": 15,
+    "corrected_identities": 4,
+    "newly_completed_bounded_reviews": 12,
+    "source_review_partial": 16,
+    "active_minutes": 10.59,
+    "checked_identities_per_active_hour": 158.68,
+    "completed_reviews_per_active_hour": 68.01,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed from current main state read through source work, rollback rehearsal, atomic import and independent production and live checks. Waiting between runs excluded."
   },
-  "planned_new_events": 45,
-  "planned_round_corrections": 4
+  "queue_dispositions": [
+    {
+      "id": "f451d727-ffcd-40e5-99ac-2f5167b7d4fb",
+      "slug": "unifly",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 8,
+      "approved_events_after": 22,
+      "new_events": 14,
+      "corrected_events": 1,
+      "evidence": "Fourteen original CORDIS allocations confirmed separately. Earliest verified adviser publication dates the EUR17m Series B to 1 July 2019. Secondary EUR14.6m January first-close claim is part of same round and no separate additive amount used. 2022 and 2023 issuer and transaction sources reviewed.",
+      "source_urls": [
+        "https://www.unifly.aero/shareholders/",
+        "https://www.pmv.eu/en/case/unifly/",
+        "https://www.join-future.co.jp/english/investments/achievement/index.php?c=investment_en_view&pk=1649141320",
+        "https://globalventuring.com/blog/2019/01/02/unifly-lands-series-b-funding/",
+        "https://cordis.europa.eu/project/id/687352",
+        "https://cordis.europa.eu/project/id/763551",
+        "https://cordis.europa.eu/project/id/763599",
+        "https://cordis.europa.eu/project/id/763719",
+        "https://cordis.europa.eu/project/id/783211",
+        "https://cordis.europa.eu/project/id/783230",
+        "https://cordis.europa.eu/project/id/824292",
+        "https://cordis.europa.eu/project/id/892928",
+        "https://cordis.europa.eu/project/id/101017682",
+        "https://cordis.europa.eu/project/id/101017701",
+        "https://cordis.europa.eu/project/id/101082484",
+        "https://cordis.europa.eu/project/id/101114674",
+        "https://cordis.europa.eu/project/id/101114732",
+        "https://cordis.europa.eu/project/id/101114799",
+        "https://medias.bryangarnier.com/marketing/old/en/blog/theme/article/index.html"
+      ]
+    },
+    {
+      "id": "217d80fb-d2d5-4ba7-b636-dd1ac016cd58",
+      "slug": "ums-skeldar",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 3,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "Exact Swiss beneficiary's GSA award added. Original Saab release establishes JV scope, and historical noncash formation and 2024 ownership event retained. Separately acquired Swedish companies excluded.",
+      "source_urls": [
+        "https://www.euspa.europa.eu/sites/default/files/gsa_grants_list_2019.pdf",
+        "https://www.saab.com/newsroom/press-releases/2015/saab-and-ums-aero-group-ag-establish-new-strategic-partnership-for-unmanned-aerial-vehicles",
+        "https://www.moneyhouse.ch/en/company/ums-skeldar-ag-5189636981"
+      ]
+    },
+    {
+      "id": "0edbfb12-c767-47b9-90b8-eda7cb82aa45",
+      "slug": "ubiq-aerospace",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 11,
+      "approved_events_after": 13,
+      "new_events": 2,
+      "corrected_events": 0,
+      "evidence": "Two distinct seed events added, the 2019 Lupa Systems contribution only bounded in note, and 2020 Lupa Investment Holdings vehicle remains unmapped. Latest Norwegian awards and Statkraft unchanged. Ministry D-ICE package may overlap contract and EU consortium grants remain unallocated.",
+      "source_urls": [
+        "https://www.ubiqaerospace.com/news/ubiq-aerospace-and-statkraft-ventures-to-propel-sustainable-autonomous-aviation",
+        "https://www.ntnutto.no/ubiq-aerospace-far-stor-amerikansk-investor-med-pa-laget/",
+        "https://www.auvsi.org/news/ubiq-aerospace-secures-financing-to-continue-development-of-autonomous-icing-protection-solution-for-uas/"
+      ]
+    },
+    {
+      "id": "30a4d458-89e2-4b8f-94fb-553cf3ff8afe",
+      "slug": "vluchnyk",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 2,
+      "new_events": 2,
+      "corrected_events": 0,
+      "evidence": "Founders and investors confirm 2025 equity and a distinct Brave1 grant. Lviv municipal grant amount relies on an indirect registry quotation, held for award evidence. Swedish JV fundraising and founders' earlier personal expenditure separate.",
+      "source_urls": [
+        "https://thedefender.media/en/2026/09/vluchnyk-zorelit-story/",
+        "https://vl4nk.com/pages/contact",
+        "https://e-gov.city-adm.lviv.ua/node/571"
+      ]
+    },
+    {
+      "id": "a38cbb98-9c08-41b7-9859-59106423dced",
+      "slug": "volocopter",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 10,
+      "approved_events_after": 12,
+      "new_events": 2,
+      "corrected_events": 0,
+      "evidence": "Sumitomo and SITA are dated Series E participation disclosures with neither a separate close nor amount assumed. 2025 buyer accounts distinguish a EUR10m business-asset acquisition through heptus 591 GmbH from financing of the old Volocopter issuer. Latest newsroom and earlier round disclosures checked.",
+      "source_urls": [
+        "https://www.volocopter.com/en/newsroom/vc-reorganization-success",
+        "https://www.volocopter.com/en/newsroom-archive",
+        "https://www.volocopter.com/en/newsroom/japan-series-e-regulatory-pathway",
+        "https://www.volocopter.com/en/newsroom/sita-vc-digital-vertiport-infra",
+        "https://www.heuking.de/en/news-events/latest-news/article/heuking-advises-sita-on-its-investment-in-and-collaboration-with-the-urban-air-mobility-provider-volocopter.html"
+      ]
+    },
+    {
+      "id": "48795ca9-df21-49e8-824e-ac05bb019720",
+      "slug": "vidar-systems",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Organizer verifies USD10k as competition prize and states USD200k MITS deal; MITS portfolio independently confirms involvement, but potential overlap with November Presto round remains unresolved. Prize is held outside grant/equity classification.",
+      "source_urls": [
+        "https://itarena.ua/revolutionary-medical-solutions-and-cutting-edge-defense-innovations-startups-that-stood-out-at-the-it-arena-startup-competition/",
+        "https://mits.capital/portfolio/vidar-systems/"
+      ]
+    },
+    {
+      "id": "d0f7aa66-dfe1-450b-8dcb-9ba974bc4afe",
+      "slug": "urc-systems",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 4,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "Official registry and company confirm distinct ERDF digitalisation grant. Czech Interior signed IED grant includes university allocation in aggregate; company-level split unresolved. NEOCLASSIG also remains a consortium allocation hold.",
+      "source_urls": [
+        "https://www.urc-systems.cz/en/projekty/projekty-eu/",
+        "https://smlouvy.gov.cz/smlouva/975677",
+        "https://starfos.tacr.cz/en/projekty/TM02000035",
+        "https://www.risy.cz/cs/vyhledavace/projekty-eu?CisloProjektu=CZ.1.07%2F1.4.00%2F21.1864&page=3519",
+        "https://mpo.gov.cz/assets/cz/podnikani/dotace-a-podpora-podnikani/oppik-2014-2020/vyzvy-op-pik-2021/2022/4/Zapis-z-jednani-vyberove-komise-3--VK-07-04-2022.pdf"
+      ]
+    },
+    {
+      "id": "e89fd447-2acc-4b60-b0fc-1a00bb289c32",
+      "slug": "wingtra",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 5,
+      "approved_events_after": 5,
+      "new_events": 0,
+      "corrected_events": 1,
+      "evidence": "Issuer and investor confirm B1 close. Venturelab EUR23m carried as approximate due other reporting. 2016 private seed and 2018/2021 secondary candidates require reconciliation. ETH and Wyss support did not establish issuer cash allocation.",
+      "source_urls": [
+        "https://www.equitypitcher.com/stories/financing-round-wingtra",
+        "https://wingtra.com/wingtra-lands-22m-funding-round-as-their-commercial-drones-take-off-to-new-heights/",
+        "https://www.grstiftung.ch/en/funding/portfolio~grs-087-14~.html",
+        "https://ethz.ch/content/dam/ethz/special-interest/phys/department/news/ETH_Globe_4_2016_EN_Web_Doppelseite.pdf",
+        "https://www.venturelab.swiss/Wingtra-Secures-a-23-Million-Series-B1-Funding-to-Revolutionize-Aerial-Data-Solutions"
+      ]
+    },
+    {
+      "id": "320a452d-a5da-499a-8422-456d04efe1cf",
+      "slug": "winnylab",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "corrected_events": 1,
+      "evidence": "Registry and JPX filing establish exact Ukrainian LLC. April contract is original WinnyLab transaction, and June 50% is intragroup transfer and board consolidation. No dated attributable pre-April financing found in registry, Brave1 and investor searches.",
+      "source_urls": [
+        "https://youcontrol.com.ua/catalog/company_details/46216004/",
+        "https://www2.jpx.co.jp/disc/278A0/140120260427512365.pdf",
+        "https://terra-drone.net/27329"
+      ]
+    },
+    {
+      "id": "76e7969b-4c8f-45aa-9053-bfc4a512c981",
+      "slug": "workswell",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 4,
+      "new_events": 2,
+      "corrected_events": 0,
+      "evidence": "Two signed Czech grants with company allocations added. CzechTrade EUROSATORY support is service offset and not issuer cash. Other grant candidates need beneficiary reconciliation.",
+      "source_urls": [
+        "https://smlouvy.gov.cz/smlouva/788577",
+        "https://smlouvy.gov.cz/smlouva/15761403",
+        "https://smlouvy.gov.cz/smlouva/37570701",
+        "https://smlouvy.gov.cz/smlouva/soubor/7465775/Uznan%C3%A9%20n%C3%A1klady%20projektu%20FV10213.pdf?backlink=xt2mm",
+        "https://smlouvy.gov.cz/smlouva/15534507",
+        "https://smlouvy.gov.cz/smlouva/soubor/19736639/Smlouva-o-ucasti-na-reseni-projektu-xxxxx.docx"
+      ]
+    },
+    {
+      "id": "506926c0-cef0-4683-ba3f-f8dca9f4ea2b",
+      "slug": "xsun",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 5,
+      "new_events": 2,
+      "corrected_events": 0,
+      "evidence": "Regional EUR500k grant and founder-confirmed Airbus loan added. EUR1.4m mixed aggregate may include existing grant. Early EUR500k versus EUR600k reports conflict; 2024 state-aid entries await instrument split.",
+      "source_urls": [
+        "https://www.europe-en-france.gouv.fr/fr/projets/drone-solaire-qui-n-pas-fini-briller",
+        "https://www.ligneseditoriales.com/2018/01/18/xsun/",
+        "https://www.ec-nantes.fr/medias/fichier/xsun-final_1548405399477-pdf?INLINE=FALSE",
+        "https://www.paysdelaloire.fr/sites/default/files/2020-11/magpay38_pap_bd.pdf"
+      ]
+    },
+    {
+      "id": "0cd3ed25-cd50-4cb8-8a3d-eb857f9cd9e0",
+      "slug": "yellowscan",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 4,
+      "new_events": 2,
+      "corrected_events": 0,
+      "evidence": "Angel networks confirm EUR405k and Occitanie managing authority confirms distinct ALLIGATOR grant allocation. 2019 USD110k secondary entry unresolved; later CORDIS awards retained.",
+      "source_urls": [
+        "https://www.franceangels.org/article/forte-mobilisation-de-melies-business-angels-pour-le-forum-du-financement-des-entreprises/",
+        "https://www.europe-en-occitanie.eu/Toutes-les-operations-financees",
+        "https://www.franceangels.org/article/melies-business-angels-et-capitole-angels-donnent-de-la-hauteur-a-yellowscan/",
+        "https://www.europe-en-occitanie.eu/IMG/xlsx/5/f/4/procc_liste_des_beneficiaires_21-27_sept_2026_.xlsx",
+        "https://isprs-archives.copernicus.org/articles/XLVIII-2-W10-2025/13/2025/isprs-archives-XLVIII-2-W10-2025-13-2025.pdf"
+      ]
+    },
+    {
+      "id": "8ce6a4a1-9eaf-4235-a4b7-6b5aadcaf83d",
+      "slug": "zephro",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Exact Eindhoven Zephro B.V. KvK 96236639. Dutch MoD APOS is commissioned R&D. Issuer, RVO, SecFund and regional funding searches found no attributable public financing in checked sources.",
+      "source_urls": [
+        "https://www.nidv.eu/bedrijvengids/zephro-b-v/",
+        "https://www.zephro.com/",
+        "https://www.defensie.nl/actueel/nieuws/2025/12/18/met-investeringen-in-drones-biedt-defensie-kansen-voor-de-bedrijven"
+      ]
+    },
+    {
+      "id": "6fbb33cd-6d76-46d9-96e4-f6ecd65792ff",
+      "slug": "zuri",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 6,
+      "approved_events_after": 7,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "Issuer confirms EUR1.1m committed to open Series A tranche. EUR6m target is not additional or closed. Earlier EUR400k interim is part of existing pre-A. EIC Seal is not grant money; later strategic claim lacked original.",
+      "source_urls": [
+        "https://zuri.com/invest",
+        "https://zuri.com/news/zuri-unveils-uncrewed-cargo-vtol",
+        "https://www.asianskygroup.com/zuri-unveils-certification-series-a-funding-plans-337/"
+      ]
+    },
+    {
+      "id": "61e9af3f-db80-403e-9177-72b7c9a06e12",
+      "slug": "telespazio-germany",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 4,
+      "new_events": 3,
+      "corrected_events": 0,
+      "evidence": "Three exact German issuer allocations added. Historical VEGA KG is a different legal form and official identity chain includes a partial asset transfer. Merger and nominal changes not issuer cash.",
+      "source_urls": [
+        "https://cordis.europa.eu/project/id/731765",
+        "https://cordis.europa.eu/project/id/223782",
+        "https://www.online-handelsregister.de/handelsregisterauszug/he/Darmstadt/HRB/89231/Telespazio-Germany-GmbH",
+        "https://cordis.europa.eu/project/id/874473",
+        "https://cordis.europa.eu/project/id/734168"
+      ]
+    },
+    {
+      "id": "e546a6a4-7e79-4a18-a57d-8fa00a15f93e",
+      "slug": "tenebris",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer and Ukrainian registry lead researched. Ukraine MilTech Partners describes market access, and Alta Ares a technical collaboration. Brave1 and local-language searches found no attributable closed financing in checked sources.",
+      "source_urls": [
+        "https://tenebris.com.ua/uk/",
+        "https://opendatabot.ua/c/45226064",
+        "https://uamiltech.com/portfolio/bahnet/",
+        "https://thedefender.media/uk/2025/11/alta-ares-drone-presented/"
+      ]
+    },
+    {
+      "id": "e4457d52-db3b-44d3-9379-19e4cad5b0f2",
+      "slug": "terra-inspectioneering",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 4,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "2019 strategic investment retained. 2018 official partner schedule identifies EUR84,700 for predecessor RoNik and different amount for partner. Province corroborates name continuity.",
+      "source_urls": [
+        "https://terra-drone.net/global/2019/07/03/terra-drone-ronik-inspectioneering-confined-space-inspection-oil-gas-industry-ndt-inspection/",
+        "https://www.stimulus.nl/wp-content/uploads/2018/12/Lijst-MIT-RD-2018-projecten-voor-op-website.pdf",
+        "https://www.zeeland.nl/digitaalarchief/ib223dce0e2e",
+        "https://www.stimulus.nl/mit-zuid/avada_portfolio/ontwikkeling-hightech-inspectiedrones-t-b-v-maritieme-maintenance/"
+      ]
+    },
+    {
+      "id": "21335b89-b9e4-4088-bd10-1a691ee4b314",
+      "slug": "thales-elbit-systems-u-tacs-joint-venture",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "SEC owner filing confirms 51:49 ownership and Watchkeeper subcontract. UK Parliament confirms no direct funding for the referenced MoD contract. Accounts report fixed nominal share capital and group trade balances, not issuer loan proceeds. Existing 2026 acquisition retained.",
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1027664/000114420406026989/f20f-elbit_2.htm",
+        "https://questions-statements.parliament.uk/written-questions/detail/2025-06-02/56475/",
+        "https://singervielle.com/wp-content/uploads/1.-UAV-Tactical-Systems-Limited-Accounts-2022.pdf"
+      ]
+    },
+    {
+      "id": "2932da14-ca56-4033-b149-68a2ae49bd3d",
+      "slug": "thales-nederland",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 24,
+      "approved_events_after": 27,
+      "new_events": 3,
+      "corrected_events": 0,
+      "evidence": "Three exact legacy coordinator awards added. Seven projects show zero beneficiary contribution. NESTOR project total and parent Thales capital excluded. Dutch state ownership review checked.",
+      "source_urls": [
+        "https://cordis.europa.eu/project/id/238710",
+        "https://cordis.europa.eu/project/id/20672",
+        "https://www.rijksoverheid.nl/documenten/2025/03/19/evaluatie-aandeelhouderschap-thales",
+        "https://cordis.europa.eu/project/id/218108",
+        "https://cordis.europa.eu/project/id/224318"
+      ]
+    },
+    {
+      "id": "b7f63b2d-2fbe-45b8-b2c9-e9a608a7d3e0",
+      "slug": "thermoteknix",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "1992 all-monies debenture gives security only. Latest audited accounts report balances of multiple interest-free director and family loans, without inception amounts or dates for discrete events. Checked issuer and Companies House releases.",
+      "source_urls": [
+        "https://find-and-update.company-information.service.gov.uk/company/01624251/charges",
+        "https://find-and-update.company-information.service.gov.uk/company/01624251/filing-history/MzUxODE1ODkwMGFkaXF6a2N4/document?format=pdf&download=0",
+        "https://www.thermoteknix.com/news"
+      ]
+    },
+    {
+      "id": "b11b4942-83dc-4307-8316-9debf6807ff8",
+      "slug": "topview",
+      "disposition": "reviewed_public_sources",
+      "previous_queue_approved_events": 14,
+      "approved_events_after": 14,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Existing 14 events checked. COMP4DRONES shows zero net allocation, AIMAG EUR40k is competition prize and Campania selection eligibility is not an award. U-ELCOME signed project exists, beneficiary amount unverified.",
+      "source_urls": [
+        "https://cordis.europa.eu/project/id/826610",
+        "https://www.aimag.it/2022/04/26/aimag-resiliency-i-vincitori/",
+        "https://www.topview.it/en/project/u-elcome-u-space-uas-integration/",
+        "https://trasparenza.mit.gov.it/archivio27_normativa_0_4356.html"
+      ]
+    },
+    {
+      "id": "a6ac843f-ac75-48df-9232-6e400085ad0d",
+      "slug": "trackdeep",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Baltic Sandbox ownership and existing CORDIS FoxHunter verified. RAR-derived recipient entries and consulting support need original grant-level evidence; Tehnopol already present.",
+      "source_urls": [
+        "https://ariregister.rik.ee/eng/company/16346893/pdf",
+        "https://cordis.europa.eu/project/id/101310495",
+        "https://regia.ee/entity/16346893-trackdeep-ou",
+        "https://www.fin.ee/halduspoliitika/riigiabi/paring-riigiabi-ja-vahese-tahtsusega-abi-registrist"
+      ]
+    },
+    {
+      "id": "ce1ffc63-366d-4f69-8200-2084ad75be8d",
+      "slug": "trndlabs",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Issuer and founder report point to Dutch e-commerce brand and HK entity. Trademark and broad crowdfunding searches do not establish an attributable round. Exact historical capital ownership remains open.",
+      "source_urls": [
+        "https://trndlabs.com/pages/about",
+        "https://www.deondernemer.nl/innovatie/waarom-het-twentse-trndlabs-personeel-locatieonafhankelijk-laat-werken~ae92564"
+      ]
+    },
+    {
+      "id": "8b695453-03f0-456c-bc74-ae6d480a1419",
+      "slug": "trumpf",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "corrected_events": 1,
+      "evidence": "May 2025 extension is same EUR500m facility and corrected in place. Later report extends same line to May 2031, prepared for next guarded enrichment. CORDIS subsidiaries and US aid not attributed to parent.",
+      "source_urls": [
+        "https://www.trumpf.cn/filestorage/TRUMPF_Master/Corporate/Annual_report/Current/TRUMPF-Annual-Report-2024-2025.pdf",
+        "https://www.trumpf.com/filestorage/TRUMPF_Master/Corporate/Annual_report/Current/TRUMPF-Annual-Report-2025-26.pdf",
+        "https://cordis.europa.eu/project/id/314410"
+      ]
+    },
+    {
+      "id": "b244baa4-e351-4ea6-ac18-4ad0fa74f698",
+      "slug": "twentyfour-industries",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Notarized Luxembourg issuer deed establishes EUR878 nominal cash subscription by Lakestar vehicle and historical distinct share classes. Headline original currency, premium and overlap with 2025 seed tranche remain open. German subsidiary accounts excluded.",
+      "source_urls": [
+        "https://gd.lu/resa/1HWfc9",
+        "https://gd.lu/rcsl/4PtCdx",
+        "https://www.lobbyregister.bundestag.de/media/01/36/854414/Bilanzbericht-2024.pdf"
+      ]
+    },
+    {
+      "id": "67ed978b-54e5-443c-903b-6ece46b1bbd4",
+      "slug": "uavionics",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 2,
+      "new_events": 1,
+      "corrected_events": 0,
+      "evidence": "Sauron Eye funded occurrence added, with consortium total excluded. V-FLEX successful recommendation and rejected similar project separated. Exact awards and payment still need beneficiary-level documents.",
+      "source_urls": [
+        "https://www.uavionics.com.pl/projekty",
+        "https://www.gov.pl/attachment/bc6f1af8-23c8-45f4-ac55-48849f920490",
+        "https://www.gov.pl/attachment/55fe8520-9636-492e-ae35-9a1a277d6ecc"
+      ]
+    },
+    {
+      "id": "1c732a8b-7233-4696-8d9d-42c6a8dec79a",
+      "slug": "thales",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 18,
+      "approved_events_after": 26,
+      "new_events": 8,
+      "corrected_events": 0,
+      "evidence": "Two distinct older signed facilities and six exact direct grant allocations recorded. Original 2014 predecessor and December 2020 publicity date found late. December 2020 exact signed/public dates now established, along with an original 2014 predecessor. Later revolving line maturity still needs reconciliation. The apparent October 2026 bond result duplicates August and is excluded.",
+      "source_urls": [
+        "https://www.thalesgroup.com/sites/default/files/investor/documents/Thales_-_Consolidated_financial_statements_at_31_December_2020_1.pdf",
+        "https://annuaire-entreprises.data.gouv.fr/entreprise/thales-552059024",
+        "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2014/12/FCECO035480_20141222.pdf",
+        "https://www.thalesgroup.com/sites/default/files/investor/documents/Thales_Second_Supplement_to_the_2019_Base_Prospectus_3.pdf",
+        "https://cordis.europa.eu/project/id/101297599",
+        "https://cordis.europa.eu/project/id/101135931",
+        "https://cordis.europa.eu/project/id/101069836",
+        "https://cordis.europa.eu/project/id/956857",
+        "https://cordis.europa.eu/project/id/883374",
+        "https://cordis.europa.eu/project/id/740898"
+      ]
+    },
+    {
+      "id": "21df5ecb-38fe-472b-bd2e-99f699be7989",
+      "slug": "tanglewood-group",
+      "disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "evidence": "Companies House 12404419 shows existing 2020 cash allotment and subsequent share variation without new capital. FY2025 unchanged GBP300 share capital. Arkeus partnership is operating and unrelated to its separate Australian funding.",
+      "source_urls": [
+        "https://find-and-update.company-information.service.gov.uk/company/12404419/filing-history",
+        "https://arkeus.com/news/arkeus-and-tanglewood-group-announce-uk-partnership-and-new-manufacturing-engineering-and-customer-support-facility"
+      ]
+    }
+  ],
+  "database": {
+    "before": {
+      "events": 1330,
+      "approved_events": 1321,
+      "links": 1313,
+      "approved_links": 1305,
+      "profiles": 808,
+      "sources": 1780,
+      "companies": 352
+    },
+    "rollback_rehearsal": {
+      "events": 1375,
+      "approved_events": 1366,
+      "links": 1335,
+      "approved_links": 1327,
+      "profiles": 814,
+      "sources": 1849,
+      "companies": 353
+    },
+    "rollback_baseline_verified": {
+      "events": 1330,
+      "approved_events": 1321,
+      "links": 1313,
+      "approved_links": 1305,
+      "profiles": 808,
+      "sources": 1780,
+      "companies": 352
+    },
+    "importer_replayed_inside_rollback": true,
+    "after": {
+      "events": 1375,
+      "approved_events": 1366,
+      "links": 1335,
+      "approved_links": 1327,
+      "profiles": 814,
+      "sources": 1849,
+      "companies": 353
+    },
+    "independent_manifest_verification": {
+      "new_events": 45,
+      "corrections": 4,
+      "matched_sources": 69,
+      "new_roles": 22
+    },
+    "prior_pending_manifest_rows_confirmed": 186
+  },
+  "publication": {
+    "manifest": "research-agent/imports/funding-landscape-20261110-fourth-evening.json",
+    "previous_manifest": "research-agent/imports/funding-landscape-20261110-third-evening.json",
+    "manifests": [
+      "research-agent/imports/funding-landscape-20261110-second-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-late-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-evening.json",
+      "research-agent/imports/funding-landscape-20261110-second-evening.json",
+      "research-agent/imports/funding-landscape-20261110-third-evening.json",
+      "research-agent/imports/funding-landscape-20261110-fourth-evening.json"
+    ],
+    "report": "research-agent/reports/2026-11-10-funding-landscape-fourth-evening.json",
+    "previous_report": "research-agent/reports/2026-11-10-funding-landscape-third-evening.json",
+    "database": {
+      "events": 1375,
+      "approved_events": 1366,
+      "links": 1335,
+      "approved_links": 1327,
+      "profiles": 814,
+      "sources": 1849,
+      "companies": 353
+    },
+    "status": "committed_awaiting_fresh_catalogue_run",
+    "expected_live": {
+      "events": 1366,
+      "links": 1327,
+      "profiles": 814,
+      "manifest_rows": 231,
+      "withheld_draft_rows": 5,
+      "approved_corrections": 23,
+      "participation_corrections": 3,
+      "additional_existing_round_participations": 3
+    },
+    "checked_at": "2026-11-10T18:59:57.225Z",
+    "observed_live": {
+      "generated_at": "2026-11-10T13:52:10.085Z",
+      "investor_generated_at": "2026-11-10T13:52:11.204Z",
+      "events": 1145,
+      "links": 1214,
+      "profiles": 774
+    },
+    "observed_workflow_runs": [
+      [
+        42828359177,
+        "schedule",
+        "2026-11-10T13:51:22Z",
+        "success",
+        "completed",
+        "0ce481330c58f1081bcdc9cb01e26421422c4a62"
+      ],
+      [
+        42795281022,
+        "push",
+        "2026-11-10T09:59:20Z",
+        "failure",
+        "completed",
+        "0ce481330c58f1081bcdc9cb01e26421422c4a62"
+      ],
+      [
+        42725276104,
+        "push",
+        "2026-11-10T00:03:04Z",
+        "success",
+        "completed",
+        "d31d443bcb013bc42f7805ef700a0db3f209ee28"
+      ],
+      [
+        42640842391,
+        "push",
+        "2026-11-09T15:04:00Z",
+        "success",
+        "completed",
+        "b9799770775a866a8d0d1a818e16068acd2f3eec"
+      ]
+    ],
+    "workflow_schedule": "0 6 * * * UTC",
+    "reason": "Latest successful catalogue run predates all six pending imports. Existing scheduled build is the publication path under read-only catalogue scope. Verify all manifests and latest guarded values after the next build."
+  },
+  "prepared_followups": [
+    {
+      "company_slug": "thales",
+      "round_key": "syndicated-revolver-2014",
+      "amount": 1500000000,
+      "currency": "EUR",
+      "announced_date": "2014-12-22",
+      "source": "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2014/12/FCECO035480_20141222.pdf",
+      "note": "Distinct signed 2014-12-19 revolver, replaced December 2020. Capacity not draw; review participant roles."
+    },
+    {
+      "company_slug": "thales",
+      "round_key": "replacement-syndicated-credit-facility-2020-12",
+      "announced_date": "2020-12-14",
+      "source": "https://www.thalesgroup.com/sites/default/files/investor/documents/Thales_signs_%E2%82%AC1.5_bn_climate-linked_revolving_credit_facility_-_Press_release_-_14_December_2020_1.pdf",
+      "note": "Source establishes 2020-12-07 signing, 2020-12-14 announcement, facility agent and arranger roles; do not assume investments from those roles."
+    },
+    {
+      "company_slug": "twentyfour-industries",
+      "announced_date": "2026-01-09",
+      "amount": 878,
+      "currency": "EUR",
+      "sources": [
+        "https://gd.lu/resa/1HWfc9",
+        "https://gd.lu/rcsl/4PtCdx"
+      ],
+      "note": "Notarized filing for 878 additional seed shares subscribed and cash paid by Lakestar Resilience I LP. Verify whether premium or headline-round overlap before applying; label nominal cash expressly."
+    },
+    {
+      "company_slug": "trumpf",
+      "round_key": "replacement-syndicated-revolver-2020",
+      "source": "https://www.trumpf.com/filestorage/TRUMPF_Master/Corporate/Annual_report/Current/TRUMPF-Annual-Report-2025-26.pdf",
+      "note": "Latest audited report confirms further same-line extension through May 2031. Update note only."
+    },
+    {
+      "company_slug": "uavionics",
+      "source": "https://www.gov.pl/attachment/55fe8520-9636-492e-ae35-9a1a277d6ecc",
+      "note": "V-FLEX A1HQ/25 recommended under consortium call. Verify executed award and recipient allocation."
+    },
+    {
+      "company_slug": "topview",
+      "sources": [
+        "https://www.topview.it/en/project/u-elcome-u-space-uas-integration/",
+        "https://trasparenza.mit.gov.it/archivio27_normativa_0_4356.html"
+      ],
+      "note": "U-ELCOME signed project under agreement 101079171. Beneficiary allocation still needs grant annex."
+    },
+    {
+      "company_slug": "wingtra",
+      "round_key": "series-b-2023",
+      "source": "https://wingtra.com/wingtra-lands-22m-funding-round-as-their-commercial-drones-take-off-to-new-heights/",
+      "note": "Issuer original authenticates USD22m and expressly listed participants. An older attached EquityPitcher link concerns 2024 B1, flag mis-scoped source without destroying the curated record."
+    }
+  ]
 }
