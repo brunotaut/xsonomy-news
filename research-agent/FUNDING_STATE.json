@@ -8,29 +8,22 @@
   "published_landscape_companies": 567,
   "partial_companies": 181,
   "fully_reviewed_companies": 386,
-  "next_action": "Check the next fresh existing catalogue workflow and live datasets for both committed manifests, including three excluded draft records. Do not retry the duplicate-artifact run. Continue the prepared Leica, Manna and Leonardo reconciliations and the screened published identities under a fresh writer lease.",
+  "next_action": "Check the next fresh catalogue workflow and live datasets for all three committed manifests, including exclusion of three draft events. Avoid rerunning the duplicate-artifact workflow. Reconcile prepared Leica, Manna, Leonardo, LMT and LiveLink items before continuing the remaining published companies.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-10T11:49:21.269Z",
+  "updated_at": "2026-11-10T11:54:40.415Z",
   "source_reconciliation_companies": 341,
-  "approved_funding_events": 1094,
-  "round_participations": 1183,
-  "investor_profiles": 764,
+  "approved_funding_events": 1110,
+  "round_participations": 1207,
+  "investor_profiles": 768,
   "publication_pending": true,
-  "last_import": "research-agent/imports/funding-landscape-20261110-followup.json",
+  "last_import": "research-agent/imports/funding-landscape-20261110-noon.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "run_id": "funding-20261110-1144",
-    "owner": "chatgpt",
-    "started_at": "2026-11-10T11:49:21.269Z",
-    "lease_expires_at": "2026-11-10T13:49:21.269Z",
-    "parent_commit": "3043c70d2f37bfd48f6ecca54341b2ac6cf01ab7",
-    "purpose": "Consolidated approved funding import"
-  },
+  "active_run": null,
   "last_verified_publication": {
     "generated_at": "2026-11-10T00:04:00.850Z",
     "investor_generated_at": "2026-11-10T00:04:01.797Z",
@@ -52,7 +45,7 @@
     },
     {
       "company_slug": "orqa",
-      "claim": "No sufficiently attributable primary or transaction-party financing event was established in checkpoint 04."
+      "claim": "Two issuer events imported; historical financing coverage remains partial."
     },
     {
       "company_slug": "rigitech",
@@ -368,19 +361,19 @@
     },
     {
       "company_slug": "lehmann-aviation",
-      "claim": "French registry material indicates a 2025 capital increase, but the checked public record does not establish an attributable amount, participants or instrument for import."
+      "claim": "Hold. Original SARL SIREN 424553766 and successor 428768923 have nominal share capital changes and merger consideration; no attributable cash financing shown."
     },
     {
       "company_slug": "leonardo",
-      "claim": "Leonardo's current official reporting covers debt-programme capacity and repayments but does not yet reconcile historical primary public-market proceeds into dated events; subsidiary and joint-venture financing is not assigned to the parent."
+      "claim": "Three loan events added. Reconcile distinct 2020 drawn EUR100m CDP loan https://www.leonardo.com/documents/15646808/16754725/ComLDO_Finanziamento%20CDP_ENG.pdf?t=1580317852944 and July 1 EUR500m 2.375% bond https://www.leonardo.com/documents/15646808/16754234/_ComLDO_Bond%2BIssue_1_07_2020_ENG%2B%28DEF%29.pdf?t=1593626607110. May 2020 revolver and contingency term line are separate capacities https://www.leonardo.com/documents/15646808/16754250/ComLDO_New%2BCredit%2BFacilities_06_05_2020_ENG.pdf?t=1588788539474. Check existing 2021 and 2025 facilities against their 26 signatory bank names and preserve lender role."
     },
     {
       "company_slug": "lv-teh",
-      "claim": "The official EUR64,425 Latvian Ministry of Defence grant is recorded; secondary references to later public support require original award-level records before attribution."
+      "claim": "Two dated national awards added with undisclosed amounts. The existing third award has EUR64,425."
     },
     {
       "company_slug": "marble-aerospace",
-      "claim": "ARIA GBP2.508m award is labeled a research contract. Individual ARIA payments are components, not additional rounds. The Innovate UK grant offer and NATO DIANA accelerator terms are separate."
+      "claim": "Exclude separate ARIA £2,508,000 R&D contract and its £49,858 May payment from grants. https://www.aria.org.uk/media/wuebqa5w/transparencydata-end-of-q4fy24-25.pdf. UKRI dates existing marine monitoring announcement April 10 2024; issuer report April 11."
     },
     {
       "company_slug": "maxon-systems",
@@ -416,19 +409,19 @@
     },
     {
       "company_slug": "mits-industries",
-      "claim": "MITS Capital announced the MITS Industries consolidation as a platform investment, while stating that the transaction remained subject to definitive agreements; no closed financing is recorded."
+      "claim": "Launch and corporate registry screening identified separate fund and portfolio company holdings. No additional confirmed issuer funding."
     },
     {
       "company_slug": "monopulse",
-      "claim": "The signed EUR1.12m ILTE loan and more-than-EUR2m 2026 equity round are recorded; secondary claims of earlier EUSPA support and a separate Plug and Play amount lack original event-level confirmation."
+      "claim": "Coinvest announcement describes more than EUR2m. Review existing round qualifier and roles. Older EUR1.12m ILTE row already exists."
     },
     {
       "company_slug": "motion-robotics",
-      "claim": "The GBP73,815 SEASHORE grant is recorded from the official UKRI beneficiary page; a separate government robotics-project reference lacks an attributable company amount."
+      "claim": "UKRI organisation profile contains project candidates requiring exact beneficiary and individual allocations."
     },
     {
       "company_slug": "msp-inntech",
-      "claim": "Two company-specific EU contributions are recorded; the PLN70.7m SPEEDJET figure is a consortium budget and is not assigned to MSP InnTech without a beneficiary split."
+      "claim": "No additional original issuer grant evidence established in screening."
     },
     {
       "company_slug": "munin-dynamics",
@@ -484,7 +477,7 @@
     },
     {
       "company_slug": "oves-enterprise",
-      "claim": "The company was negotiating a EUR55m raise in April 2026; no closed financing event or named participant was established."
+      "claim": "EUR55m is founder-reported talks. Internal R&D allocation is spending, and no closed issuer event was established."
     },
     {
       "company_slug": "parrot",
@@ -1367,53 +1360,46 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": {
-    "manifest": "research-agent/imports/funding-landscape-20261110-noon.json",
-    "report": "research-agent/reports/2026-11-10-funding-landscape-noon.json",
-    "stage": "staged_before_production_rehearsal",
-    "baseline": {
-      "events": 1097,
-      "links": 1186,
-      "profiles": 764,
-      "sources": 1451,
-      "companies": 345,
-      "approved_events": 1094,
-      "approved_links": 1183,
-      "present": 59
-    },
-    "expected_delta": {
-      "events": 16,
-      "links": 24,
-      "profiles": 4,
-      "sources": 23
-    }
-  },
+  "pending_import": null,
   "pending_publication": {
-    "manifest": "research-agent/imports/funding-landscape-20261110-followup.json",
-    "previous_manifest": "research-agent/imports/funding-landscape-20261110-morning.json",
-    "report": "research-agent/reports/2026-11-10-funding-landscape-followup.json",
+    "manifest": "research-agent/imports/funding-landscape-20261110-noon.json",
+    "previous_manifest": "research-agent/imports/funding-landscape-20261110-followup.json",
+    "report": "research-agent/reports/2026-11-10-funding-landscape-noon.json",
     "database": {
-      "events": 1097,
-      "links": 1186,
-      "profiles": 764,
-      "sources": 1451,
-      "companies": 345,
-      "approved_events": 1094,
-      "approved_links": 1183,
-      "correction_targets_still_approved": 0
+      "events": 1113,
+      "links": 1210,
+      "profiles": 768,
+      "sources": 1474,
+      "companies": 346,
+      "approved_events": 1110,
+      "approved_links": 1207
     },
-    "status": "fresh_build_succeeded_deploy_failed_duplicate_artifact",
+    "status": "committed_pending_fresh_workflow",
     "site_commit": "0ce481330c58f1081bcdc9cb01e26421422c4a62",
     "workflow_run_id": 42795281022,
     "workflow_attempt": 3,
-    "checked_at": "2026-11-10T10:55:49.817Z",
+    "checked_at": "2026-11-10T11:54:40.415Z",
     "expected_live": {
-      "events": 1094,
-      "links": 1183,
-      "profiles": 764,
-      "manifest_rows": 56
+      "events": 1110,
+      "links": 1207,
+      "profiles": 768,
+      "manifest_rows": 72,
+      "withheld_draft_rows": 3
     },
-    "failure": "Attempt 3 rebuilt current production data but the existing run now has two artifacts named github-pages. A fresh run is needed."
+    "failure": "Run 42795281022 reached deployment timeouts and then duplicate github-pages artifacts on rebuild. A new scheduled workflow was not observed at this checkpoint. The connected GitHub tools have no fresh dispatch operation and the browser session was signed out.",
+    "manifests": [
+      "research-agent/imports/funding-landscape-20261110-morning.json",
+      "research-agent/imports/funding-landscape-20261110-followup.json",
+      "research-agent/imports/funding-landscape-20261110-noon.json"
+    ],
+    "previous_report": "research-agent/reports/2026-11-10-funding-landscape-followup.json",
+    "observed_live": {
+      "events": 1038,
+      "links": 1160,
+      "profiles": 761,
+      "generated_at": "2026-11-10T00:04:00.850Z",
+      "investor_generated_at": "2026-11-10T00:04:01.797Z"
+    }
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -1464,6 +1450,23 @@
       "completed_reviews_per_active_hour": 0,
       "timing_scope": "Wall time from state read through evidence checks, rollback rehearsal, import, build and deployment verification attempt. Waiting between scheduled runs excluded. Live publication remains unverified.",
       "publication_verified": false
+    }
+  },
+  "latest_noon_reconciliation": {
+    "report": "research-agent/reports/2026-11-10-funding-landscape-noon.json",
+    "manifest": "research-agent/imports/funding-landscape-20261110-noon.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "import_bearing_identities": 8,
+      "newly_completed_bounded_reviews": 0,
+      "source_review_partial": 24,
+      "active_minutes": 10.17,
+      "checked_identities_per_active_hour": 141.54,
+      "completed_reviews_per_active_hour": 0,
+      "publication_verified": false,
+      "concurrency_speedup_claimed": false,
+      "timing_scope": "Elapsed execution from current state read through evidence review, rollback rehearsal, production import, and live and deployment checks to this checkpoint. No waiting between scheduled executions is included. Lane durations are not summed. Live verification remains pending."
     }
   }
 }
