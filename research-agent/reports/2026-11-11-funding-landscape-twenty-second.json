@@ -1,0 +1,354 @@
+{
+  "report": "funding-landscape-twenty-second",
+  "checked_at": "2026-11-11",
+  "lease_id": "funding-20261111T225044Z-wider-12",
+  "scope": "Twenty-four queued wider-cohort identities, researched in four disjoint read-only lanes and consolidated under one writer lease.",
+  "method": [
+    "Broad dated financing/history search",
+    "Official company, filing, registry and financial-source review",
+    "Investor and transaction-party search including older rounds",
+    "Exact issuer and group/subsidiary reconciliation",
+    "Original currency, date precision, instrument, amount qualifier, closing state and explicit role extraction",
+    "Production rollback rehearsal, one atomic import, post-import idempotency rehearsal and database audit"
+  ],
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 14,
+    "newly_completed_wider_reviews": 14,
+    "new_or_retained_partial": 10,
+    "new_events_written": 27,
+    "new_approved_events": 27,
+    "new_round_participations": 45,
+    "new_generic_portfolio_relationships": 3,
+    "new_investor_profiles": 41,
+    "new_source_rows": 35,
+    "new_companies_with_events": 7,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "manifest_event_matches": 27,
+    "db_approved_events": 2102,
+    "db_approved_round_participations": 2319,
+    "db_investor_profiles": 1448,
+    "db_source_reconciliation_companies": 512,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false
+  },
+  "queue_after": {
+    "reviewed_public_sources": 746,
+    "source_review_partial": 107,
+    "queued": 1711,
+    "total": 2564
+  },
+  "per_company": [
+    {
+      "company_slug": "bechtel",
+      "company_name": "Bechtel",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "Privately owned exact issuer; project/customer financing and investments made by Bechtel were excluded.",
+      "source_urls": [
+        "https://www.bechtel.com/impact/financials/",
+        "https://www.bechtel.com/annual-reports/"
+      ]
+    },
+    {
+      "company_slug": "beechcraft",
+      "company_name": "Beechcraft",
+      "disposition": "source_review_partial",
+      "funding_events_written": 6,
+      "relationships_written": 0,
+      "outcome": "Continuous Hawker Beechcraft/Beechcraft issuer supported six debt facilities/issuances; acquisition price, non-cash reorganization equity and Textron buyer financing were excluded.",
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1396420/000119312507258855/dex101.htm",
+        "https://www.sec.gov/Archives/edgar/data/1396422/000119312508001576/d424b3.htm",
+        "https://www.sec.gov/Archives/edgar/data/1396425/000119312510040870/d424b3.htm",
+        "https://www.sec.gov/Archives/edgar/data/1396443/000119312509080437/d424b3.htm",
+        "https://www.prnewswire.com/news-releases/beechcraft-emerges-from-chapter-11-a-stronger-global-company-191791941.html"
+      ]
+    },
+    {
+      "company_slug": "beehive-industries",
+      "company_name": "Beehive Industries",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "Colorado aerospace manufacturer distinguished from the Nebraska software namesake; capital-expenditure plans, contracts and acquisitions were excluded.",
+      "source_urls": [
+        "https://www.beehive-industries.com/news"
+      ]
+    },
+    {
+      "company_slug": "beeline",
+      "company_name": "Beeline",
+      "disposition": "source_review_partial",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "UAS Logistics Inc dba Beeline Inc appears economically continuous with Beeline UAS; possible duplicate remains an identity hold and no financing was assigned.",
+      "source_urls": [
+        "https://www.faa.gov/sites/faa.gov/files/107W-2026-02910-Toby-Woods-CoW.pdf",
+        "https://www.beelineuas.io/about"
+      ]
+    },
+    {
+      "company_slug": "beeline-uas",
+      "company_name": "Beeline UAS",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "UAS Logistics Inc dba Beeline Inc/Beeline UAS exact operating identity; partnerships were excluded and no public round was verified.",
+      "source_urls": [
+        "https://www.beelineuas.io/",
+        "https://www.faa.gov/sites/faa.gov/files/107W-2026-02910-Toby-Woods-CoW.pdf"
+      ]
+    },
+    {
+      "company_slug": "beex",
+      "company_name": "BeeX",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 3,
+      "relationships_written": 0,
+      "outcome": "Singapore BeeX Pte. Ltd. identity verified; three equity events recorded; multi-party programme budgets and unverified grant currency held.",
+      "source_urls": [
+        "https://imcindustrialgroup.com/imc-ventures-makes-maiden-investment-into-beex/",
+        "https://www.earth.vc/post/beex-raises-us-2mto-accelerate-autonomous-inspections-of-offshore-wind-farms",
+        "https://www.beex.sg/news/beex-closes-usd7-7m-series-a-to-scale-autonomous-underwater-operations"
+      ]
+    },
+    {
+      "company_slug": "behotec",
+      "company_name": "Behotec",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "German Behotec GmbH exact issuer distinguished from BEHtec university spinout; predecessor registered capital is not a round.",
+      "source_urls": [
+        "https://www.behotec.de/xtcommerce",
+        "https://openregister.de/company/DE-HRB-D2601-92058"
+      ]
+    },
+    {
+      "company_slug": "beijing-institute-of-technology",
+      "company_name": "Beijing Institute of Technology",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "University research budgets, recruitment packages and an alumni investment fund were not treated as issuer financing.",
+      "source_urls": [
+        "https://english.bit.edu.cn/2024-05/29/c_969216.htm",
+        "https://english.bit.edu.cn/2025-09/29/c_1129430.htm"
+      ]
+    },
+    {
+      "company_slug": "beijing-univ-of-aeronautics-and-astronautics-buaa-harbin-aircraft-industry-group-haig",
+      "company_name": "Beijing Univ. of Aeronautics & Astronautics (BUAA) / Harbin Aircraft Industry Group (HAIG)",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "Combined row is not one legal issuer; a constituent loan and parent restructuring could not be assigned to it.",
+      "source_urls": [
+        "https://www.abchina.com/en/aboutus/susReports/202303/P020230331664255776160.pdf",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2023/1127/2023112700445.pdf"
+      ]
+    },
+    {
+      "company_slug": "beker-co",
+      "company_name": "Beker & Co.",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "Kyiv advisory firm verified; client transactions and SPAC commentary excluded.",
+      "source_urls": [
+        "https://www.bekerconsulting.com/",
+        "https://youcontrol.com.ua/en/catalog/company_details/45405493/"
+      ]
+    },
+    {
+      "company_slug": "belgium-naval-and-robotics",
+      "company_name": "Belgium Naval & Robotics",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "Procurement consortium, not independently financed issuer; MCM contract and multi-partner EDF programme excluded.",
+      "source_urls": [
+        "https://www.naval-group.com/sites/default/files/2020-10/cp_la-belgique-choisit-belgium-naval-and-robotics_vf-en.pdf",
+        "https://mecatron.rma.ac.be/index.php/projects/emcm/"
+      ]
+    },
+    {
+      "company_slug": "bell-helicopter-bell-textron",
+      "company_name": "Bell Helicopter (Bell Textron)",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "Bell is a Textron brand/subsidiary; parent debt, customer export facilities and consortium investment were excluded.",
+      "source_urls": [
+        "https://www.textron.com/About/Company/History",
+        "https://news.bellflight.com/en-US/about/"
+      ]
+    },
+    {
+      "company_slug": "benua-defence",
+      "company_name": "Benua Defence",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "Malaysian subsidiary verified; group backing and procurement activity did not establish a public issuer round.",
+      "source_urls": [
+        "https://benuadefence.com/about",
+        "https://buy.experian.com.my/index.php/buy-report/malaysia-company/1415038/benua-defence-sdn-bhd"
+      ]
+    },
+    {
+      "company_slug": "beonyx",
+      "company_name": "Beonyx",
+      "disposition": "source_review_partial",
+      "funding_events_written": 4,
+      "relationships_written": 0,
+      "outcome": "BeOnyx Robotics Inc. continuity verified; two grants and two financing disclosures recorded; consortium budget and procurement revenue excluded.",
+      "source_urls": [
+        "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/economie/publications-adm/acces-information/contrats-engagements-financiers/2026/FDE/RA-engagement-fde-janvier-2026.pdf",
+        "https://search.open.canada.ca/grants/?page=3665&search_text=Novo+Plastics+Inc.+&sort=score+desc",
+        "https://beonyx.ca/news/insights/i4-capital-fund-invests-in-beonyx-to-accelerate-the-commercialization-of-its-dual-use-electric-all-terrain-vehicles/",
+        "https://i4capital.vc/fr/non-classe/investissement-damorcage-dans-beonyx/",
+        "https://beonyx.ca/news/beonyx-selected-for-minerva-defence-innovation-grant/"
+      ]
+    },
+    {
+      "company_slug": "beretta-defense-technologies",
+      "company_name": "Beretta Defense Technologies",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "Strategic alliance of Beretta Holding companies rather than separate financing issuer; group acquisitions excluded.",
+      "source_urls": [
+        "https://www.berettadefensetechnologies.com/about-beretta-defense-technologies/"
+      ]
+    },
+    {
+      "company_slug": "beta-technologies",
+      "company_name": "BETA Technologies",
+      "disposition": "source_review_partial",
+      "funding_events_written": 9,
+      "relationships_written": 0,
+      "outcome": "Nine source-supported private/public equity and debt events recorded; planned facility expansion and customer contracts excluded.",
+      "source_urls": [
+        "https://investors.beta.team/news-events/press-releases/detail/86/beta-technologies-closes-368-million-funding-round-led-by-fidelity-and-backed-by-amazons-climate-pledge-fund",
+        "https://www.axios.com/2022/04/20/beta-technologies-electric-aviation-funding",
+        "https://investors.beta.team/financials/annual-reports/content/0001784570-22-000001/primary_doc.html",
+        "https://investors.beta.team/financials/sec-filings/content/0001628280-26-069152/bta-20260930.htm",
+        "https://investors.beta.team/news-events/press-releases/detail/85/beta-technologies-raises-more-than-300m-in-additional-equity-capital-to-fund-growth-and-commercialization",
+        "https://investors.beta.team/financials/sec-filings/content/0001628280-25-055234/bta-20250930.htm",
+        "https://investors.beta.team/financials/annual-reports/content/0001193125-25-240285/d89594ds1a.htm",
+        "https://investors.beta.team/financials/annual-reports/content/0001140361-26-017861/ny20070564x1_def14a.htm",
+        "https://investors.beta.team/financials/annual-reports/content/0001628280-26-015838/bta-20251231.htm",
+        "https://www.sec.gov/Archives/edgar/data/1784570/000178457026000001/primary_doc.xml"
+      ]
+    },
+    {
+      "company_slug": "bharat-forge",
+      "company_name": "Bharat Forge",
+      "disposition": "source_review_partial",
+      "funding_events_written": 2,
+      "relationships_written": 0,
+      "outcome": "Two issuer-supported qualified-institution placements recorded; investments into subsidiaries excluded.",
+      "source_urls": [
+        "https://www.bharatforge.com/assets/pdf/investor/9th%20December%202024%20Allotment%20of%20equity%20shares%20under%20QIP%20Issue%20of%20the%20Company.pdf",
+        "https://www.bharatforge.com/assets/pdf/press-release/Bharat-Forge-Limited-QIP-closure.pdf",
+        "https://nsearchives.nseindia.com/corporate/ANILSHINDE_05112026173609_SEIntimationMonitoringAgency_sd.pdf",
+        "https://www.bazaarwatch.com/announcement/122954/bharat-forge-ltd-qualified-institutional-placement-allotment"
+      ]
+    },
+    {
+      "company_slug": "biores",
+      "company_name": "BioRes",
+      "disposition": "source_review_partial",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "DoD participant name maps to Aeroo Pro but legal-entity continuity remains unresolved; UK biotech financing false match excluded.",
+      "source_urls": [
+        "https://www.dvidshub.net/news/574682/department-war-announces-industry-participants-falcon-peak-262",
+        "https://pro.aeroodrones.com/"
+      ]
+    },
+    {
+      "company_slug": "bird-aerosystems",
+      "company_name": "Bird Aerosystems",
+      "disposition": "source_review_partial",
+      "funding_events_written": 0,
+      "relationships_written": 1,
+      "outcome": "FIMI ownership relationship recorded; FIMI and Ondas stake acquisitions are secondary and not issuer funding.",
+      "source_urls": [
+        "https://www.birdaero.com/%D7%A7%D7%A8%D7%9F-%D7%A4%D7%99%D7%9E%D7%99-%D7%97%D7%AA%D7%9E%D7%94-%D7%A2%D7%9C-%D7%94%D7%A1%D7%9B%D7%9D-%D7%9C%D7%A8%D7%9B%D7%99%D7%A9%D7%94-%D7%A9%D7%9C-50-%D7%91%D7%97%D7%91%D7%A8%D7%AA-bird-aero/"
+      ]
+    },
+    {
+      "company_slug": "birdon",
+      "company_name": "Birdon",
+      "disposition": "source_review_partial",
+      "funding_events_written": 1,
+      "relationships_written": 0,
+      "outcome": "AUD 4.16 million NSW grant recorded once; fiscal-year disbursement, guarantee and infrastructure funding excluded.",
+      "source_urls": [
+        "https://irp.cdn-website.com/f230178b/files/uploaded/202204_Leslie_Williams_Newsletter.pdf",
+        "https://files.parliament.nsw.gov.au/fileapi/ParlFiles/GetArtifact/Submission%2011%20-%20Birdon%20Group.pdf?serverRelativeUrl=%2Fladocs%2Fsubmissions%2F82432%2FSubmission+11+-+Birdon+Group.pdf"
+      ]
+    },
+    {
+      "company_slug": "birdstop",
+      "company_name": "Birdstop",
+      "disposition": "source_review_partial",
+      "funding_events_written": 2,
+      "relationships_written": 0,
+      "outcome": "Two private placements recorded; older accelerator candidates and a conflicting grant claim held.",
+      "source_urls": [
+        "https://www.prnewswire.com/news-releases/california-based-birdstop-raises-funding-to-expand-network-of-bvlos-drones-across-america-and-protect-critical-infrastructure-301895985.html",
+        "https://specstream.ai/data/form-d/company/birdstop-inc-1980743",
+        "https://www.streetinsider.com/SEC%2BFilings/Form%2BD%2BBirdstop%2C%2BInc./25213645.html"
+      ]
+    },
+    {
+      "company_slug": "blackjet-drone-solutions",
+      "company_name": "BlackJet Drone Solutions",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "2025 Denver cleaning-services issuer verified; bounded public search found no supported round.",
+      "source_urls": [
+        "https://www.linkedin.com/company/black-jet-drone-solutions-llc"
+      ]
+    },
+    {
+      "company_slug": "blackned",
+      "company_name": "blackned",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 1,
+      "outcome": "Rheinmetall ownership recorded; secondary stake purchases and procurement revenue excluded.",
+      "source_urls": [
+        "https://www.rheinmetall.com/en/media/news-watch/news/2023/jan-mar/2023-01-05_rheinmetall-acquires-40-stake-in-digitalization-specialist-blackned-gmbh"
+      ]
+    },
+    {
+      "company_slug": "blacksea-technologies",
+      "company_name": "BlackSea Technologies",
+      "disposition": "source_review_partial",
+      "funding_events_written": 0,
+      "relationships_written": 1,
+      "outcome": "Razor’s Edge founding/backing recorded; sponsor capital remains undisclosed and AEVEX acquisition consideration excluded.",
+      "source_urls": [
+        "https://www.blacksea.tech/charter",
+        "https://aevex.com/aevex-to-acquire-blacksea-technologies-strengthening-its-multi-domain-autonomous-systems-capabilities/"
+      ]
+    }
+  ],
+  "audit_notes": [
+    "Source candidates and empty database rows were not treated as verified facts or evidence of zero funding.",
+    "Acquisition prices, customer/project finance, contracts, programme-wide budgets and parent/subsidiary financing were not reassigned to cohort issuers.",
+    "All imported events use source-supported original currency and disclosed date precision; unsupported investor cheques and roles remain null or omitted."
+  ]
+}
