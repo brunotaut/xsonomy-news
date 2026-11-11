@@ -1,0 +1,520 @@
+{
+  "report": "funding-landscape-sixteenth",
+  "run_id": "funding-20261111T154900Z-wider-06",
+  "checked_at": "2026-11-11T16:07:22.000Z",
+  "scope": {
+    "identities_checked": 24,
+    "cohort": "wider",
+    "parallel_read_only_groups": 4,
+    "published_landscape_first_status": "566/567 complete; Liebherr remains partial"
+  },
+  "lease": {
+    "base_head": "9505b0679d2a99f9887e17c834d1ab1a515738e4",
+    "lease_commit": "799b4cea2e19f14de229c503166a626612c306d9",
+    "expires_at": "2026-11-11T17:49:00.000Z"
+  },
+  "manifest": "research-agent/imports/funding-landscape-20261111-sixteenth.json",
+  "database": {
+    "project_id": "uobidcahmrmfdmfbrtkt",
+    "rollback_rehearsal": true,
+    "atomic_import": true,
+    "before": {
+      "approved_events": 1765,
+      "approved_links": 1672,
+      "investor_profiles": 1019,
+      "coverage": 420
+    },
+    "after": {
+      "approved_events": 1833,
+      "approved_links": 1771,
+      "investor_profiles": 1070,
+      "coverage": 438
+    },
+    "imported": {
+      "events": 68,
+      "round_participations": 99,
+      "investor_profiles": 51,
+      "source_rows": 114,
+      "companies_with_events": 18
+    }
+  },
+  "queue": {
+    "reviewed_public_sources": 16,
+    "source_review_partial": 8,
+    "queued_remaining": 1855,
+    "wider_reviewed_or_partial": 142
+  },
+  "publication": {
+    "pending": true,
+    "catalogue_trigger": null,
+    "workflow": null,
+    "live_verified": false
+  },
+  "methodology": [
+    "Issuer identity resolved before attribution",
+    "Original currencies and amount qualifiers preserved",
+    "Equity, debt and grants separated",
+    "Generic purchaser, trustee, arranger and underwriter labels excluded from investor roles",
+    "Empty rows not treated as zero funding",
+    "Parent-only, subsidiary-only and unclosed claims held"
+  ],
+  "company_reviews": [
+    {
+      "company_id": "2026c9a4-2998-43ef-90be-d90c153b0012",
+      "name": "Allan Control Systems",
+      "disposition": "source_review_partial",
+      "event_count": 0,
+      "identity": {
+        "exact_issuer": null,
+        "note": "No distinct legal issuer was verified under the exact Allan spelling; probable misspelling/duplicate candidate of Allen Control Systems, Inc. Do not copy events or merge without entity-resolution provenance."
+      },
+      "held_or_rejected": null,
+      "source_urls": [
+        "https://www.allencontrolsystems.com/terms-and-conditions",
+        "https://sam.directory/contractors/allen-control-systems-inc-f6pcssdjef68?tab=contacts",
+        "https://uspto.report/TM/98618199/APP20240625201018"
+      ]
+    },
+    {
+      "company_id": "b48a57ed-ebae-42c1-a7c6-bb7705d8910f",
+      "name": "Allen Control Systems",
+      "disposition": "reviewed_public_sources",
+      "event_count": 3,
+      "identity": {
+        "exact_issuer": "Allen Control Systems, Inc.",
+        "jurisdiction": "Delaware, United States",
+        "identifiers": {
+          "UEI": "F6PCSSDJEF68",
+          "CAGE": "9G8G8"
+        }
+      },
+      "held_or_rejected": [
+        "Wellfound Dec. 2023 USD 3 million pre-seed is database-only and unverified.",
+        "Government awards, IDIQs, and customer contracts are not financing.",
+        "Unconfirmed investor names were not imported."
+      ],
+      "source_urls": [
+        "https://www.allencontrolsystems.com/blog/announcing-our-12m-seed-round",
+        "https://www.vcaonline.com/news/2025032705/allen-control-systems-raises-30-million-series-a-to-accelerate-deployment-of-autonomous-weapon-systems-and-counter-rapidly-proliferating-drone-threat/",
+        "https://finance.yahoo.com/news/gun-turret-startup-allen-control-170000028.html",
+        "https://www.allencontrolsystems.com/newsroom",
+        "https://www.businesswire.com/news/home/20260526638233/en/Allen-Control-Systems-Raises-%24200-Million-Series-B-at-%242.2-Billion-Post-Money-Valuation-to-Scale-Manufacturing-and-Accelerate-Deployment-of-Bullfrog",
+        "https://finance.yahoo.com/sectors/technology/articles/allen-control-systems-raises-200-141300911.html"
+      ]
+    },
+    {
+      "company_id": "00173bf2-ada7-48ea-ae63-c281a86c5595",
+      "name": "Alliant Techsystems (ATK)",
+      "disposition": "reviewed_public_sources",
+      "event_count": 4,
+      "identity": {
+        "exact_issuer": "Alliant Techsystems Inc.",
+        "jurisdiction": "Delaware, United States",
+        "identifiers": {
+          "SEC_CIK": "0000866121",
+          "EIN": "41-1672694"
+        },
+        "note": "Same registrant changed name to Orbital ATK, Inc. on 2015-02-09 after the Vista Outdoor spin-off and Orbital Sciences combination; Northrop Grumman acquired Orbital ATK on 2018-06-06."
+      },
+      "held_or_rejected": [
+        "Shelf registrations and proposed securities are not proceeds.",
+        "The Vista spin-off, Orbital combination, and Northrop acquisition are corporate transactions, not issuer funding.",
+        "Vista Outdoor, subsidiary, and Northrop parent financings are excluded."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1292455/000110465906014726/a06-4405_1424b2.htm",
+        "https://www.sec.gov/Archives/edgar/data/1292456/000104746910007976/a2200060z424b2.htm",
+        "https://www.sec.gov/Archives/edgar/data/866121/000144530513002653/atk1142013x8-k.htm",
+        "https://www.sec.gov/Archives/edgar/data/866121/000144530513002653/atk1142013xexhibit41.htm",
+        "https://www.sec.gov/Archives/edgar/data/866121/000095015714000727/form8k.htm"
+      ]
+    },
+    {
+      "company_id": "205caeba-86b8-449f-bd5a-8d7a0fa0f316",
+      "name": "Allient",
+      "disposition": "reviewed_public_sources",
+      "event_count": 3,
+      "identity": {
+        "exact_issuer": "Allient Inc.",
+        "former_name": "Allied Motion Technologies Inc.",
+        "name_change_effective": "2023-08-23",
+        "jurisdiction": "Colorado, United States",
+        "identifiers": {
+          "SEC_CIK": "0000046129",
+          "EIN": "84-0518115",
+          "NASDAQ": "ALNT"
+        }
+      },
+      "held_or_rejected": [
+        "Revolver, accordion, and private shelf capacities are not equal to proceeds; later outstanding balance lacks draw dates.",
+        "2018, 2021, and 2026 shelf registrations are offers/capacity only.",
+        "Shares issued as acquisition consideration to sellers are not funding."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/46129/000104746906004124/a2168753z10-k.htm",
+        "https://www.sec.gov/Archives/edgar/data/46129/000155837021015209/amot-20211104x8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/46129/000155837024003855/alnt-20240321x8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/46129/000155837024003855/alnt-20240321xex10d1.htm"
+      ]
+    },
+    {
+      "company_id": "144c12ac-e17b-4ae8-b5de-593d5b650c87",
+      "name": "Allur Group",
+      "disposition": "reviewed_public_sources",
+      "event_count": 2,
+      "identity": {
+        "exact_issuer": "JSC Group of Companies Allur",
+        "local_name": "АО «Группа Компаний Аллюр»",
+        "jurisdiction": "Kazakhstan",
+        "identifiers": {
+          "BIN": "140840016260"
+        },
+        "note": "Distinct from LLP ALLUR GROUP, BIN 121040005334."
+      },
+      "held_or_rejected": [
+        "DBK's 2015 11.05% shareholding / reported KZT 1.43 billion involved conversion of penalties and fines, so it is not imported as fresh funding.",
+        "Baiterek Venture Fund's end-2020 exit is not funding.",
+        "QSG Holding bonds belong to a separate issuer despite beneficiary overlap.",
+        "Customer leasing products and self-funded capital expenditure are not issuer financing."
+      ],
+      "source_urls": [
+        "https://qic.kz/en/novosti-i-insayty/fond-s-uchastiem-kazyna-kapital-menedzhment-vyshel-iz-proekta-v-sfere-transporta/",
+        "https://www.kdb.kz/en/ajax/project.php?LANG=EN_&PROJECT_ID=13850",
+        "https://www.kdb.kz/en/projects/on-financing/"
+      ]
+    },
+    {
+      "company_id": "24326917-bc10-41db-bde1-580bc58dab92",
+      "name": "Almaz-Antey",
+      "disposition": "reviewed_public_sources",
+      "event_count": 5,
+      "identity": {
+        "exact_issuer": "Air-Space Defense Concern Almaz-Antey JSC",
+        "local_name": "АО «Концерн воздушно-космической обороны «Алмаз–Антей»",
+        "jurisdiction": "Russia",
+        "identifiers": {
+          "INN": "7731084175",
+          "OGRN": "1027739001993",
+          "issuer_code": "04065-A"
+        }
+      },
+      "held_or_rejected": [
+        "Issue 015D was registered on 2025-12-08 and amended on 2026-11-02, but no results report was found by the cutoff; it is authorized/target financing, not completed proceeds.",
+        "Issue 014D code cancellation lacks a located results report and amount source, so it is held.",
+        "VTB's reported RUB 19 billion North-Western Regional Center financing and the 2011 RUB 10 billion loan were project/subsidiary financings, not proven parent borrowing.",
+        "Government contracts and procurement are not financing; absence of public bonds is not zero funding."
+      ],
+      "source_urls": [
+        "https://base.garant.ru/57645063/",
+        "https://www.cbr.ru/press/pr/?file=22102014_152601sbrfr2014-10-22t15_24_08.htm",
+        "https://mfd.ru/news/view/?id=1816051",
+        "https://www.cbr.ru/Queries/XsltBlock/File/144005/-1/ves150226016.pdf",
+        "https://www.cbr.ru/press/PR/?file=15052015_092357sbrfr2015-05-15T09_21_01.htm",
+        "https://base.garant.ru/402938771/",
+        "https://www.cbr.ru/rbr/insideDKO/doc?id=39366"
+      ]
+    },
+    {
+      "company_id": "d7ccc0b4-b741-4dcc-ba88-de646a8ed863",
+      "name": "Altair Engineering",
+      "disposition": "reviewed_public_sources",
+      "event_count": 4,
+      "identity": null,
+      "held_or_rejected": [
+        "Exclude selling-stockholder IPO proceeds.",
+        "Exclude Siemens acquisition consideration completed 2025-03-26; it was seller proceeds, not issuer funding."
+      ],
+      "source_urls": [
+        "https://www.generalatlantic.com/investment/altair/",
+        "https://www.supercomputingonline.com/latest/developer-tools/14488-altair-engineering-expands-board-of-directors",
+        "https://www.sec.gov/Archives/edgar/data/1701732/000119312517329556/d290748d424b4.htm",
+        "https://www.sec.gov/Archives/edgar/data/1701732/000119312517357573/d224585d10q.htm",
+        "https://www.sec.gov/Archives/edgar/data/1701732/000119312521283106/d206687d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1701732/000119312521283106/d206687dex991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1701732/000119312522181482/d350501dex991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1701732/000119312522174285/d230262d8k.htm"
+      ]
+    },
+    {
+      "company_id": "a3689558-f098-4959-aac5-497fe99a1918",
+      "name": "Alteon",
+      "disposition": "reviewed_public_sources",
+      "event_count": 1,
+      "identity": null,
+      "held_or_rejected": [
+        "Emergent Ventures, Atlas Fellowship and 1517 support predated incorporation or was attributed to the founder/project; do not import as issuer financing.",
+        "Do not add those earlier backers as participants in the USD 2.5 million round."
+      ],
+      "source_urls": [
+        "https://techcrunch.com/2026/08/31/lachy-groom-backs-indian-startup-aiming-to-keep-aircraft-aloft-for-a-year/",
+        "https://www.business-standard.com/companies/start-ups/alteon-bengaluru-startup-aircraft-months-dynamic-soaring-albatross-126090201377_1.html",
+        "https://www.indiafilings.com/search/minimap-aerospace-private-limited-cin-U30305MH2025PTC451082"
+      ]
+    },
+    {
+      "company_id": "9ed0bd44-5ce9-44bf-abb0-46c3e8578d62",
+      "name": "Althimis",
+      "disposition": "source_review_partial",
+      "event_count": 1,
+      "identity": null,
+      "held_or_rejected": [
+        "Do not create a separate 2023 round from database-only material showing 2023-09-01; it may be a duplicate or default-date artifact.",
+        "A contemplated next round was open/planned, not closed.",
+        "ALTHIMIS DEFENSE LTD was incorporated in Israel on 2025-09-29 and is a subsidiary/shareholding target, not the identified funding issuer."
+      ],
+      "source_urls": [
+        "https://idf.ai/companies/althimis/",
+        "https://www.calcalistech.com/ctechnews/article/hyosxamibx",
+        "https://www.linkedin.com/company/althimis"
+      ]
+    },
+    {
+      "company_id": "5525cf3e-0ddf-4b7e-937a-b57ece95bfe9",
+      "name": "AM General",
+      "disposition": "source_review_partial",
+      "event_count": 3,
+      "identity": null,
+      "held_or_rejected": [
+        "Do not import PM General Purchaser LLC's 2020 USD 600 million notes or USD 75 million revolver to AM General LLC; they were parent/acquisition financing.",
+        "Do not combine the notes and revolver commitment as USD 675 million raised; the revolver was reportedly undrawn at close.",
+        "Exclude KPS acquisition consideration and government vehicle contracts."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1494538/000138713117004627/cct-defa14a_091217.htm",
+        "https://fskkrcapitalcorp.gcs-web.com/static-files/2ef6c408-20b2-45d6-aa87-ad79ba9eeedd",
+        "https://equibles.com/stocks/fsk/calls/2020-q4"
+      ]
+    },
+    {
+      "company_id": "dd5cd104-9081-4216-9c79-b30c93817d66",
+      "name": "AM32",
+      "disposition": "source_review_partial",
+      "event_count": 0,
+      "identity": null,
+      "held_or_rejected": [
+        "Open Collective contributions and project sponsorships are donations/support, not dated closed investment rounds.",
+        "Do not confuse AM32 with AM32-compatible ESC products, manufacturers, NXP reference designs or the A/M32 military-equipment designator."
+      ],
+      "source_urls": [
+        "https://github.com/am32-firmware/AM32",
+        "https://am32.ca/",
+        "https://opencollective.com/am32"
+      ]
+    },
+    {
+      "company_id": "4a755697-38f1-480a-8607-286b4e923b76",
+      "name": "Amax",
+      "disposition": "source_review_partial",
+      "event_count": 2,
+      "identity": null,
+      "held_or_rejected": [
+        "AMAX Holding Co., Ltd.'s 2023 TWD 593,996,000 gross IPO capital increase is parent-level funding, not exact-issuer funding for AMAX Engineering Corporation.",
+        "The 2025 share authorization was not executed and was terminated; 2026 share/convertible-bond proposals were not closed by cutoff.",
+        "A 2026 USD 25 million parent guarantee/facility showed zero drawn and is not funding."
+      ],
+      "source_urls": [
+        "https://pppreport.org/latest/company/amax%2Bengineering%2Bcorp",
+        "https://projects.propublica.org/coronavirus/bailouts/search?q=amax%20engineering%20corporation",
+        "https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million"
+      ]
+    },
+    {
+      "company_id": "4fd12983-3f9c-429f-ba69-709c63486a91",
+      "name": "Amazon",
+      "disposition": "reviewed_public_sources",
+      "event_count": 15,
+      "identity": null,
+      "held_or_rejected": [
+        "The USD 1 billion of Whole Foods notes assumed in 2017 is excluded as acquisition-related predecessor debt.",
+        "Undrawn facilities, IPO over-allotment options not verified as exercised, repayments, conversions and redemptions are excluded."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1018724/000089161897001309/0000891618-97-001309-index.html",
+        "https://press.aboutamazon.com/1997/5/amazon-com-inc-announces-initial-public-offering-of-3-000-000-shares-of-common-stock",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000089102097000822/0000891020-97-000822-index.htm",
+        "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001018724/566f6509-4b15-4cd4-929a-1cba79f822b2.pdf",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000095014903000355/v87419ore10vk.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000119312507034081/d10k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000119312509014406/d10k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000119312512485763/d445039d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872415000006/amzn-20141231x10k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000119312518154502/d519156d424b3.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872417000135/amzn-20170930x10q.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000119312520159531/d933420d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000119312521159084/d508532d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000119312522104336/d325485d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000119312522296602/d376136d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000110465925114647/tm2530638d3_8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm"
+      ]
+    },
+    {
+      "company_id": "0af1039d-a0be-4dc9-921b-6b0f898a6dee",
+      "name": "Amazon Web Services",
+      "disposition": "reviewed_public_sources",
+      "event_count": 0,
+      "identity": null,
+      "held_or_rejected": [
+        "Amazon Web Services, Inc. is a Delaware corporation and 100%-owned significant subsidiary of Amazon.com, Inc.",
+        "No completed external issuer-level equity, debt or grant financing was found; an empty event list is not a zero-funding assertion.",
+        "Amazon.com, Inc. financing, AWS data-center capex, customer contracts, cloud credits and parent investments are excluded."
+      ],
+      "source_urls": []
+    },
+    {
+      "company_id": "4bd8cea3-7a6e-43bd-915a-40a5f9763853",
+      "name": "Amber Wings",
+      "disposition": "source_review_partial",
+      "event_count": 0,
+      "identity": null,
+      "held_or_rejected": [
+        "CIN U26515TN2025PTC177466; incorporated 2025-02-27. The brand states a 2019 origin, so pre-incorporation continuity is not assumed.",
+        "No completed external issuer-level financing with a supported amount and instrument was found; an empty event list is not a zero-funding assertion.",
+        "INR 100,000 paid-up incorporation capital, an undisclosed enterprise development advance, a planned USD 30-50 million Series A, parent Ubifly/ePlane funding and the Resonia JV are held or excluded."
+      ],
+      "source_urls": []
+    },
+    {
+      "company_id": "edce4e55-6264-49d7-a35c-40ad7c9c742d",
+      "name": "Ambrey",
+      "disposition": "source_review_partial",
+      "event_count": 0,
+      "identity": null,
+      "held_or_rejected": [
+        "UK company number 10222741, incorporated 2016-06-09; earlier brand history is not automatically assigned to the legal issuer.",
+        "The 2020 Barclays charge verifies a secured lender relationship but discloses no principal amount.",
+        "Ocean Infinity's 2021 acquisition and Ambrey's 2022 GBP 36,104,245 subsidiary repurchase are acquisition consideration, not issuer financing.",
+        "No completed financing with a supported amount was found; an empty event list is not a zero-funding assertion."
+      ],
+      "source_urls": []
+    },
+    {
+      "company_id": "b8ed0679-256f-45c2-a0be-d3fd11a30189",
+      "name": "Amentum",
+      "disposition": "reviewed_public_sources",
+      "event_count": 4,
+      "identity": null,
+      "held_or_rejected": [
+        "The 2024 USD 850 million and 2026 USD 1 billion revolvers are excluded because only commitments, not completed draws, were disclosed.",
+        "Transaction consideration, merger-accounting equity values and legacy predecessor acquisition facilities are excluded."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/2011286/000095015724001363/form8-ka.htm",
+        "https://www.sec.gov/Archives/edgar/data/2011286/000095015724001363/ex4-1.htm",
+        "https://www.milbank.com/en/news/milbank-advises-on-financing-and-notes-offering-for-merger-of-amentum-and-jacobs-critical-mission-solutions-and-cyber-and-intelligence-businesses.html",
+        "https://www.sec.gov/Archives/edgar/data/2011286/000201128624000072/amtm-20240927.htm",
+        "https://www.sec.gov/Archives/edgar/data/2011286/000095015724001363/ex10-1.htm",
+        "https://www.sec.gov/Archives/edgar/data/2011286/000201128626000011/amtm-20260424.htm",
+        "https://www.sec.gov/Archives/edgar/data/2011286/000201128626000011/exhibit101-1stamendment.htm",
+        "https://ir.amentum.com/news/news-details/2026/Amentum-Reports-Second-Quarter-Fiscal-Year-2026-Results-and-Reaffirms-Full-Year-Guidance/default.aspx"
+      ]
+    },
+    {
+      "company_id": "fcb7f77d-635d-40ca-b9a1-909488b35844",
+      "name": "American Rheinmetall",
+      "disposition": "reviewed_public_sources",
+      "event_count": 1,
+      "identity": null,
+      "held_or_rejected": [
+        "American Rheinmetall is a DBA/umbrella; other US affiliates are separate legal entities.",
+        "The 2025 up-to-USD 7.52 million project grant is held because the exact legal payee across the multi-site affiliate structure is not cleanly disclosed.",
+        "The 2025 USD 31.7 million and 2026 USD 41 million announcements are company capex, not financing; Loc acquisition proceeds, parent financing and government contracts are excluded."
+      ],
+      "source_urls": [
+        "https://www.michiganbusiness.org/4a5475/globalassets/documents/msf-board/meeting-minutes/msf-board-approved-meeting-minutes_july-26_2022.pdf",
+        "https://www.rheinmetall.com/en/media/news-watch/news/2022/2022-07-27_american-rheinmetall-vehicles-opens-new-facility-in-sterling-heights-mi-and-secures-%241-5m-grant-to-grow-workforce",
+        "https://www.michiganbusiness.org/494bf9/globalassets/documents/reports/legislative-reports/fy2024-msf-annual-report.pdf"
+      ]
+    },
+    {
+      "company_id": "ab9bbcbd-67ce-48f3-9ae6-750b029813bf",
+      "name": "AMMROC",
+      "disposition": "reviewed_public_sources",
+      "event_count": 1,
+      "identity": null,
+      "held_or_rejected": null,
+      "source_urls": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32010M6043",
+        "https://www.rns-pdf.londonstockexchange.com/rns/2917X_1-2010-12-2.pdf",
+        "https://grouporigin.com/clients/mubadala/ar10/pdfs/Mubadala%20AR10%20English.pdf"
+      ]
+    },
+    {
+      "company_id": "93cc4f3a-830c-4468-be19-8fc07e5f3832",
+      "name": "Amprius Technologies",
+      "disposition": "reviewed_public_sources",
+      "event_count": 4,
+      "identity": null,
+      "held_or_rejected": null,
+      "source_urls": [
+        "https://ir.amprius.com/sec-filings/all-sec-filings/content/0001193125-22-244830/d390555dex991.htm",
+        "https://ir.amprius.com/sec-filings/all-sec-filings/content/0001193125-22-242443/d252890d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1899287/000119312523161775/R9.htm",
+        "https://ir.amprius.com/news-events/press-releases/detail/99/correcting-and-replacing-amprius-announces-final-results-of-offer-to-exercise-allowing-public-and-private-warrants-to-be-exercised-at-a-reduced-price",
+        "https://ir.amprius.com/sec-filings/all-sec-filings/content/0001899287-26-000003/0001899287-26-000003.pdf",
+        "https://ir.amprius.com/news-events/press-releases/detail/175/amprius-secures-75-million-grant-for-american-high-energy-density-battery-production",
+        "https://ir.amprius.com/news-events/press-releases/detail/177/amprius-technologies-reports-third-quarter-2026-financial-results-and-recent-business-highlights"
+      ]
+    },
+    {
+      "company_id": "994cf36e-273a-4fef-af5e-525d8f4aa569",
+      "name": "ams OSRAM",
+      "disposition": "reviewed_public_sources",
+      "event_count": 4,
+      "identity": null,
+      "held_or_rejected": null,
+      "source_urls": [
+        "https://ams-osram.com/news/press-releases/cb-launch",
+        "https://ams-osram.com/documents/4390887/7186639/ams%2BOSRAM%2BENG%2BAnnual%2BReport%2B2021.pdf/bd499ed8-8ad9-ffe9-ea5a-00a4d3d080f2?t=1696488908740",
+        "https://ams-osram.com/about-us/investor-relations/fixed-income",
+        "https://ams-osram.com/news/press-releases/senior-notes-2023-pricing",
+        "https://ams-osram.com/news/press-releases/results-rights-issue",
+        "https://ams-osram.com/news/press-releases/closing",
+        "https://ams-osram.com/news/press-releases/ad-hoc_2026_senior_notes_pricing"
+      ]
+    },
+    {
+      "company_id": "4c925e37-871b-4f5c-878d-857557c989d6",
+      "name": "ANAVIA",
+      "disposition": "reviewed_public_sources",
+      "event_count": 0,
+      "identity": null,
+      "held_or_rejected": null,
+      "source_urls": []
+    },
+    {
+      "company_id": "3fdd3c0b-3072-42cf-a9d9-2c12f3628ff1",
+      "name": "AndroMach",
+      "disposition": "source_review_partial",
+      "event_count": 1,
+      "identity": null,
+      "held_or_rejected": null,
+      "source_urls": [
+        "https://fr.linkedin.com/posts/andromach_blast-activity-7249688734021947392-rdek",
+        "https://annuaire-entreprises.data.gouv.fr/entreprise/979326477"
+      ]
+    },
+    {
+      "company_id": "5e2751f3-e686-4264-b72a-d5b58ed8f3dc",
+      "name": "Anduril",
+      "disposition": "reviewed_public_sources",
+      "event_count": 9,
+      "identity": null,
+      "held_or_rejected": null,
+      "source_urls": [
+        "https://notice-reports.s3.amazonaws.com/Anduril%20Report%202024.12.23_17.57.44.pdf",
+        "https://www.luxcapital.com/companies/anduril",
+        "https://forgeglobal.com/anduril_stock/",
+        "https://a16z.com/announcement/anduril/",
+        "https://www.ocbj.com/technology/palmer-luckeys-anduril-raises-200-million-new-roun/",
+        "https://www.anduril.com/article/anduril-raises-usd450-million-in-series-d-funding/",
+        "https://www.gunder.com/en/news-insights/client-news/anduril-industries-announces-1-48b-series-e-financing",
+        "https://www.axios.com/2022/12/02/anduril-capital-raise-billion-defense-technology",
+        "https://archive.ph/2026.01.24-222749/https%3A/www.anduril.com/news/anduril-raises-usd1-5-billion-to-rebuild-the-arsenal-of-democracy",
+        "https://techcrunch.com/2025/06/05/anduril-raises-2-5b-at-30-5b-valuation-led-by-founders-fund/",
+        "https://www.linkedin.com/pulse/anduril-announces-5b-series-h-raise-anduril-qvuyc",
+        "https://jobs.a16z.com/company/anduril"
+      ]
+    }
+  ]
+}
