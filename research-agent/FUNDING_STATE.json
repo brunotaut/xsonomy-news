@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 9,
-  "fully_reviewed_companies": 580,
-  "next_action": "Published landscape:566/567 bounded reviews complete; Liebherr remains partial because the generic identity spans German Lindenberg and French Toulouse issuers. Wider cohort:14/1,997 reviewed or partial after the first two groups; continue1,975 queued identities, prioritising exact issuer mapping and primary-source amounts. Eleventh import and live publication are verified:28 new approved events,19 round links,4 generic investor relationships,19 profiles, and Hecto DKK4.992m total cash increase corrected without assigning the full amount to Maj Invest.",
+  "partial_companies": 15,
+  "fully_reviewed_companies": 598,
+  "next_action": "Published landscape:566/567 bounded reviews complete; Liebherr remains partial because the generic identity spans German Lindenberg and French Toulouse issuers. Wider cohort:46/1,997 identities reviewed or partial; continue1,951 queued identities. Twelfth import added29 approved events,56 round links,7 generic relationships and46 investor profiles; publication rebuild pending.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-11T11:50:38.688Z",
-  "source_reconciliation_companies": 365,
-  "approved_funding_events": 1618,
-  "round_participations": 1400,
-  "investor_profiles": 840,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261111-eleventh.json",
+  "updated_at": "2026-11-11T12:05:11.758Z",
+  "source_reconciliation_companies": 378,
+  "approved_funding_events": 1647,
+  "round_participations": 1456,
+  "investor_profiles": 886,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261111-twelfth.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -1852,6 +1852,48 @@
       "bounded_review_disposition": "source_review_partial",
       "checked_at": "2026-11-11",
       "audit_report": "research-agent/reports/2026-11-11-funding-landscape-eleventh.json"
+    },
+    {
+      "company_slug": "adani-defence",
+      "claim": "Brand spans multiple legal issuers. Parent related-party loan flows and secondary rights-issue claims require primary issuer/allotment documents before attribution.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twelfth.json"
+    },
+    {
+      "company_slug": "adlc",
+      "claim": "EUR2.08m seed belongs to Belgian ADLC BV; queue row is coded Singapore and predates ADLC Pte Ltd. Hold until global-brand versus subsidiary mapping is explicit.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twelfth.json"
+    },
+    {
+      "company_slug": "advs",
+      "claim": "Queue acronym lacks website,country and legal identity; Michigan Advanced Defense Vehicle Systems is plausible but not proven.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twelfth.json"
+    },
+    {
+      "company_slug": "aeon",
+      "claim": "Official company names four backers, but public round totals conflict at USD9.6m,16.6m and at least18.6m; exact events remain withheld.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twelfth.json"
+    },
+    {
+      "company_slug": "aep",
+      "claim": "Exact parent proceeds through September2026 were imported, but the long public-company equity/debt history remains partial; subsidiary issuances are excluded.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twelfth.json"
+    },
+    {
+      "company_slug": "aerialmetric",
+      "claim": "I&P confirms EUR3m equity into the AerialMetric group; Mauritius parent versus Malagasy operating issuer is not identified, so only the investor relationship is recorded.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twelfth.json"
     }
   ],
   "parallel_pilot": {
@@ -1885,32 +1927,33 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 580,
-    "source_review_partial": 9,
-    "queued": 1975
+    "reviewed_public_sources": 598,
+    "source_review_partial": 15,
+    "queued": 1951
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "delegated_groups": 4,
-    "identities_checked": 21,
-    "newly_completed_bounded_reviews": 12,
-    "newly_completed_published_reviews": 1,
-    "newly_completed_wider_reviews": 11,
-    "retained_or_new_partial": 9,
-    "new_events_written": 28,
-    "corrected_existing_events": 1,
-    "new_round_participations": 19,
-    "new_generic_portfolio_relationships": 4,
-    "new_investor_profiles": 19,
-    "new_source_rows": 33,
-    "new_companies_with_events": 7,
-    "existing_events_inspected": 4,
-    "active_minutes": 21.25,
-    "checked_identities_per_active_hour": 59.29,
-    "completed_reviews_per_active_hour": 33.88,
-    "current_manifest_publication_verified": true,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 18,
+    "newly_completed_published_reviews": 0,
+    "newly_completed_wider_reviews": 18,
+    "new_or_retained_partial": 6,
+    "new_events_written": 29,
+    "corrected_existing_events": 0,
+    "new_round_participations": 56,
+    "new_generic_portfolio_relationships": 7,
+    "new_investor_profiles": 46,
+    "new_source_rows": 51,
+    "new_companies_with_events": 13,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "active_minutes": 14.55,
+    "checked_identities_per_active_hour": 98.97,
+    "completed_reviews_per_active_hour": 74.23,
+    "current_manifest_publication_verified": false,
     "concurrency_speedup_claimed": false,
-    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, database baselines, source reconciliation, repeated-import production rollback, atomic import, independent audits, source checkpoint, catalogue build and live publication verification; between-run waiting included."
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source reconciliation, manifest validation, repeated-import production rollback, atomic import and post-import audits; publication rebuild pending."
   },
   "latest_followup_metrics": {
     "identities_reconciled": 20,
@@ -1927,7 +1970,7 @@
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 589,
+  "source_reviewed_or_partial_companies": 613,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -2334,7 +2377,19 @@
     }
   },
   "pending_import": null,
-  "pending_publication": null,
+  "pending_publication": {
+    "report": "research-agent/reports/2026-11-11-funding-landscape-twelfth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261111-twelfth.json",
+    "expected_db": {
+      "approved_events": 1647,
+      "approved_links": 1456,
+      "profiles": 886
+    },
+    "expected_new_events": 29,
+    "expected_new_links": 56,
+    "expected_new_profiles": 46,
+    "catalogue_trigger_authorized": true
+  },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
     "manifest": "research-agent/imports/funding-published-reconciliations-20261109.json",
@@ -2990,6 +3045,34 @@
       "current_manifest_publication_verified": true,
       "concurrency_speedup_claimed": false,
       "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, database baselines, source reconciliation, repeated-import production rollback, atomic import, independent audits, source checkpoint, catalogue build and live publication verification; between-run waiting included."
+    }
+  },
+  "latest_twelfth_reconciliation": {
+    "report": "research-agent/reports/2026-11-11-funding-landscape-twelfth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261111-twelfth.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "delegated_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 18,
+      "newly_completed_published_reviews": 0,
+      "newly_completed_wider_reviews": 18,
+      "new_or_retained_partial": 6,
+      "new_events_written": 29,
+      "corrected_existing_events": 0,
+      "new_round_participations": 56,
+      "new_generic_portfolio_relationships": 7,
+      "new_investor_profiles": 46,
+      "new_source_rows": 51,
+      "new_companies_with_events": 13,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "active_minutes": 14.55,
+      "checked_identities_per_active_hour": 98.97,
+      "completed_reviews_per_active_hour": 74.23,
+      "current_manifest_publication_verified": false,
+      "concurrency_speedup_claimed": false,
+      "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source reconciliation, manifest validation, repeated-import production rollback, atomic import and post-import audits; publication rebuild pending."
     }
   }
 }
