@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 3,
-  "fully_reviewed_companies": 568,
-  "next_action": "Published landscape:565/567 bounded reviews complete; retry exact Hecto FY2025 original and Liebherr generic-versus-Toulouse issuer mapping without inventing amounts. Wider cohort now started:26North,2Excel and2LNK reviewed;3DR historic-versus-current legal identity remains partial. Continue remaining1,993 queued identities, retaining specific public-source limits and avoiding repeated closed reviews for private unknowns. Latest publication verified1,589 live events/1,380 links/821 profiles; globalDB1,590approved/1,381links includes2Exceloutside map. All prior21 base+6guard pending work verified; no backlog. Minimal catalogue docs triggers authorised by Nazar; no schedules or gates changed.",
+  "partial_companies": 9,
+  "fully_reviewed_companies": 580,
+  "next_action": "Published landscape:566/567 bounded reviews complete; Liebherr remains partial because generic identity spans German Lindenberg and French Toulouse issuers. Wider cohort:14/1,997 reviewed or partial after first two groups; continue1,975 queued identities, prioritising exact issuer mapping and primary-source amounts. Eleventh import added28 approved events,19 round links,4 generic investor relationships and19 profiles; Hecto DKK4.992m total cash increase corrected without assigning the full amount to Maj Invest. Publication rebuild pending.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-11T10:51:37.839Z",
-  "source_reconciliation_companies": 357,
-  "approved_funding_events": 1590,
-  "round_participations": 1381,
-  "investor_profiles": 821,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261111-tenth.json",
+  "updated_at": "2026-11-11T11:06:02.149Z",
+  "source_reconciliation_companies": 365,
+  "approved_funding_events": 1618,
+  "round_participations": 1400,
+  "investor_profiles": 840,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261111-eleventh.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -1645,13 +1645,6 @@
       "audit_report": "research-agent/reports/2026-11-11-funding-landscape-ninth-night.json"
     },
     {
-      "company_slug": "liebherr-aerospace",
-      "claim": "Fresh19October2026 original confirms more-than-EUR40m Campsas industrial spending by Liebherr-Aerospace Toulouse SAS, not external financing. DIGIFab DGAC/CORAC support and Occitanie/Adour-Garonne support remain own-amount/instrument unknown. Existing generic Germany identity versus exact French legal recipient still needs mapping before new allocation import. ExistingEUR2.4m FranceRelance preserved; no group capex assigned as raise.",
-      "bounded_review_disposition": "source_review_partial",
-      "checked_at": "2026-11-11",
-      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-tenth.json"
-    },
-    {
       "company_slug": "lynred",
       "claim": "Twelve existing events retained. Fresh issuer June2026 campus inauguration describesEUR100m invested, not new financing (earlier85mproject). SPIRIT original26May2026 confirms consortium maximum29m; ECOSYSTEM/HEROIC own allocations remain undisclosed. Safran/Thales co-shareholders do not imply fresh round or individual contributions.",
       "bounded_review_disposition": "reviewed_public_sources",
@@ -1687,11 +1680,60 @@
       "audit_report": "research-agent/reports/2026-11-11-funding-landscape-tenth.json"
     },
     {
-      "company_slug": "3d-robotics-3dr",
-      "claim": "Critical issuer discontinuity: current3dr.com explicitly says entity before2023 was distinct and excludes old products from responsibility. Cohort description is legacy commercial drone/software company but linked website is current hardwarecompany. Historical issuer originals verify2015SeriesC USD50m expandedby14mto64m, and2017SeriesD USD53m comprisingnew equity and debtconversion. Hold imports until exact legacy/cohort mapping resolved; do not assign oldfunding to new3DRInc. SEC-derived2016amounts,early2012/13amounts remain prepared claims; investorTrueVentures originalconfirmsNovember2012investmentwithoutamount. Currentcompanynewsnot evidence of continuity.",
+      "company_slug": "liebherr-aerospace",
+      "claim": "Generic brand remains source_review_partial: Toulouse and Lindenberg are distinct legal issuers. Seven additional exact EU/French public-support candidates are held until cohort legal-entity mapping; do not attach French grants to German issuer.",
       "bounded_review_disposition": "source_review_partial",
       "checked_at": "2026-11-11",
-      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-tenth.json"
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-eleventh.json"
+    },
+    {
+      "company_slug": "3d-robotics-3dr",
+      "claim": "Current 3DR states it is distinct from the legacy issuer. Legacy SeriesA >USD5m,SeriesB USD30m,expanded SeriesC USD64m andSeriesD USD53m are source-supported but withheld until cohort identity mapping.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-eleventh.json"
+    },
+    {
+      "company_slug": "3me-technology",
+      "claim": "AUD21m 2021 convertible/growth financing names3ME Technology Holdings; AUD2.953811m government grant names3ME Technology PtyLtd. Parent/subsidiary mapping unresolved; no event imported.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-eleventh.json"
+    },
+    {
+      "company_slug": "9-mothers",
+      "claim": "YC and investor portfolio relationships are verified. Conflicting secondary round claims(USD125k/500k/1m) and the Gaingels pooled-SPV FormD are withheld.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-eleventh.json"
+    },
+    {
+      "company_slug": "acs",
+      "claim": "Generic ACS identity lacks legal name,country,URL and sector; candidate financings for several unrelated ACS entities must not be assigned.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-eleventh.json"
+    },
+    {
+      "company_slug": "acsl-global",
+      "claim": "Identity may duplicate Japanese parent,represent ACSL Inc US subsidiary,or Belgian Allied Computing Services. No parent rounds imported to this row.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-eleventh.json"
+    },
+    {
+      "company_slug": "61n-solutions",
+      "claim": "Heikki Härkönen investor relationship supported. Krosswise group financing and PRH share-issue signal lack issuer-level completed proceeds; amounts remain withheld.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-eleventh.json"
+    },
+    {
+      "company_slug": "ab-surveying-solutions",
+      "claim": "Chilean issuer identity resolved, but no financing source and inaccessible primary filings; retained partial rather than treating empty results as zero funding.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-eleventh.json"
     }
   ],
   "parallel_pilot": {
@@ -2178,7 +2220,19 @@
     }
   },
   "pending_import": null,
-  "pending_publication": null,
+  "pending_publication": {
+    "report": "research-agent/reports/2026-11-11-funding-landscape-eleventh.json",
+    "manifest": "research-agent/imports/funding-landscape-20261111-eleventh.json",
+    "correction_manifest": "research-agent/imports/funding-landscape-20261111-eleventh-guard.json",
+    "expected_db": {
+      "approved_events": 1618,
+      "approved_links": 1400,
+      "profiles": 840
+    },
+    "expected_new_events": 28,
+    "expected_correction": "hecto-drone|maj-invest-strategic-investment-2025",
+    "catalogue_trigger_authorized": true
+  },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
     "manifest": "research-agent/imports/funding-published-reconciliations-20261109.json",
@@ -2807,5 +2861,33 @@
     "source": "Nazar explicitly authorised minimal brunotaut/xSonomy writes to trigger existing builds on11November2026, without schedule changes.",
     "scope": "docs/STATUS.md publication triggers only; catalogue remains read-only against Supabase.",
     "latest_verified_commit": "4a919c55a6e68125ceee3dd5cb05c2c631fc07a4"
+  },
+  "latest_eleventh_reconciliation": {
+    "report": "research-agent/reports/2026-11-11-funding-landscape-eleventh.json",
+    "manifest": "research-agent/imports/funding-landscape-20261111-eleventh.json",
+    "correction_manifest": "research-agent/imports/funding-landscape-20261111-eleventh-guard.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "delegated_groups": 4,
+      "identities_checked": 21,
+      "newly_completed_bounded_reviews": 12,
+      "newly_completed_published_reviews": 1,
+      "newly_completed_wider_reviews": 11,
+      "retained_or_new_partial": 9,
+      "new_events_written": 28,
+      "corrected_existing_events": 1,
+      "new_round_participations": 19,
+      "new_generic_portfolio_relationships": 4,
+      "new_investor_profiles": 19,
+      "new_source_rows": 33,
+      "new_companies_with_events": 7,
+      "existing_events_inspected": 4,
+      "active_minutes": 14.41,
+      "checked_identities_per_active_hour": 87.44,
+      "completed_reviews_per_active_hour": 49.97,
+      "current_manifest_publication_verified": false,
+      "concurrency_speedup_claimed": false,
+      "timing_scope": "Elapsed from writer lease through four disjoint research lanes, database baselines, source reconciliation, repeated-import production rollback, atomic import and independent audits; between-run waiting included."
+    }
   }
 }
