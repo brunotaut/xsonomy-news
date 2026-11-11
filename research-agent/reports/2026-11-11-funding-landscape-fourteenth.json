@@ -1,0 +1,258 @@
+{
+  "report": "funding-landscape-fourteenth",
+  "generated_at": "2026-11-11T14:03:25.399Z",
+  "run_id": "funding-20261111T134826Z-wider-04",
+  "scope": {
+    "cohort_companies": 2564,
+    "published_landscape_first": 567,
+    "identities_checked": 24,
+    "queue_priority": "next queued wider-cohort identities after the completed 100-company pilot and second pass"
+  },
+  "lease": {
+    "writer_head": "ae58198696cf4be2f3e7629d4ea92bf1c7f6a474",
+    "lease_expires_at": "2026-11-11T15:48:26.753Z",
+    "overlap_check": "fresh main head matched the active lease immediately before import"
+  },
+  "methods": {
+    "parallel_read_only_groups": 4,
+    "distinct_company_ids": true,
+    "external_paid_api_budget_used": false,
+    "source_rules": [
+      "Earlier and latest public rounds checked",
+      "Original currencies and amount qualifiers preserved",
+      "Equity, debt and grants separated or explicitly marked mixed",
+      "Subsidiary, parent and SPV proceeds not reassigned",
+      "Source candidates and empty rows not treated as facts or zero funding",
+      "Investor roles imported only where explicitly supported"
+    ]
+  },
+  "rehearsal": {
+    "production_transaction": true,
+    "manifest_imports_inside_transaction": 2,
+    "rollback": true,
+    "baseline_restored": {
+      "events": 1706,
+      "approved_events": 1693,
+      "links": 1541,
+      "approved_links": 1532,
+      "profiles": 929,
+      "coverage": 395
+    }
+  },
+  "import": {
+    "manifest": "research-agent/imports/funding-landscape-20261111-fourteenth.json",
+    "events_written": 34,
+    "approved_events_after": 1727,
+    "round_links_written": 91,
+    "approved_links_after": 1623,
+    "investor_profiles_written": 59,
+    "investor_profiles_after": 988,
+    "source_rows": 43,
+    "companies_with_events": 10,
+    "coverage_after": 405,
+    "atomic_import": true
+  },
+  "queue": {
+    "before": {
+      "reviewed": 618,
+      "partial": 19,
+      "queued": 1927
+    },
+    "after": {
+      "reviewed": 634,
+      "partial": 27,
+      "queued": 1903
+    },
+    "dispositions": {
+      "reviewed_public_sources": 16,
+      "source_review_partial": 8
+    }
+  },
+  "identities": [
+    {
+      "id": "e56135d8-001a-4de1-a339-b80574cb8d9a",
+      "slug": "agibot",
+      "name": "AgiBot",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 5
+    },
+    {
+      "id": "8c6a5ce8-cd64-44f2-b8df-75d0dbdcdc1a",
+      "slug": "agile-autonomy",
+      "name": "Agile Autonomy",
+      "disposition": "source_review_partial",
+      "events_imported": 0,
+      "note": "Acquisition consideration and contracts excluded."
+    },
+    {
+      "id": "b398cdc5-61d0-4f12-9b4f-24cfaa1be3c2",
+      "slug": "agility-robotics",
+      "name": "Agility Robotics",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 7
+    },
+    {
+      "id": "bb0c7df3-c5d7-454a-9f6d-3870d501709a",
+      "slug": "agimus",
+      "name": "AGIMUS",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 0,
+      "note": "Consortium grant allocation undisclosed."
+    },
+    {
+      "id": "bc39c45c-45df-4ffa-bfff-a5b971ad7f78",
+      "slug": "agri-spray-drones",
+      "name": "Agri Spray Drones",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 0
+    },
+    {
+      "id": "b0224b34-923e-4f52-b9f5-8cb11d4d75cd",
+      "slug": "agrowing",
+      "name": "Agrowing",
+      "disposition": "source_review_partial",
+      "events_imported": 0,
+      "note": "Cumulative private history cannot be split into supported events."
+    },
+    {
+      "id": "3836cd8a-b61f-4217-b570-1db7a7c024c0",
+      "slug": "aidc",
+      "name": "AIDC",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 0,
+      "note": "Formation capital and selling-shareholder IPO excluded."
+    },
+    {
+      "id": "750c260c-118d-48c0-b33e-eaf89433692f",
+      "slug": "aidronesua",
+      "name": "AIDronesUA",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 0
+    },
+    {
+      "id": "46605966-aad8-45b0-85d3-0514198e4bc7",
+      "slug": "aim-defence",
+      "name": "AIM Defence",
+      "disposition": "source_review_partial",
+      "events_imported": 0,
+      "note": "Historical awards name different legal issuers."
+    },
+    {
+      "id": "aa9789aa-6143-4458-a4ae-3528b415fba6",
+      "slug": "aimlock",
+      "name": "AimLock",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 1
+    },
+    {
+      "id": "083f1884-07da-4bd2-985a-30cf8ccefefd",
+      "slug": "air",
+      "name": "AIR",
+      "disposition": "source_review_partial",
+      "events_imported": 0,
+      "note": "Potential alias of AIR VEV; no duplicate assignment."
+    },
+    {
+      "id": "f9b16044-a91c-4233-932f-ec20a556c75f",
+      "slug": "air-kamuy",
+      "name": "Air Kamuy",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 1
+    },
+    {
+      "id": "9c762d62-3065-4b75-b15c-22c6c8c58d1a",
+      "slug": "air-space-intelligence",
+      "name": "Air Space Intelligence",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 4
+    },
+    {
+      "id": "4507ae9c-8e70-40f6-8ed1-01aefe6ef1c7",
+      "slug": "air-tanker",
+      "name": "Air Tanker",
+      "disposition": "source_review_partial",
+      "events_imported": 0,
+      "note": "Group/SPV normalization required."
+    },
+    {
+      "id": "04167b4b-cb46-4a2c-a2b3-d21d4b4861ca",
+      "slug": "air-vev",
+      "name": "Air VEV",
+      "disposition": "source_review_partial",
+      "events_imported": 2,
+      "note": "Brand-level Ltd versus Inc issuer caveat retained."
+    },
+    {
+      "id": "37c197ba-1647-456a-ad9e-a87a4e624391",
+      "slug": "air6",
+      "name": "Air6",
+      "disposition": "source_review_partial",
+      "events_imported": 0,
+      "note": "Likely duplicate/affiliate row."
+    },
+    {
+      "id": "515e4c20-5ce8-462c-8cd0-1503658fc659",
+      "slug": "air6-system",
+      "name": "Air6 System",
+      "disposition": "source_review_partial",
+      "events_imported": 0,
+      "note": "Likely duplicate/affiliate row."
+    },
+    {
+      "id": "c2a622f6-4874-47c8-8a0c-ec06be5dfb9f",
+      "slug": "airbility",
+      "name": "Airbility",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 5
+    },
+    {
+      "id": "9897ebf0-3e06-4d90-a985-8ea77259cd94",
+      "slug": "airborne-tactical-advantage-company",
+      "name": "Airborne Tactical Advantage Company",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 3
+    },
+    {
+      "id": "a279bc9a-0f2e-494f-b36e-91a3f65f977c",
+      "slug": "airbound",
+      "name": "Airbound",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 3
+    },
+    {
+      "id": "9da76a03-f920-4b6b-ae34-d983a668bbf0",
+      "slug": "airbus-us",
+      "name": "Airbus U.S.",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 0
+    },
+    {
+      "id": "98ae9abb-2105-4461-949c-9a9012cc1556",
+      "slug": "airdata",
+      "name": "AirData",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 0
+    },
+    {
+      "id": "80c0e983-29fe-4c0d-adc9-fddfbf19bf4b",
+      "slug": "airhub",
+      "name": "AirHub",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 3
+    },
+    {
+      "id": "82c1e74d-aaba-4212-a8be-0dd75359cf0b",
+      "slug": "airlift",
+      "name": "Airlift",
+      "disposition": "reviewed_public_sources",
+      "events_imported": 0
+    }
+  ],
+  "publication": {
+    "status": "pending_catalogue_rebuild",
+    "site": "https://xsonomy.com/landscape/"
+  },
+  "legacy_state_preserved": true,
+  "frozen_snapshots_preserved": true
+}
+
