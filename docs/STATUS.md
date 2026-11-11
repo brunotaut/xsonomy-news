@@ -1725,3 +1725,8 @@ Fresh live remains10November13:52UTC.19base/five corrective manifests await depl
 ## Funding research checkpoint — 2026-11-11 eighth night
 
 Source commit: `780fc8c22ffa6e2d263f16fc62f4888427447339`. Reviewed 22 published company identities in four disjoint read-only groups; 16 bounded reviews complete and 6 reconciliations retained. Production rollback/repeated-import rehearsal and atomic import passed: 4 new events, 5 round participations, 2 profiles, 12 guarded corrections and 9 source rows. Existing curated profiles and legacy relationships preserved. DB: 1,571 approved events, 1,373 approved links, 820 profiles. Queue: 533 reviewed, 34 partial, 1,997 queued. Live publication remains pending: latest observed catalogue build 10 Nov 13:51 UTC; live 1,145 events/1,214 links/774 profiles. Catalogue stays read-only; no schedules changed. Audit: `research-agent/reports/2026-11-11-funding-landscape-eighth-night.json`.
+
+
+## Funding research checkpoint — 2026-11-11 ninth night
+
+Reviewed 22 published identities; 17 bounded reviews completed and 5 retained for specific reconciliations. Source commit `dedffc42365a425567c3b6e9b46e7e5fb208f7c5`. Tested importer, repeated production rollback and atomic application passed: 16 new events (5 exact-company loan-flow disclosures and 11 grant participations), 7 round links and 26 sources; no new profiles or duplicate generic backing. All existing curated profile/relationship fingerprints preserved. DB: 1,587 approved events, 1,380 approved links, 820 profiles. Queue: 550 reviewed, 17 partial, 1,997 queued. Publication remains pending; fresh live data still generated 10 Nov 13:52 UTC. Catalogue is read-only; no schedules changed. Audit: `research-agent/reports/2026-11-11-funding-landscape-ninth-night.json`.
