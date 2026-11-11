@@ -1,8 +1,8 @@
 {
   "run_id": "funding-20261111T115038Z-wider-02",
   "started_at": "2026-11-11T11:50:38.688Z",
-  "checked_at": "2026-11-11T12:05:11.758Z",
-  "status": "import_verified_publication_pending",
+  "checked_at": "2026-11-11T12:08:46.422Z",
+  "status": "import_and_publication_verified_programme_in_progress",
   "scope": {
     "cohort": 2564,
     "published_landscape": 567,
@@ -28,12 +28,12 @@
     "new_companies_with_events": 13,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
-    "active_minutes": 14.55,
-    "checked_identities_per_active_hour": 98.97,
-    "completed_reviews_per_active_hour": 74.23,
-    "current_manifest_publication_verified": false,
+    "active_minutes": 18.13,
+    "checked_identities_per_active_hour": 79.43,
+    "completed_reviews_per_active_hour": 59.57,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
-    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source reconciliation, manifest validation, repeated-import production rollback, atomic import and post-import audits; publication rebuild pending."
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source reconciliation, manifest validation, repeated-import production rollback, atomic import, post-import audits, source checkpoint, catalogue build and live publication verification; between-run waiting included."
   },
   "queue_counts": {
     "reviewed_public_sources": 598,
@@ -291,7 +291,153 @@
     "existing_curated_rows_preserved": true
   },
   "publication": {
-    "status": "pending",
+    "status": "verified",
+    "checked_at": "2026-11-11T12:08:46.422Z",
+    "catalogue_commit": "c71322125863ee4a34b963269006a4f3086e20f9",
+    "workflow_run": {
+      "id": 43017401666,
+      "head": "c71322125863ee4a34b963269006a4f3086e20f9",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43017401666"
+    },
+    "live": {
+      "landscape_url": "https://xsonomy.com/data/landscape.json",
+      "investors_url": "https://xsonomy.com/data/landscape-investors.json",
+      "generated_at": "2026-11-11T12:06:57.606Z",
+      "investor_generated_at": "2026-11-11T12:06:58.661Z",
+      "companies": 567,
+      "events": 1589,
+      "links": 1380,
+      "profiles": 886,
+      "portfolio_relationships": 128
+    },
+    "audit": {
+      "current_manifest_event_rows": 29,
+      "live_event_matches": [],
+      "outside_landscape": [
+        [
+          "acua-ocean-technologies",
+          "pre-seed-2024"
+        ],
+        [
+          "adac-luftrettung",
+          "bank-loan-fy2023"
+        ],
+        [
+          "ads",
+          "senior-secured-revolver-2010"
+        ],
+        [
+          "ads",
+          "amended-revolver-2011"
+        ],
+        [
+          "advanced-navigation",
+          "series-a-2019"
+        ],
+        [
+          "advanced-navigation",
+          "moon-to-mars-quantum-navigation-grant-2021"
+        ],
+        [
+          "advanced-navigation",
+          "series-b-2022"
+        ],
+        [
+          "advanced-navigation",
+          "luna-demonstrator-mission-grant-2023"
+        ],
+        [
+          "advanced-navigation",
+          "aimm-supply-chain-grant-2025"
+        ],
+        [
+          "advanced-navigation",
+          "series-c-2026"
+        ],
+        [
+          "aechelon-technology",
+          "bizcap-credit-facility-2023"
+        ],
+        [
+          "aecom",
+          "ipo-2007"
+        ],
+        [
+          "aecom",
+          "senior-notes-2033-2025"
+        ],
+        [
+          "aecom",
+          "term-loan-refinancing-2026"
+        ],
+        [
+          "aecom",
+          "supplemental-revolver-2026"
+        ],
+        [
+          "ael-sistemas",
+          "finep-fpga-asic-subvention-2015"
+        ],
+        [
+          "ael-sistemas",
+          "finep-multisensor-navigation-subvention-2023"
+        ],
+        [
+          "aep",
+          "forward-equity-partial-settlement-2025"
+        ],
+        [
+          "aep",
+          "atm-common-stock-2026-q1"
+        ],
+        [
+          "aep",
+          "pollution-control-bonds-2026"
+        ],
+        [
+          "aerial-vantage",
+          "form-d-equity-2022"
+        ],
+        [
+          "aero-sentinel",
+          "veloryx-shareholder-loan-facility-2026"
+        ],
+        [
+          "aerofugia",
+          "series-a-2023"
+        ],
+        [
+          "aerofugia",
+          "series-a-plus-2023"
+        ],
+        [
+          "aerofugia",
+          "series-b-2024"
+        ],
+        [
+          "aerofugia",
+          "series-c-2025"
+        ],
+        [
+          "aerofugia",
+          "new-financing-round-2026"
+        ],
+        [
+          "aerohooldus",
+          "eas-erdf-development-strategy-grant-2004"
+        ],
+        [
+          "aerojet-rocketdyne",
+          "dod-mceip-manufacturing-cooperative-agreement-2023"
+        ]
+      ],
+      "outside_landscape_absent_as_expected": true,
+      "investor_profiles_missing": [],
+      "generic_relationships_verified": 7,
+      "errors": []
+    },
     "catalogue_authorization": "Nazar-authorised docs/STATUS.md trigger only; no schedule changes."
   },
   "legacy_state_and_frozen_snapshots_untouched": true
