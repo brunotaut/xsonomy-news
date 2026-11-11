@@ -8,9 +8,9 @@
   "published_landscape_companies": 567,
   "partial_companies": 86,
   "fully_reviewed_companies": 719,
-  "next_action": "Publication recovery first: workflow 43095387159 for catalogue commit bb6db1bb539dd979a7debaadefc26734eea0c01b is queued; verify its completion and live artefacts before starting the next research batch. Then continue 1,759 queued wider-cohort identities.",
+  "next_action": "Publication recovery first: workflow 43095387159 for catalogue commit bb6db1bb539dd979a7debaadefc26734eea0c01b remains queued with zero jobs; verify this exact run and live artefacts before starting the next research batch. Do not create a duplicate trigger while the run is nonterminal. Then continue 1,759 queued wider-cohort identities.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-11T20:34:51.392Z",
+  "updated_at": "2026-11-11T20:54:40.610Z",
   "source_reconciliation_companies": 491,
   "approved_funding_events": 2033,
   "round_participations": 2257,
@@ -2347,15 +2347,19 @@
   "pending_publication": {
     "manifest": "research-agent/imports/funding-landscape-20261111-twentieth.json",
     "report": "research-agent/reports/2026-11-11-funding-landscape-twentieth.json",
-    "status": "workflow_queued",
+    "status": "workflow_queued_zero_jobs",
     "catalogue_commit": "bb6db1bb539dd979a7debaadefc26734eea0c01b",
     "workflow_run": {
       "id": 43095387159,
       "status": "queued",
       "conclusion": null,
-      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43095387159"
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43095387159",
+      "jobs": 0,
+      "created_at": "2026-11-11T20:19:59Z",
+      "updated_at": "2026-11-11T20:19:59Z"
     },
-    "last_checked_at": "2026-11-11T20:34:51.392Z"
+    "last_checked_at": "2026-11-11T20:54:40.610Z",
+    "recovery_note": "Run is queued with zero jobs. GitHub Status reported Actions operational when checked, while a same-day public GitHub Community report documented the same queued-with-zero-jobs scheduler symptom. Treat as transient external publication recovery; recheck the existing run before any retrigger or next import."
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
