@@ -1,8 +1,8 @@
 {
   "run_id": "funding-20261111T125152Z-wider-03",
   "started_at": "2026-11-11T12:51:52.676Z",
-  "checked_at": "2026-11-11T13:08:52.696Z",
-  "status": "import_verified_publication_pending_programme_in_progress",
+  "checked_at": "2026-11-11T13:14:04.925Z",
+  "status": "import_and_publication_verified_programme_in_progress",
   "scope": {
     "cohort": 2564,
     "published_landscape": 567,
@@ -28,12 +28,12 @@
     "new_companies_with_events": 17,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
-    "active_minutes": 17,
-    "checked_identities_per_active_hour": 84.71,
-    "completed_reviews_per_active_hour": 70.59,
-    "current_manifest_publication_verified": false,
+    "active_minutes": 22.2,
+    "checked_identities_per_active_hour": 64.86,
+    "completed_reviews_per_active_hour": 54.05,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
-    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source reconciliation, manifest validation, repeated-import production rollback, atomic import and post-import audits; publication time not yet included."
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source reconciliation, manifest validation, repeated-import production rollback, atomic import, post-import audits, source checkpoint, catalogue build and live publication verification; between-run waiting included."
   },
   "queue_counts": {
     "reviewed_public_sources": 618,
@@ -289,13 +289,219 @@
     }
   },
   "publication": {
-    "status": "pending",
-    "checked_at": null,
-    "catalogue_commit": null,
-    "workflow_run": null,
-    "live": null,
-    "audit": null,
-    "catalogue_authorization": "Nazar authorized minimal docs/STATUS.md writes to trigger the existing build; schedules must remain unchanged."
+    "status": "verified",
+    "checked_at": "2026-11-11T13:14:04.925Z",
+    "catalogue_commit": "8839d01db6658c5b5daeeb899ff78a465db84141",
+    "workflow_run": {
+      "id": 43026910506,
+      "head": "8839d01db6658c5b5daeeb899ff78a465db84141",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43026910506"
+    },
+    "live": {
+      "site": "https://xsonomy.com/landscape/",
+      "generated_at": "2026-11-11T13:12:27.182Z",
+      "investor_generated_at": "2026-11-11T13:12:28.449Z",
+      "companies": 567,
+      "events": 1589,
+      "links": 1380,
+      "profiles": 929,
+      "portfolio_relationships": 128
+    },
+    "audit": {
+      "current_manifest_event_rows": 46,
+      "current_manifest_live_matches": 0,
+      "outside_landscape": [
+        [
+          "aeromotors",
+          "mits-accelerator-2024"
+        ],
+        [
+          "aeromotors",
+          "front-ventures-equity-2025"
+        ],
+        [
+          "aeronautics-ltd",
+          "viola-poalim-equity-2009"
+        ],
+        [
+          "aeronautics-ltd",
+          "convertible-loan-2011"
+        ],
+        [
+          "aeronautics-ltd",
+          "recapitalization-2013"
+        ],
+        [
+          "aeronautics-ltd",
+          "leumi-private-placement-2017"
+        ],
+        [
+          "aeronix",
+          "shoreview-recapitalization-2021"
+        ],
+        [
+          "aerorozvidka",
+          "zmin-institutional-support-2025"
+        ],
+        [
+          "aerorozvidka",
+          "zmin-institutional-support-2026"
+        ],
+        [
+          "aerosolutions",
+          "verti-go-eu-grant-2026"
+        ],
+        [
+          "aerosonic",
+          "stockholder-note-draw-2009"
+        ],
+        [
+          "aerosonic",
+          "stockholder-note-draw-2010"
+        ],
+        [
+          "aerospacelab",
+          "seed-or-series-a-2019"
+        ],
+        [
+          "aerospacelab",
+          "series-b-2022"
+        ],
+        [
+          "aerospacelab",
+          "extended-series-b-equity-2025"
+        ],
+        [
+          "aerospacelab",
+          "eib-venture-debt-2025"
+        ],
+        [
+          "aerospacelab",
+          "wallonie-recoverable-advance-2025"
+        ],
+        [
+          "aerovel-corporation-acquired-by-aerovironment-2024",
+          "series-b-2021"
+        ],
+        [
+          "aerovironment",
+          "ipo-2007"
+        ],
+        [
+          "aerovironment",
+          "atm-completed-2023"
+        ],
+        [
+          "aerovironment",
+          "common-stock-offering-2025"
+        ],
+        [
+          "aerovironment",
+          "convertible-notes-2025"
+        ],
+        [
+          "aeroxo",
+          "seed-2015"
+        ],
+        [
+          "aeroxo",
+          "skolkovo-grant-2015"
+        ],
+        [
+          "aeryon-labs-teledyne-flir",
+          "feddev-repayable-contribution-2012"
+        ],
+        [
+          "aeryon-labs-teledyne-flir",
+          "growth-equity-2015"
+        ],
+        [
+          "aevex-aerospace",
+          "unitranche-credit-2019"
+        ],
+        [
+          "aevex-aerospace",
+          "bmo-draw-2025"
+        ],
+        [
+          "aevex-aerospace",
+          "ipo-2026"
+        ],
+        [
+          "aevex-aerospace",
+          "term-loan-refinancing-2026"
+        ],
+        [
+          "aevum",
+          "sbir-phase-i-2019"
+        ],
+        [
+          "aevum",
+          "seed-2019"
+        ],
+        [
+          "aevum",
+          "sbir-phase-ii-2020"
+        ],
+        [
+          "aevum",
+          "mda-sbir-phase-ii-2021"
+        ],
+        [
+          "aeye",
+          "series-a-2017"
+        ],
+        [
+          "aeye",
+          "series-b-2018"
+        ],
+        [
+          "aeye",
+          "de-spac-pipe-2021"
+        ],
+        [
+          "aeye",
+          "convertible-note-2025"
+        ],
+        [
+          "afm-servers",
+          "fsi-razvitie-nti-2017"
+        ],
+        [
+          "ag3-labs",
+          "burgess-awards-2025"
+        ],
+        [
+          "ag3-labs",
+          "xtech-counterstrike-2025"
+        ],
+        [
+          "ageagle",
+          "series-f-2022"
+        ],
+        [
+          "ageagle",
+          "promissory-note-2022"
+        ],
+        [
+          "ageagle",
+          "public-offering-2024"
+        ],
+        [
+          "ageagle",
+          "series-g-2025"
+        ],
+        [
+          "ageagle",
+          "series-g-extension-may-2026"
+        ]
+      ],
+      "new_profiles_present": true,
+      "errors": []
+    },
+    "catalogue_authorization": "Nazar authorized minimal docs/STATUS.md writes to trigger the existing build; schedules were unchanged."
   },
   "legacy_state_and_frozen_snapshots_untouched": true
 }
