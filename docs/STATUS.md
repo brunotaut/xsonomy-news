@@ -1678,3 +1678,10 @@ Queue: 431 bounded reviews, 136 partial histories, 1,997 queued. Production: 1,4
 Checked24 identities in four read-only groups:18 history follow-ups and six focused prepared reconciliations. Added ten events and applied five expected-value-guarded corrections after production rollback and repeated-import rehearsal; independent event/source audits passed. Investor profiles and legacy relationships unchanged. Original statutory/PDF documents resolved additional company-specific grants and cash-consideration details; noncash/overlap and borrower-attribution holds preserved.
 
 Queue:434 bounded reviews,133 partial histories,1,997 queued. Database:1,505 approved events,1,363 participations,815 profiles. Audit:`research-agent/reports/2026-11-11-funding-landscape-early.json`; manifest:`research-agent/imports/funding-landscape-20261111-early.json`; source staging commit:f32360defe52a0ce2dbc13b82158591e447de03f. Live JSON remains generated10November13:52UTC; publication pending under read-only catalogue scope. Existing schedules, legacy STATE.json and frozen snapshots preserved.
+
+
+## Investment research checkpoint — 2026-11-11T01:58:37.009Z
+
+Checked 24 identities in four read-only groups: 18 public-history followups and six focused prepared reconciliations. Added nine events; applied three expected-value-guarded event corrections and three explicit co-lead role corrections. Production rollback, repeated-import idempotency and independent event/source/role audits passed. Curated profiles and legacy relationships unchanged.
+
+Queue: 439 bounded reviews, 128 partial histories, 1,997 queued. Database: 1,514 approved events, 1,363 approved participations, 815 investor profiles. Audit: `research-agent/reports/2026-11-11-funding-landscape-second-night.json`; manifest: `research-agent/imports/funding-landscape-20261111-second-night.json`; source staging commit: dc3a8ff634ef5946eab1387169c2444f29b14951. Live JSON still generated 10 November 13:52 UTC; publication remains pending under read-only catalogue scope. Existing schedules, legacy STATE.json and frozen snapshots preserved.
