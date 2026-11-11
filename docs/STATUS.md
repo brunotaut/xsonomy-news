@@ -1699,3 +1699,10 @@ Queue:440 bounded reviews,127 partial histories,1,997 queued. Database:1,521 app
 Reviewed22 distinct published identities under one writer lease;20 bounded public-source reviews completed and2 issuer mappings remain partial. Atomic source-backed import added8 events,2 explicitly supported investor roles and15 source rows after production rollback and repeated-import checks. Current DB:1,529approved events,1,366approved participations,816investor profiles. Existing curated profiles and relationships preserved. Queue:460reviewed,107partial,1,997queued. New report: `research-agent/reports/2026-11-11-funding-landscape-fourth-night.json`; source manifest commit: `b0265879bb83d1323261257ff4da5f07f04f0931`.
 
 Live still generated10November13:52UTC and is not yet verified for pending16manifests. Catalogue repository remains read-only; existing scheduled deployment route retained without schedule changes. Hourly continuation verified enabled; no automation edits. Legacy STATE.json and frozen snapshots untouched.
+
+
+## Funding research — 11 November 2026 fifth-night checkpoint
+
+Checked20 distinct published identities;17 bounded public-source reviews completed,3 issuer mappings retained partial. Added8 confirmed grant participations with undisclosed company allocations and guarded UMag acquisition status closed→signed against original approval condition. Production rollback, repeated-import idempotency and independent post-commit audits passed; existing curated profiles/relationships preserved. DB:1,537approved events,1,366approved participations,816profiles. Queue:477reviewed,90partial,1,997queued. Source commit `49e418e10dd94bf8e3885161438b65415881d810`; report `research-agent/reports/2026-11-11-funding-landscape-fifth-night.json`.
+
+Live remains10November13:52UTC; pending17base manifests and3corrective manifests require fresh scheduled deployment audit, including four exact draft exclusions. Catalogue remains read-only; schedules and legacy STATE/frozen snapshots unchanged.

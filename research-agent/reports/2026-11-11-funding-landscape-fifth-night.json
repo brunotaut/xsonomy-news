@@ -1,0 +1,684 @@
+{
+  "run_id": "funding-20261111-0447",
+  "started_at": "2026-11-11T04:46:44.317Z",
+  "checked_at": "2026-11-11T04:54:35.882Z",
+  "status": "db_import_committed_publication_pending",
+  "manifest": "research-agent/imports/funding-landscape-20261111-fifth-night.json",
+  "correction_manifest": "research-agent/imports/funding-landscape-20261111-fifth-night-closing-guard.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 20,
+    "public_history_followups": 18,
+    "focused_prepared_reconciliations": 2,
+    "newly_completed_bounded_reviews": 17,
+    "retained_partial": 3,
+    "new_events_written": 8,
+    "new_approved_events": 8,
+    "corrected_existing_events": 1,
+    "new_round_participations": 0,
+    "new_investor_profiles": 0,
+    "new_source_rows": 15,
+    "existing_events_inspected": 60,
+    "active_minutes": 7.86,
+    "checked_identities_per_active_hour": 152.68,
+    "completed_reviews_per_active_hour": 129.78,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed from writer lease through four distinct read-only research groups, source reconciliation, production rollback and repeated import rehearsal, atomic import, independent event/source/curated-profile checks and fresh live/deployment checks. Between-run waiting excluded."
+  },
+  "queue_dispositions": [
+    {
+      "slug": "liebherr-aerospace",
+      "disposition": "source_review_partial",
+      "evidence": "Fresh original divisional governance confirms Aerospace & Transportation SAS,Toulouse controls segment; Lindenberg and Toulouse SAS are separate beneficiaries. Generic German catalogue record does not establish legal mapping. No additional subsidiary awards assigned; existing recipient-qualified2.4m record preserved pending mapping.",
+      "source_urls": [
+        "https://www.liebherr.com/en-au/aerospace-and-transportation-systems/about-us/about-us/about-us-7175925",
+        "https://www.liebherr.com/en-us/group/about-liebherr/company-profile/product-segments/aerospace-and-transportation-systems/aerospace-and-transportation-systems-3781642"
+      ],
+      "id": "e03035a9-991b-4b7c-89f0-fad6866db061",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "sky-fortress",
+      "disposition": "source_review_partial",
+      "evidence": "Catalogue describes Ukrainian company, not Estonian parent borrower. Fresh Ukrainianregistry mirrors44910606 identify SF Technologies16704134 soleowner, not sameissuer. Parent USDloan excluded. Reuters22April2026reports Brave1support without awardlevelissuer/amount; Brave1pool membership not award. Original Estonian2025PDF unavailable403 this run; priorread evidence retained without claiming fresh PDFread.",
+      "source_urls": [
+        "https://clarity-project.info/edr/44910606",
+        "https://youcontrol.com.ua/en/catalog/company_details/44910606/",
+        "https://www.internazionale.it/ultime-notizie-reuters/2026/04/22/exclusive-us-turns-to-ukrainian-counter-drone-tech-after-iran-attacks-sources-say",
+        "https://united24media.com/war-in-ukraine/sky-fortress-ukraines-acoustic-detection-system-that-tracks-drones-cheap-and-fast-9451"
+      ],
+      "id": "51b6c966-7cee-4ac7-b975-f5d576dc64f0",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "spectre-solutions",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Existing3grants corroborated contractualallocations5031119.40/17358922.20PLN; PARP2024rejectionnotgrant. Latestexhibitions/acceleratorselection notfinancing.",
+      "source_urls": [
+        "https://spectre.solutions/eu-projects/",
+        "https://spectre.solutions/blog/",
+        "https://www.gov.pl/attachment/388a18ca-7620-48bd-ab4a-60019ca84bd9",
+        "https://www.parp.gov.pl/storage/grants/documents/743/LISTA-DO-PUBLIKACJI-NA-STRONIE-INTERNETOWEJ-nabor-2-2023_20092024.pdf"
+      ],
+      "id": "67dd578c-a6fc-4279-87a7-f93bbd25561c",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "threod-systems",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Joint2018MPLMgrant added withoutassigning199899EURjointtotal. Parentadvance750kaggregateandThreodDefence500kawardremainseparate. BritishArmyASGARD4996500GBPprocurementnotfinancing.",
+      "source_urls": [
+        "https://www.threod.com/news/",
+        "https://www.threod.com/about/",
+        "https://www.find-tender.service.gov.uk/Notice/013825-2026/PDF",
+        "https://www.kaitseministeerium.ee/sites/default/files/10.7-1_18_500.pdf",
+        "https://www.kaitseministeerium.ee/kaitsetoostuse-arendusprojektide-konkurss"
+      ],
+      "id": "714352d3-de7d-4746-9e14-75527ec3b894",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 7,
+      "approved_events_after": 8,
+      "new_events": 1,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "trackdeep",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Original EISfundedlistparticipation added;923336.80EURrequested and1159832eligiblecostexcluded. FoxHunter/Tehnopol existingawards corroborated. Regiareceiptlevelentries notadditionalrounds.",
+      "source_urls": [
+        "https://trackdeep.ai/",
+        "https://cordis.europa.eu/project/id/101310495",
+        "https://www.tehnopol.ee/en/100000-euros-of-investment-in-a-drone-monitoring-system-waste-transport-building-scanning-and-sea-buoys/",
+        "https://regia.ee/en/entity/16346893-trackdeep-ou",
+        "https://eis.ee/wp-content/uploads/2023/06/iv_voorus_toetatud_projektid.pdf"
+      ],
+      "id": "a6ac843f-ac75-48df-9232-6e400085ad0d",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 4,
+      "new_events": 1,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "trndlabs",
+      "disposition": "source_review_partial",
+      "evidence": "Original2016founderinterview printedp33/PDFp38 says historicalBetafresh financed TRNDlabsinventory with bankcredit ratherthanequity. Borrower,date,bank,amount unknown. CurrentcontactBetafreshLLCWyoming versusDutchcatalogue/HKprioridentity unresolved; no loan assigned.",
+      "source_urls": [
+        "https://thesis.eur.nl/pub/41723/Paardekoper-Luite-thesis.pdf",
+        "https://trndlabs.com/pages/about",
+        "https://trndlabs.com/pages/contact"
+      ],
+      "id": "ce1ffc63-366d-4f69-8200-2084ad75be8d",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "twentyfour-industries",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Luxembourg2026report conflictingEURheadline/USDbody11.8m andsummer2025versusJan2026timing; no newseedamountinferred oroverlapwith878EURnominalsubscription. Lakestarportfolio corroborated. OTBnominee-suppliedPSIKstatement supportsbackingcandidate without roundrole; preservedfor directinvestorcorroboration.",
+      "source_urls": [
+        "https://twentyfour.industries/",
+        "https://startupluxembourg.com/news/luxembourg-based-twentyfour-industries-raises-%E2%82%AC11-8m",
+        "https://www.lakestar.com/resiliencepress",
+        "https://nagrodypsik.pl/en/"
+      ],
+      "id": "b244baa4-e351-4ea6-ac18-4ad0fa74f698",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "uav-navigation",
+      "disposition": "reviewed_public_sources",
+      "evidence": "BullnetQ42009alreadyrecorded. ESA NAVISP288 identifiesInsterprime/UAVNavigationsubcontractor: R&Dcontractnotgrant. Existing8events retained,850kEURmixed2012includes350kENISAloan. Acquisitiondatabase8.85mUSD andmultiannual7.5mEURspendingnotfreshcash.",
+      "source_urls": [
+        "https://bullnetcapital.com/company/uav_navigation/",
+        "https://www.uavnavigation.com/company/news-and-events",
+        "https://navisp.esa.int/project/288-enhanced-integrated-guidance-coms-system-from-leo-satellites"
+      ],
+      "id": "b8fc344f-6af2-4860-80c1-8dde233b777a",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 8,
+      "approved_events_after": 8,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "uavionics",
+      "disposition": "reviewed_public_sources",
+      "evidence": "ExactPolishKRS0000678183/NIP5272800467 distinctUSuAvionix. Existing3352391.39PLNgrantconfirmed;8656929.55Sauronconsortiumnotown. Space3ac2018alumni/PZULabchallenge not200kPLNpayment. Secondary50kEURpreseed andV-FLEXrecommended11002806.10PLNnotexecutedaward; separateA136/25rejectedapplicationnotA1HQ/25.",
+      "source_urls": [
+        "https://www.uavionics.com.pl/projekty",
+        "https://www.uavionics.com.pl/contact",
+        "https://www.space3.ac/2018-2/",
+        "https://www.gov.pl/attachment/1209a28e-fefb-4295-a71f-c577c41c6eb9"
+      ],
+      "id": "67ed978b-54e5-443c-903b-6ece46b1bbd4",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "uavision",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Add SOCO-DRONE andQuadMission fundedparticipations, ownallocationsunknown. PRRportal851.38kassigned/701.38kreceivedexistingVineWineinstalmentnotnewgrant. Sentinel30kcompetitionprizenotequity; secondary2011Eureka50kunsupported.",
+      "source_urls": [
+        "https://transparencia.gov.pt/pt/fundos-europeus/prr/beneficiarios-projetos/beneficiario/507294122/",
+        "https://www.uavision.com/pt",
+        "https://www.hidrografico.pt/en/news/noticias-do-antigo-site/project-soco-drone-simulation-public-flight/",
+        "https://www.frontiersin.org/10.3389/conf.fmars.2016.04.00015/event_abstract",
+        "https://uavision.wixsite.com/uavision/rd-c6g2",
+        "https://isr.tecnico.ulisboa.pt/projects/desenvolvimento-de-um-sistema-automatico-e-inteligente-para-aeronave-nao-tripulada-plataforma-quadcopter-u4/"
+      ],
+      "id": "1f70eae1-ca64-4c01-8aef-00df217e7ef9",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 5,
+      "new_events": 2,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "uavsave",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Exact54757941 originalSARIOcontract184/2025signed19March2025reconfirms3592.17EURmaximumreimbursement. Currentproducts/ISOnewsnotfinancing; nozerofundinginference.",
+      "source_urls": [
+        "https://www.crz.gov.sk/zmluva/10571404/",
+        "https://uavsave.com/"
+      ],
+      "id": "d000348b-c7ff-43e3-b1a2-614f4d3da906",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "ubiq-aerospace",
+      "disposition": "reviewed_public_sources",
+      "evidence": "TDRIC/ACTUSparticipationsadded withnullamounts. Statkraftclosedfundingcorroborated.2020NOK11.9mMinistry and23.9mdevelopmentcontractmayoverlap,notseparategrants. Lupa2019/2020vehiclemappingunknown; preserve13existingevents.",
+      "source_urls": [
+        "https://www.ubiqaerospace.com/news/ubiq-aerospace-and-statkraft-ventures-to-propel-sustainable-autonomous-aviation",
+        "https://www.ubiqaerospace.com/news/ubiq-aerospace-cooperates-with-the-ministry-of-defense-to-develop-an-ice-protection-system-for-uavs",
+        "https://www.ubiqaerospace.com/news",
+        "https://www.ubiqaerospace.com/news/ubiq-aerospace-to-collaborate-on-eu-defence-project-and-conduct-tests-in-the-world-s-largest-iwt",
+        "https://defence-industry-space.ec.europa.eu/system/files/2023-06/TDRIC-Factsheet_EDF22.pdf",
+        "https://defence-industry-space.ec.europa.eu/document/download/8817c0c4-dedb-46e2-9d02-30be8da42b24_en?filename=EDF-2023-DA-C4ISR-TRPAS+ACTUS.pdf"
+      ],
+      "id": "0edbfb12-c767-47b9-90b8-eda7cb82aa45",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 13,
+      "approved_events_after": 15,
+      "new_events": 2,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "ucandrone",
+      "disposition": "reviewed_public_sources",
+      "evidence": "NAVISENSE-Xparticipationadded exactSAbeneficiary,not4955917.98EURconsortiumamount. Existing85kprimarysubscriptionand235k/1.5msecondarytransactions preserved; EFAcostbasisnotextraproceeds.",
+      "source_urls": [
+        "https://efagroup.eu/the-greek-response-to-uas/",
+        "https://defence-industry-space.ec.europa.eu/document/download/ca96e999-c07c-473e-a23f-8bb42da28e78_en?filename=FACTSHEET_EDF_2024_LS_RA_CHALLENGE_SENS_RADNP_101224702_NAVISENSE_X.pdf",
+        "https://www.linkedin.com/posts/navisense-x-edf_press-release-navisense-x-a-new-project-activity-7427375335819862017-oz-2"
+      ],
+      "id": "5f73ae1d-0e9a-45d5-8660-52c39b904ebe",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 4,
+      "new_events": 1,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "uforce",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Shieldoriginalreconfirmsco-leadLakestar existing50mUSDseed. DealroomSeptember2026rumour500mSeriesA/Valor/5bnvaluationnotissuerconfirmed. FounderPeople.ai200mnotUforce.",
+      "source_urls": [
+        "https://shieldcap.com/announcement/investing-in-uforce",
+        "https://www.uforce.com/news",
+        "https://www.uforce.com/company",
+        "https://app.dealroom.co/companies/uforce"
+      ],
+      "id": "e4880b6d-42e5-4441-856d-1ec6c091c4d9",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "ukropter",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Issuerinvitesinvestment/donations,noexecutedround. Charity45059850distinct; founderself-financingproject lackslegalissuer/instrument/date. Boundednoattributablepublicroundfound,notzero.",
+      "source_urls": [
+        "https://ukropter.com/",
+        "https://ukropter.com/files/statut.pdf",
+        "https://dev.ua/news/ukropter",
+        "https://cpdperemoga.info/zbir/501"
+      ],
+      "id": "88b9ef24-4b9b-481c-a39c-d9de701eb03a",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "umag-solutions",
+      "disposition": "reviewed_public_sources",
+      "evidence": "OriginalBridgepointapprovalconditioncorrectedclosedtosignedwithfullbeforeafter/reversal. Fourfunderconfirmedgrantsretained including4865000DKKMineMap. Considerationandprimarycapitalunknown.",
+      "source_urls": [
+        "https://www.bridgepointgroup.com/about-us/news-and-insights/press-releases/2026/bridgepoint-to-partner-with-umag-solutions",
+        "https://www.bridgepointgroup.com/investment-strategies/private-equity/portfolio/middle-market/advanced-industrials/umag",
+        "https://danmarksinnovationsfond.dk/da/artikler/fra-dtu-til-nato-dansk-drone-innovation/",
+        "https://innovationsfonden.dk/da/news-article/kunstig-intelligens-skal-finde-bomber-og"
+      ],
+      "id": "2a5569d0-4bdd-4d10-8125-6495970cf117",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 5,
+      "approved_events_after": 5,
+      "new_events": 0,
+      "corrected_events": 1,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "umo-ua",
+      "disposition": "reviewed_public_sources",
+      "evidence": "ExactUMOUkraine45274055.24Feb2025Brave1forumattendance notgrant/investment. CurrentnewsEurosatory2026products/exhibitions/procurementnotprimaryfunding; Polishparentownership notdatedfinancing.",
+      "source_urls": [
+        "https://umo-ukraine.com/umo-ukraine-took-part-in-brave1-forum/",
+        "https://umo-ukraine.com/category/news-en/",
+        "https://umo-ukraine.com/contact-us/"
+      ],
+      "id": "0352f23b-cc3b-463f-9ac1-5ee4854569be",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "unwave",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Анвейв45033256activeUNITE-BraveNATOframeworkUA-2026-07-31-000001participation notspecificaward/proceeds. GREITONfounderand16326500UAHregisteredcapitalnotdatedexternalround; charitydeviceprocurementnotfunding.",
+      "source_urls": [
+        "https://tender-online.com.ua/agreement/2923",
+        "https://public.api.openprocurement.org/api/2.5/agreements/d21100bd6e2648e48d5da0fd004fdb53",
+        "https://overit.com.ua/en/company/tovarystvo-z-obmezhenoiu-vidpovidalnistiu-anveiv-45033256/",
+        "https://www.work.ua/jobs/by-company/2965970/"
+      ],
+      "id": "f9df351c-7f33-4477-9916-7fb16e4d7d20",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 0,
+      "approved_events_after": 0,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "urc-systems",
+      "disposition": "reviewed_public_sources",
+      "evidence": "AddNEOCLASSIGactualdotacecontractnullallocation. Contract15792865CZKandcurrentStarfos15273000bothprojecttotals,notnewrounds.2024IEDR&Dprocurementexcluded; NEURONinstrumentstillunresolved; preserveexistinggrants.",
+      "source_urls": [
+        "https://smlouvy.gov.cz/smlouva/20128075",
+        "https://www.urc-systems.cz/en/projekty/projekty-cr/",
+        "https://starfos.tacr.cz/en/projekty/TM02000035",
+        "https://smlouvy.gov.cz/smlouva/soubor/21495475/TM02000035-S.PDF"
+      ],
+      "id": "d0f7aa66-dfe1-450b-8dcb-9ba974bc4afe",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 4,
+      "approved_events_after": 5,
+      "new_events": 1,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    },
+    {
+      "slug": "verity",
+      "disposition": "reviewed_public_sources",
+      "evidence": "HelveticaoriginalfirstinvestedMarch2018minoritygrowthcapital corroborates alreadyexistinggenericrelationship; no separate artificialroundoverlapJuneSeriesA. EICFeb2026DELTA101298321alreadyrecordedApril24signatureandallocation; preservedfiveevents.",
+      "source_urls": [
+        "https://www.helvetica-capital.ch/en/portfolio/verity",
+        "https://cordis.europa.eu/project/id/101298321",
+        "https://www.verity.net/blog/verity-raises-32m-in-series-b-funding-to-accelerate-rollout-of-autonomous-inventory-drone-system/"
+      ],
+      "id": "7b5d12d8-2586-403e-ab2b-1ff48edd92b2",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 5,
+      "approved_events_after": 5,
+      "new_events": 0,
+      "corrected_events": 0,
+      "checked_at": "2026-11-11"
+    }
+  ],
+  "research_groups": [
+    {
+      "group": "root_prepared",
+      "company_ids": [
+        "51b6c966-7cee-4ac7-b975-f5d576dc64f0",
+        "e03035a9-991b-4b7c-89f0-fad6866db061"
+      ]
+    },
+    {
+      "group": "fifth_a",
+      "company_ids": [
+        "67dd578c-a6fc-4279-87a7-f93bbd25561c",
+        "714352d3-de7d-4746-9e14-75527ec3b894",
+        "a6ac843f-ac75-48df-9232-6e400085ad0d",
+        "b244baa4-e351-4ea6-ac18-4ad0fa74f698",
+        "b8fc344f-6af2-4860-80c1-8dde233b777a",
+        "ce1ffc63-366d-4f69-8200-2084ad75be8d"
+      ]
+    },
+    {
+      "group": "fifth_b",
+      "company_ids": [
+        "0edbfb12-c767-47b9-90b8-eda7cb82aa45",
+        "1f70eae1-ca64-4c01-8aef-00df217e7ef9",
+        "5f73ae1d-0e9a-45d5-8660-52c39b904ebe",
+        "67ed978b-54e5-443c-903b-6ece46b1bbd4",
+        "d000348b-c7ff-43e3-b1a2-614f4d3da906",
+        "e4880b6d-42e5-4441-856d-1ec6c091c4d9"
+      ]
+    },
+    {
+      "group": "fifth_c",
+      "company_ids": [
+        "0352f23b-cc3b-463f-9ac1-5ee4854569be",
+        "2a5569d0-4bdd-4d10-8125-6495970cf117",
+        "7b5d12d8-2586-403e-ab2b-1ff48edd92b2",
+        "88b9ef24-4b9b-481c-a39c-d9de701eb03a",
+        "d0f7aa66-dfe1-450b-8dcb-9ba974bc4afe",
+        "f9df351c-7f33-4477-9916-7fb16e4d7d20"
+      ]
+    }
+  ],
+  "database": {
+    "before": {
+      "events": 1542,
+      "approved_events": 1529,
+      "links": 1375,
+      "approved_links": 1366,
+      "profiles": 816,
+      "sources": 2109,
+      "companies": 355
+    },
+    "after": {
+      "events": 1550,
+      "approved_events": 1537,
+      "links": 1375,
+      "approved_links": 1366,
+      "profiles": 816,
+      "sources": 2124,
+      "companies": 355
+    }
+  },
+  "validation": {
+    "tested_importer": "scripts/prepare-funding-pilot.mjs",
+    "source_commit": "49e418e10dd94bf8e3885161438b65415881d810",
+    "production_rollback": true,
+    "rollback_baseline_restored": true,
+    "repeated_import_idempotent_in_rollback": true,
+    "event_values_verified": 9,
+    "event_sources_verified": 15,
+    "guarded_corrections": 1,
+    "correction_has_expected_old_and_reversal": true,
+    "preserved_existing_curated_fingerprints": [
+      {
+        "kind": "profiles",
+        "hash": "a38f897ee74a33d3b902b7f0458ed6c5"
+      },
+      {
+        "kind": "relationships",
+        "hash": "ab1e37e306957019707c2d5c54b17741"
+      }
+    ],
+    "generic_helvetica_relationship_already_present": true,
+    "legacy_state_and_frozen_snapshots_untouched": true,
+    "pending_manifest_key_status_audit": {
+      "keys": 407,
+      "matched": 407,
+      "approved": 405,
+      "draft_keys": [
+        "piaggio-aerospace:shareholder-cash-restructuring-2018",
+        "squarehead-technology:research-council-361782-grant"
+      ]
+    },
+    "source_category_note": "Existing Ministry project-page source category retained; new original decree separately classified as grantor announcement."
+  },
+  "publication": {
+    "manifest": "research-agent/imports/funding-landscape-20261111-fifth-night.json",
+    "previous_manifest": "research-agent/imports/funding-landscape-20261111-fourth-night.json",
+    "manifests": [
+      "research-agent/imports/funding-landscape-20261110-second-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-late-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-evening.json",
+      "research-agent/imports/funding-landscape-20261110-second-evening.json",
+      "research-agent/imports/funding-landscape-20261110-third-evening.json",
+      "research-agent/imports/funding-landscape-20261110-fourth-evening.json",
+      "research-agent/imports/funding-landscape-20261110-fifth-evening.json",
+      "research-agent/imports/funding-landscape-20261110-sixth-evening.json",
+      "research-agent/imports/funding-landscape-20261110-late-night.json",
+      "research-agent/imports/funding-landscape-20261110-second-late-night.json",
+      "research-agent/imports/funding-landscape-20261110-third-late-night.json",
+      "research-agent/imports/funding-landscape-20261110-midnight.json",
+      "research-agent/imports/funding-landscape-20261111-early.json",
+      "research-agent/imports/funding-landscape-20261111-second-night.json",
+      "research-agent/imports/funding-landscape-20261111-third-night.json",
+      "research-agent/imports/funding-landscape-20261111-fourth-night.json",
+      "research-agent/imports/funding-landscape-20261111-fifth-night.json"
+    ],
+    "correction_manifests": [
+      "research-agent/imports/funding-landscape-20261110-sixth-evening-award-guard.json",
+      "research-agent/imports/funding-landscape-20261110-second-late-night-piaggio-guard.json",
+      "research-agent/imports/funding-landscape-20261111-fifth-night-closing-guard.json"
+    ],
+    "draft_exclusions": [
+      {
+        "company_slug": "squarehead-technology",
+        "round_key": "research-council-361782-grant"
+      },
+      {
+        "company_slug": "piaggio-aerospace",
+        "round_key": "shareholder-cash-restructuring-2018"
+      },
+      {
+        "company_slug": "rinicom",
+        "round_key": "ukri-10024815-hado-grant"
+      },
+      {
+        "company_slug": "rinicom",
+        "round_key": "ukri-75309-grant"
+      }
+    ],
+    "report": "research-agent/reports/2026-11-11-funding-landscape-fifth-night.json",
+    "previous_report": "research-agent/reports/2026-11-11-funding-landscape-fourth-night.json",
+    "database": {
+      "events": 1550,
+      "approved_events": 1537,
+      "links": 1375,
+      "approved_links": 1366,
+      "profiles": 816,
+      "sources": 2124,
+      "companies": 355
+    },
+    "status": "committed_awaiting_fresh_catalogue_run",
+    "expected_live": {
+      "events": 1537,
+      "links": 1366,
+      "profiles": 816,
+      "manifest_rows": 405,
+      "manifest_keys_including_withheld": 407,
+      "withheld_draft_rows": 9,
+      "approved_corrections": 52,
+      "participation_corrections": 12,
+      "additional_existing_round_participations": 4,
+      "additional_draft_corrections_outside_pending_keys": [
+        {
+          "company_slug": "rinicom",
+          "round_key": "ukri-10024815-hado-grant"
+        },
+        {
+          "company_slug": "rinicom",
+          "round_key": "ukri-75309-grant"
+        }
+      ],
+      "additional_existing_round_corrections": [
+        {
+          "company_slug": "umag-solutions",
+          "round_key": "bridgepoint-majority-acquisition-2026",
+          "closing_status": "signed",
+          "manifest": "research-agent/imports/funding-landscape-20261111-fifth-night-closing-guard.json"
+        }
+      ]
+    },
+    "checked_at": "2026-11-11T04:54:35.882Z",
+    "observed_live": {
+      "generated_at": "2026-11-10T13:52:10.085Z",
+      "investor_generated_at": "2026-11-10T13:52:11.204Z",
+      "events": 1145,
+      "links": 1214,
+      "profiles": 774,
+      "withheld_live": false
+    },
+    "observed_workflow_runs": [
+      [
+        42828359177,
+        "schedule",
+        "2026-11-10T13:51:22Z",
+        "success",
+        "completed",
+        "0ce481330c58f1081bcdc9cb01e26421422c4a62"
+      ],
+      [
+        42795281022,
+        "push",
+        "2026-11-10T09:59:20Z",
+        "failure",
+        "completed",
+        "0ce481330c58f1081bcdc9cb01e26421422c4a62"
+      ],
+      [
+        42725276104,
+        "push",
+        "2026-11-10T00:03:04Z",
+        "success",
+        "completed",
+        "d31d443bcb013bc42f7805ef700a0db3f209ee28"
+      ]
+    ],
+    "workflow_schedule": "0 6 * * * UTC",
+    "reason": "Fresh live JSON still generated10November13:52UTC and latest catalogue deployment unchanged. User keeps catalogue repository read-only; existing scheduled build remains route without schedule edits or artifact-conflicting old reruns. After fresh deployment audit17 base manifests/407keys/405approved, three correction manifests, exact four draft exclusions and UMag signed closing status. No new facts claimed published.",
+    "current_live_verification": {
+      "checked_at": "2026-11-11T04:54:35.882Z",
+      "site_json_reachable": true,
+      "latest_deployment_run_unchanged": true,
+      "publication_verified": false,
+      "previous_draft_exclusions_absent": true,
+      "new_withheld_rinicom_rows_still_live": [
+        {
+          "slug": "rinicom",
+          "key": "ukri-10024815-hado-grant"
+        },
+        {
+          "slug": "rinicom",
+          "key": "ukri-75309-grant"
+        }
+      ],
+      "valid_osl_allocations_same_project_preserved": [
+        {
+          "slug": "osl-technology-operational-solutions-ltd",
+          "key": "ukri-75309-grant"
+        },
+        {
+          "slug": "osl-technology-operational-solutions-ltd",
+          "key": "ukri-10024815-hado-grant"
+        }
+      ]
+    }
+  },
+  "prepared_followups": [
+    {
+      "company_slug": "liebherr-aerospace",
+      "note": "Fresh original divisional governance confirms Aerospace & Transportation SAS,Toulouse controls segment; Lindenberg and Toulouse SAS are separate beneficiaries. Generic German catalogue record does not establish legal mapping. No additional subsidiary awards assigned; existing recipient-qualified2.4m record preserved pending mapping.",
+      "sources": [
+        "https://www.liebherr.com/en-au/aerospace-and-transportation-systems/about-us/about-us/about-us-7175925",
+        "https://www.liebherr.com/en-us/group/about-liebherr/company-profile/product-segments/aerospace-and-transportation-systems/aerospace-and-transportation-systems-3781642"
+      ]
+    },
+    {
+      "company_slug": "sky-fortress",
+      "note": "Catalogue describes Ukrainian company, not Estonian parent borrower. Fresh Ukrainianregistry mirrors44910606 identify SF Technologies16704134 soleowner, not sameissuer. Parent USDloan excluded. Reuters22April2026reports Brave1support without awardlevelissuer/amount; Brave1pool membership not award. Original Estonian2025PDF unavailable403 this run; priorread evidence retained without claiming fresh PDFread.",
+      "sources": [
+        "https://clarity-project.info/edr/44910606",
+        "https://youcontrol.com.ua/en/catalog/company_details/44910606/",
+        "https://www.internazionale.it/ultime-notizie-reuters/2026/04/22/exclusive-us-turns-to-ukrainian-counter-drone-tech-after-iran-attacks-sources-say",
+        "https://united24media.com/war-in-ukraine/sky-fortress-ukraines-acoustic-detection-system-that-tracks-drones-cheap-and-fast-9451"
+      ]
+    },
+    {
+      "company_slug": "trndlabs",
+      "note": "Original2016founderinterview printedp33/PDFp38 says historicalBetafresh financed TRNDlabsinventory with bankcredit ratherthanequity. Borrower,date,bank,amount unknown. CurrentcontactBetafreshLLCWyoming versusDutchcatalogue/HKprioridentity unresolved; no loan assigned.",
+      "sources": [
+        "https://thesis.eur.nl/pub/41723/Paardekoper-Luite-thesis.pdf",
+        "https://trndlabs.com/pages/about",
+        "https://trndlabs.com/pages/contact"
+      ]
+    }
+  ],
+  "additional_source_candidate": {
+    "company_slug": "twentyfour-industries",
+    "investor_slug": "otb-ventures",
+    "source": "https://nagrodypsik.pl/en/",
+    "claim": "Nominee-supplied OTB2025 backing statement supports portfolio candidate; direct OTB source and event overlap pending. No lead role, amount or round attribution inferred."
+  },
+  "recovery": {
+    "initial_active_run": null,
+    "expired_lease_recovery_needed": false,
+    "previous_pending_imports_verified_by_key_audit": true,
+    "writer_lease": {
+      "run_id": "funding-20261111-0447",
+      "owner": "chatgpt",
+      "started_at": "2026-11-11T04:46:44.317Z",
+      "lease_expires_at": "2026-11-11T06:46:44.317Z",
+      "parent_commit": "08dda8308fab18234022c109cab8bd42935c2107",
+      "purpose": "Next18 published public-history reviews and two prepared issuer mappings"
+    },
+    "import_committed": true
+  },
+  "research_limits": "Bounded review completion is separate from complete DB coverage. All eight new records are grants with undisclosed company allocations, not verified exact cash proceeds. Requested aid, total project costs, programme ceilings, framework participation and procurement are excluded. Unknown private terms do not prevent bounded public-source closure. Three issuer continuity questions remain partial."
+}
