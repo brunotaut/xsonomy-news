@@ -1706,3 +1706,10 @@ Live still generated10November13:52UTC and is not yet verified for pending16mani
 Checked20 distinct published identities;17 bounded public-source reviews completed,3 issuer mappings retained partial. Added8 confirmed grant participations with undisclosed company allocations and guarded UMag acquisition status closed→signed against original approval condition. Production rollback, repeated-import idempotency and independent post-commit audits passed; existing curated profiles/relationships preserved. DB:1,537approved events,1,366approved participations,816profiles. Queue:477reviewed,90partial,1,997queued. Source commit `49e418e10dd94bf8e3885161438b65415881d810`; report `research-agent/reports/2026-11-11-funding-landscape-fifth-night.json`.
 
 Live remains10November13:52UTC; pending17base manifests and3corrective manifests require fresh scheduled deployment audit, including four exact draft exclusions. Catalogue remains read-only; schedules and legacy STATE/frozen snapshots unchanged.
+
+
+## Funding research — 11 November 2026 sixth-night checkpoint
+
+Checked22 published identities under one lease;18 newly completed bounded reviews,3 partial,1 previously completed followup. Added8 events(5Terma grants,WB2016BGK facility,WB2023PLN100m nominal bonds,Weibel credit disclosure),2 lender roles,2 generic backing links,1 BGKprofile and14source rows. Corrected WB2020 allocation date/status and Weles award status with expected-old guards/reversals; Weles company amount remains unknown. Rollback/repeat-import and independent audits passed; all pre-existing curated profiles/relationships preserved. DB:1,545approved events,1,368approved participations,817profiles. Queue:495reviewed,72partial,1,997queued. Sourcecommit `51d44df9c82a11f386567cd5401e9a13867edbaa`; report `research-agent/reports/2026-11-11-funding-landscape-sixth-night.json`.
+
+Live remains10November13:52UTC;18base/four corrective manifests await fresh scheduled deployment audit. Catalogue remains read-only; schedules, legacy STATE.json and frozen snapshots untouched.
