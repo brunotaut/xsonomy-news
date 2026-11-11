@@ -1,7 +1,7 @@
 {
   "run_id": "funding-20261111T174900Z-wider-08",
   "checked_at": "2026-11-11",
-  "status": "database_imported_publication_pending",
+  "status": "completed",
   "scope": {
     "identities_checked": 24,
     "cohort": "wider",
@@ -28,10 +28,29 @@
     "coverage_total": 464
   },
   "publication": {
-    "status": "pending",
-    "catalogue_trigger": null,
-    "workflow": null,
-    "live_verification": null
+    "status": "verified",
+    "catalogue_trigger": {
+      "commit": "3e084e059a30e23bf6754dcff6b9256fadfbaf92",
+      "path": "docs/STATUS.md",
+      "schedule_changed": false
+    },
+    "workflow": {
+      "id": 43074600221,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43074600221"
+    },
+    "live_verification": {
+      "landscape_url": "https://xsonomy.com/landscape/",
+      "generated_at": "2026-11-11T18:07:43.118Z",
+      "investor_generated_at": "2026-11-11T18:07:44.464Z",
+      "companies": 567,
+      "events": 1589,
+      "round_participations": 1380,
+      "investor_profiles": 1213,
+      "portfolio_relationships": 130,
+      "manifest_scope": "All 13 event-bearing batch identities are outside the published 567-company landscape; event arrays correctly remain unchanged while 53 new investor profiles and two generic relationships are published."
+    }
   },
   "identity_notes": [
     "ArianeGroup financing is assigned to ArianeGroup SAS and separates the EIB lender from EFSI and Horizon programme backing.",
@@ -73,5 +92,7 @@
   "importer": "research-agent/imports/prepare-company-funding-pilot.mjs",
   "legacy_state_preserved": true,
   "frozen_snapshots_preserved": true,
-  "checkpointed_at": "2026-11-11T18:06:08.572Z"
+  "checkpointed_at": "2026-11-11T18:06:08.572Z",
+  "source_checkpoint_commit": "787b3657a72836ee11337281f91a9f3f179f27a1",
+  "completed_at": "2026-11-11T18:09:57.363Z"
 }
