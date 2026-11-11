@@ -1,0 +1,1189 @@
+{
+  "run_id": "funding-20261111-0747",
+  "started_at": "2026-11-11T07:46:33.573Z",
+  "checked_at": "2026-11-11T08:05:08.391Z",
+  "status": "database_committed_publication_pending",
+  "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night.json",
+  "correction_manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "delegated_research_groups": 3,
+    "root_research_group": 1,
+    "identities_checked": 22,
+    "public_history_followups": 18,
+    "focused_prepared_reconciliations": 4,
+    "newly_completed_bounded_reviews": 16,
+    "retained_partial": 6,
+    "previously_reviewed_followups": 0,
+    "new_events_written": 4,
+    "new_approved_events": 4,
+    "new_loan_facilities": 1,
+    "new_funded_project_disclosures": 1,
+    "new_noncash_equity_disclosures": 1,
+    "new_nondilutive_prizes": 1,
+    "corrected_existing_events": 12,
+    "new_round_participations": 5,
+    "new_generic_portfolio_relationships": 0,
+    "new_investor_profiles": 2,
+    "new_source_rows": 9,
+    "existing_events_inspected": 238,
+    "active_minutes": 18.58,
+    "checked_identities_per_active_hour": 71.04,
+    "completed_reviews_per_active_hour": 51.67,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed from writer lease through three disjoint delegated read-only groups and root group, primary source reconciliation, repeated-import production rollback, atomic import, independent value/source/profile audits and fresh live/deployment checks. Between-run waiting excluded."
+  },
+  "queue_dispositions": [
+    {
+      "slug": "rolls-royce",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Holdings' existing rights issue and two 2026 EUR500m bonds retained. The 2020 GBP2bn-equivalent notes expressly have Rolls-Royce plc as issuer and Holdings as guarantor; not imported into Holdings. December2025 GBP2.5bn RCF is disclosed at group level without a resolved exact legal borrower, so held. H12026 liquidity and pension activity are not new financing.",
+      "source_urls": [
+        "https://www.rolls-royce.com/investors/debt-securities.aspx",
+        "https://www.rolls-royce.com/investors/results-reports-and-presentations/financial-results/rr-holdings-plc-2025-full-year-results.aspx",
+        "https://www.rolls-royce.com/investors/results-reports-and-presentations/financial-results/rr-holdings-plc-2026-half-year-results.aspx",
+        "https://www.rolls-royce.com/media/press-releases/2020/15-10-2020-rr-prices-pound-2-billion-equivalent-senior-notes-offering.aspx"
+      ],
+      "source_dates": {},
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "85c40b2d-c6b2-4066-a55f-300e97a6488b",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "rsi-europe",
+      "disposition": "reviewed_public_sources",
+      "evidence": "ILTE original confirms signed EUR4m working-capital loan on26June2025; added with lender role and no drawdown assumption. Existing ERDF award and joint EDIP participation retained. Joint EUR29.5m EDIP allocation, up-to-EUR50m industrial spending and Fourth Law MoU are not separate own proceeds.",
+      "source_urls": [
+        "https://ilte.lt/naujienos/47/4-mln.-euru-investicija-i-saugesne-europa-ilte-finansavimas-gynybos-technologiju-bendrovei-rsi-europe%3A1963",
+        "https://rsieu.com/about/",
+        "https://rsieu.com/news/",
+        "https://kam.lt/en/the-eu-grants-eur-29-5-million-to-lithuanias-defence-industry-company/",
+        "https://eimin.lrv.lt/en/structure-and-contacts/news-1/rsi-europe-to-invest-up-to-50m-in-strengthening-lithuanias-defence-industry-3uHQ/"
+      ],
+      "source_dates": {
+        "loan_announcement": "2025-06-26",
+        "joint_EDIP_announcement": "2026-10-20"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "6e4382cb-36d3-4e44-82b2-a8d09302ff9f",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 3,
+      "new_events": 1,
+      "corrected_events": 0
+    },
+    {
+      "slug": "saab",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Existing33 financing events retained. Fresh issuer debt table lists private instruments121–132 and139; original principal versus outstanding stock and overlap with existing tranches require terms before additional events. Loan139 may overlap the existing SEK1.2bn NIB facility; not duplicated. Historical EUR100m Schuldschein signatures and subsequent repayments refer to the same2015 facility. Bookrunners not treated as lenders or purchasers.",
+      "source_urls": [
+        "https://www.saab.com/investors/debt-market",
+        "https://www.saab.com/newsroom/press-releases/2015/saab-issues-schuldschein-loan-agreements-amounting-to-meur-100",
+        "https://www.saab.com/globalassets/corporate/investor-relations/pdf/saab_asr2021_eng.pdf",
+        "https://www.saab.com/globalassets/cision/documents/2019/20191022-saabs-results-january-september-2019-en-0-3451215.pdf"
+      ],
+      "source_dates": {
+        "schuldschein_publication": "2015-12-22",
+        "schuldschein_signed": "2015-12-21"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "68c7206e-5579-415e-ab3e-8303edd8cdac",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 33,
+      "approved_events_after": 33,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "safran",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Existing29 events retained, including distinct original-currency USPP tranches and convertibles. Latest2026 regulatory results describe EUR700m redemption and share buybacks, not new proceeds.2025 early OCEANE redemption and dilution hedges are not new rounds. Subsidiary Zodiac financing not assigned to parent; remaining700m2031 debt stock not imported again.",
+      "source_urls": [
+        "https://www.safran-group.com/finance/regulated-information",
+        "https://www.safran-group.com/download/press_release/file/2269828",
+        "https://www.safran-group.com/download/media/448857",
+        "https://www.safran-group.com/download/media/447681",
+        "https://www.safran-group.com/download/media/447593",
+        "https://www.safran-group.com/pressroom/q1-sales-line-recovery-profile-expectations-2021-2021-04-30"
+      ],
+      "source_dates": {},
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "75687679-41b6-442f-b83f-f370ff0e5724",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 29,
+      "approved_events_after": 29,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "eurotech-pl",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Exact Mielec issuer and NIP8171873791 corroborated; current site redirects to MMG-Eurotech. Four existing grants retained.21December2020 regional agreement corroborated; requested PLN2,084,700 versus secondary aid PLN1,864,897 is not resolved as final own proceeds.",
+      "source_urls": [
+        "https://polishdefenceindustry.gov.pl/company/eurotech-sp-z-o-o/",
+        "https://mmg-eurotech.pl/",
+        "https://mmg-eurotech.pl/research-development/",
+        "https://bazakonkurencyjnosci.funduszeeuropejskie.gov.pl/api/files/1112828"
+      ],
+      "source_dates": {
+        "regional_agreement": "2020-12-21"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "6b636ac1-0f3d-418e-8ba7-ee740c1b2922",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 4,
+      "approved_events_after": 4,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "exail",
+      "disposition": "reviewed_public_sources",
+      "evidence": "All seven original CORDIS beneficiary sections freshly checked. Exact operating EXAIL at34rue de la Croix de Fer and allocations retained. Seven closed/closed_amount classifications corrected to signed/announced_round_size; project closure is not proof of paid cash. Parent financing and consortium budgets excluded.",
+      "source_urls": [
+        "https://cordis.europa.eu/project/id/101189541",
+        "https://cordis.europa.eu/project/id/101004205",
+        "https://cordis.europa.eu/project/id/857156",
+        "https://cordis.europa.eu/project/id/817482",
+        "https://cordis.europa.eu/project/id/101113690",
+        "https://cordis.europa.eu/project/id/101102140",
+        "https://cordis.europa.eu/project/id/101081775"
+      ],
+      "source_dates": {},
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "8517768e-5a14-4ac2-8296-692a39e2a0a0",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 24,
+      "approved_events_after": 24,
+      "new_events": 0,
+      "corrected_events": 7
+    },
+    {
+      "slug": "fire-point",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Latest EIFO21October2026 original expressly finances Danish subsidiary. DKK750m is not attributed to Ukrainian parent; plant spending and USD5.8bn valuation not financing. No new completed parent round established.",
+      "source_urls": [
+        "https://eifo.dk/en/knowledge-hub/eifo-provides-financing-for-ukrainian-defence-production-in-denmark",
+        "https://firepoint.technology/"
+      ],
+      "source_dates": {
+        "EIFO_source": "2026-10-21"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "be9d0f0c-b23d-48b2-962d-500a4fa046ef",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "firebolt-engineering",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Counsel confirms completed Grenadyr backing, not portfolio cheque range. Estimated GBP851.5k Funding Spotter headline remains unsupported and potentially overlaps Grenadyr; previously read SH01 includes noncash group-benefit consideration. Indexed counsel original available but fresh open inaccessible; no invented amount.",
+      "source_urls": [
+        "https://aequo.ua/en/news/grenadyr-invests-in-five-ukrainian-defence-tech-startups"
+      ],
+      "source_dates": {
+        "transaction_counsel": "2026-08-31"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "44492024-5861-40be-ab33-eb62107a124e",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "fixar-fixar-aero-llc",
+      "disposition": "source_review_partial",
+      "evidence": "New EIT UATMDEVDEM funded-project disclosure names Latvian FIXAR AERO SIA and GA22048; own amount and signature unknown.2021 Volatus USD1m headline is Canadian setup/business-development/support spending, not a cash round. Historical equity claims still conflict on dates, totals and Russian predecessor versus Latvian issuer.",
+      "source_urls": [
+        "https://www.fixar.pro/news/fixar-takes-part-in-eit-urban-mobility-project-to-develop-urban-air-traffic-management-system",
+        "https://www.sf.bg.ac.rs/index.php/sr-yu/research-projects",
+        "https://www.eiturbanmobility.eu/wp-content/uploads/2024/11/220302_EITUM_Per-se-1.pdf",
+        "https://www.fixar.pro/news/fixar-launches-manufacturing-in-north-america-with-volatus-in-1m-deal"
+      ],
+      "source_dates": {
+        "EIT_issuer_disclosure": "2022-03-24",
+        "EIT_plan": "2022-03-02",
+        "Volatus_issuer_disclosure": "2021-04-22"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "af596be1-755a-44bb-84b3-d6087a58ba81",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 7,
+      "approved_events_after": 8,
+      "new_events": 1,
+      "corrected_events": 0
+    },
+    {
+      "slug": "flytech-uav",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Issuer's2017 original presentation corroborates Bridge Alfa/FENIX2 and INNOSBZ participation. ARP is explicitly an observer, not an investor. Existing four events retained; INNOSBZ consortium allocation not assigned to company.",
+      "source_urls": [
+        "https://www.itu.int/en/ITU-D/Innovation/Documents/Documents_Events_Presentations/2017_WSIS/MON_WSIS17/07%20Flytech%20UAV.pdf"
+      ],
+      "source_dates": {
+        "issuer_presentation": "2017-06-12"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "0eae3539-ab00-4539-b558-1af70013c8c1",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 4,
+      "approved_events_after": 4,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "fotokite",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Ten existing events retained; latest established approximately CHF10m round11April2024 is not repeated from later retrospectives. Two CORDIS grants for Perspective Robotics AG corrected from cash-close assertions to signed allocations; original EC signature dates retained. Deployments and partnerships excluded.",
+      "source_urls": [
+        "https://fotokite.com/news/",
+        "https://fotokite.com/fotokite-secures-investment-round-achieves-strong-growth-and-expands-global-reach/",
+        "https://fotokite.com/fotokite-announces-first-closing-financing-market-expansion-and-executive-team-appointments/",
+        "https://cordis.europa.eu/project/id/880480",
+        "https://cordis.europa.eu/project/id/856120"
+      ],
+      "source_dates": {
+        "latest_round_announcement": "2024-04-11",
+        "EC_signatures": [
+          "2019-10-09",
+          "2019-01-28"
+        ]
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "8d1971e0-433b-4c26-bc2f-fa8c43f70b40",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 10,
+      "approved_events_after": 10,
+      "new_events": 0,
+      "corrected_events": 2
+    },
+    {
+      "slug": "greenjets",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Added announced USD25000 xTech finalist non-dilutive prize from exact issuer selection and Army roster/terms. No payment or final-winner amount inferred. Added z21 and Coalition Ventures as participants in existing USD40m SeriesA; no cheques or MD ONE new-round role inferred. Coalition original portfolio identity corroborated.",
+      "source_urls": [
+        "https://www.greenjets.com/news-articles/xtech-apex-intercept-finalist",
+        "https://xtech.army.mil/competition/xtechapex-intercept/",
+        "https://www.md-one.com/news/portfolio-companies-greenjets-and-valarian-close-90-million-in-series-a-funding",
+        "https://www.coalition.ventures/portfolio",
+        "https://www.greenjets.com/news-articles/series-a",
+        "https://www.linkedin.com/posts/greenjetsltd_the-uks-next-aerospace-prime-today-we-activity-7483778037923180544-t4hx"
+      ],
+      "source_dates": {
+        "finalist_issuer_announcement": "2026-10-14",
+        "MD_ONE_confirmation": "2026-07-20",
+        "existing_Series_A": "2026-07-17"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "ae211989-a5ce-4274-bcea-828d24bec03e",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 10,
+      "approved_events_after": 11,
+      "new_events": 1,
+      "corrected_events": 1
+    },
+    {
+      "slug": "grupo-amper",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Existing12 events retained. Original28October2026 COFIDES release specifies EUR50m capital into Amper Comunicaciones Criticas y Tacticas for32%, not parent. WindWaves/Elinsa subsidiary sums and acquisition consideration excluded from primary parent financing.",
+      "source_urls": [
+        "https://www.cofides.es/noticias/notas-de-prensa/amper-cofides-refuerzan-alianza-estrategica-inversion-50-millones-euros",
+        "https://www.grupoamper.com/en/news/amper-and-cofides-strengthen-their-strategic-alliance-with-a-e50-million-investment-in-the-acquisition-of-teltronic/",
+        "https://www.grupoamper.com/accionistas-e-inversores/otra-informacion-relevante/"
+      ],
+      "source_dates": {
+        "COFIDES_source": "2026-10-28"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "d00ec272-8196-4b94-9b70-cbf6db477aaa",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 12,
+      "approved_events_after": 12,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "hecto-drone",
+      "disposition": "source_review_partial",
+      "evidence": "Fresh filed2024 accounts, approved30June2025, note1 reports DKK4.992m cash capital increase in February2025 without subscriber. Possible overlap with existing27March2025 MajInvest investment; do not create or sum two events. Innobooster2024–2025 is project period, so award announcement year cleared to null; DKK959700 unchanged.2025 original report not recovered; issuer website reconstructing.",
+      "source_urls": [
+        "https://regnskaber.cvrapi.dk/68158093/amNsb3VkczovLzAzL2Y4L2JhL2QxLzIxLzQ2MGYtNDU1OC1hMzU0LTA3OGFmNDc5NGQxYQ.pdf",
+        "https://dk.linkedin.com/posts/maj-invest_majinvest-hectodrone-droneteknologi-activity-7310948541223370752-H0lK",
+        "https://innovationsfonden.dk/en/investments/investments-overview?field_area_target_id=All&field_program_target=&field_program_target_id=&field_start_year_value=&order=field_project_headline&page=512&search=&sort=desc",
+        "https://commercialisation.esa.int/?esa-startups=hecto-drone"
+      ],
+      "source_dates": {
+        "accounts_approved": "2025-06-30",
+        "capital_increase_precision": "2025-02",
+        "MajInvest_announcement": "2025-03-27"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "1c6ab0ed-e620-4c61-a403-78d2bb224107",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 3,
+      "approved_events_after": 3,
+      "new_events": 0,
+      "corrected_events": 1
+    },
+    {
+      "slug": "huless",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Issuer and Brave1 originals retain more-than-USD1m aggregate mixed equity/loan/grant disclosure. No split, private angel identity or statebank lender invented. Current product site adds no supported separate financing event.",
+      "source_urls": [
+        "https://www.linkedin.com/posts/huless_big-step-forward-for-huless-weve-secured-activity-7290723173644304384-0eRo",
+        "https://www.linkedin.com/posts/brave1ukraine_on-the-waves-of-defense-tech-valley-ukrainian-activity-7290698111398649857-iRxj",
+        "https://huless.com"
+      ],
+      "source_dates": {},
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "6d98a6c3-edad-4031-803a-83aa6d59ead0",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 1,
+      "approved_events_after": 1,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "hybrid-drones",
+      "disposition": "reviewed_public_sources",
+      "evidence": "S-Ventures original confirms GBP200000 ticket for2.67% and MBDA alongside participation. Corrected note that previously asserted only historical MBDA backing. Incremental MBDA cash and overlap with2025 remain unknown; no second event or combined round inferred. Existing six events and cash allotments retained.",
+      "source_urls": [
+        "https://www.aquis.eu/stock-exchange/announcements/5705586",
+        "https://www.aquis.eu/stock-exchange/announcements/5646650",
+        "https://www.mbda-systems.com/mbda-invests-uk-sme-maker-innovative-hydra-drone"
+      ],
+      "source_dates": {
+        "S_Ventures_completed_announcement": "2026-04-29"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "b1faf3ec-b3e4-4a90-b504-2edc58f630d6",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 6,
+      "approved_events_after": 6,
+      "new_events": 0,
+      "corrected_events": 1
+    },
+    {
+      "slug": "ids-fincantieri-nextech",
+      "disposition": "source_review_partial",
+      "evidence": "Added distinct noncash equity contribution: new IDS shares subscribed by Fincantieri NexTech with SLS stake, resolved3August2023 and ownership completed by28August2023. No value or cash inferred. RNA-derived exact-PIVA aid candidates remain discovery only without original award/instrument; guarantees not company proceeds. Existing AIRPORT ORCHESTRATOR allocation retained.",
+      "source_urls": [
+        "https://www.emarketstorage.it/sites/default/files/comunicati/2024-03/20240328_145038.pdf",
+        "https://www.fincantieri.com/en/newsroom/press-releases/2021/the-bod-approves-9m-2021-results"
+      ],
+      "source_dates": {
+        "annual_report_source": "2024-03-28",
+        "capital_resolution": "2023-08-03",
+        "SLS_ownership_completed_by": "2023-08-28"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "a3654ce0-0999-4b13-9057-917ec24c5b1e",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 25,
+      "approved_events_after": 26,
+      "new_events": 1,
+      "corrected_events": 0
+    },
+    {
+      "slug": "incas",
+      "disposition": "source_review_partial",
+      "evidence": "ASAS original names INCAS coordinator and contract15SOL(T15)/2024, but own allocation unresolved. ACTRIS original explicitly names INOE2000 as beneficiary and INCAS as partner3; RON14780073 total not INCAS proceeds. Existing32 approved awards retained; project periods not announcement dates.",
+      "source_urls": [
+        "https://www.incas.ro/ro/proiecte/asas/",
+        "https://www.incas.ro/ro/proiecte/sustinerea-operarii-facilitatilor-din-romania-in-cadrul-actris-eric-ro-actris-eric/",
+        "https://www.incas.ro/ro/program/pn4/"
+      ],
+      "source_dates": {
+        "ASAS_source": "2024-12-09",
+        "ACTRIS_source": "2025-03-17"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "1374599f-f40f-4f9e-98e8-5c854b2f028f",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 32,
+      "approved_events_after": 32,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "indra",
+      "disposition": "source_review_partial",
+      "evidence": "BOE RD913/2025 authorises exact Indra Sistemas zero-interest loans EUR24m RADAR-FI,EUR36m CYBER-RANGE,EUR820m COAAAS. Article6 still requires concession orders/acceptance: held as authorisation evidence, not signed/paid financing. January2026 PEM receipt EUR2.18938bn is group-entity aggregate without exact issuer split. FIEM-funded Ukraine study not a demonstrated loan to Indra.",
+      "source_urls": [
+        "https://www.boe.es/eli/es/rd/2025/10/14/913",
+        "https://www.indragroup.com/cms-content/2026/04/Memoria-Consolidado-2025_EN-2026-04-27-17-24.pdf",
+        "https://www.indragroup.com/en/investor-relations/other-relevant-information",
+        "https://www.indragroup.com/en/news/indra-group-reaffirms-its-commitment-to-ukraine-and-supports-the-future-reconstruction-of-its-air-traffic-systems-and-the-protection-of-its-critical-infrastructure"
+      ],
+      "source_dates": {
+        "decree": "2025-10-14",
+        "BOE_publication": "2025-10-16"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "ad88aced-579d-45f5-949c-4df263c0b4c3",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 11,
+      "approved_events_after": 11,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "infozahyst",
+      "disposition": "reviewed_public_sources",
+      "evidence": "Original2021 EUR2m investment and2024 working-capital loan corroborated; two events retained. September2026 MITS Industries cofounding and Danish R&D office do not establish a new investment into Infozahyst. Loan amount/lender and private instrument remain undisclosed, not zero.",
+      "source_urls": [
+        "https://infozahyst.com/infozahyst-otrymav-2-mln-evro-investyczij/",
+        "https://infozahyst.com/infozahyst-%D0%BE%D1%82%D1%80%D0%B8%D0%BC%D0%B0%D0%B2-%D0%BF%D0%B5%D1%80%D1%88%D0%B8%D0%B9-%D0%BF%D1%96%D0%BB%D1%8C%D0%B3%D0%BE%D0%B2%D0%B8%D0%B9-%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82-%D1%80%D0%BE/",
+        "https://infozahyst.com/ua-infozahyst-leads-the-launch-of-mits-industries-rd-office-in-denmark-to-accelerate-the-development-of-new-technologies-for-ukraine/",
+        "https://infozahyst.com/novyny/"
+      ],
+      "source_dates": {
+        "investment_source": "2021-04-20",
+        "loan_source": "2024-12-26",
+        "MITS_source": "2026-09-08"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "5422e6d4-a39a-4f53-9cc0-095e96e40cfb",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 2,
+      "approved_events_after": 2,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "innov-atm",
+      "disposition": "source_review_partial",
+      "evidence": "Code4Goods issuer original names consortium leadership and more-than-EUR5m programme allocation with Bpifrance support, but own amount and grant versus repayable instrument unresolved. Existing2025 financing, NIU.link and IRDI EUR1m round not duplicated. Company history does not establish a separate new round.",
+      "source_urls": [
+        "https://www.innov-atm.com/france2030-code4goods-project-approved-over-5-million-euros-allocated-to-transform-medical-logistics-through-drone-integration-in-u-space-and-connection-to-automated-robots/",
+        "https://www.irdi.fr/innovatm/",
+        "https://www.innov-atm.com/about-us/"
+      ],
+      "source_dates": {},
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "db545905-4557-4b90-bf27-6fd105c19b45",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 5,
+      "approved_events_after": 5,
+      "new_events": 0,
+      "corrected_events": 0
+    },
+    {
+      "slug": "inster",
+      "disposition": "reviewed_public_sources",
+      "evidence": "ESA NAVISP288 identifies Inster Tecnologia y Comunicaciones SA as prime contractor; project start11November2025 and duration24months do not establish grant instrument, own amount or award date. Exclude procurement from financing. Existing ten approved events including20October2026 AEI retained.",
+      "source_urls": [
+        "https://navisp.esa.int/project/288-enhanced-integrated-guidance-coms-system-from-leo-satellites",
+        "https://navisp.esa.int/actors-involved/inster-tecnologia-y-comunicaciones-s-a"
+      ],
+      "source_dates": {
+        "NAVISP_project_start_not_award": "2025-11-11"
+      },
+      "search_scope": [
+        "Broad dated financing and public-history search",
+        "Current issuer news and official financial or registry disclosures",
+        "Original investor, grantor or transaction-party sources"
+      ],
+      "checked_at": "2026-11-11",
+      "id": "3c1a6cf2-d7ed-455e-93ea-16b8c78bc9cc",
+      "previous_disposition": "source_review_partial",
+      "previous_queue_approved_events": 10,
+      "approved_events_after": 10,
+      "new_events": 0,
+      "corrected_events": 0
+    }
+  ],
+  "research_groups": [
+    {
+      "group": "root_prepared",
+      "company_ids": [
+        "68c7206e-5579-415e-ab3e-8303edd8cdac",
+        "6e4382cb-36d3-4e44-82b2-a8d09302ff9f",
+        "75687679-41b6-442f-b83f-f370ff0e5724",
+        "85c40b2d-c6b2-4066-a55f-300e97a6488b"
+      ]
+    },
+    {
+      "group": "eighth_a",
+      "company_ids": [
+        "0eae3539-ab00-4539-b558-1af70013c8c1",
+        "44492024-5861-40be-ab33-eb62107a124e",
+        "6b636ac1-0f3d-418e-8ba7-ee740c1b2922",
+        "8517768e-5a14-4ac2-8296-692a39e2a0a0",
+        "af596be1-755a-44bb-84b3-d6087a58ba81",
+        "be9d0f0c-b23d-48b2-962d-500a4fa046ef"
+      ]
+    },
+    {
+      "group": "eighth_b",
+      "company_ids": [
+        "1c6ab0ed-e620-4c61-a403-78d2bb224107",
+        "6d98a6c3-edad-4031-803a-83aa6d59ead0",
+        "8d1971e0-433b-4c26-bc2f-fa8c43f70b40",
+        "ae211989-a5ce-4274-bcea-828d24bec03e",
+        "b1faf3ec-b3e4-4a90-b504-2edc58f630d6",
+        "d00ec272-8196-4b94-9b70-cbf6db477aaa"
+      ]
+    },
+    {
+      "group": "eighth_c",
+      "company_ids": [
+        "1374599f-f40f-4f9e-98e8-5c854b2f028f",
+        "3c1a6cf2-d7ed-455e-93ea-16b8c78bc9cc",
+        "5422e6d4-a39a-4f53-9cc0-095e96e40cfb",
+        "a3654ce0-0999-4b13-9057-917ec24c5b1e",
+        "ad88aced-579d-45f5-949c-4df263c0b4c3",
+        "db545905-4557-4b90-bf27-6fd105c19b45"
+      ]
+    }
+  ],
+  "database": {
+    "before": {
+      "events": 1580,
+      "approved_events": 1567,
+      "links": 1377,
+      "approved_links": 1368,
+      "profiles": 818,
+      "sources": 2174,
+      "companies": 356
+    },
+    "after": {
+      "events": 1584,
+      "approved_events": 1571,
+      "links": 1382,
+      "approved_links": 1373,
+      "profiles": 820,
+      "sources": 2183,
+      "companies": 356
+    },
+    "queue_counts": {
+      "reviewed_public_sources": 533,
+      "source_review_partial": 34,
+      "queued": 1997
+    },
+    "coverage_status_counts": {
+      "partial": 356
+    }
+  },
+  "validation": {
+    "tested_importer": "scripts/prepare-funding-pilot.mjs",
+    "source_commit": "780fc8c22ffa6e2d263f16fc62f4888427447339",
+    "production_rollback": true,
+    "rollback_baseline_restored": true,
+    "repeated_import_idempotent_in_rollback": true,
+    "production_rollback_result": {
+      "events": 1584,
+      "approved_events": 1571,
+      "links": 1382,
+      "approved_links": 1373,
+      "profiles": 820,
+      "sources": 2183,
+      "companies": 356
+    },
+    "atomic_commit_at": "2026-11-11T07:56:55.387Z",
+    "manifest_financial_values_verified": 5,
+    "guarded_corrections": 12,
+    "corrections_have_expected_old_and_reversal": true,
+    "confirmed_added_event_sources": 7,
+    "confirmed_added_round_participations": 5,
+    "existing_participant_contributions_preserved": true,
+    "new_profiles": [
+      "us-army",
+      "coalition-ventures"
+    ],
+    "new_profiles_map_ready": false,
+    "preserved_existing_curated_fingerprints": [
+      {
+        "kind": "profiles",
+        "hash": "c4e25712f5c25b76134cb7859fce47da"
+      },
+      {
+        "kind": "relationships",
+        "hash": "ad0d4b984a07edb5eb439e7fe712a774"
+      }
+    ],
+    "fingerprint_scope": "All profiles except the two newly created identities; every pre-existing investor_companies relationship, with no exclusions.",
+    "legacy_state_and_frozen_snapshots_untouched": true,
+    "pending_manifest_key_status_audit": {
+      "keys": 442,
+      "matched": 442,
+      "approved": 440,
+      "draft_keys": [
+        "piaggio-aerospace:shareholder-cash-restructuring-2018",
+        "squarehead-technology:research-council-361782-grant"
+      ]
+    },
+    "pending_correction_key_status_audit": {
+      "keys": 77,
+      "matched": 77,
+      "approved": 68,
+      "draft_keys": [
+        "scoutdi:beam-global-acquisition-agreement-2026",
+        "pzl-defence:unimot-conditional-stake-agreement-2025",
+        "rinicom:ukri-75309-grant",
+        "rinicom:ukri-10024815-hado-grant",
+        "sensrad:qamcom-secondary-transfer-2026",
+        "safran-vectronix:sagem-acquisition-2003",
+        "piaggio-aerospace:shareholder-cash-restructuring-2018",
+        "squarehead-technology:research-council-361782-grant",
+        "tekne:nuburu-secondary-acquisition-2026"
+      ]
+    },
+    "draft_exclusions_and_valid_osl_allocations_verified": true,
+    "rehearsal_note": "An initial audit-block SQL whitespace syntax error aborted the rehearsal with no committed data changes. Baseline and curated fingerprints were confirmed unchanged; corrected audit then passed repeated import, rollback and atomic application."
+  },
+  "publication": {
+    "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night.json",
+    "previous_manifest": "research-agent/imports/funding-landscape-20261111-seventh-night.json",
+    "manifests": [
+      "research-agent/imports/funding-landscape-20261110-second-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-late-afternoon.json",
+      "research-agent/imports/funding-landscape-20261110-evening.json",
+      "research-agent/imports/funding-landscape-20261110-second-evening.json",
+      "research-agent/imports/funding-landscape-20261110-third-evening.json",
+      "research-agent/imports/funding-landscape-20261110-fourth-evening.json",
+      "research-agent/imports/funding-landscape-20261110-fifth-evening.json",
+      "research-agent/imports/funding-landscape-20261110-sixth-evening.json",
+      "research-agent/imports/funding-landscape-20261110-late-night.json",
+      "research-agent/imports/funding-landscape-20261110-second-late-night.json",
+      "research-agent/imports/funding-landscape-20261110-third-late-night.json",
+      "research-agent/imports/funding-landscape-20261110-midnight.json",
+      "research-agent/imports/funding-landscape-20261111-early.json",
+      "research-agent/imports/funding-landscape-20261111-second-night.json",
+      "research-agent/imports/funding-landscape-20261111-third-night.json",
+      "research-agent/imports/funding-landscape-20261111-fourth-night.json",
+      "research-agent/imports/funding-landscape-20261111-fifth-night.json",
+      "research-agent/imports/funding-landscape-20261111-sixth-night.json",
+      "research-agent/imports/funding-landscape-20261111-seventh-night.json",
+      "research-agent/imports/funding-landscape-20261111-eighth-night.json"
+    ],
+    "correction_manifests": [
+      "research-agent/imports/funding-landscape-20261110-sixth-evening-award-guard.json",
+      "research-agent/imports/funding-landscape-20261110-second-late-night-piaggio-guard.json",
+      "research-agent/imports/funding-landscape-20261111-fifth-night-closing-guard.json",
+      "research-agent/imports/funding-landscape-20261111-sixth-night-guard.json",
+      "research-agent/imports/funding-landscape-20261111-seventh-night-guard.json",
+      "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+    ],
+    "draft_exclusions": [
+      {
+        "company_slug": "squarehead-technology",
+        "round_key": "research-council-361782-grant"
+      },
+      {
+        "company_slug": "piaggio-aerospace",
+        "round_key": "shareholder-cash-restructuring-2018"
+      },
+      {
+        "company_slug": "rinicom",
+        "round_key": "ukri-10024815-hado-grant"
+      },
+      {
+        "company_slug": "rinicom",
+        "round_key": "ukri-75309-grant"
+      }
+    ],
+    "report": "research-agent/reports/2026-11-11-funding-landscape-eighth-night.json",
+    "previous_report": "research-agent/reports/2026-11-11-funding-landscape-seventh-night.json",
+    "database": {
+      "events": 1584,
+      "approved_events": 1571,
+      "links": 1382,
+      "approved_links": 1373,
+      "profiles": 820,
+      "sources": 2183,
+      "companies": 356
+    },
+    "status": "committed_awaiting_fresh_catalogue_run",
+    "expected_live": {
+      "events": 1571,
+      "links": 1373,
+      "profiles": 820,
+      "manifest_rows": 440,
+      "manifest_keys_including_withheld": 442,
+      "withheld_draft_rows": 9,
+      "approved_corrections": 68,
+      "participation_corrections": 12,
+      "additional_existing_round_participations": 6,
+      "additional_draft_corrections_outside_pending_keys": [
+        {
+          "company_slug": "rinicom",
+          "round_key": "ukri-10024815-hado-grant"
+        },
+        {
+          "company_slug": "rinicom",
+          "round_key": "ukri-75309-grant"
+        }
+      ],
+      "additional_existing_round_corrections": [
+        {
+          "company_slug": "umag-solutions",
+          "round_key": "bridgepoint-majority-acquisition-2026",
+          "closing_status": "signed",
+          "manifest": "research-agent/imports/funding-landscape-20261111-fifth-night-closing-guard.json"
+        },
+        {
+          "company_slug": "wb-group-wb-electronics",
+          "round_key": "series-1-2020-bond-placement",
+          "closing_status": "closed",
+          "amount_basis": "closed_amount",
+          "date": "2020-10-27",
+          "manifest": "research-agent/imports/funding-landscape-20261111-sixth-night-guard.json"
+        },
+        {
+          "company_slug": "welles-acoustics-quantum-systems",
+          "round_key": "regional-rd-grant-2018",
+          "closing_status": "announced",
+          "amount_basis": "undisclosed",
+          "date": "2018-01-14",
+          "manifest": "research-agent/imports/funding-landscape-20261111-sixth-night-guard.json"
+        },
+        {
+          "company_slug": "pro-patria-electronics",
+          "round_key": "national-2019-00225-airspace-surveillance-grant",
+          "closing_status": "signed",
+          "amount": 245531761,
+          "currency": "HUF",
+          "amount_basis": "announced_round_size",
+          "date": "2024-07-16",
+          "manifest": "research-agent/imports/funding-landscape-20261111-seventh-night-guard.json"
+        },
+        {
+          "company_slug": "primoco-uav",
+          "round_key": "cordis-101073911-iseamore-parent-grant",
+          "closing_status": "signed",
+          "amount": 466112.5,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "date": null,
+          "manifest": "research-agent/imports/funding-landscape-20261111-seventh-night-guard.json"
+        },
+        {
+          "company_slug": "xsun",
+          "round_key": "sx1-3-947373",
+          "closing_status": "signed",
+          "amount": 1864450,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "date": "2020-06-16",
+          "manifest": "research-agent/imports/funding-landscape-20261111-seventh-night-guard.json"
+        },
+        {
+          "company_slug": "terma",
+          "round_key": "edidp-ai4def-grant",
+          "closing_status": "announced",
+          "amount": null,
+          "currency": null,
+          "amount_basis": "undisclosed",
+          "date": "2021-07-02",
+          "manifest": "research-agent/imports/funding-landscape-20261111-seventh-night-guard.json"
+        },
+        {
+          "company_slug": "exail",
+          "round_key": "carioqa-phb-101189541",
+          "closing_status": "signed",
+          "amount": 2480912.5,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "date": "2025-07-10",
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        },
+        {
+          "company_slug": "exail",
+          "round_key": "eurisa-101004205",
+          "closing_status": "signed",
+          "amount": 1550000,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "date": "2020-11-03",
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        },
+        {
+          "company_slug": "exail",
+          "round_key": "openqkd-857156",
+          "closing_status": "signed",
+          "amount": 309925,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "date": "2019-08-09",
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        },
+        {
+          "company_slug": "exail",
+          "round_key": "pasquans-817482",
+          "closing_status": "signed",
+          "amount": 300000,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "date": "2018-10-15",
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        },
+        {
+          "company_slug": "exail",
+          "round_key": "pasquans2-1-101113690",
+          "closing_status": "signed",
+          "amount": 490000,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "date": "2023-03-27",
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        },
+        {
+          "company_slug": "exail",
+          "round_key": "qia-phase1-101102140",
+          "closing_status": "signed",
+          "amount": 520000,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "date": "2022-11-17",
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        },
+        {
+          "company_slug": "exail",
+          "round_key": "carioqa-pmp-101081775",
+          "closing_status": "signed",
+          "amount": 2181000,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "date": "2022-10-12",
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        },
+        {
+          "company_slug": "fotokite",
+          "round_key": "fotokite-880480",
+          "closing_status": "signed",
+          "amount": 2499999,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "date": "2019-10-09",
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        },
+        {
+          "company_slug": "fotokite",
+          "round_key": "fotokite-sme-p1-856120",
+          "closing_status": "signed",
+          "amount": 50000,
+          "currency": "EUR",
+          "amount_basis": "announced_round_size",
+          "date": "2019-01-28",
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        },
+        {
+          "company_slug": "hecto-drone",
+          "round_key": "innobooster-climate-friendly-agriculture-2024",
+          "closing_status": "closed",
+          "amount": 959700,
+          "currency": "DKK",
+          "amount_basis": "closed_amount",
+          "date": null,
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        },
+        {
+          "company_slug": "hybrid-drones",
+          "round_key": "s-ventures-investment-2026",
+          "closing_status": "closed",
+          "amount": 200000,
+          "currency": "GBP",
+          "amount_basis": "closed_amount",
+          "date": "2026-04-29",
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        },
+        {
+          "company_slug": "greenjets",
+          "round_key": "series-a-2026",
+          "closing_status": "closed",
+          "amount": 40000000,
+          "currency": "USD",
+          "amount_basis": "closed_amount",
+          "date": "2026-07-17",
+          "manifest": "research-agent/imports/funding-landscape-20261111-eighth-night-guard.json"
+        }
+      ],
+      "additional_generic_portfolio_relationships": [
+        {
+          "company_slug": "twentyfour-industries",
+          "investor_slug": "otb-ventures"
+        },
+        {
+          "company_slug": "vidar-systems",
+          "investor_slug": "mits-capital"
+        },
+        {
+          "company_slug": "perceptual-robotics",
+          "investor_slug": "investing-for-purpose"
+        }
+      ],
+      "correction_key_count": 77,
+      "correction_instruction_records": 79,
+      "legacy_reported_approved_corrections": 58,
+      "correction_count_note": "Normalized from actual distinct current correction targets across all20 base and6 guard manifests:77 matched,68 approved,9 draft;79 historical correction instructions include revisited targets.",
+      "additional_existing_round_participation_details": [
+        {
+          "company_slug": "greenjets",
+          "round_key": "series-a-2026",
+          "investor_slug": "z21-ventures",
+          "role": "participant"
+        },
+        {
+          "company_slug": "greenjets",
+          "round_key": "series-a-2026",
+          "investor_slug": "coalition-ventures",
+          "role": "participant"
+        }
+      ]
+    },
+    "checked_at": "2026-11-11T08:05:08.391Z",
+    "observed_live": {
+      "generated_at": "2026-11-10T13:52:10.085Z",
+      "investor_generated_at": "2026-11-10T13:52:11.204Z",
+      "events": 1145,
+      "links": 1214,
+      "profiles": 774,
+      "companies": 567
+    },
+    "observed_workflow_runs": [
+      {
+        "id": 42828359177,
+        "name": "Build & deploy catalogue",
+        "event": "schedule",
+        "created_at": "2026-11-10T13:51:22Z",
+        "conclusion": "success",
+        "status": "completed"
+      },
+      {
+        "id": 42795281022,
+        "name": "Build & deploy catalogue",
+        "event": "push",
+        "created_at": "2026-11-10T09:59:20Z",
+        "conclusion": "failure",
+        "status": "completed"
+      },
+      {
+        "id": 42725276104,
+        "name": "Build & deploy catalogue",
+        "event": "push",
+        "created_at": "2026-11-10T00:03:04Z",
+        "conclusion": "success",
+        "status": "completed"
+      }
+    ],
+    "workflow_schedule": "0 6 * * * UTC",
+    "reason": "Live JSON remains generated10November13:52UTC and no newer catalogue deployment is observed. The user keeps catalogue repository read-only; its existing scheduled build remains the available route without schedule edits or old artifact-conflicting reruns. Database import is complete; publication remains pending. After a fresh deployment audit20 base manifests,442 keys including440 approved,6 guard manifests,2 new profiles and exact correction/participation values.",
+    "current_live_verification": {
+      "checked_at": "2026-11-11T08:05:08.391Z",
+      "site_json_reachable": true,
+      "latest_deployment_run_unchanged": true,
+      "publication_verified": false,
+      "previous_draft_exclusions_absent": true,
+      "new_withheld_rinicom_rows_still_live": [
+        {
+          "slug": "rinicom",
+          "key": "ukri-10024815-hado-grant"
+        },
+        {
+          "slug": "rinicom",
+          "key": "ukri-75309-grant"
+        }
+      ],
+      "valid_osl_allocations_same_project_preserved": [
+        {
+          "slug": "osl-technology-operational-solutions-ltd",
+          "key": "ukri-75309-grant"
+        },
+        {
+          "slug": "osl-technology-operational-solutions-ltd",
+          "key": "ukri-10024815-hado-grant"
+        }
+      ]
+    }
+  },
+  "prepared_followups": [
+    {
+      "company_slug": "fixar-fixar-aero-llc",
+      "claim": "New EIT UATMDEVDEM funded-project disclosure names Latvian FIXAR AERO SIA and GA22048; own amount and signature unknown.2021 Volatus USD1m headline is Canadian setup/business-development/support spending, not a cash round. Historical equity claims still conflict on dates, totals and Russian predecessor versus Latvian issuer.",
+      "source_urls": [
+        "https://www.fixar.pro/news/fixar-takes-part-in-eit-urban-mobility-project-to-develop-urban-air-traffic-management-system",
+        "https://www.sf.bg.ac.rs/index.php/sr-yu/research-projects",
+        "https://www.eiturbanmobility.eu/wp-content/uploads/2024/11/220302_EITUM_Per-se-1.pdf",
+        "https://www.fixar.pro/news/fixar-launches-manufacturing-in-north-america-with-volatus-in-1m-deal"
+      ]
+    },
+    {
+      "company_slug": "hecto-drone",
+      "claim": "Fresh filed2024 accounts, approved30June2025, note1 reports DKK4.992m cash capital increase in February2025 without subscriber. Possible overlap with existing27March2025 MajInvest investment; do not create or sum two events. Innobooster2024–2025 is project period, so award announcement year cleared to null; DKK959700 unchanged.2025 original report not recovered; issuer website reconstructing.",
+      "source_urls": [
+        "https://regnskaber.cvrapi.dk/68158093/amNsb3VkczovLzAzL2Y4L2JhL2QxLzIxLzQ2MGYtNDU1OC1hMzU0LTA3OGFmNDc5NGQxYQ.pdf",
+        "https://dk.linkedin.com/posts/maj-invest_majinvest-hectodrone-droneteknologi-activity-7310948541223370752-H0lK",
+        "https://innovationsfonden.dk/en/investments/investments-overview?field_area_target_id=All&field_program_target=&field_program_target_id=&field_start_year_value=&order=field_project_headline&page=512&search=&sort=desc",
+        "https://commercialisation.esa.int/?esa-startups=hecto-drone"
+      ]
+    },
+    {
+      "company_slug": "ids-fincantieri-nextech",
+      "claim": "Added distinct noncash equity contribution: new IDS shares subscribed by Fincantieri NexTech with SLS stake, resolved3August2023 and ownership completed by28August2023. No value or cash inferred. RNA-derived exact-PIVA aid candidates remain discovery only without original award/instrument; guarantees not company proceeds. Existing AIRPORT ORCHESTRATOR allocation retained.",
+      "source_urls": [
+        "https://www.emarketstorage.it/sites/default/files/comunicati/2024-03/20240328_145038.pdf",
+        "https://www.fincantieri.com/en/newsroom/press-releases/2021/the-bod-approves-9m-2021-results"
+      ]
+    },
+    {
+      "company_slug": "incas",
+      "claim": "ASAS original names INCAS coordinator and contract15SOL(T15)/2024, but own allocation unresolved. ACTRIS original explicitly names INOE2000 as beneficiary and INCAS as partner3; RON14780073 total not INCAS proceeds. Existing32 approved awards retained; project periods not announcement dates.",
+      "source_urls": [
+        "https://www.incas.ro/ro/proiecte/asas/",
+        "https://www.incas.ro/ro/proiecte/sustinerea-operarii-facilitatilor-din-romania-in-cadrul-actris-eric-ro-actris-eric/",
+        "https://www.incas.ro/ro/program/pn4/"
+      ]
+    },
+    {
+      "company_slug": "indra",
+      "claim": "BOE RD913/2025 authorises exact Indra Sistemas zero-interest loans EUR24m RADAR-FI,EUR36m CYBER-RANGE,EUR820m COAAAS. Article6 still requires concession orders/acceptance: held as authorisation evidence, not signed/paid financing. January2026 PEM receipt EUR2.18938bn is group-entity aggregate without exact issuer split. FIEM-funded Ukraine study not a demonstrated loan to Indra.",
+      "source_urls": [
+        "https://www.boe.es/eli/es/rd/2025/10/14/913",
+        "https://www.indragroup.com/cms-content/2026/04/Memoria-Consolidado-2025_EN-2026-04-27-17-24.pdf",
+        "https://www.indragroup.com/en/investor-relations/other-relevant-information",
+        "https://www.indragroup.com/en/news/indra-group-reaffirms-its-commitment-to-ukraine-and-supports-the-future-reconstruction-of-its-air-traffic-systems-and-the-protection-of-its-critical-infrastructure"
+      ]
+    },
+    {
+      "company_slug": "innov-atm",
+      "claim": "Code4Goods issuer original names consortium leadership and more-than-EUR5m programme allocation with Bpifrance support, but own amount and grant versus repayable instrument unresolved. Existing2025 financing, NIU.link and IRDI EUR1m round not duplicated. Company history does not establish a separate new round.",
+      "source_urls": [
+        "https://www.innov-atm.com/france2030-code4goods-project-approved-over-5-million-euros-allocated-to-transform-medical-logistics-through-drone-integration-in-u-space-and-connection-to-automated-robots/",
+        "https://www.irdi.fr/innovatm/",
+        "https://www.innov-atm.com/about-us/"
+      ]
+    }
+  ],
+  "research_limits": "Source candidates and registry-derived totals remain unverified until exact issuer, original instrument and overlap are resolved. Bounded completion is not exhaustive knowledge of private financing. Original currencies retained; no group/subsidiary transfers, consortium totals, nominal capital, targets, repayments or future award ceilings counted as new cash.",
+  "recovery": {
+    "expired_lease_reclaimed": false,
+    "previous_committed_import_verified": true,
+    "current_import_staged_before_write": true,
+    "writer_lease_released_with_checkpoint": true
+  },
+  "automation": {
+    "id": "6ae8a29260108191a57ab58c00ff5894",
+    "is_enabled": true,
+    "schedule": "RRULE:FREQ=HOURLY",
+    "verified_at": "2026-11-11T08:05:08.391Z",
+    "observed_last_run_time": "2026-11-11T07:00:17.449081+00:00",
+    "observed_run_status": "in_progress",
+    "schedule_changed": false
+  }
+}
