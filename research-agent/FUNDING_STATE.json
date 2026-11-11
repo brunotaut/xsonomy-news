@@ -8,14 +8,14 @@
   "published_landscape_companies": 567,
   "partial_companies": 97,
   "fully_reviewed_companies": 732,
-  "next_action": "Publish and verify the twenty-first manifest (42 approved events across 14 of 24 reviewed wider-cohort identities), then continue the next queued wider-cohort identities. Do not repeat the import; all 42 manifest rows are already approved in Supabase.",
+  "next_action": "Continue the next 24 queued wider-cohort identities (Bechtel through BlackSea Technologies) under a new short writer lease; repeat four disjoint read-only lanes, exact-issuer/source reconciliation, rollback rehearsal, one tested import, database audit and publication verification.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-11T22:01:21.002Z",
+  "updated_at": "2026-11-11T22:04:48.161Z",
   "source_reconciliation_companies": 505,
   "approved_funding_events": 2075,
   "round_participations": 2274,
   "investor_profiles": 1407,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/funding-landscape-20261111-twenty-first.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -25,34 +25,49 @@
   "automation_cadence": "hourly",
   "active_run": null,
   "last_verified_publication": {
-    "checked_at": "2026-11-11T21:51:53.278Z",
-    "catalogue_commit": "09e7a6adc5e25835ae9bb9ee4897f8694d6427e2",
+    "checked_at": "2026-11-11T22:04:48.161Z",
+    "catalogue_commit": "5807971cafefd0234b109030b7b7cd05d80beeb3",
     "workflow_run": {
-      "id": 43106178224,
-      "head": "09e7a6adc5e25835ae9bb9ee4897f8694d6427e2",
+      "id": 43108214623,
+      "head": "5807971cafefd0234b109030b7b7cd05d80beeb3",
       "status": "completed",
       "conclusion": "success",
-      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43106178224"
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43108214623"
     },
-    "report": "research-agent/reports/2026-11-11-funding-landscape-twentieth.json",
-    "manifest": "research-agent/imports/funding-landscape-20261111-twentieth.json",
-    "generated_at": "2026-11-11T21:48:26.403Z",
-    "investor_generated_at": "2026-11-11T21:48:28.023Z",
+    "report": "research-agent/reports/2026-11-11-funding-landscape-twenty-first.json",
+    "manifest": "research-agent/imports/funding-landscape-20261111-twenty-first.json",
+    "generated_at": "2026-11-11T22:02:41.870Z",
+    "investor_generated_at": "2026-11-11T22:02:43.888Z",
     "events": 1589,
     "links": 1380,
-    "profiles": 1401,
+    "profiles": 1407,
     "companies": 567,
     "portfolio_relationships": 130,
-    "current_manifest_event_rows": 41,
+    "current_manifest_event_rows": 42,
     "current_manifest_live_matches": 0,
-    "outside_landscape": [],
+    "outside_landscape": [
+      "axis-communications",
+      "axon-enterprise",
+      "axon-vision",
+      "azak",
+      "b-and-c-holding-osterreich",
+      "babayte",
+      "babcock-international",
+      "bae-systems-australia",
+      "bale-defence",
+      "ballistic-defense-system",
+      "barrett-firearms",
+      "barzan-holdings-rbat",
+      "bayou-metal-supply-and-manufacturing",
+      "beam-global"
+    ],
     "new_profiles_present": true,
     "generic_relationships_verified": 0,
     "errors": [],
-    "db_approved_events": 2033,
-    "db_approved_links": 2257,
-    "db_profiles": 1401,
-    "scope_note": "All twentieth-batch event-bearing identities are outside the published 567-company landscape; map event/link totals remain unchanged while 27 new investor profiles are published."
+    "db_approved_events": 2075,
+    "db_approved_links": 2274,
+    "db_profiles": 1407,
+    "scope_note": "All 14 event-bearing identities are outside the published 567-company landscape; map event/link totals remain unchanged while six new investor profiles are published."
   },
   "known_financing_claims_to_reconcile": [
     {
@@ -2407,13 +2422,12 @@
   },
   "pending_import": null,
   "pending_publication": {
-    "status": "pending_catalogue_trigger",
+    "status": "completed",
     "manifest": "research-agent/imports/funding-landscape-20261111-twenty-first.json",
     "report": "research-agent/reports/2026-11-11-funding-landscape-twenty-first.json",
-    "approved_events_total": 2075,
-    "approved_links_total": 2274,
-    "investor_profiles_total": 1407,
-    "prepared_at": "2026-11-11T22:01:21.002Z"
+    "catalogue_commit": "5807971cafefd0234b109030b7b7cd05d80beeb3",
+    "workflow_run_id": 43108214623,
+    "verified_at": "2026-11-11T22:04:48.161Z"
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -3319,9 +3333,131 @@
       "new_companies_with_events": 14,
       "database_identities_inspected": 24,
       "existing_events_inspected": 0,
-      "current_manifest_publication_verified": false,
+      "current_manifest_publication_verified": true,
       "concurrency_speedup_claimed": false,
       "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, exact-issuer/source reconciliation, one production rollback rehearsal, one atomic import and database audit; publication wait excluded."
     }
-  }
+  },
+  "next_batch_preview": [
+    {
+      "id": "8cff11ee-deba-4995-b659-45c82e31f282",
+      "slug": "bechtel",
+      "name": "Bechtel"
+    },
+    {
+      "id": "29e25e0a-b7cd-4367-9c75-8e7a0a9c3377",
+      "slug": "beechcraft",
+      "name": "Beechcraft"
+    },
+    {
+      "id": "5bcf3c92-f785-460a-b3cc-883f12fe4928",
+      "slug": "beehive-industries",
+      "name": "Beehive Industries"
+    },
+    {
+      "id": "dbd07f17-2437-4fa3-a37b-efd547e50303",
+      "slug": "beeline",
+      "name": "Beeline"
+    },
+    {
+      "id": "526a5b2c-92cf-4fae-b30c-66892f0eb9a4",
+      "slug": "beeline-uas",
+      "name": "Beeline UAS"
+    },
+    {
+      "id": "629a4b6d-8b6d-4af4-957c-a9b1e257c8a5",
+      "slug": "beex",
+      "name": "BeeX"
+    },
+    {
+      "id": "43bddb50-17b7-4b59-a028-092ead83f0b0",
+      "slug": "behotec",
+      "name": "Behotec"
+    },
+    {
+      "id": "7e76b35d-c28e-4c94-ae4e-b05b025098be",
+      "slug": "beijing-institute-of-technology",
+      "name": "Beijing Institute of Technology"
+    },
+    {
+      "id": "b720eb0d-6505-493b-8a0e-f7b84589e621",
+      "slug": "beijing-univ-of-aeronautics-and-astronautics-buaa-harbin-aircraft-industry-group-haig",
+      "name": "Beijing Univ. of Aeronautics & Astronautics (BUAA) / Harbin Aircraft Industry Group (HAIG)"
+    },
+    {
+      "id": "31563d45-d1ea-43a4-bb00-a1cafc290c96",
+      "slug": "beker-co",
+      "name": "Beker & Co."
+    },
+    {
+      "id": "1d4a81cd-f942-4846-97d8-fa21adc01b5a",
+      "slug": "belgium-naval-and-robotics",
+      "name": "Belgium Naval & Robotics"
+    },
+    {
+      "id": "9048a670-cc63-4a88-aef8-23256eac6225",
+      "slug": "bell-helicopter-bell-textron",
+      "name": "Bell Helicopter (Bell Textron)"
+    },
+    {
+      "id": "188d5aaa-d4ef-43e1-b393-357e33a5d2b8",
+      "slug": "benua-defence",
+      "name": "Benua Defence"
+    },
+    {
+      "id": "5ebbf569-4850-476c-bf9d-01ff3a7a829b",
+      "slug": "beonyx",
+      "name": "Beonyx"
+    },
+    {
+      "id": "d347ccee-d691-4eb8-9449-1eb783111574",
+      "slug": "beretta-defense-technologies",
+      "name": "Beretta Defense Technologies"
+    },
+    {
+      "id": "8ef7dc2d-cfbe-4fe4-8d50-82c7d6a16f7d",
+      "slug": "beta-technologies",
+      "name": "BETA Technologies"
+    },
+    {
+      "id": "16c70fa2-bbc9-4e27-bc29-8a08fbbcb790",
+      "slug": "bharat-forge",
+      "name": "Bharat Forge"
+    },
+    {
+      "id": "98645667-f6f6-4f2b-91ed-b6f6685953c4",
+      "slug": "biores",
+      "name": "BioRes"
+    },
+    {
+      "id": "38578f3f-01d8-469b-adff-d0d4879ddb59",
+      "slug": "bird-aerosystems",
+      "name": "Bird Aerosystems"
+    },
+    {
+      "id": "839acfa1-e778-4569-aba6-1bc441f2f84f",
+      "slug": "birdon",
+      "name": "Birdon"
+    },
+    {
+      "id": "f61feced-2b45-411b-a21a-b6cd943648e8",
+      "slug": "birdstop",
+      "name": "Birdstop"
+    },
+    {
+      "id": "df0f8c39-c7f0-4834-b1fa-c4153bae1709",
+      "slug": "blackjet-drone-solutions",
+      "name": "BlackJet Drone Solutions"
+    },
+    {
+      "id": "3758b18d-bcd3-4970-b6fe-df90b97d8777",
+      "slug": "blackned",
+      "name": "blackned"
+    },
+    {
+      "id": "a2f7c765-e84f-4e41-b6e3-4b5bea18f8b1",
+      "slug": "blacksea-technologies",
+      "name": "BlackSea Technologies"
+    }
+  ]
 }
