@@ -8,9 +8,9 @@
   "published_landscape_companies": 567,
   "partial_companies": 86,
   "fully_reviewed_companies": 719,
-  "next_action": "Published landscape: 566/567 bounded reviews complete; Liebherr remains partial because the generic identity spans German Lindenberg and French Toulouse issuers. Wider cohort: 238/1,997 identities reviewed or partial; continue 1,759 queued identities. Twentieth import is confirmed and publication verification is pending.",
+  "next_action": "Publication recovery first: workflow 43095387159 for catalogue commit bb6db1bb539dd979a7debaadefc26734eea0c01b is queued; verify its completion and live artefacts before starting the next research batch. Then continue 1,759 queued wider-cohort identities.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-11T20:19:22.905Z",
+  "updated_at": "2026-11-11T20:34:51.392Z",
   "source_reconciliation_companies": 491,
   "approved_funding_events": 2033,
   "round_participations": 2257,
@@ -23,15 +23,7 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "run_id": "funding-20261111T194720Z-wider-10",
-    "started_at": "2026-11-11T19:47:20.000Z",
-    "lease_expires_at": "2026-11-11T21:47:20.000Z",
-    "status": "publication_pending",
-    "writer_head": "67316805da8eb906ac61c3e296225e00ece233e8",
-    "scope": "24 next queued wider-cohort identities",
-    "source_checkpoint_head": "cc4b4a4095d4ada917bccbb1a2ff4554bde65370"
-  },
+  "active_run": null,
   "last_verified_publication": {
     "checked_at": "2026-11-11T19:03:57.413Z",
     "catalogue_commit": "29349af5af81e7c743dfa343634804fa0134036a",
@@ -2355,7 +2347,15 @@
   "pending_publication": {
     "manifest": "research-agent/imports/funding-landscape-20261111-twentieth.json",
     "report": "research-agent/reports/2026-11-11-funding-landscape-twentieth.json",
-    "status": "catalogue_rebuild_required"
+    "status": "workflow_queued",
+    "catalogue_commit": "bb6db1bb539dd979a7debaadefc26734eea0c01b",
+    "workflow_run": {
+      "id": 43095387159,
+      "status": "queued",
+      "conclusion": null,
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43095387159"
+    },
+    "last_checked_at": "2026-11-11T20:34:51.392Z"
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
