@@ -1,8 +1,8 @@
 {
   "run_id": "funding-20261111T1051-wider-01",
   "started_at": "2026-11-11T10:51:37.839Z",
-  "checked_at": "2026-11-11T11:06:02.149Z",
-  "status": "import_verified_publication_pending",
+  "checked_at": "2026-11-11T11:12:52.599Z",
+  "status": "import_and_publication_verified_programme_in_progress",
   "scope": {
     "cohort": 2564,
     "published_landscape": 567,
@@ -27,12 +27,12 @@
     "new_source_rows": 33,
     "new_companies_with_events": 7,
     "existing_events_inspected": 4,
-    "active_minutes": 14.41,
-    "checked_identities_per_active_hour": 87.44,
-    "completed_reviews_per_active_hour": 49.97,
-    "current_manifest_publication_verified": false,
+    "active_minutes": 21.25,
+    "checked_identities_per_active_hour": 59.29,
+    "completed_reviews_per_active_hour": 33.88,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
-    "timing_scope": "Elapsed from writer lease through four disjoint research lanes, database baselines, source reconciliation, repeated-import production rollback, atomic import and independent audits; between-run waiting included."
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, database baselines, source reconciliation, repeated-import production rollback, atomic import, independent audits, source checkpoint, catalogue build and live publication verification; between-run waiting included."
   },
   "queue_counts": {
     "reviewed_public_sources": 580,
@@ -263,7 +263,177 @@
     "expected_old_and_reversal_preserved": true
   },
   "publication": {
-    "status": "pending",
+    "status": "verified",
+    "checked_at": "2026-11-11T11:12:52.599Z",
+    "catalogue_commit": "b5a2455253add05dac15fc4ee3fdbb007cd91595",
+    "workflow_run": {
+      "id": 43009399950,
+      "head": "b5a2455253add05dac15fc4ee3fdbb007cd91595",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43009399950"
+    },
+    "live": {
+      "landscape_url": "https://xsonomy.com/data/landscape.json",
+      "investors_url": "https://xsonomy.com/data/landscape-investors.json",
+      "generated_at": "2026-11-11T11:09:02.651Z",
+      "investor_generated_at": "2026-11-11T11:09:03.755Z",
+      "companies": 567,
+      "events": 1589,
+      "links": 1380,
+      "profiles": 840
+    },
+    "audit": {
+      "current_manifest_event_rows": 29,
+      "live_event_matches": [
+        [
+          "hecto-drone",
+          "maj-invest-strategic-investment-2025"
+        ]
+      ],
+      "outside_landscape": [
+        [
+          "abx-dynamics",
+          "front-ventures-equity-2026"
+        ],
+        [
+          "accenture",
+          "ipo-2001"
+        ],
+        [
+          "acconeer",
+          "bga-invest-round-2015"
+        ],
+        [
+          "acconeer",
+          "investment-round-2016"
+        ],
+        [
+          "acconeer",
+          "prelisting-new-share-issue-2017"
+        ],
+        [
+          "acconeer",
+          "directed-share-issue-2020"
+        ],
+        [
+          "acconeer",
+          "rights-issue-2021"
+        ],
+        [
+          "acconeer",
+          "buntel-exelity-loan-facility-2023"
+        ],
+        [
+          "acconeer",
+          "rights-issue-2024"
+        ],
+        [
+          "acconeer",
+          "alps-alpine-directed-issue-2025"
+        ],
+        [
+          "acconeer",
+          "compensation-rights-issue-2025"
+        ],
+        [
+          "acconeer",
+          "eiffel-directed-issue-2026"
+        ],
+        [
+          "acsl",
+          "utec-rakuten-round-2016"
+        ],
+        [
+          "acsl",
+          "third-party-allotment-2018"
+        ],
+        [
+          "acsl",
+          "japan-post-capital-allotment-2021"
+        ],
+        [
+          "acsl",
+          "international-offering-2023"
+        ],
+        [
+          "acsl",
+          "jfc-long-term-loan-2024"
+        ],
+        [
+          "acsl",
+          "cantor-stock-rights-program-2025-2026"
+        ],
+        [
+          "acsl",
+          "international-offering-2026"
+        ],
+        [
+          "abs-jets",
+          "public-bond-2011"
+        ],
+        [
+          "abu-dhabi-aviation",
+          "local-bank-refinancing-2019"
+        ],
+        [
+          "abu-dhabi-aviation",
+          "aircraft-term-facility-2021"
+        ],
+        [
+          "abu-dhabi-aviation",
+          "aircraft-short-term-loan-2021"
+        ],
+        [
+          "abu-dhabi-aviation",
+          "aircraft-term-facility-2023"
+        ],
+        [
+          "abu-dhabi-aviation",
+          "working-capital-facility-2024"
+        ],
+        [
+          "abu-dhabi-aviation",
+          "cash-flow-term-facility-2025"
+        ],
+        [
+          "a2z-drone-delivery",
+          "founder-confirmed-early-seed"
+        ],
+        [
+          "ab-swiftstrike-ai",
+          "vinnova-project-2026-01710"
+        ]
+      ],
+      "outside_landscape_absent_as_expected": true,
+      "investor_profiles_missing": [],
+      "generic_relationships_verified": [
+        [
+          "9-mothers",
+          "y-combinator"
+        ],
+        [
+          "9-mothers",
+          "sterling-road"
+        ],
+        [
+          "9-mothers",
+          "streamlined-ventures"
+        ],
+        [
+          "61n-solutions",
+          "heikki-harkonen"
+        ]
+      ],
+      "hecto": {
+        "stage": "February 2025 cash capital increase",
+        "amount": 4992000,
+        "currency": "DKK",
+        "amount_basis": "closed_amount",
+        "maj_invest_contribution": null
+      },
+      "errors": []
+    },
     "catalogue_authorization": "Nazar-authorised docs/STATUS.md trigger only; no schedule changes."
   },
   "legacy_state_and_frozen_snapshots_untouched": true
