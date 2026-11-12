@@ -1,0 +1,636 @@
+{
+  "report": "Twenty-ninth autonomous funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": "funding-20261112T054723855Z-wider-19",
+  "scope": {
+    "identities": 24,
+    "from": "current-scientific-corporation",
+    "through": "decision-sciences",
+    "published_landscape": false
+  },
+  "method": "Four disjoint read-only research lanes; one writer consolidation; exact issuer, original currency, amount qualifier, instrument, closing and explicit roles checked. Contracts, acquisition consideration, parent/subsidiary financing, undrawn facilities and consortium totals excluded.",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 8,
+    "new_or_retained_partial": 16,
+    "new_events_written": 67,
+    "new_generic_portfolio_relationships": 4,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "current_manifest_publication_verified": false,
+    "delegated_groups": 4,
+    "newly_completed_wider_reviews": 8,
+    "new_approved_events": 67,
+    "new_round_participations": 74,
+    "new_investor_profiles": 33,
+    "new_source_rows": 89,
+    "new_companies_with_events": 16,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "manifest_event_matches": 67,
+    "manifest_link_matches": 74,
+    "manifest_source_matches": 89,
+    "manifest_relationship_matches": 4,
+    "missing_link_source_urls": 0,
+    "db_approved_events": 2390,
+    "db_approved_round_participations": 2707,
+    "db_investor_profiles": 1668,
+    "db_source_reconciliation_companies": 607,
+    "concurrency_speedup_claimed": false,
+    "active_minutes": 15,
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded."
+  },
+  "per_company": [
+    {
+      "id": "506e8454-d799-4a14-8864-5b2dfe078f72",
+      "slug": "current-scientific-corporation",
+      "name": "Current Scientific Corporation",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 8,
+      "relationship_count": 0,
+      "evidence_note": "The exact Canadian legal entity (business number 804768174) has a public series of issuer-specific Canadian government transfer-payment agreements. The reviewed official record supports eight grants or contributions from 2021 through 2026, including a revised CAD1.77 million IRAP contribution, a CAD600,000 international-innovation contribution and a latest CAD40,000 CanExport contribution. Procurement and testing contracts are excluded.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.currentcorp.com/who-we-are/about-us/",
+        "https://search.open.canada.ca/grants/record/nrc-cnrc%2C172-2021-2022-Q1-970751%2Ccurrent",
+        "https://search.open.canada.ca/grants/record/nrc-cnrc%2C172-2021-2022-Q4-981765%2Ccurrent",
+        "https://search.open.canada.ca/grants/record/nrc-cnrc%2C172-2022-2023-Q3-996593%2Ccurrent",
+        "https://search.open.canada.ca/grants/record/nrc-cnrc%2C172-2022-2023-Q4-1001375%2Ccurrent",
+        "https://search.open.canada.ca/grants/record/nrc-cnrc%2C172-2024-2025-Q2-1021004%2Ccurrent",
+        "https://search.open.canada.ca/grants/?page=13883&sort=agreement_start_date+desc",
+        "https://search.open.canada.ca/grants/?page=77300&search_text=canada+media+fund&sort=score+desc",
+        "https://search.open.canada.ca/grants/?search_text=172-2025-2026-Q4-1039935",
+        "https://search.open.canada.ca/contracts/record/ic%2CC-2024-2025-Q3-00259"
+      ],
+      "excluded_claims": [
+        "The CAD2,366,910.18 November 2024 Innovation, Science and Economic Development Canada research award is explicitly a procurement contract and is excluded from financing.",
+        "The Innovation Solutions Canada testing-stream award and other customer, testing, supply or partnership announcements are procurement or commercial activity, not funding rounds.",
+        "The portal's CAD1,885,000 original IRAP agreement value is not retained as current proceeds because the official record also reports a CAD115,000 downward amendment; the revised commitment is CAD1,770,000."
+      ]
+    },
+    {
+      "id": "1a6b0cd8-45ee-43b5-a893-6697cccfcdc3",
+      "slug": "cx2-industries",
+      "name": "CX2 Industries",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "CX2, Inc. / CX2 Industries is the El Segundo electronic-warfare company founded in 2024. Public sources support a USD15 million seed round led by Andreessen Horowitz and 8VC, a USD31 million Series A led by Point72 Ventures with five explicitly named participants, and selection into NATO DIANA's 2026 cohort with EUR100,000 of contractual non-dilutive funding.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.cx2.com/",
+        "https://www.forbes.com/sites/davidjeans/2024/06/06/secret-electronic-warfare-startup-a16z-8vc/",
+        "https://www.axios.com/2025/05/22/cx2-funding-mintz-electronic-warfare",
+        "https://p72.vc/defense-tech/our-investment-in-cx2/",
+        "https://bowoftheseus.substack.com/p/cx2-raises-31m-in-series-a",
+        "https://labusinessjournal.com/manufacturing/defense-tech-startup-cx2-nets-31m-series-a/",
+        "https://www.diana.nato.int/about-diana/2026-cohort-of-companies.html",
+        "https://www.nato.int/content/dam/nato/webready/documents/iban/financial-audits/PO%282025%290336%20NU%20ENG%20-%20DIANA%202024%20FS%20-%20public%20disclosure.pdf"
+      ],
+      "excluded_claims": [
+        "The seed-round valuation and individual investor cheque sizes are not publicly disclosed and are not inferred.",
+        "Customer trials, DIU project selections, product integrations and military exercises are procurement or programme activity, not financing.",
+        "NATO DIANA follow-on Mission Track funding is not attributed because the reviewed Mission Track announcements did not identify CX2 as selected."
+      ]
+    },
+    {
+      "id": "89b9182f-1486-4395-a3c3-60a5a53340fe",
+      "slug": "cyark",
+      "name": "CyArk",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 6,
+      "relationship_count": 1,
+      "evidence_note": "CyArk (EIN 26-0871429) is a US nonprofit spun out of the Kacyra Family Foundation. Public IRS-source records support a USD157,184 founding contribution and USD221,199 founding loan in 2009, followed by five exact Kacyra Family Foundation grants between 2019 and 2025. CyArk also reports substantial government-grant revenue and federal award aggregators identify multiple assistance awards, but the complete award-level federal history was not sufficiently resolved for import in this pass.",
+      "hold_note": "USAspending-derived aggregators report 11 federal assistance awards totaling about USD975,000 and CyArk's Form 990s report government-grant revenue, but award-level dates, obligations and amendments were not independently reconciled here. California State Parks Foundation and AmazonSmile grant aggregates also lack a complete award-level source breakdown. Those claims remain on hold rather than being treated as zero funding.",
+      "sources_checked": [
+        "https://www.cyark.org/whoweare/",
+        "https://kacyrafamilyfoundation.org/heritage-preservation/",
+        "https://www.foundationsearch.com/990/ARCHIVE/9/KACYRA%20FAMILY%20FOUNDATION%202009%20943413411.PDF",
+        "https://www.foundationsearch.com/990/ARCHIVE/9/KACYRA%20FAMILY%20FOUNDATION%202019%20943413411.PDF",
+        "https://philanthropy.org/990/report/943413411/kacyra-family-foundation",
+        "https://philanthropy.org/990/who-funds/260871429/cyark",
+        "https://philanthropy.org/990/report/260871429/cyark",
+        "https://www.causeiq.com/organizations/cyark%2C260871429/",
+        "https://grantoria.com/recipient/cyark"
+      ],
+      "excluded_claims": [
+        "CyArk's annual aggregate gifts-and-grants and government-grant revenue are not treated as individual financing rounds without award-level grantor and date evidence.",
+        "The reported USD975,000 federal-award total is an aggregate across 11 awards and is not imported as one round.",
+        "Project fees, service revenue, in-kind support and donations lacking donor-specific award evidence are excluded from round records."
+      ]
+    },
+    {
+      "id": "234fcd42-fdca-458f-87ee-3aa9e39d5dfb",
+      "slug": "cyber-drone-solutions",
+      "name": "Cyber Drone Solutions",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact identity is Cyber Drone Solutions a.s., a Czech unmanned-systems developer and integrator. The reviewed company, trade-show, corporate-document and professional-profile sources establish issuer identity and operations but disclose no issuer-level equity, debt, convertible or grant financing round.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://cyberdronesolutions.com/",
+        "https://cyberdronesolutions.com/code-of-ethics/",
+        "https://cyberdronesolutions.com/wp-content/uploads/sites/2/2026/02/Code-of-Ethics-CDS.pdf",
+        "https://www.linkedin.com/company/cyber-drone-solutions",
+        "https://www.natoexhibition.cz/exhibitors/list/nomenclature/2507?lang=en",
+        "https://cyberdronesolutions.com/platforms/drone-shield/"
+      ],
+      "excluded_claims": [
+        "Partnerships with DroneShield, LIAZ Group, C-Astral and other platform providers are commercial integration relationships, not evidence of investment.",
+        "Exhibition participation, customer engagements and product development are not financing events.",
+        "Third-party database statements that no funding exists are not treated as proof of zero funding; the result records only that no disclosed round was found in the reviewed public sources."
+      ]
+    },
+    {
+      "id": "b45a2d11-c02a-4131-8eae-ed936cb3d23c",
+      "slug": "cyborg-autonomy",
+      "name": "Cyborg Autonomy",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Cyborg Autonomy is the current trading brand of Australian legal entity Cyborg Dynamics Engineering Pty Ltd (ABN 50 621 757 248), not a new issuer. The legal entity received an AUD426,150 Sovereign Industrial Capability Priority grant announced in 2020 and an AUD597,000 matched Industry Growth Program grant announced in 2025. Customer contracts and proceeds from the separately incorporated Athena AI/Sightline spinout are excluded.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.cyborgautonomy.com/",
+        "https://abr.business.gov.au/ABN/View?abn=50621757248",
+        "https://www.linkedin.com/posts/cyborg-dynamics-engineering_robotics-autonomoussystems-cyborgautonomy-activity-7496055248059252737-uQdW",
+        "https://www.minister.defence.gov.au/media-releases/2020-04-20/building-our-defence-industry-capability",
+        "https://business.gov.au/grants-and-programs/industry-growth-program/grant-recipients",
+        "https://www.industry.gov.au/news/innovative-crop-harvester-faba-bean-and-firefighting-robot-projects-get-igp-grants",
+        "https://www.industry.gov.au/sites/default/files/2026-02/senate-order-13-2025-calendar-year.pdf",
+        "https://www.defence.gov.au/sites/default/files/2020-06/cy_2019_list_of_defence_non-procurement_contracts.pdf",
+        "https://sightlineintelligence.com/about-sightline/"
+      ],
+      "excluded_claims": [
+        "The AUD3.3 million Defence Innovation Hub award for the Warfighter UGV is a technology-development procurement contract, not financing.",
+        "The 2019 government contract schedule reports AUD468,765 including GST for the Sovereign Industrial Capability grant; the programme's stated grant amount is AUD426,150 and is used instead of the tax-inclusive contract ceiling.",
+        "The 2025 Industry Growth Program Senate schedule reports AUD656,700 including GST; the official recipient list states AUD597,000 excluding GST, which is the grant amount used here.",
+        "Athena AI/Sightline Intelligence acquisition consideration and later sale proceeds belong to a separately incorporated spinout and are not assigned to Cyborg Autonomy."
+      ]
+    },
+    {
+      "id": "4e8e0229-d31e-49c2-a668-1d2a5f19a2c0",
+      "slug": "cyborg-dynamics-engineering",
+      "name": "Cyborg Dynamics Engineering",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "This catalogue identity is not a separate issuer from Cyborg Autonomy: Cyborg Dynamics Engineering Pty Ltd (ABN 50 621 757 248) remains the Australian legal entity, while the operating brand was renamed Cyborg Autonomy in 2026. To prevent duplicating the same legal issuer's two verified grant events across two company identities, the rounds are attached only to the current Cyborg Autonomy identity in this manifest.",
+      "hold_note": "The two catalogue identities should be reconciled or merged before any additional issuer-level financing is imported to the legacy slug. Until that identity decision is made, the AUD426,150 and AUD597,000 grants are intentionally not duplicated here.",
+      "sources_checked": [
+        "https://abr.business.gov.au/ABN/View?abn=50621757248",
+        "https://abr.business.gov.au/AbnHistory/View?id=50621757248",
+        "https://www.linkedin.com/posts/cyborg-dynamics-engineering_robotics-autonomoussystems-cyborgautonomy-activity-7496055248059252737-uQdW",
+        "https://www.cyborgautonomy.com/",
+        "https://www.minister.defence.gov.au/media-releases/2020-04-20/building-our-defence-industry-capability",
+        "https://business.gov.au/grants-and-programs/industry-growth-program/grant-recipients"
+      ],
+      "excluded_claims": [
+        "The AUD3.3 million Warfighter UGV development award is a procurement contract and is not financing.",
+        "Athena AI/Sightline Intelligence acquisition or sale consideration is not assigned to Cyborg Dynamics Engineering because the transaction concerns a separately incorporated spinout.",
+        "The legal issuer's two verified grants are not duplicated on this legacy catalogue identity; they are recorded under the current Cyborg Autonomy brand identity."
+      ]
+    },
+    {
+      "id": "edb46351-4a5f-4e32-bc59-795e070c44b7",
+      "slug": "cyphy-works",
+      "name": "CyPhy Works",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 1,
+      "evidence_note": "CyPhy Works, Inc. (previously Droid Works and later rebranded Aria Insights) publicly closed venture financings and filed later debt and equity offerings. The issuer ceased operations in March 2019, but the reviewed SEC filings and investor announcements preserve exact-issuer continuity.",
+      "hold_note": "The reviewed public record also contains older and intermediate offerings with incomplete investor attribution. Only rounds with a supportable issuer, amount or explicit investor role are included; the 2018 investor identities remain undisclosed.",
+      "sources_checked": [
+        "https://www.unmannedsystemstechnology.com/2013/11/cyphy-works-raises-7-million-to-build-flying-robots/",
+        "https://medium.com/lux-capital/the-dawn-of-flying-robots-our-investment-in-cyphy-works-4c7e40132520",
+        "https://www.motorolasolutions.com/newsroom/press-releases/motorola-solutions-invests-in-drone-maker-cyphy-works.html",
+        "https://www.prnewswire.com/news-releases/draper-nexus-invests-in-drone-trailblazer-cyphy-works-300087314.html",
+        "https://www.iqt.org/library/cyphy-works-announces-strategic-investment-and-development-agreement-with-in-q-tel",
+        "https://techcrunch.com/2015/10/13/drone-maker-cyphy-raises-22-million-to-chase-businesses-and-consumers/",
+        "https://www.sec.gov/Archives/edgar/data/1482765/000148276518000002/xslFormDX01/primary_doc.xml",
+        "https://www.sec.gov/Archives/edgar/data/1482765/000148276518000003/primary_doc.xml",
+        "https://techcrunch.com/2019/03/22/drone-analytics-startup-aria-insights-suddenly-shutters/"
+      ],
+      "excluded_claims": [
+        "Kickstarter pre-orders are excluded because they are product crowdfunding rather than issuer equity, debt or grant financing.",
+        "Government SBIR and defence procurement awards are excluded where the reviewed evidence describes research contracts or customer procurement rather than financing.",
+        "FLIR's 2019 purchase of intellectual property and certain assets is acquisition consideration, not issuer financing."
+      ]
+    },
+    {
+      "id": "df42a769-d0f7-499a-8642-fca9eb352bdc",
+      "slug": "czechoslovak-group",
+      "name": "Czechoslovak Group",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 5,
+      "relationship_count": 0,
+      "evidence_note": "Public company and prospectus sources support a sequence of CZECHOSLOVAK GROUP a.s. bond financings and the later CSG N.V. primary-share component of the group IPO. Amounts are preserved in their original currencies and secondary-share sale proceeds are excluded from issuer funding.",
+      "hold_note": "The group's full historic bilateral and syndicated debt stack is extensive. The July 2026 EUR3.062 billion refinancing is held out because CSG stated that the amount drawn remained unchanged at about EUR1.7 billion; the undrawn revolving commitment is not treated as new proceeds.",
+      "sources_checked": [
+        "https://investors.csg.com/prospectus/CZECHOSLOVAK%20GROUP%20-%20Final%20Prospectus%20%5BAFM%5D%20-%2020%20January%202026%20-%20Compressed2.pdf",
+        "https://csg.com/en/news/record-issuance-of-czech-bonds-by-csg-worth-czk-10-billion-successfully-subscribed",
+        "https://csg.com/en/news/successful-dual-tranche-bond-issuance",
+        "https://csg.com/prospectus/Czechoslovak%20Group%20announces%20the%20success%20of%20its%20IPO.pdf",
+        "https://csg.com/en/news/csg-new-debt-structure-reduces-cost-of-debt-and-extends-maturity"
+      ],
+      "excluded_claims": [
+        "The IPO's sale of existing shares by CSG FIN a.s. is secondary-sale consideration and not issuer funding; only the EUR750 million gross primary issuance is recorded.",
+        "The July 2026 EUR3.062 billion syndicated facility is a refinancing with the drawn amount unchanged at approximately EUR1.7 billion, so the undrawn facility ceiling is not recorded as new financing.",
+        "Customer contracts and acquisition consideration paid by CSG are not issuer financing."
+      ]
+    },
+    {
+      "id": "6a3cda0c-52dd-4b27-b1cc-f05fb441c7c1",
+      "slug": "d-fend-solutions",
+      "name": "D-Fend Solutions",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "D-Fend Solutions' official announcements support a US$28 million 2019 round and a US$31 million initial closing in 2024, with explicit lead and participant roles. The company also states that Vertex led a previous Q3 2018 financing, but the reviewed primary source does not disclose its amount.",
+      "hold_note": "The Q3 2018 round remains unimported because the official source does not disclose an amount or exact close date. The June 2026 Motorola Solutions acquisition is excluded as acquisition consideration.",
+      "sources_checked": [
+        "https://d-fendsolutions.com/press_releases/d-fend-solutions-raises-28m-to-further-advance-market-leading-innovation-in-the-counter-drone-industry/",
+        "https://d-fendsolutions.com/press_releases/d-fend-solutions-raises-31m-to-fortify-cyber-counter-drone-technology-and-market-leadership/",
+        "https://www.vertexventures.co.il/news/d-fend-raises-31-million-to-combat-rising-drone-threats/",
+        "https://www.motorolasolutions.com/newsroom/press-releases/motorola-solutions-to-acquire-dfend-solutions.html"
+      ],
+      "excluded_claims": [
+        "D-Fend's U.S. government procurement and product-selection announcements are customer contracts or evaluations, not issuer financing.",
+        "Motorola Solutions' 2026 acquisition consideration is not issuer financing.",
+        "The Q3 2018 Vertex-led financing is retained as an evidence note rather than a round because its amount and exact close date were not disclosed by the reviewed primary source."
+      ]
+    },
+    {
+      "id": "9a393518-4e21-402e-847f-e8957353f08f",
+      "slug": "d-ta-systems",
+      "name": "D-TA Systems",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Canadian government announcements and proactive-disclosure records identify D-TA Systems Inc. as the recipient of repayable and non-repayable public financing from 2010 through 2026. Instrument classification follows the disclosed programme terms: SADI and RDII business contributions are repayable; NRC IRAP and CanExport contributions are treated as non-repayable grant-style support.",
+      "hold_note": "The government database lists additional smaller agreements. This pass captures the earliest repayable SADI financing, the material 2022 IRAP contribution, the 2026 RDII repayable contribution and the latest 2026 CanExport contribution; undisclosed disbursement timing remains unknown.",
+      "sources_checked": [
+        "https://www.canada.ca/en/news/archive/2010/10/harper-government-supports-research-development-innovative-signal-sensor-processing.html",
+        "https://search.open.canada.ca/grants/?page=10824&search_text=sjc+heritage+inc+&sort=agreement_start_date+desc&wbdisable=true",
+        "https://search.open.canada.ca/grants/?owner_org=feddevontario&page=2&sort=agreement_start_date+desc",
+        "https://feddev-ontario.canada.ca/en/funding-southern-ontario/regional-defence-investment-initiative-businesses-how-funding-works",
+        "https://search.open.canada.ca/grants/record/nrc-cnrc%2C172-2026-2027-Q1-1041701%2Ccurrent"
+      ],
+      "excluded_claims": [
+        "Customer contracts and sales of D-TA signal-processing systems are not financing events.",
+        "Agreement values are recorded as awarded or committed amounts, not as proof that every dollar had been disbursed on the start date.",
+        "Programme-wide budgets are not attributed to D-TA."
+      ]
+    },
+    {
+      "id": "935aa6f2-a909-4aa0-8ca1-d85633cf3106",
+      "slug": "damen",
+      "name": "Damen",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Damen Shipyards Group N.V.'s 2024 annual report confirms that the group completed more than EUR1.1 billion of refinancing with over fifteen existing and new financial institutions, including an EUR88 million revolving facility, EUR35 million term loan, EUR690 million bank-guarantee facilities, EUR100 million bilateral financing and a EUR140 million real-estate sale-and-leaseback.",
+      "hold_note": "No round is proposed in this lane because the annual report does not provide a transaction close date or distinguish drawn cash from undrawn working-capital and guarantee commitments at the aggregate level. The proposed Dutch-government EUR270 million bridge facility was not taken up and must not be imported.",
+      "sources_checked": [
+        "https://www.lobbyregister.bundestag.de/media/04/f8/636296/DSG-Annual-Report-2024.pdf",
+        "https://www.damen.com/insights-center/news/damen-reports-profit-and-full-order-book-in-2024-annual-report",
+        "https://investinternational.nl/news-items/working-capital-facility-helps-customers-damen-build-a-greener-fleet/",
+        "https://nibc.com/news/nibc-provides-financing-to-damen-financial-services",
+        "https://www.damen.com/insights-center/news/dfs-and-sfs-announce-vessel-financing-facility"
+      ],
+      "excluded_claims": [
+        "The proposed EUR270 million Dutch-government F126 bridge facility was not taken up and is excluded.",
+        "Customer vessel-financing facilities arranged by Damen Financial Services are not automatically financing of Damen Shipyards Group.",
+        "The EUR25 million Exim Banca Romaneasca financing belongs to subsidiary Damen Shipyard Galati and is not reassigned to the group identity.",
+        "Bank guarantees and undrawn revolving capacity are not treated as cash proceeds."
+      ]
+    },
+    {
+      "id": "5781a9d7-6426-474d-9449-f5e58fea7ed1",
+      "slug": "damoda-america",
+      "name": "Damoda America",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact U.S. identity, Damoda America Inc., was incorporated in Florida in September 2025 and is presented publicly as the North American market presence for DAMODA drone-show technology. The reviewed public record did not disclose issuer-level equity, debt, convertible or grant financing for Damoda America Inc.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResults?ListNameOrder=DAMODA+P020001134090&inquiryDirectionType=CurrentList&inquiryType=EntityName&searchNameOrder=DAMODA+P020001134090&searchTerm=DAMLYN+LLC",
+        "https://www.damoda.com/about.html",
+        "https://www.damoda.com/case70.html",
+        "https://markets.financialcontent.com/stocks/article/marketersmedia-2025-5-25-damoda-world-class-drone-light-spectacle-lands-in-america",
+        "https://eu.36kr.com/en/p/3109871164673792"
+      ],
+      "excluded_claims": [
+        "Shenzhen DAMODA Intelligent Control Technology Co., Ltd.'s January 2025 Series A financing is parent-company financing and predates the Florida incorporation of Damoda America Inc.; it is not assigned to the U.S. issuer.",
+        "DAMODA's 2026 financing reports concern the Chinese operating parent and are not attributed to Damoda America without evidence of issuer continuity or transferred proceeds.",
+        "Drone-show contracts, equipment sales and partnership announcements are operating activity rather than financing."
+      ]
+    },
+    {
+      "id": "52188d58-3a4f-4b63-8e0c-d9570bd2655b",
+      "slug": "dark-wolf-solutions",
+      "name": "Dark Wolf Solutions",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "Dark Wolf Solutions, LLC is a current Razor's Edge Ventures growth-equity portfolio company. Public investor and trade sources confirm a completed Fund IV investment by September 2025, but the amount, security and exact closing date were not disclosed.",
+      "hold_note": "The public record confirms the investor relationship but does not disclose the investment amount, instrument or a company-level closing announcement.",
+      "sources_checked": [
+        "https://www.razorsedge.ventures/about.html",
+        "https://www.razorsvc.com/blog/dark-wolf-solutions-investment.html",
+        "https://virginiabusiness.com/reston-growth-equity-razors-edge-560m-investment-fund/",
+        "https://darkwolfsolutions.com/accelerators/"
+      ],
+      "excluded_claims": [
+        "Dark Wolf's internal Apex Innovations seed-funding program finances internal product development and is not an external issuer financing round.",
+        "Federal contracts and task orders are operating revenue, not investment funding."
+      ]
+    },
+    {
+      "id": "274ee9fd-6a79-4276-959d-a9e2a1b0b369",
+      "slug": "darkhive",
+      "name": "Darkhive",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Darkhive, Inc. publicly closed a US$4 million seed round in November 2023 and a US$21 million Series A in September 2024. Company and transaction-party announcements identify the round leads and the additional investors.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.prnewswire.com/news-releases/darkhive-inc-closes-4m-seed-round-to-scale-development-of-low-cost-autonomous-drones-for-defense-and-public-safety-302002536.html",
+        "https://www.darkhive.com/post/defense-tech-startup-darkhive-secures-21-million-series-a-investment-led-by-ten-eleven-ventures",
+        "https://www.prnewswire.com/news-releases/defense-tech-startup-darkhive-secures-21-million-series-a-investment-led-by-ten-eleven-ventures-302242224.html"
+      ],
+      "excluded_claims": [
+        "The US$100 million AFWERX Phase III IDIQ is a contract ceiling and is excluded from issuer financing.",
+        "SBIR, STTR, RDT&E and OTA contracts mentioned in company materials are excluded because the reviewed announcements do not establish financing proceeds or exact company-level grant amounts."
+      ]
+    },
+    {
+      "id": "b3b1bc70-1e3c-487c-bdbc-6ebbd6c37a79",
+      "slug": "dataminr",
+      "name": "Dataminr",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 5,
+      "relationship_count": 0,
+      "evidence_note": "Dataminr's own announcements support a US$392.6 million 2018 financing, a US$475 million Series F in 2021, US$85 million of mixed convertible financing and credit in March 2025, a US$100 million convertible financing in April 2025, and a US$300 million financing completed in September 2025. Earlier rounds remain outside this pass and the September 2025 instrument was not disclosed in the reviewed company source.",
+      "hold_note": "The issuer has earlier public venture rounds from 2009 through 2015 that require transaction-party source reconciliation. The US$300 million September 2025 financing is confirmed by the company, but the exact closing day and security mix were not disclosed; the first exact-dated company confirmation was October 21, 2025.",
+      "sources_checked": [
+        "https://www.dataminr.com/press/dataminr-appoints-former-cision-executive-jason-edelboim-as-chief-commercial-officer/",
+        "https://www.dataminr.com/press/dataminr-announces-475m-financing-round/",
+        "https://www.dataminr.com/press/announcement/dataminr-secures-funding/",
+        "https://www.dataminr.com/press/announcement/dataminr-announces-100m-investment-from-fortress/",
+        "https://www.fortress.com/news/2025-04-24-dataminr-announces-100m-investment-from-fortress-to-accelerate-gen-ai-and-agentic-ai-product-innovation-and-to-expand-its-reach-to-enterprises-governments-worldwide",
+        "https://www.dataminr.com/press/announcement/dataminr-to-acquire-threatconnect/",
+        "https://www.dataminr.com/press/announcement/dataminr-intel-agents-for-the-physical-world/"
+      ],
+      "excluded_claims": [
+        "The US$318 million Department of War contract announced in 2026 is customer revenue and not investment financing.",
+        "The US$290 million stated value for the ThreatConnect acquisition is acquisition consideration and not issuer financing.",
+        "NightDragon's announced SPV capacity of up to US$100 million is excluded because it was an intended future vehicle, not confirmed issuer proceeds."
+      ]
+    },
+    {
+      "id": "72f24cab-e557-419f-83ad-afed154372c2",
+      "slug": "datashapes-ai",
+      "name": "DataShapes AI",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "DataShapes, Inc. announced a US$5 million investment from Berg Venture Capital in March 2022. An amended SEC Form D filed June 20, 2024 reports US$6.75 million sold in an equity offering that began February 23, 2024, against a US$10 million total offering. Public references to a later US$7 million 2025 round were not supported by a primary or transaction-party source in this pass.",
+      "hold_note": "The 2024 Form D names no investors. A secondary-database claim of a US$7 million December 2025 round remains a candidate only and is not imported without a primary or filing source.",
+      "sources_checked": [
+        "https://www.prnewswire.com/news-releases/datashapes-receives-5-million-in-funding-301492155.html",
+        "https://www.sec.gov/Archives/edgar/data/2015231/000201523124000002/primary_doc.xml",
+        "https://datashapesai.com/resources/"
+      ],
+      "excluded_claims": [
+        "A secondary-database claim of a US$7 million December 2025 round is not treated as verified without a primary issuer, investor or filing source.",
+        "Defense contracts and SBIR procurement awards listed by the company are excluded from investment funding."
+      ]
+    },
+    {
+      "id": "a33149b7-c67c-4f1c-9009-5f4830f73ef3",
+      "slug": "dataspeed",
+      "name": "Dataspeed",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Dataspeed, Inc. describes itself as bootstrapped without outside investment and confirms a US$47,500 Business Accelerator Fund grant awarded in July 2012. A later US$1.77 million MDOT award was made to a Dataspeed-led consortium under an AM General contract and is not attributed wholly to Dataspeed.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.dataspeedinc.com/company/",
+        "https://www.cbsnews.com/detroit/news/dataspeed-gets-money-to-advance-embedded-components/",
+        "https://www.michiganbusiness.org/4a820f/contentassets/c55bb5fbff47499cbd27621d416652af/medc_white-paper_3-cover-and-insides_v5.pdf",
+        "https://www.prnewswire.com/news-releases/dataspeed-inc-team-awarded-1-77-million-grant-from-michigan-department-of-transportation-300985349.html",
+        "https://www.michigan.gov/dtmb/-/media/Project/Websites/dtmb/Law-and-Policies/SAB/2019/minutes/20191105-SAB-Minutes.pdf"
+      ],
+      "excluded_claims": [
+        "The US$1.77 million MDOT Michigan Mobility Challenge award is not assigned to Dataspeed because it funded a multi-party team and state records identify AM General as the contracting entity.",
+        "MEDC's later reference to approximately US$48,545 in STEP funding in 2011 conflicts with Dataspeed's dated US$47,500 2012 BAF record and is not merged into the verified grant.",
+        "Sales, distributor agreements and facilitated export revenue are operating activity rather than investment financing."
+      ]
+    },
+    {
+      "id": "0b40f241-63db-445e-b570-f92dc17e25c0",
+      "slug": "datium",
+      "name": "Datium",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue identity resolves to Datium Corp. of Seoul, the AutoHOS automotive-maintenance AI company later selected for Oregon UAS Accelerator work. Public investor and press sources support an undisclosed Pre-Series A financing announced July 21, 2025, led by Korea Investment Accelerator with participation from Seoul National University Technology Holdings.",
+      "hold_note": "The financing amount and security were not disclosed. Korea Investment Accelerator's social post calls its participation a seed investment while transaction reporting describes the round as Pre-Series A; the round is retained under the transaction announcement's Pre-Series A label.",
+      "sources_checked": [
+        "https://www.venturesquare.net/en/994794",
+        "https://www.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02059846642236816",
+        "https://en.koreainvestment.ac/portfolio",
+        "https://en.koreainvestment.ac/",
+        "https://oregonuas.org/blogs/news/oregon-uas-accelerator-welcomes-17-startups-to-its-fall-2026-cohort"
+      ],
+      "excluded_claims": [
+        "The Oregon UAS Accelerator's conditional US$5,000 completion subgrant is not recorded because Datium's completion and payment have not been established.",
+        "Australian Datium Insights is a different issuer and its Pickles Ventures relationship is excluded from this Korean Datium Corp. identity."
+      ]
+    },
+    {
+      "id": "206b69b0-d1a4-4f72-8625-ede32a3547d2",
+      "slug": "datum-submarine-technologies",
+      "name": "DATUM Submarine Technologies",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact Turkish issuer is DATUM Denizaltı Teknolojileri Uygulama ve Mühendislik A.Ş. Public sources establish that Istanbul Technical University became a shareholder in 2018 and that DATUM carries out an SSB-supported R&D project, but no reviewed source discloses cash consideration, an issuer-level round amount, instrument, or closing date.",
+      "hold_note": "The 2018 ITU shareholding and SSB R&D support are real issuer relationships, but the public record reviewed does not distinguish a cash investment from an in-kind or institutional partnership or quantify issuer proceeds.",
+      "sources_checked": [
+        "https://datum-subs.com/en/about",
+        "https://datum-subs.com/about",
+        "https://firmalar.ariteknokent.com.tr/companies/datum-denizalti-teknolojileri-uygulama-ve-muhendislik-anonim-sirketi",
+        "https://www.sahaistanbul.org.tr/firma/datum-denizalti-teknolojileri-uygulama-ve-muhendislik-anonim-sirketi",
+        "https://bulten.sahaistanbul.org.tr/saha-bulten-sayi-69-19-11-2023/",
+        "https://www.linkedin.com/company/datumsubs"
+      ],
+      "excluded_claims": [
+        "Istanbul Technical University becoming a shareholder in 2018 is not entered as a funding round because no cash amount, instrument or closing terms were disclosed.",
+        "The SSB-backed Multi-Purpose Mini Submarine R&D project is not treated as an issuer grant because the reviewed sources do not disclose a DATUM-specific cash award.",
+        "Defence contracts and project participation are operating activity, not investment financing."
+      ]
+    },
+    {
+      "id": "bec7d9a1-5d61-4c76-944f-7fc76e472f44",
+      "slug": "davie-shipbuilding",
+      "name": "Davie Shipbuilding",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Public sources disclose major Quebec-government financing around the Davie group, but the actual recipients were Groupe Davie for the Helsinki acquisition and Davie Infrastructure Limited Partnership for the Levis yard upgrade rather than the exact catalogue operating identity. These were held to prevent affiliate financing from being assigned to Davie Shipbuilding.",
+      "hold_note": "Issuer mapping is material: the 2023 EUR77 million Helsinki package went to Groupe Davie, while the CAD519.2 million modernization package was authorized for Davie Infrastructure LP. No reviewed source establishes that Chantier Davie Canada Inc. itself received those proceeds.",
+      "sources_checked": [
+        "https://www.quebec.ca/nouvelles/actualites/details/favoriser-la-croissance-internationale-de-davie-quebec-soutient-davie-pour-lacquisition-dun-chantier-naval-finlandais-51767",
+        "https://www.globenewswire.com/news-release/2023/11/03/2773209/0/en/Davie-Completes-Purchase-Of-The-Assets-Of-Helsinki-Shipyard.html",
+        "https://www.publicationsduquebec.gouv.qc.ca/fileadmin/gazette/pdf_encrypte/lois_reglements/2023F/79158.pdf",
+        "https://www.quebec.ca/nouvelles/actualites/details/le-gouvernement-du-quebec-et-chantier-davie-canada-investissent-pres-de-840-millions-de-dollars-afin-de-moderniser-les-installations-de-construction-navale-du-chantier-47241",
+        "https://www.quebec.ca/nouvelles/actualites/details/soutien-a-lindustrie-maritime-investissement-quebec-appuie-chantier-davie-canada-pour-la-realisation-dun-contrat-de-la-defense-nationale",
+        "https://www.canada.ca/en/news/archive/2008/12/canada-offers-support-davie-yards-inc-.html"
+      ],
+      "excluded_claims": [
+        "The EUR30 million equity investment and EUR47 million loan announced in November 2023 are excluded because the government source names Groupe Davie as recipient and links the package to acquisition consideration and affiliate working capital.",
+        "The CAD519.2 million 2023 yard-modernization package is excluded because the decree names Davie Infrastructure Limited Partnership as recipient, not Chantier Davie Canada Inc.",
+        "The 2020 CAD8 million maximum guarantee is a contract-performance guarantee rather than issuer proceeds.",
+        "The 2008 up-to-CAD380 million EDC financing and guarantees were conditional and no draw or close was verified; Davie Yards Inc. continuity was also not assumed."
+      ]
+    },
+    {
+      "id": "821e6d86-04ef-462e-9849-5567e38d5700",
+      "slug": "dbox",
+      "name": "DBOX",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue identity maps to Lithuanian legal issuer UAB IT logika, developer of DBOX. Exact-issuer public records support four awarded EU grant amounts: EUR840,283.51 for the issuer share of a 2020 R&D project, EUR36,720 for a 2021 e-commerce project, EUR39,981.86 for a 2024 skills project, and EUR136,885 net EU contribution under the 2026 GOF3 Horizon project.",
+      "hold_note": "DBOX states that it has secured more than EUR8 million for R&D projects, but the aggregate is not imported because it mixes project budgets and consortium funding. The EUR2.897 million 5G project grant and export-project totals are separately reviewed below and only exact issuer shares are imported.",
+      "sources_checked": [
+        "https://dbox.lt/about.html",
+        "https://dbox.lt/eu-ecommerce.html",
+        "https://dbox.lt/eu-skills.html",
+        "https://esinvesticijos.lt/sutartys/5g-technologiju-pritaikymas-bepilociu-orlaiviu-bazinese-stotyse",
+        "https://esinvesticijos.lt/sutartys/uab-it-logika-darbuotoju-igudziu-ugdymas-ir-tobulinimas",
+        "https://esinvesticijos.lt/sutartys/uab-it-logika-eksporto-rinku-pletra-dalyvaujant-parodose-ir-sertifikuojant-produkcija",
+        "https://cordis.europa.eu/project/id/101275076",
+        "https://2014.esinvesticijos.lt/docview/?h=fb7b7&media=113007&t=20200821_Nr_4-697"
+      ],
+      "excluded_claims": [
+        "The stated more-than-EUR8 million of R&D funding is an unitemized company aggregate and is not treated as a verified issuer funding total.",
+        "The EUR2,897,286.55 5G project funding amount covers a project with UAB Pixpro, UAB Taikomasis dirbtinis intelektas and Vilnius University; no issuer allocation was found, so the consortium amount is not assigned to DBOX.",
+        "Eligible project costs and private co-financing are not treated as grant proceeds.",
+        "Customer deployments, defence exercises and product sales are operating activity rather than financing."
+      ]
+    },
+    {
+      "id": "3652d0ac-1774-46c2-b42d-e4c3a20bb16f",
+      "slug": "de-havilland-canada",
+      "name": "De Havilland Canada",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "De Havilland Aircraft of Canada Limited announced an agreement for up to CAD2.5 billion of federal financing delivered by Export Development Canada, expected to close in the first quarter of 2027. The amount is held rather than imported because public reporting describes loans and loan guarantees, the facility is not yet closed, and no draw has been verified.",
+      "hold_note": "Recheck after the anticipated Q1 2027 closing for actual instrument split, closed amount and draws. The company announcement and Budget 2026 support the commitment but not funded proceeds.",
+      "sources_checked": [
+        "https://dehavilland.com/production/de-havilland-canada-announces-agreement-and-de-havilland-canadair-515-production-increase/",
+        "https://budget.canada.ca/2026/report-rapport/chap5-en.html",
+        "https://www.canada.ca/en/department-finance/news/2026/11/budget-2026-key-measures.html",
+        "https://globalnews.ca/news/12134917/de-havilland-water-bomber-production-federal-financing/",
+        "https://dehavilland.com/corporate-initiatives/de-havilland-canada-working-with-pratt-whitney-canada-to-support-the-development-of-sustainable-hybrid-electric-aircraft-propulsion-technology/"
+      ],
+      "excluded_claims": [
+        "The up-to-CAD2.5 billion EDC package is excluded until closing or draw because it remains an undrawn mix of loans and loan guarantees and the transaction is anticipated to complete in Q1 2027.",
+        "The CAD163 million hybrid-electric programme announced in 2021 was a Pratt & Whitney/Collins investment and is not assigned to De Havilland Canada.",
+        "Government aircraft purchases are customer contracts rather than issuer financing.",
+        "Acquisition consideration paid when Longview acquired the Dash 8 programme is not issuer funding."
+      ]
+    },
+    {
+      "id": "c0542c1c-074c-402c-a53e-54aaca0ae019",
+      "slug": "dearsan",
+      "name": "DEARSAN",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact Turkish shipbuilder, Dearsan Gemi İnşaat Sanayi A.Ş., has public investment projects and government investment-incentive certificates, but the reviewed record did not disclose an issuer-level equity, debt, convertible or cash grant round.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.dearsan.com/en/we-signed-a-contract-for-shipyard-investment-in-kazakhstan/",
+        "https://www.denizhaber.net/tosyali-denizcilik-ve-dearsan-tersanesi-yatirim-tesvigi-aldi-haber-106669.htm",
+        "https://ssbulten.com.tr/en/gundem/detay/dearsan-receives-environmental-approval-for-new-shipyard-in-cayirova-kocaeli--26487",
+        "https://app.dealroom.co/companies/dearsan_shipyard"
+      ],
+      "excluded_claims": [
+        "The TRY2.137 billion cited in 2021 is the planned value covered by investment-incentive certificates, not cash proceeds or a grant amount.",
+        "The Kazakhstan shipyard announcement describes an investment contract by Dearsan, not financing received by Dearsan.",
+        "Naval construction contracts and environmental approval for the Cayirova facility are not financing events."
+      ]
+    },
+    {
+      "id": "c6bf2fbc-f6c2-4dcc-aad5-ccb704861cbe",
+      "slug": "decision-sciences",
+      "name": "Decision Sciences",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 17,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Decision Sciences International Corp, formerly Decision Sciences Corp. SEC Form D accession chains support sixteen distinct exempt offerings from 2009 through 2021 after superseded amendments are collapsed, with the latest amendments reporting USD25,434,228 sold in the 2020 debt/warrant offering and USD13,454,382 sold in the 2021 equity offering. A separate USD198,147 Department of Energy project grant was awarded in 2023.",
+      "hold_note": "The SEC filings do not name investors. Commercial databases attribute several rounds to Nine Thirty Capital and Tower Three Partners, but those round-level roles were not imported because no reviewed primary source explicitly tied them to a specific offering.",
+      "sources_checked": [
+        "https://www.sec.gov/Archives/edgar/data/1347065/0000898432-24-000076.txt",
+        "https://www.sec.gov/Archives/edgar/data/1347065/0000898432-24-000046.txt",
+        "https://www.dealdata.net/company-profile/0001347065/",
+        "https://www.decisionsciences.com/about/",
+        "https://www.usaspending.gov/award/ASST_NON_DESC0024065_089",
+        "https://govtribe.com/award/federal-grant-award/project-grant-desc0024065"
+      ],
+      "excluded_claims": [
+        "Unsold balances in open Form D offerings are excluded as undrawn amounts.",
+        "Nine Thirty Capital and Tower Three Partners are not assigned to individual rounds because the SEC filings do not name them and reviewed commercial summaries do not constitute explicit transaction-party evidence.",
+        "Customer deployments and government procurement contracts are excluded from investment funding."
+      ]
+    }
+  ],
+  "audit_notes": [
+    "Only issuer-supported financing facts are normalized; parent, subsidiary, acquisition-consideration, contract and consortium amounts remain excluded unless the reviewed source establishes the target as recipient.",
+    "A completed bounded public-source review does not assert zero funding where no public round was found; undisclosed private history remains unknown.",
+    "Duplicate or closely related catalogue identities are kept distinct unless sources establish legal or economic continuity."
+  ],
+  "publication": {
+    "pending": true,
+    "catalogue_trigger_required": true,
+    "source_checkpoint_commit": null,
+    "catalogue_commit": null,
+    "workflow_run": null,
+    "live_verification": null
+  }
+}
