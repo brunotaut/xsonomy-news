@@ -575,3 +575,13 @@ export async function countArticles() {
   const m = cr.match(/\/(\d+)$/);
   return m ? Number(m[1]) : null;
 }
+
+// Private feedback inbox RPCs. Body and response errors deliberately never enter CI logs.
+export async function feedbackRpc(name,args={}) {
+ const allowed=new Set(['claim_landscape_feedback_notifications','finish_landscape_feedback_notification']);
+ if(!allowed.has(name))throw new Error('Unsupported feedback operation');
+ const {url,serviceKey}=sbConfig();if(!serviceKey)throw new Error('Feedback worker requires service access');
+ const res=await sbFetch(`${url}/rest/v1/rpc/${name}`,{method:'POST',headers:{apikey:serviceKey,Authorization:`Bearer ${serviceKey}`,'Content-Type':'application/json'},body:JSON.stringify(args),signal:AbortSignal.timeout(20000)},{retries:0});
+ if(!res.ok)throw new Error(`Feedback database operation failed (HTTP ${res.status})`);
+ return res.status===204?null:res.json();
+}

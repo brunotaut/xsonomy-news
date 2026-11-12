@@ -1,0 +1,31 @@
+name: Deliver landscape feedback
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/landscape-feedback.yml'
+      - 'scripts/feedback-notifications.mjs'
+permissions:
+  contents: read
+concurrency:
+  group: landscape-feedback-mail
+  cancel-in-progress: false
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Deliver queued suggestions to the project owner
+        run: node scripts/feedback-notifications.mjs
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_FROM: ${{ vars.DIGEST_FROM }}
