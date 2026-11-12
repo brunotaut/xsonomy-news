@@ -1,12 +1,15 @@
 {
   "report": "Forty-third autonomous funding reconciliation",
-  "checked_at": "2026-11-12",
+  "checked_at": "2026-11-12T19:59:36.072Z",
   "lease_id": "funding-20261112T1948Z-wider-24",
   "scope": {
     "identities": 25,
+    "new_wider_identities": 24,
     "from": "griselda",
     "through": "hard-cat",
-    "published_landscape": false
+    "published_followups": [
+      "uforce"
+    ]
   },
   "method": "Four disjoint read-only research groups; one writer. Earlier/latest public history, actual issuer, original currency, qualifiers, instrument and explicit participant roles reconciled.",
   "metrics": {
@@ -23,7 +26,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "local_postgresql_tests_passed": true,
     "new_investor_profiles": 53,
     "database_identities_inspected": 25,
@@ -37,7 +40,15 @@
     "db_approved_events": 2917,
     "db_approved_round_participations": 3734,
     "db_investor_profiles": 2263,
-    "db_source_reconciliation_companies": 762
+    "db_source_reconciliation_companies": 762,
+    "search_queries_logged": 90,
+    "source_ledger_entries": 89,
+    "new_profile_exact_name_duplicates": 0,
+    "active_minutes": 11.6,
+    "checked_identities_per_hour": 128.8,
+    "completed_reviews_per_hour": 36.1,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four read-only groups plus published-company followup, source QA, PostgreSQL tests, rollback, atomic import, idempotency, source audit and live publication verification. Concurrent durations not summed."
   },
   "per_company": [
     {
@@ -1155,8 +1166,32 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T19:59:36.072Z",
+    "catalogue_commit": "2da2471306b3b306f906e23d0c34108b27a628e1",
+    "source_commit": "1239b4fa8fde263e6c498bca42dd7b4f2bbcf448",
+    "workflow_run": {
+      "id": 43295358597,
+      "head": "2da2471306b3b306f906e23d0c34108b27a628e1",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43295358597"
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-third.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-forty-third.json",
+    "generated_at": "2026-11-12T19:57:44.145Z",
+    "investor_generated_at": "2026-11-12T19:57:45.815Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2254,
+    "portfolio_relationships": 294,
+    "published_portfolio_relationships": 265,
+    "current_manifest_event_rows": 16,
+    "current_manifest_live_matches": 1,
+    "published_followup": "uforce",
+    "directory_filter_note": "Nine pre-existing anonymous placeholders remain excluded: database2263 vs directory2254. Directory increased by53 named profiles. New UFORCE Series A, ten explicit participants and NWF GBP113m contribution verified live alongside unchanged March seed. GutSee and Hard Cat draft gates preserved. Other24 target identities remain outside the European landscape according to unchanged queue membership; generic published portfolio links refer to full-catalogue pages."
   },
   "audit_notes": [
     "Ground A year precision retained due conflicting August body/September webpage datelines; June closing month is not asserted as announcement day. Catalogue country preserved.",
