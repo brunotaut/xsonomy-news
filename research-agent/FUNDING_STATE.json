@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 934,
   "next_action": "Continue the next 24 queued identities from FlyGuys through Frenel Imaging.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-12T15:05:33.201Z",
+  "updated_at": "2026-11-12T15:56:20.047Z",
   "source_reconciliation_companies": 717,
   "approved_funding_events": 2798,
   "round_participations": 3470,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-12T15:50:26.664Z",
     "expires_at": "2026-11-12T17:50:38.865Z",
-    "status": "researching",
+    "status": "prepared_import",
     "planned_company_ids": [
       "3e3a6224-9ca7-4fbc-8230-ce68a0a00cb1",
       "fc7a2e76-337c-4764-96f3-2ff32373666d",
@@ -80,7 +80,9 @@
       "freewell",
       "fregat",
       "frenel-imaging"
-    ]
+    ],
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-ninth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-ninth.json"
   },
   "last_verified_publication": {
     "checked_at": "2026-11-12T15:05:33.201Z",
@@ -2780,7 +2782,13 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-ninth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-ninth.json",
+    "status": "rollback_rehearsed_not_committed",
+    "expected_new_events": 28,
+    "expected_new_links": 81
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-12T15:05:33.201Z",
