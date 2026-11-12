@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 283,
-  "fully_reviewed_companies": 930,
-  "next_action": "Continue the next 24 queued identities from Fieldmade through Flyfreely.",
+  "partial_companies": 303,
+  "fully_reviewed_companies": 934,
+  "next_action": "Publish and verify the thirty-eighth reconciliation, then continue FlyGuys through Frenel Imaging.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-12T15:01:18.481Z",
-  "source_reconciliation_companies": 705,
-  "approved_funding_events": 2749,
-  "round_participations": 3369,
-  "investor_profiles": 2046,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261112-thirty-seventh.json",
+  "updated_at": "2026-11-12T15:02:22.416Z",
+  "source_reconciliation_companies": 717,
+  "approved_funding_events": 2798,
+  "round_participations": 3470,
+  "investor_profiles": 2096,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261112-thirty-eighth.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-12T14:51:29.952Z",
     "expires_at": "2026-11-12T16:51:29.952Z",
-    "status": "researching",
+    "status": "database_imported_publication_pending",
     "planned_company_ids": [
       "23823437-30f2-4025-8648-8028140ae0a0",
       "d83029ae-3a19-4faa-8a29-f058b44a537e",
@@ -80,7 +80,9 @@
       "flock-safety",
       "flybyops",
       "flyfreely"
-    ]
+    ],
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-eighth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-eighth.json"
   },
   "last_verified_publication": {
     "checked_at": "2026-11-12T14:03:38.490Z",
@@ -2301,44 +2303,40 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 930,
-    "source_review_partial": 283,
-    "queued": 1351
+    "reviewed_public_sources": 934,
+    "source_review_partial": 303,
+    "queued": 1327
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "identities_checked": 24,
-    "newly_completed_bounded_reviews": 8,
-    "new_or_retained_partial": 16,
-    "new_approved_events": 33,
-    "new_round_participations": 70,
-    "new_source_rows": 45,
-    "new_generic_portfolio_relationships": 8,
+    "newly_completed_bounded_reviews": 4,
+    "new_or_retained_partial": 20,
+    "new_approved_events": 49,
+    "new_round_participations": 101,
+    "new_source_rows": 54,
+    "new_generic_portfolio_relationships": 7,
     "new_companies_with_events": 12,
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": true,
-    "new_events_written": 33,
-    "new_investor_profiles": 38,
+    "current_manifest_publication_verified": false,
+    "new_events_written": 49,
+    "new_investor_profiles": 50,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
-    "manifest_event_matches": 33,
-    "manifest_link_matches": 70,
-    "manifest_source_matches": 45,
-    "manifest_relationship_matches": 8,
+    "manifest_event_matches": 49,
+    "manifest_link_matches": 101,
+    "manifest_source_matches": 54,
+    "manifest_relationship_matches": 7,
     "missing_link_source_urls": 0,
-    "db_approved_events": 2749,
-    "db_total_events": 2762,
-    "db_approved_round_participations": 3369,
-    "db_investor_profiles": 2046,
-    "db_source_reconciliation_companies": 705,
-    "active_minutes": 10.5,
-    "concurrency_speedup_claimed": false,
-    "timing_scope": "Elapsed writer lease through four disjoint source reviews, rollback rehearsal, atomic import, idempotency and live publication. Concurrent lane durations are not summed.",
-    "new_profile_exact_name_duplicates": 0,
-    "checked_identities_per_active_hour": 137.1,
-    "completed_reviews_per_active_hour": 45.7
+    "db_approved_events": 2798,
+    "db_total_events": 2811,
+    "db_approved_round_participations": 3470,
+    "db_investor_profiles": 2096,
+    "db_source_reconciliation_companies": 717,
+    "active_minutes": 10.9,
+    "concurrency_speedup_claimed": false
   },
   "latest_followup_metrics": {
     "parallel_read_only_groups": 4,
@@ -2376,7 +2374,7 @@
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 1213,
+  "source_reviewed_or_partial_companies": 1237,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -2782,65 +2780,13 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": {
-    "status": "prepared_rollback_passed",
+  "pending_import": null,
+  "pending_publication": {
+    "status": "database_imported",
     "manifest": "research-agent/imports/funding-landscape-20261112-thirty-eighth.json",
     "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-eighth.json",
-    "lease_id": "funding-20261112T1450Z-wider-24"
-  },
-  "pending_publication": {
-    "status": "verified",
-    "checked_at": "2026-11-12T14:03:38.490Z",
-    "catalogue_commit": "6478092df4e49bde514bb07d178b0b673a0db03b",
-    "source_commit": "da582cc8c7c9130986a05f4b2b51d3af27b00a2f",
-    "workflow_run": {
-      "id": 43232929670,
-      "head": "6478092df4e49bde514bb07d178b0b673a0db03b",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43232929670"
-    },
-    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-seventh.json",
-    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-seventh.json",
-    "generated_at": "2026-11-12T14:02:13.063Z",
-    "investor_generated_at": "2026-11-12T14:02:15.509Z",
-    "events": 1589,
-    "links": 1380,
-    "profiles": 2037,
-    "companies": 567,
-    "portfolio_relationships": 247,
-    "published_portfolio_relationships": 218,
-    "current_manifest_event_rows": 33,
-    "current_manifest_live_matches": 0,
-    "outside_landscape": [
-      "evica",
-      "eviden",
-      "evolofoil",
-      "evolution-metals-and-technologies",
-      "evolve-dynamics",
-      "evolved-aerospace",
-      "ex-mil-recruitment",
-      "exail-robotics",
-      "exedy-globalparts",
-      "exotrail",
-      "extensee",
-      "eyeonix",
-      "facebook-meta-connectivity-lab",
-      "factorial-energy",
-      "falcata",
-      "falcon-propeller",
-      "falconworks",
-      "farage-precision",
-      "fat-shark",
-      "federal-ammunition",
-      "fedex",
-      "fernride",
-      "ferra-engineering",
-      "ffg"
-    ],
-    "directory_filter_note": "Current approved catalogue launch filter publishes named profiles only. Database has 2046 profiles; 9 pre-existing anonymous placeholders remain excluded. All 38 new named profiles are represented; spot checks verified YA II PN, both Foresight VCTs, 10x Founders and Mercedes-Benz.",
-    "verified_at": "2026-11-12T14:03:38.490Z",
-    "catalogue_trigger_required": false
+    "source_commit": null,
+    "catalogue_trigger_required": true
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -3753,124 +3699,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "23823437-30f2-4025-8648-8028140ae0a0",
-      "slug": "fieldmade",
-      "name": "Fieldmade"
+      "id": "3e3a6224-9ca7-4fbc-8230-ce68a0a00cb1",
+      "slug": "flyguys",
+      "name": "FlyGuys"
     },
     {
-      "id": "d83029ae-3a19-4faa-8a29-f058b44a537e",
-      "slug": "figure-ai",
-      "name": "Figure AI"
+      "id": "fc7a2e76-337c-4764-96f3-2ff32373666d",
+      "slug": "flying-lion",
+      "name": "Flying Lion"
     },
     {
-      "id": "e9843ad7-79bd-42d2-9f2d-f6d21af66402",
-      "slug": "fikaxo",
-      "name": "Fikaxo"
+      "id": "49359c41-d2a3-4cca-ada5-81c6b718db3c",
+      "slug": "flytbase",
+      "name": "FlytBase"
     },
     {
-      "id": "c2d83d05-b8bb-4206-b917-1a428ae88cfc",
-      "slug": "fincantieri",
-      "name": "Fincantieri"
+      "id": "aa7b2ec0-3ecd-4acb-a4ac-e75f1501e09b",
+      "slug": "flytrex",
+      "name": "Flytrex"
     },
     {
-      "id": "5d0afdf8-dd14-4282-bc16-3e532ec5d0be",
-      "slug": "fire-foresight",
-      "name": "Fire Foresight"
+      "id": "c5623f17-3b43-41e4-811a-a1911973af1c",
+      "slug": "flywoo",
+      "name": "Flywoo"
     },
     {
-      "id": "6bb05f31-e301-49b4-b4d3-cfa19cf09572",
-      "slug": "firecrest-aerospace",
-      "name": "Firecrest Aerospace"
+      "id": "8fc7f00c-6982-4a46-9c9e-b031994b5db7",
+      "slug": "fn-america",
+      "name": "FN America"
     },
     {
-      "id": "b57e61c7-9ed0-4e86-9db2-b831ba97bf8b",
-      "slug": "firefly-aerospace",
-      "name": "Firefly Aerospace"
+      "id": "513d82ec-2b2a-4f23-9860-8eb978ac764d",
+      "slug": "fnss",
+      "name": "FNSS"
     },
     {
-      "id": "0cb5a44b-9d57-433c-8afc-aa1f321d35ab",
-      "slug": "firestorm-labs",
-      "name": "Firestorm Labs"
+      "id": "0ee4d4d8-03cd-4935-9e9e-24e4408dbad3",
+      "slug": "fog-defence",
+      "name": "Fog Defence"
     },
     {
-      "id": "5c9db454-d2c4-479b-b333-6a17ee8da1e9",
-      "slug": "fireswarm-solutions",
-      "name": "FireSwarm Solutions"
+      "id": "a930703e-1b2f-43a3-bf09-deabedd1319b",
+      "slug": "foosung",
+      "name": "Foosung"
     },
     {
-      "id": "8ae0bda9-9410-458d-9027-30600dd867d4",
-      "slug": "firewerx",
-      "name": "FireWERX"
+      "id": "8330792a-6414-4914-ab6a-ea1c589e3c78",
+      "slug": "foothills-aerial-services",
+      "name": "Foothills Aerial Services"
     },
     {
-      "id": "b2270aa0-4dd6-4dec-9143-042c2e6fb358",
-      "slug": "first-breach",
-      "name": "First Breach"
+      "id": "e846fd58-22d4-4982-a890-555ae9a8b43e",
+      "slug": "force-development-services",
+      "name": "Force Development Services"
     },
     {
-      "id": "6c8d2661-35bf-4aa6-b934-1c7122c37a2b",
-      "slug": "first-rf",
-      "name": "FIRST RF"
+      "id": "a9ea96e2-aef1-4a19-ac8f-a4cd6df4fbad",
+      "slug": "fortaegis",
+      "name": "FortAegis"
     },
     {
-      "id": "229bcd66-9fa3-448f-b9c2-802bcc250f27",
-      "slug": "flanq",
-      "name": "FLANQ"
+      "id": "eabd62a2-0912-49ab-ade5-f386feb12a53",
+      "slug": "fortem-technologies",
+      "name": "Fortem Technologies"
     },
     {
-      "id": "8abdc482-b7c1-4d00-91fc-4eb40dbbe149",
-      "slug": "fleet-adversary-support-and-training",
-      "name": "Fleet Adversary Support and Training"
+      "id": "14d1fe7d-847c-49ba-911f-468f1e17e26a",
+      "slug": "forterra",
+      "name": "Forterra"
     },
     {
-      "id": "59fbe60e-61a4-4a85-a2a8-bdfb3cc2ae33",
-      "slug": "fleetwerx",
-      "name": "Fleetwerx"
+      "id": "a78b2f9d-9994-4f46-8bea-c83fed6df949",
+      "slug": "foxatm",
+      "name": "FoxATM"
     },
     {
-      "id": "ef0c4e82-07df-4786-8025-8964d2f435bb",
-      "slug": "flex-force-enterprises",
-      "name": "Flex Force Enterprises"
+      "id": "e0abc99e-cb10-4a65-9b5c-32f2b74dab11",
+      "slug": "foxtech",
+      "name": "Foxtech"
     },
     {
-      "id": "6fb84323-a528-47ea-8aa5-86a68217ebe1",
-      "slug": "flightloop",
-      "name": "Flightloop"
+      "id": "2e30c7fd-a530-422d-9bf8-d1d941bf846a",
+      "slug": "fpf-defense",
+      "name": "FPF Defense"
     },
     {
-      "id": "71bcc1e7-54de-4dbf-bd06-8f8e7ebf9319",
-      "slug": "flightready",
-      "name": "FlightReady"
+      "id": "1a2eb67f-aba5-4a5a-b0b7-652921776dac",
+      "slug": "fpv-uk",
+      "name": "FPV UK"
     },
     {
-      "id": "2ce92993-6261-413d-b501-c75601d1f8e9",
-      "slug": "flightwave-aerospace",
-      "name": "FlightWave Aerospace"
+      "id": "0cfbc92c-d742-46a2-86a0-e63492ea877b",
+      "slug": "fracs",
+      "name": "FRACS"
     },
     {
-      "id": "92f2185f-9a20-4885-9bbc-bd369f540b88",
-      "slug": "flirtey",
-      "name": "Flirtey"
+      "id": "ef207ed6-a3c5-4722-9296-a974e834d9f4",
+      "slug": "fractl",
+      "name": "Fractl"
     },
     {
-      "id": "cdbebc25-c3a5-4207-a99d-6d38c60e0ba6",
-      "slug": "flock",
-      "name": "Flock"
+      "id": "037553c1-2add-488c-8da6-efccf10f8541",
+      "slug": "freefly-systems",
+      "name": "Freefly Systems"
     },
     {
-      "id": "2880d0b9-7664-4595-b8b3-e25daeef9e9b",
-      "slug": "flock-safety",
-      "name": "Flock Safety"
+      "id": "0dfa0e00-76fc-4088-9a43-cf6158f7fca1",
+      "slug": "freewell",
+      "name": "Freewell"
     },
     {
-      "id": "cca562a0-e1dd-47fd-8db3-0934e454925f",
-      "slug": "flybyops",
-      "name": "FlybyOps"
+      "id": "2f071730-c680-4185-b26e-cc10f72b2900",
+      "slug": "fregat",
+      "name": "Fregat"
     },
     {
-      "id": "f50bb0d9-2973-4179-9fee-007ad2bb3e58",
-      "slug": "flyfreely",
-      "name": "Flyfreely"
+      "id": "53bb7aae-f895-4833-a1e0-9cccf859c31c",
+      "slug": "frenel-imaging",
+      "name": "Frenel Imaging"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -4354,7 +4300,7 @@
       "completed_reviews_per_active_hour": 51.4
     }
   },
-  "total_funding_events": 2762,
+  "total_funding_events": 2811,
   "latest_thirty_sixth_reconciliation": {
     "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-sixth.json",
     "manifest": "research-agent/imports/funding-landscape-20261112-thirty-sixth.json",
@@ -4431,6 +4377,41 @@
       "new_profile_exact_name_duplicates": 0,
       "checked_identities_per_active_hour": 137.1,
       "completed_reviews_per_active_hour": 45.7
+    }
+  },
+  "latest_thirty_eighth_reconciliation": {
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-eighth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-eighth.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 4,
+      "new_or_retained_partial": 20,
+      "new_approved_events": 49,
+      "new_round_participations": 101,
+      "new_source_rows": 54,
+      "new_generic_portfolio_relationships": 7,
+      "new_companies_with_events": 12,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "current_manifest_publication_verified": false,
+      "new_events_written": 49,
+      "new_investor_profiles": 50,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "manifest_event_matches": 49,
+      "manifest_link_matches": 101,
+      "manifest_source_matches": 54,
+      "manifest_relationship_matches": 7,
+      "missing_link_source_urls": 0,
+      "db_approved_events": 2798,
+      "db_total_events": 2811,
+      "db_approved_round_participations": 3470,
+      "db_investor_profiles": 2096,
+      "db_source_reconciliation_companies": 717,
+      "active_minutes": 10.9,
+      "concurrency_speedup_claimed": false
     }
   }
 }
