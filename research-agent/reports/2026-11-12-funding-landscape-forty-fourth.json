@@ -1,6 +1,6 @@
 {
   "report": "Forty-fourth autonomous funding reconciliation",
-  "checked_at": "2026-11-12",
+  "checked_at": "2026-11-12T20:14:58.456Z",
   "lease_id": "funding-20261112T2002Z-wider-24",
   "scope": {
     "identities": 24,
@@ -22,7 +22,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "local_postgresql_tests_passed": true,
     "new_investor_profiles": 55,
     "database_identities_inspected": 24,
@@ -40,7 +40,13 @@
     "db_approved_events": 2928,
     "db_approved_round_participations": 3817,
     "db_investor_profiles": 2318,
-    "db_source_reconciliation_companies": 768
+    "db_source_reconciliation_companies": 768,
+    "new_profile_exact_name_duplicates": 0,
+    "active_minutes": 12.4,
+    "checked_identities_per_hour": 116.2,
+    "completed_reviews_per_hour": 58.1,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, source QA, PostgreSQL tests, production rollback, atomic import, idempotency, source audit and live verification. Concurrent durations not summed."
   },
   "per_company": [
     {
@@ -213,7 +219,7 @@
       "status": "source_review_partial",
       "checked_at": "2026-11-12",
       "evidence_note": "Opened issuer originals establish three distinct financing announcements, earlier seed and latest SeriesA, and named participants. Newsroom reviewed through November2026.",
-      "hold_note": "SEC187,485,471 and seed12,233,286 candidates remain unverified/overlap-held; no added event. Exact Hanwha group vehicle unresolved, not attributed. Instruments, individual allocations and complete private history unknown.",
+      "hold_note": "SEC187,485,471 and seed12,233,286 candidates remain unverified/overlap-held; no added event. Exact Hanwha group vehicle unresolved, not attributed. Instruments, individual allocations and complete private history unknown. Issuer aggregate USD6m SBIR awards need individual award dates, beneficiary and procurement-versus-grant reconciliation; not imported as a single grant.",
       "sources_checked": [
         {
           "url": "https://www.prnewswire.com/news-releases/havocai-closes-11m-seed-round-to-revolutionize-autonomous-uncrewed-surface-vessel-operations-302254210.html",
@@ -1191,8 +1197,57 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T20:14:58.456Z",
+    "catalogue_commit": "62693222bf0728f02f5b961c937fe8d3468dbded",
+    "source_commit": "4f75d56a9e63bb49658fbc07bb6555a106107092",
+    "workflow_run": {
+      "id": 43297903841,
+      "head": "62693222bf0728f02f5b961c937fe8d3468dbded",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43297903841"
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-fourth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-forty-fourth.json",
+    "generated_at": "2026-11-12T20:12:55.380Z",
+    "investor_generated_at": "2026-11-12T20:12:57.664Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2309,
+    "portfolio_relationships": 307,
+    "published_portfolio_relationships": 278,
+    "current_manifest_event_rows": 11,
+    "current_manifest_live_matches": 0,
+    "outside_landscape": [
+      "harland-and-wolff",
+      "harris-aerial",
+      "harvard-university",
+      "hatsan",
+      "havocai",
+      "hawkei",
+      "hd-hyundai",
+      "hdt",
+      "hdt-global",
+      "hdt-robotics",
+      "hdusa",
+      "headcount-inventory",
+      "heaviside-industries",
+      "heavy-vehicle-factory",
+      "heliplanners",
+      "helix-defense",
+      "hellbender",
+      "hemeria",
+      "hensoldt-optronics",
+      "hermeus",
+      "heven-aerotech",
+      "hexai",
+      "hglrc",
+      "hid-global"
+    ],
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: database2318 versus live2309. Directory increased by55 named profiles. Spot checks FirstCitizensBank, Interlagos, Cantos, IonQ, FCDE, NavantiaUK, TheVeteranFund and CCMCapitalMarkets passed. All24 target slugs explicitly absent from the European landscape, preserving membership gates. Thirteen generic relationships are published against full-catalogue company pages, independently of European map membership."
   },
   "additional_source_candidates": [
     {
