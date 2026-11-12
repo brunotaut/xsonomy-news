@@ -20,15 +20,27 @@
     "new_generic_portfolio_relationships": 13,
     "new_companies_with_events": 6,
     "rollback_rehearsal_passed": true,
-    "atomic_import_passed": false,
-    "post_import_idempotency_rehearsal_passed": false,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
     "current_manifest_publication_verified": false,
     "local_postgresql_tests_passed": true,
     "new_investor_profiles": 55,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
     "search_queries_logged": 85,
-    "source_ledger_entries": 97
+    "source_ledger_entries": 97,
+    "new_events_written": 11,
+    "manifest_event_matches": 11,
+    "manifest_link_matches": 83,
+    "manifest_source_matches": 13,
+    "manifest_relationship_matches": 13,
+    "missing_link_source_urls": 0,
+    "mismatched_manifest_facts": 0,
+    "db_total_events": 2941,
+    "db_approved_events": 2928,
+    "db_approved_round_participations": 3817,
+    "db_investor_profiles": 2318,
+    "db_source_reconciliation_companies": 768
   },
   "per_company": [
     {
@@ -1198,5 +1210,19 @@
     "HDT and HDUSA aliases reconciled without duplicating canonical financing. Product Hawkei and unrelated Hatsan/Heqi/Helix namesakes excluded.",
     "Felicis current brand mapped to existing Felicis Ventures based on opened original felicis.com/about. Existing Outlander/Alumni variants preserved; no unrelated merge. BNP Paribas Développement retained as distinct named subsidiary, not generic bank.",
     "Unmatched Agile Robots external discovery retained for final identity/additions audit; no matching DB company name, no imported claim or checked cohort identity."
-  ]
+  ],
+  "database_audit": {
+    "events": 11,
+    "sources": 13,
+    "links": 83,
+    "missing_link_source_urls": 0,
+    "relationships": 13,
+    "mismatched_facts": 0,
+    "new_profiles": 55
+  },
+  "queue_dispositions": {
+    "reviewed_public_sources": 989,
+    "source_review_partial": 392,
+    "queued": 1183
+  }
 }
