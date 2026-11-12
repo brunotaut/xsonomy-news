@@ -22,7 +22,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "new_events_written": 49,
     "new_investor_profiles": 50,
     "database_identities_inspected": 24,
@@ -37,8 +37,10 @@
     "db_approved_round_participations": 3470,
     "db_investor_profiles": 2096,
     "db_source_reconciliation_companies": 717,
-    "active_minutes": 10.9,
-    "concurrency_speedup_claimed": false
+    "active_minutes": 14.1,
+    "concurrency_speedup_claimed": false,
+    "checked_identities_per_hour": 102.5,
+    "completed_reviews_per_hour": 17.1
   },
   "per_company": [
     {
@@ -1414,8 +1416,57 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T15:05:33.201Z",
+    "catalogue_commit": "f6513c1077719b7bf60c1ca1bcf53378f8b35ad7",
+    "source_commit": "34a2275bf21b177943b7693415d62b6642aad111",
+    "workflow_run": {
+      "id": 43243520314,
+      "head": "f6513c1077719b7bf60c1ca1bcf53378f8b35ad7",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43243520314"
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-eighth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-eighth.json",
+    "generated_at": "2026-11-12T15:03:33.206Z",
+    "investor_generated_at": "2026-11-12T15:03:35.099Z",
+    "events": 1589,
+    "links": 1380,
+    "profiles": 2087,
+    "companies": 567,
+    "portfolio_relationships": 254,
+    "published_portfolio_relationships": 225,
+    "current_manifest_event_rows": 49,
+    "current_manifest_live_matches": 0,
+    "outside_landscape": [
+      "fieldmade",
+      "figure-ai",
+      "fikaxo",
+      "fincantieri",
+      "fire-foresight",
+      "firecrest-aerospace",
+      "firefly-aerospace",
+      "firestorm-labs",
+      "fireswarm-solutions",
+      "firewerx",
+      "first-breach",
+      "first-rf",
+      "flanq",
+      "fleet-adversary-support-and-training",
+      "fleetwerx",
+      "flex-force-enterprises",
+      "flightloop",
+      "flightready",
+      "flightwave-aerospace",
+      "flirtey",
+      "flock",
+      "flock-safety",
+      "flybyops",
+      "flyfreely"
+    ],
+    "directory_filter_note": "Current approved catalogue launch filter publishes named profiles only. Database has 2096 profiles; 9 pre-existing anonymous placeholders remain excluded. Directory increased by all 50 new named profiles. The 24 current identities are outside published landscape membership."
   },
   "database": {
     "total_events": 2811,
@@ -1423,5 +1474,11 @@
     "round_participations": 3470,
     "investor_profiles": 2096,
     "source_reconciliation_companies": 717
-  }
+  },
+  "audit_notes": [
+    "All 49 events, 101 sourced participant links, 54 sources and 7 generic relationships matched after atomic import; production rollback and repeat idempotency rollback rehearsals passed.",
+    "Source dates, original currency, announced versus signed versus conditional amounts and issuer continuity are retained. Procurement and research contracts, aggregate programme budgets, capex, secondary proceeds and parent/subsidiary financing were excluded where unsupported.",
+    "The directory excludes nine pre-existing anonymous placeholder profiles under its existing named-profile publication filter; database counts therefore exceed live profiles by nine.",
+    "No geography, classification, publication gates, legacy research STATE.json, frozen snapshots or repository schedules were changed."
+  ]
 }

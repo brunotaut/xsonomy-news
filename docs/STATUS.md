@@ -1743,3 +1743,12 @@ Reviewed21 distinct identities (17 published followups and4 wider cohort).18 bou
 
 ## Autonomous funding reconciliation 37 — 2026-11-12
 24 wider-cohort identities researched: 8 bounded reviews complete, 16 partial. Imported 33 events, 70 participant links, 45 event sources and 8 ownership relationships following production rollback, atomic import, source audit and idempotency verification. DB totals: 2,762 funding rows (2,749 approved), 3,369 participant links, 2,046 profiles, 705 covered identities. Catalogue 6478092df4e49bde514bb07d178b0b673a0db03b, deployment 43232929670, live JSON verified at 2026-11-12T14:03:38.490Z; 2,037 named directory profiles (9 legacy anonymous placeholders filtered by launch cleanup), 567 landscape companies and 1,589 displayed events. Queue: 930 reviewed, 283 partial, 1,351 queued. Next Fieldmade through Flyfreely.
+
+
+### Funding reconciliation 38 — 2026-11-12T15:05:33.201Z
+
+Checked 24 wider-cohort identities under one short writer lease and four read-only research groups. Queue: 934 reviewed, 303 partial, 1327 queued. Imported 49 approved financing events, 101 sourced participant links, 54 source rows, 7 generic relationships and 50 named investor profiles across 12 newly covered companies. Production rollback rehearsal, atomic import, post-import idempotency and source matching passed. Database: 2811 total / 2798 approved events, 3470 participant links, 2096 investor profiles, 717 companies with supported event rows.
+
+Publication verified: catalogue commit f6513c1077719b7bf60c1ca1bcf53378f8b35ad7; [successful build](https://github.com/brunotaut/xSonomy/actions/runs/43243520314); live landscape generated 2026-11-12T15:03:33.206Z, investor directory 2026-11-12T15:03:35.099Z. Published membership remains 567 with 1589 displayed events / 1380 participant links; directory 2087 named profiles / 254 portfolio relationships (225 published). Nine pre-existing anonymous profiles remain excluded by the existing directory filter. Current 24 identities remain outside the published map. Actual elapsed 14.1 minutes; 102.5 identities/hour, 17.1 bounded completions/hour; no concurrency speedup inferred.
+
+Audit: [report](../research-agent/reports/2026-11-12-funding-landscape-thirty-eighth.json), [manifest](../research-agent/imports/funding-landscape-20261112-thirty-eighth.json). Full programme remains in progress. Lease released; no pending import/publication. Next: FlyGuys through Frenel Imaging (24 queued identities). No schedule, legacy snapshot, classification or geography changes.
