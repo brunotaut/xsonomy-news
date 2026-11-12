@@ -19,7 +19,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "new_approved_events": 34,
     "new_round_participations": 31,
     "new_investor_profiles": 18,
@@ -582,9 +582,28 @@
     "Acquisition consideration, commercial contracts, state ownership, secondary sale proceeds and consortium totals were not imported as company funding."
   ],
   "publication": {
-    "pending": true,
-    "catalogue_trigger_required": true,
-    "scope_note": "All fourteen event-bearing identities are outside the published 567-company landscape; map event/link totals should remain unchanged while 18 new investor profiles and three supported portfolio relationships publish."
+    "pending": false,
+    "catalogue_trigger_required": false,
+    "verified_at": "2026-11-12T03:59:34.560Z",
+    "catalogue_commit": "0b8d5eee206970343891ecb17a976158e84d346f",
+    "workflow_run": {
+      "id": 43151307519,
+      "head": "0b8d5eee206970343891ecb17a976158e84d346f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43151307519"
+    },
+    "live_landscape": {
+      "generated_at": "2026-11-12T03:55:37.009Z",
+      "investor_generated_at": "2026-11-12T03:55:38.611Z",
+      "companies": 567,
+      "funding_event_rows": 1589,
+      "investor_links": 1380,
+      "investor_profiles": 1609,
+      "portfolio_relationships": 165,
+      "current_manifest_live_event_matches": 0,
+      "scope_note": "All fourteen event-bearing identities are outside the published 567-company landscape; map event/link totals remain unchanged while 18 new investor profiles and three supported portfolio relationships are published."
+    }
   },
   "database_before": {
     "approved_events": 2263,
