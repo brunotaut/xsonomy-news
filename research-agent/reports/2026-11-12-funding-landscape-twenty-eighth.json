@@ -1,0 +1,735 @@
+{
+  "report": "Twenty-eighth autonomous funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": "funding-20261112T044920769Z-wider-18",
+  "scope": {
+    "identities": 24,
+    "from": "componentas",
+    "through": "cummings-aerospace",
+    "published_landscape": false
+  },
+  "method": "Four disjoint read-only research lanes; one writer consolidation; exact issuer, original currency, amount qualifier, instrument, closing and explicit roles checked. Contracts, acquisition consideration, parent/subsidiary financing, undrawn facilities and consortium totals excluded.",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 12,
+    "new_or_retained_partial": 12,
+    "new_events_written": 26,
+    "new_generic_portfolio_relationships": 16,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "current_manifest_publication_verified": false,
+    "newly_completed_wider_reviews": 12,
+    "new_approved_events": 26,
+    "new_round_participations": 32,
+    "new_investor_profiles": 26,
+    "new_source_rows": 34,
+    "new_companies_with_events": 10,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "manifest_event_matches": 26,
+    "db_approved_events": 2323,
+    "db_approved_round_participations": 2633,
+    "db_investor_profiles": 1635,
+    "db_source_reconciliation_companies": 591,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded."
+  },
+  "per_company": [
+    {
+      "id": "555ecf36-e7da-4b47-9891-9693a965319f",
+      "slug": "componentas",
+      "name": "Componentas",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact Czech identity is an operating component distributor within S-Tech Group. Company and group sources establish the issuer and group relationship, but the reviewed public record did not disclose an issuer-level equity, debt, convertible or grant financing round.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://componentas.eu/",
+        "https://s-techventures.com/en/s-tech-group-brings-the-innovation-pavilion-and-its-companies-to-future-forces-2026/",
+        "https://www.linkedin.com/company/componentas/"
+      ],
+      "excluded_claims": [
+        "S-Tech Group's description of Componentas as a group company is not treated as a disclosed cash investment or funding round.",
+        "Customer sales, distribution agreements and Future Forces participation are not financing events."
+      ]
+    },
+    {
+      "id": "7071c027-8ebd-4b80-bd78-187b99643c14",
+      "slug": "composite-energy-technologies",
+      "name": "Composite Energy Technologies",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Composite Energy Technologies, LLC, also publicly identified as Composite Energy Technologies Inc. dba Goetz Composites in an earlier Rhode Island incentive report. Public sources support a 2020 Rhode Island SBIR matching grant, selection into NATO DIANA's 2026 accelerator with EUR100,000 of contractual non-dilutive funding, and selection for the 2026 Mission Track with EUR300,000 of non-dilutive funding.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.compositeenergytechnologies.com/blog/cet-selected-for-nato-diana-2026-challenge-program",
+        "https://www.diana.nato.int/about-diana/2026-cohort-of-companies.html",
+        "https://www.diana.nato.int/accelerator-programme.html",
+        "https://www.diana.nato.int/connect/nato-diana-announces-full-cohort-of-15-innovators-to-move-forward-to-mission-track.html",
+        "https://www.diana.nato.int/faq/how-will-funding-work.html",
+        "https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/rhodeisland-redesign/Q2_Incentive_Report_2023_8_2_23_final_clean_2fa18963-70d9-4f50-93ba-efb6115ee9c0.pdf"
+      ],
+      "excluded_claims": [
+        "U.S. Navy and Office of Naval Research SBIR awards structured as procurement contracts are excluded from investment funding.",
+        "A 2024 multi-million-dollar ONR award is excluded because public award records identify a government contract rather than an issuer financing round.",
+        "NATO DIANA programme funding is classified as non-dilutive grant-style financing, not equity investment."
+      ]
+    },
+    {
+      "id": "43081a28-8768-49f4-b942-5bf25f40ffa3",
+      "slug": "constellis",
+      "name": "Constellis",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The exact operating group, Constellis Holdings, LLC, completed a 2020 lender-led debt-for-debt and debt-for-equity recapitalization that included up to US$50 million of new capital, then completed another recapitalization with existing investors in September 2024 that reduced debt and supplied additional new capital. The 2024 amount, instrument mix and investor identities were not disclosed.",
+      "hold_note": "Constellis has a material historical debt stack, but the reviewed public sources do not normalize the original issuances or name all lenders that became owners. The 2024 recapitalization amount and investor-level roles remain undisclosed.",
+      "sources_checked": [
+        "https://constellis.com/constellis-holdings-llc-completes-a-recapitalization-transaction-with-existing-investors/",
+        "https://www.prnewswire.com/news-releases/constellis-holdings-llc-completes-a-recapitalization-transaction-with-existing-investors-302250372.html",
+        "https://www.sfnet.com/home/industry-data-publications/the-secured-lender/tsl-express-daily-articles-news/tsl-express-daily-articles-news/2020/03/30/constellis-announces-successful-completion",
+        "https://constellis.com/constellis-announces-credit-agreement-amendments-and-maturity-extensions/",
+        "https://www.prnewswire.com/news-releases/constellis-announces-closing-of-management-led-buyout-300362097.html"
+      ],
+      "excluded_claims": [
+        "The approximately US$1.1 billion debt reduction in the 2020 recapitalization is not recorded as new proceeds.",
+        "The 2016 management-led buyout is acquisition consideration and an ownership transfer, not issuer financing.",
+        "The 2022 credit-agreement amendments and maturity extensions are excluded because the announcement does not establish new money or a new draw.",
+        "Federal customer contracts are operating revenue rather than investment financing."
+      ]
+    },
+    {
+      "id": "4a93ecaf-aaee-40cd-ab26-bac6d6cd6c17",
+      "slug": "continuous-composites",
+      "name": "Continuous Composites",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 5,
+      "relationship_count": 0,
+      "evidence_note": "Exact-issuer SEC filings verify US$1,642,026 of equity sold in a 2019 offering and US$1,427,702 sold in a December 2020 equity offering. Company and strategic-party announcements also support undisclosed investments by Arkema and NOVA by Saint-Gobain, followed by a closed US$17 million Series A led by B. Riley Venture Capital in July 2021.",
+      "hold_note": "Earlier 2016 and 2018 Form D records appear under CC3D LLC. The reviewed sources did not provide enough legal-continuity evidence to attribute those predecessor offerings to Continuous Composites Inc., so earlier history remains partial.",
+      "sources_checked": [
+        "https://www.sec.gov/Archives/edgar/data/1798375/000179837519000001/primary_doc.xml",
+        "https://www.sec.gov/Archives/edgar/data/1798375/000179837520000001/xslFormDX01/primary_doc.xml",
+        "https://www.arkema.com/global/en/media/newslist/news/global/corporate/2020/20200727-arkema-strengthen/",
+        "https://www.textileworld.com/textile-world/2021/03/continuous-composites-announces-strategic-investment-from-saint-gobains-venture-arm-nova/",
+        "https://continuouscomposites.com/17-million-in-series-a-funding-raised/"
+      ],
+      "excluded_claims": [
+        "CC3D LLC's 2016 and 2018 Form D offerings are not assigned to Continuous Composites Inc. without verified issuer continuity.",
+        "The US$3 million ceiling in the 2020 Form D is an offering target; only US$1,427,702 reported sold is recorded as closed financing.",
+        "Arkema's and Saint-Gobain's strategic investments are not assigned fabricated amounts or instruments."
+      ]
+    },
+    {
+      "id": "aa3c2da2-be78-4d2c-843a-4016ed966c87",
+      "slug": "controp",
+      "name": "CONTROP",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "CONTROP is the trade-name identity of the same Israeli operating company represented separately in the cohort by CONTROP Precision Technologies Ltd. No separate issuer-level financing was found for the short-name identity, so financing and ownership are not duplicated across both records.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.controp.com/about/",
+        "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/controp_financial_report_2026-q1/he/companies_data_and_reports_controp_financial_report_2026-q1.pdf",
+        "https://en.globes.co.il/en/article-1000667427"
+      ],
+      "excluded_claims": [
+        "The 2011 Rafael and Aeronautics acquisition is an ownership transaction and acquisition consideration, not funding received by CONTROP.",
+        "Ordinary bank balances and liabilities in the legal issuer's financial statements are not duplicated onto this trade-name identity.",
+        "Customer and defence procurement contracts are operating revenue, not investment rounds."
+      ]
+    },
+    {
+      "id": "b7c075ce-3c0d-439f-8aab-6d263b9eaa37",
+      "slug": "controp-precision-technologies",
+      "name": "CONTROP Precision Technologies",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 2,
+      "evidence_note": "The exact legal issuer is CONTROP Precision Technologies Ltd. Its March 2026 government-filed financial report identifies 50/50 direct ownership by Aeronautics Ltd. and Rafael Advanced Defense Systems Ltd. The reviewed public record did not disclose a qualifying issuer-level equity, debt, convertible or grant financing round; balance-sheet bank liabilities lack instrument-level origination and draw evidence.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/controp_financial_report_2026-q1/he/companies_data_and_reports_controp_financial_report_2026-q1.pdf",
+        "https://www.controp.com/about/",
+        "https://en.globes.co.il/en/article-1000667427"
+      ],
+      "excluded_claims": [
+        "The NIS300 million to NIS350 million valuation reported for the 2011 Rafael and Aeronautics acquisition is not company funding or proceeds to CONTROP.",
+        "Bank liabilities appearing on the balance sheet are not normalized as financing rounds without a disclosed origination, facility amount, lender and draw or close event.",
+        "Rafael's later acquisition of Aeronautics is parent-level ownership activity and not CONTROP financing."
+      ]
+    },
+    {
+      "id": "6d49ed80-30aa-41cc-aa6c-1c820c40d199",
+      "slug": "copenhagen-global",
+      "name": "Copenhagen Global",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Copenhagen Global A/S (CVR 32557066) is an operating subsidiary of Copenhagen Group A/S. Company history, current business pages, registry/account material and broad dated financing searches did not expose a source-supported external equity, debt or issuer-specific grant event. Public-contract values and commercial fleet agreements are revenue opportunities, not financing.",
+      "hold_note": "No public financing round was found in this bounded review; undisclosed private shareholder or bank financing may exist and must not be represented as zero funding.",
+      "sources_checked": [
+        "https://cphgroup.com/groups/cphglobal",
+        "https://cphgroup.com/about-us",
+        "https://regnskaber.cvrapi.dk/66075523/amNsb3VkczovLzAzL2NlLzNlL2E0L2MyLzg1YTEtNGExNy04YmEwLWIwMzdlYTRkOTZiNA.pdf",
+        "https://danskemaritime.dk/medlemmer/copenhagen-global-2/"
+      ],
+      "excluded_claims": [
+        "Vehicle, boat and equipment supply contracts are not investment rounds.",
+        "Financing of Copenhagen Group A/S or another group subsidiary is not assigned to Copenhagen Global A/S."
+      ]
+    },
+    {
+      "id": "3d1d06ac-a73b-4003-984a-d29161199956",
+      "slug": "copenhagen-helicopter",
+      "name": "Copenhagen Helicopter",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Copenhagen Helicopter ApS (CVR 36731648) is an active Danish company established in 2015. A transaction-party press release states that Copenhagen Helicopter secured EU funding with Hans Christian Andersen Airport, the University of Southern Denmark and others, and later sources identify Copenhagen Helicopter / Grøn Luftfart as lead partner in the EU- and Danish co-funded NextGen Robotics 2.0 AAM work.",
+      "hold_note": "Reviewed public pages do not disclose an issuer-specific award amount, award date or allocation between Copenhagen Helicopter ApS, Grøn Luftfart ApS and consortium partners. The known co-funded project therefore remains a hold rather than an imported company grant.",
+      "sources_checked": [
+        "https://cphhelicopter.dk/en/",
+        "https://crisalion.com/wp-content/uploads/2025/01/PR_CPH_Crisalion_280125.pdf",
+        "https://uasdenmark.dk/new-report-explores-the-realistic-potential-of-advanced-air-mobility-in-denmark/",
+        "https://cvrdb.dk/virksomhed/dk/copenhagen-helicopter-aps/36731648",
+        "https://www.dufour.aero/post/dufour-aerospace-and-copenhagen-helicopter-sign-letter-of-intent"
+      ],
+      "excluded_claims": [
+        "A consortium-level EU/Danish programme budget is not attributed to Copenhagen Helicopter without the beneficiary's exact allocation.",
+        "Conditional aircraft orders and strategic mobility agreements are not financing."
+      ]
+    },
+    {
+      "id": "2f6a596f-c7f2-409e-af5a-50fa803862d2",
+      "slug": "core-42",
+      "name": "Core 42",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Core42, formed in 2023 from G42 Cloud, Inception and Injazat, directly arranged two non-equity structured trade-finance facilities with HSBC in 2026. The company announcement specifies USD240 million completed in February and USD310 million completed in May, for USD550 million in total.",
+      "hold_note": "No separate Core42 external equity round was found. Parent G42 investments and predecessor-company financings remain outside this issuer's record unless a source explicitly assigns them to Core42.",
+      "sources_checked": [
+        "https://www.core42.ai/resources/news/core42-raises-usd-550-million-from-hsbc-to-scale-global-ai-infrastructure",
+        "https://www.g42.ai/resources/news/g42-launches-core42-deliver-national-scale-enterprise-cloud-and-ai-capabilities",
+        "https://www.core42.ai/about",
+        "https://www.datacenterdynamics.com/en/news/core42-secures-550-million-financing-to-fuel-ai-build-out-in-europe-us/"
+      ],
+      "excluded_claims": [
+        "Microsoft's USD1.5 billion investment and Silver Lake's USD800 million investment were in parent G42, not Core42.",
+        "Capital raised before the merger by G42 Cloud, Inception or Injazat is not automatically Core42 financing."
+      ]
+    },
+    {
+      "id": "5bfbf5e2-9660-4186-afc0-5bf150c098f4",
+      "slug": "corvus-robotics",
+      "name": "Corvus Robotics",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Corvus Robotics, Inc. is the exact Delaware issuer in SEC Form D filings. Public sources support a USD5 million seed round in 2022, a distinct 2024 equity offering with USD7,507,999 sold of USD7,999,999 when filed, and a USD20 million 2026 Series A-2 led by Catalyst Investors.",
+      "hold_note": "The 2023 Form D/A amends the 2022 offering and must not be summed as a separate round. The 2024 company release describes USD18 million as total company investment while the contemporaneous Form D supplies the exact new-offering cash sold; the filing amount is retained to avoid turning a cumulative total into a new round.",
+      "sources_checked": [
+        "https://techcrunch.com/2022/06/16/corvus-is-using-drones-to-track-warehouse-inventory/",
+        "https://www.sec.gov/Archives/edgar/data/1931896/000193189623000001/xslFormDX08/primary_doc.xml",
+        "https://www.sec.gov/Archives/edgar/data/1931896/000193189624000001/xslFormDX08/primary_doc.xml",
+        "https://www.corvus-robotics.com/pr-series-a",
+        "https://www.corvus-robotics.com/pr-kabir-ceo",
+        "https://cibusfund.com/press/cibus-backs-corvus-robotics/"
+      ],
+      "excluded_claims": [
+        "The 2023 Form D/A is an amendment to the offering whose first sale was in May 2022, not a separate financing event.",
+        "The USD18 million figure in the 2024 headline is cumulative company investment; it is not imported as an additional USD18 million round.",
+        "No individual investor cheque is inferred from a round total."
+      ]
+    },
+    {
+      "id": "419a9a36-d007-452d-8015-40b8b737efbe",
+      "slug": "cosine",
+      "name": "cosine",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "The xSonomy identity maps to cosine Research B.V. in Sassenheim, Netherlands. European Commission CORDIS pages verify issuer-specific EU contributions for the 2008 EUFAR, 2012 SINPLEX, 2016 I3DS and 2020 AHEAD2020 projects.",
+      "hold_note": "cosine has participated in additional ESA, EU and national programmes whose contract or consortium totals cannot be treated as company proceeds. This bounded pass normalizes four CORDIS beneficiary amounts but is not a complete public-grant history.",
+      "sources_checked": [
+        "https://www.cosine.nl/",
+        "https://cordis.europa.eu/project/id/227159",
+        "https://cordis.europa.eu/project/id/284433",
+        "https://cordis.europa.eu/project/id/730118",
+        "https://cordis.europa.eu/project/id/871158",
+        "https://www.nlspace.nl/en/spacedirectory/company/22"
+      ],
+      "excluded_claims": [
+        "Whole-project EU contributions and total project costs are not assigned to cosine.",
+        "ESA procurement contracts and customer-funded development are not treated as investment without issuer-specific financing evidence."
+      ]
+    },
+    {
+      "id": "7f4904b3-a4d9-4a63-a9b7-36731bd625b2",
+      "slug": "couach",
+      "name": "Couach",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "The current issuer is Chantier Naval Couach - CNC (SIREN 511791410), created after the predecessor's 2009 insolvency. A French official order dated 25 October 2021 directs a EUR4 million state liquidity-support loan to this exact company through Bpifrance Financement.",
+      "hold_note": "The current company also received an earlier multi-million-euro Nouvelle-Aquitaine loan and state-guaranteed bank support, but reviewed sources do not disclose exact amounts. Pre-2009 SA Couach debt belongs to the predecessor and is excluded.",
+      "sources_checked": [
+        "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000044265025",
+        "https://www.meretmarine.com/fr/construction-navale/couach-le-spectaculaire-redressement-du-chantier-girondin",
+        "https://www.meretmarine.com/fr/construction-navale/couach-a-gujan-mestras-un-chantier-plus-que-centenaire-en-pleine-transformation",
+        "https://couach.com/en/heritage/",
+        "https://www.pappers.fr/entreprise/chantier-naval-couach-cnc-511791410"
+      ],
+      "excluded_claims": [
+        "A EUR1 million 2007 bank loan was made to predecessor SA Couach before the 2009 asset transfer and is not assigned to Chantier Naval Couach - CNC.",
+        "The unspecified regional loan and state-guaranteed loans are held until issuer-specific amounts are sourced.",
+        "The 2011 acquisition by Nepteam and contract-order values are not funding rounds."
+      ]
+    },
+    {
+      "id": "4b2ab763-d1d6-4112-9cc1-ff51cceb538a",
+      "slug": "covelya",
+      "name": "Covelya",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The database identity resolves to UK company Covelya Group Limited (company 12493148), formerly Sonardyne Group Limited. Kraken Robotics completed the purchase of all Covelya shares through Kraken Robotic Systems Inc. on 2 July 2026. The C$615 million consideration was paid to the seller, Sonardyne Holdings Limited, rather than raised by Covelya, so it is not a company funding round; Kraken is recorded only as a supported corporate ownership relationship.",
+      "hold_note": "Covelya has a long operating history through Sonardyne and several subsidiaries. The 2026 registered charge and acquisition financing are tied to the buyer's transaction structure and are not assigned as Covelya funding without borrower-and-draw evidence. Historical group financing remains only partially reviewed.",
+      "sources_checked": [
+        "https://covelya.com/kraken-robotics-announces-closing-of-strategic-acquisition-of-covelya-group-limited/",
+        "https://find-and-update.company-information.service.gov.uk/company/12493148",
+        "https://find-and-update.company-information.service.gov.uk/company/12493148/filing-history",
+        "https://www.krakenrobotics.com/news-releases/kraken-robotics-announces-signing-of-strategic-acquisition-to-expand-global-maritime-capabilities/"
+      ],
+      "excluded_claims": [
+        "The approximately C$615 million acquisition consideration went to Sonardyne Holdings Limited and is not primary capital received by Covelya.",
+        "Kraken's subscription-receipt offering and acquisition credit facilities are financing of the buyer, not a Covelya funding round.",
+        "A charge registered against Covelya on 2 July 2026 is not treated as a new draw or round because the reviewed public record does not establish Covelya as the cash recipient."
+      ]
+    },
+    {
+      "id": "80fc1caf-e03f-473c-9621-21d67203c84e",
+      "slug": "covenant-industries",
+      "name": "Covenant Industries",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 6,
+      "evidence_note": "Covenant's 9 September 2026 company announcement states that the defence company raised more than US$250 million across three funding rounds, led collectively by Andreessen Horowitz, Founders Fund, Lux, 8VC, Aleph and Lightspeed. The public announcement does not allocate amounts, dates or lead roles to individual rounds, so the aggregate is not converted into an artificial round; the six named backers are captured only as supported investor relationships.",
+      "hold_note": "Round-level chronology, amounts, instruments and which investor led which of the three rounds remain undisclosed. The aggregate funding statement supports neither a single US$250 million round nor six co-leads on one round.",
+      "sources_checked": [
+        "https://www.businesswire.com/news/home/20260909151435/en/",
+        "https://markets.financialcontent.com/wedbush/article/bizwire-2026-9-9-covenant-emerges-from-stealth-with-anthem-a-long-range-heavy-payload-weapon-system-built-to-close-the-wests-deep-precision-strike-gap",
+        "https://www.calcalistech.com/ctechnews/article/hjhm5saugx",
+        "https://www.covenant.com/"
+      ],
+      "excluded_claims": [
+        "The disclosed more-than-US$250 million cumulative total across three rounds is not represented as a new single round.",
+        "The reported valuation above US$1 billion is not funding proceeds.",
+        "Approximately US$150 million of booked orders and the roughly US$70 million U.S. Navy contract are customer revenue or programme funding, not investment rounds."
+      ]
+    },
+    {
+      "id": "7d2b1de7-a090-4e77-a868-44c39961a91c",
+      "slug": "cover-tech",
+      "name": "Cover Tech",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The sparse catalogue identity is consistent with the Cover Tech counter-UAS vendor named by the U.S. Department of Defense in Falcon Peak 26.2; official DVIDS captions identify its Drone Bullet kinetic-defeat product. Broad financing, company and transaction searches found no attributable public investment disclosure, but the legal entity, website and ownership remain unresolved, so the absence of a located round is not treated as zero funding.",
+      "hold_note": "The exact legal issuer cannot yet be distinguished from unrelated Canadian, Italian and Polish companies using Cover-Tech or Covertech. No financing claim is imported until a legal identity or company-controlled source is established.",
+      "sources_checked": [
+        "https://www.dvidshub.net/news/574682/department-war-announces-industry-participants-falcon-peak-262",
+        "https://www.dvidshub.net/image/9948301/falcon-peak-262-innovation-continues",
+        "https://www.unmannedairspace.info/counter-uas-systems-and-policies/us-dod-names-industry-participants-demonstrating-c-suas-tech-at-falcon-peak-26-2/"
+      ],
+      "excluded_claims": [
+        "Falcon Peak participation is a technology evaluation, not evidence of a financing round or contract award.",
+        "Funding and corporate records for unrelated Cover-Tech fabric-building, Cover Tech Italy construction, and Polish Covertech communications businesses are not assigned to this counter-UAS vendor."
+      ]
+    },
+    {
+      "id": "cf9b7aef-41fc-4d0c-849a-72c6a68fcc0c",
+      "slug": "creoir",
+      "name": "Creoir",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Creoir Oy's own news archive supports two closed but unpriced seed financings: a 24 January 2023 seed round joined by Butterfly Ventures with unnamed later participants, and a 3 September 2026 seed investment from Gungnir Capital. Neither company announcement discloses an amount, valuation or instrument, so those fields remain undisclosed and no target amount is treated as proceeds.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://creoir.com/seed-funding-for-international-growth/",
+        "https://creoir.com/creoir-raises-investment-from-gungnir-capital/",
+        "https://creoir.com/news/",
+        "https://gungnir.vc/"
+      ],
+      "excluded_claims": [
+        "The reported EUR2 million target for an ongoing seed round is not the amount already raised and is not imported as proceeds.",
+        "Unnamed later participants in the 2023 seed round are not invented or attributed.",
+        "A venture-capital investment does not by itself establish the equity instrument, so financing_type remains undisclosed."
+      ]
+    },
+    {
+      "id": "6b84f4d2-df14-49e0-8eaf-65e2067e5d01",
+      "slug": "crida-aie",
+      "name": "CRIDA AIE",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "CRIDA A.I.E. is a nonprofit Spanish economic-interest grouping established by ENAIRE, Universidad Politecnica de Madrid and INECO. Official EU records support an exact EUR180,750 net EU contribution to CRIDA as coordinator of the 2017 IMPETUS grant and a EUR171,901.92 maximum allocation to CRIDA as a direct beneficiary of the 2025 AIRMOB Erasmus+ grant. CRIDA states that it has not required financial debt. Its extensive multi-project EU history is not yet normalized exhaustively.",
+      "hold_note": "CRIDA participates in dozens of EU projects. Only two direct, entity-specific grant allocations with clear beneficiary status are normalized here; associated-entity budgets and consortium totals are excluded pending project-by-project reconciliation.",
+      "sources_checked": [
+        "https://crida.es/webcrida/index.php/informacion-economica/",
+        "https://crida.es/webcrida/index.php/sobre-crida/",
+        "https://cordis.europa.eu/project/id/763807",
+        "https://cordis.europa.eu/project/id/763807/es",
+        "https://www.ipcb.pt/media/4jcj5lpm/datasheet-gap-101194074.pdf",
+        "https://airmobproject.eu/about-us/",
+        "https://kozadat.hungarocontrol.hu/download/db8d426cb13bd46257bb684a5ad4d464.clean-atm-3-grant-agreement-gap-101233005.pdf"
+      ],
+      "excluded_claims": [
+        "Whole-consortium EU grant totals are not assigned to CRIDA.",
+        "The EUR30,000 CLEAN ATM 3 allocation identifies CRIDA as an affiliated entity of beneficiary ENAIRE, not a direct beneficiary, and is not imported as a CRIDA round in this pass.",
+        "CRIDA's procurement budgets and contracts are operating expenditures or revenue, not investment funding.",
+        "The official statement that CRIDA has not required financial debt is scoped to debt and does not imply zero public grant support."
+      ]
+    },
+    {
+      "id": "256688cd-3606-42d8-a23a-2ae6ebc3063a",
+      "slug": "crop-quest",
+      "name": "Crop Quest",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Crop Quest, Inc. states that it was formed in 1992 as an employee-owned company and remains 100% owned by employees, with no outside board directing the business. Broad company, transaction and financing searches found no public external investment or debt round attributable to the company. This is a bounded public-source result, not a claim of zero financing.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.cropquest.com/company/",
+        "https://www.cropquest.com/company/crop-quest-history/",
+        "https://www.cropquest.com/company/employee-owned/"
+      ],
+      "excluded_claims": [
+        "Employee ownership from formation is not represented as an external funding round because no priced issuance, amount or transaction date is disclosed.",
+        "Customer service revenue, agronomy acreage and drone-based consulting activity are not financing."
+      ]
+    },
+    {
+      "id": "dcbc9ab5-3ab1-4512-ade0-f04cd6162032",
+      "slug": "crossmatch",
+      "name": "Crossmatch",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Cross Match Technologies, Inc. was acquired by Francisco Partners in July 2012 and later acquired by HID Global/ASSA ABLOY from Francisco Partners on 24 September 2018. Both transactions had undisclosed company-level consideration. Broad issuer, owner and transaction-party searches did not establish a priced primary financing round for Crossmatch itself.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.franciscopartners.com/media/francisco-partners-acquires-biometrics-provider-cross-match-technologies",
+        "https://www.franciscopartners.com/media/hid-global-acquires-crossmatch-to-expand-in-biometric-identity-management",
+        "https://www.assaabloy.com/group/en/news-media/press-releases/id.00dbc5251c3d2ac7",
+        "https://www-live.smiths.com/news-and-insights/news/2012/smiths-sells-share-of-us-biometric-company-for-77m",
+        "https://www.prnewswire.com/news-releases/cross-match-acquires-digitalpersona-and-appoints-new-ceo-255991711.html"
+      ],
+      "excluded_claims": [
+        "Francisco Partners' 2012 buyout and HID Global's 2018 acquisition are ownership transactions with undisclosed issuer proceeds, not priced primary rounds.",
+        "Smiths Group's up-to-USD77 million disposal proceeds accrued to the selling shareholder and are not Crossmatch funding.",
+        "DigitalPersona's historical venture financing and Crossmatch's 2014 acquisition of DigitalPersona are not assigned to Crossmatch as primary financing."
+      ]
+    },
+    {
+      "id": "13f81732-4495-488b-a7e8-a8a808f68f0c",
+      "slug": "crystal-group",
+      "name": "Crystal Group",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The exact Hiawatha, Iowa rugged-computing manufacturer received two issuer-specific public grants in 2022: an Iowa Manufacturing 4.0 Workforce Innovation award of USD495,699.75 and a USD36,000 Future Ready Iowa Employer Innovation Fund award. An older 2017 Iowa economic-development package contains direct assistance and tax-benefit amounts whose instrument and realized cash treatment were not sufficiently resolved for import.",
+      "hold_note": "The 2017 High Quality Jobs project reports USD100,000 in direct funding and USD513,750 in tax benefits, but the reviewed summary does not distinguish grant, forgivable loan, reimbursement or actually utilized tax credits. Those amounts remain a source-level hold rather than funding events.",
+      "sources_checked": [
+        "https://www.legis.iowa.gov/docs/publications/DF/1305813.pdf",
+        "https://corridorbusiness.com/corridor-companies-awarded-iowa-manufacturing-4-0-grants/",
+        "https://www.cedarrapids.org/solving-tomorrows-challenges-today-crystal-group-receives-manufacturing-4-0-grant/",
+        "https://workforce.iowa.gov/media/1980/download?inline=",
+        "https://www.crystalrugged.com/crystal-group-elevates-employee-learning-with-future-ready-iowa-employer-innovation-fund-award/",
+        "https://opportunityiowa.gov/media/6492/download?inline=",
+        "https://www.crystalrugged.com/about/fact-sheet/"
+      ],
+      "excluded_claims": [
+        "The USD17.5 million and later USD22.4 million expansion figures are company project investment, not external financing.",
+        "The 2017 USD513,750 figure is an approved tax-benefit ceiling rather than evidenced cash proceeds.",
+        "The 2011 Dexter Apache acquisition is an ownership transaction; purchase consideration was not attributed as issuer financing."
+      ]
+    },
+    {
+      "id": "9e51bf52-475e-4860-9c1d-ccc0ac7abb99",
+      "slug": "cubedin",
+      "name": "CUBEDIN",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 2,
+      "evidence_note": "CUBEDIN A/S was established in June 2022 as a joint venture between Systematic and Odense Maritime Technology. Systematic's audited annual report records a 50% interest. Public company, parent and registry searches did not expose a separately announced priced financing round or outside investor; annual-account capital and reserve balances were not converted into financing events without transaction evidence.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://systematic.com/int/newsroom/corporate-news/new-danish-joint-venture-develops-integration-software-for-tomorrow-s-flexible-naval-vessels/",
+        "https://systematic.com/media/ag5lwpsn/annual-report-2021-2022-systematic-as.pdf",
+        "https://odensemaritime.com/forside/news-new-ceo-cubedin/",
+        "https://odensemaritime.com/cases2/omt-group-annual-report-2025-26/",
+        "https://www.proff.dk/regnskab/cubedin-as/aarhus-c/internetdesign-og-programmering/0PSNTBI0C2C"
+      ],
+      "excluded_claims": [
+        "Registered share capital and later balance-sheet reserves are not treated as funding rounds without a dated capital transaction and exact contributor evidence.",
+        "Parent-company investment values are not inferred from the joint-venture relationship."
+      ]
+    },
+    {
+      "id": "78e8c558-62b2-42b4-9fe5-5256b2277e67",
+      "slug": "cubepilot",
+      "name": "Cubepilot",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "CubePilot Pty Ltd / CubePilot Global is an Australian private avionics supplier. Broad company, registry, investor and transaction searches found product sales and Australian Defence contracts but no issuer-specific public equity, debt or grant round. The scoped result is no verified public financing announcement, not a claim of zero private funding.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://cubepilot.com/",
+        "https://www.cubepilot.org/",
+        "https://abr.business.gov.au/ABN/View?id=51635914886",
+        "https://discuss.cubepilot.org/t/no-china-operations-for-cubepilot/13836",
+        "https://uavionix.com/press/uavionix-and-cubepilot-announce-reseller-distribution-agreement/",
+        "https://pollywatch.com.au/contracts/supplier/51635914886/"
+      ],
+      "excluded_claims": [
+        "Australian Department of Defence procurement values are contracts for goods and services, not financing.",
+        "FCC equipment authorizations use the word grant in a regulatory sense and are not financial grants.",
+        "Investor backing described for distribution partner uAvionix is not CubePilot financing."
+      ]
+    },
+    {
+      "id": "918b9949-8986-4351-b3b4-5da7aab4248a",
+      "slug": "culver-aerospace",
+      "name": "Culver Aerospace",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Public sources identify a Ukrainian Culver Aerospace operating business led by Oleg Krot, alongside a UK holding company and a 2026 Estonian holding entity. The queue's United States headquarters attribution conflicts with these records. No public financing round could be attributed confidently to the exact queued issuer during this bounded pass.",
+      "hold_note": "Issuer identity and group boundaries remain unresolved across the Ukrainian operating company, CULVER AEROSPACE UK LTD and Culver Aerospace OÜ. Affiliate share capital and creditor balances are therefore not assigned to the queued identity.",
+      "sources_checked": [
+        "https://find-and-update.company-information.service.gov.uk/company/15010661",
+        "https://find-and-update.company-information.service.gov.uk/company/15010661/filing-history",
+        "https://find-and-update.company-information.service.gov.uk/company/15010661/persons-with-significant-control",
+        "https://ariregister.rik.ee/eng/company/17544448/Culver-Aerospace-O%C3%9C",
+        "https://winwin.gov.ua/assets/files/ENG_AgroTech.pdf"
+      ],
+      "excluded_claims": [
+        "GBP1,000 incorporation capital of the UK holding company is not treated as an external funding round.",
+        "UK affiliate creditor balances and Estonian registered capital are not attributed to the Ukrainian operating company.",
+        "Military procurement and strategic partnership announcements are not financing."
+      ]
+    },
+    {
+      "id": "cd7e0f25-0109-49fd-ac5b-3abbdf906c0d",
+      "slug": "cummings-aerospace",
+      "name": "Cummings Aerospace",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Cummings Aerospace, Inc. is a Native American woman-owned aerospace business founded by Sheila Cummings in 2009. Company, federal-award, investor and transaction searches did not identify a public equity or debt financing round. The accessible federal awards are procurement or SBIR contract activity, not investment financing.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://cummingsaerospace.com/who-we-are",
+        "https://cummingsaerospace.com/executive-team",
+        "https://cummingsaerospace.com/news",
+        "https://www.sbir.gov/portfolio/684154",
+        "https://www.highergov.com/awardee/cummings-aerospace-inc-10116568/"
+      ],
+      "excluded_claims": [
+        "The USD149,890 Department of Defense SBIR Phase I award is contract research and is excluded from investment financing.",
+        "Other federal obligations and task orders are procurement contracts, not grants or investor proceeds.",
+        "The company supports and pursues grants for third-party STEM programmes; those awards are not Cummings Aerospace financing."
+      ]
+    }
+  ],
+  "audit_notes": [
+    "Only issuer-supported financing facts are normalized; parent, subsidiary, acquisition-consideration, contract and consortium amounts remain excluded unless the reviewed source establishes the target as recipient.",
+    "A completed bounded public-source review does not assert zero funding where no public round was found; undisclosed private history remains unknown.",
+    "Duplicate or closely related catalogue identities are kept distinct unless sources establish legal or economic continuity."
+  ],
+  "publication": {
+    "pending": true,
+    "catalogue_trigger_required": true,
+    "scope_note": "All ten event-bearing identities are outside the published 567-company landscape; map event/link totals should remain unchanged while 26 new investor profiles and sixteen supported portfolio relationships publish."
+  },
+  "database_before": {
+    "approved_events": 2297,
+    "round_participations": 2601,
+    "investor_profiles": 1609,
+    "source_reconciliation_companies": 581
+  },
+  "database_after": {
+    "approved_events": 2323,
+    "round_participations": 2633,
+    "investor_profiles": 1635,
+    "source_reconciliation_companies": 591,
+    "manifest_event_matches": 26,
+    "manifest_participations": 32,
+    "manifest_sources": 34,
+    "manifest_relationships": 16,
+    "participant_missing_source_url": 0
+  },
+  "queue_after": {
+    "reviewed_public_sources": 827,
+    "source_review_partial": 170,
+    "queued": 1567,
+    "total": 2564,
+    "next_batch": [
+      {
+        "id": "506e8454-d799-4a14-8864-5b2dfe078f72",
+        "slug": "current-scientific-corporation",
+        "name": "Current Scientific Corporation"
+      },
+      {
+        "id": "1a6b0cd8-45ee-43b5-a893-6697cccfcdc3",
+        "slug": "cx2-industries",
+        "name": "CX2 Industries"
+      },
+      {
+        "id": "89b9182f-1486-4395-a3c3-60a5a53340fe",
+        "slug": "cyark",
+        "name": "CyArk"
+      },
+      {
+        "id": "234fcd42-fdca-458f-87ee-3aa9e39d5dfb",
+        "slug": "cyber-drone-solutions",
+        "name": "Cyber Drone Solutions"
+      },
+      {
+        "id": "b45a2d11-c02a-4131-8eae-ed936cb3d23c",
+        "slug": "cyborg-autonomy",
+        "name": "Cyborg Autonomy"
+      },
+      {
+        "id": "4e8e0229-d31e-49c2-a668-1d2a5f19a2c0",
+        "slug": "cyborg-dynamics-engineering",
+        "name": "Cyborg Dynamics Engineering"
+      },
+      {
+        "id": "edb46351-4a5f-4e32-bc59-795e070c44b7",
+        "slug": "cyphy-works",
+        "name": "CyPhy Works"
+      },
+      {
+        "id": "df42a769-d0f7-499a-8642-fca9eb352bdc",
+        "slug": "czechoslovak-group",
+        "name": "Czechoslovak Group"
+      },
+      {
+        "id": "6a3cda0c-52dd-4b27-b1cc-f05fb441c7c1",
+        "slug": "d-fend-solutions",
+        "name": "D-Fend Solutions"
+      },
+      {
+        "id": "9a393518-4e21-402e-847f-e8957353f08f",
+        "slug": "d-ta-systems",
+        "name": "D-TA Systems"
+      },
+      {
+        "id": "935aa6f2-a909-4aa0-8ca1-d85633cf3106",
+        "slug": "damen",
+        "name": "Damen"
+      },
+      {
+        "id": "5781a9d7-6426-474d-9449-f5e58fea7ed1",
+        "slug": "damoda-america",
+        "name": "Damoda America"
+      },
+      {
+        "id": "52188d58-3a4f-4b63-8e0c-d9570bd2655b",
+        "slug": "dark-wolf-solutions",
+        "name": "Dark Wolf Solutions"
+      },
+      {
+        "id": "274ee9fd-6a79-4276-959d-a9e2a1b0b369",
+        "slug": "darkhive",
+        "name": "Darkhive"
+      },
+      {
+        "id": "b3b1bc70-1e3c-487c-bdbc-6ebbd6c37a79",
+        "slug": "dataminr",
+        "name": "Dataminr"
+      },
+      {
+        "id": "72f24cab-e557-419f-83ad-afed154372c2",
+        "slug": "datashapes-ai",
+        "name": "DataShapes AI"
+      },
+      {
+        "id": "a33149b7-c67c-4f1c-9009-5f4830f73ef3",
+        "slug": "dataspeed",
+        "name": "Dataspeed"
+      },
+      {
+        "id": "0b40f241-63db-445e-b570-f92dc17e25c0",
+        "slug": "datium",
+        "name": "Datium"
+      },
+      {
+        "id": "206b69b0-d1a4-4f72-8625-ede32a3547d2",
+        "slug": "datum-submarine-technologies",
+        "name": "DATUM Submarine Technologies"
+      },
+      {
+        "id": "bec7d9a1-5d61-4c76-944f-7fc76e472f44",
+        "slug": "davie-shipbuilding",
+        "name": "Davie Shipbuilding"
+      },
+      {
+        "id": "821e6d86-04ef-462e-9849-5567e38d5700",
+        "slug": "dbox",
+        "name": "DBOX"
+      },
+      {
+        "id": "3652d0ac-1774-46c2-b42d-e4c3a20bb16f",
+        "slug": "de-havilland-canada",
+        "name": "De Havilland Canada"
+      },
+      {
+        "id": "c0542c1c-074c-402c-a53e-54aaca0ae019",
+        "slug": "dearsan",
+        "name": "DEARSAN"
+      },
+      {
+        "id": "c6bf2fbc-f6c2-4dcc-aad5-ccb704861cbe",
+        "slug": "decision-sciences",
+        "name": "Decision Sciences"
+      }
+    ]
+  }
+}

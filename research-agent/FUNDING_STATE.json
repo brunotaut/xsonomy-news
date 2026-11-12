@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 158,
-  "fully_reviewed_companies": 815,
-  "next_action": "Continue the next 24 queued identities from Componentas through Cummings Aerospace under a new two-hour writer lease, using up to four disjoint read-only research lanes before one consolidated import.",
+  "partial_companies": 170,
+  "fully_reviewed_companies": 827,
+  "next_action": "Continue the next 24 queued identities from Current Scientific Corporation through Decision Sciences after the twenty-eighth publication is verified, under a new two-hour writer lease.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-12T04:49:20.769Z",
-  "source_reconciliation_companies": 581,
-  "approved_funding_events": 2297,
-  "round_participations": 2601,
-  "investor_profiles": 1609,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261112-twenty-seventh.json",
+  "updated_at": "2026-11-12T05:03:51.865Z",
+  "source_reconciliation_companies": 591,
+  "approved_funding_events": 2323,
+  "round_participations": 2633,
+  "investor_profiles": 1635,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261112-twenty-eighth.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -80,8 +80,10 @@
       "culver-aerospace",
       "cummings-aerospace"
     ],
-    "status": "research",
-    "writer_head": "5951e767096a28f9cca88f6716d86990539452fb"
+    "status": "publication",
+    "writer_head": "eb30ab6dde8c7ad4d707dcbb9cd166c2b9886667",
+    "manifest": "research-agent/imports/funding-landscape-20261112-twenty-eighth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-twenty-eighth.json"
   },
   "last_verified_publication": {
     "checked_at": "2026-11-12T03:59:34.560Z",
@@ -2093,34 +2095,34 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 815,
-    "source_review_partial": 158,
-    "queued": 1591
+    "reviewed_public_sources": 827,
+    "source_review_partial": 170,
+    "queued": 1567
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "identities_checked": 24,
-    "newly_completed_bounded_reviews": 8,
-    "newly_completed_wider_reviews": 8,
-    "new_or_retained_partial": 16,
-    "new_events_written": 34,
-    "new_approved_events": 34,
-    "new_round_participations": 31,
-    "new_generic_portfolio_relationships": 3,
-    "new_investor_profiles": 18,
-    "new_source_rows": 38,
-    "new_companies_with_events": 14,
+    "newly_completed_bounded_reviews": 12,
+    "newly_completed_wider_reviews": 12,
+    "new_or_retained_partial": 12,
+    "new_events_written": 26,
+    "new_approved_events": 26,
+    "new_round_participations": 32,
+    "new_generic_portfolio_relationships": 16,
+    "new_investor_profiles": 26,
+    "new_source_rows": 34,
+    "new_companies_with_events": 10,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "manifest_event_matches": 34,
-    "db_approved_events": 2297,
-    "db_approved_round_participations": 2601,
-    "db_investor_profiles": 1609,
-    "db_source_reconciliation_companies": 581,
-    "current_manifest_publication_verified": true,
+    "manifest_event_matches": 26,
+    "db_approved_events": 2323,
+    "db_approved_round_participations": 2633,
+    "db_investor_profiles": 1635,
+    "db_source_reconciliation_companies": 591,
+    "current_manifest_publication_verified": false,
     "concurrency_speedup_claimed": false,
     "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded."
   },
@@ -2139,7 +2141,7 @@
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 973,
+  "source_reviewed_or_partial_companies": 997,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -2547,14 +2549,11 @@
   },
   "pending_import": null,
   "pending_publication": {
-    "status": "completed",
-    "manifest": "research-agent/imports/funding-landscape-20261112-twenty-seventh.json",
-    "report": "research-agent/reports/2026-11-12-funding-landscape-twenty-seventh.json",
-    "source_commit": "fe4db278a35c9b94d1f92f16d7daddc12cab7c2b",
-    "catalogue_commit": "0b8d5eee206970343891ecb17a976158e84d346f",
-    "workflow_run_id": 43151307519,
-    "verified_at": "2026-11-12T03:59:34.560Z",
-    "catalogue_trigger_required": false
+    "status": "pending",
+    "manifest": "research-agent/imports/funding-landscape-20261112-twenty-eighth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-twenty-eighth.json",
+    "source_commit": null,
+    "catalogue_trigger_required": true
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -3467,124 +3466,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "555ecf36-e7da-4b47-9891-9693a965319f",
-      "slug": "componentas",
-      "name": "Componentas"
+      "id": "506e8454-d799-4a14-8864-5b2dfe078f72",
+      "slug": "current-scientific-corporation",
+      "name": "Current Scientific Corporation"
     },
     {
-      "id": "7071c027-8ebd-4b80-bd78-187b99643c14",
-      "slug": "composite-energy-technologies",
-      "name": "Composite Energy Technologies"
+      "id": "1a6b0cd8-45ee-43b5-a893-6697cccfcdc3",
+      "slug": "cx2-industries",
+      "name": "CX2 Industries"
     },
     {
-      "id": "43081a28-8768-49f4-b942-5bf25f40ffa3",
-      "slug": "constellis",
-      "name": "Constellis"
+      "id": "89b9182f-1486-4395-a3c3-60a5a53340fe",
+      "slug": "cyark",
+      "name": "CyArk"
     },
     {
-      "id": "4a93ecaf-aaee-40cd-ab26-bac6d6cd6c17",
-      "slug": "continuous-composites",
-      "name": "Continuous Composites"
+      "id": "234fcd42-fdca-458f-87ee-3aa9e39d5dfb",
+      "slug": "cyber-drone-solutions",
+      "name": "Cyber Drone Solutions"
     },
     {
-      "id": "aa3c2da2-be78-4d2c-843a-4016ed966c87",
-      "slug": "controp",
-      "name": "CONTROP"
+      "id": "b45a2d11-c02a-4131-8eae-ed936cb3d23c",
+      "slug": "cyborg-autonomy",
+      "name": "Cyborg Autonomy"
     },
     {
-      "id": "b7c075ce-3c0d-439f-8aab-6d263b9eaa37",
-      "slug": "controp-precision-technologies",
-      "name": "CONTROP Precision Technologies"
+      "id": "4e8e0229-d31e-49c2-a668-1d2a5f19a2c0",
+      "slug": "cyborg-dynamics-engineering",
+      "name": "Cyborg Dynamics Engineering"
     },
     {
-      "id": "6d49ed80-30aa-41cc-aa6c-1c820c40d199",
-      "slug": "copenhagen-global",
-      "name": "Copenhagen Global"
+      "id": "edb46351-4a5f-4e32-bc59-795e070c44b7",
+      "slug": "cyphy-works",
+      "name": "CyPhy Works"
     },
     {
-      "id": "3d1d06ac-a73b-4003-984a-d29161199956",
-      "slug": "copenhagen-helicopter",
-      "name": "Copenhagen Helicopter"
+      "id": "df42a769-d0f7-499a-8642-fca9eb352bdc",
+      "slug": "czechoslovak-group",
+      "name": "Czechoslovak Group"
     },
     {
-      "id": "2f6a596f-c7f2-409e-af5a-50fa803862d2",
-      "slug": "core-42",
-      "name": "Core 42"
+      "id": "6a3cda0c-52dd-4b27-b1cc-f05fb441c7c1",
+      "slug": "d-fend-solutions",
+      "name": "D-Fend Solutions"
     },
     {
-      "id": "5bfbf5e2-9660-4186-afc0-5bf150c098f4",
-      "slug": "corvus-robotics",
-      "name": "Corvus Robotics"
+      "id": "9a393518-4e21-402e-847f-e8957353f08f",
+      "slug": "d-ta-systems",
+      "name": "D-TA Systems"
     },
     {
-      "id": "419a9a36-d007-452d-8015-40b8b737efbe",
-      "slug": "cosine",
-      "name": "cosine"
+      "id": "935aa6f2-a909-4aa0-8ca1-d85633cf3106",
+      "slug": "damen",
+      "name": "Damen"
     },
     {
-      "id": "7f4904b3-a4d9-4a63-a9b7-36731bd625b2",
-      "slug": "couach",
-      "name": "Couach"
+      "id": "5781a9d7-6426-474d-9449-f5e58fea7ed1",
+      "slug": "damoda-america",
+      "name": "Damoda America"
     },
     {
-      "id": "4b2ab763-d1d6-4112-9cc1-ff51cceb538a",
-      "slug": "covelya",
-      "name": "Covelya"
+      "id": "52188d58-3a4f-4b63-8e0c-d9570bd2655b",
+      "slug": "dark-wolf-solutions",
+      "name": "Dark Wolf Solutions"
     },
     {
-      "id": "80fc1caf-e03f-473c-9621-21d67203c84e",
-      "slug": "covenant-industries",
-      "name": "Covenant Industries"
+      "id": "274ee9fd-6a79-4276-959d-a9e2a1b0b369",
+      "slug": "darkhive",
+      "name": "Darkhive"
     },
     {
-      "id": "7d2b1de7-a090-4e77-a868-44c39961a91c",
-      "slug": "cover-tech",
-      "name": "Cover Tech"
+      "id": "b3b1bc70-1e3c-487c-bdbc-6ebbd6c37a79",
+      "slug": "dataminr",
+      "name": "Dataminr"
     },
     {
-      "id": "cf9b7aef-41fc-4d0c-849a-72c6a68fcc0c",
-      "slug": "creoir",
-      "name": "Creoir"
+      "id": "72f24cab-e557-419f-83ad-afed154372c2",
+      "slug": "datashapes-ai",
+      "name": "DataShapes AI"
     },
     {
-      "id": "6b84f4d2-df14-49e0-8eaf-65e2067e5d01",
-      "slug": "crida-aie",
-      "name": "CRIDA AIE"
+      "id": "a33149b7-c67c-4f1c-9009-5f4830f73ef3",
+      "slug": "dataspeed",
+      "name": "Dataspeed"
     },
     {
-      "id": "256688cd-3606-42d8-a23a-2ae6ebc3063a",
-      "slug": "crop-quest",
-      "name": "Crop Quest"
+      "id": "0b40f241-63db-445e-b570-f92dc17e25c0",
+      "slug": "datium",
+      "name": "Datium"
     },
     {
-      "id": "dcbc9ab5-3ab1-4512-ade0-f04cd6162032",
-      "slug": "crossmatch",
-      "name": "Crossmatch"
+      "id": "206b69b0-d1a4-4f72-8625-ede32a3547d2",
+      "slug": "datum-submarine-technologies",
+      "name": "DATUM Submarine Technologies"
     },
     {
-      "id": "13f81732-4495-488b-a7e8-a8a808f68f0c",
-      "slug": "crystal-group",
-      "name": "Crystal Group"
+      "id": "bec7d9a1-5d61-4c76-944f-7fc76e472f44",
+      "slug": "davie-shipbuilding",
+      "name": "Davie Shipbuilding"
     },
     {
-      "id": "9e51bf52-475e-4860-9c1d-ccc0ac7abb99",
-      "slug": "cubedin",
-      "name": "CUBEDIN"
+      "id": "821e6d86-04ef-462e-9849-5567e38d5700",
+      "slug": "dbox",
+      "name": "DBOX"
     },
     {
-      "id": "78e8c558-62b2-42b4-9fe5-5256b2277e67",
-      "slug": "cubepilot",
-      "name": "Cubepilot"
+      "id": "3652d0ac-1774-46c2-b42d-e4c3a20bb16f",
+      "slug": "de-havilland-canada",
+      "name": "De Havilland Canada"
     },
     {
-      "id": "918b9949-8986-4351-b3b4-5da7aab4248a",
-      "slug": "culver-aerospace",
-      "name": "Culver Aerospace"
+      "id": "c0542c1c-074c-402c-a53e-54aaca0ae019",
+      "slug": "dearsan",
+      "name": "DEARSAN"
     },
     {
-      "id": "cd7e0f25-0109-49fd-ac5b-3abbdf906c0d",
-      "slug": "cummings-aerospace",
-      "name": "Cummings Aerospace"
+      "id": "c6bf2fbc-f6c2-4dcc-aad5-ccb704861cbe",
+      "slug": "decision-sciences",
+      "name": "Decision Sciences"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -3766,6 +3765,37 @@
       "db_investor_profiles": 1609,
       "db_source_reconciliation_companies": 581,
       "current_manifest_publication_verified": true,
+      "concurrency_speedup_claimed": false,
+      "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded."
+    }
+  },
+  "latest_twenty_eighth_reconciliation": {
+    "report": "research-agent/reports/2026-11-12-funding-landscape-twenty-eighth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-twenty-eighth.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 12,
+      "newly_completed_wider_reviews": 12,
+      "new_or_retained_partial": 12,
+      "new_events_written": 26,
+      "new_approved_events": 26,
+      "new_round_participations": 32,
+      "new_generic_portfolio_relationships": 16,
+      "new_investor_profiles": 26,
+      "new_source_rows": 34,
+      "new_companies_with_events": 10,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "manifest_event_matches": 26,
+      "db_approved_events": 2323,
+      "db_approved_round_participations": 2633,
+      "db_investor_profiles": 1635,
+      "db_source_reconciliation_companies": 591,
+      "current_manifest_publication_verified": false,
       "concurrency_speedup_claimed": false,
       "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded."
     }
