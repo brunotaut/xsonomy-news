@@ -484,6 +484,12 @@ applied in one guarded 17-step transaction and deployed. Full write-up:
   LLM-written, that is a per-issue Anthropic call and a budget decision — not yet taken.
 
 ## Session notes
+
+### 2026-11-12 — Landscape email subscriptions
+
+Added email-only “Subscribe to updates” in the map, Events and Insights headers. A public `landscape-subscribe` Edge Function verifies a short-lived signed proof of work, a bot-trap field, explicit versioned signup consent and an atomic database quota (20/IP/hour, 3/email/hour, 200/day). It normalises and deduplicates email addresses without revealing whether an address already exists. Private `landscape_subscribers` stores the email and consent; `landscape_subscription_requests` holds short-lived hashed rate-limit identifiers and single-use challenge IDs. RLS is enabled with public/authenticated table and RPC permissions revoked; only the server role can save signups. No service key reaches the browser. The list is separate from the news digest and no campaign emails or new schedules were introduced. Privacy/removal instructions are beside the form.
+
+Validation: 113 frontend and 180 backend tests pass, including private access, consent, replay binding, duplicate addresses, quotas, signed/aged challenge verification, bot trap and expired challenges. Live schema permissions verified. Supabase advisor notices that these private tables have no RLS policies are expected: client access is deliberately denied.
 _(newest first; `/wrap-up` appends here)_
 
 ### 2026-09-05 — session 1
