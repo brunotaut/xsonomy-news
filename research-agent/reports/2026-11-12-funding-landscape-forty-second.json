@@ -20,15 +20,27 @@
     "new_generic_portfolio_relationships": 5,
     "new_companies_with_events": 7,
     "rollback_rehearsal_passed": true,
-    "atomic_import_passed": false,
-    "post_import_idempotency_rehearsal_passed": false,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
     "current_manifest_publication_verified": false,
     "local_postgresql_tests_passed": true,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
     "new_investor_profiles": 20,
     "search_queries_logged": 90,
-    "source_ledger_entries": 96
+    "source_ledger_entries": 96,
+    "new_events_written": 24,
+    "manifest_event_matches": 24,
+    "manifest_link_matches": 28,
+    "manifest_source_matches": 42,
+    "manifest_relationship_matches": 5,
+    "missing_link_source_urls": 0,
+    "mismatched_manifest_facts": 0,
+    "db_approved_events": 2901,
+    "db_total_events": 2914,
+    "db_approved_round_participations": 3641,
+    "db_investor_profiles": 2210,
+    "db_source_reconciliation_companies": 754
   },
   "per_company": [
     {
@@ -1106,5 +1118,19 @@
     "GreenSight NSF awards are grants, other SBIR procurement contracts excluded. Grepow subsidy eligibility and inaccessible GreenSight SEC original are held without import.",
     "Unverified fresh Uforce source candidate is retained for priority original-source review, not counted as a checked identity or approved fact.",
     "Concurrent writer repository feedback commit preserved by rebasing the expected-head checkpoint; no unrelated files or schedules changed."
-  ]
+  ],
+  "database_audit": {
+    "events": 24,
+    "sources": 42,
+    "links": 28,
+    "missing_link_source_urls": 0,
+    "relationships": 5,
+    "mismatched_facts": 0,
+    "new_profiles": 20
+  },
+  "queue_dispositions": {
+    "reviewed_public_sources": 970,
+    "source_review_partial": 363,
+    "queued": 1231
+  }
 }
