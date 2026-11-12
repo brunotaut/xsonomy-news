@@ -37,7 +37,7 @@
     "db_approved_round_participations": 2498,
     "db_investor_profiles": 1548,
     "db_source_reconciliation_companies": 553,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
     "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded."
   },
@@ -456,8 +456,27 @@
     "Carmine Sky through Chery are prepared as the next 24 queued identities."
   ],
   "publication": {
-    "pending": true,
-    "catalogue_trigger_required": true,
-    "scope_note": "All thirteen event-bearing identities are outside the published 567-company landscape; map event/link totals should remain unchanged while new investor profiles and four supported portfolio relationships publish."
+    "pending": false,
+    "catalogue_trigger_required": false,
+    "verified_at": "2026-11-12T02:09:29.188Z",
+    "catalogue_commit": "9f029634834c29c577f2d21fb866876fa591396e",
+    "workflow_run": {
+      "id": 43138888499,
+      "head": "9f029634834c29c577f2d21fb866876fa591396e",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43138888499"
+    },
+    "live_landscape": {
+      "generated_at": "2026-11-12T02:05:53.240Z",
+      "investor_generated_at": "2026-11-12T02:05:54.428Z",
+      "companies": 567,
+      "funding_event_rows": 1589,
+      "investor_links": 1380,
+      "investor_profiles": 1548,
+      "portfolio_relationships": 158,
+      "current_manifest_live_event_matches": 0,
+      "scope_note": "All thirteen event-bearing identities are outside the published 567-company landscape; map event/link totals remain unchanged while 24 new investor profiles and four supported portfolio relationships are published."
+    }
   }
 }
