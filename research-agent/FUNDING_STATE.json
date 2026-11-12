@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 989,
   "next_action": "Continue the next 24 queued identities from Hidden Level through Hoplynk.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-12T20:14:58.456Z",
+  "updated_at": "2026-11-12T20:58:53.551Z",
   "source_reconciliation_companies": 768,
   "approved_funding_events": 2928,
   "round_participations": 3817,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-12T20:47:21.969Z",
     "expires_at": "2026-11-12T22:47:21.971Z",
-    "status": "researching",
+    "status": "prepared_import",
     "planned_company_ids": [
       "5fda7a18-3f80-4024-982c-6fe5691cca74",
       "6031063a-e3b8-4f83-ac00-5f5fbde9499e",
@@ -3336,7 +3336,27 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "rollback_rehearsed_not_committed",
+    "lease_id": "funding-20261112T2047Z-wider-24",
+    "manifest": "research-agent/imports/funding-landscape-20261112-forty-fifth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-fifth.json",
+    "baseline": {
+      "total_events": 2941,
+      "approved_events": 2928,
+      "links": 3817,
+      "profiles": 2318,
+      "covered": 768
+    },
+    "expected_delta": {
+      "events": 28,
+      "links": 43,
+      "profiles": 22,
+      "covered": 10,
+      "generic_relationships": 8
+    },
+    "prepared_at": "2026-11-12T20:58:53.551Z"
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-12T20:14:58.456Z",
