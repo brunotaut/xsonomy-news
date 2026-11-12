@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 947,
   "next_action": "Continue the next 24 queued identities from Gemfan through GLEFA.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-12T16:58:08.103Z",
+  "updated_at": "2026-11-12T17:58:04.048Z",
   "source_reconciliation_companies": 737,
   "approved_funding_events": 2856,
   "round_participations": 3596,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-12T17:50:13.416Z",
     "expires_at": "2026-11-12T19:50:14.765Z",
-    "status": "researching",
+    "status": "prepared_import",
     "planned_company_ids": [
       "ae1dc8f3-4ce8-4440-a4e4-e87633b7ae1a",
       "3c290795-53c6-4fa8-b5f8-e847cb227472",
@@ -80,7 +80,9 @@
       "givon-defense",
       "gkn-aerospace",
       "glefa"
-    ]
+    ],
+    "manifest": "research-agent/imports/funding-landscape-20261112-forty-first.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-first.json"
   },
   "last_verified_publication": {
     "checked_at": "2026-11-12T16:58:08.103Z",
@@ -2999,7 +3001,13 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "manifest": "research-agent/imports/funding-landscape-20261112-forty-first.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-first.json",
+    "status": "rollback_rehearsed_not_committed",
+    "expected_new_events": 21,
+    "expected_new_links": 17
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-12T16:58:08.103Z",
