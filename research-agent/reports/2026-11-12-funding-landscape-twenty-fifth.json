@@ -1,0 +1,463 @@
+{
+  "report": "Twenty-fifth autonomous company funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": "funding-20261112T014800Z-wider-15",
+  "scope": {
+    "cohort_total": 2564,
+    "identities_checked": 24,
+    "range": "BSS through Caribou Labs",
+    "priority": "Wider cohort after completion of the published-landscape first pass",
+    "source_commit_head_before": "804df469c3576961cdf3ec3253ed03b088053852"
+  },
+  "method": [
+    "Four disjoint read-only research lanes covered broad dated financing searches, company/registry/financial disclosures, and investor or transaction-party searches.",
+    "Only exact-issuer, source-supported events and explicitly supported participant roles were imported; contract revenue, acquisition consideration, parent financing, consortium totals and unallocated project budgets were excluded.",
+    "The tested scripts/prepare-funding-pilot.mjs validator generated the SQL. Production rollback, baseline recheck, atomic import and post-import idempotency rollback all passed."
+  ],
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 16,
+    "newly_completed_wider_reviews": 16,
+    "new_or_retained_partial": 8,
+    "new_events_written": 41,
+    "new_approved_events": 41,
+    "new_round_participations": 49,
+    "new_generic_portfolio_relationships": 4,
+    "new_investor_profiles": 24,
+    "new_source_rows": 58,
+    "new_companies_with_events": 13,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "manifest_event_matches": 41,
+    "db_approved_events": 2224,
+    "db_approved_round_participations": 2498,
+    "db_investor_profiles": 1548,
+    "db_source_reconciliation_companies": 553,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded."
+  },
+  "database_before": {
+    "approved_events": 2183,
+    "round_participations": 2449,
+    "investor_profiles": 1524,
+    "source_reconciliation_companies": 540,
+    "generic_portfolio_relationships": 51,
+    "target_event_matches": 0
+  },
+  "database_after": {
+    "approved_events": 2224,
+    "round_participations": 2498,
+    "investor_profiles": 1548,
+    "source_reconciliation_companies": 553,
+    "generic_portfolio_relationships": 55,
+    "target_events": 41,
+    "target_participations": 49,
+    "target_round_sources": 58,
+    "target_companies_with_events": 13,
+    "target_relationships": 4,
+    "events_missing_sources": 0,
+    "participations_missing_source_url": 0
+  },
+  "queue_after": {
+    "reviewed_public_sources": 794,
+    "source_review_partial": 131,
+    "queued": 1639,
+    "total": 2564
+  },
+  "per_company": [
+    {
+      "id": "9a53d3c9-2bcd-4238-9a02-dce36675810b",
+      "slug": "bss",
+      "name": "BSS",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Resolved to BSS Holland B.V., the Dutch robotics and C5ISR company founded in 2008. Official company/news pages, a Dutch registry-derived profile, and broad English/Dutch financing searches disclosed operations, customers and shareholders/directors but no source-supported external financing round.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://bssholland.com/about/",
+        "https://bssholland.com/news/",
+        "https://droneport.eu/resident/bss/",
+        "https://companyinfo.nl/organisatieprofiel/groothandel-in-informatie-en-communicatieapparatuur/bss-holland-b-v-t-harde-34310311-000016402057"
+      ],
+      "excluded_claims": [
+        "The $10 million BGF investment found in search concerns Broadband Satellite Services Ltd, not BSS Holland B.V."
+      ]
+    },
+    {
+      "id": "e3347ef7-1162-44af-9ca3-46bfc8b0bd91",
+      "slug": "bulba",
+      "name": "Bulba",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Bulba is a product brand manufactured by Ukrainian legal entity LLC Service Budtrans. The official brand page says the enterprise financed serial production from its own funds. Broad Ukrainian/English searches found procurement contracts and Brave1 status, but no attributable equity round, debt facility or named grant.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://bulba.org.ua/about-us",
+        "https://defpol.org.ua/publication/pristroi-radioelektronnoi-borotbi-ta-zahistu-vitciznanogo-virobnictva",
+        "https://zvitnist.com/43595676_TOVARYSTVO_Z_OBMEZHENOU_VIDPOVIDALNISTU_SERVIS_BU"
+      ],
+      "excluded_claims": [
+        "Brave1 status is accreditation/ecosystem participation, not evidence that this issuer received a grant.",
+        "Public procurement contract values are revenue, not investment financing."
+      ]
+    },
+    {
+      "id": "1a9bb223-4737-4bfb-95eb-2fb6ee00d9da",
+      "slug": "bullspike",
+      "name": "Bullspike",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The searched identity resolves to BULLSPIKE, a Bulgarian anti-tank grenade-launcher product manufactured by VMZ EAD in Sopot, not a standalone Ukrainian company. No financing event can be assigned to the queue row without correcting or reconciling the identity.",
+      "hold_note": "Identity reconciliation required: queue row appears to represent a product rather than a company.",
+      "sources_checked": [
+        "https://defence24.com/bullspike-anti-tank-grenade-launcher-bulgarian-vmz-ead-company-willing-to-enter-the-polish-market",
+        "https://militarnyi.com/en/news/bakhmut-defenders-issued-bulgarian-bullspike-grenade-launchers/"
+      ],
+      "excluded_claims": [
+        "Ukrainian use and procurement of the BULLSPIKE product do not establish a Ukrainian issuer or financing recipient."
+      ]
+    },
+    {
+      "id": "cfe17006-99f0-4680-a94e-ebd740d6e797",
+      "slug": "bulwark-dynamics",
+      "name": "Bulwark Dynamics",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Company history and official announcements support an undisclosed September 2025 pre-seed close and a $6.8 million seed announcement on 9 September 2026 with four explicitly named participants. No lead role or individual cheque amount was disclosed.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://bulwarkdynamics.com/news/pre-seed-round-closed",
+        "https://bulwarkdynamics.com/company/",
+        "https://bulwarkdynamics.com/newsroom/seed-funding-onomichi-dockyard-partnership/",
+        "https://www.bairdmaritime.com/amp/story/security/naval/unmanned-naval-systems/bulwark-dynamics-raises-68m-for-autonomous-vessel-production"
+      ],
+      "excluded_claims": [
+        "The Onomichi Dockyard production MOU is a separate operational partnership and is not counted as additional funding."
+      ]
+    },
+    {
+      "id": "eaad672a-e3ab-4a44-9034-b8aec58db559",
+      "slug": "by-light-professional-it-services",
+      "name": "By Light Professional IT Services",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Sagewind Capital acquired a majority stake in By Light in May 2017 and remains the disclosed sponsor. Terms and any primary proceeds were undisclosed, so the ownership link is recorded without fabricating a funding round. Subsequent disclosed transactions are By Light acquisitions of other companies.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.sagewindcapital.com/investment/by-light/",
+        "https://www.sagewindcapital.com/news/sagewind-capital-llc-acquires-by-light-professional-it-services/",
+        "https://bylight.com/about/acquisitions/",
+        "https://bylight.com/press-release/by-light-acquires-dignitas-technologies/"
+      ],
+      "excluded_claims": [
+        "Majority-stake acquisition consideration is not treated as company funding because primary proceeds were not disclosed.",
+        "Capital used by By Light to acquire add-ons is not attributed as financing received by By Light."
+      ]
+    },
+    {
+      "id": "7c2f7c65-ddec-49ad-a695-e8d1f5ed1074",
+      "slug": "byrobot",
+      "name": "Byrobot",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Korean public reporting supports a KRW 1 billion growth-sharing loan in 2013 and an approximately KRW 1.5 billion common-share investment by NCSoft in October 2014. Broad Korean/English searches found no later public financing round through the checked date.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://m.etnews.com/201311270471",
+        "https://www.hankyung.com/article/2014042064991",
+        "https://m.thebell.co.kr/m/newsview.asp?newskey=201605190100034280002088&svccode=00",
+        "https://job.gg.go.kr/empmn/desEntDtl.do?bizrno=1348679750",
+        "https://magazine.hankyung.com/business/article/202102227454b"
+      ],
+      "excluded_claims": [
+        "A reported $25,000 Plug and Play offer was declined and is not a financing event.",
+        "Export contracts and government support programmes without a company-specific financing amount are not imported."
+      ]
+    },
+    {
+      "id": "2c0e524a-5a74-4c1c-a077-2a067a15f02e",
+      "slug": "c2-robotics",
+      "name": "C2 Robotics",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Completed bounded public-source review across the company site, dated Defence-funding announcements, broad financing searches and the named investor's portfolio. Two exact-issuer Australian Department of Defence innovation-funding tranches are public but their amounts are undisclosed. A 2026 Summiteer investment is confirmed by the investor, without public round terms. No zero-funding conclusion is made.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "94e135c2-4343-45d1-8745-611aa1c04231",
+      "slug": "caci-international",
+      "name": "CACI International",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 6,
+      "relationship_count": 0,
+      "evidence_note": "Issuer filings and releases support six debt financings from the 2021 amended facility through the March 2026 notes and incremental term loan. Older financing, including a reported 2019 revolver increase, and facility-level lender roles were not imported without completed primary-source reconciliation.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "a1bdc010-7434-45af-b79d-d526aa36e34b",
+      "slug": "cae",
+      "name": "CAE",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 5,
+      "relationship_count": 0,
+      "evidence_note": "Primary CAE reports support a 2020 revolving facility, two 2020-2021 public equity offerings, a 2021 subscription-receipt private placement and 2023 senior notes. CAE has older note series and facilities that were not fully reconstructed in this bounded pass, so history remains partial.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "6d9452e7-6663-4700-901a-3db686c16b42",
+      "slug": "caje-systems",
+      "name": "CAJE Systems",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact identity reconciled to the UK family-run drone consultancy and equipment supplier at cajesystems.co.uk, with Companies House number 14486881. Broad dated financing, company, registry and investor searches located no public round. This is a scoped public-source finding, not evidence that the business has raised zero funding.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "b5a06994-185b-4a71-b146-398ef1c12916",
+      "slug": "cal-analytics",
+      "name": "CAL Analytics",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The Ohio Federal Research Network confirms a USD 1.4 million 2019 award to CAL Analytics for its contingency-management platform. NASA SBIR records identify sponsored contracts and a later source gives only an aggregate Phase I/II total; those contract/aggregate claims are not converted into financing rounds. Other ODOT research funding remains amount- and instrument-unresolved.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "81f0e979-b8e6-4fb4-866c-faa5e0951aae",
+      "slug": "calian",
+      "name": "Calian",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Calian's own releases support the committed amounts and syndicate roles for its 2023 and 2025 revolving facilities and the 2026 accordion increase. A third-party-only 2026 grant claim and older IPO/financing history remain unverified in primary sources, so the public history remains partial.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "f71ebdaa-25b3-4d00-b612-a4a92cc839b3",
+      "slug": "calibre-defence",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Calibre Defence is a UK defence-news and consulting publisher incorporated in August 2024. Broad financing searches, its own site, Companies House and investor searches found no source-backed company financing event. Articles on its domain describe funding raised by other companies and were excluded.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "b5098a93-7645-4dc8-931e-23ffef5ea0fa",
+      "slug": "calidus-aerospace",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Official Calidus/Calidus Holding pages, UAE news, partnership disclosures and broad investor searches confirm an operating defence manufacturer but disclose no external equity, debt or company grant event. Procurement contracts, MoUs and group projects were excluded; absence of a public round is not a zero-funding claim.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "fb7c33f1-ae18-43d9-8554-523dc87be651",
+      "slug": "cambridge-sensoriis",
+      "name": null,
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Three issuer-specific public grants are importable: two 2022 Future of Flight awards with undisclosed individual values and the exact GBP209,794 oDART award. The company states it is privately funded and Companies House records share allotments, but public sources do not disclose the investors, proceeds or terms. The more-than-GBP500,000 aggregate across PORTAL and ALIAS is not allocated to either event.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "9ca611dd-9afb-4106-a828-0d69f08d1469",
+      "slug": "camero-tech",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 1,
+      "evidence_note": "Contemporaneous reports and the Israeli ecosystem record support a USD6m Series A final close in 2004, USD14m Series B in 2007 and USD4m venture round in 2009. Conflicting secondary split/tranche records were not imported. The 2011 SK Group acquisition is recorded only as an ownership relationship; its undisclosed consideration and a simultaneous USD5m US Army contract are excluded.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "eb0fdc92-dde9-42fc-b626-a82c74e94da3",
+      "slug": "cammell-laird",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "Company, parent and government-project sources support an approximately GBP3.5m Department for Transport CMDC4 grant announced in April 2024. The GBP7m project total and private co-investment are not company funding. A 1971 government loan concerned a historical predecessor, not the current Cammell Laird Shiprepairers & Shipbuilders Limited.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "4775a740-1abd-4e72-b982-6484e14de9fd",
+      "slug": "canadian-uavs",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 11,
+      "relationship_count": 0,
+      "evidence_note": "Federal proactive disclosures and company/government announcements support eleven unique direct-recipient agreements from 2018 through 2026. The duplicated CAD415,000 record under Western Economic Diversification Canada and successor PrairiesCan is counted once. The CAD415,000 BSP and CAD3m RDII instruments are explicitly repayable; the other disclosed government transfers are kept as grant-type contributions. Contracts are excluded.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "91fe8d01-ffd7-43d2-8dd0-ce8846b8f75b",
+      "slug": "canarias-stratoport",
+      "name": null,
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue identity is a public R&D infrastructure project within Fuerteventura Technology Park, not the legal borrower. Official sources attribute the EUR 8.38 million repayable loan and ERDF support to Parque Tecnologico de Fuerteventura, S.A. MP.",
+      "hold_note": "No company-level financing is imported because exact-issuer attribution would be wrong; identity classification remains outside this funding workstream.",
+      "sources_checked": [
+        "https://www.ptfue.com/en/project/canary-stratoport-for-haps-uas/",
+        "https://ptfue.com/en/Technology-park-obtains-financing-of-8-from-ACIISI-for-the-execution-of-the-Canary-Islands-Stratoport-for-Haps/",
+        "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2023-18059"
+      ],
+      "excluded_claims": []
+    },
+    {
+      "id": "d019fecc-04b0-465c-8cf4-d887d879cff9",
+      "slug": "canon-electronics",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Official profile, financial disclosures and 2025-2026 shareholder/tender-offer notices were reviewed together with dated financing and investor searches. No source-supported issuer financing round was found.",
+      "hold_note": "Canon Inc.'s tender offer for outstanding shares is an acquisition/shareholder transaction, not new proceeds to Canon Electronics, and is excluded.",
+      "sources_checked": [
+        "https://en.canon-elec.co.jp/aboutus/profile/",
+        "https://en.canon-elec.co.jp/finance/data/",
+        "https://en.canon-elec.co.jp/2026/?post_type=news"
+      ],
+      "excluded_claims": []
+    },
+    {
+      "id": "dfc9a01a-58f2-46e4-b523-3881f69a35dd",
+      "slug": "capewell",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The 2018 Ironwood investment is imported with undisclosed amount and instrument. Control acquisitions by CapitalWorks and Argosy and the 2024 HEICO divisional purchase were separately reconciled as M&A, not funding rounds.",
+      "hold_note": "Private transaction terms remain undisclosed and are not inferred from Ironwood's general ticket range.",
+      "sources_checked": [
+        "https://www.ironwoodcap.com/news-article/ironwood-capital-announces-investment-in-capewell-aerial-systems-llc",
+        "https://argosycapital.com/argosy-acquires-capewell-aerial-systems/",
+        "https://cwindustrials.com/portfolio_/capewell-aerial-systems/",
+        "https://hl.com/about-us/transactions/capewell-aerial-systems-argosy-heico/"
+      ],
+      "excluded_claims": []
+    },
+    {
+      "id": "1263b003-a159-40de-9675-f37310901c1c",
+      "slug": "caracal",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Official EDGE materials identify CARACAL as an EDGE Group Missiles & Weapons entity and document its operating history. Broad dated funding, company-news and investor searches did not identify a standalone public financing round for the exact CARACAL issuer.",
+      "hold_note": "EDGE group capitalisation, government ownership and CARACAL commercial contracts are not assigned as CARACAL funding events.",
+      "sources_checked": [
+        "https://edgegroup.ae/caracal",
+        "https://mediacenter-webfiles.edgegroup.ae/s3fs-public/2023-06/caracal-corporate-08feb2021.pdf"
+      ],
+      "excluded_claims": []
+    },
+    {
+      "id": "67402f7c-49ad-4679-9a09-8349bab8e3fd",
+      "slug": "carbonix",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The A$6.3 million late-seed round and Quickstep's A$1 million contribution are source-confirmed. Searches for earlier and later public rounds did not surface another exact-issuer financing event.",
+      "hold_note": "Unnamed individuals and small funds are preserved as undisclosed rather than fabricated investor identities.",
+      "sources_checked": [
+        "https://asianaviation.com/posts/australian-uav-maker-carbonix-raises-a6-3-million",
+        "https://www.quickstep.com.au/media-release-quickstep-announces-its-investment-in-unmanned-systems-and-the-launch-of-quickstep-advanced-air-mobility-qaam/",
+        "https://carbonix.com.au/category/uav/page/3/"
+      ],
+      "excluded_claims": []
+    },
+    {
+      "id": "a9ae54fa-a295-4746-874b-2490f4cf463b",
+      "slug": "caribou-labs",
+      "name": null,
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Ondas identifies the legal target as CaribouLabs Ltd. and confirms it was acquired on 23 September 2026 together with Insignito and Ottopia. The USD 56 million consideration and potential USD 32 million earnout are aggregate amounts for all three businesses.",
+      "hold_note": "Aggregate acquisition consideration cannot be assigned to Caribou Labs and is not issuer funding. No reliable source for earlier standalone rounds was found, so the history remains partial.",
+      "sources_checked": [
+        "https://ir.ondas.com/press-releases/detail/329/ondas-acquires-three-defense-technology-businesses-to",
+        "https://ir.ondas.com/all-sec-filings/content/0001213900-26-102458/ea0306273-8k_ondas.htm?TB_iframe=true&height=auto&preload=false&width=auto"
+      ],
+      "excluded_claims": []
+    }
+  ],
+  "audit_notes": [
+    "All 24 queue rows were confirmed against the authoritative queue and Supabase company IDs before research; stale preview UUID suffixes from the preceding state were corrected without changing company identities.",
+    "Sixteen identities received bounded reviewed_public_sources dispositions and eight remain source_review_partial because identity, history or source limitations remain. Empty database rows and unsuccessful searches were not treated as evidence of zero funding.",
+    "Bullspike resolved to a VMZ EAD product rather than a standalone company; Canarias Stratoport financing belongs to Parque Tecnologico de Fuerteventura; both were held instead of misattributing issuer financing.",
+    "Carmine Sky through Chery are prepared as the next 24 queued identities."
+  ],
+  "publication": {
+    "pending": true,
+    "catalogue_trigger_required": true,
+    "scope_note": "All thirteen event-bearing identities are outside the published 567-company landscape; map event/link totals should remain unchanged while new investor profiles and four supported portfolio relationships publish."
+  }
+}

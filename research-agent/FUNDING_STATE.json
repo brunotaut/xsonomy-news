@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 123,
-  "fully_reviewed_companies": 778,
-  "next_action": "Continue the next 24 queued identities from BSS through Caribou Labs under a new short writer lease.",
+  "partial_companies": 131,
+  "fully_reviewed_companies": 794,
+  "next_action": "Trigger and verify the existing xSonomy build, then continue the next 24 queued identities from Carmine Sky through Chery.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-12T01:48:00.778Z",
-  "source_reconciliation_companies": 540,
-  "approved_funding_events": 2183,
-  "round_participations": 2449,
-  "investor_profiles": 1524,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261112-twenty-fourth.json",
+  "updated_at": "2026-11-12T02:04:30.952Z",
+  "source_reconciliation_companies": 553,
+  "approved_funding_events": 2224,
+  "round_participations": 2498,
+  "investor_profiles": 1548,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261112-twenty-fifth.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -80,8 +80,10 @@
       "carbonix",
       "caribou-labs"
     ],
-    "status": "researching",
-    "writer_head": "b8102ea3cd3b6dc5cc81332ea73ab4b1c4cfb69d"
+    "status": "publication",
+    "writer_head": "804df469c3576961cdf3ec3253ed03b088053852",
+    "manifest": "research-agent/imports/funding-landscape-20261112-twenty-fifth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-twenty-fifth.json"
   },
   "last_verified_publication": {
     "checked_at": "2026-11-12T01:15:25.927Z",
@@ -2082,28 +2084,36 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 719,
-    "source_review_partial": 86,
-    "queued": 1759
+    "reviewed_public_sources": 794,
+    "source_review_partial": 131,
+    "queued": 1639
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "identities_checked": 24,
-    "newly_completed_bounded_reviews": 15,
-    "newly_completed_wider_reviews": 15,
-    "new_or_retained_partial": 9,
+    "newly_completed_bounded_reviews": 16,
+    "newly_completed_wider_reviews": 16,
+    "new_or_retained_partial": 8,
     "new_events_written": 41,
     "new_approved_events": 41,
-    "new_round_participations": 41,
-    "new_generic_portfolio_relationships": 0,
-    "new_investor_profiles": 27,
-    "new_source_rows": 43,
+    "new_round_participations": 49,
+    "new_generic_portfolio_relationships": 4,
+    "new_investor_profiles": 24,
+    "new_source_rows": 58,
     "new_companies_with_events": 13,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "manifest_event_matches": 41,
+    "db_approved_events": 2224,
+    "db_approved_round_participations": 2498,
+    "db_investor_profiles": 1548,
+    "db_source_reconciliation_companies": 553,
     "current_manifest_publication_verified": false,
     "concurrency_speedup_claimed": false,
-    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, exact-issuer/source reconciliation, nine production rollback rehearsals and nine connector-safe atomic chunks using the tested importer; publication wait excluded."
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded."
   },
   "latest_followup_metrics": {
     "identities_reconciled": 20,
@@ -2120,7 +2130,7 @@
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 805,
+  "source_reviewed_or_partial_companies": 925,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -2528,12 +2538,11 @@
   },
   "pending_import": null,
   "pending_publication": {
-    "status": "completed",
-    "manifest": "research-agent/imports/funding-landscape-20261111-twenty-first.json",
-    "report": "research-agent/reports/2026-11-11-funding-landscape-twenty-first.json",
-    "catalogue_commit": "5807971cafefd0234b109030b7b7cd05d80beeb3",
-    "workflow_run_id": 43108214623,
-    "verified_at": "2026-11-11T22:04:48.161Z"
+    "status": "pending",
+    "manifest": "research-agent/imports/funding-landscape-20261112-twenty-fifth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-twenty-fifth.json",
+    "source_commit": null,
+    "catalogue_trigger_required": true
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -3446,124 +3455,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "9a53d3c9-ff59-45ca-b51a-4fded620b565",
-      "slug": "bss",
-      "name": "BSS"
+      "id": "93850e9e-d2c8-41bf-8604-a93537a30526",
+      "slug": "carmine-sky",
+      "name": "Carmine Sky"
     },
     {
-      "id": "e3347ef7-802c-43b4-9bd4-adabb7195a66",
-      "slug": "bulba",
-      "name": "Bulba"
+      "id": "4cba9817-fe11-4d02-a8d5-b6b904d70067",
+      "slug": "carnegie-robotics",
+      "name": "Carnegie Robotics"
     },
     {
-      "id": "1a9bb223-59f8-486d-9476-5622990c8252",
-      "slug": "bullspike",
-      "name": "Bullspike"
+      "id": "2d6547f1-1bfb-4820-8e2e-07d285816928",
+      "slug": "casc-china-academy-of-aerospace-aerodynamics-caaa",
+      "name": "China Academy of Aerospace Aerodynamics (CAAA)"
     },
     {
-      "id": "cfe17006-1344-422a-90b7-31a4c54cf721",
-      "slug": "bulwark-dynamics",
-      "name": "Bulwark Dynamics"
+      "id": "96b9010c-6289-42ee-b323-135ae7f8b9a8",
+      "slug": "caseway",
+      "name": "Caseway"
     },
     {
-      "id": "eaad672a-f4d9-43e3-bebd-8c02e273c90d",
-      "slug": "by-light-professional-it-services",
-      "name": "By Light Professional IT Services"
+      "id": "ba750096-ffd9-430b-b071-f166bb4f8762",
+      "slug": "causey-aviation",
+      "name": "Causey Aviation"
     },
     {
-      "id": "7c2f7c65-1ce5-4b4c-b7d2-f78b8e67111e",
-      "slug": "byrobot",
-      "name": "Byrobot"
+      "id": "28780ee1-9dab-4f33-a8a0-e974fbcaec35",
+      "slug": "cea-technologies",
+      "name": "CEA Technologies"
     },
     {
-      "id": "2c0e524a-3e09-41f3-af81-ca11e568b50c",
-      "slug": "c2-robotics",
-      "name": "C2 Robotics"
+      "id": "70ef8687-7003-4c5e-b6b8-e705b838975c",
+      "slug": "cellebrite",
+      "name": "Cellebrite"
     },
     {
-      "id": "94e135c2-2f3e-4a72-a60c-fb2267e90dcf",
-      "slug": "caci-international",
-      "name": "CACI International"
+      "id": "6e791c8b-69cc-4fab-a4db-723d5daee857",
+      "slug": "censys-technologies",
+      "name": "Censys Technologies"
     },
     {
-      "id": "a1bdc010-4308-46ee-993c-960db8f977a4",
-      "slug": "cae",
-      "name": "CAE"
+      "id": "b75c4fdf-7990-4b99-b69e-4ba0bc6e65c8",
+      "slug": "central-michigan-university",
+      "name": "Central Michigan University"
     },
     {
-      "id": "6d9452e7-cb51-49b3-ad16-6ff87d7cf5a6",
-      "slug": "caje-systems",
-      "name": "Caje Systems"
+      "id": "c3a59dd4-e694-4020-aeb1-6756e8df85de",
+      "slug": "centralsquare",
+      "name": "CentralSquare"
     },
     {
-      "id": "b5a06994-771a-4dbf-b64b-ad7cabf59704",
-      "slug": "cal-analytics",
-      "name": "CAL Analytics"
+      "id": "8c4db053-a53e-4431-87a7-c4109d56e9e7",
+      "slug": "ceres-air",
+      "name": "Ceres Air"
     },
     {
-      "id": "81f0e979-f22f-4078-a93b-920074bf2e17",
-      "slug": "calian",
-      "name": "Calian"
+      "id": "6266f0d0-e2de-42c6-a304-60ce08537b5b",
+      "slug": "cesium",
+      "name": "Cesium"
     },
     {
-      "id": "f71ebdaa-b75f-42ea-a8d5-f08bcaf270a2",
-      "slug": "calibre-defence",
-      "name": "Calibre Defence"
+      "id": "4c2b5ebd-6f02-4f23-9ee5-2addb321d55e",
+      "slug": "cetc",
+      "name": "CETC"
     },
     {
-      "id": "b5098a93-8fc2-4ceb-9f96-e89b685aef26",
-      "slug": "calidus-aerospace",
-      "name": "Calidus Aerospace"
+      "id": "3bf1df49-37ec-4848-ae18-11bcf18fdbfc",
+      "slug": "cfm-international",
+      "name": "CFM International"
     },
     {
-      "id": "fb7c33f1-e6d7-4e69-8144-4bb056a1061c",
-      "slug": "cambridge-sensoriis",
-      "name": "Cambridge Sensoriis"
+      "id": "9a7997ab-813a-46ac-9099-1b0f66ae02bf",
+      "slug": "cgx-aero",
+      "name": "CGX Aero"
     },
     {
-      "id": "9ca611dd-1a3f-40cb-8456-af2a9e3cdd81",
-      "slug": "camero-tech",
-      "name": "Camero-Tech"
+      "id": "0348e876-9130-4de4-88bc-1cc441065ee5",
+      "slug": "cgz",
+      "name": "CGZ"
     },
     {
-      "id": "eb0fdc92-a364-4545-ac37-e97ccbd93624",
-      "slug": "cammell-laird",
-      "name": "Cammell Laird"
+      "id": "296d2d6e-a8d4-4f4a-ac70-4bb110c1535b",
+      "slug": "ch-guernsey",
+      "name": "C.H. Guernsey"
     },
     {
-      "id": "4775a740-74dd-4914-8a02-19bef3d9d634",
-      "slug": "canadian-uavs",
-      "name": "Canadian UAVs"
+      "id": "d5f53e11-ce57-4a64-b1ba-f0cd5ca2717d",
+      "slug": "change-agents-corporation",
+      "name": "Change Agents Corporation"
     },
     {
-      "id": "91fe8d01-8683-4d4a-bfca-28d56bc5725b",
-      "slug": "canarias-stratoport",
-      "name": "Canarias Stratoport"
+      "id": "c7d0980f-b20f-44d3-b0b6-de88930f18bd",
+      "slug": "chaos-industries",
+      "name": "Chaos Industries"
     },
     {
-      "id": "d019fecc-60ff-4620-95d7-28dc7fa80df4",
-      "slug": "canon-electronics",
-      "name": "Canon Electronics"
+      "id": "6b67c7f1-ffff-4640-a1ab-c316ef7a59f9",
+      "slug": "chariot-defense",
+      "name": "Chariot Defense"
     },
     {
-      "id": "dfc9a01a-53ed-4d94-be1a-dedb90ca8c28",
-      "slug": "capewell",
-      "name": "Capewell"
+      "id": "133320c4-0617-4cbc-8d6b-e8f6038e72eb",
+      "slug": "chc-navigation",
+      "name": "CHC Navigation"
     },
     {
-      "id": "1263b003-5f5d-4f9a-8ca4-adb42faed1e0",
-      "slug": "caracal",
-      "name": "Caracal"
+      "id": "71372805-fc4a-4a94-8d02-f45b03e2f690",
+      "slug": "chengdu-aircraft-design-and-research-institute",
+      "name": "Chengdu Aircraft Design and Research Institute"
     },
     {
-      "id": "67402f7c-22e6-4f51-8de7-8115352154b2",
-      "slug": "carbonix",
-      "name": "Carbonix"
+      "id": "3611fb65-ec52-460a-a5ab-6cf7788f34bd",
+      "slug": "chengdu-aircraft-industry-group-caig-avic",
+      "name": "Chengdu Aircraft Industry Group (CAIG)"
     },
     {
-      "id": "a9ae54fa-4b22-4b66-ac96-5866056e6377",
-      "slug": "caribou-labs",
-      "name": "Caribou Labs"
+      "id": "00b4e293-9985-47c7-a4b5-7326e9591cf8",
+      "slug": "chery",
+      "name": "Chery"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -3654,6 +3663,37 @@
       "db_source_reconciliation_companies": 540,
       "current_manifest_publication_verified": true,
       "concurrency_speedup_claimed": false
+    }
+  },
+  "latest_twenty_fifth_reconciliation": {
+    "report": "research-agent/reports/2026-11-12-funding-landscape-twenty-fifth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-twenty-fifth.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 16,
+      "newly_completed_wider_reviews": 16,
+      "new_or_retained_partial": 8,
+      "new_events_written": 41,
+      "new_approved_events": 41,
+      "new_round_participations": 49,
+      "new_generic_portfolio_relationships": 4,
+      "new_investor_profiles": 24,
+      "new_source_rows": 58,
+      "new_companies_with_events": 13,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "manifest_event_matches": 41,
+      "db_approved_events": 2224,
+      "db_approved_round_participations": 2498,
+      "db_investor_profiles": 1548,
+      "db_source_reconciliation_companies": 553,
+      "current_manifest_publication_verified": false,
+      "concurrency_speedup_claimed": false,
+      "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded."
     }
   }
 }
