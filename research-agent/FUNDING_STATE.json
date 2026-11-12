@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 107,
-  "fully_reviewed_companies": 746,
-  "next_action": "Research and reconcile the next 24 queued wider-cohort identities, Blade (Horizon Hobby) through Boeing.",
+  "partial_companies": 118,
+  "fully_reviewed_companies": 759,
+  "next_action": "Trigger the existing catalogue build from the twenty-third source checkpoint, verify the workflow and live JSON, then clear the writer lease and continue the next wider-cohort group.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-11T23:47:25.363Z",
-  "source_reconciliation_companies": 512,
-  "approved_funding_events": 2102,
-  "round_participations": 2319,
-  "investor_profiles": 1448,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261111-twenty-second.json",
+  "updated_at": "2026-11-12T00:01:38.301Z",
+  "source_reconciliation_companies": 521,
+  "approved_funding_events": 2131,
+  "round_participations": 2375,
+  "investor_profiles": 1471,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261111-twenty-third.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -80,8 +80,10 @@
       "bmt-global",
       "boeing"
     ],
-    "status": "research",
-    "writer_head": "fd47d6e4ca63405d4b4a6632c45a848e01e388ee"
+    "status": "publication",
+    "writer_head": "71802b943d3a192f1e40bf888c416701828f73e5",
+    "manifest": "research-agent/imports/funding-landscape-20261111-twenty-third.json",
+    "report": "research-agent/reports/2026-11-11-funding-landscape-twenty-third.json"
   },
   "last_verified_publication": {
     "checked_at": "2026-11-11T23:06:32.539Z",
@@ -1995,6 +1997,48 @@
       "bounded_review_disposition": "source_review_partial",
       "checked_at": "2026-11-11",
       "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twenty-first.json"
+    },
+    {
+      "company_slug": "blue",
+      "claim": "The row is a probable duplicate/false extraction of Blue Water Autonomy; no independent issuer was established and Blue Water Autonomy financing must not be assigned to it.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twenty-third.json"
+    },
+    {
+      "company_slug": "blickfeld",
+      "claim": "The 2018 USD10m seed and 2021 USD31m Series A disclosures are resulting round totals; incremental extension proceeds remain undisclosed.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twenty-third.json"
+    },
+    {
+      "company_slug": "blue-halo",
+      "claim": "Intervening debt-amendment dates and lender identities are not fully disclosed; balance-sheet aggregates were not converted into synthetic events.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twenty-third.json"
+    },
+    {
+      "company_slug": "blue-origin",
+      "claim": "Earlier Bezos financing is publicly described only as annual or cumulative estimates; the 2026 outside-capital round was not finally closed and its full syndicate/final size remain undisclosed.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twenty-third.json"
+    },
+    {
+      "company_slug": "blueflite",
+      "claim": "Paspalis and Techstars backing is supported, but original transaction amounts, currency/date and exact instrument terms remain unresolved.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twenty-third.json"
+    },
+    {
+      "company_slug": "boeing",
+      "claim": "Four material earlier/latest public liquidity events are recorded, but Boeing's century-long bond history remains broader than this bounded review.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-11",
+      "audit_report": "research-agent/reports/2026-11-11-funding-landscape-twenty-third.json"
     }
   ],
   "parallel_pilot": {
@@ -3392,124 +3436,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "b1708cf9-dc79-4d2b-a868-6e60b7f656cc",
-      "slug": "blade-horizon-hobby",
-      "name": "Blade (Horizon Hobby)"
+      "id": "a37862a2-20e0-4c77-83c4-1e302e9b5ae7",
+      "slug": "boeing-australia",
+      "name": "Boeing Australia"
     },
     {
-      "id": "1e301d39-6a59-4716-b3fe-887468934108",
-      "slug": "blaskor",
-      "name": "Blaskor"
+      "id": "1e894485-6ec7-45d2-a5cf-b28aba59cd2d",
+      "slug": "boeing-defence-australia",
+      "name": "Boeing Defence Australia"
     },
     {
-      "id": "4c51c757-455d-4c0d-985d-502a6c72a107",
-      "slug": "blheli",
-      "name": "BLHeli"
+      "id": "6b4fff5a-7628-4882-ab4d-0eb29ac6ce2b",
+      "slug": "boeing-insitu",
+      "name": "Boeing Insitu"
     },
     {
-      "id": "76d74963-eedc-4422-a5f8-36577695ea51",
-      "slug": "blickfeld",
-      "name": "Blickfeld"
+      "id": "97ddc40d-858f-4b67-8363-f9c5cb5830d7",
+      "slug": "bofors",
+      "name": "Bofors"
     },
     {
-      "id": "15932822-fe5d-4265-a399-645a8ee8b576",
-      "slug": "blohm-voss",
-      "name": "Blohm+Voss"
+      "id": "1c5de58d-176a-4a14-815f-a025a9da24b2",
+      "slug": "bombardier-defense",
+      "name": "Bombardier Defense"
     },
     {
-      "id": "e6801f34-baa3-4771-b98f-14c73d88b601",
-      "slug": "blue",
-      "name": "Blue"
+      "id": "ffe3a67a-431f-4cda-b511-e640a22d2948",
+      "slug": "bond-rf",
+      "name": "BOND RF"
     },
     {
-      "id": "905c8aeb-8154-47c0-8430-fe3998f91c79",
-      "slug": "blue-arrow-defense",
-      "name": "Blue Arrow Defense"
+      "id": "f8bc2c6b-ba6a-4533-9f27-5b3dae4d70df",
+      "slug": "bonv-aero",
+      "name": "BonV Aero"
     },
     {
-      "id": "d495fb67-bd3f-42d2-956c-e01a7cefdf6e",
-      "slug": "blue-force-technologies",
-      "name": "Blue Force Technologies"
+      "id": "5fb1f31e-38e1-4b9d-aec5-633da6c569cd",
+      "slug": "boomslang-aerospace",
+      "name": "Boomslang Aerospace"
     },
     {
-      "id": "fb4298f9-dabf-45e1-928d-724fd902d336",
-      "slug": "blue-halo",
-      "name": "Blue Halo"
+      "id": "5e733cac-90fa-4d02-bff1-8a07028553db",
+      "slug": "booz-allen-hamilton",
+      "name": "Booz Allen Hamilton"
     },
     {
-      "id": "d98ff7f9-2665-4c39-940f-1f4e00f1dd07",
-      "slug": "blue-marble-geographics",
-      "name": "Blue Marble Geographics"
+      "id": "1b85b382-a470-42f2-8f87-19f0a73eacfd",
+      "slug": "born4flight",
+      "name": "Born4Flight"
     },
     {
-      "id": "8cd33109-2dd6-4b23-a301-a4c3025078df",
-      "slug": "blue-ops",
-      "name": "Blue Ops"
+      "id": "104547e8-1fe7-4723-8690-9937838b7591",
+      "slug": "boryszew",
+      "name": "Boryszew"
     },
     {
-      "id": "738afb5f-1496-45e7-b654-832861e9fa0d",
-      "slug": "blue-origin",
-      "name": "Blue Origin"
+      "id": "158eba7b-6d2e-423e-b32b-7b81739948ad",
+      "slug": "boston-dynamics",
+      "name": "Boston Dynamics"
     },
     {
-      "id": "ca3074e9-2eb2-45eb-8b61-168d185451b7",
-      "slug": "blue-uas",
-      "name": "Blue UAS"
+      "id": "b7b291bf-8fd7-4699-87bd-39c236ef6ee8",
+      "slug": "botlab-dynamics",
+      "name": "BotLab Dynamics"
     },
     {
-      "id": "5790ee11-ac1b-4988-b39c-70d2ad187e6b",
-      "slug": "blue-water-autonomy",
-      "name": "Blue Water Autonomy"
+      "id": "9fd36f26-791f-4bb7-8b99-c6af7cd3c79c",
+      "slug": "bpne",
+      "name": "BPNE"
     },
     {
-      "id": "2c4eb168-3b97-450d-b724-b0ffcfdd36b5",
-      "slug": "bluebird-aero-systems",
-      "name": "Bluebird Aero Systems"
+      "id": "868fc0c9-6a37-4459-b0c0-4d4f8132507a",
+      "slug": "brasa-defence-systems",
+      "name": "Brasa Defence Systems"
     },
     {
-      "id": "13ee7a06-5c34-4887-afaf-f24f533b4fe8",
-      "slug": "bluebottle",
-      "name": "Bluebottle"
+      "id": "6ff3c5e8-7ac0-4761-8994-9978434f5714",
+      "slug": "bravetech-eu",
+      "name": "BraveTech EU"
     },
     {
-      "id": "bd0d8b25-b0d7-40fb-a22b-9f3d1965a710",
-      "slug": "bluefin-robotics",
-      "name": "Bluefin Robotics"
+      "id": "16154d9f-dcab-4cd7-b818-d275a48fdcce",
+      "slug": "bravo-ordnance",
+      "name": "Bravo Ordnance"
     },
     {
-      "id": "201a0ee0-f0b2-4c09-a634-905292634e5b",
-      "slug": "blueflite",
-      "name": "Blueflite"
+      "id": "26ab73d4-4e53-4a1f-b7a1-9ea7edbda8b0",
+      "slug": "breaker-2",
+      "name": "Breaker"
     },
     {
-      "id": "56c2c7da-c175-4791-a81c-f8b003fcdd4c",
-      "slug": "bluehalo-aerovironment",
-      "name": "BlueHalo (AeroVironment)"
+      "id": "74379f15-8396-4727-8859-422834f15629",
+      "slug": "breaux-brothers-enterprises",
+      "name": "Breaux Brothers Enterprises"
     },
     {
-      "id": "c4320654-c3b6-41d3-8377-4818771b7740",
-      "slug": "bluepath-labs",
-      "name": "BluePath Labs"
+      "id": "9e49e0f6-f066-49c5-957f-7f755d6eff67",
+      "slug": "brigantes-consulting",
+      "name": "Brigantes Consulting"
     },
     {
-      "id": "f74ba774-5182-4f33-be6d-449809c70606",
-      "slug": "bluesky-innovations",
-      "name": "BlueSky Innovations"
+      "id": "599267c2-98c7-4ac9-82d5-07675fe601fc",
+      "slug": "brinc",
+      "name": "BRINC"
     },
     {
-      "id": "af2626a7-59e9-4594-bd4a-861e1bed6def",
-      "slug": "bmc",
-      "name": "BMC"
+      "id": "674bfac1-73e0-406b-9d2d-7a2c8073a1d3",
+      "slug": "bristow-group",
+      "name": "Bristow Group"
     },
     {
-      "id": "3c84efeb-e743-49e7-a7f4-aad222bca4c4",
-      "slug": "bmt-global",
-      "name": "BMT Global"
+      "id": "59fd4d05-1fb6-4a4d-b007-a2f634d37150",
+      "slug": "brolis-semiconductors-brolis-defence",
+      "name": "Brolis Defence Group"
     },
     {
-      "id": "9e855d0a-93bb-4cb4-8835-6dfb49bd9b8e",
-      "slug": "boeing",
-      "name": "Boeing"
+      "id": "e6174d19-6a26-45c7-b726-d7254fafcd03",
+      "slug": "brook-aviation",
+      "name": "Brook Aviation"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -3539,6 +3583,36 @@
       "db_investor_profiles": 1448,
       "db_source_reconciliation_companies": 512,
       "current_manifest_publication_verified": true,
+      "concurrency_speedup_claimed": false
+    }
+  },
+  "latest_twenty_third_reconciliation": {
+    "report": "research-agent/reports/2026-11-11-funding-landscape-twenty-third.json",
+    "manifest": "research-agent/imports/funding-landscape-20261111-twenty-third.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 13,
+      "newly_completed_wider_reviews": 13,
+      "new_or_retained_partial": 11,
+      "new_events_written": 29,
+      "new_approved_events": 29,
+      "new_round_participations": 47,
+      "new_generic_portfolio_relationships": 13,
+      "new_investor_profiles": 23,
+      "new_source_rows": 45,
+      "new_companies_with_events": 9,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "manifest_event_matches": 29,
+      "db_approved_events": 2131,
+      "db_approved_round_participations": 2375,
+      "db_investor_profiles": 1471,
+      "db_source_reconciliation_companies": 521,
+      "current_manifest_publication_verified": false,
       "concurrency_speedup_claimed": false
     }
   }

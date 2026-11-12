@@ -1,0 +1,379 @@
+{
+  "report": "funding-landscape-twenty-third",
+  "checked_at": "2026-11-11",
+  "lease_id": "funding-20261111T234725Z-wider-13",
+  "scope": "Twenty-four queued wider-cohort identities, researched in four disjoint read-only lanes and consolidated under one writer lease.",
+  "method": [
+    "Broad dated financing/history search",
+    "Official company, filing, registry and financial-source review",
+    "Investor and transaction-party search including older rounds",
+    "Exact issuer and group/subsidiary reconciliation",
+    "Original currency, date precision, instrument, amount qualifier, closing state and explicit role extraction",
+    "Production rollback rehearsal, one atomic import, post-import idempotency rehearsal and database audit"
+  ],
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 13,
+    "newly_completed_wider_reviews": 13,
+    "new_or_retained_partial": 11,
+    "new_events_written": 29,
+    "new_approved_events": 29,
+    "new_round_participations": 47,
+    "new_generic_portfolio_relationships": 13,
+    "new_investor_profiles": 23,
+    "new_source_rows": 45,
+    "new_companies_with_events": 9,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "manifest_event_matches": 29,
+    "db_approved_events": 2131,
+    "db_approved_round_participations": 2375,
+    "db_investor_profiles": 1471,
+    "db_source_reconciliation_companies": 521,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false
+  },
+  "queue_after": {
+    "reviewed_public_sources": 759,
+    "source_review_partial": 118,
+    "queued": 1687,
+    "total": 2564
+  },
+  "per_company": [
+    {
+      "company_slug": "blade-horizon-hobby",
+      "company_name": "Blade (Horizon Hobby)",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "Blade is a Horizon Hobby product brand, not a separately financed issuer; parent acquisition consideration was excluded.",
+      "held_claims": [],
+      "source_urls": [
+        "https://www.horizonhobby.com/hh-our-history/",
+        "https://www.faegredrinker.com/en/services/experience/2013/12/private-equity-firms-purchase-horizon-hobby"
+      ]
+    },
+    {
+      "company_slug": "blaskor",
+      "company_name": "Blaskor",
+      "disposition": "source_review_partial",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "The Russian BLASKOR trading identity could not be reconciled to an exact current legal issuer; procurement was excluded.",
+      "held_claims": [
+        "Exact legal-entity continuity remains unresolved."
+      ],
+      "source_urls": [
+        "https://www.interfax-russia.ru/military/news/332059",
+        "https://www.aviaport.ru/news/275205/"
+      ]
+    },
+    {
+      "company_slug": "blheli",
+      "company_name": "BLHeli",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "BLHeli is an ESC firmware/code project rather than a separately evidenced company issuer.",
+      "held_claims": [],
+      "source_urls": [
+        "https://github.com/bitdump/BLHeli"
+      ]
+    },
+    {
+      "company_slug": "blickfeld",
+      "company_name": "Blickfeld",
+      "disposition": "source_review_partial",
+      "funding_events_written": 6,
+      "relationships_written": 1,
+      "outcome": "Blickfeld GmbH history reconciled across seed, Series A and extensions, EIB venture debt and growth financing; Senstar ownership recorded separately.",
+      "held_claims": [
+        "The 2018 USD 10m and 2021 USD 31m disclosures are resulting round totals, not separately disclosed incremental amounts."
+      ],
+      "source_urls": [
+        "https://www.htgf.de/en/seed-financing-round-for-sensor-startup-blickfeld-paves-the-way-for-autonomous-driving/",
+        "https://www.blickfeld.com/lidar-technology-firm-blickfeld-announces-extension-of-series-a-funding-to-31m/",
+        "https://www.eib.org/en/projects/all/20190548",
+        "https://www.blickfeld.com/7-5m-euros-of-initial-growth-financing/"
+      ]
+    },
+    {
+      "company_slug": "blohm-voss",
+      "company_name": "Blohm+Voss",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 1,
+      "outcome": "Blohm+Voss is within NVL and now indirectly owned by Rheinmetall; buyer financing, acquisition consideration and contracts were excluded.",
+      "held_claims": [],
+      "source_urls": [
+        "https://www.rheinmetall.com/en/media/news-watch/news/2026/03/2026-03-02-rheinmetall-takes-over-nvl"
+      ]
+    },
+    {
+      "company_slug": "blue",
+      "company_name": "Blue",
+      "disposition": "source_review_partial",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "The row is an ambiguous probable false extraction of Blue Water Autonomy; no separate issuer was established.",
+      "held_claims": [
+        "Do not assign Blue Water Autonomy financing to this row."
+      ],
+      "source_urls": [
+        "https://defence-blog.com/U-S-NAVY-HIRES-SIX-FIRMS-TO-MAP-PACIFIC-AND-INDIAN-OCEAN-SEABEDS/"
+      ]
+    },
+    {
+      "company_slug": "blue-arrow-defense",
+      "company_name": "Blue Arrow Defense",
+      "disposition": "source_review_partial",
+      "funding_events_written": 1,
+      "relationships_written": 0,
+      "outcome": "An undisclosed pre-seed led by Big Defence was confirmed; a later seed remained in fundraising and was not recorded as closed.",
+      "held_claims": [],
+      "source_urls": [
+        "https://www.bluearrow.co/preseed",
+        "https://scroll.media/en/2025/10/17/blue-arrow-closes-pre-seed-round-led-by-big-defence/"
+      ]
+    },
+    {
+      "company_slug": "blue-force-technologies",
+      "company_name": "Blue Force Technologies",
+      "disposition": "source_review_partial",
+      "funding_events_written": 1,
+      "relationships_written": 1,
+      "outcome": "One exact North Carolina award was recorded; federal contracts, incentive ceilings and Anduril acquisition consideration were excluded.",
+      "held_claims": [],
+      "source_urls": [
+        "https://www.commerce.nc.gov/report-2022-awardees-one-north-carolina-small-business-program/open",
+        "https://www.anduril.com/news/anduril-acquires-blue-force-technologies"
+      ]
+    },
+    {
+      "company_slug": "blue-halo",
+      "company_name": "Blue Halo",
+      "disposition": "source_review_partial",
+      "funding_events_written": 5,
+      "relationships_written": 1,
+      "outcome": "Aegis/BlueHalo economic continuity supports five disclosed debt facilities/amendments; other balance-sheet aggregates and AeroVironment acquisition financing were excluded.",
+      "held_claims": [
+        "Intervening amendment dates and lender identities remain incompletely disclosed."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1368622/000110465925063631/tm2518865d1_ex99-1.htm",
+        "https://www.sec.gov/Archives/edgar/data/1368622/000110465925063631/tm2518865d1_ex99-2.htm"
+      ]
+    },
+    {
+      "company_slug": "blue-marble-geographics",
+      "company_name": "Blue Marble Geographics",
+      "disposition": "source_review_partial",
+      "funding_events_written": 0,
+      "relationships_written": 1,
+      "outcome": "The company reports no outside funding before an undisclosed 2004 sale; current Eterna ownership was recorded without treating acquisition consideration as issuer financing.",
+      "held_claims": [],
+      "source_urls": [
+        "https://www.bluemarblegeo.com/blog/blue-marble-geographics-celebrates-30-years-in-business/",
+        "https://www.bluemarblegeo.com/newsroom/blue-marble-geographics-and-avenza-systems-unite-to-bring-together-complementary-products-in-a-field-to-office-geospatial-platform/"
+      ]
+    },
+    {
+      "company_slug": "blue-ops",
+      "company_name": "Blue Ops",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 1,
+      "outcome": "Blue Ops is Red Cat's maritime division/subsidiary; parent equity sales, facility spending and procurement were excluded.",
+      "held_claims": [],
+      "source_urls": [
+        "https://ir.redcatholdings.com/news-events/press-releases/detail/189/red-cat-launches-maritime-division-blue-ops-inc-appoints-barry-hinckley-as-president-to-lead-expansion-into-uncrewed-surface-vessels"
+      ]
+    },
+    {
+      "company_slug": "blue-origin",
+      "company_name": "Blue Origin",
+      "disposition": "source_review_partial",
+      "funding_events_written": 1,
+      "relationships_written": 0,
+      "outcome": "The first outside-capital round was recorded as an approximate USD 10bn first close led by Coatue; earlier founder funding remains cumulative/undated and the round was not finally closed.",
+      "held_claims": [
+        "Final size, final close date and complete syndicate remain undisclosed."
+      ],
+      "source_urls": [
+        "https://www.wsj.com/business/jeff-bezos-blue-origin-is-fueled-with-30-billion-of-his-fortune-b7407e6e",
+        "https://www.investing.com/news/stock-market-news/rocket-maker-blue-origin-raises-funds-for-first-time-nyt-dealbook-reports-4781573"
+      ]
+    },
+    {
+      "company_slug": "blue-uas",
+      "company_name": "Blue UAS",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "Blue UAS is a DIU/DoD programme and approved-product framework, not a financing issuer.",
+      "held_claims": [],
+      "source_urls": [
+        "https://www.diu.mil/latest/updates-to-the-defense-innovation-blue-uas-list-framework-supply-chain-and"
+      ]
+    },
+    {
+      "company_slug": "blue-water-autonomy",
+      "company_name": "Blue Water Autonomy",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 2,
+      "relationships_written": 0,
+      "outcome": "The exact Blue Water Autonomy issuer and its USD 14m seed and USD 50m Series A were confirmed with named participants and lead role.",
+      "held_claims": [],
+      "source_urls": [
+        "https://www.prnewswire.com/news-releases/blue-water-autonomy-emerges-from-stealth-to-usher-in-new-era-of-autonomous-ships-and-modernize-the-maritime-economy-302426198.html",
+        "https://www.gv.com/news/blue-water-autonomy"
+      ]
+    },
+    {
+      "company_slug": "bluebird-aero-systems",
+      "company_name": "Bluebird Aero Systems",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 2,
+      "relationships_written": 1,
+      "outcome": "Two 2007 financings were reconciled from a contemporary report; later IAI ownership is secondary and was recorded only as a relationship.",
+      "held_claims": [],
+      "source_urls": [
+        "https://en.globes.co.il/en/article-1000285212",
+        "https://www.iai.co.il/press/iai-expands-tactical-uav-activity-acquires-50-of-bluebird-aero-systems/"
+      ]
+    },
+    {
+      "company_slug": "bluebottle",
+      "company_name": "Bluebottle",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "Bluebottle is an Ocius product, not a separately financed issuer; the AUD 176m vessel programme is procurement.",
+      "held_claims": [],
+      "source_urls": [
+        "https://ocius.com.au/products/bluebottle/",
+        "https://www.minister.defence.gov.au/media-releases/2026-03-11/albanese-government-invests-176-million-new-fleet-australian-made-uncrewed-vessels"
+      ]
+    },
+    {
+      "company_slug": "bluefin-robotics",
+      "company_name": "Bluefin Robotics",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 1,
+      "outcome": "Bluefin's Battelle and General Dynamics transactions were acquisitions, not issuer financing; current ownership was recorded.",
+      "held_claims": [],
+      "source_urls": [
+        "https://gdmissionsystems.com/articles/2016/02/22/news-2016-general-dynamics-mission-systems-acquires-bluefin-robotics"
+      ]
+    },
+    {
+      "company_slug": "blueflite",
+      "company_name": "Blueflite",
+      "disposition": "source_review_partial",
+      "funding_events_written": 7,
+      "relationships_written": 2,
+      "outcome": "Seven source-supported SAFE, crowdfunding, accelerator, grant, strategic and working-capital events were recorded; Paspalis and Techstars relationships were retained without invented transaction terms.",
+      "held_claims": [
+        "Paspalis amount/currency/date and the exact Techstars cheque remain unresolved."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1953912/000166516023000547/primary_doc.xml",
+        "https://www.esd.ny.gov/esd-media-center/press-releases/governor-hochul-announces-1-million-grand-prize-winner-genius-ny-worlds-largest-accelerator-uas",
+        "https://www.blueflite.com/blueflite-awarded-michigan-mobility-prototyping-grant-to-enhance-drone-technology-through-advanced-battery-collaboration/",
+        "https://michiganrise.com/2026/01/15/michigan-rise-announces-14-investments-in-november-december-2025/"
+      ]
+    },
+    {
+      "company_slug": "bluehalo-aerovironment",
+      "company_name": "BlueHalo (AeroVironment)",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 1,
+      "outcome": "This row is the acquired BlueHalo business under AeroVironment, not a distinct post-closing issuer; pre-acquisition events stay under Blue Halo.",
+      "held_claims": [],
+      "source_urls": [
+        "https://www.avinc.com/2025/05/01/aerovironment-and-bluehalo-complete-transaction-creating-a-global-defense-technology/"
+      ]
+    },
+    {
+      "company_slug": "bluepath-labs",
+      "company_name": "BluePath Labs",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "BluePath Labs LLC was distinguished from similarly named finance companies; contracts and SBA status are not financing.",
+      "held_claims": [],
+      "source_urls": [
+        "https://bluepathlabs.com/contracting/"
+      ]
+    },
+    {
+      "company_slug": "bluesky-innovations",
+      "company_name": "BlueSky Innovations",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "BlueSky Innovations Holdings, Inc. was identity-resolved; no supported external financing round was found.",
+      "held_claims": [],
+      "source_urls": [
+        "https://www.blueskyinnovations.com/"
+      ]
+    },
+    {
+      "company_slug": "bmc",
+      "company_name": "BMC",
+      "disposition": "source_review_partial",
+      "funding_events_written": 0,
+      "relationships_written": 2,
+      "outcome": "BMC Otomotiv was distinguished from BMC Software and subsidiaries; Barzan and Tosyalı ownership was recorded while privatization prices and facilities were excluded.",
+      "held_claims": [
+        "Primary capital injections and exact ownership-change consideration remain undisclosed."
+      ],
+      "source_urls": [
+        "https://www.bmc.com.tr/kurumsal/hakkimizda",
+        "https://qna.org.qa/en/news/news-details?date=28%2F10%2F2025&id=deputy-prime-minister-and-minister-of-state-for-defense-affairs-participates-in-inauguration-ceremony-of-bmc-factory-in-turkiye"
+      ]
+    },
+    {
+      "company_slug": "bmt-global",
+      "company_name": "BMT Global",
+      "disposition": "reviewed_public_sources",
+      "funding_events_written": 0,
+      "relationships_written": 0,
+      "outcome": "BMT Group Limited is employee-benefit-trust owned and has no share capital; no public external equity round was established.",
+      "held_claims": [],
+      "source_urls": [
+        "https://www.bmt.org/about-us/our-corporate-governance/",
+        "https://find-and-update.company-information.service.gov.uk/company/01887373/filing-history"
+      ]
+    },
+    {
+      "company_slug": "boeing",
+      "company_name": "Boeing",
+      "disposition": "source_review_partial",
+      "funding_events_written": 4,
+      "relationships_written": 0,
+      "outcome": "Four material source-supported public debt/equity issuances were recorded; underwriters were not treated as investors and customer finance or asset sales were excluded.",
+      "held_claims": [
+        "Boeing's century-long bond history remains broader than this material earlier/latest review."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/12927/000119312520132533/d911707d8k.htm",
+        "https://investors.boeing.com/investors/news/press-release-details/2024/Boeing-Announces-Closing-of-Senior-Notes-Offering/default.aspx",
+        "https://www.sec.gov/Archives/edgar/data/12927/000119312524247611/d709270d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/12927/000119312524248743/d750441d8k.htm"
+      ]
+    }
+  ],
+  "audit_notes": [
+    "Source candidates and empty database rows were not treated as verified facts or evidence of zero funding.",
+    "Product/program identities, acquisition consideration, procurement, customer finance, programme-wide budgets and parent/subsidiary financing were not reassigned to cohort issuers.",
+    "Round extensions disclose resulting round sizes where stated; notes explicitly prevent those totals from being misread as incremental proceeds.",
+    "Named underwriters, platforms and unnamed syndicate members were not treated as beneficial investors."
+  ]
+}
