@@ -22,7 +22,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "local_postgresql_tests_passed": true,
     "new_investor_profiles": 35,
     "database_identities_inspected": 24,
@@ -40,7 +40,15 @@
     "db_approved_events": 3012,
     "db_approved_round_participations": 3911,
     "db_investor_profiles": 2375,
-    "db_source_reconciliation_companies": 793
+    "db_source_reconciliation_companies": 793,
+    "new_profile_exact_name_duplicates": 0,
+    "durable_queue_identity_count": 2564,
+    "durable_queue_readback_verified": true,
+    "active_minutes": 9,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, source QA, current importer/schema verification, PostgreSQL tests, production rollback, atomic import, idempotency, source audit and live publication verification. Concurrent lane durations not summed.",
+    "checked_identities_per_hour": 160,
+    "completed_reviews_per_hour": 20
   },
   "per_company": [
     {
@@ -1121,7 +1129,59 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false
-  }
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T22:02:12.659Z",
+    "verified_at": "2026-11-12T22:02:12.659Z",
+    "catalogue_commit": "d2bec2c9d9ea5555a5de3e949efa16025fac518f",
+    "source_commit": "c15c532999541ca62c8e85281e2e9f099a309637",
+    "workflow_run": {
+      "id": 43315694363,
+      "head": "d2bec2c9d9ea5555a5de3e949efa16025fac518f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43315694363"
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-sixth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-forty-sixth.json",
+    "generated_at": "2026-11-12T22:00:44.582Z",
+    "investor_generated_at": "2026-11-12T22:00:47.072Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2366,
+    "portfolio_relationships": 316,
+    "published_portfolio_relationships": 287,
+    "current_manifest_event_rows": 56,
+    "current_manifest_live_matches": 0,
+    "outside_landscape": [
+      "horizon-aircraft",
+      "horizon-technologies",
+      "hornbeck-offshore-services",
+      "hoskin-group",
+      "hovecon-consulting",
+      "hoverair",
+      "hoverfly-technologies",
+      "howa-machinery",
+      "hp",
+      "hqprop",
+      "huawei",
+      "hubsan",
+      "hunan-sunward-technology",
+      "hungviet-technology-and-investment-trading",
+      "huntington-ingalls-industries",
+      "huta-stalowa-wola",
+      "hydrix",
+      "hydromea",
+      "hyfix",
+      "hyimpulse",
+      "hylight",
+      "hylio",
+      "hypercraft",
+      "hyperion-technology-group"
+    ],
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: database2375 versus live2366. Directory increased by35 named profiles. All24 targetslugs explicitly absent from European landscape; membership gates unchanged. Both generic associations published against full-catalogue company pages. Spot checks Canso Investment Counsel, Korea Robot Manufacturing, Ace Capital Partners Israel, DLR, UK Space Agency, River Associates and Sunward Intelligent Equipment passed. Wider-cohort financing records are confirmed in DB; they are not asserted to appear as European map events.",
+    "catalogue_trigger_required": false
+  },
+  "audit_note": "Exact issuer separation retained: HOVERAir is a brand of separately queued ZeroZero Robotics, so no parent rounds duplicated. Huawei records identify Huawei Investment & Holding group borrower; offshore SPV debt excluded. HPInc post2015 tranches separated from HPE/predecessor issuer. Facility maxima are up_to and do not imply drawn cash. HSW incremental PLN642m distinguished from cumulative PLN1.242bn envelope. Hydrix cash entitlement proceeds exclude noncash conversion. HyImpulse >EUR50m extension is incremental equity; 2025 EUR30m public financing/cumulative totals held. Hylio final common-stock sales distinguished from live offering targets and noncash fees. Existing MBG Baden-Württemberg profile reused. All uncertain histories remain explicitly partial, not zero funding."
 }
