@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 251,
-  "fully_reviewed_companies": 914,
-  "next_action": "Continue the next 24 queued identities from Epirus through Event 38 Unmanned Systems.",
+  "partial_companies": 267,
+  "fully_reviewed_companies": 922,
+  "next_action": "Publish and verify the thirty-sixth reconciliation, then continue from Evica through FFG.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-12T12:51:32.157Z",
-  "source_reconciliation_companies": 680,
-  "approved_funding_events": 2691,
-  "round_participations": 3197,
-  "investor_profiles": 1952,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261112-thirty-fifth.json",
+  "updated_at": "2026-11-12T12:52:33.406Z",
+  "source_reconciliation_companies": 693,
+  "approved_funding_events": 2716,
+  "round_participations": 3299,
+  "investor_profiles": 2008,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261112-thirty-sixth.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -80,7 +80,9 @@
       "eva-defense",
       "event-38-unmanned-systems"
     ],
-    "status": "researching"
+    "status": "database_imported_publication_pending",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-sixth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-sixth.json"
   },
   "last_verified_publication": {
     "checked_at": "2026-11-12T12:04:06.146Z",
@@ -2299,43 +2301,40 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 914,
-    "source_review_partial": 251,
-    "queued": 1399
+    "reviewed_public_sources": 922,
+    "source_review_partial": 267,
+    "queued": 1375
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "identities_checked": 24,
-    "newly_completed_bounded_reviews": 12,
-    "new_or_retained_partial": 12,
-    "new_events_written": 57,
-    "new_generic_portfolio_relationships": 5,
+    "newly_completed_bounded_reviews": 8,
+    "new_or_retained_partial": 16,
+    "new_approved_events": 38,
+    "new_round_participations": 102,
+    "new_source_rows": 48,
+    "new_generic_portfolio_relationships": 4,
+    "new_companies_with_events": 13,
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": true,
-    "newly_completed_wider_reviews": 12,
-    "new_approved_events": 57,
-    "new_round_participations": 79,
-    "new_investor_profiles": 41,
-    "new_source_rows": 71,
-    "new_companies_with_events": 12,
+    "current_manifest_publication_verified": false,
+    "new_events_written": 38,
+    "new_investor_profiles": 56,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
-    "manifest_event_matches": 57,
-    "manifest_link_matches": 79,
-    "manifest_source_matches": 71,
-    "manifest_relationship_matches": 5,
+    "manifest_event_matches": 38,
+    "manifest_link_matches": 102,
+    "manifest_source_matches": 48,
+    "manifest_relationship_matches": 4,
     "missing_link_source_urls": 0,
-    "db_approved_events": 2691,
-    "db_approved_round_participations": 3197,
-    "db_investor_profiles": 1952,
-    "db_source_reconciliation_companies": 680,
-    "concurrency_speedup_claimed": false,
-    "active_minutes": 14,
-    "timing_scope": "Lease through four read-only lanes, reconciliation, rollback rehearsal, atomic import and idempotency rollback; publication wait excluded.",
-    "checked_identities_per_active_hour": 102.9,
-    "completed_reviews_per_active_hour": 51.4
+    "db_approved_events": 2716,
+    "db_total_events": 2729,
+    "db_approved_round_participations": 3299,
+    "db_investor_profiles": 2008,
+    "db_source_reconciliation_companies": 693,
+    "active_minutes": 6.4,
+    "concurrency_speedup_claimed": false
   },
   "latest_followup_metrics": {
     "parallel_read_only_groups": 4,
@@ -2373,7 +2372,7 @@
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 1165,
+  "source_reviewed_or_partial_companies": 1189,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -2779,28 +2778,13 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": {
-    "status": "prepared_rollback_passed",
+  "pending_import": null,
+  "pending_publication": {
+    "status": "database_imported",
     "manifest": "research-agent/imports/funding-landscape-20261112-thirty-sixth.json",
     "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-sixth.json",
-    "lease_id": "funding-20261112T1245Z-wider-24"
-  },
-  "pending_publication": {
-    "status": "verified",
-    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-fifth.json",
-    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-fifth.json",
-    "source_commit": "9da3a1bf9886d11205d80917f0ec3252f16c6b79",
-    "catalogue_commit": "63eb41d7c3c596c731158e6937bcbaef75717f0e",
-    "workflow_run_id": 43213868421,
-    "workflow_run": {
-      "id": 43213868421,
-      "head": "63eb41d7c3c596c731158e6937bcbaef75717f0e",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43213868421"
-    },
-    "verified_at": "2026-11-12T12:04:06.146Z",
-    "catalogue_trigger_required": false
+    "source_commit": null,
+    "catalogue_trigger_required": true
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -3713,124 +3697,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "55f6e176-7987-40fe-9cee-ceed364c3f7f",
-      "slug": "epirus",
-      "name": "Epirus"
+      "id": "7661ab98-73a3-4c41-a870-29b355f913b4",
+      "slug": "evica",
+      "name": "Evica"
     },
     {
-      "id": "ccf5b759-d6b8-42e4-aab5-81c13d4fb555",
-      "slug": "eplane-company",
-      "name": "ePlane Company"
+      "id": "d10dbbfd-98db-4b32-9e42-740c45c256f3",
+      "slug": "eviden",
+      "name": "Eviden"
     },
     {
-      "id": "bb3f2840-acbd-4898-adbe-b7bd13cd1220",
-      "slug": "epropelled",
-      "name": "ePropelled"
+      "id": "8ee93d65-7082-4d46-9a28-1b986a5c5f59",
+      "slug": "evolofoil",
+      "name": "EvoloFoil"
     },
     {
-      "id": "da79be84-f6df-4f15-8fac-e47fb271faac",
-      "slug": "erdyn-consultants",
-      "name": "Erdyn Consultants"
+      "id": "d50b5f97-6f4b-42c0-b235-fb737a2d0aa4",
+      "slug": "evolution-metals-and-technologies",
+      "name": "Evolution Metals & Technologies"
     },
     {
-      "id": "feafae43-c1b3-4a76-9481-37e5555f8a9d",
-      "slug": "erez-defense-solutions",
-      "name": "Erez Defense Solutions"
+      "id": "a1e7407c-7a78-4ae4-93df-d3aff894a7b2",
+      "slug": "evolve-dynamics",
+      "name": "Evolve Dynamics"
     },
     {
-      "id": "5c4f9532-8d33-468c-ae10-c18302e8567e",
-      "slug": "esaero",
-      "name": "ESAero"
+      "id": "056d6ce7-2fa5-414f-ade1-5ca601d779b6",
+      "slug": "evolved-aerospace",
+      "name": "Evolved Aerospace"
     },
     {
-      "id": "29e7fef9-4e64-4c9e-9461-c44cd336a6ef",
-      "slug": "esc-baz",
-      "name": "ESC BAZ"
+      "id": "4cbdcc71-013f-4424-a865-cd5ea8d2e555",
+      "slug": "ex-mil-recruitment",
+      "name": "Ex-Mil Recruitment"
     },
     {
-      "id": "8e5f9a6a-f902-41de-8502-376792295103",
-      "slug": "esh-tech",
-      "name": "Esh-Tech"
+      "id": "ffa0380d-6768-4846-a396-49d7faca91c9",
+      "slug": "exail-robotics",
+      "name": "Exail Robotics"
     },
     {
-      "id": "5a63ff47-0ea3-45c6-8e0b-8b4b1875b709",
-      "slug": "esmart-systems",
-      "name": "eSmart Systems"
+      "id": "58520c11-9262-44cc-b0ba-9e936ea47c67",
+      "slug": "exedy-globalparts",
+      "name": "Exedy Globalparts"
     },
     {
-      "id": "917f71b6-de39-409d-9069-496116066a53",
-      "slug": "esox-group",
-      "name": "ESOX Group"
+      "id": "858f2eeb-5165-4c93-94e5-e5da821c572b",
+      "slug": "exotrail",
+      "name": "Exotrail"
     },
     {
-      "id": "941df4ad-438c-4921-8e7c-2f8980beb1c8",
-      "slug": "esri",
-      "name": "Esri"
+      "id": "7198078f-eaa5-4361-8be7-485e0b0fdfe6",
+      "slug": "extensee",
+      "name": "Extensee"
     },
     {
-      "id": "de2533a5-cf31-40c8-9fa9-904f30e639a1",
-      "slug": "esspi",
-      "name": "ESSPI"
+      "id": "6b67a8e4-8ae1-424a-a177-c0a2796c965b",
+      "slug": "eyeonix",
+      "name": "Eyeonix"
     },
     {
-      "id": "7ac24153-b28a-49ab-a779-4138cb9e9c7d",
-      "slug": "estes-energetics",
-      "name": "Estes Energetics"
+      "id": "86e9250f-a953-46f9-b7b0-0bd1c3b49bae",
+      "slug": "facebook-meta-connectivity-lab",
+      "name": "Facebook (Meta) Connectivity Lab"
     },
     {
-      "id": "6f36d3ee-ce99-4d7b-b221-0437fc159964",
-      "slug": "etak-worldwide",
-      "name": "eTak Worldwide"
+      "id": "69197254-122f-4099-abee-19257e06a65e",
+      "slug": "factorial-energy",
+      "name": "Factorial Energy"
     },
     {
-      "id": "f2d8a613-379f-4854-94b3-2dded616e97b",
-      "slug": "eu-motors",
-      "name": "EU Motors"
+      "id": "28567732-1a81-4653-a6be-710bd6c9d749",
+      "slug": "falcata",
+      "name": "Falcata"
     },
     {
-      "id": "0ae0cff2-37c5-4473-aefc-4a2fdd1ccb39",
-      "slug": "eurenco",
-      "name": "EURENCO"
+      "id": "90dc0f63-ad63-4048-bd9a-b67ddf1c9744",
+      "slug": "falcon-propeller",
+      "name": "Falcon Propeller"
     },
     {
-      "id": "dc267a16-5ced-450a-9286-48afcb5d844e",
-      "slug": "european-air-transport-leipzig",
-      "name": "European Air Transport Leipzig"
+      "id": "feae62f4-192c-44e5-be73-0153480dccb0",
+      "slug": "falconworks",
+      "name": "FalconWorks"
     },
     {
-      "id": "022d07c6-8d93-4cb5-b685-5105583cab48",
-      "slug": "europuls",
-      "name": "Europuls"
+      "id": "fd652311-ce8f-49cf-a88f-7c2f024b6e06",
+      "slug": "farage-precision",
+      "name": "Farage Precision"
     },
     {
-      "id": "041e06e6-602f-4a66-b290-5c331f37e73b",
-      "slug": "eurospike",
-      "name": "EuroSpike"
+      "id": "375ea011-a695-46b3-8d06-692d5ed39fc5",
+      "slug": "fat-shark",
+      "name": "Fat Shark"
     },
     {
-      "id": "119e6ac7-ac02-47a7-b800-cefafd766c15",
-      "slug": "eurousc-benelux",
-      "name": "EuroUSC-Benelux"
+      "id": "e2e8d6a8-54f3-4a0c-a407-5fe5221af8b1",
+      "slug": "federal-ammunition",
+      "name": "Federal Ammunition"
     },
     {
-      "id": "b16a04cc-8589-4864-81a2-cdfa77f8bd9b",
-      "slug": "eurousc-italia",
-      "name": "EuroUSC Italia"
+      "id": "4d3372f8-a57f-49fa-98a9-7b82f814532a",
+      "slug": "fedex",
+      "name": "FedEx"
     },
     {
-      "id": "45f86696-6339-4178-9250-e296ae4c8dfa",
-      "slug": "eutelsat",
-      "name": "Eutelsat"
+      "id": "d84cd7a9-9a45-459a-90a3-1a4a3d60887b",
+      "slug": "fernride",
+      "name": "Fernride"
     },
     {
-      "id": "ef4a40de-5d44-4b09-b544-f4c7604d40ab",
-      "slug": "eva-defense",
-      "name": "Eva Defense"
+      "id": "94c21191-6dde-4c75-ab00-6661f29eceed",
+      "slug": "ferra-engineering",
+      "name": "Ferra Engineering"
     },
     {
-      "id": "310a6713-9efa-4984-9882-3930094cad91",
-      "slug": "event-38-unmanned-systems",
-      "name": "Event 38 Unmanned Systems"
+      "id": "5919516d-fc9a-4cb7-a9a3-1ab693227334",
+      "slug": "ffg",
+      "name": "FFG"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -4313,5 +4297,42 @@
       "checked_identities_per_active_hour": 102.9,
       "completed_reviews_per_active_hour": 51.4
     }
-  }
+  },
+  "total_funding_events": 2729,
+  "latest_thirty_sixth_reconciliation": {
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-sixth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-sixth.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 8,
+      "new_or_retained_partial": 16,
+      "new_approved_events": 38,
+      "new_round_participations": 102,
+      "new_source_rows": 48,
+      "new_generic_portfolio_relationships": 4,
+      "new_companies_with_events": 13,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "current_manifest_publication_verified": false,
+      "new_events_written": 38,
+      "new_investor_profiles": 56,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "manifest_event_matches": 38,
+      "manifest_link_matches": 102,
+      "manifest_source_matches": 48,
+      "manifest_relationship_matches": 4,
+      "missing_link_source_urls": 0,
+      "db_approved_events": 2716,
+      "db_total_events": 2729,
+      "db_approved_round_participations": 3299,
+      "db_investor_profiles": 2008,
+      "db_source_reconciliation_companies": 693,
+      "active_minutes": 6.4,
+      "concurrency_speedup_claimed": false
+    }
+  },
+  "funding_event_count_note": "total_funding_events counts all stored rows; approved_funding_events filters publication_status=approved. Baseline had 2691 total, 2678 approved."
 }
