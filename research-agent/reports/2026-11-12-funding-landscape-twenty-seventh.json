@@ -1,0 +1,615 @@
+{
+  "report": "Twenty-seventh autonomous funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": "funding-20261112T034354812Z-wider-17",
+  "scope": {
+    "identities": 24,
+    "from": "china-aerospace-science-and-industry-corporation-casic",
+    "through": "combat-vision",
+    "published_landscape": false
+  },
+  "method": "Four disjoint read-only research lanes; one writer consolidation; exact issuer, original currency, amount qualifier, instrument, closing and explicit roles checked. Contracts, acquisition consideration, parent/subsidiary financing, undrawn facilities and consortium totals excluded.",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 8,
+    "new_or_retained_partial": 16,
+    "new_events_written": 34,
+    "new_generic_portfolio_relationships": 3,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "current_manifest_publication_verified": false,
+    "new_approved_events": 34,
+    "new_round_participations": 31,
+    "new_investor_profiles": 18,
+    "new_source_rows": 38,
+    "new_companies_with_events": 14,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "manifest_event_matches": 34,
+    "db_approved_events": 2297,
+    "db_approved_round_participations": 2601,
+    "db_investor_profiles": 1609,
+    "db_source_reconciliation_companies": 581,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded."
+  },
+  "per_company": [
+    {
+      "id": "6b67773f-7031-49cb-ae5c-5a9eb1c92b79",
+      "slug": "china-aerospace-science-and-industry-corporation-casic",
+      "name": "China Aerospace Science and Industry Corporation (CASIC)",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "The exact centrally owned parent issuer has a long public debt history. An official/issuer prospectus trail verifies a CNY3 billion 2009 medium-term note, CNY2 billion 2010 enterprise bond and CNY1.2 billion 2017 public company bond. These are parent-level obligations, not financing of listed or operating subsidiaries.",
+      "hold_note": "Public disclosures show additional notes and bonds beyond the three normalized events. This bounded pass is not a complete instrument-by-instrument debt audit.",
+      "sources_checked": [
+        "https://epaper.cs.com.cn/zgzqb/html/2010-01/29/nw.zgzqb_20100129_1-A13.htm?div=-1",
+        "https://epaper.cs.com.cn/zgzqb/html/2010-01/29/nw.zgzqb_20100129_2-A13.htm?div=-1",
+        "https://www.sse.com.cn/disclosure/bond/announcement/company/c/3223334172721080.pdf",
+        "https://www.sse.com.cn/disclosure/bond/announcement/company/c/3063484365833567.pdf"
+      ],
+      "excluded_claims": [
+        "Subsidiary IPOs, equity financings, grants and bank facilities are not assigned to the parent.",
+        "Approved shelf amounts are not treated as closed financing without issuance evidence."
+      ]
+    },
+    {
+      "id": "22a185f0-7ac7-473d-9dcc-9e9e81329bb8",
+      "slug": "china-aerospace-science-and-technology-corporation",
+      "name": "China Aerospace Science and Technology Corporation",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The exact state-owned parent has issued enterprise bonds directly. Public filings and contemporaneous market reporting support a CNY2 billion 2006 enterprise bond and CNY5 billion 2013 enterprise bond.",
+      "hold_note": "The group has additional historical bonds, notes, bank facilities and state support. Only two clearly attributable closed parent issues are normalized; coverage remains partial.",
+      "sources_checked": [
+        "https://finance.sina.com.cn/roll/20060828/0108886045.shtml",
+        "https://m.cj.sina.cn/page/aHR0cDovL2ZpbmFuY2Uuc2luYS5jb20uY24vc3RvY2svdC8yMDEzMDMxOS8wMzMwMTQ4NzMyNTEuc2h0bWw?from=redirect",
+        "https://www.spacechina.com/n25/n2014789/n2014814/c2346302/content.html",
+        "https://www.sse.com.cn/disclosure/bond/announcement/company/c/2989061936718891.pdf"
+      ],
+      "excluded_claims": [
+        "Financing of listed subsidiaries and operating institutes is not attributed to the parent.",
+        "Group-wide bank credit limits and historical aggregate state support are not recorded as closed rounds."
+      ]
+    },
+    {
+      "id": "fd077f5a-4744-4172-a4d2-898a90bbd008",
+      "slug": "china-electronics-technology-group-corporation",
+      "name": "China Electronics Technology Group Corporation",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Exchange filings for the exact parent issuer verify a CNY1.5 billion 2019 company bond and CNY4.0 billion 2021 public company bond. The issuer has a larger debt programme and additional medium-term notes.",
+      "hold_note": "This is not a complete debt-security audit; additional historical and later issues require instrument-level normalization.",
+      "sources_checked": [
+        "https://static.cninfo.com.cn/finalpage/2023-08-31/1217733163.PDF",
+        "https://static.cninfo.com.cn/finalpage/2021-11-17/1211612812.pdf",
+        "https://static.cninfo.com.cn/finalpage/2022-06-27/1213834151.PDF",
+        "https://www.cetc.com.cn/"
+      ],
+      "excluded_claims": [
+        "Debt or equity raised by listed subsidiaries is not parent financing.",
+        "Registration ceilings and approved shelf amounts are not recorded as closed issues."
+      ]
+    },
+    {
+      "id": "e7d34b7e-e6c6-4b0c-97b6-034d2053dd64",
+      "slug": "china-state-shipbuilding-corporation",
+      "name": "China State Shipbuilding Corporation",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The current exact parent issuer was created by the 2019 merger. Shanghai Stock Exchange materials and a transaction-party announcement support two CNY2 billion technology-innovation company bond issues in 2026.",
+      "hold_note": "The group has a dense parent and subsidiary debt history. The 2026 issues are supported, but this pass does not establish complete parent-level coverage; subsidiary shipping-leasing and listed-company bonds are excluded.",
+      "sources_checked": [
+        "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2026-02-03/244598_20260203_16DT.pdf",
+        "https://finance.sina.com.cn/wm/2026-07-01/doc-inifhmhu4281270.shtml",
+        "https://static.sse.com.cn/bond/bridge2/disclosure/announcement/c/202302/022530_20230202_5SQG.pdf",
+        "https://www.cssc.net.cn/n5/n21/c23470/content.html"
+      ],
+      "excluded_claims": [
+        "USD, EUR and CNY bonds issued by China Shipbuilding Leasing or other subsidiaries are not parent financing.",
+        "Listed-subsidiary IPOs, convertible bonds and exchangeable bonds are not attributed to the parent.",
+        "A prospectus registration ceiling is not a closed financing event."
+      ]
+    },
+    {
+      "id": "900e8bf7-969e-4c32-8ba6-e8b9ed23c1c4",
+      "slug": "chodai",
+      "name": "Chodai",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is CHODAI Co., Ltd., a Japanese construction consultancy. Official corporate history confirms its September 2021 delisting and October 2021 holding-company conversion under People, Dreams & Technologies Group; current stated capital of JPY1 billion is not evidence of a new financing round.",
+      "hold_note": "No source-backed external company financing round was found in the bounded public review. Unknown private financing is not treated as zero.",
+      "sources_checked": [
+        "https://www.chodai.co.jp/en/company/profile/",
+        "https://www.chodai.co.jp/en/company/history/",
+        "https://www.chodai.co.jp/news/ir/",
+        "https://www.chodai.co.jp/company/settlement/",
+        "https://www.pdt-g.co.jp/ir/"
+      ],
+      "excluded_claims": [
+        "Current paid-in capital is not treated as a dated financing event.",
+        "The 2021 share-transfer holding-company reorganisation and delisting are not company financing.",
+        "Project contracts and Chodai Capital Management activity are not financing received by Chodai."
+      ]
+    },
+    {
+      "id": "4d0ab3be-8abf-4b53-a80c-2a3bac9d195b",
+      "slug": "ciac",
+      "name": "CIAC",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Corporación de la Industria Aeronáutica Colombiana S.A. (CIAC), a Colombian mixed-economy state entity. Official company, government and audited-financial sources describe its ownership and operating finances but do not disclose a source-backed external investment round.",
+      "hold_note": "No public investment round found in this bounded review; this is not a claim of zero historical funding.",
+      "sources_checked": [
+        "https://ciac.gov.co/",
+        "https://ciac.gov.co/faq-page/",
+        "https://ciac.gov.co/wp-content/uploads/2025/05/ESTADOS-FINANCIEROS-DICIEMBRE-2024-2023-CIAC-S.A.pdf",
+        "https://www.camara.gov.co/wp-content/uploads/2025/10/control_politico/Respuestas/6688/archivo95b86dba_3784_463f_8845_e673d7a93f5f_1-22dea2ba.pdf",
+        "https://www.minhacienda.gov.co/documents/20119/1223020/Reporte%2Banual%2B-%2B2024.pdf/8020c5bb-ac0d-6566-9789-01790be6e70b?t=1754002968165"
+      ],
+      "excluded_claims": [
+        "Government ownership percentages are not converted into a new financing event.",
+        "Defence procurement, maintenance contracts and budget support are not investment rounds.",
+        "No generic investor relationship is created solely from state ownership."
+      ]
+    },
+    {
+      "id": "203e3823-25b0-458f-8b1d-d0387cc9ed8b",
+      "slug": "cis",
+      "name": "CiS",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is CiS GmbH of Bentwisch/Rostock, founded in 1990 and developing drones, GIS and inspection software. Three issuer-specific German public grants with exact beneficiary allocations are supported by federal project databases; the company's project list exposes additional funded projects whose company allocation is not public.",
+      "hold_note": "The public project history is broader than the three normalized awards. Consortium totals such as the approximately EUR 10 million 6G-ICAS4Mobility programme and projects without an issuer-specific amount remain excluded pending beneficiary-level allocation.",
+      "sources_checked": [
+        "https://www.cis-rostock.de/ueber/unternehmen/",
+        "https://www.cis-rostock.de/forschung/forschungsprojekte/",
+        "https://enargus.de/pub/bscw.cgi/?id=10536499&op=enargus.eps2&q=ISC+Inspection+GmbH&s=5&v=10",
+        "https://biooekonomie.de/service-infothek/projektdatenbank/4715/detail/2",
+        "https://biooekonomie.de/service-infothek/projektdatenbank/3368/detail/2",
+        "https://www.cis-rostock.de/aktuell/mobilitat-der-zukunft-arbeit-an-projekt-6g-icas4mobility.html",
+        "https://www.zim.de/ZIM/Redaktion/DE/Publikationen/Erfolgsbeispiele/Einzelprojekte/077-3d-inspektion-mit-drohnen.pdf?__blob=publicationFile&v=5"
+      ],
+      "excluded_claims": [
+        "The approximately EUR 10 million 6G-ICAS4Mobility figure is the total programme budget and is not attributed to CiS.",
+        "DigMo/MonoTwin, avaRes and later state/ERDF projects are not imported without an exact CiS allocation.",
+        "A historical state-aid list aggregate and company project references are not converted into standalone rounds without project-level dates and instruments."
+      ]
+    },
+    {
+      "id": "a867a890-2b91-4c30-8f6c-b00e212cc226",
+      "slug": "claymore-industries",
+      "name": "Claymore Industries",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Companies House identifies the Scottish issuer Claymore Industries Limited, incorporated 23 March 2026. Green Flag Ventures' own portfolio records investments in 2026 Q1 and Q3 and describes product progress after first funding; no amounts, security type or co-investors are disclosed.",
+      "hold_note": "The investor source supports the existence and quarter of two investments but does not disclose their amounts, exact closing days, instruments, round labels or any lead role.",
+      "sources_checked": [
+        "https://find-and-update.company-information.service.gov.uk/company/SC883495",
+        "https://www.greenflag.vc/portfolio/claymore",
+        "https://www.greenflag.vc/portfolio"
+      ],
+      "excluded_claims": [
+        "Product-development milestones and the production of evaluation units are not financing amounts.",
+        "No individual cheque, lead role, valuation or co-investor is inferred from the investor portfolio entry."
+      ]
+    },
+    {
+      "id": "12e75e10-5ab5-43ba-b698-65af20c6d946",
+      "slug": "clearspace-uk",
+      "name": "ClearSpace UK",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact UK operating issuer is ClearSpace Today Ltd (company 13249835), formed in March 2021 as the Swiss ClearSpace group's UK subsidiary. Public UKSA awards are described as mission-development or procurement contracts, while the 2021 CHF 4 million, 2023 EUR 26.7 million and 2024 EUR 5.5 million equity rounds were raised by the Swiss/group issuer rather than the UK subsidiary.",
+      "hold_note": "No independently issued UK-subsidiary equity or debt round was found in the bounded search. Unknown private intra-group funding remains unknown, not zero.",
+      "sources_checked": [
+        "https://clearspace.today/news/leading-space-innovator-clearspace-opens-for-business-in-the-uk",
+        "https://www.gov.uk/government/news/uk-builds-leadership-in-space-debris-removal-and-in-orbit-manufacturing-with-national-mission-and-funding-boost",
+        "https://clearspace.today/news/clearspace-secures-a-major-uk-contract-to-help-clean-up-space",
+        "https://clearspace.today/news/clear-debris-removal-mission-uk",
+        "https://clearspace.today/news/clearspace-announces-a-first-closing-at-chf-4-million",
+        "https://clearspace.today/news/clearspace-raises-e26-million-to-cleanup-space-in-a-series-a-round-led-by-otb-ventures-and-swisscom-ventures",
+        "https://clearspace.today/news/clearspace-breathing-new-life-into-space",
+        "https://www.sell2wales.gov.wales/search/show/search_view.aspx?ID=AUG650756&catID="
+      ],
+      "excluded_claims": [
+        "The CHF 4 million, EUR 26.7 million and EUR 5.5 million rounds belong to the Swiss/group issuer and are not assigned to ClearSpace Today Ltd.",
+        "The GBP 2.25 million design-phase award and subsequent GBP 2.35 million mission funding are public mission contracts/awards, not investment rounds.",
+        "The GBP 61 million UK ADR procurement contract and the ESA EUR 86.2 million service contract are customer contracts, not company financing."
+      ]
+    },
+    {
+      "id": "5395f987-672a-4950-a538-37654d547665",
+      "slug": "click-and-power",
+      "name": "Click & Power",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact issuer is click & power GmbH of Kaisersbach, incorporated under a 10 October 2022 articles date with EUR 100,000 registered share capital. Revive Automotive's own site states that it holds a stake in Click & Power; no investment amount, date, instrument or other shareholder financing was publicly disclosed.",
+      "hold_note": "The ownership relationship is supported, but its acquisition date, percentage, consideration and whether capital entered the company are undisclosed.",
+      "sources_checked": [
+        "https://revive-automotive.com/click-power-english/",
+        "https://www.companyhouse.de/click-power-GmbH-Kaisersbach"
+      ],
+      "excluded_claims": [
+        "EUR 100,000 registered share capital is not treated as a public investment round.",
+        "A network of four specialist companies is not interpreted as four investors because the source does not state that each owns equity."
+      ]
+    },
+    {
+      "id": "b7eea0d4-fb63-4a15-86d3-ba1fb2290374",
+      "slug": "cmn",
+      "name": "CMN",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "CMN is the Cherbourg shipbuilding subsidiary of CMN Naval S.A. The parent announced EUR 85 million of three-tranche structured bank financing on 31 July 2025, plus a distinct EUR 25 million credit line and a Bpifrance factoring line, expressly to support the group and CMN's transformation.",
+      "hold_note": "The exact borrower is CMN Naval S.A., not the queue's subsidiary CMN. No round is imported against the subsidiary until issuer mapping is resolved; the EUR 25 million line and factoring facility also lack sufficient closing/usage detail for attribution.",
+      "sources_checked": [
+        "https://cmnnaval.com/news/cmn-naval-scales-for-global-expansion-and-the-future-of-shipbuilding/",
+        "https://cmnnaval.com/wp-content/uploads/2025/08/CMN-NAVAL_Press-Release_20250731.pdf",
+        "https://www.meretmarine.com/fr/defense/cmn-naval-securise-un-financement-bancaire-de-85-meu-pour-accelerer-sa-transformation-industrielle",
+        "https://www.cmn-group.com/mentions-legales/"
+      ],
+      "excluded_claims": [
+        "The parent-issued EUR 85 million facility is not assigned to subsidiary CMN.",
+        "The additional EUR 25 million credit line is a facility for future acquisitions and not imported as cash already received by CMN.",
+        "The Bpifrance factoring line has no disclosed amount and is not normalized as a round."
+      ]
+    },
+    {
+      "id": "056d45f3-b806-445a-9b5e-725be2f2d281",
+      "slug": "cms-strategic",
+      "name": "CMS Strategic",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is CMS Strategic Limited (company 03803549), an active privately held London defence, aerospace and security communications consultancy. Company, registry and broad financing searches disclosed no external equity, debt or issuer-specific grant round.",
+      "hold_note": "This is a bounded public-source result, not a claim of zero historical or private financing.",
+      "sources_checked": [
+        "https://www.cmsstrategic.com/",
+        "https://www.cmsstrategic.com/about/",
+        "https://www.cmsstrategic.com/what-we-do/",
+        "https://find-and-update.company-information.service.gov.uk/company/03803549"
+      ],
+      "excluded_claims": [
+        "Client contracts, bid-support work and marketing activity are operating revenue/services, not financing rounds."
+      ]
+    },
+    {
+      "id": "dfa34069-9ebb-43f9-8d09-46da59edddda",
+      "slug": "cn-romtehnica",
+      "name": "CN Romtehnica",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Compania Națională ROMTEHNICA S.A. (Romanian fiscal identifier 472771), a Romanian Ministry of National Defence state company. Government ownership, corporate-governance expectations, the company's financial statements and broad Romanian-language financing searches did not establish a public external investment round. The 2025-2028 investment plan is internally budgeted operating investment, not financing received.",
+      "hold_note": "No public investment round was found in this bounded review; that is not a claim of zero undisclosed or non-public financing.",
+      "sources_checked": [
+        "https://www.mapn.ro/guvernanta_corporativa/doc/Ordin%20componenta%20initiala%20si%20scrisoare%20de%20asteptari%20Romtehnica.pdf",
+        "https://guvernanta.gov.ro/catalog-companii/",
+        "https://guvernanta.gov.ro/top-companii.html",
+        "https://www.romtehnica.com.ro/site/"
+      ],
+      "excluded_claims": [
+        "Romanian defence procurement and resale contracts are operating transactions, not issuer financing.",
+        "The 2025-2028 investment programme lists planned company spending and does not disclose an external capital provider."
+      ]
+    },
+    {
+      "id": "08cc22f0-b6e9-4c28-acb2-ee4503884cf2",
+      "slug": "coaspire",
+      "name": "CoAspire",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Virginia-based CoAspire LLC. CoAspire states that it bootstrapped thirteen years of profitable growth, has no outside investors and remains 100% owned by its two founders. Public records concern government contracts and product development rather than investment financing.",
+      "hold_note": "The bounded public-source result is company-reported bootstrapping and no outside investors; it is not evidence that no private borrowing or undisclosed financing ever occurred.",
+      "sources_checked": [
+        "https://www.coaspire.com/news",
+        "https://www.coaspire.com/whoweare",
+        "https://www.inknowvation.com/sbir/companies/coaspire-llc",
+        "https://navystp.com/wp-content/uploads/2024/05/CoAspire-LLC-Spotlight-2024.pdf"
+      ],
+      "excluded_claims": [
+        "U.S. defence contracts and programme funding for missile development are customer/procurement revenue, not investment rounds.",
+        "Company growth and office expansion are not financing events."
+      ]
+    },
+    {
+      "id": "073c81cf-696a-406d-9b85-3928d464ec30",
+      "slug": "cobham",
+      "name": "Cobham",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Issuer continuity is Cobham plc, renamed Cobham Limited after Advent's take-private. Two company equity recapitalisations are directly supported: the June 2016 rights issue and the May 2017 rights issue. Advent's 2020 acquisition is recorded only as an ownership relationship; the approximately GBP4 billion consideration went to shareholders, and acquisition-vehicle debt is not assigned as company funding.",
+      "hold_note": "Cobham has a long public-company and post-take-private debt history. This pass verifies the two major rights issues but does not claim instrument-by-instrument completeness for bank facilities, notes, preference instruments or acquisition-vehicle financing.",
+      "sources_checked": [
+        "https://docs.londonstockexchange.com/sites/default/files/reports/Main%20Market%20factsheet%20June%202016.pdf",
+        "https://www.cobham.com/wp-content/uploads/2019-annual-report-and-financial-statements-of-cobham-limited-formerly-cobham-plc.pdf",
+        "https://www.lse.co.uk/rns/recommended-cash-acquisition-of-cobham-f6g99urnh4omul4.html",
+        "https://www.adventinternational.com/ideas/with-advents-support-maxar-blasts-off-to-a-successful-launch/",
+        "https://find-and-update.company-information.service.gov.uk/company/00030470/filing-history"
+      ],
+      "excluded_claims": [
+        "The approximately GBP4 billion Advent takeover price was consideration to existing shareholders, not primary funding received by Cobham.",
+        "The reported USD2.847 billion acquisition financing was raised by the AI Convoy acquisition structure and is not assigned to Cobham Limited as a new company round.",
+        "Cobham's acquisition of Ultra and later asset sales are M&A transactions, not Cobham funding rounds."
+      ]
+    },
+    {
+      "id": "772179f9-072a-4bff-801b-8a06c12624cd",
+      "slug": "codequest",
+      "name": "Codequest",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Warsaw-based CODE QUEST sp. z o.o. (KRS 0000424452). Its official project page discloses one issuer-specific European Regional Development Fund award for the Colata multisensor drone-detection project. Broad Polish and English searches found no source-backed external equity round.",
+      "hold_note": "The grant is recorded at the exact beneficiary contribution disclosed by the company. A public crowdfunding appeal for an earlier prototype is not imported without a verified closed amount.",
+      "sources_checked": [
+        "https://www.codequest.com/funded-project",
+        "https://colata.pl/",
+        "https://rejestr.io/krs/424452/code-quest",
+        "https://zrzutka.pl/y3jy72",
+        "https://www.codequest.com/pitch-decks/codequest-deck-2025.pdf"
+      ],
+      "excluded_claims": [
+        "The total project value of PLN9,731,392.88 is not the grant amount and is not imported as financing.",
+        "A public fundraising appeal is not a completed financing event without verified proceeds.",
+        "Client software-development work is operating revenue, not investment financing."
+      ]
+    },
+    {
+      "id": "fc9c167d-e4f3-4f4b-814a-2f33ac2b7874",
+      "slug": "cogito",
+      "name": "Cogito",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 7,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Boston-based Cogito Corporation, the real-time contact-centre coaching company later acquired by Verint. Company, investor and transaction releases support six priced financings from 2015 through 2020 plus an amount-undisclosed 2023 financing. The 2024 Verint acquisition is excluded from funding.",
+      "hold_note": "SEC-derived sources also indicate earlier USD1 million offerings, a 2018 debt filing, 2020-2022 debt/securities filings and later amendments. These were not imported without direct event-level reconciliation. The October 2023 amount remains undisclosed.",
+      "sources_checked": [
+        "https://www.globenewswire.com/fr/news-release/2015/11/17/1060260/0/en/cogito-raises-5-5-million-series-a-to-improve-customer-engagement-through-behavioral-voice-analytics.html",
+        "https://openviewpartners.com/blog/openview-cogito/",
+        "https://techcrunch.com/2016/11/18/cogito-closes-15m-series-b-to-improve-customer-support-with-science/",
+        "https://techcrunch.com/2018/07/23/cogito-scores-37-million-series-c-as-customer-service-sentiment-analysis-biz-grows/",
+        "https://vcnewsdaily.com/cogito/venture-capital-funding/glvgszlrgy",
+        "https://boston.citybuzz.co/article/569818/cogito-receives-20-million-in-funding",
+        "https://venturebeat.com/business/cogito-raises-25-million-to-analyze-phone-calls-with-ai",
+        "https://www.cmswire.com/the-wire/cogito-secures-new-funding-to-empower-better-agent-and-customer-experiences/",
+        "https://www.verint.com/news/verint-acquires-cogito-develops-a-bot-that-scores-live-customer-conversations/",
+        "https://www.sec.gov/Archives/edgar/data/1166388/000116638825000014/vrnt-20250131.htm"
+      ],
+      "excluded_claims": [
+        "Verint's 2024 purchase consideration is acquisition consideration, not a Cogito financing round.",
+        "Aggregator-listed SEC offerings and debt facilities are held until their amount sold, instrument and event continuity are reconciled from the filings.",
+        "The undisclosed October 2023 round is not assigned an inferred amount."
+      ]
+    },
+    {
+      "id": "0bc08f96-26ec-4ec9-bdd1-9d24e943e865",
+      "slug": "cogniteam",
+      "name": "Cogniteam",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Petah Tikva-based Cogniteam, developer of the Nimbus cloud robotics platform. Two public rounds are supported: a USD4.2 million 2021 seed financing and a USD5.6 million 2022 Series A.",
+      "hold_note": "A secondary aggregator lists an additional USD3.3 million event in October 2023, but no issuer or investor announcement confirming that event was found, so it is not imported.",
+      "sources_checked": [
+        "https://www.roboticsandautomationmagazine.co.uk/news/ai/cogniteam-raises-us4-2m-to-launch-ai-drag-and-drop-programme.html",
+        "https://www.irt3000.si/en/news/2021101310353181/cogniteam_releases_nimbus_reducing_robotic_time_to_market_by_80_using_a_cloudbased_dragndrop_platform/",
+        "https://www.roboticsandautomationmagazine.co.uk/news/funding/cogniteam-raises-us5-6m-to-advance-low-code-ai-robotics-platform.html",
+        "https://www.cogniteam.com/about-us/",
+        "https://finder.startupnationcentral.org/company_page/cogniteam"
+      ],
+      "excluded_claims": [
+        "The aggregator-only October 2023 USD3.3 million entry is not imported without an issuer or transaction-party source.",
+        "Partnership announcements and accelerator participation are not treated as financing."
+      ]
+    },
+    {
+      "id": "204358e1-6b06-4f23-8cbd-17c8b321f67f",
+      "slug": "cognyte-formerly-verint",
+      "name": "Cognyte (formerly Verint)",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Cognyte Software Ltd. is the Israeli issuer formed in May 2020 and separated from Verint on 1 February 2021 by a pro-rata distribution, not by a cash IPO. Official filings verify two revolving facilities made effective at separation with aggregate commitments of up to USD 100 million; later amendments reduced and extended the aggregate line to USD 65 million through January 2028. The facilities were undrawn at 31 January 2026.",
+      "hold_note": "The current filing reports no outstanding draw, while an earlier filing reports 2023 interest expense; the historical draw-and-repayment timeline is not sufficiently reconciled for additional debt events. The Verint share distribution and Nasdaq trading start are not primary company funding.",
+      "sources_checked": [
+        "https://www.sec.gov/Archives/edgar/data/1824814/000182481426000021/cgnt-20260131.htm",
+        "https://www.sec.gov/Archives/edgar/data/1824814/000182481425000018/cgnt-20250131_htm.xml",
+        "https://www.sec.gov/Archives/edgar/data/1824814/000182481426000058/a6-kdec2025.htm",
+        "https://www.verint.com/press-room/2021-press-releases/verint-celebrates-day-one-as-a-company-focused-on-enabling-brands-to-achieve-boundless-customer-engagement-following-completion-of-cognyte-software-spin-off/"
+      ],
+      "excluded_claims": [
+        "The 2021 Verint distribution created an independently traded company but produced no disclosed primary cash proceeds.",
+        "The December 2025 USD 65 million line is an amendment and extension of existing facilities, not a new USD 65 million cash raise.",
+        "Undrawn facility capacity is not described as cash received."
+      ]
+    },
+    {
+      "id": "24351dd9-bcfe-4c85-8b88-2623ae7abf30",
+      "slug": "coherent",
+      "name": "Coherent",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue website resolves to current Coherent Corp., the Pennsylvania issuer formerly named II-VI Incorporated; it adopted the Coherent name in September 2022 after buying the separate legacy Coherent, Inc. Official filings verify the predecessor issuer's USD 990 million notes, the 2022 senior term facilities, and a USD 2 billion NVIDIA private placement closed on 2 March 2026.",
+      "hold_note": "The issuer has a dense public debt and refinancing history, including later amendments and subsidiary facilities. This pass captures the major predecessor-continuity debt and the latest strategic equity event, not every historical borrowing or amendment.",
+      "sources_checked": [
+        "https://www.sec.gov/Archives/edgar/data/820318/000119312522240836/d347635d8k.htm",
+        "https://ir.coherent.com/node/18426/xbrl-viewer",
+        "https://ir.coherent.com/static-files/bbbc60d1-4574-4752-91ab-9c1bcaf8b03c",
+        "https://www.coherent.com/news/press-releases/nvidia-and-coherent-announce-strategic-partnership",
+        "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Coherent-Announce-Strategic-Partnership-to-Develop-Optics-Technology-to-Scale-Next-Generation-Data-Center-Architecture/default.aspx"
+      ],
+      "excluded_claims": [
+        "The 2022 purchase price for legacy Coherent, Inc. is acquisition consideration, not funding received by current Coherent Corp.",
+        "The NVIDIA multibillion-dollar purchase commitment is a commercial commitment, separate from the USD 2 billion equity investment.",
+        "The August 2026 subsidiary credit facility was excluded because Coherent Corp. was neither borrower nor guarantor and it remained undrawn at the checked disclosure date."
+      ]
+    },
+    {
+      "id": "48388df4-3414-4d54-b0df-a3d11eb1fe8c",
+      "slug": "cohort",
+      "name": "Cohort",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Cohort plc was formed in 2006 and admitted to AIM on 8 March 2006. Its primary admission document states that the placing included both new shares and shareholder sale shares and that net proceeds received by the company were GBP 4.1 million.",
+      "hold_note": "Cohort has twenty years of listed-company share issues, employee equity and acquisition-related financing. The initial issuer proceeds are verified, but this pass is not a security-by-security or facility-by-facility capitalization audit.",
+      "sources_checked": [
+        "https://www.cohortplc.com/application/files/7515/6139/3213/Admission_Document_2006_1.pdf",
+        "https://www.cohortplc.com/download_file/force/153/241",
+        "https://www.cohortplc.com/about-us/history",
+        "https://www.londonstockexchange.com/en/quote/equity/CHRT/cohort-plc"
+      ],
+      "excluded_claims": [
+        "The GBP 9.5 million total placing included existing-shareholder sale shares; only the GBP 4.1 million net proceeds expressly received by Cohort are recorded.",
+        "Acquisition consideration for Cohort subsidiaries is not company funding.",
+        "Employee option exercises and small routine listed-company share issues were not normalized as venture rounds."
+      ]
+    },
+    {
+      "id": "ee526807-6e6c-49de-9a7e-0c404e363f0d",
+      "slug": "collins-aerospace",
+      "name": "Collins Aerospace",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "RTX and SEC materials identify Collins Aerospace as an operating business segment, formed in 2018 by combining UTC Aerospace Systems and Rockwell Collins and now reported inside RTX. No standalone financing issued by the Collins Aerospace division was verified.",
+      "hold_note": "This is a bounded public-source result, not a zero-funding assertion. Historical Rockwell Collins securities and UTC/RTX parent debt are not attributable to the post-2018 operating division without a direct issuer obligation.",
+      "sources_checked": [
+        "https://investors.rtx.com/news-releases/news-release-details/united-technologies-announces-intention-separate-three",
+        "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/R24.htm",
+        "https://www.sec.gov/ixviewer/ix.html?doc=/Archives/edgar/data/101829/000010182926000006/rtx-20251231.htm",
+        "https://www.rtx.com/collinsaerospace/who-we-are/about-us"
+      ],
+      "excluded_claims": [
+        "United Technologies' 2018 purchase of Rockwell Collins is acquisition consideration paid to sellers, not financing received by the Collins Aerospace division.",
+        "Rockwell Collins pre-combination notes are obligations of the predecessor issuer, not a post-formation Collins Aerospace round.",
+        "RTX parent debt, equity and grants to particular subsidiaries are not assigned to the operating segment."
+      ]
+    },
+    {
+      "id": "533ac800-9dc3-4703-a95c-a3229b1d0eb7",
+      "slug": "colt",
+      "name": "Colt",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue identity resolves most closely to Colt's U.S. firearms group. SEC filings for Colt Defense LLC and Colt Finance Corp. verify two debtor-in-possession facilities in June 2015 with disclosed cash draws. Colt Holding Company LLC later became the parent of Colt's Manufacturing Company and Colt Canada and was acquired by CZG in 2021; that sale is not company funding.",
+      "hold_note": "The Colt group has a complex pre-bankruptcy secured debt, noteholder and restructuring history, and the short catalogue name does not identify a single legal issuer. Only actual new-money draws explicitly reported for Colt Defense LLC and affiliates are normalized; deemed exchange tranches and undrawn commitments are excluded.",
+      "sources_checked": [
+        "https://www.sec.gov/Archives/edgar/data/1512369/000110465915048873/a15-14899_18k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1508677/000110465915043532/a15-13356_18k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1508677/000104746915005165/a2224908zex-99_t3e7.htm",
+        "https://www.colt.com/2021/05/24/colt-announces-closing-of-acquisition-by-czg/",
+        "https://www.colt.com/timeline/"
+      ],
+      "excluded_claims": [
+        "The USD 35 million and USD 20 million DIP Tranche B amounts were exchanges of existing debt, not new cash proceeds.",
+        "Conditional later draws and total facility commitments are not recorded as cash received.",
+        "CZG's 2021 acquisition consideration was paid for equity interests and is not a Colt funding round."
+      ]
+    },
+    {
+      "id": "7565994f-d835-4a9d-bb0a-438fb217a8a6",
+      "slug": "combat-vision",
+      "name": "ComBat Vision",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The product project predates the exact issuer, Combat Vision LLC (Ukrainian registration 45403936), which was registered on 15 November 2023. Current registry-derived data identify founder Yevhen Maksymenko and the Greyton closed-end venture corporate investment fund as members, with Greyton holding a 10% registered interest as of the October 2026 extract. Earlier development was supported through volunteer work and People's Project crowdfunding, but no attributable closed amount for the company issuer was found.",
+      "hold_note": "Do not assign pre-2023 project crowdfunding to the later LLC without legal continuity and issuer-specific proceeds. The date, instrument and consideration for Greyton's entry are not public, so it is recorded only as a supported ownership relationship, not a priced round.",
+      "sources_checked": [
+        "https://combat.vision/",
+        "https://youcontrol.com.ua/en/catalog/company_details/45403936/",
+        "https://opendatabot.ua/c/45403936",
+        "https://zvitnist.com/45403936_TOVARYSTVO_Z_OBMEZHENOU_VIDPOVIDALNISTU_KOMBAT_VI",
+        "https://dou.ua/lenta/projects/ukrainian-miltech-guide/",
+        "https://ethz.ch/content/dam/ethz/special-interest/gess/cis/center-for-securities-studies/pdfs/CSS_Cyberdefense_Report_Ukrainian_Way_of_Digital_Warfighting.pdf"
+      ],
+      "excluded_claims": [
+        "People's Project crowdfunding supported the earlier volunteer project and equipment deployment; it is not attributed as a financing round of the LLC formed in 2023.",
+        "The registered UAH 10,000 Greyton capital contribution is not treated as a cash funding round because the entry date, consideration form and transaction terms are not disclosed.",
+        "Product access, deployments and military adoption are not financing."
+      ]
+    }
+  ],
+  "audit_notes": [
+    "CASIC, CASC, CETC and CSSC remain partial because public parent-level debt histories are denser than this bounded instrument sample; subsidiary and listed-affiliate financing was excluded.",
+    "Claymore investment quarters are preserved at year precision because the investor portfolio does not disclose closing days, amounts or instruments.",
+    "ClearSpace UK, CMN, Collins Aerospace and other group entities were not assigned financing disclosed for a parent, subsidiary or predecessor without supported issuer continuity.",
+    "Cognyte facility capacity is an up-to commitment and not cash received; Coherent predecessor continuity is supported by the II-VI name change.",
+    "Acquisition consideration, commercial contracts, state ownership, secondary sale proceeds and consortium totals were not imported as company funding."
+  ],
+  "publication": {
+    "pending": true,
+    "catalogue_trigger_required": true,
+    "scope_note": "All fourteen event-bearing identities are outside the published 567-company landscape; map event/link totals should remain unchanged while 18 new investor profiles and three supported portfolio relationships publish."
+  },
+  "database_before": {
+    "approved_events": 2263,
+    "round_participations": 2570,
+    "investor_profiles": 1591,
+    "source_reconciliation_companies": 567,
+    "generic_relationships": 59
+  },
+  "database_after": {
+    "approved_events": 2297,
+    "round_participations": 2601,
+    "investor_profiles": 1609,
+    "source_reconciliation_companies": 581,
+    "generic_relationships": 62,
+    "target_events": 34,
+    "target_participations": 31,
+    "target_sources": 38,
+    "target_companies": 14,
+    "target_missing_sources": 0,
+    "target_participants_missing_source": 0
+  },
+  "queue_after": {
+    "reviewed_public_sources": 815,
+    "source_review_partial": 158,
+    "queued": 1591,
+    "total": 2564
+  }
+}
