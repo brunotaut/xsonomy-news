@@ -1,0 +1,436 @@
+{
+  "report": "Twenty-sixth autonomous funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": "funding-20261112T025227205Z-wider-16",
+  "scope": {
+    "identities": 24,
+    "from": "carmine-sky",
+    "through": "chery",
+    "published_landscape": false
+  },
+  "method": "Four disjoint read-only research lanes; one writer consolidation; exact issuer, original currency, amount qualifier, instrument, closing and explicit roles checked. Contracts, acquisition consideration, parent/subsidiary financing and consortium totals excluded.",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 13,
+    "new_or_retained_partial": 11,
+    "new_events_written": 39,
+    "new_generic_portfolio_relationships": 4,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "current_manifest_publication_verified": false,
+    "new_approved_events": 39,
+    "new_round_participations": 72,
+    "new_investor_profiles": 43,
+    "new_source_rows": 48,
+    "new_companies_with_events": 14,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "manifest_event_matches": 39,
+    "db_approved_events": 2263,
+    "db_approved_round_participations": 2570,
+    "db_investor_profiles": 1591,
+    "db_source_reconciliation_companies": 567,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, rollback rehearsal, atomic import and idempotency rollback; publication wait excluded."
+  },
+  "per_company": [
+    {
+      "id": "93850e9e-d2c8-41bf-8604-a93537a30526",
+      "slug": "carmine-sky",
+      "name": "Carmine Sky",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Current public sources identify Carmine Sky as a Ukrainian counter-UAS company, registration 46049320, not a Qatari issuer. Its October 2026 agreement with Qatari state-owned Barzan Holdings created a joint venture but disclosed no investment into Carmine Sky.",
+      "hold_note": "Reconcile the database's Qatar headquarters with the Ukrainian legal issuer before treating the identity as fully resolved.",
+      "sources_checked": [
+        "https://app.dealroom.co/companies/carmine_sky",
+        "https://invest-eic-companies.dealroom.co/news/note/carmine-sky-and-barzan-holdings-form-jv-for-full-cycle-air-defence",
+        "https://www.reuters.com/business/aerospace-defense/private-air-defence-takes-off-ukraine-2026-04-29/"
+      ],
+      "excluded_claims": [
+        "The Barzan Holdings joint venture is an operating partnership, not evidence of financing received by Carmine Sky.",
+        "Dealroom's empty funding entry is not evidence of zero financing."
+      ]
+    },
+    {
+      "id": "4cba9817-fe11-4d02-a8d5-b6b904d70067",
+      "slug": "carnegie-robotics",
+      "name": "Carnegie Robotics",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Carnegie Robotics states it has never taken outside investors, private equity or venture capital, while government records support a 2020 PPP loan and multiple SBIR awards. The official SBIR portfolio reports seven Phase I and three Phase II awards totaling USD 3,527,177; three individually visible awards are importable below.",
+      "hold_note": "The official portfolio exposes only the ten most recent awards incrementally; remaining award-level dates and amounts should be reconciled before claiming complete grant history.",
+      "sources_checked": [
+        "https://www.pghtech.org/news-and-publications/Carnegie_Robotics_Feature",
+        "https://projects.propublica.org/coronavirus/bailouts/search?q=Carnegie+Hall",
+        "https://www.sbir.gov/portfolio/383275"
+      ],
+      "excluded_claims": [
+        "The USD 18.4M GEARS other-transaction agreement is a procurement contract, not a financing round.",
+        "Accelerator participation without an explicit company award is not imported."
+      ]
+    },
+    {
+      "id": "2d6547f1-1bfb-4820-8e2e-07d285816928",
+      "slug": "casc-china-academy-of-aerospace-aerodynamics-caaa",
+      "name": "China Academy of Aerospace Aerodynamics (CAAA)",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "CAAA is a public-service research institute directly under China Aerospace Science and Technology Corporation. Public records describe RMB 563M establishment capital and funding from fiscal subsidies, institutional income and operating income, but no standalone external investment round.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.spacechina.com/n25/n13529/n147961/",
+        "https://ggzyfw.beijing.gov.cn/ztxxtbr/20251023/5304430.html",
+        "https://www.lawinsider.com/zh/contracts/cSc62YEIopY"
+      ],
+      "excluded_claims": [
+        "Investments into subsidiaries such as Aerospace Shenzhou Aircraft are not financing received by CAAA.",
+        "Parent CASC financing and group-company transactions are not attributable to the institute."
+      ]
+    },
+    {
+      "id": "96b9010c-6289-42ee-b323-135ae7f8b9a8",
+      "slug": "caseway",
+      "name": "Caseway",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "The database's Taiwan identity conflicts with the exact issuer, Caseway AI Inc., a Vancouver, Canada company. The company officially disclosed a USD 1M pre-seed SAFE target in May 2025 and CanadaBuys confirms a CAD 75K NRC-IRAP defence-technology grant. A May 2026 third-party claim of a USD 1.5M closed pre-seed conflicts with company materials saying USD 1.5M raised to date including grants.",
+      "hold_note": "Reconcile Canada versus Taiwan identity/geography. Do not import the claimed USD 1.5M May 2026 close until the equity amount is separated from grants and the exact closing is confirmed. The November 2026 round is open but its amount and returning lead investor are undisclosed.",
+      "sources_checked": [
+        "https://caseway.ai/blog/investor-relations-caseway-may-2025",
+        "https://caseway.ai/blog/investor-relations-caseway",
+        "https://canadabuys.canada.ca/en/node/preview/1451816",
+        "https://www.scaleupcanada.org/caseway",
+        "https://test.caseway.ai/investor-relations"
+      ],
+      "excluded_claims": [
+        "The USD 1.5M 'raised to date' figure includes grant funding and is not imported as a standalone equity round.",
+        "Research-collaboration programme totals are not treated as cash received unless issuer-specific."
+      ]
+    },
+    {
+      "id": "ba750096-ffd9-430b-b071-f166bb4f8762",
+      "slug": "causey-aviation",
+      "name": "Causey Aviation",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Exact issuer Causey Aviation Service, Inc. received a USD 578,600 PPP loan and three separately disclosed U.S. Treasury payroll-support awards. The business remains family-owned; no public equity or venture round was found.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.causeyaviation.com/about",
+        "https://data.covidstimuluswatch.org/individual-record/causey-aviation-service-inc-0",
+        "https://home.treasury.gov/system/files/136/Sec4118ReporttoCongressPayrollSupportNovember2020.pdf",
+        "https://home.treasury.gov/policy-issues/coronavirus/assisting-american-industry/payroll-support-program-extension-payments",
+        "https://home.treasury.gov/policy-issues/coronavirus/assistance-for-american-industry/payroll-support-program/psp3"
+      ],
+      "excluded_claims": [
+        "Facility construction and expansion are operating capital expenditures, not disclosed financing rounds.",
+        "The related Causey Aviation Unmanned business is not used to assign separate financing to the parent."
+      ]
+    },
+    {
+      "id": "28780ee1-9dab-4f33-a8a0-e974fbcaec35",
+      "slug": "cea-technologies",
+      "name": "CEA Technologies",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The Australian Commonwealth acquired a non-controlling stake in July 2023 and moved to 71.84% majority ownership in January 2025. Public sources describe a share purchase from existing long-term shareholders, with no price or primary proceeds disclosed.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://ministers.pmc.gov.au/gallagher/2023/albanese-government-secure-leading-edge-defence-capability",
+        "https://www.cea.com.au/innovation/commonwealth-acquires-ownership-interest-in-cea/",
+        "https://www.finance.gov.au/government/government-business-enterprises/cea-technologies-pty-limited-cea-technologies",
+        "https://www.cea.com.au/pdf/CEA-Annual-Report-2024-25.pdf"
+      ],
+      "excluded_claims": [
+        "Commonwealth acquisition consideration is not company funding because primary proceeds were not disclosed.",
+        "Defence procurement contracts and internal R&D spending are not financing rounds."
+      ]
+    },
+    {
+      "id": "70ef8687-7003-4c5e-b6b8-e705b838975c",
+      "slug": "cellebrite",
+      "name": "Cellebrite",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Issuer filing and company announcement confirm a USD 110 million preferred-share investment by IGP on 2019-06-17. The 2021 SPAC/PIPE involved material secondary share purchases from existing holders, so the aggregate transaction proceeds are not imported as primary company funding.",
+      "hold_note": "Earlier Sun Corporation ownership transaction and the exact primary-versus-secondary split of the 2021 business combination remain outside the import.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "6e791c8b-69cc-4fab-a4db-723d5daee857",
+      "slug": "censys-technologies",
+      "name": "Censys Technologies",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Company announcements confirm a USD 2 million Kirenaga-led seed round in 2020 and an oversubscribed USD 8.3 million Series A in 2022 led by Kirenaga with Collective Capital Ventures.",
+      "hold_note": "Aggregator-only 2017, 2022, 2023 and grant candidates were not imported without primary reconciliation.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "b75c4fdf-7990-4b99-b69e-4ba0bc6e65c8",
+      "slug": "central-michigan-university",
+      "name": "Central Michigan University",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "University funding pages and broad searches concern sponsored research, donations and project grants rather than investment financing of a company issuer.",
+      "hold_note": "No public investment round found; this is a bounded public-source result, not a zero-funding claim.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "c3a59dd4-e694-4020-aeb1-6756e8df85de",
+      "slug": "centralsquare",
+      "name": "CentralSquare",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "A Bloomberg-derived report supports a more-than-USD-1.2-billion private-credit refinancing led by Ares in April 2024, while Vista's portfolio confirms its continuing investment relationship.",
+      "hold_note": "No primary issuer closing announcement was located. A separately reported roughly USD 330 million preferred-equity component is held because its participants and exact terms were not sufficiently attributable.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "8c4db053-a53e-4431-87a7-c4109d56e9e7",
+      "slug": "ceres-air",
+      "name": "Ceres Air",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact company operates an active investment-solicitation page describing intended use of funds.",
+      "hold_note": "No amount, security terms, close date, platform filing or completed raise is public; an open solicitation is not a verified financing event.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "6266f0d0-e2de-42c6-a304-60ce08537b5b",
+      "slug": "cesium",
+      "name": "Cesium",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "Cesium's own announcement confirms its 2019 spinout and USD 5 million Series A from Falcon Global Capital. Bentley's issuer announcement confirms the 2024 acquisition with undisclosed consideration.",
+      "hold_note": "Acquisition consideration is excluded from funding; no later independent financing round was located.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "4c2b5ebd-6f02-4f23-9ee5-2addb321d55e",
+      "slug": "cetc",
+      "name": "CETC",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Official CETC materials identify a centrally managed state-owned enterprise. Public bond disclosures verify parent-level debt issues; two exact issues are normalized below.",
+      "hold_note": "The issuer has substantial additional bond and short-term-note history requiring instrument-by-instrument normalization before claiming complete debt coverage.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "3bf1df49-37ec-4848-ae18-11bcf18fdbfc",
+      "slug": "cfm-international",
+      "name": "CFM International",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Official parent material identifies CFM as a 50/50 joint venture of GE Aerospace and Safran Aircraft Engines. Broad searches found no source-backed external financing issued by the JV.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "9a7997ab-813a-46ac-9099-1b0f66ae02bf",
+      "slug": "cgx-aero",
+      "name": "CGX Aero",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "CORDIS and French public-programme sources verify three issuer-specific EU grants and one French innovation award. Official company material verifies current ownership.",
+      "hold_note": "Queue country says United States, while the verified issuer is French and headquartered in Castres; catalogue identity metadata should be reconciled. The EUR648,461 Smart Hub Port aid combines a grant and repayable advance, but the split is undisclosed.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "0348e876-9130-4de4-88bc-1cc441065ee5",
+      "slug": "cgz",
+      "name": "CGZ",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "French official registry data identify CGZ as a Compiègne holding company. Registry and broad financing searches found no source-backed financing round.",
+      "hold_note": "The catalogue provides no website; issuer resolution rests on the exact French CGZ holding-company match.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "296d2d6e-a8d4-4f4a-ac70-4bb110c1535b",
+      "slug": "ch-guernsey",
+      "name": "C.H. Guernsey",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The company describes itself as 100% employee-owned through an ESOP. Broad searches found contracts but no source-backed external company financing.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "d5f53e11-ce57-4a64-b1ba-f0cd5ca2717d",
+      "slug": "change-agents-corporation",
+      "name": "Change Agents Corporation",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 11,
+      "relationship_count": 0,
+      "evidence_note": "SEC filings verify the same Delaware issuer before and after its 20 July 2026 name change. Eleven material equity/debt financings are normalized below.",
+      "hold_note": "The issuer has a dense SEC financing history, including additional ATM sales, preferred-stock issuances, refinancings and amendments; this is not yet a complete security-by-security capitalization audit. Actual draws under the Hudson equity line were not assigned because reviewed sources establish capacity and amendments but not a fully reconciled cash-draw history.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "c7d0980f-b20f-44d3-b0b6-de88930f18bd",
+      "slug": "chaos-industries",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Official company announcements support four equity rounds from March 2023 through November 2025. Valuations, contracts and acquisitions were not treated as funding.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "6b67c7f1-ffff-4640-a1ab-c316ef7a59f9",
+      "slug": "chariot-defense",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Official company announcements support an $8 million seed and $34 million Series A with explicit investor roles.",
+      "hold_note": "The company says total funding was $41 million after announcing individually rounded $8 million and $34 million rounds; the discrepancy is preserved rather than reconciled by inference.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "133320c4-0617-4cbc-8d6b-e8f6038e72eb",
+      "slug": "chc-navigation",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "CHC Navigation identifies the legal issuer as Shanghai Huace Navigation Technology Ltd. and confirms its March 2017 Shenzhen IPO. Chinese listing data reports CNY381 million gross proceeds.",
+      "hold_note": "",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "71372805-fc4a-4a94-8d02-f45b03e2f690",
+      "slug": "chengdu-aircraft-design-and-research-institute",
+      "name": null,
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The institute is an AVIC research entity and a pre-IPO shareholder of AVIC (Chengdu) UAS. No direct public financing round for the institute was verified.",
+      "hold_note": "AVIC (Chengdu) UAS capital increases and IPO belong to that separate legal issuer. Public English-language financing disclosure for the institute is limited.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "3611fb65-ec52-460a-a5ab-6cf7788f34bd",
+      "slug": "chengdu-aircraft-industry-group-caig-avic",
+      "name": null,
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Public filings identify Chengdu Aircraft Industry Group as an AVIC-controlled/wholly owned entity. No direct public financing round for the exact CAIG issuer was verified.",
+      "hold_note": "The 2025 asset injection and listed-company reorganisation are corporate restructuring, not a CAIG funding round. AVIC (Chengdu) UAS financing and IPO belong to a different legal issuer.",
+      "sources_checked": [],
+      "excluded_claims": []
+    },
+    {
+      "id": "00b4e293-9985-47c7-a4b5-7326e9591cf8",
+      "slug": "chery",
+      "name": null,
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Chery Automobile Co., Ltd. disclosures and contemporaneous reporting support a 2009 domestic private-equity capital raise and the September 2025 Hong Kong IPO.",
+      "hold_note": "Only investors explicitly connected to the 2009 capital raise are included; later transfers and parent-company financings are excluded.",
+      "sources_checked": [],
+      "excluded_claims": []
+    }
+  ],
+  "audit_notes": [
+    "Carmine Sky and Caseway have catalogue geography/issuer mismatches held for identity correction; no geography changes were made in this funding workstream.",
+    "The Caseway SAFE target and Carnegie Robotics PPP row with a non-specific source URL were excluded from import; source candidates are not verified facts.",
+    "CETC and Change Agents remain partial because their public debt/security histories are denser than this bounded pass.",
+    "State-owner, joint-venture-parent, former-name and employee-ownership facts were not converted into generic investor relationships."
+  ],
+  "publication": {
+    "pending": true,
+    "catalogue_trigger_required": true,
+    "scope_note": "All fourteen event-bearing identities are outside the published 567-company landscape; map event/link totals should remain unchanged while 43 investor profiles and four supported relationships publish."
+  },
+  "database_before": {
+    "approved_events": 2224,
+    "round_participations": 2498,
+    "investor_profiles": 1548,
+    "source_reconciliation_companies": 553,
+    "generic_relationships": 55
+  },
+  "database_after": {
+    "approved_events": 2263,
+    "round_participations": 2570,
+    "investor_profiles": 1591,
+    "source_reconciliation_companies": 567,
+    "generic_relationships": 59,
+    "target_events": 39,
+    "target_participations": 72,
+    "target_sources": 48,
+    "target_companies": 14,
+    "target_missing_sources": 0,
+    "target_participants_missing_source": 0
+  },
+  "queue_after": {
+    "reviewed_public_sources": 807,
+    "source_review_partial": 142,
+    "queued": 1615,
+    "total": 2564
+  }
+}
