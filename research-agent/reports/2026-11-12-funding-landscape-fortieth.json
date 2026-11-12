@@ -22,7 +22,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "local_postgresql_tests_passed": true,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
@@ -37,7 +37,13 @@
     "db_total_events": 2869,
     "db_approved_round_participations": 3596,
     "db_investor_profiles": 2171,
-    "db_source_reconciliation_companies": 737
+    "db_source_reconciliation_companies": 737,
+    "new_profile_exact_name_duplicates": 0,
+    "active_minutes": 10,
+    "checked_identities_per_hour": 143.8,
+    "completed_reviews_per_hour": 35.9,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, source QA, local PostgreSQL tests, production rollback, atomic import, idempotency and live verification; concurrent lane durations not summed."
   },
   "per_company": [
     {
@@ -1068,8 +1074,57 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T16:58:08.103Z",
+    "catalogue_commit": "45842bc9a4097a28191a2b6c790418b601a16121",
+    "source_commit": "20822c3a142c81440e612eddb44f429743403055",
+    "workflow_run": {
+      "id": 43263930840,
+      "head": "45842bc9a4097a28191a2b6c790418b601a16121",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43263930840"
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-fortieth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-fortieth.json",
+    "generated_at": "2026-11-12T16:56:19.856Z",
+    "investor_generated_at": "2026-11-12T16:56:22.017Z",
+    "events": 1589,
+    "links": 1380,
+    "profiles": 2162,
+    "companies": 567,
+    "portfolio_relationships": 265,
+    "published_portfolio_relationships": 236,
+    "current_manifest_event_rows": 30,
+    "current_manifest_live_matches": 0,
+    "outside_landscape": [
+      "frequentis-usa",
+      "frequentist",
+      "frsky",
+      "fugro",
+      "fujitsu",
+      "fulltime-robotics",
+      "furukawa-battery",
+      "fuse",
+      "fusus",
+      "future-flight-global",
+      "g42",
+      "gaardtech",
+      "gabler",
+      "galaxeye",
+      "gale-project",
+      "galliano-marine-services",
+      "gamaya",
+      "garmin",
+      "garrett-container-systems",
+      "garuda-aerospace",
+      "gdms",
+      "ge-aerospace",
+      "ge-aviation",
+      "geely"
+    ],
+    "directory_filter_note": "Existing named-profile launch filter excludes nine pre-existing anonymous placeholders: database2171 versus live2162. Directory increased by all30 new profiles; spot checks SilverLake, NNInvestmentPartners, InfosysLimited and Mahindra&Mahindra verified. Current24 identities remain outside published landscape membership."
   },
   "database": {
     "total_events": 2869,
@@ -1077,5 +1132,14 @@
     "round_participations": 3596,
     "investor_profiles": 2171,
     "source_reconciliation_companies": 737
-  }
+  },
+  "audit_notes": [
+    "Production baseline after rollback remained 2839 total / 2826 approved events, 3551 links, 2141 profiles and 725 event-covered companies.",
+    "All 30 manifest events, 45 sourced participant links, 38 source rows, 7 generic relationships and 30 new profiles matched the production import. Participant sources satisfy event-source foreign keys; local PostgreSQL tests checked rollback, idempotency, unsupported-source rejection and amount-conflict guards.",
+    "Fugro refinancings are committed facility sizes, not incremental drawn cash; conditional/priced offerings remain announced and 2022 EUR116m remains approximate. Fujitsu historical JPY bond series are not inferred from outstanding balances.",
+    "Gabler and Garmin IPO amounts are calculated gross primary proceeds from explicitly disclosed issuer shares times offer price; selling-holder shares and secondary greenshoes excluded. Gamaya CHF12m retains mixed instrument and inclusion of prior CHF4.2m convertibles.",
+    "GE Aerospace debt is attributed to the General Electric Company issuer only; no duplicate under GE Aviation or later general-electric identity. Geely, Frequentist, FrSky and Fulltime exact-issuer/source holds preserved. Garuda included earlier tranches are not additional events; contradictory latest candidates held.",
+    "G42 noncash Mubadala exchange is a generic relationship, Silver Lake amount unknown, Microsoft USD1.5bn distinct from developer fund. Fusus minority-investment disclosure does not assert primary versus secondary allocation.",
+    "No curated investor profile overwritten. Existing source-specific slugs reused; no new exact-name duplicate profiles. No geography, classification, publication gates, legacy research STATE.json, frozen snapshots or repository schedules changed."
+  ]
 }
