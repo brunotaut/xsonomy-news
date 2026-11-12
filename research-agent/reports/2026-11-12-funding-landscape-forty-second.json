@@ -1,6 +1,6 @@
 {
   "report": "Forty-second autonomous funding reconciliation",
-  "checked_at": "2026-11-12",
+  "checked_at": "2026-11-12T19:02:48.774Z",
   "lease_id": "funding-20261112T1845Z-wider-24",
   "scope": {
     "identities": 24,
@@ -22,7 +22,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "local_postgresql_tests_passed": true,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
@@ -41,7 +41,12 @@
     "db_approved_round_participations": 3641,
     "db_investor_profiles": 2210,
     "db_source_reconciliation_companies": 754,
-    "new_profile_exact_name_duplicates": 0
+    "new_profile_exact_name_duplicates": 0,
+    "active_minutes": 18,
+    "checked_identities_per_hour": 79.8,
+    "completed_reviews_per_hour": 43.2,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, source QA, local PostgreSQL tests, production rollback, atomic import, idempotency, source audit and live verification; concurrent lane durations not summed."
   },
   "per_company": [
     {
@@ -1098,21 +1103,57 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false,
-    "status": "build_in_progress",
-    "manifest": "research-agent/imports/funding-landscape-20261112-forty-second.json",
-    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-second.json",
-    "catalogue_trigger_required": false,
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T19:02:48.774Z",
     "catalogue_commit": "a1f916752a7ff788f2944140673e1c7cd91abdf1",
     "source_commit": "bef36ed46a47d307c0d5bd7656744fc0d637aca0",
     "workflow_run": {
       "id": 43285543455,
       "head": "a1f916752a7ff788f2944140673e1c7cd91abdf1",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "url": "https://github.com/brunotaut/xSonomy/actions/runs/43285543455"
-    }
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-second.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-forty-second.json",
+    "generated_at": "2026-11-12T19:00:42.155Z",
+    "investor_generated_at": "2026-11-12T19:00:44.797Z",
+    "events": 1589,
+    "links": 1380,
+    "profiles": 2201,
+    "companies": 567,
+    "portfolio_relationships": 283,
+    "published_portfolio_relationships": 254,
+    "current_manifest_event_rows": 24,
+    "current_manifest_live_matches": 0,
+    "outside_landscape": [
+      "glenair",
+      "global-airspace-radar",
+      "global-konet",
+      "global-ordnance",
+      "global-sat",
+      "gm-defense",
+      "gniits-rt-russian-mod-with-smolensk-zavant",
+      "gogo",
+      "gogo-special-missions",
+      "gol-linhas-aereas",
+      "gomspace",
+      "google-research",
+      "gopro",
+      "gorge-drones",
+      "graal-tech",
+      "grab-indonesia",
+      "grandsky",
+      "greensea-iq",
+      "greensight",
+      "gremsy-usa",
+      "grepow",
+      "grid-aero",
+      "grif",
+      "griffon-aerospace"
+    ],
+    "directory_filter_note": "Existing named-profile filter excludes nine pre-existing anonymous placeholders: database2210 versus live2201. All20 new named profiles exported. Spot checks PeterKendalHargreaves, MateoFinancing, TheToroCompany, BisonVentures, ScienceVest andFincantieri passed. Five generic relationships increase portfolio283/published254; published means live full-catalogue company pages, independent of European landscape membership. Live landscape explicitly contains none of24 target slugs; membership gates preserved."
   },
   "additional_source_candidates": [
     {
@@ -1131,7 +1172,8 @@
     "Graal Tech grants use own beneficiary allocations and signature dates; France catalogue geography preserved despite verified Italian legal issuer. Fincantieri pending secondary acquisition remains only a source-qualified generic relationship.",
     "GreenSight NSF awards are grants, other SBIR procurement contracts excluded. Grepow subsidy eligibility and inaccessible GreenSight SEC original are held without import.",
     "Unverified fresh Uforce source candidate is retained for priority original-source review, not counted as a checked identity or approved fact.",
-    "Concurrent writer repository feedback commit preserved by rebasing the expected-head checkpoint; no unrelated files or schedules changed."
+    "Concurrent writer repository feedback commit preserved by rebasing the expected-head checkpoint; no unrelated files or schedules changed.",
+    "Successful existing push build and both live JSON files verified after deployment. Broader-cohort events remain outside the European landscape; newly named directory profiles and five source-qualified generic relationships are published. Optional company-page web-search fetches were unavailable, so no separate company-page content claim is made."
   ],
   "database_audit": {
     "events": 24,
@@ -1146,5 +1188,14 @@
     "reviewed_public_sources": 970,
     "source_review_partial": 363,
     "queued": 1231
+  },
+  "automation_verification": {
+    "checked_at": "2026-11-12T19:01:21.788Z",
+    "automation_id": "6ae8a29260108191a57ab58c00ff5894",
+    "enabled": true,
+    "schedule": "BEGIN:VEVENT\nDTSTART:20261102T144746Z\nRRULE:FREQ=HOURLY\nEND:VEVENT",
+    "timing_mode": "flexible_schedule",
+    "recorded_run_status": "in_progress",
+    "schedules_changed": false
   }
 }
