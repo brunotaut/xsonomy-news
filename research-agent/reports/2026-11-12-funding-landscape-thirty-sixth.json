@@ -22,7 +22,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "new_events_written": 38,
     "new_investor_profiles": 56,
     "database_identities_inspected": 24,
@@ -37,8 +37,11 @@
     "db_approved_round_participations": 3299,
     "db_investor_profiles": 2008,
     "db_source_reconciliation_companies": 693,
-    "active_minutes": 6.4,
-    "concurrency_speedup_claimed": false
+    "active_minutes": 8.7,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through source reconciliation, rollback, atomic import, source audit and live publication verification. Concurrent lane time is not summed.",
+    "checked_identities_per_active_hour": 165.5,
+    "completed_reviews_per_active_hour": 55.2
   },
   "per_company": [
     {
@@ -1337,8 +1340,56 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T12:54:52.428Z",
+    "catalogue_commit": "4267d20026a6dd41922b593e383a2bf0d88772c6",
+    "source_commit": "45ecb5186de1e8e354c584f93639c22266d0503d",
+    "workflow_run": {
+      "id": 43221982130,
+      "head": "4267d20026a6dd41922b593e383a2bf0d88772c6",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43221982130"
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-sixth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-sixth.json",
+    "generated_at": "2026-11-12T12:53:40.730Z",
+    "investor_generated_at": "2026-11-12T12:53:42.543Z",
+    "events": 1589,
+    "links": 1380,
+    "profiles": 2008,
+    "companies": 567,
+    "portfolio_relationships": 239,
+    "published_portfolio_relationships": 211,
+    "current_manifest_event_rows": 38,
+    "current_manifest_live_matches": 0,
+    "outside_landscape": [
+      "epirus",
+      "eplane-company",
+      "epropelled",
+      "erdyn-consultants",
+      "erez-defense-solutions",
+      "esaero",
+      "esc-baz",
+      "esh-tech",
+      "esmart-systems",
+      "esox-group",
+      "esri",
+      "esspi",
+      "estes-energetics",
+      "etak-worldwide",
+      "eu-motors",
+      "eurenco",
+      "european-air-transport-leipzig",
+      "europuls",
+      "eurospike",
+      "eurousc-benelux",
+      "eurousc-italia",
+      "eutelsat",
+      "eva-defense",
+      "event-38-unmanned-systems"
+    ]
   },
   "database": {
     "total_events": 2729,
@@ -1346,5 +1397,11 @@
     "round_participations": 3299,
     "investor_profiles": 2008,
     "source_reconciliation_companies": 693
-  }
+  },
+  "audit_notes": [
+    "13 pre-existing funding rows are not publication-approved; totals and approved-only counts are recorded separately.",
+    "SBIR/STTR research contracts are retained in source-level holds rather than mislabeled as grants.",
+    "All 24 identities are outside current published landscape; approved investor directory and ownership records refreshed without expanding company publication gates.",
+    "Existing curated investor profiles are retained by importer conflict handling."
+  ]
 }
