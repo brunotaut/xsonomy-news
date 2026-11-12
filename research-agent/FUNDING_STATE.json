@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 941,
   "next_action": "Continue the next 24 queued identities from Frequentis USA through Geely.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-12T16:00:06.502Z",
+  "updated_at": "2026-11-12T16:54:10.164Z",
   "source_reconciliation_companies": 725,
   "approved_funding_events": 2826,
   "round_participations": 3551,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-12T16:48:07.219Z",
     "expires_at": "2026-11-12T18:48:08.927Z",
-    "status": "researching",
+    "status": "prepared_import",
     "planned_company_ids": [
       "2b068a87-d7e3-438f-9e92-94a5316a5f0c",
       "bd43e6ba-a8ac-4a83-8e37-8c5db24d50f4",
@@ -80,7 +80,9 @@
       "ge-aerospace",
       "ge-aviation",
       "geely"
-    ]
+    ],
+    "manifest": "research-agent/imports/funding-landscape-20261112-fortieth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-fortieth.json"
   },
   "last_verified_publication": {
     "checked_at": "2026-11-12T16:00:06.502Z",
@@ -2885,7 +2887,13 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "manifest": "research-agent/imports/funding-landscape-20261112-fortieth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-fortieth.json",
+    "status": "rollback_rehearsed_not_committed",
+    "expected_new_events": 30,
+    "expected_new_links": 45
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-12T16:00:06.502Z",
