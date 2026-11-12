@@ -1,0 +1,1191 @@
+{
+  "report": "Thirty-first autonomous funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": "funding-20261112T075420674Z-wider-24",
+  "scope": {
+    "identities": 24,
+    "from": "dg-solone-drone-technologies",
+    "through": "dragonflypads",
+    "published_landscape": false
+  },
+  "method": "Four disjoint read-only research lanes; one writer consolidation; exact issuer, original currency, amount qualifier, instrument, closing and explicit roles checked. Contracts, acquisition consideration, parent/subsidiary financing, undrawn facilities and consortium totals excluded.",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 16,
+    "new_or_retained_partial": 8,
+    "new_events_written": 65,
+    "new_generic_portfolio_relationships": 10,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "current_manifest_publication_verified": false,
+    "newly_completed_wider_reviews": 16,
+    "new_approved_events": 65,
+    "new_round_participations": 121,
+    "new_investor_profiles": 69,
+    "new_source_rows": 110,
+    "new_companies_with_events": 14,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "manifest_event_matches": 65,
+    "manifest_link_matches": 121,
+    "manifest_source_matches": 110,
+    "manifest_relationship_matches": 10,
+    "missing_link_source_urls": 0,
+    "db_approved_events": 2492,
+    "db_approved_round_participations": 2889,
+    "db_investor_profiles": 1764,
+    "db_source_reconciliation_companies": 636,
+    "concurrency_speedup_claimed": false,
+    "active_minutes": 19,
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded.",
+    "checked_identities_per_active_hour": 75.8,
+    "completed_reviews_per_active_hour": 50.5
+  },
+  "per_company": [
+    {
+      "id": "4f9eed87-4151-4982-9494-471149f0db7f",
+      "slug": "dg-solone-drone-technologies",
+      "name": "DG Sol.One Drone Technologies",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Exact-identity review found the Indian legal entity DGSOL. ONE DRONE TECHNOLOGIES PRIVATE LIMITED (CIN U62011DL2026PTC471723), incorporated 2026-10-19. Sol.One's 2026-10-20 announcement uses the trading form DG Sol.One Drone Technologies Private Limited and explicitly calls it a joint venture founded by Sol.One and DGVK Enterprises Private Limited. A registry-derived profile reports INR 100,000 paid-up capital and INR 1,500,000 authorised capital. The incorporation-capital record is the earliest and latest public financing located as of 2026-11-12.",
+      "hold_note": "No direct MCA document was publicly retrievable in this review, and no source allocates the INR 100,000 paid-up capital between the two corporate founders. Treat founder roles as explicit but contributions as undisclosed.",
+      "sources_checked": [
+        {
+          "url": "https://www.sol.one/blog/newsroom-7/sol-one-enters-india-with-dg-sol-one-21",
+          "title": "Sol.One enters India with DG Sol.One",
+          "source_type": "company_news",
+          "published_date": "2026-10-20"
+        },
+        {
+          "url": "https://www.filesure.in/company/dgsol-one-drone-technologies-private-limited/U62011DL2026PTC471723",
+          "title": "DGSOL. One Drone Technologies Private Limited — company profile",
+          "source_type": "registry_aggregator",
+          "published_date": "2026-10"
+        },
+        {
+          "url": "https://www.kmo.partners/2026/10/20/sol-one-joint-venture-india-drones/",
+          "title": "Brugs dronebedrijf Sol.One laat drones bouwen in India via joint venture met DGVK",
+          "source_type": "trade_media",
+          "published_date": "2026-10-20"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The Indian defence budget and planned domestic drone procurements are financing for DG Sol.One.",
+          "reason": "Market and procurement context, not issuer financing; contracts and procurement are out of scope."
+        },
+        {
+          "claim": "Sol.One's EUR 5.5 million Project SOLFORGE financing or EUR 2.5 million Drone Volt reciprocal investment financed DG Sol.One.",
+          "reason": "Those transactions finance or involve Sol.One, a separate Belgian parent/co-founder, not the Indian issuer."
+        },
+        {
+          "claim": "Each founder contributed half of the INR 100,000 paid-up capital.",
+          "reason": "No reviewed source states the allocation or ownership percentages."
+        }
+      ]
+    },
+    {
+      "id": "ba8421fc-6d77-40c4-bfaa-cf5bdb6c5913",
+      "slug": "dgvk-enterprises",
+      "name": "DGVK Enterprises",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The exact Indian issuer is DGVK ENTERPRISES PRIVATE LIMITED (CIN U71100UP2025PTC218042), incorporated 2025-03-01. Registry-derived sources report INR 11,125,650 paid-up capital. The only event-level financing located is an open charge dated 2025-10-17 in favour of HDFC Bank Limited for INR 13,400,000. This is both the earliest and latest public financing event found as of 2026-11-12.",
+      "hold_note": "The charge is reported by a registry aggregator rather than a directly retrieved MCA charge instrument. A registered charge states the secured face amount and outstanding status, not necessarily cash disbursed. The paid-up-capital figure was not entered as a round because no dated allotment or issuance event was located.",
+      "sources_checked": [
+        {
+          "url": "https://www.allindiaitr.com/company/dgvk-enterprises-private-limited/U71100UP2025PTC218042",
+          "title": "DGVK Enterprises Private Limited | Company Details",
+          "source_type": "registry_aggregator",
+          "published_date": "2026-01-04"
+        },
+        {
+          "url": "https://www.zaubacorp.com/DGVK-ENTERPRISES-PRIVATE-LIMITED-U71100UP2025PTC218042",
+          "title": "DGVK ENTERPRISES PRIVATE LIMITED",
+          "source_type": "registry_aggregator",
+          "published_date": null
+        },
+        {
+          "url": "https://www.indiafilings.com/search/dgvk-enterprises-private-limited-cin-U71100UP2025PTC218042",
+          "title": "DGVK ENTERPRISES PRIVATE LIMITED | CIN & Registration Details",
+          "source_type": "registry_aggregator",
+          "published_date": "2025-08-15"
+        },
+        {
+          "url": "https://www.sol.one/blog/newsroom-7/sol-one-enters-india-with-dg-sol-one-21",
+          "title": "Sol.One enters India with DG Sol.One",
+          "source_type": "transaction_party_news",
+          "published_date": "2026-10-20"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "INR 11,125,650 paid-up capital was raised at incorporation.",
+          "reason": "The sources show a current capital state but no dated allotment event or proof that the full balance was paid on 2025-03-01."
+        },
+        {
+          "claim": "DGVK received financing through the DG Sol.One joint venture.",
+          "reason": "The joint-venture formation announcement gives no financing to DGVK and no contribution amount."
+        },
+        {
+          "claim": "The INR 13,400,000 registered charge equals cash proceeds received.",
+          "reason": "A charge amount is a secured face amount; disbursement was not verified."
+        }
+      ]
+    },
+    {
+      "id": "f8833b14-2619-4816-a20e-ba7537349e08",
+      "slug": "diades-marine",
+      "name": "Diades Marine",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is DIADES MARINE SAS, SIREN 537 614 125, registered at Angouleme. Public filings establish EUR 260,000 capital at creation in 2011 and a completed EUR 260,000 cash capital increase effective 2014-10-13, taking capital to EUR 520,000. Updated statutes show the original EUR 260,000 comprised EUR 5,200 cash plus a EUR 254,800 in-kind contribution of the Diadès business from Cassidian SAS. Earliest public financing: the EUR 260,000 founding capital published 2011-11-22. Latest: the EUR 260,000 cash increase publicly noticed 2014-10-24 and published in BODACC 2014-11-18.",
+      "hold_note": "No public source reviewed identified the subscribers to the EUR 5,200 founding cash portion or the subscribers to the 2014 cash capital increase. Later accounts contain subsidy and conditional-financing balances, but no award-level dates or funders sufficient for round records.",
+      "sources_checked": [
+        {
+          "url": "https://www.diadesmarine.com/legal-information",
+          "title": "Legal information - Diades Marine",
+          "source_type": "company_legal",
+          "published_date": null
+        },
+        {
+          "url": "https://www.pappers.fr/entreprise/diades-marine-537614125",
+          "title": "Societe DIADES MARINE : registry and filings",
+          "source_type": "registry",
+          "published_date": null
+        },
+        {
+          "url": "https://www.pappers.fr/entreprise/diades-marine-537614125/documents/DIADES%20MARINE%20-%20Statuts%20mis%20%C3%A0%20jour%2005-11-2014.pdf",
+          "title": "DIADES MARINE - Statuts mis a jour 05-11-2014",
+          "source_type": "corporate_filing",
+          "published_date": "2014-11-05"
+        },
+        {
+          "url": "https://entreprises.lefigaro.fr/diades-marine-sas-16/entreprise-537614125",
+          "title": "Diades Marine SAS - annonces legales",
+          "source_type": "legal_notice_aggregator",
+          "published_date": null
+        },
+        {
+          "url": "https://annuaire-entreprises.data.gouv.fr/entreprise/537614125",
+          "title": "DIADES MARINE SAS - Annuaire des Entreprises",
+          "source_type": "government_registry",
+          "published_date": null
+        },
+        {
+          "url": "https://pole-mer-bretagne-atlantique.com/index.php/defense-surete-securite-maritimes/mirador",
+          "title": "MIRADOR",
+          "source_type": "cluster_project_page",
+          "published_date": "2025-05-23"
+        },
+        {
+          "url": "https://www.pappers.fr/entreprise/diades-marine-sas-537614125/comptes/DIADES%20MARINE%20SAS%20-%20Comptes%20sociaux%202017%2017-07-2018.pdf",
+          "title": "DIADES MARINE SAS - Comptes sociaux 2017",
+          "source_type": "financial_filing",
+          "published_date": "2018-07-17"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The MIRADOR global budget of EUR 1.985 million is financing received by Diades Marine.",
+          "reason": "The page labels the consortium as seeking financing; the number is a consortium project budget, not an issuer award."
+        },
+        {
+          "claim": "The 2017 balance-sheet amounts for investment grants, participating securities and conditional advances are discrete rounds.",
+          "reason": "They are period-end accounting balances without award dates, named funders or enough transaction detail to avoid double counting."
+        },
+        {
+          "claim": "Hensoldt Nexeya France is a confirmed investor in Diades Marine.",
+          "reason": "Pappers labels that relationship as automatically inferred; no reviewed primary filing explicitly supports an investor role for the financing records entered here."
+        }
+      ]
+    },
+    {
+      "id": "f74ff7ab-554d-46e8-88f3-859ac3f04472",
+      "slug": "diehl-aviation",
+      "name": "Diehl Aviation",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Diehl Aviation is a brand/subgroup headed by Diehl Aviation Holding GmbH (Nuremberg, HRB 26240), with operating subsidiaries including Diehl Aviation Laupheim GmbH, Diehl Aviation Gilching GmbH and Diehl Aerospace GmbH. The brand's official public-funding page confirms that it benefits from EU, federal and state R&D subsidies, but gives no issuer-specific amount, date or award. Searches found many grants to named operating subsidiaries, not to the exact holding-company issuer. No manifest-ready financing round for the exact catalogue identity was located as of 2026-11-12.",
+      "hold_note": "Exact-issuer ambiguity blocks publication of brand-level subsidy claims. Subsidiary awards must not be attributed to Diehl Aviation Holding GmbH, and consortium totals must not be treated as issuer receipts.",
+      "sources_checked": [
+        {
+          "url": "https://new.diehl.com/aviation/en/innovation/research-and-development/public-funding-and-partners",
+          "title": "Public funding and partners | Diehl Aviation",
+          "source_type": "company_page",
+          "published_date": null
+        },
+        {
+          "url": "https://new.diehl.com/aviation/en/company/sites",
+          "title": "Sites | Diehl Aviation",
+          "source_type": "company_page",
+          "published_date": null
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/831716",
+          "title": "Novel Air Distribution Approaches | NADiA",
+          "source_type": "eu_grant_registry",
+          "published_date": "2019"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101140559",
+          "title": "Fuel cell propulsion system for Aircraft Megawatt Engines | FAME",
+          "source_type": "eu_grant_registry",
+          "published_date": "2024"
+        },
+        {
+          "url": "https://new.diehl.com/aviation/de/presse-und-medien/presse/emissionsfreie-luftfahrt-bundesministerium-fuer-digitales-und-verkehr-foerdert-projekt-zur-weiterentwicklung-der-wasserstoff-brennstoffzellen-techno",
+          "title": "Emissionsfreie Luftfahrt: BMDV foerdert BALIS 2.0",
+          "source_type": "company_news",
+          "published_date": "2024-05-06"
+        },
+        {
+          "url": "https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Downloads/I/ipcei-cis-progress-report-2025.pdf?__blob=publicationFile&v=4",
+          "title": "IPCEI-CIS Progress Report 2025 - AdvantagE",
+          "source_type": "government_report",
+          "published_date": "2025-03-24"
+        },
+        {
+          "url": "https://openregister.de/company/DE-HRB-D3310-26240",
+          "title": "Diehl Aviation Holding GmbH, Nuremberg",
+          "source_type": "registry_aggregator",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The approximately EUR 9.3 million BALIS 2.0 award is financing received by Diehl Aviation.",
+          "reason": "It is the consortium/project total; the company release does not state an exact Diehl beneficiary share, and the named participant entities are separate companies."
+        },
+        {
+          "claim": "CORDIS grants to Diehl Aviation Laupheim GmbH or Diehl Aviation Gilching GmbH are rounds for Diehl Aviation Holding GmbH.",
+          "reason": "They are subsidiary-specific grants; parent/subsidiary financing attribution is excluded."
+        },
+        {
+          "claim": "The EUR 0.67 million AdvantagE grant to Diehl Aerospace GmbH financed the catalogue issuer.",
+          "reason": "The government report names Diehl Aerospace GmbH, a separate operating subsidiary, as beneficiary."
+        },
+        {
+          "claim": "The EUR 12.7 million BCR facility for the Craiova facility financed Diehl Aviation.",
+          "reason": "The borrower/developer was Global Vision Investment Fund; Diehl Aviation was the tenant, not the financing recipient."
+        }
+      ]
+    },
+    {
+      "id": "621ef8b6-00a2-4645-a248-da1d98160071",
+      "slug": "digikey",
+      "name": "DigiKey",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is the privately held Digi-Key Corporation, now branded DigiKey. Minnesota Session Laws Chapter 94, signed 2017-05-30, appropriated USD 4,000,000 for a loan to construct and equip the qualifying wholesale electronic-component distribution center. The Governor's 2017-05-31 factsheet explicitly identifies Digi-Key and calls the instrument a USD 4 million forgivable loan. This is the earliest and latest public financing event located as of 2026-11-12.",
+      "hold_note": "The loan was contingent on performance goals and contractual obligations. The reviewed sources do not establish the later forgiveness date, amount actually drawn, or repayment status, so closing is recorded as awarded/committed rather than forgiven.",
+      "sources_checked": [
+        {
+          "url": "https://www.revisor.mn.gov/laws/2017/0/94/laws.10.2.0",
+          "title": "Minnesota Session Laws 2017, Chapter 94",
+          "source_type": "statute",
+          "published_date": "2017-05-30"
+        },
+        {
+          "url": "https://www.lrl.mn.gov/docs/2018/other/181224/governor/assets/2017_05_31_factsheet_better_jobs_energy_bill_final.pdf",
+          "title": "A Better Jobs and Energy Bill",
+          "source_type": "government_fact_sheet",
+          "published_date": "2017-05-31"
+        },
+        {
+          "url": "https://content.govdelivery.com/accounts/MNDEED/bulletins/1b74e41",
+          "title": "Digi-Key Electronics Breaks Ground on 1 Million-Square-Foot Expansion",
+          "source_type": "government_news",
+          "published_date": "2017-09-15"
+        },
+        {
+          "url": "https://subsidytracker.goodjobsfirst.org/subsidy-tracker/mn-digi-key-corporation",
+          "title": "Subsidy Tracker - Digi-Key Corporation",
+          "source_type": "subsidy_database",
+          "published_date": null
+        },
+        {
+          "url": "https://www.mprnews.org/story/2017/08/31/digi-key-boom-brings-good-problems-to-thief-river-falls",
+          "title": "Digi-Key boom brings good problems to Thief River Falls",
+          "source_type": "news",
+          "published_date": "2017-08-31"
+        },
+        {
+          "url": "https://www.digikey.com/en/news/press-releases/2010/sep/digi-key-corporation-is-now-a-billion-dollar-company",
+          "title": "Digi-Key Corporation is Now a Billion-Dollar Company",
+          "source_type": "company_news",
+          "published_date": "2010-09-03"
+        },
+        {
+          "url": "https://www.digikey.ee/en/news/press-releases/2026/october/digikey-commits-100-million-investment-over-next-18-months-to-expand-global-distribution-operations",
+          "title": "DigiKey Commits $100 Million Investment Over Next 18 Months",
+          "source_type": "company_news",
+          "published_date": "2026-10-14"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Up to USD 40 million in sales-tax exemptions is financing raised by Digi-Key.",
+          "reason": "Tax exemptions are incentives, not cash financing rounds."
+        },
+        {
+          "claim": "The USD 1.6 million public-infrastructure grant financed Digi-Key directly.",
+          "reason": "The statute awards it to the City of Thief River Falls for roads and utilities, not to the issuer."
+        },
+        {
+          "claim": "The tax-increment financing note for the expansion is Digi-Key Corporation debt.",
+          "reason": "The development agreement names DK Real Estate Holdings LLC, a separate project entity; parent/subsidiary financing is excluded."
+        },
+        {
+          "claim": "DigiKey's 2026 USD 100 million investment is a financing round.",
+          "reason": "It is company capital expenditure announced by the issuer, not external financing received."
+        }
+      ]
+    },
+    {
+      "id": "ce27db01-cb78-4b59-83fc-f4200c3106dc",
+      "slug": "digital-force-technologies",
+      "name": "Digital Force Technologies",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "The current legal issuer is Digital Force Technologies, LLC, a Delaware LLC using the DFT brand; Florida registry records list Digital Force Purchaser, LLC as member. Company and transaction-party announcements on 2020-09-24 and 2020-09-28 say DFT formed a strategic partnership with DC Capital Partners and became a DC Capital portfolio platform. Independent reporting says DC Capital acquired a partial stake and transaction terms were undisclosed. This 2020 private-equity event is the earliest and latest qualifying public financing located. BBN Technologies' 2008 purchase was an acquisition, not a financing round, and was excluded.",
+      "hold_note": "No amount or valuation was disclosed. Public sources do not separate primary growth capital from secondary share purchase consideration, so the amount is null and the transaction is qualified as a partial-stake private-equity investment.",
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/digital-force-technologies-forms-strategic-partnership-with-dc-capital-partners-301137767.html",
+          "title": "Digital Force Technologies Forms Strategic Partnership with DC Capital Partners",
+          "source_type": "company_press_release",
+          "published_date": "2020-09-24"
+        },
+        {
+          "url": "https://www.dlapiper.com/en/news/2020/09/dla-piper-advises-digital-force-technologies-in-strategic-partnership-with-dc-capital-partners",
+          "title": "DLA Piper advises Digital Force Technologies in strategic partnership with DC Capital Partners",
+          "source_type": "transaction_adviser",
+          "published_date": "2020-09-28"
+        },
+        {
+          "url": "https://www.washingtontechnology.com/2020/09/dc-capital-backs-special-operations-tech-firm/355034/",
+          "title": "DC Capital backs special operations tech firm",
+          "source_type": "trade_media",
+          "published_date": "2020-09-28"
+        },
+        {
+          "url": "https://www.columbiawestcap.com/news/2020/12/11/cw-q3-2020-aerospace-amp-defense-mampa-and-financing-report",
+          "title": "CW Q3 2020 Aerospace & Defense M&A and Financing Report",
+          "source_type": "transaction_report",
+          "published_date": "2020-12-11"
+        },
+        {
+          "url": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forl-m21000002634-41001a4c-df8c-4f79-829a-301347c5b622&directionType=Initial&inquirytype=EntityName&listNameOrder=DIGITALFOOTPRINTINTERACTIVE+L090000696240&searchNameOrder=DIGITALFORCETECHNOLOGIES+M210000026340&searchTerm=DIGITAL+FOOTPRINT+INTERACTIVE%2C+LLC",
+          "title": "Florida Division of Corporations - Digital Force Technologies, LLC",
+          "source_type": "state_registry",
+          "published_date": null
+        },
+        {
+          "url": "https://www.highergov.com/awardee/digital-force-technologies-llc-10029736/",
+          "title": "Digital Force Technologies - legal entity profile",
+          "source_type": "government_registry_aggregator",
+          "published_date": null
+        },
+        {
+          "url": "https://www.cbinsights.com/company/bbn-technologies/financials",
+          "title": "BBN Technologies acquisitions",
+          "source_type": "commercial_database",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "BBN Technologies' 2008 purchase of Digital Force Technologies is an issuer funding round.",
+          "reason": "It was an acquisition of the company; acquisitions are excluded unless a source separately establishes issuer financing."
+        },
+        {
+          "claim": "DC Capital provided a known dollar amount or a control investment to DFT in 2020.",
+          "reason": "Terms were undisclosed and the reviewed transaction reporting supports only a partial stake; no transaction-specific source states the amount or control percentage."
+        },
+        {
+          "claim": "Government contract obligations are financing.",
+          "reason": "Contracts and procurement are out of scope."
+        }
+      ]
+    },
+    {
+      "id": "0a2680ec-06c3-4b6c-a3af-d36811aaf945",
+      "slug": "dii-llc",
+      "name": "DII LLC",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Oklahoma government, USPTO and patent sources connect the unmanned-systems business DII, LLC with the expanded name Design Intelligence Incorporated, LLC and James Grimsley. A 2026 Oklahoma court caption lists DII, LLC and Design Intelligence Incorporated, LLC as separate parties, so legal continuity is unresolved. No qualifying public private-capital round was found for the exact DII, LLC issuer.",
+      "hold_note": "Public sources disclose grants, SBIR awards and an unnamed farm owner described as an investor, but no verifiable private round amount, instrument or named counterparty for DII, LLC.",
+      "sources_checked": [
+        "https://oklahoma.gov/ocast/about-ocast/news/dii-11-16-16.html",
+        "https://www.okcommerce.gov/unmanned-aerial-vehicles-extending-your-line-of-sight/",
+        "https://tbip.net/diillc/",
+        "https://uspto.report/TM/85466145/APP20111110073310",
+        "https://patents.google.com/patent/US10411642B2/en",
+        "https://oksc.oscn.net/orders/6502/orders-entered-may-26-2026/"
+      ],
+      "excluded_claims": [
+        "OCAST and SBIR awards are government grants/awards, not disclosed private rounds.",
+        "The unnamed farm-owner investor claim lacks name, date, amount, instrument and closing status.",
+        "Similarly named SEC pooled-fund issuers were rejected as false matches."
+      ]
+    },
+    {
+      "id": "cb71ce55-2991-4f8b-aa87-c9dc987ea0c7",
+      "slug": "distance-technologies",
+      "name": "Distance Technologies",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Company announcements identify the Helsinki issuer as Distance Technologies Oy (also rendered Distance Technologies Ltd) and disclose a closed USD 2.7 million pre-seed in June 2024 and a closed EUR 10 million seed in September 2024.",
+      "hold_note": "The company page lists Bragiel Brothers as a backer but does not map it to a dated round, so it is retained only as a generic relationship.",
+      "sources_checked": [
+        "https://distance.tech/news/launch_release",
+        "https://viewpoints.fov.ventures/p/investing-in-distance",
+        "https://distance.tech/news/distance-technologies-closes-oversubscribed-eur10m-seed-round-led-by-gv-google-ventures",
+        "https://distance.tech/company",
+        "https://maki.vc/case/distance/"
+      ],
+      "excluded_claims": [
+        "USD conversions of the EUR 10 million seed were excluded.",
+        "Bragiel Brothers was not assigned to either round because no round date or role is public.",
+        "Valuation claims were excluded."
+      ]
+    },
+    {
+      "id": "f16cd055-5355-48c2-99f3-1b584e2fc9fa",
+      "slug": "distran",
+      "name": "Distran",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Sources identify the issuer as Distran AG, Zurich (UID CHE-499.611.232). Public records disclose a seven-digit CHF Series A in 2017, a closed CHF 8.3 million Series B in 2023, and a separate CHF 2.5 million Swiss Accelerator grant.",
+      "hold_note": "The exact 2017 amount is undisclosed. The 2023 equity and grant amounts are separated to avoid treating the CHF 10.8 million combined headline as one instrument.",
+      "sources_checked": [
+        "https://www.energie360.ch/de/magazin/forschung-innovation/distran/",
+        "https://www.venturelab.swiss/Distran-raises-CHF-108-million-in-funding-to-accelerate-growth-in-ultrasonic-camera-technology",
+        "https://www.swlegal.com/en/insights/deals-cases-detail/schellenberg-wittmer-advised-swisscanto-private-eq/",
+        "https://www.swisscanto.com/ch/en/institutionelle/blog/asset-management/2023/private-equity-distran-anybotics-wachstumsunternehmen.html",
+        "https://www.innosuisse.admin.ch/en/approved-swiss-accelerator-innovation-projects"
+      ],
+      "excluded_claims": [
+        "The CHF 10.8 million headline combines CHF 8.3 million equity with a CHF 2.5 million grant and is not one round.",
+        "The seven-digit Series A amount was not guessed.",
+        "Customer, NASA-use and emissions-impact claims were excluded."
+      ]
+    },
+    {
+      "id": "38226d1a-70cc-4f1b-a025-2b36965a4faa",
+      "slug": "dive-technologies",
+      "name": "Dive Technologies",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "SEC CIK 0001794368 identifies Massachusetts corporation Dive Technologies Inc. The SEC and transaction-party record support a 2019/2020 seed, a July 2020 MassDevelopment loan, and a separate December 2020 equity round. Anduril acquired the company in February 2022; acquisition consideration is excluded.",
+      "hold_note": "The first seed's exact final amount is not public. Its November 2019 Form D showed USD 3,011,054 sold toward a USD 4,051,110 offering; a later company-sourced report said the same seed closed in March 2020 above USD 4 million. These are one round, not two.",
+      "sources_checked": [
+        "https://www.sec.gov/Archives/edgar/data/1794368/000179436819000001/xslFormDX01/primary_doc.xml",
+        "https://www.sec.gov/Archives/edgar/data/1794368/000179436820000002/primary_doc.xml",
+        "https://www.massdevelopment.com/news/underwater-vehicle-company-plans-to-hire-after-closing-a-state-loan/",
+        "https://www.massdevelopment.com/news/massdevelopments-emerging-technology-fund-helps-dive-technologies-inc-buy-equipment-ramp-up-hiring-in-quincy-and-pittsfield/",
+        "https://archive.citybuzz.co/article/644374/dive-technologies-closes-on-new-equity-financing-round",
+        "https://www.citybiz.co/article/212908/tanis-venture-management-mill-town-capital-and-vtc-ventures-announce-acquisition-of-dive-technologies-by-anduril-industries/"
+      ],
+      "excluded_claims": [
+        "The November 2019 Form D amount sold is an in-progress disclosure of the seed that later closed in March 2020 and is not a separate round.",
+        "Anduril acquisition consideration and government contracts/grants were excluded.",
+        "The USD 9.5 million total-raised-to-date statement was not treated as a round amount."
+      ]
+    },
+    {
+      "id": "d0e5b728-6f6a-4e14-bb4f-898ff6817d27",
+      "slug": "divergent-technologies",
+      "name": "Divergent Technologies",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 10,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Delaware corporation Divergent Technologies, Inc., earlier branded Divergent 3D. Company, investor/lender, HKEX filing and charter-data sources support the normalized events. The 2017 headline and O Luxe closing are one Series B; 2022 facilities are recorded only to funded extent; the 2025 Series E is one mixed closing of USD 250 million equity plus USD 40 million debt.",
+      "hold_note": "No issuer confirmation was found for private-market pages claiming July 2026 Series F-1/F-2 financings. A June 2026 issuer release still called the 2025 Series E its latest raise, so the 2026 claims are excluded pending primary corroboration.",
+      "sources_checked": [
+        "https://forgeglobal.com/divergent3d_ipo/",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0820/2024082000427.pdf",
+        "https://www.hkexnews.hk/listedco/listconews/sehk/2018/0125/ltn20180125536.pdf",
+        "https://www.prnewswire.com/news-releases/divergent-technologies-announces-160-million-series-c-funding-301532351.html",
+        "https://ir.horizontechfinance.com/news-releases/news-release-details/divergent-technologies-strengthens-capital-resources-60-million",
+        "https://hexagon.com/company/newsroom/press-releases/2022/hexagon-invests-100-musd-in-autonomous-and-sustainable-manufacturing-through-divergent",
+        "https://www.prnewswire.com/news-releases/divergent-technologies-inc-announces-closing-of-upsized-230-million-series-d-capital-raise-301985962.html",
+        "https://www.sfnet.com/home/industry-data-publications/the-secured-lender/tsl-express-daily-articles-news/tsl-express-daily-articles-news/2024/06/27/bridge-bank-closes-%2447-million-term-loan-to-support-divergent-technologies-growth",
+        "https://www.prnewswire.com/news-releases/divergent-announces-290-million-series-e-to-scale-digital-manufacturing-platform-and-meet-growing-us-defense-production-demand-302555989.html",
+        "https://www.prnewswire.com/news-releases/divergent-builds-americas-most-advanced-industrial-metal-3d-printer-monolith-one-and-announces-second-factory-302802466.html"
+      ],
+      "excluded_claims": [
+        "A reported USD 96 million 2019 convertible financing was excluded because only aggregator coverage and an O Luxe USD 12.5 million note disclosure were found; total and double-count risk could not be reconciled.",
+        "Purported July 2026 Series F-1/F-2 amounts were excluded because they conflict with the issuer's June 2026 latest-round statement.",
+        "The undrawn USD 40 million portion of the 2022 Horizon facility and the undrawn-status USD 20 million Bridge Bank revolver were excluded.",
+        "Valuations, contracts, asset acquisitions and Czinger Vehicles financing were excluded.",
+        "No exact-issuer SEC Form D chain was located; similarly named Divergent issuers were false matches."
+      ]
+    },
+    {
+      "id": "2a6cf55d-6429-41d1-a498-321987459284",
+      "slug": "dji",
+      "name": "DJI",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The issuer is Shenzhen-based SZ DJI Technology Co., Ltd. (also rendered Shenzhen DJI Innovation Technology Co., Ltd. / DJI Innovations). Company and investor reporting supports an approximately USD 30 million Sequoia Capital China investment in 2014 and an exact USD 75 million Accel investment in 2015.",
+      "hold_note": "The reported 2018 USD 1 billion process was an unconfirmed proposed mixed financing. DJI's PR director said the company had not confirmed it, and no definitive close source was located.",
+      "sources_checked": [
+        "https://www.prnewswire.com/news-releases/dji-raises-75-usd-million-from-accel-300078523.html",
+        "https://www.accel.com/companies/dji",
+        "https://techcrunch.com/2015/05/06/dji-drone-platform/",
+        "https://www.govinfo.gov/content/pkg/GOVPUB-Y4_2_C44-PURL-gpo222945/pdf/GOVPUB-Y4_2_C44-PURL-gpo222945.pdf",
+        "https://www.caixinglobal.com/2018-04-18/dji-to-raise-1-billion-in-innovative-bidding-process-101235781.html",
+        "https://m.eeo.com.cn/2018/0514/328348.shtml"
+      ],
+      "excluded_claims": [
+        "The proposed 2018 USD 1 billion financing was excluded for lack of a confirmed close.",
+        "Valuations were excluded.",
+        "The later congressional report's USD 36 million Sequoia exposure may include follow-on exposure, so the contemporary approximately USD 30 million round was retained.",
+        "Database rows naming additional 2015 investors were excluded without issuer or transaction-party confirmation."
+      ]
+    },
+    {
+      "id": "a738c1ae-f87d-4c74-94e2-8bd9260753b9",
+      "slug": "dlr-german-aerospace-center",
+      "name": "DLR (German Aerospace Center)",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "DLR is Deutsches Zentrum fuer Luft- und Raumfahrt e.V., a legally independent registered association and Germany's national research and technology centre, not a venture-backed company. Its official finance page reports recurring federal/state core funding, third-party research funding, research orders and programme-management budgets; these are institutional flows, contracts or administered budgets rather than issuer financing rounds.",
+      "hold_note": "No issuer-style equity, debt or discrete grant round approved. Preserve DLR as a public research institution identity; do not convert annual financing totals or programme budgets into rounds.",
+      "sources_checked": [
+        "https://www.dlr.de/en/dlr/about-us/organisation",
+        "https://www.dlr.de/en/dlr/about-us",
+        "https://www.dlr.de/en/dlr/about-us/dlr-in-numbers/financing",
+        "https://event.dlr.de/en/impressum/",
+        "https://www.helmholtz.de/ueber-uns/helmholtz-zentren/zentren-a-z/zentrum/deutsches-zentrum-fuer-luft-und-raumfahrt-dlr/"
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EUR 1.701 billion overall financing in 2024",
+          "reason": "Annual institutional operating finance combining core funding, third-party funds, orders and management revenue; not a financing round.",
+          "source_url": "https://www.dlr.de/en/dlr/about-us/dlr-in-numbers/financing"
+        },
+        {
+          "claim": "German Space Agency and project-management funding volumes",
+          "reason": "Budgets administered by units at DLR, not capital raised by DLR as issuer.",
+          "source_url": "https://www.dlr.de/en/dlr/about-us/dlr-in-numbers/financing"
+        }
+      ]
+    },
+    {
+      "id": "c3b22bcc-5166-49f9-a137-7409396a16bc",
+      "slug": "dnv-cyber",
+      "name": "DNV Cyber",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "DNV Cyber is the DNV-owned cybersecurity services business/brand formed in 2024 by merging DNV's existing cyber activity with acquired Nixu and Applied Risk. Public sources support integration and ownership continuity, but no financing issued by DNV Cyber itself was found.",
+      "hold_note": "No issuer-level round approved. Keep DNV's acquisitions of Nixu and Applied Risk as relationships/exclusions, not DNV Cyber funding.",
+      "sources_checked": [
+        "https://www.dnv.com/cyber/about/",
+        "https://www.dnv.com/cyber/about/our-story/",
+        "https://www.dnv.com/news/2024/dnv-creates-european-cyber-security-services-powerhouse-through-merger-with-nixu-and-applied-risk/",
+        "https://www.dnv.com/news/2023/dnv-acquires-nixu-to-safeguard-society-from-rising-cyber-security-risks-244722/",
+        "https://www.dnv.com/news/2021/dnv-and-applied-risk-join-forces-to-create-industrial-cyber-security-powerhouse-212877/"
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EUR 98 million Nixu transaction value",
+          "reason": "Acquisition consideration paid by DNV for Nixu; not capital raised by DNV Cyber.",
+          "source_url": "https://www.dnv.com/news/2023/dnv-acquires-nixu-to-safeguard-society-from-rising-cyber-security-risks-244722/"
+        },
+        {
+          "claim": "DNV acquisition of Applied Risk in 2021",
+          "reason": "Parent acquisition and predecessor integration; no DNV Cyber issuer financing disclosed.",
+          "source_url": "https://www.dnv.com/news/2021/dnv-and-applied-risk-join-forces-to-create-industrial-cyber-security-powerhouse-212877/"
+        }
+      ]
+    },
+    {
+      "id": "d913b7e2-1be8-4c72-9706-0375823a9329",
+      "slug": "dok-ing",
+      "name": "DOK-ING",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 10,
+      "relationship_count": 1,
+      "evidence_note": "DOK-ING d.o.o. publicly disclosed multiple non-repayable grants in original HRK and EUR. Only grant amounts attributable to DOK-ING/its named project are recorded; consortium totals without a DOK-ING allocation are excluded. Rheinmetall's 2026 acquisition and renaming are continuity relationships, not issuer funding.",
+      "hold_note": "The company was renamed Rheinmetall Unmanned Vehicles d.o.o. after Rheinmetall acquired 51% on 2026-07-01. Historical grants remain attached to the same Croatian legal-company continuity; acquisition price was undisclosed and excluded.",
+      "sources_checked": [
+        "https://dok-ing.hr/eu-projects/",
+        "https://dok-ing.hr/eu-projects/povecanje-konkurentnosti-kroz-optimalizaciju-razvojno-proizvodnih-i-poslovnih-procesa-rc-2-1-11-0005/",
+        "https://dok-ing.hr/eu-projects/bespovratna-sredstva-europskog-socijalnog-fonda-u-sklopu-programa-2007-2013-za-obrazovanje-za-poduzetnistvo-i-obrt-hr-1-1-11-0048/",
+        "https://dok-ing.hr/eu-projects/razvoj-daljinski-upravljanog-vozila-za-djelovanje-u-ekstremnim-nrkbe-uvjetima-duv-nrkbe/",
+        "https://dok-ing.hr/eu-projects/razvoj-multifunkcionalnog-antiteroristickog-navalnog-sustava-mas/",
+        "https://dok-ing.hr/eu-projects/povecanje-energetske-ucinkovitosti-i-koristenja-obnovljivih-izvora-energije-u-tvrtki-dok-ing/",
+        "https://dok-ing.hr/eu-projects/digitalizacija-poslovnih-procesa-poduzeca-dok-ing-2023-2024/",
+        "https://dok-ing.hr/eu-projects/projekt-mf-2023-1-1-50/",
+        "https://dok-ing.hr/eu-projects/dokazivanje-inovativnog-koncepta-dogrijaca-sinteznog-plina-extracth/",
+        "https://www.rheinmetall.com/en/media/news-watch/news/2026/07/2026-07-01-rheinmetall-acquires-majority-stake-in-dok-ing"
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EUR 6,077,664 NRE-ElectRA project value and 66.66% EIT co-financing",
+          "reason": "Consortium total led by the University of Zagreb; no DOK-ING-specific allocation disclosed.",
+          "source_url": "https://dok-ing.hr/eu-projects/nre-electra-projekt-eit-rawmaterials/"
+        },
+        {
+          "claim": "EUR 702,000 Mobile Waste Management Gasification Solution project value",
+          "reason": "Total project value for DOK-ING plus partner; grant amount to DOK-ING not stated.",
+          "source_url": "https://dok-ing.hr/eu-projects/mobile-waste-management-gasification-solution-innovation-norway/"
+        },
+        {
+          "claim": "Rheinmetall acquisition of 51%",
+          "reason": "Acquisition/ownership change, not capital raised by the issuer; purchase price undisclosed.",
+          "source_url": "https://www.rheinmetall.com/en/media/news-watch/news/2026/07/2026-07-01-rheinmetall-acquires-majority-stake-in-dok-ing"
+        }
+      ]
+    },
+    {
+      "id": "6c0256ed-0b20-4b4b-a77d-98c867dc4e78",
+      "slug": "dongguan-poweramp",
+      "name": "Dongguan Poweramp",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 2,
+      "evidence_note": "Dongguan Poweramp Technology Ltd. (Dongguan Xineng'an Technology Co., Ltd.) was a wholly owned manufacturing subsidiary in the ATL/TDK group, established in 2019 with USD 150 million registered capital. TDK reported it liquidated during the six months ended 2026-09-30. No external issuer financing was found.",
+      "hold_note": "No round approved. Registered capital, parent investment and the roughly RMB 5 billion campus investment are not evidenced as external financing rounds; the legal entity was liquidated in 2026.",
+      "sources_checked": [
+        "https://www.tdk.com/worldwide/index.html",
+        "https://www.tdk.cn/zh/sustainability/social/safety-health/iso145001",
+        "https://www.cnesa.org/information/detail/?column_id=4&id=1045",
+        "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261030/20261030560692.pdf"
+      ],
+      "excluded_claims": [
+        {
+          "claim": "USD 150 million registered capital",
+          "reason": "Corporate registered capital/parent capitalization, not a public external financing event.",
+          "source_url": "https://www.tdk.cn/zh/sustainability/social/safety-health/iso145001"
+        },
+        {
+          "claim": "Approximately RMB 5 billion Poweramp campus investment",
+          "reason": "Project/site investment reported by a trade association; no issuer raise, investor role or closing disclosed.",
+          "source_url": "https://www.qushanghui.com.cn/pc/newscontent/13848"
+        }
+      ]
+    },
+    {
+      "id": "438fdfcd-33cd-494e-96d9-5a74ec09c214",
+      "slug": "doodle-labs",
+      "name": "Doodle Labs",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Doodle Labs is a long-running brand/spin-out. Federal award records identify Graffiti Enterprises LLC d.b.a. Doodle Labs for 2019-2024 awards and a separate Doodle Labs LLC for 2024-2025 awards. Those records carry procurement contract numbers; under the task's no-contract rule they are excluded rather than represented as grants. No verifiable equity or loan round was found.",
+      "hold_note": "Hold all SBIR/STTR/TACFI entries as contract exclusions unless the programme policy later allows federal R&D contracts. Legal continuity between Graffiti Enterprises LLC and Doodle Labs LLC is not fully resolved from public sources.",
+      "sources_checked": [
+        "https://doodlelabs.com/about",
+        "https://www.sbir.gov/portfolio/1615201",
+        "https://www.sbir.gov/portfolio/2446959",
+        "https://www.sbir.gov/awards/180438",
+        "https://www.sbir.gov/awards/186194",
+        "https://www.sbir.gov/awards/191162",
+        "https://www.sbir.gov/awards/214584",
+        "https://www.sbir.gov/awards/215773",
+        "https://doodlelabs.com/blog/air-force-research-laboratory-beamforming-investment/"
+      ],
+      "excluded_claims": [
+        {
+          "claim": "USD 48,405 2019 SBIR Phase I",
+          "reason": "Federal R&D procurement award with contract FA8649-19-P-A188; contracts excluded.",
+          "source_url": "https://www.sbir.gov/awards/180438"
+        },
+        {
+          "claim": "USD 1,556,991 2020 SBIR Phase II",
+          "reason": "Federal R&D procurement award with contract FA8649-20-C-0098; contracts excluded.",
+          "source_url": "https://www.sbir.gov/awards/186194"
+        },
+        {
+          "claim": "USD 749,979 2021 SBIR Phase II",
+          "reason": "Federal R&D procurement award with contract FA8649-21-P-1592; contracts excluded.",
+          "source_url": "https://www.sbir.gov/awards/191162"
+        },
+        {
+          "claim": "USD 1.6 million / USD 1,699,112 TACFI funding",
+          "reason": "Follow-on federal R&D contract; company headline rounded the amount and SBIR record identifies contract FA8750-22-C-0512.",
+          "source_url": "https://doodlelabs.com/blog/air-force-research-laboratory-beamforming-investment/"
+        },
+        {
+          "claim": "USD 1,899,831 2024 SBIR Phase II",
+          "reason": "Federal R&D procurement award with contract FA8750-24-C-B105; contracts excluded.",
+          "source_url": "https://www.sbir.gov/awards/214584"
+        },
+        {
+          "claim": "USD 1,998,272 2025 SBIR Phase II",
+          "reason": "Federal R&D procurement award with contract W51701-25-C-0057; contracts excluded.",
+          "source_url": "https://www.sbir.gov/awards/215773"
+        }
+      ]
+    },
+    {
+      "id": "d42e636e-b3bd-426d-be67-5a0bd1aa193f",
+      "slug": "doordash",
+      "name": "DoorDash",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 12,
+      "relationship_count": 0,
+      "evidence_note": "Issuer is DoorDash, Inc., the Delaware corporation incorporated in 2013 as Palo Alto Delivery Inc. and renamed in 2015. Private preferred-series amounts were reconciled to the 2020 S-1/10-K final issuance totals where available; announcement headlines are noted rather than double-counted. The 2020 IPO and 2025 convertible notes were issued by DoorDash, Inc.; subsidiary acquisition consideration and later acquisition bridge commitments are excluded.",
+      "hold_note": "The Series D record retains the USD 535 million headline/series total but notes that USD 60 million came from 2017 notes converted in 2018; do not add a second USD 60 million round without netting it. Series G excludes USD 100 million of stock issued for the Caviar acquisition. Proposed 2026 Instacart bridge financing is committed, not funded, as of the check date.",
+      "sources_checked": [
+        "https://www.sec.gov/Archives/edgar/data/1792789/000119312520292381/d752207ds1.htm",
+        "https://www.sec.gov/Archives/edgar/data/1792789/000162828021004032/dash-20201231.htm",
+        "https://www.stanleytang.com/blog/a-new-beginning-the-doordash-story/",
+        "https://www.ycombinator.com/blog/doordasy-yc-s13-raises-2-dollars-dot-4m-to-improve-food-delivery-growing-over-20-percent-weekly",
+        "https://www.prnewswire.com/news-releases/doordash-secures-535-million-in-funding-from-softbank-sequoia-and-gic-to-expand-its-on-demand-platform-300606365.html",
+        "https://www.prnewswire.com/news-releases/doordash-raises-250-million-from-coatue-management-and-dst-global-at-4-billion-valuation-300698555.html",
+        "https://www.gunder.com/en/news-insights/client-news/doordash-raises-400m",
+        "https://www.gunder.com/en/news-insights/client-news/doordash-raises-series-g-financing",
+        "https://ir.doordash.com/news/news-details/2020/DoorDash-Announces-Pricing-of-Initial-Public-Offering/default.aspx",
+        "https://ir.doordash.com/news/news-details/2025/DoorDash-Announces-Closing-of-Upsized-2-75-Billion-Offering-of-0-Convertible-Senior-Notes/default.aspx",
+        "https://www.sec.gov/Archives/edgar/data/1792789/000114036125021020/ef20049988_8k.htm"
+      ],
+      "excluded_claims": [
+        {
+          "claim": "USD 100 million Series G stock issued for Caviar acquisition",
+          "reason": "Acquisition consideration, not cash financing; excluded from the USD 703,000,001 Series G cash issuance total.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1792789/000119312520292381/d752207ds1.htm"
+        },
+        {
+          "claim": "USD 950 million revolving credit facility",
+          "reason": "Credit availability/commitment; no issuer borrowing evidenced for the period reviewed.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1792789/000119312520292381/d752207ds1.htm"
+        },
+        {
+          "claim": "2026 bridge loan for Instacart acquisition",
+          "reason": "Committed acquisition facility, not funded/closed issuer financing as of 2026-11-12.",
+          "source_url": "https://ir.doordash.com/news/news-details/2026/DoorDash-to-Acquire-Instacart-to-Help-Local-Stores-Win/default.aspx"
+        }
+      ]
+    },
+    {
+      "id": "dedb380e-ce30-449a-a34a-a62fad6031a2",
+      "slug": "dornier",
+      "name": "Dornier Seawings GmbH",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 2,
+      "evidence_note": "The target was resolved to the German Dornier Seawings GmbH / Dornier Seawings operating group, not the historic dissolved/absorbed Dornier Flugzeugwerke and not the separately incorporated Wuxi subsidiary. The company says the GmbH is 85% owned by Dornier Seawings Co., Ltd. (China) and 15% by the Dornier family. One issuer-level shareholder funding event is sufficiently evidenced; older aggregate references to more than US$300m do not provide round-level dates or instruments.",
+      "hold_note": "Hold for editorial review if the database target was intended to be Dornier Seawings Wuxi Co., Ltd. rather than the German GmbH. The September 2025 Wuxi A round and Hong Kong affiliate bond issues are deliberately excluded from the GmbH issuer record.",
+      "sources_checked": [
+        {
+          "url": "https://dornierseawings.com/dornier-seawings-raises-e150m-investments/",
+          "title": "Dornier Seawings Raises €150m Investments",
+          "source_type": "company"
+        },
+        {
+          "url": "https://dornierseawings.com/company/",
+          "title": "Company Overview | Dornier Seawings",
+          "source_type": "company"
+        },
+        {
+          "url": "https://static.sse.com.cn/bond/bridge2/disclosure/announcement/c/202503/8051d6_20250311_BQ3T.pdf",
+          "title": "Wuxi Communications Industry Group 2025 bond underwriter due-diligence opinion",
+          "source_type": "regulatory_filing"
+        },
+        {
+          "url": "https://fund.10jqka.com.cn/20250904/c670887293.shtml",
+          "title": "CDB Manufacturing Transformation and Upgrading Fund invests in Dornier Seawings Wuxi",
+          "source_type": "transaction_report"
+        },
+        {
+          "url": "https://dornierseawings.com/dornier-seawings-received-additional-eur-300-million-bonds/",
+          "title": "Dornier Seawings received additional EUR 300 million bonds",
+          "source_type": "company"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "September 2025 A round in which CDB Manufacturing Transformation and Upgrading Fund became a shareholder and registered capital increased from about RMB650m to RMB810m",
+          "reason": "The exact issuer was Dornier Seawings Wuxi Co., Ltd., a separately incorporated operating subsidiary, not Dornier Seawings GmbH; the public report also labels the amount undisclosed, so the registered-capital increase was not substituted for cash proceeds.",
+          "sources": [
+            "https://fund.10jqka.com.cn/20250904/c670887293.shtml"
+          ]
+        },
+        {
+          "claim": "EUR300m and EUR350m bond financings associated with the Dornier Seawings group",
+          "reason": "Available disclosures identify Sea Wings (Hong Kong) Limited / another group financing vehicle as issuer; affiliate debt was not attributed to the GmbH.",
+          "sources": [
+            "https://dornierseawings.com/dornier-seawings-received-additional-eur-300-million-bonds/"
+          ]
+        },
+        {
+          "claim": "Project investment of US$298m and registered capital of US$120m",
+          "reason": "These are project/corporate capitalization figures in a group-history filing, not a dated issuer financing round.",
+          "sources": [
+            "https://static.sse.com.cn/bond/bridge2/disclosure/announcement/c/202503/8051d6_20250311_BQ3T.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5b86005a-7283-4a05-8d98-632b4a27d8b4",
+      "slug": "dotchain",
+      "name": "DotChain Co., Ltd. (株式会社DotChain)",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact identity was resolved to Japanese corporation number 9470001019389, a Kagawa-based VR/metaverse advertising company founded as a sole proprietorship on 1 October 2022 and incorporated on 15 December 2022. Company and Japanese startup-directory sources disclose no financing event or external investor.",
+      "hold_note": "No publishable funding round was found. Do not confuse this company with Ukraine's government-operated DOT-Chain procurement platform.",
+      "sources_checked": [
+        {
+          "url": "https://www.dotchain.ltd/information",
+          "title": "Public information | DotChain Co., Ltd.",
+          "source_type": "company"
+        },
+        {
+          "url": "https://startup-db.com/companies/rE5aJP5U3DaGmVbw",
+          "title": "DotChain | STARTUP DB",
+          "source_type": "company_database"
+        },
+        {
+          "url": "https://www.dotchain.ltd/",
+          "title": "DotChain Co., Ltd.",
+          "source_type": "company"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "UAH600m-UAH1bn DOT-Chain Defence pilot budget",
+          "reason": "This is a Ukrainian defence-procurement programme budget and not financing of the Japanese DotChain corporation.",
+          "sources": [
+            "https://mod.gov.ua/en/news/dot-chain-defense-enhancing-autonomy-for-brigades-and-reducing-bureaucracy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fbe465c9-1d97-4bea-8950-6ed36821e8d3",
+      "slug": "dowty",
+      "name": "Dowty Propellers",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The current operating identity is Dowty Propellers, a GE Aerospace business and trading operation of GE Aviation Systems Limited. The historic Dowty Group was acquired by TI Group in 1992 and is not continuous as a standalone venture-backed issuer. No issuer-exclusive public equity or debt round was verified.",
+      "hold_note": "No manifest round. Government/ATI project support is a multi-party consortium amount, and GE Aerospace's 2026 spend is parent-company investment into its own business; both are excluded under issuer-attribution rules.",
+      "sources_checked": [
+        {
+          "url": "https://www.dowty.com/company",
+          "title": "Company | Dowty",
+          "source_type": "company"
+        },
+        {
+          "url": "https://www.geaerospace.com/company/businesses/dowty-propellers",
+          "title": "Dowty Propellers | GE Aerospace",
+          "source_type": "parent_company"
+        },
+        {
+          "url": "https://www.dowtyheritage.org.uk/content/dowty-group/dowty-group-dowty-group/dowty-group-history",
+          "title": "Dowty Group History",
+          "source_type": "historical_archive"
+        },
+        {
+          "url": "https://www.dowty.com/news/new-dowty-propellers-administration-hq",
+          "title": "Dowty Propellers to build a new UK headquarters & production facility and invest in technology development",
+          "source_type": "company"
+        },
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/5a82c04ded915d74e3403620/Aerospace_Technology_Institute_-_Strategic_R_D_Projects_-_Batch_19_-_Com....pdf",
+          "title": "Aerospace Technology Institute Strategic R&D Projects Batch 19 results",
+          "source_type": "government"
+        },
+        {
+          "url": "https://www.dowty.com/news/dowty-propeller-expertise-supports-open-fan-technology-development",
+          "title": "Dowty propeller expertise supports Open Fan technology development",
+          "source_type": "company"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "£9.5m grant for the £20m Digital Propulsion project announced 14 July 2017",
+          "reason": "Dowty's release describes a match-funded project with several partners, while the government competition result gives a proposed consortium grant of £9,953,242. No issuer-exclusive allocation to GE Aviation Systems Limited/Dowty was disclosed, so the consortium total is not a company round.",
+          "sources": [
+            "https://www.dowty.com/news/new-dowty-propellers-administration-hq",
+            "https://assets.publishing.service.gov.uk/media/5a82c04ded915d74e3403620/Aerospace_Technology_Institute_-_Strategic_R_D_Projects_-_Batch_19_-_Com....pdf"
+          ]
+        },
+        {
+          "claim": "Approximately £12m invested in Gloucester by July 2026",
+          "reason": "The company explicitly says the money came from parent GE Aerospace; parent capital expenditure is not external issuer funding.",
+          "sources": [
+            "https://www.dowty.com/news/dowty-propeller-expertise-supports-open-fan-technology-development"
+          ]
+        },
+        {
+          "claim": "TI Group's 1992 takeover of Dowty Group",
+          "reason": "This was an acquisition of the historic listed group, not a funding round of the current Dowty Propellers operating business.",
+          "sources": [
+            "https://www.dowtyheritage.org.uk/content/dowty-group/dowty-group-dowty-group-history"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9d8d5787-fc96-48e0-b356-dcfa0090c795",
+      "slug": "dracoe",
+      "name": "DRACOE",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The target was resolved to the veteran-owned North Carolina defence-technology business operating through DRACOE LP/DRACOE US, not the UK subsidiary. The company was founded in 2025 and publicly describes US manufacturing, unmanned systems, components and training. No attributable external round for the US issuer was found in company, SEC/Form D or public business-registry searches.",
+      "hold_note": "No manifest round. A September 2026 UK share allotment belongs to DRACOE UK LIMITED and cannot be attributed to the US target without evidence of the source of cash or an external investor.",
+      "sources_checked": [
+        {
+          "url": "https://www.dracoe.tech/",
+          "title": "DRACOE",
+          "source_type": "company"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16771379",
+          "title": "DRACOE UK LIMITED overview",
+          "source_type": "company_registry"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16771379/filing-history",
+          "title": "DRACOE UK LIMITED filing history",
+          "source_type": "company_registry"
+        },
+        {
+          "url": "https://www.fundingspotter.com/company/dracoe-uk-limited-16771379",
+          "title": "DRACOE UK LIMITED funding profile",
+          "source_type": "transaction_database"
+        },
+        {
+          "url": "https://www.ncse.org/",
+          "title": "North Carolina's Southeast - DRACOE facility opening",
+          "source_type": "regional_development_org"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "£438.9k raised by share allotment on 4 September 2026",
+          "reason": "The filing belongs to DRACOE UK LIMITED (company 16771379), a separate UK subsidiary/affiliate. Public records do not identify an external investor or establish that the allotment was financing of the US issuer.",
+          "sources": [
+            "https://find-and-update.company-information.service.gov.uk/company/16771379/filing-history",
+            "https://www.fundingspotter.com/company/dracoe-uk-limited-16771379"
+          ]
+        },
+        {
+          "claim": "US Army purchase order and facility/permit values",
+          "reason": "Contracts, property transactions and construction permit estimates are not issuer financing.",
+          "sources": [
+            "https://www.dracoe.tech/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17007ec2-0fe5-4efa-8f91-ffa5363b0afa",
+      "slug": "draganfly",
+      "name": "Draganfly Inc.",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 16,
+      "relationship_count": 1,
+      "evidence_note": "The issuer is the British Columbia corporation incorporated as Drone Acquisition Corp. on 1 June 2018, renamed Draganfly Inc. on 15 August 2019 when it completed the recapitalization/reverse takeover of the older Draganfly Innovations business. Closed issuer financings were reconciled against SEC filings and company closing releases. Shelf capacities, acquisition consideration, debt settlements, grants/loans to subsidiaries and unexercised warrants were not counted as rounds.",
+      "hold_note": "The 2023 ATM record uses actual cumulative gross proceeds reported in audited statements, not the US$15m programme ceiling. The 2020-2021 Regulation A+ record is consolidated as one fully closed offering to avoid counting its initial and final tranches twice.",
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1786286/000149315222008934/form20-f.htm",
+          "title": "Draganfly Inc. 2021 Form 20-F",
+          "source_type": "regulatory_filing"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1786286/000164117225000949/form20-f.htm",
+          "title": "Draganfly Inc. 2024 Form 20-F",
+          "source_type": "regulatory_filing"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1786286/000178628619000002/xslFormDX08/primary_doc.xml",
+          "title": "Draganfly Inc. Form D filed 27 August 2019",
+          "source_type": "regulatory_filing"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1786286/000149315226050995/ex99-2.htm",
+          "title": "Draganfly Q3 2026 management discussion and analysis",
+          "source_type": "regulatory_filing"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1786286/000149315226008450/ex99-1.htm",
+          "title": "Draganfly Announces Closing of US$50.0 Million Registered Direct Offering",
+          "source_type": "company_filing"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1786286/000149315226044983/ex99-1.htm",
+          "title": "Draganfly Announces Closing of US$10 Million Strategic Investment",
+          "source_type": "company_filing"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "2019 Form D amount of US$968,789",
+          "reason": "This is the US-investor subset of the C$7,025,749.50 subscription-receipt financing completed for the going-public transaction, not an additional round.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1786286/000178628619000002/xslFormDX08/primary_doc.xml",
+            "https://www.sec.gov/Archives/edgar/data/1786286/000149315222008934/form20-f.htm"
+          ]
+        },
+        {
+          "claim": "US$15m 2023 ATM programme capacity",
+          "reason": "Capacity is not proceeds. Only C$1,748,946 of actual gross share sales reported for 2023 is included.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1786286/000164117225000949/form20-f.htm"
+          ]
+        },
+        {
+          "claim": "C$200m 2023 and C$300m 2026 base-shelf prospectus totals",
+          "reason": "Shelf ceilings merely qualify possible future securities; they are not cash raised.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1786286/000149315223038479/formsuppl.htm",
+            "https://www.sec.gov/Archives/edgar/data/1786286/000149315226044659/formsuppl.htm"
+          ]
+        },
+        {
+          "claim": "Warrant exercises, placement-agent warrants and warrant repricings",
+          "reason": "Unexercised warrant notional was not treated as proceeds; routine exercises disclosed in aggregate share-capital movements were not represented as separate funding rounds.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1786286/000164117225000949/form20-f.htm",
+            "https://www.sec.gov/Archives/edgar/data/1786286/000149315226050995/ex99-2.htm"
+          ]
+        },
+        {
+          "claim": "CEBA loans received by Dronelogics and Draganfly Innovations",
+          "reason": "The borrowers were subsidiaries, the amounts were loans rather than parent-issuer rounds, and both were repaid.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1786286/000164117225000949/form20-f.htm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20698428-2f45-4ec8-b2d0-c2bfa5e60abf",
+      "slug": "dragonflypads",
+      "name": "DRAGONFLYPADS",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The target was resolved to French SAS DRAGONFLYPADS (SIREN 889 227 906), incorporated in September 2020 and led by Sissel Thorstensen. A company fundraising deck reports €150k from partners and family/friends in 2021. Earlier regional aid was awarded to the separate company Fan Worldwide France for the DragonFlyPads project and is not attributed to the later SAS.",
+      "hold_note": "The 2021 round is publishable with a year-only date and unnamed participants, but the deck is the only located round-level source. The amount's EUR currency is inferred from the French deck's euro-denominated fundraising context; retain the qualifier.",
+      "sources_checked": [
+        {
+          "url": "https://www.pappers.fr/entreprise/dragonflypads-889227906",
+          "title": "DRAGONFLYPADS company profile",
+          "source_type": "company_registry_aggregator"
+        },
+        {
+          "url": "https://www.norban.no/wp-content/uploads/2022/02/dragonflypads-pitch.pdf",
+          "title": "DragonFlyPads investor pitch",
+          "source_type": "company_deck"
+        },
+        {
+          "url": "https://www.iledefrance.fr/actes/deliberations/CP2020-220RAP.pdf",
+          "title": "Île-de-France CP2020-220 project report",
+          "source_type": "government"
+        },
+        {
+          "url": "https://www.iledefrance.fr/actes/deliberations/CP2024-225RAP.pdf",
+          "title": "Île-de-France CP2024-225 project financing report",
+          "source_type": "government"
+        },
+        {
+          "url": "https://www.tp-lj.si/en/news/news/successfully-completed-bali-2-0-with-a-pitch-day-2026-01-22",
+          "title": "Successfully Completed BALI 2.0 with a Pitch Day",
+          "source_type": "accelerator"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "€273k Innov'up subsidy in 2020",
+          "reason": "The company deck's shorthand conflicts with official regional records: the beneficiary was Fan Worldwide France, not DRAGONFLYPADS SAS, and the 2020 maximum award was €219,750. The later report says €73,540.41 had actually been paid before the remaining €146,209.59 was re-awarded. No parent/predecessor project aid is attributed to the SAS.",
+          "sources": [
+            "https://www.norban.no/wp-content/uploads/2022/02/dragonflypads-pitch.pdf",
+            "https://www.iledefrance.fr/actes/deliberations/CP2020-220RAP.pdf",
+            "https://www.iledefrance.fr/actes/deliberations/CP2024-225RAP.pdf"
+          ]
+        },
+        {
+          "claim": "BALI 2.0 accelerator participation and pitch day",
+          "reason": "Participation demonstrates programme activity but no cash investment or grant amount was disclosed.",
+          "sources": [
+            "https://www.tp-lj.si/en/news/news/successfully-completed-bali-2-0-with-a-pitch-day-2026-01-22"
+          ]
+        },
+        {
+          "claim": "€1.5m seed round and €5m-€20m capital sought",
+          "reason": "These were fundraising targets/candidates in the 2022 deck, not closed financing.",
+          "sources": [
+            "https://www.norban.no/wp-content/uploads/2022/02/dragonflypads-pitch.pdf"
+          ]
+        }
+      ]
+    }
+  ],
+  "audit_notes": [
+    "Only issuer-supported financing facts are normalized; parent, subsidiary, acquisition-consideration, contract and consortium amounts remain excluded unless the reviewed source establishes the target as recipient.",
+    "A completed bounded public-source review does not assert zero funding where no public round was found; undisclosed private history remains unknown.",
+    "Duplicate or closely related catalogue identities are kept distinct unless sources establish legal or economic continuity.",
+    "SEC Form D amendments are treated as cumulative issuer disclosures and are not double-counted as separate closes unless a later filing establishes a distinct offering."
+  ],
+  "publication": {
+    "pending": true,
+    "catalogue_trigger_required": true,
+    "database_imported_at": "2026-11-12T08:13:29.112Z",
+    "database_totals": {
+      "approved_events": 2492,
+      "round_participations": 2889,
+      "investor_profiles": 1764,
+      "source_reconciliation_companies": 636
+    },
+    "verification": {
+      "manifest_events": 65,
+      "manifest_sources": 110,
+      "manifest_links": 121,
+      "manifest_relationships": 10,
+      "missing_link_source_urls": 0
+    }
+  }
+}

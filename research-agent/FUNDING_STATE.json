@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 199,
-  "fully_reviewed_companies": 846,
-  "next_action": "Continue the next 24 queued identities from DG Sol.One Drone Technologies through DragonFlyPads after publication verification.",
+  "partial_companies": 207,
+  "fully_reviewed_companies": 862,
+  "next_action": "Trigger the existing catalogue build, verify the thirty-first manifest publication, then continue the next 24 queued identities from Draken International through DroneSports.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-12T07:54:20.674Z",
-  "source_reconciliation_companies": 622,
-  "approved_funding_events": 2427,
-  "round_participations": 2768,
-  "investor_profiles": 1695,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261112-thirtieth.json",
+  "updated_at": "2026-11-12T08:13:29.112Z",
+  "source_reconciliation_companies": 636,
+  "approved_funding_events": 2492,
+  "round_participations": 2889,
+  "investor_profiles": 1764,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261112-thirty-first.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -80,8 +80,43 @@
       "draganfly",
       "dragonflypads"
     ],
-    "status": "research",
-    "writer_head": "4a4ae88f955ca61b5245eac2ae5bc6a3c47ba8cf"
+    "status": "database_imported_publication_pending",
+    "writer_head": "4a4ae88f955ca61b5245eac2ae5bc6a3c47ba8cf",
+    "database_imported_at": "2026-11-12T08:13:29.112Z",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 16,
+      "newly_completed_wider_reviews": 16,
+      "new_or_retained_partial": 8,
+      "new_events_written": 65,
+      "new_approved_events": 65,
+      "new_round_participations": 121,
+      "new_generic_portfolio_relationships": 10,
+      "new_investor_profiles": 69,
+      "new_source_rows": 110,
+      "new_companies_with_events": 14,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "manifest_event_matches": 65,
+      "manifest_link_matches": 121,
+      "manifest_source_matches": 110,
+      "manifest_relationship_matches": 10,
+      "missing_link_source_urls": 0,
+      "db_approved_events": 2492,
+      "db_approved_round_participations": 2889,
+      "db_investor_profiles": 1764,
+      "db_source_reconciliation_companies": 636,
+      "current_manifest_publication_verified": false,
+      "concurrency_speedup_claimed": false,
+      "active_minutes": 19,
+      "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded.",
+      "checked_identities_per_active_hour": 75.8,
+      "completed_reviews_per_active_hour": 50.5
+    }
   },
   "last_verified_publication": {
     "checked_at": "2026-11-12T07:07:05.189Z",
@@ -2297,60 +2332,81 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 846,
-    "source_review_partial": 199,
-    "queued": 1519
+    "reviewed_public_sources": 862,
+    "source_review_partial": 207,
+    "queued": 1495
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "identities_checked": 24,
-    "newly_completed_bounded_reviews": 11,
-    "newly_completed_wider_reviews": 11,
-    "new_or_retained_partial": 13,
-    "new_events_written": 37,
-    "new_approved_events": 37,
-    "new_round_participations": 61,
-    "new_generic_portfolio_relationships": 13,
-    "new_investor_profiles": 27,
-    "new_source_rows": 54,
-    "new_companies_with_events": 15,
+    "newly_completed_bounded_reviews": 16,
+    "newly_completed_wider_reviews": 16,
+    "new_or_retained_partial": 8,
+    "new_events_written": 65,
+    "new_approved_events": 65,
+    "new_round_participations": 121,
+    "new_generic_portfolio_relationships": 10,
+    "new_investor_profiles": 69,
+    "new_source_rows": 110,
+    "new_companies_with_events": 14,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "manifest_event_matches": 37,
-    "manifest_link_matches": 61,
-    "manifest_source_matches": 54,
-    "manifest_relationship_matches": 13,
+    "manifest_event_matches": 65,
+    "manifest_link_matches": 121,
+    "manifest_source_matches": 110,
+    "manifest_relationship_matches": 10,
     "missing_link_source_urls": 0,
-    "db_approved_events": 2427,
-    "db_approved_round_participations": 2768,
-    "db_investor_profiles": 1695,
-    "db_source_reconciliation_companies": 622,
-    "current_manifest_publication_verified": true,
+    "db_approved_events": 2492,
+    "db_approved_round_participations": 2889,
+    "db_investor_profiles": 1764,
+    "db_source_reconciliation_companies": 636,
+    "current_manifest_publication_verified": false,
     "concurrency_speedup_claimed": false,
-    "active_minutes": 15,
+    "active_minutes": 19,
     "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded.",
-    "checked_identities_per_active_hour": 96,
-    "completed_reviews_per_active_hour": 44
+    "checked_identities_per_active_hour": 75.8,
+    "completed_reviews_per_active_hour": 50.5
   },
   "latest_followup_metrics": {
-    "identities_reconciled": 20,
-    "prepared_company_followup": 1,
-    "newly_completed_bounded_reviews": 0,
-    "source_review_partial": 20,
-    "new_generic_relationships": 2,
-    "new_profiles": 2,
-    "new_events": 0,
-    "active_minutes": 2.93,
-    "completed_reviews_per_active_hour": 0,
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 16,
+    "newly_completed_wider_reviews": 16,
+    "new_or_retained_partial": 8,
+    "new_events_written": 65,
+    "new_approved_events": 65,
+    "new_round_participations": 121,
+    "new_generic_portfolio_relationships": 10,
+    "new_investor_profiles": 69,
+    "new_source_rows": 110,
+    "new_companies_with_events": 14,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "manifest_event_matches": 65,
+    "manifest_link_matches": 121,
+    "manifest_source_matches": 110,
+    "manifest_relationship_matches": 10,
+    "missing_link_source_urls": 0,
+    "db_approved_events": 2492,
+    "db_approved_round_participations": 2889,
+    "db_investor_profiles": 1764,
+    "db_source_reconciliation_companies": 636,
+    "current_manifest_publication_verified": false,
     "concurrency_speedup_claimed": false,
-    "publication_verified": true
+    "active_minutes": 19,
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded.",
+    "checked_identities_per_active_hour": 75.8,
+    "completed_reviews_per_active_hour": 50.5
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 1045,
+  "source_reviewed_or_partial_companies": 1069,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -2758,14 +2814,14 @@
   },
   "pending_import": null,
   "pending_publication": {
-    "status": "completed",
-    "manifest": "research-agent/imports/funding-landscape-20261112-thirtieth.json",
-    "report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json",
-    "source_commit": "f36ca5fa690a0fd450dccfbdfb63296ad61016ca",
-    "catalogue_commit": "d1610c4adb3894a2426408398c380a1b85ac6973",
-    "workflow_run_id": 43172486266,
-    "verified_at": "2026-11-12T07:07:05.189Z",
-    "catalogue_trigger_required": false
+    "status": "database_imported",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-first.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-first.json",
+    "source_commit": null,
+    "catalogue_commit": null,
+    "workflow_run_id": null,
+    "verified_at": null,
+    "catalogue_trigger_required": true
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -3678,124 +3734,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "4f9eed87-4151-4982-9494-471149f0db7f",
-      "slug": "dg-solone-drone-technologies",
-      "name": "DG Sol.One Drone Technologies"
+      "id": "a7b87f2d-cf76-40f9-a56f-219fe7b591b0",
+      "slug": "draken-international",
+      "name": "Draken International"
     },
     {
-      "id": "ba8421fc-6d77-40c4-bfaa-cf5bdb6c5913",
-      "slug": "dgvk-enterprises",
-      "name": "DGVK Enterprises"
+      "id": "5fb2cc56-f51b-4202-81c6-89558d2bad50",
+      "slug": "drb-hicom-defence-technologies",
+      "name": "DRB-HICOM Defence Technologies"
     },
     {
-      "id": "f8833b14-2619-4816-a20e-ba7537349e08",
-      "slug": "diades-marine",
-      "name": "Diades Marine"
+      "id": "ecdd29bf-b6b4-44f0-89f2-4fd5c7237f2d",
+      "slug": "dreame-technology",
+      "name": "Dreame Technology"
     },
     {
-      "id": "f74ff7ab-554d-46e8-88f3-859ac3f04472",
-      "slug": "diehl-aviation",
-      "name": "Diehl Aviation"
+      "id": "acf356c5-c283-47d2-91fe-6f2571ca37ee",
+      "slug": "dron-e",
+      "name": "Dron-e"
     },
     {
-      "id": "621ef8b6-00a2-4645-a248-da1d98160071",
-      "slug": "digikey",
-      "name": "DigiKey"
+      "id": "58f9a778-1817-4931-83be-2340500e3508",
+      "slug": "dron-solyushns",
+      "name": "Dron Solyushns"
     },
     {
-      "id": "ce27db01-cb78-4b59-83fc-f4200c3106dc",
-      "slug": "digital-force-technologies",
-      "name": "Digital Force Technologies"
+      "id": "95764b13-9e1a-4f81-bcb9-ce85fab0d0ca",
+      "slug": "drone-amplified",
+      "name": "Drone Amplified"
     },
     {
-      "id": "0a2680ec-06c3-4b6c-a3af-d36811aaf945",
-      "slug": "dii-llc",
-      "name": "DII LLC"
+      "id": "e4e2f38e-81a4-4a2d-a4a3-93d9e0ed2162",
+      "slug": "drone-matrix",
+      "name": "Drone Matrix"
     },
     {
-      "id": "cb71ce55-2991-4f8b-aa87-c9dc987ea0c7",
-      "slug": "distance-technologies",
-      "name": "Distance Technologies"
+      "id": "ebdfc53a-c82d-4113-9ad8-07e1cfc1d179",
+      "slug": "drone-nerds",
+      "name": "Drone Nerds"
     },
     {
-      "id": "f16cd055-5355-48c2-99f3-1b584e2fc9fa",
-      "slug": "distran",
-      "name": "Distran"
+      "id": "49a13c8e-a678-4441-9d3a-809619168b6d",
+      "slug": "drone-parts-center",
+      "name": "Drone Parts Center"
     },
     {
-      "id": "38226d1a-70cc-4f1b-a025-2b36965a4faa",
-      "slug": "dive-technologies",
-      "name": "Dive Technologies"
+      "id": "ef7a9b61-e375-4da2-8e86-9df1f99424a2",
+      "slug": "drone-solutions",
+      "name": "Drone Solutions"
     },
     {
-      "id": "d0e5b728-6f6a-4e14-bb4f-898ff6817d27",
-      "slug": "divergent-technologies",
-      "name": "Divergent Technologies"
+      "id": "eb010ab2-394c-4693-9700-f9f541336b9f",
+      "slug": "drone-solutions-international",
+      "name": "Drone Solutions International"
     },
     {
-      "id": "2a6cf55d-6429-41d1-a498-321987459284",
-      "slug": "dji",
-      "name": "DJI"
+      "id": "cafbb526-e3e7-49f0-aa7e-243f45e6756d",
+      "slug": "drone-solutions-zimbabwe",
+      "name": "Drone Solutions Zimbabwe"
     },
     {
-      "id": "a738c1ae-f87d-4c74-94e2-8bd9260753b9",
-      "slug": "dlr-german-aerospace-center",
-      "name": "DLR (German Aerospace Center)"
+      "id": "77d858cf-8070-4f8b-8772-0b9038b84430",
+      "slug": "dronebundle",
+      "name": "DroneBundle"
     },
     {
-      "id": "c3b22bcc-5166-49f9-a137-7409396a16bc",
-      "slug": "dnv-cyber",
-      "name": "DNV Cyber"
+      "id": "ccf5dcfc-5c16-4117-887b-b5efe3e8eed5",
+      "slug": "droneclear",
+      "name": "DroneClear"
     },
     {
-      "id": "d913b7e2-1be8-4c72-9706-0375823a9329",
-      "slug": "dok-ing",
-      "name": "DOK-ING"
+      "id": "a88435e0-cff3-4d19-ad10-cfcc036e65d3",
+      "slug": "dronedeploy",
+      "name": "DroneDeploy"
     },
     {
-      "id": "6c0256ed-0b20-4b4b-a77d-98c867dc4e78",
-      "slug": "dongguan-poweramp",
-      "name": "Dongguan Poweramp"
+      "id": "b69ab412-9d26-4d47-83e5-1d97eeae0bf8",
+      "slug": "dronedesk",
+      "name": "Dronedesk"
     },
     {
-      "id": "438fdfcd-33cd-494e-96d9-5a74ec09c214",
-      "slug": "doodle-labs",
-      "name": "Doodle Labs"
+      "id": "c1c74bdb-3b2d-431d-a933-7af46bc74129",
+      "slug": "droneflight",
+      "name": "DroneFlight"
     },
     {
-      "id": "d42e636e-b3bd-426d-be67-5a0bd1aa193f",
-      "slug": "doordash",
-      "name": "DoorDash"
+      "id": "e248dc29-794e-4927-9601-2f49ae688496",
+      "slug": "droneflykart",
+      "name": "Droneflykart"
     },
     {
-      "id": "dedb380e-ce30-449a-a34a-a62fad6031a2",
-      "slug": "dornier",
-      "name": "Dornier"
+      "id": "53d37ccf-882a-48d5-868e-0e0017a1da3e",
+      "slug": "droneresponders",
+      "name": "DroneResponders"
     },
     {
-      "id": "5b86005a-7283-4a05-8d98-632b4a27d8b4",
-      "slug": "dotchain",
-      "name": "DotChain"
+      "id": "e9dd33be-c1cc-4eda-a79a-a6b2936b7141",
+      "slug": "dronery",
+      "name": "Dronery"
     },
     {
-      "id": "fbe465c9-1d97-4bea-8950-6ed36821e8d3",
-      "slug": "dowty",
-      "name": "Dowty"
+      "id": "3604337a-32ae-4ca5-98f2-c48f7d7eff22",
+      "slug": "dronesec",
+      "name": "DroneSec"
     },
     {
-      "id": "9d8d5787-fc96-48e0-b356-dcfa0090c795",
-      "slug": "dracoe",
-      "name": "DRACOE"
+      "id": "ef9938ca-70ac-4b02-bc88-0c3f70c89e19",
+      "slug": "dronesense",
+      "name": "DroneSense"
     },
     {
-      "id": "17007ec2-0fe5-4efa-8f91-ffa5363b0afa",
-      "slug": "draganfly",
-      "name": "Draganfly"
+      "id": "9b0dcb9f-979a-4a85-ab95-8a9fcc86341d",
+      "slug": "droneshield",
+      "name": "DroneShield"
     },
     {
-      "id": "20698428-2f45-4ec8-b2d0-c2bfa5e60abf",
-      "slug": "dragonflypads",
-      "name": "DragonFlyPads"
+      "id": "1318d995-b3db-4cdf-a122-fb935d7f3ab8",
+      "slug": "dronesports",
+      "name": "DroneSports"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -4087,6 +4143,44 @@
       "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded.",
       "checked_identities_per_active_hour": 96,
       "completed_reviews_per_active_hour": 44
+    }
+  },
+  "latest_thirty_first_reconciliation": {
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-first.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-first.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 16,
+      "newly_completed_wider_reviews": 16,
+      "new_or_retained_partial": 8,
+      "new_events_written": 65,
+      "new_approved_events": 65,
+      "new_round_participations": 121,
+      "new_generic_portfolio_relationships": 10,
+      "new_investor_profiles": 69,
+      "new_source_rows": 110,
+      "new_companies_with_events": 14,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "manifest_event_matches": 65,
+      "manifest_link_matches": 121,
+      "manifest_source_matches": 110,
+      "manifest_relationship_matches": 10,
+      "missing_link_source_urls": 0,
+      "db_approved_events": 2492,
+      "db_approved_round_participations": 2889,
+      "db_investor_profiles": 1764,
+      "db_source_reconciliation_companies": 636,
+      "current_manifest_publication_verified": false,
+      "concurrency_speedup_claimed": false,
+      "active_minutes": 19,
+      "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded.",
+      "checked_identities_per_active_hour": 75.8,
+      "completed_reviews_per_active_hour": 50.5
     }
   }
 }
