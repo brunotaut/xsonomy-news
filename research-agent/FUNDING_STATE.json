@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 186,
-  "fully_reviewed_companies": 835,
-  "next_action": "Continue the next 24 queued identities from Dedienne Aerospace through DFA Systems under a new two-hour writer lease.",
+  "partial_companies": 199,
+  "fully_reviewed_companies": 846,
+  "next_action": "Continue the next 24 queued identities from DG Sol.One Drone Technologies through DragonFlyPads after publication verification.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-12T06:47:47.538Z",
-  "source_reconciliation_companies": 607,
-  "approved_funding_events": 2390,
-  "round_participations": 2707,
-  "investor_profiles": 1668,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261112-twenty-ninth.json",
+  "updated_at": "2026-11-12T07:02:47.864Z",
+  "source_reconciliation_companies": 622,
+  "approved_funding_events": 2427,
+  "round_participations": 2768,
+  "investor_profiles": 1695,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261112-thirtieth.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -80,8 +80,13 @@
       "dezamet",
       "dfa-systems"
     ],
-    "status": "research",
-    "writer_head": "60cd1b7c0b9d9f67c4fbddd3bede4888e1feea7b"
+    "status": "publication",
+    "writer_head": "60cd1b7c0b9d9f67c4fbddd3bede4888e1feea7b",
+    "imported_at": "2026-11-12T07:02:47.864Z",
+    "db_approved_events": 2427,
+    "db_approved_round_participations": 2768,
+    "db_investor_profiles": 1695,
+    "db_source_reconciliation_companies": 622
   },
   "last_verified_publication": {
     "checked_at": "2026-11-12T06:07:42.541Z",
@@ -2174,6 +2179,97 @@
       "bounded_review_disposition": "source_review_partial",
       "checked_at": "2026-11-12",
       "audit_report": "research-agent/reports/2026-11-12-funding-landscape-twenty-ninth.json"
+    },
+    {
+      "company_slug": "dedienne-aerospace",
+      "claim": "The France Relance awards and the 2021 capital changes remain on hold because the reviewed public evidence does not disclose attributable cash amounts or closing details. The 2024 ADEME amount is supported by a public-data mirror rather than a directly addressable ADEME award page, so broader historical coverage remains partial.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "deepspace",
+      "claim": "The official site does not publish a legal company name, registered address or corporate identifier, so exact legal-issuer continuity cannot yet be established. The absence of a disclosed round is not evidence of zero funding.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "deere-and-company",
+      "claim": "Deere & Company has decades of additional parent-level notes and debentures. A complete security-by-security reconciliation remains outstanding. Finance-subsidiary medium-term notes, securitisations, facilities and DFCC notes guaranteed by Deere are intentionally excluded from this issuer record.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "defcomm",
+      "claim": "Identity reconciliation is required before import. Fincantieri's July 2026 binding agreement covers an initial 49% position through both a capital increase and a direct share purchase, but the transaction was still subject to closing conditions and no Defcomm-specific amount was disclosed or allocated between issuer proceeds and secondary consideration.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "defence-builder",
+      "claim": "The operating entity and Defence Builder Fund I must be legally resolved before any fund commitments are imported. Portfolio-company financings belong to those companies, not to Defence Builder, and an empty operating-company round set is not evidence of zero funding.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "defenture",
+      "claim": "Neither capital event disclosed an amount or security terms. The March 2025 reporting identifies Azur and NCJ as the two major shareholders but does not expressly allocate the rescue injection between them, so no investor is attached to that event. Working-capital language in Defenture's 2025 governance release is not itself financing.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "defsecintel-origin-robotics",
+      "claim": "No funding should be imported to this conflated identity. Origin Robotics financing belongs only to the separate origin-robotics record; DefSecIntel consortium awards and company-specific funding belong only to the separate defsecintel-solutions record. The combined row should remain a frozen-snapshot compatibility record without classifications or financing.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "deftak",
+      "claim": "The rounds are recorded at the public brand identity with the legal-vehicle caveat. Angel One did not disclose the deal-specific amount; a transaction adviser reported an approximate US$150,000-US$200,000 standard ticket per startup, which is preserved only in the note rather than collapsed into a false point amount.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "deftech",
+      "claim": "A wholly owned subsidiary relationship is not evidence of a separately priced financing round, and absence of a public round is not evidence of zero funding. Any capital supplied by DRB-HICOM remains undisclosed at subsidiary level in the reviewed materials.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "dell-oro-group",
+      "claim": "Hold without a round. The reviewed official sources do not disclose financing terms, and the absence of a public financing announcement cannot establish that the private company has never raised capital. The catalogue's dellororesearch.com URL appears historical while the active corporate site is delloro.com; the founder-led operating identity is supported, but no registry-grade capital history was available.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "department-13",
+      "claim": "Hold without a round for the current ACN 639 277 571 issuer. Broad searches did not locate an official post-2020 financing closing for the current private company. Historical ASX raises remain excluded because the legal issuer was the former listed parent, even though the operating business and brand were later acquired.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "devdroid",
+      "claim": "The exact 2024 Brave1 award date and project-level grant agreement were not publicly located. No public equity round, named investor or additional issuer-specific grant amount was verified.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
+    },
+    {
+      "company_slug": "dfa-systems",
+      "claim": "The US$250,000 investor identities, security instrument and individual close date were not disclosed. A later US$1.25 million raise was described only as soft-circled and is not treated as closed financing.",
+      "bounded_review_disposition": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json"
     }
   ],
   "parallel_pilot": {
@@ -2207,36 +2303,43 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 827,
-    "source_review_partial": 170,
-    "queued": 1567
+    "reviewed_public_sources": 846,
+    "source_review_partial": 199,
+    "queued": 1519
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "identities_checked": 24,
-    "newly_completed_bounded_reviews": 12,
-    "newly_completed_wider_reviews": 12,
-    "new_or_retained_partial": 12,
-    "new_events_written": 26,
-    "new_approved_events": 26,
-    "new_round_participations": 32,
-    "new_generic_portfolio_relationships": 16,
-    "new_investor_profiles": 26,
-    "new_source_rows": 34,
-    "new_companies_with_events": 10,
+    "newly_completed_bounded_reviews": 11,
+    "newly_completed_wider_reviews": 11,
+    "new_or_retained_partial": 13,
+    "new_events_written": 37,
+    "new_approved_events": 37,
+    "new_round_participations": 61,
+    "new_generic_portfolio_relationships": 13,
+    "new_investor_profiles": 27,
+    "new_source_rows": 54,
+    "new_companies_with_events": 15,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "manifest_event_matches": 26,
-    "db_approved_events": 2323,
-    "db_approved_round_participations": 2633,
-    "db_investor_profiles": 1635,
-    "db_source_reconciliation_companies": 591,
-    "current_manifest_publication_verified": true,
+    "manifest_event_matches": 37,
+    "manifest_link_matches": 61,
+    "manifest_source_matches": 54,
+    "manifest_relationship_matches": 13,
+    "missing_link_source_urls": 0,
+    "db_approved_events": 2427,
+    "db_approved_round_participations": 2768,
+    "db_investor_profiles": 1695,
+    "db_source_reconciliation_companies": 622,
+    "current_manifest_publication_verified": false,
     "concurrency_speedup_claimed": false,
-    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded."
+    "active_minutes": 15,
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded.",
+    "checked_identities_per_active_hour": 96,
+    "completed_reviews_per_active_hour": 44
   },
   "latest_followup_metrics": {
     "identities_reconciled": 20,
@@ -2253,7 +2356,7 @@
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 997,
+  "source_reviewed_or_partial_companies": 1045,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -2661,14 +2764,14 @@
   },
   "pending_import": null,
   "pending_publication": {
-    "status": "completed",
-    "manifest": "research-agent/imports/funding-landscape-20261112-twenty-eighth.json",
-    "report": "research-agent/reports/2026-11-12-funding-landscape-twenty-eighth.json",
-    "source_commit": "71fb28d3e1998495432cd1765142940d13696cc2",
-    "catalogue_commit": "8da86a91ca266f2a542e0bb87da599251c01c37d",
-    "workflow_run_id": 43158902648,
-    "verified_at": "2026-11-12T05:07:46.174Z",
-    "catalogue_trigger_required": false
+    "status": "prepared",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirtieth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json",
+    "source_commit": null,
+    "catalogue_commit": null,
+    "workflow_run_id": null,
+    "verified_at": null,
+    "catalogue_trigger_required": true
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -3581,124 +3684,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "9b926e95-3171-4d60-a6d0-a018243f4284",
-      "slug": "dedienne-aerospace",
-      "name": "Dedienne Aerospace"
+      "id": "4f9eed87-4151-4982-9494-471149f0db7f",
+      "slug": "dg-solone-drone-technologies",
+      "name": "DG Sol.One Drone Technologies"
     },
     {
-      "id": "f8ef1527-501d-41a5-87a2-7570bdca9800",
-      "slug": "dedrone-axon",
-      "name": "Dedrone (Axon)"
+      "id": "ba8421fc-6d77-40c4-bfaa-cf5bdb6c5913",
+      "slug": "dgvk-enterprises",
+      "name": "DGVK Enterprises"
     },
     {
-      "id": "29859041-8896-4250-b561-4a7afb2ad64b",
-      "slug": "deepspace",
-      "name": "DeepSpace"
+      "id": "f8833b14-2619-4816-a20e-ba7537349e08",
+      "slug": "diades-marine",
+      "name": "Diades Marine"
     },
     {
-      "id": "2d191e91-5ac0-4a0d-b9cd-54220a0d3011",
-      "slug": "deere-and-company",
-      "name": "Deere & Company"
+      "id": "f74ff7ab-554d-46e8-88f3-859ac3f04472",
+      "slug": "diehl-aviation",
+      "name": "Diehl Aviation"
     },
     {
-      "id": "2bebe5d1-4cdb-4daf-bcc7-cdfe76ad7dd7",
-      "slug": "defcomm",
-      "name": "Defcomm"
+      "id": "621ef8b6-00a2-4645-a248-da1d98160071",
+      "slug": "digikey",
+      "name": "DigiKey"
     },
     {
-      "id": "73149c22-048f-49ba-b98e-11022820b811",
-      "slug": "defence-builder",
-      "name": "Defence Builder"
+      "id": "ce27db01-cb78-4b59-83fc-f4200c3106dc",
+      "slug": "digital-force-technologies",
+      "name": "Digital Force Technologies"
     },
     {
-      "id": "ad1df63f-45fe-426d-a3b6-0b8eb69c049a",
-      "slug": "defendtex",
-      "name": "DefendTex"
+      "id": "0a2680ec-06c3-4b6c-a3af-d36811aaf945",
+      "slug": "dii-llc",
+      "name": "DII LLC"
     },
     {
-      "id": "c8f6a3e0-edf7-40f2-975f-c79c3deaf665",
-      "slug": "defenture",
-      "name": "Defenture"
+      "id": "cb71ce55-2991-4f8b-aa87-c9dc987ea0c7",
+      "slug": "distance-technologies",
+      "name": "Distance Technologies"
     },
     {
-      "id": "656e3bd5-6618-481f-a12a-5ede91931548",
-      "slug": "defsecintel-origin-robotics",
-      "name": "DefSecIntel · Origin Robotics"
+      "id": "f16cd055-5355-48c2-99f3-1b584e2fc9fa",
+      "slug": "distran",
+      "name": "Distran"
     },
     {
-      "id": "9f6f2027-44b6-488a-82e2-8b44290a4bca",
-      "slug": "deftak",
-      "name": "Deftak"
+      "id": "38226d1a-70cc-4f1b-a025-2b36965a4faa",
+      "slug": "dive-technologies",
+      "name": "Dive Technologies"
     },
     {
-      "id": "ea0ddf0b-a4ff-41d6-b5ba-7879fb942077",
-      "slug": "deftech",
-      "name": "DEFTECH"
+      "id": "d0e5b728-6f6a-4e14-bb4f-898ff6817d27",
+      "slug": "divergent-technologies",
+      "name": "Divergent Technologies"
     },
     {
-      "id": "b52dfb6b-751c-4da7-9c9a-5b2e99733e52",
-      "slug": "delian-alliance-industries",
-      "name": "Delian Alliance Industries"
+      "id": "2a6cf55d-6429-41d1-a498-321987459284",
+      "slug": "dji",
+      "name": "DJI"
     },
     {
-      "id": "fd76e363-bbb8-40ba-9163-f75a417c074e",
-      "slug": "dell-oro-group",
-      "name": "Dell'Oro Group"
+      "id": "a738c1ae-f87d-4c74-94e2-8bd9260753b9",
+      "slug": "dlr-german-aerospace-center",
+      "name": "DLR (German Aerospace Center)"
     },
     {
-      "id": "74ec81a5-7a08-4b66-83cb-c0b377f50924",
-      "slug": "deloitte",
-      "name": "Deloitte"
+      "id": "c3b22bcc-5166-49f9-a137-7409396a16bc",
+      "slug": "dnv-cyber",
+      "name": "DNV Cyber"
     },
     {
-      "id": "a9a18066-0dcc-4165-84f0-d7dedc0d9006",
-      "slug": "denel",
-      "name": "Denel"
+      "id": "d913b7e2-1be8-4c72-9706-0375823a9329",
+      "slug": "dok-ing",
+      "name": "DOK-ING"
     },
     {
-      "id": "b279204c-3e1e-4e8c-9cdf-b4827defa616",
-      "slug": "denel-dynamics",
-      "name": "Denel Dynamics"
+      "id": "6c0256ed-0b20-4b4b-a77d-98c867dc4e78",
+      "slug": "dongguan-poweramp",
+      "name": "Dongguan Poweramp"
     },
     {
-      "id": "3406ecdc-7745-4cd7-92f4-ac0c4ab1e05e",
-      "slug": "department-13",
-      "name": "Department 13"
+      "id": "438fdfcd-33cd-494e-96d9-5a74ec09c214",
+      "slug": "doodle-labs",
+      "name": "Doodle Labs"
     },
     {
-      "id": "8f9230d5-f93e-4d77-aa52-566539d1ee34",
-      "slug": "deutz",
-      "name": "DEUTZ"
+      "id": "d42e636e-b3bd-426d-be67-5a0bd1aa193f",
+      "slug": "doordash",
+      "name": "DoorDash"
     },
     {
-      "id": "752e8f32-57ec-4fba-9fd4-d8a8b3b0ad28",
-      "slug": "devdroid",
-      "name": "DevDroid"
+      "id": "dedb380e-ce30-449a-a34a-a62fad6031a2",
+      "slug": "dornier",
+      "name": "Dornier"
     },
     {
-      "id": "a5505c17-fe9c-4e54-9378-ad68e8d59f83",
-      "slug": "devorto-corporation",
-      "name": "Devorto Corporation"
+      "id": "5b86005a-7283-4a05-8d98-632b4a27d8b4",
+      "slug": "dotchain",
+      "name": "DotChain"
     },
     {
-      "id": "b97cc85a-80a2-4d84-a823-34c53dfd5b5d",
-      "slug": "dexa",
-      "name": "Dexa"
+      "id": "fbe465c9-1d97-4bea-8950-6ed36821e8d3",
+      "slug": "dowty",
+      "name": "Dowty"
     },
     {
-      "id": "de056446-e026-4d2c-9388-887ad17b150b",
-      "slug": "dexterity",
-      "name": "Dexterity"
+      "id": "9d8d5787-fc96-48e0-b356-dcfa0090c795",
+      "slug": "dracoe",
+      "name": "DRACOE"
     },
     {
-      "id": "c0ad36e1-3924-4d29-a9b6-5143ea8ae943",
-      "slug": "dezamet",
-      "name": "Dezamet"
+      "id": "17007ec2-0fe5-4efa-8f91-ffa5363b0afa",
+      "slug": "draganfly",
+      "name": "Draganfly"
     },
     {
-      "id": "2ac2998f-1c1c-456d-b444-15b4e0d899d3",
-      "slug": "dfa-systems",
-      "name": "DFA Systems"
+      "id": "20698428-2f45-4ec8-b2d0-c2bfa5e60abf",
+      "slug": "dragonflypads",
+      "name": "DragonFlyPads"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -3952,6 +4055,44 @@
       "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded.",
       "checked_identities_per_active_hour": 72,
       "completed_reviews_per_active_hour": 24
+    }
+  },
+  "latest_thirtieth_reconciliation": {
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirtieth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirtieth.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 11,
+      "newly_completed_wider_reviews": 11,
+      "new_or_retained_partial": 13,
+      "new_events_written": 37,
+      "new_approved_events": 37,
+      "new_round_participations": 61,
+      "new_generic_portfolio_relationships": 13,
+      "new_investor_profiles": 27,
+      "new_source_rows": 54,
+      "new_companies_with_events": 15,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "manifest_event_matches": 37,
+      "manifest_link_matches": 61,
+      "manifest_source_matches": 54,
+      "manifest_relationship_matches": 13,
+      "missing_link_source_urls": 0,
+      "db_approved_events": 2427,
+      "db_approved_round_participations": 2768,
+      "db_investor_profiles": 1695,
+      "db_source_reconciliation_companies": 622,
+      "current_manifest_publication_verified": false,
+      "concurrency_speedup_claimed": false,
+      "active_minutes": 15,
+      "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded.",
+      "checked_identities_per_active_hour": 96,
+      "completed_reviews_per_active_hour": 44
     }
   }
 }

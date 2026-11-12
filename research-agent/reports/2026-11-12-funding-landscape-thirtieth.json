@@ -1,0 +1,647 @@
+{
+  "report": "Thirtieth autonomous funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": "funding-20261112T064747538Z-wider-20",
+  "scope": {
+    "identities": 24,
+    "from": "dedienne-aerospace",
+    "through": "dfa-systems",
+    "published_landscape": false
+  },
+  "method": "Four disjoint read-only research lanes; one writer consolidation; exact issuer, original currency, amount qualifier, instrument, closing and explicit roles checked. Contracts, acquisition consideration, parent/subsidiary financing, undrawn facilities and consortium totals excluded.",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 11,
+    "new_or_retained_partial": 13,
+    "new_events_written": 37,
+    "new_generic_portfolio_relationships": 13,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "current_manifest_publication_verified": false,
+    "newly_completed_wider_reviews": 11,
+    "new_approved_events": 37,
+    "new_round_participations": 61,
+    "new_investor_profiles": 27,
+    "new_source_rows": 54,
+    "new_companies_with_events": 15,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "manifest_event_matches": 37,
+    "manifest_link_matches": 61,
+    "manifest_source_matches": 54,
+    "manifest_relationship_matches": 13,
+    "missing_link_source_urls": 0,
+    "db_approved_events": 2427,
+    "db_approved_round_participations": 2768,
+    "db_investor_profiles": 1695,
+    "db_source_reconciliation_companies": 622,
+    "concurrency_speedup_claimed": false,
+    "active_minutes": 15,
+    "timing_scope": "Elapsed from writer lease through four disjoint read-only research lanes, source/issuer reconciliation, one production rollback rehearsal, one atomic import and one post-import idempotency rollback; publication wait excluded.",
+    "checked_identities_per_active_hour": 96,
+    "completed_reviews_per_active_hour": 44
+  },
+  "per_company": [
+    {
+      "id": "9b926e95-3171-4d60-a6d0-a018243f4284",
+      "slug": "dedienne-aerospace",
+      "name": "Dedienne Aerospace",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 2,
+      "evidence_note": "The exact French issuer is DEDIENNE AEROSPACE SAS (SIREN 560 801 706). Its own site confirms France Relance support during 2020-2022 without award amounts, while a public-aid registry mirror identifies one exact ADEME grant of EUR16,320 awarded on 12 August 2024. A contemporaneous business report also identifies IRDI Capital Investissement and Credit Mutuel Equity as shareholders, but does not disclose investment dates or amounts.",
+      "hold_note": "The France Relance awards and the 2021 capital changes remain on hold because the reviewed public evidence does not disclose attributable cash amounts or closing details. The 2024 ADEME amount is supported by a public-data mirror rather than a directly addressable ADEME award page, so broader historical coverage remains partial.",
+      "sources_checked": [
+        "https://www.dedienne-aero.com/company/",
+        "https://dedienne-aero.com/terms-of-use/",
+        "https://dedienne-aero.com/values/",
+        "https://annuaire-entreprises.data.gouv.fr/entreprise/dedienne-aerospace-560801706",
+        "https://www.economie.gouv.fr/files/2020-12-08-DP-NATIONAL-Laureats-des-fonds-auto-et-aero.pdf",
+        "https://france.welipro.com/entreprise/dedienne-aerospace-560801706",
+        "https://www.ladepeche.fr/2024/07/09/le-toulousain-dedienne-aerospace-rachete-lusine-fct-pres-dalbi-et-veut-doubler-de-taille-dici-2028-12069602.php",
+        "https://www.pappers.fr/entreprise/dedienne-aerospace-560801706"
+      ],
+      "excluded_claims": [
+        "The 2020-2022 France Relance support is not converted into a round because neither the company page nor the official laureate list states an issuer-level amount or award date.",
+        "The 2021 capital modifications are not treated as cash financing: the reviewed registry history references contributions in kind and does not disclose attributable cash proceeds.",
+        "The purchases of Champion GSE and the former FCT factory are acquisitions or asset transactions, not financing received by Dedienne Aerospace.",
+        "Customer agreements and OEM licences are commercial arrangements rather than financing."
+      ]
+    },
+    {
+      "id": "f8ef1527-501d-41a5-87a2-7570bdca9800",
+      "slug": "dedrone-axon",
+      "name": "Dedrone (Axon)",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 6,
+      "relationship_count": 0,
+      "evidence_note": "Dedrone's own announcements and Axon's shareholder reporting support six closed equity rounds from the original Dedrone GmbH growth-capital financing in 2015 through the US operating group's Series C-1 in June 2022. The sources preserve continuity of the same Dedrone business as headquarters shifted from Kassel to San Francisco. Axon completed its acquisition on 2 October 2024; that acquisition is excluded from issuer financing.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.dedrone.com/press/target-partners-invests-in-dedrone",
+        "https://www.dedrone.com/press/fast-growing-dedrone-raises-10m-series-a",
+        "https://www.dedrone.com/press/john-chambers-and-felicis-ventures-lead-series-b",
+        "https://www.dedrone.com/press/tempocap-leads-12-1m-funding-round-for-dedrone",
+        "https://www.dedrone.com/press/dedrone-secures-30-5-million-series-c-to-protect-airspace-against-unauthorized-drones",
+        "https://investor.axon.com/image/AXON_Q2_2022_ShareholderLetter.pdf",
+        "https://www.axon.com/blog/axon-completes-acquisition-of-dedrone",
+        "https://www.sec.gov/Archives/edgar/data/1069183/000106918325000061/annualreportarsproxycombob.pdf"
+      ],
+      "excluded_claims": [
+        "Axon's 2024 cash and equity acquisition consideration is excluded because it was consideration to acquire Dedrone, not financing received by the issuer.",
+        "Customer deployments, reseller arrangements and airspace-security contracts are commercial activity, not financing.",
+        "The 2015 announcement's US-dollar translation is not used as the round currency because the issuer disclosed the original EUR2.7 million amount."
+      ]
+    },
+    {
+      "id": "29859041-8896-4250-b561-4a7afb2ad64b",
+      "slug": "deepspace",
+      "name": "DeepSpace",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue identity resolves to the Chinese FPV product brand DEEPSPACE / DeepSpace FPV, whose official store says its team has twelve years of FPV design experience and lists mainland-China contact numbers. A contemporaneous product report attributes the brand launch to Vivian Tan. No issuer-level equity, debt, convertible or grant financing event was found in the reviewed public sources.",
+      "hold_note": "The official site does not publish a legal company name, registered address or corporate identifier, so exact legal-issuer continuity cannot yet be established. The absence of a disclosed round is not evidence of zero funding.",
+      "sources_checked": [
+        "https://www.deepspacefpv.com/pages/about-us-11836541.html",
+        "https://www.deepspacefpv.com/",
+        "https://www.deepspacefpv.com/DeepSpace-SEEKER5-5inch-freestyle-FPV-Drone-DJI-O3-Air-Unit-Analog-PNP-with-GPS-6S-p6219507.html",
+        "https://www.helicomicro.com/2025/01/20/deepspace-seeker5/",
+        "https://dronexl.co/2026/10/03/fpv-pilot-kinzua-bridge-pennsylvania-state-park-permission/"
+      ],
+      "excluded_claims": [
+        "Product prices, reseller availability and sponsored media activity are commercial sales or marketing, not financing.",
+        "Funding attributed to unrelated companies named DeepSpace or Deep Space is excluded because issuer continuity to the FPV brand is not established."
+      ]
+    },
+    {
+      "id": "2d191e91-5ac0-4a0d-b9cd-54220a0d3011",
+      "slug": "deere-and-company",
+      "name": "Deere & Company",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is SEC registrant Deere & Company (CIK 0000315189), not finance subsidiaries John Deere Capital Corporation or Deere Funding Canada Corporation. Official filings support selected parent-issued public debt closings from a US$200 million debenture issuance in 1992 through a US$2 billion two-tranche senior-note offering closed in January 2025. The company has a much larger historical debt programme, so this pass records verified earlier and latest anchor issuances rather than claiming exhaustive financing coverage.",
+      "hold_note": "Deere & Company has decades of additional parent-level notes and debentures. A complete security-by-security reconciliation remains outstanding. Finance-subsidiary medium-term notes, securitisations, facilities and DFCC notes guaranteed by Deere are intentionally excluded from this issuer record.",
+      "sources_checked": [
+        "https://www.sec.gov/Archives/edgar/data/315189/000155837019011614/de-20191103ex4507be99d.htm",
+        "https://www.sec.gov/Archives/edgar/data/315189/000155837019011614/de-20191103ex46ef37521.htm",
+        "https://www.sec.gov/Archives/edgar/data/315189/000141057819001067/tv528927_8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/315189/000155837025000246/de-20250113x8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/315189/000110465925003754/tm252904d3_424b2.htm",
+        "https://www.sec.gov/Archives/edgar/data/315189/000110465925122321/de-20251102x10k.htm",
+        "https://investor.deere.com/fixed-income/default.aspx"
+      ],
+      "excluded_claims": [
+        "John Deere Capital Corporation InterNotes and other JDCC debt are excluded because JDCC is a separate finance subsidiary, even when consolidated by Deere.",
+        "Deere Funding Canada Corporation's 2025 and 2026 notes are excluded because DFCC, not Deere & Company, is the issuer; Deere's guarantee does not change issuer identity.",
+        "Retail-note securitisations, commercial paper and undrawn revolving facilities are excluded from this parent-issuer round manifest.",
+        "Secondary sales by Deere shareholders and ordinary stock-exchange trading do not provide financing proceeds to Deere & Company."
+      ]
+    },
+    {
+      "id": "2bebe5d1-4cdb-4daf-bcc7-cdfe76ad7dd7",
+      "slug": "defcomm",
+      "name": "Defcomm",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue row is country-coded France and has no website or legal name, while the reviewed public sources for the matching defence-technology name describe DEFCOMM Defense Communications S.r.l. unipersonale, a Rome-based Italian company founded in 2024. Because that country and issuer mismatch is unresolved, no financing is attached to this catalogue identity.",
+      "hold_note": "Identity reconciliation is required before import. Fincantieri's July 2026 binding agreement covers an initial 49% position through both a capital increase and a direct share purchase, but the transaction was still subject to closing conditions and no Defcomm-specific amount was disclosed or allocated between issuer proceeds and secondary consideration.",
+      "sources_checked": [
+        "https://www.def-comm.com/about",
+        "https://www.fincantieri.com/en/newsroom/press-releases/2025/fincantieri-agreement-with-defcomm-for-the-future-of-autonomous-naval-units-and-surface-drones",
+        "https://www.fincantieri.com/en/newsroom/press-releases/2026/fincantieri-creates-an-international-underwater-champion-acquisition-of-four-companies-to-accelerate-growth-in-marine-drone-and-in-commercial-and-defense-underwater-activities-with-an-initial-expenditur-of-approzimately-euro-600-million"
+      ],
+      "excluded_claims": [
+        "The approximately EUR600 million headline expenditure covers four separate acquisitions and must not be attributed to Defcomm.",
+        "Fincantieri's planned direct purchase of existing Defcomm shares is acquisition consideration rather than issuer financing.",
+        "The unallocated capital-increase component is not recorded as a round because no issuer proceeds or closing date are disclosed.",
+        "The October 2025 co-investment partnership does not disclose a cash amount, instrument or completed issuer-level financing.",
+        "Government development contracts are customer procurement, not financing."
+      ]
+    },
+    {
+      "id": "73149c22-048f-49ba-b98e-11022820b811",
+      "slug": "defence-builder",
+      "name": "Defence Builder",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Defence Builder is a Ukrainian accelerator and ecosystem founded by Sigma Software, Kyiv School of Economics and Buntar Aerospace, not the issuer of its portfolio companies' rounds. In March 2026 it announced a separate US$5 million venture-fund target and US$1.5 million initial founder contributions, but the public page does not identify the legal fund vehicle or establish that those commitments financed the Defence Builder operating entity.",
+      "hold_note": "The operating entity and Defence Builder Fund I must be legally resolved before any fund commitments are imported. Portfolio-company financings belong to those companies, not to Defence Builder, and an empty operating-company round set is not evidence of zero funding.",
+      "sources_checked": [
+        "https://defencebuilder.com/",
+        "https://defencebuilder.com/fund",
+        "https://defencebuilder.com/news/defence-builder-expands-into-a-full-ecosystem-investment-fund-and-new-capabilities-added-to-accelerator",
+        "https://defencebuilder.com/news/defence-builder-fund-i-invests-in-dod-solution"
+      ],
+      "excluded_claims": [
+        "The US$5 million fund size is a target for an investment vehicle, not a closed financing round received by Defence Builder.",
+        "The US$1.5 million initial contribution is not attached because the legal recipient vehicle and commitment-versus-paid-in status are not disclosed.",
+        "The combined valuation of accelerator cohorts is a portfolio metric, not Defence Builder funding.",
+        "DOD Solution's US$2.1 million pre-seed round and other cohort-company rounds belong to the portfolio issuers, not Defence Builder."
+      ]
+    },
+    {
+      "id": "ad1df63f-45fe-426d-a3b6-0b8eb69c049a",
+      "slug": "defendtex",
+      "name": "DefendTex",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Australian business-register and Department of Defence records identify DefendTex Pty Ltd as the exact issuer behind the catalogue identity. Two public grants to that legal entity are supportable: a Sovereign Industrial Capability Priority grant recorded at A$1.1 million consideration in the Commonwealth contract register and a later A$150,000 Defence Global Competitiveness grant.",
+      "hold_note": "Most other public amounts attached to the DefendTex brand are Defence Innovation Hub procurement/R&D contracts or grants to separately registered group companies. They are not treated as financing of DefendTex Pty Ltd. No public equity round was verified.",
+      "sources_checked": [
+        "https://abr.business.gov.au/ABN/View/45602887098",
+        "https://www.minister.defence.gov.au/media-releases/2019-04-04/sovereign-industrial-capability-priority-grants",
+        "https://www.defence.gov.au/sites/default/files/2020-08/2019-20_list_of_defence_contracts.pdf",
+        "https://www.minister.defence.gov.au/media-releases/2019-09-09/defence-export-grants-help-small-businesses-think-global",
+        "https://www.minister.defence.gov.au/media-releases/2018-06-21/defence-partners-industry-develop-innovative-capability-army",
+        "https://www.minister.defence.gov.au/media-releases/2019-04-04/boost-australian-defence-industry-innovation-sector",
+        "https://www.minister.defence.gov.au/media-releases/2019-08-02/boost-victorian-small-business-partnering-defence",
+        "https://www.minister.defence.gov.au/media-releases/2020-10-12/innovation-hub-invests-28-million-australian-industry",
+        "https://www.minister.defence.gov.au/media-releases/2021-03-26/backing-small-businesses-grow-through-defence-exports",
+        "https://business.gov.au/grants-and-programs/supply-chain-resilience-initiative-round-2/grant-recipients",
+        "https://business.gov.au/grants-and-programs/mmi-manufacturing-translation-stream-defence-round-2/grant-recipients",
+        "https://www.minister.defence.gov.au/media-releases/2025-05-23/albanese-government-investment-defence-industry-provides-critical-support-local-manufacturing-jobs",
+        "https://www.minister.defence.gov.au/media-releases/2026-01-23/local-defence-manufacturing-industry-receives-funding-boost"
+      ],
+      "excluded_claims": [
+        "Defence Innovation Hub awards of A$1.04 million, A$957,000, A$3 million and A$2 million to DefendTex Pty Ltd are excluded because the official sources call them contracts for Defence R&D deliverables, not grants or investment financing.",
+        "The A$2.1 million, A$1.84 million and A$263,000 Innovation Hub contracts to DefendTex Research Labs Pty Ltd are excluded both as procurement contracts and as amounts to a separately registered issuer.",
+        "The A$240,000 and A$226,839 grants to DefendTex Military Products Pty Ltd, and the A$2 million, A$4.37 million and A$135,503 grants to DefendTex Research Labs Pty Ltd, are excluded because those are separately registered group entities rather than DefendTex Pty Ltd.",
+        "The A$2.6 million additive-manufacturing CRC project is excluded because it is a consortium/project total, not an amount attributable solely to DefendTex Pty Ltd."
+      ]
+    },
+    {
+      "id": "c8f6a3e0-edf7-40f2-975f-c79c3deaf665",
+      "slug": "defenture",
+      "name": "Defenture",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Investor and company sources establish Defenture B.V. continuity and two public capital events: an undisclosed 2021 capital injection from Azur Investment Group in exchange for an ownership stake, and an undisclosed emergency capital injection completed by shareholders in March 2025.",
+      "hold_note": "Neither capital event disclosed an amount or security terms. The March 2025 reporting identifies Azur and NCJ as the two major shareholders but does not expressly allocate the rescue injection between them, so no investor is attached to that event. Working-capital language in Defenture's 2025 governance release is not itself financing.",
+      "sources_checked": [
+        "https://defenture.com/company/",
+        "https://www.azurinvestmentgroup.com/post/azur-investment-group-neemt-kapitaalbelang-in-defenture",
+        "https://nltimes.nl/2025/03/31/dutch-combat-vehicle-builder-defenture-narrowly-escaped-bankruptcy",
+        "https://defenture.com/defenture-strengthens-governance-structure/",
+        "https://www.rtl.nl/nieuws/economie/artikel/5601411/miljoenenruzie-rond-nederlands-defensiebedrijf-defenture"
+      ],
+      "excluded_claims": [
+        "Dutch, German, Swiss, Polish and Lithuanian vehicle orders are customer procurement contracts, not issuer financing.",
+        "The 2025 governance announcement's statement that Defenture was structuring its working-capital needs is excluded because it does not establish a completed facility, amount or counterparty.",
+        "No amount is inferred from Defenture's balance-sheet movements or media descriptions of financial distress."
+      ]
+    },
+    {
+      "id": "656e3bd5-6618-481f-a12a-5ede91931548",
+      "slug": "defsecintel-origin-robotics",
+      "name": "DefSecIntel · Origin Robotics",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "This frozen-snapshot record is not a financing issuer. DefSecIntel Solutions OÜ (Estonia) and Origin Robotics SIA (Latvia) are separate companies that announced a product partnership in September 2025. Their separate legal entities, websites and public financing records do not support treating the combined label as a company.",
+      "hold_note": "No funding should be imported to this conflated identity. Origin Robotics financing belongs only to the separate origin-robotics record; DefSecIntel consortium awards and company-specific funding belong only to the separate defsecintel-solutions record. The combined row should remain a frozen-snapshot compatibility record without classifications or financing.",
+      "sources_checked": [
+        "https://www.defsecintel.com/",
+        "https://origin-robotics.com/about-us",
+        "https://labsoflatvia.com/en/news/origin-robotics-and-defsecintel-solutions-launch-partnership-to-drive-the-drone-wall-forward",
+        "https://ariregister.rik.ee/eng/company/14514582/Defsecintel-Solutions-O%C3%9C",
+        "https://www.miltech.lv/en/biedri/origin-robotics",
+        "https://www.linkedin.com/posts/origin-robotics_airdogs-founders-are-back-with-a-precision-strike-activity-7256530638344732672-k4UD",
+        "https://www.mod.gov.lv/lv/zinas/eiropas-komisija-pieskir-45-miljonu-eiro-finansejumu-latvijas-militaro-tehnologiju-uznemumam",
+        "https://kaitseministeerium.ee/en/news/estonian-projects-won-more-eur-10-million-european-defence-fund"
+      ],
+      "excluded_claims": [
+        "Origin Robotics' €4 million 2024 pre-seed package, including €2.4 million of venture capital and €1.6 million of grants/support, is excluded from this combined row because Origin Robotics SIA is a separate Latvian issuer.",
+        "The European Commission's €4.5 million approval for the Origin Robotics-led MPortISTAR project is excluded from this combined row and is also a project/consortium award rather than evidence of financing for DefSecIntel.",
+        "European Defence Fund project totals involving DefSecIntel Solutions are excluded because consortium totals are not attributable issuer financing and DefSecIntel Solutions OÜ is a separate Estonian entity.",
+        "The September 2025 EIRSHIELD/BLAZE collaboration is a commercial and technical partnership, not a merger, acquisition or financing event."
+      ]
+    },
+    {
+      "id": "9f6f2027-44b6-488a-82e2-8b44290a4bca",
+      "slug": "deftak",
+      "name": "Deftak",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 2,
+      "evidence_note": "The Deftak brand publicly closed a €600,000 Darkstar investment in May 2025 and a further syndicated Angel One investment announced in April 2026. The product, team and brand are continuous across the two announcements, but the reviewed public sources alternately describe Deftak as Ukrainian-Estonian and Ukrainian and do not identify the financed legal vehicle.",
+      "hold_note": "The rounds are recorded at the public brand identity with the legal-vehicle caveat. Angel One did not disclose the deal-specific amount; a transaction adviser reported an approximate US$150,000-US$200,000 standard ticket per startup, which is preserved only in the note rather than collapsed into a false point amount.",
+      "sources_checked": [
+        "https://deftak.com/",
+        "https://www.linkedin.com/posts/darkstar-hd_our-mission-at-darkstar-is-to-help-re-arm-activity-7332732183335403523-wufP",
+        "https://militarnyi.com/en/news/darkstar-invests-e600-000-in-the-development-of-a-ukrainian-estonian-high-precision-bomb/",
+        "https://www.angelone.fund/angel-one-fund-investments-three-ukrainian-startups/",
+        "https://aequo.ua/en/news/angel-one-invests-in-dod-solution-and-deftak"
+      ],
+      "excluded_claims": [
+        "The US$150,000-US$200,000 figure is not used as a round amount because the investor's own announcement calls it only the fund's average ticket and the legal adviser reports an approximate range, not a precise amount for Deftak.",
+        "Brave1 membership is ecosystem participation and is not treated as a grant or investment.",
+        "Product tests, combat use and customer support are not financing events."
+      ]
+    },
+    {
+      "id": "ea0ddf0b-a4ff-41d6-b5ba-7879fb942077",
+      "slug": "deftech",
+      "name": "DEFTECH",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue identity is DRB-HICOM Defence Technologies Sdn Bhd, a Malaysian defence manufacturer incorporated in 1996 and wholly owned by listed DRB-HICOM Berhad. Official company and parent materials reviewed did not disclose a stand-alone external financing round for DEFTECH.",
+      "hold_note": "A wholly owned subsidiary relationship is not evidence of a separately priced financing round, and absence of a public round is not evidence of zero funding. Any capital supplied by DRB-HICOM remains undisclosed at subsidiary level in the reviewed materials.",
+      "sources_checked": [
+        "https://deftech.com.my/corporate-profile/",
+        "https://deftech.com.my/deftech-hq/",
+        "https://www.drb-hicom.com/group-companies/defence/",
+        "https://www.drb-hicom.com/group-companies/",
+        "https://www.drb-hicom.com/wp-content/uploads/2016/09/Press-Release-for-handing-over-of-AV8-2-Dec-latest-1600hrs.pdf",
+        "https://www.drb-hicom.com/wp-content/uploads/2016/09/PRESS-STATEMENT-FOR-CONTRACT-SIGNING4-final.pdf"
+      ],
+      "excluded_claims": [
+        "The RM7.55 billion AV8 vehicle programme and other Malaysian government awards are customer procurement contracts, not issuer financing.",
+        "DEFTECH's RM191 million aggregate agreement announcement is excluded because the underlying items are supply and maintenance contracts, not financing.",
+        "Financing, investments or liabilities reported only at DRB-HICOM group level are not attributed to the wholly owned DEFTECH subsidiary without an issuer-specific disclosure.",
+        "R&D collaboration agreements with universities and technology partners are not treated as financing unless a company-specific grant or investment amount is disclosed."
+      ]
+    },
+    {
+      "id": "b52dfb6b-751c-4da7-9c9a-5b2e99733e52",
+      "slug": "delian-alliance-industries",
+      "name": "Delian Alliance Industries",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 6,
+      "evidence_note": "Marathon Venture Capital's issuer history establishes continuity from Lambda Automata to Delian Alliance Industries and supports three financing events: Marathon's undisclosed October 2021 seed investment, a €6 million round announced in October 2023, and a US$14 million Series A closed in July 2025.",
+      "hold_note": "The 2021 seed amount and security terms were not disclosed. The 2023 and 2025 amounts are preserved in their original announced currencies, and lead/co-lead roles are assigned only where investor sources state them explicitly.",
+      "sources_checked": [
+        "https://marathon.vc/portfolio/delian-alliance-industries",
+        "https://marathon.vc/blog/restoring-european-strategic-autonomy-with-lambda-automata",
+        "https://marathon.vc/blog/delian-alliance-industries-raises-eur6-million-to-defend-western-democracies",
+        "https://marathon.vc/blog/delian-series-a",
+        "https://press.airstreet.com/p/delian-alliance-industries-defense-14-million-series-a",
+        "https://www.osborneclarke.com/news/osborne-clarke-advises-delian-alliance-industries-14m-series-investment",
+        "https://www.eif.org/case-study/all/delian-alliance-industries"
+      ],
+      "excluded_claims": [
+        "The European Investment Fund did not invest directly in Delian; it backed Marathon Venture Capital as a financial intermediary, so EIF is not recorded as a Delian investor.",
+        "Government contracts and nationwide deployments are customer revenue/procurement and are not included as financing.",
+        "No round amount is inferred for Marathon's October 2021 seed investment."
+      ]
+    },
+    {
+      "id": "fd76e363-bbb8-40ba-9163-f75a417c074e",
+      "slug": "dell-oro-group",
+      "name": "Dell'Oro Group",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The current Dell'Oro Group corporate site and founder biography identify Tam Dell'Oro as founder and CEO of the operating market-research firm, and the reviewed newsroom provides a broad history of company publications. Broad searches of the corporate site and public transaction sources did not surface an issuer-attributable financing announcement, filing, lender disclosure, or named external investor. This is a source-coverage outcome, not evidence of zero funding.",
+      "hold_note": "Hold without a round. The reviewed official sources do not disclose financing terms, and the absence of a public financing announcement cannot establish that the private company has never raised capital. The catalogue's dellororesearch.com URL appears historical while the active corporate site is delloro.com; the founder-led operating identity is supported, but no registry-grade capital history was available.",
+      "sources_checked": [
+        "https://www.delloro.com/",
+        "https://www.delloro.com/about/team/tam-delloro/",
+        "https://www.delloro.com/newsroom/"
+      ],
+      "excluded_claims": [
+        "Customer spending, telecom infrastructure market sizes, and vendor capital expenditure cited in Dell'Oro research are not financing of Dell'Oro Group.",
+        "No external investor or funding amount is inferred from the firm's continued private operation or from an empty funding search result."
+      ]
+    },
+    {
+      "id": "74ec81a5-7a08-4b66-83cb-c0b377f50924",
+      "slug": "deloitte",
+      "name": "Deloitte",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Deloitte's official network description says that 'Deloitte' is a global network of separate and independent legal entities, not a single firm or partnership. DTTL is a UK private company limited by guarantee, does not provide client services, and member firms are not subsidiaries or branches of a global parent. Consequently, capital events of a country member firm, related entity, acquisition vehicle, or Deloitte-backed portfolio company cannot be assigned to this brand-level catalogue identity without a specifically identified issuer.",
+      "hold_note": "Hold without a round for the brand-level identity. A single issuer continuity chain does not exist across the Deloitte network, and the reviewed official sources did not disclose a financing event attributable to a uniquely resolved legal entity represented by this row.",
+      "sources_checked": [
+        "https://www.deloitte.com/us/en/about/governance/network-brand-alliances/about-the-network.html",
+        "https://www.deloitte.com/global/en/about/governance/network-brand-alliances.html",
+        "https://www.deloitte.com/ua/en/legal/global-report-legal.html"
+      ],
+      "excluded_claims": [
+        "Investments made by Deloitte Ventures or individual Deloitte member firms into portfolio companies are outbound investments, not financing received by the brand-level identity.",
+        "Acquisitions by national member firms and investments in technology, people, or offices are operating or M&A activity, not issuer financing of a single global Deloitte company.",
+        "Debt or capital of a particular member firm or related entity is not assigned to the worldwide Deloitte network without exact legal-issuer evidence."
+      ]
+    },
+    {
+      "id": "a9a18066-0dcc-4165-84f0-d7dedc0d9006",
+      "slug": "denel",
+      "name": "Denel",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Official Denel and South African government sources support two issuer-attributable recapitalisation events for Denel SOC Ltd. Denel's 30 August 2019 announcement identifies a ZAR1.8 billion government allocation. The later ZAR3.4 billion conditional allocation was announced on 27 October 2022, but an official 1 November 2023 government report states that only ZAR1.9 billion had actually been disbursed in March 2023 and that the remainder remained ring-fenced; only the actual disbursement is recorded as the latest closed financing. Denel's 2024/25 annual report confirms that Denel SOC is the reporting issuer and remains partly reliant on government recapitalisation.",
+      "hold_note": "The ZAR3.4 billion 2022 allocation is not recorded as a fully closed round because the official government update says the undisbursed remainder was ring-fenced. A requested additional ZAR100 million is also not recorded because the reviewed source reports a request, not a completed release.",
+      "sources_checked": [
+        "https://denel.co.za/press-article/Recap-Will-Fast-Track-Denels-Turnaround-/216",
+        "https://denel.co.za/press-article/NEW-INJECTION-IN-DENEL-WILL-REVITALISE-THE-BUSINESS/242",
+        "https://www.sanews.gov.za/node/66202",
+        "https://www.parliament.gov.za/special-event/speech-2022-medium-term-budget-policy-statement-minister-finance-mr-enoch-godongwana",
+        "https://admin.denel.co.za/uploads/d17198bea54d732b0ad2cbebd8ca0579.pdf"
+      ],
+      "excluded_claims": [
+        "The ZAR3.4 billion conditional 2022 allocation is not treated as fully disbursed; only the official ZAR1.9 billion March 2023 payment is recorded as closed.",
+        "The ZAR1.8 billion expected from non-core asset sales is disposal proceeds, not external investment funding.",
+        "The ZAR12 billion order book, customer advances, defence contracts, and guarantees are not recorded as investment rounds.",
+        "Recapitalisation of Denel SOC is not duplicated onto Denel Dynamics because the annual report presents Dynamics as a business division and does not allocate the shareholder funds to it."
+      ]
+    },
+    {
+      "id": "b279204c-3e1e-4e8c-9cdf-b4827defa616",
+      "slug": "denel-dynamics",
+      "name": "Denel Dynamics",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Denel's official 2024/25 annual report presents Denel Dynamics as a business division within Denel SOC's current organisational structure, not as a separately financed issuer in the reviewed reporting boundary. The report and Denel's corporate site describe the division's missiles, precision-guided weapons, UAV and target-system activities, but do not allocate the parent company's recapitalisation proceeds to Dynamics or disclose a Dynamics-specific equity, debt, loan, or grant closing.",
+      "hold_note": "Hold without a round. Parent-level Denel recapitalisation cannot be assigned to this division absent a disclosed Dynamics-specific allocation or legal-issuer financing document.",
+      "sources_checked": [
+        "https://admin.denel.co.za/uploads/d17198bea54d732b0ad2cbebd8ca0579.pdf",
+        "https://denel.co.za/press-article/NEW-INJECTION-IN-DENEL-WILL-REVITALISE-THE-BUSINESS/242",
+        "https://denel.co.za/press-article/Recap-Will-Fast-Track-Denels-Turnaround-/216"
+      ],
+      "excluded_claims": [
+        "Denel SOC's 2019 and 2022/23 government recapitalisations are parent-level financings and are not duplicated onto Denel Dynamics.",
+        "Missile, UAV and defence-system contracts, order-book amounts, customer advances and development programmes are operating activity rather than verified investment funding.",
+        "No zero-funding conclusion is drawn from the absence of a Dynamics-specific public round."
+      ]
+    },
+    {
+      "id": "3406ecdc-7745-4cd7-92f4-ac0c4ab1e05e",
+      "slug": "department-13",
+      "name": "Department 13",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The current website's privacy notice identifies the operating company as Department 13 Pty Ltd (ACN 639 277 571), while the Australian Business Register identifies the active legal entity as Department 13 International Pty Ltd from 21 February 2020. Historical ASX records concern a different listed parent, Department 13 International Ltd (ACN 155 396 893), formerly Kunene Resources and later renamed Delaware Thirteen Ltd. That listed parent acquired Department 13 LLC in 2015, raised capital in 2015-2018, entered administration, and sold its shares in Department 13, Inc. and the associated loan to the newly formed private buyer in February 2020. The legacy raises therefore cannot be assigned to today's private issuer without misattributing parent financing.",
+      "hold_note": "Hold without a round for the current ACN 639 277 571 issuer. Broad searches did not locate an official post-2020 financing closing for the current private company. Historical ASX raises remain excluded because the legal issuer was the former listed parent, even though the operating business and brand were later acquired.",
+      "sources_checked": [
+        "https://department13.com/",
+        "https://department13.com/about/",
+        "https://department13.com/privacy-policy/",
+        "https://abr.business.gov.au/ABN/View?id=49639277571",
+        "https://announcements.asx.com.au/asxpdf/20151203/pdf/433jrlh0mjpv7t.pdf",
+        "https://announcements.asx.com.au/asxpdf/20160229/pdf/435h25mb5l6nzd.pdf",
+        "https://www.delisted.com.au/company/department-13-international-ltd/",
+        "https://www.sec.gov/Archives/edgar/data/1704425/000170442517000001/primary_doc.xml"
+      ],
+      "excluded_claims": [
+        "The AUD6 million 2015 capital raising, AUD6.5 million 2016 raise, AUD5.54379 million 2017 placement, and AUD7 million 2018 convertible-note placement were issued by the former ASX-listed parent ACN 155 396 893, not today's private company ACN 639 277 571.",
+        "The former listed parent's reported AUD10 million line of credit is not assigned to the current company, and a facility limit would not establish actual proceeds drawn in any event.",
+        "The February 2020 sale consideration and debt forgiveness transferred the operating subsidiary and loan; it is acquisition/administration consideration, not a financing round received by the current issuer.",
+        "Counter-drone purchase orders, trials and contracts are revenue or commercial validation, not investment funding."
+      ]
+    },
+    {
+      "id": "8f9230d5-f93e-4d77-aa52-566539d1ee34",
+      "slug": "deutz",
+      "name": "DEUTZ",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 1,
+      "evidence_note": "DEUTZ AG's official releases and annual reports establish a continuous listed issuer and three recent completed capital increases. On 29 March 2023, DEUTZ closed an in-kind capital increase issuing 5,285,412 shares to Daimler Truck for medium-duty engine IP at a total issue price of EUR13.5 million. On 3 July 2024 it placed about 12.6 million shares at EUR5.71 for approximately EUR72 million. On 9 September 2025 it placed 13,876,191 shares at EUR9.45 for approximately EUR131.1 million gross proceeds. The latter two placements identify only institutional investors as a class, so no unnamed investors are fabricated.",
+      "hold_note": "No named investor relationships are created for the 2024 and 2025 accelerated placements because the issuer disclosed only institutional-investor classes. Undrawn facilities and acquisition-credit availability are excluded; the 2025 cash capital increase itself is included because it was completed by DEUTZ AG and generated issuer proceeds.",
+      "sources_checked": [
+        "https://www.deutz.com/en/news/press-releases/news-detail/completion-of-cooperation-between-deutz-and-daimler-truck/",
+        "https://www.deutz.com/fileadmin/user_upload/investoren/veranstaltungen/hauptversammlung/2024/documents/20240319_DEUTZ_Annual_Report_2023_en_sec.pdf",
+        "https://www.deutz.com/en/news/press-releases/news-detail/deutz-carries-out-a-successful-capital-increase-of-eur72-million/",
+        "https://www.deutz.com/fileadmin/user_upload/news/pressemitteilungen/2025/20250909_DEUTZ_AG_Press_release_Capital_increase_en.pdf",
+        "https://www.deutz.com/fileadmin/contents/global/investoren/financial_reports/2025/EN/20260326_DEUTZ_FY2025_Annual_Report_en_sec.pdf",
+        "https://www.deutz.com/en/investor-relations/investor-news/deutz-ends-eur150-million-kfw-credit-line-early/",
+        "https://www.deutz.com/en/news/press-releases/news-detail/deutz-generates-further-growth-in-first-quarter-of-2022/"
+      ],
+      "excluded_claims": [
+        "The EUR150 million KfW COVID-19 line was never used and is not recorded as funding.",
+        "The EUR250 million syndicated facility and other undrawn credit capacity are facility limits, not issuer proceeds; only disclosed actual financing events are included.",
+        "Credit lines said to secure acquisition financing for SOBEK are not separately recorded because no attributable draw amount was disclosed and the completed 2025 capital increase is recorded on its own terms.",
+        "Acquisition prices, purchase consideration, and financing of subsidiaries are not treated as DEUTZ investment rounds."
+      ]
+    },
+    {
+      "id": "752e8f32-57ec-4fba-9fd4-d8a8b3b0ad28",
+      "slug": "devdroid",
+      "name": "DevDroid",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The exact catalogue issuer is Ukrainian DevDroid / DevDroid LLC (devdroid.tech). In an interview published 22 January 2026, founder and CEO Yurii Poritskyi said the company received a US$25,000 Brave1 grant in 2024 after initially operating on founder funding. The public source gives the receipt year but not the exact award date, so the source publication date is used as the public-disclosure date rather than inventing a 2024 day.",
+      "hold_note": "The exact 2024 Brave1 award date and project-level grant agreement were not publicly located. No public equity round, named investor or additional issuer-specific grant amount was verified.",
+      "sources_checked": [
+        "https://devdroid.tech/en/",
+        "https://mind.ua/publications/20300068-vid-provalnogo-prototipu-do-pershogo-u-sviti-robota-vbivci-rosijskoyi-bronetehniki-yak-devdroid-zavd",
+        "https://brave1.gov.ua/en/news/1000-grants-brave1",
+        "https://www.kmu.gov.ua/en/news/mintsyfry-defense-tech-klaster-brave1-zapuskaie-onovlenu-hrantovu-prohramu-dlia-ukrainskykh-rozrobnykiv",
+        "https://main.neb.org.ua/auction/award/LSE001-UA-20260706-42236"
+      ],
+      "excluded_claims": [
+        "Brave1 aggregate programme totals and grant ceilings are not assigned to DevDroid beyond the issuer-specific US$25,000 disclosed by its founder.",
+        "Brave1 Market orders and the 2026 land-auction amount are procurement or operating transactions, not investment financing.",
+        "Founder self-funding and employee equity compensation are described qualitatively but no amount or financing close is publicly disclosed."
+      ]
+    },
+    {
+      "id": "a5505c17-fe9c-4e54-9378-ad68e8d59f83",
+      "slug": "devorto-corporation",
+      "name": "Devorto Corporation",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The SEC filing issuer Devorto Corp is continuous with Devorto Corporation at devorto.io through founder and CEO Justin Selfridge, the company name, Virginia location and TURN aerospace programme. Its 20 September 2022 Form D reports a fully sold US$175,000 friends-and-family SAFE offering first sold 23 November 2021 to three unnamed investors.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://www.sec.gov/Archives/edgar/data/1947170/000194717022000001/primary_doc.xml",
+        "https://www.sec.gov/Archives/edgar/data/1947170/000194717022000002/primary_doc.xml",
+        "https://devorto.io/",
+        "https://www.sbir.gov/awards/209024",
+        "https://govtribe.com/award/federal-contract-award/definitive-contract-fa254124cb020"
+      ],
+      "excluded_claims": [
+        "The US$750,000 2022 Rule 506(c) SAFE filing reported US$0 sold and is therefore a target, not verified financing proceeds.",
+        "The US$1.9 million Air Force Direct-to-Phase-II SBIR instrument is recorded by SBA as a contract and is excluded as procurement revenue rather than investment financing.",
+        "NASA, Air Force and Space Force support claims without issuer-specific award amounts are not imported as financing."
+      ]
+    },
+    {
+      "id": "b97cc85a-80a2-4d84-a823-34c53dfd5b5d",
+      "slug": "dexa",
+      "name": "Dexa",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "DEXA is the public brand of the exact legal issuer Drone Express, Inc.; the company announcement explicitly identifies DEXA as Drone Express and the SEC filing names Drone Express, Inc. at the same Dayton address with CEO Beth Flippo. The company closed a US$15 million seed round across three US$5 million stages and later reported US$2,702,500 sold in a separate option/warrant offering begun 24 March 2026.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://flydexa.com/about-dexa/",
+        "https://finance.yahoo.com/news/dexa-closes-oversubscribed-15m-seed-185200710.html",
+        "https://www.autonomyglobal.co/dexa-closes-oversubscribed-15m-seed-funding-to-introduce-at-home-drone-delivery-in-major-metropolitan-markets/",
+        "https://www.sec.gov/Archives/edgar/data/1897956/000189795626000001/xslFormDX01/primary_doc.xml",
+        "https://www.sec.gov/Archives/edgar/data/1897956/000189795625000002/xslFormDX08/primary_doc.xml"
+      ],
+      "excluded_claims": [
+        "The US$10 million 2026 Form D total offering size is not recorded; only the US$2,702,500 amount actually sold is imported.",
+        "The 2021, 2023 and 2025 seed stages are not duplicated as separate rounds because DEXA announced them as one completed US$15 million seed round and public stage-level investor allocation is incomplete.",
+        "FAA certifications, customer pilots and delivery contracts are operating milestones, not investment financing."
+      ]
+    },
+    {
+      "id": "de056446-e026-4d2c-9388-887ad17b150b",
+      "slug": "dexterity",
+      "name": "Dexterity",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue website dexterity.ai and the 2026 SEC issuer Dexterity, Inc. match the Redwood City physical-AI robotics company founded by Samir Menon. Public sources support four financing events: a US$56.2 million aggregate seed/Series A/debt financing disclosed in 2020, US$140 million Series B equity and debt in 2021, US$95 million additional funding in 2025, and US$104,906,666 actually sold in a 2026 Regulation D equity offering.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://dexterity.ai/about",
+        "https://www.kleinerperkins.com/perspectives/robots-with-human-like-dexterity/",
+        "https://techcrunch.com/2020/07/22/dexterity-exits-stealth-with-56-2m-raised-for-its-collaborative-warehouse-robots/",
+        "https://www.businesswire.com/news/home/20211013005190/en/",
+        "https://www.gunder.com/en/news-insights/client-news/dexterity-raises-140m-series-b-financing",
+        "https://www.linkedin.com/posts/dexterityinc_physicalai-robotics-innovation-activity-7305301173199069184-mlGk",
+        "https://techcrunch.com/2025/03/11/yet-another-ai-robotics-firm-lands-major-funding-as-dexterity-closes-latest-round/",
+        "https://www.sec.gov/Archives/edgar/data/2137857/000213785726000002/xslFormDX01/primary_doc.xml",
+        "https://www.sec.gov/Archives/edgar/data/2137857/000213785726000001/0002137857-26-000001-index.htm"
+      ],
+      "excluded_claims": [
+        "The US$56.2 million disclosed in 2020 is kept as one aggregate seed, Series A and debt financing because the public announcement does not provide a reliable instrument-level split.",
+        "The US$140 million 2021 round is kept as mixed equity and debt because the issuer announcement does not disclose the debt/equity allocation.",
+        "The US$120 million 2026 Form D offering target and US$15,093,334 remaining are not treated as raised; only the US$104,906,666 reported sold is imported.",
+        "Commercial deployments and strategic partnerships with customers are not financing events."
+      ]
+    },
+    {
+      "id": "c0ad36e1-3924-4d29-a9b6-5143ea8ae943",
+      "slug": "dezamet",
+      "name": "Dezamet",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Zaklady Metalowe DEZAMET S.A. of Nowa Deba, the PGZ ammunition company at dezamet.com.pl. Official issuer, Polish-government and European Commission sources support a EUR2,137,612.06 ASAP grant agreement in 2024 and PLN1,358,000,000 of issuer-specific Capital Investment Fund support announced as received in July 2025.",
+      "hold_note": "",
+      "sources_checked": [
+        "https://dezamet.com.pl/o-nas/informacje-finansowe",
+        "https://dezamet.com.pl/aktualnosci/dezamet-podpisal-umowe-o-udzielenie-dotacji-na-inwestycje-w-ramach-programu-asap",
+        "https://defence-industry-space.ec.europa.eu/document/download/9d7b317f-5220-4e37-8f87-982f43b668b1_en?filename=07+06+2024+ASAP+Award+Decisions.pdf&prefLang=pl",
+        "https://dezamet.com.pl/aktualnosci/dofinansowanie-inwestycji-ze-srodkow-funduszu-inwestycji-kapitalowych",
+        "https://www.gov.pl/web/aktywa-panstwowe/24-mld-zl-dla-pgz-na-dofinansowanie-produkcji-amunicji-155-mm",
+        "https://www.sejm.gov.pl/Sejm10.nsf/biuletyn.xsp?skrnr=FPB-153",
+        "https://www.gov.pl/web/obrona-narodowa/wiecej-amunicji-dla-polskich-haubic-finansowanych-z-programu-safe"
+      ],
+      "excluded_claims": [
+        "The PLN2.4 billion PGZ group support total is not assigned to Dezamet; only the issuer-specific PLN1.358 billion allocation confirmed by Dezamet is imported.",
+        "The 2026 parliamentary reference to a planned PLN620 million capitalization is held because no reviewed issuer or transaction-party source establishes a completed closing or whether it is additional to the PLN1.358 billion programme.",
+        "The PLN13.5 billion-plus 2026 SAFE-financed ammunition supply contract belongs to the PGZ-AMUNICJA consortium and is procurement revenue, not issuer investment financing.",
+        "BAE Systems technology agreements and Polish defence orders are contracts or operating partnerships, not financing rounds."
+      ]
+    },
+    {
+      "id": "2ac2998f-1c1c-456d-b444-15b4e0d899d3",
+      "slug": "dfa-systems",
+      "name": "DFA Systems",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is DFA Systems, Inc., the Sandia Park, New Mexico tactical-robotics startup founded by Douglas Wood and Zachary Lippay. Wood publicly stated that the company had raised US$250,000 from investors in July 2025, and New Mexico EDD officially awarded DFA Systems a US$50,000 Science and Technology Business Startup grant in December 2025.",
+      "hold_note": "The US$250,000 investor identities, security instrument and individual close date were not disclosed. A later US$1.25 million raise was described only as soft-circled and is not treated as closed financing.",
+      "sources_checked": [
+        "https://dfasystems.com/about-us",
+        "https://dfasystems.com/",
+        "https://www.linkedin.com/posts/douglas-wood-36358264_ive-hinted-in-previous-posts-but-i-want-activity-7346508016088731648-c0Yp",
+        "https://www.edd.newmexico.gov/wp-content/uploads/2026/03/TIO-ST-Business-Startup-Grants-Awardees.pdf",
+        "https://blackpowder.ghost.io/company-highlight-dfa-systems-precision-flying-grenades/",
+        "https://nm.news/2025/12/22/sandia-crest-company-building-high-tech-infantry-weapons/"
+      ],
+      "excluded_claims": [
+        "The US$1.25 million raise reported as soft-circled pending a lead investor in August 2025 is not a closed financing event.",
+        "Founder references to customer interest, prospective MARSOC purchases and partnership activity are not investment financing.",
+        "Contract ceilings associated with founder prior employment and Sandia CRADA access do not belong to DFA Systems as financing."
+      ]
+    }
+  ],
+  "audit_notes": [
+    "Only issuer-supported financing facts are normalized; parent, subsidiary, acquisition-consideration, contract and consortium amounts remain excluded unless the reviewed source establishes the target as recipient.",
+    "A completed bounded public-source review does not assert zero funding where no public round was found; undisclosed private history remains unknown.",
+    "Duplicate or closely related catalogue identities are kept distinct unless sources establish legal or economic continuity.",
+    "SEC Form D amendments are treated as cumulative issuer disclosures and are not double-counted as separate closes unless a later filing establishes a distinct offering."
+  ],
+  "publication": {
+    "pending": true,
+    "catalogue_trigger_required": true,
+    "database_verified_at": "2026-11-12T07:02:47.864Z"
+  }
+}
