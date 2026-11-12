@@ -21,13 +21,23 @@
     "new_companies_with_events": 8,
     "rechecked_published_identities": 1,
     "rollback_rehearsal_passed": true,
-    "atomic_import_passed": false,
-    "post_import_idempotency_rehearsal_passed": false,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
     "current_manifest_publication_verified": false,
     "local_postgresql_tests_passed": true,
     "new_investor_profiles": 53,
     "database_identities_inspected": 25,
-    "existing_events_inspected": 1
+    "existing_events_inspected": 1,
+    "manifest_event_matches": 16,
+    "manifest_link_matches": 93,
+    "manifest_source_matches": 26,
+    "manifest_relationship_matches": 11,
+    "missing_link_source_urls": 0,
+    "db_total_events": 2930,
+    "db_approved_events": 2917,
+    "db_approved_round_participations": 3734,
+    "db_investor_profiles": 2263,
+    "db_source_reconciliation_companies": 762
   },
   "per_company": [
     {
@@ -1154,5 +1164,10 @@
     "Harbinger extension is incremental13m, parent60m preserved. Cumulative totals, orders, placement agents and manager substitutions excluded.",
     "Hanwha events preserve original KRW and rounded precision; debt tranches not double counted; subsidiaries and guarantees remain separate.",
     "Pre-existing Fidelity duplicate profiles observed; existing pilot canonical slug reused, no new Fidelity profile and no unrelated merge."
-  ]
+  ],
+  "queue_dispositions": {
+    "reviewed_public_sources": 977,
+    "source_review_partial": 380,
+    "queued": 1207
+  }
 }
