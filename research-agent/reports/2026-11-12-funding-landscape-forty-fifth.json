@@ -22,7 +22,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "local_postgresql_tests_passed": true,
     "new_investor_profiles": 22,
     "database_identities_inspected": 24,
@@ -45,7 +45,14 @@
     "db_approved_round_participations": 3860,
     "db_investor_profiles": 2340,
     "db_source_reconciliation_companies": 778,
-    "new_profile_exact_name_duplicates": 0
+    "new_profile_exact_name_duplicates": 0,
+    "active_minutes": 16.6,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, source QA, PostgreSQL tests, production rollback, atomic import, idempotency, source audit and live publication verification. Concurrent lane durations not summed.",
+    "durable_queue_identity_count": 2564,
+    "durable_queue_readback_verified": true,
+    "checked_identities_per_hour": 86.7,
+    "completed_reviews_per_hour": 32.5
   },
   "per_company": [
     {
@@ -1183,8 +1190,59 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T21:03:56.186Z",
+    "verified_at": "2026-11-12T21:03:56.186Z",
+    "catalogue_commit": "270e51d9462ea15dd42660efea3bc5df4d449272",
+    "source_commit": "0c642ad33d65738778576908cd750b99dc47d7f5",
+    "workflow_run": {
+      "id": 43305979794,
+      "head": "270e51d9462ea15dd42660efea3bc5df4d449272",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43305979794"
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-fifth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-forty-fifth.json",
+    "generated_at": "2026-11-12T21:01:46.740Z",
+    "investor_generated_at": "2026-11-12T21:01:48.818Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2331,
+    "portfolio_relationships": 314,
+    "published_portfolio_relationships": 285,
+    "current_manifest_event_rows": 28,
+    "current_manifest_live_matches": 0,
+    "outside_landscape": [
+      "hidden-level",
+      "high-great-innovation",
+      "high-lander",
+      "high-precision-systems",
+      "hii-newport-news-shipbuilding",
+      "hikvision",
+      "himera",
+      "hindsight-vip",
+      "hinetics",
+      "hipert",
+      "hisilicon",
+      "hive-robotics",
+      "hobbywing",
+      "hobizone",
+      "hollyland",
+      "holybro",
+      "holywater-tech",
+      "honeywell",
+      "honeywell-aerospace",
+      "honeywell-defense-and-space",
+      "hongdu-aviation-industry-group-haig-avic",
+      "hood-tech-vision",
+      "hoplite-group",
+      "hoplynk"
+    ],
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: database2340 versus live2331. Directory increased by22 named profiles. All24 target slugs explicitly absent from European landscape; membership gates preserved. Seven new generic links and existing D3/Hive link verified against published full-catalogue company pages. Spot checks ONE9 Special Mission Fund I, STEP, Protego, Horizon Capital Ukraine, Dave Morgan, Huawei and FOX Entertainment passed.",
+    "catalogue_trigger_required": false
   },
   "audit_note": "Seven new generic links, one existing D3/Hive relationship preserved with investor-original d3.vc/portfolio source; all eight associations present, seven exact new source URLs. Manifest retains independently corroborating Hive issuer source. No curated record overwritten. Honeywell parent and spun-off Aerospace economic issuers separated; noncash debt exchange excluded from new-money notes. Facility ceilings are not drawn cash. Partial/private unknowns are not zero funding."
 }
