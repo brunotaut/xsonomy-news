@@ -22,7 +22,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "local_postgresql_tests_passed": true,
     "new_investor_profiles": 36,
     "database_identities_inspected": 24,
@@ -40,7 +40,15 @@
     "db_approved_events": 3049,
     "db_approved_round_participations": 4011,
     "db_investor_profiles": 2411,
-    "db_source_reconciliation_companies": 804
+    "db_source_reconciliation_companies": 804,
+    "new_profile_exact_name_duplicates": 0,
+    "durable_queue_identity_count": 2564,
+    "durable_queue_readback_verified": true,
+    "active_minutes": 12.3,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, source QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, source audit and live publication verification. Concurrent lane durations not summed.",
+    "checked_identities_per_hour": 117.1,
+    "completed_reviews_per_hour": 24.4
   },
   "per_company": [
     {
@@ -1358,8 +1366,59 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T22:56:49.320Z",
+    "verified_at": "2026-11-12T22:56:49.320Z",
+    "catalogue_commit": "51f23f8b31a9ee4791f439896536e985ea151277",
+    "source_commit": "7fdef27e50e3720f38858974bc1ef66c2921be63",
+    "workflow_run": {
+      "id": 43324173569,
+      "head": "51f23f8b31a9ee4791f439896536e985ea151277",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43324173569"
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-seventh.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-forty-seventh.json",
+    "generated_at": "2026-11-12T22:55:15.962Z",
+    "investor_generated_at": "2026-11-12T22:55:18.544Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2402,
+    "portfolio_relationships": 321,
+    "published_portfolio_relationships": 292,
+    "current_manifest_event_rows": 37,
+    "current_manifest_live_matches": 0,
+    "outside_landscape": [
+      "hyperscale",
+      "hypersonix",
+      "hyprspace",
+      "hyssos-tech",
+      "hyundai-heavy-industries",
+      "hyundai-rotem",
+      "i-see",
+      "iai-elta-systems",
+      "iai-israel-mod",
+      "iai-tamam-malat",
+      "icarus",
+      "icarus-swarms",
+      "iceye",
+      "iceye-poland",
+      "ici",
+      "icomat",
+      "icreativesystems",
+      "ideaforge",
+      "ideal-aerosmith",
+      "idv",
+      "iknowhow",
+      "iks-holding",
+      "imagesat-international-isi",
+      "imaging-in-the-sky"
+    ],
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: database2411 versus live2402. Directory increased by36 named profiles. All24 targetslugs explicitly absent from European landscape; membership gates unchanged. Five new generic associations verified against published full-catalogue company pages; existing Seraphim/ICEYE association also present and preserved. Spot checks High Tor Capital, Geodesic Fund France, DeepTech2030, FIMI Opportunity6, Discount Capital Bank, EuroHPC JU, Scaleup Europe Fund, AIN Ventures and Infosys passed. Wider-cohort financing records confirmed in DB are not asserted to appear as European map events.",
+    "catalogue_trigger_required": false
   },
   "audit_note": "ICEYE primary Series E EUR150m and Series F EUR450m are separated from secondary placements. Series F remains conditional/announced; August Scaleup Europe Fund joins same round, not a new event. Business Finland grants/loans split; overlapping EUR28.3m continuation held. ICEYE Poland does not inherit Finnish parent financing. True Ventures2015 retrospective investment preserves date precision and undisclosed amount. ideaForge IPO/QIP fresh proceeds exclude OFS; Infosys exact individual contributions stored only as participations, unknown round totals null. ICI EUR725k is exact own allocation, not EUR4m/8m consortium budget; signeddate not projectstart. IAI division/collaboration labels do not inherit parent bonds. ImageSat primaryIPO proceeds exclude secondary sale. Parent/control associations and procurement do not assert cash raises. Existing manager aliases reused with original source names noted; named vehicles FIMI6/FrenchTechSeed/DeepTech2030 retained separately. Unknown histories remain partial, not zero funding."
 }
