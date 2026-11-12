@@ -20,15 +20,27 @@
     "new_generic_portfolio_relationships": 5,
     "new_companies_with_events": 11,
     "rollback_rehearsal_passed": true,
-    "atomic_import_passed": false,
-    "post_import_idempotency_rehearsal_passed": false,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
     "current_manifest_publication_verified": false,
     "local_postgresql_tests_passed": true,
     "new_investor_profiles": 36,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
     "search_queries_logged": 91,
-    "source_ledger_entries": 117
+    "source_ledger_entries": 117,
+    "new_events_written": 37,
+    "manifest_event_matches": 37,
+    "manifest_link_matches": 100,
+    "manifest_source_matches": 47,
+    "manifest_relationship_matches": 5,
+    "missing_link_source_urls": 0,
+    "mismatched_manifest_facts": 0,
+    "db_total_events": 3062,
+    "db_approved_events": 3049,
+    "db_approved_round_participations": 4011,
+    "db_investor_profiles": 2411,
+    "db_source_reconciliation_companies": 804
   },
   "per_company": [
     {
@@ -1348,5 +1360,6 @@
   "publication": {
     "pending": true,
     "verified": false
-  }
+  },
+  "audit_note": "ICEYE primary Series E EUR150m and Series F EUR450m are separated from secondary placements. Series F remains conditional/announced; August Scaleup Europe Fund joins same round, not a new event. Business Finland grants/loans split; overlapping EUR28.3m continuation held. ICEYE Poland does not inherit Finnish parent financing. True Ventures2015 retrospective investment preserves date precision and undisclosed amount. ideaForge IPO/QIP fresh proceeds exclude OFS; Infosys exact individual contributions stored only as participations, unknown round totals null. ICI EUR725k is exact own allocation, not EUR4m/8m consortium budget; signeddate not projectstart. IAI division/collaboration labels do not inherit parent bonds. ImageSat primaryIPO proceeds exclude secondary sale. Parent/control associations and procurement do not assert cash raises. Existing manager aliases reused with original source names noted; named vehicles FIMI6/FrenchTechSeed/DeepTech2030 retained separately. Unknown histories remain partial, not zero funding."
 }
