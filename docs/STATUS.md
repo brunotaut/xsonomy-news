@@ -1739,3 +1739,7 @@ Reviewed21 distinct identities (17 published followups and4 wider cohort).18 bou
 
 ## Autonomous funding reconciliation 36 — 2026-11-12
 24 wider-cohort identities reviewed (8 bounded reviews complete, 16 partial); 38 events, 102 participant links, 48 sources and 4 ownership relationships imported after rollback rehearsal and verified idempotency. DB totals: 2,729 events (2,716 approved), 3,299 links, 2,008 investor profiles, 693 company coverage rows. Catalogue commit 4267d20026a6dd41922b593e383a2bf0d88772c6, workflow 43221982130, live JSON verified. Dedicated queue: 922 reviewed, 267 partial, 1,375 queued. Next: Evica through FFG.
+
+
+## Autonomous funding reconciliation 37 — 2026-11-12
+24 wider-cohort identities researched: 8 bounded reviews complete, 16 partial. Imported 33 events, 70 participant links, 45 event sources and 8 ownership relationships following production rollback, atomic import, source audit and idempotency verification. DB totals: 2,762 funding rows (2,749 approved), 3,369 participant links, 2,046 profiles, 705 covered identities. Catalogue 6478092df4e49bde514bb07d178b0b673a0db03b, deployment 43232929670, live JSON verified at 2026-11-12T14:03:38.490Z; 2,037 named directory profiles (9 legacy anonymous placeholders filtered by launch cleanup), 567 landscape companies and 1,589 displayed events. Queue: 930 reviewed, 283 partial, 1,351 queued. Next Fieldmade through Flyfreely.

@@ -22,7 +22,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "new_events_written": 33,
     "new_investor_profiles": 38,
     "database_identities_inspected": 24,
@@ -37,8 +37,12 @@
     "db_approved_round_participations": 3369,
     "db_investor_profiles": 2046,
     "db_source_reconciliation_companies": 705,
-    "active_minutes": 7.8,
-    "concurrency_speedup_claimed": false
+    "active_minutes": 10.5,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four disjoint source reviews, rollback rehearsal, atomic import, idempotency and live publication. Concurrent lane durations are not summed.",
+    "new_profile_exact_name_duplicates": 0,
+    "checked_identities_per_active_hour": 137.1,
+    "completed_reviews_per_active_hour": 45.7
   },
   "per_company": [
     {
@@ -1197,8 +1201,57 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T14:03:38.490Z",
+    "catalogue_commit": "6478092df4e49bde514bb07d178b0b673a0db03b",
+    "source_commit": "da582cc8c7c9130986a05f4b2b51d3af27b00a2f",
+    "workflow_run": {
+      "id": 43232929670,
+      "head": "6478092df4e49bde514bb07d178b0b673a0db03b",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43232929670"
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-seventh.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-seventh.json",
+    "generated_at": "2026-11-12T14:02:13.063Z",
+    "investor_generated_at": "2026-11-12T14:02:15.509Z",
+    "events": 1589,
+    "links": 1380,
+    "profiles": 2037,
+    "companies": 567,
+    "portfolio_relationships": 247,
+    "published_portfolio_relationships": 218,
+    "current_manifest_event_rows": 33,
+    "current_manifest_live_matches": 0,
+    "outside_landscape": [
+      "evica",
+      "eviden",
+      "evolofoil",
+      "evolution-metals-and-technologies",
+      "evolve-dynamics",
+      "evolved-aerospace",
+      "ex-mil-recruitment",
+      "exail-robotics",
+      "exedy-globalparts",
+      "exotrail",
+      "extensee",
+      "eyeonix",
+      "facebook-meta-connectivity-lab",
+      "factorial-energy",
+      "falcata",
+      "falcon-propeller",
+      "falconworks",
+      "farage-precision",
+      "fat-shark",
+      "federal-ammunition",
+      "fedex",
+      "fernride",
+      "ferra-engineering",
+      "ffg"
+    ],
+    "directory_filter_note": "Current approved catalogue launch filter publishes named profiles only. Database has 2046 profiles; 9 pre-existing anonymous placeholders remain excluded. All 38 new named profiles are represented; spot checks verified YA II PN, both Foresight VCTs, 10x Founders and Mercedes-Benz."
   },
   "database": {
     "total_events": 2762,
@@ -1206,5 +1259,12 @@
     "round_participations": 3369,
     "investor_profiles": 2046,
     "source_reconciliation_companies": 705
-  }
+  },
+  "audit_notes": [
+    "All 24 identities remain outside current European published landscape; draft identities are not promoted.",
+    "Financing history stays partial for unresolved issuer, historical, grant instrument and aggregate claims documented per company.",
+    "Paired Foresight VCT subscriptions use lower-bound investment disclosures with exact individual contributions, not inferred complete round sizes.",
+    "Named-directory launch filter excludes 9 pre-existing anonymous placeholders; new profile count and all funding source links verified.",
+    "Earlier and latest public funding events reconciled; no assertion of complete private financing knowledge."
+  ]
 }
