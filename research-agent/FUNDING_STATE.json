@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 220,
-  "fully_reviewed_companies": 873,
-  "next_action": "Trigger the existing catalogue build, verify publication, then continue the next 24 queued identities from Dronetrake through Easy City.",
+  "partial_companies": 231,
+  "fully_reviewed_companies": 886,
+  "next_action": "Trigger the existing catalogue build, verify publication, then continue the next 24 queued identities from E.B. Howard Consulting through ELDIS Pardubice.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-12T09:51:10.068Z",
-  "source_reconciliation_companies": 647,
-  "approved_funding_events": 2531,
-  "round_participations": 2966,
-  "investor_profiles": 1813,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261112-thirty-second.json",
+  "updated_at": "2026-11-12T10:03:51.877Z",
+  "source_reconciliation_companies": 658,
+  "approved_funding_events": 2569,
+  "round_participations": 3014,
+  "investor_profiles": 1848,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261112-thirty-third.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -80,8 +80,43 @@
       "easy-aerial",
       "easy-city"
     ],
-    "status": "researching",
-    "writer_head": "8672e7d57f310f9bda078bc49b6368cb171c236e"
+    "status": "database_imported_publication_pending",
+    "writer_head": "8672e7d57f310f9bda078bc49b6368cb171c236e",
+    "database_imported_at": "2026-11-12T10:03:51.877Z",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 13,
+      "new_or_retained_partial": 11,
+      "new_events_written": 38,
+      "new_generic_portfolio_relationships": 6,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "current_manifest_publication_verified": false,
+      "newly_completed_wider_reviews": 13,
+      "new_approved_events": 38,
+      "new_round_participations": 48,
+      "new_investor_profiles": 35,
+      "new_source_rows": 55,
+      "new_companies_with_events": 11,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "manifest_event_matches": 38,
+      "manifest_link_matches": 48,
+      "manifest_source_matches": 55,
+      "manifest_relationship_matches": 6,
+      "missing_link_source_urls": 0,
+      "db_approved_events": 2569,
+      "db_approved_round_participations": 3014,
+      "db_investor_profiles": 1848,
+      "db_source_reconciliation_companies": 658,
+      "concurrency_speedup_claimed": false,
+      "active_minutes": 13,
+      "timing_scope": "Lease through four read-only lanes, reconciliation, rollback rehearsal, atomic import and idempotency rollback; publication wait excluded.",
+      "checked_identities_per_active_hour": 110.8,
+      "completed_reviews_per_active_hour": 60
+    }
   },
   "last_verified_publication": {
     "checked_at": "2026-11-12T09:03:05.189Z",
@@ -2306,43 +2341,43 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 873,
-    "source_review_partial": 220,
-    "queued": 1471
+    "reviewed_public_sources": 886,
+    "source_review_partial": 231,
+    "queued": 1447
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "identities_checked": 24,
-    "newly_completed_bounded_reviews": 11,
-    "newly_completed_wider_reviews": 11,
-    "new_or_retained_partial": 13,
-    "new_events_written": 39,
-    "new_approved_events": 39,
-    "new_round_participations": 77,
-    "new_generic_portfolio_relationships": 9,
-    "new_investor_profiles": 49,
-    "new_source_rows": 54,
-    "new_companies_with_events": 11,
-    "database_identities_inspected": 24,
-    "existing_events_inspected": 0,
+    "newly_completed_bounded_reviews": 13,
+    "new_or_retained_partial": 11,
+    "new_events_written": 38,
+    "new_generic_portfolio_relationships": 6,
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "manifest_event_matches": 39,
-    "manifest_link_matches": 77,
-    "manifest_source_matches": 54,
-    "manifest_relationship_matches": 9,
+    "current_manifest_publication_verified": false,
+    "newly_completed_wider_reviews": 13,
+    "new_approved_events": 38,
+    "new_round_participations": 48,
+    "new_investor_profiles": 35,
+    "new_source_rows": 55,
+    "new_companies_with_events": 11,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "manifest_event_matches": 38,
+    "manifest_link_matches": 48,
+    "manifest_source_matches": 55,
+    "manifest_relationship_matches": 6,
     "missing_link_source_urls": 0,
-    "db_approved_events": 2531,
-    "db_approved_round_participations": 2966,
-    "db_investor_profiles": 1813,
-    "db_source_reconciliation_companies": 647,
-    "current_manifest_publication_verified": true,
+    "db_approved_events": 2569,
+    "db_approved_round_participations": 3014,
+    "db_investor_profiles": 1848,
+    "db_source_reconciliation_companies": 658,
     "concurrency_speedup_claimed": false,
-    "active_minutes": 12,
+    "active_minutes": 13,
     "timing_scope": "Lease through four read-only lanes, reconciliation, rollback rehearsal, atomic import and idempotency rollback; publication wait excluded.",
-    "checked_identities_per_active_hour": 120,
-    "completed_reviews_per_active_hour": 55
+    "checked_identities_per_active_hour": 110.8,
+    "completed_reviews_per_active_hour": 60
   },
   "latest_followup_metrics": {
     "parallel_read_only_groups": 4,
@@ -2380,7 +2415,7 @@
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 1093,
+  "source_reviewed_or_partial_companies": 1117,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -2788,14 +2823,14 @@
   },
   "pending_import": null,
   "pending_publication": {
-    "status": "verified",
-    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-second.json",
-    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-second.json",
-    "source_commit": "4e125c68d9d0100a310bdd9d3d0194c2ad1f505d",
-    "catalogue_commit": "29937c5f93b9ec5a8cad085657d8a8c636d244ad",
-    "workflow_run_id": 43187556752,
-    "verified_at": "2026-11-12T09:03:05.189Z",
-    "catalogue_trigger_required": false
+    "status": "database_imported",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-third.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-third.json",
+    "source_commit": null,
+    "catalogue_commit": null,
+    "workflow_run_id": null,
+    "verified_at": null,
+    "catalogue_trigger_required": true
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -3708,124 +3743,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "39c2d8f7-e75c-41d5-afc2-a4de48a9a903",
-      "slug": "dronetrake",
-      "name": "Dronetrake"
+      "id": "cb64dbfb-ab05-440b-97c5-32d25740f673",
+      "slug": "eb-howard-consulting",
+      "name": "E.B. Howard Consulting"
     },
     {
-      "id": "9ce88358-de18-4eac-a08a-4d586cfcf808",
-      "slug": "droneup",
-      "name": "DroneUp"
+      "id": "92299e36-58f5-4c27-9486-20bae0ab2d26",
+      "slug": "eca-group-infotron",
+      "name": "ECA Group / Infotron"
     },
     {
-      "id": "6d12d8a6-98b2-4dd4-a0de-e1cde7fbb489",
-      "slug": "dronevia",
-      "name": "DroneVia"
+      "id": "f610ad11-5771-4f41-9f59-a1717dc7429d",
+      "slug": "echodyne",
+      "name": "Echodyne"
     },
     {
-      "id": "81b0788d-b427-4faf-9ed3-1ff7fb36e44b",
-      "slug": "dronexl",
-      "name": "DroneXL"
+      "id": "a99e3f80-c8ed-4bdd-b3d1-bab74ea8f044",
+      "slug": "echomav-technologies",
+      "name": "EchoMAV Technologies"
     },
     {
-      "id": "82531419-151d-4ca7-b003-e1ed3146a2c3",
-      "slug": "drs-rada-technologies",
-      "name": "DRS RADA Technologies"
+      "id": "0b807dda-e79d-430f-a04d-2d6a1cc699c7",
+      "slug": "eclecticiq",
+      "name": "EclecticIQ"
     },
     {
-      "id": "c1bf17d1-2410-4340-83b7-efe85989d505",
-      "slug": "dryad-networks",
-      "name": "Dryad Networks"
+      "id": "a2ab4cb9-459f-4c17-850b-a0ed1f365d03",
+      "slug": "eco-brick-innovio",
+      "name": "eco BRICK Innovio"
     },
     {
-      "id": "61146168-ae06-4733-b893-ab7fdbc80570",
-      "slug": "dsv",
-      "name": "DSV"
+      "id": "cd442edc-94ae-4975-af4a-71f341a55e3d",
+      "slug": "ecoflow",
+      "name": "EcoFlow"
     },
     {
-      "id": "3643dd5e-7232-41f9-ba7d-272bb9a267bb",
-      "slug": "dta-international",
-      "name": "DTA International"
+      "id": "26eeebf8-c714-46c9-9cf6-ea4bfd08a3e0",
+      "slug": "edge-autonomy",
+      "name": "Edge Autonomy"
     },
     {
-      "id": "b4457df5-960b-48e4-8f4a-b4fc7bd8e75f",
-      "slug": "dtsl",
-      "name": "DTSL"
+      "id": "1a82d342-fa33-455d-96f2-e1fd2e63d4cb",
+      "slug": "edge-group",
+      "name": "EDGE Group"
     },
     {
-      "id": "6886830f-6734-4990-af28-6127b75212ac",
-      "slug": "dubai-aviation-engineering-projects",
-      "name": "Dubai Aviation Engineering Projects"
+      "id": "0d32fdd4-4700-4432-86ad-53cfa7c74f24",
+      "slug": "edgecortix",
+      "name": "EdgeCortix"
     },
     {
-      "id": "6ccb9f2f-967d-4a02-9ef4-cfcfb9236223",
-      "slug": "duke-university",
-      "name": "Duke University"
+      "id": "9e6f7b39-eda4-4341-92fb-a6f7d2e7b019",
+      "slug": "edgex-robotics",
+      "name": "EdgeX Robotics"
     },
     {
-      "id": "71d33b80-b67f-469f-986a-db09074b23fb",
-      "slug": "dutch-naval-design",
-      "name": "Dutch Naval Design"
+      "id": "9f58473a-0cac-4b33-9e2f-296bc5b407b9",
+      "slug": "edison-chouest-offshore",
+      "name": "Edison Chouest Offshore"
     },
     {
-      "id": "cf2317b2-c876-49cb-af40-4659d22e489b",
-      "slug": "dymstec",
-      "name": "Dymstec"
+      "id": "8fc8896b-6750-4320-b1c0-53efd7f0a052",
+      "slug": "ee",
+      "name": "EE"
     },
     {
-      "id": "d5566e68-d377-40b1-a6e1-2c34a3baa94a",
-      "slug": "dynamit-nobel-defence",
-      "name": "Dynamit Nobel Defence"
+      "id": "b6dc95cc-661d-431f-9048-1bdc2db14a0a",
+      "slug": "egis",
+      "name": "EGIS"
     },
     {
-      "id": "1a79dd9b-0d2b-44a8-a5e9-d94081ba4940",
-      "slug": "dynetics",
-      "name": "Dynetics"
+      "id": "342c7e0a-ddc1-4e50-871b-5d960c12b947",
+      "slug": "ehang",
+      "name": "EHang"
     },
     {
-      "id": "472af1ef-186a-4e07-8d40-dd7e5e913329",
-      "slug": "dyzne",
-      "name": "DYZNE"
+      "id": "387aa284-14e1-4fce-926e-2c8cf2bffebb",
+      "slug": "eivie",
+      "name": "EIVIE"
     },
     {
-      "id": "55a64c10-3080-4964-b537-38847e613655",
-      "slug": "dzp-group",
-      "name": "DZP Group"
+      "id": "c2ded8c0-14c5-417e-9b7e-45e8dc3a8824",
+      "slug": "ekolot",
+      "name": "EKOLOT"
     },
     {
-      "id": "c755ac11-25ff-48f0-a196-50886a22b48e",
-      "slug": "dzyne-technologies",
-      "name": "DZYNE Technologies"
+      "id": "97fe0f8e-8647-43c0-b8f4-d4161a1269cd",
+      "slug": "ekspla",
+      "name": "Ekspla"
     },
     {
-      "id": "ac18d4af-3089-4537-bb84-6431d3367b0a",
-      "slug": "e-flight-academy",
-      "name": "E-Flight Academy"
+      "id": "9d4af86e-f6c6-4b25-91f0-be19062b8f33",
+      "slug": "elac-sonar",
+      "name": "ELAC Sonar"
     },
     {
-      "id": "6f545848-db03-414d-8989-348e42e2cfa5",
-      "slug": "eads-now-airbus-defence-and-space",
-      "name": "EADS (now Airbus Defence and Space)"
+      "id": "57dcad99-96d1-44a1-bb67-3badf2895e1b",
+      "slug": "elbit-systems",
+      "name": "Elbit Systems"
     },
     {
-      "id": "5c37a85b-95d8-4a01-b5b6-087b38526ff8",
-      "slug": "eagle-eye-innovations",
-      "name": "Eagle Eye Innovations"
+      "id": "af6e48e2-fa44-4bbb-8609-fe7fca06a207",
+      "slug": "elbit-systems-deutschland",
+      "name": "Elbit Systems Deutschland"
     },
     {
-      "id": "bcda9a19-f8a1-4bb7-b456-8b3a8213f34d",
-      "slug": "eaglenxt",
-      "name": "EagleNXT"
+      "id": "0dd5ab23-6e14-4a00-b8fa-933692737463",
+      "slug": "elbit-systems-elisra",
+      "name": "Elbit Systems (Elisra)"
     },
     {
-      "id": "6c4e4679-b3b1-4f55-855e-fed57bcdd7c5",
-      "slug": "easy-aerial",
-      "name": "Easy Aerial"
+      "id": "99cd94ee-d8f2-4561-83bc-304a131e44e4",
+      "slug": "elbit-systems-elop",
+      "name": "Elbit Systems (Elop)"
     },
     {
-      "id": "673b03cf-eb14-4ea5-89e6-30e5b6bc8ae8",
-      "slug": "easy-city",
-      "name": "Easy City"
+      "id": "8a66d62c-2a68-4b8d-83ef-404c0643bab8",
+      "slug": "eldis-pardubice",
+      "name": "ELDIS Pardubice"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -4193,6 +4228,44 @@
       "timing_scope": "Lease through four read-only lanes, reconciliation, rollback rehearsal, atomic import and idempotency rollback; publication wait excluded.",
       "checked_identities_per_active_hour": 120,
       "completed_reviews_per_active_hour": 55
+    }
+  },
+  "latest_thirty_third_reconciliation": {
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-third.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-third.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 13,
+      "new_or_retained_partial": 11,
+      "new_events_written": 38,
+      "new_generic_portfolio_relationships": 6,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "current_manifest_publication_verified": false,
+      "newly_completed_wider_reviews": 13,
+      "new_approved_events": 38,
+      "new_round_participations": 48,
+      "new_investor_profiles": 35,
+      "new_source_rows": 55,
+      "new_companies_with_events": 11,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "manifest_event_matches": 38,
+      "manifest_link_matches": 48,
+      "manifest_source_matches": 55,
+      "manifest_relationship_matches": 6,
+      "missing_link_source_urls": 0,
+      "db_approved_events": 2569,
+      "db_approved_round_participations": 3014,
+      "db_investor_profiles": 1848,
+      "db_source_reconciliation_companies": 658,
+      "concurrency_speedup_claimed": false,
+      "active_minutes": 13,
+      "timing_scope": "Lease through four read-only lanes, reconciliation, rollback rehearsal, atomic import and idempotency rollback; publication wait excluded.",
+      "checked_identities_per_active_hour": 110.8,
+      "completed_reviews_per_active_hour": 60
     }
   }
 }

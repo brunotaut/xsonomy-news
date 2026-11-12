@@ -1,0 +1,1416 @@
+{
+  "report": "Thirty-third autonomous funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": null,
+  "scope": {
+    "identities": 24,
+    "from": "dronetrake",
+    "through": "easy-city",
+    "published_landscape": false
+  },
+  "method": "Four disjoint read-only research lanes; one writer consolidation; exact issuer, original currency, amount qualifier, instrument, closing and explicit roles checked. Contracts, acquisition consideration, parent/subsidiary financing, undrawn facilities and consortium totals excluded.",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 13,
+    "new_or_retained_partial": 11,
+    "new_events_written": 38,
+    "new_generic_portfolio_relationships": 6,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "current_manifest_publication_verified": false,
+    "newly_completed_wider_reviews": 13,
+    "new_approved_events": 38,
+    "new_round_participations": 48,
+    "new_investor_profiles": 35,
+    "new_source_rows": 55,
+    "new_companies_with_events": 11,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "manifest_event_matches": 38,
+    "manifest_link_matches": 48,
+    "manifest_source_matches": 55,
+    "manifest_relationship_matches": 6,
+    "missing_link_source_urls": 0,
+    "db_approved_events": 2569,
+    "db_approved_round_participations": 3014,
+    "db_investor_profiles": 1848,
+    "db_source_reconciliation_companies": 658,
+    "concurrency_speedup_claimed": false,
+    "active_minutes": 13,
+    "timing_scope": "Lease through four read-only lanes, reconciliation, rollback rehearsal, atomic import and idempotency rollback; publication wait excluded.",
+    "checked_identities_per_active_hour": 110.8,
+    "completed_reviews_per_active_hour": 60
+  },
+  "per_company": [
+    {
+      "id": "39c2d8f7-e75c-41d5-afc2-a4de48a9a903",
+      "slug": "dronetrake",
+      "name": "Dronetrake",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Dronetrake is a software product of Bluix Group Ltd, not a separately identified legal issuer. Bluix's official site lists Dronetrake among its products and Dronetrake's privacy notice names Bluix Group Ltd as data controller. Dronetrake's official about page describes Bluix as an independent, self-funded software house and states that it has no venture capital. No attributable external financing event was located for either the product or Bluix Group Ltd in the bounded review.",
+      "hold_note": "The issuer's self-funded/no-VC statement supports ownership and financing context but is not treated as evidence of zero funding or the absence of every possible loan, grant or shareholder contribution. The current Bluix Group Ltd entity was incorporated in England and Wales in March 2026; no financing amount, date or external investor was disclosed.",
+      "sources_checked": [
+        {
+          "url": "https://dronetrake.com/about",
+          "title": "About Dronetrake",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://dronetrake.com/privacy",
+          "title": "Dronetrake Privacy Policy",
+          "source_type": "company_legal",
+          "published_date": null
+        },
+        {
+          "url": "https://bluix.com/",
+          "title": "Bluix Group official website",
+          "source_type": "parent_company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.companiesintheuk.co.uk/ltd/bluix-group",
+          "title": "Bluix Group Ltd company profile",
+          "source_type": "registry_aggregator",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Dronetrake has raised zero funding.",
+          "reason": "The company says Bluix is self-funded and has no venture capital, but that does not prove the absence of every financing instrument."
+        },
+        {
+          "claim": "Dronetrake is a standalone investable issuer.",
+          "reason": "Official legal and product pages identify it as a Bluix Group Ltd product."
+        }
+      ]
+    },
+    {
+      "id": "9ce88358-de18-4eac-a08a-4d586cfcf808",
+      "slug": "droneup",
+      "name": "DroneUp",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 6,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is DroneUp, LLC, a Virginia limited liability company incorporated in 2016 and formerly named Dart Ventures, LLC, SEC CIK 0001697096. SEC Form D filings verify debt/security offerings with USD 250,000 sold from a December 2019 first sale, USD 590,000 sold from a July 2020 first sale, a January 2021 debt offering amended to USD 6,661,773 sold, a November 2021 USD 5 million equity offering, and USD 950,000 sold in a January 2024 debt/security offering. Walmart separately announced an amount-undisclosed investment on 17 June 2021.",
+      "hold_note": "Form D figures are amounts sold as of the relevant filing or cumulative amendment, not the larger offering targets. Investor identities in the private offerings were not disclosed. A July 2022 Form D was located, but its amount, instrument and first-sale terms were not sufficiently exposed in the bounded source extract and are held rather than guessed. Public incentives offered by Virginia Beach and Virginia were contingent on investment and job benchmarks and were not entered as received financing. Walmart's 2021 investment instrument and amount were not disclosed, and later reporting that Walmart ceased to be an investor does not change the historical event.",
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1697096/000156761920000708/xslFormDX01/primary_doc.xml",
+          "title": "DroneUp 2019 debt offering Form D",
+          "source_type": "regulatory_filing",
+          "published_date": "2020-01-07"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1697096/000169709620000001/xslFormDX01/primary_doc.xml",
+          "title": "DroneUp July 2020 debt offering Form D",
+          "source_type": "regulatory_filing",
+          "published_date": "2020-07-30"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1697096/000169709621000002/xslFormDX01/primary_doc.xml",
+          "title": "DroneUp January 2021 debt offering Form D amendment",
+          "source_type": "regulatory_filing",
+          "published_date": "2021-04-23"
+        },
+        {
+          "url": "https://corporate.walmart.com/news/2021/06/17/walmart-invests-in-droneup-the-nationwide-on-demand-drone-delivery-provider",
+          "title": "Walmart Invests in DroneUp",
+          "source_type": "investor_press_release",
+          "published_date": "2021-06-17"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1697096/000169709621000003/xslFormDX01/primary_doc.xml",
+          "title": "DroneUp November 2021 equity offering Form D",
+          "source_type": "regulatory_filing",
+          "published_date": "2021-11-22"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1697096/000169709622000001/primary_doc.xml",
+          "title": "DroneUp July 2022 Form D",
+          "source_type": "regulatory_filing",
+          "published_date": "2022-07-21"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1697096/000169709624000001/xslFormDX08/primary_doc.xml",
+          "title": "DroneUp January 2024 debt offering Form D",
+          "source_type": "regulatory_filing",
+          "published_date": "2024-01-05"
+        },
+        {
+          "url": "https://www.droneup.com/news/droneup-partners-utah-department-transportation-division-aeronautics-air-mobility",
+          "title": "DroneUp company background and Walmart investment",
+          "source_type": "company_news",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DroneUp raised the full USD 2 million target beginning in December 2019.",
+          "reason": "The Form D reported only USD 250,000 sold at filing; the remainder was an unsold target."
+        },
+        {
+          "claim": "DroneUp raised the full USD 1.5 million target beginning in July 2020.",
+          "reason": "The Form D reported USD 590,000 sold at filing."
+        },
+        {
+          "claim": "DroneUp raised USD 20 million in January 2024.",
+          "reason": "The Form D reported USD 950,000 sold and USD 19.05 million remaining."
+        },
+        {
+          "claim": "Walmart invested a specific amount or acquired a specified stake in June 2021.",
+          "reason": "Walmart disclosed the investment but not the amount, instrument or ownership percentage."
+        },
+        {
+          "claim": "DroneUp received USD 6.2 million in state and city grants.",
+          "reason": "Reviewed reporting described contingent economic-development awards tied to future benchmarks, not verified cash received by the issuer."
+        }
+      ]
+    },
+    {
+      "id": "6d12d8a6-98b2-4dd4-a0de-e1cde7fbb489",
+      "slug": "dronevia",
+      "name": "DroneVia",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The exact Swiss issuer is DroneVia Group SA, UID CHE-246.201.662, formerly DroneVia SAGL. The Swiss commercial-register publication dated 12 March 2026 records conversion from a GmbH/SAGL to an AG/SA under statutes dated 24 February 2026 and an increase of paid-up share capital from CHF 20,000 to CHF 100,000. The CHF 80,000 increment is the only dated issuer-level capital event located.",
+      "hold_note": "The publication states that shares were allotted to shareholders and that negative net assets were eliminated in the capital increase, but it does not map the new shares or cash/non-cash consideration to individual subscribers. Previously published shareholder holdings are therefore not assigned as participants in the 2026 increase. Current nominal capital is not treated as an additional CHF 100,000 round on top of the CHF 80,000 increment.",
+      "sources_checked": [
+        {
+          "url": "https://www.moneyhouse.ch/en/company/dronevia-group-sa-12638713791",
+          "title": "DroneVia Group SA commercial-register publications",
+          "source_type": "registry_aggregator",
+          "published_date": "2026-03-12"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The named pre-increase shareholders each subscribed to the 2026 capital increase in proportion to their earlier holdings.",
+          "reason": "The reviewed register publication does not allocate the new shares or consideration to individual subscribers."
+        },
+        {
+          "claim": "DroneVia raised CHF 100,000 in February 2026.",
+          "reason": "CHF 100,000 is the post-increase nominal capital; the disclosed increase was from CHF 20,000 to CHF 100,000, an CHF 80,000 increment."
+        }
+      ]
+    },
+    {
+      "id": "81b0788d-b427-4faf-9ed3-1ff7fb36e44b",
+      "slug": "dronexl",
+      "name": "DroneXL",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "DroneXL is a drone-news publication and brand owned by Kesteloo Ventures, LLC, according to DroneXL's official privacy policy. The reviewed public pages identify the publication and its ownership but do not disclose a standalone DroneXL issuer or an attributable financing round for Kesteloo Ventures, LLC.",
+      "hold_note": "Commercial advertising, affiliate revenue and newsroom activity are not investment financing. No public-source financing event was found, but this is not evidence that the owner has never received private funding.",
+      "sources_checked": [
+        {
+          "url": "https://dronexl.co/privacy-policy/",
+          "title": "DroneXL Privacy Policy",
+          "source_type": "company_legal",
+          "published_date": "2025-05-19"
+        },
+        {
+          "url": "https://dronexl.co/about-us/",
+          "title": "About DroneXL",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://dronexl.co/",
+          "title": "DroneXL official website",
+          "source_type": "company_website",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DroneXL has raised zero funding.",
+          "reason": "No public round was located, but absence of a public disclosure is not proof of zero financing."
+        },
+        {
+          "claim": "Advertising or affiliate relationships are DroneXL investors.",
+          "reason": "Commercial relationships are not financing evidence."
+        }
+      ]
+    },
+    {
+      "id": "82531419-151d-4ca7-b003-e1ed3146a2c3",
+      "slug": "drs-rada-technologies",
+      "name": "DRS RADA Technologies",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 1,
+      "evidence_note": "The catalogue identity continues RADA Electronic Industries Ltd., the Israeli radar issuer whose public financing history is documented under SEC CIK 761238. Confirmed primary-capital events include a USD 12.5 million registered direct offering completed in December 2018, an approximately USD 1.5 million private placement to DBSI in January 2019, a USD 25.3 million underwritten public offering closed in January 2020, and a USD 59.5125 million underwritten public offering closed in March 2021. RADA then completed an all-stock merger on 28 November 2022 and became a wholly owned subsidiary of Leonardo DRS; the merger consideration is not issuer financing.",
+      "hold_note": "Gross proceeds are recorded where the issuer disclosed both gross and net figures; fees are not subtracted from the event amount. Underwriters and bookrunners are not classified as investors. Historical warrant exercises and acquisition consideration are excluded from round normalization. The legal continuity is supported by the merger agreement and closing announcement, but the current DRS RADA Technologies brand is not treated as a separate issuer with duplicated financing history.",
+      "sources_checked": [
+        {
+          "url": "https://www.drsrada.com/blog/rada-raises-12-5-million-from-leading-israeli-institutional-investors",
+          "title": "RADA Raises $12.5 million from Leading Israeli Institutional Investors",
+          "source_type": "company_press_release",
+          "published_date": "2018-11-12"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/761238/000117891321000830/rada20f1220.htm",
+          "title": "RADA 2020 Form 20-F",
+          "source_type": "regulatory_filing",
+          "published_date": "2021-03-09"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/761238/000117891320000081/exhibit_99-1.htm",
+          "title": "RADA Announces Closing of 2020 Public Offering",
+          "source_type": "company_filing",
+          "published_date": "2020-01-10"
+        },
+        {
+          "url": "https://www.drsrada.com/blog/rada-announces-closing-of-public-offering-of-5175000-ordinary-shares",
+          "title": "RADA Announces Closing of Public Offering of 5,175,000 Ordinary Shares",
+          "source_type": "company_press_release",
+          "published_date": "2021-03-08"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/761238/000117891322001245/zk2227477.htm",
+          "title": "RADA 2021 Form 20-F",
+          "source_type": "regulatory_filing",
+          "published_date": "2022-03-24"
+        },
+        {
+          "url": "https://www.leonardodrs.com/news/press-releases/leonardo-drs-and-rada-agree-to-all-stock-merger-combining-top-defense-technology-companies-into-leader-in-advanced-sensing-and-force-protection/",
+          "title": "Leonardo DRS and RADA Agree to All-Stock Merger",
+          "source_type": "transaction_party_announcement",
+          "published_date": "2022-06-21"
+        },
+        {
+          "url": "https://www.leonardodrs.com/news/press-releases/leonardo-drs-announces-closing-of-merger-with-rada/",
+          "title": "Leonardo DRS Announces Closing of Merger with RADA",
+          "source_type": "transaction_party_announcement",
+          "published_date": "2022-11-28"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1833756/000162828022017550/drs-20220621.htm",
+          "title": "Leonardo DRS and RADA merger agreement filing",
+          "source_type": "regulatory_filing",
+          "published_date": "2022-06-21"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The 2022 all-stock merger amount was new funding received by RADA.",
+          "reason": "The transaction made RADA a wholly owned subsidiary and represents acquisition consideration, not issuer financing."
+        },
+        {
+          "claim": "Canaccord Genuity, Jefferies or Robert W. Baird invested in RADA's public offerings.",
+          "reason": "The sources identify them as underwriters/bookrunners, not principal investors."
+        },
+        {
+          "claim": "RADA received the net and gross proceeds as separate financings.",
+          "reason": "They describe the same offering before and after costs; only gross primary proceeds are normalized."
+        }
+      ]
+    },
+    {
+      "id": "c1bf17d1-2410-4340-83b7-efe85989d505",
+      "slug": "dryad-networks",
+      "name": "Dryad Networks",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 8,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Dryad Networks GmbH, the German environmental-IoT company. Official issuer, investor and funder sources verify a EUR 1.8 million seed round in October 2020; EUR 1.6 million of mixed ProFIT Brandenburg grants and low-interest loans in March 2021; a EUR 10.5 million Series A in August 2022; an amount-undisclosed TELUS Series A investment in July 2023; a EUR 5.6 million initial close of convertible financing in March 2024; a EUR 2.5 million First Imagine extension plus a separate EUR 3.8 million ERDF grant in October 2024; and a USD 800,000 XPRIZE Wildfire award in September 2026.",
+      "hold_note": "The 2021 ProFIT amount is explicitly a mix of non-refundable grants and low-interest loans, so it is not labelled grant-only. The March 2024 announcement described a EUR 5.6 million initial close toward an up-to-EUR 10 million target; only the closed amount is recorded. Dryad said the later First Imagine injection brought the convertible round's cumulative total to EUR 8.9 million, implying other capital beyond the named EUR 2.5 million injection; the unexplained EUR 0.8 million is not assigned or invented. The EUR 3.8 million ERDF grant is kept separate from the EUR 2.5 million investment despite a combined EUR 6.3 million headline.",
+      "sources_checked": [
+        {
+          "url": "https://www.dryad.net/post/dryad-networks-sets-out-plans-for-large-scale-iot-network-for-ultra-early-wildfire-detection",
+          "title": "Dryad secures EUR 1.8 million seed funding",
+          "source_type": "company_press_release",
+          "published_date": "2020-10-06"
+        },
+        {
+          "url": "https://www.dryad.net/post/dryad-networks-secures-additional-1-6m-funding-from-profit-brandenburg-to-accelerate-development",
+          "title": "Dryad secures additional EUR 1.6 million from ProFIT Brandenburg",
+          "source_type": "company_press_release",
+          "published_date": "2021-03-10"
+        },
+        {
+          "url": "https://www.dryad.net/post/dryad-closes-10-5m-in-series-a-funding-to-bring-ultra-early-wildfire-detection-to-global-market",
+          "title": "Dryad Closes EUR 10.5 million in Series A Funding",
+          "source_type": "company_press_release",
+          "published_date": "2022-08-23"
+        },
+        {
+          "url": "https://www.brandenburg-kapital.de/en/bk/news/newsdetailseite_160.html",
+          "title": "Brandenburg Kapital: Dryad receives fresh capital",
+          "source_type": "investor_press_release",
+          "published_date": "2022-08"
+        },
+        {
+          "url": "https://www.dryad.net/post/telus-pollinator-fund-invests-in-dryad-helping-to-combat-the-devastating-effects-of-wildfires",
+          "title": "TELUS Pollinator Fund invests in Dryad",
+          "source_type": "company_press_release",
+          "published_date": "2023-07-27"
+        },
+        {
+          "url": "https://www.telus.com/en/about/news-and-events/media-releases/telus-pollinator-fund-invests-in-dryad-networks-helping-to-combat-the-devastating-effects-of-wildfires",
+          "title": "TELUS Pollinator Fund invests in Dryad Networks",
+          "source_type": "investor_press_release",
+          "published_date": "2023-07-27"
+        },
+        {
+          "url": "https://www.dryad.net/post/dryad-networks-announces-initial-closing-of-5-6-million",
+          "title": "Dryad Announces Initial Closing of EUR 5.6 Million in Convertible Financing",
+          "source_type": "company_press_release",
+          "published_date": "2024-03-20"
+        },
+        {
+          "url": "https://www.dryad.net/post/dryad-networks-xprize-wildfire-suppression-eu-funding",
+          "title": "Dryad raises EUR 6.3 million across grant and investment",
+          "source_type": "company_press_release",
+          "published_date": "2024-10-22"
+        },
+        {
+          "url": "https://www.dryad.net/post/dryad-wins-international-xprize-wildfire-award-for-autonomous-wildfire-detection-and-suppression",
+          "title": "Dryad Wins International XPRIZE Wildfire Award",
+          "source_type": "company_press_release",
+          "published_date": "2026-09-23"
+        },
+        {
+          "url": "https://ventilator.xprize.org/news/xprize-wildfire-awardees",
+          "title": "XPRIZE Wildfire awardees",
+          "source_type": "funder_announcement",
+          "published_date": "2026-09-23"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Dryad received EUR 1.6 million entirely as a grant in March 2021.",
+          "reason": "Dryad explicitly described the ProFIT funding as a combination of grants and low-interest loans."
+        },
+        {
+          "claim": "Dryad closed EUR 10 million of convertible financing in March 2024.",
+          "reason": "EUR 10 million was the up-to target; the initial close was EUR 5.6 million."
+        },
+        {
+          "claim": "Dryad raised a single EUR 6.3 million equity round in October 2024.",
+          "reason": "The headline combines a EUR 3.8 million ERDF grant with a EUR 2.5 million First Imagine investment."
+        },
+        {
+          "claim": "The October 2024 EUR 8.9 million cumulative convertible total is an additional standalone round.",
+          "reason": "It is a cumulative total for the April/March convertible financing; recording it again would double count the initial close and extension."
+        },
+        {
+          "claim": "Dryad's reported EUR 22 million total raised is a separate financing event.",
+          "reason": "It is a cumulative company-history figure without a new closing disclosure."
+        }
+      ]
+    },
+    {
+      "id": "61146168-ae06-4733-b893-ab7fdbc80570",
+      "slug": "dsv",
+      "name": "DSV",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Danish listed company DSV A/S (named DSV Panalpina A/S from 2019 to 2021). Official issuer announcements verify direct DSV equity offerings of DKK 1.442 billion in 2009, DKK 5.0 billion in 2015 and DKK 37.3 billion in 2024, plus a direct EUR 500 million senior-unsecured Eurobond in 2020. The 2009 offering is the earliest direct issuer financing located in the bounded review and the 2024 equity offering is the latest. The 2024 completion announcement explicitly names six cornerstone participants whose aggregate commitments represented DKK 21 billion; individual final allocations were not disclosed.",
+      "hold_note": "The reviewed events are supported direct-issuer financings, not an assertion of exhaustive listed-company capital history. DSV's 2021-2024 Finance B.V. notes are excluded because the legal issuer was DSV Panalpina Finance B.V. or DSV Finance B.V., even where proceeds were applied within the DSV group.",
+      "sources_checked": [
+        {
+          "url": "https://investor.dsv.com/news-releases/news-release-details/dsv-327-completion-offering",
+          "title": "DSV, 327 - Completion of the offering",
+          "source_type": "company_announcement",
+          "published_date": "2009-04-30"
+        },
+        {
+          "url": "https://investor.dsv.com/news-releases/news-release-details/dsv-621-completion-offering",
+          "title": "DSV, 621 - Completion of the offering",
+          "source_type": "company_announcement",
+          "published_date": "2015-11-18"
+        },
+        {
+          "url": "https://investor.dsv.com/node/17311",
+          "title": "DSV, 820 - Successful EUR 500 million Eurobond issue",
+          "source_type": "company_announcement",
+          "published_date": "2020-02-21"
+        },
+        {
+          "url": "https://investor.dsv.com/node/24521",
+          "title": "DSV, 1137 - DSV A/S completes equity offering of 26.4 million new shares raising gross proceeds of DKK 37.3 billion",
+          "source_type": "company_announcement",
+          "published_date": "2024-10-04"
+        },
+        {
+          "url": "https://investor.dsv.com/shares-bonds/bond-information",
+          "title": "DSV bond information",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://investor.dsv.com/news-releases/news-release-details/dsv-1118-eur-500-million-eurobond-issue",
+          "title": "DSV, 1118 - EUR 500 million Eurobond issue",
+          "source_type": "company_announcement",
+          "published_date": "2024-06-26"
+        },
+        {
+          "url": "https://investor.dsv.com/news-releases/news-release-details/dsv-1142-eur-5-billion-eurobonds-issue",
+          "title": "DSV, 1142 - EUR 5 billion Eurobonds issue",
+          "source_type": "company_announcement",
+          "published_date": "2024-11-04"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DSV A/S directly issued EUR 500 million of notes in June 2024 and EUR 5 billion of notes in November 2024.",
+          "reason": "The official announcements and bond table identify DSV Finance B.V. as the legal issuer; group use of proceeds does not make DSV A/S the issuer."
+        },
+        {
+          "claim": "The six disclosed 2024 cornerstone commitment amounts equal their final allocations.",
+          "reason": "The completion announcement says the offering was oversubscribed and shares were allocated individually; it does not disclose final investor-by-investor allocations."
+        }
+      ]
+    },
+    {
+      "id": "3643dd5e-7232-41f9-ba7d-272bb9a267bb",
+      "slug": "dta-international",
+      "name": "DTA International",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Current consortium and company materials identify DTA International as DTA Group/Groupement DTA, an architecture, urban-planning and engineering firm. French registry records establish DTA INTERNATIONAL (SIREN 981 609 993) as a Marseille entity incorporated with EUR 15,000 of share capital, contributed in kind by Mohamed Amine Dhaouadi through the transfer of his architectural practice. This incorporation capital is the only event-level issuer capital disclosure located; no external venture, debt or grant round was verified.",
+      "hold_note": "Groupement DTA describes a broader international practice with operations predating the 2023 French entity. Public sources link the DTA International brand to DTA Group, but do not establish that every earlier Groupement DTA activity or obligation belongs to French SIREN 981 609 993. The 2025 conversion to SARL and share transfer did not change the disclosed EUR 15,000 capital and is not treated as a new financing.",
+      "sources_checked": [
+        {
+          "url": "https://www.pappers.fr/entreprise/dta-international-981609993",
+          "title": "DTA INTERNATIONAL (SIREN 981 609 993) registry profile",
+          "source_type": "official_registry"
+        },
+        {
+          "url": "https://www.pappers.fr/entreprise/dta-international-981609993/documents/DTA%20INTERNATIONAL%20-%20Copie%20des%20statuts%2016-11-2023.pdf",
+          "title": "DTA INTERNATIONAL incorporation statutes",
+          "source_type": "company_filing",
+          "published_date": "2023-11-16"
+        },
+        {
+          "url": "https://entreprises.lefigaro.fr/dta-international-13/entreprise-981609993",
+          "title": "DTA International legal notices and registry summary",
+          "source_type": "third_party_report"
+        },
+        {
+          "url": "https://innovitech.com/en/news/oman-launches-its-national-advanced-air-mobility-strategy-and-entrusts-its-development-to-the-international-consortium-guamobility/",
+          "title": "Oman launches its national advanced air mobility strategy and entrusts its development to GUAMobility",
+          "source_type": "transaction_party_announcement",
+          "published_date": "2026-07-08"
+        },
+        {
+          "url": "https://groupement-dta.com/",
+          "title": "Groupement DTA official website",
+          "source_type": "company_announcement"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DTA International raised EUR 15,000 of external cash financing.",
+          "reason": "The filed statutes identify the EUR 15,000 capital as an in-kind contribution of Mohamed Amine Dhaouadi's architectural practice, not an external cash round."
+        },
+        {
+          "claim": "Client project investment budgets displayed on Groupement DTA's portfolio pages were financing received by DTA International.",
+          "reason": "Those amounts are project investment budgets for client developments, not proceeds to the architecture/engineering issuer."
+        }
+      ]
+    },
+    {
+      "id": "b4457df5-960b-48e4-8f4a-b4fc7bd8e75f",
+      "slug": "dtsl",
+      "name": "DTSL",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue's United Kingdom drone-context identity appears to be a transposition of Dstl, the Defence Science and Technology Laboratory, which official UK sources identify as a Ministry of Defence executive agency conducting drone and autonomy work. The exact uppercase company name DTSL also belongs to unrelated entities, including active UK cable manufacturer DTSL UK Ltd (company 09270596) and a New Zealand ICT services company. No issuer-level financing can be safely attributed while the catalogue identity remains unresolved.",
+      "hold_note": "Identity resolution is required before importing any financing. If the intended identity is Dstl, it is a UK government executive agency funded through public budgets, not an SME issuer. If it is DTSL UK Ltd or another DTSL, the current drone-context match is unsupported.",
+      "sources_checked": [
+        {
+          "url": "https://www.gov.uk/government/organisations/defence-science-and-technology-laboratory",
+          "title": "Defence Science and Technology Laboratory",
+          "source_type": "government_announcement"
+        },
+        {
+          "url": "https://www.gov.uk/government/news/dstl-drone-swarm-accelerates-army-autonomy-ambition",
+          "title": "Dstl drone swarm accelerates Army autonomy ambition",
+          "source_type": "government_announcement",
+          "published_date": "2026-09-16"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/09270596",
+          "title": "DTSL UK LTD company overview",
+          "source_type": "official_registry"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/09270596/officers",
+          "title": "DTSL UK LTD people",
+          "source_type": "official_registry"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DTSL received the GBP 2.5 million third-stage Many Drones Make Light Work contract.",
+          "reason": "The public account identifies a Blue Bear Systems Research-led team as recipient; Dstl administered or funded the competition, and the catalogue identity is not resolved."
+        },
+        {
+          "claim": "DTSL UK Ltd is the drone-research entity represented by this catalogue row.",
+          "reason": "Companies House identifies DTSL UK Ltd as the former Diagnosys Test Systems UK Limited with cable-manufacturing activity; no drone continuity was found."
+        }
+      ]
+    },
+    {
+      "id": "6886830f-6734-4990-af28-6127b75212ac",
+      "slug": "dubai-aviation-engineering-projects",
+      "name": "Dubai Aviation Engineering Projects",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact identity is the Dubai Aviation Engineering Projects Corporation (DAEP/DAEPC), a public corporation established by Dubai Law No. 2 of 2012 with legal personality and financial and administrative autonomy. The law states that its resources include support allocated in the Dubai Aviation City Corporation budget, proceeds from its work and activities, and other resources approved by the President, but it discloses no event-level amount, date or instrument. No qualifying dated issuer financing was verified.",
+      "hold_note": "Government budget support is a recurring statutory funding mechanism, not a disclosed round. DAEP project-development budgets, airport investment announcements and contractor awards must not be imported as financing to DAEP unless a source establishes DAEP as the actual recipient and states an event-level amount.",
+      "sources_checked": [
+        {
+          "url": "https://dlp.dubai.gov.ae/Legislation%20Reference/2012/Law%20No.%20%282%29%20of%202012.html",
+          "title": "Law No. (2) of 2012 Establishing the Dubai Aviation Engineering Projects Corporation",
+          "source_type": "government_database",
+          "published_date": "2012-03-29"
+        },
+        {
+          "url": "https://daep.gov.ae/en/faqs",
+          "title": "Dubai Aviation Engineering Projects FAQs",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.daep.gov.ae/who-we-are",
+          "title": "Dubai Aviation Engineering Projects - Who We Are",
+          "source_type": "company_announcement"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Dubai airport expansion or Al Maktoum International project budgets are financing raised by DAEP.",
+          "reason": "DAEP acts as the Government of Dubai's aviation engineering and project-development corporation; project investment budgets are not issuer proceeds absent explicit recipient evidence."
+        },
+        {
+          "claim": "DAEP has zero funding.",
+          "reason": "The establishing law expressly provides for DACC budget support and operating proceeds but does not disclose event-level amounts."
+        }
+      ]
+    },
+    {
+      "id": "6ccb9f2f-967d-4a02-9ef4-cfcfb9236223",
+      "slug": "duke-university",
+      "name": "Duke University",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Duke and U.S. government sources verify two directly attributable UAV-related awards with public amounts in the bounded review. A 2023 Office of Naval Research Young Investigator award provided USD 450,000 for Duke professor Leila Bridgeman's work on robust distributed control for aerial vehicles; ONR's programme rules state awards are made to institutions. In September 2026 Duke University received a USD 24 million, six-year U.S. Army DEVCOM Army Research Office cooperative agreement to lead the ICE-CEM counter-UAS center. The 2023 award is the earliest amount-supported direct award located and the 2026 agreement is the latest.",
+      "hold_note": "Duke receives many research awards across unrelated fields. This review is limited to direct, publicly amount-supported UAV and autonomous-vehicle awards relevant to the catalogue identity. Several Duke Scholars UAS project records name grantors but omit amounts and are retained only as source candidates, not normalized events. The USD 24 million center includes seven partner universities and Lockheed Martin; Duke is the explicitly named award recipient, but subaward allocations are not public.",
+      "sources_checked": [
+        {
+          "url": "https://pratt.duke.edu/news/bridgeman-onr-young-investigator/",
+          "title": "Bridgeman Wins Office of Naval Research Young Investigator Award",
+          "source_type": "company_announcement",
+          "published_date": "2023-02-02"
+        },
+        {
+          "url": "https://www.onr.navy.mil/2023-young-investigators",
+          "title": "2023 Young Investigator Award Recipients",
+          "source_type": "government_announcement"
+        },
+        {
+          "url": "https://www.onr.navy.mil/education-outreach/sponsored-research/yip",
+          "title": "Office of Naval Research Young Investigator Program",
+          "source_type": "government_announcement"
+        },
+        {
+          "url": "https://pratt.duke.edu/news/duke-ice-cem-center-announcement/",
+          "title": "Duke to Lead $24M Army Research Center to Detect, Thwart and Control Enemy Drones",
+          "source_type": "company_announcement",
+          "published_date": "2026-09-02"
+        },
+        {
+          "url": "https://scholars.duke.edu/person/david.johnston/research",
+          "title": "David William Johnston - Selected Grants",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://scholars.duke.edu/grant/310058",
+          "title": "Persistent Airborne Counter Unmanned Aerial System Surveillance",
+          "source_type": "company_announcement"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Each ICE-CEM partner received an equal share of the USD 24 million award.",
+          "reason": "The Duke announcement identifies a Duke University award and lists center partners but does not disclose subaward or partner allocations."
+        },
+        {
+          "claim": "UAS-related Duke Scholars grant records with blank amounts represent zero-value awards.",
+          "reason": "Those records establish projects and grantors but not public award amounts; blank fields are not evidence of zero."
+        }
+      ]
+    },
+    {
+      "id": "71d33b80-b67f-469f-986a-db09074b23fb",
+      "slug": "dutch-naval-design",
+      "name": "Dutch Naval Design",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Dutch Naval Design's official site and Dutch Ministry of Defence sources identify DND as a collaborative ecosystem/partnership among the Ministry of Defence, maritime industry and knowledge institutes, not a separable SME issuer. In April 2024 Defence and DND signed an unmanned-surface-vessel development contract; later official reporting identifies the delivery body as a 12-member USV Alliance led by De Haas Shipyards. No amount was disclosed for that contract and no event-level financing to a DND legal entity was verified.",
+      "hold_note": "The catalogue row needs entity-type correction or legal-recipient resolution before financing can be imported. Public programme spending 'in the field of Dutch Naval Design' and project-wide procurement bands support a maritime innovation ecosystem; they do not establish that an entity named Dutch Naval Design received the full amount.",
+      "sources_checked": [
+        {
+          "url": "https://dutchnavaldesign.nl/",
+          "title": "Dutch Naval Design official website",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.defensie.nl/actueel/nieuws/2024/04/12/defensie-en-dutch-naval-design-samen-in-zee-voor-onbemand-vaartuig",
+          "title": "Defensie en Dutch Naval Design samen in zee voor onbemand vaartuig",
+          "source_type": "government_announcement",
+          "published_date": "2024-04-12"
+        },
+        {
+          "url": "https://www.defensie.nl/magazines/materieelgezien/2026/editie-6/usv-van-nederlandse-bodem",
+          "title": "Bijzondere samenwerking met maritieme bedrijven",
+          "source_type": "government_announcement",
+          "published_date": "2026-09-01"
+        },
+        {
+          "url": "https://www.defensie.nl/nieuws/20260729-ontwerp-onbemenste-vaartuigen-voor-nieuwe-asw-fregatten-van-start",
+          "title": "Ontwerp onbemenste vaartuigen voor nieuwe ASW-fregatten van start",
+          "source_type": "government_announcement",
+          "published_date": "2026-07-29"
+        },
+        {
+          "url": "https://zoek.officielebekendmakingen.nl/kst-31409-481.html",
+          "title": "Voortgangsrapportage Sectoragenda Maritieme Maakindustrie",
+          "source_type": "government_database",
+          "published_date": "2025-04-22"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Dutch Naval Design received EUR 7.8 million in 2024.",
+          "reason": "The Dutch government report says the Ministry of Defence spent EUR 7.8 million through a maritime innovation scheme in the field of Dutch Naval Design; it does not identify DND as a single recipient or allocate the programme amount among projects and participants."
+        },
+        {
+          "claim": "The EUR 50-250 million procurement band for unmanned ASW vessels is financing raised by Dutch Naval Design.",
+          "reason": "That figure is a broad Dutch Defence project investment range, much of it long-term sustainment, not proceeds to a DND issuer."
+        },
+        {
+          "claim": "The April 2024 USV development contract is a disclosed funding round for Dutch Naval Design.",
+          "reason": "The official announcement provides no contract value, and later reporting identifies a multi-party consortium led by De Haas Shipyards rather than a distinct DND corporate recipient."
+        }
+      ]
+    },
+    {
+      "id": "cf2317b2-c876-49cb-af40-4659d22e489b",
+      "slug": "dymstec",
+      "name": "Dymstec",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The reviewed identity is the Korean counter-UAS and RF-security company DYMSTEC CO., LTD. The official product site presents a business history beginning in 1995, while a Gyeonggi-do company record identifies the present legal company, business registration number 129-86-78948, as established on 2 January 2013. A 2024 business report states that Dymstec signed an export-demonstration support agreement with the Korea Research Institute for Defense Technology Planning and Advancement, but no recipient-specific award amount or financing instrument was disclosed. No event-level external equity, debt or quantified grant financing was located in the bounded review as of 2026-11-12.",
+      "hold_note": "The 1995 brand/business-history date and 2013 legal-company establishment date require continuity reconciliation before older activity can be attributed to the current corporation. The December 2024 support agreement is not entered as a grant because the reviewed disclosure does not state the award amount, exact instrument or payment terms. National R&D project counts from commercial aggregators are discovery leads, not verified financing events.",
+      "sources_checked": [
+        {
+          "url": "https://dymstec-antidrone.com/about/",
+          "title": "About Dymstec",
+          "source_type": "company_about",
+          "published_date": null
+        },
+        {
+          "url": "https://job.gg.go.kr/empmn/desEntDtl.do?bizrno=1298678948",
+          "title": "DYMSTEC CO., LTD. company profile",
+          "source_type": "government_database",
+          "published_date": null
+        },
+        {
+          "url": "https://www.dapa.go.kr/dapa/doc/selectDoc.do?bbsSeq=326&docSeq=11110&menuSeq=3069",
+          "title": "Defense Acquisition Program Administration visit to Dymstec",
+          "source_type": "government_announcement",
+          "published_date": "2020-08-12"
+        },
+        {
+          "url": "https://www.mk.co.kr/news/business/11203494",
+          "title": "Dymstec selected for overseas performance demonstration support",
+          "source_type": "news_media",
+          "published_date": "2024-12-26"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Dymstec was incorporated in 1995.",
+          "reason": "The official brand site uses 1995 as its founding/history date, but the reviewed Korean company record gives 2 January 2013 for the present legal company; exact corporate continuity was not established."
+        },
+        {
+          "claim": "The 2024 export-demonstration agreement was a quantified grant to Dymstec.",
+          "reason": "The report establishes selection and an agreement but does not disclose a recipient-specific amount, exact instrument or payment terms."
+        },
+        {
+          "claim": "Dymstec has raised zero funding.",
+          "reason": "No qualifying disclosed event was located, but source absence and empty database fields are not evidence of zero or of no undisclosed financing."
+        }
+      ]
+    },
+    {
+      "id": "d5566e68-d377-40b1-a6e1-2c34a3baa94a",
+      "slug": "dynamit-nobel-defence",
+      "name": "Dynamit Nobel Defence",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact German defence-company identity is Dynamit Nobel GmbH, trading as Dynamit Nobel Defence and described by Diehl Defence as the successor to Dynamit Nobel Explosivstoff- und Systemtechnik GmbH. Diehl Defence states that it acquired Dynamit Nobel GmbH in a 2024 share deal including all operations, employees and assets. No consideration was disclosed and the transaction is ownership transfer rather than issuer financing. No event-level external equity, debt or grant financing for the exact issuer was located in the reviewed sources as of 2026-11-12.",
+      "hold_note": "Historic transactions involving the broader Dynamit Nobel group, Albemarle or specialty-chemicals assets must not be attributed to this exact defence issuer without entity-level continuity and proceeds evidence. The 2024 share-deal price was undisclosed and no primary-capital component was identified.",
+      "sources_checked": [
+        {
+          "url": "https://dn-defence.com/",
+          "title": "Dynamit Nobel Defence",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://new.diehl.com/defence/en/press-media/news/dynitec-location-in-troisdorf-secured-for-the-long-term",
+          "title": "DynITEC location in Troisdorf secured for the long term",
+          "source_type": "parent_company_announcement",
+          "published_date": "2024-11-14"
+        },
+        {
+          "url": "https://newsroom.manda.co/kpmg-law-and-kpmg-advise-diehl-defence-on-the-acquisition-of-dynamit-nobel/",
+          "title": "KPMG Law and KPMG advise Diehl Defence on the acquisition of Dynamit Nobel",
+          "source_type": "transaction_adviser",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Diehl's 2024 purchase price was financing received by Dynamit Nobel Defence.",
+          "reason": "The acquisition was a share deal and the reviewed sources do not identify any primary capital paid to the issuer."
+        },
+        {
+          "claim": "Parent-level or historic Dynamit Nobel group transactions financed the current defence company.",
+          "reason": "The reviewed disclosures do not establish recipient-level proceeds for Dynamit Nobel GmbH."
+        },
+        {
+          "claim": "Dynamit Nobel Defence has raised zero funding.",
+          "reason": "No qualifying public event was located, but absence from reviewed sources is not proof of zero or undisclosed financing."
+        }
+      ]
+    },
+    {
+      "id": "1a79dd9b-0d2b-44a8-a5e9-d94081ba4940",
+      "slug": "dynetics",
+      "name": "Dynetics",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact issuer is Dynetics, Inc., the U.S. engineering and defence-technology company acquired by Leidos Holdings, Inc. Leidos completed the acquisition on 31 January 2020 for approximately USD 1.65 billion in cash and states that Dynetics became a wholly owned subsidiary. Leidos funded the purchase with its own cash and USD 1.25 billion of short-term borrowing; those funds and the acquisition consideration are not Dynetics issuer financing. No separate event-level equity, debt or grant financing for Dynetics was located in the reviewed sources as of 2026-11-12.",
+      "hold_note": "The USD 1.65 billion purchase price and Leidos's USD 1.25 billion acquisition borrowing must remain excluded from Dynetics funding totals. The Leidos filing mentions repayment of Dynetics debt in acquisition accounting, but does not establish a qualifying public financing event with sufficient original terms for this issuer.",
+      "sources_checked": [
+        {
+          "url": "https://www.leidos.com/insights/leidos-completes-acquisition-dynetics-expanding-companys-portfolio-new-offerings",
+          "title": "Leidos completes acquisition of Dynetics, expanding company's portfolio with new offerings",
+          "source_type": "parent_company_announcement",
+          "published_date": "2020-01-31"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1336920/000133692020000038/ldos-20200403.htm",
+          "title": "Leidos Holdings, Inc. quarterly report for the period ended 3 April 2020",
+          "source_type": "regulatory_filing",
+          "published_date": "2020-05-05"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Dynetics raised USD 1.65 billion in January 2020.",
+          "reason": "USD 1.65 billion was acquisition consideration paid by Leidos, not a disclosed primary financing round received by Dynetics."
+        },
+        {
+          "claim": "Leidos's USD 1.25 billion short-term borrowing was Dynetics debt financing.",
+          "reason": "Leidos expressly identifies the borrowing as purchaser funding for the acquisition."
+        },
+        {
+          "claim": "Dynetics has raised zero funding.",
+          "reason": "No qualifying public event was located, but source absence is not a verified lifetime zero-funding conclusion."
+        }
+      ]
+    },
+    {
+      "id": "472af1ef-186a-4e07-8d40-dd7e5e913329",
+      "slug": "dyzne",
+      "name": "DYZNE",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue's DYZNE row uses dzyne.com, the same official website and brand as the separate DZYNE Technologies row. First-party and U.S. government records identify the legal issuer as DZYNE Technologies, LLC; no separate legal issuer spelled DYZNE was established. To prevent duplicated rounds or ownership, no financing event or relationship is attached to this likely misspelled duplicate identity.",
+      "hold_note": "Resolve this row as a catalogue identity duplicate of DZYNE Technologies before publication or import. Until that disposition is confirmed, all event-level facts remain only on the correctly spelled DZYNE Technologies identity and must not be copied here.",
+      "sources_checked": [
+        {
+          "url": "https://dzyne.com/about/",
+          "title": "About DZYNE Technologies",
+          "source_type": "company_about",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/406214",
+          "title": "DZYNE TECHNOLOGIES, LLC portfolio",
+          "source_type": "official_grant_database",
+          "published_date": null
+        },
+        {
+          "url": "https://dzyne.com/ondas-announces-transformative-acquisition-of-dzyne-technologies-establishing-the-leading-autonomous-defense-platform-spanning-persistent-intelligence-aerial-security-and-autonomous-effects/",
+          "title": "Ondas announces transformative acquisition of DZYNE Technologies",
+          "source_type": "company_announcement",
+          "published_date": "2026-07-06"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DYZNE and DZYNE Technologies are separate financed issuers.",
+          "reason": "Both catalogue rows use the same official website, while first-party and government records identify only DZYNE Technologies, LLC as the legal recipient."
+        },
+        {
+          "claim": "Financing events verified for DZYNE Technologies should be duplicated on DYZNE.",
+          "reason": "Doing so would double-count one economic and legal issuer."
+        }
+      ]
+    },
+    {
+      "id": "55a64c10-3080-4964-b537-38847e613655",
+      "slug": "dzp-group",
+      "name": "DZP Group",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The reviewed operating identity is the professional-diving and tactical-equipment group branded DZP Group / De Zeeman Pro, founded in 1976. Its own materials describe a Belgian-headquartered group with European branches, including France; a registry-derived company profile identifies the Belgian parent as DZP Group SA, enterprise number 0452.343.563. No event-level external equity, debt or grant financing for the exact group or its French branch was located in the bounded public-source review as of 2026-11-12.",
+      "hold_note": "The catalogue row is associated with France, while the available corporate evidence points to a Belgian parent with a French operating branch. Legal-recipient resolution is required before any future financing can be assigned. Group financing must not be inferred from a branch or vice versa.",
+      "sources_checked": [
+        {
+          "url": "https://dezeeman.fr/a-propos-de-nous/",
+          "title": "About us - De Zeeman France",
+          "source_type": "company_about",
+          "published_date": null
+        },
+        {
+          "url": "https://www.dzptactic.com/about/",
+          "title": "About DZP Tactic",
+          "source_type": "company_about",
+          "published_date": null
+        },
+        {
+          "url": "https://www.travaux-sous-marins.com/de-zeeman-france/",
+          "title": "De Zeeman France - DZP Group France",
+          "source_type": "trade_directory",
+          "published_date": null
+        },
+        {
+          "url": "https://amlcompany.com/fr-be/entreprises/0452343563-dzp-group",
+          "title": "DZP Group SA company profile",
+          "source_type": "registry_aggregator",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The French branch is the same legal issuer as Belgian DZP Group SA.",
+          "reason": "The reviewed sources establish an operating relationship but do not provide a complete official legal-entity chain for the French catalogue row."
+        },
+        {
+          "claim": "DZP Group has raised zero funding.",
+          "reason": "No disclosed financing event was located, but absence from reviewed sources does not establish a lifetime zero-funding fact."
+        }
+      ]
+    },
+    {
+      "id": "c755ac11-25ff-48f0-a196-50886a22b48e",
+      "slug": "dzyne-technologies",
+      "name": "DZYNE Technologies",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "The exact legal recipient is DZYNE Technologies, LLC, confirmed by the official U.S. SBIR portfolio under UEI H5CDSXZGE983. The government portfolio reports 16 Phase I and 26 Phase II awards with cumulative values of USD 2,587,915 and USD 43,468,391 respectively, but those aggregates are not treated as one round. One event-level Phase II award is normalized below: contract HR001123C0049 for USD 1,499,939, starting 3 February 2023. DZYNE was acquired by Highlander Partners in January 2023 and subsequently acquired by Ondas in July 2026; acquisition consideration is not issuer financing.",
+      "hold_note": "The SBIR portfolio contains 42 awards and requires award-by-award reconciliation before its cumulative USD 46,056,306 can be represented completely. Only the individually verified award below is imported. The USD 875.8 million Ondas acquisition value and the undisclosed Highlander acquisition are ownership transactions, not primary capital. The separate catalogue row spelled DYZNE is the same apparent issuer and must not receive duplicated events.",
+      "sources_checked": [
+        {
+          "url": "https://dzyne.com/about/",
+          "title": "About DZYNE Technologies",
+          "source_type": "company_about",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/406214",
+          "title": "DZYNE TECHNOLOGIES, LLC portfolio",
+          "source_type": "official_grant_database",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sbir.gov/awards/207499",
+          "title": "Inexpensive Long Endurance Drone - SBIR Phase II award HR001123C0049",
+          "source_type": "official_grant_database",
+          "published_date": null
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/highlander-partners-announces-the-acquisition-of-dzyne-technologies-a-leading-designer-and-developer-of-advanced-unmanned-aircraft-systems-301714068.html",
+          "title": "Highlander Partners announces the acquisition of DZYNE Technologies",
+          "source_type": "investor_announcement",
+          "published_date": "2023-01-05"
+        },
+        {
+          "url": "https://hl.com/about-us/transactions/houlihan-lokey-advises-dzyne-technologies/",
+          "title": "Houlihan Lokey advises DZYNE Technologies",
+          "source_type": "transaction_adviser",
+          "published_date": null
+        },
+        {
+          "url": "https://dzyne.com/ondas-announces-transformative-acquisition-of-dzyne-technologies-establishing-the-leading-autonomous-defense-platform-spanning-persistent-intelligence-aerial-security-and-autonomous-effects/",
+          "title": "Ondas announces transformative acquisition of DZYNE Technologies",
+          "source_type": "company_announcement",
+          "published_date": "2026-07-06"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DZYNE received one USD 46,056,306 grant round.",
+          "reason": "The official portfolio value is the cumulative total of 42 Phase I and Phase II awards, not one event."
+        },
+        {
+          "claim": "The USD 875.8 million Ondas acquisition value was funding raised by DZYNE.",
+          "reason": "The disclosed value is cash-and-stock acquisition consideration for ownership, not a stated primary-capital investment into the issuer."
+        },
+        {
+          "claim": "Highlander Partners' January 2023 acquisition was a financing round with undisclosed primary proceeds.",
+          "reason": "The sources establish an ownership acquisition but do not identify primary capital paid to DZYNE."
+        },
+        {
+          "claim": "The DYZNE catalogue row represents a separate financed company.",
+          "reason": "Both rows use dzyne.com and the verified legal recipient is DZYNE Technologies, LLC."
+        }
+      ]
+    },
+    {
+      "id": "ac18d4af-3089-4537-bb84-6431d3367b0a",
+      "slug": "e-flight-academy",
+      "name": "E-Flight Academy",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "E-Flight Academy is the electric-flight-school operating brand at Teuge and says it was founded in May 2021. A well-publicised December 2023 crowdfunding campaign was promoted jointly with E-Deck, but the legally required campaign information identifies E-Deck B.V. (LEI 724500KAKWI90IHU2563), not E-Flight Academy, as the issuer and borrower. The campaign was a loan with a EUR 400,000 minimum target and public reports say the target was passed, but neither those proceeds nor the separate Triodos project page can be assigned to E-Flight Academy without a recipient legal entity and transaction terms.",
+      "hold_note": "No verified financing event is imported. Resolution requires the legal entity behind the E-Flight Academy brand and primary documentation showing whether it, rather than E-Deck B.V., received any crowdfunding or Triodos financing. Empty rounds do not mean zero funding.",
+      "sources_checked": [
+        {
+          "url": "https://www.eflight.nl/en/pages/vacancies",
+          "title": "E-Flight Academy — Vacancies and company history",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://app.triodos.nl/projecten/eflight-academy",
+          "title": "E-Flight Academy — Triodos project page",
+          "source_type": "lender_project_page",
+          "published_date": null
+        },
+        {
+          "url": "https://crowdaboutnow.nl/campagnes/vliegenopdezon",
+          "title": "E-Deck Vliegen op de Zon!",
+          "source_type": "crowdfunding_platform",
+          "published_date": "2023-12"
+        },
+        {
+          "url": "https://assets.crowdaboutnow.nl/images/campinfo/2373/downloads/EBI-Lening-E-Deck-CrowdAboutNow-2023.pdf",
+          "title": "Essential Investment Information — E-Deck B.V. Vliegen op de zon",
+          "source_type": "regulatory_filing",
+          "published_date": "2023"
+        },
+        {
+          "url": "https://www.eflight.nl/de/blogs/e-flug-bekanntmachungen/crowdfunding-fliegen-in-die-sonne-holt-innerhalb-von-10-tagen-4-ton-auf",
+          "title": "Crowdfunding Vliegen op de Zon raises more than EUR 400,000 within ten days",
+          "source_type": "company_announcement",
+          "published_date": "2023-12"
+        },
+        {
+          "url": "https://nederlandelektrisch.nl/actueel/nieuwsoverzicht/i2491/video-van-de-week-crowdfunding-voor-eerste-elektrische-vliegschool-ter-wereld",
+          "title": "Crowdfunding for the first electric flight school passes EUR 400,000 target",
+          "source_type": "third_party_report",
+          "published_date": "2023-12"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "E-Flight Academy raised EUR 400,000 in a 2023 crowdfunding round.",
+          "reason": "The primary campaign disclosure names E-Deck B.V. as the borrower and the EUR 400,000 figure as a minimum target; publicity naming the academy does not establish it as legal recipient or allocate proceeds to it."
+        },
+        {
+          "claim": "The Triodos project page proves a discrete E-Flight Academy financing round.",
+          "reason": "The reviewed page gives a project profile but no amount, date, instrument or borrower legal entity suitable for an event record."
+        },
+        {
+          "claim": "E-Flight Academy has USD 660,000 of verified funding.",
+          "reason": "The figure appears only in an unsourced startup aggregator and conflicts with the exact-issuer evidence."
+        }
+      ]
+    },
+    {
+      "id": "6f545848-db03-414d-8989-348e42e2cfa5",
+      "slug": "eads-now-airbus-defence-and-space",
+      "name": "EADS (now Airbus Defence and Space)",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue label conflates a former listed parent company with a current business division. Airbus states that EADS was formed in 2000, was renamed Airbus Group in January 2014, and was ultimately renamed Airbus SE; at the same 2014 reorganisation, the former Space, Defence and Military Transport Aircraft units were combined into the business unit later called Airbus Defence and Space. EADS therefore did not simply become the Airbus Defence and Space division. Capital-market and shareholder transactions of EADS/Airbus SE belong to the parent issuer, not automatically to the division represented by the catalogue URL.",
+      "hold_note": "No financing or ownership record is imported because the row needs an identity decision: either map it to the legal parent Airbus SE and retain parent capital history, or map it to the Airbus Defence and Space division and exclude parent financing unless specifically allocated. Empty rounds do not mean zero funding.",
+      "sources_checked": [
+        {
+          "url": "https://www.airbus.com/en/newsroom/stories/2025-07-a-daring-vision-takes-flight-25-years-of-airbus-as-an-integrated-company",
+          "title": "A daring vision takes flight: 25 years of Airbus as an integrated company",
+          "source_type": "company_announcement",
+          "published_date": "2025-07-10"
+        },
+        {
+          "url": "https://www.airbus.com/en/investors/share-price-and-information",
+          "title": "Airbus share price and listing history",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://www.airbus.com/en/about-us/our-history",
+          "title": "Airbus history",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://www.airbus.com/sites/g/files/jlcbta136/files/2021-06/airbus-group-information-notice_evf-2014.pdf",
+          "title": "Airbus Group 2014 information notice",
+          "source_type": "company_filing",
+          "published_date": "2014"
+        },
+        {
+          "url": "https://www.airbus.com/en/newsroom/press-releases/2012-12-ad-hoc-release-5-december-2012-eads-governance-and-shareholding",
+          "title": "EADS governance and shareholding overhaul",
+          "source_type": "company_announcement",
+          "published_date": "2012-12-05"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EADS was renamed Airbus Defence and Space.",
+          "reason": "Official Airbus history says EADS was renamed Airbus Group, while Airbus Defence and Space was formed as a business unit by combining several former EADS divisions."
+        },
+        {
+          "claim": "EADS/Airbus SE public offerings, share buybacks or state shareholdings are financing of Airbus Defence and Space.",
+          "reason": "Those transactions concern the listed parent issuer; no reviewed source allocates them to the division."
+        },
+        {
+          "claim": "The 2000 creation of EADS was a financing round of the current Airbus Defence and Space division.",
+          "reason": "It was a transnational merger and listing of the parent company, not an investment into the later-created division."
+        }
+      ]
+    },
+    {
+      "id": "5c37a85b-95d8-4a01-b5b6-087b38526ff8",
+      "slug": "eagle-eye-innovations",
+      "name": "Eagle Eye Innovations",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Eagle Eye Innovations, the Lincoln-based drone training, operations and consultancy company founded in 2013, announced an amount-undisclosed investment from UK private-equity investor LDC on 2026-02-10. LDC's transaction page classifies the transaction as a management buyout and says it backed the existing management team. Transaction advisers and diligence providers independently corroborate the deal. No earlier public financing with sufficient issuer, amount/instrument and date evidence was located in the bounded review.",
+      "hold_note": "The purchase price, primary-versus-secondary split, ownership percentage, valuation and any debt package were not disclosed and must remain unknown. LDC is recorded as a participant, not a lead investor, because 'led by LDC's team' refers to its internal deal team rather than a syndicate role.",
+      "sources_checked": [
+        {
+          "url": "https://eeinnovationsltd.com/",
+          "title": "Eagle Eye Innovations",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://www.ldc.co.uk/news/eagle-eye-secures-investment-ldc/",
+          "title": "Eagle Eye Innovations secures investment from LDC to accelerate expansion plans",
+          "source_type": "transaction_party_announcement",
+          "published_date": "2026-02-10"
+        },
+        {
+          "url": "https://www.ldc.co.uk/portfolio/eagle-eye-innovations-scaling-drone-services/",
+          "title": "Eagle Eye Innovations: scaling drone services",
+          "source_type": "investor_portfolio",
+          "published_date": "2026-02"
+        },
+        {
+          "url": "https://www.freeths.co.uk/insights-events/press-releases/2026/freeths-supports-ldc-on-its-investment-in-eagle-eye-innovations/",
+          "title": "Freeths supports LDC on its investment in Eagle Eye Innovations",
+          "source_type": "transaction_adviser",
+          "published_date": "2026"
+        },
+        {
+          "url": "https://www.bdo.co.uk/en-gb/deals/investment-of-eagle-eye-innovations-by-ldc",
+          "title": "Investment in Eagle Eye Innovations by LDC",
+          "source_type": "transaction_adviser",
+          "published_date": "2026"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "LDC disclosed the amount or acquired a known percentage of Eagle Eye Innovations.",
+          "reason": "No reviewed investor or adviser announcement states consideration, proceeds, valuation, stake percentage or a primary/secondary split."
+        },
+        {
+          "claim": "LDC led a multi-investor financing syndicate.",
+          "reason": "The announcement says the investment was led by named members of LDC's internal regional team; it does not identify a funding syndicate."
+        }
+      ]
+    },
+    {
+      "id": "bcda9a19-f8a1-4bb7-b456-8b3a8213f34d",
+      "slug": "eaglenxt",
+      "name": "EagleNXT",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 8,
+      "relationship_count": 0,
+      "evidence_note": "EagleNXT is legal continuity of AgEagle Aerial Systems Inc., not a newly funded successor: the Nevada public company adopted the EagleNXT brand in 2025 while SEC filings continue under the same CIK 8504. The reviewed filings support a history including a USD 6.375 million registered direct agreement in January 2021, Alpha Capital Anstalt's USD 10 million Series F convertible preferred purchase and USD 3.5 million original-issue-discount note in 2022, the approximately USD 6.5 million October 2024 public offering, and later Series F AIR exercises. The latest transaction-specific inbound financing located is Alpha's 2026-05-27 USD 500,000 Series F purchase.",
+      "hold_note": "The six-month 2026 filing reports USD 8.25 million of net Series F and Series G proceeds in aggregate, but the Series G cash events are not sufficiently disaggregated by date and instrument in the reviewed passages. The November 2025 Series G framework includes future additional-investment rights and is not treated as a fully funded USD 100 million round. Public-offering purchasers other than explicitly named Alpha remain undisclosed.",
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/8504/000143774926010682/uavs20251231_10k.htm",
+          "title": "EagleNXT 2025 Form 10-K",
+          "source_type": "regulatory_filing",
+          "published_date": "2026"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/8504/000143774926028026/uavs20260630_10q.htm",
+          "title": "EagleNXT Form 10-Q for the six months ended June 30, 2026",
+          "source_type": "regulatory_filing",
+          "published_date": "2026"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/8504/000157570521000004/ex99_1.htm",
+          "title": "AgEagle announces USD 6.375 million registered direct offering",
+          "source_type": "company_announcement",
+          "published_date": "2021-01-04"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/8504/000165495423006392/uavs_10q.htm",
+          "title": "AgEagle 2023 Form 10-Q describing the June 2022 Series F closing",
+          "source_type": "regulatory_filing",
+          "published_date": "2023"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/8504/000190359622000886/ex10_2.htm",
+          "title": "USD 3.5 million 8% original issue discount promissory note to Alpha Capital Anstalt",
+          "source_type": "regulatory_filing",
+          "published_date": "2022-12-06"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/8504/000149315224039093/ex99-1.htm",
+          "title": "AgEagle closes public offering",
+          "source_type": "company_announcement",
+          "published_date": "2024-10-01"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/8504/000164117225006435/form424b7.htm",
+          "title": "AgEagle prospectus for Series F shares sold in December 2024 and February 2025",
+          "source_type": "regulatory_filing",
+          "published_date": "2025"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EagleNXT is a separate issuer from AgEagle Aerial Systems Inc.",
+          "reason": "SEC filings identify EagleNXT as the current brand of the same Nevada corporation and retain the same CIK."
+        },
+        {
+          "claim": "The November 2025 Series G agreement was a fully funded USD 100 million round.",
+          "reason": "The agreement separated initial preferred shares from conditional additional-investment rights; future capacity and undrawn rights are not closed proceeds."
+        },
+        {
+          "claim": "EagleNXT raised a single USD 8.25 million round in the first half of 2026.",
+          "reason": "The figure is an aggregate net-proceeds total across multiple Series F and Series G issuances, not one dated transaction."
+        },
+        {
+          "claim": "Spartan Capital Securities was an investor in the October 2024 public offering.",
+          "reason": "It acted as placement agent, not as a disclosed capital provider."
+        },
+        {
+          "claim": "EagleNXT's investments into ThirdEye USA, Aerodrome or Agilis were inbound financing.",
+          "reason": "Those are outbound strategic investments or joint-venture activity by EagleNXT."
+        }
+      ]
+    },
+    {
+      "id": "6c4e4679-b3b1-4f55-855e-fed57bcdd7c5",
+      "slug": "easy-aerial",
+      "name": "Easy Aerial",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Easy Aerial Inc. is the Brooklyn-founded autonomous aerial-systems company. A company release records a closed USD 6.15 million Series A on 2020-08-25 and says unnamed seed rounds totalled USD 4.75 million during 2017-2019. The latest verified round is a completed USD 20 million Series B announced 2026-08-31 with Insight Partners, Entree Capital and unnamed private US investors. An official BIRD Foundation project history also confirms a November 2019 joint project with Blue White Robotics, but it does not disclose Easy Aerial's beneficiary-specific award amount.",
+      "hold_note": "The 2017-2019 USD 4.75 million seed total is aggregate history across multiple undated rounds and is not imported as one event. The BIRD HLS programme's maximum grant is not treated as Easy Aerial proceeds. The 2020 lead private investment group remains unnamed, and the 2026 release says Insight and Entree participated but does not state either led.",
+      "sources_checked": [
+        {
+          "url": "https://www.easyaerial.com/",
+          "title": "Easy Aerial",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://www.securityinfowatch.com/perimeter-security/robotics/unmanned-aerial-vehicles-drones/press-release/21152862/easy-aerial-easy-aerial-announces-615m-in-series-a-funding",
+          "title": "Easy Aerial announces USD 6.15 million in Series A funding",
+          "source_type": "company_announcement",
+          "published_date": "2020-08-25"
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/articles/easy-aerial-completes-20-million-130000624.html",
+          "title": "Easy Aerial completes USD 20 million Series B funding round",
+          "source_type": "company_announcement",
+          "published_date": "2026-08-31"
+        },
+        {
+          "url": "https://www.morningstar.com/news/business-wire/20260831863599/easy-aerial-completes-20-million-series-b-funding-round-to-expand-global-defense-footprint",
+          "title": "Easy Aerial completes USD 20 million Series B funding round to expand global defense footprint",
+          "source_type": "company_announcement",
+          "published_date": "2026-08-31"
+        },
+        {
+          "url": "https://www.birdf.com/news/hls-approved-projects/",
+          "title": "BIRD HLS approved projects",
+          "source_type": "official_grant_database",
+          "published_date": null
+        },
+        {
+          "url": "https://www.birdf.com/bird_programs/bird-hls/",
+          "title": "BIRD HLS programme",
+          "source_type": "official_grant_database",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Easy Aerial raised one USD 4.75 million seed round in 2019.",
+          "reason": "The Series A announcement describes aggregate initial seed rounds totalling USD 4.75 million between 2017 and 2019, without event dates or allocations."
+        },
+        {
+          "claim": "BIRD Foundation granted Easy Aerial USD 1 million in November 2019.",
+          "reason": "The official project list confirms a joint project but does not disclose its award amount; the programme maximum applies to a joint project and is not beneficiary-specific."
+        },
+        {
+          "claim": "Insight Partners and Entree Capital co-led the 2026 Series B.",
+          "reason": "The company release names them as participants and says Easy Aerial is backed by them, but does not assign a lead role."
+        }
+      ]
+    },
+    {
+      "id": "673b03cf-eb14-4ea5-89e6-30e5b6bc8ae8",
+      "slug": "easy-city",
+      "name": "Easy City",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact Italian identity is Easy City SRLS, VAT number 03366240798, operating the Dron-e brand from Catanzaro. Its own terms identify Dron-e as Easy City SRLS, and ENAC recognises Easy City as UAS training entity ENAC.UAS-RE.094. Public procurement records confirm commercial contracts, including a 2024-2025 Calabria drone-and-software supply, but contracts and invoice payments are revenue, not investment. The 2021 Aerodyne relationship was a commercial collaboration to explore the Italian inspection market, not an announced financing transaction.",
+      "hold_note": "No public financing event with a supported amount, date, instrument and investor role was located. The empty round set records the bounded evidence result, not a claim of zero private funding. A similarly named later Aerodyne investment in Aiviewgroup is a different Italian issuer and must not be assigned here.",
+      "sources_checked": [
+        {
+          "url": "https://dron-e.it/get-in-touch/",
+          "title": "Dron-e contact details — Easy City SRLS",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://dron-e.it/it/termini-e-condizioni/",
+          "title": "Dron-e terms and conditions",
+          "source_type": "company_website",
+          "published_date": "2023-12-27"
+        },
+        {
+          "url": "https://www.enac.gov.it/app/uploads/2025/06/UAS_Recognized_Entities_12-Giugno-2025.pdf",
+          "title": "ENAC recognised UAS entities — 12 June 2025",
+          "source_type": "government_database",
+          "published_date": "2025-06-12"
+        },
+        {
+          "url": "https://dron-e.it/2021/07/19/aerodyne-and-dron-e-collaborate-to-explore-usd900-million-italian-asset-inspection-market/",
+          "title": "Aerodyne and Dron-e collaborate to explore Italian asset inspection market",
+          "source_type": "company_announcement",
+          "published_date": "2021-07-19"
+        },
+        {
+          "url": "https://aerodyne.group/files/aerodyne-drone-e.pdf",
+          "title": "Aerodyne Group and Dron-e collaboration announcement",
+          "source_type": "transaction_party_announcement",
+          "published_date": "2021-07"
+        },
+        {
+          "url": "https://www.regione.calabria.it/wp-content/uploads/2025/08/DECRETO-N.-11513.pdf",
+          "title": "Calabria decree concerning Easy City SRLS drone and software supply",
+          "source_type": "government_database",
+          "published_date": "2025-08"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Aerodyne invested USD 900 million in Easy City or Dron-e.",
+          "reason": "USD 900 million was the estimated Italian inspection-market opportunity; the announcement describes a commercial collaboration, not an investment."
+        },
+        {
+          "claim": "Calabria public-procurement payments were grants or financing rounds.",
+          "reason": "The decrees describe consideration and invoices for supplied drones and software, which are customer revenue."
+        },
+        {
+          "claim": "Aerodyne's investment in Aiviewgroup financed Easy City.",
+          "reason": "Aiviewgroup is a distinct Italian company; the source distinguishes that later investment from Aerodyne's earlier Dron-e collaboration."
+        }
+      ]
+    }
+  ],
+  "audit_notes": [
+    "Only issuer-supported financing facts are normalized; parent, subsidiary, acquisition-consideration, contract and consortium amounts remain excluded unless the reviewed source establishes the target as recipient.",
+    "A completed bounded public-source review does not assert zero funding where no public round was found; undisclosed private history remains unknown.",
+    "Duplicate or closely related catalogue identities are kept distinct unless sources establish legal or economic continuity.",
+    "SEC Form D amendments are treated as cumulative issuer disclosures and are not double-counted as separate closes unless a later filing establishes a distinct offering."
+  ],
+  "publication": {
+    "pending": true,
+    "catalogue_trigger_required": true,
+    "database_imported_at": "2026-11-12T10:03:51.877Z",
+    "database_totals": {
+      "approved_events": 2569,
+      "round_participations": 3014,
+      "investor_profiles": 1848,
+      "source_reconciliation_companies": 658
+    },
+    "verification": {
+      "manifest_events": 38,
+      "manifest_sources": 55,
+      "manifest_links": 48,
+      "manifest_relationships": 6,
+      "missing_link_source_urls": 0
+    }
+  }
+}
