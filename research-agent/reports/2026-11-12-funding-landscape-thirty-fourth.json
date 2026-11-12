@@ -1,0 +1,1641 @@
+{
+  "report": "Thirty-fourth autonomous funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": "funding-20261112T104740346Z-wider-24",
+  "scope": {
+    "identities": 24,
+    "from": "eb-howard-consulting",
+    "through": "eldis-pardubice",
+    "published_landscape": false
+  },
+  "method": "Four disjoint read-only research lanes; one writer consolidation; exact issuer, original currency, amount qualifier, instrument, closing and explicit roles checked. Contracts, acquisition consideration, parent/subsidiary financing, undrawn facilities and consortium totals excluded.",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 16,
+    "new_or_retained_partial": 8,
+    "new_events_written": 52,
+    "new_generic_portfolio_relationships": 8,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "current_manifest_publication_verified": false,
+    "newly_completed_wider_reviews": 16,
+    "new_approved_events": 52,
+    "new_round_participations": 104,
+    "new_investor_profiles": 63,
+    "new_source_rows": 69,
+    "new_companies_with_events": 10,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "manifest_event_matches": 52,
+    "manifest_link_matches": 104,
+    "manifest_source_matches": 69,
+    "manifest_relationship_matches": 8,
+    "missing_link_source_urls": 0,
+    "db_approved_events": 2634,
+    "db_approved_round_participations": 3118,
+    "db_investor_profiles": 1911,
+    "db_source_reconciliation_companies": 668,
+    "concurrency_speedup_claimed": false,
+    "active_minutes": 16,
+    "timing_scope": "Lease through four read-only lanes, reconciliation, rollback rehearsal, atomic import and idempotency rollback; publication wait excluded.",
+    "checked_identities_per_active_hour": 90,
+    "completed_reviews_per_active_hour": 60
+  },
+  "per_company": [
+    {
+      "id": "cb64dbfb-ab05-440b-97c5-32d25740f673",
+      "slug": "eb-howard-consulting",
+      "name": "E.B. Howard Consulting",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "E.B. Howard Consulting (EBHC) was founded in 2013, initially as a sole proprietorship, and transitioned to an LLC in 2018. Its official materials describe a consulting business that helps clients locate and secure non-dilutive funding; the amounts it promotes as 'secured' are client awards, not financing received by EBHC. No attributable issuer-level equity, debt or grant financing event was located in the bounded review.",
+      "hold_note": "The absence of a public issuer-level financing announcement is not evidence that EBHC has received zero funding. Client grants, proposal wins and the Funding Menu service are not normalized as EBHC financing, and the company says it does not take ownership interests or percentages of client grants.",
+      "sources_checked": [
+        {
+          "url": "https://www.ebhoward.com/wp-content/uploads/2025/11/General-Capabilities-Statement-for-External-Evaluation-2025.pdf",
+          "title": "General Capabilities Statement for External Evaluation Services",
+          "source_type": "company_document",
+          "published_date": null
+        },
+        {
+          "url": "https://www.ebhoward.com/meet-the-team-christine-e-b-howard/",
+          "title": "Meet the team: Christine E.B. Howard",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.ebhoward.com/find-funding/",
+          "title": "Find Funding",
+          "source_type": "company_service_page",
+          "published_date": null
+        },
+        {
+          "url": "https://www.ebhoward.com/apply-for-funding/",
+          "title": "Apply for Funding",
+          "source_type": "company_service_page",
+          "published_date": null
+        },
+        {
+          "url": "https://www.ebhoward.com/trackrecord/?v=7516fd43adaa",
+          "title": "Track Record",
+          "source_type": "company_profile",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EBHC itself raised or received the more than USD 60 million shown in its track record.",
+          "reason": "Official pages describe this as non-dilutive funding secured for clients through EBHC's consulting work, not proceeds received by EBHC."
+        },
+        {
+          "claim": "EBHC has raised zero funding.",
+          "reason": "No attributable public financing event was found, but that does not prove the absence of private financing, owner contributions, loans or grants."
+        },
+        {
+          "claim": "EBHC receives equity or a percentage of client grant awards.",
+          "reason": "The company's application-services page explicitly says it does not take an ownership interest, stake or percentage of grants awarded to clients."
+        }
+      ]
+    },
+    {
+      "id": "92299e36-58f5-4c27-9486-20bae0ab2d26",
+      "slug": "eca-group-infotron",
+      "name": "ECA Group / Infotron",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The catalogue identity combines the historical ECA Group business with Infotron. Official group history states that ECA was acquired by Groupe Gorgé in 1992 and was combined with iXblue in 2022 to form Exail. A June 2014 ECA disclosure states that Groupe Gorgé acquired Infotron from RemoteReward on 16 April 2014 for EUR 2.5 million cash plus 375,000 ECA shares, then contributed the Infotron shares to ECA, making ECA the sole shareholder. This is acquisition consideration and corporate ownership evidence, not primary financing received by Infotron or ECA.",
+      "hold_note": "No attributable primary issuer financing round for the combined catalogue identity was located in the bounded review. Acquisition prices, group public-market history and customer contract values are not normalized as financing. The 2014 transfer documents do not state that the EUR 2.5 million or ECA shares became working capital of Infotron.",
+      "sources_checked": [
+        {
+          "url": "https://www.exail-technologies.com/history/",
+          "title": "History - Exail Technologies",
+          "source_type": "parent_company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.exail.com/media-file/7007/5771-eca-cp-infotron-dispense-vf.pdf",
+          "title": "ECA finalizes contribution of Infotron shares",
+          "source_type": "company_transaction_document",
+          "published_date": "2014-06-03"
+        },
+        {
+          "url": "https://www.gorge-entreprises.com/histoire/",
+          "title": "Groupe Gorgé / Exail Technologies history",
+          "source_type": "parent_company_profile",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Infotron raised EUR 2.5 million and 375,000 ECA shares in April 2014.",
+          "reason": "Those terms were consideration paid to the seller for Infotron's shares; the source does not describe primary proceeds received by Infotron."
+        },
+        {
+          "claim": "The 2022 creation of Exail was a financing round for ECA Group.",
+          "reason": "Official history describes the combination of ECA Group and iXblue following an acquisition, not a primary capital raise by ECA."
+        },
+        {
+          "claim": "ECA Group / Infotron has raised zero funding.",
+          "reason": "No attributable primary financing event was located, but absence of a public disclosure is not proof of zero financing."
+        }
+      ]
+    },
+    {
+      "id": "f610ad11-5771-4f41-9f59-a1717dc7429d",
+      "slug": "echodyne",
+      "name": "Echodyne",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 6,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Echodyne Corp. Company announcements verify an initial USD 15 million Series A in December 2014, USD 29 million Series B in May 2017, a closed USD 20 million financing round in September 2019, an amount-undisclosed minority investment by Northrop Grumman in February 2022, a closed USD 135 million fundraising round in June 2022, and an amount-undisclosed minority investment by Supernal in May 2023. A November 2026 agreement for Shield to acquire Echodyne at a USD 5.3 billion transaction value is pending and is not issuer financing.",
+      "hold_note": "Unnamed 'other' investors are not guessed. The amount and instrument of the Northrop Grumman and Supernal minority investments remain undisclosed. Shield's acquisition consideration and Shield's own acquisition financing belong to Shield, not Echodyne, and are excluded from Echodyne funding totals.",
+      "sources_checked": [
+        {
+          "url": "https://www.echodyne.com/newsroom/echodyne-announces-15-million-series-a-led-by-bill-gates-and-madrona-venture-group",
+          "title": "Echodyne Announces $15 million Series A Led by Bill Gates and Madrona Venture Group",
+          "source_type": "company_press_release",
+          "published_date": "2014-12-19"
+        },
+        {
+          "url": "https://www.echodyne.com/newsroom/nea-leads-round-that-includes-bill-gates-madrona-venture-group-vulcan-capital-lux-capital-and-others",
+          "title": "NEA leads $29 million Series B",
+          "source_type": "company_press_release",
+          "published_date": "2017-05-19"
+        },
+        {
+          "url": "https://www.echodyne.com/newsroom/echodyne-raises-20-million-from-new-and-existing-investors-for-commercial-production-and-market-expansion",
+          "title": "Echodyne Raises $20 Million from New and Existing Investors",
+          "source_type": "company_press_release",
+          "published_date": "2019-09-11"
+        },
+        {
+          "url": "https://www.echodyne.com/newsroom/echodyne-and-northrop-grumman-expand-partnership-on-defense-and-security-applications",
+          "title": "Echodyne and Northrop Grumman Expand Partnership",
+          "source_type": "company_press_release",
+          "published_date": "2022-02-17"
+        },
+        {
+          "url": "https://www.echodyne.com/newsroom/echodyne-closes-135-million-to-expand-distribution-production-and-development-across-defense-security-and-autonomous-machine-markets",
+          "title": "Echodyne Closes $135 Million",
+          "source_type": "company_press_release",
+          "published_date": "2022-06-13"
+        },
+        {
+          "url": "https://www.echodyne.com/newsroom/echodyne-and-supernal-partner-for-next-generation-aam-safety",
+          "title": "Echodyne and Supernal Partner on Radar Solutions for AAM Safety",
+          "source_type": "company_press_release",
+          "published_date": "2023-05-09"
+        },
+        {
+          "url": "https://shield.ai/shield-to-acquire-echodyne-in-a-transaction-valued-at-5-3-billion-and-raise-2-5-billion-at-a-28-8-billion-valuation/",
+          "title": "Shield to acquire Echodyne in a transaction valued at $5.3 billion",
+          "source_type": "acquirer_press_release",
+          "published_date": "2026-11-05"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Echodyne received USD 5.3 billion in November 2026.",
+          "reason": "USD 5.3 billion is the announced transaction value for Shield's pending acquisition, including contingent consideration, not primary proceeds to Echodyne."
+        },
+        {
+          "claim": "Shield's USD 2.5 billion financing is an Echodyne round.",
+          "reason": "The financing is being raised by Shield to support the transaction and belongs to Shield's capital history."
+        },
+        {
+          "claim": "Northrop Grumman or Supernal invested a specific amount or obtained a specified stake.",
+          "reason": "The company announcements disclose minority investments but not amounts, instruments or ownership percentages."
+        },
+        {
+          "claim": "The unnamed investors in the disclosed rounds can be identified from later backer lists.",
+          "reason": "Later backer lists do not establish participation in a specific earlier round."
+        }
+      ]
+    },
+    {
+      "id": "a99e3f80-c8ed-4bdd-b3d1-bab74ea8f044",
+      "slug": "echomav-technologies",
+      "name": "EchoMAV Technologies",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "EchoMAV's official site says the business was founded in 2022. A September 2026 federal bankruptcy opinion states that William Jeffrey Knowles organized Echo MAV, LLC in New Mexico in August 2022; Denny Eugene Trey Sprinkle III formed Echo MAV Technologies, Inc. in Texas in July 2024 and became sole owner of Echo MAV in 2025. The opinion also documents Echo MAV's March 2023 asset purchase for USD 500,000 cash plus a USD 1.5 million promissory note, which is acquisition consideration and seller debt rather than investment financing. No attributable primary equity, debt or grant financing round was located.",
+      "hold_note": "The official site still identifies its operator as EchoMAV, LLC while the catalogue uses EchoMAV Technologies. The court establishes shared ownership and legal chronology but does not state that the Texas corporation is the parent of the New Mexico LLC. Procurement awards, paid R&D/customer contracts, accelerator or supplier references, and the 2023 asset-purchase obligation are not treated as capital raised.",
+      "sources_checked": [
+        {
+          "url": "https://echomav.com/pages/about-us",
+          "title": "About Us - EchoMAV Technologies",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://echomav.com/pages/privacy-policy",
+          "title": "Privacy Policy - EchoMAV Technologies",
+          "source_type": "company_legal",
+          "published_date": null
+        },
+        {
+          "url": "https://www.govinfo.gov/app/details/USCOURTS-tneb-3_25-bk-31122/USCOURTS-tneb-3_25-bk-31122-0",
+          "title": "In re Echo MAV, LLC - findings of fact and conclusions of law",
+          "source_type": "court_opinion",
+          "published_date": "2026-09-30"
+        },
+        {
+          "url": "https://echomav.com/blogs/news",
+          "title": "EchoMAV Technologies News",
+          "source_type": "company_news_index",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1889201",
+          "title": "SBIR portfolio entry naming EchoMAV as a supplier/integration partner",
+          "source_type": "government_program_record",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EchoMAV raised USD 2 million in March 2023.",
+          "reason": "The court describes USD 500,000 cash plus a USD 1.5 million promissory note as consideration owed by Echo MAV to acquire Horizon's assets, not investor proceeds received by EchoMAV."
+        },
+        {
+          "claim": "EchoMAV received the SBIR award shown on the federal portfolio page.",
+          "reason": "The record identifies a different awardee and names EchoMAV only as a supplier/integration partner."
+        },
+        {
+          "claim": "Federal procurement or paid development contract values are investment funding.",
+          "reason": "Customer revenue and procurement obligations are not issuer financing rounds."
+        },
+        {
+          "claim": "EchoMAV has never raised funding.",
+          "reason": "No attributable public financing event was located, but aggregator claims or empty profiles are not proof of zero financing."
+        }
+      ]
+    },
+    {
+      "id": "0b807dda-e79d-430f-a04d-2d6a1cc699c7",
+      "slug": "eclecticiq",
+      "name": "EclecticIQ",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 6,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is EclecticIQ B.V. Company and institutional sources verify a EUR 5.5 million Series A in May 2016, EUR 14 million Series B in November 2017, EUR 20 million Series C in December 2020, a EUR 15 million EIB loan/quasi-equity financing signed in August 2021, an approximately EUR 3 million equity investment by Dutch Security TechFund in August 2021, and a EUR 1 million additional equity interest by Invest-NL during 2022. The Series A included EUR 1.5 million converting previously committed capital and brought disclosed total investment to EUR 6.5 million, but the earlier commitments were not sufficiently dated or characterized for separate normalization.",
+      "hold_note": "The 2016 source implies pre-Series-A capital but does not provide sufficient event dates, instruments and investor allocation to create earlier rounds. The Series B announcement names Keen Venture Partners as lead but describes the other participants only as existing shareholders, so they are not guessed. The 2022 Invest-NL follow-on is supported at calendar-year granularity only. The EIB package is treated as debt/credit financing because EIB describes it as a loan deal, while another EIB publication calls the instrument quasi-equity.",
+      "sources_checked": [
+        {
+          "url": "https://www.eclecticiq.com/news/2-may-2016-eclecticiq-raises-series-a-for-cyber-threat-intelligence-platform",
+          "title": "EclecticIQ Raises 5.5 Million Euro for Enterprise-Ready Cyber Threat Intelligence Platform",
+          "source_type": "company_press_release",
+          "published_date": "2016-05-02"
+        },
+        {
+          "url": "https://www.eclecticiq.com/news/9-nov-2017-eclecticiq-lands-series-b-investment-of-14-million-to-make-cyber-threat-intelligence-accessible-to-organizations-at-any-level-of-cyber-readiness",
+          "title": "EclecticIQ lands Series-B investment of EUR 14 million",
+          "source_type": "company_press_release",
+          "published_date": "2017-11-07"
+        },
+        {
+          "url": "https://www.eclecticiq.com/news/1-dec-2020-eclecticiq-raises-20-million-in-series-c-funding",
+          "title": "EclecticIQ raises EUR 20 million in Series C funding",
+          "source_type": "company_press_release",
+          "published_date": "2020-12-01"
+        },
+        {
+          "url": "https://www.invest-nl.nl/en/news/invest-nl-invests-in-eclecticiq?lang=en",
+          "title": "Invest-NL invests in EclecticIQ",
+          "source_type": "investor_press_release",
+          "published_date": "2020-12-01"
+        },
+        {
+          "url": "https://www.eib.org/en/projects/all/20200319",
+          "title": "ECLECTICIQ (EGFF) project summary",
+          "source_type": "government_lender_record",
+          "published_date": "2021-09-06"
+        },
+        {
+          "url": "https://www.eib.org/en/press/all/2021-293-dutch-scale-up-eclecticiq-receives-eur15-million-in-eu-financing-to-boost-development-of-next-gen-cyber-security-platform",
+          "title": "Dutch scale-up EclecticIQ receives EUR 15 million in EU financing",
+          "source_type": "government_lender_press_release",
+          "published_date": "2021-08-31"
+        },
+        {
+          "url": "https://www.eclecticiq.com/news/31-august-2021-dutch-security-techfund-invests-in-innovative-cybersecurity-leader-eclecticiq",
+          "title": "Dutch Security TechFund Invests in EclecticIQ",
+          "source_type": "company_press_release",
+          "published_date": "2021-08-31"
+        },
+        {
+          "url": "https://www.invest-nl.nl/media/attachment/2023/6/20/invest_nl_jaarverslag_2022.pdf",
+          "title": "Invest-NL Annual Report 2022",
+          "source_type": "institutional_annual_report",
+          "published_date": "2023-05-15"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EclecticIQ raised a separate EUR 1.5 million round in 2016 in addition to the EUR 5.5 million Series A.",
+          "reason": "The company says EUR 1.5 million of the EUR 5.5 million Series A converted previously committed capital; counting it again would duplicate part of the Series A."
+        },
+        {
+          "claim": "All known existing investors participated in the 2017 Series B.",
+          "reason": "The announcement identifies only Keen Venture Partners by name and refers generically to existing investors."
+        },
+        {
+          "claim": "The EUR 15 million EIB package was ordinary venture equity.",
+          "reason": "EIB describes a financing/loan deal and separately characterizes the instrument as quasi-equity; it is not normalized as common venture equity."
+        },
+        {
+          "claim": "EclecticIQ's 2020 PolyLogyx acquisition was funding received by EclecticIQ.",
+          "reason": "An acquisition of another company's technology is not primary financing of EclecticIQ."
+        }
+      ]
+    },
+    {
+      "id": "a2ab4cb9-459f-4c17-850b-a0ed1f365d03",
+      "slug": "eco-brick-innovio",
+      "name": "eco BRICK Innovio",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "eco BRICK Innovio is an Israeli company founded in 2016; Startup Nation Central identifies company number 514988096. Its official site describes the waste-to-construction-materials business but no financing event. An August 2026 iHLS profile identifies the company as an INNOFENSE graduate and says it had recently begun pursuing an investment round, which supports fundraising intent but not a completed raise. No attributable completed equity, debt or grant financing was located.",
+      "hold_note": "The INNOFENSE program page says selected startups in the current call receive an ILS 200,000 grant, but the reviewed sources do not identify eco BRICK's cycle, award date or recipient-specific payment; no grant is therefore normalized. A Startup Nation Central profile showing undisclosed funding/zero rounds and a seed-stage label from another directory are discovery candidates, not proof of a financing event or zero funding.",
+      "sources_checked": [
+        {
+          "url": "https://ecobrick.tech/",
+          "title": "eco BRICK Innovio official website",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://finder.startupnationcentral.org/company_page/eco-brick-innovio",
+          "title": "Eco-Brick Innovio company profile",
+          "source_type": "ecosystem_database",
+          "published_date": "2025-03-29"
+        },
+        {
+          "url": "https://i-hls.com/archives/138478",
+          "title": "From Waste to Critical Infrastructure: eco BRICK Innovio's Triple-Use Technology",
+          "source_type": "accelerator_profile",
+          "published_date": "2026-08-19"
+        },
+        {
+          "url": "https://accelerator.i-hls.com/innofense/",
+          "title": "iHLS INNOFENSE accelerator",
+          "source_type": "accelerator_program_page",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "eco BRICK closed an investment round in 2026.",
+          "reason": "The iHLS profile says the company had begun pursuing a round; it does not report a close, amount or investors."
+        },
+        {
+          "claim": "eco BRICK received an ILS 200,000 INNOFENSE grant.",
+          "reason": "The generic program page states current selected startups receive this amount, but the reviewed evidence does not connect eco BRICK to a specific grant cycle or recipient-level award."
+        },
+        {
+          "claim": "eco BRICK completed a seed round because a directory labels it seed stage.",
+          "reason": "A stage label without a dated transaction, amount, issuer and source is not verified financing evidence."
+        },
+        {
+          "claim": "eco BRICK has raised zero funding.",
+          "reason": "An empty or undisclosed funding profile is not evidence of zero private financing."
+        }
+      ]
+    },
+    {
+      "id": "cd442edc-94ae-4975-af4a-71f341a55e3d",
+      "slug": "ecoflow",
+      "name": "EcoFlow",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "The financing issuer is the Shenzhen company now styled EcoFlow Inc. (Chinese name 深圳市正浩创新科技股份有限公司; formerly Shenzhen EcoFlow Technology Limited), not a US distributor or a crowdfunding campaign. Dated public evidence verifies a CNY 30 million Pre-A round announced in March 2018, a separate Series A of more than USD 4 million announced in April 2018, a qualitatively disclosed tens-of-millions-of-renminbi A+ round in May 2019, and a Series B of more than USD 100 million in June 2021. The latest supported public institutional round located is the June 2021 Series B.",
+      "hold_note": "The 2019 A+ announcement does not disclose an exact number, so no numeric amount is invented. One retrospective source calls the March 2018 CNY 30 million financing an A round, while the contemporaneous announcement calls it Pre-A; the contemporaneous label is retained. April 2021 strategic-financing and early angel claims found only in profile/job-post summaries are not normalized without a transaction announcement. Kickstarter, Indiegogo and Makuake receipts are customer product crowdfunding, not investment rounds.",
+      "sources_checked": [
+        {
+          "url": "https://www.escn.com.cn/news/show-511577.html",
+          "title": "EcoFlow receives CNY 30 million Pre-A financing",
+          "source_type": "trade_press",
+          "published_date": "2018-03-30"
+        },
+        {
+          "url": "https://techcrunch.com/2018/04/27/ecoflow-raises-4m/",
+          "title": "EcoFlow raises more than USD 4 million Series A",
+          "source_type": "business_press",
+          "published_date": "2018-04-27"
+        },
+        {
+          "url": "https://pe.pedaily.cn/201905/442886.shtml",
+          "title": "EcoFlow announces tens-of-millions-of-yuan A+ financing",
+          "source_type": "trade_press",
+          "published_date": "2019-05-09"
+        },
+        {
+          "url": "https://globalventuring.com/corporate/ecoflow-stores-100m-in-series-b-round/",
+          "title": "EcoFlow stores more than USD 100 million in Series B",
+          "source_type": "trade_press",
+          "published_date": "2021-06-10"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/ecoflow-triples-sales-for-the-2nd-consecutive-year-in-2021-301452253.html",
+          "title": "EcoFlow 2021 retrospective confirms Series B investors and amount qualifier",
+          "source_type": "company_press_release",
+          "published_date": "2021-12-29"
+        },
+        {
+          "url": "https://account.ecoflow.com/agreement/en-us/ProductsTermsOfUse.html",
+          "title": "EcoFlow product terms identifying EcoFlow Inc.",
+          "source_type": "company_legal",
+          "published_date": null
+        },
+        {
+          "url": "https://ised-isde.canada.ca/cipo/trademark-search/2022023",
+          "title": "Canadian trademark record showing Shenzhen EcoFlow Technology name change to EcoFlow Inc.",
+          "source_type": "official_registry",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EcoFlow's May 2019 A+ round had an exact eight-digit USD amount.",
+          "reason": "The contemporaneous Chinese announcement says only tens of millions of renminbi; the later USD characterization is too imprecise to normalize as an exact amount."
+        },
+        {
+          "claim": "EcoFlow raised EUR 10.6 million or USD 12 million of venture capital in 2021.",
+          "reason": "Those figures refer to product pre-orders on Kickstarter, not issuer investment financing."
+        },
+        {
+          "claim": "EcoFlow completed an IPO in December 2025.",
+          "reason": "No exchange, regulator or issuer filing supporting a completed listing was located; a commercial secondary-market page's placeholder IPO entry is not evidence."
+        },
+        {
+          "claim": "The April 2021 profile entry is a distinct completed strategic round.",
+          "reason": "Reviewed profile and recruitment summaries did not expose an original issuer, investor or transaction announcement sufficient to separate it from the June 2021 Series B process."
+        },
+        {
+          "claim": "The March and April 2018 financings are one duplicated round.",
+          "reason": "The contemporaneous reports give different dates, currencies, stage labels and investor groups; they are retained as separate disclosed events."
+        }
+      ]
+    },
+    {
+      "id": "26eeebf8-c714-46c9-9cf6-ea4bfd08a3e0",
+      "slug": "edge-autonomy",
+      "name": "Edge Autonomy",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact operating group is Edge Autonomy Intermediate Holdings, LLC together with its subsidiaries. SEC materials say the seller and intermediate holding company were formed in January 2021, acquired SIA UAV Factory in January 2021 and Jennings Aeronautics in September 2021, and later operated under the Edge Autonomy brand. AE Industrial Partners' 2021 acquisition was a buyout with undisclosed terms, not disclosed primary issuer financing. On 13 June 2025 Redwire completed its acquisition of 100% of Edge Autonomy; Edge Autonomy Intermediate Holdings survived as a wholly owned Redwire subsidiary.",
+      "hold_note": "The USD 925 million paid at the Redwire closing was merger consideration to the seller, consisting of cash and Redwire shares and subject to adjustments; it is not recorded as money raised by Edge Autonomy. AE Industrial Partners is a historical owner realized in June 2025 and therefore is not published as a current investor relationship. No attributable issuer-level venture, debt or grant round was located in the bounded review.",
+      "sources_checked": [
+        {
+          "url": "https://www.aeroequity.com/ae-industrial-partners-acquires-uav-factory-a-leader-in-the-tactical-unmanned-aerial-vehicle-uav-and-isr-technology-markets/",
+          "title": "AE Industrial Partners acquires UAV Factory",
+          "source_type": "acquirer_press_release",
+          "published_date": "2021-01-28"
+        },
+        {
+          "url": "https://www.aeroequity.com/uav-factory-a-portfolio-company-of-ae-industrial-partners-acquires-jennings-aeronautics/",
+          "title": "UAV Factory acquires Jennings Aeronautics",
+          "source_type": "owner_press_release",
+          "published_date": "2021-09-14"
+        },
+        {
+          "url": "https://www.aeroequity.com/investment/uav-factory/",
+          "title": "AE Industrial Partners Edge Autonomy portfolio record",
+          "source_type": "investor_portfolio",
+          "published_date": null
+        },
+        {
+          "url": "https://ir.redwirespace.com/sec-filings/all-sec-filings/content/0001628280-25-016955/0001628280-25-016955.pdf",
+          "title": "Redwire proxy statement describing Edge Autonomy formation and acquisitions",
+          "source_type": "regulatory_filing",
+          "published_date": "2025-04-04"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1819810/000181981025000163/rdw-20250613.htm",
+          "title": "Redwire Form 8-K reporting completed Edge Autonomy acquisition",
+          "source_type": "regulatory_filing",
+          "published_date": "2025-06-13"
+        },
+        {
+          "url": "https://rdw.com/newsroom/redwire-completes-acquisition-of-edge-autonomy-establishing-company-as-a-global-defense-tech-disruptor-specializing-in-multi-domain-solutions/",
+          "title": "Redwire completes acquisition of Edge Autonomy",
+          "source_type": "parent_company_press_release",
+          "published_date": "2025-06-13"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Edge Autonomy raised USD 925 million in June 2025.",
+          "reason": "The amount was acquisition consideration paid by Redwire to the seller, not primary proceeds to the operating company."
+        },
+        {
+          "claim": "AE Industrial Partners remains Edge Autonomy's current owner or investor.",
+          "reason": "AEI marks the investment realized in June 2025, when Redwire completed its acquisition."
+        },
+        {
+          "claim": "The February 2022 brand combination was a new financing round.",
+          "reason": "It was a corporate integration and rebranding of businesses already held under the platform, with no issuer proceeds disclosed."
+        },
+        {
+          "claim": "Sleeping Bear Capital financing of Adaptive Energy was funding for Edge Autonomy.",
+          "reason": "That financing related to a component subsidiary and later historical minority ownership; it is not attributable as an Edge Autonomy issuer round."
+        }
+      ]
+    },
+    {
+      "id": "1a82d342-fa33-455d-96f2-e1fd2e63d4cb",
+      "slug": "edge-group",
+      "name": "EDGE Group",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is EDGE Group PJSC, the Abu Dhabi advanced-technology and defence group launched in November 2019. An official 21 June 2022 release verifies a signed arrangement under which Emirates Development Bank would provide up to AED 1 billion of financing to support industrialisation of EDGE products. This is facility capacity, not evidence that the full amount was drawn. No public equity round was located.",
+      "hold_note": "Later treasury and supply-chain finance arrangements are not treated as new issuer funding without disclosed commitment or draw amounts. The AED 1.2 billion of off-balance-sheet financing cited in the 2025 FAB announcement relates to supplier invoices, not capital raised by EDGE. The USD 7 billion Indonesia package is a sovereign financing/procurement programme for defence modernisation, not investment into EDGE. EDGE's wholly owned Strategic Development Fund is a subsidiary, not an investor in its parent.",
+      "sources_checked": [
+        {
+          "url": "https://edgegroup.ae/about",
+          "title": "About EDGE Group PJSC",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://edgegroup.ae/news/moiat-edb-edge-group-sign-joint-agreement-boost-manufacturing-defense-sector-0",
+          "title": "MoIAT, EDB and EDGE sign manufacturing-finance agreement",
+          "source_type": "company_press_release",
+          "published_date": "2022-06-21"
+        },
+        {
+          "url": "https://edgegroup.ae/news/edge-and-fab-sign-strategic-agreement-build-resilient-financial-ecosystem",
+          "title": "EDGE and FAB sign supply-chain finance and treasury agreement",
+          "source_type": "company_press_release",
+          "published_date": "2025-06-11"
+        },
+        {
+          "url": "https://edgegroup.ae/news/edge-and-republikorp-announce-usd-7-billion-cooperation-establish-localised-defence",
+          "title": "EDGE and Republikorp announce USD 7 billion Indonesia cooperation package",
+          "source_type": "company_press_release",
+          "published_date": "2025-11-18"
+        },
+        {
+          "url": "https://beta.emiratesislamic.ae/en/news-and-updates/2026/February/emirates-islamic-landmark-partnership-with-edge-group",
+          "title": "Emirates Islamic and EDGE announce financing-solutions partnership",
+          "source_type": "bank_press_release",
+          "published_date": "2026-02-24"
+        },
+        {
+          "url": "https://www.wam.ae/en/article/bieaxsj-strategic-development-fund-signs-agreement-with",
+          "title": "WAM identifies Strategic Development Fund as wholly owned by EDGE",
+          "source_type": "government_news",
+          "published_date": "2025-02-26"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EDGE drew the full AED 1 billion in June 2022.",
+          "reason": "The announcement describes financing capacity of up to AED 1 billion under a signed agreement, not a full cash draw."
+        },
+        {
+          "claim": "EDGE raised AED 1.2 billion from FAB in 2025.",
+          "reason": "The figure is off-balance-sheet supplier-invoice financing and is not issuer capital."
+        },
+        {
+          "claim": "EDGE raised USD 7 billion from the UAE in 2025.",
+          "reason": "The figure is a financing and procurement package for Indonesia's defence programme, not financing received by EDGE."
+        },
+        {
+          "claim": "Emirates Islamic provided a quantified completed round to EDGE in February 2026.",
+          "reason": "The partnership describes future treasury, corporate-finance and supply-chain solutions but discloses no facility size, draw or closing amount."
+        },
+        {
+          "claim": "Strategic Development Fund invested in EDGE Group.",
+          "reason": "Official reporting identifies SDF as wholly owned by EDGE, so reversing the subsidiary-parent direction would be incorrect."
+        }
+      ]
+    },
+    {
+      "id": "0d32fdd4-4700-4432-86ad-53cfa7c74f24",
+      "slug": "edgecortix",
+      "name": "EdgeCortix",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 9,
+      "relationship_count": 0,
+      "evidence_note": "The issuer is EdgeCortix Inc., founded in July 2019 and headquartered in Tokyo with operations in the United States and India. Public issuer and investor sources verify a USD 1 million seed extension in January 2020; a Series A of more than USD 8 million in February 2022; a USD 20 million financing in October 2023; separate NEDO project awards of JPY 4 billion in November 2024 and JPY 3 billion in May 2025; an amount-undisclosed Series B completed through August and November 2025 closes; a JPY 1.5 billion Mizuho credit facility in October 2025; and an amount-undisclosed follow-on investment from Axiro Semiconductor and MPower Partners in April 2026.",
+      "hold_note": "The founder's January 2020 statement says the USD 1 million extension brought total funding to USD 4 million, but does not state the initial seed amount directly; the implied USD 3 million is not normalized. The August and November 2025 announcements describe cumulative funding of nearly USD 100 million and more than USD 110 million respectively, explicitly including equity and government awards, and the latter also discusses the separate credit facility. Those cumulative figures are not assigned as Series B proceeds. The April 2026 investors disclosed no amount. Dollar conversions supplied alongside NEDO yen awards are not substituted for the original currency.",
+      "sources_checked": [
+        {
+          "url": "https://www.linkedin.com/pulse/ai-chip-design-startup-edgecortix-brings-total-funding-dasgupta",
+          "title": "Founder statement on EdgeCortix USD 1 million seed extension",
+          "source_type": "founder_statement",
+          "published_date": "2020-01-28"
+        },
+        {
+          "url": "https://www.edgecortix.com/en/press-releases/energy-efficient-ai-semiconductor-company-edgecortix-closes-series-a-funding",
+          "title": "EdgeCortix closes Series A funding",
+          "source_type": "company_press_release",
+          "published_date": "2022-02-28"
+        },
+        {
+          "url": "https://www.edgecortix.com/en/press-releases/edgecortix-closes-20-million-in-additional-funding-round",
+          "title": "EdgeCortix closes USD 20 million additional financing",
+          "source_type": "company_press_release",
+          "published_date": "2023-10-04"
+        },
+        {
+          "url": "https://www.edgecortix.com/en/press-releases/edgecortix-receives-4-billion-yen-subsidy-from-japans-nedo",
+          "title": "EdgeCortix receives JPY 4 billion NEDO subsidy",
+          "source_type": "company_press_release",
+          "published_date": "2024-11-06"
+        },
+        {
+          "url": "https://www.edgecortix.com/en/press-releases/edgecortix-awarded-new-3-billion-yen-nedo-project-to-develop-advanced-energy-efficient-ai-chiplet-for-edge-inference-and-learning",
+          "title": "EdgeCortix awarded additional JPY 3 billion NEDO project",
+          "source_type": "company_press_release",
+          "published_date": "2025-05-28"
+        },
+        {
+          "url": "https://www.edgecortix.com/en/press-releases/edgecortix-completes-initial-close-of-series-b-financing-driving-total-funding-to-nearly-100-million-usd",
+          "title": "EdgeCortix completes initial close of Series B",
+          "source_type": "company_press_release",
+          "published_date": "2025-08-18"
+        },
+        {
+          "url": "https://www.yanmar.com/global/yvs/news/2025/08/14/155375.html",
+          "title": "Yanmar Ventures investment in EdgeCortix Series B",
+          "source_type": "investor_press_release",
+          "published_date": "2025-08-14"
+        },
+        {
+          "url": "https://www.edgecortix.com/en/press-releases/edgecortix-secures-1.5-billion-credit-facility-with-mizuho-bank-to-support-acceleration-of-business-growth",
+          "title": "EdgeCortix secures JPY 1.5 billion Mizuho credit facility",
+          "source_type": "company_press_release",
+          "published_date": "2025-10-27"
+        },
+        {
+          "url": "https://www.edgecortix.com/en/press-releases/edgecortix-closes-oversubscribed-series-b-bringing-total-funding-over-110m-amid-growing-edge-ai-demand",
+          "title": "EdgeCortix announces second close of oversubscribed Series B",
+          "source_type": "company_press_release",
+          "published_date": "2025-11-06"
+        },
+        {
+          "url": "https://tdk-ventures.com/news/announcements/tdk-ventures-invests-in-edgecortix-to-accelerate-global-expansion-and-edge-ai-processing-platform/",
+          "title": "TDK Ventures invests in EdgeCortix Series B",
+          "source_type": "investor_press_release",
+          "published_date": "2025-11-06"
+        },
+        {
+          "url": "https://www.edgecortix.com/en/edgecortix-announces-new-investment-from-axiro-semiconductor-and-mpower-partners-to-advance-next-generation-edge-ai-platforms",
+          "title": "EdgeCortix announces Axiro Semiconductor and MPower Partners investment",
+          "source_type": "company_press_release",
+          "published_date": "2026-04-15"
+        },
+        {
+          "url": "https://www.edgecortix.com/en/about-us",
+          "title": "About EdgeCortix",
+          "source_type": "company_profile",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EdgeCortix's initial 2019 seed round was exactly USD 3 million.",
+          "reason": "The founder disclosed a USD 1 million extension and USD 4 million cumulative funding; deriving the initial tranche by subtraction would be an inference rather than a directly stated amount."
+        },
+        {
+          "claim": "EdgeCortix raised nearly USD 100 million in the August 2025 Series B first close.",
+          "reason": "The company explicitly says the figure is cumulative and includes earlier equity and non-dilutive government awards."
+        },
+        {
+          "claim": "EdgeCortix raised more than USD 110 million in the November 2025 Series B.",
+          "reason": "The company again describes cumulative funding, not Series B proceeds; the round amount remains undisclosed."
+        },
+        {
+          "claim": "The November 2024 NEDO award was JPY 3 billion or the May 2025 award was JPY 4 billion.",
+          "reason": "They are separate projects: JPY 4 billion in November 2024 and an additional JPY 3 billion in May 2025."
+        },
+        {
+          "claim": "The JPY 1.5 billion Mizuho facility is equity or cash fully drawn.",
+          "reason": "It is an unsecured line of credit; utilization was not disclosed."
+        },
+        {
+          "claim": "Axiro Semiconductor and MPower Partners invested a specific amount in April 2026.",
+          "reason": "The issuer disclosed the investors and purpose but not the amount or instrument."
+        }
+      ]
+    },
+    {
+      "id": "9e6f7b39-eda4-4341-92fb-a6f7d2e7b019",
+      "slug": "edgex-robotics",
+      "name": "EdgeX Robotics",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The exact entity is EdgeX Robotics sp. z o.o., a Polish company registered on 1 October 2025 (KRS 0001197445) that develops the NUUN modular unmanned ground vehicle. The European Defence Agency selected EdgeX Robotics for BraveTech EU Phase II in July 2026 and on 14 October 2026 explicitly listed it among four companies awarded EUR 300,000 each. That company-specific prize is the only verified external financing event located.",
+      "hold_note": "The BraveTech EU programme has a wider EUR 35 million budget through 2028, but only the EUR 300,000 company award is attributable to EdgeX Robotics. Selection for the accelerator's earlier phase is not independently treated as cash funding. Commercial databases saying no known external funding are source candidates, not proof of zero funding. Unrelated entities named EdgeX Labs, EdgeX Inc., EDGEX satellite or EdgeX Foundry are excluded.",
+      "sources_checked": [
+        {
+          "url": "https://www.eda.europa.eu/news-and-events/news/2026/07/14/eda-starts-working-with-the-first-group-of-innovators-under-bravetech-eu-phase-ii",
+          "title": "EDA selects EdgeX Robotics for BraveTech EU Phase II",
+          "source_type": "government_agency",
+          "published_date": "2026-07-14"
+        },
+        {
+          "url": "https://www.eda.europa.eu/news-and-events/news/2026/10/14/eda-accelerates-defence-innovation-through-operational-experimentation-in-portugal",
+          "title": "EDA awards BraveTech EU innovators EUR 300,000 each",
+          "source_type": "government_agency",
+          "published_date": "2026-10-14"
+        },
+        {
+          "url": "https://bravetecheu-deftechforges.eu/estonia-france-viable-drone-and-ground-defence-resilience-achieved/",
+          "title": "BraveTech EU profile of EdgeX Robotics NUUN",
+          "source_type": "program_profile",
+          "published_date": "2026-10"
+        },
+        {
+          "url": "https://edgexrobotics.com/",
+          "title": "EdgeX Robotics official website",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://rejestr.io/krs/1197445/edgex-robotics",
+          "title": "EdgeX Robotics Polish registry-derived profile",
+          "source_type": "registry_aggregator",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EdgeX Robotics received the full EUR 35 million BraveTech EU programme budget.",
+          "reason": "EUR 35 million is EDA's programme-wide budget through 2028; the agency identifies EdgeX Robotics' award as EUR 300,000."
+        },
+        {
+          "claim": "BraveTech EU Phase I selection itself was a separate funded round.",
+          "reason": "Reviewed official material supports selection and experimentation but no separate company-specific cash amount for Phase I."
+        },
+        {
+          "claim": "EdgeX Robotics has raised zero external funding.",
+          "reason": "A commercial profile's no-known-funding label is not proof, and the later EDA announcement verifies a EUR 300,000 public prize."
+        },
+        {
+          "claim": "Funding or investors of EdgeX Labs, EdgeX Inc. or EDGEX satellite belong to EdgeX Robotics.",
+          "reason": "Those are unrelated organizations in crypto, software or space sectors."
+        }
+      ]
+    },
+    {
+      "id": "9f58473a-0cac-4b33-9e2f-296bc5b407b9",
+      "slug": "edison-chouest-offshore",
+      "name": "Edison Chouest Offshore",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Edison Chouest Offshore (ECO) is not presented by its own sources as a single venture issuer; it is a group of privately owned affiliated companies within the privately held, family-owned Chouest Group. The bounded review found no capital event attributable to a single ECO parent issuer. A USD 400 million 2013 vessel loan belonged to Nautical Solutions, LLC, an operating unit, while 2022-2024 Title XI applications belonged to other named affiliates and were either withdrawn or still under review.",
+      "hold_note": "Subsidiary and affiliate financing is not rolled up as funding of the catalogue identity without explicit parent borrowing or guarantee evidence. The USD 400 million Nautical Solutions loan refinanced that entity's notes and funded its vessels. ECO Edison LLC withdrew its USD 90 million Title XI application, so it was not closed funding. Offshore Wind Support LLC's USD 95,156,250 application was under review in the cited report, not an award. Acquisitions by the Chouest Group are uses of capital and do not establish money raised by ECO.",
+      "sources_checked": [
+        {
+          "url": "https://www.chouest.com/about.html",
+          "title": "About Edison Chouest Offshore companies",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://chouest.com/downloads/2024-eco-sustainability-report.pdf",
+          "title": "Edison Chouest Offshore 2024 sustainability report",
+          "source_type": "company_report",
+          "published_date": "2025"
+        },
+        {
+          "url": "https://www.chouest.com/press/ecopr031926.html",
+          "title": "Chouest Group press release describing private family ownership",
+          "source_type": "company_press_release",
+          "published_date": "2026-03-19"
+        },
+        {
+          "url": "https://www.equipmentfa.com/news/2474/aigcaf-provides-400mm-vessel-financing-for-nautical-solutions",
+          "title": "AIGCAF provides USD 400 million vessel financing to Nautical Solutions",
+          "source_type": "lender_trade_press",
+          "published_date": "2013-11-19"
+        },
+        {
+          "url": "https://www.marinelink.com/news/edison-chouest-withdraws-title-xi-511628",
+          "title": "Edison Chouest affiliate withdraws Title XI application",
+          "source_type": "trade_press",
+          "published_date": "2024-02-23"
+        },
+        {
+          "url": "https://chouest.com/press/chouest-aquires-rovop.html",
+          "title": "Chouest acquires ROVOP",
+          "source_type": "company_press_release",
+          "published_date": "2024-05-03"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Edison Chouest Offshore raised USD 400 million in November 2013.",
+          "reason": "The borrower was Nautical Solutions, LLC, an operating unit; the source does not identify an ECO parent issuer as borrower."
+        },
+        {
+          "claim": "ECO Edison LLC received USD 90 million of Title XI financing.",
+          "reason": "The application was withdrawn in February 2024 and therefore did not close."
+        },
+        {
+          "claim": "Offshore Wind Support LLC received USD 95,156,250 of Title XI financing.",
+          "reason": "The reviewed report described the affiliate's application as under review, not awarded or funded."
+        },
+        {
+          "claim": "Edison Chouest Offshore has raised zero funding.",
+          "reason": "No parent-attributable public event was found, but the group is private and absence of public disclosure is not proof of zero financing."
+        },
+        {
+          "claim": "The Chouest Group's ROVOP and other acquisitions were funding rounds for Edison Chouest Offshore.",
+          "reason": "They are acquisition uses of capital and do not establish primary proceeds to ECO."
+        }
+      ]
+    },
+    {
+      "id": "8fc8896b-6750-4320-b1c0-53efd7f0a052",
+      "slug": "ee",
+      "name": "EE",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "EE is not a standalone current funding issuer in the reviewed landscape context: EE Limited was acquired by BT Group plc from T-Mobile Holdings Limited and Orange Telecommunications Group Limited on 29 January 2016 and was immediately transferred to British Telecommunications plc. BT's filings identify the GBP 10.971 billion figure as acquisition consideration and an intercompany transfer value, not primary proceeds raised by EE.",
+      "hold_note": "No discrete post-acquisition external financing round attributable to EE Limited was located. The review does not treat a subsidiary balance sheet or the absence of a public round as evidence of zero funding.",
+      "sources_checked": [
+        {
+          "url": "https://www.bt.com/about/investors/financial-reporting-and-news/annual-reports/listing-history",
+          "title": "BT Group listing history — EE acquisition",
+          "source_type": "company_investor_relations",
+          "published_date": null
+        },
+        {
+          "url": "https://www.bt.com/bt-plc/assets/documents/investors/financial-reporting-and-news/annual-reports/2016/bt-annual-report-form-20-f-2016.pdf",
+          "title": "BT Group plc Annual Report 2016",
+          "source_type": "regulatory_filing",
+          "published_date": "2016-05-05"
+        },
+        {
+          "url": "https://www.bt.com/bt-plc/assets/documents/investors/financial-reporting-and-news/annual-reports/2017/bt-annual-report-form-20-f-2017.pdf",
+          "title": "BT Group plc Annual Report 2017",
+          "source_type": "regulatory_filing",
+          "published_date": "2017-05-11"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EE raised GBP 10.971 billion in January 2016.",
+          "reason": "BT's filings identify GBP 10.971 billion as acquisition consideration paid for EE and then as the fair value of an intercompany transfer, not proceeds received by EE in a financing round."
+        },
+        {
+          "claim": "Deutsche Telekom and Orange invested in EE in January 2016.",
+          "reason": "Their relevant entities were sellers of EE to BT; the BT shares and cash were consideration to the sellers rather than new investment into EE."
+        }
+      ]
+    },
+    {
+      "id": "b6dc95cc-661d-431f-9048-1bdc2db14a0a",
+      "slug": "egis",
+      "name": "EGIS",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Egis' official site currently identifies Tikehau Capital's decarbonisation fund as a 43% shareholder, Caisse des Dépôts as a 34% shareholder, and partner-managers and employees as holding 23%. The January 2022 transaction was a secondary transfer from Caisse des Dépôts to a Tikehau-managed vehicle. The July 2025 announcement concerns a continuation fund of more than EUR 1 billion, with additional commitments for possible future Egis capital increases; it does not disclose how much, if any, was paid into Egis at closing.",
+      "hold_note": "No issuer-level amount was normalized from the 2022 or 2025 ownership transactions. The official 2021 transfer authorization discloses buyer-to-seller consideration for a secondary share sale, while the 2025 release discloses the continuation vehicle's size and future commitments rather than present proceeds received by Egis.",
+      "sources_checked": [
+        {
+          "url": "https://www.egis-group.com/our-group",
+          "title": "Egis — Our group",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000044553782",
+          "title": "Order of 22 December 2021 relating to the transfer of Egis to the private sector",
+          "source_type": "government_filing",
+          "published_date": "2021-12-24"
+        },
+        {
+          "url": "https://www.tikehaucapital.com/~/media/Files/T/Tikehau-Capital-V2/documents/media/en/pr-2022-en/PR-Egis-capital.pdf",
+          "title": "Tikehau Capital completes acquisition of a stake in Egis",
+          "source_type": "investor_press_release",
+          "published_date": "2022-01-07"
+        },
+        {
+          "url": "https://www.tikehaucapital.com/~/media/Files/T/Tikehau-Capital-V2/documents/media/en/pr-2025-en/20250707-PR-Tikehau-Capital-Egis.pdf",
+          "title": "Tikehau Capital raises EUR 1 billion to support Egis' next phase of growth",
+          "source_type": "investor_press_release",
+          "published_date": "2025-07-07"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Egis raised EUR 321,112,244.36 in January 2022.",
+          "reason": "The French government authorization identifies this as price paid by the Tikehau vehicle to Caisse des Dépôts for a secondary transfer of 1,901,467 Egis shares, subject to adjustments."
+        },
+        {
+          "claim": "Egis raised more than EUR 1 billion in July 2025.",
+          "reason": "The figure is the size of Tikehau Capital's continuation fund dedicated to Egis. The release only describes additional commitments for future Egis capital increases and does not allocate the fund size as current issuer proceeds."
+        },
+        {
+          "claim": "Apollo S3, ADIA and Neuberger Berman directly invested EUR 1 billion into Egis.",
+          "reason": "The release names them as co-lead investors in the continuation fund or consortium, not as direct Egis shareholders or providers of a disclosed amount to Egis."
+        }
+      ]
+    },
+    {
+      "id": "342c7e0a-ddc1-4e50-871b-5d960c12b947",
+      "slug": "ehang",
+      "name": "EHang",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 9,
+      "relationship_count": 0,
+      "evidence_note": "The reviewed issuer is Cayman-incorporated EHang Holdings Limited, Nasdaq: EH. Public company and investor sources verify a USD 10 million Series A in 2014, USD 42 million Series B in 2015, a USD 40 million gross IPO in 2019, USD 40 million Carmignac placement in 2021, USD 10 million Qingdao and USD 23 million Lee Soo Man-led placements in 2023, USD 76.2 million ATM proceeds and USD 22.6 million private placements in 2024, and USD 23.8 million additional ATM proceeds in 2025.",
+      "hold_note": "The bounded review does not normalize opaque angel/pre-Series A issuances or undisclosed bank-loan drawdowns referenced generally in annual filings. Underwriters are not treated as IPO investors. The unnamed Middle East institutional investor in the 2024 PIPE remains unnamed. The 2025 ATM amount is a completed portion of the same USD 100 million program begun in 2024, not a separate program target.",
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/ehang-announces-10-million-series-a-round-led-by-ggv-capital-to-take-personal-drones-mainstream-300014427.html",
+          "title": "EHANG Announces $10 Million Series A Round Led by GGV Capital",
+          "source_type": "company_and_investor_press_release",
+          "published_date": "2014-12-30"
+        },
+        {
+          "url": "https://www.ehang.com/news/138.html",
+          "title": "EHANG Raises $42M in Series B Financing",
+          "source_type": "company_press_release",
+          "published_date": "2015-08-24"
+        },
+        {
+          "url": "https://ir.ehang.com/news-releases/news-release-details/ehang-announces-pricing-initial-public-offering",
+          "title": "EHang Announces Pricing of Initial Public Offering",
+          "source_type": "company_investor_relations",
+          "published_date": "2019-12-12"
+        },
+        {
+          "url": "https://ir.ehang.com/news-releases/news-release-details/ehang-reports-fourth-quarter-and-full-year-2019-unaudited",
+          "title": "EHang Reports Fourth Quarter and Full Year 2019 Results",
+          "source_type": "company_financial_results",
+          "published_date": "2020-04-20"
+        },
+        {
+          "url": "https://ir.ehang.com/news-releases/news-release-details/ehang-announces-us40-million-investment-carmignac/",
+          "title": "EHang announces US$40 million Investment from Carmignac",
+          "source_type": "company_press_release",
+          "published_date": "2021-01-29"
+        },
+        {
+          "url": "https://ir.ehang.com/news-releases/news-release-details/ehang-reports-first-quarter-2023-unaudited-financial-results/",
+          "title": "EHang Reports First Quarter 2023 Unaudited Financial Results",
+          "source_type": "company_financial_results",
+          "published_date": "2023-05-31"
+        },
+        {
+          "url": "https://ir.ehang.com/news-releases/news-release-details/ehang-announces-us23-million-private-placement-led-south-korean/",
+          "title": "EHang Announces US$23 Million Private Placement Led by Lee Soo Man",
+          "source_type": "company_press_release",
+          "published_date": "2023-07-12"
+        },
+        {
+          "url": "https://ir.ehang.com/news-releases/news-release-details/ehang-reports-second-quarter-2024-unaudited-financial-results/",
+          "title": "EHang Reports Second Quarter 2024 Unaudited Financial Results",
+          "source_type": "company_financial_results",
+          "published_date": "2024-08-22"
+        },
+        {
+          "url": "https://ir.ehang.com/news-releases/news-release-details/ehang-announces-over-us22-million-pipe-investment-strategic",
+          "title": "EHang Announces Over US$22 Million PIPE Investment From Strategic Investors Including Enpower",
+          "source_type": "company_press_release",
+          "published_date": "2024-11-14"
+        },
+        {
+          "url": "https://ir.ehang.com/static-files/821db5e5-327d-4b5f-8b48-540557afcb2b",
+          "title": "EHang Holdings Limited Annual Report 2024",
+          "source_type": "regulatory_filing",
+          "published_date": "2025-04-15"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1759783/000119312526226608/d39307d20f.htm",
+          "title": "EHang Holdings Limited Form 20-F for 2025",
+          "source_type": "regulatory_filing",
+          "published_date": "2026-05-15"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Morgan Stanley, Needham, Tiger Brokers and Prime Number Capital invested in EHang's IPO.",
+          "reason": "They were identified as bookrunner/co-managers, not purchasers or investors."
+        },
+        {
+          "claim": "EHang received the potential additional USD 10 million mentioned in the 2022 Qingdao announcement.",
+          "reason": "The verified close was USD 10 million; the additional USD 10 million was only potential and is not included."
+        },
+        {
+          "claim": "EHang raised USD 100 million through the ATM in 2024.",
+          "reason": "USD 100 million was the program capacity. The company reports USD 76.2 million gross proceeds in 2024 and USD 23.8 million in 2025."
+        },
+        {
+          "claim": "The unnamed UAE-based investor in the 2024 PIPE has a specific identity.",
+          "reason": "The issuer disclosed only its region and institutional nature; no name is inferred."
+        }
+      ]
+    },
+    {
+      "id": "387aa284-14e1-4fce-926e-2c8cf2bffebb",
+      "slug": "eivie",
+      "name": "EIVIE",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The exact recipient is EIVIE Corp. (federal award records use EIVIE and the same UEI UQY5K7JEL7H7). Public sources verify a USD 150,000 NASA SBIR Phase I award starting 16 September 2025 and a USD 50,000 Business Oregon Phase I matching grant announced in January 2026.",
+      "hold_note": "EIVIE's investor room is invitation-only, so private equity terms and investors remain unknown. EIVIE is listed in Oregon UAS Accelerator Cohort 3, and the program states that each participant receives a USD 40,000 grant; however, no EIVIE-specific award/contract or payment date was located, so that amount is held rather than normalized.",
+      "sources_checked": [
+        {
+          "url": "https://eivie.us/",
+          "title": "EIVIE official website",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sbir.gov/awards/220483",
+          "title": "The Annular-Wing VTOL Aircraft — NASA SBIR award",
+          "source_type": "government_award_database",
+          "published_date": "2025-09-16"
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/2666723",
+          "title": "EIVIE SBIR portfolio",
+          "source_type": "government_award_database",
+          "published_date": null
+        },
+        {
+          "url": "https://eastcascadesworks.org/business-oregon-awards-1-million-to-support-oregon-innovators/",
+          "title": "Business Oregon Awards $1 Million to Support Oregon Innovators",
+          "source_type": "public_agency_partner_announcement",
+          "published_date": "2026-01-27"
+        },
+        {
+          "url": "https://oregonuas.org/blogs/news/oregon-uas-accelerator-selects-34-companies-for-the-oregon-uas-innovation-challenge-its-largest-and-most-ambitious-cohort-to-date",
+          "title": "Oregon UAS Accelerator selects Cohort 3",
+          "source_type": "accelerator_announcement",
+          "published_date": "2025-12-23"
+        },
+        {
+          "url": "https://www.oregonlottery.org/programs/oregon-uas-accelerator/",
+          "title": "Oregon UAS Accelerator — program profile",
+          "source_type": "government_program_profile",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EIVIE has no private investors.",
+          "reason": "The company provides investor information only through an invitation-only investor room; public silence is not evidence of no investment."
+        },
+        {
+          "claim": "EIVIE has received a USD 40,000 Oregon UAS Accelerator grant.",
+          "reason": "Cohort membership and the generic per-participant program benefit are public, but an EIVIE-specific award notice or payment record was not located."
+        }
+      ]
+    },
+    {
+      "id": "c2ded8c0-14c5-417e-9b7e-45e8dc3a8824",
+      "slug": "ekolot",
+      "name": "EKOLOT",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact landscape issuer is the Polish sole proprietorship P.P.H.U. 'EKOLOT' Małgorzata Słowik (NIP 6841012542; REGON 370239384), a family-run microlight-aircraft manufacturer. Its official privacy notice and Polish aviation authority records confirm the legal identity. No attributable completed external financing round or grant amount was located in the bounded review.",
+      "hold_note": "The newer EKOLOT Aerospace and Defense sp. z o.o. is a separate legal and financial entity. It publicly states that it has no legal, financial, management or investment relationship with the former EKOLOT PPHU, although it acquired intellectual property and know-how. Its planned PLN 86,622,650 special-economic-zone investment is not attributed to this EKOLOT record.",
+      "sources_checked": [
+        {
+          "url": "https://ekolot.pl/en/privacy-policy/",
+          "title": "EKOLOT privacy policy",
+          "source_type": "company_legal",
+          "published_date": null
+        },
+        {
+          "url": "https://ekolot.pl/en/history-of-the-ekolot/",
+          "title": "History of EKOLOT",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://ulc.gov.pl/urzadzenia-latajace/lista-typow-zatwierdzonych/ultralekki-samolot/kr-030-600-topaz-ekolot-pl-ul-a-001-2025",
+          "title": "KR-030-600 TOPAZ type approval — EKOLOT",
+          "source_type": "government_registry",
+          "published_date": "2025-04-07"
+        },
+        {
+          "url": "https://ekolot-ad.com/comunicado-de-prensa-interes-nacional/",
+          "title": "EKOLOT Aerospace & Defense statement of independence from EKOLOT PPHU",
+          "source_type": "company_statement",
+          "published_date": null
+        },
+        {
+          "url": "https://europark.arp.pl/uk/aktualnosci/euro-park-mielec-w-2025-roku/",
+          "title": "EURO-PARK Mielec in 2025",
+          "source_type": "government_investment_zone_announcement",
+          "published_date": "2026-05-07"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EKOLOT raised or received PLN 86,622,650 in 2025.",
+          "reason": "The figure is a declared capital expenditure commitment by the separate EKOLOT Aerospace and Defense sp. z o.o., not financing received by P.P.H.U. EKOLOT."
+        },
+        {
+          "claim": "EKOLOT Aerospace and Defense is the same issuer or a funded subsidiary of P.P.H.U. EKOLOT.",
+          "reason": "The newer company expressly denies a legal, financial, management or investment relationship with the former PPHU despite acquiring selected IP and know-how."
+        },
+        {
+          "claim": "The family-run EKOLOT has raised zero funding.",
+          "reason": "No public financing event was located, but family ownership and public-source silence do not prove the absence of all owner capital, loans or grants."
+        }
+      ]
+    },
+    {
+      "id": "97fe0f8e-8647-43c0-b8f4-d4161a1269cd",
+      "slug": "ekspla",
+      "name": "Ekspla",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 6,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is UAB Ekspla (Lithuanian legal entity code 121706497), founded in 1992 from the laser division of EKSMA. European Commission CORDIS records and the company site verify multiple beneficiary-specific non-dilutive awards: EUR 141,300 for OPTIX, EUR 220,442.76 for FBI, EUR 410,468.75 for PAMMOTH, EUR 227,500 for MiLEDI, EUR 282,043.71 for HOLISTEP, and EUR 92,279 for the EKSPLA Inside export project.",
+      "hold_note": "The review does not treat consortium-wide project budgets as Ekspla proceeds; only participant-specific net EU contributions or the company's own disclosed allocation are normalized. Historical EKSMA control/consolidation and a 2021 asset reorganization were located, but no transaction amount or sufficiently current direct ownership chain was established for publication. No private equity round was located, and that is not evidence of zero private financing.",
+      "sources_checked": [
+        {
+          "url": "https://ekspla.com/about-us/",
+          "title": "EKSPLA — About company",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://ekspla.com/contacts/",
+          "title": "EKSPLA headquarters",
+          "source_type": "company_legal",
+          "published_date": null
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/218037",
+          "title": "OPTIX project fact sheet",
+          "source_type": "government_grant_database",
+          "published_date": null
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/721766",
+          "title": "FBI project fact sheet",
+          "source_type": "government_grant_database",
+          "published_date": "2016-08-16"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/732411",
+          "title": "PAMMOTH project fact sheet",
+          "source_type": "government_grant_database",
+          "published_date": "2016-10-25"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/779373",
+          "title": "MiLEDI project fact sheet",
+          "source_type": "government_grant_database",
+          "published_date": "2017-11-15"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101137624",
+          "title": "HOLISTEP project fact sheet",
+          "source_type": "government_grant_database",
+          "published_date": "2023-12-04"
+        },
+        {
+          "url": "https://ekspla.com/news/project-ekspla-inside-has-launched/",
+          "title": "Project EKSPLA Inside has launched",
+          "source_type": "company_news",
+          "published_date": "2024-04-25"
+        },
+        {
+          "url": "https://www.eksmaoptics.com/news/166/eksma-has-taken-control-of-ekspla",
+          "title": "EKSMA has taken control of EKSPLA",
+          "source_type": "historical_company_news",
+          "published_date": "2004-01-01"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Ekspla received the full EUR 2,487,556 OPTIX consortium grant.",
+          "reason": "CORDIS attributes EUR 141,300 specifically to EKSPLA; the larger number is the grant for all consortium participants."
+        },
+        {
+          "claim": "Ekspla received the full consortium budgets for FBI, PAMMOTH, MiLEDI or HOLISTEP.",
+          "reason": "Only EKSPLA's participant-specific net EU contributions are normalized."
+        },
+        {
+          "claim": "EKSPLA Inside provided EUR 184,558 to Ekspla.",
+          "reason": "EUR 184,558 is total project value; the company states the EU allocation is EUR 92,279."
+        },
+        {
+          "claim": "EKSMA is currently the direct parent of Ekspla on the basis of the 2004 announcement alone.",
+          "reason": "A later 2021 reorganization transferred EKSMA assets and obligations to Ekspla and EKSMA Optics, so the historical control statement is insufficient for a current parent relationship."
+        }
+      ]
+    },
+    {
+      "id": "9d4af86e-f6c6-4b25-91f0-be19062b8f33",
+      "slug": "elac-sonar",
+      "name": "ELAC Sonar",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact issuer is ELAC SONAR GmbH, formerly Wärtsilä ELAC Nautik GmbH. Cohort plc agreed in December 2019 to acquire 100% of the German company from Wärtsilä and completed the transaction on 3 December 2020, when the company joined Cohort as a standalone subsidiary and was renamed ELAC SONAR. No issuer-level equity, debt, loan or grant financing event was located in the bounded review.",
+      "hold_note": "The EUR 11.25 million headline acquisition price and EUR 10.5 million initial consideration were purchase consideration paid by Cohort and financed with Cohort cash and credit facilities; they were not proceeds raised by ELAC. Customer orders, revenue, customer advances and Cohort group borrowings are likewise not treated as ELAC financing. Absence of a disclosed standalone round is not evidence of zero funding.",
+      "sources_checked": [
+        {
+          "url": "https://www.cohortplc.com/news/press-release/cohort-acquires-wartsila-elac-nautik-gmbh",
+          "title": "Cohort acquires Wärtsilä ELAC Nautik GmbH",
+          "source_type": "transaction_party_announcement",
+          "published_date": "2019-12-12"
+        },
+        {
+          "url": "https://www.wartsila.com/can/media/global-news/12-12-2019-wartsila-to-divest-its-elac-nautik-business-2610765",
+          "title": "Wärtsilä to divest its ELAC Nautik business",
+          "source_type": "seller_announcement",
+          "published_date": "2019-12-12"
+        },
+        {
+          "url": "https://www.cohortplc.com/news/press-release/cohort-completes-acquisition-wartsila-elac-nautik-gmbh",
+          "title": "Cohort completes acquisition of Wärtsilä ELAC Nautik GmbH",
+          "source_type": "transaction_party_announcement",
+          "published_date": "2020-12-03"
+        },
+        {
+          "url": "https://www.cohortplc.com/our-businesses/elac-sonar",
+          "title": "ELAC SONAR",
+          "source_type": "parent_company_profile",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "ELAC SONAR raised EUR 11.25 million in December 2019.",
+          "reason": "EUR 11.25 million was the headline price for Cohort's secondary acquisition of ELAC shares from Wärtsilä, not issuer financing."
+        },
+        {
+          "claim": "Cohort's revolving and accordion credit facilities were borrowed by ELAC SONAR.",
+          "reason": "The buyer disclosed those facilities as sources for acquisition consideration; no evidence attributes the borrowing to ELAC."
+        },
+        {
+          "claim": "ELAC SONAR has raised zero funding.",
+          "reason": "No attributable public financing was located, but nondisclosure does not prove that no private or intra-group financing exists."
+        }
+      ]
+    },
+    {
+      "id": "57dcad99-96d1-44a1-bb67-3badf2895e1b",
+      "slug": "elbit-systems",
+      "name": "Elbit Systems",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 8,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Elbit Systems Ltd., an Israeli company formed in 1996 in the Elbit Ltd. corporate demerger. Primary issuer and SEC sources verify a broad modern capital-markets history: NIS 1.1 billion Series A notes in June 2010; an approximately NIS 831 million public Series A expansion and approximately NIS 94.7 million institutional placement in 2012; approximately NIS 665 million of treasury-share equity sold in April 2019; NIS 1.9 billion Series B, C and D notes in July 2021; approximately USD 314 million of Series A commercial paper in 2023; USD 110 million of Series B commercial paper in September 2024; and an approximately USD 588.8 million underwritten ordinary-share offering closed in May 2025.",
+      "hold_note": "Amounts remain in original disclosed currencies. Note and commercial-paper amounts are principal/par value; equity offerings use gross proceeds. The 1996 demerger distributed an operating business rather than disclosing cash proceeds to the issuer and is not recorded as a financing round. Share-market holders, classified investors and commercial-paper purchasers were not individually identified; distributors, underwriters, rating agencies and trustees are not investors. Customer contracts, acquisition consideration, bank facility availability and subsidiary activity are excluded unless the exact issuer received financing. The 2023 commercial-paper amount is the issuer's year-end aggregate Series A issuance, not an additional USD 314 million on top of the September USD 300 million announcement.",
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000117891310001559/zk1008414.htm",
+          "title": "Elbit Systems results of 2010 Series A notes public tender",
+          "source_type": "regulatory_filing",
+          "published_date": "2010-06-08"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000091068010000259/f6k-08172010.htm",
+          "title": "Elbit Systems second-quarter 2010 results confirming notes completion",
+          "source_type": "regulatory_filing",
+          "published_date": "2010-08-17"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000117891312000865/exhibit_1.htm",
+          "title": "Elbit Systems results of 2012 public tender for new Series A notes",
+          "source_type": "regulatory_filing",
+          "published_date": "2012-03-29"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000091068012000097/f6k-05082012.htm",
+          "title": "Elbit Systems conclusion of 2012 private placement of additional Series A notes",
+          "source_type": "regulatory_filing",
+          "published_date": "2012-05-08"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000144530514001097/eslt1231201320-f.htm",
+          "title": "Elbit Systems 2013 Form 20-F confirming 2012 Series A issuances",
+          "source_type": "regulatory_filing",
+          "published_date": "2014-03-19"
+        },
+        {
+          "url": "https://www.elbitsystems.com/news/elbit-systems-announces-offering-ordinary-shares",
+          "title": "Elbit Systems Announces Offering of Ordinary Shares",
+          "source_type": "company_press_release",
+          "published_date": "2019-04-09"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000162828020004030/R32.htm",
+          "title": "Elbit Systems 2019 ordinary-share sale disclosure",
+          "source_type": "regulatory_filing",
+          "published_date": "2020-03-25"
+        },
+        {
+          "url": "https://www.elbitsystems.com/news/elbit-systems-announces-results-public-tenders-israel-purchase-companys-notes",
+          "title": "Elbit Systems Announces Results of Public Tenders in Israel for the Purchase of the Company's Notes",
+          "source_type": "company_press_release",
+          "published_date": "2021-07-07"
+        },
+        {
+          "url": "https://www.elbitsystems.com/news/elbit-systems-announces-commercial-paper-issuance-israel",
+          "title": "Elbit Systems Announces Commercial Paper Issuance in Israel",
+          "source_type": "company_press_release",
+          "published_date": "2023-09-01"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000162828025013971/eslt-20241231.htm",
+          "title": "Elbit Systems 2024 Form 20-F",
+          "source_type": "regulatory_filing",
+          "published_date": "2025-03-25"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000162828025027540/form6-kxclosing.htm",
+          "title": "Elbit Systems May 2025 offering closing Form 6-K",
+          "source_type": "regulatory_filing",
+          "published_date": "2025-05-23"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000102766426000005/eslt-20251231.htm",
+          "title": "Elbit Systems 2025 Form 20-F",
+          "source_type": "regulatory_filing",
+          "published_date": "2026-03-17"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Elbit Systems raised cash in its 1996 demerger.",
+          "reason": "The reviewed filing describes a corporate spin-off of defense assets and business, not a primary cash financing."
+        },
+        {
+          "claim": "The 2012 Series A expansion raised exactly NIS 807 million.",
+          "reason": "NIS 807 million was rounded principal value; the issuer disclosed approximately NIS 831 million immediate gross proceeds for the public expansion."
+        },
+        {
+          "claim": "The September 2023 USD 300 million issuance and the 2023 USD 314 million annual total were separate full rounds to be added together.",
+          "reason": "The annual total includes the initial issuance and additional Series A commercial paper; recording both as separate totals would double count."
+        },
+        {
+          "claim": "Elbit subsidiaries received Elbit Systems Ltd.'s parent-level equity and debt proceeds.",
+          "reason": "The reviewed securities sources name Elbit Systems Ltd. as issuer and do not identify the German, Elisra or Elop subsidiaries as recipients."
+        },
+        {
+          "claim": "BofA Securities, J.P. Morgan, Jefferies or Morgan Stanley were investors in the 2025 offering.",
+          "reason": "The filing identifies them as underwriters; it does not establish principal investor roles."
+        },
+        {
+          "claim": "Defense contracts and customer advances were investment financing.",
+          "reason": "They are operating/customer transactions rather than issuer capital raises."
+        }
+      ]
+    },
+    {
+      "id": "af6e48e2-fa44-4bbb-8609-fe7fca06a207",
+      "slug": "elbit-systems-deutschland",
+      "name": "Elbit Systems Deutschland",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact German issuer is Elbit Systems Deutschland GmbH & Co. KG, the legal continuity of the former TELEFUNKEN RACOMS. Elbit Systems' official October 2020 announcement identifies TELEFUNKEN RACOMS as its wholly owned German subsidiary and states that it was rebranded Elbit Systems Deutschland. No attributable standalone equity, debt, loan or grant financing event was located.",
+      "hold_note": "Elbit Systems Ltd.'s parent-level notes, commercial paper and equity offerings are not assigned to the German subsidiary. TELEFUNKEN RACOMS' acquisition history and operating contracts are not issuer financing. No public round located does not mean that the subsidiary has never received intra-group or private financing.",
+      "sources_checked": [
+        {
+          "url": "https://www.elbitsystems.com/news/elbit-systems-consolidates-operations-germany-rebrands-telefunken-racoms-elbit-systems",
+          "title": "Elbit Systems Consolidates Operations in Germany, Rebrands TELEFUNKEN RACOMS as Elbit Systems Deutschland",
+          "source_type": "parent_company_announcement",
+          "published_date": "2020-10-01"
+        },
+        {
+          "url": "https://www.elbitsystems.com/global-presence",
+          "title": "Elbit Systems Worldwide",
+          "source_type": "parent_company_profile",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Elbit Systems Deutschland raised Elbit Systems Ltd.'s 2021 notes, 2023-2024 commercial paper or 2025 equity proceeds.",
+          "reason": "All reviewed securities disclosures name Elbit Systems Ltd. as issuer and do not identify the German subsidiary as recipient."
+        },
+        {
+          "claim": "Contracts awarded to Elbit Systems Deutschland are investment rounds.",
+          "reason": "Customer procurement awards are operating revenue, not capital financing."
+        },
+        {
+          "claim": "Elbit Systems Deutschland has raised zero funding.",
+          "reason": "No attributable public event was located, but private and intra-group financing may be undisclosed."
+        }
+      ]
+    },
+    {
+      "id": "0dd5ab23-6e14-4a00-b8fa-933692737463",
+      "slug": "elbit-systems-elisra",
+      "name": "Elbit Systems Elisra",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact issuer is Elbit Systems EW and SIGINT – Elisra Ltd., formerly Elisra Electronic Systems Ltd. Elbit Systems acquired the remaining 30% from Elta Systems in March 2011 for USD 67.5 million, after which Elisra became wholly owned and was renamed. Current Elbit SEC filings continue to identify Elisra as a major group subsidiary. No attributable standalone primary financing event was located.",
+      "hold_note": "The USD 67.5 million paid by Elbit Systems to Elta was secondary acquisition consideration for existing shares, not proceeds raised by Elisra. Parent Elbit Systems securities issuances, customer contracts awarded to products made by Elisra, and consolidated group debt are not assigned to the subsidiary. No public round found is not evidence of zero funding.",
+      "sources_checked": [
+        {
+          "url": "https://www.elbitsystems.com/sites/default/files/2025-03/un.eyq22011clean.pdf",
+          "title": "Elbit Systems second-quarter 2011 financial statements",
+          "source_type": "regulatory_filing",
+          "published_date": "2011-08-16"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000117891312000998/R10.htm",
+          "title": "Elbit Systems subsidiary and Elisra name-change disclosure",
+          "source_type": "regulatory_filing",
+          "published_date": "2012-05-30"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000102766426000005/eslt-20251231.htm",
+          "title": "Elbit Systems 2025 Form 20-F",
+          "source_type": "regulatory_filing",
+          "published_date": "2026-03-17"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Elisra raised USD 67.5 million in March 2011.",
+          "reason": "USD 67.5 million was consideration paid by Elbit Systems to Elta for Elta's existing 30% stake, not primary capital received by Elisra."
+        },
+        {
+          "claim": "Elta Systems was a financing investor in Elisra in 2011.",
+          "reason": "The reviewed 2011 event was Elta's exit as selling shareholder; it was not a new-money investment."
+        },
+        {
+          "claim": "Elisra received the parent company's public notes, commercial paper or equity proceeds.",
+          "reason": "The securities sources name Elbit Systems Ltd. as issuer and do not attribute proceeds to Elisra."
+        },
+        {
+          "claim": "Elisra has raised zero funding.",
+          "reason": "The review found no standalone public financing disclosure, but that does not establish the absence of private or intra-group financing."
+        }
+      ]
+    },
+    {
+      "id": "99cd94ee-d8f2-4561-83bc-304a131e44e4",
+      "slug": "elbit-systems-elop",
+      "name": "Elbit Systems Elop",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact issuer is Elbit Systems Electro-Optics Elop Ltd. Elbit SEC filings describe Elop as a major wholly owned subsidiary and establish continuity from El-Op/Elop into the current legal name. No attributable standalone equity, debt, loan or grant financing event was located in the bounded review.",
+      "hold_note": "Parent Elbit Systems Ltd.'s capital-market financings are not assigned to Elop. Customer contracts, research programs, internal capital expenditure and parent consolidated borrowings are not evidence that Elop itself raised external financing. Absence of a public round does not prove zero funding.",
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000091068007000557/f20f12312006.htm",
+          "title": "Elbit Systems 2006 Form 20-F",
+          "source_type": "regulatory_filing",
+          "published_date": "2007-05-29"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000162828024013449/eslt-20231231.htm",
+          "title": "Elbit Systems 2023 Form 20-F",
+          "source_type": "regulatory_filing",
+          "published_date": "2024-03-28"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1027664/000091068006000928/f6k092006.htm",
+          "title": "Elbit Systems filing identifying Elop as subsidiary",
+          "source_type": "regulatory_filing",
+          "published_date": "2006-09-20"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Elop received Elbit Systems Ltd.'s parent-level notes, commercial paper or public-equity proceeds.",
+          "reason": "Reviewed securities filings name Elbit Systems Ltd. as issuer and do not attribute proceeds to Elop."
+        },
+        {
+          "claim": "Elop customer contracts or development programs are investment rounds.",
+          "reason": "Procurement and operating arrangements are not external capital financing."
+        },
+        {
+          "claim": "Elop has raised zero funding.",
+          "reason": "No attributable public financing was located, but undisclosed private or intra-group financing cannot be ruled out."
+        }
+      ]
+    },
+    {
+      "id": "8a66d62c-2a68-4b8d-83ef-404c0643bab8",
+      "slug": "eldis-pardubice",
+      "name": "ELDIS Pardubice",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact Czech issuer is ELDIS Pardubice, s.r.o., company ID 15050742. Czechoslovak Group announced that it purchased 100% of ELDIS from its founders in 2017, and current official ELDIS and CSG profiles identify the company as a CSG group member. The acquisition price was not disclosed and no attributable standalone equity, debt, loan or grant financing event was located.",
+      "hold_note": "CSG's 2017 purchase was a secondary transfer of existing ownership, not ELDIS issuer financing. A CZK 100 million facility described as an ELDIS investment is company capital expenditure and is not treated as external funding without a disclosed financing source. Contracts, group bond proceeds and parent borrowings are not assigned to ELDIS. No public round located does not mean the company has never received private or intra-group financing.",
+      "sources_checked": [
+        {
+          "url": "https://csg.com/en/news/czechoslovak-group-bought-the-czech-manufacturer-of-radar-systems-eldis-pardubice",
+          "title": "Czechoslovak Group bought the Czech manufacturer of radar systems ELDIS Pardubice",
+          "source_type": "transaction_party_announcement",
+          "published_date": "2017"
+        },
+        {
+          "url": "https://csg.com/en/companies/eldis-pardubice",
+          "title": "ELDIS Pardubice",
+          "source_type": "parent_company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.eldis.cz/en/contacts",
+          "title": "ELDIS Pardubice contacts and legal information",
+          "source_type": "company_legal",
+          "published_date": null
+        },
+        {
+          "url": "https://www.eldis.cz/en/company-profile",
+          "title": "ELDIS Pardubice company profile",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://csg.com/en/news/eldis-pardubice-opens-new-facility-worth-100-million-czk-enabling-testing-of-3d-radars",
+          "title": "ELDIS Pardubice Opens New Facility Worth 100 Million CZK",
+          "source_type": "parent_company_announcement",
+          "published_date": "2026-04"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "ELDIS Pardubice raised an undisclosed round from Czechoslovak Group in 2017.",
+          "reason": "The official source describes CSG's purchase of a 100% share from ELDIS's owners and founders, a secondary acquisition rather than new issuer capital."
+        },
+        {
+          "claim": "ELDIS Pardubice raised CZK 100 million for its new facility.",
+          "reason": "The source describes the facility as an investment but does not identify an external financing instrument, lender, grantor or investor."
+        },
+        {
+          "claim": "CSG parent bond or loan proceeds were received by ELDIS Pardubice.",
+          "reason": "No reviewed source assigns parent financing proceeds to the ELDIS legal entity."
+        },
+        {
+          "claim": "ELDIS Pardubice has raised zero funding.",
+          "reason": "No attributable public round was located, but absence of disclosure is not proof that no private or intra-group financing exists."
+        }
+      ]
+    }
+  ],
+  "audit_notes": [
+    "Only issuer-supported financing facts are normalized; parent, subsidiary, acquisition-consideration, contract and consortium amounts remain excluded unless the reviewed source establishes the target as recipient.",
+    "A completed bounded public-source review does not assert zero funding where no public round was found; undisclosed private history remains unknown.",
+    "Duplicate or closely related catalogue identities are kept distinct unless sources establish legal or economic continuity.",
+    "SEC Form D amendments are treated as cumulative issuer disclosures and are not double-counted as separate closes unless a later filing establishes a distinct offering."
+  ],
+  "publication": {
+    "pending": true,
+    "verified": false,
+    "catalogue_commit": null,
+    "workflow_run": null,
+    "live_generated_at": null
+  },
+  "database": {
+    "approved_funding_events": 2634,
+    "round_participations": 3118,
+    "investor_profiles": 1911,
+    "source_reconciliation_companies": 668
+  }
+}
