@@ -1,0 +1,1441 @@
+{
+  "report": "Thirty-fifth autonomous funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": "funding-20261112T114459Z-wider-24",
+  "scope": {
+    "identities": 24,
+    "from": "electra",
+    "through": "eotech",
+    "published_landscape": false
+  },
+  "method": "Four disjoint read-only research lanes; one writer consolidation; exact issuer, original currency, amount qualifier, instrument, closing and explicit roles checked. Contracts, acquisition consideration, parent/subsidiary financing, undrawn facilities and consortium totals excluded.",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 12,
+    "new_or_retained_partial": 12,
+    "new_events_written": 57,
+    "new_generic_portfolio_relationships": 5,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "current_manifest_publication_verified": false,
+    "newly_completed_wider_reviews": 12,
+    "new_approved_events": 57,
+    "new_round_participations": 79,
+    "new_investor_profiles": 41,
+    "new_source_rows": 71,
+    "new_companies_with_events": 12,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "manifest_event_matches": 57,
+    "manifest_link_matches": 79,
+    "manifest_source_matches": 71,
+    "manifest_relationship_matches": 5,
+    "missing_link_source_urls": 0,
+    "db_approved_events": 2691,
+    "db_approved_round_participations": 3197,
+    "db_investor_profiles": 1952,
+    "db_source_reconciliation_companies": 680,
+    "concurrency_speedup_claimed": false,
+    "active_minutes": 14,
+    "timing_scope": "Lease through four read-only lanes, reconciliation, rollback rehearsal, atomic import and idempotency rollback; publication wait excluded.",
+    "checked_identities_per_active_hour": 102.9,
+    "completed_reviews_per_active_hour": 51.4
+  },
+  "per_company": [
+    {
+      "id": "783b797b-b03b-4c56-ad44-1224f5dee748",
+      "slug": "electra",
+      "name": "Electra",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 7,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Electra.aero, Inc. Primary company and government sources verify an amount-undisclosed Series A announced in January 2022; a January 2023 STRATFI package containing up to USD 30 million of U.S. Air Force/SBIR and other government funding plus USD 55 million of private investment; separate amount-undisclosed investments from Virginia Venture Partners, Statkraft Ventures and Honeywell Ventures; an amount-undisclosed Virginia CCF grant; and a USD 115 million Series B in April 2025. Only the government component of STRATFI is normalized because the private component is not resolved into dated underlying rounds.",
+      "hold_note": "Series A, Virginia Venture Partners, CCF, Statkraft and Honeywell amounts remain undisclosed. The USD 85 million STRATFI headline is a combined maximum package rather than one equity round; its USD 55 million private component is held to avoid overlap with separately disclosed private financings. Safran is later described as a strategic investor, but no attributable investment date or amount was located.",
+      "sources_checked": [
+        {
+          "url": "https://electra.aero/company",
+          "title": "Company - Electra.aero",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/lockheed-martin-ventures-leads-series-a-funding-round-for-electraaero-301462410.html",
+          "title": "Lockheed Martin Ventures Leads Series A Funding Round for Electra.aero",
+          "source_type": "company_press_release",
+          "published_date": "2022-01-18"
+        },
+        {
+          "url": "https://electra.aero/news/stratfi",
+          "title": "Electra Wins STRATFI Award from U.S. Air Force",
+          "source_type": "company_press_release",
+          "published_date": "2023-01-26"
+        },
+        {
+          "url": "https://afwerx.com/news/afwerx-sbir-sttr-program-advances-hybrid-powered-aircraft-for-tactical-logistics/",
+          "title": "AFWERX SBIR/STTR program advances hybrid-powered aircraft for tactical logistics",
+          "source_type": "government_program_announcement",
+          "published_date": "2023-02-02"
+        },
+        {
+          "url": "https://www.airframer.com/news/release/vipc-s-virginia-venture-partners-invests-in-electra-to-provide-efficient-and",
+          "title": "VIPC's Virginia Venture Partners Invests in Electra",
+          "source_type": "public_investor_press_release_mirror",
+          "published_date": "2023-04-06"
+        },
+        {
+          "url": "https://vipc.org/electra/",
+          "title": "Electra - VIPC portfolio",
+          "source_type": "public_investor_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://electra.aero/news/vipc-award",
+          "title": "Electra Wins Virginia Commonwealth Commercialization Fund Award",
+          "source_type": "company_press_release",
+          "published_date": "2023-04-19"
+        },
+        {
+          "url": "https://electra.aero/news/statkraft",
+          "title": "Statkraft Ventures Invests in Electra",
+          "source_type": "company_press_release",
+          "published_date": "2023-07-26"
+        },
+        {
+          "url": "https://electra.aero/news/electra-selects-honeywell-to-provide-key-flight-technology-for-its-hybrid-electric-aircraft",
+          "title": "Electra Selects Honeywell to Provide Key Flight Technology",
+          "source_type": "company_press_release",
+          "published_date": "2024-07-24"
+        },
+        {
+          "url": "https://electra.aero/news/electra-raises-115-million",
+          "title": "Electra Raises $115 Million to Enter Pre-Production",
+          "source_type": "company_press_release",
+          "published_date": "2025-04-21"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Electra raised one USD 85 million equity round in January 2023.",
+          "reason": "The sources describe STRATFI as a maximum combined package of USD 30 million government funding and USD 55 million private investment, not one equity round."
+        },
+        {
+          "claim": "The USD 55 million private STRATFI component is a separately closed round on 26 January 2023.",
+          "reason": "The sources do not disclose its underlying close dates, investor allocation or overlap with separately announced private investments."
+        },
+        {
+          "claim": "VIPC invested exactly USD 500,000 in Electra.",
+          "reason": "A board presentation listed USD 500,000 in a pipeline; the completed investment release did not disclose an amount."
+        },
+        {
+          "claim": "Safran invested in the July 2023 partnership announcement.",
+          "reason": "That announcement describes a partnership, while later materials call Safran a strategic investor without identifying an investment date or amount."
+        }
+      ]
+    },
+    {
+      "id": "f6a6bbb5-de23-4005-8e31-87e89a8b6a83",
+      "slug": "electric-aviation-maven",
+      "name": "Electric Aviation Maven",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Electric Aviation Maven Ltd (UK company number 14773111). The UK subsidy database records a GBP 207,683 direct grant awarded by UKRI Innovate UK on 4 August 2026 under the Research, Development and Innovation Streamlined Subsidy Scheme. Government project pages also identify the company as a partner in SATE hydrogen-roadmap and Project SEAN consortium work, but consortium totals are not assigned to this issuer.",
+      "hold_note": "No attributable public equity or debt round was located. SATE and Project SEAN programme totals and Department for Transport consortium funding are not normalized because the sources do not disclose Electric Aviation Maven's issuer-level allocation.",
+      "sources_checked": [
+        {
+          "url": "https://www.eamaven.com/about-us",
+          "title": "About Us - Electric Aviation Maven",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://searchforuksubsidies.beis.gov.uk/searchresultsawardroute/?page=69696",
+          "title": "Subsidy award 69696 - Electric Aviation Maven Ltd",
+          "source_type": "government_subsidy_database",
+          "published_date": "2026-08-04"
+        },
+        {
+          "url": "https://www.gov.uk/government/publications/zero-emission-flight-demonstrator-competition-successful-projects/zero-emission-flight-demonstrator-competition-round-1-successful-projects",
+          "title": "Zero Emission Flight Demonstrator competition: successful projects",
+          "source_type": "government_program_announcement",
+          "published_date": "2025-03-27"
+        },
+        {
+          "url": "https://sate.scot/live-projects/",
+          "title": "SATE live projects",
+          "source_type": "program_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://hitrans.org.uk/projects/project-sean/",
+          "title": "Project SEAN",
+          "source_type": "public_project_profile",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Electric Aviation Maven received each consortium's full published project budget.",
+          "reason": "The government sources list the company as one project partner and do not disclose its share."
+        },
+        {
+          "claim": "Electric Aviation Maven has raised zero private capital.",
+          "reason": "No public equity or debt event was found, but absence of disclosure is not evidence of zero private financing."
+        }
+      ]
+    },
+    {
+      "id": "bc71b911-20f5-4afa-b37e-530a35bb3ee9",
+      "slug": "electrical-wings",
+      "name": "Electrical Wings",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer behind the catalogue brand is Electric Wings Group OÜ (Estonian registry code 16908003). Estonian public-transaction aggregators record two issuer-specific defence grant receipts from Riigi Kaitseinvesteeringute Keskus: EUR 540,000 on 20 June 2025 and EUR 630,000 on 18 December 2025. The 2026 defence procurement framework is a customer-contract ceiling, not financing.",
+      "hold_note": "The original award decisions were not located, so the two grants remain supported by replicated public-transaction records rather than primary award documents. A 2026-01-08 EUR 630,000 posting appears duplicative of the December 2025 grant and is not counted. A EUR 1,510 April 2026 state-aid entry is held pending an original award record.",
+      "sources_checked": [
+        {
+          "url": "https://electricwings.ee/",
+          "title": "Electric Wings",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://ariregister.rik.ee/est/company/16908003/Electric-Wings-Group-O%C3%9C",
+          "title": "Electric Wings Group OÜ registry record",
+          "source_type": "official_registry",
+          "published_date": null
+        },
+        {
+          "url": "https://regia.ee/en/entity/16908003-electric-wings-group-ou",
+          "title": "Electric Wings Group OÜ public transactions",
+          "source_type": "public_transaction_database",
+          "published_date": null
+        },
+        {
+          "url": "https://radar.aripaev.ee/ettevote/558905/electric-wings-group-ou",
+          "title": "Electric Wings Group OÜ transactions and state aid",
+          "source_type": "public_transaction_database",
+          "published_date": null
+        },
+        {
+          "url": "https://riigihanked.riik.ee/rhr/api/public/v1/notice/5524238/html",
+          "title": "Procurement notice concerning Electric Wings Group OÜ",
+          "source_type": "government_procurement_notice",
+          "published_date": "2026-01-09"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Electric Wings raised EUR 400 million in January 2026.",
+          "reason": "EUR 400 million is a procurement framework ceiling, not capital received by the issuer."
+        },
+        {
+          "claim": "Electric Wings received two separate EUR 630,000 grants in December 2025 and January 2026.",
+          "reason": "The postings appear to describe the same counterparty, amount and aid classification, so only the earlier transaction entry is normalized pending reconciliation."
+        },
+        {
+          "claim": "The EUR 1,510 state-aid listing is a confirmed financing event ready for import.",
+          "reason": "The aggregator entry lacks a located original award decision and is held for primary-source reconciliation."
+        }
+      ]
+    },
+    {
+      "id": "c170fd0c-f5ed-42de-8aa4-cafff8985e28",
+      "slug": "electroninks",
+      "name": "Electroninks",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Electroninks Inc. Company announcements verify a USD 3.9 million Series A in August 2017, an amount-undisclosed Series B disclosed in March 2020, nearly USD 1.5 million of U.S. Air Force Phase II SBIR funding in October 2021, and an amount-undisclosed In-Q-Tel strategic investment announced in February 2022. The Series B disclosure names Applied Ventures, Merck Ventures, In-Q-Tel and Bandgap Ventures plus unnamed Taiwan and Japan investors.",
+      "hold_note": "The Series B's actual close date and amount remain undisclosed; the announcement date is used as the bounded public disclosure date. Earlier NSF/SBIR claims and exact dates found only in aggregators are not normalized without original award records. ITIC and M Ventures appearances in later backer lists are not assigned to specific rounds beyond what event-level sources establish.",
+      "sources_checked": [
+        {
+          "url": "https://electroninks.com/electroninks-closes-series-a-investment-to-commercialize-particle-free-silver-and-copper-conductive-inks-for-the-consumer-electronics-and-e-textiles-industries/",
+          "title": "Electroninks Closes Series A Investment",
+          "source_type": "company_press_release",
+          "published_date": "2017-08-07"
+        },
+        {
+          "url": "https://presswire.com/release/electroninks-announces-strategic-alliance-enjet-inc-provide/",
+          "title": "Electroninks Announces Strategic Alliance with Enjet and Series B Completion",
+          "source_type": "company_press_release_mirror",
+          "published_date": "2020-03-09"
+        },
+        {
+          "url": "https://electroninks.com/electroninks-receives-u-s-air-force-contract-to-provide-particle-free-conductive-ink-and-printers-for-advanced-manufacturing/",
+          "title": "Electroninks Receives U.S. Air Force Contract",
+          "source_type": "company_press_release",
+          "published_date": "2021-10-28"
+        },
+        {
+          "url": "https://electroninks.com/electroninks-finalizes-enhanced-particle-free-silver-ink-product-for-aerosol-jet-printing/",
+          "title": "Electroninks Finalizes Enhanced Particle-Free Silver Ink Product",
+          "source_type": "company_press_release",
+          "published_date": "2022-02-09"
+        },
+        {
+          "url": "https://electroninks.com/newsroom/",
+          "title": "Electroninks newsroom",
+          "source_type": "company_news_index",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Electroninks' Series B closed on 9 March 2020 for a known amount.",
+          "reason": "The release says the company had recently completed the round; it does not disclose the actual close date or amount."
+        },
+        {
+          "claim": "Unnamed Taiwan and Japan Series B investors can be identified from later cap-table or backer lists.",
+          "reason": "The event-level source leaves them unnamed, so identities are not guessed."
+        },
+        {
+          "claim": "The Air Force SBIR was ordinary venture equity.",
+          "reason": "The company describes deliverable-backed Phase II SBIR contract funding, not an equity sale."
+        },
+        {
+          "claim": "The February 2022 In-Q-Tel investment is necessarily the same transaction as its 2020 Series B participation.",
+          "reason": "The 2022 company release presents In-Q-Tel as an additional partner and investor; amount and whether it was a follow-on remain undisclosed."
+        }
+      ]
+    },
+    {
+      "id": "2e3a2e9b-bb9e-4ecc-9644-032436cee7e5",
+      "slug": "elevon-aerial",
+      "name": "Elevon Aerial",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Elevon Aerial's official site says the agricultural-drone business was formed in 2025 by co-owners James and Jim Rafferty. No attributable issuer-level equity, debt or grant financing event was located in the bounded public-source review.",
+      "hold_note": "The absence of a public financing announcement is not evidence of zero funding. Owner contributions, product pricing, conditional approvals, customer contracts and the owners' separate KT Precision operating history are not treated as Elevon Aerial financing.",
+      "sources_checked": [
+        {
+          "url": "https://elevonaerialag.com/about/",
+          "title": "About Elevon Aerial",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://elevonaerialag.com/",
+          "title": "Elevon Aerial",
+          "source_type": "company_website",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Elevon Aerial has raised zero funding.",
+          "reason": "No attributable public financing event was located, but public silence is not proof of no financing."
+        },
+        {
+          "claim": "The Raffertys' earlier KT Precision resources or contracts are Elevon Aerial investment funding.",
+          "reason": "Operating history and customer revenue of a separate business are not issuer financing for Elevon Aerial."
+        }
+      ]
+    },
+    {
+      "id": "218d04cf-1569-407d-8a14-167889423e93",
+      "slug": "elitac-wearables",
+      "name": "Elitac Wearables",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Elitac B.V., trading as Elitac Wearables. A company-hosted reproduction of Teijin's announcement states that Teijin Aramid B.V. acquired 25,000 shares, equal to 20% of outstanding shares, on 29 November 2018; consideration and whether the shares were primary or secondary were not disclosed. NATO DIANA selected Elitac Wearables for its 2026 cohort, whose selected companies receive EUR 100,000 of contractual, non-equity funding paid before the programme; NATO explicitly states that this funding is not a grant and requires deliverables.",
+      "hold_note": "Teijin transaction value and primary-versus-secondary structure remain undisclosed, so the stake acquisition is recorded as an investment disclosure rather than assumed primary proceeds. Earlier EUR 50,000, EUR 50,000 and EUR 250,000 grant claims found in aggregators are held without original award records. Elitac does not appear in NATO DIANA's later 2026 mission-track list, so no EUR 300,000 continuation funding is attributed.",
+      "sources_checked": [
+        {
+          "url": "https://elitacwearables.com/about/partners-and-clients/teijin-2/",
+          "title": "Teijin invests in Elitac",
+          "source_type": "company_transaction_announcement",
+          "published_date": "2018-12-05"
+        },
+        {
+          "url": "https://elitacwearables.com/10-years-of-elitac-wearables/",
+          "title": "10 years of Elitac Wearables",
+          "source_type": "company_profile",
+          "published_date": "2022-10-13"
+        },
+        {
+          "url": "https://www.diana.nato.int/connect/nato-diana-announces-largestever-cohort-150-innovators-selected-across-ten-challenge-areas-for-2026-challenge-programme.html",
+          "title": "NATO DIANA announces 2026 cohort",
+          "source_type": "program_announcement",
+          "published_date": "2025-12-10"
+        },
+        {
+          "url": "https://www.diana.nato.int/about-diana/2026-cohort-of-companies.html",
+          "title": "2026 cohort of companies",
+          "source_type": "program_cohort_list",
+          "published_date": null
+        },
+        {
+          "url": "https://www.diana.nato.int/faq/how-will-funding-work.html",
+          "title": "How will funding work?",
+          "source_type": "program_funding_terms",
+          "published_date": null
+        },
+        {
+          "url": "https://www.diana.nato.int/connect/-nato-diana-challenge-call-qa-your-key-questions-answered-2.html",
+          "title": "NATO DIANA Challenge Call Q&A",
+          "source_type": "program_funding_terms",
+          "published_date": "2026-06-04"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Teijin invested a disclosed cash amount directly into Elitac in November 2018.",
+          "reason": "The source discloses a 20% share acquisition but not consideration or whether shares were newly issued versus acquired from holders."
+        },
+        {
+          "claim": "The NATO DIANA EUR 100,000 is an equity round or grant.",
+          "reason": "NATO states that it is non-equity contractual funding, not a grant, with deliverables required."
+        },
+        {
+          "claim": "Elitac received EUR 300,000 of DIANA mission-track funding.",
+          "reason": "Elitac was selected for the 2026 cohort but is not listed among the subsequent mission-track companies."
+        },
+        {
+          "claim": "Aggregator-listed earlier grants are ready to import.",
+          "reason": "No original issuer-specific award documents were located for those claimed EUR 50,000, EUR 50,000 and EUR 250,000 events."
+        }
+      ]
+    },
+    {
+      "id": "9a8b4d4d-ea94-47ec-891d-b7c5b2c4ec1c",
+      "slug": "elroy-air",
+      "name": "Elroy Air",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Elroy Air, Inc. is the issuer. Company sources verify a USD 40 million Series A in 2021, USD 36 million of additional financing in 2022, an amount-undisclosed first close in January 2025, and USD 75 million of pre-PIPE financing funded by September 2026. The remaining USD 100 million of the upsized PIPE was still conditional on the pending business-combination closing at the review date.",
+      "hold_note": "The USD 48 million cumulative figure published with the 2021 Series A implies USD 8 million of prior capital but does not identify a separable dated round. The USD 100 million closing PIPE is only a commitment until the business combination closes. The USD 46 million Army award, customer deposits and aircraft demand are contracts or commercial commitments, not issuer financing.",
+      "sources_checked": [
+        {
+          "url": "https://elroyair.com/company/news/press-releases/elroy-series-a-financing/",
+          "title": "Elroy Air's Series A Financing",
+          "source_type": "company_press_release",
+          "published_date": "2021-08-03"
+        },
+        {
+          "url": "https://elroyair.com/company/history/",
+          "title": "Elroy Air history",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://elroyair.com/company/news/press-releases/new-ceo-and-financing-announcement/",
+          "title": "Elroy Air completes first close of additional funding",
+          "source_type": "company_press_release",
+          "published_date": "2025-01-14"
+        },
+        {
+          "url": "https://elroyair.com/company/news/press-releases/PIPE-upsizing-to-175-million-with-lockheed-martin-ventures/",
+          "title": "Elroy Air upsizes PIPE commitments to USD 175 million",
+          "source_type": "company_press_release",
+          "published_date": "2026-09-24"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1808548/000121390026116482/ea0299133-07.htm",
+          "title": "Inflection Point/Elroy Air registration statement describing pre-funded convertible notes and warrants",
+          "source_type": "regulatory_filing",
+          "published_date": "2026-11-05"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Elroy Air raised the full USD 175 million PIPE by September 2026.",
+          "reason": "Only USD 75 million was funded; USD 100 million remained expected at the pending transaction closing."
+        },
+        {
+          "claim": "The USD 46 million U.S. Army award was a funding round.",
+          "reason": "It is a multi-year customer contract, not investment financing."
+        },
+        {
+          "claim": "The 2021 cumulative USD 48 million proves an earlier USD 8 million round.",
+          "reason": "The source gives a cumulative total only and does not identify a separable event, date or investor set."
+        }
+      ]
+    },
+    {
+      "id": "01fa19de-b262-4b1a-b4c2-f98da8871499",
+      "slug": "elsight",
+      "name": "Elsight",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 8,
+      "relationship_count": 0,
+      "evidence_note": "The issuer is Elsight Limited (ACN 616 435 753; ASX: ELS). Primary company and ASX materials verify the 2017 IPO, 2018 institutional placement, 2020 placement, 2020 rights issue and follow-on placement, 2022 secured convertible notes, 2022 Israel Innovation Authority grant, 2025 loan and 2025 placement. Original currencies and commitment-versus-closing distinctions are retained.",
+      "hold_note": "Routine option exercises and employee securities are not treated as financing rounds. The 2018 company material states more than A$9 million and therefore supports a lower bound, not an exact total. The 2022 convertible-note commitments were A$8 million, but the audited report shows A$7,544,850 actually issued, which is the closed amount recorded. The 2025 lender is undisclosed; Gleneagle Securities was arranger, not lender.",
+      "sources_checked": [
+        {
+          "url": "https://www.elsight.com/wp-content/uploads/2021/03/01864178.pdf",
+          "title": "Elsight commences ASX trading after A$5 million IPO",
+          "source_type": "company_asx_announcement",
+          "published_date": "2017-06-08"
+        },
+        {
+          "url": "https://www.elsight.com/wp-content/uploads/2021/03/02106594.pdf",
+          "title": "Elsight investor presentation confirming 2018 placement",
+          "source_type": "company_presentation",
+          "published_date": "2019-05-01"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20200110/pdf/44d5qfl3r88s66.pdf",
+          "title": "Elsight A$2.88 million placement",
+          "source_type": "regulatory_announcement",
+          "published_date": "2020-01-10"
+        },
+        {
+          "url": "https://www.elsight.com/wp-content/uploads/2021/03/02321079.pdf",
+          "title": "Elsight rights issue closes oversubscribed",
+          "source_type": "company_asx_announcement",
+          "published_date": "2020-12-11"
+        },
+        {
+          "url": "https://www.elsight.com/wp-content/uploads/2023/04/31-Mar-2023-Annual-Report-to-shareholders.pdf",
+          "title": "Elsight 2022 annual report",
+          "source_type": "company_annual_report",
+          "published_date": "2023-03-31"
+        },
+        {
+          "url": "https://company-announcements.afr.com/asx/els/b33e9c7a-6b77-11ed-8d7d-ba667c702a54.pdf",
+          "title": "Elsight selected for Israel Innovation Authority grant",
+          "source_type": "regulatory_announcement_mirror",
+          "published_date": "2022-11-24"
+        },
+        {
+          "url": "https://www.elsight.com/wp-content/uploads/2025/03/Elsight-Secures-a-A1-million-loan.pdf",
+          "title": "Elsight secures A$1 million loan",
+          "source_type": "company_asx_announcement",
+          "published_date": "2025-03-13"
+        },
+        {
+          "url": "https://www.elsight.com/wp-content/uploads/2025/07/Completion-of-Capital-Raise.pdf",
+          "title": "Elsight A$60 million capital raise",
+          "source_type": "company_asx_announcement",
+          "published_date": "2025-07-23"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Elsight raised exactly A$9 million in March 2018.",
+          "reason": "The company source states more than A$9 million; the normalized A$9 million is a lower bound."
+        },
+        {
+          "claim": "Elsight closed the full A$8 million convertible-note commitment in 2022.",
+          "reason": "The audited report states that A$7,544,850 of notes were issued in December."
+        },
+        {
+          "claim": "Gleneagle Securities lent Elsight A$1 million in 2025.",
+          "reason": "The announcement identifies Gleneagle only as arranger and describes the lender as a client of Gleneagle."
+        },
+        {
+          "claim": "Commercial defence orders and option exercises are investment rounds.",
+          "reason": "They are customer revenue or security exercises rather than new institutional financing events."
+        }
+      ]
+    },
+    {
+      "id": "4cc8e7e1-4fc6-4d01-95df-f93ce20b67b3",
+      "slug": "em-and-e-group",
+      "name": "EM&E Group",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The reviewed identity is the privately held Spanish defence company EM&E Group (Escribano Mechanical & Engineering). No issuer-level equity, loan or grant event with a primary amount and closing evidence was located in the bounded public review.",
+      "hold_note": "A secondary report says financing from J.P. Morgan supported EM&E's purchases of Indra shares and cites year-end debt, but the original accounts, exact borrower and draw dates were not available in the reviewed sources. Purchases of Indra shares, factory investment budgets and the abandoned Indra transaction are not financing raised by EM&E.",
+      "sources_checked": [
+        {
+          "url": "https://eme-es.com/en/news/",
+          "title": "EM&E Group news archive",
+          "source_type": "company_news",
+          "published_date": null
+        },
+        {
+          "url": "https://eme-es.com/en/the-eme-group-increases-its-stake-in-indra-to-14-3/",
+          "title": "EM&E increases its stake in Indra",
+          "source_type": "company_press_release",
+          "published_date": "2024-12-05"
+        },
+        {
+          "url": "https://dealroom.co/news/137677-spains-markets-watchdog-probes-195m-indra-share-sale-by-escribano-family/",
+          "title": "Report on financing used for EM&E's Indra share purchases",
+          "source_type": "business_press",
+          "published_date": "2025-12-04"
+        },
+        {
+          "url": "https://www.indragroup.com/en/news/indra-group-deems-concluded-the-analysis-process-of-the-potential-transaction-between-the-company-and-eme",
+          "title": "Indra ends analysis of potential EM&E transaction",
+          "source_type": "counterparty_press_release",
+          "published_date": "2026-03-19"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EM&E raised EUR 372.2 million from J.P. Morgan as a dated company round.",
+          "reason": "Only secondary reporting of outstanding financing used for Indra share purchases was located; the exact borrower, origination date and primary closing evidence remain unresolved."
+        },
+        {
+          "claim": "Indra's proposed acquisition was financing for EM&E.",
+          "reason": "The transaction was a potential acquisition and was later terminated, not primary issuer financing."
+        },
+        {
+          "claim": "EM&E's factory investment budgets are proceeds raised.",
+          "reason": "They are capital-expenditure plans, not evidence of financing inflows."
+        }
+      ]
+    },
+    {
+      "id": "88b1962f-b4ee-4d3c-a7f5-24f844471ccd",
+      "slug": "embraer",
+      "name": "Embraer",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer reviewed is Embraer S.A. Primary sources verify a USD 200 million supplier-finance credit facility closed with Citibank in March 2023 and a 2024 sustainable-aircraft research agreement under which Finep/FNDCT provides half of BRL 126.7 million as a non-reimbursable subsidy. Public notes in 2023 and 2025 were issued by Embraer Netherlands Finance B.V. and only guaranteed by Embraer S.A., so they are not assigned as parent-issuer rounds.",
+      "hold_note": "Eve Air Mobility equity and BNDES facilities belong to a separate subsidiary and are excluded. Embraer Netherlands Finance bond offerings are subsidiary-issued debt guaranteed by Embraer S.A. The 2024 USD 1 billion RCF was an extension of an undrawn facility usable by U.S. and Dutch subsidiaries and is not recorded as funded parent proceeds. Aircraft export credit extended to customers is also excluded.",
+      "sources_checked": [
+        {
+          "url": "https://embraer.com/media-center/en/?detail=14178&mediatype=NEWS",
+          "title": "Embraer closes USD 200 million credit facility in the US",
+          "source_type": "company_press_release",
+          "published_date": "2023-03-09"
+        },
+        {
+          "url": "https://embraer.com/media-center/en?detail=1324&mediatype=NEWS",
+          "title": "Embraer, MCTI and Finep celebrate sustainable-aircraft research agreement",
+          "source_type": "company_press_release",
+          "published_date": "2024-10-10"
+        },
+        {
+          "url": "https://www.embraer.com/media/tkcnfswb/annual_report_2024_eng.pdf",
+          "title": "Embraer 2024 annual report",
+          "source_type": "company_annual_report",
+          "published_date": "2025-04-30"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1355444/000162828026021824/erj-20251231.htm",
+          "title": "Embraer 2025 Form 20-F identifying subsidiary bond issuers",
+          "source_type": "regulatory_filing",
+          "published_date": "2026-04-30"
+        },
+        {
+          "url": "https://www.embraer.com/media-center/en/?detail=13429&mediatype=NEWS",
+          "title": "Embraer extends USD 1 billion syndicated credit line",
+          "source_type": "company_press_release",
+          "published_date": "2024-08-06"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Embraer S.A. issued USD 750 million of notes in 2023 and USD 650 million and USD 1 billion of notes in 2025.",
+          "reason": "The actual issuer was Embraer Netherlands Finance B.V.; Embraer S.A. was guarantor."
+        },
+        {
+          "claim": "Eve Air Mobility financings are Embraer parent rounds.",
+          "reason": "Eve is a separately identified subsidiary/issuer and its proceeds cannot be assigned to Embraer S.A."
+        },
+        {
+          "claim": "The full USD 1 billion 2024 RCF was raised by Embraer S.A.",
+          "reason": "It extended an undrawn facility usable by subsidiaries; the announcement does not evidence a parent draw."
+        }
+      ]
+    },
+    {
+      "id": "70c7c066-6916-4c97-a925-2d4913e48268",
+      "slug": "embraerx",
+      "name": "EmbraerX",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "EmbraerX is Embraer's market accelerator and innovation division, not a separately identified financing issuer. Its first spin-off is Eve Air Mobility. No attributable EmbraerX issuer-level round was located.",
+      "hold_note": "Eve Air Mobility's SPAC, equity and debt financings belong to Eve, not EmbraerX. Investment budgets for internal EmbraerX projects and funding received by spin-offs cannot be reassigned to the division.",
+      "sources_checked": [
+        {
+          "url": "https://embraerx.embraer.com/",
+          "title": "EmbraerX official site",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://embraerx.embraer.com/news-2.html",
+          "title": "EmbraerX news archive and Eve spin-off coverage",
+          "source_type": "company_news",
+          "published_date": null
+        },
+        {
+          "url": "https://www.embraer.com/media/tkcnfswb/annual_report_2024_eng.pdf",
+          "title": "Embraer 2024 annual report",
+          "source_type": "parent_annual_report",
+          "published_date": "2025-04-30"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Eve Air Mobility's funding rounds were raised by EmbraerX.",
+          "reason": "Eve is the spin-off and separate financing issuer; EmbraerX is the originating division."
+        },
+        {
+          "claim": "Internal Embraer innovation spending is an EmbraerX funding round.",
+          "reason": "A parent budget is not external issuer financing."
+        }
+      ]
+    },
+    {
+      "id": "dcb46913-3a1f-4834-808d-930572359eb0",
+      "slug": "embry-riddle-aeronautical-university",
+      "name": "Embry-Riddle Aeronautical University",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 14,
+      "relationship_count": 0,
+      "evidence_note": "Embry-Riddle Aeronautical University is a nonprofit university rather than a venture-backed issuer. Official university releases verify a sequence of competitively awarded NASA, NSF, FAA and Defense Department research or scholarship grants from 2022 through the latest located October 2026 award. Each grant is recorded separately where the source gives a distinct amount and funder.",
+      "hold_note": "The university reports much larger annual aggregate research funding and philanthropic campaign totals, but these are cumulative budgets or fundraising totals rather than separable financing events. Grants to consortia are recorded only when Embry-Riddle is identified as the award recipient or lead; no allocation among collaborators is invented. Contracts and student competition prizes are excluded.",
+      "sources_checked": [
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/embry-riddle-awarded-1-and-a-half--million-to-bolster-engineering-workforce",
+          "title": "Embry-Riddle awarded USD 1.5 million NSF grant",
+          "source_type": "university_news",
+          "published_date": "2022-10-24"
+        },
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/embry-riddle-earns-nasa-funding-to-build-new-space-instruments-and-conduct-space-weather-research",
+          "title": "Embry-Riddle earns two NASA awards",
+          "source_type": "university_news",
+          "published_date": "2023-05-23"
+        },
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/embry-riddle-researchers-awarded-nearly-2-million-in-nasa-nsf-grants",
+          "title": "Embry-Riddle researchers awarded NASA and NSF grants",
+          "source_type": "university_news",
+          "published_date": "2023-06-26"
+        },
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/1-million-faa-grant-supports-eagle-researcher-in-improving-pilot-assessment-methods",
+          "title": "USD 1 million FAA grant supports Embry-Riddle research",
+          "source_type": "university_news",
+          "published_date": "2024-02-12"
+        },
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/four-new-research-grants-to-help-solve-key-mysteries-of-space",
+          "title": "Four new Embry-Riddle space-research grants",
+          "source_type": "university_news",
+          "published_date": "2024-03-11"
+        },
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/eagle-built-tech-to-provide-new-atmospheric-imagery-thanks-to-nsf-funding",
+          "title": "NSF awards Embry-Riddle USD 1 million atmospheric-research grant",
+          "source_type": "university_news",
+          "published_date": "2024-10-21"
+        },
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/embry-riddle-team-to-lead-6-million-nasa-project-to-advance-safety-of-next-generation-air-mobility",
+          "title": "Embry-Riddle to lead USD 6.7 million NASA project",
+          "source_type": "university_news",
+          "published_date": "2025-03-11"
+        },
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/defense-department-awards-$185-million-to-embry-riddle-for-full-ride-cybersecurity-scholarships",
+          "title": "Defense Department awards Embry-Riddle USD 1.85 million",
+          "source_type": "university_news",
+          "published_date": "2025-10-06"
+        },
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/nsf-awards-embry-riddle-2-million-scholarships-computational-math-meteorology-data-science",
+          "title": "NSF awards Embry-Riddle USD 2 million",
+          "source_type": "university_news",
+          "published_date": "2026-10-28"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Embry-Riddle's annual research-funding total is one financing round.",
+          "reason": "It aggregates many grants and contracts and cannot be normalized as one event."
+        },
+        {
+          "claim": "The university's USD 300 million campaign goal or USD 192 million campaign-to-date total is a closed round.",
+          "reason": "Those are philanthropic campaign metrics, not a single dated financing event."
+        },
+        {
+          "claim": "Student competition prizes and procurement contracts are institutional funding rounds.",
+          "reason": "They do not finance the university as issuer-level investment or grant proceeds."
+        }
+      ]
+    },
+    {
+      "id": "e5502629-d091-4714-8d90-52fb32d2e6a7",
+      "slug": "emesent",
+      "name": "Emesent",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "The attributable issuer is Emesent Pty Ltd (ABN 95 626 502 350). Public sources verify an AUD 3.5 million seed round in 2018, an oversubscribed AUD 32 million Series A in 2022, and AUD 25 million of new funding in 2026 split into a separate AUD 15 million equity round and AUD 10 million venture-debt facility.",
+      "hold_note": "A later CSIRO retrospective describes the 2018 round as AUD 4.5 million, conflicting with the contemporaneous ministerial release's AUD 3.5 million; the contemporaneous figure is normalized and the discrepancy is retained. Consortium grants, accelerator support and team prizes are not attributed to Emesent without an issuer-specific allocation.",
+      "sources_checked": [
+        {
+          "url": "https://abr.business.gov.au/ABN/View?abn=95626502350",
+          "title": "Current details for ABN 95 626 502 350",
+          "source_type": "government_registry",
+          "published_date": null
+        },
+        {
+          "url": "https://www.minister.industry.gov.au/k-andrews/media/drones-unlock-safer-future-underground-mines",
+          "title": "Drones unlock safer future for underground mines",
+          "source_type": "government_press_release",
+          "published_date": "2018-11-05"
+        },
+        {
+          "url": "https://www.emesent.com/news/2022/02/25/emesent-doubles-down-on-global-growth-after-closing-32-million-series-a",
+          "title": "Emesent doubles down on global growth after closing $32 million fundraise",
+          "source_type": "company_press_release",
+          "published_date": "2022-02-25"
+        },
+        {
+          "url": "https://www.emesent.com/news/emesent-secures-25-million-aud-to-accelerate-autonomous-intelligence-platform?hs_amp=true",
+          "title": "Emesent secures A$25 million to accelerate autonomous intelligence platform",
+          "source_type": "company_press_release",
+          "published_date": "2026-07-08"
+        },
+        {
+          "url": "https://www.nrf.gov.au/our-investments/emesent",
+          "title": "Emesent — National Reconstruction Fund Corporation",
+          "source_type": "government_investor_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://csiropedia.csiro.au/wp-content/uploads/2020/12/20-00135_CORP_AnnualReport2019-20.html",
+          "title": "CSIRO Annual Report 2019-20",
+          "source_type": "government_annual_report",
+          "published_date": "2020"
+        },
+        {
+          "url": "https://business.gov.au/grants-and-programs/cooperative-research-centres-projects-crcp-grants/crc-projects-selection-round-outcomes",
+          "title": "CRC Projects selection round outcomes",
+          "source_type": "government_grant_database",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Emesent's 2018 seed round was definitively AUD 4.5 million.",
+          "reason": "A CSIRO retrospective gives AUD 4.5 million, while the contemporaneous ministerial announcement gives AUD 3.5 million. The contemporaneous disclosed closed amount is retained and the conflict is not silently reconciled."
+        },
+        {
+          "claim": "Emesent received the full AUD 2,415,000 CRC-P grant for the Integrated Mining Digitalisation and Automation Platform.",
+          "reason": "The government database identifies a consortium project involving Emesent, Aeris Resources, BHP and CSIRO and does not allocate the project grant among participants."
+        },
+        {
+          "claim": "CSIRO ON Accelerator support or the DARPA Subterranean Challenge team prize was an issuer-level Emesent financing round.",
+          "reason": "The reviewed sources describe program support or a multi-party team prize, not a cash investment or grant allocated specifically to Emesent Pty Ltd."
+        }
+      ]
+    },
+    {
+      "id": "d45f5421-273b-47f5-be9c-5364bb08c1e1",
+      "slug": "empyrean-defense",
+      "name": "Empyrean Defense",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Empyrean Defense, Inc., a U.S. defense-software company founded in 2026 and based in Bend, Oregon. It is publicly confirmed as a member of the Oregon UAS Accelerator Fall 2026 cohort, but no completed issuer-level financing round was located.",
+      "hold_note": "The cohort terms provide a conditional USD 5,000 non-dilutive completion subgrant only after attendance, assignment and final-showcase requirements. As of the 12 November 2026 review, the showcase was scheduled for 18 November and no Empyrean-specific completion award or payment was located, so no grant is normalized.",
+      "sources_checked": [
+        {
+          "url": "https://empyreandefense.com/about/",
+          "title": "About Empyrean Defense",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://oregonuas.org/blogs/news/oregon-uas-accelerator-welcomes-17-startups-to-its-fall-2026-cohort",
+          "title": "Oregon UAS Accelerator Announces Fall 2026 Cohort",
+          "source_type": "accelerator_announcement",
+          "published_date": "2026-08-19"
+        },
+        {
+          "url": "https://oregonuas.org/pages/fall-2026-cohort",
+          "title": "Oregon UAS Accelerator — Fall 2026 Cohort",
+          "source_type": "accelerator_program_terms",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Empyrean Defense has already received a USD 5,000 Oregon UAS Accelerator grant.",
+          "reason": "The official program describes a conditional completion subgrant; the completion showcase had not yet occurred at the review date and no company-specific award or payment record was found."
+        },
+        {
+          "claim": "The broader USD 40,000-per-participant grant described on an Oregon Lottery program profile applies to Empyrean Defense's Fall 2026 cohort.",
+          "reason": "The cohort-specific official terms state a USD 5,000 conditional completion subgrant. The generic profile is not sufficient to attribute a different amount to this company or cohort."
+        }
+      ]
+    },
+    {
+      "id": "48326477-2f01-49f9-868c-e9a117a1ef16",
+      "slug": "emrgy",
+      "name": "Emrgy",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 8,
+      "relationship_count": 0,
+      "evidence_note": "The issuer is Emrgy Inc. (formerly Emrgy Hydro, LLC; SEC CIK 1672740). Public sources verify a USD 1.2 million DOE/EERE award in 2015, five exempt-offering proceeds disclosures from 2016 through 2024, an issuer-announced USD 18.4 million Series A in 2023, and a USD 1.1 million DOE SBIR Phase II award disclosed in 2023.",
+      "hold_note": "Emrgy's 2022-2023 Form D offering reports USD 26,162,382 sold, while the subsequent issuer announcement calls the Series A USD 18.4 million. Because the filings may include securities or closings beyond the announced Series A, the issuer-announced round is normalized once and the Form D discrepancy is retained rather than double counted. The 2018 filing offered debt plus options and is not recast as equity.",
+      "sources_checked": [
+        {
+          "url": "https://emrgy.com/in-the-news/",
+          "title": "Emrgy — In the News timeline",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1672740/000167274016000002/primary_doc.xml",
+          "title": "Emrgy Inc. Form D filed 29 April 2016",
+          "source_type": "regulatory_filing",
+          "published_date": "2016-04-29"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1672740/000167274017000001/primary_doc.xml",
+          "title": "Emrgy Inc. Form D filed 11 May 2017",
+          "source_type": "regulatory_filing",
+          "published_date": "2017-05-11"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1672740/000167274018000002/primary_doc.xml",
+          "title": "Emrgy Inc. Form D filed 16 August 2018",
+          "source_type": "regulatory_filing",
+          "published_date": "2018-08-16"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1672740/000167274021000001/primary_doc.xml",
+          "title": "Emrgy Inc. Form D filed 25 March 2021",
+          "source_type": "regulatory_filing",
+          "published_date": "2021-03-25"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1672740/000110465923025157/xslFormDX01/primary_doc.xml",
+          "title": "Emrgy Inc. Form D/A filed 24 February 2023",
+          "source_type": "regulatory_filing",
+          "published_date": "2023-02-24"
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/emrgy-secures-%2418m-to-scale-renewable-energy-projects-within-water-infrastructure",
+          "title": "Emrgy Secures $18M To Scale Renewable Energy Projects Within Water Infrastructure",
+          "source_type": "company_press_release_syndication",
+          "published_date": "2023-04-11"
+        },
+        {
+          "url": "https://www.energy.gov/cmei/water/articles/unlocking-energy-potential-deployable-scalable-hydropower",
+          "title": "Unlocking Energy Potential with Deployable, Scalable Hydropower",
+          "source_type": "government_profile",
+          "published_date": "2023-11-06"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1672740/000114036125001280/primary_doc.xml",
+          "title": "Emrgy Inc. Form D filed 16 January 2025",
+          "source_type": "regulatory_filing",
+          "published_date": "2025-01-16"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Emrgy raised both USD 26,162,382 under its 2022-2023 Form D and a separate USD 18.4 million Series A in April 2023.",
+          "reason": "The Form D offering began in August 2022 and was amended shortly before the April 2023 announcement. The records are treated as overlapping evidence of the same financing period, not additive rounds."
+        },
+        {
+          "claim": "Emrgy received a USD 1.6 million DOE award by November 2023.",
+          "reason": "DOE stated that the company was selected for an investment; the reviewed source did not establish award execution or payment."
+        },
+        {
+          "claim": "Emrgy received USD 200,000 cash from TEAMER in 2023.",
+          "reason": "DOE describes the amount as technical assistance for turbine testing, not cash proceeds to the issuer."
+        },
+        {
+          "claim": "Emrgy's total DOE support of more than USD 6 million is one financing round.",
+          "reason": "The figure is cumulative support across multiple DOE offices since 2015 and cannot be added to individually identified awards without double counting."
+        }
+      ]
+    },
+    {
+      "id": "cbeaa2b0-5e4b-4637-9e22-f9b3e0f528e9",
+      "slug": "ems-defense-technologies",
+      "name": "EMS Defense Technologies",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact issuer is EMS Defense Technologies, Inc., an active Georgia corporation and a wholly owned Honeywell Aerospace subsidiary. Public records reviewed show federal procurement contracts and registrations, not an external issuer-level financing round.",
+      "hold_note": "The 2026 DHS counter-UAS IDIQ has a USD 1.5 billion vehicle ceiling but only USD 250 directly obligated at the referenced vehicle level; it is a procurement contract, not investment proceeds, and is excluded from funding normalization.",
+      "sources_checked": [
+        {
+          "url": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?aggregateId=forp-f15000000467-7582182d-7be3-4a7c-858b-e73c04e16f21&directionType=ForwardList&inquirytype=EntityName&listNameOrder=EMSCREDITORS+L170000708940&searchNameOrder=EMSDEFENSETECHNOLOGIES+F150000004670&searchTerm=EMS+AUTO+DEALER++INC",
+          "title": "Florida Division of Corporations — EMS Defense Technologies, Inc.",
+          "source_type": "government_registry",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2089271/000162828026035212/exhibit211-10x12ba1.htm",
+          "title": "Subsidiaries of the Registrant — Exhibit 21.1",
+          "source_type": "regulatory_filing",
+          "published_date": "2026"
+        },
+        {
+          "url": "https://www.highergov.com/idv/70RDA226D00000007/",
+          "title": "IDC 70RDA226D00000007 — EMS Defense Technologies",
+          "source_type": "federal_procurement_aggregator",
+          "published_date": "2026-07"
+        },
+        {
+          "url": "https://www.usaspending.gov/recipient/4fabad5e-36bf-da88-f917-2d5a577eb245-C/latest",
+          "title": "EMS Defense Technologies Inc — Federal Award Recipient Profile",
+          "source_type": "government_procurement_database",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EMS Defense Technologies raised USD 1.5 billion in 2026.",
+          "reason": "USD 1.5 billion is the ceiling of a multi-year DHS indefinite-delivery procurement vehicle, not financing proceeds or even obligated contract revenue to the company."
+        },
+        {
+          "claim": "Honeywell's corporate financing or a future parent-company distribution is EMS Defense Technologies financing.",
+          "reason": "No reviewed source attributes parent-level debt, equity or transaction consideration to EMS Defense Technologies as issuer proceeds."
+        }
+      ]
+    },
+    {
+      "id": "2ff9338b-7212-4758-8aa0-bffb905f4ba9",
+      "slug": "endee-labs",
+      "name": "Endee Labs",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Endee Labs is a Bengaluru vector-infrastructure startup publicly selected for SAP Labs India's 2026 Startup Studio cohort. The official SAP announcement describes mentorship, co-creation, customer, partner and commercialization access but does not disclose a cash investment, grant or equity transaction.",
+      "hold_note": "A commercial database labels the SAP cohort participation as non-equity assistance, but no original source discloses an amount or issuer-level transfer. No attributable public financing round was located, and the absence of a public round is not evidence of zero funding.",
+      "sources_checked": [
+        {
+          "url": "https://endee.io/about",
+          "title": "About Endee",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://endee.io/contact",
+          "title": "Endee contact",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://news.sap.com/india/2026/06/sap-labs-india-unveils-2026-startup-studio-cohort-focused-on-enterprise-ai-and-deep-tech-innovation/?amp=1",
+          "title": "SAP Labs India Unveils 2026 Startup Studio Cohort Focused on Enterprise AI and Deep-Tech Innovation",
+          "source_type": "corporate_accelerator_announcement",
+          "published_date": "2026-06"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "SAP Startup Studio invested in or granted cash to Endee Labs.",
+          "reason": "The official announcement establishes selection and program support but states no cash amount, equity purchase, grant or issuer-level transfer."
+        },
+        {
+          "claim": "Endee Labs has one verified financing round because Crunchbase lists non-equity assistance.",
+          "reason": "The commercial database entry does not reveal amount or transaction terms and is not treated as proof of financing without an original source."
+        }
+      ]
+    },
+    {
+      "id": "0af73c69-b7a0-44a4-a8fb-87bf951188bf",
+      "slug": "enedis",
+      "name": "Enedis",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Enedis is an EDF subsidiary and the promoter/beneficiary of major grid-investment programmes. The reviewed EIB financing contracts were legally signed by EDF acting as Enedis shareholder or to meet Enedis financing needs; they are EDF borrowings rather than Enedis-issued financing.",
+      "hold_note": "No EIB loan, EDF green bond or parent-level financing is normalized as Enedis proceeds. The project linkage is retained in the evidence ledger, while legal borrower and issuer boundaries are preserved.",
+      "sources_checked": [
+        {
+          "url": "https://www.eib.org/en/projects/all/20210554",
+          "title": "ENEDIS DISTRIBUTION NETWORK 2022-2023",
+          "source_type": "multilateral_bank_project_record",
+          "published_date": null
+        },
+        {
+          "url": "https://www.enedis.fr/presse/edf-et-la-banque-europeenne-dinvestissement-bei-annoncent-la-signature-dun-contrat-de-pret",
+          "title": "EDF and the European Investment Bank announce a loan agreement for Enedis investments",
+          "source_type": "company_press_release",
+          "published_date": "2022-05-23"
+        },
+        {
+          "url": "https://www.eib.org/en/projects/all/20240597",
+          "title": "ENEDIS DISTRIBUTION NETWORK 2024-2027",
+          "source_type": "multilateral_bank_project_record",
+          "published_date": null
+        },
+        {
+          "url": "https://www.eib.org/en/press/all/2025-323-edf-and-the-eib-announce-the-signature-of-eur500-million-financing-contract-to-support-the-modernisation-and-the-resilience-of-enedis-managed-public-electricity-grid",
+          "title": "EDF and the EIB announce a EUR 500 million financing contract for the Enedis-managed grid",
+          "source_type": "multilateral_bank_press_release",
+          "published_date": "2025-09-05"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Enedis borrowed EUR 800 million from the EIB in 2021-2022.",
+          "reason": "The official Enedis release states that EDF, acting as Enedis shareholder, concluded the loan for Enedis investments. EDF is the legal borrower."
+        },
+        {
+          "claim": "Enedis borrowed EUR 1 billion from the EIB in 2024-2025.",
+          "reason": "The EIB release states that EDF signed the EUR 1 billion loan package, split into two EUR 500 million tranches, to meet Enedis financing needs. The project beneficiary is not the legal borrower."
+        },
+        {
+          "claim": "EDF green bonds allocated to Enedis assets were issued by Enedis.",
+          "reason": "The bond issuer is EDF; allocation of proceeds to subsidiary assets does not make Enedis the issuer or recipient of a distinct financing round."
+        }
+      ]
+    },
+    {
+      "id": "258c7583-c9b3-44a3-81c2-64aba128242a",
+      "slug": "enics",
+      "name": "ENICS",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Russian non-public joint-stock company AO Eniks (JSC ENIKS), OGRN 1031632202227, registered in Kazan. Official sanctions records and the company domain establish continuity with the UAV manufacturer in the catalogue. A 2008 trade report states that the predecessor ZAO Eniks signed a Rosoboronexport agreement to finance pulse-jet-engine development work, but it does not disclose an amount or establish whether the arrangement was a grant, customer-funded R&D or another instrument. No attributable public equity, loan or grant financing round was located in the bounded review.",
+      "hold_note": "The 2008 Rosoboronexport work-financing agreement is held because the disclosure describes financing of development work rather than issuer capital and omits amount, instrument and payment terms. Government procurement, sales contracts, charter capital and operating cash flows are not normalized as investment financing. The absence of a public round does not establish zero private financing.",
+      "sources_checked": [
+        {
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023D1767",
+          "title": "Council Decision (CFSP) 2023/1767 identifying JSC ENIKS",
+          "source_type": "government_announcement",
+          "published_date": "2023-09-13"
+        },
+        {
+          "url": "https://enics.aero/",
+          "title": "JSC ENIKS official website",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://www.aviaport.ru/news/155697/",
+          "title": "Eniks signs Rosoboronexport agreement to finance pulse-jet development work",
+          "source_type": "third_party_report",
+          "published_date": "2008-08-21"
+        },
+        {
+          "url": "https://companies.rbc.ru/id/1031632202227-ao-eniks/",
+          "title": "AO Eniks legal and registry profile",
+          "source_type": "third_party_report",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The Rosoboronexport development-work agreement was a closed investment round or grant to ENIKS.",
+          "reason": "The report describes financing of specified technical work and gives no amount, capital instrument, grant terms or evidence of unrestricted issuer proceeds."
+        },
+        {
+          "claim": "ENIKS' RUB 2.991 million charter capital is a dated external financing round.",
+          "reason": "Registry charter capital is a legal capitalization figure and does not establish a dated external cash event."
+        },
+        {
+          "claim": "Russian state contracts are investment financing.",
+          "reason": "Procurement and customer-funded work are operating transactions unless a source separately establishes a capital or grant instrument."
+        }
+      ]
+    },
+    {
+      "id": "acae063b-5a59-43d2-9b84-8c5b6ef0bcd5",
+      "slug": "eos",
+      "name": "EOS",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue draft was created from the Ukrainian Drone Ecosystem Directory, but that source's EOS profile explicitly describes Australian Electro Optic Systems, founded in 1983 and located in Symonston, Canberra. It is therefore not a distinct Ukrainian issuer. The catalogue already contains separate EOS Defence and EOS Defence Systems Australia identities. No financing is assigned to this duplicate draft row.",
+      "hold_note": "This is an identity-level duplicate/out-of-scope draft disposition, not a zero-funding result. It must not be confused with EOS Data Analytics, Foreign Company EOS Ukraine, Estonian UAV maker Threod's EOS products, French EOS Technologie, or Ukrainian EOS Robotics.",
+      "sources_checked": [
+        {
+          "url": "https://www.drone-directory.com.ua/profile/eos/",
+          "title": "EOS - Ukrainian Drone Ecosystem Directory",
+          "source_type": "third_party_report",
+          "published_date": null
+        },
+        {
+          "url": "https://eos-aus.com/contact-us/",
+          "title": "Electro Optic Systems contact and Australian legal entities",
+          "source_type": "company_website",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The draft EOS row represents a Ukrainian company that separately raised financing.",
+          "reason": "The source profile identifies Australian Electro Optic Systems and Canberra, not a Ukrainian legal issuer."
+        },
+        {
+          "claim": "Funding of EOS Data Analytics, EOS Robotics or EOS Defence belongs to this draft identity.",
+          "reason": "Those are distinct similarly named entities and no legal continuity to the draft row is established."
+        }
+      ]
+    },
+    {
+      "id": "a940dbf7-232d-41fb-af23-7168fd2723f5",
+      "slug": "eos-data-analytics",
+      "name": "EOS Data Analytics",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue identity is EOS Data Analytics, Inc., a U.S. company founded in 2015 within Max Polyakov's Noosphere space ecosystem. The company's history says EOSDA secured support for the GoldenEye Horizon 2020 project, but the official CORDIS beneficiary is the distinct Ukrainian legal entity Foreign Company EOS Ukraine, with EUR 281,968.75 net EU contribution under a grant agreement signed 17 April 2020. That subsidiary/affiliate grant is not assigned to the U.S. catalogue issuer. Secondary databases report an earlier USD 1 million seed or Noosphere backing without an issuer or investor event source sufficient for normalization. AWS Space Accelerator participation offered up to USD 100,000 in service credits, training and support, not a cash financing round.",
+      "hold_note": "Public history remains partial because the original capitalization and any Noosphere investment terms are undisclosed. Foreign Company EOS Ukraine's exact GoldenEye grant belongs to that legal beneficiary and should be represented only if that entity receives its own reconciled identity or continuity evidence. Company contracts, ESA work and AWS credits are not treated as investor cash.",
+      "sources_checked": [
+        {
+          "url": "https://eos.com/company/",
+          "title": "EOS Data Analytics company history",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://eos.com/terms-of-use/",
+          "title": "EOS Data Analytics, Inc. terms identifying the U.S. contracting entity",
+          "source_type": "company_legal",
+          "published_date": "2025-04-07"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/869398",
+          "title": "GoldenEye Horizon 2020 project and beneficiary allocations",
+          "source_type": "government_database",
+          "published_date": "2020-04-17"
+        },
+        {
+          "url": "https://eos.com/blog/eos-data-analytics-joins-the-goldeneye-project/",
+          "title": "EOSDA describes its GoldenEye project participation",
+          "source_type": "company_news",
+          "published_date": null
+        },
+        {
+          "url": "https://eos.com/blog/eos-data-analytics-takes-part-in-aws-space-accelerator/",
+          "title": "EOSDA participates in AWS Space Accelerator",
+          "source_type": "company_news",
+          "published_date": "2022-05-24"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EOS Data Analytics, Inc. received the EUR 281,968.75 GoldenEye grant.",
+          "reason": "CORDIS names Foreign Company EOS Ukraine, a separate Ukrainian legal entity, as the beneficiary."
+        },
+        {
+          "claim": "The full EUR 8.36 million GoldenEye consortium grant was EOSDA funding.",
+          "reason": "That is the consortium-wide EU contribution across sixteen participants, not a company allocation."
+        },
+        {
+          "claim": "AWS invested USD 100,000 in EOSDA.",
+          "reason": "The accelerator offered up to USD 100,000 in AWS Activate credits plus training and support, not cash equity or debt."
+        },
+        {
+          "claim": "A secondary USD 1 million seed entry is verified financing.",
+          "reason": "No issuer, investor or transaction-party source with dated terms and actual issuer was located."
+        }
+      ]
+    },
+    {
+      "id": "f932bfb9-0db0-4530-aa13-a8c139195180",
+      "slug": "eos-defence",
+      "name": "EOS Defence",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "EOS Defence is the Defence Systems operating division of listed Australian parent Electro Optic Systems Holdings Limited, not the issuer of the parent's securities. The parent completed an A$190 million equity raise in May 2026 and drew a A$70 million secured term loan during the first half of 2026, but official disclosures name the listed holding company/group. They do not establish financing issued by the Defence Systems division, so no parent capital is assigned to this catalogue identity.",
+      "hold_note": "Customer defence contracts, the C4 EDGE programme budget, acquisition spending and parent-level equity/debt are excluded. The bounded review did not locate a separable financing instrument issued by an EOS Defence legal entity. This does not assert that the division operates without group funding.",
+      "sources_checked": [
+        {
+          "url": "https://eos-aus.com/news/eos-completes-a190-million-capital-raising/",
+          "title": "EOS Holdings completes A$190 million capital raising",
+          "source_type": "company_press_release",
+          "published_date": "2026-05-20"
+        },
+        {
+          "url": "https://investorhub.eos-aus.com/announcements/699omo-appendix-4d-half-year-financial-report-and-revenue-update",
+          "title": "Electro Optic Systems Holdings 2026 half-year report",
+          "source_type": "regulatory_filing",
+          "published_date": "2026-08-25"
+        },
+        {
+          "url": "https://eos-aus.com/contact-us/",
+          "title": "EOS legal entities and contact details",
+          "source_type": "company_website",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EOS Defence raised A$190 million in May 2026.",
+          "reason": "The issuer was Electro Optic Systems Holdings Limited; the source describes Defence Systems as a division."
+        },
+        {
+          "claim": "The parent group's A$70 million term-loan draw was subsidiary financing for EOS Defence.",
+          "reason": "The half-year accounts report a group/holding-company financing and do not identify the division as borrower or recipient."
+        },
+        {
+          "claim": "The Australian Army's A$35 million C4 EDGE investment was a grant or round for EOS Defence.",
+          "reason": "The programme funded development across a consortium of 31 SMEs and no EOS Defence beneficiary allocation or capital instrument is disclosed."
+        }
+      ]
+    },
+    {
+      "id": "514a847e-0a2e-4949-954e-cc7c919ec03c",
+      "slug": "eos-defence-systems-australia",
+      "name": "EOS Defence Systems Australia",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The operating company is EOS Defence Systems Pty Limited, an Australian wholly owned subsidiary within the Electro Optic Systems Holdings group; 'EOS Defence Systems Australia' is an operating-market label and executive role. The parent's 2026 equity raising and term loan are not assigned to the subsidiary. A$35 million of Australian Army investment in the C4 EDGE proof-of-concept programme was spread across 31 SMEs and does not provide a beneficiary-specific EOS Defence Systems allocation.",
+      "hold_note": "No attributable public primary financing event for EOS Defence Systems Pty Limited was located. Group financing, customer programmes, procurement and capital raised by Electro Optic Systems Holdings Limited remain at the parent. Unknown internal group funding is not inferred.",
+      "sources_checked": [
+        {
+          "url": "https://eos-aus.com/contact-us/",
+          "title": "EOS contact page identifying EOS Defence Systems Pty Limited",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://eos-aus.com/news/new-australian-ceo-for-defence-systems/",
+          "title": "EOS announces Australian-focused EOS Defence Systems management structure",
+          "source_type": "company_press_release",
+          "published_date": null
+        },
+        {
+          "url": "https://eos-aus.com/news/c4-edge-partner-capability-on-display/",
+          "title": "EOS describes C4 EDGE consortium funding",
+          "source_type": "company_news",
+          "published_date": null
+        },
+        {
+          "url": "https://investorhub.eos-aus.com/announcements/699omo-appendix-4d-half-year-financial-report-and-revenue-update",
+          "title": "Electro Optic Systems Holdings 2026 half-year report",
+          "source_type": "regulatory_filing",
+          "published_date": "2026-08-25"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EOS Defence Systems Pty Limited received the parent company's A$190 million capital raise.",
+          "reason": "The official announcement names Electro Optic Systems Holdings Limited as issuer and does not allocate proceeds to the subsidiary."
+        },
+        {
+          "claim": "EOS Defence Systems Australia received A$35 million from the Army.",
+          "reason": "EOS states the programme funding was invested across a 31-SME consortium; no company-specific allocation is given."
+        },
+        {
+          "claim": "Customer contracts or internal group support are external investment rounds.",
+          "reason": "They do not establish a primary equity, debt or grant instrument issued to this legal subsidiary."
+        }
+      ]
+    },
+    {
+      "id": "f757fb79-15af-41d0-919b-db892e7644e3",
+      "slug": "eotech",
+      "name": "EOTECH",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "EOTECH originated as an L-3/L3Harris business and was sold on 31 July 2020 to American Holoptics, a Koucar Management affiliate; the acquisition consideration was paid to L3Harris and was not primary EOTECH financing. For EOTECH LLC's acquisition of Intevac's Photonics business, closed 30 December 2021, transaction adviser Houlihan Lokey explicitly states that its Capital Markets team acted as EOTECH's exclusive placement agent and arranged, structured and negotiated financing. The financing amount, instrument and capital providers were not disclosed, so one amount-undisclosed issuer financing event is retained without invented investors. The seller disclosed up to USD 100 million acquisition consideration, including USD 70 million upfront and up to USD 30 million earn-out; that purchase price is not the financing amount.",
+      "hold_note": "The 2020 American Holoptics acquisition used subordinated debt with warrants at the buyer holding company, not at EOTECH, and is excluded from EOTECH's financing history. The 2021 acquisition financing is confirmed but its lender/investor identities, instrument and amount remain undisclosed. Seneca's 2024 exit is an ownership transfer with no issuer proceeds established.",
+      "sources_checked": [
+        {
+          "url": "https://www.eotechinc.com/pages/about-eotech",
+          "title": "EOTECH company history",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.eotechinc.com/blogs/gov/intevac-photonics-acquisition",
+          "title": "EOTECH announces Intevac Photonics acquisition",
+          "source_type": "company_press_release",
+          "published_date": "2022-01-04"
+        },
+        {
+          "url": "https://hl.com/about-us/transactions/houlihan-lokey-advises-eotech-on-its-acquisition-of-intevac-photonics/",
+          "title": "Houlihan Lokey arranges acquisition financing for EOTECH",
+          "source_type": "transaction_party_announcement",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1001902/000119312522000589/d261166dex991.htm",
+          "title": "Intevac announces Photonics asset sale to EOTECH",
+          "source_type": "regulatory_filing",
+          "published_date": "2022-01-03"
+        },
+        {
+          "url": "https://www.merionpartners.com/2020/09/01/merion-announces-new-investment-in-specialized-optics-manufacturer/",
+          "title": "Merion investment in American Holoptics acquisition vehicle",
+          "source_type": "investor_press_release",
+          "published_date": "2020-09-01"
+        },
+        {
+          "url": "https://hl.com/about-us/transactions/houlihan-lokey-advises-l3harris-technologies-2/",
+          "title": "L3Harris sale of EOTECH to American Holoptics",
+          "source_type": "transaction_party_announcement",
+          "published_date": "2020-07-31"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "EOTECH raised USD 100 million in December 2021.",
+          "reason": "Up to USD 100 million was the asset-purchase consideration payable to Intevac; the financing amount was not disclosed."
+        },
+        {
+          "claim": "Merion Investment Partners' subordinated debt with warrants was issued by EOTECH.",
+          "reason": "Merion states that it invested in American Holoptics to support American Holoptics' acquisition of EOTECH."
+        },
+        {
+          "claim": "American Holoptics' approximately USD 42 million purchase of EOTECH was primary EOTECH funding.",
+          "reason": "It was acquisition consideration paid for the L3Harris business, not proceeds of an issuer capital raise."
+        },
+        {
+          "claim": "Seneca Partners' 2024 exit supplied new capital to EOTECH.",
+          "reason": "The portfolio source identifies an investor exit and does not establish primary issuer proceeds."
+        }
+      ]
+    }
+  ],
+  "audit_notes": [
+    "Only issuer-supported financing facts are normalized; parent, subsidiary, acquisition-consideration, contract and consortium amounts remain excluded unless the reviewed source establishes the target as recipient.",
+    "A completed bounded public-source review does not assert zero funding where no public round was found; undisclosed private history remains unknown.",
+    "Duplicate or closely related catalogue identities are kept distinct unless sources establish legal or economic continuity.",
+    "SEC Form D amendments are treated as cumulative issuer disclosures and are not double-counted as separate closes unless a later filing establishes a distinct offering."
+  ],
+  "publication": {
+    "pending": true,
+    "verified": false,
+    "catalogue_commit": null,
+    "workflow_run": null,
+    "live_generated_at": null
+  },
+  "database": {
+    "approved_funding_events": 2691,
+    "round_participations": 3197,
+    "investor_profiles": 1952,
+    "source_reconciliation_companies": 680
+  }
+}
