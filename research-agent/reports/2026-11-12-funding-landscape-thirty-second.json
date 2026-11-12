@@ -1,0 +1,1345 @@
+{
+  "report": "Thirty-second autonomous funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": "funding-20261112T084721415Z-wider-24",
+  "scope": {
+    "identities": 24,
+    "from": "draken-international",
+    "through": "dronesports",
+    "published_landscape": false
+  },
+  "method": "Four disjoint read-only research lanes; one writer consolidation; exact issuer, original currency, amount qualifier, instrument, closing and explicit roles checked. Contracts, acquisition consideration, parent/subsidiary financing, undrawn facilities and consortium totals excluded.",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 11,
+    "new_or_retained_partial": 13,
+    "new_events_written": 39,
+    "new_generic_portfolio_relationships": 9,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "current_manifest_publication_verified": false,
+    "newly_completed_wider_reviews": 11,
+    "new_approved_events": 39,
+    "new_round_participations": 77,
+    "new_investor_profiles": 49,
+    "new_source_rows": 54,
+    "new_companies_with_events": 11,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "manifest_event_matches": 39,
+    "manifest_link_matches": 77,
+    "manifest_source_matches": 54,
+    "manifest_relationship_matches": 9,
+    "missing_link_source_urls": 0,
+    "db_approved_events": 2531,
+    "db_approved_round_participations": 2966,
+    "db_investor_profiles": 1813,
+    "db_source_reconciliation_companies": 647,
+    "concurrency_speedup_claimed": false,
+    "active_minutes": 12,
+    "timing_scope": "Lease through four read-only lanes, reconciliation, rollback rehearsal, atomic import and idempotency rollback; publication wait excluded.",
+    "checked_identities_per_active_hour": 120,
+    "completed_reviews_per_active_hour": 55
+  },
+  "per_company": [
+    {
+      "id": "a7b87f2d-cf76-40f9-a56f-219fe7b591b0",
+      "slug": "draken-international",
+      "name": "Draken International",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "The reviewed company history identifies the issuer as Draken International, established in Florida in 2011 and now part of the combined Draken group. Draken says Blackstone acquired a majority interest in 2019; a later company release says funds affiliated with Blackstone Tactical Opportunities completed a strategic investment in 2019. No transaction amount was disclosed. Draken also states that Mario Parisi previously converted a seven-figure debt into equity for a 30% stake before selling 24% in the Blackstone transaction, but it gives no date, currency or exact amount for that earlier conversion.",
+      "hold_note": "The Blackstone transaction amount and primary-versus-secondary proceeds split remain undisclosed. A later press profile calls the sale price a reported nine-figure sum, but that unverified estimate is excluded. The earlier debt conversion is retained only as context because no event date or exact amount was located.",
+      "sources_checked": [
+        {
+          "url": "https://draken.aero/about/our-history/",
+          "title": "Our History - Draken",
+          "source_type": "company_history",
+          "published_date": null
+        },
+        {
+          "url": "https://www.draken.aero/about/our-people/",
+          "title": "Our People - Draken",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.defensedaily.com/press-releases/joe-ford-joins-draken-international-as-chief-executive-officer/",
+          "title": "Joe Ford Joins Draken International as Chief Executive Officer",
+          "source_type": "company_press_release",
+          "published_date": "2020-06-17"
+        },
+        {
+          "url": "https://www.bglco.com/transactions/draken-international-acquired-by-blackstone/",
+          "title": "Draken International Acquired by Blackstone",
+          "source_type": "transaction_adviser",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Blackstone paid a nine-figure price for Draken in 2019.",
+          "reason": "The figure appears only as a later reported estimate; Draken, Blackstone and the transaction adviser did not disclose terms."
+        },
+        {
+          "claim": "Mario Parisi's seven-figure debt conversion can be entered as a dated round.",
+          "reason": "Draken gives neither a date nor exact amount or currency for the conversion."
+        },
+        {
+          "claim": "USAF and other government contract awards financed Draken.",
+          "reason": "Contracts and procurement revenue are out of scope."
+        }
+      ]
+    },
+    {
+      "id": "5fb2cc56-f51b-4202-81c6-89558d2bad50",
+      "slug": "drb-hicom-defence-technologies",
+      "name": "DRB-HICOM Defence Technologies",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The exact Malaysian issuer is DRB-HICOM Defence Technologies Sdn Bhd (DEFTECH), incorporated on 17 October 1996. DEFTECH's official site and DRB-HICOM corporate materials identify it as a wholly owned subsidiary of DRB-HICOM Berhad. No sufficiently sourced issuer-level financing event was located in the bounded review.",
+      "hold_note": "Public group reports contain DRB-HICOM-level loans and financing and describe DEFTECH contracts and acquisitions, but do not establish that those borrowings were received by DEFTECH. A registry document reposted on Scribd mentions a chargee but was not treated as sufficient evidence without the underlying official charge instrument, amount and date.",
+      "sources_checked": [
+        {
+          "url": "https://deftech.com.my/group-of-companies/",
+          "title": "Group Of Companies - DEFTECH Defence Technology",
+          "source_type": "company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.drb-hicom.com/group-companies/defence/",
+          "title": "Aerospace and Defence - DRB-HICOM",
+          "source_type": "parent_company_profile",
+          "published_date": null
+        },
+        {
+          "url": "https://www.drb-hicom.com/wp-content/uploads/2025/07/DRB-HICOM-CORP-STRUCTURE.pdf",
+          "title": "DRB-HICOM Corporate Structure",
+          "source_type": "parent_company_filing",
+          "published_date": "2025-07"
+        },
+        {
+          "url": "https://www.drb-hicom.com/wp-content/uploads/2026/04/Full-Single-Low-res-DRBH-IAR2025.pdf",
+          "title": "DRB-HICOM Integrated Annual Report 2025",
+          "source_type": "parent_company_filing",
+          "published_date": "2026-04"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DRB-HICOM group borrowings are DEFTECH financing.",
+          "reason": "The reviewed filings do not allocate the group facilities to this exact subsidiary."
+        },
+        {
+          "claim": "Malaysian government vehicle contracts are investment funding for DEFTECH.",
+          "reason": "Contracts and procurement are out of scope."
+        },
+        {
+          "claim": "DEFTECH's purchases or internal transfers of CTRM assets are capital raised by DEFTECH.",
+          "reason": "Acquisition consideration and internal restructuring are not issuer financing absent evidence of a funding instrument."
+        }
+      ]
+    },
+    {
+      "id": "ecdd29bf-b6b4-44f0-89f2-4fd5c7237f2d",
+      "slug": "dreame-technology",
+      "name": "Dreame Technology",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "The reviewed sources consistently identify the issuer as Dreame Technology (追觅科技), the smart-appliance company that joined the Xiaomi ecosystem in late 2017. The earliest public equity financing located is a CNY 14 million first investment from Xiaomi and Shunwei, described by the founder and retrospectively dated to 2017. Confirmed priced rounds include a nearly CNY 100 million Series B+ closed 1 September 2020 and a CNY 3.6 billion Series C reported 20 October 2021. Public financing timelines also show an amount-undisclosed D round in April 2022 and D+/later round in May 2023; those are retained only as amount-undisclosed events.",
+      "hold_note": "The earliest CNY 14 million event is a retrospective founder disclosure without an exact closing date. The 2022 and 2023 rounds are supported by Chinese financing databases but lack issuer press releases and amounts; investor lists are therefore intentionally narrow. A 2025 equity transfer is excluded because it was reported as a secondary stake transfer, not new issuer capital.",
+      "sources_checked": [
+        {
+          "url": "https://www.donews.com/news/detail/4/6540984.html",
+          "title": "Yu Hao clarifies early financing: first investment only from Xiaomi and Shunwei",
+          "source_type": "founder_statement_report",
+          "published_date": "2026-05-04"
+        },
+        {
+          "url": "https://www.36kr.com/p/860248419146112",
+          "title": "Dreame completes nearly RMB100 million B+ round",
+          "source_type": "business_media",
+          "published_date": "2020-09-01"
+        },
+        {
+          "url": "https://www.prnewswire.co.uk/news-releases/smart-consumer-technology-startup-dreame-technology-raises-nearly-usd-15-million-in-series-b-funding-led-by-idg-capital-896502284.html",
+          "title": "Dreame Technology Raises Nearly USD 15 Million in Series B+ Funding",
+          "source_type": "company_press_release",
+          "published_date": "2020-09-07"
+        },
+        {
+          "url": "https://www.asiape.com/images/upload/private/doc/APER_202111.pdf",
+          "title": "Asia Private Equity Review - November 2021",
+          "source_type": "trade_media",
+          "published_date": "2021-11"
+        },
+        {
+          "url": "https://pitchhub.36kr.com/project/1744026209672068",
+          "title": "Dreame financing history",
+          "source_type": "business_database",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Dreame raised USD 562.8 million in addition to CNY 3.6 billion in Series C.",
+          "reason": "The dollar figure is a conversion of the same round; original currency is CNY."
+        },
+        {
+          "claim": "Yunmu Capital was an investor in the 2020 Series B+.",
+          "reason": "The issuer release names Yunmu Capital as exclusive financial adviser, not investor."
+        },
+        {
+          "claim": "The 2025 equity transfer financed Dreame.",
+          "reason": "It was reported as an equity transfer and no primary capital to the issuer was established."
+        }
+      ]
+    },
+    {
+      "id": "acf356c5-c283-47d2-91fe-6f2571ca37ee",
+      "slug": "dron-e",
+      "name": "Dron-e",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact operating identity is the Italian Dron-e brand of Easy City Societa a Responsabilita Limitata Semplificata (Easy City SRLS), VAT/registration number 03366240798, founded in Catanzaro in 2014. Dron-e's own contact and terms pages explicitly connect the brand to Easy City SRLS. A business directory reports EUR 600 corporate capital, but no dated capital issuance or external financing event was located.",
+      "hold_note": "The EUR 600 figure is a current registry-derived capital state without a dated allotment event. No reviewed source identified outside investors, grants, loans or equity rounds for Easy City SRLS/Dron-e; absence of a located event is not evidence of zero financing.",
+      "sources_checked": [
+        {
+          "url": "https://dron-e.it/get-in-touch/",
+          "title": "Contact us - Dron-e",
+          "source_type": "company_contact",
+          "published_date": null
+        },
+        {
+          "url": "https://dron-e.it/it/termini-e-condizioni/",
+          "title": "Termini e condizioni - Dron-e",
+          "source_type": "company_legal",
+          "published_date": "2023-12-27"
+        },
+        {
+          "url": "https://dron-e.it/en/company-history/",
+          "title": "Company history - Dron-e",
+          "source_type": "company_history",
+          "published_date": null
+        },
+        {
+          "url": "https://gb.kompass.com/c/easy-city/it5125007/",
+          "title": "Easy City Societa a Responsabilita Limitata Semplificata",
+          "source_type": "business_directory",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The EUR 600 corporate-capital balance was a fundraising round in 2014.",
+          "reason": "No filing or source dates the capital contribution or identifies subscribers."
+        },
+        {
+          "claim": "DJI's dealer relationship or customer projects financed Dron-e.",
+          "reason": "Commercial partnerships and contracts are not investment financing."
+        }
+      ]
+    },
+    {
+      "id": "58f9a778-1817-4931-83be-2340500e3508",
+      "slug": "dron-solyushns",
+      "name": "Dron Solyushns",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 2,
+      "evidence_note": "The exact issuer is Russian ООО «ДРОН СОЛЮШНС» (Dron Solutions LLC), OGRN 1187746132870 and INN 7716892964, registered in Moscow on 8 February 2018. Moscow Venture Fund's official release verifies CNY-equivalent not applicable: all financing was denominated in RUB. It retrospectively reports RUB 20 million invested in 2022 by Moscow Venture Fund with a private investor, RUB 170 million invested in 2023 by Voshod, and a new aggregate RUB 80 million financing by Moscow Venture Fund and Voshod announced 13 December 2024.",
+      "hold_note": "The 2022 and 2023 disclosures give only the year, not exact close dates. The December 2024 RUB 80 million round combines Moscow Venture Fund financing, described in the release as loan instruments, with additional Voshod funding; no participant-by-participant split or exact instrument mix was disclosed. Registry capital changes in 2024-2025 are not counted as additional cash rounds because they are far smaller than the disclosed financings and may reflect ownership formalities.",
+      "sources_checked": [
+        {
+          "url": "https://www.dronesolutions.ru/",
+          "title": "Dron Solutions official website",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://moscow.vc/ru-RU/content/index",
+          "title": "Moscow Venture Fund and Voshod invested RUB 80 million in Dron Solutions",
+          "source_type": "investor_press_release",
+          "published_date": "2024-12-13"
+        },
+        {
+          "url": "https://companies.rbc.ru/id/1187746132870-ooo-dron-solyushns/",
+          "title": "Dron Solutions company profile",
+          "source_type": "registry_aggregator",
+          "published_date": null
+        },
+        {
+          "url": "https://companium.ru/id/1187746132870-dron-solyushns",
+          "title": "Dron Solutions registry profile",
+          "source_type": "registry_aggregator",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The current RUB 136,460 charter capital equals total funding raised.",
+          "reason": "Charter capital is a registry capital state and is not comparable to disclosed investment proceeds."
+        },
+        {
+          "claim": "The 2024 RUB 80 million was entirely equity or entirely debt.",
+          "reason": "The source describes Moscow Venture Fund's instrument as financing/loans and Voshod as an investor but does not disclose allocation or instrument split."
+        },
+        {
+          "claim": "Government procurement or customer contracts are issuer financing.",
+          "reason": "Contracts and procurement are out of scope."
+        }
+      ]
+    },
+    {
+      "id": "95764b13-9e1a-4f81-bcb9-ce85fab0d0ca",
+      "slug": "drone-amplified",
+      "name": "Drone Amplified",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Drone Amplified, Inc., a Delaware corporation previously named Drone Amplified, LLC, based in Lincoln, Nebraska. The earliest completed external financing located is an undisclosed 2017 seed investment by Invest Nebraska; the first priced completed equity event is a USD 500,000 follow-on seed round completed in November 2018. Public non-dilutive financing includes a USD 224,999 NSF SBIR Phase I beginning 1 February 2019, state matching and seed-program awards, and NSF SBIR Phase II award 2025871 initially awarded at USD 983,676 effective 15 September 2020 and later amended to USD 1,459,606 total obligations.",
+      "hold_note": "2017 and 2018 SEC Form D filings showed USD 340,000 and USD 600,000 intended offerings but zero sold at filing; they are not treated as completed raises. The later USD 500,000 completed round is supported by company-republished reporting and university/venture reporting. Government procurement and 2024-2026 DOD SBIR contracts are excluded as contracts. The NSF Phase II record is entered at the initial USD 983,676 award amount, with the later amendment noted rather than double counted as a new round.",
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1719982/000171998217000001/primary_doc.xml",
+          "title": "Drone Amplified 2017 Form D",
+          "source_type": "regulatory_filing",
+          "published_date": "2017-10-18"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1719982/000171998218000002/primary_doc.xml",
+          "title": "Drone Amplified 2018 Form D",
+          "source_type": "regulatory_filing",
+          "published_date": "2018-09-20"
+        },
+        {
+          "url": "https://droneamplified.com/lincoln-based-drone-company-getting-accolades-investment/",
+          "title": "Lincoln-based Drone Company Getting Accolades, Investment",
+          "source_type": "company_news",
+          "published_date": "2019-03-05"
+        },
+        {
+          "url": "https://droneamplified.com/drone-amplified-awarded-competitive-grant-from-the-national-science-foundation/",
+          "title": "Drone Amplified Awarded Competitive Grant from the National Science Foundation",
+          "source_type": "company_press_release",
+          "published_date": "2019-02-21"
+        },
+        {
+          "url": "https://govdocs.nebraska.gov/epubs/E1000/A001-2019.pdf",
+          "title": "Nebraska Business Innovation Act Annual Report 2019",
+          "source_type": "government_report",
+          "published_date": "2019"
+        },
+        {
+          "url": "https://nsf.elsevierpure.com/en/projects/sbir-phase-ii-intelligent-drone-ignitions-to-manage-fires-2/",
+          "title": "SBIR Phase II: Intelligent Drone Ignitions To Manage Fires",
+          "source_type": "government_award_database",
+          "published_date": null
+        },
+        {
+          "url": "https://govdocs.nebraska.gov/epubs/E1000/A001-2021.pdf",
+          "title": "Nebraska Business Innovation Act Annual Report 2021",
+          "source_type": "government_report",
+          "published_date": "2021"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Drone Amplified raised USD 340,000 in October 2017 and USD 600,000 in September 2018.",
+          "reason": "Both Form D filings reported zero amount sold when filed; offering targets are not completed financing."
+        },
+        {
+          "claim": "The NSF Phase II award was both USD 983,676 and USD 1,459,606 in separate rounds.",
+          "reason": "USD 983,676 was the initial award; USD 1,459,606 is the later amended cumulative obligation for the same award ID 2025871."
+        },
+        {
+          "claim": "Federal purchases, DOI/Forest Service R&D task orders, or DOD SBIR contracts are investment financing.",
+          "reason": "They are procurement contracts and are out of scope."
+        }
+      ]
+    },
+    {
+      "id": "e4e2f38e-81a4-4a2d-a4a3-93d9e0ed2162",
+      "slug": "drone-matrix",
+      "name": "Drone Matrix",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 2,
+      "evidence_note": "DroneMatrix's 30 April 2025 relaunch announcement says that, after Nordic Unmanned's collapse, the Vanwelkenhuyzen family reacquired 30% and a Norwegian investor group, including Knut Roar Wiig, held the other 70%. It states that debt conversion plus new capital injection totalled exactly EUR 1 million. This is the earliest and latest qualifying issuer financing located in the bounded review. A separate company announcement describes the three-year MARISPEC project's EUR 1.3 million total budget, but it does not allocate that amount to DroneMatrix.",
+      "hold_note": "The EUR 1 million disclosure combines debt conversion and new capital without giving the component split or individual investor allocations. The Norwegian owners are identified collectively; only Knut Roar Wiig is named as an example member of the group.",
+      "sources_checked": [
+        {
+          "url": "https://www.dronematrix.eu/de/news/dronematrix-relaunches-under-belgian-norwegian-partnership-secures-new-critical-infrastructure-client",
+          "title": "DroneMatrix Relaunches Under Belgian-Norwegian Partnership, Secures New Critical Infrastructure Client",
+          "source_type": "company_announcement",
+          "published_date": "2025-04-30"
+        },
+        {
+          "url": "https://www.dronematrix.eu/news/dronematrix-receives-defra-funding-for-marispec-research-project",
+          "title": "DroneMatrix receives DEFRA funding for MARISPEC research project",
+          "source_type": "company_announcement",
+          "published_date": "2024-10-01"
+        },
+        {
+          "url": "https://nordicir.com/company_announcement/nordic-unmanned-asa-completes-the-acquisition-of-the-remaining-45-shares-in-leading-belgian-drone-company-dronematrix/",
+          "title": "Nordic Unmanned ASA completes the acquisition of the remaining 45% shares in DroneMatrix",
+          "source_type": "transaction_party_announcement",
+          "published_date": "2024-07-01"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DroneMatrix received EUR 1.3 million of DEFRA funding for MARISPEC.",
+          "reason": "The company source gives EUR 1.3 million as the total three-year consortium project budget and does not disclose DroneMatrix's beneficiary allocation."
+        },
+        {
+          "claim": "Nordic Unmanned's EUR 2.6 million purchase of the remaining 45% in 2024 was issuer financing for DroneMatrix.",
+          "reason": "That disclosure describes secondary acquisition consideration paid for shares, including cash and Nordic Unmanned shares, not proceeds to the issuer."
+        }
+      ]
+    },
+    {
+      "id": "ebdfc53a-c82d-4113-9ad8-07e1cfc1d179",
+      "slug": "drone-nerds",
+      "name": "Drone Nerds",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "XTI Aerospace's announcement and 2025 Form 10-K establish that XTI Drones Holdings LLC acquired 100% of Drone Nerds LLC on 10 November 2025. The approximately USD 40 million purchase consideration was paid for the acquired equity and is not Drone Nerds issuer financing. The separately announced USD 25 million Unusual Machines investment was into XTI Aerospace, not Drone Nerds. No event-level public issuer financing for Drone Nerds was verified in the bounded review.",
+      "hold_note": "Private or founder financing remains unknown; absence of a verified issuer round is not evidence of zero funding.",
+      "sources_checked": [
+        {
+          "url": "https://ir.xtiaerospace.com/ir-news-events/press-releases/detail/369/xti-aerospace-acquires-drone-nerds-and-closes-25-million-strategic-investment-by-unusual-machines",
+          "title": "XTI Aerospace Acquires Drone Nerds and Closes $25 Million Strategic Investment by Unusual Machines",
+          "source_type": "transaction_party_announcement",
+          "published_date": "2025-11-12"
+        },
+        {
+          "url": "https://ir.xtiaerospace.com/sec-filings/all-sec-filings/content/0001213900-26-043785/ea0279149-10k_xtiaero.htm",
+          "title": "XTI Aerospace, Inc. 2025 Form 10-K",
+          "source_type": "regulatory_filing",
+          "published_date": "2026-04-15"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Drone Nerds raised approximately USD 40 million in November 2025.",
+          "reason": "The amount is acquisition consideration paid to acquire Drone Nerds, not capital received by the issuer."
+        },
+        {
+          "claim": "Unusual Machines invested USD 25 million in Drone Nerds.",
+          "reason": "The private placement recipient was XTI Aerospace; the source does not establish Drone Nerds as recipient."
+        }
+      ]
+    },
+    {
+      "id": "49a13c8e-a678-4441-9d3a-809619168b6d",
+      "slug": "drone-parts-center",
+      "name": "Drone Parts Center",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The official site identifies Drone Parts Center as a brand of PIM, while a current supplier profile identifies the operator as Belgian company PIM-Consult SRL (BE 0765.467.085). No event-level public financing for the brand or its legal operator was verified in the bounded review.",
+      "hold_note": "The catalogue identity is a trading brand rather than a clearly separable issuer. Private financing of PIM-Consult SRL remains unknown; blank aggregator funding fields are not evidence of zero.",
+      "sources_checked": [
+        {
+          "url": "https://drone-parts-center.com/en/",
+          "title": "Drone Parts Center — official website",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://robottoday.com/suppliers-discovery/drone-parts-center",
+          "title": "Drone Parts Center supplier profile",
+          "source_type": "third_party_report"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Drone Parts Center has no funding.",
+          "reason": "A blank funding field on a directory profile is not transaction evidence and does not establish zero funding."
+        }
+      ]
+    },
+    {
+      "id": "ef7a9b61-e375-4da2-8e86-9df1f99424a2",
+      "slug": "drone-solutions",
+      "name": "Drone Solutions",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact identity is the Russian UAV developer ООО «Дрон Солюшнс» / Drone Solutions (dronesolutions.ru), founded in 2018. Moscow Venture Fund's 13 December 2024 announcement reports an RUB 80 million round from Moscow Venture Fund and Voskhod, and retrospectively reports RUB 20 million from Moscow Venture Fund plus a private investor in 2022 and RUB 170 million from Voskhod in 2023. The 2022 amount is the earliest qualifying public issuer financing located and the 2024 round is the latest. Only calendar-year precision is public for the first two events.",
+      "hold_note": "The researched Russian OOO Drone Solutions is not the catalogue row headquartered in Zimbabwe; its financing is retained only on the distinct Dron Solyushns identity.",
+      "sources_checked": [
+        {
+          "url": "https://www.mosinnov.ru/news/fund/mining-wave-exit.html",
+          "title": "Moscow Venture Fund and Voskhod invested RUB 80 million in UAV developer Drone Solutions",
+          "source_type": "investor_announcement",
+          "published_date": "2024-12-13"
+        },
+        {
+          "url": "https://www.rbc.ru/business/17/04/2025/67ffe2e29a79473371d3feef",
+          "title": "Venture investment in Russian space technology fell threefold",
+          "source_type": "third_party_report",
+          "published_date": "2025-04-17"
+        },
+        {
+          "url": "https://app.dealroom.co/companies/drone_solutions_llc",
+          "title": "Drone Solutions company information, funding and investors",
+          "source_type": "third_party_report"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The December 2024 issuer round was USD 2.2 million.",
+          "reason": "A later RBC market summary reports USD 2.2 million, but the contemporaneous fund announcement gives the original-currency round amount as RUB 80 million; the original-currency primary figure is retained."
+        },
+        {
+          "claim": "The 2022 unnamed private investor was a specific named person or fund.",
+          "reason": "The reviewed fund announcement does not identify that co-investor."
+        }
+      ]
+    },
+    {
+      "id": "eb010ab2-394c-4693-9700-f9f541336b9f",
+      "slug": "drone-solutions-international",
+      "name": "Drone Solutions International",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Drone Solutions International's official group page identifies it as the holding company connecting operating businesses in Zimbabwe, Malawi, Mozambique, the DRC and South Africa, with the Zimbabwe business established in 2016 and five-country integration in 2026. No event-level public financing of the holding company was verified in the bounded review.",
+      "hold_note": "The group's operating businesses are separate recipients; subsidiary contracts, donor activity or project spending must not be assigned to Drone Solutions International without an explicit holding-company financing disclosure. Undisclosed private financing remains unknown.",
+      "sources_checked": [
+        {
+          "url": "https://www.dronesolutionsintl.com/group",
+          "title": "The Group — Drone Solutions International",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.dronesolutionsintl.com/",
+          "title": "Drone Solutions International — official website",
+          "source_type": "company_announcement"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Country-subsidiary contracts or donor-funded demonstrations are financing for Drone Solutions International.",
+          "reason": "The reviewed sources do not establish the holding company as recipient; the group explicitly operates through local companies."
+        }
+      ]
+    },
+    {
+      "id": "cafbb526-e3e7-49f0-aa7e-243f45e6756d",
+      "slug": "drone-solutions-zimbabwe",
+      "name": "Drone Solutions Zimbabwe",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "The official Zimbabwe site identifies Drone Solutions Zimbabwe as a subsidiary of Drone Solutions International, and the group site says the Zimbabwe operating company was established in 2016. A Zimbabwe government award notice identifies the legal supplier as Drone Solutions Pvt Ltd, but procurement revenue is not financing. No event-level public issuer financing was verified in the bounded review.",
+      "hold_note": "The company is an operating subsidiary. Group-level activity, demonstrations seeking future donor support, and procurement awards are not issuer funding. Private financing remains unknown.",
+      "sources_checked": [
+        {
+          "url": "https://dronesolutions.co.zw/",
+          "title": "Drone Solutions Zimbabwe — official website",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.dronesolutionsintl.com/group",
+          "title": "The Group — Drone Solutions International",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://egp.praz.org.zw/egp-SW5kZXhlcy92aWV3QXdhcmROb3RpY2UvNTIyMi9NT1JF",
+          "title": "Zimbabwe e-GP award notice — drone training services, mapping and surveillance",
+          "source_type": "government_database",
+          "published_date": "2026-06-18"
+        },
+        {
+          "url": "https://technomag.co.zw/drone-solutions-launches-34-minute-medical-drone-corridor-from-harare-to-marondera/",
+          "title": "Drone Solutions launches 34-minute medical drone corridor from Harare to Marondera",
+          "source_type": "third_party_report",
+          "published_date": "2026-10"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The US$4,620 Zimbabwe government award is investment funding.",
+          "reason": "It is procurement consideration for training, mapping and surveillance services, not issuer financing."
+        },
+        {
+          "claim": "The Harare–Marondera medical corridor is donor-funded financing received by Drone Solutions Zimbabwe.",
+          "reason": "The company representative described the activity as a demonstration without a contract or partnership and said possible donor funding was prospective."
+        }
+      ]
+    },
+    {
+      "id": "77d858cf-8070-4f8b-8772-0b9038b84430",
+      "slug": "dronebundle",
+      "name": "DroneBundle",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact-identity review establishes that DroneBundle is a product and trading name of NakaFly, LLC, a Delaware limited liability company. DroneBundle's official terms and privacy policy name NakaFly, LLC as the service provider, while the company about page describes DroneBundle as an independent, founder-built side project that later added a dedicated team. No event-level external equity, debt or grant financing for NakaFly, LLC or DroneBundle was located in the bounded public-source review as of 2026-11-12.",
+      "hold_note": "The official description of DroneBundle as independent does not establish that it has never received external capital. No financing round should be created without an event-level source naming NakaFly, LLC or DroneBundle as recipient and stating the instrument or amount.",
+      "sources_checked": [
+        {
+          "url": "https://dronebundle.com/terms",
+          "title": "Terms of Service | DroneBundle",
+          "source_type": "company_legal",
+          "published_date": "2026-09-23"
+        },
+        {
+          "url": "https://dronebundle.com/privacy",
+          "title": "Privacy Policy | DroneBundle",
+          "source_type": "company_legal",
+          "published_date": "2026-10-04"
+        },
+        {
+          "url": "https://dronebundle.com/about",
+          "title": "About DroneBundle - Mission Control for Drone Operations",
+          "source_type": "company_about",
+          "published_date": null
+        },
+        {
+          "url": "https://dronebundle.com/press",
+          "title": "Press and Media Kit | DroneBundle",
+          "source_type": "company_press",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DroneBundle has raised zero funding.",
+          "reason": "No disclosed financing event was located, but absence from the reviewed sources is not proof of zero or of no undisclosed founder capital, loans or grants."
+        },
+        {
+          "claim": "DroneBundle Oy in Finland is the issuer behind dronebundle.com.",
+          "reason": "The reviewed first-party legal pages expressly identify NakaFly, LLC as the operator; no continuity to the similarly named Finnish company was established."
+        }
+      ]
+    },
+    {
+      "id": "ccf5dcfc-5c16-4117-887b-b5efe3e8eed5",
+      "slug": "droneclear",
+      "name": "DroneClear",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue identity is the enterprise drone-program platform DroneClear developed by Wanda Analytics, not DroneClear Thailand. Wanda Analytics' official site calls DroneClear its patent-pending platform, and an FAA waiver names the operating legal entity as Wanda Analytics LLC. Wanda's official company history states that the business was bootstrapped. No event-level external equity, debt or grant financing for DroneClear or Wanda Analytics LLC was located in the reviewed public sources as of 2026-11-12.",
+      "hold_note": "Bootstrapped is a financing characterization, not a verified lifetime zero-funding total. The product should inherit financing only from Wanda Analytics LLC when a source explicitly identifies that legal recipient; unrelated entities using the DroneClear or Wanda name must be excluded.",
+      "sources_checked": [
+        {
+          "url": "https://www.wandaanalytics.com/",
+          "title": "Home | Wanda Analytics | AI",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://www.wandaanalytics.com/about-us",
+          "title": "ABOUT | Wanda Analytics",
+          "source_type": "company_about",
+          "published_date": null
+        },
+        {
+          "url": "https://www.faa.gov/sites/faa.gov/files/107W-2026-01501-Bryan-Gabric-CoW.pdf",
+          "title": "FAA Certificate of Waiver issued to Wanda Analytics LLC",
+          "source_type": "government_record",
+          "published_date": "2026-10-20"
+        },
+        {
+          "url": "https://www.commercialuavnews.com/search?cdFieldFilters=eyJ0YWdzSURzIjoiMWE2ZWQyMjAtZjBmNy00NjYyLThmMjctYjFhZTFkYTRhNmViIn0K&hierarchicalMenu%5Bcat.categories.lv0%5D%5B0%5D=Buyer%27s+Guide&hierarchicalMenu%5Bcat.categories.lv0%5D%5B1%5D=Vendors+Category&hierarchicalMenu%5Bcat.categories.lv0%5D%5B2%5D=Products&hierarchicalMenu%5Bcat.categories.lv0%5D%5B3%5D=Software&page=2&searchCats=&term=",
+          "title": "DroneClear by Wanda Analytics",
+          "source_type": "trade_directory",
+          "published_date": "2026-05-23"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Financing or ownership of DroneClear Thailand applies to this DroneClear identity.",
+          "reason": "DroneClear Thailand is operated by BRS Properties Co., Ltd. and is a separate registration-assistance service with no demonstrated continuity to Wanda Analytics LLC."
+        },
+        {
+          "claim": "Fundraising by Wanda Connected Health Systems Limited financed DroneClear.",
+          "reason": "Wanda Health is an unrelated healthcare company; name similarity is not issuer continuity."
+        },
+        {
+          "claim": "Wanda Analytics has raised zero funding.",
+          "reason": "The official source says the company was bootstrapped, but it does not disclose a complete lifetime financing ledger."
+        }
+      ]
+    },
+    {
+      "id": "a88435e0-cff3-4d19-ad10-cfcc036e65d3",
+      "slug": "dronedeploy",
+      "name": "DroneDeploy",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 7,
+      "relationship_count": 0,
+      "evidence_note": "Exact-issuer review found seven disclosed financings for DroneDeploy from the USD 2 million seed announced 2014-09-19 through the USD 15 million strategic financing announced 2025-09-09. The intervening Series A-E rounds were publicly announced at USD 9 million, USD 20 million, USD 25 million, USD 35 million and USD 50 million respectively. The sources consistently describe DroneDeploy as the recipient and explicitly identify the lead or co-lead investors recorded below.",
+      "hold_note": "The 2013 AngelPad participation is incubation/accelerator history with no event-level amount located and is not entered as a financing round. Round amounts are announced round sizes, not investor-by-investor contributions. Procore's later acquisition of DroneDeploy is an ownership transaction and not issuer proceeds, so it is excluded from this financing manifest.",
+      "sources_checked": [
+        {
+          "url": "https://www.prweb.com/releases/dronedeploy_raises_2m_to_launch_to_cloud_control_for_commercial_drones/prweb12184164.htm",
+          "title": "DroneDeploy Raises $2m to launch to Cloud Control for Commercial Drones",
+          "source_type": "company_press_release",
+          "published_date": "2014-09-19"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2015/03/31/1130370/0/en/dronedeploy-raises-9m-series-a-funding-led-by-emergence-capital.html",
+          "title": "DroneDeploy Raises $9M; Series A Funding Led by Emergence Capital",
+          "source_type": "company_press_release",
+          "published_date": "2015-03-31"
+        },
+        {
+          "url": "https://techcrunch.com/2016/08/24/dronedeploy-raises-20-million-to-help-any-business-put-drones-to-work/",
+          "title": "DroneDeploy raises $20 million to help any business put drones to work",
+          "source_type": "news_media",
+          "published_date": "2016-08-24"
+        },
+        {
+          "url": "https://venturebeat.com/business/dronedeploy-raises-25-million-to-help-drone-operators-capture-and-analyze-aerial-data",
+          "title": "DroneDeploy raises $25 million to help drone operators capture and analyze aerial data",
+          "source_type": "news_media",
+          "published_date": "2018-06-26"
+        },
+        {
+          "url": "https://www.dronedeploy.com/blog/new-series-funding-announcement",
+          "title": "Our Next Chapter: How This Latest Investment Will Help Best Serve Our Customers",
+          "source_type": "company_news",
+          "published_date": "2019-11-14"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2021/02/04/2170029/0/en/DroneDeploy-Secures-50M-to-Accelerate-Development-Beyond-Drones-and-Solidify-Global-Market-Leadership.html",
+          "title": "DroneDeploy Secures $50M to Accelerate Development Beyond Drones and Solidify Global Market Leadership",
+          "source_type": "company_press_release",
+          "published_date": "2021-02-04"
+        },
+        {
+          "url": "https://energizecap.com/insights/why-were-continuing-to-invest-in-dronedeploy",
+          "title": "Why We're Continuing to Invest in DroneDeploy",
+          "source_type": "investor_news",
+          "published_date": "2021-02-04"
+        },
+        {
+          "url": "https://dronedeploy.com/blog/dronedeploy-hits-break-even-raises-strategic-15m-to-fuel-construction-progress-ai-product",
+          "title": "DroneDeploy Hits Break-Even, Raises Strategic $15M to Fuel Construction Progress AI Product",
+          "source_type": "company_news",
+          "published_date": "2025-09-09"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The 2013 AngelPad incubation was a priced or quantified financing round.",
+          "reason": "Reviewed sources establish incubation history but do not disclose an event-level amount or instrument for 2013."
+        },
+        {
+          "claim": "Each named participant supplied an equal share of a round.",
+          "reason": "The sources identify round totals and roles, not investor-level contributions."
+        },
+        {
+          "claim": "Procore's acquisition consideration is financing received by DroneDeploy.",
+          "reason": "Acquisition consideration is a secondary ownership transaction unless a source explicitly allocates primary capital to the issuer; no such allocation was used here."
+        }
+      ]
+    },
+    {
+      "id": "b69ab412-9d26-4d47-83e5-1d97eeae0bf8",
+      "slug": "dronedesk",
+      "name": "Dronedesk",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact-issuer review establishes that Dronedesk is a trading name of Grey Rock Innovations Ltd (company number 11621288), not the separate dormant company DRONEDESK LTD. A 2020 launch announcement states that the business was entirely founder-funded and had no external investors, while Dronedesk's 2026 first-party market review says it remains bootstrapped and profitable with no investors or parent company. No event-level external equity, debt or grant financing for Grey Rock Innovations Ltd trading as Dronedesk was located as of 2026-11-12.",
+      "hold_note": "The public statements support bootstrapped/self-funded status at their publication dates, but should not be converted into a numeric zero-funded record. Undisclosed founder contributions and any later private facilities remain unknown unless an event-level source is found.",
+      "sources_checked": [
+        {
+          "url": "https://dronedesk.io/blog/drone-fleet-management-software-market/",
+          "title": "Drone Fleet Management Software - The Platforms That Failed, and the Ones Still Flying",
+          "source_type": "company_news",
+          "published_date": "2026-10"
+        },
+        {
+          "url": "https://www.suasnews.com/2020/10/new-drone-operations-management-platform-saves-uk-operators-45-minutes-of-admin-per-flight/",
+          "title": "New drone operations management platform saves UK operators 45 minutes of admin per flight",
+          "source_type": "company_distributed_press_release",
+          "published_date": "2020-10-12"
+        },
+        {
+          "url": "https://trust.dronedesk.io/",
+          "title": "Dronedesk Trust Centre - Security & Compliance",
+          "source_type": "company_legal",
+          "published_date": null
+        },
+        {
+          "url": "https://dronedesk.io/media-kit",
+          "title": "Dronedesk - Media kit",
+          "source_type": "company_press",
+          "published_date": "2026-11"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DRONEDESK LTD (company number 12184476) is the operating issuer.",
+          "reason": "The operating platform's first-party sources identify Grey Rock Innovations Ltd, company number 11621288, as the legal entity; the similarly named company is listed as dormant."
+        },
+        {
+          "claim": "Dronedesk has raised exactly zero capital.",
+          "reason": "The sources state founder funding and no external investors, but do not quantify founder contributions or prove the absence of all undisclosed debt or grants."
+        }
+      ]
+    },
+    {
+      "id": "c1c74bdb-3b2d-431d-a933-7af46bc74129",
+      "slug": "droneflight",
+      "name": "DroneFlight",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue identity resolves to UK operator Drone-Flight Ltd / Droneflight Ltd at droneflight.co.uk, active since 2014. The company says it participated as one of six UK SMEs in Wrexham Glyndwr University's FAST-Fan project, which was funded through the Welsh Government SMARTExpertise programme and the European Regional Development Fund. The reviewed sources do not state a grant amount or allocation to Drone-Flight Ltd. No separable external financing event for the company was located as of 2026-11-12.",
+      "hold_note": "FAST-Fan programme funding cannot be assigned to Drone-Flight Ltd because the source names a university-led collaboration and multiple SME participants without recipient-level allocation. A 2026 EUR 300,000 start-up investment in DroneFlight Romania is a separate Romanian operation and must not be attributed without demonstrated corporate continuity.",
+      "sources_checked": [
+        {
+          "url": "https://www.droneflight.co.uk/about/",
+          "title": "About — Droneflight",
+          "source_type": "company_about",
+          "published_date": null
+        },
+        {
+          "url": "https://www.droneflight.co.uk/blog/fast-fan-project",
+          "title": "Fast Fan Project — Droneflight",
+          "source_type": "company_news",
+          "published_date": "2023-03-14"
+        },
+        {
+          "url": "https://www.aerosociety.com/news/a-rim-driven-future-wrexham-university-s-fast-fan-project/",
+          "title": "A rim-driven future? Wrexham University's FAST-Fan project",
+          "source_type": "professional_society_news",
+          "published_date": "2023"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Welsh Government or European Regional Development Fund financing of FAST-Fan was received in full by Drone-Flight Ltd.",
+          "reason": "The source identifies a multi-party university-led project and gives no amount or company-level allocation."
+        },
+        {
+          "claim": "DroneFlight Romania's EUR 300,000 initial investment financed the UK Drone-Flight Ltd.",
+          "reason": "The Romanian announcement describes local shareholders and transfer of a Netherlands model; no ownership continuity to the UK company was established."
+        },
+        {
+          "claim": "DroneFlight has raised zero funding.",
+          "reason": "No separable round was found, but absence of a disclosed event is not evidence of zero."
+        }
+      ]
+    },
+    {
+      "id": "e248dc29-794e-4927-9601-2f49ae688496",
+      "slug": "droneflykart",
+      "name": "Droneflykart",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact-identity review finds Droneflykart.no is a free Norwegian drone-flight planning service created by Felix Slettevoll and described by its own terms as a voluntary project. Teknisk Ukeblad reported on 2026-08-25 that Slettevoll built the service for his own operational need, incurs only small costs, develops it himself with limited volunteer assistance, and has no plan to monetize it. No event-level external equity, debt or grant financing was located as of 2026-11-12.",
+      "hold_note": "The founder says the service is free and has no monetization plan, but that is not evidence of zero funding. Support, in-kind work or undisclosed personal expenditure must not be converted into financing without an amount and instrument.",
+      "sources_checked": [
+        {
+          "url": "https://droneflykart.no/vilkar",
+          "title": "Bruksvilkar – Droneflykart.no",
+          "source_type": "project_terms",
+          "published_date": "2026-05-18"
+        },
+        {
+          "url": "https://www.tu.no/luftfart/han-gjor-det-enklere-for-dronepiloter-a-planlegge-flyging/986147",
+          "title": "Han gjor det enklere for dronepiloter a planlegge flyging",
+          "source_type": "news_media",
+          "published_date": "2026-08-25"
+        },
+        {
+          "url": "https://www.droneflykart.no/",
+          "title": "Droneflykart - NSM Drone Kart Norge",
+          "source_type": "project_website",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "SafeSky's free API access is an investment round in Droneflykart.",
+          "reason": "The source describes a no-cost integration for a non-commercial project, not cash financing or a disclosed grant."
+        },
+        {
+          "claim": "Droneflykart has raised zero funding.",
+          "reason": "No event-level financing was located, but the founder's statements about low costs and no monetization do not prove a lifetime zero."
+        }
+      ]
+    },
+    {
+      "id": "53d37ccf-882a-48d5-868e-0e0017a1da3e",
+      "slug": "droneresponders",
+      "name": "DroneResponders",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "DRONERESPONDERS is not a standalone legal issuer: its own site identifies it as an official 501(c)(3) nonprofit program of AIRT, Inc. The earliest program-specific financing located is an amount-undisclosed Motorola Solutions Foundation grant announced 2019-10-01 to AIRT for the DRONERESPONDERS program. The latest directly attributed program-specific financing located is NIST cooperative agreement 70NANB21H033, awarded to AIRT on 2021-04-01 for USD 109,993.36 and publicly announced by DRONERESPONDERS on 2021-04-19. The legal recipient and the beneficiary program are kept distinct.",
+      "hold_note": "The 2019 Motorola Solutions Foundation grant amount was not disclosed. Later NIST cooperative agreements to AIRT in 2022 and 2025 were not entered as DRONERESPONDERS rounds because the reviewed award descriptions do not explicitly name the program as recipient or beneficiary. Donations and corporate-patron support are continuous support, not event-level rounds.",
+      "sources_checked": [
+        {
+          "url": "https://www.droneresponders.org/about",
+          "title": "DRONERESPONDERS — About",
+          "source_type": "program_website",
+          "published_date": null
+        },
+        {
+          "url": "https://www.airt.ngo/news?category=News+Release&offset=1581000300736",
+          "title": "AIRT Receives Motorola Solutions Foundation Grant for DRONERESPONDERS Program",
+          "source_type": "recipient_news",
+          "published_date": "2019-10-01"
+        },
+        {
+          "url": "https://d7-archive.auvsi.org/industry-news/airt-use-grant-help-expand-its-droneresponders-program",
+          "title": "AIRT to use grant to help expand its DroneResponders program",
+          "source_type": "trade_media",
+          "published_date": "2019-10-01"
+        },
+        {
+          "url": "https://www.droneresponders.org/post/airt-awarded-federal-grant-from-u-s-department-of-commerce-to-help-improve-public-safety-drone-ops",
+          "title": "AIRT Awarded Federal Grant from U.S. Department of Commerce to Help Improve Public Safety Drone Ops",
+          "source_type": "recipient_news",
+          "published_date": "2021-04-19"
+        },
+        {
+          "url": "https://govtribe.com/award/federal-grant-award/cooperative-agreement-70nanb21h033",
+          "title": "Cooperative Agreement 70NANB21H033",
+          "source_type": "federal_award_aggregator",
+          "published_date": "2021-04-01"
+        },
+        {
+          "url": "https://www.droneresponders.org/donation",
+          "title": "Donate | DRONERESPONDERS",
+          "source_type": "program_website",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DRONERESPONDERS itself was the legal recipient of the 2019 or 2021 grants.",
+          "reason": "The sources identify AIRT, Inc. as the nonprofit legal recipient and DRONERESPONDERS as the beneficiary program."
+        },
+        {
+          "claim": "The 2019 Motorola Solutions Foundation grant had a known dollar amount.",
+          "reason": "No reviewed recipient, funder or trade source disclosed an amount."
+        },
+        {
+          "claim": "AIRT's 2022 USD 550,000 and 2025 USD 99,000 NIST cooperative agreements were DRONERESPONDERS financing.",
+          "reason": "The award descriptions reviewed name AIRT and related standards work but do not explicitly attribute the awards to the DRONERESPONDERS program; parent financing was not reassigned."
+        },
+        {
+          "claim": "Donations and corporate-patron listings are financing rounds.",
+          "reason": "They are ongoing support pages without event dates, amounts or discrete award terms."
+        }
+      ]
+    },
+    {
+      "id": "e9dd33be-c1cc-4eda-a79a-a6b2936b7141",
+      "slug": "dronery",
+      "name": "Dronery",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The catalogue record identifies a Netherlands company but provides no website or legal name. Public review found at least two distinct businesses using Dronery: a Berlin-based drone-services and electronics business at dronery.com, and an Israeli drone-delivery and air-taxi operator at droneryfly.com that explicitly describes itself as a subsidiary of Cando Drones Ltd. No source connected either business to a Netherlands legal issuer, so no financing or ownership relationship was assigned to the catalogue identity.",
+      "hold_note": "Exact-identity resolution is blocked by a same-name collision and conflicting geography. A legal name, website or registry identifier for the catalogue's Netherlands identity is required before importing Cando Drones ownership or any parent financing.",
+      "sources_checked": [
+        {
+          "url": "https://www.dronery.com/",
+          "title": "Dronery.com — Drone Services and Electronics",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://www.dronery.com/contacts/",
+          "title": "Dronery.com — Contacts",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://www.droneryfly.com/about-us/",
+          "title": "About Us — Dronery",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://innovationisrael.org.il/en/press_release/first-air-taxi-test-conducted-in-israel/",
+          "title": "First Air Taxi Test Conducted in Israel",
+          "source_type": "government_news",
+          "published_date": "2023-06-05"
+        },
+        {
+          "url": "https://en.globes.co.il/en/article-rami-levy-buys-stake-in-drone-delivery-fleet-startup-1001422100",
+          "title": "Rami Levy buys stake in drone delivery fleet startup",
+          "source_type": "business_media",
+          "published_date": "2022-08-22"
+        },
+        {
+          "url": "https://en.globes.co.il/en/article-rami-levys-cando-drones-completes-tase-ipo-1001548716",
+          "title": "Rami Levy's Cando Drones completes TASE IPO",
+          "source_type": "business_media",
+          "published_date": "2026-07"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The catalogue Dronery is the Israeli Cando Drones subsidiary.",
+          "reason": "The catalogue country is Netherlands and no catalogue website or legal identifier connects it to the Israeli operator."
+        },
+        {
+          "claim": "The catalogue Dronery is the Berlin service business at dronery.com.",
+          "reason": "That site gives a Berlin, Germany contact location, conflicting with the catalogue country and offering no Netherlands legal entity."
+        },
+        {
+          "claim": "Rami Levy's 2022 minority investment or Cando Drones' 2026 NIS 19 million IPO financed Dronery.",
+          "reason": "Both transactions financed Cando Drones, a separate parent issuer; no reviewed source allocated proceeds to Dronery."
+        },
+        {
+          "claim": "The NIS 60 million Israeli National Drone Initiative budget was Dronery financing.",
+          "reason": "The amount is a multi-participant government initiative budget, not an award to the exact catalogue identity."
+        }
+      ]
+    },
+    {
+      "id": "3604337a-32ae-4ca5-98f2-c48f7d7eff22",
+      "slug": "dronesec",
+      "name": "DroneSec",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "DroneSec began as Mike Monnik's drone-security consultancy in 2016. A 2020 NUS Enterprise notice identifies DroneSec as a subsidiary of Privasec. Australian registry records then show DRONESEC PTY LTD (ABN 82 638 809 971) active from 2020-02-03 until cancellation on 2025-03-24, while Privasec Pty Ltd separately held the Dronesec business name from 2020-01-21 to 2024-02-15. CyRise's own 2021-04-13 cohort announcement confirms the operating brand joined Cohort 5. This amount-undisclosed accelerator investment is the only public financing event supported strongly enough to record; the present US-headquartered operating entity was not identified in public registry sources.",
+      "hold_note": "CyRise's cohort announcement does not disclose an amount or instrument. General CyRise materials describe its programs as investment programs, but a transaction-specific AUD 50,000 amount was not found for DroneSec. Legal continuity after the Australian company's 2025 ABN cancellation remains unresolved, so the record is partial.",
+      "sources_checked": [
+        {
+          "url": "https://cyrise.medium.com/cyrise-cybersecurity-accelerator-program-cohort-5-announcement-da0505c23dbe",
+          "title": "CyRise Cybersecurity Accelerator Program: Cohort 5 Announcement",
+          "source_type": "accelerator_news",
+          "published_date": "2021-04-13"
+        },
+        {
+          "url": "https://cyrise.medium.com/founder-stories-from-cyrise-mike-monnik-from-dronesec-3b0b5e255bb7",
+          "title": "Founder stories from CyRise: Mike Monnik from DroneSec",
+          "source_type": "accelerator_news",
+          "published_date": "2021-07-20"
+        },
+        {
+          "url": "https://abr.business.gov.au/AbnHistory/View?id=82638809971",
+          "title": "Historical details for ABN 82 638 809 971",
+          "source_type": "government_registry",
+          "published_date": null
+        },
+        {
+          "url": "https://abr.business.gov.au/AbnHistory/View?id=44603476768",
+          "title": "Historical details for ABN 44 603 476 768",
+          "source_type": "government_registry",
+          "published_date": null
+        },
+        {
+          "url": "https://enterprise.nus.edu.sg/event/ice71-expert-series-from-hollywood-to-real-life-the-threat-of-drones/",
+          "title": "ICE71 Expert Series: From Hollywood to Real Life — The Threat of Drones",
+          "source_type": "university_program",
+          "published_date": "2020-08-18"
+        },
+        {
+          "url": "https://app.dealroom.co/companies/dronesec",
+          "title": "DroneSec company information, funding & investors",
+          "source_type": "funding_database",
+          "published_date": null
+        },
+        {
+          "url": "https://www.cbinsights.com/company/dronesec/financials",
+          "title": "DroneSec funding and investors",
+          "source_type": "funding_database",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DroneSec received financing in February 2016 from Deakin University and CyRise.",
+          "reason": "That claim appears only in a funding database and conflicts with CyRise's establishment timeline and its official 2021 cohort announcement."
+        },
+        {
+          "claim": "Deakin University was a direct DroneSec investor.",
+          "reason": "Reviewed primary sources identify Deakin as a backer of CyRise, not as a direct investor in DroneSec."
+        },
+        {
+          "claim": "DroneSec received exactly AUD 50,000 from CyRise.",
+          "reason": "General CyRise materials discuss AUD 50,000 investments, but the DroneSec cohort announcement does not state a company-specific amount or instrument."
+        },
+        {
+          "claim": "Australian or US government contracts awarded to DroneSec were investment financing.",
+          "reason": "They are procurement or services contracts, not issuer financing."
+        }
+      ]
+    },
+    {
+      "id": "ef9938ca-70ac-4b02-bc88-0c3f70c89e19",
+      "slug": "dronesense",
+      "name": "DroneSense",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "The exact issuer is DroneSense, Inc. of Austin, Texas. FLIR Systems announced on 2018-04-18 that it completed an amount-undisclosed strategic minority investment in DroneSense; this is the earliest and latest direct issuer financing supported by primary sources. Versaterm acquired DroneSense on 2025-07-30, establishing current parent ownership but not issuer financing because the acquisition consideration and seller proceeds were undisclosed.",
+      "hold_note": "The FLIR investment amount, valuation and percentage were not disclosed. No primary source was found for a database-listed 2017 angel event. DroneSense's federal SBIR awards were procurement/R&D contracts and were not treated as grants or investment rounds.",
+      "sources_checked": [
+        {
+          "url": "https://www.flir.com/news-center/press-releases/flir-systems-completes-strategic-investment-in-dronesense/",
+          "title": "FLIR Systems Completes Strategic Investment in DroneSense",
+          "source_type": "investor_news",
+          "published_date": "2018-04-18"
+        },
+        {
+          "url": "https://www.versaterm.com/news/versaterm-acquires-dronesense-setting-the-standard-for-drone-operations-as-part-of-the-incident-response-workflow/",
+          "title": "Versaterm Acquires DroneSense",
+          "source_type": "acquirer_news",
+          "published_date": "2025-07-30"
+        },
+        {
+          "url": "https://www.dronesense.com/about",
+          "title": "About DroneSense",
+          "source_type": "company_website",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1172903",
+          "title": "DroneSense SBIR company awards",
+          "source_type": "government_award_database",
+          "published_date": null
+        },
+        {
+          "url": "https://app.dealroom.co/companies/dronesense",
+          "title": "DroneSense company information, funding and investors",
+          "source_type": "funding_database",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "DroneSense raised a public angel round in July 2017.",
+          "reason": "The event appears only in a funding database with no amount, investor or original announcement; it remains an unverified candidate."
+        },
+        {
+          "claim": "DroneSense's SBIR awards totaling USD 2,695,228 were grant financing.",
+          "reason": "The awards are federal R&D procurement contracts tied to deliverables, not equity investment or non-procurement grants."
+        },
+        {
+          "claim": "Versaterm's 2025 acquisition consideration was financing received by DroneSense.",
+          "reason": "The acquisition announcement gives no consideration or issuer proceeds; it supports ownership only."
+        }
+      ]
+    },
+    {
+      "id": "9b0dcb9f-979a-4a85-ab95-8a9fcc86341d",
+      "slug": "droneshield",
+      "name": "DroneShield",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 14,
+      "relationship_count": 0,
+      "evidence_note": "The issuer is DroneShield Limited (ACN 608 915 859), incorporated in Australia on 2015-11-04 to acquire and operate the business founded as DroneShield LLC in the United States in 2014. The acquisition of 100% of DroneShield LLC completed before listing, establishing issuer continuity. The earliest public financing is the A$7 million IPO completed in June 2016. The latest qualifying public financing found is the A$120 million institutional placement announced 2024-08-01 and allotted 2024-08-07. Primary ASX filings also support intervening equity placements, SPPs and one 2019 R&D-incentive bridge loan; contracts, undrawn facilities, employee loans and option exercises are excluded.",
+      "hold_note": "Public placements identify investor classes rather than named beneficial investors, so no individual investor names were inferred. The April/June 2024 two-tranche placement is recorded once at exact aggregate cash received of A$100.522 million from the annual report, rather than duplicating the A$100 million announcement headline. The 2024 SPP is separate. No new placement or SPP was identified in 2025 or through 2026-11-12.",
+      "sources_checked": [
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20160620/pdf/4380cn69pfns7b.pdf",
+          "title": "DroneShield Limited — Pre-Quotation Disclosure",
+          "source_type": "asx_filing",
+          "published_date": "2016-06-20"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20160622/pdf/4381zc3d74ystv.pdf",
+          "title": "Leading Drone Security Company Debuts on the ASX",
+          "source_type": "asx_filing",
+          "published_date": "2016-06-22"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20180222/pdf/43rv12gtbrnq5g.pdf",
+          "title": "DroneShield 2017 Annual Report",
+          "source_type": "asx_filing",
+          "published_date": "2018-02-22"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20190220/pdf/442s21wdqqc66y.pdf",
+          "title": "DroneShield 2018 Annual Report",
+          "source_type": "asx_filing",
+          "published_date": "2019-02-20"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20190823/pdf/447ry546bkrck9.pdf",
+          "title": "DroneShield 2019 Half-Year Report",
+          "source_type": "asx_filing",
+          "published_date": "2019-08-23"
+        },
+        {
+          "url": "https://asx.api.markitdigital.com/asx-research/1.0/file/2924-02129784-2A1163039?access_token=83ff96335c2d45a094df02a206a39ff4",
+          "title": "DroneShield receives commitments for A$9.55 million placement",
+          "source_type": "asx_filing",
+          "published_date": "2019-08-02"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20200806/pdf/44l7wgf38qf5js.pdf",
+          "title": "DroneShield Placement and Share Purchase Plan",
+          "source_type": "asx_filing",
+          "published_date": "2020-08-06"
+        },
+        {
+          "url": "https://company-announcements.afr.com/asx/dro/814a9981-9366-11ec-b4cf-6eeaf7b2618c.pdf",
+          "title": "DroneShield 2020 Annual Report",
+          "source_type": "asx_filing_mirror",
+          "published_date": "2021-02"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20230307/pdf/45mdcb15y4wf3r.pdf",
+          "title": "Outstanding Shareholder Support for Share Purchase Plan",
+          "source_type": "asx_filing",
+          "published_date": "2023-03-07"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20250225/pdf/06fx5g4yfpk79c.pdf",
+          "title": "DroneShield 2024 Annual Report",
+          "source_type": "asx_filing",
+          "published_date": "2025-02-25"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20240422/pdf/062qv16wzqw09h.pdf",
+          "title": "Completion of Upsized Underwritten A$100m Placement",
+          "source_type": "asx_filing",
+          "published_date": "2024-04-22"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20240507/pdf/0639ngn7cqf4tv.pdf",
+          "title": "Successful Completion of Share Purchase Plan",
+          "source_type": "asx_filing",
+          "published_date": "2024-05-07"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20240801/pdf/06668c55vyz3g6.pdf",
+          "title": "Successful Completion of A$120m Underwritten Placement",
+          "source_type": "asx_filing",
+          "published_date": "2024-08-01"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20260225/pdf/06wq71j5jq4dtc.pdf",
+          "title": "DroneShield 2025 Annual Report",
+          "source_type": "asx_filing",
+          "published_date": "2026-02-25"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "Government sales contracts, framework agreements or procurement vehicles are financing rounds.",
+          "reason": "They are customer procurement and revenue opportunities, not capital supplied to the issuer."
+        },
+        {
+          "claim": "The A$1.855 million credit facility announced in October 2018 was drawn financing.",
+          "reason": "The 2018 annual report says the non-convertible facility was undrawn."
+        },
+        {
+          "claim": "Employee limited-recourse loans, option exercises and cashless exercises are external funding rounds.",
+          "reason": "They are compensation-plan or derivative-capital mechanics, not independently marketed issuer financing rounds."
+        },
+        {
+          "claim": "Joint lead managers and underwriters in the 2024 placements were beneficial investors.",
+          "reason": "The filings support arranger, bookrunner and underwriter roles only; no beneficial allocation was inferred."
+        },
+        {
+          "claim": "DroneShield raised new placement capital in 2025 or 2026.",
+          "reason": "The 2025 annual report shows only option exercises, loan-funded exercises and employee-loan repayments; 2026 filings reviewed through 2026-11-12 show no new placement or SPP."
+        }
+      ]
+    },
+    {
+      "id": "1318d995-b3db-4cdf-a122-fb935d7f3ab8",
+      "slug": "dronesports",
+      "name": "DroneSports",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "The exact issuer is Japanese company DRONE SPORTS株式会社, developer of the Rangle inspection-drone series. On 2025-01-20 the company announced that it had raised JPY 100 million by a third-party allotment capital increase and other means. The subscribers were explicitly withheld. This is the only public event-level financing located and therefore the earliest and latest verified financing as of 2026-11-12.",
+      "hold_note": "The announcement uses the formulation 'third-party allotment capital increase and other means' and does not allocate the JPY 100 million between equity and any other instrument. The total is exact, but the instrument mix and investor identities remain undisclosed.",
+      "sources_checked": [
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000092.000033439.html",
+          "title": "DRONE SPORTS株式会社、1億円の資金調達を実施",
+          "source_type": "company_press_release",
+          "published_date": "2025-01-20"
+        },
+        {
+          "url": "https://prtimes.jp/main/html/searchrlp/company_id/33439",
+          "title": "DRONE SPORTS株式会社 press-release index",
+          "source_type": "company_press_release_index",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        {
+          "claim": "The JPY 100 million was entirely equity financing.",
+          "reason": "The company says third-party allotment capital increase 'and other means' without disclosing the instrument split."
+        },
+        {
+          "claim": "Named customers, construction companies or equipment contractors invested in DroneSports.",
+          "reason": "The release says the subscribers are undisclosed and gives no investor identity or role."
+        },
+        {
+          "claim": "The absence of other press releases proves zero earlier funding.",
+          "reason": "No earlier public event was located, but an empty search result is not evidence of zero financing."
+        }
+      ]
+    }
+  ],
+  "audit_notes": [
+    "Only issuer-supported financing facts are normalized; parent, subsidiary, acquisition-consideration, contract and consortium amounts remain excluded unless the reviewed source establishes the target as recipient.",
+    "A completed bounded public-source review does not assert zero funding where no public round was found; undisclosed private history remains unknown.",
+    "Duplicate or closely related catalogue identities are kept distinct unless sources establish legal or economic continuity.",
+    "SEC Form D amendments are treated as cumulative issuer disclosures and are not double-counted as separate closes unless a later filing establishes a distinct offering."
+  ],
+  "publication": {
+    "pending": true,
+    "catalogue_trigger_required": true,
+    "database_imported_at": "2026-11-12T08:59:33.225Z",
+    "database_totals": {
+      "approved_events": 2531,
+      "round_participations": 2966,
+      "investor_profiles": 1813,
+      "source_reconciliation_companies": 647
+    },
+    "verification": {
+      "manifest_events": 39,
+      "manifest_sources": 54,
+      "manifest_links": 77,
+      "manifest_relationships": 9,
+      "missing_link_source_urls": 0
+    }
+  }
+}
