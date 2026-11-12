@@ -22,7 +22,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "local_postgresql_tests_passed": true,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
@@ -37,7 +37,13 @@
     "db_total_events": 2890,
     "db_approved_round_participations": 3613,
     "db_investor_profiles": 2190,
-    "db_source_reconciliation_companies": 747
+    "db_source_reconciliation_companies": 747,
+    "new_profile_exact_name_duplicates": 0,
+    "active_minutes": 12.3,
+    "checked_identities_per_hour": 116.7,
+    "completed_reviews_per_hour": 48.6,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, source QA, local PostgreSQL tests, production rollback, atomic import, idempotency and live verification; concurrent durations not summed."
   },
   "per_company": [
     {
@@ -1127,8 +1133,57 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T18:02:34.051Z",
+    "catalogue_commit": "0552353f47059d68bc1cd014e23639099411fed6",
+    "source_commit": "cec7790b1dd07d3da7ef810de3c30f413c53c31d",
+    "workflow_run": {
+      "id": 43275223196,
+      "head": "0552353f47059d68bc1cd014e23639099411fed6",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43275223196"
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-first.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-forty-first.json",
+    "generated_at": "2026-11-12T18:00:57.920Z",
+    "investor_generated_at": "2026-11-12T18:01:00.447Z",
+    "events": 1589,
+    "links": 1380,
+    "profiles": 2181,
+    "companies": 567,
+    "portfolio_relationships": 278,
+    "published_portfolio_relationships": 249,
+    "current_manifest_event_rows": 21,
+    "current_manifest_live_matches": 0,
+    "outside_landscape": [
+      "gemfan",
+      "general-atomics-aeronautical-systems",
+      "general-atomics-aeronautical-systems-ga-asi",
+      "general-dynamics",
+      "general-electric",
+      "general-motors-defense",
+      "general-orbit",
+      "general-radar",
+      "genesis-arms",
+      "geo4d",
+      "geocomm",
+      "geocue",
+      "geolitix",
+      "geoscan",
+      "geoslam-faro",
+      "geprc",
+      "gfai-tech",
+      "ghost-robotics",
+      "gilden-photonics",
+      "gir",
+      "gis-hub",
+      "givon-defense",
+      "gkn-aerospace",
+      "glefa"
+    ],
+    "directory_filter_note": "Existing named-profile filter excludes nine pre-existing anonymous placeholders: database2190 versus live2181. Directory increased by19 new named profiles; spot checks MSPBank, OctaveVentures, GeneralMotors, MoKoyfman and BenFranklinSEPA verified. Live landscape explicitly contained none of the24 target slugs; membership gates preserved."
   },
   "database": {
     "total_events": 2890,
@@ -1136,5 +1191,14 @@
     "round_participations": 3613,
     "investor_profiles": 2190,
     "source_reconciliation_companies": 747
-  }
+  },
+  "audit_notes": [
+    "Production baseline after rollback remained 2869 total / 2856 approved events, 3596 links, 2171 profiles and 737 event-covered companies.",
+    "All 21 manifest events, 17 participant links, 29 source rows, 13 generic relationships and 19 new profiles matched after the atomic import. Participant source URLs resolve to event source rows. Local PostgreSQL rollback, idempotency, conflict and foreign-key tests plus production repeat idempotency rollback passed.",
+    "General Dynamics debt principal and the new 2025 credit commitment are distinct from repayments, commercial-paper period net flows, existing facility balances or drawn cash. GE July2025 financing already under ge-aerospace was not duplicated on general-electric; GA-ASI identities were evidenced as duplicate labels without duplicating parent financing.",
+    "General Orbit PitchMI USD375k includes Assembly Ventures USD125k; Google credits and conditional university authorisation excluded. Mobility programme own cash amount unknown. Genesis FAA award and later reimbursement are one event; fiscal periods do not become invented award dates.",
+    "GeoSLAM GBP5.4m package retains source-confirmed split and undisclosed precise instruments. Geoscan RUB500m loan uses CEO disclosure date and notes December2023 receipt. Acquisition consideration for GeoSLAM, Geoscan, Ghost Robotics, GeoComm and GeoCue is not issuer capital.",
+    "GKN grant offers are exact own-beneficiary allocations, with original award dates unknown and project periods not treated as payment dates. Gilden GBP33,333 is a historical payment disclosure with full grant commitment unknown. AEGIR support amount and instrument remain undisclosed. Individual Mo Koyfman listing is not a Shine Capital cheque.",
+    "Existing curated profiles preserved; no new exact-name duplicates. Geography, classification, company publication gates, repository schedules, legacy STATE.json and frozen snapshots preserved."
+  ]
 }
