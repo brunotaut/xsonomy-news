@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-12T20:02:34.753Z",
     "expires_at": "2026-11-12T22:02:34.753Z",
-    "status": "researching",
+    "status": "prepared_import",
     "planned_company_ids": [
       "81e1a137-5446-4b8c-966c-cf43ce38d01f",
       "5d85ceb2-7aec-4e75-8099-2ffb0ab5b1c3",
@@ -3238,7 +3238,39 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "rollback_rehearsed_not_committed",
+    "manifest": "research-agent/imports/funding-landscape-20261112-forty-fourth.json",
+    "report": "research-agent/reports/2026-11-12-funding-landscape-forty-fourth.json",
+    "expected_metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 12,
+      "new_or_retained_partial": 12,
+      "new_approved_events": 11,
+      "new_round_participations": 83,
+      "new_source_rows": 13,
+      "new_generic_portfolio_relationships": 13,
+      "new_companies_with_events": 6,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": false,
+      "post_import_idempotency_rehearsal_passed": false,
+      "current_manifest_publication_verified": false,
+      "local_postgresql_tests_passed": true,
+      "new_investor_profiles": 55,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "search_queries_logged": 85,
+      "source_ledger_entries": 97
+    },
+    "baseline": {
+      "total_events": 2930,
+      "approved_events": 2917,
+      "links": 3734,
+      "profiles": 2263,
+      "covered": 762
+    }
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-12T19:59:36.072Z",

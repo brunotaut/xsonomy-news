@@ -1,0 +1,1202 @@
+{
+  "report": "Forty-fourth autonomous funding reconciliation",
+  "checked_at": "2026-11-12",
+  "lease_id": "funding-20261112T2002Z-wider-24",
+  "scope": {
+    "identities": 24,
+    "from": "harland-and-wolff",
+    "through": "hid-global",
+    "published_landscape": false
+  },
+  "method": "Four disjoint read-only research groups; one writer. Earlier/latest public history, actual issuer, original currency, qualifiers, instrument and explicit participant roles reconciled.",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 12,
+    "new_or_retained_partial": 12,
+    "new_approved_events": 11,
+    "new_round_participations": 83,
+    "new_source_rows": 13,
+    "new_generic_portfolio_relationships": 13,
+    "new_companies_with_events": 6,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": false,
+    "post_import_idempotency_rehearsal_passed": false,
+    "current_manifest_publication_verified": false,
+    "local_postgresql_tests_passed": true,
+    "new_investor_profiles": 55,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "search_queries_logged": 85,
+    "source_ledger_entries": 97
+  },
+  "per_company": [
+    {
+      "id": "81e1a137-5446-4b8c-966c-cf43ce38d01f",
+      "slug": "harland-and-wolff",
+      "name": "Harland & Wolff",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "evidence_note": "Original Navantia completion and lender RNS distinguish operating yards from former listed holding company and residual gas-storage group. No debt silently transferred across administration/asset sale.",
+      "hold_note": "Reconcile historical USD35m/140m facilities, emergency debt and exact borrowers/continuity before round import. Private operating-company capital and old equity history remain partial.",
+      "sources_checked": [
+        {
+          "url": "https://navantia.co.uk/2025/01/27/navantia-uk-completes-acquisition-of-harland-wolff/",
+          "title": "Navantia UK original: acquisition of four Harland and Wolff facilities",
+          "published_date": "2025-01-27",
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://www.theaic.co.uk/companydata/riverstone-credit-opportunities-income/announcements/9719025",
+          "title": "RCOI original RNS reproduced by AIC: historical H&W credit and administration",
+          "published_date": "2026-08-13",
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://www.gov.uk/government/news/deal-agreed-to-secure-harland-wolffs-future-protecting-thousands-of-uk-shipbuilding-jobs",
+          "title": "UK government asset deal announcement",
+          "published_date": "2024-12-19",
+          "source_type": "third_party_report"
+        }
+      ],
+      "searches_checked": [
+        "Harland Wolff financing Navantia Riverstone loan 2024 2025 official",
+        "Harland Wolff earlier latest funding 2026 Riverstone",
+        "Navantia UK completes acquisition Harland Wolff original"
+      ],
+      "excluded_claims": [
+        "GBP69.9m asset-sale and23m debt waiver are not new primary proceeds",
+        "Navantia development plans and government procurement contract not company grant",
+        "Residual Geostore/Islandmagee assets are not continuing shipyard finance"
+      ],
+      "event_count": 0,
+      "relationship_count": 1
+    },
+    {
+      "id": "5d85ceb2-7aec-4e75-8099-2ffb0ab5b1c3",
+      "slug": "harris-aerial",
+      "name": "Harris Aerial",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "evidence_note": "Founder original19October2026 explicitly describes family/friends backing at founding and subsequent bootstrapping; no named investor or quantified round identified in dated broad/company/investor searches.",
+      "hold_note": "Unnamed private backing, exact instruments and amounts unknown; no claim that company raised zero.",
+      "sources_checked": [
+        {
+          "url": "https://harrisaerial.com/harris-aerial-story-american-made-drones/",
+          "title": "Ben Harris original founder financing history",
+          "published_date": "2026-10-19",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://harrisaerial.com/about/",
+          "title": "Harris Aerial original manufacturer identity",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://harrisaerial.com/news/",
+          "title": "Harris Aerial original newsroom",
+          "published_date": null,
+          "source_type": "company_announcement"
+        }
+      ],
+      "searches_checked": [
+        "Harris Aerial funding investment acquisition official 2026",
+        "Harris Aerial investment funding investors earlier latest",
+        "site:harrisaerial.com funding investment partner"
+      ],
+      "excluded_claims": [
+        "Founder family/friends are unnamed, no personal investor substitution",
+        "Federal sales/procurement not equity or grants",
+        "Aggregator never-raised-funding labels not adopted"
+      ],
+      "event_count": 0,
+      "relationship_count": 0
+    },
+    {
+      "id": "e872ce39-ea99-45be-ad53-cc595c0db85a",
+      "slug": "harvard-university",
+      "name": "Harvard University",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "evidence_note": "Official university-hosted offering memorandum establishes direct legal issuer and750mUSD2025B taxable bond terms; separate conduit debt not substituted.",
+      "hold_note": "Long university debt, philanthropy and research-grant history incomplete. Indexed2026A conduit issue and2024/2025A borrowings require transaction-specific originals and beneficiary checks. Expected closing not verified.",
+      "sources_checked": [
+        {
+          "url": "https://otm.finance.harvard.edu/sites/g/files/omnuum12861/files/otm/files/series_2025b_om_supplemented.pdf",
+          "title": "President and Fellows of Harvard College: 2025B offering memorandum and supplement",
+          "published_date": "2025-04-15",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://otm.finance.harvard.edu/sites/hwpi.harvard.edu/files/otm/files/series_2025a_os.pdf",
+          "title": "Harvard2025A official-statement candidate, not imported",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://otm.finance.harvard.edu/debt/financing-documents",
+          "title": "Attempted official debt document index, inaccessible",
+          "published_date": null,
+          "source_type": "company_announcement"
+        }
+      ],
+      "searches_checked": [
+        "Harvard University 2026 2025 bond issuance debt official financing",
+        "Harvard Series2026 bonds",
+        "site.otm.finance.harvard.edu 2026 bonds Official"
+      ],
+      "excluded_claims": [
+        "Endowment investment returns, aggregate gifts, research revenues and grants involving affiliates not synthetic funding rounds",
+        "Bond underwriters/trustees not ultimate investors",
+        "Conduit issuer identity not transferred to university as direct issuance"
+      ],
+      "event_count": 1,
+      "relationship_count": 0
+    },
+    {
+      "id": "2d594e19-1750-4a5e-9611-d9513549a659",
+      "slug": "hatsan",
+      "name": "Hatsan",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "evidence_note": "Turkish official indexed company history identifies Izmir gun manufacturer established1976. Search hits for HATSN concern unrelated Hat-San shipyard, not hatsan.com.tr issuer.",
+      "hold_note": "Official gun-company full pages timed out; financing history cannot be claimed complete. No named financier or round verified; private capital unknown.",
+      "sources_checked": [
+        {
+          "url": "https://hatsan.com.tr/tr/hakkimizda/",
+          "title": "Official gun-manufacturer history indexed; full open timed out",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://hatsan.com.tr/",
+          "title": "Official gun issuer homepage timed out",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.oyakyatirim.com.tr/hisse-detay/HATSN",
+          "title": "Transaction-party names distinct Hat-San shipbuilding issuer",
+          "published_date": null,
+          "source_type": "third_party_report"
+        }
+      ],
+      "searches_checked": [
+        "Hatsan silah yatırım finansman kredi sermaye aile2026 2025",
+        "Hatsan yatırım kredi silah",
+        "Hatsan financing investors official earlier latest"
+      ],
+      "excluded_claims": [
+        "Hat-San Gemi IPO, HATSN credit ratings and stock movements are namesake shipyard data",
+        "Gun sales/export growth not capital financing"
+      ],
+      "event_count": 0,
+      "relationship_count": 0
+    },
+    {
+      "id": "e0146898-2e11-4d54-9333-0a80d228d7e0",
+      "slug": "havocai",
+      "name": "HavocAI",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "evidence_note": "Opened issuer originals establish three distinct financing announcements, earlier seed and latest SeriesA, and named participants. Newsroom reviewed through November2026.",
+      "hold_note": "SEC187,485,471 and seed12,233,286 candidates remain unverified/overlap-held; no added event. Exact Hanwha group vehicle unresolved, not attributed. Instruments, individual allocations and complete private history unknown.",
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/havocai-closes-11m-seed-round-to-revolutionize-autonomous-uncrewed-surface-vessel-operations-302254210.html",
+          "title": "HavocAI issuer: USD11m seed closed",
+          "published_date": "2024-09-20",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/havocai-adds-85m-in-new-capital-to-scale-proven-autonomy-capabilities-302580282.html",
+          "title": "HavocAI issuer: USD85m new capital completed",
+          "published_date": "2025-10-10",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.havocai.com/news/havoc-raises-100m-series-a-for-all-domain-collaborative-autonomy",
+          "title": "Havoc issuer: USD100m Series A",
+          "published_date": "2026-05-13",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.havocai.com/news",
+          "title": "Issuer current newsroom through November2026",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://bv.vc/leaders/joe-musselman/",
+          "title": "BVVC original leadership identifies HavocAI backing",
+          "published_date": null,
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://outlander.vc/portfolio/",
+          "title": "Outlander original portfolio attempted, rendering errors",
+          "published_date": null,
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://dfxintel.com/vc/companies/ba0b8b2d-7f13-4066-8238-9cf33e1f70b9",
+          "title": "FormD discovery only; exact originals/overlap unresolved",
+          "published_date": null,
+          "source_type": "third_party_report"
+        }
+      ],
+      "searches_checked": [
+        "HavocAI funding seed SeriesA2026 2025 official",
+        "site.havocai.com funding2026 November latest",
+        "site.outlander.vc HavocAI",
+        "site.lockheedmartin.com HavocAI investment Ventures2025",
+        "HavocAI2025 Hanwha exact investment entity",
+        "site.bv.vc HavocAI"
+      ],
+      "excluded_claims": [
+        "SEC mixed/option offering may overlap public rounds, not incremental187m",
+        "SBIR PhaseIII award is contract, not automatic grant",
+        "~100m/~200m cumulative totals not separate rounds",
+        "No lead inferred in2025/2026, no intermediary profession automatically excludes issuer-explicit investor"
+      ],
+      "event_count": 3,
+      "relationship_count": 0
+    },
+    {
+      "id": "b93e3bf5-b7d4-4c7b-9a76-128a6af35634",
+      "slug": "hawkei",
+      "name": "Hawkei",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "evidence_note": "Australian Defence original identifies Hawkei as light protected mobility vehicle produced and supported by Thales Australia Ltd. Product/non-issuer disposition supported; catalogue gate not changed.",
+      "hold_note": "No standalone capital issuer established; parent Thales finance not reassigned. Any future separate legal issuer needs evidence.",
+      "sources_checked": [
+        {
+          "url": "https://www.defence.gov.au/defence-activities/projects/protected-mobility-vehicle",
+          "title": "Defence original identifies Thales and Hawkei product",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.defence.gov.au/defence-activities/projects/protected-mobility-vehicle-technology-modernisation-hawkei",
+          "title": "Defence original Hawkei project description",
+          "published_date": null,
+          "source_type": "third_party_report"
+        }
+      ],
+      "searches_checked": [
+        "Hawkei Thales vehicle company financing investment Australia official",
+        "Hawkei funding investors capital history",
+        "site.defence.gov.au Hawkei Thales manufacturer"
+      ],
+      "excluded_claims": [
+        "Vehicle purchase/manufacturing/modernisation contracts are procurement, not Hawkei capital rounds",
+        "Thales group equity/debt not assigned to vehicle name"
+      ],
+      "event_count": 0,
+      "relationship_count": 0
+    },
+    {
+      "id": "f04dc474-f147-4146-aaf4-3bca0ebb32c8",
+      "slug": "hd-hyundai",
+      "name": "HD Hyundai",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Group structure separates listed holding company HD Hyundai from HD Korea Shipbuilding, Heavy Industries, Robotics and other operating subsidiaries. Original finance review is incomplete; no mirrored filing amount imported.",
+      "hold_note": "Original DART October2026 exchangeable-bond decision could not be opened; mirror lists KRW588,667,443,000 proposed principal and future26November payment, plus historical debt. April2026/July2025 bonds and October2024 exchangeable issue remain unreconciled. No claim of zero funding.",
+      "searches_checked": [
+        "HD Hyundai corporate bond 2025 2026 financing holding company",
+        "HD현대 회사채 2026 2025 발행 267250",
+        "HD현대 2026.10.27 교환사채 kind.krx",
+        "site.hd.com HD Hyundai holding",
+        "site.kind.krx.co.kr 20261027 588667443000"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.hd-ksoe.com/en/investors/governance/group/contents",
+          "title": "HD KSOE original group structure",
+          "disposition": "Opened original distinguishes holding company and subsidiaries; no capital transferred between them.",
+          "published_date": null
+        },
+        {
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027000277",
+          "title": "HD Hyundai original DART exchangeable bond filing",
+          "disposition": "Original open inaccessible; amount/participants held.",
+          "published_date": "2026-10-27"
+        },
+        {
+          "url": "https://samara.kr/disclosure/20261027000277",
+          "title": "Mirror of HD Hyundai October2026 filing",
+          "disposition": "Opened mirror for discovery only; not approved financial fact. Future issue/payment date and refinancing purpose noted.",
+          "published_date": "2026-10-27"
+        },
+        {
+          "url": "https://englishdart.fss.or.kr/dsbc001/selectPopup.ax?selectKey=01205709",
+          "title": "FSS company identity",
+          "disposition": "Indexed holding-company code267250; open timed out.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.hd.com/",
+          "title": "HD Hyundai current website",
+          "disposition": "Original returned403; old catalogue website timed out.",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        "Subsidiary Aidin investment is capital deployed, not holding-company funds received.",
+        "HD Hyundai Marine Solution shares underlying proposed exchangeable bonds do not make Marine Solution the debt issuer.",
+        "Demand-book orders and debt balances are not new financing events.",
+        "Named securities firms may be intermediaries; no investor roles inferred from mirrored terms."
+      ]
+    },
+    {
+      "id": "2eae6105-dea9-480e-b2b6-eceab71d0386",
+      "slug": "hdt",
+      "name": "HDT",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Short-name catalogue provenance concerns Hunter WOLF and Army logistics trials. Current original identifies HDT Robotics LLC dba BLADE for these products; the alias is reconciled to canonical hdt-robotics. No duplicate financing or ownership relationship imported.",
+      "hold_note": "Duplicate/alias disposition only. Canonical HDT Robotics and HDT Global remain distinct from acquisition holding-company borrowers; private capital unknown.",
+      "searches_checked": [
+        "HDT wheel powered drone Army trials Hunter WOLF",
+        "HDT Robotics funding investment acquisition 2026",
+        "site.hdtrobotics.com funding equity investment loan grants"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defence-blog.com/wheel-powered-drone-makes-the-cut-in-u-s-army-trials/",
+          "title": "Catalogue provenance for HDT",
+          "disposition": "DB source article points to Hunter WOLF; original news page403, not a financial source.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.hdtrobotics.com/post/blade-awarded-u-s-army-project-sustainment-contract-for-advanced-autonomous-logistics/",
+          "title": "HDT Robotics original Project Sustainment announcement",
+          "disposition": "Opened original names exact legal issuer HDT Robotics LLC dba BLADE and WOLF family; contract procurement excluded. Body dateline24June2026; publication field empty. HDT Global reproduction posted23July, so publication date not inferred from dateline.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.hdtrobotics.com/",
+          "title": "HDT Robotics original website",
+          "disposition": "Opened current original with HDT Global affiliation; short HDT name is brand usage.",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        "Army prototype/trials are procurement and selection, not equity or grant receipts.",
+        "Do not repeat canonical hdt-robotics or hdt-global finance under short-name row."
+      ]
+    },
+    {
+      "id": "1c5644e2-9804-47c1-863a-b287e857877f",
+      "slug": "hdt-global",
+      "name": "HDT Global",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 3,
+      "evidence_note": "Original transaction-party history supports historical Metalmark and Charlesbank ownership and current Nexus ownership. These secondary buyouts are generic relationships only. No acquisition price or debt aggregate is assigned as issuer financing.",
+      "hold_note": "Known2021 debt/2024 amendment history remains partial: S&P original amount/origination page not located, current SEC portfolio original too large to open. Borrower continuity, loan purchase dates and balances require further reconciliation. CBInsights180k2017 claim lacks original. No zero-funding inference.",
+      "searches_checked": [
+        "HDT Global financing investment Carlyle Charlesbank 2026 2025",
+        "HDT Global loan financing Nexus 2021 2024 2025",
+        "HDT HoldCo 2021 spglobal 280",
+        "site.sec.gov HDT Global 6/30/2021 2025",
+        "site.hdtglobal.com funding investment debt loan Nexus Metalmark"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.charlesbank.com/investments/hdt-global/",
+          "title": "Charlesbank original HDT portfolio",
+          "disposition": "Opened original confirms2014 investment and2021 realization.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2014/09/16/1109282/0/en/Charlesbank-Capital-Partners-Acquires-HDT-Global-From-Metalmark-Capital.html",
+          "title": "Charlesbank distributed original acquisition announcement",
+          "disposition": "Opened original identifies seller Metalmark and unnamed management co-investment. No issuer-primary allocation disclosed.",
+          "published_date": "2014-09-16"
+        },
+        {
+          "url": "https://www.charlesbank.com/news/hdt-global-announces-acquisition-by-nexus-capital-management/",
+          "title": "HDT/Charlesbank original2021 sale announcement",
+          "disposition": "Opened original; transaction price undisclosed; debt commitments addressed to Nexus, not automatically an HDT company event.",
+          "published_date": "2021-05-18"
+        },
+        {
+          "url": "https://www.nexuslp.com/portfolio/hdt-global",
+          "title": "Nexus original HDT portfolio",
+          "disposition": "Opened original shows2021 investment active through current check.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.nexuslp.com/news/nexus-completes-acquisition-of-hdt-global",
+          "title": "Nexus original completion announcement",
+          "disposition": "Opened original confirms acquisition completed9July2021.",
+          "published_date": "2021-07-09"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1633858/000119312526348682/ck0001633858-20260630.htm",
+          "title": "Audax original quarterly loan portfolio",
+          "disposition": "Search surfaced HDT loan position; original open failed length limit. Position principal/fair value not imported as company raise.",
+          "published_date": "2026"
+        },
+        {
+          "url": "https://www.bankrupt.com/TCR_Public/210616.mbx",
+          "title": "Reproduction of S&P2021 proposed acquisition facilities",
+          "disposition": "Discovery only, USD40m revolver/280m loan and merger-sub borrower mapping held pending original.",
+          "published_date": "2021-06-16"
+        },
+        {
+          "url": "https://www.bankrupt.com/TCR_Public/240814.mbx",
+          "title": "Reproduction of S&P2024 amendment discussion",
+          "disposition": "Discovery only; sponsor inventory/receivable facilities and amendments not separate verified new money.",
+          "published_date": "2024-08-14"
+        }
+      ],
+      "excluded_claims": [
+        "USD335m historical secondary buyout price is not issuer capital raised.",
+        "USD320m proposed facilities are not necessarily cash drawn.",
+        "RBC, Barclays and Societe Generale commitments to Nexus are not attributed as issuer lenders.",
+        "Management co-investment not assigned to named executives.",
+        "Loan position values, cumulative aggregator totals and government contracts not funding rounds."
+      ]
+    },
+    {
+      "id": "6fbede9c-b885-4e0d-8483-3fc5bb4db466",
+      "slug": "hdt-robotics",
+      "name": "HDT Robotics",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Official current site identifies robotics business as an HDT Global company; original June2026 release explicitly names HDT Robotics LLC dba BLADE. Generic parent relationship only. Broad/official/transaction searches located procurement and operational news, without verified standalone capital event.",
+      "hold_note": "Private subsidiary financing unknown. Do not substitute HDT HoldCo/Global acquisition financing or Army contract awards for Robotics fundraising.",
+      "searches_checked": [
+        "HDT Robotics funding investment acquisition 2026",
+        "site.hdtrobotics.com funding equity investment loan grants",
+        "site.hdtrobotics.com funding investment",
+        "HDT Robotics BLADE earlier latest financing 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.hdtrobotics.com/",
+          "title": "HDT Robotics original current website",
+          "disposition": "Opened original page title and affiliation identify an HDT Global company.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.hdtrobotics.com/post/blade-awarded-u-s-army-project-sustainment-contract-for-advanced-autonomous-logistics/",
+          "title": "HDT Robotics original legal identity and Army selection",
+          "disposition": "Opened original explicitly HDT Robotics LLC dba BLADE. Selection is contract procurement, not capital. Body dateline24June2026; publication field empty. HDT Global reproduction posted23July, so publication date not inferred from dateline.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.hdtglobal.com/news/",
+          "title": "HDT Global original current news",
+          "disposition": "Opened original news index: HDT Global now BLADE, with HDT Robotics LLC legal name for WOLF programmes; procurement excluded.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.hdtrobotics.com/contact/",
+          "title": "HDT Robotics original contact",
+          "disposition": "Indexed info@hdtglobal.com affiliation corroborates current website, not a funding event.",
+          "published_date": null
+        }
+      ],
+      "excluded_claims": [
+        "Parent sponsor ownership is not a named direct Robotics funding round.",
+        "Army Project Sustainment, Last Tactical Mile and GroundBreaker programmes are procurement/trials."
+      ]
+    },
+    {
+      "id": "d852f782-03a4-4dc3-9607-2117f1975af4",
+      "slug": "hdusa",
+      "name": "HDUSA",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Official Hanwha Defense USA announcement explicitly defines HDUSA abbreviation and subsidiary relationship. This is an alias of canonical hanwha-defense-usa reviewed in run43; no duplicate capital event or parent relationship imported.",
+      "hold_note": "Canonical Hanwha Defense USA subscription/borrowing holds remain unresolved in run43. Alias disposition does not complete those financial histories or assert zero funding.",
+      "searches_checked": [
+        "HDUSA defense company funding Hyongsuk",
+        "HDUSA funding financing loan equity 2026 Hanwha",
+        "Hanwha Defense USA HDUSA official earlier latest financing 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://hanwhadefenseusa.com/news-articles/hdusa-statement-on-offer-to-austal",
+          "title": "Hanwha Defense USA original official abbreviation",
+          "disposition": "Opened original defines HDUSA and names Hanwha Aerospace parent; nonbinding Austal purchase offer is not fundraising.",
+          "published_date": "2026-08-10"
+        },
+        {
+          "url": "https://www.hanwha.com/newsroom/news/press-releases/hanwha-invests-in-us-production-of-k9-mobile-howitzer.do",
+          "title": "Hanwha official U.S. production investment",
+          "disposition": "Indexed issuer announcement concerns deployment/capex, not a standalone receipt round.",
+          "published_date": "2026-05-04"
+        },
+        {
+          "url": "https://www.hanwha.com/newsroom/news/press-releases/hanwha-defense-usa-selected-by-tote-services-for-lsm-construction-contract-in-philadelphia.do",
+          "title": "Hanwha official LSM contract selection",
+          "disposition": "Indexed original procurement exclusion; not company equity/grant.",
+          "published_date": "2026-11-02"
+        }
+      ],
+      "excluded_claims": [
+        "Do not repeat149m subscription candidate under HDUSA; canonical source hold retained.",
+        "USD2.2bn planned munitions campus is capex, not capital received.",
+        "Navy shipbuilding contract269m is procurement."
+      ]
+    },
+    {
+      "id": "6f178a7d-ebf3-442e-84da-b783ad13e826",
+      "slug": "headcount-inventory",
+      "name": "HeadCount Inventory",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Original issuer site identifies HeadCount as a division of Crop Quest Inc., matching catalogue cattle-counting article provenance; parent website directly links the same service. Generic division/parent relationship only, no financial round established.",
+      "hold_note": "Private division capitalization and intercompany funding remain unknown. Partner job titles, customers, lenders as customers and commercial launch dates are not proof of equity subscriptions.",
+      "searches_checked": [
+        "HeadCount Inventory funding company",
+        "HeadCount Inventory investment funding seed grant",
+        "HeadCount Inventory Crop Quest investment financing",
+        "site.cropquest.com HeadCount investment",
+        "HeadCount Inventory investor 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.headcountinventory.com/about",
+          "title": "HeadCount original about page",
+          "disposition": "Opened original explicitly names Crop Quest division, services launched2021 and product history since2018.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.cropquest.com/",
+          "title": "Crop Quest original parent website",
+          "disposition": "Opened original links HeadCount drone feedlot inventory services, matching parent/brand identity.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.headcountinventory.com/lenders",
+          "title": "HeadCount original lender-customer page",
+          "disposition": "Opened original describes services for lenders; it does not name financing providers or loans.",
+          "published_date": null
+        },
+        {
+          "url": "https://dronexl.co/2026/07/07/headcount-dji-drones-4000-cattle-kansas/",
+          "title": "Catalogue source article",
+          "disposition": "Indexed cattle-counting activity matches official product identity.",
+          "published_date": "2026-07-07"
+        }
+      ],
+      "excluded_claims": [
+        "Third-party no-funding label not adopted.",
+        "Customer livestock valuationUSD4000/head is not company financing.",
+        "Partner titles do not establish personal financial contributions.",
+        "Lender service audience is not an actual lender list."
+      ]
+    },
+    {
+      "id": "aaff3650-a731-4b6c-8f07-ed83aaec2d3f",
+      "slug": "heaviside-industries",
+      "name": "Heaviside Industries",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "evidence_note": "Issuer originals establish May Series A and August Series B; latest newsroom checked through November.",
+      "hold_note": "No exhaustive private financing claim. Exact legal securities and individual cheques undisclosed.",
+      "searches_checked": [
+        "Heaviside Industries funding investment defense drones",
+        "site.theheaviside.com seed 2024 2025 funding Interlagos",
+        "Heaviside latest 2026 financing Nammo Felicis"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.theheaviside.com/press-series-a",
+          "title": "Heaviside issuer Series A announcement",
+          "published_date": "2026-05-11",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://theheaviside.com/press-series-b",
+          "title": "Heaviside issuer Series B announcement",
+          "published_date": "2026-08-12",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://theheaviside.com/press",
+          "title": "Issuer latest and earlier newsroom",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.felicis.com/about",
+          "disposition": "Official current Felicis page identifies Felicis Ventures; existing profile reused rather than duplicate brand profile."
+        }
+      ],
+      "excluded_claims": [
+        "Nammo supplier partnership is not investment.",
+        "USD600m valuation and USD99m Army IDIQ procurement ceiling are not capital raised.",
+        "Named individual investors do not imply investments by their employers."
+      ],
+      "event_count": 2,
+      "relationship_count": 0
+    },
+    {
+      "id": "b1c79840-201a-47ad-a4c0-82ccd800a737",
+      "slug": "heavy-vehicle-factory",
+      "name": "Heavy Vehicle Factory",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "evidence_note": "AVNL original identifies HVF as its operating unit; NBCC original identifies consultancy contract awarded by HVF.",
+      "hold_note": "Unit-specific equity, loans and grants not established. Parent/state capital is not assigned to the factory; private or internal funding remains unknown.",
+      "searches_checked": [
+        "Heavy Vehicles Factory AVNL equity loan grant funding 2026 2025",
+        "Heavy Vehicles Factory loan funding",
+        "Heavy Vehicles Factory government investment grant capital"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://avnl.co.in/heavy-vehicles-factory",
+          "title": "AVNL official identifies Heavy Vehicles Factory as its unit",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.nbccindia.in/webEnglish/news",
+          "title": "NBCC original 350-crore HVF capital-works consultancy",
+          "published_date": "2025-11-10",
+          "source_type": "third_party_report"
+        }
+      ],
+      "excluded_claims": [
+        "INR350crore is estimated capex/consultancy project awarded to NBCC, not capital received by HVF.",
+        "AVNL corporate balance-sheet financing and government budget allocations not transferred to operating unit."
+      ],
+      "event_count": 0,
+      "relationship_count": 1
+    },
+    {
+      "id": "5e177e81-d214-4608-a9fa-c1e1fa59195d",
+      "slug": "heliplanners",
+      "name": "Heliplanners",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "evidence_note": "Official site and aviation association member spotlight establish the longstanding family heliport consultancy in Temecula.",
+      "hold_note": "No source-supported financing event located in bounded searches; private financing remains unknown. Original site opened without readable body; association original provides operational identity.",
+      "searches_checked": [
+        "Heliplanners funding investors",
+        "Heliplanners investor grant loan financing",
+        "site.heliplanners.com owner investment capital loan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.heliplanners.com/",
+          "title": "Issuer website, blank readable body on opening",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://verticalavi.org/news/vai-weekly/vai-member-spotlight-heliplanners-california-usa/",
+          "title": "VAI original member interview and family-business identity",
+          "published_date": "2025-07-01",
+          "source_type": "third_party_report"
+        },
+        {
+          "url": "https://www.linkedin.com/company/heliplanners",
+          "title": "Issuer professional profile",
+          "published_date": null,
+          "source_type": "company_announcement"
+        }
+      ],
+      "excluded_claims": [
+        "Aggregator never-raised/no-funding labels are not evidence of zero financing.",
+        "Heliport project construction budgets or consultancy fees are not consultancy company capital.",
+        "Heliplan flight-planning software is a different issuer."
+      ],
+      "event_count": 0,
+      "relationship_count": 0
+    },
+    {
+      "id": "e825a327-5c61-4afe-8b3b-2a308d70db37",
+      "slug": "helix-defense",
+      "name": "Helix Defense",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "evidence_note": "Original Helix Defense site and team page identify STING counter-drone products; unrelated namesakes excluded.",
+      "hold_note": "Bounded history search found no supported capital round; unknown private finance remains unknown. Team experience and partnerships do not prove investor roles.",
+      "searches_checked": [
+        "Helix Defense funding seed investors",
+        "site.helixdefense.com investment funding capital 2026",
+        "Helix Defense investment investors financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://helixdefense.com/",
+          "title": "Issuer STING products and identity",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://helixdefense.com/our-team/",
+          "title": "Issuer team and Bush Combat Development Complex partnership",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://helixdefense.com/why-helix-defense/",
+          "title": "Issuer background and experience",
+          "published_date": null,
+          "source_type": "company_announcement"
+        }
+      ],
+      "excluded_claims": [
+        "Voice-based human-verification Helix USD6.2m pre-seed belongs to a different company.",
+        "Nearly USD1bn revenue language is not capital raised.",
+        "Testing partnerships do not establish investment or grants."
+      ],
+      "event_count": 0,
+      "relationship_count": 0
+    },
+    {
+      "id": "c5690379-232a-4800-8255-fd0c8337f20a",
+      "slug": "hellbender",
+      "name": "Hellbender",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "evidence_note": "Distributed issuer original confirms seed close and six named investors; investor portfolio confirms exact Pittsburgh robotics issuer.",
+      "hold_note": "Earlier March2021 financing trace in regional investment report and other private financing require original-source reconciliation. No additional amount inferred. Current investor solicitation is not a completed new round.",
+      "searches_checked": [
+        "Hellbender company funding investors Pittsburgh",
+        "Hellbender funding 2021 2023 seed 2026 investors earlier",
+        "site.hellbender.com funding seed 2026 2025 2021"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/hellbender-secures-12-5m-seed-round-to-accelerate-domestic-manufacturing-of-physical-ai-and-launch-its-on-edge-camera-line-302775081.html",
+          "title": "Hellbender issuer seed closing announcement",
+          "published_date": "2026-05-19",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://hellbender.com/",
+          "title": "Issuer physical AI identity, Pittsburgh, founded2021",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.magarac.vc/portfolio/hellbender",
+          "title": "Co-lead investor original portfolio",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://hellbender.com/investors/",
+          "title": "Issuer investor solicitation",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://assets-global.website-files.com/648ba1c76ceafa17392b7743/64922698137f1685078ebdff_2021-First-Five-Months-Draft.pdf",
+          "title": "Earlier regional transaction candidate, indexed but not original deal verification",
+          "published_date": null,
+          "source_type": "company_announcement"
+        }
+      ],
+      "excluded_claims": [
+        "USD13m aggregator rounding is not exact original USD12.5m.",
+        "Employee ownership does not identify individual cash subscribers.",
+        "Expansion spending, customer partnerships and facility space are not funding events."
+      ],
+      "event_count": 1,
+      "relationship_count": 0
+    },
+    {
+      "id": "1573993b-2762-46ff-924c-6bcd79c3ae1c",
+      "slug": "hemeria",
+      "name": "Hemeria",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "evidence_note": "Issuer original confirms FCDE majority ownership after December2025 negotiations. Investor original establishes historical minority reinvestors and 2019 Nexeya carve-out continuity.",
+      "hold_note": "Historic carve-out capital, project support and debt/grants not fully reconciled. Secondary ownership/reinvestment primary-cash component remains undisclosed; exact group holding/operating issuer is not silently rewritten.",
+      "searches_checked": [
+        "Hemeria financement investisseurs 2026 2025 levee fonds",
+        "Hemeria financing 2019 2020 2023 debt loan grant capital",
+        "Hemeria FCDE 5 mars 2026 site:fonds-fcde.fr",
+        "site.hemeria-group.com financement subvention pret capital 2019 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://fr.linkedin.com/posts/hemeria-company_communiqu%C3%A9-de-presse-activity-7436805483404972032-q6LZ",
+          "title": "Hemeria original confirms FCDE majority ownership from 5 March 2026",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.fonds-fcde.fr/media/news/cp-hemeria-eng-20251205-2141-vdef-clean.pdf",
+          "title": "FCDE original identifies Hemeria transaction and historical shareholders",
+          "published_date": "2025-12-09",
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://www.hemeria-group.com/medias/",
+          "title": "Issuer newsroom: FCDE and CNES BalMan project",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.hemeria-group.com/wp-content/uploads/2020/10/Prom%C3%A9th%C3%A9e-boucle-sa-premi%C3%A8re-lev%C3%A9e-de-fonds-1.pdf",
+          "title": "Promethee financing names Hemeria as investor, not recipient; source candidate",
+          "published_date": null,
+          "source_type": "company_announcement"
+        }
+      ],
+      "excluded_claims": [
+        "FCDE own EUR400m fund size and typical tickets are not Hemeria financing.",
+        "Hemerion biotech financing and Hemeria crowdfunding intermediary are distinct issuers.",
+        "CNES BalMan contract and company co-financing language do not establish allocated grant received.",
+        "Promethee fundraising concerns Hemeria making an investment, not raising capital."
+      ],
+      "event_count": 0,
+      "relationship_count": 2
+    },
+    {
+      "id": "795d43e8-0264-4c07-a577-b29a2d7d8a90",
+      "slug": "hermeus",
+      "name": "Hermeus",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Exact Hermeus Corp aviation issuer confirmed by official site and original releases. Equity and debt components separated, prior Series B preserved as standalone history.",
+      "hold_note": "2019 seed,2020 USD16m Series A and2024 SEC offering candidates remain held: older original A release indexed but page open disabled; investor Canaan links only headline. SEC exact sold figures and overlap with2026 need original reconciliation. USD60m USAF arrangement is procurement/development contract, not a grant by assumption.",
+      "sources_checked": [
+        {
+          "url": "https://www.airframer.com/news/release/hermeus-raises-100-million-series-b-led-by-sam-altman",
+          "title": "Hermeus original distributed release: USD100m Series B",
+          "published_date": "2022-03-10",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/hermeus-reaches-1-billion-valuation-with-350-million-raise-to-build-todays-fastest-aircraft-for-the-american-warfighter-302735273.html",
+          "title": "Hermeus original: USD200m equity and USD150m debt",
+          "published_date": "2026-04-07",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.hermeus.com/",
+          "title": "Issuer latest news and identity",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.canaan.com/news/company/hermeus",
+          "title": "Investor primary directory links USD16m Series A headline",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.airframer.com/news/release/hermeus-closes-16-million-series-a-led-by-canaan-partners",
+          "title": "Indexed issuer Series A original; repeated page open disabled",
+          "published_date": "2020-10-29",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://roboticsregistry.co/companies/hermeus",
+          "title": "Discovery-only SEC offering candidates; originals not yet opened",
+          "published_date": null,
+          "source_type": "third_party_report"
+        }
+      ],
+      "searches_checked": [
+        "Hermeus financing seed Series A B C latest 2019 2020 2022 2024 2026",
+        "site.hermeus.com funding2019 Khosla",
+        "site.canaan.com Hermeus16 million2020",
+        "Hermeus2024 40million funding SEC offering"
+      ],
+      "excluded_claims": [
+        "USD350m aggregate not added alongside200m equity and150m debt",
+        "USAF60m arrangement not assumed grant",
+        "Valuation, cumulative capital and aggregator exact SEC amounts not imported"
+      ]
+    },
+    {
+      "id": "6c450e5f-9db1-44a2-8509-a36b7bbd9607",
+      "slug": "heven-aerotech",
+      "name": "Heven AeroTech",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Original company rebrand and old-domain redirect establish Heven Drones economic continuity. IonQ and issuer agree investment; Dec1 source quantifies round.",
+      "hold_note": "Earlier2020 R&D grant,2022seed and2023SeriesA indexed by IVC lack opened original terms/issuer allocations; held without amounts. Exact private legal structure and undisclosed participants remain unknown.",
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/heven-aerotech-announces-100m-in-series-b-raise-reaching-1b-valuation-as-customer-demand-surges-302629214.html",
+          "title": "Heven original USD100m Series B",
+          "published_date": "2025-12-01",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.ionq.com/news/ionq-and-heven-aerotech-partner-to-develop-quantum-enabled-drones-for",
+          "title": "IonQ original investment announcement",
+          "published_date": "2025-11-24",
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://hevenaerotech.com/heven-aerotech-a-new-identity-for-a-growing-mission/",
+          "title": "Issuer explicitly confirms Heven Drones rebrand",
+          "published_date": "2025-09-30",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://hevendrones.com/",
+          "title": "Old domain redirects to current Heven AeroTech official site",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://hevenaerotech.com/a-big-step-forward-welcoming-zepher-scaling-with-mach/",
+          "title": "Issuer Zepher acquisition and Mach manufacturing partnership",
+          "published_date": "2025-05-05",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.ivc-online.com/Google-Card?ID=cb0725ee-91fc-ea11-810b-0050569a1018&type=1",
+          "title": "Discovery-only earlier financing candidates",
+          "published_date": null,
+          "source_type": "third_party_report"
+        }
+      ],
+      "searches_checked": [
+        "Heven AeroTech HevenDrones earlier seed SeriesA funding 2020 2022 2023",
+        "Heven AeroTech latest investment 2025 2026 IonQ",
+        "site.ionq.com Heven November24 2025 investment"
+      ],
+      "excluded_claims": [
+        "No extra November24 round alongside December1 SeriesB",
+        "USD1bn valuation not funding",
+        "Mach production partnership, Zepher acquisition and plant capex not Heven capital raised"
+      ]
+    },
+    {
+      "id": "125035a5-62f0-41dd-b5be-9b6ada0fc413",
+      "slug": "hensoldt-optronics",
+      "name": "HENSOLDT Optronics",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Original annual report identifies the German operating subsidiary; official holding-structure announcement maps former Airbus DS Optronics.",
+      "hold_note": "Own EDF/FTS beneficiary grant candidates (ARIGA,STORE) require exact original allocations and award dates. Consortium budgets and HENSOLDT Sensors grants not assigned. Original funding history incomplete.",
+      "sources_checked": [
+        {
+          "url": "https://annualreport.hensoldt.net/resource/PDF/HENSOLDT_AG_Annual_Report_2024.pdf",
+          "title": "HENSOLDT original annual report subsidiary structure",
+          "published_date": null,
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://www.hensoldt.net/de/news/new-defence-champion-hensoldt-to-be-given-holding-structure",
+          "title": "Issuer holding structure and Optronics continuity",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.northdata.com/HENSOLDT%20Optronics%20GmbH%2C%20Oberkochen/Amtsgericht%20Ulm%20HRB%20500995",
+          "title": "Discovery-only issuer grant candidates",
+          "published_date": null,
+          "source_type": "third_party_report"
+        },
+        {
+          "url": "https://defence-industry-space.ec.europa.eu/document/download/b816bef0-0a9f-439d-9f30-2dfc97373b55_en?filename=EDF-2023-DA-GROUND-MBT+MARTE.pdf",
+          "title": "EC consortium candidate, not own allocation",
+          "published_date": null,
+          "source_type": "investor_announcement"
+        }
+      ],
+      "searches_checked": [
+        "HENSOLDT Optronics GmbH funding equity loan grant2025 2026",
+        "HENSOLDT Optronics shareholder Holding Germany",
+        "HENSOLDT Optronics CORDIS ARIGA STORE EU grant"
+      ],
+      "excluded_claims": [
+        "Parent HENSOLDT IPO/equity/debt not subsidiary finance",
+        "Procurement periscope contracts and OptronicsIII capex excluded",
+        "Consortium grant totals not own proceeds"
+      ]
+    },
+    {
+      "id": "af39c3dd-6614-48f1-bab1-7c21285d54e1",
+      "slug": "hexai",
+      "name": "HexAI",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Catalogue original iHLS article provenance reconciled with organizer Hebrew workshop description of binary-security agents, matching Hex-Rays acquired cybersecurity issuer. Taiwan ecommerce namesake excluded.",
+      "hold_note": "Exact legal registry identity and any INNOFENSE own grant entitlement/payment remain unresolved. Generic programme NIS170k allowance is not automatically beneficiary capital; press says no outside capital but not adopted as zero funding.",
+      "sources_checked": [
+        {
+          "url": "https://hex-rays.com/blog/hex-rays-completes-acquisition-of-hexai",
+          "title": "Hex-Rays original confirms completed HexAI acquisition",
+          "published_date": "2026-10-22",
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://i-hls.com/he/archives/137075",
+          "title": "Organizer original identifies HexAI binary-security agents",
+          "published_date": "2026-06-07",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://i-hls.com/archives/137950",
+          "title": "Catalogue source article; open403",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.ivc-online.com/Google-Card?Id=2AD958D4-BABC-E911-8106-0050569A1018",
+          "title": "Generic INNOFENSE assistance terms, not actual payment",
+          "published_date": null,
+          "source_type": "third_party_report"
+        }
+      ],
+      "searches_checked": [
+        "HexAI Israel funding investment 2025 2026",
+        "HexAI INNOFENSE iHLS startup",
+        "site.hex-rays.com HexAI acquisition2026"
+      ],
+      "excluded_claims": [
+        "Taiwan ecommerce HexAI bootstrap180k excluded as namesake",
+        "Generic accelerator allowances not actual grant",
+        "Acquisition price, Hex-Rays investors Smartfin/SFPIM/SRIW not HexAI round participants"
+      ]
+    },
+    {
+      "id": "0dc78547-489f-4dd8-8024-750fbfcfb333",
+      "slug": "hglrc",
+      "name": "HGLRC",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Issuer brand story identifies Shenzhen Huagulong Technology Co Ltd; official current FPV website and Chinese searches reviewed. Heqi financing is unrelated issuer.",
+      "hold_note": "Private capital unknown, not zero. Shenzhen/Guangdong legal name variants need registry continuity if a financing document is found.",
+      "sources_checked": [
+        {
+          "url": "https://www.hglrc.com/pages/brand-story",
+          "title": "HGLRC original identifies Huagulong RC brand and operating company",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.hglrc.com/",
+          "title": "HGLRC official current business",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://patents.google.com/patent/CN309203915S/zh",
+          "title": "Patent shows HGLRC product and Chinese Huagulong applicant",
+          "published_date": null,
+          "source_type": "third_party_report"
+        }
+      ],
+      "searches_checked": [
+        "HGLRC investment financing funding2025 2026",
+        "HGLRC 禾启智能 融资 投资",
+        "深圳化骨龙科技有限公司 融资 投资2026 2025",
+        "HGLRC Shenzhen Huagulong company investors"
+      ],
+      "excluded_claims": [
+        "Heqi/深圳市禾启智能 CNY5m subscription candidate excluded, not HGLRC",
+        "Hiring-site no-financing label not adopted as zero funding",
+        "Dealer/affiliate and pilot sponsorship not capital"
+      ]
+    },
+    {
+      "id": "f4dca658-431f-416b-a52d-b79b95e71545",
+      "slug": "hid-global",
+      "name": "HID Global",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 2,
+      "evidence_note": "Original company and acquirer history establish HID identity, historical MBO backer and current ASSA ABLOY group ownership. Parent central financing strategy and current issuer news reviewed.",
+      "hold_note": "Subsidiary private and intercompany financing remains unknown. No zero-funding inference; exact origination documents needed for any future HID-specific loan.",
+      "sources_checked": [
+        {
+          "url": "https://www.assaabloy.com/group/en/news-media/press-releases/id.c2e3a5d6d6d11112",
+          "title": "ASSA ABLOY original HID acquisition and earlier Citicorp-backed MBO",
+          "published_date": "2000-11-06",
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://www.assaabloy.com/group/sv/news-media/press-releases/id.5128aa73277a55a9",
+          "title": "ASSA ABLOY original confirms HID acquisition closed",
+          "published_date": "2001-01-04",
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://www.hidglobal.com/about-hid",
+          "title": "HID original current parent",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.assaabloy.com/group/en/investors/debt/debt-financing-and-credit-rating",
+          "title": "Parent original centralised borrowers, not HID financing",
+          "published_date": null,
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://newsroom.hidglobal.com/press-releases",
+          "title": "HID latest original news and business-unit disposals",
+          "published_date": null,
+          "source_type": "company_announcement"
+        }
+      ],
+      "searches_checked": [
+        "HID Global funding loan equity investment2025 2026",
+        "HID Global ASSA ABLOY subsidiary financing",
+        "HID Citicorp Venture Capital1995 management buyout"
+      ],
+      "excluded_claims": [
+        "ASSA ABLOYAB/FinancialServicesAB debt not HID debt",
+        "250m acquisition price and30m earnout not HID primary proceeds",
+        "Vista PKI disposal,TOPPAN CitizenID disposal and HID purchases are not primary capital rounds"
+      ]
+    }
+  ],
+  "publication": {
+    "pending": true,
+    "verified": false
+  },
+  "additional_source_candidates": [
+    {
+      "company_name": "Agile Robots SE",
+      "status": "unmatched_external_discovery_not_verified",
+      "source_url": "https://www.reuters.com/business/media-telecom/softbank-nvidia-back-germanys-agile-robots-85-billion-valuation-2026-11-12/",
+      "source_published_date": "2026-11-12",
+      "note": "Same-day report surfaced incidentally. No matching company name found in current DB; not assigned to the cohort, not counted as a checked identity, not imported. Original financing announcement and full identity/additions reconciliation still required; partnerships are not investment proof."
+    }
+  ],
+  "audit_notes": [
+    "Hermeus Series C is two supported equity/debt components, without duplicating the USD350m package. Four explicit debt providers; current First Citizens Bank economic issuer for SVB division retained separately from defunct legacy SVB.",
+    "HavocAI three issuer announcements are distinct; SEC offering-total candidates held for original-source/overlap review, not imported as incremental financing. Unspecified Hanwha vehicle not assigned to subsidiary.",
+    "Harvard direct issuer is President and Fellows of Harvard College; announced principal preserved, expected delivery not asserted as verified close. Underwriters and trustees not lenders by inference.",
+    "HDT and HDUSA aliases reconciled without duplicating canonical financing. Product Hawkei and unrelated Hatsan/Heqi/Helix namesakes excluded.",
+    "Felicis current brand mapped to existing Felicis Ventures based on opened original felicis.com/about. Existing Outlander/Alumni variants preserved; no unrelated merge. BNP Paribas Développement retained as distinct named subsidiary, not generic bank.",
+    "Unmatched Agile Robots external discovery retained for final identity/additions audit; no matching DB company name, no imported claim or checked cohort identity."
+  ]
+}
