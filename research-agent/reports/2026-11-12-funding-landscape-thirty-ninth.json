@@ -22,7 +22,7 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "local_postgresql_tests_passed": true,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
@@ -37,7 +37,13 @@
     "db_total_events": 2839,
     "db_approved_round_participations": 3551,
     "db_investor_profiles": 2141,
-    "db_source_reconciliation_companies": 725
+    "db_source_reconciliation_companies": 725,
+    "new_profile_exact_name_duplicates": 0,
+    "active_minutes": 9.7,
+    "checked_identities_per_hour": 149,
+    "completed_reviews_per_hour": 43.5,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four read-only groups, source QA, PostgreSQL tests, production rollback, atomic import, idempotency and live publication; concurrent durations not summed."
   },
   "per_company": [
     {
@@ -1065,8 +1071,57 @@
     }
   ],
   "publication": {
-    "pending": true,
-    "verified": false
+    "pending": false,
+    "verified": true,
+    "checked_at": "2026-11-12T16:00:06.502Z",
+    "catalogue_commit": "6ae4fe44f40f498bc85613855edde500fcc2e256",
+    "source_commit": "7c0d3aea24b52800780be101bf5ef371ae26e3d0",
+    "workflow_run": {
+      "id": 43253481020,
+      "head": "6ae4fe44f40f498bc85613855edde500fcc2e256",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43253481020"
+    },
+    "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-ninth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261112-thirty-ninth.json",
+    "generated_at": "2026-11-12T15:58:47.286Z",
+    "investor_generated_at": "2026-11-12T15:58:49.822Z",
+    "events": 1589,
+    "links": 1380,
+    "profiles": 2132,
+    "companies": 567,
+    "portfolio_relationships": 258,
+    "published_portfolio_relationships": 229,
+    "current_manifest_event_rows": 28,
+    "current_manifest_live_matches": 0,
+    "outside_landscape": [
+      "flyguys",
+      "flying-lion",
+      "flytbase",
+      "flytrex",
+      "flywoo",
+      "fn-america",
+      "fnss",
+      "fog-defence",
+      "foosung",
+      "foothills-aerial-services",
+      "force-development-services",
+      "fortaegis",
+      "fortem-technologies",
+      "forterra",
+      "foxatm",
+      "foxtech",
+      "fpf-defense",
+      "fpv-uk",
+      "fracs",
+      "fractl",
+      "freefly-systems",
+      "freewell",
+      "fregat",
+      "frenel-imaging"
+    ],
+    "directory_filter_note": "Existing launch filter excludes nine anonymous placeholders. Database2141 versus live2132 named profiles. All45 newly created profiles reflected in directory growth; spot checks Wrap Technologies, Scot Cohen, Serendipity Capital, TEL Venture Capital and SoftBank Vision Fund2 verified. All24 reviewed identities remain outside published landscape membership."
   },
   "database": {
     "total_events": 2839,
@@ -1074,5 +1129,12 @@
     "round_participations": 3551,
     "investor_profiles": 2141,
     "source_reconciliation_companies": 725
-  }
+  },
+  "audit_notes": [
+    "Production baseline after rollback was unchanged at 2811 total / 2798 approved events, 3470 links, 2096 profiles and 717 event-covered companies.",
+    "Source-audited import matched all 28 events, 81 participant links, 36 event sources, 4 generic relationships and 45 new profiles. Every participant source resolves to an event source. Rerun conflict guard/idempotency and local PostgreSQL rollback, foreign-key, amount-conflict tests passed.",
+    "FlyGuys 2022 records only USD2m incremental closing; Fortem 2026 USD50m includes USD25m April tranche; Frenel signed up-to USD2.4m includes March bridge, excludes prior SAFE conversion and unfunded options.",
+    "Forterra 2025 USD238m combines equity and debt; amounts are not relabelled wholly equity. Fortaegis 2025 EUR10m original counsel currency preserved. July strategic investment disclosures retain unknown overlap.",
+    "No curated profile overwritten; existing economic-group slugs reused. Fund/manager-specific names remain distinct where explicitly supported. No geography, classification, publication gate, legacy STATE.json, frozen snapshot or schedule changed."
+  ]
 }
