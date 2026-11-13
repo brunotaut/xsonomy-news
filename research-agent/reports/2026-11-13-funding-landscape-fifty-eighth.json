@@ -1,5 +1,5 @@
 {
-  "status": "imported_awaiting_publication",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T09:50:42.897Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-fifty-eighth.json",
@@ -38,9 +38,18 @@
     "db_investor_profiles": 2664,
     "db_source_reconciliation_companies": 909,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
-    "new_profile_exact_name_duplicates": 0
+    "new_profile_exact_name_duplicates": 0,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 4,
+    "clickable_generic_company_links_verified": 4,
+    "active_minutes": 16.63,
+    "checked_identities_per_hour": 86.6,
+    "completed_reviews_per_hour": 39.7,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, original-source and canonical identity QA, importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution and extension-parent audit, and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3382,
@@ -988,6 +997,10 @@
         {
           "url": "https://www.sec.gov/Archives/edgar/data/40545/000004054525000015/ge-20241231.htm",
           "disposition": "Opened officialGE2024Form10-K; exactregistrant GeneralElectricCompany operatingasGEAerospace. Canonicalidentitymapping supported, notGEVernova orGEHealthCare."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1049521/000104952119000033/mrcy201910-k.htm",
+          "disposition": "Opened original FY2019 Form10-K dated15August2019; source date retained independently of historical closing dates."
         }
       ]
     },
@@ -1018,6 +1031,12 @@
     },
     "extension_parent_audit": {
       "extension_parent_matches": 1
+    },
+    "live_generic_entry_verification": {
+      "entries": 4,
+      "source_urls": 4,
+      "clickable_company_links": 4,
+      "unlinked": []
     }
   },
   "publication_scope": {
@@ -1035,5 +1054,47 @@
     "Repository schedules",
     "No paid external API backfill"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T10:07:20.694Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T10:07:20.694Z",
+    "verified_at": "2026-11-13T10:07:20.694Z",
+    "catalogue_commit": "3599c506251437f03b44bd3174716938216c54ee",
+    "source_commit": "02e7e4df545fcaebb5c72fa39574878cc71d39a6",
+    "workflow_run": {
+      "id": 43406313516,
+      "head": "3599c506251437f03b44bd3174716938216c54ee",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43406313516"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-eighth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-eighth.json",
+    "generated_at": "2026-11-13T10:05:28.964Z",
+    "investor_generated_at": "2026-11-13T10:05:32.010Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2655,
+    "portfolio_relationships": 418,
+    "expected_profiles": 22,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 4,
+    "generic_portfolio_entries_verified": 4,
+    "clickable_company_links_verified": 4,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 21,
+    "manifest_generic_relationship_matches": 4,
+    "current_manifest_event_rows": 22,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 21,
+    "current_manifest_generic_relationship_matches": 4,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: DB2664 versus live2655. All24 target identities remain outside European map. All22 referenced profiles,21 participant source URLs and4 generic portfolio entries with original source URLs verified; all4 current entries have company links. Ten new profiles published; curated-profile hash preserved. No company publication gate changed."
+  }
 }
