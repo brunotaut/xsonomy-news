@@ -46,7 +46,9 @@
     "active_minutes": 10.52,
     "checked_identities_per_hour": 136.9,
     "completed_reviews_per_hour": 34.2,
-    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, original-source and canonical identity QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution audit and verified live publication. Concurrent durations not summed."
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, original-source and canonical identity QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution audit and verified live publication. Concurrent durations not summed.",
+    "generic_portfolio_entries_verified": 13,
+    "clickable_generic_company_links_verified": 12
   },
   "production_before": {
     "events": 3312,
@@ -1001,6 +1003,16 @@
       "source_matches": 48,
       "relationship_matches": 13,
       "missing_link_sources": 0
+    },
+    "live_generic_entry_verification": {
+      "generic_portfolio_entries_verified": 13,
+      "clickable_company_links_verified": 12,
+      "unlinked_under_existing_publication_gates": [
+        [
+          "european-space-agency",
+          "liveeo"
+        ]
+      ]
     }
   },
   "publication_scope": {
@@ -1022,8 +1034,8 @@
   "completed_at": "2026-11-13T08:04:29.066Z",
   "publication": {
     "status": "verified",
-    "checked_at": "2026-11-13T08:04:29.066Z",
-    "verified_at": "2026-11-13T08:04:29.066Z",
+    "checked_at": "2026-11-13T08:05:14.744Z",
+    "verified_at": "2026-11-13T08:05:14.744Z",
     "catalogue_commit": "409900c46ea23d9c970c8b5bd9e414322ee20872",
     "source_commit": "83d602e5bd92e18a689c43757ea960c6f2e375c1",
     "workflow_run": {
@@ -1045,12 +1057,7 @@
     "expected_profiles": 65,
     "missing_profiles": [],
     "missing_participant_sources": [],
-    "missing_relationships": [
-      [
-        "european-space-agency",
-        "liveeo"
-      ]
-    ],
+    "missing_relationships": [],
     "targets_in_european_landscape": [],
     "generic_profile_source_matches": 13,
     "manifest_participation_source_matches": 70,
@@ -1060,6 +1067,14 @@
     "current_manifest_participation_source_matches": 70,
     "current_manifest_generic_relationship_matches": 13,
     "catalogue_trigger_required": false,
-    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: DB2619 versus live2610. All24 targets remain outside the European landscape. All65 referenced profiles,70 participant source URLs and13 generic links and their source URLs verified. Forty new profiles published; curated-profile hash preserved. Wider-cohort DB funding is not asserted to be European map events. Gates unchanged."
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: DB2619 versus live2610. All24 target identities remain outside European map. All65 referenced profiles,70 participant source URLs and13 generic portfolio entries with their original source URLs verified. Twelve portfolio entries link to company pages; the ESA/LiveEO entry is present with matching slug, companyId and source, published=false and url=null under existing company publication gates. Forty new profiles published; curated-profile hash preserved. No gate changed.",
+    "generic_portfolio_entries_verified": 13,
+    "clickable_company_links_verified": 12,
+    "unlinked_under_existing_publication_gates": [
+      [
+        "european-space-agency",
+        "liveeo"
+      ]
+    ]
   }
 }
