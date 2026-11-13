@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1102,
   "next_action": "Continue next24 queued wider-cohort identities Nurol Holding through OJSC AGAT (Belarus) under a fresh short writer lease and up to four disjoint read-only groups. No pending import or publication. Reconcile Ocius/Ocius Technology aliases and OHB parent/subsidiary/composite identities before assigning financing. Preserve source-level identity, currency and cash/in-kind/instrument holds, including unresolved published Liebherr attribution. No internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T14:52:48.320Z",
+  "updated_at": "2026-11-13T15:01:50.242Z",
   "source_reconciliation_companies": 955,
   "approved_funding_events": 3530,
   "round_participations": 4619,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T14:52:48.320Z",
     "expires_at": "2026-11-13T16:52:48.320Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "1d96a08a-786f-48d8-a36d-8834e92cf263",
       "b28ebefa-2f78-4ef1-b6b1-74a8c877a0b7",
@@ -6144,7 +6144,32 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "rollback_rehearsal_passed_ready_for_atomic_import",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-third.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-third.json",
+    "run_id": "funding-20261113T1451Z-next24",
+    "expected": {
+      "events": 23,
+      "round_participations": 34,
+      "source_rows": 33,
+      "relationships": 7
+    },
+    "baseline": {
+      "events": 3543,
+      "approved": 3530,
+      "links": 4619,
+      "sources": 4882,
+      "profiles": 2777,
+      "covered": 955,
+      "relationships": 448,
+      "preserved_profiles_hash": "563dc9b3f7e1faeccb03cbca653199cc"
+    },
+    "local_postgresql_tests": "passed",
+    "rollback_baseline_verified": true,
+    "prepared_at": "2026-11-13T15:01:50.242Z",
+    "recovery_note": "Check exact manifest round keys and dataset before retry. Importer is atomic and rejects conflicting existing facts; never blindly create alternate event keys."
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T14:02:25.140Z",
