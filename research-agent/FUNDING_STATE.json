@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1109,
   "next_action": "Continue next24 queued wider-cohort identities OKB Simonov through Opticoelectron under a fresh short writer lease and up to four disjoint read-only groups. No pending import or publication. Verify exact issuer for OM Defence aliases, Ondas subsidiaries and OMT Group versus Odense Maritime Technology. Preserve unresolved published Liebherr attribution and source-level allocation/currency/instrument holds. No internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T15:48:30.527Z",
+  "updated_at": "2026-11-13T15:53:59.033Z",
   "source_reconciliation_companies": 963,
   "approved_funding_events": 3553,
   "round_participations": 4653,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T15:48:30.526Z",
     "expires_at": "2026-11-13T17:48:30.526Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "79631fb2-0734-4128-8f72-52225b822e81",
       "cc2595d0-0b93-4046-b23a-8081341d624a",
@@ -6246,7 +6246,26 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-fourth.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-fourth.json",
+    "status": "rollback_verified_ready_for_atomic_import",
+    "baseline": {
+      "events": 3566,
+      "approved": 3553,
+      "links": 4653,
+      "sources": 4915,
+      "profiles": 2803,
+      "covered": 963,
+      "relationships": 455,
+      "preserved_profiles_hash": "c2d1c50aabfb094f043db472dc241746"
+    },
+    "expected_events": 11,
+    "expected_links": 25,
+    "expected_sources": 12,
+    "expected_relationships": 9,
+    "recovery_note": "Check dataset and exact manifest keys before retry; importer rejects conflicting facts and is atomic/idempotent."
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T15:06:09.661Z",
