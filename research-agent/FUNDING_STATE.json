@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1022,
   "next_action": "Continue next24 queued wider-cohort identities Kaizen Laboratories through Kelly Hills Unmanned Systems under a new short writer lease and up to four disjoint read-only groups. No pending import/publication. Preserve source-backed identity, parent/subsidiary, historical-funding and inaccessible-original holds; no internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T03:49:45.838Z",
+  "updated_at": "2026-11-13T03:58:05.225Z",
   "source_reconciliation_companies": 830,
   "approved_funding_events": 3114,
   "round_participations": 4108,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T03:49:45.838Z",
     "expires_at": "2026-11-13T05:49:45.838Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "6b717768-c191-439f-8913-03be66b75a21",
       "50965076-d6f8-45e2-a4c8-6cc6eda17758",
@@ -4157,7 +4157,34 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "validated_rollback_passed_ready_for_atomic_import",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-second.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-second.json",
+    "counts": {
+      "events": 28,
+      "links": 20,
+      "sources": 35,
+      "relationships": 9,
+      "companies_with_events": 13,
+      "reviewed": 4,
+      "partial": 20,
+      "group_search_queries": 85,
+      "source_ledger_entries": 116
+    },
+    "baseline": {
+      "events": 3127,
+      "approved": 3114,
+      "links": 4108,
+      "sources": 4365,
+      "profiles": 2489,
+      "covered": 830,
+      "relationships": 358,
+      "preserved_profiles_hash": "f260db8b12fd247dc0e77acc77b39f0a"
+    },
+    "postgresql_tests_passed": true,
+    "production_rollback_baseline_verified": true
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T03:03:58.808Z",
