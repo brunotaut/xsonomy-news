@@ -42,7 +42,8 @@
     "db_investor_profiles": 3029,
     "db_source_reconciliation_companies": 1051,
     "concurrency_speedup_claimed": false,
-    "search_queries_executed": 140
+    "search_queries_executed": 140,
+    "reviewed_existing_fact_corrections": 1
   },
   "production_before": {
     "events": 3755,
@@ -1125,7 +1126,8 @@
       "Rheinmetall Canada exact legalrecipient contribution agreement has unknown repayment terms and payout, not assumed grant or loan. Australia candidate award remains secondary hold. Kraken partner raise and future JV contributions not company receipts. Naval holding/operating division and parent debt borrowers remain distinct; Jan1.5bn facility/March1bn draw are not two financing facilities. Ricardo ordinary-share financing gross versus net and committed RCF capacity separated from WSP acquisition consideration.",
       "RIIS exact Troy LLC recipient, joint-prize allocations and legal award instrument remain unknown. Rikor FRP loan approval not signed loan or disbursed cash; capex and later investment totals excluded. Rincell seed and final CEC grant approval distinct; Army contract and tax exclusion not equity/grants. RIY volunteer legal recipient unresolved. Robinson business unit does not inherit Ascent funding; existing Ascent three DB events inspected by count, not reimported. Robot Aviation bankrupt predecessor and asset restart require exact recipient continuity.",
       "Rocket Lab economic history and holding successor/guarantee documented;2018closed round,2024principal including full option once and three terminated2026ATM programme actual gross are separate. Original note amounts in thousands; rounded gross approximate; capacity, net, fees, cashflow and Iridium borrower debt not additional parent proceeds. Future Fund maps existing Australian canonical profile. Rocket One is legally former Hoth Therapeutics, not180LifeSciences; actual registered direct proceeds and defined2024ATM executed sales distinct from capacity, overlapping net reports and acquisition warrants.",
-      "Rock West ESOP/secondary terms, individual SBIR instruments and tax-credit conditionality remain held. Robota and RMUS bounded searches found no supported own financing; procurement and customer grant-funded purchases not issuer grants. Roca holding/private-funded language and sponsorship do not establish a financing event. Generic Lighthouse source is investor portfolio evidence; unchanged importer retains legacy evidence labels without changing the actual source type."
+      "Rock West ESOP/secondary terms, individual SBIR instruments and tax-credit conditionality remain held. Robota and RMUS bounded searches found no supported own financing; procurement and customer grant-funded purchases not issuer grants. Roca holding/private-funded language and sponsorship do not establish a financing event. Generic Lighthouse source is investor portfolio evidence; unchanged importer retains legacy evidence labels without changing the actual source type.",
+      "Final reviewed correction: NRC contribution agreement start is not public announcement date. Announced_date set null while exact start stays in note, using expected-old-value guard, separate production rollback, durable reversal record and corrected-manifest idempotency. No new event or amount/instrument/role change."
     ]
   },
   "validation": {
@@ -1142,6 +1144,15 @@
       "relationship_matches": 1,
       "missing_link_sources": 0,
       "extension_parent_matches": 0
+    },
+    "reviewed_correction": {
+      "record": "research-agent/imports/funding-landscape-20261113-seventy-first-correction.json",
+      "expected_old_value_checks": true,
+      "production_rollback_passed": true,
+      "atomic_update_passed": true,
+      "reversal_record_preserved": true,
+      "corrected_manifest_idempotency_passed": true,
+      "counts_and_curated_profiles_unchanged": true
     }
   },
   "publication_scope": {
