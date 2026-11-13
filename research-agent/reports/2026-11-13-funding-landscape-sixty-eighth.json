@@ -1,0 +1,1193 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T19:55:00Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-sixty-eighth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "additional_published_identity_followups": 1,
+    "newly_completed_bounded_reviews": 4,
+    "new_or_retained_partial": 20,
+    "new_approved_events": 35,
+    "new_round_participations": 74,
+    "new_source_rows": 55,
+    "new_generic_portfolio_relationships": 1,
+    "new_companies_with_events": 12,
+    "new_investor_profiles": 38,
+    "group_search_queries_executed": 140,
+    "root_additional_search_queries": 6,
+    "search_queries_executed": 146,
+    "per_company_search_ledger_entries": 140,
+    "source_ledger_entries": 119,
+    "company_database_identity_contexts_checked": 24,
+    "existing_canonical_events_inspected": 0,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 35,
+    "mismatched_facts": 0,
+    "participant_matches": 74,
+    "source_matches": 55,
+    "relationship_matches": 1,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 0,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "db_total_events": 3695,
+    "db_approved_events": 3682,
+    "db_round_participations": 4869,
+    "db_investor_profiles": 2934,
+    "db_source_reconciliation_companies": 1016,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 3660,
+    "approved": 3647,
+    "links": 4795,
+    "sources": 5047,
+    "profiles": 2896,
+    "covered": 1004,
+    "relationships": 483,
+    "preserved_profiles_hash": "0e96cd86dac91068831810725d4f8ef7"
+  },
+  "production_after": {
+    "events": 3695,
+    "approved": 3682,
+    "links": 4869,
+    "sources": 5102,
+    "profiles": 2934,
+    "covered": 1016,
+    "relationships": 484,
+    "preserved_profiles_hash": "0e96cd86dac91068831810725d4f8ef7"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1131,
+    "source_review_partial": 802,
+    "queued": 631
+  },
+  "per_company": [
+    {
+      "id": "7b1e30a3-c4b2-4db3-974c-86b222d31d30",
+      "slug": "posco",
+      "name": "POSCO",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Operating steel issuer matched the official exchange record and parent filing; two 2026 tranches confirmed.",
+      "hold_note": "Earlier post-2022 bond history is incomplete. Old POSCO became POSCO Holdings in 2022; continuity to the new operating issuer is not automatic. Holdings 2025 green bonds, International USD500m, Argentina USD700m facility, Future M and Krakatau are excluded. July2026 tender redemption is not new funding.",
+      "searches_checked": [
+        "\"POSCO\" bond issuance 2026 2025 official",
+        "\"POSCO\" \"700 million\" site:newsroom.posco.com 2026",
+        "site:newsroom.posco.com \"POSCO\" \"January\" \"2026\" \"bonds\"",
+        "\"POSCO\" \"bonds\" \"2023\" site:posco.com OR site:newsroom.posco.com",
+        "\"POSCO\" \"2026\" \"bond\" \"2025\" \"steel\" January"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://links.sgx.com/1.0.0/prospectus-circulars/56392",
+          "disposition": "Opened official exchange circular index: actual POSCO issuer and two USD tranches, dated12Jan2026."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/889132/000119312526188766/R50.htm",
+          "disposition": "Opened original parent filing subsequent-event note explicitly confirms subsidiary POSCO issued400m/300m on16Jan. Other subsidiary financing excluded."
+        },
+        {
+          "url": "https://newsroom.posco.com/en/posco-holdings-issues-700-million-global-green-bond-boosting-the-energy-materials-business/",
+          "disposition": "Indexed official2025Holdings bond candidate is separate holding issuer; not operating POSCO. No parent financing transferred."
+        },
+        {
+          "url": "https://www.posco.co.kr/docs/eng7/jsp/resources/file/ir/POSCO_consolidated_FY25Q4.pdf",
+          "disposition": "Earlier operating issuer annual-report candidate identified in search; PDF table not fully reconciled and no historical issuance extracted."
+        },
+        {
+          "url": "https://en.yna.co.kr/view/AEN20260113010800320",
+          "disposition": "Dated13Jan2026 issuer-press-release reporting corroborates operating steelmaker; no intermediary assigned as bondholder."
+        }
+      ]
+    },
+    {
+      "id": "39e26005-78a2-412a-9068-0f8eac41ba13",
+      "slug": "poseidon-aerospace",
+      "name": "Poseidon Aerospace",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Issuer and counsel confirm two distinct closed rounds and explicit lead roles.",
+      "hold_note": "Earlier USD1.4m pre-seed remains on hold for primary transaction evidence, date and possible overlap. Hanwha Asset Management USA is not automatically the manager or venture fund. Individual cheques and unnamed angels remain undisclosed. CRADA does not establish a grant amount.",
+      "searches_checked": [
+        "\"Poseidon Aerospace\" funding 60 million investors seed 2026",
+        "\"Poseidon Aerospace\" site:tqventures.com OR site:tamarackglobal.com investment",
+        "\"Poseidon Aerospace\" funding seed preseed 2024 2026 latest",
+        "\"Poseidon\" \"Starship Ventures\" \"$1.4\" seed"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.poseidonaero.com/news/poseidon-aerospace-announces-11m-fundraise-to-build-unmanned-cargo-aircraft",
+          "disposition": "Opened full original:5Nov2025 closed11m seed, Tamaracklead and6named participants."
+        },
+        {
+          "url": "https://www.poseidonaero.com/news/poseidon-aerospace-raises-60-million-series-a-to-build-unmanned-cargo-aircraft",
+          "disposition": "Opened full original:8Sep2026 closed60m A,TQlead and6named participants."
+        },
+        {
+          "url": "https://www.poseidonaero.com/news",
+          "disposition": "Opened current issuer newsroom; latestlisted financing8Sep2026."
+        },
+        {
+          "url": "https://www.wsgr.com/en/insights/wilson-sonsini-advises-poseidon-aerospace-on-dollar60-million-series-a.html",
+          "disposition": "Opened original counsel confirmation of60m SeriesA and source-named investors."
+        },
+        {
+          "url": "https://www.businessinsider.com/how-poseidon-plans-disrupt-logistics-with-uncrewed-sea-glider-2025-4",
+          "disposition": "Earlier1.4m preseed candidate read in indexed reporting; no original transaction-source verification. Held, not collapsed into11m or fabricatedclosingdate."
+        }
+      ]
+    },
+    {
+      "id": "8a92c1d4-1d5c-419a-89ba-8f10dfff1220",
+      "slug": "potensic",
+      "name": "Potensic",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Official brand and legal-controller pages checked; an employer-original recruitment disclosure links the Botan brand family.",
+      "hold_note": "Exact legal continuity among Shenzhen Potensic Innovations and Botan entities remains unresolved. Registered capital of CNY30m, branch capital of CNY5m and R&D spending are not incoming rounds. An empty database or aggregator is not evidence of zero funding.",
+      "searches_checked": [
+        "\"Potensic\" funding investment 融资 投资",
+        "\"Potensic\" 融资 投资 公司 深圳",
+        "\"Potensic\" \"博坦\" \"融资\"",
+        "\"Potensic\" site:potensic.com about company financing investors",
+        "\"深圳市博坦智能\" \"投资\" \"融资\" 2025 2026",
+        "\"Potensic\" \"investors\" funding 2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.potensic.com/about-us.html",
+          "disposition": "Opened current officialbrandhistory; partner language not investor relationship."
+        },
+        {
+          "url": "https://www.potensic.com/News_Details/29.html",
+          "disposition": "Opened2026IFAofficialannouncement; internalR&Dinvestment not incoming financing."
+        },
+        {
+          "url": "https://app.potensic.com/privacy",
+          "disposition": "Opened officialpolicy names ShenzhenPotensicInnovations legalcontroller; not automatic identity with all Botan entities."
+        },
+        {
+          "url": "https://www.career.zju.edu.cn/jyxt/sczp/zpztgl/ckZpgwXq.zf?zpxxbh=40D8B64652135150E0653A68DD0E9B18",
+          "disposition": "Opened employer-originalrecruitmentposted13Oct2025:Potensicbrand ofBotan;30mCNY registeredcapital andcumulativeR&Dspending not financinground."
+        },
+        {
+          "url": "https://szbotan.com/index.php",
+          "disposition": "Officialcandidate indexed but directfetch timedout. Branch5mCNYcapital not parentround; privatehistoryunknown."
+        }
+      ]
+    },
+    {
+      "id": "b424664d-e7a9-4df5-87e0-efa115bf8d70",
+      "slug": "powertech",
+      "name": "POWERTECH",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact UAE EDGE engine company confirmed by its 2025 launch and current parent page.",
+      "hold_note": "No incoming cash round verified in the bounded search. Parent ownership, group CMD acquisition and Morocco memorandum are not company financing events. Formation capital remains unknown; Taiwanese semiconductor namesake excluded.",
+      "searches_checked": [
+        "\"POWERTECH\" EDGE investment funding acquisition official",
+        "\"POWERTECH\" site:edgegroup.ae CMD acquisition 2026 capital",
+        "\"POWERTECH\" EDGE \"funding\" OR \"loan\" OR \"capital\"",
+        "\"POWERTECH\" site:edgegroup.ae 2026 acquisition CMD investment",
+        "\"POWERTECH\" \"CMD\" \"EDGE\" May 2026 official"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://edgegroup.ae/news/edge-launches-powertech-establish-global-propulsion-systems-manufacturer",
+          "disposition": "Opened12Feb2025 original EDGElaunch: companyformed, no disclosed subscription/cashtransfer. Genericparent ownership not standalone financingfact."
+        },
+        {
+          "url": "https://edgegroup.ae/powertech",
+          "disposition": "Opened current exact UAEengineentity; nofinanceclaims."
+        },
+        {
+          "url": "https://www.iiss.org/online-analysis/military-balance/2026/10/the-uae-propels-towards-greater-defence-industrial-autonomy",
+          "disposition": "Indexed2026analysis distinguishes EDGE acquisition ofCMDfromPOWERTECH ownincomingcapital. Noacquisitionvalue orparentcashtransferred."
+        },
+        {
+          "url": "https://quwa.org/europe/defence-news-eu/edge-completes-acquisition-of-italian-engine-maker-cmd-targets-large-volume-drone-engine-orders/",
+          "disposition": "IndexedlatestOctober2026CMDtransaction andMoroccoMoU candidate; not POWERTECHfinancing. SemiconductorPowertechTechnologyTaiwan searchnamesakeexcluded."
+        }
+      ]
+    },
+    {
+      "id": "abf0f9c2-497b-4899-b7d2-70b22c822c48",
+      "slug": "powerup-toys",
+      "name": "PowerUp Toys",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Tailor Toys LLC and POWERUP brand matched issuer legal terms and historical product campaigns.",
+      "hold_note": "Rewards and product pledges remain separate from equity, debt and grants; Kickstarter is not an investor. No securities round established in the bounded search. Undisclosed private financing remains unknown, not zero.",
+      "searches_checked": [
+        "\"PowerUp Toys\" investment funding Kickstarter investors",
+        "site:poweruptoys.com Kickstarter funding investor 2026",
+        "\"PowerUp Toys\" \"investors\" \"seed\" 2025 2026",
+        "\"PowerUp\" \"Tailor Toys\" funding loan investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.poweruptoys.com/pages/about-us-1",
+          "disposition": "Opened issuerhistory:2013/2015/2017/2019productKickstarter campaigns; productcrowdfunding, noequity/debt established."
+        },
+        {
+          "url": "https://www.poweruptoys.com/pages/press-resources",
+          "disposition": "Opened issuerpressroom andprojectfundingtallies:1.12m,1.67m,0.49m,1.23m rewards campaigns; noinvestmentrounds inferred."
+        },
+        {
+          "url": "https://www.poweruptoys.com/pages/copyright-policy",
+          "disposition": "Opened issuerlegalterms identifiesTailorToysLLC brandoperator."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/launching-smartphone-controlled-paper-airplane-based-on-bluetooth-smart-technology-238876121.html",
+          "disposition": "Opened originalTailorToyscampaignrelease;900kopenpledges vs50kgoal not equity/debt orclosedcash. Kickstarterplatform notinvestor."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/powerup-toys/financials",
+          "disposition": "Searchcandidate incorrectlylabelsKickstarter investor; excluded absentsecurities evidence."
+        }
+      ]
+    },
+    {
+      "id": "6173de86-e18b-40df-96d7-7413793e2f35",
+      "slug": "powerus",
+      "name": "Powerus",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "APC d/b/a Powerus is the confirmed financed economic issuer, distinct from its post-merger public AGH parent. Four cash financings supported.",
+      "hold_note": "Initial placement is held: prospectus USD6.07m/13,488 shares differs from later H1 approximately USD6m/13,398 shares and subscription-receivable timing. Kaizen/Agile predecessor loans are not new APC financing. AGH pre-merger PIPE, golf IPO, USD250m shelf, resales, commercial contracts, advisory warrants, treasury repurchase and merger consideration excluded. UMAC liability accounting and June issuance versus cash-date distinction documented.",
+      "searches_checked": [
+        "\"Powerus\" financing private placement 2026 merger 50 million",
+        "site:power.us \"financing\" \"2026\" \"30\"",
+        "\"Powerus\" \"October\" \"2026\" \"financing\" \"PIPE\"",
+        "\"Powerus\" \"June 30, 2026\" \"Unusual Machines\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2009312/000149315226041764/form424b3.htm",
+          "disposition": "Opened originalprospectus financingandmergersections; exactKCGIfundnames,USD50,000,582cash,30mUMACgross; advisorywarrants/mergershares notcash."
+        },
+        {
+          "url": "https://ir.power.us/sec-filings/all-sec-filings/content/0001493152-26-047462/ex99-1.htm",
+          "disposition": "Opened later16Oct2026 APC H1 originalnotes12–14,21:5m cash vs5,555,555OIDface;20mAGHloan,exactKCGIcash,UMACsubscription. Earlierinitialplacementamount/sharecount/cash-timingconflict retained."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2009312/000149315226047466/forms-3.htm",
+          "disposition": "Opened October16S3:250m shelfcapacity andsellingstockholderresales notnewcash. APC remainsownsubsidiaryfollowingOctober1 merger; oldAGHgolf/IPOcash nottransferred asnewPowerusround."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2009312/000110465926114800/xslSCHEDULE_13D_X02/primary_doc.xml",
+          "disposition": "Indexed original13DconfirmsOctober1 merger andAPCsurvivingassubsidiary; noadditionalcashamount extracted."
+        }
+      ]
+    },
+    {
+      "id": "ec5b4fc6-ab45-4147-8950-8e58b10de29f",
+      "slug": "praetorian-aeronautics",
+      "name": "Praetorian Aeronautics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Australian issuer matched by original product/Brett Hill identity; metadata US inconsistency preserved.",
+      "hold_note": "Exact funding vehicle and security,30m raising target outcome and15m cumulative constituents remain unknown. No NVIDIA/AVSF or consortium money misassignment.",
+      "searches_checked": [
+        "\"Praetorian Aeronautics\" funding investment investors",
+        "\"Praetorian Aeronautics\" investment 30 million 2026 Paspalis",
+        "\"Praetorian Aeronautics\" site:praetorian-aeronautics.com funding investment",
+        "\"Praetorian Aeronautics\" investment Paspalis 2025 2026 round capital"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://paspalis.vc/praetorian-aeronautics/",
+          "disposition": "Opened original manager portfolio: 2024 seed; no amount/security/precise date."
+        },
+        {
+          "url": "https://darwininnovationhub.com.au/praetorian-aeronautics-strengthens-nt-defence-ties/",
+          "disposition": "Opened original July5 2024 partner publication: venture capital recipient from Paspalis/NT Local Jobs Fund co-investment."
+        },
+        {
+          "url": "https://defencesa.com/news-events-and-media/news/sa-partnership-marks-new-dawn-in-local-defence-technology/",
+          "disposition": "Opened government September7 2026 source: USD/AUD-unspecified $15m cumulative capital, not discrete round; not imported."
+        },
+        {
+          "url": "https://praetorian-aeronautics.com/media/",
+          "disposition": "Opened issuer May6 2025 NVIDIA Inception selection: noncash program membership, no NVIDIA investment established."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2161806/000216180626000001/primary_doc.xml",
+          "disposition": "Indexed original identifies pooled AVSF investment vehicle; rendered fetch unavailable. Vehicle proceeds not assigned to operating Praetorian."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/praetorian-aeronautics",
+          "disposition": "April8 2026 indexed fundraising headline says seeking more than30m at100m+valuation, not raised. Aggregator30m event held."
+        }
+      ]
+    },
+    {
+      "id": "2f7226e8-993a-46cf-80e1-ae7e5a450736",
+      "slug": "pratt-and-whitney",
+      "name": "Pratt & Whitney",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "US RTX operating business; exact funding issuers of Canadian/Polish subsidiaries differ.",
+      "hold_note": "Long historical corporate/assistance review incomplete. RTX debt, Polish subsidiary grants/incentives, Canadian technology funding and procurement/capex not reassigned; no zero-funding assertion.",
+      "searches_checked": [
+        "\"Pratt & Whitney\" financing bonds grant 2026 2025",
+        "\"Pratt & Whitney\" \"financing\" \"United Technologies\" securities grant",
+        "\"Pratt & Whitney\" site:rtx.com news grant financing 2026",
+        "\"Pratt & Whitney\" site:prattwhitney.com \"grant\" \"2025\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rtx.com/news/news-center/2026/09/04/rtxs-pratt-whitney-invests-25-million-to-expand-precision-parts-manufacturing",
+          "disposition": "Opened original RTX release: USD25m/PLN95m outgoing capex. Polish Investment Zone support does not identify amount/instrument/exact legal recipient for US parent record."
+        },
+        {
+          "url": "https://www.rtx.com/news/news-center/2026/10/20/rtx-reports-q3-2026-results",
+          "disposition": "Current original indexed parent results reviewed as candidate; direct fetch timed out. Parent capital-raising not assigned to division."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/101829/000119312504078065/d10q.htm",
+          "disposition": "Indexed historical parent filing mentions2003 technology funding at Pratt & Whitney Canada, a distinct borrower; not imported to US Pratt."
+        },
+        {
+          "url": "https://www.rtx.com/news/news-center/2026/07/31/rtxs-pratt-whitney-awarded-1-3-billion-f135-sustainment-contract",
+          "disposition": "Original current procurement release indexed: nearly1.3bn contract not equity/debt/grant financing."
+        }
+      ]
+    },
+    {
+      "id": "19e8dd12-8804-4eb4-a8d0-9fb5faf7c821",
+      "slug": "precision-approach",
+      "name": "Precision Approach",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Michigan UAS/AAM advisory identity established by issuer/ANRA partner release.",
+      "hold_note": "Project grant recipient/allocation not proven. Namesake Georgia construction contracts and Michigan Travel LLC excluded. Own incoming private capital and complete history remain unknown.",
+      "searches_checked": [
+        "\"Precision Approach\" Chippewa drone funding company",
+        "\"Precision Approach LLC\" funding investors grant",
+        "\"Precision Approach\" Michigan official drone company website",
+        "\"Precision Approach\" site:michiganbusiness.org drone funding",
+        "site:anratechnologies.com \"Chippewa County Drone Project\" \"Precision Approach\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.linkedin.com/company/precision-approach-llc-michigan",
+          "disposition": "Opened issuer profile and partner repost: exact Michigan aviation advisory firm tied to Chippewa project."
+        },
+        {
+          "url": "https://www.anratechnologies.com/home/2026/07/16/chippewa-county-drone-project-successfully-demonstrates-advanced-digital-airspace-infrastructure-for-commercial-and-public-safety-operations/",
+          "disposition": "Original ANRA July16 publication with July15 release dateline indexed full body: partner coordinates project; OFME funding is project-wide, allocation to Precision Approach unspecified."
+        },
+        {
+          "url": "https://precisionapproach.org/company-info",
+          "disposition": "Indexed original identifies separate Georgia airport-construction namesake; municipal construction contracts not financing to Michigan drone firm."
+        }
+      ]
+    },
+    {
+      "id": "7f139d3d-1b02-46b4-b28c-b66c625e9785",
+      "slug": "precisionhawk",
+      "name": "PrecisionHawk",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "US drone issuer confirmed through dated original syndicated releases, not current compromised domain.",
+      "hold_note": "Earlier2013 USD1m and2020SEC/PPP candidates need original reconciliation. 2014 earliest exact date/lead held; 2016 DuPont additional participant original held; unnamedUSAA vehicle not manufactured. Security types unknown except2016. Acquisition/asset buyer not assumed fresh financing.",
+      "searches_checked": [
+        "\"PrecisionHawk\" funding investment rounds 2019 2020 acquired",
+        "\"PrecisionHawk\" \"Series C\" \"$18\" press release",
+        "\"PrecisionHawk\" \"$10 million\" 2014 Intel press",
+        "site:precisionhawk.com \"2019\" \"$32\"",
+        "site:precisionhawk.com \"2016\" \"$18\"",
+        "\"PrecisionHawk\" \"32 million\" \"December 11\" prnewswire",
+        "\"PrecisionHawk\" \"18 million\" \"PRNewswire\" 2016",
+        "\"PrecisionHawk\" site:verizon.com 2016 funding 18",
+        "\"PrecisionHawk\" \"Field\" 2023 acquisition bankruptcy",
+        "\"PrecisionHawk\" \"$18 million\" \"Verizon Ventures\" 2016 official",
+        "site:prnewswire.com \"PrecisionHawk\" \"September\" \"2014\" funding",
+        "\"PrecisionHawk\" \"2014\" \"approximately\" \"Millennium\" \"PRWEB\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prweb.com/releases/precisionhawk_announces_addition_of_intel_capital_to_its_series_b_investor_group/prweb12297956.htm",
+          "disposition": "Opened original November4 issuer release; same previously-announced September USD10m B, Intel joins existing participants. No new Intel10m event."
+        },
+        {
+          "url": "https://vcnewsdaily.com/precisionhawk/venture-capital-funding/tmplktbdkd",
+          "disposition": "Opened full syndicated original April20 2016 release; explicit closed USD18m new equity and investor names."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/precisionhawk-secures-75-million-to-foster-global-adoption-of-commercial-drone-technology-300587057.html",
+          "disposition": "Opened/found financing section original January24 2018 issuer release: USD75m and exact lead/participants; cumulative totals excluded."
+        },
+        {
+          "url": "https://uasweekly.com/2019/12/11/precisionhawk-raises-32-million-to-advance-next-phase-of-growth-in-commercial-drones/",
+          "disposition": "Opened full syndicated December11 2019 issuer release: USD32m three named investors, no explicit lead."
+        },
+        {
+          "url": "https://mtvlp.com/media/",
+          "disposition": "Opened investor archive and found December11 2019 USD32m item; linked BusinessWire now redirects to newsroom."
+        },
+        {
+          "url": "https://www.precisionhawk.com/about",
+          "disposition": "Initial original-looking historical HTML fetched, but follow-up find redirects to unrelated gambling domain; not relied upon as trustworthy current issuer history."
+        },
+        {
+          "url": "https://finance.yahoo.com/news/precisionhawk-leader-drone-data-safety-150000191.html",
+          "disposition": "Original Marketwired syndication indexed confirms2016 equity; direct429. Same release fullbody checked at VCNewsDaily."
+        },
+        {
+          "url": "https://www.newsobserver.com/news/business/article283092953.html",
+          "disposition": "Original bankruptcy reporting indexed, not primary financed proceeds;2023 wind-down and subsequent brand continuity remain outside confirmed funding subset."
+        }
+      ]
+    },
+    {
+      "id": "ce0eefae-9821-4541-a073-1350e413240f",
+      "slug": "prevail-partners",
+      "name": "Prevail Partners",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact UK defence issuer established from own source and Raybird counterparty despite catalogue US metadata.",
+      "hold_note": "Bounded incoming history/latest searches found no substantiated financing event for British issuer. Private financing unknown, notzero; JV, procurement and unrelated US life-science investments excluded.",
+      "searches_checked": [
+        "\"Prevail Partners\" investment funding investors",
+        "\"Prevail Partners\" \"Raybird\" investment",
+        "\"Prevail Partners\" defence \"funding\" OR \"shareholders\" OR \"investors\"",
+        "site:prevail-partners.com investment finance funding 2026 2025",
+        "\"Prevail Partners\" \"investment\" \"funding\" defence 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prevail-partners.com/who-we-are/",
+          "disposition": "Opened issuer identifies British Prevail Partners Ltd cofounders, distinct from US life-science fund."
+        },
+        {
+          "url": "https://www.prevail-partners.com/first-new-uk-ukraine-drone-joint-venture-powers-the-zelenskyy-and-starmer-vision/",
+          "disposition": "Opened original July2 2025 joint venture source; company partner and UK Raybird manufacture, not incoming company capital."
+        },
+        {
+          "url": "https://skyeton.com/news/skyeton-prevail-solutions/",
+          "disposition": "Original JV counterparty indexed corroborates UK partner identity and separate JV."
+        },
+        {
+          "url": "https://prevailpartners.com/",
+          "disposition": "US life-science fund original indexed; unrelated investor capital not assigned to British defence issuer."
+        }
+      ]
+    },
+    {
+      "id": "abe7a5ce-e6f4-4a8e-a21c-ef63e53fb125",
+      "slug": "primordial-labs",
+      "name": "Primordial Labs",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "New Haven Anura developer established through original investor/transaction counsel releases.",
+      "hold_note": "2022seed mayoverlap2023closing. 2026SEC18.5m candidate conflicts with18mheadline andcouldoverlap; no extra event/extension assumed. SBIRIII andGDLS teaming not assigned asgrants. Private terms unknown.",
+      "searches_checked": [
+        "\"Primordial Labs\" funding seed investors",
+        "\"Primordial Labs\" seed closing Squadra Lockheed May 2023",
+        "\"Primordial Labs\" site:squadra.vc seed 2022 2023 funding",
+        "\"Primordial Labs\" site:sec.gov 2026 18.5 2022",
+        "\"Primordial Labs\" \"2026\" \"sec.gov/Archives\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://newsroom.squadra.vc/defense-autonomy-company-primordial-labs-emerges-from-stealth-mode-raises-seed-round-led-by-squadra-ventures-debuts-ai-voice-control-technology-to-pilot-drones/",
+          "disposition": "Opened original seed release: May2 dateline, May3 webpage; explicit closedseed andthree participants."
+        },
+        {
+          "url": "https://www.wiggin.com/news/wiggin-and-dana-client-primordial-labs-raises-seed-round/",
+          "disposition": "Opened original transaction counsel May4 confirms three seed participants."
+        },
+        {
+          "url": "https://newsroom.squadra.vc/primordial-labs-raises-18m-series-a-to-scale-natural-language-command-and-control/",
+          "disposition": "Opened original November10 2026 investor release: USD18m SeriesA, Ballistic lead andtwo existing participants."
+        },
+        {
+          "url": "https://www.axios.com/2026/11/10/primordial-labs-seriesa-anura-ai",
+          "disposition": "Opened original CEO interview: equity explicitly confirmed, used only for instrument."
+        },
+        {
+          "url": "https://www.squadra.vc/portcos/primordial-labs",
+          "disposition": "Investor indexed portfolio says FundII2022 seed; overlap with2023 announcement unresolved."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1949856/000194985622000001/primary_doc.xml",
+          "disposition": "Original2022SEC candidate indexed; formatted fetch inaccessible, amounts not imported.2026aggregator18.5m/21m also held for original filing androundoverlap."
+        }
+      ]
+    },
+    {
+      "id": "cc00b8c4-a916-484b-8511-6a0b2eec9ca9",
+      "slug": "pro-drones",
+      "name": "PRO drones",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"PRO drones\" Ukraine investment funding prodrone.com.ua",
+        "site:prodrone.com.ua інвестиції фінансування \"Про\"",
+        "\"PRO drones\" \"інвестиції\"",
+        "\"prodrone.com.ua\" фінансування грант",
+        "\"PRO drones\" Україна інвестор грант \"prodrone\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://prodrone.com.ua/about-us/",
+          "disposition": "Opened original: Ukrainian online drone/equipment retailer; legal issuer not established."
+        },
+        {
+          "url": "https://prodrone.com.ua/contacts/",
+          "disposition": "Original contact page inspected in search confirms Kharkiv address and exact domain."
+        },
+        {
+          "url": "https://prodrone.com.ua/",
+          "disposition": "Indexed current issuer news/product pages examined; brand representation and sales not financing."
+        }
+      ],
+      "evidence_note": "Exact Ukrainian retailer domain and contact identity separated from Japanese Prodrone manufacturer. Searches did not establish a public own-company financing event.",
+      "hold_note": "Legal operator and earlier/private financing unresolved; unknown is not zero funding."
+    },
+    {
+      "id": "36d3f9e8-b6d7-4c21-a008-9a2a8221907a",
+      "slug": "pro-optica",
+      "name": "Pro Optica",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Pro Optica\" investment funding shareholders Romania",
+        "site:prooptica.ro proiect finanțare fonduri europene capital investitii",
+        "\"Pro Optica\" \"Elbit\" \"shares\" investment",
+        "\"Pro Optica\" finanțare investiții 2026 2025 grant",
+        "site:prooptica.ro news 2026 capital shareholders"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://prooptica.ro/company/history/",
+          "disposition": "Opened exact Romanian private issuer history; not predecessor IOR financing attribution."
+        },
+        {
+          "url": "https://prooptica.ro/projects/",
+          "disposition": "Opened SOFID grant project details: total RON1,720,426.58, nonrepayable support RON1,352,500; IMT-Bucharest/Pro Optica joint project, company allocation unestablished."
+        },
+        {
+          "url": "https://firmabuna.ro/firma/324813-pro-optica-sa",
+          "disposition": "Secondary indexed procurement candidate: EU-funded supplier contracts, not company grant/equity. Original grant split not established."
+        }
+      ],
+      "evidence_note": "Exact Romanian private optical issuer and SOFID subsidised R&D participation established.",
+      "hold_note": "RON1.3525m is assistance for joint IMT/Pro Optica project; recipient allocation not explicit. Procurement and contract revenues not rounds. Earlier/latest company-specific equity/debt remain unresolved."
+    },
+    {
+      "id": "f2e6872f-a8fb-461d-a93a-f27297f6915b",
+      "slug": "procore-technologies",
+      "name": "Procore Technologies",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 6,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Procore funding Series 2013 2020 investors IPO",
+        "site:procore.com/press funding million 2016 2018 2020 2021",
+        "site:procore.com/press \"2016\" \"funding\"",
+        "site:procore.com \"2020\" \"D1\" funding",
+        "site:procore.com \"Closes\" \"$50\" funding",
+        "site:procore.com \"million\" \"2016\" \"ICONIQ\"",
+        "\"Procore\" \"2016\" \"$50 million\" funding press",
+        "\"Procore\" \"2016\" \"$30 million\" financing",
+        "site:investors.procore.com \"2026\" \"700\" \"credit\"",
+        "site:procore.com \"2021\" \"initial public offering\" \"67.00\"",
+        "site:procore.com \"2014\" \"15 million\"",
+        "site:investors.procore.com \"2026\" \"Credit Agreement\"",
+        "site:procore.com \"2026\" \"financing\" \"DroneDeploy\"",
+        "\"Procore\" \"2026\" \"950\" \"convertible\" notes closing",
+        "\"Procore\" \"No amounts were borrowed\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.procore.com/press/procore-technologies-inc-achieves-record-breaking-growth-in-2014",
+          "disposition": "Opened original retrospective; 2014 USD15m closed Series D, year precision retained."
+        },
+        {
+          "url": "https://www.procore.com/press/procore-raises-30-million-to-accelerate-growth",
+          "disposition": "Opened original USD30m closed, explicit ICONIQ lead and Bessemer participation."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/procore-the-most-widely-used-construction-project-management-software-secures-50-million-investment-300375608.html",
+          "disposition": "Opened and located issuer Dec8 2016 close/lead statement."
+        },
+        {
+          "url": "https://www.procore.com/press/procore-closes-75m-funding",
+          "disposition": "Opened original USD75m close and Tiger lead."
+        },
+        {
+          "url": "https://www.procore.com/en-ae/blog/procore-ranked-8-on-forbes-list-of-100-private-cloud-companies",
+          "disposition": "Opened original and found over USD160m Series I extension; withheld pending base-round/extension reconciliation."
+        },
+        {
+          "url": "https://www.procore.com/press/procore-announces-closing-of-initial-public-offering-and-full-exercise-of-underwriters-option-to-purchase-additional-shares",
+          "disposition": "Opened original; gross IPO calculation and option deduplicated."
+        },
+        {
+          "url": "https://www.cooley.com/news/coverage/2026/2026-07-30-procore-technologies-to-acquire-dronedeploy-for-approximately-$845-million",
+          "disposition": "Opened counsel transaction source and prior-Series labels. USD80m Series F candidate retained pending timing/closing reconciliation; USD845m acquisition not financing."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1611052/000119312526338452/d169822d8k.htm",
+          "disposition": "Opened original and located completed August6 USD950m notes disclosure."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1611052/000161105226000003/pcor-20260930.htm",
+          "disposition": "Opened original and located principal/net disclosures and explicit no borrowing/automatic termination of USD700m bridge. Cancelled undrawn facility excluded."
+        },
+        {
+          "url": "https://investors.procore.com/news/news-details/2026/Procore-Announces-Third-Quarter-2026-Financial-Results/default.aspx",
+          "disposition": "Opened latest issuer results and searched debt; precise financing supplemented by original SEC filing."
+        }
+      ],
+      "evidence_note": "Six source-backed historical/latest financing events prepared; primary gross IPO amount and convertible principal distinguished from net proceeds.",
+      "hold_note": "Earlier seed/A-C, 2016 Series F and 2020 Series I base/extension still require reconciliation. USD700m bridge was undrawn and terminated; not imported. Acquisition consideration, buybacks and expenses excluded."
+    },
+    {
+      "id": "981ca7b1-8ebf-4e9e-9584-5d35862b3400",
+      "slug": "prodrone",
+      "name": "Prodrone",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 7,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Prodrone Japan funding investment 2026 2025 series",
+        "site:prodrone.com 資金調達 2016 2017 2018 2020 2025",
+        "site:prodrone.com 2026 4 21 Central Japan Innovation Capital",
+        "site:prodrone.com \"資金調達\" \"2017\"",
+        "site:prodrone.com \"資金調達\" \"2025\"",
+        "\"Prodrone\" \"2017\" \"1 billion\" funding",
+        "site:prodrone.com \"シリーズA\" \"10億\"",
+        "site:prodrone.com \"脱炭素化支援機構を\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prodrone.com/news/1695",
+          "disposition": "Opened original completed Series A and six subscriber list."
+        },
+        {
+          "url": "https://www.prodrone.com/jp/date/2017/05/",
+          "disposition": "Indexed archive identified 2017 announcement; direct old archive returned404, new original1695 read."
+        },
+        {
+          "url": "https://www.prodrone.com/news/10342",
+          "disposition": "Opened Japanese original completed CJIC-managed exact fund allotment."
+        },
+        {
+          "url": "https://www.prodrone.com/news/10393",
+          "disposition": "Opened Japanese original completed exact JIC Growth Fund2 allotment."
+        },
+        {
+          "url": "https://www.j-vgi.co.jp/en/news/prodrone260624",
+          "disposition": "Opened investor confirms acquisition through JIC Venture Growth Fund2."
+        },
+        {
+          "url": "https://www.prodrone.com/news/10423",
+          "disposition": "Opened Japanese original completed DBJ share allotment, not bank loan."
+        },
+        {
+          "url": "https://www.prodrone.com/news/10442",
+          "disposition": "Opened Japanese original decided JICN share allotment, approval not cash."
+        },
+        {
+          "url": "https://www.jicn.co.jp/3264/",
+          "disposition": "Opened original investor specifies JPY300m support decision; exact issuer."
+        },
+        {
+          "url": "https://www.jicn.co.jp/wp-content/uploads/2026/08/JICN_newsrelease_260830.pdf",
+          "disposition": "Opened original PDF support decision prose, not inferred disbursement."
+        },
+        {
+          "url": "https://www.prodrone.com/news/10453",
+          "disposition": "Opened Japanese original implemented Persol allotment."
+        },
+        {
+          "url": "https://www.prodrone.com/news/10461",
+          "disposition": "Opened Japanese original implemented Howa allotment; factory/approval not additional cash."
+        },
+        {
+          "url": "https://www.prodrone.com/news/",
+          "disposition": "Opened latest issuer archive throughOctober2026; programme selections not quantified financing without award evidence."
+        }
+      ],
+      "evidence_note": "Seven issuer-confirmed dated allotment/financing disclosures, including historical Series A and announced JICN approval.",
+      "hold_note": "Earlier/intermediate shareholder rounds and possible common wider2026 fundraising affiliation not established. Individual contributions, absent amounts and lead roles remain unknown; do not sum disclosures into total funding."
+    },
+    {
+      "id": "05815070-a407-4c43-9f6b-8771b52b8555",
+      "slug": "project35",
+      "name": "Project35",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Project35\" \"T3\" acquisition investment funding",
+        "\"Project 35\" funding investment \"Cancellation\"",
+        "\"Project35\" funding investors 2025 2026",
+        "\"Project35\" investors venture seed fundraising"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://project35ltd.com/",
+          "disposition": "Opened original current exact Israeli UAS business identity."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1787518/000118518526004529/dfnspps1a1100126.htm",
+          "disposition": "Opened original Oct2 filing; found July6 purchase and August28 cancellation/return of seller consideration and full release of funding obligation. Neither secondary seller note nor cancelled USD2.5m obligation imported."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/project35",
+          "disposition": "Indexed stale acquisition candidate checked against later original cancellation; not used as fact."
+        }
+      ],
+      "evidence_note": "Bounded review reconciled current exact issuer and stale acquisition report with later original SEC cancellation; no supported live own-company round found.",
+      "hold_note": "Undisclosed private financings remain unknown. USD1.25m seller note and parent shares were acquisition consideration returned; USD2.5m operating funding obligation cancelled, not cash received."
+    },
+    {
+      "id": "36ed024a-99bb-4f94-8059-392fac0184f5",
+      "slug": "protego",
+      "name": "Protego",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Protego\" \"High Lander\" investor",
+        "\"Protego\" ventures funding investor Lital Leshem fund",
+        "site:protego.vc about fund capital 125 million",
+        "site:protego.vc portfolio High Lander"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.protego.vc/about-us",
+          "disposition": "Opened original: exact Protego Ventures is Israel-based USD125m defense venture fund."
+        },
+        {
+          "url": "https://www.protego.vc/team",
+          "disposition": "Opened original exact founders and investor role."
+        },
+        {
+          "url": "https://www.protego.vc/portfolio",
+          "disposition": "Indexed original portfolio lists High Lander; investment made by fund not funding of this company identity."
+        },
+        {
+          "url": "https://www.apm.law/representing-protego-ventures-in-high-landers-15m-funding-round/",
+          "disposition": "Indexed transaction counsel confirms Protego as High Lander investor; direct fetch403. This concerns High Lander issuer, not Protego issuer fundraising."
+        }
+      ],
+      "evidence_note": "Bounded identity review establishes Protego Ventures as investor/fund rather than operating drone issuer; fund commitments and investments made are outside own-company round scope.",
+      "hold_note": "USD125m FundI/AUM is not a venture equity round into the management company. High Lander financing belongs to High Lander; no company-role or identity classification mutation performed."
+    },
+    {
+      "id": "b7910e20-e16f-424c-9222-96f891294ff7",
+      "slug": "protolabs",
+      "name": "Protolabs",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Original issuer IPO and latest2026filing checked; supported IPO imported.",
+      "hold_note": "Earlier2008PIC/NorthBridge investment and November2012primary portion require exact subscription/proceeds verification. Equity-plan cash and secondary sales not treated as rounds.",
+      "searches_checked": [
+        "Protolabs IPO 2012 shares proceeds investors funding",
+        "site:investors.protolabs.com \"2012\" \"3.5\" \"32.50\"",
+        "site:investors.protolabs.com \"2026\" \"credit\" financing",
+        "\"Protolabs\" \"2012\" \"100,000\" \"$\" offering priced",
+        "site:investors.protolabs.com \"November\" \"2012\" \"pricing\"",
+        "site:investors.protolabs.com \"2012\" \"3.60\" \"100,000\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1443669/000119312512443979/R23.htm",
+          "disposition": "Opened original SEC IPO financial note; gross/net and overallotment distinction verified."
+        },
+        {
+          "url": "https://investors.protolabs.com/node/13701/xbrl-viewer",
+          "disposition": "Opened latest Q32026 issuer10Q; cashflow financing is equity-plan receipts, withholding/buybacks and finance-lease repayments, not a new fundraising round."
+        },
+        {
+          "url": "https://protolabs.gcs-web.com/news-releases/news-release-details/proto-labs-announces-public-offering-common-stock/",
+          "disposition": "Indexed original Nov2012 candidate separates100k primary shares from3.5m secondary; exact final primary cash not verified, held."
+        }
+      ]
+    },
+    {
+      "id": "51bc6763-f4ea-491d-8783-fc611cd441eb",
+      "slug": "protora",
+      "name": "Protora",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "C Speed to Protora issuer continuity and NewSpring backing established; one generic relationship.",
+      "hold_note": "Acquisition consideration/primary cash not disclosed; JV capital unknown. Aggregator no-known-funding does not establish zero.",
+      "searches_checked": [
+        "\"Protora\" funding company counter drone",
+        "\"Protora\" \"C Speed\" \"investment\"",
+        "site:newspringcapital.com \"C Speed\" investment",
+        "\"Protora\" financing investment 2026 radar"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/c-speed-becomes-protora-launches-radar-product-lines-powered-by-lightwave-302871926.html",
+          "disposition": "Opened issuer rebrand and backing confirmation; exact C Speed continuity verified."
+        },
+        {
+          "url": "https://newspringcapital.com/news/2024/newspring-announces-acquisition-of-radar-systems-solutions-provider-c-speed",
+          "disposition": "Opened investor acquisition announcement; no primary funding amount disclosed."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/protora-and-demco-holdings-form-joint-venture-to-bring-radar-and-sensing-capability-to-the-kingdom-of-saudi-arabia-302874629.html",
+          "disposition": "Indexed issuer JV announcement; new JV is not issuer financing; amount unknown."
+        }
+      ]
+    },
+    {
+      "id": "1eaa8940-ccfc-4ddf-82c4-62ae411058bc",
+      "slug": "psi-services",
+      "name": "PSI Services",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "PSI Services LLC testing issuer matched to FAA context;2015 and2019equity support verified,2024sale/2025capex separated.",
+      "hold_note": "OlderABRY2006terms, debt holdings in thirdpartySECfilings and2024primary/secondary split remain unresolved. Do not transfer Talogy financing after separation.",
+      "searches_checked": [
+        "\"PSI Services\" investment ownership Gryphon Bridgepoint financing",
+        "\"PSI Services\" \"investment\" \"Waud\"",
+        "site:waudcapital.com \"PSI\" \"2019\"",
+        "site:waudcapital.com \"PSI Services Receives\"",
+        "site:psiexams.com \"Waud\" \"2019\"",
+        "\"PSI\" \"2019\" \"investment\" site:waudcapital.com",
+        "\"PSI Services\" \"ETS\" \"2024\" site:ets.org",
+        "PSI Services Waud capital 2019 significant equity investment official",
+        "\"PSI Services\" \"ETS\" acquisition January 25 2024 official",
+        "\"PSI Services\" \"2019\" \"Waud\" site:businesswire.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.marketscreener.com/news/latest/PSI-Services-LLC-Announces-Growth-Equity-Investment-and-Partnership-with-Waud-Capital-Partners-19953719/",
+          "disposition": "Opened full issuer BusinessWire syndication; significant equity investment confirmed, unknown cash terms."
+        },
+        {
+          "url": "https://www.pressreleasepoint.com/psi-services-receives-new-investment-and-continues-partnership-waud-capital?lang=es",
+          "disposition": "Indexed original issuer-authored full release checked; direct timedout; explicit completed equity and lead verified."
+        },
+        {
+          "url": "https://www.waudcapital.com/en/portfolio/psi/",
+          "disposition": "Opened official investor page but only menu rendered; no amount inferred."
+        },
+        {
+          "url": "https://www.prnewswire.co.uk/news-releases/lifelong-learner-holdings-announces-the-sale-of-psi-services-302046396.html",
+          "disposition": "Opened seller Jan2024 acquisition release; share purchase not primary capital."
+        },
+        {
+          "url": "https://www.psiexams.com/en-gb/about-psi/news-press/psi-enhances-test-center-network-with-key-investments/",
+          "disposition": "Opened issuer2025 investment-program announcement; operating capex not a disclosed new financing round."
+        }
+      ]
+    },
+    {
+      "id": "31f0386a-fe72-4875-8533-ef8f22a464d7",
+      "slug": "pt-esystem-solutions",
+      "name": "PT ESystem Solutions",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Leonardo primary regulated release establishes PT Esystem Solutions Indonesia procurement role.",
+      "hold_note": "Sparse identity: same-name energy contractor continuity unproven, private funding/ownership unknown. Procurement and LOI not investment.",
+      "searches_checked": [
+        "\"PT ESystem Solutions\" investment funding Leonardo",
+        "site:leonardo.com \"ESystem\" \"2026\"",
+        "\"PT ESystem Solutions\" modal investasi pendanaan",
+        "\"PT ESystem Solutions\" investors funding equity"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.emarketstorage.it/sites/default/files/comunicati/2026-07/20260721_187061.pdf",
+          "disposition": "Opened Leonardo regulated original procurement contract release, exact Indonesian partner matched; no own-issuer fundraising."
+        },
+        {
+          "url": "https://ptesystemsolutions.com/about-us/",
+          "disposition": "Opened same-name contractor site, describes energy/mining not defence; legal continuity to Leonardo partner not assumed."
+        },
+        {
+          "url": "https://companieshouse.id/esystem-solutions-indonesia",
+          "disposition": "Indexed registry candidate for1558537; no paid report or hidden ownership inferred."
+        }
+      ]
+    },
+    {
+      "id": "22ad3da0-ed2f-40ad-998f-4c5bb66d6015",
+      "slug": "pt-pal",
+      "name": "PT PAL",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Exact state enterprise and two share-capital injections verified using government and original issuer indexed text.",
+      "hold_note": "Later stateholding funding allocation, any2023PMN share versus broaderLen pool and historical debt unresolved. Currentprocurement and priorPMNutilization not newcash.",
+      "searches_checked": [
+        "\"PT PAL\" \"penyertaan modal\" 2021 2025 2026",
+        "\"PT PAL\" \"PMN\" \"2026\" \"2025\"",
+        "site:pal.co.id \"PMN\" \"2023\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://peraturan.bpk.go.id/Details/175387/pp-no-84-tahun-2021",
+          "disposition": "Opened government exact share-capital amount/date/issuer."
+        },
+        {
+          "url": "https://www.pal.co.id/menkeu-serahkan-pmn-pal-siap-eksekusi-whole-local-production-kapal-selam/",
+          "disposition": "Indexed original issuer fulltext checked:2015 and2021 funds received; direct403."
+        },
+        {
+          "url": "https://www.pal.co.id/laksanakan-supervisi-laporan-realisasi-pmn-pt-pal-indonesia-terima-kunjungan-bakn-dpr-ri/",
+          "disposition": "Indexed original issuer fulltext checked with July2023 date; direct403."
+        },
+        {
+          "url": "https://monitorindonesia.com/hukum/read/2026/03/622248/proyek-kapal-selam-tersendat-dana-pmn-rp-340-m-justru-mengendap-di-bank",
+          "disposition": "Secondary2026 audit candidate checked in search, not imported: utilization of prior2021PMN not a new financing event."
+        }
+      ]
+    },
+    {
+      "id": "04d2be38-207e-4f2c-abac-bcfbe245869a",
+      "slug": "pterodynamics",
+      "name": "PteroDynamics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Earlier seed and lateststrategic investor capital supported; original issuer archive/transaction sources checked.",
+      "hold_note": "Pre2023Kairos money/date unknown;2022/2023Colorado grants held;2024TACFI is contract, private match and2025Navy procurement not inferred as equity or grants. No aggregate added.",
+      "searches_checked": [
+        "PteroDynamics funding Series A 2023 2025 2026 investors",
+        "site:pterodynamics.com \"2026\" \"investment\"",
+        "site:pterodynamics.com \"7.5\" \"2023\"",
+        "site:pterodynamics.com \"Kairos\"",
+        "site:oedit.colorado.gov \"PteroDynamics\" \"$250,000\"",
+        "\"$8.5 million\" \"PteroDynamics\" 2022 Colorado",
+        "\"PteroDynamics\" \"TACFI\" \"$1.9\" \"contract\"",
+        "site:oedit.colorado.gov \"PteroDynamics\" \"2023\" \"250,000\"",
+        "site:oedit.colorado.gov \"85-million\" \"PteroDynamics\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://pterodynamics.com/press/",
+          "disposition": "Opened issuer press archive through Nov9,2026, earlier/latest financing and contract candidates checked."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20230228005102/en/PteroDynamics-Raises-$7.5-Million-Seed-Round-to-Expand-Transwing-Aircraft-Platform",
+          "disposition": "Opened original issuer seed release; all three co-leads verified."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/one-bow-river-makes-strategic-growth-investment-in-vtol-uas-innovator-pterodynamics-302778218.html",
+          "disposition": "Opened investor release; capital injection and exact fund confirmed, amount/security unknown."
+        },
+        {
+          "url": "https://www.einpresswire.com/article/728619389/pterodynamics-wins-1-9-million-tactical-funding-increase-to-expand-work-on-existing-u-s-air-force-sbir-contract",
+          "disposition": "Opened issuer2024TACFI release:1.9m contract award, existing1.25mSBIR and required1.9mprivate match. Contract not grant; match closing/security not proven, held."
+        },
+        {
+          "url": "https://oedit.nxt-dev.colorado.gov/press-release/85-million-advanced-industries-awards-accelerate-38-colorado-startups-and-researchers",
+          "disposition": "Indexed government2022grant250k candidate; direct502; held for full original-page verification."
+        },
+        {
+          "url": "https://oedit.colorado.gov/press-release/advanced-industries-grants-accelerate-43-colorado-startups-and-researchers-across-the",
+          "disposition": "Issuerlinked2023grant candidate direct403; allocation not verified, held."
+        },
+        {
+          "url": "https://oedit.colorado.gov/sites/coedit/files/documents/colorado_office_of_economic_development_annual_report_fiscal_year_2021-2022.pdf",
+          "disposition": "Indexed government conditional job-growth tax-credit2,545,891 candidate, not cash grant and not imported."
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [],
+    "root_verification": {
+      "search_queries_executed": 6,
+      "searches_checked": [
+        "Liebherr 2026 financing bonds loan issuer Liebherr International Liebherr Aerospace funding",
+        "Liebherr 2025 2026 financing EIB loan Liebherr Aerospace Toulouse Lindenberg",
+        "site:liebherr.com Aerospace grant funding 2025 2026 Toulouse Lindenberg",
+        "site:eib.org Liebherr loan financing",
+        "Procore 2026 700 million bridge facility BofA J.P. Morgan acquisition financing",
+        "Powerus 2026 April June KCGI 50 million 30 million Aureus financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.liebherr.com/en-gb/aerospace-and-transportation-systems/about-us/about-us/about-us-7172797",
+          "disposition": "Original governance identifies French divisional control company distinct from operating legal subsidiaries. Generic cohort brand does not resolve held legal-recipient allocation."
+        },
+        {
+          "url": "https://www.liebherr.com/en-ie/group/annual-reports/annual-report-2025/product-segments/aerospace-and-transportation-systems-8945352",
+          "disposition": "Original opened annual segment context; no own financing allocation established from extracted content. Segment revenue not fundraising."
+        },
+        {
+          "url": "https://www.liebherr.com/en-us/n/liebherr-aerospace-lindenberg-gmbh-leading-innovation-in-lufo-vii-projects-218944-3782185",
+          "disposition": "Original June2/2026 LuFo VII consortium announcement identifies Lindenberg as SONRISA/NewFlAir leader, BMWE-funded projects. Own award amounts/payment not disclosed; no budget attributed to generic brand."
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/04/09/3270971/0/en/Aureus-Greenway-Holdings-Announces-50-Million-Strategic-Investment-in-Powerus-from-KCGI.html",
+          "disposition": "Root original transaction-party release identifies Autonomous Power Corporation dba Powerus as operating merger target with closed KCGI financing, distinct AGH predecessor."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1611052/000119312526323800/d119085d8k.htm",
+          "disposition": "Root original July27 Procore commitment up to700m subject conditions. LatestQ3 indexed primary candidate says bridge terminated undrawn; laneC asked to reconcile to primary latest filing before import."
+        },
+        {
+          "url": "https://ir.power.us/sec-filings/all-sec-filings/content/0001493152-26-047462/ex99-1.htm",
+          "disposition": "Root original H1 notes12–14 checked:5m actual cash vs5,555,555 OID face; March20/23 AGH20m dates differ;50,000,582 received April3;30m pre-funded warrant accounting liability vs capital instrument; initial placement share/receivable inconsistency retained."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2009312/000149315226041764/form424b3.htm",
+          "disposition": "Root original merger prospectus confirms APC survives as subsidiary, original economic issuer Powerus, KCGI named fund vehicles; participant evidence moved to prospectus rather than H1 unnamed manager funds."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/889132/000119312526188766/R50.htm",
+          "disposition": "Root original subsequent-event note explicitly operating POSCO subsidiary issued400m/300m Jan16; separateFutureM/parentfinancingexcluded."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/precisionhawk-secures-75-million-to-foster-global-adoption-of-commercial-drone-technology-300587057.html",
+          "disposition": "Root original full issuer financing section confirms ThirdPoint lead and ten exact named participants; historical footer investors not added."
+        },
+        {
+          "url": "https://www.pressreleasepoint.com/psi-services-receives-new-investment-and-continues-partnership-waud-capital?lang=es",
+          "disposition": "Root direct fetch timeout; laneD indexedoriginal full release was checked. Primary/secondary undisclosed; PSI events conservatively investment_disclosure with noamount rather than quantifiedcompanyproceeds."
+        },
+        {
+          "url": "https://www.procore.com/press/procore-announces-closing-of-initial-public-offering-and-full-exercise-of-underwriters-option-to-purchase-additional-shares",
+          "disposition": "Root original completed10,410,000shares×USD67 including940,000option read; gross697.47m calculation explicit, serviceproviders notinvestors."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1611052/000119312526338452/d169822d8k.htm",
+          "disposition": "Root original August6 completion950mconvertibleprincipal includes125moption; not750/825/950 separateevents."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1611052/000161105226000003/pcor-20260930.htm",
+          "disposition": "Root latest primaryQ3 located950mprincipal/927.3mnet/22.7mcosts andexplicit700mbridge undrawn/terminated; no facilityproceeds imported."
+        }
+      ],
+      "additional_published_identity_followup": "liebherr-aerospace",
+      "followup_disposition": "source_review_partial; no new imported event; held legal-issuer allocation preserved.",
+      "company_database_identity_contexts_checked": 24,
+      "existing_canonical_events_inspected": 0,
+      "additional_published_followup_identity_context": {
+        "slug": "liebherr-aerospace",
+        "legal_name": null,
+        "hq_country": "Germany",
+        "disposition": "Generic German brand entry without legal_name; no authorized factual basis to move French subsidiary grants or group segment budgets."
+      }
+    },
+    "pre_import_root_adjustments": [
+      "KCGI fund participant sources moved to prospectus naming exact vehicles.",
+      "Wiggin counsel source classified third_party_report.",
+      "PSI primary/secondary allocation unknown: two events classified investment_disclosure; amount remains null."
+    ],
+    "notes": [
+      "Operating POSCO steel issuer distinguished from post-demerger Holdings, International, FutureM, Argentina and joint-venture entities. Two2026note tranches400m/300m are not duplicated as700m aggregate. Earlier issuance history remains partial.",
+      "Poseidon confirmed11mseed and60mA; preseed1.4m candidate still held. HanwhaUSA sourcelegalidentity and KCGI exactfundvehicles retained. Potensic Botan legalcontinuity unresolved, POWERTECHparentM&A notcompanycash, POWERUPrewards campaigns notsecurities orKickstarterinvestor.",
+      "Powerus APC economicissuer confirmed separate from AGH predecessor. Actual5mcash note+warrant package distinct5,555,555OIDface,20mbridge refinances oldnote without deductingcashtransaction orduplicateaggregate. KCGI exact50,000,582 receivedApr3;30mUMACprefundedwarrants notaccountingfairvalue, issuance/cashdate precision qualified. Initial6.07m placement conflicts withlaterH1shares/receivables andremainsheld. AGHPIPE/golfIPO/shelf/resales/mergerconsideration excluded.",
+      "PraetorianAustralian andPrevailUK issuers matched originalproducts/transactioncounterparties despite countrymetadatainconsistencies; no metadatachanged. PrattCanadian/Polish andRTXparentfunding excluded; PrecisionApproachprojectallocations held.",
+      "PrecisionHawk originaldatedreleases used because currentdomain redirects togambling. Fourdistincthistoricalfinancings; explicit2018ThirdPointlead, historicalfooter investors notassigned, unnamedUSAAsubsidiary notparentidentity. Primordial2022/2023seedoverlap and2026SEC18.5mheadlineconflict held ratherthanduplicate18mSeriesA.",
+      "Procore primaryIPO gross697.47m disclosedshares×price calculation, fulloptiononce; August2026closed950mconvertibleprincipal vs927.3mnet,125moptionnotextraevent. LatestQ3confirms700mbridge undrawn/terminated, excluded. EarlierF/Iextension histories remainpartial.",
+      "JapaneseProdrone manufacturer separated UkrainianPROdronesretailer.2017JPY1bn andfive2026implementedallotmentdisclosures plusannouncedJICNJPY300mapproval; unknownwiderprogramme affiliation, amountsandchequesnotinvented. Manager/fundvehicle identitiesdistinct; JICNapprovalnotdisbursement.",
+      "SOFIDjointprojectsupport notallocatedtoProOptica. Project35cancelled2.5mfundingobligation andreturnedacquisitionconsideration excluded. Protegoisfund/investor,125mFundInotmanagementcompanyround.",
+      "ProtolabsIPOroundedgross79.1mapproximate,netnotadded. PSI2015/2019unknownprimary-secondarysplit preservedasinvestment_disclosure withnullamount, notquantifiedcompanycash. PT PALstatecapitalIDR1.5tn/1.28tn separateyearsinjections,notgrantsorprocurement. Pteroallthree2023coleads and2026exactONEBowRiverfund;TACFIprocurement/private-matchnotinferredgrants. Protora/C SpeedcontinuitysupportsNewSpringHoldingsFederalgenericbacking,notacquisitioncash.",
+      "AdditionalpublishedLiebherrfollowup retainslegalissuerallocationhold:genericGermanbrand withnulllegal_name cannotreceiveFrenchsubsidiarygrants automatically;2026LuFoLindenbergconsortiumleadnotice doesnotdiscloseownawardallocation."
+    ]
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting amount rejection and participant-source FK rejection with current manifest.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T20:02:38.903Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 35,
+      "mismatched_facts": 0,
+      "participant_matches": 74,
+      "source_matches": 55,
+      "relationship_matches": 1,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 0
+    }
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Existing geography/classification/publication gates retained. Wider-cohort event rows outside European map; profiles and generic backing publish under existing directory gates."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false,
+  "publication": {
+    "status": "pending"
+  }
+}
