@@ -1,0 +1,1030 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T03:49:45.838Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-fifty-second.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 4,
+    "new_or_retained_partial": 20,
+    "new_approved_events": 28,
+    "new_round_participations": 20,
+    "new_source_rows": 35,
+    "new_generic_portfolio_relationships": 9,
+    "new_companies_with_events": 13,
+    "new_investor_profiles": 14,
+    "search_queries_logged": 88,
+    "root_additional_search_queries": 3,
+    "source_ledger_entries": 116,
+    "database_identities_inspected": 24,
+    "existing_target_events_inspected": 0,
+    "existing_alias_events_inspected": 2,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 28,
+    "mismatched_facts": 0,
+    "participant_matches": 20,
+    "source_matches": 35,
+    "relationship_matches": 9,
+    "missing_link_sources": 0,
+    "contribution_fields_audited": true,
+    "db_total_events": 3155,
+    "db_approved_events": 3142,
+    "db_approved_round_participations": 4128,
+    "db_investor_profiles": 2503,
+    "db_source_reconciliation_companies": 843,
+    "queue_dispositions_applied": 24,
+    "new_profile_exact_name_duplicates": 0,
+    "current_manifest_publication_verified": false
+  },
+  "production_before": {
+    "events": 3127,
+    "approved": 3114,
+    "links": 4108,
+    "sources": 4365,
+    "profiles": 2489,
+    "covered": 830,
+    "relationships": 358,
+    "preserved_profiles_hash": "f260db8b12fd247dc0e77acc77b39f0a"
+  },
+  "production_after": {
+    "events": 3155,
+    "approved": 3142,
+    "links": 4128,
+    "sources": 4400,
+    "profiles": 2503,
+    "covered": 843,
+    "relationships": 367,
+    "preserved_profiles_hash": "f260db8b12fd247dc0e77acc77b39f0a"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1026,
+    "source_review_partial": 523,
+    "queued": 1015
+  },
+  "per_company": [
+    {
+      "id": "6b717768-c191-439f-8913-03be66b75a21",
+      "slug": "kaizen-laboratories",
+      "name": "Kaizen Laboratories",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Exact Kaizen Labs/Kaizen Laboratories Inc New York govtech and federal software issuer matched through kaizenlabs.co contact and original distributed financing release. Two public rounds verified.",
+      "hold_note": "USD35m cumulative versus USD21m plus11m rounds leaves unreconciled residual; conflicting secondary 2026USD50m SeriesA claim is not imported. Exact historical seed date, other rounds/security and legal fund vehicles undisclosed. DoD15mOTA,43m/49m contracts and10bn government modernization programme are procurement/programme totals, not primary financing. Unknown private details are not zero.",
+      "searches_checked": [
+        "\"Kaizen Laboratories\" funding investors defense marketplace",
+        "\"Kaizen\" \"kaizenlabs.co\" \"funding\" investors",
+        "site:kaizenlabs.co \"seed\" \"11\"",
+        "site:kaizenlabs.co \"Accel\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://rss.globenewswire.com/news-release/2025/10/30/3177523/0/en/kaizen-raises-21-million-to-re-build-government-s-digital-front-door.html",
+          "disposition": "opened_original_issuer_release"
+        },
+        {
+          "url": "https://www.kaizenlabs.co/",
+          "disposition": "opened_original_empty_render"
+        },
+        {
+          "url": "https://www.carahsoft.com/kaizen-laboratories",
+          "disposition": "search_identity_candidate"
+        },
+        {
+          "url": "https://www.cbinsights.com/company/kaizen-labs/financials",
+          "disposition": "secondary_conflicting_totals_not_imported"
+        },
+        {
+          "url": "https://app.dealroom.co/companies/kaizen_9",
+          "disposition": "secondary_conflicting_2026round_held"
+        },
+        {
+          "url": "https://www.defenseone.com/technology/2026/08/pentagon-counterdrone-task-force-has-new-ai-powered-marketplace/415216/",
+          "disposition": "search_procurement_not_funding"
+        }
+      ]
+    },
+    {
+      "id": "50965076-d6f8-45e2-a4c8-6cc6eda17758",
+      "slug": "kalray",
+      "name": "Kalray",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Original Euronext IPO, Kalray2020 pricing and July2026 received OpenChip warrant exercise verified. Share counts/prices yield primary proceeds, with settlement status retained.",
+      "hold_note": "Full2008–2026 financing history remains incomplete: earlier VC rounds/Definvest allocation, later placements, OCEANE and IRIS actual equity-line draw history require reconciliation.2026IRIS termination is not an incoming round. OpenChip amount/currency unknown; commercial partnership co-development budget not automatically equity. Settlement2020 not independently verified. Company remains outside landscape publication scope.",
+      "searches_checked": [
+        "Kalray financing capital increase2026 2025 2018IPO official",
+        "site:kalrayinc.com \"2026\" \"capital\" \"million\"",
+        "Kalray2026 Openchip capital increase3million July2026",
+        "site:kalrayinc.com2026 \"equity line\" \"€\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.euronext.com/sites/default/files/pr_kalray_ipo_eng_12062018.pdf",
+          "disposition": "opened_original_exchange"
+        },
+        {
+          "url": "https://www.kalrayinc.com/investors-information/financial-press-releases/?CLIENT=ACTUS-0-462&ID=ACTUS-0-66209",
+          "disposition": "opened_original_issuer_full_terms"
+        },
+        {
+          "url": "https://www.kalrayinc.com/news/openchip-software-and-technologies-becomes-a-shareholder-of-kalray/",
+          "disposition": "opened_original_issuer_cash_receipt"
+        },
+        {
+          "url": "https://www.kalrayinc.com/investors-information/financial-press-releases/",
+          "disposition": "original_index_checked_current2026"
+        },
+        {
+          "url": "https://live.euronext.com/en/products/equities/company-news/2026-02-10-termination-equity-line",
+          "disposition": "robot_wall_original_not_financing"
+        },
+        {
+          "url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/02/10/cpr05_actus_96521_FR0010722819.pdf",
+          "disposition": "search_original_termination_candidate"
+        }
+      ]
+    },
+    {
+      "id": "c0144798-cfae-487a-8d86-e44c4055d9bb",
+      "slug": "kalyani-strategic-systems",
+      "name": "Kalyani Strategic Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Exact Indian KSSL wholly owned by Bharat Forge confirmed on company site and original NSE16October2026 invested-rights filing.",
+      "hold_note": "October30completion and additionalinvestment claims found only in secondary full-text mirrors, original completion notice not located. November5up-toINR2.905bn approval remains proposed, not paid. Earlier rights rounds and paid-up capital are not reconstructed from aggregate balances. AEL onward investment and Bharat Forge QIP not misassigned to KSSL.",
+      "searches_checked": [
+        "\"Kalyani Strategic Systems\" investment funding capital BharatForge",
+        "site:bharatforge.com \"2026\" \"2,400\" \"KSSL\"",
+        "site:bharatforge.com \"October30,2026\" Kalyani",
+        "BharatForge October16 2026 investment KSSL2400millionpdf",
+        "site:nsearchives.nseindia.com/corporate \"30102026\" \"KSSL\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://nsearchives.nseindia.com/corporate/ANILSHINDE_16102026170442_SEIntimation_further_investment_KSSL_AEL.pdf",
+          "disposition": "opened_original_parent_exchange_filing"
+        },
+        {
+          "url": "https://www.kssl.in/company-profile",
+          "disposition": "opened_original_identity"
+        },
+        {
+          "url": "https://nsearchives.nseindia.com/corporate/ANILSHINDE_05112026131420_SEIntimationOutcomeofBM_sd.pdf",
+          "disposition": "search_proposed_investment_not_closed"
+        },
+        {
+          "url": "https://www.bazaarwatch.com/announcement/223409/bharat-forge-ltd-update-on-investment-in-wholly-owned-subsidiary",
+          "disposition": "original_mirror_timeout"
+        },
+        {
+          "url": "https://www.bazaarwatch.com/announcement/261774/bharat-forge-ltd-update-on-investment-in-wholly-owned-subsidiary",
+          "disposition": "secondary_completion_candidate"
+        }
+      ]
+    },
+    {
+      "id": "08c4f7ec-3379-45e7-8259-a28fce13bfc0",
+      "slug": "kamai",
+      "name": "Kamai",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Cohort origin original explicitly identifies Israeli construction-blueprint AI Kamai in INNOFENSE workshop; original Kamai account acknowledges IIA support.",
+      "hold_note": "IIA grant amount/date and November2025 preseed claims remain aggregator/commenter claims, not verified award/round facts. Original issuer thanks IIA without award terms. kamai.ai employment platform is a different identity; accelerator participation and generic programme grant ceilings not company proceeds. Private history unknown, not zero.",
+      "searches_checked": [
+        "\"Kamai\" i-hls137950 funding",
+        "\"Kamai\" \"137950\"",
+        "Kamai iHLS drone startup137950",
+        "\"Kamai\" \"137950\" i-hls",
+        "site:kamai.ai investors funding",
+        "\"Kamai\" \"Israel Innovation Authority\" grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://i-hls.com/archives/137950",
+          "disposition": "opened_original_exact_cohort_identity"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/kamai-io_constructiontech-innovation-ai-activity-7277015404806369280-Zux6",
+          "disposition": "opened_original_support_acknowledgment_only"
+        },
+        {
+          "url": "https://startupim.com/company/kamai",
+          "disposition": "secondary_grant_round_claim_held"
+        },
+        {
+          "url": "https://finder.startupnationcentral.org/company_page/kamai",
+          "disposition": "search_identity_and_prefunding_candidate"
+        },
+        {
+          "url": "https://kamai.ai/",
+          "disposition": "search_different_employment_issuer_excluded"
+        }
+      ]
+    },
+    {
+      "id": "c5b5077b-94c1-4fb1-b65f-0614c2b7a88f",
+      "slug": "kaman-aerospace",
+      "name": "Kaman Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Original Kaman SEC10K distinguishes Kaman Aerospace Corporation operating subsidiary from parent Kaman Corporation; issuer-distributed completed Arcline buyout checked.",
+      "hold_note": "Parent credit facilities,2026lender investment holdings and ArxisIPO are not assigned to Kaman Aerospace subsidiary.2024Arcline1.8bn enterprise value/shareholder cash is not company primary raise. Exact standalone subsidiary incoming finance remains undisclosed; ordinary UAV/customer contracts and India JV parent-support claims require recipient-specific evidence.",
+      "searches_checked": [
+        "\"Kaman Aerospace\" funding loan acquisition Arcline",
+        "site:kaman.com \"Kaman Aerospace\" \"funding\" \"2026\"",
+        "site:arcline.com Kaman completed April2024 acquisition"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/54381/000005438124000005/kamn-20231231.htm",
+          "disposition": "opened_original_legal_parent_subsidiary"
+        },
+        {
+          "url": "https://markets.financialcontent.com/am-news/article/bizwire-2024-4-19-arcline-completes-acquisition-of-kaman",
+          "disposition": "opened_issuer_distributed_completed_acquisition_not_primary"
+        },
+        {
+          "url": "https://www.kaman.com/arcline-completes-acquisition-of-kaman/",
+          "disposition": "failed_original_route"
+        },
+        {
+          "url": "https://arcline.com/kaman-to-be-acquired-by-arcline-for-1-8-billion/",
+          "disposition": "search_original_buyer_announcement"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1902649/000119312526338073/ck0001902649-20260630.htm",
+          "disposition": "search_parent_lender_holding_not_facilityprincipal"
+        }
+      ]
+    },
+    {
+      "id": "707acbe4-6f07-48fe-9460-96a7ba507b2b",
+      "slug": "kamaz",
+      "name": "KamAZ",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Original NRA rated-issue table reopened, exact PAO KAMAZ issuer, ISINs and placement-start/face-volume terms established for four2025/2026bond disclosures.",
+      "hold_note": "Full1969–2026 debt/equity/grant history incomplete. Bond face volume and placement-start dates are not independently verified paid net proceeds or completed placements.2026P20additional3.5bn and earlier2018/2024/2025issues require reconciliation before extending history; maturity date15Oct2026 is not newP13issuance. Interest subsidies/government support, capex and group debt balances not discrete incoming rounds. ACRA original routes502/timeouts; indexed agency values not independently promoted.",
+      "searches_checked": [
+        "site:kamaz.ru \"2025\" \"облигаций\" \"миллиард\"",
+        "site:kamaz.ru \"2026\" \"размещение\" \"облигаций\"",
+        "site:kamaz.ru \"2025\" \"облигаций\" \"5млрд\"",
+        "site:kamaz.ru \"облигаций\" \"2025\" \"разместил\"",
+        "site:kamaz.ru \"2026\" \"биржевых облигаций\"",
+        "КАМАЗ разместил облигации2025 2026 официальный"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.ra-national.ru/press_release/vypusk-birzhevyh-obligacij-pao-kamaz-bo-p15/43689/",
+          "disposition": "opened_original_rating_agency_issuer_data_table"
+        },
+        {
+          "url": "https://acra-ratings.ru/press-releases/6693/",
+          "disposition": "failed502_then_www_timeout"
+        },
+        {
+          "url": "https://acra-ratings.ru/press-releases/6354/",
+          "disposition": "failed502"
+        },
+        {
+          "url": "https://www.acra-ratings.ru/upload/iblock/595/mu7tqomtr6eewhxatd0nk59feavd6hbx/20251202-PAO-_KAMAZ_obligatsii_BO_P18_BO_P19_press_reliz_rus.pdf",
+          "disposition": "failed502_original_pdf"
+        },
+        {
+          "url": "https://bonds.finam.ru/issue/details0458F00004/default.asp",
+          "disposition": "secondary_extension_candidate_only"
+        },
+        {
+          "url": "https://www.kommersant.ru/doc/8534349",
+          "disposition": "secondary_completed_placement_claim_not_independentcashverification"
+        }
+      ]
+    },
+    {
+      "id": "90badf3f-5d5a-4f47-a44c-cb78007c54e6",
+      "slug": "kamov-design-bureau",
+      "name": "Kamov Design Bureau",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Kamov design bureau identity and Mil/Kamov successor-centre context corroborated by original Russian Helicopters indexed structure and official legal register. No exact standalone financing imported.",
+      "hold_note": "Historical Kamov versus merged National Helicopter Center legal continuity needs finance-level reconciliation. Secondary2021 RUB741.7m bank loan/RUB500m IDF loan and RUB602.5m guarantee concern successor centre; original funding releases not opened. Russian Helicopters parent and AAK Progress RUB40bn are different issuers. Academic proposed RUB50bn loan is not an executed transaction. Empty rows do not mean zero.",
+      "searches_checked": [
+        "Kamov design bureau financing shares loan Russian Helicopters 2026",
+        "Kamov кредит 2026 финансирование"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rhc.ru/en/structure/national-helicopter-center-mil-kamov",
+          "disposition": "original_index_checked_full_fetch_timeout"
+        },
+        {
+          "url": "https://eur-lex.europa.eu/eli/dec/2026/696/oj/eng",
+          "disposition": "official_identity_search_checked"
+        },
+        {
+          "url": "https://www.interfax-russia.ru/military/news_eng/360140",
+          "disposition": "secondary_specific_successor_financing_candidate_only"
+        },
+        {
+          "url": "https://www.interfax-russia.ru/military/news_eng/340588",
+          "disposition": "secondary_merger_share_exchange_not_primary_raise"
+        }
+      ]
+    },
+    {
+      "id": "05bc147c-21c8-4d29-bf2f-d90665ec0ce6",
+      "slug": "kanematsu",
+      "name": "Kanematsu",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Exact parent issuer and four bond issuances verified from original pricing and audited report; 2022 nominal amounts separated from later amortised balances.",
+      "hold_note": "Full historical equity/debt/grant history remains incomplete. February2025 bonds7/8 face principal needs original pricing; null amounts deliberately avoid treating5,958m/5,959m carrying values as proceeds.2024bank shareholder placement is secondary, not new issuer capital. 2026group borrowings, subsidiary borrowing and project subsidy allocations require exact issuance-level reconciliation.",
+      "searches_checked": [
+        "Kanematsu corporate bond issuance 2026 2025 sustainability bond",
+        "site:kanematsu.co.jp 2025 第7回 60億 社債",
+        "site:kanematsu.co.jp 2022 第5回 社債",
+        "site:kanematsu.co.jp 2025年2月 第７回 60億",
+        "site:kanematsu.co.jp 第７回 第８回 発行総額",
+        "Kanematsu 7th 8th bonds 2025 6 billion February 21"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kanematsu.co.jp/en/press/files/220225_Notice_Regarding_the_Fifth_and_Sixth_Issuance_of_Unsecured_Bonds.pdf",
+          "disposition": "opened_original_terms"
+        },
+        {
+          "url": "https://www.kanematsu.co.jp/press/ir/20220225_002821",
+          "disposition": "opened_original_Japanese_terms"
+        },
+        {
+          "url": "https://www.kanematsu.co.jp/en/securities_reports/SR_2025_4q",
+          "disposition": "opened_original_audited_issuer_table"
+        },
+        {
+          "url": "https://www.kanematsu.co.jp/en/press/release/20250106_release.html",
+          "disposition": "indexed_original_secondary_bank_shareholder_sale"
+        },
+        {
+          "url": "https://www.jcr.co.jp/en/ratinglist/corp/8020/release",
+          "disposition": "primary_rating_index_search_checked_not_amount_proof"
+        }
+      ]
+    },
+    {
+      "id": "1ebe9d32-a7fc-44c7-94a8-0d284947007d",
+      "slug": "kara-dag-technologies",
+      "name": "Kara Dag Technologies",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original investor portfolio establishes exact Kara Dag brand/domain and two investment vintages24Q2/25Q1. Root confirmed already recorded under kara-dag canonical alias. No duplicate events or investor relationship created.",
+      "hold_note": "Existing canonical events under kara-dag retain announcement dates2024-08-21 and2025; portfolio investment quarter is not automatically announcement/closing day. Private amounts remain unknown, not zero. Partnerships and product news do not establish another round; no forced company merge.",
+      "searches_checked": [
+        "Kara Dag Technologies funding Green Flag Ventures 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.greenflag.vc/portfolio/karadag",
+          "disposition": "opened_original_exact_domain_investment_quarters"
+        },
+        {
+          "url": "https://www.greenflag.vc/portfolio",
+          "disposition": "original_portfolio_search_checked"
+        },
+        {
+          "url": "https://inventure.com.ua/en/news/world/green-flag-ventures-invests-in-ukraines-startup-karadag-to-revolutionize-counter-drone-warfare",
+          "disposition": "secondary_discovery_only"
+        }
+      ]
+    },
+    {
+      "id": "582b7976-62d6-496a-b068-4be7bcfd3c10",
+      "slug": "karem-aircraft",
+      "name": "Karem Aircraft",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Hanwha original establishes USD25m investment belongs K4/Overair spin-off, not Karem parent. Official SBIR exact Karem Aircraft Inc identity and one2024award found.",
+      "hold_note": "Counsel shorthand calls2019USD25m Karem financing but investor original and issuer spin-off release identify separate Overair/K4 recipient; not assigned parent. SBIR2024USD179473 PhaseI requires original award instrument/date before treating as grant; defence research contracts are not inferred equity or grant. Other debt/history claims unverified; unknown private financing not zero.",
+      "searches_checked": [
+        "Karem Aircraft funding investment 2019 Hanwha 25 million",
+        "Karem Aircraft funding financing investors 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.hanwha.com/newsroom/news/press-releases/hanwha-systems-gearing-up-to-enter-air-taxi-market.do",
+          "disposition": "opened_investor_original_exact_spin_off_issuer"
+        },
+        {
+          "url": "https://www.fenwick.com/insights/experience/fenwick-represents-karem-aircraft-in-its-25-million-series-a-financing",
+          "disposition": "opened_counsel_shorthand_issuer_conflict"
+        },
+        {
+          "url": "https://evtol.news/news/press-release-karem-aircraft-launches-new-air-taxi-company",
+          "disposition": "issuer_origin_index_checked"
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1823801",
+          "disposition": "opened_official_exact_entity_award_instrument_unresolved"
+        },
+        {
+          "url": "https://prospeo.io/c/karem-aircraft-email-format",
+          "disposition": "unverified_never_funded_claim_excluded"
+        }
+      ]
+    },
+    {
+      "id": "d15ee96e-e2cd-47a6-bba9-05d090be344f",
+      "slug": "kavro-protection",
+      "name": "Kavro Protection",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Original MKU company and Morocco release expressly identify Kavro Protection as MKU product portfolio; parent association only.",
+      "hold_note": "No separate issuer-level financing verified after bounded brand/parent searches. MKU factory plans in Morocco do not disclose financing or standalone Kavro issuance. Parent contracts/capex and similarly named Kavro internet companies excluded. Private financing unknown, not zero; preserve cohort identity metadata.",
+      "searches_checked": [
+        "Kavro MKU brand protection funding investment 2026",
+        "Kavro Protection investment funding investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.mku.com/en-gb/news-event/mku-to-establish-electro-optics-and-armour-manufacturing-facility-in-morocco",
+          "disposition": "opened_original_brand_parent"
+        },
+        {
+          "url": "https://www.mku.com/en-uk/about-us",
+          "disposition": "opened_original_company_identity"
+        },
+        {
+          "url": "https://www.mku.com/en-uk/news-event/mku-unveils-aksion-thermal-core-doma-360-ultra",
+          "disposition": "original_product_launch_search_checked"
+        }
+      ]
+    },
+    {
+      "id": "2c7eac57-32a4-46a1-90b9-b3d54c58a417",
+      "slug": "kawasaki-heavy-industries",
+      "name": "Kawasaki Heavy Industries",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Exact issuer2026completed share offering and two convertible series verified from full issuer quarterly report, with original November report corroborating share settlement.",
+      "hold_note": "Full historical bonds/loans/grants not exhausted. Jan2024JPY10bn transition bond announcement was a planned February issuance and not independently reconciled to settlement. March2026sustainable-loan original repeatedly timed out, amount/contract not inferred.2026pricing PDF under maintenance and SGX offering circular403; full issuer Japanese release mirror supplied actual terms and completed payments. Net/cashflow aggregates, conversion adjustments, subsidiary capital and contracts not additional rounds.",
+      "searches_checked": [
+        "Kawasaki Heavy Industries bond issuance 2025 2026 40 billion",
+        "site:global.kawasaki.com 2026 new shares July31",
+        "Kawasaki July2026 37350000 issue price2608 offering"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://global.kawasaki.com/en/corp/ir/news/index.html",
+          "disposition": "opened_original_current_IR_index"
+        },
+        {
+          "url": "https://tdnet-pdf.kabutan.jp/20260807/140120260806511849.pdf",
+          "disposition": "opened_full_issuer_TDnet_report_mirror"
+        },
+        {
+          "url": "https://global.kawasaki.com/en/corp/ir/library/pdf/sta_261110-1e.pdf",
+          "disposition": "opened_original_current_interim"
+        },
+        {
+          "url": "https://global.kawasaki.com/news_260714-1e.pdf",
+          "disposition": "original_maintenance_notice"
+        },
+        {
+          "url": "https://links.sgx.com/FileOpen/Kawasaki%20Heavy%20Industries%20-%20Final%20Offering%20Circular.ashx?App=Prospectus&FileID=70661",
+          "disposition": "original403"
+        },
+        {
+          "url": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20260319_6873",
+          "disposition": "original_index_checked_repeat_timeout"
+        },
+        {
+          "url": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20240116_8209",
+          "disposition": "opened_original_planned_bond_not_closed"
+        }
+      ]
+    },
+    {
+      "id": "a859f6ad-430f-49f5-8325-9dedfcf3b515",
+      "slug": "kazan-helicopters",
+      "name": "Kazan Helicopters",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Exact Kazan Helicopters plant matched full bank-issued syndicated original; signed700mRUB facility verified. Current issuer annual-report archive checked.",
+      "hold_note": "Earlier250mRUB Rostec original timed out; historical BankMoscow550mRUB/15mEUR andBankStPetersburg100mUSD remain original-reconciliation holds. Parent Russian Helicopters finance, programme25bn lease/customer orders, capex, debt balances and guarantees are not new company proceeds. Latest2025 annual report ZIP not reviewed.",
+      "searches_checked": [
+        "Казанский вертолетный завод кредит заем финансирование 2025 2026",
+        "site:novikom.ru Казанскому вертолетному 700",
+        "Казанский вертолетный 700 млн Новикомбанк2021"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://bosfera.ru/press-release/novikombank-otkroet-kreditnuyu-liniyu-dlya-kazanskogo-vertoletnogo-zavoda",
+          "disposition": "opened_bank_issued_original_syndication"
+        },
+        {
+          "url": "https://rostec.ru/media/news/novikombank-profinansiroval-proizvodstvo-vertoletov-dlya-yakutii/",
+          "disposition": "original_timeout_hold"
+        },
+        {
+          "url": "https://www.e-disclosure.ru/portal/files.aspx?id=3919&type=2",
+          "disposition": "opened_issuer_annual_report_archive"
+        },
+        {
+          "url": "https://logistics.ru/9/12/i84_4729.htm",
+          "disposition": "secondary_candidate_not_imported"
+        }
+      ]
+    },
+    {
+      "id": "63f8652a-cb4a-4de8-8edf-6be987c6a4a5",
+      "slug": "kb-iskatel-moscow-aviation-institute-mai",
+      "name": "KB Iskatel, Moscow Aviation Institute (MAI)",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "MAI original explicitly identifies student design bureau SKB602 Iskatel under department602; bounded research unit identity established.",
+      "hold_note": "Not established as separately financed incorporated issuer. University budgets, departmental research spending, ministry trials and separately incorporated Specrobot production are not assigned as company capital. Financing remains unknown, not zero.",
+      "searches_checked": [
+        "КБ Искатель МАИ финансирование грант инвестиции",
+        "КБ Искатель МАИ грант финансирование",
+        "СКБ-602 грант инвесторы"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://institutes.mai.ru/space/nirs6/",
+          "disposition": "opened_university_original"
+        },
+        {
+          "url": "https://institutes.mai.ru/space/602/",
+          "disposition": "cohort_original_identity"
+        },
+        {
+          "url": "https://www.ato.ru/content/bespilotnyy-voron-poluchil-sistemu-reb",
+          "disposition": "secondary_production_issuer_distinction"
+        }
+      ]
+    },
+    {
+      "id": "9645022d-33cb-41a7-8902-9ed61b5ac5a6",
+      "slug": "kb-luch-part-of-vega-concern-rostec",
+      "name": "KB Luch, Rybinsk",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Exact Rybinsk bureau, not Ukrainian Luch. Current issuer site and original2008 annual report establish signed facilities176/223 and historicalVega membership.",
+      "hold_note": "January2008 contracts140/149 signed but RUB30m each-versus-aggregate not resolved. RUB19m proposed federal-budget equity and share-issue registration do not alone establish cash receipt. Lease totalpayments include interest/advances; not principal. Newer annual reports and full financing history remain unresolved.",
+      "searches_checked": [
+        "КБ Луч Рыбинск финансирование кредит облигации",
+        "КБ Луч кредит Рыбинск",
+        "КБ Луч Вега2026 инвестиции"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kb-lutch.ru/wp-content/uploads/2011/10/2008_GodOtchet.pdf",
+          "disposition": "opened_original_full_annual_report"
+        },
+        {
+          "url": "https://kb-lutch.ru/",
+          "disposition": "opened_current_original"
+        },
+        {
+          "url": "https://kb-lutch.ru/korporativnaya-informacziya",
+          "disposition": "opened_original_disclosure_page"
+        },
+        {
+          "url": "https://www.aviationunion.ru/about/members/",
+          "disposition": "original_industry_identity_search"
+        }
+      ]
+    },
+    {
+      "id": "e8c41fa8-c92b-41ce-a6d5-79bbbca8caa4",
+      "slug": "kb-vzlyot",
+      "name": "KB Vzlyot",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Cohort registry-origin and active AO NPK KB VZLET INN7735094054 candidate matched; old issuer domain inaccessible.",
+      "hold_note": "Exact historical continuity and financial originals remain unresolved. Secondary public-support listings describe consultation/information services, not cash financing. General government Vzlet programme is a namesake, not company award. No zero-funding assertion or geography/classification change.",
+      "searches_checked": [
+        "КБ Взлет кредит инвестиции",
+        "КБ Взлет инвестиции финансирование официальный",
+        "КБ Взлет финансирование2026",
+        "КБ Взлет kbvzlet.com инвестиции"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kbvzlet.com",
+          "disposition": "issuer_domain_inaccessible"
+        },
+        {
+          "url": "https://www.rusprofile.ru/id/1894544",
+          "disposition": "cohort_registry_candidate"
+        },
+        {
+          "url": "https://www.tbank.ru/business/contractor/legal/1027739098090/",
+          "disposition": "registry_search_identity_then_fetch_timeout"
+        },
+        {
+          "url": "https://injust.pro/proverka/7735094054",
+          "disposition": "secondary_support_candidate_not_cash_award"
+        }
+      ]
+    },
+    {
+      "id": "b1056ee9-bbda-4d84-831e-681670b05c52",
+      "slug": "kbm",
+      "name": "KBM",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Origin article explicitly names KBM Kolomna as Arena-M maker, distinguishing Moscow and other KBM namesakes. Official government indexed sources identify AO NPK KBM INN5022039177 Kolomna.",
+      "hold_note": "Own site502 and government page403 limit full original financial/ownership verification. Parent HighPrecision/Rostec funding, defence procurement, municipal budgets and factory capex are not issuer fundraising. Do not assign Moscow KBM INN7722307636 or unrelated Kazakhstan block-module funding.",
+      "searches_checked": [
+        "КБМ танк дроны КБ машиностроения финансирование",
+        "КБМ Коломна финансирование кредит",
+        "КБМ Коломна Новикомбанк",
+        "КБМ Коломна2026 инвесторы облигации"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defence-blog.com/russian-tank-shoots-down-attacking-drones-in-war-games/",
+          "disposition": "opened_origin_identity"
+        },
+        {
+          "url": "https://www.kbm.ru/",
+          "disposition": "original502"
+        },
+        {
+          "url": "https://war-sanctions.gur.gov.ua/ru/rostec/235",
+          "disposition": "official_index_identity_fetch403"
+        },
+        {
+          "url": "https://disclosure.1prime.ru/Portal/Default.aspx?emid=5022039177",
+          "disposition": "official_issuer_registry_search_candidate"
+        }
+      ]
+    },
+    {
+      "id": "303c06e1-ac74-4750-bd18-779bbbebfd35",
+      "slug": "kbr",
+      "name": "KBR",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "KBR Inc exact parent bond pricing and550m loan draw verified. Executed amendment13 explicitly provides delayed-draw loan to KBR, not merely subsidiary guarantee.",
+      "hold_note": "Full2006-2026 history remains partial. January2024 USD1bn refinancing (only24m cash after repayments),2018mixed2.15bn facilities with500m letters-of-credit,2023tranches and revolver turnovers require granular reconciliation. 2026 SECXML unsupported; current balances are not new events. 2020annualPDF font encoding unreadable, so bond kept priced/announced instead of assuming close.",
+      "searches_checked": [
+        "KBR2026 senior notes financing closing2025 2024",
+        "site.kbr.com KBR closes2020 250 million notes4.750",
+        "site:kbr.com credit facility2024closed",
+        "site:kbr.com completed refinancing2024",
+        "site:sec.gov/Archives/edgar/data/1357615 September30,2020 issuedandsold"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kbr.com/en-gb/insights-news/press-release/kbr-inc-announces-pricing-250-million-senior-unsecured-notes-offering",
+          "disposition": "opened_original_pricing"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1357615/000135761524000059/kbr-20240927.htm",
+          "disposition": "opened_original_actual_draw"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1357615/000135761524000048/exhibit10-108142024.htm",
+          "disposition": "opened_executed_contract_exact_borrower"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1357615/000135761524000044/kbr-20240628.htm",
+          "disposition": "opened_original_refinancing_cash_split"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1357615/000135761526000172/kbr-20260703_htm.xml",
+          "disposition": "original_XML_content_unsupported"
+        },
+        {
+          "url": "https://s23.q4cdn.com/238351756/files/doc_financials/2020/ar/KBR-2020-Annual-Report_Web.pdf",
+          "disposition": "opened_original_font_encoding_unreadable"
+        },
+        {
+          "url": "https://www.kbr.com/en/insights-news/press-release/kbr-reports-fourth-quarter-and-fiscal-2025-results",
+          "disposition": "current_original_search_result"
+        }
+      ]
+    },
+    {
+      "id": "bdd2cc66-a52c-4510-afbb-2555b065ea3a",
+      "slug": "kddi-smartdrone",
+      "name": "KDDI SmartDrone",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "Exact Japanese subsidiary, current two shareholders and JAL new-share allotment verified in original issuer/parent/JAL sources.",
+      "hold_note": "JPY250m incorporation stated capital and current JPY100m capital are not independently verified external round proceeds. Parent KDDI debt/Skydio outgoing investment excluded; private history remains unknown.",
+      "searches_checked": [
+        "KDDI SmartDrone funding capital shareholders Japan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://press.jal.co.jp/en/release/202312/007836.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://kddi.smartdrone.co.jp/company/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://news.kddi.com/kddi/corporate/english/ir-news/2022/01/28/5845.html",
+          "disposition": "opened_original"
+        }
+      ]
+    },
+    {
+      "id": "c5a26b33-4bb9-4464-8856-ec8117fc6c8e",
+      "slug": "keeta-drone",
+      "name": "Keeta Drone",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Exact Meituan/Keeta drone brand and parent relationship verified; issuer newsroom through 9 November 2026 checked. No company-specific public financing event established.",
+      "hold_note": "Private or intra-group finance unknown, not zero. Meituan-wide funds, UAE headquarters MoU/jobs, delivery partnerships, factory spending and regulatory permissions are not Keeta Drone raises.",
+      "searches_checked": [
+        "\"Keeta Drone\" funding investment Meituan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.keetadrone.com/pages/about-us",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.keetadrone.com/blogs/news",
+          "disposition": "opened_original_current_news"
+        }
+      ]
+    },
+    {
+      "id": "59d000d1-e8b7-4e2f-8d5f-a566223bd2ca",
+      "slug": "kef-robotics",
+      "name": "KEF Robotics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Pittsburgh KEF Robotics Inc identity, original company timeline, exact SBIR portfolio and Innovation Works residency verified.",
+      "hold_note": "SBIR site aggregates USD5,939,078 across awards, not one event; individual instruments/awards need reconciliation. USD1m July2024 aggregator grant and March2024 seed claims remain unsupported. DoD/AFWERX contracts are not automatically grants; Norway SPRIND recipient continuity needs proof. Programme-wide USD63m not KEF proceeds.",
+      "searches_checked": [
+        "KEF Robotics funding seed investment",
+        "site:kefrobotics.com investment funding seed AFWERX",
+        "site:kefrobotics.com investor seed Robotics Factory",
+        "KEF Robotics site:innovationworks.org investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kefrobotics.com/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.kefrobotics.com/aboutus/namc",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1546473",
+          "disposition": "opened_official_company_and_aggregate_only"
+        },
+        {
+          "url": "https://www.innovationworks.org/about/news/robotics-factory-scale-program-announces-residency-pilot-cohort/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.bluearrow.co/preseed",
+          "disposition": "search_candidate_other_recipient"
+        },
+        {
+          "url": "https://wellfound.com/company/kef-robotics/funding",
+          "disposition": "secondary_seed_claim_held"
+        }
+      ]
+    },
+    {
+      "id": "94997deb-5a89-408c-a87d-ed30382921b9",
+      "slug": "kela-technologies",
+      "name": "Kela Technologies",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Original Sequoia and Lux sources establish historical seed and Series A; issuer domain links these originals. Exact primary USD10m preferred over secondary USD11m.",
+      "hold_note": "Secondary USD28m Series A, USD60m follow-on and May2026 USD200m being raised require original closing evidence; no aggregate treated as round. IQT/Stripes/D1/Bill Ackman/Eric Schmidt roles not assigned to specific event without original support. Contracts and outgoing Pelanor acquisition excluded.",
+      "searches_checked": [
+        "Kela Technologies funding investors Series A 2025 2026",
+        "site.kela.com funding Sequoia Lux 2025 2026",
+        "site.sequoiacap.com Kela investment 2025 seed",
+        "site:luxcapital.com Kela 28 million",
+        "site:kela.ai funding raised 60 2026 200"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://sequoiacap.com/article/partnering-with-kela-modern-defense-for-israel-and-western-allies",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.luxcapital.com/companies/kela-technologies",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://kela.io/",
+          "disposition": "opened_original_current_issuer"
+        },
+        {
+          "url": "https://kelasys.com/",
+          "disposition": "opened_original_redirect_to_kela.io"
+        },
+        {
+          "url": "https://www.luxcapital.com/news/the-technowarrior-revolution-our-investment-in-kela-technologies",
+          "disposition": "failed404"
+        },
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/s1tf111z11gg",
+          "disposition": "secondary_candidate_only"
+        },
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/rktbqqprbl",
+          "disposition": "secondary_raise_in_process_held"
+        }
+      ]
+    },
+    {
+      "id": "c8936831-fd50-4c19-a78d-7e23bafc7a6f",
+      "slug": "kelluu",
+      "name": "Kelluu",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Original issuer and NIF April2026 round plus Redstone 2021 investment year/fund verified; no duplicate cohort row reported by writer.",
+      "hold_note": "Secondary 2023 EUR1.4m seed, prior approximately EUR7.5m equity/10m total, DIANA EUR300k and government grants lack original event-level reconciliation. Generic accelerator completion is not paid grant evidence. Individual cheques and full private history unknown.",
+      "searches_checked": [
+        "Kelluu funding investment seed Series A NATO Innovation Fund",
+        "Kelluu seed funding 2023 2024 investors 4 million",
+        "Kelluu site:redstone.vc funding seed 2023"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kelluu.com/news/kelluu-raises-15mn-series-a-to-build-europes-persistent-aerial-intelligence-layer-and-strengthen-natos-surveillance-capabilities",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.nif.fund/news/the-nato-innovation-fund-leads-e15mn-series-a-in-kelluu-to-build-europes-persistent-aerial-intelligence-layer-and-strengthen-natos-surveillance-capabilities/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://redstone.vc/portfolio/kelluu-airships?58a90a93_page=2",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://tesi.fi/en/news-item/kelluu-series-a/",
+          "disposition": "original_search_corroboration"
+        },
+        {
+          "url": "https://bouncewatch.com/company/kelluu",
+          "disposition": "secondary_seed_and_DIANA_claims_held"
+        }
+      ]
+    },
+    {
+      "id": "6830020e-3703-42ff-8599-92fecfd22118",
+      "slug": "kelly-hills-unmanned-systems",
+      "name": "Kelly Hills Unmanned Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "Exact LLC identity and state USD3m award confirmed by original Governor bulletin linked by issuer. Date resolved to 19 February 2026.",
+      "hold_note": "June2025 more-than-USD688k KDOT award remains held pending exact official award table. USD1.3m Patterson Foundation FLARE is CHCS-led partner funding, not established Kelly Hills proceeds. Heinen parent financing, contracts, FAA authorizations and programme-wide amounts excluded; private history unknown.",
+      "searches_checked": [
+        "\"Kelly Hills Unmanned Systems\" funding investment grant",
+        "site:agriculture.ks.gov \"Kelly Hills\" \"3 million\"",
+        "site:kellyhills.us grant 688 2025 RAMP",
+        "site:ks.gov \"Kelly Hills\" \"688\"",
+        "\"Kelly Hills\" \"grant\" \"2025\" \"KDOT\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://content.govdelivery.com/accounts/KSOG/bulletins/40a6b0a",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://kellyhills.us/press-releases/media-release-governor-kelly-announces-3m-to-develop-unmanned-aerial-systems-technology-for-agricultural-research/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.agriculture.ks.gov/Home/Components/News/News/631/17",
+          "disposition": "official_search_fulltext_then403_repost"
+        },
+        {
+          "url": "https://kellyhills.us/press-releases/",
+          "disposition": "opened_original_archive"
+        },
+        {
+          "url": "https://kellyhills.us/press-releases/state-of-kansas-and-kelly-hills-unmanned-systems-unveil-ramp-pioneering-autonomous-tractor-operations-on-public-roads/",
+          "disposition": "original_search_programme_context"
+        },
+        {
+          "url": "https://www.chcsks.org/blog/post/a-1-3-million-investment-in-the-future-of-rural-healthcare",
+          "disposition": "original_search_other_recipient_then403"
+        },
+        {
+          "url": "https://mscnews.net/local-news/814456",
+          "disposition": "secondary_award_amount_held"
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "notes": [
+      "Kara Dag Technologies matched the previously researched Kara Dag identity. Two existing Green Flag events were inspected and not duplicated. Investment quarters in the current portfolio are distinguished from prior announcement dates; no arbitrary closing day inferred.",
+      "Kaizen Laboratories is the government-software issuer, not Kaizen Aerospace. Separate USD21m Series A and USD11m historical seed are supported; the residual of reported cumulative USD35m remains held. Existing NEA, Accel, Andreessen Horowitz and Seven Seven Six profiles reused.",
+      "KSSL INR2.4bn parent rights investment is a disclosure with share allotment pending, not a claim of completed issuance. AEL onward investment and Bharat Forge parent QIP are not extra KSSL receipts.",
+      "Kalray IPO proceeds derived from exact new shares and price. Priced 2020 issue remains announced; OpenChip warrant price paid is confirmed with amount/currency unknown. Ownership percentage is not a cheque.",
+      "Kanematsu 2025 bond amounts withheld because carrying balances do not establish face principal. Kawasaki share gross, issuer receipts, net proceeds, bond principal and premiums are explicitly distinguished; two bond series are separate events.",
+      "KBR delayed draw expressly names KBR Inc and the actual USD550m draw; subsidiary and cashless refinancing proceeds are not misassigned. KB Luch and Kazan signed facilities are credit_facility records with limits distinguished from cash drawn. KamAZ placement-start disclosures do not claim settlement.",
+      "Kela USD10m primary seed source prevails over secondary USD11m. Lux Series A amount unknown; year corroborated by investor portfolio and Sequoia summer2024 narrative. Kelluu EUR15m is original currency; North Karelia Fund distinct from its Redstone manager.",
+      "KDDI SmartDrone JAL allotment distinguished from KDDI parent finance; Meituan funding not assigned to Keeta Drone. KEF residency and DIANA support are generic associations without default grant amounts.",
+      "Kelly Hills Governor original dated19February2026 prevails over20February repost. Contractual grantor agency is not inferred from press-release delivery roles; grant awarded does not prove cash paid."
+    ],
+    "root_originals_checked": [
+      "https://www.nif.fund/news/the-nato-innovation-fund-leads-e15mn-series-a-in-kelluu-to-build-europes-persistent-aerial-intelligence-layer-and-strengthen-natos-surveillance-capabilities/",
+      "https://content.govdelivery.com/accounts/KSOG/bulletins/40a6b0a",
+      "https://tdnet-pdf.kabutan.jp/20260807/140120260806511849.pdf",
+      "https://rss.globenewswire.com/news-release/2025/10/30/3177523/0/en/kaizen-raises-21-million-to-re-build-government-s-digital-front-door.html",
+      "https://nsearchives.nseindia.com/corporate/ANILSHINDE_16102026170442_SEIntimation_further_investment_KSSL_AEL.pdf",
+      "https://www.luxcapital.com/companies/kela-technologies",
+      "https://sequoiacap.com/article/partnering-with-kela-modern-defense-for-israel-and-western-allies",
+      "https://www.kalrayinc.com/news/openchip-software-and-technologies-becomes-a-shareholder-of-kalray/",
+      "https://www.sec.gov/Archives/edgar/data/1357615/000135761524000048/exhibit10-108142024.htm"
+    ],
+    "root_search_queries": [
+      "Kelluu15millionSeriesAApril142026NATOInnovationFund",
+      "KelaTechnologiesfundingSequoia10millionseed2026Lux",
+      "KellyHillsUnmannedSystems3milliongrantFebruary2026Kansas"
+    ]
+  },
+  "validation": {
+    "importer_and_three_schema_fixtures_match_current_main": true,
+    "postgresql": "PGlite rollback, atomic event/link/relationship counts, idempotency, conflict rejection and investor-source foreign-key enforcement.",
+    "production_rollback_baseline_restored": true,
+    "production_atomic_commit": true,
+    "post_import_exact_fact_role_source_and_contribution_audit": true,
+    "post_import_idempotency_rehearsal": true
+  },
+  "publication_scope": {
+    "targets_in_european_landscape": [],
+    "note": "Keep geography, classification and publication gates unchanged; full-catalogue funding is not asserted to appear on the European map."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles",
+    "Legacy relationships",
+    "Geography/classification/publication gates",
+    "Repository schedules"
+  ],
+  "programme_complete": false
+}
