@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1011,
   "next_action": "Continue next24 queued wider-cohort identities Insta360 through Iveco under a new short writer lease and up to four disjoint read-only groups. Prepared run48 reconciled in run49; no pending import/publication. Preserve known issuer/history holds and all publication gates.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T01:53:08.718Z",
+  "updated_at": "2026-11-13T01:59:00.979Z",
   "source_reconciliation_companies": 815,
   "approved_funding_events": 3073,
   "round_participations": 4058,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T01:53:08.718Z",
     "expires_at": "2026-11-13T03:53:08.718Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "65093ac9-94f7-4d42-8795-373cfc57cc44",
       "e141ddeb-c457-4b26-b6df-17c1f6a5dcd4",
@@ -3817,7 +3817,34 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "validated_rollback_passed_ready_for_atomic_import",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fiftieth.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fiftieth.json",
+    "counts": {
+      "events": 23,
+      "links": 23,
+      "sources": 28,
+      "relationships": 10,
+      "companies_with_events": 8,
+      "reviewed": 5,
+      "partial": 19,
+      "search_queries": 85,
+      "source_ledger_entries": 112
+    },
+    "baseline": {
+      "events": 3086,
+      "approved": 3073,
+      "links": 4058,
+      "sources": 4317,
+      "profiles": 2448,
+      "covered": 815,
+      "relationships": 340,
+      "preserved_profiles_hash": "d7e74cd5fafb4c236e1eca33f95a4843"
+    },
+    "postgresql_tests_passed": true,
+    "production_rollback_verified": true
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T00:54:58.443Z",
