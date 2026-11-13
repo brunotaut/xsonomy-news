@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1034,
   "next_action": "Continue next24 queued wider-cohort identities Kongsberg NanoAvionics through L3Harris WESCAM under a new short writer lease and up to four disjoint read-only groups. No pending import/publication. Prioritise exact Kraken/Kongsberg/L3Harris issuer and alias reconciliation before attributing financing. Preserve source-backed historical, instrument and access holds; no internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T05:56:16.178Z",
+  "updated_at": "2026-11-13T06:05:36.012Z",
   "source_reconciliation_companies": 849,
   "approved_funding_events": 3160,
   "round_participations": 4147,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T05:56:16.178Z",
     "expires_at": "2026-11-13T07:56:16.179Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "1b6eeee9-e029-42cf-bf9d-62f87f1dd5d8",
       "8d158167-b170-4dbc-b6a2-69d46d98e842",
@@ -4496,7 +4496,27 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "ready_after_verified_production_rollback",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-fourth.json",
+    "prepared_at": "2026-11-13T06:05:36.012Z",
+    "expected_events": 77,
+    "expected_participations": 40,
+    "expected_source_rows": 98,
+    "expected_generic_relationships": 9,
+    "production_before": {
+      "events": 3173,
+      "approved": 3160,
+      "links": 4147,
+      "sources": 4424,
+      "profiles": 2514,
+      "covered": 849,
+      "relationships": 377,
+      "preserved_profiles_hash": "c025e835a7df6418a555ab813c62d1ac"
+    },
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T05:11:06.879Z",
