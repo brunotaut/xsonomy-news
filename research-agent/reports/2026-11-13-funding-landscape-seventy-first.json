@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T22:48:16.321Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-seventy-first.json",
@@ -35,7 +35,7 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 3778,
     "db_approved_events": 3765,
     "db_round_participations": 5058,
@@ -43,7 +43,16 @@
     "db_source_reconciliation_companies": 1051,
     "concurrency_speedup_claimed": false,
     "search_queries_executed": 140,
-    "reviewed_existing_fact_corrections": 1
+    "reviewed_existing_fact_corrections": 1,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_generic_company_links_verified": 1,
+    "active_minutes": 14.56,
+    "checked_identities_per_hour": 98.9,
+    "completed_reviews_per_hour": 12.4,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only research groups, exact issuer/profile/source reconciliation, current importer/schema validation, PostgreSQL tests, production rollback, atomic import, exact fact/role/source/contribution audit, idempotency, guarded NRC announcement-date correction with reversal record/rollback and corrected-manifest tests, durable queue/manifest readback and successful build with both fresh live JSON datasets. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3755,
@@ -1153,6 +1162,12 @@
       "reversal_record_preserved": true,
       "corrected_manifest_idempotency_passed": true,
       "counts_and_curated_profiles_unchanged": true
+    },
+    "live_generic_entry_verification": {
+      "entries": 1,
+      "source_urls": 1,
+      "clickable_company_links": 1,
+      "unlinked": []
     }
   },
   "publication_scope": {
@@ -1172,6 +1187,48 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "pending"
-  }
+    "status": "verified",
+    "checked_at": "2026-11-13T23:02:50.143Z",
+    "verified_at": "2026-11-13T23:02:50.143Z",
+    "catalogue_commit": "310ca8922ce14c788ae4e50768b8a49bd4dbcec3",
+    "source_commit": "1a04e9f8e5b492d4b9b444b0782f7dafee252c7f",
+    "reviewed_correction_commit": "f614240a917ac0540b05f1f784e0dd594cca585f",
+    "reviewed_correction_record": "research-agent/imports/funding-landscape-20261113-seventy-first-correction.json",
+    "workflow_run": {
+      "id": 43523582769,
+      "head": "310ca8922ce14c788ae4e50768b8a49bd4dbcec3",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43523582769"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-seventy-first.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-seventy-first.json",
+    "generated_at": "2026-11-13T22:59:35.456Z",
+    "investor_generated_at": "2026-11-13T22:59:39.011Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3020,
+    "portfolio_relationships": 485,
+    "expected_profiles": 19,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 1,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_company_links_verified": 1,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 18,
+    "manifest_generic_relationship_matches": 1,
+    "current_manifest_event_rows": 23,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 18,
+    "current_manifest_generic_relationship_matches": 1,
+    "catalogue_trigger_required": true,
+    "reviewed_correction_requires_duplicate_build": false,
+    "directory_filter_note": "Nine pre-existing anonymous profile placeholders remain excluded: DB3029 versus live3020. All24 targets outside European map under existing gates. All19 referenced profiles,18 participation source URLs andone generic entry with originalsource/clickablecompanylink verified; nine new profiles published. NRC announcement-date correction changes an event outside the map and does not change published directory source/profile data; no duplicate build required. No company gate/classification/geography change."
+  },
+  "completed_at": "2026-11-13T23:02:50.143Z"
 }
