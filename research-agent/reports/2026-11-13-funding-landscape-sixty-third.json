@@ -1,5 +1,5 @@
 {
-  "status": "imported_awaiting_publication",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T14:52:48.320Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-sixty-third.json",
@@ -40,9 +40,18 @@
     "db_investor_profiles": 2803,
     "db_source_reconciliation_companies": 963,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
-    "new_profile_exact_name_duplicates": 0
+    "new_profile_exact_name_duplicates": 0,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 7,
+    "clickable_generic_company_links_verified": 7,
+    "active_minutes": 13.36,
+    "checked_identities_per_hour": 107.8,
+    "completed_reviews_per_hour": 31.4,
+    "timing_scope": "Elapsed short writer lease through four disjoint read-only research groups, original-source/issuer/instrument/amount QA, canonical investor separation, importer/schema checks, PostgreSQL tests, production rollback, atomic import, repeat/idempotency and exact fact/role/source/contribution and extension-parent audit, durable queue readback and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3543,
@@ -1011,7 +1020,8 @@
         }
       ],
       "company_database_contexts_checked": 9,
-      "additional_investor_identity_contexts_checked": 2
+      "additional_investor_identity_contexts_checked": 2,
+      "search_counter_note": "115 actual group search executions plus4 root searches =119. Per-company ledger124 references includes9 Ocius shared alias query references executed once; agent confirmed. Company-level source ledger102 entries may likewise reference shared originals."
     },
     "notes": [
       "Ocius and Ocius Technology share exact ABN32 086377148; alias receives no duplicate financing. Octopus is government-developed licensing project; Oboronka is media vertical. Neither treated as standalone funded technology issuer.",
@@ -1038,7 +1048,14 @@
       "relationship_matches": 7,
       "missing_link_sources": 0,
       "extension_parent_matches": 1
-    }
+    },
+    "live_generic_entry_verification": {
+      "entries": 7,
+      "source_urls": 7,
+      "clickable_company_links": 7,
+      "unlinked": []
+    },
+    "initial_check_rejected_stale_dataset_while_build_running": true
   },
   "publication_scope": {
     "all_new_targets_outside_european_landscape": true,
@@ -1055,5 +1072,47 @@
     "Repository schedules",
     "No paid external API backfill"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T15:06:09.661Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T15:06:09.661Z",
+    "verified_at": "2026-11-13T15:06:09.661Z",
+    "catalogue_commit": "bc226982b0b9a9cd4fe22f864dea599948d51e11",
+    "source_commit": "db2034605c8f28986f8f9f566ead7ba3f83d6aa7",
+    "workflow_run": {
+      "id": 43448877538,
+      "head": "bc226982b0b9a9cd4fe22f864dea599948d51e11",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43448877538"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-third.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-third.json",
+    "generated_at": "2026-11-13T15:05:17.901Z",
+    "investor_generated_at": "2026-11-13T15:05:21.254Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2794,
+    "portfolio_relationships": 452,
+    "expected_profiles": 39,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 7,
+    "generic_portfolio_entries_verified": 7,
+    "clickable_company_links_verified": 7,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 34,
+    "manifest_generic_relationship_matches": 7,
+    "current_manifest_event_rows": 23,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 34,
+    "current_manifest_generic_relationship_matches": 7,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: DB2803 versus live2794. All24 targets remain outside European map; no new round rows expected there. All39 referenced investor profiles,34 participation source URLs and7 generic portfolio entries with exact original source URLs verified; all7 have company links. Twenty-six new profiles published, curated-profile hash preserved. No company publication gate changed."
+  }
 }
