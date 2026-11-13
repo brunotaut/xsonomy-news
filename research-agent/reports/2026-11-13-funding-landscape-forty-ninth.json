@@ -1,0 +1,986 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T00:47:14.705Z",
+  "prior_preparation": "research-agent/prepared/funding-landscape-20261112-forty-eighth.json",
+  "manifest": "research-agent/imports/funding-landscape-20261113-forty-ninth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "prepared_identities_recovered": 24,
+    "new_identity_research_repeated": 0,
+    "newly_completed_bounded_reviews": 5,
+    "new_or_retained_partial": 19,
+    "new_approved_events": 24,
+    "new_round_participations": 47,
+    "new_source_rows": 34,
+    "new_generic_portfolio_relationships": 16,
+    "new_companies_with_events": 11,
+    "new_investor_profiles": 37,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "rollback_baseline_hash_verified": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 24,
+    "mismatched_facts": 0,
+    "participant_matches": 47,
+    "source_matches": 34,
+    "relationship_matches": 16,
+    "missing_link_sources": 0,
+    "db_total_events": 3086,
+    "db_approved_events": 3073,
+    "db_approved_round_participations": 4058,
+    "db_investor_profiles": 2448,
+    "db_source_reconciliation_companies": 815,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false
+  },
+  "production_before": {
+    "events": 3062,
+    "approved": 3049,
+    "links": 4011,
+    "sources": 4283,
+    "profiles": 2411,
+    "covered": 804,
+    "relationships": 324,
+    "preserved_profiles_hash": "65968f50e58e3ccd0e085dc8b86357af"
+  },
+  "production_after": {
+    "events": 3086,
+    "approved": 3073,
+    "links": 4058,
+    "sources": 4317,
+    "profiles": 2448,
+    "covered": 815,
+    "relationships": 340,
+    "preserved_profiles_hash": "65968f50e58e3ccd0e085dc8b86357af"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1011,
+    "source_review_partial": 466,
+    "queued": 1087
+  },
+  "per_company": [
+    {
+      "id": "3920d8a2-695e-46aa-8b63-e94aaa3a4154",
+      "slug": "immersive-wisdom",
+      "name": "Immersive Wisdom",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "IQT2018 original and current13Oct2026 issuer IDIQ checked.",
+      "hold_note": "Privatehistory/security unresolved;99mIDIQ,25mSBIRPhaseIII and151bnSHIELD programmeceilings excluded asprocurement, aggregatorgrant labels unverified.",
+      "searches_checked": [
+        "\"Immersive Wisdom\" funding investment investors",
+        "\"Immersive Wisdom\" In-Q-Tel investment 2018",
+        "\"Immersive Wisdom\" funding grant 2024 2025 2026",
+        "site:immersivewisdom.com/news investment funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.iqt.org/library/immersive-wisdom-secures-strategic-investment-from-in-q-tel-to-scale-its-virtual-and-augmented-reality-collaboration-and-intelligence-platform",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.immersivewisdom.com/news/2026/10/13/immersive-wisdom-awarded-99-million-us-army-enterprise-idiq-contract",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.immersivewisdom.com/news",
+          "disposition": "search_index_checked"
+        },
+        {
+          "url": "https://www.immersivewisdom.com/news/2023/10/9/ausa-2023-us-air-force-acquires-enterprise-class-license-of-immersive-wisdoms-ddil-no-bandwidth-and-low-bandwidth-collaboration-software-via-newly-awarded-25mm-sbir-phase-iii-contract",
+          "disposition": "search_index_excluded_procurement"
+        },
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA489025P0001_9700_-NONE-_-NONE-_-NONE-",
+          "disposition": "search_candidate_not_verified_grant"
+        }
+      ]
+    },
+    {
+      "id": "b204c339-4b22-4be9-bcf8-f82ec9ac670e",
+      "slug": "imod",
+      "name": "IMoD",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Ondas original expandsIMOD asIsraeli MinistryofDefense customer, notconclusivecohortmatch.",
+      "hold_note": "Origin403. Preserveclassification/geography; no ministrybudgets/vendorfinance/procurement assigned. Emptyrows notzero.",
+      "searches_checked": [
+        "\"IMoD\" \"i-hls.com/archives/138034\"",
+        "\"i-hls.com/archives/138034\"",
+        "\"IMoD\" funding \"2026\" drones startup investors",
+        "\"IMOD\" investment company drone"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://i-hls.com/archives/138034",
+          "disposition": "attempted403"
+        },
+        {
+          "url": "https://www.ondas.com/post/ondas-selected-to-build-israel-s-next-generation-of-military-tactical-attack-drones",
+          "disposition": "opened_original_identity_candidate_only"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2024306/000149315226018249/form425.htm",
+          "disposition": "search_candidate_not_cohort_identityproof"
+        }
+      ]
+    },
+    {
+      "id": "c31eae9a-1346-4e75-9e70-650572e882b9",
+      "slug": "impact-drones",
+      "name": "Impact Drones",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "YC exactfounders/domain portfolio backed; issuerwebsite opened.",
+      "hold_note": "No issuer-specific datedround. PioneerFund originalinaccessible and directoryclaims held;180m+LOIs notfinance.",
+      "searches_checked": [
+        "\"Impact Drones\" funding investors",
+        "\"Impact Drones\" seed investment",
+        "\"IMPACT Drones\" site:pioneerfund.vc",
+        "\"Impact Drones\" Y Combinator 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.ycombinator.com/companies/impact-drones",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://impact-drones.com/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.pioneerfund.vc/companies",
+          "disposition": "inaccessible_no_investment_verified"
+        }
+      ]
+    },
+    {
+      "id": "ea58e6be-bae5-4fa2-b436-3615c1c8d2ec",
+      "slug": "indela",
+      "name": "INDELA",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original privateKB INDELA LLC Belarus legalidentity/company/history/events read.",
+      "hold_note": "Currentcontinuity and ADCOM2013/2015acquisitionchronology/consideration unresolved. LatinAmericanINDELA programme namesake; lackoffunds historicalstatement notzero.",
+      "searches_checked": [
+        "INDELA Belarus drones investment funding state ownership",
+        "\"INDELA\" \"ADCOM\" investment 2015",
+        "\"INDELA\" acquired 2013 funding",
+        "site:indela.group investment history"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://indela.group/eng_lang/about.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://indela.group/about.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://indela.group/history.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://indela.group/events.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.timesaerospace.aero/sandbox/features/adcom-uavs-in-service-in-algeria",
+          "disposition": "search_candidate_conflicting_acquisition_dates"
+        }
+      ]
+    },
+    {
+      "id": "0b85cf9d-3ceb-45b9-80e4-856f2edc74bf",
+      "slug": "indrajaal",
+      "name": "Indrajaal",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "Party LinkedIn/fullInc42 founderinterview exact48crore; issuerlatest/Sigmaauditedreport opened.",
+      "hold_note": "Earlier rights/seed/secondary/SigmaequityCCPS carryingvalues andadvances unresolved;420croreSeriesA plannednotclosed;250crore manufacturing/procurement notraise; Greneparent separate.",
+      "searches_checked": [
+        "\"Indrajaal\" funding investment investors",
+        "\"Indrajaal\" \"48\" \"Finvolve\"",
+        "\"Indrajaal\" seed rights issue 2023 2024",
+        "\"Indrajaal\" \"Sigma\" investment",
+        "\"Indrajaal\" Series A funding 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.linkedin.com/posts/india-accelerator_indrajaal-defence-westernnavalcommand-activity-7371427992490799104-4-8B",
+          "disposition": "opened_original_relative_date_only"
+        },
+        {
+          "url": "https://inc42.com/buzz/exclusive-indrajaal-raises-inr-48-cr-to-scale-anti-drone-capabilities/",
+          "disposition": "opened_full_report"
+        },
+        {
+          "url": "https://www.indiaaccelerator.co/blog-detail/?id=4496",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://indrajaal.in/press-release/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://sigmaadvsys.com/wp-content/uploads/2026/09/SigmaAnnual-ReportFY2025-26.pdf",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://sigmaadvsys.com/about-us/journey/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://inc42.com/startups/can-indrajaal-build-a-%E2%82%B9100-cr-business-protecting-indias-skies/?itm_content=article&itm_term=1",
+          "disposition": "search_index_plan_not_closed"
+        },
+        {
+          "url": "https://finvolve.co/portfolio-companies/",
+          "disposition": "opened_original"
+        }
+      ]
+    },
+    {
+      "id": "e88258d0-9e9c-4a0b-bc96-89f904d93aca",
+      "slug": "ineco",
+      "name": "INECO",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 6,
+      "evidence_note": "CORDIS exactlinkedthirdparty andissuer23Sep2026role/current6shareholders confirmed.",
+      "hold_note": "Recipientannouncement/paymentdate/history unresolved; signatures/startdates notrecipientcash; ownershipnotcapital. INERCO namesakeexcluded.",
+      "searches_checked": [
+        "INECO funding investment grant shareholders",
+        "INECO SPATIO funding CORDIS",
+        "INECO ENAIRE Renfe ADIF shareholders capital",
+        "INECO Spain grants funding investment history"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://cordis.europa.eu/project/id/101114674",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.ineco.com/ineco/en/communication/news/spatio-strengthens-inecos-position-future-management-drones",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.ineco.com/ineco/en/transparency/corporate-information",
+          "disposition": "opened_original"
+        }
+      ]
+    },
+    {
+      "id": "eeebb16c-5f6a-4416-bea1-5c85baa6e777",
+      "slug": "inertial-labs",
+      "name": "Inertial Labs",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "status": "source_review_partial",
+      "evidence_note": "Issuer confirms completed Viavi acquisition; generic parent association only.",
+      "hold_note": "Earlier private capitalization, debt/grants unresolved. Acquisition USD150m initial/up_to175m contingent is not issuer fundraising.",
+      "searches_checked": [
+        "Inertial Labs funding investment acquisition",
+        "Inertial Labs seed investors financing grants"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://inertiallabs.com/inertial-labs-has-officially-joined-viavi-solutions/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/912093/000091209325000012/R28.htm",
+          "disposition": "search_result_candidate_only"
+        }
+      ]
+    },
+    {
+      "id": "5349bad4-2c65-4c77-bf47-e778c48ea88a",
+      "slug": "infinidome",
+      "name": "infiniDome",
+      "checked_at": "2026-11-12",
+      "event_count": 4,
+      "relationship_count": 1,
+      "status": "source_review_partial",
+      "evidence_note": "Original2020seed/2021preA/2023A/2024Artofin sources verified; no duplicate cohort issuer found.",
+      "hold_note": "2022VentureIsrael may overlap2021. SAFE target notclosed; cumulativeUSD15m/USD7m/USD1.5m Authority support notincremental events; mixedlogo page notallinvestors.",
+      "searches_checked": [
+        "infiniDome funding investment seed Series A earlier rounds",
+        "infiniDome funding2025 2026 investment",
+        "infiniDome2020 1.6",
+        "infiniDome2021 2.4",
+        "infiniDome Artofin"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://prcenter.co.il/article/23568/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://goldenimpressions.com/wp-content/uploads/2021/10/InfiniDome-Funding-PR-FINAL-logo.pdf",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://goldenimpressions.com/wp-content/uploads/2021/10/InfiniDome-Funding-PR-FINAL-logo.pdf",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20230424005263/en/infiniDome-Raises-9M-Series-A-Led-by-South-Korean-Giant-Hanwha-Aerospace-to-Bring-Navigation-Resiliency-to-UAS-and-Vehicles-in-Defense-and-Commercial-Markets",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.artofin.com/our-new-investment-in-infinidome/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/ventureisrael-invests-in-israeli-startup-infinidome-pioneer-in-gps-anti-jamming-and-navigation-resiliency-solutions-for-defense-hls-and-commercial-applications-301523113.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://innovationisrael.org.il/en/importWinner/515476232/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.drivetlv.com/companies/infinidome",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://infinidome.com/investors/",
+          "disposition": "opened_original"
+        }
+      ]
+    },
+    {
+      "id": "cc390ee8-2e6d-477b-91e1-262621ade4b2",
+      "slug": "infinit-drones",
+      "name": "Infinit Drones",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "status": "reviewed_public_sources",
+      "evidence_note": "Canadian Infinit Drones Corp identity matched; Oct2026conditional acquisition/JV notstandalone finance.",
+      "hold_note": "Private financing unknown. ArcanusUSD500k belongs differentissuer; proposedacquisition notcompletedownership; customerprocurement notgrant.",
+      "searches_checked": [
+        "Infinit Drones funding investment seed",
+        "Infinit Drones acquisition Arcanus",
+        "Infinit Drones grant financing investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.infinitdrones.com/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.newswire.ca/news-releases/arcanus-aerial-systems-appoints-drone-pioneer-pedram-nowroozi-as-chief-technology-officer-and-agrees-to-acquire-infinit-drones-and-nested-technologies-877574731.html",
+          "disposition": "opened_original"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "source_url": "https://devcuration.com/articles/arcanus-aerial-systems-500k-canadian-drone-manufacturing",
+          "disposition": "different_issuer"
+        },
+        {
+          "source_url": "https://canadabuys.canada.ca/en/tender-opportunities/contract-history/cw2367160-001?wbdisable=true",
+          "disposition": "customer_procurement_not_grant"
+        }
+      ]
+    },
+    {
+      "id": "7e3da518-3acb-4e3b-a074-2e9fbf883427",
+      "slug": "infinite-electronics",
+      "name": "Infinite Electronics",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 2,
+      "status": "source_review_partial",
+      "evidence_note": "Warburg2021acquisition and Genstar historical2016backing supported; genericonly.",
+      "hold_note": "Lender holdings for Infinite/Bidco nottotalfacilities; USD478956holding notborrowedprincipal; borrower and standalone borrowing unresolved.",
+      "searches_checked": [
+        "Infinite Electronics funding debt investment2025 2026",
+        "Infinite Electronics Warburg Genstar acquisition financing",
+        "Infinite Electronics first lien term loan SEC"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://warburgpincus.com/2021/03/02/infinite-electronics-announces-significant-growth-investment-from-warburg-pincus/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://warburgpincus.com/investments/infinite-electronics/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1633858/000119312525277817/ck0001633858-20250930.htm",
+          "disposition": "search_result_candidate_only"
+        },
+        {
+          "url": "https://www.infiniteelectronics.com/news/",
+          "disposition": "opened_original_iframe_only"
+        }
+      ]
+    },
+    {
+      "id": "5ecffd08-41d6-4710-a206-dd576ebf711b",
+      "slug": "influential-drones",
+      "name": "Influential Drones",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "status": "reviewed_public_sources",
+      "evidence_note": "Bounded issuer/investor/grant searches found no verified public financing; unknownprivate≠zero.",
+      "hold_note": "Leaf/Ridge CommercialCapital are customerfinancepartners, notestablishedissuer lenders. Aggregator neverfunded assertion excluded.",
+      "searches_checked": [
+        "Influential Drones funding investment",
+        "Influential Drones investors grants SBA funding",
+        "Influential Drones financing plans"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://influentialdrones.com/pages/who-we-are",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://influentialdrones.com/pages/financing-plans",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://influentialdrones.com/",
+          "disposition": "opened_original"
+        }
+      ],
+      "excluded_claims": [
+        {
+          "source_url": "https://prospeo.io/c/influential-drones",
+          "disposition": "unverified_negative_claim"
+        }
+      ]
+    },
+    {
+      "id": "5b050855-296b-4f2e-9012-a8cff62ea8c9",
+      "slug": "infox-navigation",
+      "name": "INFOX Navigation",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "status": "source_review_partial",
+      "evidence_note": "Brand header combines Malaysia INFOX NAVIGATION TECHNOLOGY SDN.BHD. and Shenzhen Tenet Silicon System&Technology.",
+      "hold_note": "2022angel timeline lacks exact historicalissuer continuity, amount/investors;2025STARIPO application notcompletedraise.",
+      "searches_checked": [
+        "INFOX NAVIGATION investment funding",
+        "TENET SILICON SYSTEM funding investment",
+        "INFOX 天衡 融资"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.infoxantijamming.com/about-us",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.infoxantijamming.com/infox-to-exhibit-at-drone-tech-asia-2026-in-bangkok",
+          "disposition": "search_result_candidate_only"
+        }
+      ]
+    },
+    {
+      "id": "86f8c00d-92a7-4efc-8f74-69b90e3ed403",
+      "slug": "infratec",
+      "name": "InfraTec",
+      "checked_at": "2026-11-12",
+      "event_count": 3,
+      "relationship_count": 0,
+      "status": "source_review_partial",
+      "evidence_note": "Owner-managedDresden infraredissuer matched3exactlegalCORDISbeneficiarygrants.",
+      "hold_note": "Otherprojects/NextGenerationEU mobilitysupport terms/private debt unresolved.20mbuildingcapexnotraise; USInfratech/NZInfratec namesakes excluded; independence notzero.",
+      "searches_checked": [
+        "InfraTec infrared investment funding 2026",
+        "\"InfraTec GmbH\" \"Finanzierung\" Förderung Investoren",
+        "site:cordis.europa.eu \"INFRATEC\" grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.infratec-infrared.com/company/about/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.infratec-infrared.com/company/history/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.infratec.de/unternehmen/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/213457",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/284607",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/779431",
+          "disposition": "opened_original"
+        }
+      ]
+    },
+    {
+      "id": "cef570a1-0558-4a6a-b352-9736262d66b5",
+      "slug": "inkas",
+      "name": "INKAS",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "status": "reviewed_public_sources",
+      "evidence_note": "BoundedCanadianarmoredvehicle issuer/investor/history checked; no confirmedincomingfinance found, unknownnotzero.",
+      "hold_note": "Customerfinance notissuerfinance; UAE55mfacilitydifferentissuer; expansions/Moroccoplans withoutfinancingterms notraise.",
+      "searches_checked": [
+        "INKAS armored vehicle manufacturing funding investment investors loan",
+        "\"INKAS\" \"raises\" funding investors Canada",
+        "INKAS manufacturing expansion 2026 investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://inkasarmored.com/about/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://inkasarmored.com/frequently-asked-questions/",
+          "disposition": "opened_original"
+        }
+      ]
+    },
+    {
+      "id": "ddd22d63-b7db-4411-a88f-c5ac5556b4ee",
+      "slug": "innokas",
+      "name": "Innokas",
+      "checked_at": "2026-11-12",
+      "event_count": 2,
+      "relationship_count": 1,
+      "status": "source_review_partial",
+      "evidence_note": "FinnishMedical→Innokas rebrand,2ownEUgrants/currentPareeparent supported.",
+      "hold_note": "EarlierSerresownership cash/primarysplit/history unresolved; Estonia grants/GermanInnokRobotics notsameissuer; AirlogixLOInotraise.",
+      "searches_checked": [
+        "Innokas funding investment 2026",
+        "Innokas Paree Serres ownership investment 2017",
+        "site:cordis.europa.eu Innokas FlowOx CUCUMBER",
+        "Innokas Airlogix financing 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.innokas.eu/hub/innokas-medical-rebrands-as-innokas-paving-the-way-for-growth-and-innovation",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.innokas.eu/hub/innokas-sustainability-report-launch",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/737964",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/958809",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://blog.innokasmedical.fi/blog/2016/08/17/innokas-was-granted-almost-e700-000-funding-by-the-eu-comission",
+          "disposition": "fetch_failed404"
+        },
+        {
+          "url": "https://blog.innokasmedical.fi/blog/2017/02/08/new-finnish-main-owner-for-innokas-medical",
+          "disposition": "fetch_failed404"
+        }
+      ]
+    },
+    {
+      "id": "926c7c55-cd48-48ca-bd28-388fd8e4b562",
+      "slug": "innoluce-infineon",
+      "name": "Innoluce (Infineon)",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 1,
+      "status": "source_review_partial",
+      "evidence_note": "Original2016Infineoncall exactDutchMEMSidentity/acquisition.",
+      "hold_note": "2011EUR200kgrant/USD1.93mcapital/investorlist secondaryclaims lackoriginalaward; archivedDutchprogrammes unresolved. Infineonparentdebt/acquisitionprice notownprimary.",
+      "searches_checked": [
+        "Innoluce funding seed investment 2011 2016",
+        "Innoluce Point One Innovation Fund investment original",
+        "Innoluce funding Participatiemaatschappij Oost Business Angels Technostarters"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.infineon.com/assets/row/public/documents/corporate/investors/presentations/archive/2016-10-11-infineon-atv-call.pdf",
+          "disposition": "opened_original"
+        }
+      ]
+    },
+    {
+      "id": "972294b5-9cb3-4c3d-adb7-382483458b80",
+      "slug": "innovaero-technologies",
+      "name": "Innovaero Technologies",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "status": "source_review_partial",
+      "evidence_note": "Originalissuer/counsel completed40mIPO.",
+      "hold_note": "AdvisorDec2020AUD4m/H22021AUD6mnotes+2mequity: oldissuer/BAEJV/2025restructure continuity unresolved. State7.4m/3.7minstalment needsoriginal; managersnotinvestors; valuationnotfunding.",
+      "searches_checked": [
+        "Innovaero Technologies investment funding BAE IPO 2020 2026",
+        "Innovaero AUD40m IPO 21 September 2026",
+        "Innovaero state grant 7.4 million 3.7 million"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.innov.aero/wp-content/uploads/2026/09/Innovaero-Pre-Listing-Business-Update.pdf",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.thomsons.com.au/news/thomsons-advises-drone-developer-innovaero-technologies-on-asx-ipo",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.innov.aero/investors/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.innov.aero/investors/asx-announcements/",
+          "disposition": "opened_original_JSlinks_unavailable"
+        },
+        {
+          "url": "https://x10.socialbump.com.au/journeys-and-transactions/innovaero/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.innov.aero/wp-content/uploads/2026/09/Replacement-Prospectus-Innovaero-Technologies-Limited.pdf",
+          "disposition": "fetch_failed_size11.3MB"
+        }
+      ]
+    },
+    {
+      "id": "ed28c101-8df5-45bd-9cb2-c562444b553a",
+      "slug": "innovation-first",
+      "name": "Innovation First",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "status": "reviewed_public_sources",
+      "evidence_note": "PrivateUSInnovationFirstInternationalInc founded1996 parentVEX/RackSolutions exactissuer checked, no incomingroundverified.",
+      "hold_note": "Privateunknownnotzero. Australian subsidiary competition/sponsorshipgrants notUSparent; orders/rewards notfinance.",
+      "searches_checked": [
+        "Innovation First International funding investors venture capital 2026",
+        "\"Innovation First International\" \"funding\" investors seed financing",
+        "site:innovationfirst.com investment funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.innovationfirst.com/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.innovationfirst.com/about/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.innovationfirst.com/modern-slavery-statement",
+          "disposition": "opened_original"
+        }
+      ]
+    },
+    {
+      "id": "8fccfddf-f5c6-47eb-829c-f77f61ed405e",
+      "slug": "innovitech",
+      "name": "Innovitech",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "status": "reviewed_public_sources",
+      "evidence_note": "Canadianconsultant matchedGUAMobilityOman throughissuersyndication/company. Noownraiseconfirmed, unknownnotzero.",
+      "hold_note": "OutboundBliinx2020investment/clientMEDTEQfundmanagement/consultancyprocurement excluded; no geographyprofilechange.",
+      "searches_checked": [
+        "Innovitech funding investment financing",
+        "Innovitech GUAMobility Oman",
+        "site:innovitech.com investment seed funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://unmannedairspace.info/uncategorized/guamobility-consortium-to-lead-advanced-air-mobility-programme-in-oman",
+          "disposition": "access_limited"
+        },
+        {
+          "url": "https://www.publicnow.com/view/4A5FA88F36015755B84FF288DF2B9D100C10E3EC",
+          "disposition": "issuer_origin_syndication_identity"
+        },
+        {
+          "url": "https://innovitech.com/en/about-us/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://innovitech.com/en/our-work/investment-in-a-seed-round/",
+          "disposition": "outbound_not_ownraise"
+        },
+        {
+          "url": "https://innovitech.com/en/our-work/management-of-the-medteq-invest-fund/",
+          "disposition": "client_programme"
+        },
+        {
+          "url": "https://innovitech.com/en/news/",
+          "disposition": "opened_original"
+        }
+      ]
+    },
+    {
+      "id": "3002861a-81d4-4fd4-9084-f2507217d477",
+      "slug": "innoviz-technologies",
+      "name": "Innoviz Technologies",
+      "checked_at": "2026-11-12",
+      "event_count": 8,
+      "relationship_count": 0,
+      "status": "source_review_partial",
+      "evidence_note": "OriginalA/B/C andincrements/publicofferings8events; exactclosegross/net preserved.",
+      "hold_note": "2021SPAC actualcash/trust/PIPE/redemptions unresolved; ATMactualsales notcapacity;2023optionheld. DelekA/Bnames awaitingcanonicalreconciliation. NRE80mcustomerrevenuenotfinance; cumulative/B73/C170 notadditive.",
+      "searches_checked": [
+        "Innoviz Technologies funding Series A Series B Series C",
+        "Innoviz Technologies public offering August 2023 gross proceeds",
+        "Innoviz Technologies February 2025 registered direct offering closing",
+        "Innoviz Technologies July 2026 registered direct offering closing",
+        "Innoviz SPAC merger cash proceeds PIPE redemptions",
+        "Innoviz 2025 ATM sales proceeds"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ir.innoviz.tech/news-events/press-releases/detail/21/innoviz-technologies-secures-9m-in-series-a-funding",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ir.innoviz.tech/news-events/press-releases/detail/18/innoviz-technologies-raises-65m-as-its-solid-state-lidar",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ir.innoviz.tech/news-events/press-releases/detail/17/innoviz-technologies-extends-series-b-funding-to-73-million",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ir.innoviz.tech/news-events/press-releases/detail/10/innoviz-technologies-raises-132m-in-series-c-funding-to/1000",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ir.innoviz.tech/news-events/press-releases/detail/9/innoviz-technologies-series-c-funding-round-closes-at",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ir.innoviz.tech/sec-filings/all-sec-filings/content/0001178913-23-002865/0001178913-23-002865.pdf",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1835654/000117891325000817/zk2532805.htm",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ir.innoviz.tech/sec-filings/all-sec-filings/content/0001178913-26-003692/zk2635764.htm",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1835654/000117891326003603/exhibit_99-1.htm",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ir.innoviz.tech/sec-filings/all-sec-filings/content/0001213900-20-042153/0001213900-20-042153.pdf",
+          "disposition": "held_SPAC_candidate"
+        }
+      ]
+    },
+    {
+      "id": "b33eb6a3-bb12-459f-9530-f2478e955fc4",
+      "slug": "inocea-group",
+      "name": "Inocea Group",
+      "checked_at": "2026-11-12",
+      "event_count": 0,
+      "relationship_count": 0,
+      "status": "source_review_partial",
+      "evidence_note": "DTCP original9July2026exact175mrecipientKrakenTechnologyGroup; Inoceaoutboundinvestor.",
+      "hold_note": "Parentborrowingexactissuerunresolved; Davie/Chantier/GulfCoppercapex/acquisition/orderbooknotgroupraise. Nozeroassertion.",
+      "searches_checked": [
+        "Inocea Group financing investment loan 2025 2026",
+        "Inocea Kraken 175 million Series B",
+        "Inocea Davie Gulf Copper financing borrower"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defence-blog.com/british-drone-boat-firm-raises-175m-at-1b-valuation",
+          "disposition": "access_limited403"
+        },
+        {
+          "url": "https://www.dtcp.capital/news-and-insights/detail/dtcp-defence-leads-175-million-series-b-financing-round-in-kraken-technology-group/",
+          "disposition": "original_otherissuer"
+        },
+        {
+          "url": "https://www.inocea.com/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.inocea.com/who-we-are/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.inocea.com/what-we-do/",
+          "disposition": "opened_original"
+        }
+      ]
+    },
+    {
+      "id": "482e26de-1dce-4657-9707-c9a1eb2a683f",
+      "slug": "insignito",
+      "name": "Insignito",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "status": "source_review_partial",
+      "evidence_note": "ICI managingpartnerinvestment, fundfoundertestimonials and18Sep2026Ondasacquisition supported.",
+      "hold_note": "Date/amount/security/preciseICIvehicle/FreshFundcandidate unknown. EaglePointFundingadvisory andFreeMindclientaggregate notaward/ownfunding; acquisitionnotprimary.",
+      "searches_checked": [
+        "Insignito funding investment ICI Fund Fresh Fund",
+        "Insignito Ondas acquisition ICI",
+        "site:ici.fund Insignito"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.linkedin.com/posts/gilielkin_drone-acoustics-dronetechnology-activity-7376993486119563264-6hKa",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ici.fund/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ici.fund/events/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ici.fund/event/%F0%9F%93%A3-ici-fund-portfolio-company-insignito-acquired-by-ondas/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/insignito_were-excited-to-announce-insignitos-strategic-activity-7393935625042857984--Ode",
+          "disposition": "advisory_not_award"
+        }
+      ]
+    },
+    {
+      "id": "7e61e04d-89b7-4456-9af7-e24753ae42d4",
+      "slug": "insitu-boeing",
+      "name": "Insitu (Boeing)",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 1,
+      "status": "source_review_partial",
+      "evidence_note": "Battery2006Growth exactyear, acquiredBoeinghistoricalparent.",
+      "hold_note": "2006USD23m/2007USD25mvs21.3msecondarytotals needoriginals. Navy25.7mcontract procurement; parentdebt/acquisitionprice excluded;2026Archerproposalnotclosed.",
+      "searches_checked": [
+        "Insitu funding Battery Ventures2006",
+        "Insitu2007 funding25million21.3million",
+        "Insitu Boeing financing2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.battery.com/company/insitu/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.insitu.com/news",
+          "disposition": "current_news_candidates"
+        },
+        {
+          "url": "https://www.insitu.com/news/insitu-gets-25m-us-navy-support-contract",
+          "disposition": "procurement_candidate"
+        }
+      ]
+    },
+    {
+      "id": "2a376759-f4e5-40c6-bcf3-733fe7c730b2",
+      "slug": "inspired-flight",
+      "name": "Inspired Flight",
+      "checked_at": "2026-11-12",
+      "event_count": 1,
+      "relationship_count": 0,
+      "status": "source_review_partial",
+      "evidence_note": "12mA TriValleylead, body25Aug2025/page25Sep2025exactonedisclosure.",
+      "hold_note": "Earlierunnamedinvestors andfullhistoryunresolved; security/chequesunknown. Product/dealerrelationships/unnamedupdateApr17 notraise.",
+      "searches_checked": [
+        "Inspired Flight funding investment Series A",
+        "Inspired Flight earlier investors2017",
+        "site:trivalleyventures.com Inspired Flight",
+        "Inspired Flight funding2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.inspiredflight.com/post/inspired-flight-technologies-raises-12-million-series-a-led-by-tri-valley-ventures",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.inspiredflight.com/blog/categories/press-releases",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.inspiredflight.com/post/profile-inside-business-development-with-adam-bilmes",
+          "disposition": "earlier_history_candidate"
+        }
+      ]
+    }
+  ],
+  "source_qa": {
+    "date": "2026-11-13",
+    "method": "Four read-only disjoint groups reopened original event/ownership sources, including company releases, CORDIS exact beneficiary sections, SEC closings and investor portfolio evidence. Prior run48 ledgers retain85 searches/108 entries; these are not counted as new queries.",
+    "canonical_mapping": {
+      "original": "Vertex Venture Capital",
+      "canonical": "vertex-ventures-israel",
+      "source": "https://www.vertexventures.co.il/news/vertex-israel-s-2-new-funds/",
+      "specific_fund_inferred": false
+    },
+    "corrections": [
+      "Indrajaal INR480m kept announced_round_size/announced; separate settlement not verified.",
+      "Existing canonical names preserved; current profiles never overwritten. Sigma formerly Megasoft verified; neither alias existed.",
+      "Delek Investments and Delek Motors remain source-specific; exact equivalence not proven.",
+      "Inertial acquisition USD150m initial plus up toUSD175m contingent; neither amount imported as primary funding."
+    ],
+    "held": "Private histories, IMoD identity, INFOX issuer continuity, Innovaero legacy placements, Insignito exact fund vehicle, Innoviz SPAC/ATM/options, and acquisition/contract/consortium totals remain explicit holds. Unknown is not zero."
+  },
+  "validation": {
+    "tested_importer": "scripts/prepare-funding-pilot.mjs",
+    "schema_fixtures": [
+      "db/company-funding-schema.sql",
+      "db/company-funding-history-schema.sql",
+      "db/company-funding-amount-qualifier-schema.sql"
+    ],
+    "tests": "PostgreSQL PGlite transaction rollback, actual atomic event/link/source counts, idempotency, investor source foreign key, conflicting-value rejection.",
+    "production_rollback": true,
+    "production_atomic_commit": true,
+    "post_import_rehearsal_rollback": true,
+    "exact_fact_role_source_audit": true
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Geography/classification/publication gates",
+    "Existing curated profiles",
+    "Repository schedules"
+  ],
+  "programme_complete": false
+}
