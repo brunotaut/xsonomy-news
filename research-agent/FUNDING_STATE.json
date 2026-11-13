@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 466,
-  "fully_reviewed_companies": 1011,
-  "next_action": "Continue next24 queued wider-cohort identities Insta360 through Iveco under a new short writer lease and up to four disjoint read-only groups. Prepared run48 reconciled in run49; no pending import/publication. Preserve known issuer/history holds and all publication gates.",
+  "partial_companies": 485,
+  "fully_reviewed_companies": 1016,
+  "next_action": "Verify fiftieth catalogue publication then continue next24 queued identities iVent Mobile through Kaizen Aerospace.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T01:59:00.979Z",
-  "source_reconciliation_companies": 815,
-  "approved_funding_events": 3073,
-  "round_participations": 4058,
-  "investor_profiles": 2448,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261113-forty-ninth.json",
+  "updated_at": "2026-11-13T02:00:44.845Z",
+  "source_reconciliation_companies": 823,
+  "approved_funding_events": 3096,
+  "round_participations": 4081,
+  "investor_profiles": 2468,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261113-fiftieth.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T01:53:08.718Z",
     "expires_at": "2026-11-13T03:53:08.718Z",
-    "status": "importing",
+    "status": "publishing",
     "planned_company_ids": [
       "65093ac9-94f7-4d42-8795-373cfc57cc44",
       "e141ddeb-c457-4b26-b6df-17c1f6a5dcd4",
@@ -3330,50 +3330,43 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 1011,
-    "source_review_partial": 466,
-    "queued": 1087
+    "reviewed_public_sources": 1016,
+    "source_review_partial": 485,
+    "queued": 1063
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "identities_checked": 24,
-    "prepared_identities_recovered": 24,
-    "new_identity_research_repeated": 0,
     "newly_completed_bounded_reviews": 5,
     "new_or_retained_partial": 19,
-    "new_approved_events": 24,
-    "new_round_participations": 47,
-    "new_source_rows": 34,
-    "new_generic_portfolio_relationships": 16,
-    "new_companies_with_events": 11,
-    "new_investor_profiles": 37,
+    "new_approved_events": 23,
+    "new_round_participations": 23,
+    "new_source_rows": 28,
+    "new_generic_portfolio_relationships": 10,
+    "new_companies_with_events": 8,
+    "new_investor_profiles": 20,
+    "search_queries_logged": 85,
+    "source_ledger_entries": 112,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
     "local_postgresql_tests_passed": true,
     "rollback_rehearsal_passed": true,
-    "rollback_baseline_hash_verified": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
     "curated_profile_hash_preserved": true,
-    "event_matches": 24,
+    "event_matches": 23,
     "mismatched_facts": 0,
-    "participant_matches": 47,
-    "source_matches": 34,
-    "relationship_matches": 16,
+    "participant_matches": 23,
+    "source_matches": 28,
+    "relationship_matches": 10,
     "missing_link_sources": 0,
-    "db_total_events": 3086,
-    "db_approved_events": 3073,
-    "db_approved_round_participations": 4058,
-    "db_investor_profiles": 2448,
-    "db_source_reconciliation_companies": 815,
+    "db_total_events": 3109,
+    "db_approved_events": 3096,
+    "db_approved_round_participations": 4081,
+    "db_investor_profiles": 2468,
+    "db_source_reconciliation_companies": 823,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": true,
-    "durable_queue_identity_count": 2564,
-    "durable_queue_readback_verified": true,
-    "new_profile_exact_name_duplicates": 0,
-    "active_minutes": 7.73,
-    "checked_identities_per_hour": 186.3,
-    "completed_reviews_per_hour": 38.8,
-    "concurrency_speedup_claimed": false,
-    "timing_scope": "Elapsed current writer lease: recovery of24 previously prepared identities, four read-only original-source QA groups, canonical reconciliation, PostgreSQL tests, production rollback, atomic import, exact source/fact audit, idempotency and verified live publication. Prior research time is not counted as new work."
+    "current_manifest_publication_verified": false
   },
   "latest_followup_metrics": {
     "parallel_read_only_groups": 4,
@@ -3411,7 +3404,7 @@
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 1477,
+  "source_reviewed_or_partial_companies": 1501,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -3817,67 +3810,11 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": {
-    "status": "validated_rollback_passed_ready_for_atomic_import",
-    "manifest": "research-agent/imports/funding-landscape-20261113-fiftieth.json",
-    "report": "research-agent/reports/2026-11-13-funding-landscape-fiftieth.json",
-    "counts": {
-      "events": 23,
-      "links": 23,
-      "sources": 28,
-      "relationships": 10,
-      "companies_with_events": 8,
-      "reviewed": 5,
-      "partial": 19,
-      "search_queries": 85,
-      "source_ledger_entries": 112
-    },
-    "baseline": {
-      "events": 3086,
-      "approved": 3073,
-      "links": 4058,
-      "sources": 4317,
-      "profiles": 2448,
-      "covered": 815,
-      "relationships": 340,
-      "preserved_profiles_hash": "d7e74cd5fafb4c236e1eca33f95a4843"
-    },
-    "postgresql_tests_passed": true,
-    "production_rollback_verified": true
-  },
+  "pending_import": null,
   "pending_publication": {
-    "status": "verified",
-    "checked_at": "2026-11-13T00:54:58.443Z",
-    "verified_at": "2026-11-13T00:54:58.443Z",
-    "catalogue_commit": "4fe4e537d98bdbba78d46a81f36402090e6d9d01",
-    "source_commit": "4f82b1b0f8ef8ea82dbdc572beaff3ed3d8da7b2",
-    "workflow_run": {
-      "id": 43340558952,
-      "head": "4fe4e537d98bdbba78d46a81f36402090e6d9d01",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43340558952"
-    },
-    "report": "research-agent/reports/2026-11-13-funding-landscape-forty-ninth.json",
-    "manifest": "research-agent/imports/funding-landscape-20261113-forty-ninth.json",
-    "generated_at": "2026-11-13T00:53:32.381Z",
-    "investor_generated_at": "2026-11-13T00:53:34.530Z",
-    "companies": 567,
-    "events": 1590,
-    "links": 1390,
-    "profiles": 2439,
-    "portfolio_relationships": 337,
-    "expected_profiles": 50,
-    "missing_profiles": [],
-    "missing_participant_sources": [],
-    "missing_relationships": [],
-    "targets_in_european_landscape": [],
-    "current_manifest_event_rows": 24,
-    "current_manifest_live_matches": 0,
-    "current_manifest_participation_source_matches": 47,
-    "current_manifest_generic_relationship_matches": 16,
-    "catalogue_trigger_required": false,
-    "directory_filter_note": "All24 company identities remain outside European landscape. No financing events claimed on European map. All50 referenced participant/owner/support profiles, all47 event-participant source URLs and all16 full-catalogue portfolio links verified in live investor directory. Nine pre-existing anonymous placeholders remain excluded:DB2448 versuslive2439. Existing curated profiles preserved. 37 new profiles and16 generic links published."
+    "status": "awaiting_catalogue_trigger",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fiftieth.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fiftieth.json"
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -4790,124 +4727,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "65093ac9-94f7-4d42-8795-373cfc57cc44",
-      "slug": "insta360",
-      "name": "Insta360"
+      "id": "8cfcc1d3-6564-4f4f-b41c-7c83f181d623",
+      "slug": "ivent-mobile",
+      "name": "iVent Mobile"
     },
     {
-      "id": "e141ddeb-c457-4b26-b6df-17c1f6a5dcd4",
-      "slug": "instro-precision",
-      "name": "Instro Precision"
+      "id": "de13a19d-9bd9-4312-855d-a44645780f10",
+      "slug": "iwi",
+      "name": "IWI"
     },
     {
-      "id": "59e2cf39-8020-4dce-a520-632d3d6e0ca0",
-      "slug": "intact",
-      "name": "iNTACT"
+      "id": "e99326a6-0edb-4920-bfe2-814b2e36281c",
+      "slug": "ixblue",
+      "name": "iXblue"
     },
     {
-      "id": "8865d9c7-420b-4272-9737-f8118c003b79",
-      "slug": "intec-group",
-      "name": "INTEC Group"
+      "id": "6520bd23-487d-4a86-83d6-60a7101538e1",
+      "slug": "izhmash-kalashnikov-group",
+      "name": "Izhmash (Kalashnikov Group)"
     },
     {
-      "id": "dbc8b9fb-76eb-4905-bf7a-839e0d28a787",
-      "slug": "integrate-dg",
-      "name": "Integrate DG"
+      "id": "f64068dc-5645-4b0d-8d34-56a6050d0cfe",
+      "slug": "izhmash-unmanned-systems",
+      "name": "Izhmash-Unmanned Systems"
     },
     {
-      "id": "4db1c9de-8905-4f86-ba56-9c4656fa1b1b",
-      "slug": "intel",
-      "name": "Intel"
+      "id": "098d5090-06d1-4394-8fb8-b4e701262569",
+      "slug": "izhmash-unmanned-systems-kalashnikov-group",
+      "name": "Izhmash - Unmanned Systems (Kalashnikov Group)"
     },
     {
-      "id": "0ff9eab4-3d67-4567-a1d4-1b9c580477d8",
-      "slug": "international-golden-group",
-      "name": "International Golden Group"
+      "id": "72279516-665e-4269-923a-d2cb44e9b255",
+      "slug": "jade-advisory",
+      "name": "JADE Advisory"
     },
     {
-      "id": "b4236778-ab25-4722-ba77-ff183ad96c2b",
-      "slug": "international-submarine-engineering",
-      "name": "International Submarine Engineering"
+      "id": "39c1a885-7768-4670-b528-9f724a2ed596",
+      "slug": "japan-biz-aviation",
+      "name": "Japan Biz Aviation"
     },
     {
-      "id": "f2bdff0a-ff16-452c-84df-c4eeb06d3d55",
-      "slug": "intersoft",
-      "name": "Intersoft"
+      "id": "ba1c75c1-9f1e-47d1-8082-1f1aa4d7427b",
+      "slug": "je-dunn",
+      "name": "JE Dunn"
     },
     {
-      "id": "9ce0921d-5786-477f-936e-47ec1a14fb71",
-      "slug": "intramotev",
-      "name": "Intramotev"
+      "id": "cbd26c63-59fa-40a9-a935-942b1c8d39d2",
+      "slug": "jeppesen",
+      "name": "Jeppesen"
     },
     {
-      "id": "e2a6c783-40fb-4740-834c-faa528c9b12c",
-      "slug": "invariant",
-      "name": "Invariant"
+      "id": "5f840a20-3d69-4429-837a-c332a40610a5",
+      "slug": "jetoptera",
+      "name": "Jetoptera"
     },
     {
-      "id": "e59aee71-12fc-4c7b-9d4e-5f6b7640dd89",
-      "slug": "invisio",
-      "name": "Invisio"
+      "id": "a3bdbcc7-37fc-4689-819e-f7e51e18a802",
+      "slug": "jetzero",
+      "name": "JetZero"
     },
     {
-      "id": "c5b62060-9632-4b86-97f7-64738483d204",
-      "slug": "iridium-communications",
-      "name": "Iridium Communications"
+      "id": "2a99b264-d26c-4baa-b87b-1bb2a8dfffaf",
+      "slug": "jfb-construction-holdings",
+      "name": "JFB Construction Holdings"
     },
     {
-      "id": "bf82e33f-c6f1-42e3-8d86-fd02edbb0bc7",
-      "slug": "irkut-corporation",
-      "name": "Irkut Corporation"
+      "id": "f71cd00c-3d3f-4cd4-9a02-738ae062b741",
+      "slug": "jfg-composites",
+      "name": "JFG Composites"
     },
     {
-      "id": "29a14b61-265e-40ba-b7bf-e6ad665d1ae8",
-      "slug": "iron-cluster",
-      "name": "Iron Cluster"
+      "id": "5f552c75-b64c-44a8-84da-c8a2e9624603",
+      "slug": "jisr",
+      "name": "JISR"
     },
     {
-      "id": "4b8a899c-5577-48db-a78e-260e7d0a75fb",
-      "slug": "israel-aerospace-industries-iai",
-      "name": "Israel Aerospace Industries (IAI)"
+      "id": "793514b4-8b62-40b0-b14d-b813d6df39fd",
+      "slug": "joby-aviation",
+      "name": "Joby Aviation"
     },
     {
-      "id": "036c0075-5714-4a7a-ac2f-b6be27638fee",
-      "slug": "israel-shipyards",
-      "name": "Israel Shipyards"
+      "id": "f44ed53a-7975-427a-a74c-44e6f5f0d08d",
+      "slug": "jouav",
+      "name": "JOUAV"
     },
     {
-      "id": "90e2dafc-0383-4414-b61d-3a5734de42f5",
-      "slug": "israel-weapon-industries",
-      "name": "Israel Weapon Industries"
+      "id": "31e8face-3f88-45ee-acf0-3ca9265e10f2",
+      "slug": "jovistar",
+      "name": "Jovistar"
     },
     {
-      "id": "92799ae0-1a64-408d-84d5-f384845e391c",
-      "slug": "iss-aerospace",
-      "name": "ISS Aerospace"
+      "id": "626d0f74-65fc-4d69-8004-98f83c51eab0",
+      "slug": "jsc-agat-control-systems",
+      "name": "JSC AGAT - Control Systems"
     },
     {
-      "id": "49637e2c-89e6-4732-90f0-fd315cbfb918",
-      "slug": "istra-aero-istrinsk-experimental-mechanical-plant",
-      "name": "Istra Aero (Istrinsk Experimental Mechanical Plant)"
+      "id": "4f5e0e86-92a6-4b61-a811-584caf4e775a",
+      "slug": "jsc-npp-radar-mms",
+      "name": "JSC NPP Radar MMS"
     },
     {
-      "id": "8c1506a8-5e56-4da5-ab57-725035efc639",
-      "slug": "it-logika",
-      "name": "IT Logika"
+      "id": "7021d59f-3e5c-4103-8747-7a3cbacd0ccf",
+      "slug": "jtekt",
+      "name": "JTEKT"
     },
     {
-      "id": "eb6ccbf4-2bd1-4c30-afae-adf5205955d5",
-      "slug": "it-s-fpv",
-      "name": "IT'S FPV"
+      "id": "4aa0152d-d517-4e5c-8b68-c424775758fc",
+      "slug": "jugoimport-sdpr",
+      "name": "Jugoimport SDPR"
     },
     {
-      "id": "13b6bfb2-5b8f-456f-b027-d5098db5ac1e",
-      "slug": "itt-cannon",
-      "name": "ITT Cannon"
+      "id": "41cc9428-5425-4e09-8581-11a82d85d432",
+      "slug": "jump-aero",
+      "name": "Jump Aero"
     },
     {
-      "id": "0985aee0-e5ac-4214-a6f1-8023d301a9e9",
-      "slug": "iveco",
-      "name": "Iveco"
+      "id": "d0d2408b-4a0e-41cc-a460-44ad87d7b0c3",
+      "slug": "kaizen-aerospace",
+      "name": "Kaizen Aerospace"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -5391,7 +5328,7 @@
       "completed_reviews_per_active_hour": 51.4
     }
   },
-  "total_funding_events": 3086,
+  "total_funding_events": 3109,
   "latest_thirty_sixth_reconciliation": {
     "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-sixth.json",
     "manifest": "research-agent/imports/funding-landscape-20261112-thirty-sixth.json",
@@ -6021,6 +5958,44 @@
       "completed_reviews_per_hour": 38.8,
       "concurrency_speedup_claimed": false,
       "timing_scope": "Elapsed current writer lease: recovery of24 previously prepared identities, four read-only original-source QA groups, canonical reconciliation, PostgreSQL tests, production rollback, atomic import, exact source/fact audit, idempotency and verified live publication. Prior research time is not counted as new work."
+    }
+  },
+  "latest_fiftieth_reconciliation": {
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fiftieth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fiftieth.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 5,
+      "new_or_retained_partial": 19,
+      "new_approved_events": 23,
+      "new_round_participations": 23,
+      "new_source_rows": 28,
+      "new_generic_portfolio_relationships": 10,
+      "new_companies_with_events": 8,
+      "new_investor_profiles": 20,
+      "search_queries_logged": 85,
+      "source_ledger_entries": 112,
+      "database_identities_inspected": 24,
+      "existing_events_inspected": 0,
+      "local_postgresql_tests_passed": true,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "curated_profile_hash_preserved": true,
+      "event_matches": 23,
+      "mismatched_facts": 0,
+      "participant_matches": 23,
+      "source_matches": 28,
+      "relationship_matches": 10,
+      "missing_link_sources": 0,
+      "db_total_events": 3109,
+      "db_approved_events": 3096,
+      "db_approved_round_participations": 4081,
+      "db_investor_profiles": 2468,
+      "db_source_reconciliation_companies": 823,
+      "queue_dispositions_applied": 24,
+      "current_manifest_publication_verified": false
     }
   }
 }

@@ -1,0 +1,1000 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T01:53:08.718Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-fiftieth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 5,
+    "new_or_retained_partial": 19,
+    "new_approved_events": 23,
+    "new_round_participations": 23,
+    "new_source_rows": 28,
+    "new_generic_portfolio_relationships": 10,
+    "new_companies_with_events": 8,
+    "new_investor_profiles": 20,
+    "search_queries_logged": 85,
+    "source_ledger_entries": 112,
+    "database_identities_inspected": 24,
+    "existing_events_inspected": 0,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 23,
+    "mismatched_facts": 0,
+    "participant_matches": 23,
+    "source_matches": 28,
+    "relationship_matches": 10,
+    "missing_link_sources": 0,
+    "db_total_events": 3109,
+    "db_approved_events": 3096,
+    "db_approved_round_participations": 4081,
+    "db_investor_profiles": 2468,
+    "db_source_reconciliation_companies": 823,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false
+  },
+  "production_before": {
+    "events": 3086,
+    "approved": 3073,
+    "links": 4058,
+    "sources": 4317,
+    "profiles": 2448,
+    "covered": 815,
+    "relationships": 340,
+    "preserved_profiles_hash": "d7e74cd5fafb4c236e1eca33f95a4843"
+  },
+  "production_after": {
+    "events": 3109,
+    "approved": 3096,
+    "links": 4081,
+    "sources": 4345,
+    "profiles": 2468,
+    "covered": 823,
+    "relationships": 350,
+    "preserved_profiles_hash": "d7e74cd5fafb4c236e1eca33f95a4843"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1016,
+    "source_review_partial": 485,
+    "queued": 1063
+  },
+  "per_company": [
+    {
+      "id": "65093ac9-94f7-4d42-8795-373cfc57cc44",
+      "slug": "insta360",
+      "name": "Insta360",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 3,
+      "evidence_note": "Issuer2019, investor2015 and counsel2025 original financings verified; exactIPO1938070000CNY.",
+      "hold_note": "Earlierangel/2016B/B+/2018/2019E and2015A-vs-Bhistorical discrepancy unreconciled; source refresh not eventdate. IPOallocations and own2026funding remain subject registryreconciliation, notzero.",
+      "searches_checked": [
+        "Insta360 IPO2025 raised funding IDG Qiming official",
+        "site:insta360.com IPO June2025 funding2016",
+        "site:qimingvc.com Insta360 IPO2025",
+        "site:dehenglaw.com 影石 2025 19.38"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.insta360.com/blog/news/insta360-closes-30m-funding-round.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.qimingvc.com/en/node/7305",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.dehenglaw.com/CN/newscontent/0006/034254/2.aspx?AID=&MID=0876",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://techcrunch.com/2019/03/19/insta360-raises-30-million-plans-ipo/",
+          "disposition": "opened_contemporaneous_date_only"
+        },
+        {
+          "url": "https://news.insta360.com/cctv-focus-report/",
+          "disposition": "empty_original_historicalstageclaim_held"
+        },
+        {
+          "url": "https://www.citic.com/uploadfile/2026/0421/20260421158405.pdf",
+          "disposition": "failed521_candidateonly"
+        }
+      ]
+    },
+    {
+      "id": "e141ddeb-c457-4b26-b6df-17c1f6a5dcd4",
+      "slug": "instro-precision",
+      "name": "Instro Precision",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "UKInstro exact company andPSCregistry verified; parentassociationonly.",
+      "hold_note": "Private financing unknown, notzero. Elbitparentfinancing/acquisitionprice/UKMoDcontracts andsitecapex notownraise. UScohortcountry preserved.",
+      "searches_checked": [
+        "InstroPrecision investment acquisitionElbitfunding",
+        "site:instro.com funding grant investment2026",
+        "site:elbitsystems.com InstroPrecisionUKsubsidiary"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://instro.com/about",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/00794972/persons-with-significant-control",
+          "disposition": "opened_original_registry"
+        },
+        {
+          "url": "https://instro.com/wp-content/uploads/2024/02/MAN001-Instro-Integrated-Management-System-IMS-Version-1.pdf",
+          "disposition": "failed404"
+        },
+        {
+          "url": "https://instro.com/about-us/latest-news/elbit-systems-uk-to-deliver-further-xact-night-vision-goggles/",
+          "disposition": "failed404"
+        }
+      ]
+    },
+    {
+      "id": "59e2cf39-8020-4dce-a520-632d3d6e0ca0",
+      "slug": "intact",
+      "name": "iNTACT",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Peraso original8K identifies Israeli iNTACT IFFdefencecustomer matchingname/productcandidate; origin403.",
+      "hold_note": "Cohort exactlegalidentity not conclusively matched; no Perasofinance assigned. Auditsoftware/Canadianinsurance namesakes excluded. Emptyrows notzero.",
+      "searches_checked": [
+        "iNTACT dronecompanyfunding",
+        "iNTACT Perasofundinginvestment",
+        "iNTACT investmentfundingIsraeli",
+        "site:perasoinc.com iNTACT April2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://i-hls.com/archives/139131",
+          "disposition": "origin403"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/890394/000121390026043233/ea0286166-8k_peraso.htm",
+          "disposition": "opened_original_exactcustomeridentity_candidate"
+        },
+        {
+          "url": "https://perasoinc.com/media/peraso-prso-achieves-production-milestone-with-initial-shipment/",
+          "disposition": "search_original_candidate"
+        }
+      ]
+    },
+    {
+      "id": "8865d9c7-420b-4272-9737-f8118c003b79",
+      "slug": "intec-group",
+      "name": "INTEC Group",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "GermanINTEC Industrie-Technik fromGAASIMOU andownsite; completedArmira majorityassociation verified.",
+      "hold_note": "2024buyeracquisitionfinancing exists but exactborrower notestablished as operatingtarget; no loanamount/instrument invented. Specificfundvehicle and privatehistoricalraises unknown.",
+      "searches_checked": [
+        "INTECGroup GAASI",
+        "INTECFinanzierungGroup",
+        "INTECArmira investment2024",
+        "site:intec.group funding grant investment2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://intec.group/en/home/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://intec.group/en/2025-was-an-incredibly-exciting-and-successful-year-for-intec-holding/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.goodwinlaw.com/en/news-and-events/news/2024/11/announcements-privateequity-goodwin-advises-armira",
+          "disposition": "opened_original_buyers_acquisitionloan_not_targetfinance"
+        },
+        {
+          "url": "https://www.lw.com/en/news/2024/12/latham-watkins-advises-dz-bank-ag-on-acquisition-financing-of-armira-for-intec",
+          "disposition": "originalsearch_candidate"
+        }
+      ]
+    },
+    {
+      "id": "dbc8b9fb-76eb-4905-bf7a-839e0d28a787",
+      "slug": "integrate-dg",
+      "name": "Integrate DG",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Officialbrandsite andUKCompaniesHouse14289159 actual filings checked; broadUSLLC/cohortclaim.",
+      "hold_note": "UKLtd vsConnecticutUSLLC exactcohortcontinuity unresolved. SondeGBP3.4m candidate is potentiallysharecapital notcashproceeds; originalSH01notfullyread. USArmyprocurementnotfinance; no geographychange.",
+      "searches_checked": [
+        "IntegrateDG fundinginvestmentseed",
+        "IntegrateDG investmentinvestors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defence-blog.com/u-s-army-buys-mystery-drones-from-little-known-integrate-dg",
+          "disposition": "timeout"
+        },
+        {
+          "url": "https://integrate-dg.com/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/14289159/filing-history",
+          "disposition": "opened_original_registry"
+        },
+        {
+          "url": "https://www.sondedata.com/company/14289159",
+          "disposition": "candidate_unverifiedamount_held"
+        }
+      ]
+    },
+    {
+      "id": "4db1c9de-8905-4f86-ba56-9c4656fa1b1b",
+      "slug": "intel",
+      "name": "Intel",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "IntelCorporation original2025Form10K and2026Q3Form10Q actualequitycloses verified;1971IPOoriginalhistory checked.",
+      "hold_note": "Full1968-2026 debt/equity/grant history incomplete. Government8.9b combines5.7b formerCHIPSgrants and3.2bSecureEnclave conditionaltranches; paidgrants2.2bvs2.3b and reclassification need award-level reconciliation. Apollojointventure/subsidiarycash, Altera sale notIntelprimary; warrants notcash.1971IPOprimaryproceeds notread.",
+      "searches_checked": [
+        "site:intel.com Intelinvestment2025 2026 NvidiaSoftBankUSgovernmentproceedsstock",
+        "site:intel.com 1971IPO"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000191/intc-20260926.htm",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://timeline.intel.com/1971/the-ipo",
+          "disposition": "opened_original_history_no_verified_primaryproceeds"
+        },
+        {
+          "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-and-trump-administration-reach-historic-agreement.html",
+          "disposition": "originalsearch_tranche_reconciliation_held"
+        }
+      ]
+    },
+    {
+      "id": "0ff9eab4-3d67-4567-a1d4-1b9c580477d8",
+      "slug": "international-golden-group",
+      "name": "International Golden Group",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Abu Dhabi International Golden Group PJSC exact defence supplier matched official UAE government original; added to EDGE portfolio23Jan2024.",
+      "hold_note": "Tawazun secondary investor listing and historical finance unresolved. Search engine surfaced loan PDFs with exact-issuer ambiguity, including Agthia/Oman-bank results; no loan assigned; UK namesake not assumed. Acquisition not primary raise; private funding unknown.",
+      "searches_checked": [
+        "International Golden Group EDGE acquisition financing funding",
+        "International Golden Group financing investors loan",
+        "International Golden Group funding Tawazun"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.mediaoffice.abudhabi/en/security/edge-group-adds-international-golden-group-to-portfolio-of-companies/",
+          "disposition": "opened_official_original"
+        },
+        {
+          "url": "https://www.cbinsights.com/company/international-golden-group/financials",
+          "disposition": "secondary_candidate_only"
+        },
+        {
+          "url": "https://static.mubasher.info/File.Mix_Announcement_File/C7F2CFBD-8E34-49CD-B030-D7422DF89AAD.pdf",
+          "disposition": "search_candidate_exact_issuer_not_established"
+        }
+      ]
+    },
+    {
+      "id": "b4236778-ab25-4722-ba77-ff183ad96c2b",
+      "slug": "international-submarine-engineering",
+      "name": "International Submarine Engineering",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Original Elbit20Oct2026 confirms exact Vancouver-area International Submarine Engineering Ltd acquisition. Own press archive checked.",
+      "hold_note": "IDEaS project funding mentioned in issuer search/archive but full page repeatedly timed out, exact award recipient/instrument/amount/date unresolved. Canadian contracts and consortium budgets not grants; acquisition price not own raise.",
+      "searches_checked": [
+        "International Submarine Engineering funding investment Elbit 2026",
+        "International Submarine Engineering grant funding Canada",
+        "International Submarine Engineering investor acquisition"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.elbitsystems.com/news/elbit-systems-expands-underwater-and-maritime-autonomy-capabilities-acquisition-ise",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ise.bc.ca/category/press-releases/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ise.bc.ca/subsea-surveillance-team-release/",
+          "disposition": "fetch_repeated_timeout"
+        },
+        {
+          "url": "https://search.open.canada.ca/contracts/?search_text=%22International+Submarine+Engineering+Ltd.%22",
+          "disposition": "search_procurement_candidate_not_grant"
+        }
+      ]
+    },
+    {
+      "id": "f2bdff0a-ff16-452c-84df-c4eeb06d3d55",
+      "slug": "intersoft",
+      "name": "Intersoft",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Cohort origin article is Axon Vision ForceField release; no Intersoft identified in indexed full content. Separate original Indra13Mar2026 identifies Belgian Intersoft Electronics Services in another C-UAS alliance, only candidate identity.",
+      "hold_note": "Exact cohort Intersoft identity unresolved; do not assign Belgian grants or similarly named IT company funding. Source-origin live fetch403 though indexed release available. PwC subsidy case and ePerfect participation remain candidate until identity/own allocations proven; no geography change.",
+      "searches_checked": [
+        "Intersoft Axon Vision ForceField company financing",
+        "Intersoft ForceField",
+        "Intersoft defence funding drone",
+        "Intersoft Axon company"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://euro-sd.com/2026/10/news/land/54075/axon-vision-forcefield/",
+          "disposition": "indexed_issuer_origin_content_checked_live403"
+        },
+        {
+          "url": "https://www.indragroup.com/cms-content/2026/03/260313-PR-Indra-Group-EME-Group-Intersoft.pdf",
+          "disposition": "opened_original_candidate_identity_only"
+        },
+        {
+          "url": "https://www.pwc.be/en/news-publications/client-case-studies/intersoft-electronics.html",
+          "disposition": "search_candidate_subsidy_claim_not_attributed"
+        }
+      ]
+    },
+    {
+      "id": "9ce0921d-5786-477f-936e-47ec1a14fb71",
+      "slug": "intramotev",
+      "name": "Intramotev",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Exact railcar issuer; four original company/SEC sources verified, including latest27Oct2026 amount-sold disclosure, distinct grant.",
+      "hold_note": "2022seed USD6.487m/2023seed and January2026MissouriTechnologyCorp investment remain original-reconciliation holds. Earlier amendments within latest offering not extra rounds; latest reported10725724 differs from earlier10760000, do not sum. ProChain SPV own fundraising not issuer proceeds. COLT16.2mgrant awarded CityColumbia notIntramotev. Full private history/security unknown.",
+      "searches_checked": [
+        "Intramotev funding Series A seed investor 2025 2026",
+        "Intramotev investment Idealab X August 2024 14.4 million",
+        "Intramotev 2022 Flybridge seed official",
+        "site:intramotev.com funding 2026 2025",
+        "Intramotev Receives $200,000 Grant PRNewswire"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/intramotev-receives-investment-from-idealab-x-to-accelerate-development-of-autonomous-and-zero-emissions-freight-rail-technologies-301416507.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/intramotev-raises-14-4-million-to-retrofit-a-new-era-of-growth-for-rail-industry-302223983.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/intramotev-receives-200-000-grant-from-michigans-office-of-future-mobility-and-electrification-to-accelerate-autonomous-railcar-tech-301821747.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1945538/000194553826000003/xslFormDX01/primary_doc.xml",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.advantagecap.com/news/st-louis-autonomous-railcar-startup-intramotev-raises-14m/",
+          "disposition": "opened_investor_conflicting_lead_headline_held"
+        },
+        {
+          "url": "https://specstream.ai/data/form-d/company/intramotev-inc-1945538",
+          "disposition": "opened_discovery_links_followed_to_SEC"
+        },
+        {
+          "url": "https://www.bizjournals.com/stlouis/news/2026/10/20/intramotev-columbia-terminal-railrowd-project.html",
+          "disposition": "indexed_secondary_columbia_grant_and_MTC_candidate"
+        }
+      ]
+    },
+    {
+      "id": "e2a6c783-40fb-4740-834c-faa528c9b12c",
+      "slug": "invariant",
+      "name": "Invariant",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "ExactHuntsville engineering/ST​AKE issuer founded2001; original confirms2024transition100%ESOP; current news October2026checked.",
+      "hold_note": "ESOP transfer not established external primary equity injection or company debt.400mcontractwins/200mMarineCorpsprocurement notfunding. SBIR candidate listing requires exact original award/instrument; namesake AI firms excluded. Unknown private proceeds notzero.",
+      "searches_checked": [
+        "Invariant Huntsville employee owned investment financing ESOP",
+        "Invariant Corporation financing investors loan",
+        "Invariant Corporation funding grant SBIR"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.invariant-corp.com/invariant-corporation-transitions-to-100-esop-ownership/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.invariant-corp.com/invariant-corporation-celebrates-25-years/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.invariant-corp.com/news-2/",
+          "disposition": "opened_original_current_news"
+        },
+        {
+          "url": "https://www.inknowvation.com/sbir/companies/invariant-corporation",
+          "disposition": "search_award_candidate_not_verified"
+        },
+        {
+          "url": "https://prospeo.io/c/invariant-corporation-email-format",
+          "disposition": "unverified_never_funded_claim_excluded"
+        }
+      ]
+    },
+    {
+      "id": "e59aee71-12fc-4c7b-9d4e-5f6b7640dd89",
+      "slug": "invisio",
+      "name": "Invisio",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "OriginalSwedish listed issuer continuity/history and current30Oct2026Q3original PDF checked. Three exacthistorical debt/equity disclosures verified.",
+      "hold_note": "Earlier2010/2011rights issues and2021loan need complete originalproceeds/issuance reconciling.2022yearendloanbalance65m/2021balance85m notnewdraws. Employeeoptions/sharecapital notfundingproceeds.450mCanadianframework procurementnotraise. Current2026PDF read but no newlyattributedfinancing event; historypartial.",
+      "searches_checked": [
+        "Invisio financing bank loan rights issue 2025 2026",
+        "site:invisio.com credit facility financing 2025 2026",
+        "site:invisio.com capital raise rights issue 2009 2011 2013",
+        "site:corp.invisio.com loan 2026",
+        "site:corp.invisio.com loan 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://corp.invisio.com/news-and-events/pressrelease/invisio-communications-interim-report-january-to-september-2012-bcbf9a69",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://corp.invisio.com/news-and-events/pressrelease/invisio-carries-out-directed-share-issue-of-sek-10-m-e4cd0dcd",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://corp.invisio.com/news-and-events/pressrelease/invisio-interim-report-january-september-2026-strong-sales-and-order-intake",
+          "disposition": "opened_original_current_report"
+        },
+        {
+          "url": "https://storage.mfn.se/62f0bbb8-939a-4bfb-b46a-346594da397a/interim-report-q3-2026.pdf",
+          "disposition": "opened_original_current_report_pdf"
+        },
+        {
+          "url": "https://corp.invisio.com/the-share/share-capital-development/",
+          "disposition": "search_original_capital_history_candidate"
+        },
+        {
+          "url": "https://corp.invisio.com/media/wfefio1g/invisio-annual-report-2022.pdf",
+          "disposition": "indexed_original_loan_balance_not_event"
+        },
+        {
+          "url": "https://corp.invisio.com/media/fqfluccv/invisio-annual-report-2021.pdf",
+          "disposition": "indexed_original_loan_balance_not_event"
+        }
+      ]
+    },
+    {
+      "id": "c5b62060-9632-4b86-97f7-64738483d204",
+      "slug": "iridium-communications",
+      "name": "Iridium Communications",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Exactpublicparent fouroriginal2012/2014preferred/common/directplacements. Current2026SEC debt andacquisitionfiling checked.",
+      "hold_note": "2019/2023/2024termloans actualIridiumSatelliteLLC,2026sellerloan actualMonitorHoldingsLLC andassumedAireondebt notassignedparent. Otherhistoricalfinancing/2009SPAC/optionexercise/convertiblehistoryunresolved. RocketLabtransactionpendingnotprimaryraise.",
+      "searches_checked": [
+        "site.investor.iridium.com 2026 financing term loan 2025 2024 2031 notes",
+        "site.iridium.com 2019 2024 2025 2026 term loan financing",
+        "site.investor.iridium.com 2013 preferred offering closing",
+        "Iridium Baron2014 stock sale"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://investor.iridium.com/09-28-2012-iridium-prices-100-million-private-offering-of-7-percent-series-a-cumulative-perpetual-convertible-preferred-stock",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://investor.iridium.com/05-14-2014-iridium-announces-closing-of-public-offering-of-common-stock-and-series-b-preferred-stock",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://investor.iridium.com/05-05-2014-iridium-communications-inc-announces-sale-of-common-stock-to-baron-funds",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1418819/000119312514180753/d718930d8k.htm",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1418819/000141881926000052/irdm-20260930.htm",
+          "disposition": "opened_original_exactsubsidiaryborrowers_held"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1418819/000141881924000013/irdm-20240325.htm",
+          "disposition": "search_original_exactborrowercandidate"
+        }
+      ]
+    },
+    {
+      "id": "bf82e33f-c6f1-42e3-8d86-fd02edbb0bc7",
+      "slug": "irkut-corporation",
+      "name": "Irkut Corporation",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "MOEX8Sep2023 notice confirms samelegalissuer renamedYakovlev effective11Sep2023, shareandbondidentifiers.",
+      "hold_note": "2004IPOprimaryvssecondarysplit/originalcurrency, historicbonds and2024/2025additionalplacements notverifiedoriginalcompletedproceeds. Currentissuerinvestor/historypage timedout. Do notassignUACgroupcapitalorcountsecondaryEADSsale asownraise. Emptyrowsnotzero.",
+      "searches_checked": [
+        "Иркут корпорация облигации допэмиссия 2025 2026 Яковлев",
+        "site:yakovlev.ru размещ акций 2025",
+        "Irkut2004IPOproceeds issuer",
+        "Яковлев допэмиссии2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.moex.com/n63805",
+          "disposition": "opened_original_identitycontinuity"
+        },
+        {
+          "url": "https://yakovlev.ru/investors/",
+          "disposition": "fetch_timeout_original_indexsearchreviewed"
+        },
+        {
+          "url": "https://yakovlev.ru/about/history-and-progress/",
+          "disposition": "fetch_timeout"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/vprr/0501/05012512.pdf",
+          "disposition": "original_candidate2004notreconciled"
+        }
+      ]
+    },
+    {
+      "id": "29a14b61-265e-40ba-b7bf-e6ad665d1ae8",
+      "slug": "iron-cluster",
+      "name": "Iron Cluster",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Originalnonprofitmembership-fundedcluster exactLvividentity; financeattractionfacilitatesmembercompanies.",
+      "hold_note": "Ownmembercontributionsnotpricedround.1.5mecosysteminvestments,10kprizefund,300kUAHoutgoinggrantcaps/40mLvivcommunitysupportnotownissuerproceeds. Unknownprivatefundingnotzero.",
+      "searches_checked": [
+        "Iron Cluster funding grant investors",
+        "IRON кластер грант фінансування інвесторів",
+        "IRON non-profit membership funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ironcluster.org/about-us-eng",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ironcluster.org/home-eng",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ironcluster.org/about-us",
+          "disposition": "search_original_local_language"
+        },
+        {
+          "url": "https://loda.gov.ua/news/99516",
+          "disposition": "search_official_memberfacilitation"
+        }
+      ]
+    },
+    {
+      "id": "4b8a899c-5577-48db-a78e-260e7d0a75fb",
+      "slug": "israel-aerospace-industries-iai",
+      "name": "Israel Aerospace Industries (IAI)",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "AuditedIAI2021originalestablishes twoexactparentbonds andnativeNISamounts. RootcheckedotherIAIaliasrows0events.",
+      "hold_note": "Earlier2007/2009bondnativecurrency/sourceproceeds andnew2026extensions/reissuancesunresolved. PlannedIPO/up-to49%stateholdingsnotclosedprimaryproceeds. USDtranslationsnotoriginalcurrency. NotpropagatedtoELTA/TAMAM/otherIAIcohortaliases.",
+      "searches_checked": [
+        "site:iai.co.il bonds",
+        "Israel Aerospace Industries bonds2026",
+        "Israel Aerospace Industries raised bonds",
+        "site:iai.co.il bonds2025funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.iai.co.il/wp-content/uploads/2026/04/IAI-FS-CONSOLIDATED-AND-SOLO-12.21.pdf",
+          "disposition": "opened_original_auditedNote19"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/52749/000110465926079237/tm2619146d1_ex99-d.htm",
+          "disposition": "officialgovernmentIPOcandidate_notcompleted"
+        },
+        {
+          "url": "https://en.globes.co.il/en/article-1000813543",
+          "disposition": "secondaryhistoriccandidatecorroboratedonlyownoriginal"
+        }
+      ]
+    },
+    {
+      "id": "036c0075-5714-4a7a-ac2f-b6be27638fee",
+      "slug": "israel-shipyards",
+      "name": "Israel Shipyards",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Originalparentis-ind.com explicitly separatesIsraelShipyardsLtdoperatingnavalcompany fromIsraelShipyardsIndustriesLtdholdingissuer.",
+      "hold_note": "2020ILS340mIPO andJuly2026ILS200mbonds belongIndustriesholding, notautomaticallyoperatingshipyard.2026shipacquisitionproposedbankloanexactborrower/notdrawnheld.1.7bnvaluationnotfunding. No issuerfinanceassigneduntilcohortcontinuityresolved.",
+      "searches_checked": [
+        "Israel Shipyards financing bonds IPO2020",
+        "Israel Shipyards loan financing shipyardsltd2025 2026",
+        "Israel Shipyards parent subsidiary Industries"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://is-ind.com/about/?lang=en",
+          "disposition": "opened_original_issuerseparation"
+        },
+        {
+          "url": "https://is-ind.com/investor-relations/company-profile/?lang=en",
+          "disposition": "search_original_parent"
+        },
+        {
+          "url": "https://content.tase.co.il/media/u2vihc5m/stat_210_ipo_companies_2025_eng.pdf",
+          "disposition": "officialexchangeparentIPOcandidate"
+        },
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/o5qpex1k0",
+          "disposition": "secondary2026parentbondcandidate_held"
+        }
+      ]
+    },
+    {
+      "id": "90e2dafc-0383-4414-b61d-3a5734de42f5",
+      "slug": "israel-weapon-industries",
+      "name": "Israel Weapon Industries",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "ExactIWIownandIsraeliSKoriginalconfirmparentmembership. Government2025visitcorroboratesfacilityandSamyKatsavgroup.",
+      "hold_note": "Government multimillionfacilityinvestment describescapexwithoutclosedexternalraise/amount/date. Otherprivatefinancingunknown, notzero. Do notassignIMI/ElbitacquisitionpriceorUSaffiliatefunding.",
+      "searches_checked": [
+        "site.iwi.net SK Israel Weapon ownership financing",
+        "site:iwi.net investment funding loan investors",
+        "Israel Weapon Industries funding loan capital investment SK Group",
+        "site:iwi.net/about/ funding financing investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://iwi.net/about/about-iwi/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://sk-g.net/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://mod.gov.il/en/press-releases/press-room/israel-mod-director-general-conducts-working-visit-to-iwi",
+          "disposition": "opened_original_capexnotraise"
+        },
+        {
+          "url": "https://app.dealroom.co/companies/israel_weapon_industries",
+          "disposition": "search_negativeclaim_notproof"
+        }
+      ]
+    },
+    {
+      "id": "92799ae0-1a64-408d-84d5-f384845e391c",
+      "slug": "iss-aerospace",
+      "name": "ISS Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Exact UK09752527/domain matched. Original2022investment and exact2023DTEP grant verified.",
+      "hold_note": "Unknown investors/cheques/security and full earlier history; sixDASA contracts and2024NDA procurement not grants, programme2m/16m budgets not own proceeds. Preserve geography.",
+      "searches_checked": [
+        "\"ISS Aerospace\" investment funding",
+        "\"ISS Aerospace\" \"DTEP\" 500000",
+        "\"ISS Aerospace\" investment 2024 2025 2026 grant funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.issaerospace.com/iss-aerospace-announces-new-shareholder-and-investment-growth/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://pressat.co.uk/releases/iss-aerospace-announces-new-shareholder-and-investment-for-growth-f14b038d7b6c04f4eb354d0e22afe0ed/",
+          "disposition": "opened_issuer_original"
+        },
+        {
+          "url": "https://www.gov.uk/government/news/670k-shared-by-two-innovators-in-first-round-of-dtep-funding",
+          "disposition": "opened_original_exact499992"
+        },
+        {
+          "url": "https://www.issaerospace.com/iss-aerospace-announces-dtep/",
+          "disposition": "opened_original_rounded500000_sameaward"
+        },
+        {
+          "url": "https://www.gov.uk/government/case-studies/flying-heavy-how-dasa-funded-uas-revolutionises-military-logistics",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.gov.uk/government/news/sensing-success-2-million-in-contracts-awarded-to-fund-remote-sensing-technologies",
+          "disposition": "opened_original_contract_excluded"
+        },
+        {
+          "url": "https://www.issaerospace.com/news/",
+          "disposition": "opened_index"
+        }
+      ]
+    },
+    {
+      "id": "49637e2c-89e6-4732-90f0-fd315cbfb918",
+      "slug": "istra-aero-istrinsk-experimental-mechanical-plant",
+      "name": "Istra Aero (Istrinsk Experimental Mechanical Plant)",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact IEMZ Russian experimental aircraft identity matched original indexed about-page; site fetch502.",
+      "hold_note": "Private funding unknown, not zero. No exact finance original located; generic national19.5bnprogramme not companyallocation. Namesake AtlantAero excluded.",
+      "searches_checked": [
+        "\"Istra Aero\" финансирование инвестиции",
+        "\"Истринский экспериментальный механический завод\" инвестиции кредит",
+        "\"Истринский экспериментальный механический завод\" \"финансирование\"",
+        "\"ИТСТРА.АЭРО\" инвестор"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.istra.aero/about",
+          "disposition": "original_index_identity_fetch502"
+        },
+        {
+          "url": "http://www.istra.aero",
+          "disposition": "fetch502"
+        },
+        {
+          "url": "https://www.tbank.ru/business/contractor/legal/1027710002319/",
+          "disposition": "registry_candidate_only"
+        },
+        {
+          "url": "https://base.garant.ru/48189070/7d7b9c31284350c257ca3649122f627b/",
+          "disposition": "national_programme_candidate_not_companyfinance"
+        }
+      ]
+    },
+    {
+      "id": "8c1506a8-5e56-4da5-ab57-725035efc639",
+      "slug": "it-logika",
+      "name": "IT Logika",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Lithuanian UAB302672804 DBOX origin matched. Two original own-grants; direct official signed/paid amounts separated.",
+      "hold_note": "5G project08-004-K-0016 EUR2897286.55 is consortium grant withPixpro/AAI/VilniusUniversity, not established ownallocation. SixfigureUSorder/2mPolandtransaction sales not financing. Defencevoucherrequestedamount not award. Privatehistoryunknown.",
+      "searches_checked": [
+        "\"IT Logika\" investment funding drones",
+        "\"IT Logika\" finansavimo 5G 2897286",
+        "\"IT logika\" \"Inostartas\" \"finansavimo\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://2014.esinvesticijos.lt/lt//finansavimas/paraiskos_ir_projektai/inovatyvios-bepilociu-orlaiviu-valdymo-sistemos-sukurimas",
+          "disposition": "opened_original_exact_paidaward"
+        },
+        {
+          "url": "https://esinvesticijos.lt/sutartys/uab-it-logika-darbuotoju-igudziu-ugdymas-ir-tobulinimas",
+          "disposition": "opened_original_ownallocation"
+        },
+        {
+          "url": "https://esinvesticijos.lt/sutartys/5g-technologiju-pritaikymas-bepilociu-orlaiviu-bazinese-stotyse",
+          "disposition": "opened_original_consortium_amount_held"
+        },
+        {
+          "url": "https://www.pix-pro.com/pl/eu-investment",
+          "disposition": "opened_original_partner_consortiumconfirmation"
+        },
+        {
+          "url": "https://www.inovacijuagentura.lt/naujiena/lietuviu-sukurta-autonomine-dronu-stotis-leidzia-valdyti-bepilocius-is-bet-kurio-pasaulio-tasko/",
+          "disposition": "opened_original_identity_Inostartas"
+        },
+        {
+          "url": "https://lithuania.lt/governance-in-lithuania/lithuanian-drone-technology-makes-inroads-in-us-with-six-figure-order-and-new-partnership/",
+          "disposition": "opened_official_sales_not_financing"
+        },
+        {
+          "url": "https://_mta-sts.droneteam.lt/eu-5g-sandbox.html",
+          "disposition": "fetch502"
+        },
+        {
+          "url": "https://www.inovacijuagentura.lt/finansavimo-kvietimas/gynybos-inovaciniai-cekiai-2025/",
+          "disposition": "search_candidate_requested_notaward"
+        }
+      ]
+    },
+    {
+      "id": "eb6ccbf4-2bd1-4c30-afae-adf5205955d5",
+      "slug": "it-s-fpv",
+      "name": "IT'S FPV",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Originalsource motor collaboration matched German itsFPV UG HRB20668; official about/legal/currentshop checked. Bounded public finance review found no confirmed round.",
+      "hold_note": "Private funding unknown, never zero. T-Hobby supplier/product co-development not established investor; retailprice/order notfinance.",
+      "searches_checked": [
+        "\"IT'S FPV\" company funding",
+        "\"IT'S FPV\" funding investors grant",
+        "\"itsFPV\" investor investment funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://itsfpv.de/pages/about-us",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://itsfpv.de/de-de/policies/legal-notice",
+          "disposition": "opened_original_legalidentity"
+        },
+        {
+          "url": "https://itsfpv.de/",
+          "disposition": "opened_original_shop"
+        },
+        {
+          "url": "https://dronexl.co/2026/10/05/quadmovr-160-gram-5-inch-los-drone/",
+          "disposition": "opened_origin_product_notfinance"
+        }
+      ]
+    },
+    {
+      "id": "13b6bfb2-5b8f-456f-b027-d5098db5ac1e",
+      "slug": "itt-cannon",
+      "name": "ITT Cannon",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Original ITT release identifies exact Cannon brand/segment; bounded ownfinance search found no separate Cannon raise.",
+      "hold_note": "Standaloneprivate details unknown, notzero. ParentITT2026debt/SPXFLOWacquisition/European18.3mgrant not attributed Cannon. USprocurement notgrant;40maddressablemarket notraise.",
+      "searches_checked": [
+        "\"ITT Cannon\" funding investment parent",
+        "\"ITT Cannon\" investment funding grants loan",
+        "\"ITT Cannon\" investors grants 2026 financing",
+        "\"ITT Cannon\" \"part of\" \"ITT\" site:itt.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://investors.itt.com/news-releases/news-release-details/itt-cannon-connectors-receive-us-army-qualification-nett-warrior",
+          "disposition": "opened_original_parentbrand"
+        },
+        {
+          "url": "https://www.ittcannon.com/about",
+          "disposition": "iframe_only"
+        },
+        {
+          "url": "https://investors.itt.com/static-files/b291ee30-1079-40d5-8737-18eed2618b7c",
+          "disposition": "fetch403"
+        },
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_SPE7MC24V7124_9700_-NONE-_-NONE-",
+          "disposition": "procurement_candidate_iframe"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/216228/000021622826000076/itt-20261003.htm",
+          "disposition": "search_candidate_parent_finance_excluded"
+        }
+      ]
+    },
+    {
+      "id": "0985aee0-e5ac-4214-a6f1-8023d301a9e9",
+      "slug": "iveco",
+      "name": "Iveco",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Issuer original identifies Iveco as commercialbrand ofIvecoGroup; financearm offerscustomerfinance. Exact operatingissuer financing not established.",
+      "hold_note": "IvecoGroup450mEIB/150mCDP/groupbonds are parenttransactions not automaticallybrandproceeds. CNHCapitaldebt, leases/customerfinance, PlusAIlisting, LeonardoIDVpurchase and procurement excluded. Standalonehistory/issuercontinuity held, notzero.",
+      "searches_checked": [
+        "\"Iveco\" \"bond\" \"2026\" financing",
+        "\"site:ivecogroup.com\" \"Iveco S.p.A.\" financing loan",
+        "\"Iveco S.p.A.\" \"loan\" financing EIB",
+        "site:ivecogroup.com \"IVECO\" \"brand\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.ivecogroup.com/media/corporate_press_releases/2026/january/iveco_and_plus_ai_launch_new_level_4_autonomous_driving_programme_in_spain",
+          "disposition": "opened_original_parentbrand"
+        },
+        {
+          "url": "https://www.ivecocapital.com/en_nrd/about-us",
+          "disposition": "opened_original_customerfinance_notissuer"
+        },
+        {
+          "url": "https://www.iveco.com/global/iveco/brand/iveco-in-brief",
+          "disposition": "fetch_failed"
+        },
+        {
+          "url": "https://www.ivecogroup.com/-/media/investors/demerger_information/admission_documents/docs/iveco_group_n.v._prospectus_251978896.1.pdf",
+          "disposition": "search_candidate_parentgroup"
+        },
+        {
+          "url": "https://previewcdn01.ivecogroup.com/-/media/corporate_press_releases/2026/november/iveco_group_2026_third_quarter_results/20261103_PR_IVG_Q3_2026.pdf?rev=2ab4d577fa1e4d1aa69aa81f6c243d46",
+          "disposition": "search_candidate_parentfinance"
+        }
+      ]
+    }
+  ],
+  "canonical_and_source_reconciliation": {
+    "existing_profiles_preserved": true,
+    "notes": [
+      "Exact parent IAI debt only; three other IAI identities inspected and no events duplicated. No propagation to ELTA/Tamam/MALAT.",
+      "SK Group Israel existing Camero-backed profile reused, not Korean SK; exact Baron funds distinct from Baron manager.",
+      "Michigan existing exact slug reused; pre-existing duplicate not merged. Armira distinct from Armira Growth, Elbit UK distinct from Elbit parent.",
+      "DASA grantor row removed: delivery/announcement does not establish contractual legal grantor. Government grant amount retained with no invented participant.",
+      "Intramotev latest Form D amount sold is a single dated disclosure, not another amendment round, full-offering close or capacity. Closing status undisclosed.",
+      "Insta3602019 issuer-page2025refresh date is not a2025raise; exact1938070000CNYIPO and original IPOcounsel conversion checked.",
+      "Iridium exact primary shares*price proceeds distinct from net; subsidiary borrowers not assigned to parent. IAI faceprincipal explicitly not netcash."
+    ],
+    "root_originals_checked": [
+      "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000191/intc-20260926.htm",
+      "https://www.iai.co.il/wp-content/uploads/2026/04/IAI-FS-CONSOLIDATED-AND-SOLO-12.21.pdf",
+      "https://www.dehenglaw.com/CN/newscontent/0006/034254/2.aspx?AID=&MID=0876",
+      "https://www.gov.uk/government/news/670k-shared-by-two-innovators-in-first-round-of-dtep-funding",
+      "https://investor.iridium.com/05-14-2014-iridium-announces-closing-of-public-offering-of-common-stock-and-series-b-preferred-stock"
+    ],
+    "limitation": "Root SEC FormD refetch inaccessible; research group opened actual SEC XML, exact amount/issuer corroborated in its ledger. Failed root refetch is not negative financing evidence."
+  },
+  "validation": {
+    "importer_and_three_schema_fixtures_match_current_main": true,
+    "postgresql": "PGlite actual transaction rollback, atomic counts, idempotency, conflicting-value rejection and source foreign-key enforcement.",
+    "production_rollback_baseline_restored": true,
+    "production_atomic_commit": true,
+    "post_import_idempotency_and_exact_source_role_audit": true
+  },
+  "publication_scope": {
+    "targets_in_european_landscape": [],
+    "note": "Preserve all geography, classification and publication gates; full-catalogue investors/associations published without claiming wider-company events are on European map."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles",
+    "Legacy relationships",
+    "Publication and geography gates",
+    "Repository schedules"
+  ],
+  "programme_complete": false
+}
