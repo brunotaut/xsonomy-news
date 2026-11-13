@@ -1,5 +1,5 @@
 {
-  "status": "imported_awaiting_publication",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T05:56:16.178Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-fifty-fourth.json",
@@ -47,8 +47,15 @@
     "db_source_reconciliation_companies": 862,
     "queue_dispositions_applied": 24,
     "new_profile_exact_name_duplicates": 0,
-    "current_manifest_publication_verified": false,
-    "concurrency_speedup_claimed": false
+    "current_manifest_publication_verified": true,
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "durable_manifest_readback_verified": true,
+    "active_minutes": 15.81,
+    "checked_identities_per_hour": 94.9,
+    "completed_reviews_per_hour": 26.6,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, priority published-company follow-up, source/canonical QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution audit and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3173,
@@ -1103,10 +1110,11 @@
       "reason": "Original2018 investor name retained; no unsupported successor vehicle mapping."
     },
     "root_verification": {
-      "search_queries_executed": 2,
+      "search_queries_executed": 3,
       "searches_checked": [
         "Kpler 2022 Rothschild Five Arrows 20 million primary 200 million secondary",
-        "Kova Labs 120000 300000 European Defence Agency 2026 funding"
+        "Kova Labs 120000 300000 European Defence Agency 2026 funding",
+        "site.liebherr.com aerospace Toulouse Lindenberg legal companies financing 2026 grants"
       ],
       "sources_checked": [
         {
@@ -1142,7 +1150,8 @@
       "stored_source": "https://smartcap.ee/sc_portfolio/",
       "additional_profile_source": "https://krakentechnology.com/articles/kraken-technology-group-raises-160m-at-1bn-valuation",
       "new_generic_relationships": 8,
-      "confirmed_generic_relationships": 9
+      "confirmed_generic_relationships": 9,
+      "audit_note": "All9 relationship identities and all9 new profile-source URLs verified;8 direct relationship-source URLs match, while existing SmartCap source is preserved. Eight new relationship rows, not nine."
     },
     "publication_source_types_note": "Government registry and issuer filings retain source URLs and source publication dates in the versioned manifest; published dates unknown remain null."
   },
@@ -1182,5 +1191,53 @@
     "Repository schedules",
     "No paid external API backfill"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T06:12:04.653Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T06:12:04.653Z",
+    "verified_at": "2026-11-13T06:12:04.653Z",
+    "catalogue_commit": "e808b20ed4cd8b05497dadbf6281bf6632cc79b6",
+    "source_commit": "b03e0d268ab8172a3b2de7175040bdddce7248e2",
+    "workflow_run": {
+      "id": 43376725939,
+      "head": "e808b20ed4cd8b05497dadbf6281bf6632cc79b6",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43376725939"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-fourth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-fourth.json",
+    "generated_at": "2026-11-13T06:10:16.072Z",
+    "investor_generated_at": "2026-11-13T06:10:19.316Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2530,
+    "portfolio_relationships": 382,
+    "expected_profiles": 45,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "generic_profile_source_matches": 9,
+    "manifest_participation_source_matches": 40,
+    "manifest_generic_relationship_matches": 9,
+    "new_named_profiles": 25,
+    "new_generic_portfolio_links": 8,
+    "current_manifest_event_rows": 77,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 40,
+    "current_manifest_generic_relationship_matches": 9,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: DB2539 versus live2530. All24 new targets remain outside the European landscape. All45 referenced profiles,40 participant source URLs and9 generic links and their source URLs verified; eight generic links are new and one existing SmartCap association retained. Twenty-five new profiles published; curated-profile hash preserved. No new funding attributed to published Liebherr Aerospace. Geography/classification/publication gates unchanged."
+  },
+  "automation_verified": {
+    "id": "6ae8a29260108191a57ab58c00ff5894",
+    "enabled": true,
+    "schedule": "BEGIN:VEVENT\nDTSTART:20261102T144746Z\nRRULE:FREQ=HOURLY\nEND:VEVENT",
+    "timing_mode": "flexible_schedule",
+    "checked_at": "2026-11-13T06:10:46.520Z",
+    "note": "Hourly continuation remains enabled; no schedules changed. Recorded in-progress run is not used as evidence of research completion."
+  }
 }
