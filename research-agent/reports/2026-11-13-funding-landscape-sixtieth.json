@@ -1,5 +1,5 @@
 {
-  "status": "imported_awaiting_publication",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T11:47:39.382Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-sixtieth.json",
@@ -35,13 +35,22 @@
     "contribution_fields_audited": true,
     "db_total_events": 3473,
     "db_approved_events": 3460,
-    "db_approved_round_participations": 4505,
     "db_investor_profiles": 2722,
     "db_source_reconciliation_companies": 935,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
-    "new_profile_exact_name_duplicates": 0
+    "new_profile_exact_name_duplicates": 0,
+    "db_round_participations": 4505,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 9,
+    "clickable_generic_company_links_verified": 9,
+    "active_minutes": 10.92,
+    "checked_identities_per_hour": 131.9,
+    "completed_reviews_per_hour": 54.9,
+    "timing_scope": "Elapsed short writer lease through four disjoint read-only research groups, original-source and identity QA, importer/schema checks, PostgreSQL tests, production rollback, atomic import, repeat/idempotency and exact fact/role/source/contribution and extension-parent audit, durable queue readback and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3436,
@@ -1107,6 +1116,12 @@
       "relationship_matches": 9,
       "missing_link_sources": 0,
       "extension_parent_matches": 1
+    },
+    "live_generic_entry_verification": {
+      "entries": 9,
+      "source_urls": 9,
+      "clickable_company_links": 9,
+      "unlinked": []
     }
   },
   "publication_scope": {
@@ -1124,5 +1139,47 @@
     "Repository schedules",
     "No paid external API backfill"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T11:58:34.532Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T11:58:34.532Z",
+    "verified_at": "2026-11-13T11:58:34.532Z",
+    "catalogue_commit": "0475629133390ab73a91a9784b8054f6e7c42adc",
+    "source_commit": "4bbd5c8582cd11854d958cb8fa755074cc242ba9",
+    "workflow_run": {
+      "id": 43420985512,
+      "head": "0475629133390ab73a91a9784b8054f6e7c42adc",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43420985512"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixtieth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixtieth.json",
+    "generated_at": "2026-11-13T11:56:50.829Z",
+    "investor_generated_at": "2026-11-13T11:56:52.582Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2713,
+    "portfolio_relationships": 436,
+    "expected_profiles": 57,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 9,
+    "generic_portfolio_entries_verified": 9,
+    "clickable_company_links_verified": 9,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 71,
+    "manifest_generic_relationship_matches": 9,
+    "current_manifest_event_rows": 37,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 71,
+    "current_manifest_generic_relationship_matches": 9,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: DB2722 versus live2713. All24 targets remain outside European map. All57 referenced profiles,71 participation source URLs and9 generic portfolio entries with exact original source URLs verified; all9 entries have company links. Thirty-four new profiles published, curated-profile hash preserved. No company publication gate changed."
+  }
 }
