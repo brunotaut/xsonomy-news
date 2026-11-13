@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1089,
   "next_action": "Continue next24 queued wider-cohort identities Navantia UK through Nikon under a fresh short writer lease and up to four disjoint read-only groups. No pending import or publication. Reconcile Navantia UK separately from Navantia SAU own2025 SEPI loans; avoid copying parent financing. Resolve NextVision aliases before importing duplicates. Prioritise latest and historical originals and explicit roles; preserve documented legal-issuer/source holds, including published Liebherr attribution. No internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T12:46:24.602Z",
+  "updated_at": "2026-11-13T12:53:42.297Z",
   "source_reconciliation_companies": 935,
   "approved_funding_events": 3460,
   "round_participations": 4505,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T12:46:24.602Z",
     "expires_at": "2026-11-13T14:46:24.602Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "2abb4d66-6101-44dd-86f0-2f03899dffc0",
       "293c16e3-01a9-47c3-829b-b8ab50b038fb",
@@ -5759,7 +5759,32 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "ready_after_production_rollback",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-first.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-first.json",
+    "run_id": "funding-20261113T1245Z-next24",
+    "dataset": "funding-landscape-20261113-sixty-first",
+    "prepared_at": "2026-11-13T12:53:42.297Z",
+    "expected": {
+      "events": 29,
+      "participations": 68,
+      "sources": 40,
+      "relationships": 4
+    },
+    "production_before": {
+      "events": 3473,
+      "approved": 3460,
+      "links": 4505,
+      "sources": 4789,
+      "profiles": 2722,
+      "covered": 935,
+      "relationships": 439,
+      "preserved_profiles_hash": "4691acaf2b897248495d656954f37cc9"
+    },
+    "local_postgresql_tests_passed": true,
+    "production_rollback_baseline_restored": true
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T11:58:34.532Z",
