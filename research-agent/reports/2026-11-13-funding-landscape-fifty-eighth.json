@@ -1,0 +1,1039 @@
+{
+  "status": "imported_awaiting_publication",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T09:50:42.897Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-fifty-eighth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 11,
+    "new_or_retained_partial": 13,
+    "new_approved_events": 22,
+    "new_round_participations": 21,
+    "new_source_rows": 28,
+    "new_generic_portfolio_relationships": 4,
+    "new_companies_with_events": 9,
+    "new_investor_profiles": 10,
+    "search_queries_executed": 95,
+    "group_search_queries_executed": 91,
+    "root_additional_search_queries": 4,
+    "per_company_search_ledger_entries": 91,
+    "source_ledger_entries": 107,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 22,
+    "mismatched_facts": 0,
+    "participant_matches": 21,
+    "source_matches": 28,
+    "relationship_matches": 4,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 1,
+    "contribution_fields_audited": true,
+    "db_total_events": 3404,
+    "db_approved_events": 3391,
+    "db_approved_round_participations": 4405,
+    "db_investor_profiles": 2664,
+    "db_source_reconciliation_companies": 909,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "new_profile_exact_name_duplicates": 0
+  },
+  "production_before": {
+    "events": 3382,
+    "approved": 3369,
+    "links": 4384,
+    "sources": 4673,
+    "profiles": 2654,
+    "covered": 900,
+    "relationships": 417,
+    "preserved_profiles_hash": "64ec2764dc10f8419896f09b5ba72bab"
+  },
+  "production_after": {
+    "events": 3404,
+    "approved": 3391,
+    "links": 4405,
+    "sources": 4701,
+    "profiles": 2664,
+    "covered": 909,
+    "relationships": 421,
+    "preserved_profiles_hash": "64ec2764dc10f8419896f09b5ba72bab"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1072,
+    "source_review_partial": 621,
+    "queued": 871
+  },
+  "per_company": [
+    {
+      "id": "fc3fa4cc-fd60-4951-9c11-738bb67a22a5",
+      "slug": "material-impact",
+      "name": "Material Impact",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact entity is venture capital manager. Fund I and Fund III fundraising and manager AUM excluded from incoming operating-company funding.",
+      "hold_note": "Incoming firm equity history not established; outbound portfolio investing and fund LP commitments are separate. No zero-funding inference.",
+      "searches_checked": [
+        "site.materialimpact.com fund 2025 2026 500 million",
+        "\"Material Impact\" 2026 funding firm fund III",
+        "\"Material Impact\" investment management firm equity financing 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.materialimpact.com/about/",
+          "disposition": "Issuer identity and manager AUM; not a company round"
+        },
+        {
+          "url": "https://www.materialimpact.com/lab/announcing-our-352m-fund-iii/",
+          "disposition": "Fund III LP commitments excluded"
+        },
+        {
+          "url": "https://www.materialimpact.com/lab/introducing-material-impact/",
+          "disposition": "Original firm launch and Fund I distinguished from company financing"
+        }
+      ]
+    },
+    {
+      "id": "71a3f316-74b1-44e0-be60-2b940a5e975a",
+      "slug": "matrixspace",
+      "name": "MatrixSpace",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Three issuer-backed financing announcements, OTB transaction-party confirmation and historical/registry search completed.",
+      "hold_note": "March2026 FormD candidate USD24,786,203 sold has first sale September2025 in aggregators: may overlap SeriesB, not a new March round. Original SEC inaccessible; do not import or subtract inferred extension. USD30m SeriesA aggregator and later USD58m cumulative conflict with original10m A.",
+      "searches_checked": [
+        "site.matrixspace.com funding 2023 2025 2026 20 million",
+        "site.matrixspace.com funding seed 2022 2026 latest",
+        "MatrixSpace March 2026 25000000 Form D SEC",
+        "\"0001231919-26-000268\" MatrixSpace sec",
+        "site.otb.vc MatrixSpace 2025 Series B 20 million"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.matrixspace.com/press-release/announcing-matrixspace---smart-edge-sensing-solutions-launches-with-industry-leadership-team-and-advisors-10-1m-funding",
+          "disposition": "Approved completed funding"
+        },
+        {
+          "url": "https://www.matrixspace.com/press-release/matrixspace-secures-10m-series-a-funding",
+          "disposition": "Approved contemporaneous Series A amount"
+        },
+        {
+          "url": "https://www.matrixspace.com/press-release/matrixspace-completes-20m-series-b-funding",
+          "disposition": "Approved Series B"
+        },
+        {
+          "url": "https://otb.vc/article/matrixspace-ai-native-portable-radars-for-the-physical-world/",
+          "disposition": "Verified co-leads and L3Harris investment"
+        },
+        {
+          "url": "https://altstreet.investments/edgar/1979894",
+          "disposition": "Discovery only; 2026 filing candidate and 2025 first-sale date"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1979894/000123191926000268/xslFormDX01/primary_doc.xml",
+          "disposition": "Access failed; filing overlap unresolved"
+        }
+      ]
+    },
+    {
+      "id": "c2610d8e-b9a9-44a7-acd1-eb04257e028c",
+      "slug": "matternet-inc",
+      "name": "Matternet, Inc.",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 6,
+      "relationship_count": 0,
+      "evidence_note": "Original Boeing and issuer history plus SEC financial statements reviewed; legacy/public-parent continuity established.",
+      "hold_note": "Seed and 2022B claims unresolved. 2023 notes issuance timing, 2024 tranche dates and later B3 net proceeds held. Parent/individual investor affiliations do not establish subscribing vehicles.",
+      "searches_checked": [
+        "site.matternet.com funding Series B 2022 42 million investors",
+        "Matternet 2026 SPAC Los Altos Montrose funding 33 million merger",
+        "Matternet 2018 16 million Boeing Sony Swiss Post investment",
+        "site.matternet.com 2019 investment McKesson eight million",
+        "site.matternet.com 2022 series B 40 million"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://boeing.mediaroom.com/2018-06-26-Boeing-HorizonX-Ventures-Invests-in-On-Demand-Urban-Aerial-Delivery-Startup-Matternet",
+          "disposition": "Approved original SeriesA16m"
+        },
+        {
+          "url": "https://investor.matternet.com/news-events/press-releases/detail/109/matternet-raises-strategic-investment-from-mckesson-ventures",
+          "disposition": "Approved amount-undisclosed strategic investment"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2075109/000121390026087808/ea0301499-424b5_matternet.htm",
+          "disposition": "Approved selected actual cash events; note conversions, resale shares, merger shares and net-proceeds extension excluded"
+        },
+        {
+          "url": "https://www.matternet.com/newsroom/matternet-the-worlds-only-faa-type-certified-drone-delivery-platform-raises-33m-private-placement-as-part-of-go-public-transaction",
+          "disposition": "Approx33m headline reconciled against SEC; no separate duplicate round"
+        },
+        {
+          "url": "https://montrosecapital.com/portfolio/matternet/",
+          "disposition": "34.5m transaction headline held; no duplicate financing"
+        }
+      ]
+    },
+    {
+      "id": "bec14cf8-fc1d-4600-9d63-b2cec1b7d5f1",
+      "slug": "maxvision",
+      "name": "MaxVision",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Resolved US Huntsville/Madison rugged-computer issuer; Chinese listed-company and 2020 IPO namesake excluded.",
+      "hold_note": "2010USD2m candidate appears in VentureDeal-derived Gaebler and Dealroom, but no original transaction source or named investors; hold pending issuer/registry corroboration. Empty rows are not zero funding.",
+      "searches_checked": [
+        "MaxVision Rugged Portable Computers investment acquisition funding Huntsville",
+        "\"MaxVision\" \"investment\" \"Huntsville\"",
+        "\"MaxVision\" \"funding\" \"Rugged Portable\"",
+        "\"MaxVision\" \"2010\" \"$2\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.maxvision.com/about/location/",
+          "disposition": "Confirmed US issuer identity; no funding disclosed"
+        },
+        {
+          "url": "https://www.gaebler.com/VC-Funding-9B831292-4222-4DB1-85FC-60B4ACDB0E16-MaxVision-05-11-2010",
+          "disposition": "Candidate only; secondary database has no original source"
+        },
+        {
+          "url": "https://app.dealroom.co/companies/maxvision",
+          "disposition": "Corroborating database candidate; not an independent transaction source"
+        },
+        {
+          "url": "https://www.cbinsights.com/company/maxvision/financials",
+          "disposition": "Namesake collision risk; IPO not assigned"
+        }
+      ]
+    },
+    {
+      "id": "dc03a7d2-7867-4230-abed-49c7ee0b72cf",
+      "slug": "mayman-aerospace",
+      "name": "Mayman Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Original issuer and investor establish JetPack Aviation continuity and signed SDF investment; historical backing and 2026 timeline checked.",
+      "hold_note": "2019USD2m candidate and early investor allocations held: JetPack Aviation investor page repeatedly timed out. OTA awards and scope expansion are procurement; not equity or assumed grants.",
+      "searches_checked": [
+        "Mayman Aerospace funding 2026 55 million Jetpack Aviation",
+        "\"Mayman Aerospace\" \"Draper\" investment",
+        "site.sdfuae.ae Mayman 3 million"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://sdf.ae/news/strategic-development-fund-announces-3-million-investment-in-mayman-aerospace/",
+          "disposition": "Approved investor agreement dated2023-02-22"
+        },
+        {
+          "url": "https://maymanaerospace.com/sdf-investment",
+          "disposition": "Verified JetPack Aviation brand continuity"
+        },
+        {
+          "url": "https://maymanaerospace.com/company",
+          "disposition": "2026latest milestones; OTA contracts excluded"
+        },
+        {
+          "url": "https://jetpackaviation.com/investors/",
+          "disposition": "Repeated timeout; indexed backing claims not imported"
+        },
+        {
+          "url": "https://app.dealroom.co/companies/maymanaerospace_com",
+          "disposition": "2019funding candidate only"
+        }
+      ]
+    },
+    {
+      "id": "c980a3e0-4ecd-48a3-9a82-c3c001f38235",
+      "slug": "mazex",
+      "name": "Mazex",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Japanese issuer profile and English/Japanese funding history plus Sumitomo transaction-party news checked.",
+      "hold_note": "JPY10m registered capital lacks financing-event terms/date. Sumitomo forestry co-development/distribution alliance is not investment. No incoming financing established in bounded sources; no zero-funding claim.",
+      "searches_checked": [
+        "Mazex funding investment Sumitomo 2026 2024 マゼックス 資金調達",
+        "site.mazex.jp 出資 資金調達 会社概要",
+        "site.mazex.jp 出資 住友林業",
+        "マゼックス 資金調達 出資 投資 2026 2025 住友林業"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://mazex.jp/company.html",
+          "disposition": "Issueridentity and registeredcapital; no event inferred"
+        },
+        {
+          "url": "https://sfc.jp/information/news/2026/2026-07-17.html",
+          "disposition": "Original counterparty alliance; no equity terms"
+        },
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000071.000044345.html",
+          "disposition": "Issuer-released partnership; not financing"
+        }
+      ]
+    },
+    {
+      "id": "0ca1e6ab-d204-44c6-878d-a9b7572b1d3e",
+      "slug": "mcq-inc",
+      "name": "McQ Inc.",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact American sensor issuer separated from MCQ Markets. Original 2023 AFWERX award expressly contractual and excluded.",
+      "hold_note": "Historical aggregator Other/total funding claims remain unverified; SBIR contracts not automatically grants. No verified event is not zero funding.",
+      "searches_checked": [
+        "McQ Inc funding investment equity loan 2026 sensors",
+        "McQ Inc financing investors grants loan",
+        "\"McQ\" \"loan\" \"investment\" sensor company",
+        "\"McQ Inc\" \"2019\" \"150,000\" funding",
+        "site:sbir.gov \"McQ\" \"2019\" \"150,000\"",
+        "site:mcqinc.com investment funding financing ownership"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.mcqinc.com/",
+          "disposition": "Opened issuer; Fredericksburg sensor manufacturer, distinct from MCQ Markets securities issuer."
+        },
+        {
+          "url": "https://www.mcqinc.com/news/",
+          "disposition": "Opened issuer news and searched issuer funding history; operating products and procurement not funding rounds."
+        },
+        {
+          "url": "https://www.mcqinc.com/about-us/",
+          "disposition": "Issuer search result identifies government/commercial customers, not investors."
+        },
+        {
+          "url": "https://www.mcqinc.com/wp-content/uploads/2023/08/Press-Release_AFWERX-SBIR-STTR-AWARD_202308_V2.pdf",
+          "disposition": "Opened original dated August 4, 2023: USD1,249,956 Direct-to-Phase II SBIR is expressly a contract; excluded from equity/grant rounds."
+        },
+        {
+          "url": "https://seedtable.com/companies/mcq-inc",
+          "disposition": "Search discovery claims USD2.1m cumulative and June14,2019 USD150k Other; not verified as investment or grant. Original government-award reconciliation held."
+        }
+      ]
+    },
+    {
+      "id": "6f2709f9-488a-4b8c-8333-c2a6db95a9e1",
+      "slug": "mctech-rf-technologies",
+      "name": "MCTECH RF Technologies",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Israeli RF-jamming issuer checked against original identity/news and broad historical/latest investor and transaction searches.",
+      "hold_note": "Coverage archive follow-up404 and private financing unknown; catalogue empty rows not no funding. LPF(MCTECH) Trident Brands lending excluded.",
+      "searches_checked": [
+        "MCTECH RF Technologies investment funding acquired",
+        "\"MCTECH\" \"investment\" \"share\" company Israel",
+        "\"MCTECH\" investors financing Israel 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://mctech-jammers.com/about-us/",
+          "disposition": "Opened exact Israeli RF-jamming issuer; current Kfar Saba identity."
+        },
+        {
+          "url": "https://mctech-jammers.com/news/",
+          "disposition": "Opened issuer news hub; operational coverage, no disclosed financing identified."
+        },
+        {
+          "url": "https://mctech-jammers.com/news/press-release.html",
+          "disposition": "Coverage page initially returned document but follow-up fetch404; cannot claim full archive review."
+        },
+        {
+          "url": "https://finder.startupnationcentral.org/company_page/mctech",
+          "disposition": "Search discovery identifies Israeli company515049427; empty financing catalogue is not evidence of no funding."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1421907/000116552716000889/g8298.txt",
+          "disposition": "Search-discovered LPF(MCTECH) Investment Corp convertible lending relates to different issuer Trident Brands; excluded."
+        }
+      ]
+    },
+    {
+      "id": "d872cef6-b092-428a-bada-7dbb493da1bc",
+      "slug": "mdgroup",
+      "name": "mdGroup",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Exact aerial-survey mdGroup parent receives GE investment per July7,2021 original announcement; no invented amount, instrument, lead or closing day.",
+      "hold_note": "Only disclosed participation event supported. Earlier/later public funding history remains partial; clinical mdgroup namesake and outbound GeoCue acquisition excluded.",
+      "searches_checked": [
+        "mdGroup microdrones GE industrial investment funding",
+        "\"mdGroup\" funding investment 2026 2025 2024",
+        "site.group-md.com investment GE funding mdGroup"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.microdrones.com/en/content/microdrones-and-ge-launch-the-ge-industrial-drone-line/",
+          "disposition": "Opened original July7,2021: GE invested in Microdrones parent mdGroup; future investment promise not another event."
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2021/07/07/2258880/0/en/Microdrones-and-GE-Launch-the-GE-Industrial-Drone-Line.html",
+          "disposition": "Opened issuer-distributed identical July7,2021 release; mdGroup exact recipient and observer role, no amount or instrument."
+        },
+        {
+          "url": "https://group-md.com/",
+          "disposition": "Opened current original parent website and investors section; GeoCue, Schuebeler and Microdrones identities; investor opportunities are not closed rounds."
+        },
+        {
+          "url": "https://dronedj.com/2022/01/12/microdrones-owner-mdgroup-buys-lidar-specialist-geocue/",
+          "disposition": "Search discovery of outbound GeoCue acquisition; not incoming mdGroup capital."
+        },
+        {
+          "url": "https://mdgroup.com/blog/mdgroup-expands-clinical-trial-solutions-with-acquisition-of-skyelarke-and-skyepay-platform/",
+          "disposition": "Search discovery: clinical-trials namesake excluded."
+        }
+      ]
+    },
+    {
+      "id": "e19f83e0-14f8-4f4b-b8ff-897a39183922",
+      "slug": "mdh-strategic-services",
+      "name": "MDH Strategic Services",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Current Airwolf issuer activity confirmed in October2026 original reporting; supplier components not investor roles.",
+      "hold_note": "No issuer-owned financing archive located; LLC identity relies on registry mirrors, one fetch403. Historical funding and legal context remain partial; MDH Partners and UK M&DH namesakes excluded.",
+      "searches_checked": [
+        "MDH Strategic Services funding investors",
+        "MDH Strategic Services LLC drones company",
+        "\"MDH Strategic Services\" drones AUSA 2026 investment",
+        "\"MDH Strategic Services\" investors funding Airwolf"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://breakingdefense.com/2026/10/race-cars-and-robots-on-drones-sights-from-ausa-day-2/",
+          "disposition": "Opened October13,2026 cohort source; Parker Hannifin components on Airwolf show supplier relationship, not investment."
+        },
+        {
+          "url": "https://opengovus.com/sam-entity/V3ZFR8LCDA44",
+          "disposition": "Search discovery of Davidson North Carolina LLC, CAGE9X5J0; opening403. Mirror alone insufficient for current legal financing context."
+        },
+        {
+          "url": "https://govtribe.com/vendors/mdh-strategic-services-llc-9x5j0",
+          "disposition": "Search discovery confirms same LLC/CAGE identity; no funding event established."
+        }
+      ]
+    },
+    {
+      "id": "76a105f2-67e6-45a7-a34e-f55f958b23a9",
+      "slug": "measur",
+      "name": "Measur",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Bounded review covers historical/current issuer, dated exact acquisition counsel, original sponsor and September2026 partner confirming Hoskin division. Generic owner link supported.",
+      "hold_note": "No independently supported incoming Measur financing event identified; unknown private finance is not zero funding. Acquisition consideration, sponsor fund commitments, Measurand and Measurabl financing excluded.",
+      "searches_checked": [
+        "Measur Canada funding investment acquired investors surveying",
+        "\"Measur\" investment financing 2026 Hoskin",
+        "\"Measur\" \"Hoskin\" \"loan\" financing acquisition"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://measur.ca/pages/our_story",
+          "disposition": "Opened current Canadian distributor issuer site; distinct from Measurabl and Measurand."
+        },
+        {
+          "url": "https://www.millerthomson.com/en/deals-cases/hoskin-scientific-acquires-measur/",
+          "disposition": "Opened September19,2024 transaction counsel; exact acquired issuer879142AlbertaLtd dbaMeasur. Buyer financing and consideration not incoming company round."
+        },
+        {
+          "url": "https://riverassociates.com/hoskin-acquires-measur/",
+          "disposition": "Opened original sponsor September19,2024; transaction closed same date, Hoskin acquirer. Sponsor fund commitments excluded."
+        },
+        {
+          "url": "https://www.sphengineering.com/news/measur-master-distributor-canada",
+          "disposition": "Opened original partner September10,2026; Measur remains Hoskin Group division, expanded distribution is commercial agreement."
+        }
+      ]
+    },
+    {
+      "id": "424401c7-7d38-4c65-a6b0-e64b73f377b5",
+      "slug": "medusa-geoservices",
+      "name": "Medusa Geoservices",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Current Dutch soil-survey issuer and October2026 partner case study confirmed; no monetary amount attached to recognition award.",
+      "hold_note": "New branch/legal continuity from Medusa Explorations remains partial. No parent/sibling grant assigned without own issuer allocation; Danish Medusa commerce issuer excluded.",
+      "searches_checked": [
+        "Medusa Geoservices drone funding investment company",
+        "\"Medusa Geoservices\" financiering investering",
+        "\"Medusa Geoservices\" subsidie financiering investeerder"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://medusa-geoservices.com/",
+          "disposition": "Opened current Groningen soil-survey issuer; research services and product ecosystem not financing."
+        },
+        {
+          "url": "https://medusa-geoservices.com/over-ons/",
+          "disposition": "Opened issuer team and Groningen address; founders and R&D collaboration do not establish capital round."
+        },
+        {
+          "url": "https://www.sphengineering.com/news/drone-gamma-ray-peat-mapping-ireland",
+          "disposition": "Opened original partner October27,2026; client survey and recognition award, no disclosed monetary financing; Radiometrics supplier separate."
+        },
+        {
+          "url": "https://nl.linkedin.com/posts/medusa-geoservices_met-trots-kondigen-we-aan-dat-wij-zijn-gestart-activity-7381683048641216513-y2O8",
+          "disposition": "Search discovery of new Geoservices branch from Explorations; legal continuity and own allocation not established."
+        },
+        {
+          "url": "https://companyinfo.nl/organisatieprofiel/activiteiten-van-ingenieurs-en-overig-technisch-ontwerp-en-advies/medusa-geoservices-b-v-groningen-97787655-000062988549",
+          "disposition": "Search-discovered BV97787655 identity candidate; no parent/sibling project funding assigned."
+        }
+      ]
+    },
+    {
+      "id": "88eae4be-c52c-4264-b93e-643f882c4731",
+      "slug": "melrose-networks",
+      "name": "Melrose Networks",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact original identity resolved as Melrose Labs specialist division; no incoming financing verified.",
+      "hold_note": "Registry financial/allotment review remains pending. Parent privately held status is not proof of no funding; unrelated Melrose Industries group debt excluded.",
+      "searches_checked": [
+        "Melrose Networks funding investment company drone mesh2026",
+        "\"Melrose Networks\" company investment funding",
+        "site.melrosenetworks.com about investors funding company",
+        "\"Melrose Networks\" investors investment funding Edinburgh",
+        "site.melroselabs.com funding investment loans shareholders"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://melrosenetworks.com/",
+          "disposition": "Opened original drone/mobile-network analytics business."
+        },
+        {
+          "url": "https://melroselabs.com/about/",
+          "disposition": "Opened original exact specialist division of privately held Melrose Labs, not Melrose Industries PLC."
+        },
+        {
+          "url": "https://melroselabs.com/legal.php",
+          "disposition": "Discovered original company number SC638764; legal page not opened, registry filings still require review."
+        },
+        {
+          "url": "https://www.linkedin.com/company/melrose-networks",
+          "disposition": "Official company identity discovered; no confirmed incoming financing."
+        },
+        {
+          "url": "https://www.crunchbase.com/organization/melrose-networks",
+          "disposition": "Discovery only; category-wide USD4.6bn total excluded from company financing."
+        }
+      ]
+    },
+    {
+      "id": "d2a15389-7d67-4b22-bb27-396b29d6e9f8",
+      "slug": "mente-systems",
+      "name": "Mente Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact Mente Systems Inc/TheIncLab identity confirmed on original site; procurement and accelerator source candidates separated.",
+      "hold_note": "Tech|X participation and possible SBIR awards require primary instrument, cash consideration and date confirmation. No verified financing is not zero funding.",
+      "searches_checked": [
+        "Mente Systems funding investors2026",
+        "\"Mente Systems\" funding investment",
+        "site.theinclab.com Mente Systems investment funding investors",
+        "site.theinclab.com Mente Systems investors investment funding",
+        "site.theinclab.com investors funding accelerator 2019"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://theinclab.com/",
+          "disposition": "Opened original copyright confirms Mente Systems Inc, DBA TheIncLab; www variant initially failed."
+        },
+        {
+          "url": "https://www.linkedin.com/showcase/theinclab/",
+          "disposition": "Official profile identifies Mente Systems Inc and product brands."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/theinclab/financials",
+          "disposition": "Discovery-only May2019 Tech|X Accelerator label; original admission, consideration and instrument unverified."
+        },
+        {
+          "url": "https://www.highergov.com/news/mente-systems-wins-99-million-army-commercial-tec-6490134/",
+          "disposition": "Discovery of up-to USD99m procurement IDIQ, not a financing round."
+        },
+        {
+          "url": "https://www.noairlab.ai/companies/mente-systems-inc",
+          "disposition": "Aggregate SBIR/grant-like award candidate held pending exact original award and instrument."
+        }
+      ]
+    },
+    {
+      "id": "e645bf9c-da59-4006-b441-0b901ae37de8",
+      "slug": "meopta",
+      "name": "Meopta",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Czech successor identity and Carlyle generic ownership verified; no primary round amount established.",
+      "hold_note": "2023 acquisition facility actual borrower, amount and share-sale versus primary allocation unresolved; do not assign US Meopta subsidiary capital or acquisition price.",
+      "searches_checked": [
+        "Meopta financing loan acquisition Carlyle2023 2026",
+        "\"Meopta\" loan financing banks 2023 2024 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.meopta.com/en/news/merger-of-the-companies-meopta-optika,-s-r-o-and-meopta-s-r-o/",
+          "disposition": "Opened Czech successor identity, company number and current Carlyle ownership."
+        },
+        {
+          "url": "https://www.carlyle.com/media-room/news-release-archive/carlyle-to-acquire-meopta",
+          "disposition": "Opened buyer original31May2023 acquisition agreement; undisclosed purchase consideration is not primary company financing."
+        },
+        {
+          "url": "https://www.cliffordchance.com/news/news/2023/10/clifford-chance-advises-club-of-banks-led-by-eska-spoitelna-and-.html",
+          "disposition": "Bank counsel discovery confirms acquisition financing, but actual borrower and principal unresolved; no issuer debt or lender allocations imported."
+        }
+      ]
+    },
+    {
+      "id": "f8ff3e95-b587-49e9-ba63-ba202ac678b3",
+      "slug": "mercury-systems",
+      "name": "Mercury Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Four original-source events verified:2016 term and revolving facilities,2019 net equity offering and2025 replacement revolving capacity.",
+      "hold_note": "2017/2018 and later facility amendments need full terms reconciliation;2017 equity offering and earliest IPO remain pending. Facility balances, annual aggregate draws, buybacks and ATM authorisations without sales are not new rounds; administrative agents not assumed lenders.",
+      "searches_checked": [
+        "Mercury Systems funding financing credit agreement2026 850",
+        "site.mrcy.com2016 2017 2019 public offering credit facility2026 850",
+        "site.ir.mrcy.com \"2017\" \"400 million\" facility",
+        "site.ir.mrcy.com \"November\" \"2025\" credit 850"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1049521/000104952119000033/mrcy201910-k.htm",
+          "disposition": "Opened issuer annual financial notes,2016 facilities and31May2019 net equity proceeds."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1049521/000104952125000060/mrcy-20251104.htm",
+          "disposition": "Opened signed4Nov2025 replacement facility; old900m terminated,591.5m borrowings unchanged."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1049521/000104952126000045/mrcy-20260703.htm",
+          "disposition": "Latest annual filing discovered corroborating850m facility; debt balances not fresh rounds."
+        },
+        {
+          "url": "https://ir.mrcy.com/node/26266/xbrl-viewer",
+          "disposition": "Current10Nov2026 filing discovered;341.5m balance not new funding."
+        },
+        {
+          "url": "https://ir.mrcy.com/news-releases/news-release-details/mercury-systems-expands-revolving-credit-facility-retires-term",
+          "disposition": "Original2017 expansion press fetch403; historical amendment reconciliation remains partial."
+        }
+      ]
+    },
+    {
+      "id": "ab3b6ce1-fedc-40bc-a7bc-ced6c3dabaa7",
+      "slug": "merlin-labs",
+      "name": "Merlin Labs",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "2022 SeriesB105m and1May2026 closed80m PIPE verified, including named legal purchaser; current public-parent identity traced.",
+      "hold_note": "2021 source conflict(seed3.5m plusA21.5m versus25m SeriesA label) held.2025 >200m conditional/prefundedPIPE not repeated as2026 cash. March2026 initialPIPE120m and mergertrustcash26.29m require separate exact instrument/closing verification; warrants, noncash conversions and secondary resales excluded.",
+      "searches_checked": [
+        "\"Merlin\" 2026 2025 financing PIPE 200 million",
+        "site.merlinlabs.com raises funding2021 2022 2023 2026 November",
+        "site.investors.merlinlabs.com \"March\" \"2026\" \"closed\" \"PIPE\"",
+        "site.sec.gov Merlin2026 10-Q 80million May1 2026 PIPE",
+        "site.merlinlabs.com \"Series B\" \"lead\" \"2022\"",
+        "site.bailliegifford.com Merlin 2022 105 million Snowpoint"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/autonomous-flight-company-merlin-labs-raises-105m-series-b-announces-partnership-with-usaf-301585960.html",
+          "disposition": "Opened105m SeriesB and named participants; issuer's2021A25m label conflicts with reports splitting seed3.5m andA21.5m, held."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2028707/000121390026055861/ea0289173-02.htm",
+          "disposition": "Opened1May2026 closed80m gross PIPE, April29SPA, named Alyeska Master Fund purchaser and successor identity."
+        },
+        {
+          "url": "https://investors.merlinlabs.com/node/7636/ixbrl-viewer",
+          "disposition": "Original current10Q wrapper opened; underlying120m initialPIPE versus26.29m SPACcash requires exact closing reconciliation by consolidating writer."
+        },
+        {
+          "url": "https://investors.merlinlabs.com/news-releases/news-release-details/merlin-inc-announces-80-million-pipe-investment-accelerate",
+          "disposition": "Original29April2026 signing source opened in earlier tool execution; not a second80m event."
+        },
+        {
+          "url": "https://merlinlabs.com/news/merlin-labs-inc-and-inflection-point-acquisition-corp-iv-announce-upsizing-of-pip/",
+          "disposition": "2025 PIPE commitments include prefunding and conditional amounts; held against actual2026 closing to prevent duplication."
+        }
+      ]
+    },
+    {
+      "id": "7376630c-ea35-4350-bf6c-15738c5ad771",
+      "slug": "meta-bureau",
+      "name": "Meta Bureau",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Ukrainian UAV identity corroborated by accelerator original; outgoing grants and software purchases excluded.",
+      "hold_note": "Incoming private round history and government awards remain unverified. Generic accelerator programme grants are not MetaBureau recipient funding; no zero-funding claim.",
+      "searches_checked": [
+        "\"Meta Bureau\" investment funding Ukraine drones",
+        "\"Meta Bureau\" funding investors investment grants Ukraine"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defencebuilder.com/news/meta-bureau-becomes-a-partner-of-db-accelerator-batch-4.0",
+          "disposition": "Opened2Nov2026 accelerator original: MetaBureau cofunds grants to other teams, not recipient funding."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2092574/000110465926097620/tm2622797d1_424b3.htm",
+          "disposition": "Discovered Swarmer issuer filing; MetaBureau software licence purchases are commercial spending, not MetaBureau capital."
+        },
+        {
+          "url": "https://swarmer.com/news/swarmer-adds-additional-1m-in-revenue-from-skyknight-contract-update-that-expands-swarming-software-to-czech-republic/",
+          "disposition": "Counterparty original discovered; software contract revenue to Swarmer not MetaBureau financing."
+        },
+        {
+          "url": "https://www.gaebler.com/VC-Funding-4834609A-476B-4ABB-A08F-A253F8686F5C-Swarmer-05-13-2026",
+          "disposition": "Aggregator mislabels procurement contract as investment; excluded."
+        }
+      ]
+    },
+    {
+      "id": "60b16577-b8ee-4f48-9bb9-9a89d693bf80",
+      "slug": "metal-shark",
+      "name": "Metal Shark",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "Broad history/latest search, issuer identity/news and acquisition/grant party checks support one own 2016 grant and current acquirer relationship.",
+      "hold_note": "Other financing undisclosed; procurement contracts and acquisition consideration excluded. Search snippets initially suggested 2015; opened issuer announcement establishes20April2016.",
+      "searches_checked": [
+        "Metal Shark funding investment Magnet Defense 2026 acquisition financing",
+        "site.maritime.dot.gov \"Metal Shark\" grant",
+        "site.maritime.dot.gov \"Metal Shark\" \"2015\"",
+        "\"Metal Shark\" \"582,410\" grant 2016"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.metalsharkboats.com/metal-shark-awarded-2016-marad-shipyard-grant/",
+          "disposition": "import_own_grant_original"
+        },
+        {
+          "url": "https://magnetdefense.com/magnet-defense-acquires-metal-shark-to-accelerate-autonomous-maritime-capabilities-and-u-s-shipbuilding-capacity/",
+          "disposition": "import_generic_acquirer_only"
+        },
+        {
+          "url": "https://www.metalsharkboats.com/contact-us/",
+          "disposition": "exact_legal_identity_Gravois_Aluminum_Boats_LLC_DBA"
+        },
+        {
+          "url": "https://www.marinelink.com/news/awarded-shark-metal408533",
+          "disposition": "corroboration21April2016_not_duplicate"
+        },
+        {
+          "url": "https://www.maritime.dot.gov/grants-finances/small-shipyard-grants",
+          "disposition": "programme_only_no_programme_budget_import"
+        }
+      ]
+    },
+    {
+      "id": "a2c4cbcb-2a85-42b7-9a1a-b4ec6d43cd32",
+      "slug": "metalcraft-marine",
+      "name": "MetalCraft Marine",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Broad historical/latest financing, issuer history and government grantor checks support one Canadian OSGP award. Own company history explicitly distinguishes MetalCraft Marine US Inc operations.",
+      "hold_note": "USD5542372021 US grant is held to distinct US issuer; customer FEMA financing links and boat procurement are excluded. No zero-funding inference from aggregator.",
+      "searches_checked": [
+        "MetalCraft Marine funding investment grant loan Canada",
+        "site.news.ontario.ca \"MetalCraft\" 2026 million",
+        "\"MetalCraft Marine\" investment investors government grant history"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://georgepiriempp.ca/ontario-investing-more-than-90-million-to-support-expanded-provincial-shipbuilding-capacity/",
+          "disposition": "import_recipient_specific_lower_bound"
+        },
+        {
+          "url": "https://johnjordanmpp.ca/ontario-investing-6-million-to-support-shipbuilders-in-kingston/",
+          "disposition": "earliest_public_disclosure_same_award"
+        },
+        {
+          "url": "https://news.ontario.ca/en/release/1007712/ontario-investing-more-than-90-million-to-support-expanded-provincial-shipbuilding-capacity",
+          "disposition": "official_page_JS_shell_index_corroborates"
+        },
+        {
+          "url": "https://metalcraftmarine.com/html/about.html",
+          "disposition": "original_history_and_US_legal_entity_distinction"
+        },
+        {
+          "url": "https://www.yahoo.com/news/watertowns-metalcraft-obtains-554-000-120200937.html",
+          "disposition": "held_distinct_MetalCraft_Marine_US_Inc_USD5542372021"
+        }
+      ]
+    },
+    {
+      "id": "f96c13b1-26e9-4ce2-a69a-4a8d76a748df",
+      "slug": "metasensing",
+      "name": "MetaSensing",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Broad financing/history, official grant registry legal-beneficiary checks and investor/issuer-site review support three exact Dutch BV grants.",
+      "hold_note": "Current metasensing.com footer is Italian MetaSensing Srl. No Italy-only grants transferred; Japanese Raman MetaSensing/Genesia equity is a namesake. Investor solicitation is not an announced round. Dates and unseen private financing remain unknown.",
+      "searches_checked": [
+        "MetaSensing funding investors grant Netherlands Italy",
+        "site.cordis.europa.eu/project \"METASENSING BV\" grant",
+        "\"MetaSensing BV\" funding investment investors grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://cordis.europa.eu/project/id/286105",
+          "disposition": "import_exact_Dutch_BV_EUR592631"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/605093",
+          "disposition": "import_exact_Dutch_BV_EUR425624"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/313243",
+          "disposition": "import_exact_Dutch_BV_EUR395839.96"
+        },
+        {
+          "url": "https://metasensing.com/investors/",
+          "disposition": "opened_Italian_Srl_footer_no_verified_round; later_refetch_timeout"
+        },
+        {
+          "url": "https://www.genesiaventures.com/en/investment-metasensing-2/",
+          "disposition": "search_candidate_Japanese_namesake_excluded; direct_open_failed"
+        }
+      ]
+    },
+    {
+      "id": "da655a0f-b36b-4e4b-850d-66a612b1ba3a",
+      "slug": "metro-aviation",
+      "name": "Metro Aviation",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Broad historical/latest and issuer news/history searches confirm Shreveport air-medical operator; investor-party search and TGH portfolio page did not establish aggregator investor assertion.",
+      "hold_note": "CBInsights lists TGH Ventures as Other Investors but issuer-specific primary evidence/date/terms not established; held, no round or relationship import. BETA deposit-backed aircraft order is outgoing procurement.",
+      "searches_checked": [
+        "Metro Aviation financing investment loan investors 2026 company",
+        "\"Metro Aviation\" \"TGH Ventures\" investment",
+        "site.metroaviation.com financing investment ownership loan",
+        "\"TGH Ventures\" \"Metro Aviation\" investor"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.metroaviation.com/meet-metro/",
+          "disposition": "original_exact_issuer_history"
+        },
+        {
+          "url": "https://www.metroaviation.com/2024/11/04/metro-partners-with-beta/",
+          "disposition": "original4November2024_family_owned_and_outgoing_order_excluded"
+        },
+        {
+          "url": "https://www.cbinsights.com/company/metro-aviation",
+          "disposition": "search_candidate_TGH_investor_claim_unverified"
+        },
+        {
+          "url": "https://www.tghventures.vc/portfolio",
+          "disposition": "opened_investor_page_no_exact_Metro_evidence_rendered"
+        },
+        {
+          "url": "https://www.tghventures.vc/about",
+          "disposition": "investor_party_scope_only"
+        }
+      ]
+    },
+    {
+      "id": "e68875dc-ed58-4b55-a69c-97be078cd083",
+      "slug": "mfe-offshore",
+      "name": "MFE Offshore",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Broad latest/history and parent/investor checks plus original parent history and division announcement identify Houston MFE Offshore division and corporate parent.",
+      "hold_note": "No distinct incoming financing established; parent history acquisitions and supplier relationships are not financing. CohortUK geography not silently changed. Aggregator never-raised assertion is not proof of zero.",
+      "searches_checked": [
+        "MFE Offshore funding investment MFE inspection solutions ownership 2026",
+        "\"MFE Inspection Solutions\" funding investors investment acquired",
+        "\"MFE Offshore\" investment investors financing -prospeo"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://mfe-is.com/offshore/resources/mfe-launches-mfe-offshore-subsea-offshore-operations/",
+          "disposition": "import_generic_parent_division_only"
+        },
+        {
+          "url": "https://mfe-is.com/about/",
+          "disposition": "original_parent_history_and_division_launch2025"
+        },
+        {
+          "url": "https://www.offshore-mag.com/subsea/article/55363980/mfe-forms-dedicated-offshore-division-to-support-outcome-driven-inspections",
+          "disposition": "search_identity_corroboration_no_incoming_round"
+        }
+      ]
+    },
+    {
+      "id": "e2fff0cf-a1d1-49e2-b0e6-fb6772dc0c4d",
+      "slug": "mg-cleaning-systems",
+      "name": "MG Cleaning Systems",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Broad history/latest funding, exact family-owned Colorado issuer website and named counterparty Lucid searches distinguish operational cleaning collaboration from incoming finance.",
+      "hold_note": "No independently supported incoming finance found in bounded review; no zero-funding conclusion. Lucid Bots rounds and its operator partnership are not MG funding. Private terms remain unknown.",
+      "searches_checked": [
+        "\"MG Cleaning Systems\" funding investment",
+        "\"MG Cleaning Systems\" investment funding Lucid",
+        "\"MG Cleaning Systems\" investors grant loan -Lucid -Caplight",
+        "\"MG Cleaning Systems\" site:lucidbots.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://mgcleaningsystems.com/about",
+          "disposition": "opened_original_family_owned_Erie_Colorado_identity"
+        },
+        {
+          "url": "https://thedroningcompany.com/blog/lucid-bots-takes-drone-cleaning-beyond-280-feet",
+          "disposition": "search_operational_collaboration_not_financing"
+        },
+        {
+          "url": "https://columbia.newsnetmedia.com/story/497657/lucid-bots-takes-drone-cleaning-beyond-280-feet-with-new-sherpa-highline-rooftop-pulley-system/",
+          "disposition": "search_Lucid_release_mirror_partner_context_only"
+        },
+        {
+          "url": "https://www.caplight.com/company/lucid-bots",
+          "disposition": "search_wrong_financing_recipient_Lucid_not_MG"
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [
+      {
+        "from": "general-electric",
+        "to": "ge-aerospace",
+        "basis": "Historical General Electric Company is the same SEC registrant operating as GE Aerospace in its 2024 Form 10-K; exact subscribing vehicle not disclosed. Not GE Capital, GE Vernova or GE HealthCare."
+      }
+    ],
+    "root_verification": {
+      "search_queries_executed": 4,
+      "searches_checked": [
+        "site.merlinlabs.com 2026 PIPE closing net proceeds",
+        "site.matrixspace.com funding 2026 20 million investors",
+        "MetalCraft Marine Ontario July 2026 six million funding Ontario",
+        "site.geaerospace.com General Electric Company GE Aerospace 2024 10-k"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2028707/000121390026055861/ea0289173-02.htm",
+          "disposition": "Opened original SEC prospectus confirms actual1May2026PIPE grossUSD80m, not earlier expectedclosing or separatewarrantaccountingcash."
+        },
+        {
+          "url": "https://www.matrixspace.com/press-release/matrixspace-completes-20m-series-b-funding",
+          "disposition": "Opened original15October2025B20m, explicitco-leadersRaptor/OTB andstrategicL3Harris. Cumulative58m notanotherround."
+        },
+        {
+          "url": "https://news.ontario.ca/en/release/1007712/ontario-investing-more-than-90-million-to-support-expanded-provincial-shipbuilding-capacity",
+          "disposition": "Official8July2026primary indexed release read; direct open returned JavaScript shell. Official fallstatement primary confirms same own morethanCAD6m award, notprogramme90m."
+        },
+        {
+          "url": "https://www.ontario.ca/files/2025-06/mto-shipbuilding-grant-program-guidelines-en-2025-06-23.pdf",
+          "disposition": "Opened programme terms, non-repayable grants, notprocurement orloan."
+        },
+        {
+          "url": "https://budget.ontario.ca/2026/fallstatement/chapter-1b-plan.html",
+          "disposition": "Opened officialprovincialbudget corroboration; sameJulyOSGPownallocation, notsecondaward."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/40545/000004054525000015/ge-20241231.htm",
+          "disposition": "Opened officialGE2024Form10-K; exactregistrant GeneralElectricCompany operatingasGEAerospace. Canonicalidentitymapping supported, notGEVernova orGEHealthCare."
+        }
+      ]
+    },
+    "notes": [
+      "MatrixSpace original Series A USD10m preserved despite conflicting aggregate reports; 2026 Form D overlap candidate held. No extra round derived from cumulative USD58m.",
+      "Matternet legacy issuer and successor public parent continuity reconciled; USD6m bridge cash, preferred cash and separate PIPE closes distinguished from noncash debt conversions and secondary registrations. Same-company extension parent verified.",
+      "Merlin initial March PIPE USD120m candidate and merger-trust proceeds remain held for exact primary instrument and closing reconciliation. May1 USD80m PIPE confirmed independently; Alyeska Master Fund exact subscribing fund distinct from investment manager.",
+      "Mercury Systems facilities are committed capacity, not cash drawn; USD454.343m public-equity amount is net proceeds, explicitly labelled.",
+      "MetalCraft own more-than-CAD6m grant distinguished from CAD90m programme and US subsidiary grant. Original official fall statement corroborates same July award.",
+      "Dutch METASENSING BV only receives its own CORDIS allocations; project starts/archive dates not award dates. Italian Srl and Japanese namesake financing excluded.",
+      "McQ AFWERX contract not misclassified as grant; fund LP commitments, procurement, acquisitions, registered capital and outgoing customer funding are not new company equity rounds.",
+      "Generic owner/parent relationships do not imply primary financing or an undisclosed purchase price. GE historical source name mapped to same General Electric Company registrant operating as GE Aerospace; no speculative fund-vehicle mapping."
+    ]
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, repeat idempotency, conflicting amount rejection and participant-source foreign-key rejection. Same-company extension parent audited.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T10:01:45.953Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 22,
+      "mismatched_facts": 0,
+      "participant_matches": 21,
+      "source_matches": 28,
+      "relationship_matches": 4,
+      "missing_link_sources": 0
+    },
+    "extension_parent_audit": {
+      "extension_parent_matches": 1
+    }
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Wider-cohort DB events do not enter European map. Profiles and generic relationships use existing directory publication gates; no geography/classification or company gates changed."
+  },
+  "preserved": [
+    "Legacy research-agent/STATE.json",
+    "Frozen snapshots",
+    "Curated investor profiles and legacy relationships",
+    "Company geography, classification and publication gates",
+    "Repository schedules",
+    "No paid external API backfill"
+  ],
+  "programme_complete": false
+}
