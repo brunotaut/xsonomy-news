@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1142,
   "next_action": "Continue Romarm through SandboxAQ, then remaining cohort and partial histories. Seventy-first23 events and one guarded announcement-date correction already committed and live publication verified; do not retry import/correction. Retain published Liebherr attribution hold and source-specific issuer/amount limitations. Programme incomplete; continuation enabled.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T23:48:00Z",
+  "updated_at": "2026-11-13 23:53:29 UTC",
   "source_reconciliation_companies": 1051,
   "approved_funding_events": 3765,
   "round_participations": 5058,
@@ -6733,7 +6733,28 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "production_rollback_passed_atomic_pending",
+    "manifest": "research-agent/imports/funding-landscape-20261113-seventy-second.json",
+    "dataset": "funding-landscape-20261113-seventy-second",
+    "events": 24,
+    "participations": 61,
+    "sources": 38,
+    "relationships": 1,
+    "production_before": {
+      "events": 3778,
+      "approved": 3765,
+      "links": 5058,
+      "sources": 5208,
+      "profiles": 3029,
+      "covered": 1051,
+      "relationships": 488,
+      "preserved_profiles_hash": "655285210c6403800ffba6f5453fb63a"
+    },
+    "started_at": "2026-11-13T23:48:00Z",
+    "checked_at": "2026-11-13",
+    "recovery": "Check exact manifest keys and DB facts before retrying any atomic import. Production rollback restored baseline."
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T23:02:50.143Z",
