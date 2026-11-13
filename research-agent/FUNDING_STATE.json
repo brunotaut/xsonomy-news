@@ -6724,7 +6724,33 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-ninth.json",
+    "dataset": "funding-landscape-20261113-sixty-ninth",
+    "status": "rollback_rehearsed_ready_for_atomic_commit",
+    "production_before": {
+      "events": 3695,
+      "approved": 3682,
+      "links": 4869,
+      "sources": 5102,
+      "profiles": 2934,
+      "covered": 1016,
+      "relationships": 484,
+      "preserved_profiles_hash": "73c627852a73246b33db9ce02f4ed2f6"
+    },
+    "expected": {
+      "events": 25,
+      "links": 51,
+      "sources": 36,
+      "relationships": 0,
+      "profiles": 33,
+      "covered": 11,
+      "extensions": 0
+    },
+    "local_postgresql_tests_passed": true,
+    "production_rollback_baseline_restored": true,
+    "recovery_note": "Check exact manifest event matches and counts before retry after interrupted execution; atomic importer rejects conflicting stored facts and is idempotent."
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T20:07:17.388Z",
