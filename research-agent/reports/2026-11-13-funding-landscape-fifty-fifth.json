@@ -1,0 +1,1047 @@
+{
+  "status": "imported_awaiting_publication",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T06:52:55.471Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-fifty-fifth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 6,
+    "new_or_retained_partial": 18,
+    "new_approved_events": 62,
+    "new_round_participations": 72,
+    "new_source_rows": 68,
+    "new_generic_portfolio_relationships": 4,
+    "new_companies_with_events": 16,
+    "new_investor_profiles": 40,
+    "search_queries_executed": 118,
+    "group_search_queries_executed": 116,
+    "root_additional_search_queries": 2,
+    "per_company_search_ledger_entries": 116,
+    "source_ledger_entries": 107,
+    "existing_related_issuer_events_inspected": 19,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 62,
+    "mismatched_facts": 0,
+    "participant_matches": 72,
+    "source_matches": 68,
+    "relationship_matches": 4,
+    "missing_link_sources": 0,
+    "contribution_fields_audited": true,
+    "db_total_events": 3312,
+    "db_approved_events": 3299,
+    "db_approved_round_participations": 4259,
+    "db_investor_profiles": 2579,
+    "db_source_reconciliation_companies": 878,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 3250,
+    "approved": 3237,
+    "links": 4187,
+    "sources": 4522,
+    "profiles": 2539,
+    "covered": 862,
+    "relationships": 385,
+    "preserved_profiles_hash": "9d6d01230a7651bb70548cbde4781e98"
+  },
+  "production_after": {
+    "events": 3312,
+    "approved": 3299,
+    "links": 4259,
+    "sources": 4590,
+    "profiles": 2579,
+    "covered": 878,
+    "relationships": 389,
+    "preserved_profiles_hash": "9d6d01230a7651bb70548cbde4781e98"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1047,
+    "source_review_partial": 574,
+    "queued": 943
+  },
+  "per_company": [
+    {
+      "id": "6cd4b6dc-fc0b-48c6-904e-68cfe86ce57c",
+      "slug": "lamarr-ai",
+      "name": "Lamarr AI",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Three company-specific financing events supported.",
+      "hold_note": "Planned2026seed completion and other competitions remain unresolved. DOE2019research grant not company funding; finalist selection not another award.",
+      "searches_checked": [
+        "Lamarr AI funding seed investment 2026",
+        "site.lamarr.ai funding investment seed 2026 Hazelview",
+        "site.michiganbusiness.org Lamarr 2026",
+        "Lamarr Michigan 2026 grant",
+        "Lamarr.AI funding seed 2026 2025 GENIUS NY investors",
+        "site.geniusny.com Lamarr 500000 2026 winner"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.hazelviewventures.com/prop-tech-startup-lamarr-ai-raises-1-1-million-in-pre-seed-funding-to-bring-disruptive-building-diagnostics-technology-to-market/",
+          "disposition": "Opened lead investor original: pre-seed and roles."
+        },
+        {
+          "url": "https://www.lamarr.ai/about",
+          "disposition": "Opened official history: pre-seed corroborated."
+        },
+        {
+          "url": "https://www.lamarr.ai/news",
+          "disposition": "Opened current issuer news."
+        },
+        {
+          "url": "https://www.hazelviewventures.com/wp-content/uploads/2025/10/HAZELVIEW-CASE-STUDY-LAMARR-2025.pdf",
+          "disposition": "Opened investor plan for Q12026 seed; plan is not a completed raise."
+        },
+        {
+          "url": "https://www.michigan.gov/leo/news/2026/10/21/whitmer-awards-funds-to-launch-12-advanced-air-mobility-projects-statewide",
+          "disposition": "Opened original own award."
+        },
+        {
+          "url": "https://centerstateceo.com/news/flox-intelligence-wins-genius-ny-round-9-grand-prize",
+          "disposition": "Opened operator final awards."
+        },
+        {
+          "url": "https://geniusny.com/meet-genius-ny-9-lamarr-ai/",
+          "disposition": "Opened;2019DOEfunding belongs research team beforecompany, not attributed."
+        }
+      ]
+    },
+    {
+      "id": "bd58d1f8-8f6c-4ba5-81b4-26975ef53187",
+      "slug": "lambert-defence",
+      "name": "Lambert Defence",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact Belgian vehicle integration business distinguished from similarly named investors.",
+      "hold_note": "Legal issuer mapping and historical finance remain partial. TLTP tender cooperation and planned local industrial spending do not establish a funding round; unknown private finance is not zero.",
+      "searches_checked": [
+        "Lambert Defence funding investment company",
+        "Lambert Defence company investment",
+        "Lambert Defence group financing Lambert frères Belgium",
+        "Lambert Defence funding investors ownership",
+        "Lambert Defence site:lambertdefence.com",
+        "Lambert Defence Lambert company website",
+        "Lambert Defence investment capital Belgique Lambert groupe",
+        "site.lambert.be defence group investor"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.daimlertruck.com/en/newsroom/pressrelease/daimler-truck-lambert-defence-and-soframe-join-forces-for-belgian-defence-tender-53543910",
+          "disposition": "Opened transaction party original: procurement MoU, not incoming financing."
+        },
+        {
+          "url": "https://be.linkedin.com/company/lambert-automotive",
+          "disposition": "Opened parent company original identity; family-owned Lambert Automotive."
+        },
+        {
+          "url": "https://transportmedia.be/2026/07/daimler-truck-lambert-defence-en-soframe-bundelen-hun-krachten-voor-aanbesteding-defensie/",
+          "disposition": "Indexed secondary identifies Lambert division; not financing."
+        }
+      ]
+    },
+    {
+      "id": "2dd90de8-06ab-4b2b-bd9e-9926251d16e6",
+      "slug": "landing-zones",
+      "name": "Landing Zones",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Three distinct financing events verified for Canadian legal issuer.",
+      "hold_note": "Older public contributions including CanExport CAD28000 need agreement-level instrument/date review; no whole fund budgets or contracts transferred.",
+      "searches_checked": [
+        "Landing Zones company funding drone",
+        "site.canada.ca Landing Zones 1.1",
+        "site.canada.ca Landing Zones Canada repayable"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.bdc.ca/en/about/mediaroom/news-releases/landing-zones-canada-secures-first-investment-from-bdc-new-strongnorth-defence-fund",
+          "disposition": "Opened investor original confirms received investment."
+        },
+        {
+          "url": "https://www.airbus.com/en/newsroom/press-releases/2026-07-airbus-and-landing-zones-sign-strategic-partnership-for-advanced-uas-in-canada",
+          "disposition": "Opened transaction party original investment."
+        },
+        {
+          "url": "https://www.canada.ca/en/prairies-economic-development/news/2026/03/government-of-canada-announces-support-to-help-alberta-business-enhance-artificial-intelligence-technologies-and-compete-in-global-markets.html",
+          "disposition": "Opened government exact repayable amount/date."
+        },
+        {
+          "url": "https://landingzones.com/press/",
+          "disposition": "Indexed issuer press history corroborates distinct financing."
+        },
+        {
+          "url": "https://search.open.canada.ca/grants/record/nrc-cnrc,172-2024-2025-Q2-1020565,current",
+          "disposition": "Opened exact CAD28000 CanExport contribution agreement; instrument and original award date retained as hold."
+        }
+      ]
+    },
+    {
+      "id": "684cc700-7d23-4321-9983-dc8a9c494292",
+      "slug": "landspace",
+      "name": "LandSpace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 6,
+      "relationship_count": 0,
+      "evidence_note": "Six original-source historical rounds established with qualifiers and date precision.",
+      "hold_note": "2019C,2024D,2025primary/secondary and2026IPO status need original filings. Zhejiang support combines investment types; no blanket grant. C+ participant vehicles require further exact-name source extraction.",
+      "searches_checked": [
+        "LandSpace funding 2026 round investors",
+        "site.landspace.com 融资 2018 2019 2020",
+        "site.landspace.com 融资 2018",
+        "site.landspace.com 融资 2020",
+        "LandSpace 融资 2026 2025 国中 君宇 星空"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.landspace.com/news-detail.html?itemid=1",
+          "disposition": "Opened issuer original supportsB and earlier rounds."
+        },
+        {
+          "url": "https://www.landspace.com/news-detail.html?itemid=4",
+          "disposition": "Opened issuer original supportsB+; date conflict retained."
+        },
+        {
+          "url": "https://www.zj-inv.cn/news/194.html",
+          "disposition": "Opened original existing investor confirmsC+ amount/month."
+        },
+        {
+          "url": "https://www.reuters.com/en/chinas-country-garden-sell-11-stake-landspace-2025-04-25/",
+          "disposition": "Discovery secondary sale, not issuer proceeds."
+        },
+        {
+          "url": "https://www.reuters.com/business/aerospace-defense/chinas-landspace-completes-tutoring-process-ahead-shanghai-ipo-2025-12-23/",
+          "disposition": "IPO process is not completed proceeds."
+        }
+      ]
+    },
+    {
+      "id": "abaa5527-9ec0-40b7-8f74-bd64bcb226fc",
+      "slug": "lantronix",
+      "name": "Lantronix",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 8,
+      "relationship_count": 0,
+      "evidence_note": "Eight source-confirmed financing events across equity and actual debt/capacity.",
+      "hold_note": "Earlier IPO, historical debt amendments and other prior financing remain partial. Secondary option, capacity renewals and acquisition consideration excluded. Original publication dates unverified SECdates remainnull.",
+      "searches_checked": [
+        "site.lantronix.com financing credit agreement 2026 2025 2021",
+        "site.lantronix.com public offering 2021 2024 2026",
+        "site.lantronix.com 2026 Silicon Valley Bank First Citizens",
+        "site.lantronix.com November2021 35.3 35.25 offering"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1114925/000168316822000856/lantronix_i10q-123121.htm",
+          "disposition": "Opened historical parent filings: actual loans and secondary option distinct."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1114925/000168316826006754/lantronix_i10k-063026.htm",
+          "disposition": "Opened annual filing: equitygross/ATM/revolver."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1114925/000168316826008447/lantronix_i10q-093026.htm",
+          "disposition": "Opened latest quarterly original:5mactualdraw and current lender."
+        },
+        {
+          "url": "https://www.firstcitizens.com/silicon-valley-bank-cit-rebrand-faq",
+          "disposition": "Opened lenderoriginal mapspost2023division."
+        },
+        {
+          "url": "https://www.lantronix.com/newsroom/press-releases/lantronix-announces-proposed-public-offering-common-stock-2/",
+          "disposition": "Indexed pricing-stage announcement not extra round."
+        },
+        {
+          "url": "https://www.omm.com/news/press-releases/o-melveny-advises-lantronix-in-underwritten-offering-of-common-stock/",
+          "disposition": "Transaction counsel search corroborates2021offering, serviceprovidersnotinvestors."
+        }
+      ]
+    },
+    {
+      "id": "a935ea05-681c-4491-967d-97f83455c52b",
+      "slug": "larsen-and-toubro",
+      "name": "Larsen & Toubro",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Two parent NCD issues verified, original INR preserved.",
+      "hold_note": "Older parent debt and individual commercial-paper issuances need dated-original reconciliation; annual CP14600crore and total outstandingNCD notsinglefundingevents. Subsidiaryfinance and capex excluded.",
+      "searches_checked": [
+        "site.larsentoubro.com 2026 bonds debentures financing",
+        "site.larsentoubro.com debentures 2026 crore",
+        "site.larsentoubro.com September9 2026 500",
+        "site.larsentoubro.com Tokenised Bond",
+        "Larsen Toubro500crore sustainability bonds2025June4issueinvestorsHSBC"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.larsentoubro.com/pressreleases/2026/2026-09-09-lt-becomes-india-s-first-private-sector-corporate-to-issue-tokenised-bond",
+          "disposition": "Opened original completed tokenisedraise."
+        },
+        {
+          "url": "https://www.larsentoubro.com/pressreleases/2025-06-06-following-sebi-s-esg-bond-framework-lt-announces-india-s-first-listed-esg-bond-deal-in-partnership-with-hsbc",
+          "disposition": "Opened original announcement:HSBCarranger notinvestor."
+        },
+        {
+          "url": "https://investors.larsentoubro.com/board-report.aspx",
+          "disposition": "Opened issuer annual board capitalandfinance confirms issue/allotment."
+        },
+        {
+          "url": "https://nsearchives.nseindia.com/content/debt/WDM/PAM_28012026190011_SecurityCoverDec2025.pdf",
+          "disposition": "Opened issuer regulatorfiled debtlist;outstandingamounts notassumedoriginalrounds."
+        }
+      ]
+    },
+    {
+      "id": "71a6568f-38c1-4f59-930c-151801e0f63a",
+      "slug": "lasar-s-group",
+      "name": "Lasar's Group",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original NGU unit channel identifies a military special unit within 27th brigade; no private-company financing issuer established.",
+      "hold_note": "State military budget and equipment-destruction values are not corporate rounds. MDP and Palantir claims cannot be transferred from associated founders or other companies; no catalogue identity mutation.",
+      "searches_checked": [
+        "Lasar group funding Ukraine investment",
+        "Lasar’s Group National Guard official",
+        "site.ngu.gov.ua Lasar група",
+        "Lasar Palantir funding company 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://t.me/s/lasars_group",
+          "disposition": "Opened original unit statement; National Guard special-unit identity."
+        },
+        {
+          "url": "https://uasvision.com/2026/10/16/ukraines-ex-defence-minister-s-tech-company-funded-by-palantir-unveils-new-interceptor-drone",
+          "disposition": "Original cohort URL failed; not evidence of unit receiving Palantir investment."
+        },
+        {
+          "url": "https://www.forbes.com/sites/forbesinternational/2025/10/14/how-a-former-ukrainian-tv-producer-built-a-drone-unit-that-destroyed-12-billion-of-russian-equipment/",
+          "disposition": "Indexed identity corroboration; prospective military budget not corporate funding."
+        }
+      ]
+    },
+    {
+      "id": "365e2fcd-f523-45ae-9693-220c199d35f0",
+      "slug": "laser-photonics",
+      "name": "Laser Photonics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "evidence_note": "Five original issuer equity receipts reconciled, from IPO through latest September2026 close.",
+      "hold_note": "2025 note financing, joint-borrower Agile loan, PPP and 2026 February/April issuances remain follow-up. Inconsistent September2025 share counts held; no secondary resales or noncash consideration inferred as fresh proceeds.",
+      "searches_checked": [
+        "Laser Photonics financing private placement 2026 2025 IPO",
+        "site.laserphotonics.com closes offering 2026 2022 2024",
+        "site.laserphotonics.com offering 2026 million closed",
+        "site.lase.com initial public offering 15 million",
+        "site.lase.com Closes 2022 Initial",
+        "Laser Photonics Closing 2022 15"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1807887/000165495422013400/laser_8k.htm",
+          "disposition": "Opened original financing terms; dates/gross proceeds distinguished."
+        },
+        {
+          "url": "https://lase.com/wp-content/uploads/2025/01/10Q-Q3-2024.pdf",
+          "disposition": "Opened original financing terms; dates/gross proceeds distinguished."
+        },
+        {
+          "url": "https://laserphotonics.com/news/press-releases/laser-photonics-closes-4-million-private-placement/",
+          "disposition": "Opened original financing terms; dates/gross proceeds distinguished."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1807887/000149315226033889/form8-k.htm",
+          "disposition": "Opened original financing terms; dates/gross proceeds distinguished."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1807887/000149315226042779/ex99-1.htm",
+          "disposition": "Opened original financing terms; dates/gross proceeds distinguished."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1807887/000149315226004541/forms-1a.htm",
+          "disposition": "Indexed offering capacity is not closed proceeds; held."
+        },
+        {
+          "url": "https://www.publicnow.com/view/476F9F7F177ECBE583B3E99E830C91A2F85C27F7",
+          "disposition": "Annual-report discovery pointer; unresolved debt/issuance history held."
+        }
+      ]
+    },
+    {
+      "id": "5443845b-a9c6-4bd4-9adf-0987d0214298",
+      "slug": "laser-zentrum-hannover",
+      "name": "Laser Zentrum Hannover",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Four exact beneficiary grants verified in official CORDIS, historical and recent; institute rather than equity startup.",
+      "hold_note": "Many additional historical and domestic grants remain unreviewed. Programme totals, partner budgets and project implementation dates not imported as own award amounts or dates.",
+      "searches_checked": [
+        "Laser Zentrum Hannover funding grant CORDIS 2026",
+        "site.cordis.europa.eu Laser Zentrum Hannover contribution",
+        "site.cordis.europa.eu/project LZH LASERZENTRUM HANNOVER EV 2026",
+        "site.lzh.de 2026 2025 Förderung Finanzierung EU grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://cordis.europa.eu/project/id/870427",
+          "disposition": "Opened exact legal beneficiary allocation and EC signature date."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101132575",
+          "disposition": "Opened exact legal beneficiary allocation and EC signature date."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101189970",
+          "disposition": "Opened exact legal beneficiary allocation and EC signature date."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101174399",
+          "disposition": "Opened exact legal beneficiary allocation and EC signature date."
+        },
+        {
+          "url": "https://www.lzh.de/veroeffentlichungsrelevante-projekte",
+          "disposition": "Opened original domestic project list; dates are implementation periods, own amounts absent."
+        },
+        {
+          "url": "https://www.lzh.de/index.php/en/node/29",
+          "disposition": "Official project-funding service discovery; not grant receipt evidence."
+        }
+      ]
+    },
+    {
+      "id": "24cce13f-7a5c-40f1-b9cc-e9fb1b58d211",
+      "slug": "latent-ai",
+      "name": "Latent AI",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Original seed and SeriesA plus latest Voyager and AUM investments verified.",
+      "hold_note": "Cumulative USD29.5m and claimed USD36.35m transactions not treated as single rounds. Historical extensions/SEC cumulative offering need reconciliation. DARPA-origin technology and SBIR Army procurement not company grants. Source dateline/header conflicts retained.",
+      "searches_checked": [
+        "Latent AI funding investment 2026 2021",
+        "site.latentai.com investment 2025 seed 2019 funding",
+        "site.latentai.com investment 2025",
+        "Voyager and Latent AI Bring Advanced AI to Orbit",
+        "Latent AI 2026 funding Future Ventures AUM Standard investments"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://latentai.com/news/latent-ai-inc-announces-seed-funding-led-by-future-ventures/",
+          "disposition": "Opened original event source and explicit party roles."
+        },
+        {
+          "url": "https://latentai.com/news/latent-ai-raises-19-million-series-a-to-enable-next-generation-ai-factories/",
+          "disposition": "Opened original event source and explicit party roles."
+        },
+        {
+          "url": "https://investors.voyagertechnologies.com/news/news-details/2025/Voyager-and-Latent-AI-Bring-Advanced-AI-to-Orbit/default.aspx",
+          "disposition": "Opened original event source and explicit party roles."
+        },
+        {
+          "url": "https://latentai.com/news/latent-ai-receives-investment-from-aum-ventures-to-scale-ai-solutions-globally/",
+          "disposition": "Opened original event source and explicit party roles."
+        },
+        {
+          "url": "https://www.sri.com/press/story/case-study-edge-ai-deployment-gets-simpler-with-latent-ai/",
+          "disposition": "Opened venture-originator retrospective; aggregate29.5m not new round."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/209644",
+          "disposition": "Indexed DOD contract W51701-24-C-0174, procurement not grant."
+        },
+        {
+          "url": "https://newsroom.boozallen.com/news-releases/news-release-details/booz-allen-invests-adaptive-ai-company-latent-ai/",
+          "disposition": "Original-party indexed July2021 disclosure; not separately counted from SeriesA."
+        }
+      ]
+    },
+    {
+      "id": "021ceb23-4040-4688-8a23-4666d1fed0ee",
+      "slug": "lcr-embedded-systems",
+      "name": "LCR Embedded Systems",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Bounded history, company and transaction-party review confirms JLL ownership acquisition; no attributable primary financing found in checked originals.",
+      "hold_note": "Private financing remains unknown, not zero. Aggregator acquisition-financing stage is not an issuer equity round. JLL total fund commitments and purchase consideration excluded.",
+      "searches_checked": [
+        "LCR Embedded Systems investment funding acquired investors",
+        "LCR Embedded Systems JLL Systel funding 2026",
+        "LCR Embedded Systems JLL 2026 2025",
+        "site.lcrembeddedsystems.com investment funding company 2026",
+        "site.jllpartners.com LCR investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/alderman--company-announces-another-ma-transaction-301446671.html",
+          "disposition": "Opened original transaction adviser release; sale and ownership only."
+        },
+        {
+          "url": "https://www.lcrembeddedsystems.com/",
+          "disposition": "Opened current original issuer website."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/lcr-embedded-systems/financials",
+          "disposition": "Indexed acquisition-financing claim reconciled against transaction original."
+        }
+      ]
+    },
+    {
+      "id": "3d23b434-3f71-4467-8e30-290ff1a3bb99",
+      "slug": "leetop",
+      "name": "Leetop",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original company identifies Leetop Technology (Shenzhen) Co., Ltd.; no financing event supported.",
+      "hold_note": "Cohort Russia country conflicts with original Shenzhen issuer; no geography change. NVIDIA elite/strategic ecosystem status not investment. Similar Levetop Semiconductor financing not attributable.",
+      "searches_checked": [
+        "Leetop funding investment company",
+        "site.leetop.cn 融资 投资 深圳 乐拓",
+        "Leetop investors funding NVIDIA 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.leetopgroup.com/pages/about-us",
+          "disposition": "Opened original Chinese legal issuer and Shenzhen address; technical partnerships only."
+        },
+        {
+          "url": "https://www.leetop.cn/honor/",
+          "disposition": "Original local-language page timed out; indexed partnership status not funding."
+        },
+        {
+          "url": "https://pitchhub.36kr.com/project/1818744783032455",
+          "disposition": "Indexed unrelated Levetop semiconductor namesake; financing excluded."
+        }
+      ]
+    },
+    {
+      "id": "fd7dfcaf-c285-420d-b6f8-60805e75511e",
+      "slug": "leidos",
+      "name": "Leidos",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 8,
+      "relationship_count": 0,
+      "evidence_note": "Original 2020/2026 notes and actual2020draw reconciled; current restated facility capacity distinguished.",
+      "hold_note": "Earlier SAIC/Leidos issuer history,2016/2023 loans,2025 notes closing and terminated2026bridge need fuller reconciliation. CP balance and outbound fund LP commitments not issuer rounds.",
+      "searches_checked": [
+        "site.leidos.com 2026 notes offering 2024 2023 credit",
+        "site.leidos.com notes 2026 financing",
+        "site.leidos.com notes 2024 offering",
+        "site.investors.leidos.com 2026 February 1,400 notes issued",
+        "site.leidos.com 2024 2020 notes issued",
+        "Leidos financing history lender 2026 notes 2025 JPMorgan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://investors.leidos.com/node/9841/html",
+          "disposition": "Opened original annual report; issued principal and dated actual draw."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1336920/000133692026000169/ldos-20260403.htm",
+          "disposition": "Opened issuer current financial statements; dated notes and undrawn revolver."
+        },
+        {
+          "url": "https://investors.leidos.com/node/35541/html",
+          "disposition": "Opened2026prospectus; issuer LeidosInc versus guarantorHoldings."
+        },
+        {
+          "url": "https://investors.leidos.com/node/34341/html",
+          "disposition": "Opened2025prospectus; closing not fully reconciled, held."
+        },
+        {
+          "url": "https://leidos.gcs-web.com/node/36326/html",
+          "disposition": "Latest Q3report checked; CP/outboundinvestment not newfunding."
+        }
+      ]
+    },
+    {
+      "id": "da7933d2-a783-4c62-96eb-3680c0348b6e",
+      "slug": "leidos-australia",
+      "name": "Leidos Australia",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Exact Australian operation award found in original Queensland announcement. Bounded history, issuer and public fund checks completed.",
+      "hold_note": "Private financing remains unknown; procurement, facility spending, parent borrowing and full government programme budget excluded.",
+      "searches_checked": [
+        "Leidos Australia funding investment loan investors 2026 2025",
+        "site.leidos.com Australia subsidiary grant funding investment",
+        "site.leidos.com Australia grant investors history funding",
+        "Leidos Australia grant 1.3 million 2026 Leidos official Cairns"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://statements.qld.gov.au/statements/105721",
+          "disposition": "Opened exact recipient AUD1.3m award,30July2026."
+        },
+        {
+          "url": "https://www.leidos.com/sites/leidos/files/2024-07/Leidos%20Australia%20Modern%20Slavery%20Statement%20_FY%202024_0.pdf",
+          "disposition": "Opened official Australian operation structure; no parent cash transferred."
+        }
+      ]
+    },
+    {
+      "id": "b1809563-1d6f-4358-85e9-6ef4630632a4",
+      "slug": "leolabs",
+      "name": "LeoLabs",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "evidence_note": "Four historical financing announcements plus latest conditional government loan verified; investor roles source-specific.",
+      "hold_note": "Undisclosed intervening rounds, sourceclaimed2025Alumni backing and grants require originals.2024extension parent/instrument unspecified; conditional150m is not cash raised.",
+      "searches_checked": [
+        "site.leolabs.space funding 2026 2024 Series 2021 2018",
+        "LeoLabs 150 million Office Strategic Capital November2026 official",
+        "LeoLabs raises65million2021 29million2024 13million2018 official",
+        "site.leolabs.space 2017 4 funding",
+        "LeoLabs investors Alumni Ventures2025 portfolio"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/leolabs-closes-funding-round-for-leo-mapping-platform-300413737.html",
+          "disposition": "Opened original issuer release, closed4m."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/leolabs-closes-13-million-series-a-to-expand-space-situational-awareness-and-mapping-platform-300686776.html",
+          "disposition": "Opened original issuer release,13m and roles."
+        },
+        {
+          "url": "https://www.leolabs.space/wp-content/uploads/2021/06/LeoLabs-Series-B-Press-Release-Final-Version-03-June-2021.pdf",
+          "disposition": "Opened original PDF,65m and joint leaders."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/leolabs-raises-29-million-to-deliver-enhanced-ai-powered-insights-for-space-operations-302059070.html",
+          "disposition": "Opened original issuer release,29m financing and namedbackers."
+        },
+        {
+          "url": "https://leolabs.space/press/leolabs-secures-150m-u-s-government-financing/",
+          "disposition": "Opened original conditionalup-to150m,notdraw."
+        },
+        {
+          "url": "https://www.war.gov/News/Releases/Release/Article/4641087/department-of-wars-office-of-strategic-capital-signs-150-million-conditional-lo/",
+          "disposition": "Government original403; earlier4Novdate held, company5Novused."
+        }
+      ]
+    },
+    {
+      "id": "4eb42fa0-e8f1-432c-94a2-d3e12c04bf41",
+      "slug": "leonardo-drs-rada",
+      "name": "Leonardo DRS (RADA)",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Exact DRS borrower2022fullterm draw/revolver and2026replacement verified. Four existing RADA alias offerings inspected and not copied.",
+      "hold_note": "Earlierrelated-partyloans, factoringtransactions and premerger identity need follow-up.2023secondaryoffering expressly no issuerproceeds; no newequity round.",
+      "searches_checked": [
+        "site.leonardodrs.com 2026 credit facility2022 2023financing",
+        "site.investors.leonardodrs.com 2022 225million November29",
+        "Leonardo DRS historical financing2023 secondaryoffering proceeds no proceeds"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://investors.leonardodrs.com/node/7006/html",
+          "disposition": "Opened originalexecutedcredit disclosure, full225mdraw and275mcapacity."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1833756/000183375626000007/drs-20260128.htm",
+          "disposition": "Opened exactborrower500mcapacity andJPMswingline role."
+        },
+        {
+          "url": "https://investors.leonardodrs.com/node/10206/html",
+          "disposition": "LatestQ3debt and oldtermrepayment checked; no newroundfrombalance."
+        },
+        {
+          "url": "https://investors.leonardodrs.com/news-releases/news-release-details/leonardo-drs-announces-launch-proposed-secondary-offering-common",
+          "disposition": "Original15Nov2023 expressly noissuerproceeds; excluded."
+        }
+      ]
+    },
+    {
+      "id": "2f11b133-abdf-48af-863e-b48e0329df13",
+      "slug": "leonardo-helicopters",
+      "name": "Leonardo Helicopters",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Officialdivision identity and transaction-party reviews distinguish producer from parent borrower and helicopter asset owners.",
+      "hold_note": "No separate source-confirmed incoming company round found within boundedreview. ParentLeonardo15existingevents not duplicated; private detailsunknown, notzero.",
+      "searches_checked": [
+        "site.helicopters.leonardo.com grant loan funding2026 2025",
+        "site.leonardo.com helicopters EIB borrower2026 loan",
+        "site.leonardo.com helicopters division2026",
+        "Leonardo Helicopters financing grant investors2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.leonardo.com/documents/15646808/30043445/20260312_ANNEX_LDO%2BIndustrial%2BPlan_vsent.pdf/1138487b-2987-c2d7-6dfc-448fbf8923b8?t=1773304174951",
+          "disposition": "Opened currentdivision structure."
+        },
+        {
+          "url": "https://www.eib.org/en/projects/all/20200620",
+          "disposition": "Opened originalparent programme, helicoptersegment not borrower."
+        },
+        {
+          "url": "https://www.milestoneaviation.com/media-center/press-releases/detail/9713/milestone-signs-new-framework-agreement-with-leonardo-helicopters",
+          "disposition": "Opened transactionpartyframework; helicopterleasing notproducerfinancing."
+        }
+      ]
+    },
+    {
+      "id": "f8a5cbcb-f916-452a-8514-70496f79de6e",
+      "slug": "leonardo-underwater-systems",
+      "name": "Leonardo (Underwater Systems)",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Originalseller/buyer and current subsidiary pages establish2025business transfer intoWASS and Fincantieriownership.",
+      "hold_note": "No source-confirmed standalone financing event found in boundedreview. Fincantiericapitalincrease financesbuyer acquisition; purchaseprice andearnout notWASSround. Private detailsunknown.",
+      "searches_checked": [
+        "Leonardo WASS sale January2025 Fincantieriunderwater systemsfinancing",
+        "WASS Submarine Systems loan grant funding2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.fincantieri.com/en/newsroom/press-releases/2025/fincantieri-completes-the-acquisition-of-leonardos-uas-underwater-business",
+          "disposition": "Opened acquisitionclosing; exactnewlegalissuer, considerationexcluded."
+        },
+        {
+          "url": "https://www.fincantieri.com/en/group/company/subsidiaries-and-associates/WASS",
+          "disposition": "Opened currentgroupassociation."
+        }
+      ]
+    },
+    {
+      "id": "1585dd89-0518-469a-b770-100981b0a52b",
+      "slug": "levanta-tech",
+      "name": "LeVanta Tech",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Lender confirms exact maritime drone issuer credit investment.",
+      "hold_note": "Current seed-target status, earlier contracts and unspecified private backing remain unresolved. Creator-commerce LevantaUSD22m excluded; SBIR procurement not assumed grant.",
+      "searches_checked": [
+        "LeVanta Tech funding investment drone investors",
+        "site.leonidfinance.io LeVanta 800000 credit",
+        "LeVanta 800 Leonid investment",
+        "LeVanta Tech funding seed 2026 investors",
+        "site.leonidcp.com LeVanta"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.linkedin.com/posts/leonidcapitalpartners_leonid-capital-partners-is-proud-to-announce-activity-7321208883048316928-ZRJs",
+          "disposition": "Opened original lender credit investment; date relative only."
+        },
+        {
+          "url": "https://www.levantatech.com/news",
+          "disposition": "Opened official issuer news, content partly dynamic."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/kellyechols_levanta-tech-has-opened-its-seed-round-activity-7402418587010793472-aMbb",
+          "disposition": "Indexed issuerseedopening candidate, closing unverified."
+        },
+        {
+          "url": "https://nsin.mil/assets/downloads/NSIN%20Vector%202024%20Lookbook.pdf",
+          "disposition": "Official cohort identity candidate, not funding amount."
+        },
+        {
+          "url": "https://www.leonidfinance.io/news",
+          "disposition": "Fetch failed; original lender socialpost used."
+        }
+      ]
+    },
+    {
+      "id": "1497bff0-6984-43c4-b231-5a4a99304022",
+      "slug": "lexisnexis",
+      "name": "LexisNexis",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Bounded history, issuer and parent financial/transaction-party review confirms RELX division; no attributable public company raise established.",
+      "hold_note": "Private terms unknown, notzero. RELXFinanceBV borrowing and acquisition prices are different issuer or transaction types.",
+      "searches_checked": [
+        "LexisNexis financing investment RELX subsidiary 2026",
+        "site.lexisnexis.com RELX division",
+        "LexisNexis investors funding financing history",
+        "site.lexisnexis.com part of RELX"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.lexisnexis.com/en-gb/about-us",
+          "disposition": "Opened issuer division/parent relationship."
+        },
+        {
+          "url": "https://www.lexisnexis.com/en-us/about-us/about-us.page",
+          "disposition": "Opened exact company identity."
+        },
+        {
+          "url": "https://www.relx.com/~/media/Files/R/RELX-Group/documents/investors/corporate-governance/debt-investors/relx-finance-bv-annual-report-2025.pdf",
+          "disposition": "Indexed parent financevehicle; borrowing not assigned to LexisNexis."
+        }
+      ]
+    },
+    {
+      "id": "197a7d5c-c94b-4385-a951-35926a369a23",
+      "slug": "liangxi-aerospace-technology-group",
+      "name": "Liangxi Aerospace Technology Group",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Local government original establishes exact Wuxi Liangxi state-owned commercial aerospace platform.",
+      "hold_note": "Registered RMB1bn capital is not paid financing proof. RMB2bn fund/StarUnion capital and financing of invested companies not recipient rounds; own paidcapital and historical instruments require originals.",
+      "searches_checked": [
+        "Liangxi Aerospace Technology Group funding investment financing",
+        "梁溪空天 融资 集团 注册资本",
+        "梁溪空天 融资 集团",
+        "梁溪空天科技集团 增资 融资",
+        "无锡市梁溪空天科技集团有限公司 贷款 OR 融资 OR 补助"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.wxlx.gov.cn/doc/2026/06/09/4788388.shtml",
+          "disposition": "Opened official exactplatform identity, industrial investment not incomingfinance."
+        },
+        {
+          "url": "https://www.shuididp.cn/yp-b670a30fab5adfac7d104eff4239e901.html",
+          "disposition": "Indexed secondaryregistry subscribedcapital not paidcapital."
+        },
+        {
+          "url": "https://www.wuxicapital.com.cn/news_59/540.html",
+          "disposition": "Investor originalcandidate concerns other recipient; excluded."
+        }
+      ]
+    },
+    {
+      "id": "fd623e7d-d235-412e-92d7-09490b388524",
+      "slug": "lig-nex1",
+      "name": "LIG Nex1",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Original final KRX prospectus supports issuer340bnKRW bond terms.",
+      "hold_note": "2026 preferred equity revised date13Nov2026 and amount531.968bn require latest original; no closing assumed. Earlier IPO, commercial paper and related subsidiary funding need reconciliation. Ghost acquisition and defence contracts excluded.",
+      "searches_checked": [
+        "LIG Nex1 2026 bonds financing 2025",
+        "LIG넥스원 2026 회사채 3400",
+        "site.kind.krx.co.kr LIG넥스원 2026 340,000",
+        "site.kind.krx.co.kr 엘아이지넥스원 2026 제10-1",
+        "LIG Nex1 bonds financing 2025 2026 July November",
+        "site.kind.krx.co.kr LIG넥스원 2026 유상증자 09"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kind.krx.co.kr/external/2026/02/11/000065/20260211000131/10601.htm",
+          "disposition": "Opened exactissuer finalbondprospectus; paymentdate notsettlementproof."
+        },
+        {
+          "url": "https://kind.krx.co.kr/external/2026/02/10/001335/20260210003439/10002.htm",
+          "disposition": "Original finalcoupon terms indexed."
+        },
+        {
+          "url": "https://bullga.ai/disclosures/103034",
+          "disposition": "Latest preferred equity correction candidate, originalnotverified; held."
+        }
+      ]
+    },
+    {
+      "id": "b2de459f-ab50-423c-84ae-de1a9d833156",
+      "slug": "lighthouse-avionics",
+      "name": "Lighthouse Avionics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Government and operator originals support ownGENIUS500k award; 2025selection distinguished.",
+      "hold_note": "Ownsite indexed25kHilliard2024,200kIMG2026 and OGTF2024claims held because direct original page body yielded SPA shell only. SBIRcontract totals not grants; 100kOhiooriginal404. Notzero funding.",
+      "searches_checked": [
+        "Lighthouse Avionics funding investors grant",
+        "Lighthouse Avionics GENIUS $500,000 2026",
+        "Lighthouse Avionics Ohio Gateway investment",
+        "Lighthouse Avionics investment Ohio Gateway site.ohiogateway",
+        "site.lighthouseavionics.com/news matching 200",
+        "Lighthouse Avionics NYS Innovation grant 200000",
+        "site.lighthouseavionics.com investment funding 2026 investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.esd.ny.gov/esd-media-center/press-releases/empire-state-development-announces-round-nine-winners-genius-ny",
+          "disposition": "Opened original actual investmentaward."
+        },
+        {
+          "url": "https://centerstateceo.com/news/flox-intelligence-wins-genius-ny-round-9-grand-prize",
+          "disposition": "Opened operator original, own500k."
+        },
+        {
+          "url": "https://lighthouseavionics.com/news",
+          "disposition": "Indexed companyfinancialclaims but openedSPA shell, heldunverifieddetails."
+        },
+        {
+          "url": "https://lighthouseavionics.com/news/hilliard-city-lab",
+          "disposition": "Direct web and rawHTML contain onlySPA shell, indexed25k held."
+        },
+        {
+          "url": "https://development.ohio.gov/home/news-and-events/all-news/2021-0310-ohio-providing-early-stage-capital",
+          "disposition": "Original404;100kcandidateheld."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1987117",
+          "disposition": "Indexed awardaggregate not individualgrant; held."
+        }
+      ]
+    },
+    {
+      "id": "dee222ad-d944-4b75-8cd2-8791e8884bcb",
+      "slug": "lightpath-technologies",
+      "name": "LightPath Technologies",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 7,
+      "relationship_count": 0,
+      "evidence_note": "Seven parent equity/debt events verified against original SEC history and latestNovember2026filing.",
+      "hold_note": "Older IPO/pre2016placements, February2025mixedacquisitionfinancing and actual equipmentlease proceeds remain followup. Latvia subsidiary loans not transferred. Seller notes, vendor consideration, ADS/ATM capacity, netcashflowaggregate and NorthRunsecondary excluded.",
+      "searches_checked": [
+        "LightPath Technologies financing public offering 2026 2025",
+        "LightPath December15 2025 gross",
+        "site.lightpath.com 2023 offering gross",
+        "site.lightpath.com 2017 offering gross proceeds",
+        "LightPath December15 2025 69",
+        "LightPath January2023 10million closing",
+        "LightPath 2017 offering 18"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/889971/000138713117004685/lpth-10k_063017.htm",
+          "disposition": "Opened parent2016equity/loan/line and actualclosing."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/889971/000165495424012103/lpth_10k.htm",
+          "disposition": "Opened January2023closing; subsidiaryequipmentloan excluded."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/889971/000143774926036178/lpth20260922_10q.htm",
+          "disposition": "Opened latest2026Q1filing with2025/2026equityclosings."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/889971/000143774926019435/ex_971315.htm",
+          "disposition": "Opened original primary50mversussecondary50m."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/889971/000165495425013906/lpth_8k.htm",
+          "disposition": "Opened exactprice andoptions."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/889971/000165495423000328/lpth_8k.htm",
+          "disposition": "Opened2023SPA; unusedATMcapacity excluded."
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [
+      {
+        "from": "lockheed-martin",
+        "to": "lockheed-martin-corporation",
+        "basis": "Same named corporate investor; not the separately named venture unit."
+      }
+    ],
+    "root_verification": {
+      "search_queries_executed": 2,
+      "searches_checked": [
+        "site.lightpath.com 2026 100 million secondary 50 million offering June",
+        "site.lantronix.com 2026 First Citizens 5 million loan August"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://centerstateceo.com/news/flox-intelligence-wins-genius-ny-round-9-grand-prize",
+          "disposition": "Opened programme operator release8May2026; exact own500k recipients, not cohortbudget."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/889971/000143774926019435/lpth20260602_8k.htm",
+          "disposition": "Opened issuer8K, approxUSD50m primary proceeds distinct from selling stockholder shares; closed3June2026."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1114925/000168316826008447/lantronix_i10q-093026.htm",
+          "disposition": "Opened latestissuer10Q, currentFirstCitizens lender distinct from historicSVB; actualAugustfunding versusfacilitylimits."
+        },
+        {
+          "url": "https://esd.ny.gov/esd-media-center/press-releases/empire-state-development-announces-round-nine-winners-genius-ny",
+          "disposition": "Opened official programmeowner original, exact500k recipients checked."
+        }
+      ]
+    },
+    "notes": [
+      "Chinese investor names retain original spellings with English transliterations; Unicode-aware identity matching avoids collapsing distinct non-Latin names.",
+      "LandSpace cumulative totals, LightPath secondary sales, Leidos/Leonardo subsidiary and division distinctions preserved.",
+      "GENIUS investment instrument unknown; programme budget and finalist selection not extra rounds.",
+      "Existing15Leonardo and4DRS/RADA alias events not copied.",
+      "Failed source pages and unknown private details retained in per-company holds."
+    ]
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting stored amount rejection and participant-source foreign key rejection.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T07:00:19.369Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 62,
+      "mismatched_facts": 0,
+      "participant_matches": 72,
+      "source_matches": 68,
+      "relationship_matches": 4,
+      "missing_link_sources": 0
+    }
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "New wider-cohort DB events are not claimed to appear on European map. Profiles and generic portfolio associations publish through existing directory build."
+  },
+  "preserved": [
+    "Legacy research-agent/STATE.json",
+    "Frozen snapshots",
+    "Curated investor profiles and legacy relationships",
+    "Company geography, classification and publication gates",
+    "Repository schedules",
+    "No paid external API backfill"
+  ],
+  "programme_complete": false
+}
