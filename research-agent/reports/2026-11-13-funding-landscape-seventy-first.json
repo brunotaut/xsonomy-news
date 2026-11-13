@@ -1,0 +1,1166 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T22:48:16.321Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-seventy-first.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 3,
+    "new_or_retained_partial": 21,
+    "new_approved_events": 23,
+    "new_round_participations": 18,
+    "new_source_rows": 27,
+    "new_generic_portfolio_relationships": 1,
+    "new_companies_with_events": 12,
+    "new_investor_profiles": 9,
+    "group_search_queries_executed": 136,
+    "root_additional_search_queries": 4,
+    "per_company_search_ledger_entries": 136,
+    "source_ledger_entries": 99,
+    "company_database_identity_contexts_checked": 24,
+    "existing_canonical_events_inspected": 0,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 23,
+    "mismatched_facts": 0,
+    "participant_matches": 18,
+    "source_matches": 27,
+    "relationship_matches": 1,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 0,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "db_total_events": 3778,
+    "db_approved_events": 3765,
+    "db_round_participations": 5058,
+    "db_investor_profiles": 3029,
+    "db_source_reconciliation_companies": 1051,
+    "concurrency_speedup_claimed": false,
+    "search_queries_executed": 140
+  },
+  "production_before": {
+    "events": 3755,
+    "approved": 3742,
+    "links": 5040,
+    "sources": 5181,
+    "profiles": 3020,
+    "covered": 1039,
+    "relationships": 487,
+    "preserved_profiles_hash": "b3ff9469e7885aa1ccad697538186490"
+  },
+  "production_after": {
+    "events": 3778,
+    "approved": 3765,
+    "links": 5058,
+    "sources": 5208,
+    "profiles": 3029,
+    "covered": 1051,
+    "relationships": 488,
+    "preserved_profiles_hash": "b3ff9469e7885aa1ccad697538186490"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1142,
+    "source_review_partial": 863,
+    "queued": 559
+  },
+  "per_company": [
+    {
+      "id": "3a2d7c85-367f-463c-ad4b-844f39988c79",
+      "slug": "renk",
+      "name": "RENK",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "RENK financing 2024 2026 bond loan Renk Group GmbH official",
+        "site:renk.com 2026 refinancing 450 borrower Group AG",
+        "\"RENK\" \"2026\" \"loan\" \"Group AG\" October November",
+        "\"RENK\" \"IPO\" \"proceeds\" \"selling shareholder\" 2024 official"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ir.renk.com/news-releases/news-release-details/renk-successfully-refinances-and-expands-financial-flexibility",
+          "published_date": "2026-07-28",
+          "disposition": "Opened original financing/award evidence; only supported disclosed subset retained."
+        },
+        {
+          "url": "https://ir.renk.com/static-files/ed2caf5d-de9a-40a6-b2ad-45ad54f05fb8",
+          "published_date": null,
+          "disposition": "Indexed official Q3 Nov5 financing bridge150m October10 candidate; direct PDF403 and exact legal borrower not checked, held."
+        },
+        {
+          "url": "https://www.renk.com/en/newsroom/news/press-releases-1/private-placement-of-shares-of-renk-group-ag",
+          "published_date": null,
+          "disposition": "Original IPO placement existing shares from Rebecca BidCo/Triton seller, not primary issuer cash."
+        },
+        {
+          "url": "https://ir.renk.com/static-files/cdee709d-2d97-46bf-820e-7b9ec799bcea",
+          "published_date": null,
+          "disposition": "Indexed original annual report earlier2024 loans/bond; GmbH versus Group AG attribution held."
+        }
+      ],
+      "evidence_note": "Exact catalogue identity and dated public originals checked; amount, role and instrument distinctions preserved. Only supported subset prepared; not complete programme sign-off.",
+      "hold_note": "Earlier2024 facilities/520m bond operating GmbH versus Group AG legal issuer unresolved. October2026 EUR150m bridge directPDF403, legal borrower/draw unverified. IPO/secondary seller proceeds and375m guarantees excluded. Partial history."
+    },
+    {
+      "id": "745ad414-e061-4a55-92e6-b366805eefa1",
+      "slug": "replay-technologies",
+      "name": "Replay Technologies",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Replay Technologies funding 2016 Deutsche Telekom Intel investment",
+        "\"Replay Technologies\" \"Class A\" \"Guggenheim\" 2014",
+        "\"Replay Technologies\" site:intel.com 2016 acquired",
+        "\"Replay Technologies\" \"funding\" \"2014\" \"Samsung\" site:prnewswire.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/replay-technologies-inc-closes-class-a-stock-round-investment-partners-with-samsung-venture-investment-corporation-to-explore-broader-applications-261492351.html",
+          "published_date": "2014-06-02",
+          "disposition": "Opened original financing/award evidence; only supported disclosed subset retained."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/replay-technologies-closes-135-million-series-b-funding-led-by-deutsche-telekom-capital-partners-300227902.html",
+          "published_date": "2016-02-29",
+          "disposition": "Opened original financing/award evidence; only supported disclosed subset retained."
+        },
+        {
+          "url": "https://download.intel.com/newsroom/2021/archive/2016-03-09-editorials-intel-acquires-replay-technologies.pdf",
+          "published_date": null,
+          "disposition": "Indexed Intel original acquisition March9/2016; purchase price not incoming funding."
+        }
+      ],
+      "evidence_note": "Exact catalogue identity and dated public originals checked; amount, role and instrument distinctions preserved. Only supported subset prepared; not complete programme sign-off.",
+      "hold_note": "2014 Trinity USD3m candidate lacks original and instrument. ClassA total unknown; USD9m is one cheque. Intel acquisition and founder later XTEND financing excluded. Private earlier/follow-on history incomplete."
+    },
+    {
+      "id": "8af1540b-6e0a-4185-af04-91e741880aaa",
+      "slug": "resilienx",
+      "name": "ResilienX",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "ResilienX funding seed investment 2026 2025",
+        "site:resilienx.com investment funding investors Genius 100000 seed",
+        "site:resilienx.com \"funding\" \"500\" OR \"GENIUS\" investment",
+        "\"ResilienX\" \"$500,000\" GENIUS 2019 official",
+        "\"ResilienX\" \"2026\" funding investors grant Michigan",
+        "\"ResilienX\" site:michigan.gov \"200,000\"",
+        "\"ResilienX\" site:michigan.gov \"200,000\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://centerstateceo.com/nl/node/1981?language=nl",
+          "published_date": "2019-04-09",
+          "disposition": "Opened original financing/award evidence; only supported disclosed subset retained."
+        },
+        {
+          "url": "https://www.michigan.gov/leo/news/2026/10/21/whitmer-awards-funds-to-launch-12-advanced-air-mobility-projects-statewide",
+          "published_date": "2026-10-21",
+          "disposition": "Opened original financing/award evidence; only supported disclosed subset retained."
+        },
+        {
+          "url": "https://resilienx.com/press-release-resilienx-selected-for-nasa-sbir-phase-ii-to-advance-orion-airspace-coordination-system-for-wildfire-and-disaster-response/",
+          "published_date": null,
+          "disposition": "Opened issuer Aug20/2026 NASA SBIR selection; no amount or instrument established, not assumed equity/grant."
+        },
+        {
+          "url": "https://resilienx.com/resilienx-wins-afwerx-sbir-phase-i-for-explainable-ai-model-health-monitoring/",
+          "published_date": null,
+          "disposition": "Indexed issuer Aug3/2026 confirms June30 contract; procurement not venture financing."
+        },
+        {
+          "url": "https://resilienx.com/battle-creek-unlimited-selects-resilienx-for-mich-air-beyond-visual-line-of-sight-system/",
+          "published_date": null,
+          "disposition": "Original BCU selection contract; BCU appropriation not company grant."
+        }
+      ],
+      "evidence_note": "Exact catalogue identity and dated public originals checked; amount, role and instrument distinctions preserved. Only supported subset prepared; not complete programme sign-off.",
+      "hold_note": "2019 instrument/disbursement unknown;2026 Michigan award instrument/payment unknown. NASA/AFWERX SBIR procurement contracts, programme totals,BCU7m appropriation and secondary100k/670k claims not promoted. Earlier private history partial."
+    },
+    {
+      "id": "5e731d77-cd16-4550-a8c4-942fa878a180",
+      "slug": "resonant-sciences",
+      "name": "Resonant Sciences",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Resonant Sciences\" funding investment investors 2026 2025",
+        "\"Resonant Sciences\" \"$2.5\" site:jobsohio.com",
+        "\"Resonant Sciences\" \"2026\" \"financing\" \"investment\"",
+        "\"Resonant Sciences\" Cerberus equity grant funding 2026 2015"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.cerberus.com/media/resonant-sciences-announces-strategic-investment-from-cerberus/",
+          "published_date": "2023-09-06",
+          "disposition": "Opened original financing/award evidence; only supported disclosed subset retained."
+        },
+        {
+          "url": "https://www.jobsohio.com/newsroom/news-press/resonant-sciences-establishes-cutting-edge-radome-production-facility-in-greene-county",
+          "published_date": "2026-03-30",
+          "disposition": "Opened original financing/award evidence; only supported disclosed subset retained."
+        },
+        {
+          "url": "https://www.resonantsciences.com/news",
+          "published_date": null,
+          "disposition": "Opened issuer archive March25/2026 same grant, latest Joby agreement not own financing."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1819848/000181984826000533/joby-20260930.htm",
+          "published_date": null,
+          "disposition": "Indexed original Joby subsequent acquisition agreement identifies seller consideration; no equity raise assigned."
+        }
+      ],
+      "evidence_note": "Exact catalogue identity and dated public originals checked; amount, role and instrument distinctions preserved. Only supported subset prepared; not complete programme sign-off.",
+      "hold_note": "Cerberus actual affiliate unnamed; amount/security/primary-secondary split unknown. JobsOhio award payout unknown. Joby purchase consideration excluded. Earlier/private capital history remains partial."
+    },
+    {
+      "id": "84f70085-44f7-4e86-a4d3-982ea536d524",
+      "slug": "resquant",
+      "name": "ResQuant",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "searches_checked": [
+        "ResQuant finansowanie inwestycja 2026 2025",
+        "site:resquant.com funding investors grant",
+        "site:resquant.com \"fund\" OR \"grant\" OR \"project\"",
+        "site:inventovc.pl ResQuant inwestycja",
+        "\"ResQuant\" site:inventovc.com OR site:inventovc.pl OR site:lhv.vc",
+        "\"ResQuant\" \"Invento\" investment 2023 official",
+        "\"ResQuant\" \"Lighthouse\" funding 2024 2026",
+        "\"ResQuant\" site:ncbr.gov.pl OR site:gov.pl STEP 15.8",
+        "\"ResQuant\" \"STEP\" \"15\" \"gov.pl\"",
+        "\"ResQuant\" \"STEP\" \"15\" \"gov.pl\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ssklegal.pl/2023/01/02/resquant-for-future-cyber-threats/?lang=en",
+          "published_date": "2023-01-02",
+          "disposition": "Opened original financing/award evidence; only supported disclosed subset retained."
+        },
+        {
+          "url": "https://www.resquant.com/contact",
+          "published_date": null,
+          "disposition": "Opened original exact ResQuant Sp. z o.o., KRS0000868922, Poland."
+        },
+        {
+          "url": "https://mamstartup.pl/resquant-z-branzy-cybersecurity-pozyskal-ponad-1-mln-zl-od-invento-vc/",
+          "published_date": null,
+          "disposition": "Secondary PLN1.1m 2023 amount held pending original amount source; not verified by counsel."
+        },
+        {
+          "url": "https://lhv.vc/project/resquant/",
+          "published_date": null,
+          "disposition": "Opened original manager portfolio backing, no round details."
+        }
+      ],
+      "evidence_note": "Exact catalogue identity and dated public originals checked; amount, role and instrument distinctions preserved. Only supported subset prepared; not complete programme sign-off.",
+      "hold_note": "Earlier Invento date and2023PLN1.1m amount original not resolved. Lighthouse fund vehicle/date and purported2024seed not established.2026STEP15.8m/EIC500k/ESA185k/DIANA100k and25m/26m grant aggregates not source-audited; fundraising target not closed funding."
+    },
+    {
+      "id": "1f0cbb42-4a89-4c82-8298-6a10e08cdb41",
+      "slug": "rfbeam-microwave",
+      "name": "RFbeam Microwave",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"RFbeam\" investment funding investors acquisition",
+        "\"RFbeam\" Finanzierung Investoren 2025 2026",
+        "\"RFbeam\" site:rfbeam.ch news investors capital financing",
+        "\"RFbeam\" \"investment\" \"2026\" OR \"2025\"",
+        "\"RFbeam\" investment shareholders funding 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://rfbeam.ch/about-us/",
+          "published_date": null,
+          "disposition": "Opened full original history: Swiss RFbeam Microwave GmbH St.Gallen founded2007;2015 Ecom project acquisition not financing."
+        },
+        {
+          "url": "https://rfbeam.ch/news/",
+          "published_date": null,
+          "disposition": "Opened latest original news October11/2026,September18,June1 products/projects; no funding fact stated."
+        },
+        {
+          "url": "https://rfbeam.ch/",
+          "published_date": null,
+          "disposition": "Opened original exact radar sensor company; distribution/project revenue not equity or grant."
+        }
+      ],
+      "evidence_note": "Exact catalogue identity and dated public originals checked; amount, role and instrument distinctions preserved. No verified funding event in bounded checked sources.",
+      "hold_note": "Bounded public-source review finds no evidenced incoming financing in checked original history/current news and broad searches; private records unknown, no inference of zero funding. Registered capital and Ecom project acquisition not funding."
+    },
+    {
+      "id": "a469000e-0c7e-404d-8232-5af5eca839c9",
+      "slug": "rheinmetall-canada",
+      "name": "Rheinmetall Canada",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Rheinmetall Canada\" financing grant investment 2026 2025",
+        "\"Rheinmetall Canada\" \"grant\" \"funding\" site:canada.ca",
+        "site:search.open.canada.ca/grants \"Rheinmetall Canada\" \"969229\"",
+        "\"Rheinmetall Canada\" financing loan equity investment 2010 2020",
+        "site:nrc.canada.ca IRAP non-repayable contributions firms funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://search.open.canada.ca/grants/record/nrc-cnrc,172-2020-2021-Q4-969229,current",
+          "disposition": "Original grantor record read: exact recipient, contribution agreement, CAD498000; publication date and repayment terms absent.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.rheinmetall.com/en/company/subsidiaries/rheinmetall-canada/history",
+          "disposition": "Original history supports Oerlikon continuity; no financing amount inferred.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.rheinmetall.com/en/media/news-watch/news/2026/09/2026-09-16-rheinmetall-breaks-ground-to-expand-quebec-facility",
+          "disposition": "Original company announcement: CAD150m is own investment/capex; not external funding.",
+          "published_date": "2026-09-16"
+        }
+      ],
+      "evidence_note": "Legal recipient and former operating name reconcile. One R&D contribution agreement is supported; financing instrument deliberately undisclosed pending award terms.",
+      "hold_note": "Earlier/latest source audit not complete. Retrieve agreement repayment conditions and other federal/provincial awards. Procurement and parent cash must remain excluded."
+    },
+    {
+      "id": "c875250e-b24f-4c93-8fbb-2b009c8c962a",
+      "slug": "rheinmetall-defence-australia",
+      "name": "Rheinmetall Defence Australia",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Rheinmetall Defence Australia\" funding grant investment capital",
+        "\"Rheinmetall\" \"5G Innovation\" grant 2021 amount",
+        "site:infrastructure.gov.au \"Rheinmetall\" \"1,496,627\"",
+        "site:infrastructure.gov.au \"Rheinmetall\" \"5G\"",
+        "site:minister.infrastructure.gov.au \"Rheinmetall\" \"2021\"",
+        "\"Rheinmetall Defence Australia\" \"grant\" site:rheinmetall.com",
+        "\"Rheinmetall\" \"5G\" \"grant\" \"2021\" site:rheinmetall.com/en/media",
+        "\"5G Innovation Initiative\" \"Rheinmetall\" \"gov.au\" 2021 recipients",
+        "\"Rheinmetall\" \"AFC\" \"2021\" \"grant\" official"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rheinmetall.com/en/company/subsidiaries/rheinmetall-defence-australia/about-us",
+          "disposition": "Original subsidiary identity checked; distinct from parent and NIOA JV.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.defenceconnect.com.au/land-amphibious/8637-rheinmetall-wins-5g-innovation-grant",
+          "disposition": "Secondary report with issuer quote confirms 5G innovation award for Advanced Firefighting Concept; exact primary award amount not yet retrieved.",
+          "published_date": "2021-08-26"
+        },
+        {
+          "url": "https://www.australiandefence.com.au/defence/unmanned/rheinmetall-receives-5g-grant-to-develop-autonomous-vehicle-technology",
+          "disposition": "Indexed corroboration only; not imported as independent original grantor evidence.",
+          "published_date": "2021-08-30"
+        }
+      ],
+      "evidence_note": "2021 5G Innovation Initiative award is a candidate; secondary exact AUD1496627 not promoted to verified primary fact. Outward R&D fund, procurement budgets and own capex excluded.",
+      "hold_note": "Find original Commonwealth grant award record and terms; earlier/latest own financing remains unresolved. No zero-funding claim."
+    },
+    {
+      "id": "cf3d8790-6954-4d35-b1c6-8a8dfa655646",
+      "slug": "rheinmetall-kraken",
+      "name": "Rheinmetall Kraken",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Rheinmetall Kraken\" joint venture financing capital",
+        "\"Rheinmetall Kraken\" investment equity funding 2025 2026",
+        "\"Rheinmetall Kraken\" funding investors capital 2026 original",
+        "\"Rheinmetall Kraken GmbH\" \"capital\" shareholder financing",
+        "\"NVL Kraken\" funding investment joint venture 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rheinmetall.com/en/media/news-watch/news/2026/04/2026-04-20-rheinmetall-kraken-gmbh-is-launching-series-production-of-unmanned-maritime-systems-in-hamburg",
+          "disposition": "Original identity: Rheinmetall Kraken GmbH joint venture; production capacities are not financing.",
+          "published_date": "2026-04-20"
+        },
+        {
+          "url": "https://krakentechnology.com/articles/kraken-technology-group-raises-160m-at-1bn-valuation",
+          "disposition": "Original British Kraken Technology Group financing announcement belongs to partner, not German JV; excluded.",
+          "published_date": "2026-07-09"
+        },
+        {
+          "url": "https://nvl.de/sites/default/files/2025-08/20250822_NVL%20Press%20Release_NVL%20establishes%20joint%20venture%20with%20Kraken.pdf",
+          "published_date": "2025-08-22",
+          "disposition": "Original joint statement: NVL recently invested in British Kraken parent; both companies will invest in JV roll-out. Future investment pledge, no amount/instrument/received proceeds; excluded from closed funding."
+        }
+      ],
+      "evidence_note": "JV versus partner issuer boundary established. British Kraken Technology Group July 2026 Series B is not financing received by this German company. Original 22 August 2025 JV announcement found: significant future roll-out investment pledge is distinct from NVL investment into British partner.",
+      "hold_note": "JV capital contributions, formation chronology and complete history remain unverified. Resolve NVL Kraken predecessor continuity; do not assign partner proceeds."
+    },
+    {
+      "id": "78fd1050-df99-4eff-a18d-bbc96d617c63",
+      "slug": "rheinmetall-naval-systems",
+      "name": "Rheinmetall Naval Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Rheinmetall Naval Systems\" financing loan capital",
+        "\"Rheinmetall Naval Systems\" \"loan\" \"borrower\" 2026",
+        "\"Rheinmetall Naval Systems\" own capital funding 2026 loan",
+        "\"Rheinmetall Naval Systems GmbH\" \"financing\" 2026",
+        "\"NVL\" \"2026\" \"credit facility\" Rheinmetall"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rheinmetall.com/en/company/divisions/naval-systems",
+          "disposition": "Original division identity checked: led by NVL B.V. & Co. KG; holding and division not automatically same issuer.",
+          "published_date": null
+        },
+        {
+          "url": "https://ir.rheinmetall.com/media/document/c06d264c-1ad6-4ef0-b737-23f10d83f598/assets/DE0007030009-Q3-2026-EQ-E-00.pdf",
+          "disposition": "Indexed original Q3 report: acquisition holding named; parent debt cannot be assigned without borrower proof.",
+          "published_date": "2026-11-05"
+        },
+        {
+          "url": "https://ir.rheinmetall.com/media/document/02bf150a-4f6e-4374-b573-7911c601125c/assets/Rheinmetall_Bond_05-2026_Prospectus.pdf",
+          "published_date": "2026-05-26",
+          "disposition": "Original issuer prospectus pages58-59 confirms acquisition holding and EUR1.5bn club capacity with EUR1bn draw on 4March2026; same facility not two raises; legal borrower not named in club paragraph, excluded from division."
+        }
+      ],
+      "evidence_note": "Generic catalogue division name must be distinguished from acquisition holding Rheinmetall Naval Systems GmbH and operating NVL. Parent acquisition debt and purchase price excluded.",
+      "hold_note": "Generic division versus holding legal/economic issuer remains unresolved. Original prospectus reconciles EUR1.5bn January2026 facility with EUR1bn 4March2026 draw as one facility, not separate raises; borrower/guarantee proof required before allocating to Naval Systems."
+    },
+    {
+      "id": "922a3060-62f0-41ef-b053-b3c8a4a45618",
+      "slug": "rhoman-aerospace",
+      "name": "Rhoman Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Rhoman Aerospace\" funding investors seed 2026 2025",
+        "\"Rhoman Aerospace\" site:rhomanaerospace.com funding",
+        "site:sbir.gov \"Rhoman\" \"Grant\" \"Contract\"",
+        "\"Rhoman Aerospace\" investors funding MassChallenge LACI 2026",
+        "\"Rhoman Aerospace\" \"funding\" \"2026\" investor latest"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rhoman.aero/",
+          "disposition": "Original company site read: identity/address/autonomy product, mixed partnership logos do not identify investors.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sbir.gov/awards/210887",
+          "disposition": "Original USAF 2024 Phase I award USD74984, contract FA8649-24-P-0806; not assumed grant.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sbir.gov/awards/209030",
+          "disposition": "Indexed original 2024 Phase II USD1.9m contract FA2541-24-C-B018; procurement classification hold.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sbir.gov/awards/218202",
+          "disposition": "Indexed original 2025 Navy Phase II USD990981 contract N68335-25-C-0280; procurement classification hold.",
+          "published_date": null
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1665545",
+          "disposition": "Original indexed legal name Rhoman Aerospace Corporation and matching address; historical award aggregate not a single funding round.",
+          "published_date": null
+        }
+      ],
+      "evidence_note": "Exact SBIR legal recipient reconciles with company address. DoD contract-numbered R&D awards are procurement candidates, not automatically non-repayable grants; partner/incubator membership is not equity investment.",
+      "hold_note": "Review award instruments and equity history; no supported priced round or explicit named investor participation verified. Awards kept outside funding importer pending instrument resolution."
+    },
+    {
+      "id": "9430567e-ebe1-4ba4-a63d-dbafd2fa8ed0",
+      "slug": "ricardo",
+      "name": "Ricardo",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Ricardo plc funding placing 2020 revolving credit facility 2024 2025",
+        "site:ricardo.com \"placing\" \"2020\" \"28.5\"",
+        "site:ricardo.com \"150\" \"August 2022\" facility",
+        "\"Ricardo\" \"2025\" \"2026\" loan funding WSP acquisition",
+        "\"Ricardo\" \"2020\" \"placing\" \"gross\" 29.3 million",
+        "\"Ricardo\" \"2022\" \"150\" \"refinancing\" lenders",
+        "\"Ricardo\" 2026 funding loan grant site:ricardo.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.ricardo.com/media/u0bb5vow/interim-report-for-six-months-ended-31-december-2020-hy-2020-21.pdf",
+          "disposition": "Original PDF note14 and screenshot page43 verify shares, cashbox mechanism and GBP29.3m gross/GBP28.2m net.",
+          "published_date": "2021-02-25"
+        },
+        {
+          "url": "https://www.investegate.co.uk/announcement/rns/ricardo--rcdo/preliminary-results/7314071",
+          "disposition": "Original issuer RNS full body initially retrieved; alternate index URL subsequently returned wrapper. Refinance supported with later original financial reports.",
+          "published_date": "2022-09-14"
+        },
+        {
+          "url": "https://www.ricardo.com/media/xrjlndum/9-ricardo-interim-results-for-the-six-months-ended-31-december-2024.pdf",
+          "disposition": "Original PDF confirms GBP150m RCF, GBP50m accordion, undrawn capacity and 2026 maturity.",
+          "published_date": "2025-03-05"
+        },
+        {
+          "url": "https://www.ricardo.com/media/5drkbm52/annual-report.pdf",
+          "disposition": "Original 2023/24 annual report confirms committed GBP150m RCF and uncommitted accordion; no repeated round.",
+          "published_date": "2024-09-10"
+        },
+        {
+          "url": "https://www.ricardo.com/media/rsfcog35/ricardo-plc-annual-report-and-accounts-2021-22.pdf",
+          "disposition": "Fetch failed because PDF too large; replaced by original issuer RNS, not treated as read.",
+          "published_date": null
+        }
+      ],
+      "evidence_note": "Ricardo plc group issuer; November2020 share financing and August2022 capacity refinance distinguished. Later WSP acquisition purchase consideration and Ricardo Defense disposal proceeds not new equity/debt funding.",
+      "hold_note": "Earlier funding and latest 2025/26 transaction-linked refinancing/repayment require complete source review; investor names and lenders remain undisclosed in supported records."
+    },
+    {
+      "id": "86ef9542-a0bc-4abb-856a-bf974e84397c",
+      "slug": "riis",
+      "name": "RIIS",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "RIIS drone company funding investment 2026 2025 Michigan",
+        "\"RIIS\" funding investors grant 2026 Michigan drone",
+        "\"RIIS\" \"funding\" \"investment\" \"Godfrey\"",
+        "\"RIIS\" site:nist.gov UAS prize award funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.riis.com/press",
+          "published_date": null,
+          "disposition": "Opened current issuer press archive, Jan2025 Dronecode membership and 2022 NIST win; membership not funding."
+        },
+        {
+          "url": "https://www.nist.gov/ctl/pscr/cna-riis",
+          "published_date": "2022-08-01",
+          "disposition": "Opened original NIST: RIIS LLC recipient one-year demonstration award with CNA; unknown amount and instrument; joint prize allocations held."
+        },
+        {
+          "url": "https://www.nist.gov/ctl/pscr/commercialization/psiap-taba-demonstration",
+          "published_date": null,
+          "disposition": "Opened original programme awardees: RIIS explicitly listed, programme non-dilutive follow-on funding."
+        },
+        {
+          "url": "https://www.nist.gov/ctl/pscr/open-innovation-prize-challenges/past-prize-challenges/2022-first-responder-uas-indoor",
+          "published_date": null,
+          "disposition": "Checked original joint CNA-RIIS challenge result; no entire joint prize attributed to RIIS."
+        },
+        {
+          "url": "https://www.nist.gov/ctl/pscr/open-innovation-prize-challenges/past-prize-challenges/2021-first-responder-uas-triple-1",
+          "published_date": null,
+          "disposition": "Original joint team challenge context; earlier challenge prizes distinct from later demonstration award."
+        }
+      ],
+      "evidence_note": "Exact Troy Michigan RIIS LLC matched NIST named president and issuer drone business; one non-dilutive award confirmed with undisclosed amount.",
+      "hold_note": "Earlier joint prizes have unknown RIIS allocation; exact demonstration instrument/date and later own funding unresolved. Australian RIIS research hub and other namesakes excluded; unknown is not zero."
+    },
+    {
+      "id": "38456bf4-5c5f-424e-bfa7-853929ee65de",
+      "slug": "rikor-electronics",
+      "name": "Rikor-Electronics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Рикор-Электроникс\" финансирование займ инвестиции 2025 2026",
+        "site:frprf.ru \"Рикор\" \"249,5\"",
+        "\"Рикор\" \"249,5\" \"Фонд\" сайт frprf.ru",
+        "\"Рикор Электроникс\" \"заем\" site:frprf.ru",
+        "\"Рикор\" \"249,5\" site:government-nnov.ru"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.interfax-russia.ru/volga/news/frp-predostavit-250-mln-rub-nizhegorodskomu-rikor-elektroniks-dlya-seriynogo-proizvodstva-lineyki-it-oborudovaniya",
+          "published_date": "2020-07-13",
+          "disposition": "Opened original 2020 creditor-quoted reporting: expert council approval exact RUB249.5m loan, five-year terms; not confirmed cash."
+        },
+        {
+          "url": "https://xn--b1agjasmlcka4m.xn--p1ai/event/ekspertnyy-sovet-frp-odobril-novye-zaymy",
+          "published_date": "2020-07-14",
+          "disposition": "Original creditor/Minpromtorg syndication indexed full text; direct open timed out. Confirms approval not disbursement."
+        },
+        {
+          "url": "https://www.rikor-electronics.ru/aktsioneram",
+          "published_date": null,
+          "disposition": "Opened original shareholder page: exact Arzamas legal company and 2020 additional-share notice; issue outcome/proceeds unverified."
+        },
+        {
+          "url": "https://www.rikor-electronics.ru/kontakty",
+          "published_date": null,
+          "disposition": "Opened exact company contact/legal identity source."
+        },
+        {
+          "url": "https://www.rikor-electronics.ru/",
+          "published_date": null,
+          "disposition": "Current official issuer site checked; manufacturing plans and capex excluded from funding."
+        },
+        {
+          "url": "https://expertcc.ru/portfolios/nash-klient-ao-rikor-elektroniks-moderniziroval-proizvodstvo-noutbukov-v-nizhegorodskoy-oblasti/",
+          "published_date": null,
+          "disposition": "Original adviser describes business plan for financing, not independent proof of additional closed loan."
+        }
+      ],
+      "evidence_note": "Arzamas Rikor legal issuer reconciled; 2020 approved federal FRP loan confirmed in original creditor-quoted report.",
+      "hold_note": "2020 additional shares not verified closed; subsequent project/capex totals not loan proceeds; later FRP/loan cash balances and earlier/latest funding incomplete. St Petersburg fund not substituted for federal FRP."
+    },
+    {
+      "id": "bb214fe3-1bfd-4cef-bfc0-e602706befbc",
+      "slug": "rincell",
+      "name": "Rincell",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Rincell funding investment seed 2024 2025 2026",
+        "site:energy.ca.gov \"Rincell\" \"2,999,528\"",
+        "\"Rincell\" site:rincell.com grant funding 2026 2025",
+        "\"Rincell\" funding investment 2025 2026 NextGen",
+        "\"Rincell\" \"1,972,144\"",
+        "\"Rincell\" \"2025\" \"SBIR\" Army contract"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/rincell-corporation-raises-1-2m-seed-round-to-accelerate-the-electrification-of-high-impact-carbon-emission-products-using-advanced-cell-chemistries-302027747.html",
+          "published_date": "2024-01-08",
+          "disposition": "Opened original issuer seed release, lead exact vehicle and amount."
+        },
+        {
+          "url": "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=93605&tn=257710",
+          "published_date": "2024-07-11",
+          "disposition": "Opened final adopted resolution approves exact EPC24-003 grant, not cash disbursement."
+        },
+        {
+          "url": "https://www.energy.ca.gov/filebrowser/download/6462?fid=6462",
+          "published_date": null,
+          "disposition": "Opened original proposal/request packet; superseded by final adopted resolution for approval status."
+        },
+        {
+          "url": "https://www.rincell.com/",
+          "published_date": null,
+          "disposition": "Current issuer news indexed; direct JS shell. August2024 CEC grant is not new separate event; latest product/customer news not funding."
+        },
+        {
+          "url": "https://www.treasurer.ca.gov/sites/default/files/caeatfa/4a2.pdf",
+          "published_date": "2025-06-17",
+          "disposition": "Opened June2025 original staff summary: same grant, rounded Army award, shareholder and sales-tax exclusion proposal. Tax incentive/qualified-property costs not incoming cash."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/2660338",
+          "published_date": null,
+          "disposition": "Opened original firm: exact Rincell UEI and one PhaseII award."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/215807",
+          "published_date": null,
+          "disposition": "Opened original exact Army research contract W51701-25-C-A051 USD1,972,144, Direct-to-PhaseII, start May6/2025–May7/2027. Contract not labelled grant, date differs from rounded Dec2024 staff-summary award; overlap/instrument held."
+        },
+        {
+          "url": "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=109658&tn=271989",
+          "published_date": null,
+          "disposition": "Official annual-report indexed row confirms exact EPC24-003 and active status; direct PDF failed size limit, not claimed full-read."
+        }
+      ],
+      "evidence_note": "Delaware Rincell Corporation exact issuer matched original seed and public-agency grant; original currencies and distinct instrument classes maintained.",
+      "hold_note": "Army contract exact SBA record held for funding-versus-procurement and Dec2024/May2025 overlap, not duplicated; CEC approval not assumed fully paid; possible IQT backing lacks original transaction confirmation. Sales-tax exclusion and equipment cost not funding."
+    },
+    {
+      "id": "f8c77737-36bc-4a15-a101-e06319f2d16d",
+      "slug": "riy-drone-project",
+      "name": "RIY Drone Project",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"RIY Drone Project\" funding investment grant",
+        "\"РІЙ\" \"Drone\" інвестиції грант проект",
+        "\"RIY Drone Project\" funding grant інвестиції",
+        "\"RIY\" \"Суран\" дрон грант інвестор",
+        "\"RIY\" \"Суран\" Горгона фінансування"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.drone-directory.com.ua/profile/riy-drone-project/",
+          "published_date": null,
+          "disposition": "Opened directory exact Uzhhorod volunteer initiative, Horhona and Volodymyr Suran; no legal operator or financing disclosed."
+        }
+      ],
+      "evidence_note": "Exact Uzhhorod volunteer Horhona initiative located; founder Volodymyr Suran distinguished from similar RIY names.",
+      "hold_note": "Legal recipient and earliest/latest public/private backing unresolved; directory and searches cannot establish zero funding or comprehensive history."
+    },
+    {
+      "id": "f92d75ec-c6c4-4f99-a826-60b44ebf1030",
+      "slug": "robinson-unmanned",
+      "name": "Robinson Unmanned",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Robinson Unmanned\" funding Ascent AeroSystems investment 2026",
+        "\"Robinson Unmanned\" \"funding\" \"investment\" 2026",
+        "\"Robinson Unmanned\" site:robinsonheli.com news investment",
+        "\"Ascent AeroSystems\" funding investors seed 2016 2024"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.robinsonheli.com/unmanned/press/robinson-helicopter-company-establishes-robinson-unmanned-business-unit-formalizing-expansion-into-scalable-autonomous-aviation",
+          "published_date": "2026-03-10",
+          "disposition": "Opened issuer March10/2026 formation: business unit, wholly owned Ascent remains identifiable separate operating company."
+        },
+        {
+          "url": "https://www.robinsonheli.com/unmanned/press",
+          "published_date": null,
+          "disposition": "Opened current original press archive."
+        },
+        {
+          "url": "https://www.robinsonheli.com/unmanned/media",
+          "published_date": null,
+          "disposition": "Checked original current business unit context."
+        },
+        {
+          "url": "https://www.robinsonheli.com/unmanned/press/robinson-unmanned-spirit-nepal-army-fms-contract",
+          "published_date": "2026-10",
+          "disposition": "Opened current issuer procurement release: Ascent is contracting entity; FMS contract not company financing."
+        },
+        {
+          "url": "https://republic.com/ascent-aerosystems",
+          "published_date": null,
+          "disposition": "Original historic subsidiary campaign candidate; not transferred into parent/business-unit financing. Root confirms Ascent already has three database events."
+        }
+      ],
+      "evidence_note": "Official 2026 formation establishes Robinson Helicopter business unit integrating autonomous operations and wholly owned Ascent; issuer boundaries confirmed.",
+      "hold_note": "No new own financing supported. Do not duplicate existing Ascent subsidiary history or infer parent funding allocation. Partnership/procurement, asset/share acquisition consideration not incoming unit financing; historical/latest coverage remains partial."
+    },
+    {
+      "id": "346f0df5-b483-45b0-a967-9b62833e80df",
+      "slug": "robot-aviation",
+      "name": "Robot Aviation",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Robot Aviation\" funding investors Norway loan grant",
+        "\"Robot Aviation\" investors funding 2026 2025 Tronrud",
+        "\"Robot Aviation\" finansiering investering 2024 2026",
+        "\"Robot Aviation\" \"Innovasjon Norge\" tilskudd 2024 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.robotaviation.com/about",
+          "published_date": null,
+          "disposition": "Opened current official operating brand/management history; continuity claim does not prove same legal funded recipient."
+        },
+        {
+          "url": "https://www.robotaviation.com/news",
+          "published_date": null,
+          "disposition": "Opened current original news: November2026 Nordic Batteries MoU and other cooperation/Army delivery are not capital proceeds."
+        },
+        {
+          "url": "https://www.uasnorway.no/robot-aviation-as-pa-honefoss-er-konkurs/",
+          "published_date": "2023-04-14",
+          "disposition": "Original industry association report confirms 2023 bankruptcy of historical entity and historical shareholders; no current issuer cash inferred."
+        },
+        {
+          "url": "https://www.finansavisen.no/teknologi/2023/11/12/8055949/robot-aviation-satser-pa-norske-droner-tronrud-engineering-og-gudleiv-bjorklund-har-kjopt-konkursboet",
+          "published_date": "2023-11-12",
+          "disposition": "Original publisher interview indexed: Tronrud Engineering/Invex bought bankrupt assets and moved into shelf company; purchase consideration and new primary capitalization unknown."
+        },
+        {
+          "url": "https://www.finansavisen.no/nyheter/teknologi/2021/07/19/7705048/endre-rosjo-og-bjarne-skeie-ser-muligheter-i-norsk-dronebransje-robot-aviation-fyller-kassen-i-fersk-emisjon",
+          "published_date": "2021-07-19",
+          "disposition": "Original publisher indexed NOK6.5m historical raise, held because bankrupt predecessor versus current 926016555 legal issuer unresolved."
+        },
+        {
+          "url": "https://regnskapsbasen.no/selskap/robot-aviation-as-926016555",
+          "published_date": null,
+          "disposition": "Secondary current organization registry/award candidate; original Innovasjon Norge award confirmation required."
+        },
+        {
+          "url": "https://www.proff.no/selskap/robot-aviation-as/h%C3%B8nefoss/forsvaret/IFBBQY30BM9",
+          "published_date": null,
+          "disposition": "Indexed current organization 926016555 and NOK57,500 Innovasjon Norge 2024 grant candidate, held pending original grantor and date."
+        }
+      ],
+      "evidence_note": "Current brand/operator distinguished from 2023 bankrupt predecessor; official latest MoUs not financing.",
+      "hold_note": "Old organization 992527404 versus current 926016555 asset restart: old NOK6.5m raise and historical investors held for exact funded-recipient continuity. NOK57,500 Innovasjon Norge2024 candidate requires original grantor evidence; secondary balances/share capital not new rounds."
+    },
+    {
+      "id": "508dc65a-196a-4b66-afbb-26ac31eaf285",
+      "slug": "robota-llc",
+      "name": "Robota LLC",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Robota LLC funding investment grant",
+        "Robota site:robota.us funding grant investment",
+        "Robota LLC investors seed loan2025 2026",
+        "site:robota.us news investment company",
+        "site:robota.us investor grant funding",
+        "Robota LLC seed venture"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.robota.us/terms-of-sale",
+          "disposition": "Opened original September2026 legalterms identifies Robota LLC Delaware issuer; product/customer payments not rounds."
+        },
+        {
+          "url": "https://www.linkedin.com/company/robota-llc",
+          "disposition": "Indexed original company profile confirms navigation/lightshow business; no financing terms established."
+        },
+        {
+          "url": "https://www.trophyclub.org/DocumentCenter/View/10316/January-2025-Check-Register",
+          "disposition": "Indexed original municipal10k drone-show payment is procurement, not grant/equity; no funding imported."
+        }
+      ],
+      "evidence_note": "Exact original-source identity context checked; supported findings and source limitations recorded.",
+      "hold_note": "No substantiated own financing in bounded public searches. Undisclosed private capital unknown, notzero. Customer procurement and UkrainianRobotaGranola loan namesake excluded."
+    },
+    {
+      "id": "5e823d1d-066f-4447-916b-7b4158faeee3",
+      "slug": "roca-defense-and-systems",
+      "name": "Roca Defense and Systems",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Roca Defense funding investors",
+        "Roca Defense financing capital funding",
+        "site:rocadefense.com investor grant company",
+        "Roca Defense inversión financiación2026 2025",
+        "Roca Defense investors funding",
+        "Roca Defense inversores capital"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rocadefense.com/en/",
+          "disposition": "Opened original holding/defense products and investment interest page; no completed financing amount or legal recipient established."
+        },
+        {
+          "url": "https://www.linkedin.com/company/rocadefense",
+          "disposition": "Indexed original company private-funded status and founder conference sponsorship do not establish a round."
+        },
+        {
+          "url": "https://www.infodefensa.com/texto-diario/mostrar/5951933/espanola-gms-plesium-alia-roca-defence-crecer-america-latina",
+          "disposition": "Indexed July2026 alliance candidate, not financing; Romanian ROCA Industry namesake excluded."
+        }
+      ],
+      "evidence_note": "Exact original-source identity context checked; supported findings and source limitations recorded.",
+      "hold_note": "Privatefunded/holding statements do not disclose round, legalrecipient, amount or instrument. Investment solicitation, sponsor expenditure and strategicalliance not completedcompanycapital. Legal structure/history incomplete."
+    },
+    {
+      "id": "269bc10f-9014-42ec-9697-456f4088cc44",
+      "slug": "rock-west-composites",
+      "name": "Rock West Composites",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Rock West Composites investment funding private equity",
+        "Rock West Composites ESOP financing2018 loan",
+        "Rock West Composites grant loan capital investors2026",
+        "Rock West Composites funding2025 2026",
+        "Rock West Composites SBIR grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rockwestcomposites.com/about-us.html",
+          "disposition": "Opened exact manufacturer original; employee ownership not incoming cash amount."
+        },
+        {
+          "url": "https://www.rockwestcomposites.com/our-15th-anniversary.html",
+          "disposition": "Opened original history:2009assetacquisition/2018ESOP; primary versus secondary funding and proceeds unknown."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/142693",
+          "disposition": "Opened original exactUEI/issuer and award list; aggregate5,891,582 across14awards not one grant. Instruments/individual awards require reconciliation."
+        },
+        {
+          "url": "https://business.utah.gov/recruitment/companies/",
+          "disposition": "Opened original programme explains conditional taxcredits/projectedcapex; issuer row candidate not assumed cash grant. No table-derived amount imported."
+        }
+      ],
+      "evidence_note": "Exact original-source identity context checked; supported findings and source limitations recorded.",
+      "hold_note": "ESOP primary/secondary terms, olderdebt and exactSBIRgrant-versuscontract awards unresolved. Taxcredits conditional, capex and acquisition prices notincomingrounds. Aggregate awards not imported as one grant."
+    },
+    {
+      "id": "2dbd5f52-f21e-48ae-a690-f7c5f97569da",
+      "slug": "rocket-lab",
+      "name": "Rocket Lab",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Rocket Lab funding2018 140million2024convertible2026ATM",
+        "site:rocketlabcorp.com75millionfunding2017",
+        "site:rocketlabcorp.com75million2017",
+        "site:rocketlabcorp.com3552024closed",
+        "site:rocketlabcorp.com75SeriesD",
+        "Rocket Lab2026funding2017 75million",
+        "Rocket Lab November2026financingATMSeptember"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://rocketlabcorp.com/updates/rocket-lab-announces-140-million-in-new-funding/",
+          "disposition": "Opened full original140mE withFutureFundlead,seveneightpartiesincludingACC; original announcement and priorOctoberclosing distinguished."
+        },
+        {
+          "url": "https://investors.rocketlabcorp.com/node/6961/pdf",
+          "disposition": "Opened original February7/2024 closed355mnotes withfull55moption; principal/net/cappedcall uses separated."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000074/rklb-20260930.htm",
+          "disposition": "Opened original latestNov9Q3 and relevant prose: three distinct2026ATMactualgross lines1135–1137 inUSDthousands;2025holdingreorganization; bridge terminated,Iridiumborrower distinct. Capacity/net/cashflow not extra rounds."
+        },
+        {
+          "url": "https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-fully-funds-iridium-acquisition-including-completion",
+          "disposition": "Indexed original Sept15 completed1.944bnAugATM corroboration; Iridium1.775bnloan not parentnewcash,3.6bnbridge terminated."
+        },
+        {
+          "url": "https://rocketlabcorp.com/updates/rocket-lab-wins-24m-u-s-space-force-contract-to-develop-neutron-upper-stage/",
+          "disposition": "Original indexed contract24.35m supports procurement R&D, not assumed grant;75mwholeprogramme notcompanyfinancing."
+        }
+      ],
+      "evidence_note": "Exact original-source identity context checked; supported findings and source limitations recorded.",
+      "hold_note": "Earlier2006–2017/2020,SPACPIPEand2025ATMconstituents incomplete.2026September2025programme sales, CHIPS allocation/payment and grants require separate reconciliation. Iridiumborrower1.775bn andterminated3.6bnbridge notnewparentcash; procurement/contracts notgrants."
+    },
+    {
+      "id": "6490b16d-c35f-484c-8021-5d7377782342",
+      "slug": "rocket-one",
+      "name": "Rocket One",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Rocket One swarm funding investment",
+        "Rocket One financing2026privateplacementSEC",
+        "Rocket One April2 2026 8millionoffering",
+        "Rocket One April2 2026gross",
+        "site:rocketone.co funding investment2026financing",
+        "Rocket One20260630sec.gov",
+        "site:sec.gov/Archives/edgar/data/1711786/2026 1,611,880",
+        "Rocket One financingNovember2026quarterlatest"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1711786/000121390026090048/ea0300119-10q_rocket.htm",
+          "disposition": "Opened original Q2fullbody May26 HothTherapeutics samelegalissuer; Aprilgross2m actual anddefinedATMnet/gross/period distinctions checked."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1711786/000121390026083962/ea0299669-8k_rocket.htm",
+          "disposition": "Opened original July31SEC filing actual13,557,905 grosssold todate distinctremaining5.257mcapacity."
+        },
+        {
+          "url": "https://www.rocketone.co/",
+          "disposition": "Original indexed currentcompanydefenseAIplatform confirmsSwarmStageAI, not similarlynamedRocketLab."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1711786/000121390026102217/ea0306306-8k_rocket.htm",
+          "disposition": "Original indexed SeptemberTracer purchaseannouncement is acquisition obligation, not financing. Latest Q3/afterAugactualsales remainheld."
+        }
+      ],
+      "evidence_note": "Exact original-source identity context checked; supported findings and source limitations recorded.",
+      "hold_note": "EarlierHothIPO/offeringhistory and afterAug2026executedATM/latestQ3remainpartial. Programme actualgross includeshistoricalsales and is recordedonce, not alongside periodnet amounts. Traceracquisition/warrantsfairvalue/remainingcapacitynotcash."
+    },
+    {
+      "id": "f57e0fca-f9ae-4282-98f0-390d8382c0cb",
+      "slug": "rocky-mountain-unmanned-systems",
+      "name": "Rocky Mountain Unmanned Systems",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Rocky Mountain Unmanned Systems investment funding financing",
+        "Rocky Mountain Unmanned Systems investors capital funding2026 2025",
+        "Rocky Mountain Unmanned Systems loan investment grant",
+        "site:rmus.com funding investors acquisition",
+        "Rocky Mountain Unmanned Systems site:rmus.com2026 news",
+        "Rocky Mountain Unmanned Systems private equity acquired"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rmus.com/pages/about-rmus",
+          "disposition": "Opened original company history and exact RMUS identity."
+        },
+        {
+          "url": "https://www.rmus.com/",
+          "disposition": "Original current manufacturer platform checked; ownR&Dinvestment notincomingcapital."
+        },
+        {
+          "url": "https://www.elcajon.gov/home/showpublisheddocument/28666/638690156741870000",
+          "disposition": "Indexed original municipal purchase identifies RMUS LLC dba Rocky Mountain Unmanned Systems. Buyer grant-funded181,362.41procurement not RMUS grant."
+        }
+      ],
+      "evidence_note": "Exact original-source identity context checked; supported findings and source limitations recorded.",
+      "hold_note": "Bounded public searches found no substantiated own financing. Privatehistory unknown,notzero; municipalUASIgrant fundedbuyerprocurement, not RMUS grant."
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [
+      {
+        "from": "future-fund",
+        "to": "australian-future-fund",
+        "basis": "Exact Unicode-aware canonical profile name match."
+      }
+    ],
+    "root_verification": {
+      "search_queries_executed": 4,
+      "searches_checked": [
+        "site.renk.com July 28 2026 450 225 credit facility",
+        "Rincell EPC-24-003 California Energy Commission 2999528 grant",
+        "site.sec.gov \"Rocket Lab\" \"20260930\" \"ATM\"",
+        "\"Rocket One\" \"13,557,905\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://renk.gcs-web.com/news-releases/news-release-details/renk-successfully-refinances-and-expands-financial-flexibility",
+          "disposition": "Original parent RENK July28 financing differentiates450mtermloan,225mrevolver and375mguaranteeline; no1.05bncashaggregate orguaranteeasproceeds. Legalborrower/drawscope retained."
+        },
+        {
+          "url": "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=93605&tn=257710",
+          "disposition": "Original FINAL CECresolution24-0710-13c July10certifiedJuly11approves RincellEPC24-003exactUSD2,999,528. Approvalnotproposalornotcashdisbursement. Sent laneC toinclude finalsource."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000074/rklb-20260930.htm",
+          "disposition": "Root originalQ3 opened tocheck programme-specific ATM actualsales, thousandsunits, and guarantee/reorganization issuerboundaries; separate2025sales notduplicate2026programmes."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1711786/000121390026083962/ea0299669-8k_rocket.htm",
+          "disposition": "Root originalJuly31 issuer8K confirms approximately13,557,905already sold sinceNovember8/2024definedATM; additional5,257,000capacitynotcash. Noartificialhistoricaltotalround."
+        }
+      ],
+      "company_database_identity_contexts_checked": 24,
+      "existing_canonical_events_inspected": 0
+    },
+    "pre_import_root_adjustments": [
+      "Rocket One precise-looking USD13,557,905 retains approximate qualifier explicitly present in original SEC disclosure.",
+      "RIIS unknown legal instrument retained as investment_disclosure; NIST named funding authority has undisclosed role rather than an unproven grantor role.",
+      "Rincell final CEC July10 resolution added and read, superseding proposal-only evidence; status announced, no full cash payment inferred."
+    ],
+    "notes": [
+      "RENK current generic cohort provenance maps Group-level Patria partnership.2026 Group release financing capacities distinct operating GmbH historical obligations, secondary IPO proceeds and guarantee line; no EUR1.05bn package as cash.",
+      "Replay unknown2014 round total differs from explicit Guggenheim9m contribution. Samsung remains source-supported participant, majority investment not lead.2016DTCP round separate, Intel acquisition/XTEND founder financings not reassigned. ResilienX GENIUS and Michigan awards are announced with unknown instrument/payment, no programme totals or administering entities as invented investors.",
+      "Resonant Cerberus affiliate unnamed; manager not substituted as cheque, primary-secondary split unknown. JobsOhio grant award not cash payment. ResQuant signed agreement amount unknown and Lighthouse generic backing retained; unverified STEP/ESA/EIC/DIANA aggregates held. RFbeam bounded review does not mean zero funding.",
+      "Rheinmetall Canada exact legalrecipient contribution agreement has unknown repayment terms and payout, not assumed grant or loan. Australia candidate award remains secondary hold. Kraken partner raise and future JV contributions not company receipts. Naval holding/operating division and parent debt borrowers remain distinct; Jan1.5bn facility/March1bn draw are not two financing facilities. Ricardo ordinary-share financing gross versus net and committed RCF capacity separated from WSP acquisition consideration.",
+      "RIIS exact Troy LLC recipient, joint-prize allocations and legal award instrument remain unknown. Rikor FRP loan approval not signed loan or disbursed cash; capex and later investment totals excluded. Rincell seed and final CEC grant approval distinct; Army contract and tax exclusion not equity/grants. RIY volunteer legal recipient unresolved. Robinson business unit does not inherit Ascent funding; existing Ascent three DB events inspected by count, not reimported. Robot Aviation bankrupt predecessor and asset restart require exact recipient continuity.",
+      "Rocket Lab economic history and holding successor/guarantee documented;2018closed round,2024principal including full option once and three terminated2026ATM programme actual gross are separate. Original note amounts in thousands; rounded gross approximate; capacity, net, fees, cashflow and Iridium borrower debt not additional parent proceeds. Future Fund maps existing Australian canonical profile. Rocket One is legally former Hoth Therapeutics, not180LifeSciences; actual registered direct proceeds and defined2024ATM executed sales distinct from capacity, overlapping net reports and acquisition warrants.",
+      "Rock West ESOP/secondary terms, individual SBIR instruments and tax-credit conditionality remain held. Robota and RMUS bounded searches found no supported own financing; procurement and customer grant-funded purchases not issuer grants. Roca holding/private-funded language and sponsorship do not establish a financing event. Generic Lighthouse source is investor portfolio evidence; unchanged importer retains legacy evidence labels without changing the actual source type."
+    ]
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting amount rejection and participant-source FK rejection with final qualifier/role adjustments.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T22:57:18.860Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 23,
+      "mismatched_facts": 0,
+      "participant_matches": 18,
+      "source_matches": 27,
+      "relationship_matches": 1,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 0
+    }
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Fresh baseline confirms all24 targets outside existing European map. Gates preserved; new directory profiles and generic backing publish under existing rules."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false,
+  "publication": {
+    "status": "pending"
+  }
+}
