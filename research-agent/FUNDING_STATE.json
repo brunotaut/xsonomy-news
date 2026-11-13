@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 485,
-  "fully_reviewed_companies": 1016,
-  "next_action": "Continue next24 queued wider-cohort identities iVent Mobile through Kaizen Aerospace under a new short writer lease and up to four disjoint read-only groups. No pending import/publication. Resolve next iwi identity against current Israel Weapon Industries before attributing any facts. Preserve known parent/subsidiary, grant, historical financing and source-access holds; no approval required for internal batches.",
+  "partial_companies": 503,
+  "fully_reviewed_companies": 1022,
+  "next_action": "Verify fifty-first catalogue publication then continue next24 queued identities Kaizen Laboratories through Kelly Hills Unmanned Systems.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T02:59:25.613Z",
-  "source_reconciliation_companies": 823,
-  "approved_funding_events": 3096,
-  "round_participations": 4081,
-  "investor_profiles": 2468,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261113-fiftieth.json",
+  "updated_at": "2026-11-13T03:01:19.155Z",
+  "source_reconciliation_companies": 830,
+  "approved_funding_events": 3114,
+  "round_participations": 4108,
+  "investor_profiles": 2489,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261113-fifty-first.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T02:53:42.014Z",
     "expires_at": "2026-11-13T04:53:42.014Z",
-    "status": "importing",
+    "status": "publishing",
     "planned_company_ids": [
       "8cfcc1d3-6564-4f4f-b41c-7c83f181d623",
       "de13a19d-9bd9-4312-855d-a44645780f10",
@@ -3498,52 +3498,46 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 1016,
-    "source_review_partial": 485,
-    "queued": 1063
+    "reviewed_public_sources": 1022,
+    "source_review_partial": 503,
+    "queued": 1039
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "identities_checked": 24,
-    "newly_completed_bounded_reviews": 5,
-    "new_or_retained_partial": 19,
-    "new_approved_events": 23,
-    "new_round_participations": 23,
-    "new_source_rows": 28,
-    "new_generic_portfolio_relationships": 10,
-    "new_companies_with_events": 8,
-    "new_investor_profiles": 20,
-    "search_queries_logged": 88,
+    "newly_completed_bounded_reviews": 6,
+    "new_or_retained_partial": 18,
+    "new_approved_events": 18,
+    "new_round_participations": 27,
+    "new_source_rows": 20,
+    "new_generic_portfolio_relationships": 8,
+    "new_companies_with_events": 7,
+    "new_investor_profiles": 21,
+    "search_queries_logged": 89,
+    "root_additional_search_queries": 3,
     "source_ledger_entries": 112,
     "database_identities_inspected": 24,
-    "existing_events_inspected": 0,
+    "existing_target_events_inspected": 0,
+    "existing_alias_events_inspected": 26,
     "local_postgresql_tests_passed": true,
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
     "curated_profile_hash_preserved": true,
-    "event_matches": 23,
+    "event_matches": 18,
     "mismatched_facts": 0,
-    "participant_matches": 23,
-    "source_matches": 28,
-    "relationship_matches": 10,
+    "participant_matches": 27,
+    "source_matches": 20,
+    "relationship_matches": 8,
     "missing_link_sources": 0,
-    "db_total_events": 3109,
-    "db_approved_events": 3096,
-    "db_approved_round_participations": 4081,
-    "db_investor_profiles": 2468,
-    "db_source_reconciliation_companies": 823,
+    "contribution_fields_audited": true,
+    "db_total_events": 3127,
+    "db_approved_events": 3114,
+    "db_approved_round_participations": 4108,
+    "db_investor_profiles": 2489,
+    "db_source_reconciliation_companies": 830,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": true,
-    "root_additional_search_queries": 3,
-    "durable_queue_readback_verified": true,
-    "durable_queue_identity_count": 2564,
-    "new_profile_exact_name_duplicates": 0,
-    "active_minutes": 10.72,
-    "checked_identities_per_hour": 134.4,
-    "completed_reviews_per_hour": 28,
-    "concurrency_speedup_claimed": false,
-    "timing_scope": "Elapsed writer lease through four disjoint read-only research groups, canonical/source QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source audit and verified live publication. Concurrent durations not summed."
+    "current_manifest_publication_verified": false
   },
   "latest_followup_metrics": {
     "parallel_read_only_groups": 4,
@@ -3581,7 +3575,7 @@
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 1501,
+  "source_reviewed_or_partial_companies": 1525,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -3987,67 +3981,11 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": {
-    "status": "validated_rollback_passed_ready_for_atomic_import",
-    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-first.json",
-    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-first.json",
-    "counts": {
-      "events": 18,
-      "links": 27,
-      "sources": 20,
-      "relationships": 8,
-      "companies_with_events": 7,
-      "reviewed": 6,
-      "partial": 18,
-      "group_search_queries": 86,
-      "source_ledger_entries": 112
-    },
-    "baseline": {
-      "events": 3109,
-      "approved": 3096,
-      "links": 4081,
-      "sources": 4345,
-      "profiles": 2468,
-      "covered": 823,
-      "relationships": 350,
-      "preserved_profiles_hash": "3605c5ad240be6c2d2aaae137ab929ff"
-    },
-    "postgresql_tests_passed": true,
-    "production_rollback_baseline_verified": true
-  },
+  "pending_import": null,
   "pending_publication": {
-    "status": "verified",
-    "checked_at": "2026-11-13T02:03:51.743Z",
-    "verified_at": "2026-11-13T02:03:51.743Z",
-    "catalogue_commit": "6283fb4129a905fe3b5be23411cf0583376aa964",
-    "source_commit": "280c14f58d28550de2b34931e68f4c62f97c9950",
-    "workflow_run": {
-      "id": 43349112530,
-      "head": "6283fb4129a905fe3b5be23411cf0583376aa964",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43349112530"
-    },
-    "report": "research-agent/reports/2026-11-13-funding-landscape-fiftieth.json",
-    "manifest": "research-agent/imports/funding-landscape-20261113-fiftieth.json",
-    "generated_at": "2026-11-13T02:01:57.481Z",
-    "investor_generated_at": "2026-11-13T02:01:59.251Z",
-    "companies": 567,
-    "events": 1590,
-    "links": 1390,
-    "profiles": 2459,
-    "portfolio_relationships": 347,
-    "expected_profiles": 33,
-    "missing_profiles": [],
-    "missing_participant_sources": [],
-    "missing_relationships": [],
-    "targets_in_european_landscape": [],
-    "current_manifest_event_rows": 23,
-    "current_manifest_live_matches": 0,
-    "current_manifest_participation_source_matches": 23,
-    "current_manifest_generic_relationship_matches": 10,
-    "catalogue_trigger_required": false,
-    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded:DB2468 versuslive2459. All24targetidentities outsideEuropeanlandscape;20newprofiles and10genericlinks verified. All33referencedprofiles and23participant sourceURLs present. Wider-cohort events remain in DB; no false assertion they appear on European map. Gates unchanged."
+    "status": "awaiting_catalogue_trigger",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-first.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-first.json"
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -4960,124 +4898,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "8cfcc1d3-6564-4f4f-b41c-7c83f181d623",
-      "slug": "ivent-mobile",
-      "name": "iVent Mobile"
+      "id": "6b717768-c191-439f-8913-03be66b75a21",
+      "slug": "kaizen-laboratories",
+      "name": "Kaizen Laboratories"
     },
     {
-      "id": "de13a19d-9bd9-4312-855d-a44645780f10",
-      "slug": "iwi",
-      "name": "IWI"
+      "id": "50965076-d6f8-45e2-a4c8-6cc6eda17758",
+      "slug": "kalray",
+      "name": "Kalray"
     },
     {
-      "id": "e99326a6-0edb-4920-bfe2-814b2e36281c",
-      "slug": "ixblue",
-      "name": "iXblue"
+      "id": "c0144798-cfae-487a-8d86-e44c4055d9bb",
+      "slug": "kalyani-strategic-systems",
+      "name": "Kalyani Strategic Systems"
     },
     {
-      "id": "6520bd23-487d-4a86-83d6-60a7101538e1",
-      "slug": "izhmash-kalashnikov-group",
-      "name": "Izhmash (Kalashnikov Group)"
+      "id": "08c4f7ec-3379-45e7-8259-a28fce13bfc0",
+      "slug": "kamai",
+      "name": "Kamai"
     },
     {
-      "id": "f64068dc-5645-4b0d-8d34-56a6050d0cfe",
-      "slug": "izhmash-unmanned-systems",
-      "name": "Izhmash-Unmanned Systems"
+      "id": "c5b5077b-94c1-4fb1-b65f-0614c2b7a88f",
+      "slug": "kaman-aerospace",
+      "name": "Kaman Aerospace"
     },
     {
-      "id": "098d5090-06d1-4394-8fb8-b4e701262569",
-      "slug": "izhmash-unmanned-systems-kalashnikov-group",
-      "name": "Izhmash - Unmanned Systems (Kalashnikov Group)"
+      "id": "707acbe4-6f07-48fe-9460-96a7ba507b2b",
+      "slug": "kamaz",
+      "name": "KamAZ"
     },
     {
-      "id": "72279516-665e-4269-923a-d2cb44e9b255",
-      "slug": "jade-advisory",
-      "name": "JADE Advisory"
+      "id": "90badf3f-5d5a-4f47-a44c-cb78007c54e6",
+      "slug": "kamov-design-bureau",
+      "name": "Kamov Design Bureau"
     },
     {
-      "id": "39c1a885-7768-4670-b528-9f724a2ed596",
-      "slug": "japan-biz-aviation",
-      "name": "Japan Biz Aviation"
+      "id": "05bc147c-21c8-4d29-bf2f-d90665ec0ce6",
+      "slug": "kanematsu",
+      "name": "Kanematsu"
     },
     {
-      "id": "ba1c75c1-9f1e-47d1-8082-1f1aa4d7427b",
-      "slug": "je-dunn",
-      "name": "JE Dunn"
+      "id": "1ebe9d32-a7fc-44c7-94a8-0d284947007d",
+      "slug": "kara-dag-technologies",
+      "name": "Kara Dag Technologies"
     },
     {
-      "id": "cbd26c63-59fa-40a9-a935-942b1c8d39d2",
-      "slug": "jeppesen",
-      "name": "Jeppesen"
+      "id": "582b7976-62d6-496a-b068-4be7bcfd3c10",
+      "slug": "karem-aircraft",
+      "name": "Karem Aircraft"
     },
     {
-      "id": "5f840a20-3d69-4429-837a-c332a40610a5",
-      "slug": "jetoptera",
-      "name": "Jetoptera"
+      "id": "d15ee96e-e2cd-47a6-bba9-05d090be344f",
+      "slug": "kavro-protection",
+      "name": "Kavro Protection"
     },
     {
-      "id": "a3bdbcc7-37fc-4689-819e-f7e51e18a802",
-      "slug": "jetzero",
-      "name": "JetZero"
+      "id": "2c7eac57-32a4-46a1-90b9-b3d54c58a417",
+      "slug": "kawasaki-heavy-industries",
+      "name": "Kawasaki Heavy Industries"
     },
     {
-      "id": "2a99b264-d26c-4baa-b87b-1bb2a8dfffaf",
-      "slug": "jfb-construction-holdings",
-      "name": "JFB Construction Holdings"
+      "id": "a859f6ad-430f-49f5-8325-9dedfcf3b515",
+      "slug": "kazan-helicopters",
+      "name": "Kazan Helicopters"
     },
     {
-      "id": "f71cd00c-3d3f-4cd4-9a02-738ae062b741",
-      "slug": "jfg-composites",
-      "name": "JFG Composites"
+      "id": "63f8652a-cb4a-4de8-8edf-6be987c6a4a5",
+      "slug": "kb-iskatel-moscow-aviation-institute-mai",
+      "name": "KB Iskatel, Moscow Aviation Institute (MAI)"
     },
     {
-      "id": "5f552c75-b64c-44a8-84da-c8a2e9624603",
-      "slug": "jisr",
-      "name": "JISR"
+      "id": "9645022d-33cb-41a7-8902-9ed61b5ac5a6",
+      "slug": "kb-luch-part-of-vega-concern-rostec",
+      "name": "KB Luch, Rybinsk"
     },
     {
-      "id": "793514b4-8b62-40b0-b14d-b813d6df39fd",
-      "slug": "joby-aviation",
-      "name": "Joby Aviation"
+      "id": "e8c41fa8-c92b-41ce-a6d5-79bbbca8caa4",
+      "slug": "kb-vzlyot",
+      "name": "KB Vzlyot"
     },
     {
-      "id": "f44ed53a-7975-427a-a74c-44e6f5f0d08d",
-      "slug": "jouav",
-      "name": "JOUAV"
+      "id": "b1056ee9-bbda-4d84-831e-681670b05c52",
+      "slug": "kbm",
+      "name": "KBM"
     },
     {
-      "id": "31e8face-3f88-45ee-acf0-3ca9265e10f2",
-      "slug": "jovistar",
-      "name": "Jovistar"
+      "id": "303c06e1-ac74-4750-bd18-779bbbebfd35",
+      "slug": "kbr",
+      "name": "KBR"
     },
     {
-      "id": "626d0f74-65fc-4d69-8004-98f83c51eab0",
-      "slug": "jsc-agat-control-systems",
-      "name": "JSC AGAT - Control Systems"
+      "id": "bdd2cc66-a52c-4510-afbb-2555b065ea3a",
+      "slug": "kddi-smartdrone",
+      "name": "KDDI SmartDrone"
     },
     {
-      "id": "4f5e0e86-92a6-4b61-a811-584caf4e775a",
-      "slug": "jsc-npp-radar-mms",
-      "name": "JSC NPP Radar MMS"
+      "id": "c5a26b33-4bb9-4464-8856-ec8117fc6c8e",
+      "slug": "keeta-drone",
+      "name": "Keeta Drone"
     },
     {
-      "id": "7021d59f-3e5c-4103-8747-7a3cbacd0ccf",
-      "slug": "jtekt",
-      "name": "JTEKT"
+      "id": "59d000d1-e8b7-4e2f-8d5f-a566223bd2ca",
+      "slug": "kef-robotics",
+      "name": "KEF Robotics"
     },
     {
-      "id": "4aa0152d-d517-4e5c-8b68-c424775758fc",
-      "slug": "jugoimport-sdpr",
-      "name": "Jugoimport SDPR"
+      "id": "94997deb-5a89-408c-a87d-ed30382921b9",
+      "slug": "kela-technologies",
+      "name": "Kela Technologies"
     },
     {
-      "id": "41cc9428-5425-4e09-8581-11a82d85d432",
-      "slug": "jump-aero",
-      "name": "Jump Aero"
+      "id": "c8936831-fd50-4c19-a78d-7e23bafc7a6f",
+      "slug": "kelluu",
+      "name": "Kelluu"
     },
     {
-      "id": "d0d2408b-4a0e-41cc-a460-44ad87d7b0c3",
-      "slug": "kaizen-aerospace",
-      "name": "Kaizen Aerospace"
+      "id": "6830020e-3703-42ff-8599-92fecfd22118",
+      "slug": "kelly-hills-unmanned-systems",
+      "name": "Kelly Hills Unmanned Systems"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -5561,7 +5499,7 @@
       "completed_reviews_per_active_hour": 51.4
     }
   },
-  "total_funding_events": 3109,
+  "total_funding_events": 3127,
   "latest_thirty_sixth_reconciliation": {
     "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-sixth.json",
     "manifest": "research-agent/imports/funding-landscape-20261112-thirty-sixth.json",
@@ -6239,6 +6177,47 @@
       "completed_reviews_per_hour": 28,
       "concurrency_speedup_claimed": false,
       "timing_scope": "Elapsed writer lease through four disjoint read-only research groups, canonical/source QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source audit and verified live publication. Concurrent durations not summed."
+    }
+  },
+  "latest_fifty_first_reconciliation": {
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-first.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-first.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 6,
+      "new_or_retained_partial": 18,
+      "new_approved_events": 18,
+      "new_round_participations": 27,
+      "new_source_rows": 20,
+      "new_generic_portfolio_relationships": 8,
+      "new_companies_with_events": 7,
+      "new_investor_profiles": 21,
+      "search_queries_logged": 89,
+      "root_additional_search_queries": 3,
+      "source_ledger_entries": 112,
+      "database_identities_inspected": 24,
+      "existing_target_events_inspected": 0,
+      "existing_alias_events_inspected": 26,
+      "local_postgresql_tests_passed": true,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "curated_profile_hash_preserved": true,
+      "event_matches": 18,
+      "mismatched_facts": 0,
+      "participant_matches": 27,
+      "source_matches": 20,
+      "relationship_matches": 8,
+      "missing_link_sources": 0,
+      "contribution_fields_audited": true,
+      "db_total_events": 3127,
+      "db_approved_events": 3114,
+      "db_approved_round_participations": 4108,
+      "db_investor_profiles": 2489,
+      "db_source_reconciliation_companies": 830,
+      "queue_dispositions_applied": 24,
+      "current_manifest_publication_verified": false
     }
   }
 }

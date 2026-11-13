@@ -1,0 +1,1010 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T02:53:42.014Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-fifty-first.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 6,
+    "new_or_retained_partial": 18,
+    "new_approved_events": 18,
+    "new_round_participations": 27,
+    "new_source_rows": 20,
+    "new_generic_portfolio_relationships": 8,
+    "new_companies_with_events": 7,
+    "new_investor_profiles": 21,
+    "search_queries_logged": 89,
+    "root_additional_search_queries": 3,
+    "source_ledger_entries": 112,
+    "database_identities_inspected": 24,
+    "existing_target_events_inspected": 0,
+    "existing_alias_events_inspected": 26,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 18,
+    "mismatched_facts": 0,
+    "participant_matches": 27,
+    "source_matches": 20,
+    "relationship_matches": 8,
+    "missing_link_sources": 0,
+    "contribution_fields_audited": true,
+    "db_total_events": 3127,
+    "db_approved_events": 3114,
+    "db_approved_round_participations": 4108,
+    "db_investor_profiles": 2489,
+    "db_source_reconciliation_companies": 830,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false
+  },
+  "production_before": {
+    "events": 3109,
+    "approved": 3096,
+    "links": 4081,
+    "sources": 4345,
+    "profiles": 2468,
+    "covered": 823,
+    "relationships": 350,
+    "preserved_profiles_hash": "3605c5ad240be6c2d2aaae137ab929ff"
+  },
+  "production_after": {
+    "events": 3127,
+    "approved": 3114,
+    "links": 4108,
+    "sources": 4365,
+    "profiles": 2489,
+    "covered": 830,
+    "relationships": 358,
+    "preserved_profiles_hash": "3605c5ad240be6c2d2aaae137ab929ff"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1022,
+    "source_review_partial": 503,
+    "queued": 1039
+  },
+  "per_company": [
+    {
+      "id": "8cfcc1d3-6564-4f4f-b41c-7c83f181d623",
+      "slug": "ivent-mobile",
+      "name": "iVent Mobile",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Issuer site establishes Ivent Mobile BV, Dutch KvK60818492 at Jacob van Lenneplaan57Baarn; consortium party original confirms exact ARES identity. Bounded financing searches found no attributable round, not zero funding.",
+      "hold_note": "ARES is an industry initiative, not company grant award. UK iVent virtual-events platform/Purple Ventures funding is different issuer. Aggregator never-funded assertion excluded; private financing unknown. No geography change.",
+      "searches_checked": [
+        "\"iVent Mobile\" funding investment company ARES consortium",
+        "\"iVent Mobile\" investment funding seed",
+        "site:iventmobile.com funding investment",
+        "site:ivent-mobile.com funding investment",
+        "\"iVent Mobile\" \"investor\" \"funding\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://iventmobile.com/",
+          "disposition": "opened_original_exact_legal_identity"
+        },
+        {
+          "url": "https://oramach.net/news/pr3.html",
+          "disposition": "opened_original_transaction_party_identity"
+        },
+        {
+          "url": "https://new.diehl.com/aviation/en/press-and-media/press/diehl-aerospace-joins-consortium-that-builds-asymmetric-response-european-system",
+          "disposition": "original_search_checked_consortium_not_financing"
+        },
+        {
+          "url": "https://www.eventindustrynews.com/news/ivent-secures-series-a-funding-from-purple-ventures",
+          "disposition": "search_different_UK_virtual_event_issuer_excluded"
+        },
+        {
+          "url": "https://prospeo.io/c/ivent-mobile",
+          "disposition": "unverified_no_funding_assertion_excluded"
+        }
+      ]
+    },
+    {
+      "id": "de13a19d-9bd9-4312-855d-a44645780f10",
+      "slug": "iwi",
+      "name": "IWI",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Own original explicitly expands IWI to Israel Weapon Industries and exact Israeli SKGroup founded SamyKatsav; sameeconomicissuer as earlier israel-weapon-industries cohort row. No duplicate financing or duplicate generic association proposed.",
+      "hold_note": "Unknown private financing notzero.2005privatisation/parentNaskaIPOplans are not issuer primary raises; facilitiescapex,20mprocurement and2026DutchAIAmanufacturingcooperation notverified incoming capital. Keep existing SKGroup relation under canonical researched row, no forced company merge.",
+      "searches_checked": [
+        "site:iwi.net \"SK Group\" investment",
+        "IWI Israel Weapon Industries funding investment financing round"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://iwi.net/about/about-iwi/",
+          "disposition": "opened_original_exact_alias_and_SKGroup_identity"
+        },
+        {
+          "url": "https://shop.iwi.net/about-us/",
+          "disposition": "search_original_legal_name_corroboration"
+        },
+        {
+          "url": "https://www.mod.gov.il/en/press-releases/press-room/israel-mod-director-general-conducts-working-visit-to-iwi",
+          "disposition": "official_search_capex_not_financing"
+        },
+        {
+          "url": "https://en.globes.co.il/en/article-Samy-Katsav-to-float-defense-group-at-NIS-15b-valuation-1001403821",
+          "disposition": "secondary_parentIPO_and_capex_not_company_raise"
+        },
+        {
+          "url": "https://www.timesofisrael.com/despite-tensions-israeli-dutch-firms-to-establish-weapons-plant-in-netherlands/",
+          "disposition": "secondary_9Nov2026_manufacturing_not_verified_financing"
+        }
+      ]
+    },
+    {
+      "id": "e99326a6-0edb-4920-bfe2-814b2e36281c",
+      "slug": "ixblue",
+      "name": "iXblue",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original Exail issuer documents identify IXBLUE renamed EXAIL SAS and completed September2022 acquisition; original2022 announcement locates financing in NEWCO, not target. Root confirms existing exail24grants; none duplicated under alias.",
+      "hold_note": "2022ExailHolding81.3mICGbonds/149.7mpreferred and2025/2026ExailTechnologiesODIRNANE belong other exact issuers, not iXblue operating target. Acquisitionvaluation/price, revenues, shareoptions and competitor fundraising excluded. Beneficiary-level grants require canonical same-issuer reconciliation against existing exail before any newevent; old privatehistory unresolved.",
+      "searches_checked": [
+        "iXblue Exail financing acquisition debt BNP 2022 2025",
+        "\"iXblue\" funding capital grant loan 2026 2021 2019",
+        "site:exail-technologies.com \"September 2022\" \"finalized\" \"iXblue\"",
+        "\"iXblue\" \"grant\" \"financing\" 2020"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.exail-technologies.com/combination-of-eca-group-and-ixblue-emergence-of-a-french-technology-champion/",
+          "disposition": "opened_original_NEWCO_finance_not_target"
+        },
+        {
+          "url": "https://www.exail-technologies.com/wp-content/uploads/2026/03/cpexail-technologiesfy-2025en.pdf",
+          "disposition": "opened_original_current_parent_results"
+        },
+        {
+          "url": "https://www.exail-technologies.com/wp-content/uploads/2026/04/exail-technologies-urd-2025en.pdf",
+          "disposition": "original_search_legal_rename_and_group_acquisition_checked"
+        },
+        {
+          "url": "https://www.icg-enterprise.co.uk/case-studies/exail/",
+          "disposition": "investor_original_search_acquisition_financing_only"
+        },
+        {
+          "url": "https://live.euronext.com/en/products/equities/company-news/2026-01-13-exail-technologies-sa-successfully-completed-tap-issue",
+          "disposition": "issuer_original_search_other_issuer_ODIRNANE_excluded"
+        }
+      ]
+    },
+    {
+      "id": "6520bd23-487d-4a86-83d6-60a7101538e1",
+      "slug": "izhmash-kalashnikov-group",
+      "name": "Izhmash (Kalashnikov Group)",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact parent history corroborated by Interfax original:2011NPOIzhmash renamedKalashnikov2013, distinct bankruptoldplant and separate UAV legalcompany. Root verified all current/otherKalashnikov candidate rows have zeroevents.",
+      "hold_note": "Rostec indexed2014closed1.3bnRUB49%additionalshareissue conflicts with2013proposed2.5bnheadline; original full RU/EN pages both502 so event held, not promoted from snippets. Rostec13Mar2014registered nominal2.653bn is not automaticallycashproceeds.2013proposed500mloan/13bnguarantee, historical2.1bnSberbankdebtbalance and2026programmebudgets lack closedissuer-level evidence. No procurement/secondarytransfer counted.",
+      "searches_checked": [
+        "site:kalashnikovgroup.ru \"финансирование\" \"кредит\"",
+        "site:rostec.ru \"Калашников\" \"инвест\" \"51%\"",
+        "site:rostec.ru Калашников частные инвесторы 2013 49% 51%",
+        "\"Ижмаш\" \"кредит\" \"Ростех\" финансирование 2016 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.interfax-russia.ru/volga/news/izhevskiy-proizvoditel-bespilotnikov-smenil-nazvanie-po-soglasheniyu-s-kalashnikovym",
+          "disposition": "opened_original_parent_and_renamed_UAV_company_distinction"
+        },
+        {
+          "url": "https://rostec.ru/media/pressrelease/4513367/",
+          "disposition": "original_index_claim_full_fetch502_event_held"
+        },
+        {
+          "url": "https://rostec.ru/media/pressrelease/4513002/",
+          "disposition": "original_index_claim_full_fetch502_nominal_capital_not_cash"
+        },
+        {
+          "url": "https://rostec.ru/media/pressrelease/3071/",
+          "disposition": "original_search_proposal_not_closed"
+        },
+        {
+          "url": "https://www.aex.ru/news/2013/7/16/108089/",
+          "disposition": "secondary_proposed_loan_and_guarantees_not_confirmed_draw"
+        },
+        {
+          "url": "https://rostec.ru/en/media/pressrelease/4513367/",
+          "disposition": "original_full_fetch502"
+        }
+      ]
+    },
+    {
+      "id": "f64068dc-5645-4b0d-8d34-56a6050d0cfe",
+      "slug": "izhmash-unmanned-systems",
+      "name": "Izhmash-Unmanned Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Interfax original13Jan2017 links Izhmash-Bespilotnye Sistemy to renamed NPOIzhevskieBespilotnyeSistemy, then100%RSLeasing controlled by management. Current MISIS original exact NPOIzhBS research/production identity corroborated; official UkrainianGUR gives newer Rostec/Kalashnikov structure.",
+      "hold_note": "Historical2017ownership and currentgroupattribution need exactlegalregistration continuity; do not infer every IzhBS/Finco/ZALA/Supercam entity identical. No confirmed incoming companyfinance.2026regional8bncapex and subsidyprogrammes are not ownawards; educationalspending/defenceorders notfunding. Old iza-bs.ru domain and current Kalashnikovgroup record mayoverlap, preserve both cohort rows pending identityaudit.",
+      "searches_checked": [
+        "Ижевские беспилотные системы Ижмаш БС инвестиции финансирование владельцы",
+        "\"Ижевские беспилотные системы\" \"инвестиции\" финансирование",
+        "\"НПО ИжБС\" финансирование кредит инвестиции 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.interfax-russia.ru/volga/news/izhevskiy-proizvoditel-bespilotnikov-smenil-nazvanie-po-soglasheniyu-s-kalashnikovym",
+          "disposition": "opened_original_2017_rename_and_historical_ownership"
+        },
+        {
+          "url": "https://innovations.misis.ru/partneri/ооо-нпо-ижевские-беспилотные-системы/",
+          "disposition": "opened_original_exact_research_partner_identity"
+        },
+        {
+          "url": "https://war-sanctions.gur.gov.ua/ru/uav/companies/258",
+          "disposition": "opened_official_current_structure_identity_not_financing"
+        },
+        {
+          "url": "https://pulsfid.ru/news/8-mlrd-rubley-i-270-novyh-mest-kak-udmurtiya-stala-stolicey-dronov-i-gde-nayti-zarplatu-do-300-tysyach-v-2026-godu-663196321",
+          "disposition": "secondary_regional_capex_different_Supercam_issuer_excluded"
+        },
+        {
+          "url": "https://www.d-kvadrat.ru/novosti/34683",
+          "disposition": "secondary_training_expenditure_not_company_raise"
+        }
+      ]
+    },
+    {
+      "id": "098d5090-06d1-4394-8fb8-b4e701262569",
+      "slug": "izhmash-unmanned-systems-kalashnikov-group",
+      "name": "Izhmash - Unmanned Systems (Kalashnikov Group)",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Cohort Kalashnikovgroup domain/description and current officialGUR NPOIzhBS structure corroborate UAVgroupcandidate, but neither exactlegalnumber nor continuity with separately listed old Izhmash-BS established. No automaticaliasmerge or copied financing.",
+      "hold_note": "Identity overlap with izhmash-unmanned-systems remains explicit. ParentKalashnikov shareissues/debt and ZALA/Supercam financing notassigned; productionexpansion and defenceorders notissuer finance. Current primary company financing originals notlocated; emptyDBnotzero.",
+      "searches_checked": [
+        "site:kalashnikovgroup.ru \"ИжБС\" \"входит\" 2026",
+        "site:kalashnikovgroup.ru \"кредит\" \"рублей\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://war-sanctions.gur.gov.ua/ru/uav/companies/258",
+          "disposition": "opened_official_current_Kalashnikov_structure"
+        },
+        {
+          "url": "https://innovations.misis.ru/partneri/ооо-нпо-ижевские-беспилотные-системы/",
+          "disposition": "opened_original_NPOIzhBS_identity"
+        },
+        {
+          "url": "https://www.interfax-russia.ru/volga/news/izhevskiy-proizvoditel-bespilotnikov-smenil-nazvanie-po-soglasheniyu-s-kalashnikovym",
+          "disposition": "opened_original_historical_ownership_contradiction_hold"
+        },
+        {
+          "url": "https://aviation21.ru/koncern-kalashnikov-uvelichivaet-obyomy-vypuska-bpla/",
+          "disposition": "secondary_factory_expansion_not_financing"
+        }
+      ]
+    },
+    {
+      "id": "72279516-665e-4269-923a-d2cb44e9b255",
+      "slug": "jade-advisory",
+      "name": "JADE Advisory",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Tunis2019PPP/infrastructureadviser matched GUAMobilityrole throughoriginalconsortiummember release andownexpertise. No ownincomingroundverified afterboundedresearch.",
+      "hold_note": "Project-financingadvice/clientPPPbudgets are notownraise. UKJADEADVISORYLTDnamesake notautomaticallysamelegalissuer. Privatefinancing remainsunknown, notzero.",
+      "searches_checked": [
+        "\"JADE Advisory\" GUAMobility financing investment",
+        "JADE Advisory financement levée fonds Tunisie",
+        "site:jade-advisory.com funding investment about"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://innovitech.com/en/news/oman-launches-its-national-advanced-air-mobility-strategy-and-entrusts-its-development-to-the-international-consortium-guamobility/",
+          "disposition": "opened_original_identity"
+        },
+        {
+          "url": "https://jade-advisory.com/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://jade-advisory.com/our-expertise/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://jade-advisory.com/services/infrastructure-advisory/",
+          "disposition": "search_original_advisory_notownfunding"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/10680759/filing-history",
+          "disposition": "namesake_candidate_notproven"
+        }
+      ]
+    },
+    {
+      "id": "39c1a885-7768-4670-b528-9f724a2ed596",
+      "slug": "japan-biz-aviation",
+      "name": "Japan Biz Aviation",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "ExactTokyoHaneda JapanBizAviation JBZ identity originalcompanyandcurrentnews through30Oct2026 matchedSkyDriveMOU. No ownpublicroundverified.",
+      "hold_note": "Aircraftcoownership/purchase/charterservices andSkyDrivepartnership are notownfunding. GroupcompanyJapanGeneralAviationService notassertedlegalparent; privatefinanceunknownnotzero.",
+      "searches_checked": [
+        "\"Japan Biz Aviation\" investment funding shareholders",
+        "\"Japan Biz Aviation\" 資金調達 出資 増資",
+        "\"Japan Biz Aviation\" \"投資\" \"出資\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.j-bizavi.com/company/",
+          "disposition": "opened_original_identity"
+        },
+        {
+          "url": "https://www.j-bizavi.com/news/",
+          "disposition": "opened_original_current_history"
+        },
+        {
+          "url": "https://www.j-bizavi.com/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=9080001018810",
+          "disposition": "official_registry_search_candidate"
+        },
+        {
+          "url": "https://skydrive.co.jp/en/archives/66493",
+          "disposition": "failed_wrong_orinaccessible_candidate"
+        }
+      ]
+    },
+    {
+      "id": "ba1c75c1-9f1e-47d1-8082-1f1aa4d7427b",
+      "slug": "je-dunn",
+      "name": "JE Dunn",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "JE DunnConstruction exactfamilyandemployeeowned originalpressroom/ESOP2010history checked; no externalissuerfinanceverified afterboundedresearch.",
+      "hold_note": "ESOPshareallocations/ownDunnCapitalPartners128minvestments andSaronic3bshipyard are not JE Dunn incomingfunding. NoESOPdebtterms inferred; privatefinanceunknownnotzero.",
+      "searches_checked": [
+        "JE Dunn financing investors ESOP funding loan official",
+        "site:jedunn.com employee ownership family owned financing loan",
+        "site:jedunn.com \"loan\" financing investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://jedunn.com/press-room/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://centennial.jedunn.com/blog/guided-by-generosity-je-dunns-employee-ownership-story/",
+          "disposition": "opened_original_ESOPhistory"
+        },
+        {
+          "url": "https://centennial.jedunn.com/category/timeline/",
+          "disposition": "search_original_outboundinvestment_notraise"
+        }
+      ]
+    },
+    {
+      "id": "cbd26c63-59fa-40a9-a935-942b1c8d39d2",
+      "slug": "jeppesen",
+      "name": "Jeppesen",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 2,
+      "evidence_note": "OriginalThomaBravo3Nov2025completedJeppesenForeFlightcarveout supportsnewownerandhistoricalBoeing; exactJeppesenbusiness notwholegroupfinance.",
+      "hold_note": "10.55b acquisitionproceeds belong sellerBoeing andmultipleassets. Approx4bcreditfinancing borrower/portion notestablished asJeppesenoperatingissuer; private/historyunresolved. SECinvestorholdings identifyJeppesenHoldingsLLC loans, notproof ofJeppesenoperatingcompanyborrower orfullfacilityprincipal; individualholdingamounts nottotalborrowing.",
+      "searches_checked": [
+        "Jeppesen ForeFlight Thoma Bravo acquisition completed 2025 2026 funding",
+        "Jeppesen financing loan equity investors 2000 2026",
+        "site:jeppesenforeflight.com financing investment 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.thomabravo.com/press-releases/jeppesen-foreflight-launches-as-a-standalone-company-to-redefine-the-future-of-aviation-software",
+          "disposition": "opened_original_completed_owner"
+        },
+        {
+          "url": "https://www.thomabravo.com/news-awards/private-credit-financing-supporting-thoma-bravos-digital-aviation-solutions-acquisition-from-boeing-wins-ifr-award",
+          "disposition": "search_original_acquisitionfinance_borrowerheld"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/12927/000162828026004357/R14.htm",
+          "disposition": "original_search_sellerproceeds_notraise"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1918712/000162828026071725/asifq3-202610qxsupplement.htm",
+          "disposition": "search_original_JeppesenHoldingsLLC_investorholding_notoperatingissuer_total"
+        }
+      ]
+    },
+    {
+      "id": "5f840a20-3d69-4429-837a-c332a40610a5",
+      "slug": "jetoptera",
+      "name": "Jetoptera",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 3,
+      "evidence_note": "ExactJetopteraInc CIK1708246 originalFormC2022 relatedpersonfinancing/convertiblenotehistory read;3actualhistoricalinvestorssupported generically. Currentissuerinvestors/Wefunderopened.",
+      "hold_note": "SEC2018/2019notes balances notinitialraisedprincipal; datedproceeds fullhistoryunreconciled. CurrentWefunderoverall5864877vscampaign5652637/SPVsubscription andcapacity/committedversusreceived unresolved.128.5mvaluation,22mR&Dspend,6.1mcontractrevenue and2019FormDsold0 notfundingevents; noWefunderportalasinvestor.",
+      "searches_checked": [
+        "Jetoptera funding investment grants investors 2026",
+        "site:sec.gov/Archives/edgar/data/1708246 Jetoptera \"total amount\" sold",
+        "Jetoptera Series A 2016 investors financing official"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://jetoptera.com/investors/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://wefunder.com/jetoptera/updates",
+          "disposition": "opened_original_companyprovided_conflictingtotalsheld"
+        },
+        {
+          "url": "https://wefunder.com/jetoptera/details",
+          "disposition": "search_original_SPVterms"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1708246/000121390022023282/ea159269-jetoptera.pdf",
+          "disposition": "opened_original_SEC_financialhistory_andrelatedpersoninvestments"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1708246/000092708719000005/xslFormDX08/primary_doc.xml",
+          "disposition": "originalsearch0sold_notcompletedraise"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1708246/000170824625000003/xslC_X01/primary_doc.xml",
+          "disposition": "search_original_coissuerJetopteraIII_SPV_notstandalonecashproof"
+        }
+      ]
+    },
+    {
+      "id": "a3bdbcc7-37fc-4689-819e-f7e51e18a802",
+      "slug": "jetzero",
+      "name": "JetZero",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Fouroriginalsourcefinancingsverified:2023A/yearprecision,2025Uniteddisclosure,2026approx175mB,closedup-to100mcreditfacility. Current28Oct2026FAAawardoriginalchecked.",
+      "hold_note": "USAF235m expresslycontract, notgrant; FAA5.3mCLEENIVawardselectedbut exactcontract/grantinstrument/terms needoriginalaward, held. Morethan1b mixedcommitments notround; NCincentives conditional/noncash/consortiumterms held. NoLPLender/individualcheque inference.",
+      "searches_checked": [
+        "JetZero funding Series B 2026 2025 175 million investors official",
+        "JetZero Series A Alaska Star Ventures 2023 grant 235 million official",
+        "site:jetzero.aero FAA 5.3 million award 2024 235",
+        "site:jetzero.aero \"235\" award"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.jetzero.aero/hubfs/Press%20releases/JetZero%20Alaska%20Release%20FINAL.pdf?hsLang=en",
+          "disposition": "opened_original_historicalSeriesA"
+        },
+        {
+          "url": "https://www.jetzero.aero/united-investment-announcement",
+          "disposition": "opened_original_investment_andconditionalorders"
+        },
+        {
+          "url": "https://www.jetzero.aero/jetzero-raises-175-million-in-series-b-financing",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.jetzero.aero/jetzero-closes-100-million-financing",
+          "disposition": "opened_original_facilitynotdraw"
+        },
+        {
+          "url": "https://www.jetzero.aero/jetzero-awarded-5.3m-faa-cleen-iv",
+          "disposition": "opened_original_instrumenthold"
+        },
+        {
+          "url": "https://www.jetzero.aero/newsroom",
+          "disposition": "search_original_currentnews"
+        }
+      ]
+    },
+    {
+      "id": "793514b4-8b62-40b0-b14d-b813d6df39fd",
+      "slug": "joby-aviation",
+      "name": "Joby Aviation",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 8,
+      "relationship_count": 0,
+      "evidence_note": "Original2020SeriesC,2025Form10K and2026Q3Form10Q actualprimaryfinancingverified; Toyota2ndtranchetestedthroughcurrentquarter.",
+      "hold_note": "2018B/earlierhistory,2021SPACactualgrossvsnetPIPE/trust/redemptions,2023direct/SKTplacements, mortgageexactborrower,2024/2026ATMactualgross needfurtherreconciliation. Toyota2nd250mconditionalstillnotclosed; JTAMPCcapitalnotparent. ATM750mcapacity/620mremaining notraise,128.2mnetactualsalesheldwithoutgross; publicwarrantaggregate/ESPPnotdiscreteevents.",
+      "searches_checked": [
+        "JobyAviation investmentToyota2026 2025closing",
+        "JobyAviation funding2026publicofferingclosedproceeds",
+        "site:jobyaviation.com 2020 590funding",
+        "site:jobyaviation.com 2018 100million",
+        "site:jobyaviation.com 2023 180investment",
+        "site:jobyaviation.com 2025ClosingOctober"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ir.jobyaviation.com/news-events/press-releases/detail/11/joby-aviation-raises-590-million-in-series-c-financing-to",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ir.jobyaviation.com/sec-filings/all-sec-filings/content/0001819848-26-000160/joby-20251231.htm",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ir.jobyaviation.com/sec-filings/all-sec-filings/content/0001819848-26-000533/joby-20260930.htm",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.jobyaviation.com/news/joby-aviation-announces-closing-of-250-million-investment",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://ir.jobyaviation.com/news-events/press-releases/detail/151/joby-aviation-announces-pricing-of-underwritten-offering-of",
+          "disposition": "opened_original_expectedsettlementcorroboratedactual10K"
+        }
+      ]
+    },
+    {
+      "id": "2a99b264-d26c-4baa-b87b-1bb2a8dfffaf",
+      "slug": "jfb-construction-holdings",
+      "name": "JFB Construction Holdings",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "ExactCIK2024306 issuerIPO andconvertiblePIPE originalSECexhibitsclosed.",
+      "hold_note": "2026XTENDmerger1.5bvaluation/proposed152mPIPE notactualJFBcashclose; latest2026registration/mergerproceedsandprivatepriorhistoryneedreconciliation. IPOlaterquartersharecountinconsistencyandoptionwarrant1386held; originalIPO1250000unitsexactretained. OutgoinghotelLLC1minvestmentnotownraise.",
+      "searches_checked": [
+        "JFBConstructionHoldingsIPO2025grossproceedsofficial",
+        "JFB43895000site:sec.gov",
+        "JFBConstructionHoldingsfundingXTEND2026PIPE"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2024306/000149315225009645/ex99-2.htm",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2024306/000149315225016735/ex99-1.htm",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2024306/000119312526134406/jfb-ex10_20.htm",
+          "disposition": "opened_original_exactconvertibleterms"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2024306/000095017025108769/jfb-20250630.htm",
+          "disposition": "searched_original_netnotextra"
+        },
+        {
+          "url": "https://investors.jfbconstruction.net/pr/jfb-construction-holdings-announces-the-closing-of-approximately-44-million-private-placement-priced-at-the-market-under-nasdaq-rules",
+          "disposition": "opened_empty_usedSECoriginal"
+        }
+      ]
+    },
+    {
+      "id": "f71cd00c-3d3f-4cd4-9a02-738ae062b741",
+      "slug": "jfg-composites",
+      "name": "JFG Composites",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Polishcomposites exactissuer originalindexedfullNorwaygrantpage saysowncofinancingEUR1570186.44, butfreshpagefetchrepeated503soimportheld.",
+      "hold_note": "IndexedownNorwaygrant1570186.44EUR candidate (totalproject16135873PLNnotgrant) requiresreliableoriginalfetch/directaward. 2023FENGrejectionnotaward; nominal5000PLNcapitalandfirelossesnotfinance. Privatehistoryunknownnotzero.",
+      "searches_checked": [
+        "JFGCompositesdotacjefinansowanieinwestor",
+        "JFGCompositesgrantPLN",
+        "site:jfgcomposites.com dofinansowanieWartosc",
+        "site:jfgcomposites.com Norwayproject"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://jfgcomposites.com/",
+          "disposition": "repeated503_indexedidentitycontentchecked"
+        },
+        {
+          "url": "https://jfgcomposites.com/2024/08/20/norway-grants-together-we-work-for-a-green-competitive-and-socially-inclusive-europe/",
+          "disposition": "repeated503_fullindexedoriginalcandidate_notimported"
+        },
+        {
+          "url": "https://feng.parp.gov.pl/storage/grants/documents/743/LISTA-DO-PUBLIKACJI-NA-STRONIE-INTERNETOWEJ-nabor-2-2023_20092024.pdf",
+          "disposition": "officialsearchresultnegativeapplicationnotaward"
+        }
+      ]
+    },
+    {
+      "id": "5f552c75-b64c-44a8-84da-c8a2e9624603",
+      "slug": "jisr",
+      "name": "JISR",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "ExactCzechJISRInstituteas05295416 matchedcohortNSPAframework throughoriginal27July2026issuerrelease; owncurrentOct2026newschecked.",
+      "hold_note": "Noverifiedpublicincomingroundafterboundedcompany/history/investorsearch. Privateunknownnotzero; NATOframeworkprocurementnotgrant. JISRHRSaudi30mround/JISRVenturePartnersnamesakesexcluded; aggregatormissingfundingnotproof.",
+      "searches_checked": [
+        "JISRNATOfundingcompanyinvestordrone",
+        "JISRInstitutefinancinginvestorsownership",
+        "JISRInstituteinvestmentgrantfinancingfund"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://jisr-institute.org/about-us",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.jisr-institute.org/news/jisr-institute-among-nspa-framework-contract-holders-c-uas",
+          "disposition": "opened_original_procurement"
+        },
+        {
+          "url": "https://www.jisr-institute.org/",
+          "disposition": "opened_originalcurrentnews"
+        },
+        {
+          "url": "https://jisr-institute.org/news",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://prospeo.io/c/jisr-institute-revenue",
+          "disposition": "unverifiedneverfundedassertionexcluded"
+        }
+      ]
+    },
+    {
+      "id": "f44ed53a-7975-427a-a74c-44e6f5f0d08d",
+      "slug": "jouav",
+      "name": "JOUAV",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "ExactSSE688070 legalissuerand2021listingoriginal; fullissuerannouncementmirrorreadgross507204000CNYverified.",
+      "hold_note": "2025/26proposedCNY548mprivateplacementnotclosed,2026prospectusdraftnoactualcloseestablished. Earlierprivateplacements/grantsandIPOallocationfundvehiclesrequirefurtheroriginalreconciliation. Do notusevaluation/projectcapex/cumulativefunding.",
+      "searches_checked": [
+        "JOUAVIPO2021raisedofficial",
+        "JOUAVIPO2021funds",
+        "JOUAV2021IPO36.8722.5millionproceeds",
+        "JOUAV募集资金总额2021",
+        "507204000纵横pdf",
+        "JOUAVfunding2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6900979",
+          "disposition": "opened_fullissuerlistingannouncement_mirror"
+        },
+        {
+          "url": "https://www.sse.com.cn/assortment/stock/list/info/company/index.shtml?COMPANY_CODE=688070&tabActive=1",
+          "disposition": "opened_exchangeoriginalidentity"
+        },
+        {
+          "url": "https://www.jouav.com/company",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.jouav.com/news",
+          "disposition": "opened_currentoriginalnews"
+        },
+        {
+          "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?CompanyCode=81586794&gather=1&id=12388961",
+          "disposition": "searched_issuerdraft_notclosedraise"
+        }
+      ]
+    },
+    {
+      "id": "31e8face-3f88-45ee-acf0-3ca9265e10f2",
+      "slug": "jovistar",
+      "name": "Jovistar",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "FCCapplicantJovistarInc matcheddroneidentity throughactualfilingmirror; reportedCaliforniacompanyvsDBChinapreserved.",
+      "hold_note": "Noverifiedfinancing; primarycompanysiteinaccessible,exactlegalownership/issuercontinuityunresolved. FCCequipmentauthorizationgrantnotfinancialgrant; suspectedDJIownershipnotproven, noDJIfundingassigned. OtherChile/Polandnamesakesexcluded; privateunknownnotzero.",
+      "searches_checked": [
+        "Jovistardronecompanyinvestmentfunding",
+        "Jovistarinvestmentinvestorsfunding",
+        "Jovistarsite:fcc.gov",
+        "Jovistarinvestorfunding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://fccid.io/2BRGWFKAWZJO",
+          "disposition": "opened_FCCfilingmirroridentity_regulatorynotfinancial"
+        },
+        {
+          "url": "https://fcc.report/company/jovistar-inc",
+          "disposition": "fetch_failed"
+        },
+        {
+          "url": "https://www.jovistarus.com/",
+          "disposition": "fetch_failed"
+        },
+        {
+          "url": "https://www.jovistar.com/",
+          "disposition": "fetch_failed"
+        },
+        {
+          "url": "https://www.linkedin.com/company/jovistar-inc",
+          "disposition": "searchcandidate"
+        }
+      ]
+    },
+    {
+      "id": "626d0f74-65fc-4d69-8004-98f83c51eab0",
+      "slug": "jsc-agat-control-systems",
+      "name": "JSC AGAT - Control Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "ExactBelarusAGATControlSystems cohortdomain and indexed government/registryidentity; ownsite timedout. No attributable financing confirmed.",
+      "hold_note": "Originalfinancialdisclosures unavailable; no zeroassertion. UzbekistanAgatCredit and RussianMorinformsystemAgat/Roscosmos namesakes excluded. Stateorders/researchbudgets notcompanyfinancing.",
+      "searches_checked": [
+        "Агат системы управления финансирование кредит инвестиции",
+        "site:agat.by финансирование инвестиции кредит",
+        "\"Агат - системы управления\" \"кредит\"",
+        "\"Агат\" \"системы управления\" \"инвестиции\" финансирование",
+        "site:vpk.gov.by \"АГАТ\" \"системы управления\" финансирование"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://agat.by/",
+          "disposition": "fetch_timeout"
+        },
+        {
+          "url": "https://t.me/s/vpkgovby?before=6124",
+          "disposition": "indexed_government_product_identity_candidate"
+        },
+        {
+          "url": "https://agatcredit.uz/about/corporate-info/",
+          "disposition": "namesake_excluded"
+        }
+      ]
+    },
+    {
+      "id": "4f5e0e86-92a6-4b61-a811-584caf4e775a",
+      "slug": "jsc-npp-radar-mms",
+      "name": "JSC NPP Radar MMS",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "ExactStPetersburgAO NPP RadarMMS identity and lenderoriginal700mloanapproval verified.",
+      "hold_note": "Earlierloans/equity/privateownership and2025annualreport originals needreconciliation; 2026e-disclosurefilelist notfullfinancials. Loanapprovalnotcashreceipt. Conflictingfake-looking requisitespage notused to establishregistryIDs.",
+      "searches_checked": [
+        "Радар ммс облигации финансирование инвестор",
+        "site:radar-mms.com заем финансирование 2026",
+        "\"Радар ммс\" инвестиции акционеры кредит финансирование 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://frp.spb.ru/projects/ao-npp-radar-mms/",
+          "disposition": "opened_lender_original"
+        },
+        {
+          "url": "https://radar-mms.com/en/",
+          "disposition": "fetch502"
+        },
+        {
+          "url": "https://www.e-disclosure.ru/portal/files.aspx?id=2527&type=2",
+          "disposition": "indexed_issuer_annual_report_candidate"
+        },
+        {
+          "url": "https://e-disclosure.azipi.ru/organization/personal-pages/1387584/",
+          "disposition": "indexed_identity_registry_candidate"
+        }
+      ]
+    },
+    {
+      "id": "7021d59f-3e5c-4103-8747-7a3cbacd0ccf",
+      "slug": "jtekt",
+      "name": "JTEKT",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "ExactJapaneseJTEKT Corporation2024originalbondpricing, sustainabilitypage and current2026newschecked.",
+      "hold_note": "Fullhistoricalbond/loan/equityhistory incomplete.2026reportproceeds needs exacteventreconciliation, shelf100bncapacitynotraise. JTEKTIndia2026rightsissue is distinctissuer; JapanTobaccobonds namesakeexcluded.22investment-intentioninstitutions notsettledallocationproof.",
+      "searches_checked": [
+        "JTEKT bonds issuance 2025 2026 corporate bond",
+        "site:jtekt.co.jp 社債 発行 2026 2025",
+        "JTEKT Corporation financing investor bonds history"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.jtekt.co.jp/news/2024/004232.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.jtekt.co.jp/news/2024/004173.html",
+          "disposition": "opened_original_plan_samebond"
+        },
+        {
+          "url": "https://www.jtekt.co.jp/ir/sustainability_bond.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.jtekt.co.jp/news/topics2026.html",
+          "disposition": "opened_original_current_news"
+        },
+        {
+          "url": "https://financialfilings.com/filings/jtekt-corporation/interim-quarterly-report/2026/74887012/",
+          "disposition": "secondary_currentreport_candidate_notfacts"
+        }
+      ]
+    },
+    {
+      "id": "4aa0152d-d517-4e5c-8b68-c424775758fc",
+      "slug": "jugoimport-sdpr",
+      "name": "Jugoimport SDPR",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Official exactJugoimportSDPR state-ownedSerbianpubliccompany original historyverified.",
+      "hold_note": "HistoricalSrpskaBankaguaranteedborrowings/2011guaranteebill andIranlegacydebtneedexecutedterms/cashreconciliation. EUR98mspentover8years capexnotraise, Ethiopianbuyerreceivablenotownloan. Budgetaidcontradictorysecondaryclaimsheld; no zeroassertion.",
+      "searches_checked": [
+        "Jugoimport SDPR financing loan investment",
+        "\"Jugoimport\" financing bank loan budget government",
+        "Jugoimport SDPR investor state financing history"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.yugoimport.com/en/about-us",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.parlament.gov.rs/Sixty-Eighth_Sitting_of_the_Finance_Committee.7587.537.html",
+          "disposition": "indexed_original_guaranteebill_candidate"
+        },
+        {
+          "url": "https://otvorenavlada.rs/pz-srpska-banka-jugoimport00399-lat-doc/",
+          "disposition": "indexed_bill_candidate_notexecutedloan"
+        },
+        {
+          "url": "https://n1info.rs/biznis/a536751-Jugoimport-SDPR-kaze-da-posluje-bez-dinara-od-drzave-a-sta-se-vidi-u-dokumentima/",
+          "disposition": "secondary_disputedbudgetclaim_held"
+        }
+      ]
+    },
+    {
+      "id": "41cc9428-5425-4e09-8581-11a82d85d432",
+      "slug": "jump-aero",
+      "name": "Jump Aero",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "ExactCarlDietrichJA1Pulseissuer/domain, MSIVactual2023investment andAktivahistoricalbacking originalschecked.",
+      "hold_note": "SBDC8.4mequity+3.6mAFWERXcontracts cumulativehistory notone12mround; Dealroom11mJan2025 and148k/750kgrants needawardoriginals/instrument. AFWERXcontracts procurementnotautomaticallygrant. Aktiva2024intentnotcompletednewraise, MaterialImpact/Bantamsecondarybackingheld.",
+      "searches_checked": [
+        "Jump Aero funding investment grant seed investor 2026 2025",
+        "site:jumpaero.com investment Marin Sonoma Aktiva",
+        "site:jumpaero.com Marin Sonoma investment",
+        "site:msivfund.com Jump Aero investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://jumpaero.com/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.msivfund.com/news/marin-sonoma-impact-ventures-invests-in-jump-aero-petaluma",
+          "disposition": "opened_investor_original"
+        },
+        {
+          "url": "https://www.aktivacp.com/noticia5.html",
+          "disposition": "opened_investor_original"
+        },
+        {
+          "url": "https://www.norcalsbdc.org/client-stories/jump-aero-raises-12m-to-build-the-worlds-fastest-first-response-aircraft/",
+          "disposition": "opened_adviser_original_cumulative_notround"
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1677377",
+          "disposition": "indexed_original_awards_candidate"
+        },
+        {
+          "url": "https://dealroom.co/companies/jump-aero/",
+          "disposition": "secondary_candidate_notverified"
+        }
+      ]
+    },
+    {
+      "id": "d0d2408b-4a0e-41cc-a460-44ad87d7b0c3",
+      "slug": "kaizen-aerospace",
+      "name": "Kaizen Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "ExactKaizenAerospaceInc whollyownedAPC/PowerussubsidiaryfromSEC originalactual30Jan2026acquisition; predecessorcolumnsread.",
+      "hold_note": "APC50m/30mfinancings,60mdistributionagreement andacquisitionprice notKaizenprimaryproceeds. Predecessor2025shareholderloan167684/relatedpartyloan93750 arebalancefigures, notnewdatedraise. Historicalstandalonefinancing needsdatednotes/agreements; unknownnotzero.",
+      "searches_checked": [
+        "Kaizen Aerospace funding Powerus Aureus investment",
+        "site:sec.gov \"Kaizen Aerospace\" \"2026\"",
+        "\"Kaizen Aerospace\" funding investors loan before Powerus"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2009312/000149315226047462/ex99-1.htm",
+          "disposition": "opened_original_exactissuer_acquisition_andpredecessor"
+        },
+        {
+          "url": "https://ir.power.us/news-events/press-releases/detail/99/powerus-company-launches-agriculture-division-as-kaizen-aerospace-signs-60-million-australia-new-zealand-distribution-agreement-and-u-s-partnership-with-sprig-aerospace",
+          "disposition": "indexed_original_distribution_notfinance"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2009312/000149315226035181/forms-4.htm",
+          "disposition": "indexed_original_parentfinancing_notassigned"
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "notes": [
+      "IWI confirmed same economic issuer as Israel Weapon Industries; existing SK relationship retained under prior canonical row, not duplicated. No forced company merge or zero-funding inference.",
+      "iXblue/EXAILSAS continuity confirmed;24 existing Exail operating-company events inspected, not copied. Separate Exail Robotics Belgium2events also inspected, not assigned to iXblue. Parent Exail Holding/Technologies debt excluded.",
+      "Kalashnikov historical1.3bnRUB primary issue remains hold: original Rostec pages502; indexed snippets are not verified importfacts. Two UAV rows retain legal-continuity holds.",
+      "Current JetZero loan names SVB as First Citizens division. Existing First Citizens Bank lender reused, distinct from pre-2023 Silicon Valley Bank; source branchname retained in eventnote. Pinegrove Credit Partners distinct from Pinegrove Venture Partners.",
+      "JobyToyotaMotorCorporation distinct from Toyota AI Ventures; SPARXGroup distinct from SpaceFrontierFund; CapricornInvestmentGroup distinct from namedfunds. Delta12Jan2026actualexercise precise date established by Q3Note7. Conditional Toyota secondtranche/JVcash andATMcapacities excluded.",
+      "JFB SeriesXIVJFB exact vehicle distinct from SeriesIVPowerUS; acquisition/secondary-use-of-proceeds not additional raises.",
+      "JTEKT bond pricing and RadarMMS approvedloan not claimed settledcash; investor intention letters not settled participations. JetZero facilitylimit up-to100m not fullydrawncash.",
+      "FAAaward instrument, USAFprocurement, JFGgrantoriginalfailure, Jetoptera historicalaggregates/SPVreceipts and Kaizenparentfinance retained as explicit holds."
+    ],
+    "root_originals_checked": [
+      "https://ir.jobyaviation.com/sec-filings/all-sec-filings/content/0001819848-26-000533/joby-20260930.htm",
+      "https://www.jetzero.aero/jetzero-raises-175-million-in-series-b-financing",
+      "https://www.jetzero.aero/jetzero-closes-100-million-financing",
+      "https://www.jtekt.co.jp/news/2024/004232.html",
+      "https://ir.jobyaviation.com/news-events/press-releases/detail/11/joby-aviation-raises-590-million-in-series-c-financing-to",
+      "https://www.sec.gov/Archives/edgar/data/2024306/000149315225016735/ex99-1.htm"
+    ],
+    "root_search_queries": [
+      "site.jobyaviation.com2026financingpublicofferingOctoberNovember2026Toyotainvestmentclosing",
+      "JetZero2026SeriesBfundinginvestorsofficial",
+      "JumpAerofundinginvestment2026seedofficial"
+    ]
+  },
+  "validation": {
+    "importer_and_three_schema_fixtures_match_current_main": true,
+    "postgresql": "PGlite rollback, atomic counts, idempotency, conflicting-value rejection and investor source foreign-key enforcement.",
+    "production_rollback_baseline_restored": true,
+    "production_atomic_commit": true,
+    "post_import_exact_fact_role_source_and_contribution_audit": true,
+    "post_import_idempotency_rehearsal": true
+  },
+  "publication_scope": {
+    "targets_in_european_landscape": [],
+    "note": "No geography, classification or publication gate changes. Wider-cohort funding is not asserted to appear as European map events."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles",
+    "Legacy relationships",
+    "Geography/classification/publication gates",
+    "Repository schedules"
+  ],
+  "programme_complete": false
+}
