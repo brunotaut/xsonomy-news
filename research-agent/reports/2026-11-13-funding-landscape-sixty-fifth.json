@@ -1,0 +1,1084 @@
+{
+  "status": "imported_awaiting_publication",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T16:53:52.738Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-sixty-fifth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 5,
+    "new_or_retained_partial": 19,
+    "new_approved_events": 26,
+    "new_round_participations": 53,
+    "new_source_rows": 41,
+    "new_generic_portfolio_relationships": 9,
+    "new_companies_with_events": 11,
+    "new_investor_profiles": 27,
+    "group_search_queries_executed": 122,
+    "root_additional_search_queries": 6,
+    "search_queries_executed": 128,
+    "per_company_search_ledger_entries": 122,
+    "source_ledger_entries": 110,
+    "company_database_identity_contexts_checked": 24,
+    "existing_canonical_events_inspected": 2,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 26,
+    "mismatched_facts": 0,
+    "participant_matches": 53,
+    "source_matches": 41,
+    "relationship_matches": 9,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 0,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "db_total_events": 3603,
+    "db_approved_events": 3590,
+    "db_round_participations": 4731,
+    "db_investor_profiles": 2843,
+    "db_source_reconciliation_companies": 981,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 3577,
+    "approved": 3564,
+    "links": 4678,
+    "sources": 4927,
+    "profiles": 2816,
+    "covered": 970,
+    "relationships": 464,
+    "preserved_profiles_hash": "9346bad34d8ae4b066bc03eab8524f30"
+  },
+  "production_after": {
+    "events": 3603,
+    "approved": 3590,
+    "links": 4731,
+    "sources": 4968,
+    "profiles": 2843,
+    "covered": 981,
+    "relationships": 473,
+    "preserved_profiles_hash": "9346bad34d8ae4b066bc03eab8524f30"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1118,
+    "source_review_partial": 743,
+    "queued": 703
+  },
+  "per_company": [
+    {
+      "id": "102a5c48-e4b0-4604-9839-8d20b2026a47",
+      "slug": "optris",
+      "name": "Optris",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Exactissuer privatelyowned Berlinfamilybusiness, historical MicroEpsilon24.9%shareholder financialsupport verified; genericrelationshiponly.",
+      "hold_note": "No discrete cashraise supported in bounded public history; unknownprivatefinancing notzero.2017founderbuyout,2025partnershipend,legalformconversion andIDEELprojectheadline notnewprimarycapital. BatteryVentures acquisitionsearch matched nooriginalclaim andnotimported.",
+      "searches_checked": [
+        "Optris 2026 investment funding acquisition Battery Ventures 2024",
+        "site.optris.com Battery Ventures 2024 acquired",
+        "Optris acquired Battery Ventures official May 2024",
+        "Optris Battery acquisition",
+        "Optris financing grant investment Micro-Epsilon2026",
+        "Optris grant IDEEL funding share company"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://optris.com/company/about-us/",
+          "disposition": "Opened original history financialsupport/24.9% and2017buyout, legalformcontinuity."
+        },
+        {
+          "url": "https://optris.com/optris-and-micro-epsilon-conclude-21-years-of-successful-cooperation/",
+          "disposition": "Opened issuerMay2025partnershiptermination; notcashraise."
+        }
+      ]
+    },
+    {
+      "id": "271f2f65-d39c-493b-9457-4a256a5d6f85",
+      "slug": "oq-technology",
+      "name": "OQ Technology",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Own13mEUR2022A,2024convertibleunknownamount,2.5mgrant andsigned25mventuredebt verified separately.",
+      "hold_note": "Earlier2017grant235k/2018grant6m/2019seed1.5m candidates notoriginallyreconciled;currencyconflict seedUSD/EUR.2024converter6m/24maggregatorsheld.15mEICequityconditionalmatching notclosed; ESAprojectcontractstotals notgrants.",
+      "searches_checked": [
+        "OQ Technology funding2026 2025SeriesA B EICLuxembourg",
+        "site.oqtec.com Series A13",
+        "site.oqtec.com EIC2.5million2025",
+        "OQTechnology2.5grant2025",
+        "OQTechnologyseedfunding2019investorofficial",
+        "site.oqtec.com2019seed1.5millioninvestmentLuxembourg"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.oqtec.com/news/aramcos-waed-ventures-and-phaistos-investment-fund-invest-13-million-euro-in",
+          "disposition": "Indexed original full financingtextread; currentdirectarticleempty."
+        },
+        {
+          "url": "https://www.oqtec.com/news/oq-technology-secures-convertible-investment-as-part-of-series-b-round",
+          "disposition": "Indexed original detailedconvertibletextread; directarticleempty;GSMAoriginalsyndication403."
+        },
+        {
+          "url": "https://startupluxembourg.com/news/oq-technology-secures-european-innovation-council-funding-to-lead-direct-to-mobile-connectivity",
+          "disposition": "Opened governmentgrantown2.5m andequitycap separately."
+        },
+        {
+          "url": "https://space-agency.public.lu/en/news-events/news/2025/luxembourgspacesuccessstoriesoqtech.html",
+          "disposition": "Opened originalfounderinterview explicitlymatchingcondition; lastupdate16March2026 notgrantdate."
+        },
+        {
+          "url": "https://www.eib.org/en/press/all/2026-x072-european-financing-for-luxembourgish-satellite-to-smartphone-connectivity-pioneer-oq-technology",
+          "disposition": "Opened originalFebruary25venturedebt lenderannouncement."
+        },
+        {
+          "url": "https://www.eib.org/en/projects/all/20250291",
+          "disposition": "Opened primaryregistry signature24Feb2026exactborrower25m;83mprojectcostexcluded."
+        }
+      ]
+    },
+    {
+      "id": "33229c94-65ec-4ba1-9953-a64e02447f69",
+      "slug": "oramach",
+      "name": "Oramach",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "OramachGmbHexactGermanSkyFive spinout verified by ownJan14/2026ARESconsortiumannouncement.",
+      "hold_note": "No discrete owncash financing supported in bounded originals; unknown notzero. ARESMoU,technologyconsortium partners/spinoutorigin notinvestorcheques. Undatedseedaggregatorcandidate insufficient.",
+      "searches_checked": [
+        "Oramach company fundingdrone",
+        "Oramach investment fundingseedfinancing",
+        "Oramach funding2026investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://oramach.aero/news/pr1.html",
+          "disposition": "Opened issuerJan14/2026MoU;consortium,notincomingcash."
+        },
+        {
+          "url": "https://oramach.net/",
+          "disposition": "Original currentissuer identity/news indexed;nozero-fundingclaim."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/skyfive-world_were-proud-to-see-our-skyfiveworld-spin-out-activity-7361817300649320448-v-Sb",
+          "disposition": "Original parentindexedspinoutannouncement;notfinancialinvestmentproof."
+        }
+      ]
+    },
+    {
+      "id": "d7c3dcd1-5d60-423e-b778-207d0ac3d65c",
+      "slug": "orbit-communication-systems",
+      "name": "Orbit Communication Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "Original2017privateplacementclosed andMarch2026KratosdirectUKparent acquired verified.",
+      "hold_note": "UnderlyingILSamount36mcandidate/2019NIS18moptionexercise needHebrewfilings;approxUSD10mequivalence nottreatedoriginalcurrency.20moptionsunexercised,2024NIS100msecondarysale and2026acquisitionconsideration excluded.",
+      "searches_checked": [
+        "site.orbit-cs.com investmentFIMI2017financing2026",
+        "site.fimi.co.il Orbitinvestment2017",
+        "Orbit Kratos acquisitioncompleted2026official"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/fimi-becomes-orbits-controlling-shareholder-by-acquiring-334-of-the-company-for-approximately-us10-million-660995433.html",
+          "disposition": "Opened issuer originalfull2017privateplacementcompletedtext."
+        },
+        {
+          "url": "https://fimi.co.il/component/content/article/84-fimi-buying-control-of-orbit-technologies?Itemid=101&catid=26",
+          "disposition": "DirectinvestorURLreturnedhomepage;ILS36mnotverified."
+        },
+        {
+          "url": "https://orbit-cs.com/investor-relations",
+          "disposition": "Opened issuerhistoryFIMIcontrol2017;contractsnotfinancing."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000026/ktos-20260302.htm",
+          "disposition": "Opened exactcompletedmergerMarch2/2026;UKdirectparent andprimaryversusconsideration separated."
+        }
+      ]
+    },
+    {
+      "id": "61ff5bff-24fb-43bd-9ceb-5a79b52725a5",
+      "slug": "orbital-atk",
+      "name": "Orbital ATK",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Own2015USD1.8bncreditcapacity and400mnotes confirmed originalissuerSEC;2018Northropacquisitiongenericonly.",
+      "hold_note": "EarlierpredecessorAlliantTechsystems300mnotesdate/continuity andoldfacilities notfullyreconciled. Northrop2017own8.25bnnotes/8.5bnbridge exclude. Procurement,mergerprice,repaymentsanddebtsnapshotnotfreshcapital.",
+      "searches_checked": [
+        "OrbitalATK2015 2016seniornotes300million400creditfacilitysec",
+        "OrbitalATK2016credit2017loan",
+        "OrbitalATK2016 2017refinancingseniorcreditfacilitynotes",
+        "site.northropgrumman.com June2018completesacquisitionOrbitalATK"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/866121/000110465915068110/a15-16285_48k.htm",
+          "disposition": "Indexed original8K relevantfulltextread;directfetchfailed."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/866121/000086612118000023/oa_10qxq118xdoc.htm",
+          "disposition": "Opened original2018SECbody notesandfacility;exactissuerCIK866121."
+        },
+        {
+          "url": "https://investor.northropgrumman.com/news-releases/news-release-details/northrop-grumman-completes-orbital-atk-acquisition-blake-larson",
+          "disposition": "Opened originalacquisitioncompletion;Northropownfinancingexcluded."
+        }
+      ]
+    },
+    {
+      "id": "5c587704-8f60-419d-9a90-4dacbac1a0fe",
+      "slug": "orbotix",
+      "name": "Orbotix",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "OrbotixEuropeanUAVAtlas economicdefencebrand matchedOct1/2025 ownPDF+counsel6.5mfunding.",
+      "hold_note": "ExactPolishgroupversusRomanianSRLsubscribingissuer/securityclass unknown. Do notassumeRomanianplantreceivedfullproceeds; noUSOrbotix/Sphero2010venturefunding.2026Romaeroproductionpartnership/contractreinvestmentnotcashraise;draftgatepreserved.",
+      "searches_checked": [
+        "OrbotixRomaniafunding2026 2025investors",
+        "site.orbotix.tech6.5",
+        "Orbotixfundingsite:orbotix.tech",
+        "OrbotixinvestmentfundingNovember2026seed2024"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://orbotix.tech/wp-content/uploads/2025/10/Orbotix-Pre-Seed-Press-Release_EN-1.pdf",
+          "disposition": "Opened2pageissuerPDF exactfundingdate/amountandparticipants."
+        },
+        {
+          "url": "https://chambers.com/articles/kondracki-celej-advised-orbotix-industries-on-6-5-eur-million-funding-round-from-investment-funds-2",
+          "disposition": "Opened counseloriginal confirmsBVVCactualleadname."
+        },
+        {
+          "url": "https://orbotix.tech/wp-content/uploads/2025/03/Orbotix_FactSheet_Jan_V2.pdf",
+          "disposition": "Indexed factsheet identifiesRomanianSRL;fundingsuballocationnotproven."
+        },
+        {
+          "url": "https://orbotix.tech/newsroom/",
+          "disposition": "Originallatest2026businessnewsindexed;noadditionalraiseverified."
+        }
+      ]
+    },
+    {
+      "id": "a4d8c258-1cc0-4cee-8bca-cccf3e5ac1a3",
+      "slug": "orcas",
+      "name": "ORCAS",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "ORCAS is French DANAE consortium led by SEAir, not proven separate corporate issuer.",
+      "hold_note": "Identity/allocation hold. SEAir crowdfunding, members funding and DANAE development procurement cannot be assigned to ORCAS. No independent legal issuer or own cash allocation established; not zero funding.",
+      "searches_checked": [
+        "ORCAS France drones funding investment company",
+        "ORCAS SEAir financement investissement consortium DANAE 2026",
+        "site.seair.fr ORCAS 2026 financement",
+        "\"ORCAS\" consortium investment \"2026\" financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.defense.gouv.fr/aid/actualites/securite-maritime-ports-lagence-linnovation-defense-marine-nationale-selectionnent-drones-surface",
+          "disposition": "Official indexed text identifies ORCAS as SEAir-led consortium; direct fetch timed out twice."
+        },
+        {
+          "url": "https://www.opex360.com/2026/10/09/la-direction-generale-de-larmement-selectionne-trois-drones-de-surface-pour-la-protection-des-bases-et-des-navires-de-la-marine/",
+          "disposition": "Cohort-linked DANAE maritime consortium context; procurement/development not independent issuer round."
+        },
+        {
+          "url": "https://www.revueconflits.com/le-foil-fait-gagner-un-etat-de-mer-au-drone-entretien-avec-richard-forest-president-de-seair/",
+          "disposition": "Indexed SEAir800k crowdfunding claim belongs distinct consortium member; not ORCAS funding."
+        }
+      ]
+    },
+    {
+      "id": "55393147-5ac7-4a85-8bef-2698bc50446c",
+      "slug": "origin",
+      "name": "ORIGIN",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Cohort BLAZE/Anduril context matches Latvian Origin Robotics despite Polish metadata; canonical origin-robotics already holds2024 equity/grant events.",
+      "hold_note": "Alias receives zero duplicate events. Canonical source history and later4.5m/8.5m aggregate claims must be reconciled under actual origin-robotics issuer; no Polishcompany proceeds invented.",
+      "searches_checked": [
+        "ORIGIN Poland drone funding investor robotics",
+        "\"ORIGIN\" Poland drone company funding 2026",
+        "site.origin-robotics.com \"funding\" \"2026\"",
+        "\"ORIGIN\" \"Poland\" \"Blaze\" funding investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://origin-robotics.com/about-us",
+          "disposition": "Original issuer founders, NATOautonomy and privatecapital development read; matches Latvian BLAZE context."
+        },
+        {
+          "url": "https://www.unmannedsystemstechnology.com/2026/09/autonomous-drone-interceptor-debuts-advanced-flight-safety-warhead-module/",
+          "disposition": "Contemporaneous LatvianORIGIN/PolishWITU partnership supports economic identity not Polish financing."
+        },
+        {
+          "url": "https://changeventures.medium.com/origin-robotics-brings-a-decade-of-drone-experience-from-action-sports-to-precision-weapons-systems-1faa45b69594",
+          "disposition": "Original investor indexed2.4mequity claim already canonical origin-robotics per rootDB; no alias duplicate."
+        },
+        {
+          "url": "https://defence-industry-space.ec.europa.eu/eu-defence-industry/eu-defence-action_en?etrans=bg&prefLang=de",
+          "disposition": "Official EU indexed Riga identity and consortium project not whole budget imported."
+        }
+      ]
+    },
+    {
+      "id": "b13c9f3c-928b-4e8d-a2fc-5f511c0c5884",
+      "slug": "orkid-tech",
+      "name": "Orkid Tech",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Original Newtopiaportfolio links exactdomain/founders and currentOrkid260issuer.",
+      "hold_note": "Earlier1m2022preseed and2024crowdfunder terms not originalcorroborated. CurrentPalladynepartnership notincomingfunding. Backing unknownamount not zero.",
+      "searches_checked": [
+        "\"Orkid\" drone funding investment",
+        "site.orkid.tech investment crowdfunding funding",
+        "site.orkid.tech \"funding\" OR \"investors\"",
+        "site.orkid.tech \"invest\" crowdfund 2023"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://orkid.tech/",
+          "disposition": "Original current autonomousVTOL issuer read, OrlandoHQ; no incoming financing terms."
+        },
+        {
+          "url": "https://newtopia.vc/portfolio/orkid/",
+          "disposition": "Original investor portfolio fullbody read namesexactfounders anddomain."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1826681/000119312526454410/pdyn-ex99_1.htm",
+          "disposition": "Original counterparty2026indexed operatingpartnership not funding."
+        },
+        {
+          "url": "https://bouncewatch.com/company/orkid",
+          "disposition": "2022USD1m fourbacker preseed discovery only; no original event confirmation."
+        },
+        {
+          "url": "https://www.unmannedairspace.info/latest-news-and-information/orkid-and-elsight-assist-mexican-drone-delivery-operations-with-flyzz/",
+          "disposition": "2024crowdfunder secondary candidate not closed funding evidence."
+        }
+      ]
+    },
+    {
+      "id": "a1a3afd8-e96a-4367-9535-159727f7bab2",
+      "slug": "ornadyne",
+      "name": "Ornadyne",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "OriginalYCportfolio establishes2026company and genericbacking; currentdroneidentity verified.",
+      "hold_note": "No company-specific closingamount/date/instrument found in bounded public review. Conflicting500k/1maggregators and standardYCterms not cashfacts; no zero-funding claim.",
+      "searches_checked": [
+        "\"Ornadyne\" funding investment",
+        "\"Ornadyne\" \"investment\" 2026",
+        "\"Ornadyne\" funding investors November 2026 YC",
+        "\"Ornadyne\" \"seed\" \"investor\" official"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.ycombinator.com/companies/ornadyne",
+          "disposition": "Original exact company Spring2026batch/founders/product fullbody read."
+        },
+        {
+          "url": "https://www.ycombinator.com/companies/industry/drones",
+          "disposition": "Original fundedcompany directory read supportsYCbacking."
+        },
+        {
+          "url": "https://ornadyne.com/",
+          "disposition": "Original domain no readabletext."
+        },
+        {
+          "url": "https://aventure.vc/companies/ornadyne-san-francisco-ca-us/fundraising",
+          "disposition": "500kApril2026 aggregator candidate only, standardtermsnotproof."
+        },
+        {
+          "url": "https://whoraisedwhat.com/c/ornadyne-com",
+          "disposition": "Conflicting1mApril2026 claim discovery only."
+        }
+      ]
+    },
+    {
+      "id": "6ef686ad-604a-472f-af3c-0d8301c82fe4",
+      "slug": "oshen",
+      "name": "Oshen",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Originals support new5mUSD2026round and ownGBP2mARIAaward; explicit roles and monthprecision retained.",
+      "hold_note": "2024angelAmarShah and100kaggregate need originalround confirmation; DEFRA/DASAconsortium allocations unknown. ARIApaymentsnotextraawards; USD/GBP equivalents not separateevents. No unnamed angels or securities inferred.",
+      "searches_checked": [
+        "Oshen funding 2026 2025 pre seed investment ocean",
+        "site.lunar.vc Oshen funding 2026",
+        "site.albion.vc Oshen 2026 investment",
+        "site.oshendata.com \"funding\" \"2026\"",
+        "\"Oshen\" \"funding\" site:oshendata.com OR site:lunar.vc OR site:conceptventures.vc OR site:twintrack.vc",
+        "\"Oshen\" \"Amar Shah\" investment 2024",
+        "\"Oshen\" \"ARIA\" funding grant 2025",
+        "\"Oshen\" \"Albion\" investment 2026 site:albion.vc"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://albion.vc/spotlight/news/oshen-scales-ocean-robot-production-as-us-and-uk-navy-move-in/",
+          "disposition": "Original investor21Aug2026 USD5m/4explicitparticipants read."
+        },
+        {
+          "url": "https://www.lunar.vc/buzz",
+          "disposition": "Lead original GBP3.65m($5m)caption read; conversion not secondround."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/oshensail_announcement-weve-secured-2m-in-funding-activity-7297208574118649857-rK6p",
+          "disposition": "Original issuer explicitlyown securedGBP2m, relativepublicationdateonly."
+        },
+        {
+          "url": "https://www.metoffice.gov.uk/blog/2025/are-ocean-robots-the-next-big-thing-for-climate-monitoring",
+          "disposition": "Original MetOffice says announcementFebruary2025; noexactday inferred."
+        },
+        {
+          "url": "https://www.oshendata.com/",
+          "disposition": "Original homepage no readablebody; indexed issuerpresslinks identify5mround."
+        },
+        {
+          "url": "https://www.investplymouth.co.uk/news/oshen-raises-5m-to-scale-autonomous-c-star-vessels-in-plymouth",
+          "disposition": "Official local economicagency fullbody corroborates5m andparticipants."
+        },
+        {
+          "url": "https://thenextweb.com/news/little-autonomous-sailboat-robot-oshen-marine-science",
+          "disposition": "2024angelAmarShah undisclosedsize secondarycandidate, not original eventproof."
+        },
+        {
+          "url": "https://aria.org.uk/media/0usfmzui/aria-end-of-q2-fy25-26.pdf",
+          "disposition": "Government indexed quarterly78,587payment maysame2maward; not additionalround."
+        }
+      ]
+    },
+    {
+      "id": "4dbd0f82-dc79-4aaa-93f7-9421afb75cc8",
+      "slug": "oshkosh-defense",
+      "name": "Oshkosh Defense",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Ownissuer states Oshkoshparent; originalSEC2014reorganization and2026parent borrowing inspected.",
+      "hold_note": "Earlierpre2014legalissuer finance and any independentDefensefunding require detailed reconciliation. Newholdingassumedolddebt; Defenseguaranteenotnewcash. Procurement/contracts/capex andparent1.6bnfacility/500mtermloan excluded.",
+      "searches_checked": [
+        "Oshkosh Defense subsidiary financing loan investors 2026",
+        "site.oshkoshdefense.com \"subsidiary\" \"Oshkosh Corporation\"",
+        "\"Oshkosh Defense\" \"funding\" \"investment\" 2026 loan",
+        "\"Oshkosh Defense\" \"capital\" \"2014\" reorganization"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://oshkoshdefense.com/about/",
+          "disposition": "Original subsidiary statement and current2026news read."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/775158/000110465926028611/tm268947d1_8k.htm",
+          "disposition": "Original16March2026parentUSD1.6bnfacility read, not Defenseissuer."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/775158/000110465914049551/a14-15943_58k12b.htm",
+          "disposition": "Original2014reorganization read: oldcorp mergedintoDefense; newholding assumesdebt, Defenseguarantor. Not freshcash."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/775158/000119312526437287/osk-20260930.htm",
+          "disposition": "Latest2026Q3indexed parent500mtermloan/undrawnfacility excluded, not own subsidiary funding."
+        }
+      ]
+    },
+    {
+      "id": "0aedaf00-b26d-4513-9c41-135ab5f8e33f",
+      "slug": "osiris-ai",
+      "name": "OSIRIS AI",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Own issuer current blog/products connects DroneOS and UEB-1 interceptor; own2025LinkedIn investment disclosure and CEOoriginalinterview support one unknownamount investment, no namedinvestor inferred.",
+      "hold_note": "Investoridentity,amount,currency,instrument and earlierprivatefunding undisclosed. UKOsiris-AILtd/CIAOsiris/Osirusnamesakes excluded. November2025singleinvestment notNov3/4/14duplicate; currentproductnewscouldnotprove additionalfunding.",
+      "searches_checked": [
+        "OSIRIS AI Ukraine investment funding 2026 2025",
+        "site.osiris-ai.com investment funding",
+        "site.osirisai.io investment 2025 2026",
+        "\"OSIRIS AI\" \"investment\" site:linkedin.com/posts",
+        "site.osiris-ai.com OR site.osirisai.com \"2026\"",
+        "site.osirisai.com \"investment\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.linkedin.com/posts/osiris-ai-inc_%D1%96%D0%BD%D0%BE%D0%B7%D0%B5%D0%BC%D0%BD%D1%96-%D1%96%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B8-%D0%B2%D0%BA%D0%BB%D0%B0%D0%B4%D1%83%D1%82%D1%8C%D1%81%D1%8F-%D0%B2-%D1%83%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9-activity-7391140443427659776-oYYd",
+          "disposition": "Own original fullpost read; confirmsinvestment, amountnotdisclosed"
+        },
+        {
+          "url": "https://scroll.media/en/2025/11/14/osiris-ai-interview/",
+          "disposition": "OriginalCEOinterview read; supportsUSprivateinvestor, Nov3announcement, noamount/security"
+        },
+        {
+          "url": "https://osirisai.com/blog/",
+          "disposition": "Originalissuer currentblog read throughOctober2026; productupdatesnotfunding"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/04/21/3277622/0/en/Introducing-Osirus-AI-the-Unified-Platform-for-Building-Deploying-and-Managing-Enterprise-AI-Agents.html",
+          "disposition": "DiscoverynamesakeOsirusenterpriseagentplatformexcluded"
+        },
+        {
+          "url": "https://osirisai.com/osiris-ueb-interceptor-drone/",
+          "disposition": "Originalfullbodyread: UEB-1 introductionMarch23,2026, footerOsirisAIUkraine andmodularOS statement; continuityexactcohortissuer confirmed"
+        }
+      ]
+    },
+    {
+      "id": "60efa213-8387-461f-810b-605febbe736d",
+      "slug": "oskbes-mai-moscow-aviation-institute",
+      "name": "OSKBES MAI (Moscow Aviation Institute)",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact issuer original-source review retained supported subset; unsupported namesake, acquisition, budget and private claims separated.",
+      "hold_note": "Institutionalissuerhold: MAIdesignbureau notprovenstandalonecorporateissuer. Originalregulationunreadable andbureauwebtimeout; universitybudgets, ministrycontracts andregisteredcapitalnotassigned. Fundingunknownnotzero.",
+      "searches_checked": [
+        "OSKBES MAI funding investment financing Moscow 2026",
+        "OSKBES MAI официальный бюро финансирование инвестиции",
+        "site.oskbes.ru история МАИ ОСКБЭС",
+        "site.oskbes.ru \"финанс\"",
+        "\"OSKBES\" investment grant funding 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://mai.ru/upload/iblock/5cb/oskbes-mai-_-polozhenie.pdf",
+          "disposition": "Official university regulation candidate opened but noextractablelines; screenshotfailedtimeout, notverifiedfinancialproof"
+        },
+        {
+          "url": "https://www.oskbes.ru/english.html",
+          "disposition": "Originalbureauwebsite timeout; nozero-fundinginference"
+        },
+        {
+          "url": "https://mai.ru/press/events/detail.php?ID=35290",
+          "disposition": "Officialuniversity indexed bureauchief/email identitycontext only"
+        }
+      ]
+    },
+    {
+      "id": "0476647a-f84b-4468-8a2d-eb08e9631c14",
+      "slug": "otokar",
+      "name": "Otokar",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Exact issuer original-source review retained supported subset; unsupported namesake, acquisition, budget and private claims separated.",
+      "hold_note": "Own2026twoissueddebtsecurities supported; fullolderhistory, other2025/2026tranches andbankloans notfullyreconciled. 2023TRY500mPDFfailed. Programmeceilings,couponpayments,outstandingbalances, exportorders andRomanianacquisitioncosts excluded. Bondholdernamesunknown; broker notinvestor.",
+      "searches_checked": [
+        "Otokar 2026 2025 financing loan bond issue",
+        "site.otokar.com.tr \"2026\" \"bond\" \"3.500\"",
+        "\"Otokar\" \"2026\" \"October\" \"bond\"",
+        "site.kap.org.tr \"OTOKAR\" \"2026\" \"Satışın Tamamlanması\"",
+        "\"Otokar\" \"2026\" \"bond\" \"November\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kap.org.tr/tr/Bildirim/1616937",
+          "disposition": "OriginalJune12completed3.5bnTRYsale fullrelevantbodyread"
+        },
+        {
+          "url": "https://www.kap.org.tr/en/Bildirim/1663159",
+          "disposition": "OriginalSeptember15coupon confirms issued3.5bnbond; couponnotnewfunds"
+        },
+        {
+          "url": "https://kap.org.tr/tr/Bildirim/1654939",
+          "disposition": "OriginalAugust25completed2bnTRYsale fullbodyread; futureplannedsettlementpreserved"
+        },
+        {
+          "url": "https://www.otokar.com.tr/getmedia/c9ac0f5b-cb56-4551-8d15-c7d927b6cd90/otokar-30-09-2024-en",
+          "disposition": "Older2023bond500mTRYcandidate; issuerPDF502 so numericoldhistoryheld"
+        },
+        {
+          "url": "https://www.kap.org.tr/tr/api/file/download/4028328da17e515f01a1a713012a724c",
+          "disposition": "LatestQ32026issuerfiling indexed only; balancesnotnewfunding"
+        }
+      ]
+    },
+    {
+      "id": "89fba685-964f-466b-9976-03e5b99c5ba2",
+      "slug": "otto-aerospace",
+      "name": "Otto Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Exact issuer original-source review retained supported subset; unsupported namesake, acquisition, budget and private claims separated.",
+      "hold_note": "Earlierdebt3.85m/2025equity92m andnamedinvestorsaggregatorsnotoriginalsubstantiated.2026SeriesCstillbeingraised exceptreceivedbridge. FAAgrantawardnotpayment.34.9mJAApackageincludesinfrastructure and20mREVrebateterms/430mmixedcreditsHIPI notcashgrant; ownallocations/conditionsheld.430mcapex andFlexjetorders notfunding.",
+      "searches_checked": [
+        "Otto Aerospace funding 2026 2025 investment",
+        "site.faa.gov \"Otto\" \"7,000,000\"",
+        "\"Otto Aerospace\" investment investors 2026 Drennan funding",
+        "site.ottoaerospace.com \"investment\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ottoaerospace.com/news/otto-aviation-awarded-7-million-faa-grant/",
+          "disposition": "Originalown7mgrantaward read"
+        },
+        {
+          "url": "https://www.corporatejetinvestor.com/news/otto-phantom-3500-certification/",
+          "disposition": "OriginalCEOinterview fullrelevantbridgeparagraph read"
+        },
+        {
+          "url": "https://ottoaerospace.com/news/otto-aviation-announces-new-manufacturing-facility-and-headquarters-in-jacksonville-florida/",
+          "disposition": "Originalincentivepackage34.9m,up-to20mREVgrant and430mmixedtaxcredits/HIPIread; attribution/termsheld"
+        },
+        {
+          "url": "https://ottoaerospace.com/news/otto-aerospace-reshaping-business-aviation-cover-story-aviation-week/",
+          "disposition": "Issuer-syndicatedOctober2026article indexed; investorbackingnotseparateround"
+        },
+        {
+          "url": "https://ottoaerospace.com/company/",
+          "disposition": "Issuercompanypage indexedidentity/investorrelationsteam; notamountproof"
+        }
+      ]
+    },
+    {
+      "id": "82823dc1-c54a-4856-9a6d-19c043ded2a4",
+      "slug": "otto-engineering",
+      "name": "OTTO Engineering",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact issuer original-source review retained supported subset; unsupported namesake, acquisition, budget and private claims separated.",
+      "hold_note": "No discrete public incominground supported in boundedreview; privatefinanceunknownnotzero. Community/selfinvestment andgovernmentcustomercontracts notexternalfinance. PrivatePreqinrecentfundingclaim lacksoriginalterms; namesakeOttoGroup/OTTOrobotics excluded.",
+      "searches_checked": [
+        "OTTO Engineering funding investment investors 2026 private owned",
+        "site.ottoexcellence.com \"family\" \"owned\"",
+        "\"OTTO Engineering\" \"investment\" \"2026\"",
+        "\"OTTO Engineering\" \"owned\" Roeser",
+        "\"OTTO Engineering\" \"loan\" OR \"funding\" OR \"investors\"",
+        "\"OTTO Engineering\" \"financing\" \"bank\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.ottoexcellence.com/",
+          "disposition": "Originalcurrentcompanyhomepage read: exactCarpentersvillecontrol/communicationissuer, privateownership andcommunityinvestment"
+        },
+        {
+          "url": "https://www.ottoexcellence.com/corporate",
+          "disposition": "Originalcorporatepath inaccessible; nozero-fundingclaim"
+        },
+        {
+          "url": "https://www.preqin.com/data/profile/asset/otto-engineering/159668",
+          "disposition": "Subscriber/privatefinancecandidate; unsubstantiatedrecentfundingnotpromoted"
+        }
+      ]
+    },
+    {
+      "id": "7a307455-ac24-4511-91c8-06ebd8e56f48",
+      "slug": "ottopia-defense",
+      "name": "Ottopia Defense",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Exact issuer original-source review retained supported subset; unsupported namesake, acquisition, budget and private claims separated.",
+      "hold_note": "Exactsolddefensebusiness separatedfromcontinuingcommercialOttopia. Earlierparent3m/9m/14.5mrounds notautomaticallyDefensefunding. Shared56macquisitionheadline/prices notprimarycash. Separateownroundhistoryunknown, notzero.",
+      "searches_checked": [
+        "Ottopia Defense funding 2026 2025 14.5 million",
+        "\"Ottopia Defense\" investment funding 2026 Ondas"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.ottopia.tech/blog-posts/defense-transaction",
+          "disposition": "Originalseller confirmscompleteddefensebusinesssale andcommercialbusinessseparation"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1646188/000121390026102458/ea030627301ex99-1.htm",
+          "disposition": "OriginalbuyerSECexhibit read; threebusinessacquisitionsnotprimaryfunding"
+        },
+        {
+          "url": "https://www.prnewswire.com/il/news-releases/ottopia-announces-14-5m-series-a-funding-round-301717717.html",
+          "disposition": "Original2023parentOttopiafundingindexed; no transfer onto sold defense business"
+        }
+      ]
+    },
+    {
+      "id": "652e6e96-f03c-44b8-b4ef-1e8dad359ffb",
+      "slug": "ouster",
+      "name": "Ouster",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Threeownissuer events from2017/2020/2026 originalparties. 2026primarygross200mcompleted excludes191.9mnet or unexercisedoption.",
+      "hold_note": "2019>60mmixed debt/equity notsplit;2021SPAC299.9mgross includingPIPE notimported pendingissuer/proceedsreconciliation.2022debt andATMprogrammes2022-26 incl100m2026sales requireperiod/nonoverlap audit. New2026ATMgross candidateoriginallatest10Q notfullyread; capacities notcash.",
+      "searches_checked": [
+        "Ouster funding financing 2026 2025 2020 42 million Series B",
+        "Ouster 200 million July2026 offering closing",
+        "site.ouster.com 27M financing",
+        "site.ouster.com 2019 60 million",
+        "site.prnewswire.com/news-releases/ouster-announces-launch-of-os1-lidar-completes",
+        "site.ouster.com 60 million 2019",
+        "Ouster November2026 ATM100million July200"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/ouster-announces-launch-of-os1-lidar-completes-27m-series-a-financing-round-300567269.html",
+          "disposition": "Ouster original completed USD27m Series A; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://investors.ouster.com/node/9866/pdf",
+          "disposition": "Ouster original USD42m Series B announcement; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.faegredrinker.com/en/about/news/2026/7/faegre-drinker-advises-underwriter-of-ai-company-ousters-200-million-public-offering",
+          "disposition": "Underwriter counsel original confirms closed Ouster primary offering; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1816581/000162828026054467/oust-20260630.htm",
+          "disposition": "Ouster own SEC quarterly report confirms July6 completion and expired option; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/ouster-announces-significant-lidar-business-milestones-additional-60m-funding-adds-to-board-of-directors-300817850.html",
+          "disposition": "2019mixedfundingcandidate; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://investors.ouster.com/static-files/d8114903-1909-43fc-8f3a-e1062d261a41",
+          "disposition": "OwnSEC2022registration SPACgrossproceeds; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1816581/000119312526293358/d101562d424b5.htm",
+          "disposition": "2026preliminaryofferingprospectus candidate; exact supported facts retained, unresolved claims held as described."
+        }
+      ]
+    },
+    {
+      "id": "c4ce3fb6-3e77-413d-9c5a-3af029a0e0f9",
+      "slug": "outlook-industries",
+      "name": "Outlook Industries",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact AustralianGUSrobotissuer established viaownsiteandYorkoriginalplannedacquisition12Nov2026.",
+      "hold_note": "Yorkintent conditional/unclosed acquisition notprimaryfunding or currentownershiplink. Terms/privatehistory unknown; nozero-fundingclaim. Governmentcontracts/procurement excluded.",
+      "searches_checked": [
+        "Outlook Industries Australia drone funding investors",
+        "Outlook Industries York November2026 acquisition",
+        "site.yorkspacesystems.com Outlook Industries November12 2026",
+        "Outlook Industries investment funding grant2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://sites.google.com/outlookindustries.org/outlookindustries/home",
+          "disposition": "Issuer GUS site; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20261112355309/en/",
+          "disposition": "York original intent to acquire Outlook; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.defenceconnect.com.au/land/19126-york-space-systems-announces-intent-to-acquire-ugv-developer-outlook-industries",
+          "disposition": "Contemporaneous conditionalintent details; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.aol.com/articles/york-space-systems-acquire-outlook-113000000.html",
+          "disposition": "FullYorkBusinessWireoriginalsyndication12Nov2026read: intent, uponclosingandregulatoryconditions explicit. DirectBusinessWireURLinaccessible; no completedownershiporprimarycashinferred."
+        }
+      ]
+    },
+    {
+      "id": "db564ca1-74d9-4308-9f34-9695405bffd9",
+      "slug": "overland-ai",
+      "name": "Overland AI",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Fourfinancingevents separate2024seed10m/2025A32m/2026equity80m and20mfacility from100mcombinedtotal.",
+      "hold_note": "2026equity80m derivedfrom explicit100m totalminus20mdebt; noSeriesBlabel inoriginal. Earlierprivatehistory andtermssubset unknown.18.6mprototypeOT, APFITcontracts andmilitaryawards notequity/grants.",
+      "searches_checked": [
+        "Overland AI2026 funding100million SeriesB",
+        "site.overland.ai 32million2025",
+        "site.overland.ai 10seed Point72",
+        "site.overland.ai funding November October2026 investment",
+        "site.point72.com Overland2024 investment",
+        "site.ascend.vc Overland",
+        "site.ascendvc.com Overland",
+        "Ascend OverlandAI KirbyWinfield",
+        "AscendVentureCapital OverlandAI StLouis"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://assets-global.website-files.com/65f97567e38182a99a5348e0/664abba4fd37045efe4bb977_Overland_AI_Funding_Press_Release_05_20_2024%20.pdf",
+          "disposition": "Overland issuer original seed financing press release; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2025/01/13/3008705/0/en/overland-ai-raises-32-million-in-series-a-funding-to-advance-ground-autonomy-for-u-s-defense-forces.html",
+          "disposition": "Overland original USD32m Series A; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/02/03/3231434/0/en/overland-ai-raises-100-million-to-scale-ground-autonomy-with-u-s-armed-forces.html",
+          "disposition": "Overland original financing split equity and TriplePoint venture debt; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.overland.ai/",
+          "disposition": "Issuer currentnews throughOct2026; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://overlandai.substack.com/p/overland-ai-raises-32m-in-series",
+          "disposition": "FounderoriginalJan22recap; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://overlandai.substack.com/p/business-update-overland-ai-raises",
+          "disposition": "FounderoriginalFeb25recap; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.ascend.vc/companies",
+          "disposition": "Opened originalSeattleAscend portfolio confirmsOverlandAI; distinctStLouisfirm notmapped. FounderoriginalLinkedInandissuer2024seedexplicitAscendVC corroborated."
+        },
+        {
+          "url": "https://www.overland.ai/news/overland-ai-secures-10m-in-seed-funding-to-accelerate-development-of-autonomous-vehicle-software-for-high-risk-missions",
+          "disposition": "Opened originalissuerfullseedrelease confirms all6namedparties, stronger accessiblealternative to PDFindexedbody."
+        }
+      ]
+    },
+    {
+      "id": "c42a2742-fbbf-467e-bed2-d78c0d8af307",
+      "slug": "owt-global",
+      "name": "OWT Global",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Owncurrentdefenceissuer andDobbsfamily2020acquisition confirmed originalfamilyofficeportfolio.",
+      "hold_note": "No discreteprimary equity/debt amount supported. Acquisitionownershipgenericonly; Sciathrole, cashconsideration andearlierhistoryunknown. SBA/SBIRprocurement notventuregrant.",
+      "searches_checked": [
+        "OWT Global investment acquisition investors2026",
+        "OWT Global investment LVC",
+        "OWT Global funding investment acquisition firm",
+        "site.owtglobal.com Dobbs investment",
+        "OWT Global Dobbs investment",
+        "OWT Global investment funding2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.dobbsmanagement.com/portfolio-companies",
+          "disposition": "Dobbs family original current OWT portfolio ownership; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.owtglobal.com/who-we-are",
+          "disposition": "Original issuer current identity; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.owtglobal.com/newsroom",
+          "disposition": "Latest2026procurement/partnership news; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/2468173",
+          "disposition": "Government exact legal issuer portfolio; exact supported facts retained, unresolved claims held as described."
+        }
+      ]
+    },
+    {
+      "id": "35f71f9e-865b-4d87-b168-4b2dde41f3db",
+      "slug": "oxford-space-systems",
+      "name": "Oxford Space Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 1,
+      "evidence_note": "Original2018/2020/2022/2024financing with ownUKI2S750k contribution;SPRKdebtproviderrelationship.",
+      "hold_note": "FirstLongwall investment2013originalversus2014BBB conflict, amountsnotassigned. 2018up-to1.3mPhase2notclosedproof.2022/23DASAloan amounts, SPRK2024/25separatefacilitydetails, grantallocations and2025secondary1.9mcandidate held. No grant/project totals or cumulativefunding imported.",
+      "searches_checked": [
+        "site.oxford.space funding investment2026 2025 2018 3million",
+        "Oxford Space Systems funding2026 2025 2024 2018 original",
+        "Oxford Space Systems2022 4million NSSIF",
+        "site.oxford.space funding2026 investmentSPRK"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.ukspace.org/oss-new-funding/",
+          "disposition": "Oxford issuer announcement distributed by UKspace: GBP6.7m round; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.british-business-bank.co.uk/case-studies/oxford-space-systems",
+          "disposition": "British Business Bank original Oxford financing history; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://ukinnovationscienceseedfund.co.uk/uk-space-companies-partnership-completed-the-development-of-an-advanced-deployable-sar-antenna-payload/",
+          "disposition": "Original transaction-party reports completed approximate GBP4m financing; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://ukinnovationscienceseedfund.co.uk/oxford-space-systems-3m-funding-round/",
+          "disposition": "UKI2S original equity round and GBP750k own cheque; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://oxford.space/investors/",
+          "disposition": "Issuercurrentinvestorlist; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.gov.uk/government/case-studies/from-startup-to-space-oxford-space-systems-journey-to-oberon",
+          "disposition": "Government2026case DASAloan2022/23 history; exact supported facts retained, unresolved claims held as described."
+        }
+      ]
+    },
+    {
+      "id": "2640feff-28a0-4cdb-b271-40035a1c3e3b",
+      "slug": "pacmar-technologies",
+      "name": "PacMar Technologies",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "PacMar/Navatek/MartinDefense samecompanycontext corroborated governmentSBIR exactUEI;relatedMUSVarticle isprocurement.",
+      "hold_note": "Companywebsiteunavailable.7.5mPPPaggregator versus10mNavatekloan and2.84msubsidiarycourtclaims require exactloan/issuer/date/repaymentaudit; noeventimported. SBIRdefinitivecontracts excluded; notzero funding.",
+      "searches_checked": [
+        "PacMar Technologies investment acquisition",
+        "PacMar Technologies loan PPP Navatek2020 official",
+        "site.pacmartech.com Navatek financing loan",
+        "PacMar loan justice.gov",
+        "site.justice.gov Navatek7.5million",
+        "site.pacmartech.com Navatek",
+        "site.justice.gov Kao loan2023 Navatek",
+        "PacMar Technologies Elemental investment",
+        "PacMar Technologies funding investment2026 2025",
+        "site.justice.gov Navatek PPP million"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://pacmartech.com",
+          "disposition": "Issuer site inaccessible; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/245768",
+          "disposition": "Government exact PacMar issuer and award portfolio; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/80010",
+          "disposition": "Government award identifies Navyprocurement; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.justice.gov/usao-hi/pr/former-ceo-hawaii-engineering-company-sentenced-seven-years-prison-covid-19-relief-loan-fraud",
+          "disposition": "Governmentloan-fraudcandidate directURLunavailable; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/navatek-ltd",
+          "disposition": "Aggregator7.5mPPPcandidate only; exact supported facts retained, unresolved claims held as described."
+        },
+        {
+          "url": "https://www.justice.gov/archives/opa/pr/hawaii-ceo-charged-covid-relief-fraud",
+          "disposition": "Original30Sep2020DOJ allegations nameNavateknowMartinDefense, loansaggregate12.8m includesdifferentlegalborrowers; no blanketPacMar12.8m/7.5mfundingassigned."
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [
+      {
+        "from": "oxford-technology-and-innovations-eis-fund",
+        "to": "oxford-technology-innovations-eis-fund",
+        "basis": "Source explicit Oxford Technology and Innovations EIS Fund is same OTIF as curated ampersand spelling; preserve existing profile."
+      }
+    ],
+    "root_verification": {
+      "search_queries_executed": 6,
+      "searches_checked": [
+        "Overland AI 2026 100 million 20 million TriplePoint funding",
+        "Ouster July 2026 200 million offering closed",
+        "Orbotix 2025 6.5 million 1 October investors",
+        "OSIRIS AI UEB-1 2025 investment November financing",
+        "site.ascend.vc \"Overland\"",
+        "site.ascendstl.com \"Overland\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.overland.ai/news/overland-ai-raises-100-million-to-scale-ground-autonomy-with-u-s-armed-forces",
+          "disposition": "Root opened issuer original100m funding expresslyincludes20mventuredebtfacility; primaryequity80m separate, facility notassumedcashdrawn."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1816581/000162828026054467/oust-20260630.htm",
+          "disposition": "Root opened issuerSEC2026Q2 report original6Julyclosed equity issuance and191.9mnet proceeds;200mgross notadditionalnet; optionexpiredunexercised5Aug."
+        },
+        {
+          "url": "https://chambers.com/articles/kondracki-celej-advised-orbotix-industries-on-6-5-eur-million-funding-round-from-investment-funds-2",
+          "disposition": "Root read transactioncounsel1Oct2025 original confirms6.5msecured, BVVClead Gustav/Leryonparticipants; economicOrbotixgroup notRomanianSRLcashassertion."
+        },
+        {
+          "url": "https://osirisai.com/osiris-ueb-interceptor-drone/",
+          "disposition": "Root opened issuer23March2026UEB1original toverify OSIRISDroneOS/UEB1samebrand, followingcohortdescription. GroupCprimarycontinuity andunknown2025privateinvestment retained."
+        },
+        {
+          "url": "https://www.ascend.vc/companies",
+          "disposition": "Root opened originalSeattleAscend portfolio OverlandAI, distinct AscendStLouis. NoSPVfundraisingassignedascompanyround."
+        }
+      ],
+      "company_database_identity_contexts_checked": 24,
+      "existing_canonical_events_inspected": 2
+    },
+    "notes": [
+      "OQ EUR13m Series A, unknown convertible, EUR2.5m grant and signed EUR25m EIB venture debt separated; conditional up-toEUR15m equity, project costs and guarantees excluded.",
+      "Orbit primary FIMI private placement verified, amount held because disclosed USD10m equivalence does not establish original ILS amount. Kratos exact UK direct parent retained. Orbital own USD1.8bn facility capacity and400m notes separated from drawn cash, predecessor debt and acquisition consideration.",
+      "Orbotix economic defence brand identified from cohortAtlas and issuerPolish/Romanian group release. EUR6.5m group financing not asserted as cash received by Romanian operating SRL; draft gate retained. Exact security remains unknown. Gustav Söhne source spelling decoded correctly.",
+      "ORIGIN Latvian BLAZE context matches canonical origin-robotics; no duplicated canonical EUR2.4m equity/EUR1.6m grant events on alias. ORCAS consortium and Oramach project allocations held; YC membership not automatic500k investment.",
+      "Oshen original investor reports newUSD5m round, lead also quotes GBP3.65m($5m). Retained explicit transaction-party reported USD denomination, not a second currency-converted event; settlement currency/security remain unknown. Own GBP2m ARIA grant separated from wider programme.",
+      "OSIRIS own website proves DroneOS andUEB1 same issuer. Unknown2025private investment retained without invented investor/security. Otokar own TRY3.5bn issued bond confirmed later coupon, distinct TRY2bn note sale with planned settlement; ceilings and coupons excluded.",
+      "Otto Aerospace own USD7m FAA grant and recent received bridge investment disclosed byCEO, not full ongoingSeriesC or modelled92m. OTTO Engineering namesakes, capex and contracts excluded. Ottopia Defence business sale toOndas supports generic ownership; parentOttopia venture rounds not copied.",
+      "Ouster approximatelyUSD200m gross primary closed July6;191.9m net not another event. SEC confirms August5option expired unexercised. 2019 mixed financing,SPAC/ATM and older debt remain held for granularity.",
+      "Overland2026combinedUSD100m split into80m equity and20m venture-debt facility; facility notdrawncash. Original SeattleAscend portfolio confirms identity distinct from StLouisAscend. No fundraisingbyAscendSPV assigned tocompany.",
+      "Oxford current rounds remain distinct from historical cumulative finance, proposedfollow-ons, grantconsortia andSPRK debt balance. UKI2S ownGBP750k contribution within approxGBP3m round. Curated OTIF ampersand spelling reused toavoidduplicate profile. OWT Dobbsfamily relationship generic; Outlook planned acquisition andPacMar PPP/legalclaims unresolved."
+    ]
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflict rejection and participant-source FK rejection after final canonical mapping. Source URL uniqueness/date precision checked. Production rollback restored baseline; atomic import and postimport repeat verified. Exact facts/roles/sources/contributions audited.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T17:02:14.442Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 26,
+      "mismatched_facts": 0,
+      "participant_matches": 53,
+      "source_matches": 41,
+      "relationship_matches": 9,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 0
+    }
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Existing company geography/classification/publication gates retained, including draftOrbotix; wider-cohort event rows outsideEuropeanmap. Profiles/generic relationships publish under existing directory gates."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false
+}
