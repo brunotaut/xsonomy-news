@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1026,
   "next_action": "Continue next24 queued wider-cohort identities KestrelX through Kongsberg Discovery under a new short writer lease and up to four disjoint read-only groups. No pending import/publication. Preserve source-backed issuer/alias, facility/drawdown, historical-funding and inaccessible-original holds; no internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T04:53:14.755Z",
+  "updated_at": "2026-11-13T05:03:52.700Z",
   "source_reconciliation_companies": 843,
   "approved_funding_events": 3142,
   "round_participations": 4128,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T04:53:14.755Z",
     "expires_at": "2026-11-13T06:53:14.755Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "c618a98d-5284-4a3f-a966-4b15a7fb970a",
       "3d787385-2125-41f5-94f7-7645abb223cd",
@@ -4325,7 +4325,36 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "validated_rollback_passed_ready_for_atomic_import",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-third.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-third.json",
+    "counts": {
+      "events": 18,
+      "links": 19,
+      "sources": 24,
+      "relationships": 10,
+      "companies_with_events": 6,
+      "reviewed": 8,
+      "partial": 16,
+      "per_company_search_ledger_entries": 79,
+      "group_search_queries_executed": 76,
+      "shared_alias_query_reuse": 3,
+      "source_ledger_entries": 101
+    },
+    "baseline": {
+      "events": 3155,
+      "approved": 3142,
+      "links": 4128,
+      "sources": 4400,
+      "profiles": 2503,
+      "covered": 843,
+      "relationships": 367,
+      "preserved_profiles_hash": "440e04bf46fa582f0dc3d717203f2166"
+    },
+    "postgresql_tests_passed": true,
+    "production_rollback_baseline_verified": true
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T04:04:54.296Z",
