@@ -1,7 +1,7 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
-  "started_at": "2026-11-13T23:48:00Z",
+  "started_at": "2026-11-13T23:47:01Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-seventy-second.json",
   "metrics": {
     "parallel_read_only_groups": 4,
@@ -36,13 +36,23 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 3802,
     "db_approved_events": 3789,
     "db_round_participations": 5119,
     "db_investor_profiles": 3048,
     "db_source_reconciliation_companies": 1062,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_generic_company_links_verified": 1,
+    "reviewed_existing_fact_corrections": 0,
+    "active_minutes": 11.75,
+    "checked_identities_per_hour": 122.6,
+    "completed_reviews_per_hour": 10.2,
+    "timing_scope": "Elapsed actual writer-lease commit through four disjoint read-only research groups, source/issuer/profile reconciliation, current importer/schema validation, PostgreSQL tests, production rollback, atomic import, exact fact/role/source/contribution audit, idempotency, durable queue/manifest readback, successful existing build and both fresh live JSON datasets. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3778,
@@ -1184,7 +1194,15 @@
       "missing_link_sources": 0,
       "extension_parent_matches": 0
     },
-    "reviewed_corrections_required": false
+    "reviewed_corrections_required": false,
+    "null_public_announcement_dates_preserved": 9,
+    "measured_start_note": "Throughput uses actual Git commit timestamp of writer lease, 2026-11-13T23:47:01Z; initial lease metadata rounded start to23:48. No concurrent research durations summed.",
+    "live_generic_entry_verification": {
+      "entries": 1,
+      "source_urls": 1,
+      "clickable_company_links": 1,
+      "unlinked": []
+    }
   },
   "publication_scope": {
     "all_new_targets_outside_european_landscape": true,
@@ -1203,8 +1221,43 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "pending",
+    "status": "verified",
+    "checked_at": "2026-11-13T23:58:46Z",
+    "verified_at": "2026-11-13T23:58:46Z",
+    "catalogue_commit": "fc70bc4a19d38a5a96fc17f17851393d8da6dfc8",
+    "source_commit": "fd4b6009e82734b3fa4ae15321a05504a7954056",
+    "workflow_run": {
+      "id": 43530673554,
+      "head": "fc70bc4a19d38a5a96fc17f17851393d8da6dfc8",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43530673554"
+    },
     "report": "research-agent/reports/2026-11-13-funding-landscape-seventy-second.json",
-    "manifest": "research-agent/imports/funding-landscape-20261113-seventy-second.json"
-  }
+    "manifest": "research-agent/imports/funding-landscape-20261113-seventy-second.json",
+    "generated_at": "2026-11-13T23:56:51.919Z",
+    "investor_generated_at": "2026-11-13T23:56:56.321Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3039,
+    "portfolio_relationships": 486,
+    "expected_profiles": 51,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 1,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_company_links_verified": 1,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 61,
+    "manifest_generic_relationship_matches": 1,
+    "current_manifest_event_rows": 24,
+    "current_manifest_live_matches": 0,
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "Nine pre-existing anonymous profile placeholders remain excluded: DB3048 versus live3039. All24 targets outside European map under existing gates. All51 referenced profiles,61 participation source URLs andone historical backing entry with original source and clickable company link verified;19 new profiles published. No company publication/geography/classification change."
+  },
+  "completed_at": "2026-11-13T23:58:46Z"
 }
