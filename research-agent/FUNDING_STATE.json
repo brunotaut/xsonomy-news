@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1006,
   "next_action": "Recover prepared forty-eighth research checkpoint before fresh queue work: research-agent/prepared/funding-landscape-20261112-forty-eighth.json. Reconcile canonical investors/issuers, validate with current importer and meaningful PostgreSQL tests, run production rollback rehearsal, then one atomic import and source/idempotency audit. Check for already committed events before retrying. Apply queue dispositions only after consolidation. Publish via authorised docs-only catalogue trigger and verify live JSON. Transient execution environment failure needs automatic retry, not Nazar approval.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T00:47:14.705Z",
+  "updated_at": "2026-11-13T00:50:23.730Z",
   "source_reconciliation_companies": 804,
   "approved_funding_events": 3049,
   "round_participations": 4011,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T00:47:14.705Z",
     "expires_at": "2026-11-13T02:47:14.705Z",
-    "status": "consolidating_prepared_research",
+    "status": "importing",
     "planned_company_ids": [
       "3920d8a2-695e-46aa-8b63-e94aaa3a4154",
       "b204c339-4b22-4be9-bcf8-f82ec9ac670e",
@@ -3646,7 +3646,27 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "validated_rollback_passed_ready_for_atomic_import",
+    "manifest": "research-agent/imports/funding-landscape-20261113-forty-ninth.json",
+    "prepared_checkpoint": "research-agent/prepared/funding-landscape-20261112-forty-eighth.json",
+    "events": 24,
+    "participations": 47,
+    "sources": 34,
+    "relationships": 16,
+    "local_postgresql_tests_passed": true,
+    "production_rollback_baseline_verified": true,
+    "baseline": {
+      "events": 3062,
+      "approved": 3049,
+      "links": 4011,
+      "sources": 4283,
+      "profiles": 2411,
+      "covered": 804,
+      "relationships": 324,
+      "preserved_profiles_hash": "65968f50e58e3ccd0e085dc8b86357af"
+    }
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-12T22:56:49.320Z",
