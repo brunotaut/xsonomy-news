@@ -1,0 +1,1068 @@
+{
+  "status": "imported_awaiting_publication",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T08:51:21.417Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-fifty-seventh.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 8,
+    "new_or_retained_partial": 16,
+    "new_approved_events": 29,
+    "new_round_participations": 55,
+    "new_source_rows": 35,
+    "new_generic_portfolio_relationships": 15,
+    "new_companies_with_events": 11,
+    "new_investor_profiles": 35,
+    "search_queries_executed": 98,
+    "group_search_queries_executed": 96,
+    "root_additional_search_queries": 2,
+    "per_company_search_ledger_entries": 96,
+    "source_ledger_entries": 116,
+    "existing_related_issuer_events_inspected": 6,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 29,
+    "mismatched_facts": 0,
+    "participant_matches": 55,
+    "source_matches": 35,
+    "relationship_matches": 15,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 1,
+    "contribution_fields_audited": true,
+    "db_total_events": 3382,
+    "db_approved_events": 3369,
+    "db_approved_round_participations": 4384,
+    "db_investor_profiles": 2654,
+    "db_source_reconciliation_companies": 900,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 3353,
+    "approved": 3340,
+    "links": 4329,
+    "sources": 4638,
+    "profiles": 2619,
+    "covered": 889,
+    "relationships": 402,
+    "preserved_profiles_hash": "35e6526181eac7de6c6be09347aad881"
+  },
+  "production_after": {
+    "events": 3382,
+    "approved": 3369,
+    "links": 4384,
+    "sources": 4673,
+    "profiles": 2654,
+    "covered": 900,
+    "relationships": 417,
+    "preserved_profiles_hash": "35e6526181eac7de6c6be09347aad881"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1061,
+    "source_review_partial": 608,
+    "queued": 895
+  },
+  "per_company": [
+    {
+      "id": "8d034f23-0f04-4142-b397-cad998235834",
+      "slug": "mach-industries",
+      "name": "Mach Industries",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "evidence_note": "Bounded history, issuer and investor searches completed; confirmed exact-issuer findings retained with original currencies, dates and qualifiers.",
+      "hold_note": "Unverified aggregator additional2024/2025 rounds and Series A non-lead investor lists remain held. Cumulative funding, company valuation, acquisition prices and government contracts not extra rounds.",
+      "searches_checked": [
+        "Mach Industries funding seed Series A 2023 2025 2026 Khosla Sequoia",
+        "site.machindustries.com 2026 funding September",
+        "Mach Industries 2023 79 million Bedrock company announcement Sequoia seed"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/sequoia-capital-partners-with-mach-industries-to-revolutionize-defense-technology-for-the-united-states-301852798.html",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://techcrunch.com/2023/10/04/defense-startup-mach-industries-closes-79m-series-a-at-335m-valuation/",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://machindustries.com/articles/mach-industries-raises-100-million-in-series-b-funding-to-advance-u-s-defense-manufacturing",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://machindustries.com/articles/mach-industries-raises-300-million-in-series-c-funding",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/mach-industries-raises-additional-600-million-to-scale-defense-manufacturing-302874488.html",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://www.cooley.com/news/coverage/2026/2026-09-10-mach-industries-raises-additional-$600-million",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        }
+      ]
+    },
+    {
+      "id": "c6cf3c51-b9d7-408a-beba-a70226e29b74",
+      "slug": "maglev-aero",
+      "name": "MagLev Aero",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 5,
+      "evidence_note": "Bounded history, issuer and investor searches completed; confirmed exact-issuer findings retained with original currencies, dates and qualifiers.",
+      "hold_note": "Offering amounts are issuer-reported cumulative sold snapshots, not cash receipt dates or independently audited amounts. DARPA and USAF SBIR contracts excluded, not grants. Named funding backers not assigned to unnamed Form D buyers.",
+      "searches_checked": [
+        "MagLev Aero funding investors 2023 2026",
+        "site.maglev.aero investment investors funding 2026 2023",
+        "site.sec.gov/Archives/edgar/data/1894062 MagLev 2025",
+        "site.sec.gov/Archives/edgar/data/1894062 2025 MagLev Aero",
+        "site.sec.gov/Archives/edgar/data/1894062 2024 14,325,765",
+        "site.sec.gov/Archives/edgar/data/1894062 2021 11,764,710",
+        "site.sec.gov 1894062 2316127"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1894062/000189406224000004/xslFormDX01/primary_doc.xml",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1894062/000089706921000579/xslFormDX01/primary_doc.xml",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1894062/000189406225000001/xslFormDX01/primary_doc.xml",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1894062/000189406225000002/xslFormDX01/primary_doc.xml",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/maglev-aero-unveils-breakthrough-propulsion-technology-at-paris-air-show-to-speak-in-showcase-session-at-paris-air-mobility-301853115.html",
+          "disposition": "Opened exact issuer or investor association source; no round attribution."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/220056",
+          "disposition": "Opened government record: contract FA8649-25-P-0097, not grant."
+        },
+        {
+          "url": "https://maglevaero.com/",
+          "disposition": "Original site investor logos not read as round allocations; DARPA contracts excluded."
+        }
+      ]
+    },
+    {
+      "id": "a5d2a31a-7a94-4cb6-ae43-3b3bc2100213",
+      "slug": "magnet-defense",
+      "name": "Magnet Defense",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Bounded history, issuer and investor searches completed; confirmed exact-issuer findings retained with original currencies, dates and qualifiers.",
+      "hold_note": "USD50m development spending, Metal Shark acquisition and Hanwha manufacturing partnership are not company capital rounds. Arcline attribution appears to concern other deal-table rows; no supported investor inferred. Private financing remains unknown, not zero.",
+      "searches_checked": [
+        "Magnet Defense investment funding 2026 investors",
+        "site.magnetdefense.com investment investors funding",
+        "Magnet Defense Arcline investment management original January 2026",
+        "Magnet Defense Arcline investment original",
+        "site.magnetdefense.com invest 50"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://magnetdefense.com/",
+          "disposition": "Opened exact issuer; no asserted zero funding."
+        },
+        {
+          "url": "https://magnetdefense.com/news/",
+          "disposition": "Opened original2025/2026 releases; capex and acquisition excluded."
+        },
+        {
+          "url": "https://www.kippsdesanto.com/insights/industry-week-in-review-january-9-2026/",
+          "disposition": "Transaction-party deal list distinguishes Arcline/Arxis from Magnet acquisition."
+        }
+      ]
+    },
+    {
+      "id": "0c7c6097-156e-49ea-8e4e-c8e899aec296",
+      "slug": "magnix",
+      "name": "magniX",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Bounded history, issuer and investor searches completed; confirmed exact-issuer findings retained with original currencies, dates and qualifiers.",
+      "hold_note": "NASA USD74.3m is a firm-fixed-price/cost-share procurement award, not grant or equity. Australian AUD2.5m consortium award identifies magniX Technologies Pty Ltd with partners; own allocation and economic issuer continuity unresolved. Historical private financing unknown.",
+      "searches_checked": [
+        "site.magnix.aero funding investors 2026",
+        "site.business.gov.au magniX 2017 2.5 million",
+        "site.nasa.gov magniX 74.3 million contract 2021"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.magnix.aero/detail/magnix-expands-to-energy-solutions",
+          "disposition": "Opened exact issuer or investor association source; no round attribution."
+        },
+        {
+          "url": "https://www.nasa.gov/news-release/nasa-issues-contracts-to-mature-electrified-aircraft-propulsion-technologies/",
+          "disposition": "Opened original confirms procurement not grant."
+        },
+        {
+          "url": "https://business.gov.au/grants-and-programs/cooperative-research-centres-projects-crcp-grants/crc-projects-selection-round-outcomes",
+          "disposition": "Opened original consortium award, own allocation absent."
+        }
+      ]
+    },
+    {
+      "id": "b7a03c09-9e18-48ec-a1de-2582c8a4065b",
+      "slug": "magos-systems",
+      "name": "Magos Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 2,
+      "evidence_note": "Bounded history, issuer and investor searches completed; confirmed exact-issuer findings retained with original currencies, dates and qualifiers.",
+      "hold_note": "Historical Afcon MOU is announced, not confirmed completed; Johnson Controls amount/date and cumulative5m claims unresolved. Current defence procurement and group ownership not an additional priced round.",
+      "searches_checked": [
+        "Magos Systems funding investment investors 2026",
+        "Magos Johnson Controls strategic investment 2016 2017 official",
+        "Magos Systems Afcon investment 2013 2014 official",
+        "site.magossystems.com Johnson Afcon",
+        "site.afcon.co.il מגוס השקעה 2017",
+        "site.magossystems.com investors",
+        "Magos Johnson Controls investment site:magossystems.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.funder.co.il/article/79925",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://www.calcalist.co.il/local/articles/0,7340,L-3714330,00.html",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://www.afcon.co.il/%D7%98%D7%9B%D7%A0%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA/",
+          "disposition": "Opened exact issuer or investor association source; no round attribution."
+        },
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/sjijcmxmge",
+          "disposition": "Opened exact issuer or investor association source; no round attribution."
+        },
+        {
+          "url": "https://www.magossystems.com/",
+          "disposition": "Issuer identity checked through Afcon original linked site; no grantor inference."
+        },
+        {
+          "url": "https://uk.marketscreener.com/quote/stock/AFCON-HOLDINGS-LTD-56536675/news/MAGOS-Systems-Ltd-announced-that-it-expects-to-receive-4-million-in-funding-from-Afcon-Holdings-Lt-35073499/",
+          "disposition": "Candidate primary4m claim reconciled to original attributed MOU terms, not completed funding."
+        }
+      ]
+    },
+    {
+      "id": "b8366a2e-ae26-4edc-8ed7-778394be3a4c",
+      "slug": "mahindra",
+      "name": "Mahindra",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "evidence_note": "Bounded history, issuer and investor searches completed; confirmed exact-issuer findings retained with original currencies, dates and qualifiers.",
+      "hold_note": "Older equity/convertibles, parent credit draws and later historical debt require reconciliation. Current debt balances and rated facility limits not original borrowing events; Mahindra Financial Services and other subsidiary funding excluded.",
+      "searches_checked": [
+        "site.mahindra.com 2026 non convertible debentures 2500 crore July",
+        "Mahindra & Mahindra 2063 allotment 2023",
+        "Mahindra Mahindra funding debt equity 2026 parent investors latest"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.mahindra.com/resources/investor-reports/FY21/Announcements/SEBISIN-April21.pdf",
+          "disposition": "Opened original or attributed transaction source; extracted only supported facts."
+        },
+        {
+          "url": "https://www.mahindra.com/annual-report-FY2026/340/",
+          "disposition": "Opened original standalone balances; not extra funding."
+        },
+        {
+          "url": "https://www.crisilratings.com/mnt/winshare/Ratings/RatingList/RatingDocs/MahindraandMahindraLimited_September%2018_%202026_RR_404981.html",
+          "disposition": "Latest rating candidate facility sizes not new borrowing event."
+        }
+      ]
+    },
+    {
+      "id": "0d0add6a-a40a-41d9-b2c4-28b5b2b6a4f3",
+      "slug": "makera",
+      "name": "Makera",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Exact desktop CNC issuer confirmed from own history and original investor Pre-A; later Series A supported by dated investor-report syndication.",
+      "hold_note": "Kickstarter USD1.7m,3.47m and10.24m are product crowdfunding, not investment rounds. Numeric Series A amount and precise legal investor vehicles remain undisclosed; earlier funding history partial.",
+      "searches_checked": [
+        "Makera funding investment Series A investors 2026 Carvera",
+        "site.qimingvc.com Makera 2026 series A",
+        "site.qimingvc.com Makera 2026",
+        "Makera 数亿元 A轮 华映 顺禧 2026 启明",
+        "site.makera.com funding 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.qimingvc.com/en/news/qiming-venture-partners-exclusively-leads-makeras-pre-round",
+          "disposition": "Opened original investor: completed Pre-A, imprecise amount and exclusive leader."
+        },
+        {
+          "url": "https://finance.sina.com.cn/jjxw/2026-05-06/doc-inhwxnur5950062.shtml",
+          "disposition": "Opened dated Chinese announcement; investor names retained without conflicting English substitutions."
+        },
+        {
+          "url": "https://www.makera.com/pages/about-us",
+          "disposition": "Opened issuer history; product crowdfunding excluded."
+        },
+        {
+          "url": "https://dealroom.co/news/133399-makera-raises-hundreds-of-millions-of-yuan-in-series-a/",
+          "disposition": "Discovery only; June date and English vehicle mappings not substituted."
+        }
+      ]
+    },
+    {
+      "id": "40dd78c2-0572-4a2f-8adc-b303e09d1c1a",
+      "slug": "manna",
+      "name": "Manna",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Source identity reconciles Manna US expansion with canonical Manna Drone Delivery; six existing canonical events inspected and no event duplicated under this alias.",
+      "hold_note": "Existing canonical keys: Coca-Cola2023,FormD2019,seed2019,SeriesA2021,equity2025 andSeriesB2026. HSBC debt2023/2024 and earlier history remain follow-up. USD110m cumulative and US hiring/expansion are not new funding. No geography or identity mutation.",
+      "searches_checked": [
+        "Manna drone delivery funding investors 2026 latest November"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.manna.aero/blog/series-b",
+          "disposition": "Opened original1April2026USD50m Series B; already stored on canonical issuer."
+        },
+        {
+          "url": "https://www.moltenventures.com/news/draper-esprit-leads-25m-series-a-in-drone-delivery-company-manna",
+          "disposition": "Opened original29April2021USD25m Series A; already stored."
+        },
+        {
+          "url": "https://www.manna.aero/news",
+          "disposition": "Original issuer newsroom checked; US expansion is same business."
+        },
+        {
+          "url": "https://dronelife.com/2026/07/09/manna-us-drone-delivery-tulsa",
+          "disposition": "Cohort source fetch403; original issuer corroborates Tulsa operations."
+        },
+        {
+          "url": "https://www.enterprise-ireland.com/en/news/manna-air-delivery",
+          "disposition": "Official investor source confirms same2026round and Irish/US operations."
+        }
+      ]
+    },
+    {
+      "id": "d2714807-7a41-485e-a345-97bff3f66f4f",
+      "slug": "manor-marine",
+      "name": "Manor Marine",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Bounded issuer, registry and transaction-party review confirms exact UK boatbuilder and current controller; no source-confirmed company funding event in checked sources.",
+      "hold_note": "Private financing remains unknown, not zero. Historical MRE/OEG acquisition, parent Shawbrook financing and capex not issuer rounds. Current owner distinguished from former MRE controller.",
+      "searches_checked": [
+        "Manor Marine funding investors acquisition Manor Renewable Energy"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/02590501/persons-with-significant-control",
+          "disposition": "Opened official current and former PSC entries."
+        },
+        {
+          "url": "https://manormarine.co.uk/manor-renewable-energy-ltd-acquire-uk-ship-builder-manor-marine-uk-limited/",
+          "disposition": "Opened issuer30November2017 share acquisition; historical, not funding."
+        },
+        {
+          "url": "https://manormarine.co.uk/oeg-offshore-broadens-renewables-capability-with-manor-renewable-energy/",
+          "disposition": "Opened issuer26January2022 parent acquisition; not own funding."
+        },
+        {
+          "url": "https://www.benchmarkintl.com/insights/benchmark-international-has-advised-on-the-sale-of-manor-renewable-energy-to-a-consortium-of-investors/",
+          "disposition": "Opened adviser19November2019; founder exit and parent deal excluded."
+        }
+      ]
+    },
+    {
+      "id": "b547cb62-cf08-4129-a4a0-22ed52819d21",
+      "slug": "mantech-international",
+      "name": "ManTech International",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Two exact historical borrower commitments and explicit nine-bank schedules verified; Carlyle sponsor association supported.",
+      "hold_note": "Earlier facilities and actual loan draw history remain partial. Proposed2025BSL refinancing was pulled; USD2.9bn repricing/BDC holding balances are not a new confirmed principal raise. Acquisition consideration and government procurement excluded.",
+      "searches_checked": [
+        "ManTech credit agreement financing 2025 2026 Carlyle",
+        "site.mantech.com financing credit 2022 loan 2026",
+        "site.sec.gov ManTech International credit agreement 2022 revolving 500000000",
+        "ManTech International 2021 600 million term loan funded August SEC",
+        "site.carlyle.com ManTech completes acquisition September 2022"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/892537/000119312521219727/d198446dex101.htm",
+          "disposition": "Opened executed agreement, exact borrower and both lender schedules."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/892537/000089253721000020/mant-20210630.htm",
+          "disposition": "Issuer filing corroborates limits and maturity, not draw."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/892537/000119312522244730/d677708dex991.htm",
+          "disposition": "Opened issuer completion release; secondary buyout excluded."
+        },
+        {
+          "url": "https://news.bloomberglaw.com/bankruptcy-law/mantech-2-9-billion-loan-stays-private-credit-after-pulled-deal",
+          "disposition": "Indexed refinancing candidate; no executed final terms, held."
+        }
+      ]
+    },
+    {
+      "id": "728c53cd-fd0c-466a-b1ab-e428a62e3539",
+      "slug": "mantis-analytics",
+      "name": "Mantis Analytics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 6,
+      "relationship_count": 0,
+      "evidence_note": "Ukrainian-founded platform and founders distinguished from unrelated UK namesake; six own financing disclosures verified including exact EC award and SAFE.",
+      "hold_note": "US/Ukraine corporate chain and further awards remain partial. Seeds of Bravery/Google programme amounts, AngelOne/KStreet claims and aggregate totals held without recipient-level original terms. AIN originals inaccessible; readable corroboration used where available. Exact Advanceo date/instrument/vehicle unknown.",
+      "searches_checked": [
+        "Mantis Analytics funding investors 2026 seed",
+        "site.mantisanalytics.com investment funding Nezlamni Google 2026",
+        "site.mantisanalytics.com funding grant investment",
+        "site.zas.ventures Mantis Analytics 50000",
+        "Mantis Analytics 2026 EIC grant 500000 official",
+        "site.mantisanalytics.ai funding investment",
+        "Mantis Analytics Advanceo ALTdata 2026 investment",
+        "Mantis Analytics ZAS Ventures 50000 26 березня 2024 ain.ua",
+        "Mantis Analytics Nezlamni fund portfolio 240000",
+        "site.mantisanalytics.com 2026 grant investors Google Seeds Bravery"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://inventure.com.ua/en/news/ukraine/ukrainian-anti-fake-ai-startup-mantis-analytics-has-raised-dollar50k",
+          "disposition": "Opened readable report: ZAS50k, historical ownBrave1amount, exactfounders."
+        },
+        {
+          "url": "https://www.vestbee.com/insights/articles/mantis-analytics-raises-240-k",
+          "disposition": "Opened company-informed SAFE240k and separateAlchemist30k."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101311351",
+          "disposition": "Opened official award and exact netbeneficiaryallocation/signature."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/meredith-amdurprofile_excited-to-back-the-dc-based-mantis-team-activity-7487616351621124096-8SPP",
+          "disposition": "Opened original company post embedded in investor endorsement; dateunknown."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/zas-ventures_congratulations-to-the-mantis-analytics-team-activity-7490809962168958977-zUO1",
+          "disposition": "Opened ZAS endorsement and Advanceo comment corroborating exactteam."
+        },
+        {
+          "url": "https://zas.ventures/portfolio/mantis-analytics",
+          "disposition": "Opened investor portfolio identifying same founders."
+        },
+        {
+          "url": "https://mantisanalytics.com/",
+          "disposition": "Issuer site yields SPA shell; not negative funding evidence."
+        },
+        {
+          "url": "https://ain.ua/2024/03/26/zas-ventures-investuvav-u-mantis-analytics/",
+          "disposition": "Original fetch failed; indexed December claim not an imported exact closing date."
+        },
+        {
+          "url": "https://www.advanceo.vc/en",
+          "disposition": "Opened manager original fund announcement; no individual cheque or legalvehicle assignment."
+        }
+      ]
+    },
+    {
+      "id": "016f97dd-2201-4a99-b131-6c1a7f025334",
+      "slug": "mara",
+      "name": "Mara",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Exact Mara Inc counter-UAS issuer, founders and Spike matched; original7mannouncement and transaction-counsel confirmation checked.",
+      "hold_note": "Prior cumulative7.8m claim not decomposed into invented800k round. DIANA selection is not a default monetary award. Original instrument and closing date unknown; partnership/test agreements and founders formerOptivolt financing not transferred.",
+      "searches_checked": [
+        "Mara counter drone 7 million funding investors",
+        "Mara funding 2026 2025 Khosla Night Capital"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/08/26/3351362/0/en/mara-raises-7m-to-stop-ongoing-fpv-drone-nightmare-with-low-cost-autonomy.html",
+          "disposition": "Opened issuer original7m and namedroundparticipants."
+        },
+        {
+          "url": "https://www.wsgr.com/en/insights/firm-advises-mara-on-dollar7-million-funding-round.html",
+          "disposition": "Transaction counsel confirms same round."
+        },
+        {
+          "url": "https://mara.inc/",
+          "disposition": "Opened exactissuer and product identity; partners notautomaticallyinvestors."
+        },
+        {
+          "url": "https://alleywatch.com/2026/08/the-weekly-notable-startup-funding-report-8-31-26/",
+          "disposition": "Indexed7.8mcumulative notnew800kevent."
+        }
+      ]
+    },
+    {
+      "id": "a3e8073b-4069-4b87-80be-d905dc31e8e9",
+      "slug": "marand",
+      "name": "Marand",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Two own government grants and current CPE ownership verified.",
+      "hold_note": "Older undated AUD5m state/AUD5m Commonwealth capital contributions and AUD50k starter kit require programme, instrument and overlap reconciliation before further import. Exact2022 official amount candidate inaccessible; do not duplicate possible tax/amendment amount. Acquisition price, own capex and F35 contract values excluded.",
+      "searches_checked": [
+        "Marand engineering investment acquired CHAMP Equity funding",
+        "Marand funding grant loan 2025 2026 CHAMP",
+        "site.marand.com.au funding grant investment 2026 2025",
+        "Marand 2022 grant 1.76 million Modern Manufacturing government"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.marand.com.au/about/",
+          "disposition": "Opened exact issuer and current CPE ownership."
+        },
+        {
+          "url": "https://marand.com.au/sale-of-marand-precision-engineering-to-champ-private-equity/",
+          "disposition": "Opened signed historical acquisition agreement and CHAMP IV name; no primary amount inferred."
+        },
+        {
+          "url": "https://cpecapital.com/sale-of-marand-precision-engineering-to-champ-private-equity/",
+          "disposition": "Opened investor original corroboration; subject-to-approval transaction is not a company round."
+        },
+        {
+          "url": "https://defence.vic.gov.au/success-stories/marand",
+          "disposition": "Opened historical government contribution and starter-kit disclosures; held possible overlap, cash/instrument and award-date questions."
+        },
+        {
+          "url": "https://www.premier.vic.gov.au/75m-investment-next-generation-victorian-manufacturing",
+          "disposition": "Opened exact AUD5m Marand grant and date."
+        },
+        {
+          "url": "https://www.geelongmanufacturingcouncil.com.au/2022/05/marand-to-boost-defence-manufacturing-capability-in-geelong",
+          "disposition": "Opened own AUD1.76m grant disclosure, not whole programme."
+        },
+        {
+          "url": "https://www.industry.gov.au/sites/default/files/2025-02/senate-order-13-2024-calendar-year.pdf",
+          "disposition": "Official exact award candidate failed404; amount not imported from snippet."
+        },
+        {
+          "url": "https://cpecapital.com/category/portfolio-company-announcement/",
+          "disposition": "Investor listing failed404; current issuer ownership original used."
+        }
+      ]
+    },
+    {
+      "id": "516ada7a-f3d0-4998-91c6-1ec2986be620",
+      "slug": "marcos-aerospace",
+      "name": "Marcos Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Bounded company, Greek government and investor-opportunity review established exact Quencher issuer; no source-confirmed incoming funding round found.",
+      "hold_note": "Private financing unknown, not zero. Soliciting qualified investor interest and a government presentation are not a closed raise. No patent or aircraft programme valuation treated as proceeds.",
+      "searches_checked": [
+        "Marcos Aerospace Quencher funding investment",
+        "Marcos Aerospace funding investment investors 2026",
+        "site.marcosaerospace.com investors capital funding",
+        "Marcos Aerospace χρηματοδότηση επενδυτές"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://marcosaerospace.com/",
+          "disposition": "Opened current Greek Quencher issuer."
+        },
+        {
+          "url": "https://marcosaerospace.com/investors/",
+          "disposition": "Opened professional-investor expression-of-interest page; discussions are not closed funding."
+        },
+        {
+          "url": "https://www.mod.mil.gr/synantisi-ekprosopo-tis-etaireias-marcos-aerospace-i-k-e-gea/",
+          "disposition": "Opened official July2026 identity and demonstration meeting; no investment or contract financing announced."
+        }
+      ]
+    },
+    {
+      "id": "ad17c896-3814-4b54-bad6-1a1d3dfed7c6",
+      "slug": "maren-go",
+      "name": "Maren-Go",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Bounded historical, official issuer and transaction-party review confirms one exact lender credit investment.",
+      "hold_note": "Private amount, draw timing and original date unknown. Relative social age not a date. SBIR contracts, procurement prototypes and lender fund capital excluded.",
+      "searches_checked": [
+        "Maren-Go company investment funding drone Army",
+        "Maren-go Leonid credit investment financing amount 2026",
+        "site.leonidcp.com Maren-go investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.maren-go.com/",
+          "disposition": "Opened exact US issuer; original explicitly calls SBIR I/II past contracts."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/leonidcapitalpartners_leonid-capital-partners-has-provided-a-credit-activity-7406400073695404033-EF2X",
+          "disposition": "Opened lender original: credit investment, unknown amount and date."
+        },
+        {
+          "url": "https://leonidcp.com/p-profile/?partner_id=2682",
+          "disposition": "Opened current lender portfolio and exact recipient."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1543515",
+          "disposition": "Indexed official recipient pointer; no award amount imported or assumed grant."
+        },
+        {
+          "url": "https://nwtechbridge.org/automating-the-airfield-maren-gos-journey-from-concept-to-mission-impact/",
+          "disposition": "Indexed contract transition candidate; procurement excluded, not used as financing evidence."
+        }
+      ]
+    },
+    {
+      "id": "8ce31c8d-3a15-43a7-aa04-9d4ceb9cd5fa",
+      "slug": "marine-alutech",
+      "name": "Marine Alutech",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact Finnish Marine Alutech Oy Ab established; growth, orderbook and outgoing port purchase distinguished from financing.",
+      "hold_note": "Several original issuer pages inaccessible. No source-confirmed incoming round extracted; this is not evidence of zero funding. Parent or German partnership funding, customer budgets and invoice-bank BIC not assigned as loans.",
+      "searches_checked": [
+        "Marine Alutech investment funding owners",
+        "Marine Alutech rahoitus laina avustus omistajat",
+        "Marine Alutech investors private equity grant Finnvera 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.marinealutech.com/news/",
+          "disposition": "Original fetch timed out; indexed current purchase and customer contracts do not establish incoming financing."
+        },
+        {
+          "url": "https://www.marinealutech.com/marine-alutech-is-growing-and-expanding/",
+          "disposition": "Original failed502; indexed revenue, expansion and orderbook are not funding rounds."
+        },
+        {
+          "url": "https://www.marinealutech.com/wp-content/uploads/2023/11/20231103-Marine-Alutech_Press-release.pdf",
+          "disposition": "Original failed502; no financing extracted."
+        },
+        {
+          "url": "https://www.marinealutech.com/procurement/",
+          "disposition": "Indexed issuer VAT08516140 and suppliers; no lender inferred from invoicing BIC."
+        }
+      ]
+    },
+    {
+      "id": "24a85184-fd93-4fbe-86f6-2e71bd2622f1",
+      "slug": "marineai",
+      "name": "MarineAI",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact UK Marine AI Ltd11088766 and GuardianAI platform established; current ownership record and UKDI project checked.",
+      "hold_note": "Own UKDI recipient allocation and grant-versus-procurement instrument remain unresolved. Consortium support and Oshen equity financing not transferred to MarineAI. MSubs historic control ceased2024; Mayflower and US/NZ affiliates not assumed same issuer.",
+      "searches_checked": [
+        "MarineAI funding investment equity 2026 M Subs Mayflower",
+        "MarineAI investment funding grant loan",
+        "site.marineai.co.uk investment funding UKDI Oshen 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://marineai.co.uk/history/",
+          "disposition": "Opened original exact GuardianAI issuer, MSubs origins and procurement collaborations."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/11088766/persons-with-significant-control",
+          "disposition": "Opened official ownership history: MSubs ceased January2024; no share value or incoming primary amount established."
+        },
+        {
+          "url": "https://www.investplymouth.co.uk/news/zerousv-oshen-and-marineai-partner-to-develop-autonomous-underwater-sensing-network",
+          "disposition": "Opened official local authority February2026 UKDI consortium project; own allocation and contractual instrument not established."
+        },
+        {
+          "url": "https://www.gov.uk/government/publications/ukdi-funding",
+          "disposition": "Official award-list candidate indexed; no recipient-specific grant imported."
+        }
+      ]
+    },
+    {
+      "id": "6c5cd3ca-43a0-48c2-8c66-383036d10276",
+      "slug": "markets-and-markets",
+      "name": "Markets and Markets",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Bounded issuer, transaction-party and dated latest/history searches reconcile one own USD56m institutional growth-equity round.",
+      "hold_note": "Undisclosed private terms remain unknown. Aggregator Series C and USD56.5m claims not substituted for originals; market-size reports, adviser status and fund capital are not company funding.",
+      "searches_checked": [
+        "MarketsandMarkets funding FTV 2017 56 million 2026",
+        "MarketsandMarkets financing investment 2025 2026 FTV Zodius",
+        "site.marketsandmarkets.com funding 2026 FTV financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.marketsandmarkets.com/PressReleases/marketsandmarkets-raises-$56-million.asp",
+          "disposition": "Opened original own USD56m first institutional funding."
+        },
+        {
+          "url": "https://ftvcapital.com/2017/global-industry-research-leader-marketsandmarkets-raises-56-million-in-growth-equity-led-by-ftv-capital/",
+          "disposition": "Opened dated lead investor original with Zodius co-investment."
+        },
+        {
+          "url": "https://ftvcapital.com/portfolio-item/marketsandmarkets/",
+          "disposition": "Indexed investor current portfolio and investment year; no second event inferred."
+        }
+      ]
+    },
+    {
+      "id": "f00a5b38-229a-4f4a-bac7-363daaba7931",
+      "slug": "markready",
+      "name": "MarkReady",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Bounded history, issuer and investor searches matched MarkReady to the hardware-certification content site explicitly described in its own privacy policy. No public issuer financing event established in checked sources.",
+      "hold_note": "Legal operating entity and private funding undisclosed, not zero funding. Directory lab investment figures concern listed laboratories, not MarkReady; Apple API namesake excluded.",
+      "searches_checked": [
+        "\"MarkReady\" funding investment drones",
+        "\"MarkReady\" investors funding startup",
+        "site.markready.io about funding investors",
+        "\"MarkReady\" founder seed investment",
+        "\"MarkReady\" investors venture capital"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://markready.io/",
+          "disposition": "Opened original certification content platform; no financing assertion."
+        },
+        {
+          "url": "https://markready.io/privacy",
+          "disposition": "Opened original18April2026policy identifies content site; no company funding claim."
+        },
+        {
+          "url": "https://dronexl.co/2026/08/21/fcc-tcb-guidance-drone-certification/",
+          "disposition": "Indexed cohort source identifies compliance consultancy role; financing not asserted."
+        },
+        {
+          "url": "https://markready.io/labs/tuv-sud-product-service-gmbh-straubing",
+          "disposition": "Indexed lab capex belongs to TUVSUD, not MarkReady."
+        }
+      ]
+    },
+    {
+      "id": "92f259a0-fc8f-41e9-8871-e501aae5ca0e",
+      "slug": "marshall-aerospace",
+      "name": "Marshall Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Original issuer and government registry confirm exact Marshall of Cambridge Aerospace Limited and completed8October2026Aurelius control transfer. No incoming financing amount established.",
+      "hold_note": "Parent/group covenant and loan reports lack exact borrower reconciliation. Grant-funded SAIL assessments benefit UAS applicants while Marshall supplies assessment services; not a Marshall grant round. Acquisition price, earnout and future investment intentions excluded.",
+      "searches_checked": [
+        "Marshall Aerospace financing loan grant 2026 2025",
+        "\"Marshall Aerospace\" \"loan\" Aurelius 2026 financing",
+        "\"Marshall Aerospace\" Aurelius financing credit loan 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://marshalladg.com/en/news-stories/aurelius-acquires-marshall-aerospace-from-marshall-group",
+          "disposition": "Opened original9October2026 release confirms8Octoberclosing; ownership only."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/00245740/persons-with-significant-control",
+          "disposition": "Opened exactcurrentcontrol register; prior Marshall ADG control ceased8October2026."
+        },
+        {
+          "url": "https://www.bwb.gv.at/en/merger_control/merger/7528",
+          "disposition": "Opened official merger identifies indirect acquisition structure and exactcompanies."
+        },
+        {
+          "url": "https://marshalladg.com/en/news-stories/marshall-aerospace-uk-drone-sector-government-backed-assessments",
+          "disposition": "Opened original18March2026: recipients receive fullyfundedassessments, provider service not issuer grant."
+        },
+        {
+          "url": "https://businessnc.com/marshall-backs-out-of-state-incentive-deal-for-pti-plane-repair-shop/",
+          "disposition": "Indexed withdrawn incentive and group covenant claim held; no recipientcash imported."
+        },
+        {
+          "url": "https://www.traverssmith.com/knowledge/knowledge-container/travers-smith-advises-marshall-group-on-its-carve-out-sale-of-marshall-aerospace/",
+          "disposition": "Indexed transaction-party confirms carveout sale; not capitalraise."
+        }
+      ]
+    },
+    {
+      "id": "af671ef4-9941-4e09-bd9b-79d29eea2229",
+      "slug": "martac",
+      "name": "MARTAC",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "MARTAC exact Florida maritime issuer matched current original company releases and investor portfolio. Flying Point backing verified generically; no priced round imported.",
+      "hold_note": "Conflicting2021aggregator claims USD10m/Aug19,USD14m/Aug andSep9date lack readable original issuer/filing terms. Not resolved by other aggregator empty rows. Procurement agreements, order backlog and manufacturing-capacity investments excluded.",
+      "searches_checked": [
+        "MARTAC funding investment private placement",
+        "\"MARTAC\" \"investment\" funding investors",
+        "site.martacsystems.com Flying Point investment 2021",
+        "\"MARTAC\" \"Flying Point\" investment 2021",
+        "\"MARTAC\" \"$10 million\" financing",
+        "\"MARTAC\" \"2021\" \"investment\" \"Flying\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://martacsystems.com/media-room/press-releases/",
+          "disposition": "Opened current issuer release archive through9November2026; sales/contracts/capacity not financing."
+        },
+        {
+          "url": "https://www.flyingpointindustries.com/news/",
+          "disposition": "Opened original investor list expressly identifies MARTAC investment; amount/date unknown."
+        },
+        {
+          "url": "https://www.caplight.com/company/martacsystems",
+          "disposition": "Indexed2021VCround candidate; unsupported exactdate/terms held."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/maritime-tactical-systems/financials",
+          "disposition": "Indexed USD10m19August2021candidate, no primary support."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/maritime_tactical_systems_martac_",
+          "disposition": "Indexed conflicting USD14mAugust2021claim held; not a second round."
+        }
+      ]
+    },
+    {
+      "id": "b6e10b79-e74c-43d0-b14c-da7d82842859",
+      "slug": "martin-baker",
+      "name": "Martin-Baker",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Bounded public history, official company and transaction/investor searches confirm exact family-run aircraft ejection-seat issuer. No source-confirmed incoming public financing event found in checked sources.",
+      "hold_note": "Unknown private financing remains unknown, not zero. Pension scheme buyin and company student sponsorship concern outgoing obligations/support, not money raised. Safran joint venture ownership not ownership of whole Martin-Baker.",
+      "searches_checked": [
+        "Martin Baker funding loan grant investment",
+        "site.martin-baker.com company family owned finance loans",
+        "\"Martin-Baker\" loan financing investment bond 2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://martin-baker.com/about-us/",
+          "disposition": "Opened original family-run company/board and history."
+        },
+        {
+          "url": "https://martin-baker.com/our-locations/",
+          "disposition": "Indexed jointventureSEMMB50percentSafran interest only, not parent financing."
+        },
+        {
+          "url": "https://www.martinbakerpensions.com/wp-content/uploads/2025/06/Martin-Baker-Pension-Scheme-Member-Announcement-May-2025.pdf",
+          "disposition": "Indexed pensionrisktransfer; not issuer funding."
+        },
+        {
+          "url": "https://www.birmingham.ac.uk/birmingham-in-action/news/support-for-the-next-generation-of-engineers-from-martin-baker-aircraft",
+          "disposition": "Indexed company outgoing sponsorship excluded."
+        }
+      ]
+    },
+    {
+      "id": "409b71c5-f440-40ba-a0c1-a1dbb76742d0",
+      "slug": "marubeni-aerospace",
+      "name": "Marubeni Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Exact Japanese issuer history and current shareholder original reviewed. Historical increases in registered capital and parentownership established; incoming cash contributions not established.",
+      "hold_note": "Increased registeredcapital toJPY400m2000/650m2003/676m2022/749.5m2024 is not automatically cash raised; no delta invented. Parent/group financing and Aircastle/TEAM loans not transferred. Banks listed as relationships are not evidence of round lender participation.",
+      "searches_checked": [
+        "\"Marubeni Aerospace\" investment funding loan subsidiary",
+        "\"Marubeni Aerospace\" \"funding\" investors 2026",
+        "丸紅エアロスペース 増資 融資 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://marubeni-aerospace.co.jp/en/company/overview.php",
+          "disposition": "Opened original100percentMarubeni and registeredcapital, no financing terms."
+        },
+        {
+          "url": "https://marubeni-aerospace.co.jp/en/company/history.php",
+          "disposition": "Opened original continuity fromJapanAircraftLeasing and registeredcapital increases; cash amountheld."
+        },
+        {
+          "url": "https://marubeni-aerospace.co.jp/company/history.php",
+          "disposition": "Opened Japanese original monthprecisionchronology; not capitalraised amount."
+        },
+        {
+          "url": "https://www.jbic.go.jp/en/information/press/press-2026/press_00077.html",
+          "disposition": "Opened original exact Aircastle borrower, up-to240mJBIC/400mcofinancing excluded from Aerospace."
+        },
+        {
+          "url": "https://www.jbic.go.jp/en/information/press/press-2024/press_00119.html",
+          "disposition": "Indexed TEAM loan separateissuer excluded."
+        },
+        {
+          "url": "https://www.marubeni.com/en/news/2023/release/00067.html",
+          "disposition": "Indexed parent outbound500mAircastleequity excluded."
+        }
+      ]
+    },
+    {
+      "id": "9e9f9779-fe4c-4489-a291-b1b79cdef970",
+      "slug": "marvin-test-solutions",
+      "name": "Marvin Test Solutions",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Bounded broad history, official current company/parent and transaction-party searches established Geotest-Marvin Test Systems continuity and current Marvin Group business unit. No source-confirmed public round in checked originals.",
+      "hold_note": "Private financing unknown, not zero. Aggregator1m funding claim unsupported and other aggregator never-raised claim not evidence; neither imported. DoD contracts, test-equipment sales and parent awards are not financing events.",
+      "searches_checked": [
+        "\"Marvin Test Solutions\" funding investors acquired",
+        "\"Marvin Test Solutions\" loan financing grant 2026",
+        "site.marvingroup.com \"Marvin Test Solutions\" company",
+        "site.marvintest.com \"funding\" investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.marvintest.com/LetterFromCEO.aspx",
+          "disposition": "Opened original namechange continuity and groupmembership."
+        },
+        {
+          "url": "https://marvingroup.com/overview/",
+          "disposition": "Opened original parent confirms threebusinessunits including MTS."
+        },
+        {
+          "url": "https://www.marvintest.com/CompanyProfile",
+          "disposition": "Opened originalcurrent profile; not financing."
+        },
+        {
+          "url": "https://www.marvintest.com/CompanyProfile/Links-Affiliates",
+          "disposition": "Opened original currentgroup association."
+        },
+        {
+          "url": "https://www.marvintest.com/Company.aspx",
+          "disposition": "Legacy candidate failed; currentoriginal used."
+        },
+        {
+          "url": "https://www.owler.com/company/marvintest",
+          "disposition": "Indexed unsupported1m aggregate financing candidate held."
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [
+      {
+        "from": "grit-capital-partners candidate",
+        "to": "grit-capital",
+        "basis": "Original issuer names Grit Capital only; no current legal vehicle assumed."
+      }
+    ],
+    "root_verification": {
+      "search_queries_executed": 2,
+      "searches_checked": [
+        "site.cooley.com Mach Industries 600 million September 2026 Series C",
+        "site.manna.aero 2026 funding 50 million"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.cooley.com/news/coverage/2026/2026-09-10-mach-industries-raises-additional-%24600-million",
+          "disposition": "Opened transactioncounsel original10September2026; explicitly600mcontinuation of300mJuneSeriesC, notwholecumulativesingleevent."
+        },
+        {
+          "url": "https://www.manna.aero/blog/series-b",
+          "disposition": "Opened issuer1April2026; same50mSeriesB already recordedundercanonical MannaDroneDelivery."
+        },
+        {
+          "url": "https://machindustries.com/articles/mach-industries-raises-additional-600-million-to-scale-defense-manufacturing",
+          "disposition": "Opened exactissuer continuation; valuation3.7bn excluded."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/maglev-aero-unveils-breakthrough-propulsion-technology-at-paris-air-show-to-speak-in-showcase-session-at-paris-air-mobility-301853115.html",
+          "disposition": "Opened original16June2023 and exact fundingbackerlist; retain Grit Capital source name without guessing legalvehicle."
+        }
+      ]
+    },
+    "notes": [
+      "Manna alias reconciled with Manna Drone Delivery; six existing canonical events inspected and none copied.",
+      "Mach additionalUSD600m is an extension of JuneUSD300m SeriesC; parent verified, noUSD900m duplicate primary event.",
+      "MagLev latest actual sales snapshot replaces initial amount in sameoffering; limits and residual amounts excluded.",
+      "Afcon Control and Automation conditional MOU not completed parent cash; Mahindra parent securities separated from subsidiaries.",
+      "Marand grant candidates with possible overlap held; contracts, registered capital, secondary proceeds and group borrowing not inferred as company rounds.",
+      "CPE Capital source name retained without merging an ambiguous existing CPE profile; Grit Capital exact issuer spelling retained without guessing vehicle."
+    ]
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting stored amount rejection and participant-source foreign key rejection; manifest includes a tested same-company extension parent.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T08:59:07.277Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 29,
+      "mismatched_facts": 0,
+      "participant_matches": 55,
+      "source_matches": 35,
+      "relationship_matches": 15,
+      "missing_link_sources": 0
+    },
+    "extension_parent_audit": {
+      "extension_parent_matches": 1
+    }
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Wider-cohort DB events are not claimed to appear on European map. Profiles and generic portfolio associations publish through existing directory build; unlinked entries are checked by identity/source without changing publication gates."
+  },
+  "preserved": [
+    "Legacy research-agent/STATE.json",
+    "Frozen snapshots",
+    "Curated investor profiles and legacy relationships",
+    "Company geography, classification and publication gates",
+    "Repository schedules",
+    "No paid external API backfill"
+  ],
+  "programme_complete": false
+}
