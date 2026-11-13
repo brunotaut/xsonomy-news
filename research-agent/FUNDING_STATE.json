@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1079,
   "next_action": "Continue next24 queued wider-cohort identities Molfar Defence Technologies through Navantia under a fresh short writer lease and up to four disjoint read-only groups. No pending import or publication. Prioritise exact issuers, historical and latest original financing, subsidiary/acquisition continuity and explicit investor roles. Preserve source-level identity and financing holds from current audit and unresolved published Liebherr attribution; no internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T11:47:39.382Z",
+  "updated_at": "2026-11-13T11:54:00.416Z",
   "source_reconciliation_companies": 921,
   "approved_funding_events": 3423,
   "round_participations": 4434,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T11:47:39.382Z",
     "expires_at": "2026-11-13T13:47:39.382Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "d9c4b8b0-0875-4d1b-8d35-443e4b736156",
       "e9108421-010c-4a07-a539-8025db25b1db",
@@ -5566,7 +5566,32 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "ready_after_production_rollback",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixtieth.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixtieth.json",
+    "run_id": "funding-20261113T1146Z-next24",
+    "dataset": "funding-landscape-20261113-sixtieth",
+    "prepared_at": "2026-11-13T11:54:00.416Z",
+    "expected": {
+      "events": 37,
+      "participations": 71,
+      "sources": 46,
+      "relationships": 9
+    },
+    "production_before": {
+      "events": 3436,
+      "approved": 3423,
+      "links": 4434,
+      "sources": 4743,
+      "profiles": 2688,
+      "covered": 921,
+      "relationships": 430,
+      "preserved_profiles_hash": "2474e15d908350d80366e6d9341e47b5"
+    },
+    "local_postgresql_tests_passed": true,
+    "production_rollback_baseline_restored": true
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T10:56:48.092Z",
