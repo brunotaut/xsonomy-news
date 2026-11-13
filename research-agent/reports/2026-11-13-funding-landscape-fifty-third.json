@@ -1,0 +1,964 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T04:53:14.755Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-fifty-third.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 8,
+    "new_or_retained_partial": 16,
+    "new_approved_events": 18,
+    "new_round_participations": 19,
+    "new_source_rows": 24,
+    "new_generic_portfolio_relationships": 10,
+    "new_companies_with_events": 6,
+    "new_investor_profiles": 11,
+    "search_queries_executed": 79,
+    "group_search_queries_executed": 76,
+    "root_additional_search_queries": 3,
+    "per_company_search_ledger_entries": 79,
+    "shared_alias_query_reuse": 3,
+    "source_ledger_entries": 101,
+    "database_identities_inspected": 24,
+    "existing_target_events_inspected": 0,
+    "existing_related_issuer_events_inspected": 13,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 18,
+    "mismatched_facts": 0,
+    "participant_matches": 19,
+    "source_matches": 24,
+    "relationship_matches": 10,
+    "missing_link_sources": 0,
+    "contribution_fields_audited": true,
+    "db_total_events": 3173,
+    "db_approved_events": 3160,
+    "db_approved_round_participations": 4147,
+    "db_investor_profiles": 2514,
+    "db_source_reconciliation_companies": 849,
+    "queue_dispositions_applied": 24,
+    "new_profile_exact_name_duplicates": 0,
+    "current_manifest_publication_verified": false
+  },
+  "production_before": {
+    "events": 3155,
+    "approved": 3142,
+    "links": 4128,
+    "sources": 4400,
+    "profiles": 2503,
+    "covered": 843,
+    "relationships": 367,
+    "preserved_profiles_hash": "440e04bf46fa582f0dc3d717203f2166"
+  },
+  "production_after": {
+    "events": 3173,
+    "approved": 3160,
+    "links": 4147,
+    "sources": 4424,
+    "profiles": 2514,
+    "covered": 849,
+    "relationships": 377,
+    "preserved_profiles_hash": "440e04bf46fa582f0dc3d717203f2166"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1034,
+    "source_review_partial": 539,
+    "queued": 991
+  },
+  "per_company": [
+    {
+      "id": "c618a98d-5284-4a3f-a966-4b15a7fb970a",
+      "slug": "kestrelx",
+      "name": "KestrelX",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact KestrelX LLC threat-replication issuer matched government SBIR records; bounded searches found no verified incoming equity or loan round.",
+      "hold_note": "Private financing unknown, not zero. Official SBIR record214581 is contract FA4861-24-P-0086, not inferred grant. Navy9.987m contract,5.4bn shared IDIQ ceiling and PhaseIII procurement excluded. Aggregator no-funding assertions are not evidence.",
+      "searches_checked": [
+        "KestrelX funding investors company Air Force",
+        "KestrelX investors funding grant seed",
+        "KestrelX funding investors -contract -idiq -million -grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sbir.gov/awards/214581",
+          "disposition": "opened_original_contract_not_grant"
+        },
+        {
+          "url": "https://www.kestrelx.com/",
+          "disposition": "fetch_failed"
+        },
+        {
+          "url": "https://defence-blog.com/u-s-navy-hires-small-firm-for-drone-mimicking-planes/",
+          "disposition": "indexed_procurement_claim_excluded"
+        },
+        {
+          "url": "https://app.dealroom.co/companies/kestrelx",
+          "disposition": "unverified_negative_claim_excluded"
+        }
+      ]
+    },
+    {
+      "id": "3d787385-2125-41f5-94f7-7645abb223cd",
+      "slug": "keyoptions",
+      "name": "KeyOptions",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Melbourne-based private KeyOptions, SkyControl domain and product matched original website and company LinkedIn.",
+      "hold_note": "USD3.5m customer delivery and Australian16.9m group awards are procurement, not equity. A2020administrative/financing agreement for KeyOptions Inc Virolens business is an unresolved exact-issuer/actual-proceeds hold; UK company namesakes and Skycope supplier financing not assigned.",
+      "searches_checked": [
+        "KeyOptions funding investment company counter drone",
+        "KeyOptions investment funding investors",
+        "KeyOptions investment investors grants finance"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.keyoptions.com/specialist-security",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.linkedin.com/company/key-options/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.keyoptions.com/counter-drone-systems",
+          "disposition": "fetch_timeout"
+        },
+        {
+          "url": "https://www.unmannedairspace.info/counter-uas-systems-and-policies/keyoptions-to-provide-mobile-c-uas-for-southeast-asia/",
+          "disposition": "opened_procurement_original_statement"
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/lord-global-corporation-n-k-a-27-health-holdings-corp.-shareholder-update-september",
+          "disposition": "search_candidate_financing_agreement_held"
+        }
+      ]
+    },
+    {
+      "id": "05c39901-a045-41a4-8572-882389d596c5",
+      "slug": "keys4sea",
+      "name": "Keys4sea",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact French engineering Keys4Sea/KEYS4SEA SIREN922015151 and maritime drone DANAE activity matched registry, issuer indexed pages and current institutional sources.",
+      "hold_note": "Private funding unknown, not zero. Constitutive capital/deposit of funds is not an external round. Safran partnership and DANAE evaluation are not grant awards or fresh equity; issuer webpage403 is a source-access limitation.",
+      "searches_checked": [
+        "Keys4sea levée fonds financement investisseurs",
+        "site:keys-4-sea.com financement investissement capital",
+        "Keys4sea investisseurs financement levée fonds"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.pappers.fr/entreprise/keys-4-sea-922015151",
+          "disposition": "opened_registry_derived_identity"
+        },
+        {
+          "url": "https://keys-4-sea.com/qui-sommes-nous/",
+          "disposition": "fetch403_indexed_identity"
+        },
+        {
+          "url": "https://keys-4-sea.com/en/who-we-are/",
+          "disposition": "indexed_original_identity"
+        },
+        {
+          "url": "https://www.bretagnecommerceinternational.com/actu/cp-euronaval-2026-la-bretagne-affirme-son-expertise-au-coeur-du-naval-de-defense/",
+          "disposition": "indexed_institutional_identity"
+        },
+        {
+          "url": "https://keys-4-sea.com/keys4sea-et-safran-sallient-pour-un-nouveau-defi-danae/",
+          "disposition": "indexed_partnership_not_financing"
+        }
+      ]
+    },
+    {
+      "id": "4a84126c-e615-4eb4-8498-c9c6bbd9a664",
+      "slug": "keysight-technologies",
+      "name": "Keysight Technologies",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 8,
+      "relationship_count": 0,
+      "evidence_note": "Exact Keysight Technologies Inc issuer; original issuer 2015 exchange release, audited2025annual and2026Q3 filings checked. Six historical note series and two signed facilities supported.",
+      "hold_note": "Full earlier equity, employee plans, spin-off/capital-distribution and later credit renewal history incomplete. 2017 priced common-share offering needs actual-close reconciliation. Bondholder identities unknown. Share repurchases, acquisition prices,2015noncash exchange and bond carrying balances are not new financing.",
+      "searches_checked": [
+        "Keysight2026seniornotes issued financing20252024",
+        "site:investor.keysight.com2017700million seniornotesApril6",
+        "site:investor.keysight.comOctober2019500million seniornotes",
+        "site:keysight.comJuly2026creditagreement750million"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1601046/000114036126002385/ny20058135x4_ars.pdf",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://investor.keysight.com/investor-news-and-events/financial-press-releases/press-release-details/2015/Keysight-Technologies-Initiates-Exchange-Offer/default.aspx",
+          "disposition": "opened_original_no_new_exchange_proceeds"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1601046/000160104626000036/keys-20260731.htm",
+          "disposition": "opened_original_current_filing"
+        },
+        {
+          "url": "https://investor.keysight.com/investor-news-and-events/financial-press-releases/press-release-details/2017/Keysight-Technologies-Announces-Pricing-of-Public-Offering-of-Senior-Unsecured-Notes-in-Connection-with-Pending-Acquisition-of-Ixia/default.aspx",
+          "disposition": "opened_original_pricing_not_settlement"
+        }
+      ]
+    },
+    {
+      "id": "faefc8e4-8d16-4f1e-9c3c-2865c21537f4",
+      "slug": "kha",
+      "name": "KHA",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "KHA matched exact Kraus Hamdani Aerospace Inc and K1000ULE from issuer current site, original newsroom and official SBIR company record.",
+      "hold_note": "Private round claims/unnamed investors unresolved; website Partners & Investors heading alone establishes no participant. APFITUSD20m delivery award,270m AFCENT procurement, SBIR contract candidates and latest12Nov2026Army selection are not automatically grants. Nevada capex/tax-abatement records not a cash financing event; PowerLight funding belongs different issuer.",
+      "searches_checked": [
+        "KHA K1000ULE Kraus Hamdani funding investment",
+        "Kraus Hamdani Aerospace investors venture funding",
+        "Kraus Hamdani Aerospace investment investors -contract -procure -military"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.khaero.com/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.khaero.com/mediacenter/categories/press-releases",
+          "disposition": "opened_original_current_news"
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1313203",
+          "disposition": "indexed_original_award_candidate"
+        },
+        {
+          "url": "https://www.prweb.com/releases/kraus-hamdani-aerospace-secures-20-million-via-apfit-program-to-deliver-k1000ule-unmanned-aerial-vehicles-to-us-army-302290477.html",
+          "disposition": "indexed_issuer_procurement"
+        },
+        {
+          "url": "https://goed.nv.gov/wp-content/uploads/2024/01/7-E.-Kraus-Hamdani-Aerospace-Inc.-Board-Packet-1.pdf",
+          "disposition": "indexed_original_capex_and_abatement_not_round"
+        }
+      ]
+    },
+    {
+      "id": "66648620-459b-4574-ad46-3c90ac0cdafb",
+      "slug": "kimley-horn",
+      "name": "Kimley-Horn",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact Kimley-Horn engineering issuer; original corporate career/ownership pages confirm private employee ownership, not an external financing round.",
+      "hold_note": "2026municipal presentation candidate says untappedUSD125m line of credit, but exact borrower, commitment/execution date and lender not established in opened original; hold. Employee share transitions/retirement balances and customer municipal loans not issuer financing. Private finance unknown, not zero.",
+      "searches_checked": [
+        "KimleyHorn funding ownership ESOP investors company2026",
+        "KimleyHorn credit facility loan funding",
+        "site:kimley-horn.com news investment funding grant2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kimley-horn.com/find-your-home-at-kimley-horn/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.kimley-horn.com/careers/working-at-kimley-horn/career-questions-to-consider/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.londonderrynh.gov/AgendaCenter/ViewFile/Minutes/_02022026-1052",
+          "disposition": "search_original_candidate_credit_line_held"
+        },
+        {
+          "url": "https://www.masc.sc/sites/default/files/uploads/administration/kimley-horn.pdf",
+          "disposition": "search_customer_loan_not_issuer_finance"
+        }
+      ]
+    },
+    {
+      "id": "c957e9c4-97e6-4532-96d6-7c0437d3a928",
+      "slug": "kinedyne",
+      "name": "Kinedyne",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Exact cargo-securement Kinedyne LLC matched own September2026 news and HEICO group affiliation. Bounded issuer/history/investor searches found no verified primary financing event.",
+      "hold_note": "Private funding remains unknown, not zero. Aeroquip acquisition and distribution-facility capex are spending, not raises. Parent HEICO Companies is distinct from listed HEICO Corporation; parent finance and generic never-funded assertions excluded.",
+      "searches_checked": [
+        "\"Kinedyne\" financing investment acquisition",
+        "\"Kinedyne\" funding investors loan",
+        "site:kinedyne.com funding investment finance"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kinedyne.com/press-release-doug-apelt-appointed-president/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://kinedyne.com/news/",
+          "disposition": "search_original_news_checked"
+        },
+        {
+          "url": "https://kinedyne.com/about-us-military/",
+          "disposition": "search_original_history_checked"
+        },
+        {
+          "url": "https://kinedyne.com/kinedyne-press-release-new-ohio-facility/",
+          "disposition": "search_original_capex_not_raise"
+        }
+      ]
+    },
+    {
+      "id": "723d8aa2-6b2d-4adb-a988-bed65550cb08",
+      "slug": "kinetic-frames",
+      "name": "Kinetic Frames",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Own website identifies Kinetic Frames LLC, veteran-owned Talking Rock Georgia FPV frame business; source-origin reporting identifies same Georgia engineering partner.",
+      "hold_note": "Financing unknown. A Florida2026 litigation caption involving Kinetic Frames LLC/Unique Funding Solutions surfaced, but exact issuer continuity, executed contracts and amounts are unverified; not treated as financing. Government subcontract labor/material orders and Drone Dominance programme budget are procurement. No relation to Israeli Kinetica or US database namesake inferred.",
+      "searches_checked": [
+        "\"Kinetic Frames\" funding investment",
+        "\"Kinetic Frames\" investment grant loan funding drone",
+        "\"Kinetic Frames\" investor financing loan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kineticframes.us/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.defensenews.com/unmanned/2026/07/21/how-startups-are-reshaping-the-pentagons-drone-industry/",
+          "disposition": "indexed_origin_content_checked"
+        },
+        {
+          "url": "https://dockets.justia.com/docket/florida/flsdce/1%3A2026cv23883/715753",
+          "disposition": "search_litigation_candidate_not_verified_financing"
+        },
+        {
+          "url": "https://govtribe.com/vendors/kinetic-frames-llc-90kb7",
+          "disposition": "search_procurement_not_financing"
+        }
+      ]
+    },
+    {
+      "id": "0dbce0c3-af86-455f-a81a-8f0ead3781e2",
+      "slug": "kinetica",
+      "name": "Kinetica",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact cohort origin names Israeli Kinetica VC investing into High Lander. Own website lists Yoav Knoll, Frederic Landau, Aaron Applbaum and Amit Kunik and a defence portfolio; this is not the US GPU-database company.",
+      "hold_note": "Private management-company financing unknown, not zero. USD150m fundraising target/LP fund capital is not verified closed company financing. High Lander, Line5, Limitless and other portfolio fundraising is outgoing investment activity, not Kinetica receipts. 8VC strategic partnership and advisers do not establish equity ownership or company proceeds.",
+      "searches_checked": [
+        "\"Kinetica\" \"High Lander\" funding",
+        "\"Kinetica\" \"150 million\" \"Kunik\"",
+        "Kinetica venture capital Yoav Knoll site official"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kineticavc.com/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.apm.law/representing-protego-ventures-in-high-landers-15m-funding-round/",
+          "disposition": "fetch403_outgoing_investment_candidate"
+        },
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/s1cjt21rgl",
+          "disposition": "search_fundraising_target_not_closed_company_round"
+        },
+        {
+          "url": "https://www.jpost.com/defense-and-tech/article-875004",
+          "disposition": "search_partnership_not_company_financing"
+        }
+      ]
+    },
+    {
+      "id": "6e8c296a-b40c-4757-b7cf-f676e352448d",
+      "slug": "kinnami",
+      "name": "Kinnami",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 3,
+      "evidence_note": "Exact Kinnami Software Corporation issuer pages and providers verify company-specific EUR300k DIANA Phase2 announced funding and historical accelerator support. Latest October2026 news/September2026 operational update checked.",
+      "hold_note": "Historical ICE71 seed amount/date, NGA Accelerator USD100k claim and any private equity rounds need original event-level reconciliation. Programme participation does not establish default cheques. USAF SBIR PhaseI expressly contract, Tradewinds awardable status not a closed award, university bridge grant not own allocation, regional/NATO procurement budgets excluded. Current DIANA contractual-funding terms do not establish the legal form or payment of this specific Phase2 award.",
+      "searches_checked": [
+        "Kinnami funding investment seed Series A investors",
+        "site:kinnami.com funding investment seed investors",
+        "site:kinnami.com \"investment\" Seraphim funding",
+        "site:seraphim.vc Kinnami",
+        "\"Kinnami\" \"ICE71\" investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kinnami.com/post/kinnami-chosen-to-join-next-phase-of-nato-diana-programme",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.diana.nato.int/accelerator-programme.html",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://www.kinnami.com/news-resources",
+          "disposition": "opened_original_current_news"
+        },
+        {
+          "url": "https://www.kinnami.com/post/how-did-we-get-here-we-tested-everywhere",
+          "disposition": "opened_original_current_history"
+        },
+        {
+          "url": "https://seraphim.vc/news/seraphim-space-camp-spacetech-startup-cohort/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://enterprise.nus.edu.sg/news/ice71-powers-cyber-startups-to-raise-sgd18million/",
+          "disposition": "opened_original"
+        },
+        {
+          "url": "https://techcrunch.com/2020/10/12/seraphim-capitals-spacetech-accelerator-releases-details-of-its-newest-spacecamp-cohort/",
+          "disposition": "search_secondary_seed_claim_held"
+        },
+        {
+          "url": "https://cleantech.com/data-security-and-cleantech-the-future-of-cyber-physical-systems/",
+          "disposition": "search_secondary_NGA_grant_claim_held"
+        }
+      ]
+    },
+    {
+      "id": "7db3dad0-66dd-4373-b55e-091b3f88bff6",
+      "slug": "kite-aero",
+      "name": "Kite Aero",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Two issuer originals identify Kite Aero brand as Australian Kite Aerospace PtyLtd, CEO Philip van der Burg. Zimbabwe references are operating partner Drone Solutions International. Both cohort identities retained without forced merge or geography changes.",
+      "hold_note": "Bounded public-source financing remains unknown, not zero. Swoop Aero asset purchase does not transfer Swoop historical financing to this issuer. Swinburne AEA project received AUD495877; Kite is industry partner, no own allocation established. Regulatory CAAZ approval, 100-unit pipeline, commercial partnerships and acquisition consideration are not financing. Indian Kite Aero Private Limited is another issuer.",
+      "searches_checked": [
+        "\"Kite\" \"Geelong\" investment funding aerospace",
+        "\"Kite Aero\" funding investors Zimbabwe",
+        "\"Kite Aerospace\" \"Swinburne\" \"Ignite\" grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kite.aero/media/kite-aero-partners-with-sykes-advanced-manufacturing/",
+          "disposition": "opened_original_exact_legal_identity"
+        },
+        {
+          "url": "https://kite.aero/media/drone-solutions-secures-caaz-approval-for-kite-drone-deliveries-in-zimbabwe/",
+          "disposition": "opened_original_partner_identity"
+        },
+        {
+          "url": "https://kite.aero/media/",
+          "disposition": "opened_original_current_news"
+        },
+        {
+          "url": "https://kite.aero/media/kite-aero-acquires-swoop-aero-assets/",
+          "disposition": "opened_original_asset_acquisition"
+        },
+        {
+          "url": "https://www.swinburne.edu.au/news/2026/01/aea-ignite-grants/",
+          "disposition": "opened_original_university_beneficiary_not_Kite"
+        },
+        {
+          "url": "https://www.thecompanycheck.com/company/b/kite-aero/k8n1gpf4plyjnupdm",
+          "disposition": "search_secondary_Swoop_funding_misattribution_excluded"
+        }
+      ]
+    },
+    {
+      "id": "4bbe427c-77be-4012-8eb7-19becf31cfea",
+      "slug": "kite-aerospace",
+      "name": "Kite Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Two issuer originals identify Kite Aero brand as Australian Kite Aerospace PtyLtd, CEO Philip van der Burg. Zimbabwe references are operating partner Drone Solutions International. Both cohort identities retained without forced merge or geography changes.",
+      "hold_note": "Bounded public-source financing remains unknown, not zero. Swoop Aero asset purchase does not transfer Swoop historical financing to this issuer. Swinburne AEA project received AUD495877; Kite is industry partner, no own allocation established. Regulatory CAAZ approval, 100-unit pipeline, commercial partnerships and acquisition consideration are not financing. Indian Kite Aero Private Limited is another issuer.",
+      "searches_checked": [
+        "\"Kite\" \"Geelong\" investment funding aerospace",
+        "\"Kite Aero\" funding investors Zimbabwe",
+        "\"Kite Aerospace\" \"Swinburne\" \"Ignite\" grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kite.aero/media/kite-aero-partners-with-sykes-advanced-manufacturing/",
+          "disposition": "opened_original_exact_legal_identity"
+        },
+        {
+          "url": "https://kite.aero/media/drone-solutions-secures-caaz-approval-for-kite-drone-deliveries-in-zimbabwe/",
+          "disposition": "opened_original_partner_identity"
+        },
+        {
+          "url": "https://kite.aero/media/",
+          "disposition": "opened_original_current_news"
+        },
+        {
+          "url": "https://kite.aero/media/kite-aero-acquires-swoop-aero-assets/",
+          "disposition": "opened_original_asset_acquisition"
+        },
+        {
+          "url": "https://www.swinburne.edu.au/news/2026/01/aea-ignite-grants/",
+          "disposition": "opened_original_university_beneficiary_not_Kite"
+        },
+        {
+          "url": "https://www.thecompanycheck.com/company/b/kite-aero/k8n1gpf4plyjnupdm",
+          "disposition": "search_secondary_Swoop_funding_misattribution_excluded"
+        }
+      ]
+    },
+    {
+      "id": "24f649ce-4e7e-474e-bbcc-819779c648d7",
+      "slug": "klau-geomatics",
+      "name": "Klau Geomatics",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact Australian Klau Geomatics Pty Ltd ABN 53 132 851 775 is confirmed by the official legal terms. Official product history and news archive reviewed alongside broad funding searches. No source-supported financing event or investor relationship identified in this bounded review.",
+      "hold_note": "This is a bounded public-source outcome, not evidence of zero funding or an exhaustive private funding history. Product partnerships are not treated as investor roles.",
+      "searches_checked": [
+        "\"Klau Geomatics\" investment funding grant",
+        "\"Klau Geomatics\" grant financing investors",
+        "\"Klau Geomatics\" investors funding 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://geomatics.com.au/terms-and-conditions/",
+          "disposition": "Official legal entity and ABN; identity confirmed."
+        },
+        {
+          "url": "https://www.klauppk.com/about",
+          "disposition": "Official brand and operating history; no financing announcement identified."
+        },
+        {
+          "url": "https://geomatics.com.au/news/",
+          "disposition": "Original news archive reviewed; product announcements do not establish investment."
+        }
+      ]
+    },
+    {
+      "id": "af7539ee-b844-43f9-808a-d8f97c91c4c1",
+      "slug": "klaveness",
+      "name": "Klaveness",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Official Torvald Klaveness group financials and 2025 annual report separate holding-company related-party borrowing from vessel facilities in KCC entities. Holding level has a USD 42.7m ultimate-owner loan balance.",
+      "hold_note": "Do not turn USD 42.7m outstanding owner loan into a newly raised round without origination evidence. USD 180m 2025 facility, subsidiary USD 200m 2026 refinancing, KCC bonds and vessel SPV finance are not direct Torvald parent financings. ScoutDI equity ownership is an outbound investment, not a Klaveness raise.",
+      "searches_checked": [
+        "Klaveness financing funding loan 2025 2026",
+        "Torvald Klaveness annual report financing ultimate owner loan",
+        "Klaveness Combination Carriers 2026 USD 200 million refinancing subsidiary"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.klaveness.com/about/financials",
+          "disposition": "Official consolidated financial history; balance figures not new raises."
+        },
+        {
+          "url": "https://4605420.fs1.hubspotusercontent-na1.net/hubfs/4605420/Klaveness%20reports%20and%20presentations/Torvald%20Klaveness%20Annual%20Report%202025.pdf",
+          "disposition": "Original annual report pp 7 and 47-48 separates legal issuers, related-party balances and cash flows."
+        }
+      ]
+    },
+    {
+      "id": "5a3681f3-795a-4ad5-833a-0ae560598a52",
+      "slug": "klein-marine-systems",
+      "name": "Klein Marine Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 2,
+      "evidence_note": "Original SEC filings establish an approximately USD 850,000 own-company PPP loan granted 5 May 2020 by Bank of America N.A., subsequently forgiven in February 2021. Completed 2023 equity sale establishes historical MIND parent and General Oceans buyer.",
+      "hold_note": "USD 11.5m acquisition consideration is secondary sale proceeds to MIND and excluded from funding events. MIND public offerings and General Oceans 2026 IPO are different issuers. Exact USD 850,315 PPP amount appears only in secondary mirrors and is held. Procurement orders are not grants.",
+      "searches_checked": [
+        "\"Klein Marine Systems\" funding investment acquisition",
+        "\"Klein Marine Systems\" \"PPP\" \"loan\"",
+        "\"Klein Marine Systems\" \"promissory\" \"2020\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/926423/000143774922010274/mind20220131_10k.htm",
+          "disposition": "Primary issuer SEC report separately allocates approximately USD 850,000 loan to Klein; debt imported."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/926423/000092642320000028/mind-20200731.htm",
+          "disposition": "Earlier primary SEC filing establishes 5 May 2020 loan grant date, lender and note terms; aggregate amount not assigned."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/926423/000143774923024694/mind20230825_8k.htm",
+          "disposition": "Primary SEC completed disposal; generic parent relationships only."
+        },
+        {
+          "url": "https://www.generaloceans.com/our-story",
+          "disposition": "Current owner confirms Klein acquisition in 2023 and own 2026 IPO; IPO not assigned to Klein."
+        },
+        {
+          "url": "https://ppprecipients.com/loan/556080",
+          "disposition": "Secondary exact PPP figure is discovery only; retained as a hold pending SBA original."
+        }
+      ]
+    },
+    {
+      "id": "8721e082-5035-4f91-a9c0-0a78872329a1",
+      "slug": "klm-defense",
+      "name": "KLM Defense",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "The exact supplied KLM Defense domain describes Sentinel and counter-drone systems matching the cohort source. No original financing disclosure located in broad company and investor searches.",
+      "hold_note": "Legal issuer and jurisdiction remain unresolved: the site quotes prices in INR and uses a klmpower.com sales contact, while the cohort says United States. Indian company directory nominal capital is not a verified funding round and cannot be assigned without legal matching. Contact and about routes were inaccessible.",
+      "searches_checked": [
+        "\"KLM Defense\" funding investors",
+        "\"KLM Defense\" \"investment\" funding",
+        "\"KLM Defense\" \"funding\" OR \"investors\" OR \"grant\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.klmdefense.com/",
+          "disposition": "Official product evidence; INR pricing and contact raise unresolved jurisdiction match."
+        },
+        {
+          "url": "https://www.klmdefense.com/contact/",
+          "disposition": "Inaccessible route; not source evidence."
+        },
+        {
+          "url": "https://www.klmdefense.com/why-klm",
+          "disposition": "Inaccessible route; legal issuer unresolved."
+        }
+      ]
+    },
+    {
+      "id": "22b710d9-4a20-47e7-b8f1-822df6f5c0b2",
+      "slug": "kms-solutions",
+      "name": "KMS Solutions",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Matched the Navy engineering services KMS Solutions LLC, CAGE 43ZC5 and UEI ZQ7JL84XKHS3, to its official kmssol.com site. The original SEC-filed 13 August 2026 purchase option identifies the exact Virginia LLC seller and Space-Eyes Inc buyer.",
+      "hold_note": "An exclusive conditional option to acquire KMS is not completed ownership or primary financing. No Space-Eyes investor or SPAC raise is assigned to KMS. Navy service orders and possible SBIR contract are not classified as investment or grants without the underlying award instrument.",
+      "searches_checked": [
+        "\"KMS Solutions\" \"Space\" funding acquisition",
+        "\"KMS Solutions\" \"funding\" \"investment\" Navy",
+        "\"KMS Solutions\" LLC official Navy"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kmssol.com/",
+          "disposition": "Official exact legal company service profile and federal identifiers; identity confirmed."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2080206/000121390026106819/ea030085202ex10-42.htm",
+          "disposition": "Original purchase option dated 13 August 2026; conditional transaction excluded from financing and current ownership."
+        },
+        {
+          "url": "https://kmssol.com/news/",
+          "disposition": "Official news index search reviewed; contracts distinguished from financing."
+        }
+      ]
+    },
+    {
+      "id": "1f65c328-728c-4707-8e5b-5844bde52e00",
+      "slug": "knds-robotics",
+      "name": "KNDS Robotics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "The supplied subsidiary URL identifies exact KNDS France Robotics, wholly owned by KNDS France and established October 2012. CORDIS exact name and Versailles address establish two beneficiary grants: TERRIFFIC EUR 197,280 signed 23 April 2018; GUARDIANS EUR 293,130.79 signed 16 July 2025.",
+      "hold_note": "This company is not Shark Robotics or Milrem. Four EDF project shares reported by EUACC (LATACC, LATACC2, FAMOUS2, iMUGS2) remain candidates because original portal did not expose beneficiary allocation. KNDS France audited 2024 accounts show a EUR 3m subsidiary loan balance and EUR 2m increase, but lack origination/tranche reconciliation; neither is imported as a new round. No consortium totals assigned.",
+      "searches_checked": [
+        "\"KNDS France Robotics\" funding grant investment",
+        "\"KNDS France Robotics\" CORDIS GUARDIANS TERRIFFIC",
+        "\"KNDS France Robotics\" comptes 2024 pret 3 millions",
+        "KNDS France Robotics LATACC2 iMUGS2 European Defence Fund"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://knds.com/en/subsidiaries/knds-france-robotics",
+          "disposition": "Official exact subsidiary and parent identity; generic ownership relationship supported."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/786729",
+          "disposition": "Original grant agreement and exact beneficiary allocation; imported only own EUR 197,280."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101225744",
+          "disposition": "Original grant agreement and exact beneficiary allocation; imported only own EUR 293,130.79."
+        },
+        {
+          "url": "https://www.pappers.fr/entreprise/knds-france-379706344/comptes/KNDS%20FRANCE%20-%20Comptes%20sociaux%202024%2011-07-2025.pdf",
+          "disposition": "Original audited parent financial statement mirrored by registry; subsidiary loan balance and annual change held, not a new financing event."
+        },
+        {
+          "url": "https://www.euacc.ai/organisations/knds-france-robotics-940660023",
+          "disposition": "Secondary project discovery PIC 940660023; EDF allocations held pending original evidence."
+        },
+        {
+          "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/44181033/101304780/EDF",
+          "disposition": "Original LATACC2 portal rendered no readable allocation; candidate held."
+        },
+        {
+          "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/44181033/101223988/EDF",
+          "disposition": "Original iMUGS2 portal rendered no readable allocation; candidate held."
+        }
+      ]
+    },
+    {
+      "slug": "knetco",
+      "name": "KNETCO",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Matched the Kuwaiti critical infrastructure contractor through its own corporate website. The Skyports infrastructure partnership is not financing evidence. No dated company financing was verified in the bounded searches.",
+      "hold_note": "Unknown private financing is not zero funding. Generic claims about project funding, chairmanship and secondary database ownership are insufficient for a financing event or ownership import. Skyports financing is not attributed to KNETCO.",
+      "searches_checked": [
+        "KNETCO Skyports Kuwait company investment funding",
+        "site:knetco.com.kw funding investors loan ownership Fouad",
+        "site:skyports.net KNETCO partnership2026",
+        "site:skyports.net KNETCO2026 infrastructure partnership"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.knetco.com.kw/",
+          "disposition": "Opened original issuer site; identity and project capabilities, no dated financing"
+        },
+        {
+          "url": "https://www.aaminternational.com/2026/08/partnership-to-develop-kuwaits-advanced-air-mobility-infrastructure/",
+          "disposition": "Search-discovered partnership report; not funding evidence"
+        },
+        {
+          "url": "https://www.urbanairmobilitynews.com/uam-infrastructure/knetco-and-skyports-to-build-advanced-air-mobility-infrastructure-in-kuwait/",
+          "disposition": "Search-discovered partnership report; not funding evidence"
+        }
+      ],
+      "id": "c4625148-6e2e-4051-a9c8-7fd6d585e257"
+    },
+    {
+      "slug": "knitmesh-technologies",
+      "name": "KnitMesh Technologies",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Issuer imprint and UK registry match company 10748144. Official significant-control record supports a separately identified UK Greenfield Technologies parent association.",
+      "hold_note": "Preserve catalogue country pending separate identity correction. Exact legal trading name, charges history, possible GKD association and private funding need further original-source review. India factory capex or separate Indian share capital are not UK issuer rounds.",
+      "searches_checked": [
+        "KnitMesh Technologies funding investment ownership",
+        "site:knitmeshtechnologies.com GKD acquisition investment2026",
+        "Knitmesh funding grant investors loan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://knitmeshtechnologies.com/about/",
+          "disposition": "Opened original issuer corporate history"
+        },
+        {
+          "url": "https://knitmeshtechnologies.com/de/company-information/",
+          "disposition": "Opened original imprint identifying UK company10748144"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/10748144/persons-with-significant-control",
+          "disposition": "Opened official register; active corporate PSC with more than75 percent shares and votes"
+        }
+      ],
+      "id": "340df3c2-1e0e-4598-a0f5-cf9adac31436"
+    },
+    {
+      "slug": "kodiak-ai",
+      "name": "Kodiak AI",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "evidence_note": "Matched Kodiak AI to Legacy Kodiak Robotics operating business through original SEC reverse recapitalization notes. Five events supported across 2018,2021,2025 and 2026; current SEC quarter verifies actual PIPE closes and debt refinancing.",
+      "hold_note": "Do not import USD 275 m SPAC headline, mixed trust and PIPE aggregates, preferred fair value or contingent warrant cash. Earlier 2022 facility capacity, equipment draws, SAFE balances and second-lien history require distinct draw/close reconciliation. No investor role or cheque inferred for unnamed holders.",
+      "searches_checked": [
+        "Kodiak AI financing September2025 closing PIPE gross proceeds official Kodiak Robotics125million",
+        "Kodiak Robotics125million SeriesB2021 official",
+        "Kodiak Robotics40million SeriesA2018 official",
+        "Kodiak Robotics raises40million2018 Battery Ventures Lightspeed CRV source",
+        "Kodiak Robotics125million SeriesB November102021 investors press release"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1853138/000162828026071686/kdk-20260930.htm",
+          "disposition": "Opened original current quarterly filing; Notes3,8,12 support events and issuer continuity"
+        },
+        {
+          "url": "https://techcrunch.com/2018/08/07/self-driving-truck-startup-kodiak-robotics-raises-40-million/",
+          "disposition": "Opened contemporary original founder interview;2018 Series A participants"
+        },
+        {
+          "url": "https://www.battery.com/company/kodiak-robotics/",
+          "disposition": "Opened original investor portfolio page as identity corroboration"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/kodiak-robotics-raises-125-million-in-oversubscribed-series-b-round-301420677.html",
+          "disposition": "Opened issuer-distributed Series B original announcement"
+        },
+        {
+          "url": "https://kodiak.ai/news/kodiak-eyes-the-future-with-125m-series-b",
+          "disposition": "Opened original CEO Series B announcement"
+        },
+        {
+          "url": "https://investors.kodiak.ai/news-releases/news-release-details/kodiak-completes-business-combination-ares-acquisition",
+          "disposition": "Opened issuer closing announcement; aggregate headline held pending cash reconciliation"
+        }
+      ],
+      "id": "04866b3c-abb9-4b3e-9f25-142f25a46152"
+    },
+    {
+      "slug": "kompaniya-sovremennye-tekhnologii",
+      "name": "Kompaniya Sovremennye Tekhnologii",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Reporting associates the Russian company name with import conformity registrations for Chinese jet engines. This does not establish a funding event or a unique legal issuer.",
+      "hold_note": "Exact Russian tax and registration identity remain unresolved. Do not merge common-name Russian companies, Sberbank-linked namesakes, procurement, engine imports or drone programme budgets into financing.",
+      "searches_checked": [
+        "Kompaniya Sovremennye Tekhnologii Geran funding Russia",
+        "Компания Современные Технологии Джетсон финансирование инвестиции",
+        "Kompaniya Sovremennye Tekhnologii company owner registration"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://uasvision.com/2026/10/12/chinese-jet-engines-power-russias-geran-drones",
+          "disposition": "Original source candidate inspected for identity; not financing evidence"
+        },
+        {
+          "url": "https://united24media.com/investigations/chinese-jet-engines-gave-russias-geran-drones-a-deadlier-upgrade-now-iran-is-eyeing-them-23153",
+          "disposition": "Investigation source candidate; importer identity and financing remain unresolved"
+        }
+      ],
+      "id": "960d6bcf-add2-4951-877c-3b7b0ab82e51"
+    },
+    {
+      "slug": "kongsberg-defence-australia",
+      "name": "Kongsberg Defence Australia",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Australian Defence original release explicitly identifies the Australian subsidiary and its Kongsberg Defence and Aerospace parent. No issuer-specific financing round was verified.",
+      "hold_note": "Australian missile factory procurement and programme spending are not equity, loans or grants to this issuer without explicit aid or financing terms. Parent bonds and Norwegian capacity grants remain on their supported issuers.",
+      "searches_checked": [
+        "site:kongsberg.com Kongsberg Defence Australia investment funding grant",
+        "Kongsberg Defence Australia parent company financing grant",
+        "site:kongsberg.com Kongsberg Defence Australia annual report financing parent loan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.defence.gov.au/news-events/releases/2025-03-28/contract-signed-establish-australias-first-missile-factory",
+          "disposition": "Opened original government contract release; parent confirmed, procurement excluded"
+        },
+        {
+          "url": "https://abr.business.gov.au/ABN/View?id=95146599359",
+          "disposition": "Official identity registry search candidate; no financing event"
+        }
+      ],
+      "id": "25a2c9fa-d12e-475a-8bf5-1742763fef2f"
+    },
+    {
+      "slug": "kongsberg-discovery",
+      "name": "Kongsberg Discovery",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "Official aid register supports one exact NOK 5.45 m grant to Kongsberg Discovery AS organisation 930770426, awarded July 29,2026. Original Kongsberg group list corroborates group affiliation.",
+      "hold_note": "Further registry awards and research programme aggregate amounts need award-level reconciliation; do not sum programme budgets. Parent debt, sibling grants, acquisitions and capex do not establish Discovery financing.",
+      "searches_checked": [
+        "site:kongsberg.com Kongsberg Discovery funding grant loan2026",
+        "Kongsberg Discovery financing Innovation Norway loan grant",
+        "Kongsberg Discovery54500002026 Norges Forskningsråd støtte"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://stotte.brreg.no/nb/oppslag/stoettetildeling/1000249955",
+          "disposition": "Opened original official award register; exact recipient, amount and award date"
+        },
+        {
+          "url": "https://www.kongsberg.com/about-us/management-and-organisation/group-companies/",
+          "disposition": "Opened original group company list; corporate association only"
+        },
+        {
+          "url": "https://www.kongsberg.com/discovery/",
+          "disposition": "Catalogue issuer URL redirects to corporate site"
+        }
+      ],
+      "id": "7c5f364c-29fd-406f-a1fe-2f1c8d7aac32"
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "notes": [
+      "Kinetica cohort identity is the Israeli venture firm, not the funded US database company. LP fundraising targets and outgoing investments are not company financing. Kite Aero and Kite Aerospace trace to the same Australian issuer; shared searches were counted once and no Swoop or university proceeds were transferred.",
+      "Keysight actual note issuances distinguished from noncash registration exchanges, maturity dates, carrying values and net proceeds. Signed revolving and bridge commitments are facility limits, not cash borrowed; bridge termination disclosed.",
+      "Kinnami issuer explicitly announces its own EUR300,000 Phase2 funding. DIANA calls funding contractual; instrument remains undisclosed and no payment or executed-contract claim is made. Generic programme caps are not used as company proceeds.",
+      "KNDS France Robotics exact Versailles beneficiary allocations imported; parent financing, Milrem facts and EDF consortium totals not assigned. Klein PPP loan allocation established separately at approximately USD850,000; parent and combined loans excluded, forgiveness not an extra cash event.",
+      "Kodiak 2018/2021 original rounds, 2025 preferred PIPE, fully drawn December2025 debt and May2026 PIPE distinguished from merger headlines, SPAC trust cash, SAFE conversions, balances and future warrants. December loan refinances USD15m plus fees; full USD30m principal is not all incremental new cash.",
+      "Kodiak Q3 Note12 explicitly names Ares Management Corporation as a Company affiliate and reports USD5m; this resolves ambiguity in the earlier release phrase affiliate of Ares. The supported contribution is recorded without assigning unnamed participants or placement agents as investors.",
+      "Research Council award names exact Kongsberg Discovery AS org930770426, NOK5,450,000 and29July2026 award date. Registry receipt21August is not award date. Eight sibling Defence & Aerospace grants and five Milrem events inspected for issuer separation, not copied.",
+      "The HEICO Companies is distinct from public HEICO Corporation. UK Greenfield Technologies company10745053 is distinct from agricultural-robotics namesakes. Seraphim accelerator vehicle is distinct from the investment trust/manager. Historical MIND ownership and current General Oceans ownership distinguished."
+    ],
+    "root_originals_checked": [
+      "https://www.sec.gov/Archives/edgar/data/1853138/000162828026071686/kdk-20260930.htm",
+      "https://stotte.brreg.no/nb/oppslag/stoettetildeling/1000249955",
+      "https://www.kinnami.com/post/kinnami-chosen-to-join-next-phase-of-nato-diana-programme",
+      "https://www.sec.gov/Archives/edgar/data/926423/000143774922010274/mind20220131_10k.htm",
+      "https://cordis.europa.eu/project/id/101225744"
+    ],
+    "root_search_queries": [
+      "site investors.kodiak.ai2026NovemberfinancingcommonstockofferingKodiakAI",
+      "site keysight.com20252026seniornotesofferingfinancingclosing",
+      "site kinnami.comSeptember2025DIANA300000funding"
+    ],
+    "query_count_note": "Group B logged three shared Kite alias queries under both cohort records; actual execution count17 replaces20 ledger entries. Total actual queries76group+3writer=79. Company identities are cohort records, not a claim of24 unique legal issuers."
+  },
+  "validation": {
+    "importer_and_three_schema_fixtures_match_current_main": true,
+    "postgresql": "PGlite rollback, atomic event/link/relationship counts, idempotency, conflict rejection and investor-source foreign-key enforcement.",
+    "production_rollback_baseline_restored": true,
+    "production_atomic_commit": true,
+    "post_import_exact_fact_role_source_and_contribution_audit": true,
+    "post_import_idempotency_rehearsal": true,
+    "company_ids": "24 unique planned UUIDs matched against current DB slug/name records; alternate company_id input key normalized to id before queue update."
+  },
+  "publication_scope": {
+    "targets_in_european_landscape": [],
+    "note": "Keep geography, classification and publication gates unchanged; full-catalogue funding is not asserted to appear on the European map."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles",
+    "Legacy relationships",
+    "Geography/classification/publication gates",
+    "Repository schedules"
+  ],
+  "programme_complete": false
+}

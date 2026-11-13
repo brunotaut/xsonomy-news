@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 523,
-  "fully_reviewed_companies": 1026,
-  "next_action": "Continue next24 queued wider-cohort identities KestrelX through Kongsberg Discovery under a new short writer lease and up to four disjoint read-only groups. No pending import/publication. Preserve source-backed issuer/alias, facility/drawdown, historical-funding and inaccessible-original holds; no internal batch approval required.",
+  "partial_companies": 539,
+  "fully_reviewed_companies": 1034,
+  "next_action": "Verify fifty-third catalogue publication then continue next24 queued identities Kongsberg NanoAvionics through L3Harris WESCAM.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T05:03:52.700Z",
-  "source_reconciliation_companies": 843,
-  "approved_funding_events": 3142,
-  "round_participations": 4128,
-  "investor_profiles": 2503,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261113-fifty-second.json",
+  "updated_at": "2026-11-13T05:07:17.908Z",
+  "source_reconciliation_companies": 849,
+  "approved_funding_events": 3160,
+  "round_participations": 4147,
+  "investor_profiles": 2514,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261113-fifty-third.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T04:53:14.755Z",
     "expires_at": "2026-11-13T06:53:14.755Z",
-    "status": "importing",
+    "status": "publishing",
     "planned_company_ids": [
       "c618a98d-5284-4a3f-a966-4b15a7fb970a",
       "3d787385-2125-41f5-94f7-7645abb223cd",
@@ -3834,54 +3834,50 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 1026,
-    "source_review_partial": 523,
-    "queued": 1015
+    "reviewed_public_sources": 1034,
+    "source_review_partial": 539,
+    "queued": 991
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "identities_checked": 24,
-    "newly_completed_bounded_reviews": 4,
-    "new_or_retained_partial": 20,
-    "new_approved_events": 28,
-    "new_round_participations": 20,
-    "new_source_rows": 35,
-    "new_generic_portfolio_relationships": 9,
-    "new_companies_with_events": 13,
-    "new_investor_profiles": 14,
-    "search_queries_logged": 88,
+    "newly_completed_bounded_reviews": 8,
+    "new_or_retained_partial": 16,
+    "new_approved_events": 18,
+    "new_round_participations": 19,
+    "new_source_rows": 24,
+    "new_generic_portfolio_relationships": 10,
+    "new_companies_with_events": 6,
+    "new_investor_profiles": 11,
+    "search_queries_executed": 79,
+    "group_search_queries_executed": 76,
     "root_additional_search_queries": 3,
-    "source_ledger_entries": 116,
+    "per_company_search_ledger_entries": 79,
+    "shared_alias_query_reuse": 3,
+    "source_ledger_entries": 101,
     "database_identities_inspected": 24,
     "existing_target_events_inspected": 0,
-    "existing_alias_events_inspected": 2,
+    "existing_related_issuer_events_inspected": 13,
     "local_postgresql_tests_passed": true,
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
     "curated_profile_hash_preserved": true,
-    "event_matches": 28,
+    "event_matches": 18,
     "mismatched_facts": 0,
-    "participant_matches": 20,
-    "source_matches": 35,
-    "relationship_matches": 9,
+    "participant_matches": 19,
+    "source_matches": 24,
+    "relationship_matches": 10,
     "missing_link_sources": 0,
     "contribution_fields_audited": true,
-    "db_total_events": 3155,
-    "db_approved_events": 3142,
-    "db_approved_round_participations": 4128,
-    "db_investor_profiles": 2503,
-    "db_source_reconciliation_companies": 843,
+    "db_total_events": 3173,
+    "db_approved_events": 3160,
+    "db_approved_round_participations": 4147,
+    "db_investor_profiles": 2514,
+    "db_source_reconciliation_companies": 849,
     "queue_dispositions_applied": 24,
     "new_profile_exact_name_duplicates": 0,
-    "current_manifest_publication_verified": true,
-    "durable_queue_readback_verified": true,
-    "durable_queue_identity_count": 2564,
-    "active_minutes": 15.14,
-    "checked_identities_per_hour": 95.1,
-    "completed_reviews_per_hour": 15.9,
-    "concurrency_speedup_claimed": false,
-    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, source/canonical QA, alias inspection, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution audit and verified live publication. Concurrent durations not summed."
+    "current_manifest_publication_verified": false
   },
   "latest_followup_metrics": {
     "parallel_read_only_groups": 4,
@@ -3919,7 +3915,7 @@
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 1549,
+  "source_reviewed_or_partial_companies": 1573,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -4325,69 +4321,11 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": {
-    "status": "validated_rollback_passed_ready_for_atomic_import",
-    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-third.json",
-    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-third.json",
-    "counts": {
-      "events": 18,
-      "links": 19,
-      "sources": 24,
-      "relationships": 10,
-      "companies_with_events": 6,
-      "reviewed": 8,
-      "partial": 16,
-      "per_company_search_ledger_entries": 79,
-      "group_search_queries_executed": 76,
-      "shared_alias_query_reuse": 3,
-      "source_ledger_entries": 101
-    },
-    "baseline": {
-      "events": 3155,
-      "approved": 3142,
-      "links": 4128,
-      "sources": 4400,
-      "profiles": 2503,
-      "covered": 843,
-      "relationships": 367,
-      "preserved_profiles_hash": "440e04bf46fa582f0dc3d717203f2166"
-    },
-    "postgresql_tests_passed": true,
-    "production_rollback_baseline_verified": true
-  },
+  "pending_import": null,
   "pending_publication": {
-    "status": "verified",
-    "checked_at": "2026-11-13T04:04:54.296Z",
-    "verified_at": "2026-11-13T04:04:54.296Z",
-    "catalogue_commit": "e24e76fc1d70d8acc2501e8a9b76ec4e3e1b8041",
-    "source_commit": "a1540acf65fac181c505baa703d1196c6aa6da0e",
-    "workflow_run": {
-      "id": 43362796705,
-      "head": "e24e76fc1d70d8acc2501e8a9b76ec4e3e1b8041",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43362796705"
-    },
-    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-second.json",
-    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-second.json",
-    "generated_at": "2026-11-13T04:02:32.153Z",
-    "investor_generated_at": "2026-11-13T04:02:34.892Z",
-    "companies": 567,
-    "events": 1590,
-    "links": 1390,
-    "profiles": 2494,
-    "portfolio_relationships": 364,
-    "expected_profiles": 26,
-    "missing_profiles": [],
-    "missing_participant_sources": [],
-    "missing_relationships": [],
-    "targets_in_european_landscape": [],
-    "current_manifest_event_rows": 28,
-    "current_manifest_live_matches": 0,
-    "current_manifest_participation_source_matches": 20,
-    "current_manifest_generic_relationship_matches": 9,
-    "catalogue_trigger_required": false,
-    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: DB2503 versus live2494. All24 target identities remain outside the European landscape. All26 referenced profiles,20 participant source URLs and9 new generic links verified. Fourteen new profiles published; existing curated-profile hash preserved. Wider-cohort funding is confirmed in DB without claiming European map events. Gates unchanged."
+    "status": "awaiting_catalogue_trigger",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-third.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-third.json"
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -5300,124 +5238,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "c618a98d-5284-4a3f-a966-4b15a7fb970a",
-      "slug": "kestrelx",
-      "name": "KestrelX"
+      "id": "1b6eeee9-e029-42cf-bf9d-62f87f1dd5d8",
+      "slug": "kongsberg-nanoavionics",
+      "name": "Kongsberg NanoAvionics"
     },
     {
-      "id": "3d787385-2125-41f5-94f7-7645abb223cd",
-      "slug": "keyoptions",
-      "name": "KeyOptions"
+      "id": "8d158167-b170-4dbc-b6a2-69d46d98e842",
+      "slug": "kord",
+      "name": "Kord"
     },
     {
-      "id": "05c39901-a045-41a4-8572-882389d596c5",
-      "slug": "keys4sea",
-      "name": "Keys4sea"
+      "id": "58c291d8-0f26-4aae-b246-16ebf7be6123",
+      "slug": "korea-aerospace-industries",
+      "name": "Korea Aerospace Industries"
     },
     {
-      "id": "4a84126c-e615-4eb4-8498-c9c6bbd9a664",
-      "slug": "keysight-technologies",
-      "name": "Keysight Technologies"
+      "id": "33da68c3-2c01-424e-83ba-d80f01a3abf0",
+      "slug": "korea-robot-manufacturing",
+      "name": "Korea Robot Manufacturing"
     },
     {
-      "id": "faefc8e4-8d16-4f1e-9c3c-2865c21537f4",
-      "slug": "kha",
-      "name": "KHA"
+      "id": "f93fc321-a61a-470b-9048-c0aa99e7cd0b",
+      "slug": "kova-labs",
+      "name": "Kova Labs"
     },
     {
-      "id": "66648620-459b-4574-ad46-3c90ac0cdafb",
-      "slug": "kimley-horn",
-      "name": "Kimley-Horn"
+      "id": "c1940768-cf13-4e80-9e4e-4d7deb1f8d27",
+      "slug": "kovo-armor",
+      "name": "KOVO Armor"
     },
     {
-      "id": "c957e9c4-97e6-4532-96d6-7c0437d3a928",
-      "slug": "kinedyne",
-      "name": "Kinedyne"
+      "id": "04c9ef6e-ea90-4143-a469-59256bd548b9",
+      "slug": "kp-labs",
+      "name": "KP Labs"
     },
     {
-      "id": "723d8aa2-6b2d-4adb-a988-bed65550cb08",
-      "slug": "kinetic-frames",
-      "name": "Kinetic Frames"
+      "id": "ed4dc287-b58a-402e-987f-f1fee8af40f6",
+      "slug": "kpler",
+      "name": "Kpler"
     },
     {
-      "id": "0dbce0c3-af86-455f-a81a-8f0ead3781e2",
-      "slug": "kinetica",
-      "name": "Kinetica"
+      "id": "2482bbf3-9d7f-4a19-bda2-c1684a6383d6",
+      "slug": "kraken",
+      "name": "Kraken"
     },
     {
-      "id": "6e8c296a-b40c-4757-b7cf-f676e352448d",
-      "slug": "kinnami",
-      "name": "Kinnami"
+      "id": "02c4ca2c-c3aa-4cda-b9f6-0774f3c171a2",
+      "slug": "kraken-kinetics",
+      "name": "Kraken Kinetics"
     },
     {
-      "id": "7db3dad0-66dd-4373-b55e-091b3f88bff6",
-      "slug": "kite-aero",
-      "name": "Kite Aero"
+      "id": "2eb477b4-1190-4561-be31-de88cde79bea",
+      "slug": "kraken-robotics",
+      "name": "Kraken Robotics"
     },
     {
-      "id": "4bbe427c-77be-4012-8eb7-19becf31cfea",
-      "slug": "kite-aerospace",
-      "name": "Kite Aerospace"
+      "id": "12bd6887-0bc4-4322-b8ee-c97743abfb42",
+      "slug": "kraken-technology-group",
+      "name": "Kraken Technology Group"
     },
     {
-      "id": "24f649ce-4e7e-474e-bbcc-819779c648d7",
-      "slug": "klau-geomatics",
-      "name": "Klau Geomatics"
+      "id": "7fe083bd-6314-4bff-8a77-db4c07e601f3",
+      "slug": "krakenrf",
+      "name": "KrakenRF"
     },
     {
-      "id": "af7539ee-b844-43f9-808a-d8f97c91c4c1",
-      "slug": "klaveness",
-      "name": "Klaveness"
+      "id": "90901ba3-3615-4b17-8366-be71d0a8725b",
+      "slug": "kratos-defense-and-security-solutions",
+      "name": "Kratos Defense & Security Solutions"
     },
     {
-      "id": "5a3681f3-795a-4ad5-833a-0ae560598a52",
-      "slug": "klein-marine-systems",
-      "name": "Klein Marine Systems"
+      "id": "305da5a8-fbaa-491b-befd-c3d684b18f75",
+      "slug": "kraus-hamdani-aerospace",
+      "name": "Kraus Hamdani Aerospace"
     },
     {
-      "id": "8721e082-5035-4f91-a9c0-0a78872329a1",
-      "slug": "klm-defense",
-      "name": "KLM Defense"
+      "id": "423fa7c7-a423-4e1d-be9c-f84cdfc7b5ce",
+      "slug": "kronshtadt-group",
+      "name": "Kronshtadt Group"
     },
     {
-      "id": "22b710d9-4a20-47e7-b8f1-822df6f5c0b2",
-      "slug": "kms-solutions",
-      "name": "KMS Solutions"
+      "id": "dd52ed68-4436-462a-8a9d-22ed93f99394",
+      "slug": "ksat-kongsberg-satellite-services",
+      "name": "KSAT (Kongsberg Satellite Services)"
     },
     {
-      "id": "1f65c328-728c-4707-8e5b-5844bde52e00",
-      "slug": "knds-robotics",
-      "name": "KNDS Robotics"
+      "id": "05614144-90ff-4852-9c7d-a2bc8dfb3609",
+      "slug": "kubota",
+      "name": "Kubota"
     },
     {
-      "id": "c4625148-6e2e-4051-a9c8-7fd6d585e257",
-      "slug": "knetco",
-      "name": "KNETCO"
+      "id": "911d7ef9-9890-4cda-a111-570c94cbf1de",
+      "slug": "kuznetsov-research-institute-of-applied-mechanics",
+      "name": "Kuznetsov Research Institute of Applied Mechanics"
     },
     {
-      "id": "340df3c2-1e0e-4598-a0f5-cf9adac31436",
-      "slug": "knitmesh-technologies",
-      "name": "KnitMesh Technologies"
+      "id": "57b0f05c-1285-4d75-8322-15e8bc180aa7",
+      "slug": "kvand",
+      "name": "KVAND"
     },
     {
-      "id": "04866b3c-abb9-4b3e-9f25-142f25a46152",
-      "slug": "kodiak-ai",
-      "name": "Kodiak AI"
+      "id": "7fdc6d2e-096b-4678-8d82-be6d60e11094",
+      "slug": "kwoon-chung-smart-mobility",
+      "name": "Kwoon Chung Smart Mobility"
     },
     {
-      "id": "960d6bcf-add2-4951-877c-3b7b0ab82e51",
-      "slug": "kompaniya-sovremennye-tekhnologii",
-      "name": "Kompaniya Sovremennye Tekhnologii"
+      "id": "39a5cdcd-acea-40dc-8abf-f55da93423e4",
+      "slug": "l-and-s-advanced-equipment",
+      "name": "L&S Advanced Equipment"
     },
     {
-      "id": "25a2c9fa-d12e-475a-8bf5-1742763fef2f",
-      "slug": "kongsberg-defence-australia",
-      "name": "Kongsberg Defence Australia"
+      "id": "39070bd1-52e3-4439-9001-b5e0438bdaa6",
+      "slug": "l3harris",
+      "name": "L3Harris"
     },
     {
-      "id": "7c5f364c-29fd-406f-a1fe-2f1c8d7aac32",
-      "slug": "kongsberg-discovery",
-      "name": "Kongsberg Discovery"
+      "id": "10596a3a-7101-4842-930b-51d32f651f2c",
+      "slug": "l3harris-wescam",
+      "name": "L3Harris WESCAM"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -5901,7 +5839,7 @@
       "completed_reviews_per_active_hour": 51.4
     }
   },
-  "total_funding_events": 3155,
+  "total_funding_events": 3173,
   "latest_thirty_sixth_reconciliation": {
     "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-sixth.json",
     "manifest": "research-agent/imports/funding-landscape-20261112-thirty-sixth.json",
@@ -6679,6 +6617,51 @@
       "completed_reviews_per_hour": 15.9,
       "concurrency_speedup_claimed": false,
       "timing_scope": "Elapsed writer lease through four disjoint read-only groups, source/canonical QA, alias inspection, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution audit and verified live publication. Concurrent durations not summed."
+    }
+  },
+  "latest_fifty_third_reconciliation": {
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-third.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-third.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 8,
+      "new_or_retained_partial": 16,
+      "new_approved_events": 18,
+      "new_round_participations": 19,
+      "new_source_rows": 24,
+      "new_generic_portfolio_relationships": 10,
+      "new_companies_with_events": 6,
+      "new_investor_profiles": 11,
+      "search_queries_executed": 79,
+      "group_search_queries_executed": 76,
+      "root_additional_search_queries": 3,
+      "per_company_search_ledger_entries": 79,
+      "shared_alias_query_reuse": 3,
+      "source_ledger_entries": 101,
+      "database_identities_inspected": 24,
+      "existing_target_events_inspected": 0,
+      "existing_related_issuer_events_inspected": 13,
+      "local_postgresql_tests_passed": true,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "curated_profile_hash_preserved": true,
+      "event_matches": 18,
+      "mismatched_facts": 0,
+      "participant_matches": 19,
+      "source_matches": 24,
+      "relationship_matches": 10,
+      "missing_link_sources": 0,
+      "contribution_fields_audited": true,
+      "db_total_events": 3173,
+      "db_approved_events": 3160,
+      "db_approved_round_participations": 4147,
+      "db_investor_profiles": 2514,
+      "db_source_reconciliation_companies": 849,
+      "queue_dispositions_applied": 24,
+      "new_profile_exact_name_duplicates": 0,
+      "current_manifest_publication_verified": false
     }
   }
 }
