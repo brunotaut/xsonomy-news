@@ -1,0 +1,1049 @@
+{
+  "status": "imported_awaiting_publication",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T18:53:42.982Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-sixty-seventh.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 3,
+    "new_or_retained_partial": 21,
+    "new_approved_events": 22,
+    "new_round_participations": 29,
+    "new_source_rows": 33,
+    "new_generic_portfolio_relationships": 7,
+    "new_companies_with_events": 11,
+    "new_investor_profiles": 32,
+    "group_search_queries_executed": 122,
+    "root_additional_search_queries": 6,
+    "search_queries_executed": 128,
+    "per_company_search_ledger_entries": 122,
+    "source_ledger_entries": 100,
+    "company_database_identity_contexts_checked": 24,
+    "existing_canonical_events_inspected": 0,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 22,
+    "mismatched_facts": 0,
+    "participant_matches": 29,
+    "source_matches": 33,
+    "relationship_matches": 7,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 1,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "db_total_events": 3660,
+    "db_approved_events": 3647,
+    "db_round_participations": 4795,
+    "db_investor_profiles": 2896,
+    "db_source_reconciliation_companies": 1004,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 3638,
+    "approved": 3625,
+    "links": 4766,
+    "sources": 5014,
+    "profiles": 2864,
+    "covered": 993,
+    "relationships": 476,
+    "preserved_profiles_hash": "33621ea31ecb66dab0ce40d15c7de3c0"
+  },
+  "production_after": {
+    "events": 3660,
+    "approved": 3647,
+    "links": 4795,
+    "sources": 5047,
+    "profiles": 2896,
+    "covered": 1004,
+    "relationships": 483,
+    "preserved_profiles_hash": "33621ea31ecb66dab0ce40d15c7de3c0"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1127,
+    "source_review_partial": 782,
+    "queued": 655
+  },
+  "per_company": [
+    {
+      "id": "cfd3dc19-020a-4137-a655-7c4cbe9a5f6f",
+      "slug": "perimeterai",
+      "name": "PerimeterAI",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "PerimeterAI Group acoustic Puck firm in Haymarket Virginia confirmed by original issuer and original August 2026 Oregon UAS cohort list.",
+      "hold_note": "Programme participation and grant readiness do not establish grant disbursement. Aggregator grant candidate held; no amount or zero-funding claim. Namesake Perimeter Systems biosecurity/Perimeter Group/SPAC excluded.",
+      "searches_checked": [
+        "PerimeterAI funding investment 2026",
+        "\"PerimeterAI\" Oregon UAS Accelerator grant",
+        "site.perimeteraigroup.com funding investor grant",
+        "\"PerimeterAI\" \"grant\" site:oregonuas.org"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://perimeteraigroup.com/company/",
+          "disposition": "Original full body establishes acoustic Puck company identity."
+        },
+        {
+          "url": "https://oregonuas.org/blogs/news/oregon-uas-accelerator-welcomes-17-startups-to-its-fall-2026-cohort",
+          "disposition": "Original August 19 2026 lists PerimeterAI Group Haymarket VA; programme membership established, grant receipt not established."
+        },
+        {
+          "url": "https://unmannedairspace.info/uncategorized/c-uas-lasers-and-traffic-awareness-systems-included-in-latest-oregon-uas-programme",
+          "disposition": "Cohort article context supplied by checkpoint; programme context only, not own capital evidence."
+        }
+      ]
+    },
+    {
+      "id": "539ad543-f7dd-4901-bef7-cbd17f138aa6",
+      "slug": "perseus",
+      "name": "Perseus",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "Exact YC Summer 2025 Austin counter-UAS company identified, issuer-exclusive USD6m seed and named participants supported.",
+      "hold_note": "Exact seed day unresolved: aggregators conflict Sep 2025 versus Oct18. Bow biggest cheque is not explicit lead. Standard YC500k, founder prior NASA award, unnamed investors and earlier/private history held.",
+      "searches_checked": [
+        "Perseus drone company funding 2026",
+        "\"Perseus Defense\" funding 6 million official",
+        "\"Perseus Defense\" \"6 million\" investors Jason official",
+        "\"Perseus Defense\" \"seed\" site:bowcapital.com OR site:av.vc",
+        "\"Perseus Defense Closes\" \"2025\" September",
+        "\"Perseus\" \"6M Seed\" \"September 18\" 2025",
+        "\"Exclusive: YC-Backed Perseus Defense Closes $6M Seed Round\" date"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.tectonicdefense.com/exclusive-yc-backed-perseus-defense-closes-6m-seed-round/",
+          "disposition": "Full body issuer-exclusive founder release supports USD6m closed seed; seven named backers and >15 total, no explicit lead."
+        },
+        {
+          "url": "https://www.ycombinator.com/companies/perseus-defense",
+          "disposition": "Original exact company batch/founders/identity; generic backing only."
+        },
+        {
+          "url": "https://bowcapital.com/",
+          "disposition": "Original portfolio confirms Perseus Defense; no further investment amount or role."
+        },
+        {
+          "url": "https://robotics.press/company/perseus-defense/",
+          "disposition": "Aggregator date differs from other dataset; precise day held."
+        }
+      ]
+    },
+    {
+      "id": "df40dd53-e474-4007-a4e4-76d2d4afc6ba",
+      "slug": "persistent-systems",
+      "name": "Persistent Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact US MANET Persistent Systems LLC matches persistentsystems.com and Yuma context; domain is correct for US firm. Original issuer Feb4 release identifies procurement contract, not financing.",
+      "hold_note": "Caplight mixes Indian IT Persistent Systems Ltd investors with US MANET company and labels Feb4 procurement as corporate funding. USD87.5m plus prior USD34m orders excluded from capital. SBIR Wave Relay ROP USD1,602,057 original government candidate needs award date/instrument/issuer reconciliation; not imported. Earlier/private financing unresolved; no zero asserted.",
+      "searches_checked": [
+        "Persistent Systems MANET funding investment 2026",
+        "site.persistentsystems.com \"private\" \"funding\" MANET",
+        "\"Persistent Systems\" \"investment\" \"LLC\" investors",
+        "\"Persistent Systems\" MANET \"capital\" funding investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/us-army-awards-persistent-systems-contract-for-87-5-million-supporting-next-generation-command-and-control-prototype-302679509.html",
+          "disposition": "Original February4 2026 full body: USD87.5m follow-on equipment order plus previous USD34m, procurement not capital."
+        },
+        {
+          "url": "https://www.caplight.com/company/persistentsystems",
+          "disposition": "Discovery only: mismatched IPO/India investors and procurement financing classification held."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1614631",
+          "disposition": "Government indexed candidate Wave Relay ROP USD1,602,057; award-level date and grant versus contract unresolved, held."
+        },
+        {
+          "url": "https://defence-blog.com/ukrainian-interceptor-drones-join-pentagon-test-at-yuma",
+          "disposition": "Checkpoint exact article context: US MANET identity, no capital fact."
+        }
+      ]
+    },
+    {
+      "id": "59bb7030-37be-4bc4-b8d4-4a947cb10829",
+      "slug": "persona-ai",
+      "name": "Persona AI",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Houston humanoid issuer matched by founders/address. May2025 closed USD27m pre-seed and September2026 SEC USD65,363,626 sold-to-date verified as distinct offering with first sale Aug28 2026.",
+      "hold_note": "Ongoing USD141,964,814 SEC target is not a completed round. 46 SEC investors unnamed; no roles inferred from directors. Korean PersonaAI, identity-verification Persona and video-agent namesakes excluded. Further prior/private history remains open.",
+      "searches_checked": [
+        "Persona AI 2026 funding seed 27 million",
+        "site.persona-ai.com funding 2026 2025 investors",
+        "\"Persona AI\" \"2026\" site:sec.gov \"65,363\"",
+        "\"Persona AI\" \"September 14, 2026\" \"sec.gov\"",
+        "\"Persona AI Inc.\" \"2026\" \"primary_doc.xml\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/persona-ai-raises-27m-oversubscribed-pre-seed-to-deliver-the-future-of-humanoid-robotics-302455330.html",
+          "disposition": "Original May14 2025 full body closed USD27m, two co-leads and 17 explicit participants."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2107493/000210749326000002/xslFormDX01/primary_doc.xml",
+          "disposition": "Original SEC full body new notice firstsale2026Aug28 actual65363626 sold, target141964814, 46unnamedinvestors; equity/options/warrants."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2107493/000210749326000002/0002107493-26-000002-index.htm",
+          "disposition": "Original SEC filing index September14 2026."
+        }
+      ]
+    },
+    {
+      "id": "882ab6f2-aa31-4ddd-9de0-0368d6cb138b",
+      "slug": "petrel-technologies",
+      "name": "Petrel Technologies",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Florida defence VTOL Petrel Technologies USD3.5m pre-seed from unnamed family offices supported by exclusive issuer release/founder interview.",
+      "hold_note": "Current petrel.com explicitly calls Sustainable Skylines a sister-brand. Its original May9 2023 USD1m pre-seed, named angels and security cannot safely be transferred or added to Petrel USD3.5m without legal issuer/overlap reconciliation. Date of original exclusive page absent; no invented day. Military experiments excluded.",
+      "searches_checked": [
+        "\"Petrel Technologies\" funding investment",
+        "\"Petrel Technologies\" \"funding\" site:petreltechnologies.com OR site:petrel.aero",
+        "\"Petrel Technologies\" \"Flies Out\" \"February 10\"",
+        "\"Petrel Technologies\" investment funding earlier Sustainable Skylines",
+        "\"Exclusive: Petrel Technologies Flies Out of Stealth\" date"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.tectonicdefense.com/exclusive-petrel-technologies-flies-out-of-stealth/",
+          "disposition": "Full body issuer-exclusive founder interview supports USD3.5m pre-seed raised, unnamed family offices."
+        },
+        {
+          "url": "https://www.petrel.com/",
+          "disposition": "Original full body exact company/AERO Sky identity; explicitly Sustainable Skylines sister-brand."
+        },
+        {
+          "url": "https://finance.yahoo.com/news/sustainable-skylines-raises-1m-pre-130000022.html",
+          "disposition": "Syndicated issuer ACCESSWIRE release May9 2023 supports Sustainable Skylines USD1m; sibling issuer/overlap hold prevents import to Petrel."
+        },
+        {
+          "url": "https://www.tectonicdefense.com/exclusive-the-army-turns-petrels-group-3-drone-into-an-fpv-mothership/",
+          "disposition": "Follow-up indexed full content places stealth exit in February; not a new financing."
+        }
+      ]
+    },
+    {
+      "id": "0a2b8717-7ac6-40dc-92f6-a7ac010f835f",
+      "slug": "phenix-solutions",
+      "name": "Phenix Solutions",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "SEC original exact McMinnville issuer FormD verified USD3m equity sold July2024, no remaining amount. Original investor OCEANM19 July2024 growth-capital portfolio supports generic investor relationship.",
+      "hold_note": "2019 new investment on issuer history page predates current SEC legal issuer incorporation2023: predecessor continuity and financing nature unresolved, held. Own Oregon accelerator first-cohort grant repost does not establish exact recipient allocation/date; no programme standard grant amount assigned. Procurement/SBIR contracts excluded; earlier/latest private history open.",
+      "searches_checked": [
+        "\"Phenix Solutions\" financing investment funding",
+        "site.phenixuas.com investment grant 2026 2025",
+        "\"Phenix Solutions\" \"investment\" 2019 Simplex",
+        "\"Phenix Solutions\" \"funding\" site:phenixuas.com OR site:oceanm19.com",
+        "\"Phenix Solutions\" \"2024\" \"3,000,000\" site:sec.gov",
+        "\"Phenix Solutions\" \"2024-07-26\" sec",
+        "\"Phenix Solutions\" \"primary_doc.xml\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2031864/000203186424000001/xslFormDX01/primary_doc.xml",
+          "disposition": "Original FormD full body newnotice firstsale2024Jul12, filingJuly26, equity3m sold of3m to2unnamedinvestors."
+        },
+        {
+          "url": "https://oceanm19.com/",
+          "disposition": "Original portfolio explicitly Phenix Solutions Growth Capital July2024; generic no lead/cheque inference."
+        },
+        {
+          "url": "https://www.phenixuas.com/about/",
+          "disposition": "Original history says newinvestment2019 fromformerSimplexshareholders; current legal issuer incorporated2023 therefore predecessor hold."
+        },
+        {
+          "url": "https://www.phenixuas.com/oregon-uas-accelerator-propels-unmanned-innovation/",
+          "disposition": "Original issuer repost quotes cohort first grant funding generally; exact Phenix allocation/date held."
+        },
+        {
+          "url": "https://www.streetinsider.com/SEC%2BFilings/Form%2BD%2BPhenix%2BSolutions,%2BInc./23510321.html",
+          "disposition": "Filing mirror discovery independently matched to original SEC document."
+        }
+      ]
+    },
+    {
+      "id": "c7e04592-07da-4cbd-8464-8c9d595ac0ca",
+      "slug": "phoenix-air-unmanned",
+      "name": "Phoenix Air Unmanned",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact US drone-services issuer distinguished from SwissDrones and Phoenix Air Group. Own company history and news reviewed; sister-company relationship and operational partnerships are not verified incoming investments. No attributable public financing event established in this bounded review.",
+      "hold_note": "Financing remains unknown, not zero. No parent/sister-company, aircraft purchase, FAA exemption or partner financing copied.",
+      "searches_checked": [
+        "\"Phoenix Air Unmanned\" funding investment investors 2026",
+        "site.phoenixairunmanned.com funding investors investment parent",
+        "\"Phoenix Air Unmanned\" investment capital 2015 2026",
+        "\"Phoenix Air Unmanned\" \"funding\" investors loan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.phoenixairunmanned.com/phoenix-air-unmanned",
+          "disposition": "Company background: Phoenix Air Group described as sister company, not verified financing"
+        },
+        {
+          "url": "https://www.phoenixairunmanned.com/news",
+          "disposition": "Own operational news reviewed; no issuer financing evidence"
+        },
+        {
+          "url": "https://dronexl.co/2026/08/31/swissdrones-ceo-ulrich-amberg-steps-down-xplorate-group",
+          "disposition": "Catalogue candidate: SwissDrones management/ownership topic, not financing of Phoenix Air Unmanned"
+        }
+      ]
+    },
+    {
+      "id": "57378323-142a-4d77-b288-6e66ee429155",
+      "slug": "phoenix-drone",
+      "name": "Phoenix Drone",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact Arizona Phoenix Drone LLC is a Honeywell engineer-founded startup, distinguished from similarly named operators. DARPA identifies Honeywell Aerospace Technologies, M4 Engineering and Embention USA as sponsors. Sponsorship and competition participation do not establish an equity/grant transaction.",
+      "hold_note": "Cash amount, payer, instrument and any challenge prize allocation are unverified. No USD 6.5m total prize pool assigned to this issuer; linked winners story does not name Phoenix among monetary podium winners.",
+      "searches_checked": [
+        "\"Phoenix Drone\" funding investment company",
+        "site.phoenixdronellc.com funding investment DARPA",
+        "\"Phoenix Drone LLC\" funding grant investment prize 2026",
+        "\"Phoenix Drone LLC\" Honeywell investment sponsorship funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.darpa.mil/node/5118",
+          "disposition": "Primary DARPA team profile: founders and sponsors; no cash/instrument terms"
+        },
+        {
+          "url": "https://phoenixdronellc.com/",
+          "disposition": "403 direct fetch; indexed own profile corroborates identity, not financing"
+        },
+        {
+          "url": "https://defence-blog.com/darpa-lift-challenge-ends-with-a-surprisingly-old-fashioned-winner/",
+          "disposition": "Catalogue article read: Phoenix appears as competitor, no attributable award amount"
+        }
+      ]
+    },
+    {
+      "id": "b5464eab-a449-4a86-9a9f-7bc524a70c40",
+      "slug": "physicotechnical-institute-nan-belarus-fti-nan",
+      "name": "Physicotechnical Institute, NAN Belarus (FTI NAN)",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Belarusian state research institute identity established; not a venture startup merely because represented in the cohort. NAS institutional directory and official 2026 cooperation news do not establish attributable investment or grant financing.",
+      "hold_note": "Own phti.by direct access returned 403. Institution and national programme budgets, commercial output and cooperation arrangements are not issuer financing. Public award allocations remain unresolved, not zero.",
+      "searches_checked": [
+        "\"Physicotechnical Institute\" Belarus funding grant investment 2026",
+        "site.phti.by финансирование грант инвестиции институт 2026",
+        "site.phti.by \"Финанс\" институт",
+        "\"Физико-технический институт\" \"НАН Беларуси\" финансирование грант",
+        "site.phti.by \"государственное научное\" институт"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://phti.by/",
+          "disposition": "403; no grant fact imported from inaccessible page"
+        },
+        {
+          "url": "https://smu-nanb.by/page/402",
+          "disposition": "Institutional directory identity reviewed; unrelated compromised navigation ignored"
+        },
+        {
+          "url": "https://ascon.ru/news/2026/10/02/askon-i-nacionalnaya-akademiya-nauk-belarusi-nachinayut-sotrudnichestvo-v-sfere-cifrovizacii/",
+          "disposition": "Indexed official cooperation news; no funding commitment"
+        }
+      ]
+    },
+    {
+      "id": "6b91a833-d7d3-4d2e-afb2-d8501e25ad9c",
+      "slug": "picket-defense-systems",
+      "name": "Picket Defense Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact US Inferno RTC startup identified through own product page and operational partner/test reports. Aggregator claim of Edgar A. de Gracia seed investment in August 2025 was investigated without locating transaction-party confirmation.",
+      "hold_note": "Aggregator-only seed claim held. Walaris cooperation/MOU, DIU selection/testing and similarly named UK Picket products do not prove cash investment. No amount or investor relationship invented.",
+      "searches_checked": [
+        "\"Picket Defense\" funding seed investors",
+        "site.picketdefense.com investment funding seed",
+        "\"Picket Defense Systems\" \"Edgar\" investor",
+        "\"Picket Defense Systems\" \"de Gracia\" site:linkedin.com",
+        "\"Picket Defense Systems\" funding 2026 investor",
+        "\"Picket Defense Systems\" \"seed\" investment original"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.picketdefense.com/",
+          "disposition": "Own product page read: exact issuer, no financing announcement"
+        },
+        {
+          "url": "https://www.linkedin.com/company/picket-defense-systems",
+          "disposition": "Indexed own operational posts: testing and partnerships, no transaction terms"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/walaris_the-future-of-c-uas-will-be-built-through-activity-7483521563028443136-3I82",
+          "disposition": "Indexed partner MOU, not equity funding"
+        },
+        {
+          "url": "https://defence-blog.com/passive-infrared-sensing-joins-pickets-inferno-rtc-drone-killer",
+          "disposition": "Catalogue article candidate: technology collaboration, not financing evidence"
+        }
+      ]
+    },
+    {
+      "id": "a9ef9409-c615-46f1-8e5b-6e00cafe80f2",
+      "slug": "picraft-technology",
+      "name": "Picraft Technology",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Two supported issuer financing disclosures: INR 8 lakh IIT Ropar AWaDH/GENESIS grant announced March 20, 2025 and INR 12 lakh Runway investment listed January 2026. Company/founder identity linked through UPES and own site. December 2025 grant felicitation is corroboration of existing INR 8 lakh, not another award.",
+      "hold_note": "Specific Runway security and cash closing unconfirmed. DST iTBI listing has no separate allocation; no additional event or total added. Large AWaDH PDF direct open failed due size; usable primary HTML sources independently support grant.",
+      "searches_checked": [
+        "\"Picraft\" funding investment seed investors",
+        "site.runwayincubator.com \"Picraft\" \"Grant\"",
+        "site.picraft.in funding grant investment",
+        "\"Picraft Technology\" IIT Ropar grant 8 lakhs Runway 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ihub-awadh.in/2025/iit-ropar-awadh-in-collaboration-with-puri-oil-and-meity-startup-hub-genesis-organised-pragati-summit-uniting-stakeholders-to-promote-deep-tech-innovations-in-agriculture-and-sustainabilit/",
+          "disposition": "Primary grantor report read: dated INR 8 lakh allocation"
+        },
+        {
+          "url": "https://www.upes.ac.in/student-achievements/krishna-singh",
+          "disposition": "UPES founder identity and explicit grant instrument read"
+        },
+        {
+          "url": "https://www.runwayincubator.com/",
+          "disposition": "Primary investment listing read: Jan 2026, original INR 12 lakh; instrument undisclosed"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/ihub-awadh_iit-ropar-genesis-eir-startups-under-meity-activity-7409234686020911104-Wo6B",
+          "disposition": "Grantor December 16, 2025 felicitation read; duplicate INR 8 lakh, not additive"
+        },
+        {
+          "url": "https://www.runwayincubator.com/grants",
+          "disposition": "Indexed DST iTBI Picraft recipient listing: no attributable amount"
+        },
+        {
+          "url": "https://picraft.in/",
+          "disposition": "Own site read: issuer product identity"
+        },
+        {
+          "url": "https://ihub-awadh.in/wp-content/uploads/2025/12/Powering-Bharats-AI-Deep-Tech-Ecosystem-Insights-and-Outcomes-of-100-Startups-100-Days-by-IIT-Ropar-3_compressed.pdf",
+          "disposition": "Indexed candidate matches grant; direct full PDF failed due size, not claimed read"
+        }
+      ]
+    },
+    {
+      "id": "31179ae7-0b76-4643-a77a-acae300ac49c",
+      "slug": "pierce-aerospace",
+      "name": "Pierce Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 3,
+      "evidence_note": "SEC original Form D establishes cumulative debt sold USD 1.08m, first sale June 4, 2021, filing February 2, 2024; one investment disclosure imported with five unnamed purchasers. Own current about page explicitly identifies State of Indiana, Techstars and Purdue Research Foundation as historical seed supporters, recorded only as generic relationships.",
+      "hold_note": "No support for splitting cumulative SEC amount into annual rounds or assigning named supporters to debt. SBIR/STTR expressly described as contracting; NASA nonreimbursable agreement and ResilienX-led NASA project are not Pierce equity/grants. Aggregator Techstars ticket/cumulative totals and comparable investor Cascade Seed Fund held.",
+      "searches_checked": [
+        "\"Pierce Aerospace\" funding investment seed 2026",
+        "\"Pierce Aerospace\" investment Purdue Indiana Techstars 2026",
+        "site.sec.gov \"Pierce Aerospace\" \"1,080,000\"",
+        "\"Pierce Aerospace\" \"2024-02-02\" SEC",
+        "\"Pierce Aerospace\" \"Form D\" SEC 1080000",
+        "site.pierceaerospace.net \"investment\" \"2026\"",
+        "\"Pierce Aerospace\" \"Cascade Seed\" fund"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2004057/000200405724000001/xslFormDX01/primary_doc.xml",
+          "disposition": "SEC filing full body read via filing-index click: debt, actual sold principal, first-sale date and unnamed investor count"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2004057/000200405724000001/0002004057-24-000001-index.htm",
+          "disposition": "SEC index read: filing date February 2, 2024"
+        },
+        {
+          "url": "https://www.pierceaerospace.net/about",
+          "disposition": "Own background read: historical seed supporters and SBIR contracting"
+        },
+        {
+          "url": "https://www.pierceaerospace.net/blogs/news",
+          "disposition": "Current own news reviewed: operational/contract activity, not new attributable investment"
+        },
+        {
+          "url": "https://unmannedairspace.info/latest-news-and-information/resilienx-selected-for-nasa-sbir-phase-ii-to-advance-orion-airspace-coordination-system",
+          "disposition": "Catalogue candidate: ResilienX is actual NASA award issuer; no partner amount attributed to Pierce"
+        }
+      ]
+    },
+    {
+      "id": "24c991ea-96f3-4815-858c-1358a2210c78",
+      "slug": "pik-pba-company-llc",
+      "name": "PIK PBA Company LLC",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact Russian company legalname corroborated by originalcourtjudgment; procurement and contractprice litigation excluded.",
+      "hold_note": "Own equity/debt/grant history unknown, notzero. INN7720029430 company distinct genericPIKdeveloper; sourcecourtredactsregistrationnumbers. Incorporationcapital/turnover/litigationaward notexternalfunding.",
+      "searches_checked": [
+        "PIK PBA company беспилотники финансирование инвестиции",
+        "\"ПИК ПБА\" инвестиции финансирование",
+        "\"ПИК ПБА\" \"кредит\" \"инвестиции\"",
+        "\"ПИК ПБА\" официальный сайт компания"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://sudact.ru/arbitral/doc/d75T7wuAVmYQ/",
+          "disposition": "Original court judgment reproduced fullbodyread:exact CompanyPIKPBA legalname;2022procurement amounts and2026price dispute notinvestment."
+        },
+        {
+          "url": "https://companies.rbc.ru/id/1037700024450-ooo-promyishlenno-investitsionnaya-kompaniya-proizvoditelej-bronirovannyih-avtomobilej/",
+          "disposition": "Registry-derived discovery only; incorporationcapital/turnover/owners notnewfinancing."
+        },
+        {
+          "url": "https://b95.ru/news/novosti/uchastniki-vystavki-navigatsiya-i-svyaz-v-osobykh-usloviyakh-2024/",
+          "disposition": "Exhibitionorganizer indexed participantoriginal exactPIKPBA manufacturer; notfinancialevent."
+        }
+      ]
+    },
+    {
+      "id": "253c572c-1b94-4365-a5f6-b4bd7f315f60",
+      "slug": "pivotal",
+      "name": "Pivotal",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "ExactUSHelix/BlackFlyeVTOLissuer established from ownUSAFrelease and cohortmedicalresponsecontext.",
+      "hold_note": "LarryPagebacking has no inspectedprimarypartyfundingdate/amount/security. OTAcontract/testaccess, refundablecustomerdeposits andwholeAFWERXbudgets excluded. PivotalSoftwarefinancing notassigned.",
+      "searches_checked": [
+        "Pivotal eVTOL funding investment 2026 2025",
+        "site.pivotal.aero \"Larry Page\"",
+        "\"Pivotal\" \"Larry Page\" site:pivotal.aero",
+        "site.pivotal.aero \"Page\" investor",
+        "\"Pivotal\" \"funding\" \"2026\" site:pivotal.aero",
+        "site.pivotal.aero \"Opener\" \"renamed\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.pivotal.aero/newsroom/pivotal-signs-us-air-force-contract-and-expands-partnership-with-agility-prime-group",
+          "disposition": "Issuer original fullbodyread May28,2024OTAcontract testresources; no grant or entireAFWERXbudgetascompanycapital."
+        },
+        {
+          "url": "https://www.pivotal.aero/defense",
+          "disposition": "Indexed issuer current2026defence context Helix/BlackFly matchescohort, notPivotalSoftware."
+        },
+        {
+          "url": "https://techcrunch.com/2026/09/01/larry-pages-flying-car-company-pivotal-loses-its-ceo/",
+          "disposition": "SecondaryLarryPagebacking candidate only;amount/security/dateunknown, no primaryroundproof."
+        }
+      ]
+    },
+    {
+      "id": "849037d4-bb73-4bce-acc6-9a80a862861a",
+      "slug": "pixhawk",
+      "name": "Pixhawk",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "OriginalprojectREADME explicitlyindependentopenhardwarestandard, matchingcohortflightcontrollercontext.",
+      "hold_note": "Noncompany/projectdisposition: noautonomouslegalissuer proven. Do notcopyAuterion,Dronecode,ETH,manufacturer/boardproductfinancing oropensourcegrants.",
+      "searches_checked": [
+        "Pixhawk project funding company open source",
+        "site.pixhawk.org \"project\" \"supported\"",
+        "site.pixhawk.org investment funding 2026",
+        "site.px4.io pixhawk independent project funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://github.com/pixhawk/Hardware/blob/master/README.md",
+          "disposition": "Original README fullrelevanttextread explicitlyindependentopenhardwareproject; proprietary manufacturers separate."
+        },
+        {
+          "url": "https://pixhawk.org/",
+          "disposition": "Primaryhomepageindexed text inspected, directfetch timeout; studentproject/standard, notfinancingcompany."
+        },
+        {
+          "url": "https://docs.px4.io/v1.17/en/flight_controller/pixhawk_series",
+          "disposition": "Officialprojectdocumentationindexed confirmsindependentopenhardwareproject."
+        },
+        {
+          "url": "https://auterion.com/company/the-history-of-pixhawk/",
+          "disposition": "Originalfounder/companyhistoricalaccount indexed:ETHprojectlaterAuterion, notidentityequivalenceforfinancing."
+        }
+      ]
+    },
+    {
+      "id": "874eff67-dfac-4ead-b61a-e53ad18f608b",
+      "slug": "planet-labs",
+      "name": "Planet Labs",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Three ownissuerfinancingevents supported from originalannouncement/SEC:168mSeriesDcash,252mPIPEequity,460mconvertiblenotes.",
+      "hold_note": "Earlier2013A/2013B,2015C70mequity+25mdebt/laterextension and2020claims notfullyreconciled. SeriesDnoncashTerraBella consideration and2021SPACtrustcash distinct. PIPEnamedparticipants/cheques notverifiedhere;2026contracts/NASA R&Dproject receipts notpricedrounds.",
+      "searches_checked": [
+        "Planet Labs funding 2026 convertible notes 2025 PIPE",
+        "\"Planet\" \"2021\" \"252\" PIPE",
+        "site.planet.com \"Series\" \"2013\" funding",
+        "site.planet.com \"2015\" \"95\" funding",
+        "site.planet.com \"2020\" \"168\" funding",
+        "site.planet.com \"2014\" \"52 million\" funding",
+        "site.planet.com \"2021\" \"252 million\" \"closed\"",
+        "site.planet.com \"Raises\" \"2015\" \"95\"",
+        "site.sec.gov \"Planet Labs\" \"December 7, 2021\" \"252\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.planet.com/pulse/planet-closes-168m-series-d-financing/",
+          "disposition": "Original fullbodyread supports168mcash, closing2018/disclosure2019, not384mcumulative ornoncashTerraBella."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312521368023/d267173ds1.htm",
+          "disposition": "OriginalSECfullrelevantsectionsread confirms252mprimaryPIPE25.2mshares,590.2mcombinedgross andtrustcash distinguished."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1836833/000114036125034840/ef20055521_8k.htm",
+          "disposition": "OriginalSECfullrelevantbodyread460mconvertible issuedSeptember12,2025, wholeincludingoption."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526381874/pl-ex99_1.htm",
+          "disposition": "LatestSeptember3,2026issuerresults index checked; NASAprojects/customercontracts andregulatedpurchase awards notprimaryinvestment."
+        },
+        {
+          "url": "https://s29.q4cdn.com/903184914/files/doc_downloads/2021/12/PL-Fiscal-Q3-2022-Earnings-Call-13-Dec-2021.pdf",
+          "disposition": "Issuertranscriptindexed PIPE252m corroboration; directfileaccess unavailable."
+        },
+        {
+          "url": "https://www.marketscreener.com/news/latest/Planet-Labs-Raises-95-Million-Financing-19733789/",
+          "disposition": "2015issuerrelease discovery70mequity/25mdebt pluslaterCextension notfullyreconciled; notimportedfromcandidatealone."
+        }
+      ]
+    },
+    {
+      "id": "27314ea2-5278-4ea3-a0ec-ce951f4fdcd2",
+      "slug": "plasan",
+      "name": "Plasan",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "ExactPlasanSasaissuer andKibbutzSasaowner supported by currentissuerandtransactioncounseloriginal.",
+      "hold_note": "Owncapitalhistoryunknown, notzero.2005plannedNasdaq80m and2025/26TASEplans notcompletedfunding. Charmochrommerger consideration/legalcapitalunknown;ManorEvergreeninvestmentinCharmochrom notPlasanprimarycash.",
+      "searches_checked": [
+        "Plasan investment funding ownership 2026",
+        "\"Plasan\" \"owned\" \"Sasa\"",
+        "site.plasan.com \"2026\" \"investment\"",
+        "site.plasan.com \"Sasa\" ownership"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://plasan.com/our-company/",
+          "disposition": "Originalcurrentissuerfullbodyread protectioncompany/Sasa/Karmiel operations;financeheadingnotfundraise."
+        },
+        {
+          "url": "https://www.shibolet.com/en/representing-plasan-sasa-in-its-merger-transaction-with-charmochrom/",
+          "disposition": "Originaltransactioncounselfullbodyread May13,2026merger andKibbutzSasaownership;IPOvaluationfutureintentionnotcapital."
+        },
+        {
+          "url": "https://plasan.com/wp-content/uploads/2025/01/Plasan-privacy-policy-2025.pdf",
+          "disposition": "OriginalindexedprivacyconfirmsPlasanSasaLtdissuer, notPlasanaMedical."
+        },
+        {
+          "url": "https://www.ynetnews.com/business/article/rkhtyjdqzl",
+          "disposition": "SecondaryplannedIPO/frozenlisting discovery, no pricedcompletedcapitalimport."
+        }
+      ]
+    },
+    {
+      "id": "11d33055-7eef-46c0-b1f1-851bd14a4da0",
+      "slug": "platform-aerospace",
+      "name": "Platform Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "ExactHollywoodMarylandVanillaUAScompany verified from ownsite; mappedcohortdronearticle.",
+      "hold_note": "SECderived2018~1.6m/2021~1.54m candidates unresolvedtargetvssold/security, PlatformSystemsIncorporated identitycontinuity notoriginalverified.2020DoD2.3maward instrumentuncertain, procurementnotgrantbyassumption. Privatefundingunknown,notzero.",
+      "searches_checked": [
+        "Platform Aerospace investment funding 2026 2025",
+        "\"Platform Aerospace\" \"investment\"",
+        "site.sec.gov \"Platform Aerospace\" \"2018\"",
+        "\"Platform Aerospace\" \"Form D\"",
+        "\"Platform Aerospace\" \"SEC\" \"2021\" \"1,540\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.platformaerospace.com/about",
+          "disposition": "Originalcurrentissuerfullbodyread exactHollywoodMD/VanillaUAS/CEOParsons;30yearSDVOSB."
+        },
+        {
+          "url": "https://platform-aerospace.squarespace.com/news",
+          "disposition": "Originallegacynewsindex checked;manufacturing/2024exercise notincomingcapital."
+        },
+        {
+          "url": "https://www.intelligence360.news/hollywood-maryland-based-platform-aerospace-is-raising-1540000-00-in-new-equity-investment/",
+          "disposition": "2021SECderived1.54mraise candidate, targetversussold notoriginalverified;held."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/platform_aerospace",
+          "disposition": "2018USD1.6mseed versusCBInsightsconvertible,2020grant2.3m,2020/21angels discoveryonly; notpromoted."
+        },
+        {
+          "url": "https://trademarks.justia.com/874/11/platform-87411541.html",
+          "disposition": "PlatformSystemsIncorporated tradeidentitycandidate; fulllegalcontinuity/originalSECoffering notestablished."
+        }
+      ]
+    },
+    {
+      "id": "eb9e328d-a894-4fc1-92d9-671f7fde6885",
+      "slug": "plath",
+      "name": "PLATH",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Official legal notice identifies PLATH GmbH & Co KG; corporate portfolio/history establishes PLATH Corporation GmbH parent following 2021 reorganisation. Parent portfolio relationship supported without invented financing.",
+      "hold_note": "Group credit-framework financial statement candidate does not establish operating-company allocation, origination or round. Family/private-equity namesakes and outgoing partnerships excluded. Earlier/latest own incoming capital not established; no zero-funding assertion.",
+      "searches_checked": [
+        "PLATH GmbH Finanzierung Investor 2026 Eigentümer 2024",
+        "PLATH investor private equity ownership family funding history",
+        "site.plath.de Finanzierung Bank Familie PLATH Corporation",
+        "site.plath-corporation.de Finanzierung 2026 Investor Kapital"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.plath.de/impressum",
+          "disposition": "Original legal notice read: exact operating issuer; management company is not presumed investor."
+        },
+        {
+          "url": "https://plath-corporation.de/en/portfolio/",
+          "disposition": "Original portfolio read: operating PLATH GmbH & Co KG included."
+        },
+        {
+          "url": "https://plath-corporation.de/en/history/",
+          "disposition": "Original history read: 2021 reorganisation creates independent KG and PLATH Corporation holding."
+        },
+        {
+          "url": "https://www.lobbyregister.bundestag.de/media/0f/05/278036/PLATH-Corporation-GmbH-Offenlegung-KAP-31-03-2023.pdf",
+          "disposition": "Indexed original financial statement candidate: group bank credit framework; own allocation and origination held."
+        }
+      ]
+    },
+    {
+      "id": "2962d7aa-7b0e-4ab8-a4f9-ab811c8d6544",
+      "slug": "plaz",
+      "name": "PLAZ",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Cohort identity is Russia-based radiolink supplier at plazlink.com. Five English/Russian finance searches and attempted original website access recorded.",
+      "hold_note": "Original website/about inaccessible through connected research tool. No exact-issuer financing source established; UK app and similarly named companies excluded. Source access and historical financing remain unresolved, not zero funding.",
+      "searches_checked": [
+        "PLAZ plazlink финансирование инвестиции 2026",
+        "site.plazlink.com инвестиции финансирование",
+        "\"PLAZ\" \"плазлинк\" инвестиции грант",
+        "\"ПЛАЗ\" \"беспилот\" \"финансирование\"",
+        "\"PLAZ\" \"plazlink\" investment grant loan Russia"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.plazlink.com",
+          "disposition": "Original website access attempted, inaccessible; no financing evidence extracted."
+        },
+        {
+          "url": "https://www.plazlink.com/about",
+          "disposition": "Original about access attempted, inaccessible."
+        }
+      ]
+    },
+    {
+      "id": "47250fbc-c251-42b7-874f-865b7bb86cb1",
+      "slug": "pni-sensor",
+      "name": "PNI Sensor",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Exact issuer Protonex LLC dba PNI Sensor established by current original privacy notice. Own and Army originals confirm xTechSearch 7 cash-prize win.",
+      "hold_note": "Individual cash-prize allocation, exact date and private capital history unresolved. USD450k pooled prize and potential USD250k SBIR contract excluded as own disclosed amounts; no grant or automatic contract award inferred. Distinct Protonex fuel-cell company not assigned.",
+      "searches_checked": [
+        "PNI Sensor funding investment 2026 2007 PNI Sensor Corporation",
+        "site.pnisensor.com funding investment xtechsearch prize",
+        "\"PNI Sensor\" \"investment\" \"Protonex\"",
+        "site.pnisensor.com investor capital financing 2026",
+        "site.pnisensor.com \"25,000\" OR \"$25\" OR \"prize\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://xtech.army.mil/announcement/10-winners-2-95-mil-after-record-participation/",
+          "disposition": "Original relevant winner/prize text read; pooled450k and conditional250k contract opportunity distinguished from own undisclosed cash allocation."
+        },
+        {
+          "url": "https://www.pnisensor.com/pni-sensor-wins-xtechsearch-7/",
+          "disposition": "Original company winner announcement read; own amount absent."
+        },
+        {
+          "url": "https://www.pnisensor.com/privacy/",
+          "disposition": "Original legal identity read: Protonex LLC dba PNI Sensor."
+        }
+      ]
+    },
+    {
+      "id": "20b4f884-b873-417e-91b9-f9d7af5af6b0",
+      "slug": "polaris",
+      "name": "Polaris",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "US Polaris Inc identity confirmed by cohort MRZR vehicle context. SEC establishes own USD500m 2023 and USD500m 2025 senior-note issues; 2025 issuer pricing corroborates terms.",
+      "hold_note": "Earlier USD350m 2018 notes and revolving/term facilities require origination reconciliation. June 2025 full repayment and credit agreement amendment are not new cash raises. German AURORA spaceplane investments excluded.",
+      "searches_checked": [
+        "Polaris Inc 2026 financing credit senior notes",
+        "site.polaris.com \"2023\" \"500\" \"November\" notes",
+        "site.polaris.com \"2018\" \"350 million\" notes",
+        "site.polaris.com \"2018\" \"Senior Notes\" \"$350\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/931015/000162828026067531/pii-20260930.htm",
+          "disposition": "Original SEC senior-note section read: November2023/2025 actual issuances, gross principal versus net cash distinguished."
+        },
+        {
+          "url": "https://ir.polaris.com/news/news-details/2025/Polaris-Announces-Pricing-of-500-Million-of-Senior-Notes/default.aspx",
+          "disposition": "Original 5Nov2025 pricing read; later SEC proves issuance."
+        },
+        {
+          "url": "https://www.polaris.com/en-us/news/company/polaris-announces-amendmen-to-existing-credit-agreement-and-full-prepayment/",
+          "disposition": "Indexed issuer source candidate: June2025 amendment and repayment350m, not new raise; earlier origination unresolved."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/931015/000162828019001394/pii-12312018x10xk.htm",
+          "disposition": "Final-query indexed original SEC candidate: May2011 USD25m+75m notes, December2013 USD100m and July2018 USD350m. Full relevant original section not read during bounded pass; amounts kept out of current import pending origination reconciliation."
+        }
+      ]
+    },
+    {
+      "id": "cf137c8d-5aa3-489c-9756-425cd7bb6185",
+      "slug": "porsche",
+      "name": "Porsche",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 7,
+      "relationship_count": 0,
+      "evidence_note": "Porsche Automobil Holding SE exact borrower verified; seven original-source debt events supported. H1 explicitly confirms March740m plus May320m extension; Q3 proves September disbursement.",
+      "hold_note": "Q3 EUR1060m aggregate not imported in addition to its March740m and May320m components. Earlier acquisition bridge, first historical financing and 2025 settlement remain partial. Porsche AG financing and outgoing portfolio investments excluded.",
+      "searches_checked": [
+        "Porsche SE financing 2026 bond 2023 2025 Schuldschein",
+        "site.porsche-se.com \"2026\" \"May\" \"Schuldschein\"",
+        "site.porsche-se.com \"2025\" \"1.5\" \"Schuldschein\"",
+        "site.porsche-se.com \"2024\" \"1.6 billion\" bond",
+        "site.porsche-se.com \"2026\" \"740\" \"Schuldschein\"",
+        "site.porsche-se.com \"2023\" \"750 million\" \"April\" bond"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.porsche-se.com/en/investor-relations/financing",
+          "disposition": "Original financing source relevant body read; issuer, debt principal, dates and aggregate/individual distinctions reconciled."
+        },
+        {
+          "url": "https://www.porsche-se.com/fileadmin/downloads/investorrelations/mandatorypublications/interimreport-26/PSE-Q1E_2026_web_.pdf",
+          "disposition": "Original financing source relevant body read; issuer, debt principal, dates and aggregate/individual distinctions reconciled."
+        },
+        {
+          "url": "https://www.porsche-se.com/fileadmin/downloads/investorrelations/mandatorypublications/report-1-2009/PSE_HJ2026_E.pdf",
+          "disposition": "Original financing source relevant body read; issuer, debt principal, dates and aggregate/individual distinctions reconciled."
+        },
+        {
+          "url": "https://www.porsche-se.com/fileadmin/downloads/investorrelations/mandatorypublications/interimreport-26/PSE2026_Q3_Englisch_web.pdf",
+          "disposition": "Original financing source relevant body read; issuer, debt principal, dates and aggregate/individual distinctions reconciled."
+        },
+        {
+          "url": "https://www.porsche-se.com/en/media/press-releases/detail/porsche-se-has-placed-a-schuldschein-loan-of-euro-2-7-billion",
+          "disposition": "Original issuer release full relevant body read; source date and debt terms supported."
+        },
+        {
+          "url": "https://www.porsche-se.com/en/media/press-releases/detail/porsche-se-issues-record-bond-of-16-billion-euro",
+          "disposition": "Original issuer release full relevant body read; source date and debt terms supported."
+        },
+        {
+          "url": "https://www.porsche-se.com/en/media/press-releases/detail/porsche-se-issues-a-new-bond-in-two-tranches",
+          "disposition": "Original issuer release full relevant body read; source date and debt terms supported."
+        },
+        {
+          "url": "https://www.porsche-se.com/en/media/press-releases/detail/porsche-se-platziert-schuldscheindarlehen-ueber-15-milliarden-euro",
+          "disposition": "Original issuer release full relevant body read; source date and debt terms supported."
+        },
+        {
+          "url": "https://www.porsche-se.com/en/media/press-releases/detail/porsche-se-places-schuldschein-loan-of-07-billion-euro",
+          "disposition": "Original issuer release full relevant body read; source date and debt terms supported."
+        }
+      ]
+    },
+    {
+      "id": "63d0ac8e-8eb4-45d2-a5d0-4d92745ca894",
+      "slug": "portal-aircraft",
+      "name": "Portal Aircraft",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Portal Aircraft Inc Fort Worth exact entity supported by lead investor Cowtown Seed portfolio; issuer original says pre-seed closed. Lead role explicitly supported.",
+      "hold_note": "Closed total, original currency, calendar date and security not established. USD500k convertible-note first-tranche target is not a proven closed amount. SBIR contractual award and DARPA awardable qualification not equity/grant cash; Portal Space Systems unrelated rounds excluded. Additional final-query candidate: founder reposts TechFW report of USD500k DARPA LIFT prize; exact government award/receipt and original award date require primary reconciliation, distinct from500k private-round target. Held for next pass, not dismissed as mere qualification.",
+      "searches_checked": [
+        "Portal Aircraft funding investors 2026 seed",
+        "\"Portal Aircraft\" \"Cowtown\" \"pre-seed\"",
+        "\"Portal Aircraft\" \"funding\" \"2025\" \"2026\" -\"Portal Space\"",
+        "\"Portal Aircraft\" \"pre-seed\" \"closed\" 2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.linkedin.com/posts/portal-aircraft-company_portalaircraft-aerospace-defensetech-activity-7494905841326755840-s2JD",
+          "disposition": "Original company post read: closed pre-seed; relative date not converted to invented calendar date."
+        },
+        {
+          "url": "https://www.cowtownseed.com/portfolio.html",
+          "disposition": "Original investor portfolio read: exact legal issuer and explicit lead role."
+        },
+        {
+          "url": "https://pitch.vc/companies/portal-aircraft-company",
+          "disposition": "Indexed self-profile candidate: begun500k first-tranche target not closed total."
+        },
+        {
+          "url": "https://bentonvillestartups.com/companies/portal-aircraft-company",
+          "disposition": "Indexed duplicate self-profile candidate held; no independent closure proof."
+        },
+        {
+          "url": "https://www.linkedin.com/in/james-t-thurman",
+          "disposition": "Indexed founder repost of TechFW/Fort Worth INC USD500k DARPA prize report; new specific cash-award candidate requires government primary evidence."
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [],
+    "root_verification": {
+      "search_queries_executed": 6,
+      "searches_checked": [
+        "Planet Labs 2025 September convertible 460 million closed PIPE 252 million",
+        "Persona AI 2026 65 million funding 27 million pre seed",
+        "site.porsche-se.com 2026 Schuldschein 700 million",
+        "site.planet.com September 12 2025 460 closing notes",
+        "site.porsche-se.com \"May 2026\" \"320\"",
+        "site.porsche-se.com \"May\" \"1,060\" \"2026\" Schuldschein"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2107493/000210749326000002/primary_doc.xml",
+          "disposition": "Root direct rawXML open unsupported text/xml; retried SEC XSL renderer. GroupA validates original firstsale/actualsold separately; do not treat indexed secondarycandidate as confirmed by rawXMLfetch."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1836833/000114036125034840/ef20055521_99-2.htm",
+          "disposition": "Root opens PlanetSECoriginal pricing400m with60moption; mustreconcilefinal460mwholeclosedonce, not400+460."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2107493/000210749326000002/xslFormDX01/primary_doc.xml",
+          "disposition": "Root full originalSECXSLbody read: newnoticefirstsaleAug28/2026,equity/options/warrants,65,363,626USDsoldvs141,964,814target;46unnamedinvestors, nooverlap2025preseed."
+        },
+        {
+          "url": "https://www.porsche-se.com/en/media/press-releases/detail/porsche-se-places-schuldschein-loan-of-07-billion-euro",
+          "disposition": "Root originalMarch19/2026Schuldschein loan refinancing sameholding notPorscheAG; latestQ3checkedMayfollowonnotrepaymentascash."
+        },
+        {
+          "url": "https://www.porsche-se.com/fileadmin/downloads/investorrelations/mandatorypublications/interimreport-26/PSE2026_Q3_Englisch_web.pdf",
+          "disposition": "Root opens latestQ3issuer finance section for March+May2026loans andSeptrepaymentboundary."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1836833/000114036125034840/ef20055521_8k.htm",
+          "disposition": "Root originalSEC8K confirmsSeptember12issued460m convertibleprincipal afterpricing400m+60moption, trustees notfinancingparticipants."
+        },
+        {
+          "url": "https://www.porsche-se.com/fileadmin/downloads/investorrelations/mandatorypublications/report-1-2009/PSE_HJ2026_E.pdf",
+          "disposition": "Root officialIRclicked H1 originalexplicit March740m increasedadditional320m inMayidenticalterms; latestQ3confirmsSeptdisbursement. No derivation from rounded0.7bnheadline orduplicate1060mwholeevent."
+        },
+        {
+          "url": "https://www.porsche-se.com/en/media/press-releases/detail/porsche-se-has-placed-a-schuldschein-loan-of-euro-2-7-billion",
+          "disposition": "Root original21Feb2023 headline/body specifies2.7bn placement,120unnamedinstitutions, arrangersnotassumedlenders; laterissuersourcecorroboratesclosed."
+        }
+      ],
+      "company_database_identity_contexts_checked": 24,
+      "existing_canonical_events_inspected": 0
+    },
+    "notes": [
+      "Persistent Systems cohort is US MANET supplier, not Indian IT namesake despite website mismatch; procurement excluded. PerimeterAI Oregon programme allocation unresolved. Perseus issuer seed6m closed, date/security unknown and BowCapital largestcheque notleadrole. YCombinator membership notautomaticstandardticket.",
+      "Persona Houston issuer27mclosedpreseed explicitlyUnityGrowth/Tidescoleads andnamedparticipants. Original newSEC2026notice firstsaleAug28 distinctearlier2025round:65,363,626sold,141,964,814target,76,601,188remaining,46unnamedinvestors. Offeringnotfullyclosed; nofulltargetasraisedcash, Serieslabel orprivateinvestoridentities invented.",
+      "Petrel3.5mpreseed founder/issuerexclusive original with date/security/backersunknown. SustainableSkylines sisterbrand2023financing held actualissuer/overlap. Phenix2024SEC3m sold distinct2019predecessorinvestmenthold; SEC2023incorporation preventsblindhistoricalcashtransfer. OCEANM19 growthcapital relationgeneric notassignedSECround.",
+      "Picraft originalIITRoparAWaDH award8lakhINR dated20March2025;Decemberfelicitationduplicate notanothercheque. RunwayUPES investment12lakhJan2026 instrument/paymentunknown. Pierce debt1.08m sold firstsale2021 filed2024 recordedinvestmentdisclosure, notnew2024cashclosing; historicalseedrelationships notassigneddebtroles. SBIRprocurement/unrelatedrecipientResilienX notcompanygrant.",
+      "PhoenixDrone exactcompetitionteam distinguishedfromunrelatedbusinesses. FTI NAN institution notindependentventure; budgetsnotcompanyrounds. Picket aggregatorseed/SBIRinstrumentclaim notaccepted. PhoenixAir privatefundingunknown notzero.",
+      "Planet2018SeriesD168m cash disclosed2019 excludesGoogleTerraBella noncashstock andcumulative384m.2021PIPE252m actualprimary distinct SPACtrustcash/combinedgross/fees;2025convert460m includes60moptiononce, not400mplus460m.2026ATMprogramme histories held for separateperiodreconciliation, noceilingasraisedcash.",
+      "Pixhawk openhardwareproject notissuer; Pivotal eVTOL notsoftwarenamesake, OTAprocurementnotgrant andLarryPagebackingsecondaryheld. PlasanKibbutzSasaowner generic;plannedIPO/mergerconsideration notprimaryfunding. PlatformAerospace versusPlatformSystems legalissuer/sold/instrument reconciliation held.",
+      "Porsche exactPorscheAutomobilHoldingSE notPorscheAG. RootfreshH1 originalexplicitMarch740m increasedadditional320mMayidenticalterms; Q3confirms1060mdisbursedSept. Marchrounded0.7bn refinedto740m; Mayextension linksMarchsameissuer, noadditional1060maggregate orrepaymentsasrounds. EarlierSchuldschein/bonds retainprimaryEURprincipal.2025settlementretainedconservativeannounced.",
+      "Polaris US vehiclemaker notGermanPolaris spaceplane; own500mnotes2013/earlierhistory held, supported2023and2025issues separate. PNIArmycashprize ownallocation/dateunknown;shared450kpoolnotdividedandpotentialSBIRcontractnotgrant. Portal ownpreseedclose unknownamount/date/security, Cowtownexplicitlead;500knotetarget andDARPAprizecandidate held pendingoriginal. PLATHparentgeneric;groupfacilityallocation andPLAZinaccessiblesources remainholds."
+    ]
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflict rejection and participant-source FK rejection after final Porsche May extension reconciliation. Source URL uniqueness/date precision checked. Production rollback restored baseline; atomic import and postimport repeat verified. Exact facts/roles/sources/contributions and same-company extension parent audited.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T19:05:23.157Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 22,
+      "mismatched_facts": 0,
+      "participant_matches": 29,
+      "source_matches": 33,
+      "relationship_matches": 7,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 1
+    }
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Existing company geography/classification/publication gates retained; wider-cohort event rows outsideEuropeanmap. Profiles/genericrelationships publish underexistingdirectorygates."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false
+}
