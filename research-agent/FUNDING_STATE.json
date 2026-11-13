@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1061,
   "next_action": "Continue next24 queued wider-cohort identities Material Impact through MG Cleaning Systems under a fresh short writer lease and up to four disjoint read-only groups. No pending import/publication. Distinguish Material Impact venture-fund LP commitments from company financing, and reconcile exact issuers and aliases before attribution. Preserve documented source-access, financing-overlap and instrument holds; no internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T09:50:42.897Z",
+  "updated_at": "2026-11-13T10:01:30.615Z",
   "source_reconciliation_companies": 900,
   "approved_funding_events": 3369,
   "round_participations": 4384,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T09:50:42.897Z",
     "expires_at": "2026-11-13T11:50:42.897Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "fc3fa4cc-fd60-4951-9c11-738bb67a22a5",
       "71a3f316-74b1-44e0-be60-2b940a5e975a",
@@ -5182,7 +5182,32 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "ready_after_production_rollback",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-eighth.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-eighth.json",
+    "dataset": "funding-landscape-20261113-fifty-eighth",
+    "run_id": "funding-20261113T0949Z-next24",
+    "prepared_at": "2026-11-13T10:01:30.615Z",
+    "expected": {
+      "events": 22,
+      "participations": 21,
+      "sources": 28,
+      "relationships": 4
+    },
+    "production_before": {
+      "events": 3382,
+      "approved": 3369,
+      "links": 4384,
+      "sources": 4673,
+      "profiles": 2654,
+      "covered": 900,
+      "relationships": 417,
+      "preserved_profiles_hash": "64ec2764dc10f8419896f09b5ba72bab"
+    },
+    "local_postgresql_tests_passed": true,
+    "production_rollback_baseline_restored": true
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T09:03:53.464Z",
