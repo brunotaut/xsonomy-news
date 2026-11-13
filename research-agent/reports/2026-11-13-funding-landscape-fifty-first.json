@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T02:53:42.014Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-fifty-first.json",
@@ -38,7 +38,15 @@
     "db_investor_profiles": 2489,
     "db_source_reconciliation_companies": 830,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false
+    "current_manifest_publication_verified": true,
+    "durable_queue_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "new_profile_exact_name_duplicates": 0,
+    "active_minutes": 10.28,
+    "checked_identities_per_hour": 140.1,
+    "completed_reviews_per_hour": 35,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, source/canonical QA, alias-event inspection, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution audit and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3109,
@@ -984,7 +992,8 @@
       "site.jobyaviation.com2026financingpublicofferingOctoberNovember2026Toyotainvestmentclosing",
       "JetZero2026SeriesBfundinginvestorsofficial",
       "JumpAerofundinginvestment2026seedofficial"
-    ]
+    ],
+    "new_profile_exact_name_duplicates": []
   },
   "validation": {
     "importer_and_three_schema_fixtures_match_current_main": true,
@@ -1006,5 +1015,40 @@
     "Geography/classification/publication gates",
     "Repository schedules"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T03:03:58.808Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T03:03:58.808Z",
+    "verified_at": "2026-11-13T03:03:58.808Z",
+    "catalogue_commit": "99c0a8f4bc0b0c4e244ab88dfe6ea2998ab63b92",
+    "source_commit": "7a5d3e1065b84e3f65b9b89a6aaff33911243828",
+    "workflow_run": {
+      "id": 43356160391,
+      "head": "99c0a8f4bc0b0c4e244ab88dfe6ea2998ab63b92",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43356160391"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-first.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-first.json",
+    "generated_at": "2026-11-13T03:02:39.339Z",
+    "investor_generated_at": "2026-11-13T03:02:41.990Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2480,
+    "portfolio_relationships": 355,
+    "expected_profiles": 32,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "current_manifest_event_rows": 18,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 27,
+    "current_manifest_generic_relationship_matches": 8,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded:DB2489 versuslive2480. All24targetidentities remain outsideEuropeanlandscape. All32referencedprofiles,27participant sourceURLs and8newgenericlinks verified. Twenty-one new profiles published; existing curatedprofilehash preserved. Wider-cohort funding is confirmed inDB without claimingEuropeanmapevents. Gates unchanged."
+  }
 }
