@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T01:53:08.718Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-fiftieth.json",
@@ -14,7 +14,7 @@
     "new_generic_portfolio_relationships": 10,
     "new_companies_with_events": 8,
     "new_investor_profiles": 20,
-    "search_queries_logged": 85,
+    "search_queries_logged": 88,
     "source_ledger_entries": 112,
     "database_identities_inspected": 24,
     "existing_events_inspected": 0,
@@ -35,7 +35,16 @@
     "db_investor_profiles": 2468,
     "db_source_reconciliation_companies": 823,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false
+    "current_manifest_publication_verified": true,
+    "root_additional_search_queries": 3,
+    "durable_queue_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "new_profile_exact_name_duplicates": 0,
+    "active_minutes": 10.72,
+    "checked_identities_per_hour": 134.4,
+    "completed_reviews_per_hour": 28,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only research groups, canonical/source QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source audit and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3086,
@@ -973,9 +982,17 @@
       "https://www.iai.co.il/wp-content/uploads/2026/04/IAI-FS-CONSOLIDATED-AND-SOLO-12.21.pdf",
       "https://www.dehenglaw.com/CN/newscontent/0006/034254/2.aspx?AID=&MID=0876",
       "https://www.gov.uk/government/news/670k-shared-by-two-innovators-in-first-round-of-dtep-funding",
-      "https://investor.iridium.com/05-14-2014-iridium-announces-closing-of-public-offering-of-common-stock-and-series-b-preferred-stock"
+      "https://investor.iridium.com/05-14-2014-iridium-announces-closing-of-public-offering-of-common-stock-and-series-b-preferred-stock",
+      "https://esinvesticijos.lt/sutartys/uab-it-logika-darbuotoju-igudziu-ugdymas-ir-tobulinimas"
     ],
-    "limitation": "Root SEC FormD refetch inaccessible; research group opened actual SEC XML, exact amount/issuer corroborated in its ledger. Failed root refetch is not negative financing evidence."
+    "limitation": "Root SEC FormD refetch inaccessible; research group opened actual SEC XML, exact amount/issuer corroborated in its ledger. Failed root refetch is not negative financing evidence.",
+    "root_additional_search_queries": [
+      "Intramotev Series B2026fundinginvestors",
+      "ISS Aerospace funding investmentSkyris2026",
+      "Intel202623billionAugust12publicofferinggrossproceeds"
+    ],
+    "new_profile_exact_name_duplicates": [],
+    "future_identity_note": "Next queued iwi may overlap Israel Weapon Industries: resolve from its actual source before attributing funding, do not auto-complete or merge identities."
   },
   "validation": {
     "importer_and_three_schema_fixtures_match_current_main": true,
@@ -996,5 +1013,40 @@
     "Publication and geography gates",
     "Repository schedules"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T02:03:51.743Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T02:03:51.743Z",
+    "verified_at": "2026-11-13T02:03:51.743Z",
+    "catalogue_commit": "6283fb4129a905fe3b5be23411cf0583376aa964",
+    "source_commit": "280c14f58d28550de2b34931e68f4c62f97c9950",
+    "workflow_run": {
+      "id": 43349112530,
+      "head": "6283fb4129a905fe3b5be23411cf0583376aa964",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43349112530"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fiftieth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fiftieth.json",
+    "generated_at": "2026-11-13T02:01:57.481Z",
+    "investor_generated_at": "2026-11-13T02:01:59.251Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2459,
+    "portfolio_relationships": 347,
+    "expected_profiles": 33,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "current_manifest_event_rows": 23,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 23,
+    "current_manifest_generic_relationship_matches": 10,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded:DB2468 versuslive2459. All24targetidentities outsideEuropeanlandscape;20newprofiles and10genericlinks verified. All33referencedprofiles and23participant sourceURLs present. Wider-cohort events remain in DB; no false assertion they appear on European map. Gates unchanged."
+  }
 }
