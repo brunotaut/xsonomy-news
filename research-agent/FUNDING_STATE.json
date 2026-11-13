@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1113,
   "next_action": "Continue next24 queued wider-cohort identities Optris through PacMar Technologies under fresh short writer lease and up to four disjoint read-only groups. No pending import or publication. Preserve exact issuer/alias boundaries and unresolved published Liebherr/source holds. No internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T16:53:52.739Z",
+  "updated_at": "2026-11-13T17:01:41.592Z",
   "source_reconciliation_companies": 970,
   "approved_funding_events": 3564,
   "round_participations": 4678,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T16:53:52.738Z",
     "expires_at": "2026-11-13T18:53:52.739Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "102a5c48-e4b0-4604-9839-8d20b2026a47",
       "271f2f65-d39c-493b-9457-4a256a5d6f85",
@@ -6366,7 +6366,28 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "rollback_verified_ready_for_atomic_import",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-fifth.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-fifth.json",
+    "expected": {
+      "events": 26,
+      "links": 53,
+      "sources": 41,
+      "relationships": 9
+    },
+    "baseline": {
+      "events": 3577,
+      "approved": 3564,
+      "links": 4678,
+      "sources": 4927,
+      "profiles": 2816,
+      "covered": 970,
+      "relationships": 464,
+      "preserved_profiles_hash": "9346bad34d8ae4b066bc03eab8524f30"
+    },
+    "recovery_note": "Check exact manifest keys/dataset for previously committed atomic import before retry. Idempotent importer rejects conflicts."
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T15:57:24.698Z",
