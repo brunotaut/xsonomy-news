@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1096,
   "next_action": "Continue next24 queued wider-cohort identities NIOA through NUBURU under a fresh short writer lease and up to four disjoint read-only groups. No pending import or publication. Reconcile joint/composite identities such as Northrop Grumman/IAI before assigning parent financing. Preserve exact issuer, latest/historical source and financing-instrument holds, including published Liebherr attribution; no internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T13:45:09.145Z",
+  "updated_at": "2026-11-13T13:56:29.794Z",
   "source_reconciliation_companies": 945,
   "approved_funding_events": 3489,
   "round_participations": 4573,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T13:45:09.145Z",
     "expires_at": "2026-11-13T15:45:09.145Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "39bad1ea-9a5b-46b2-9ccf-81f7663f0861",
       "47622a2c-96d8-4c95-8d92-359872057ce3",
@@ -5951,7 +5951,32 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "ready_after_production_rollback",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-second.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-second.json",
+    "run_id": "funding-20261113T1344Z-next24",
+    "dataset": "funding-landscape-20261113-sixty-second",
+    "prepared_at": "2026-11-13T13:56:29.794Z",
+    "expected": {
+      "events": 41,
+      "participations": 46,
+      "sources": 53,
+      "relationships": 5
+    },
+    "production_before": {
+      "events": 3502,
+      "approved": 3489,
+      "links": 4573,
+      "sources": 4829,
+      "profiles": 2753,
+      "covered": 945,
+      "relationships": 443,
+      "preserved_profiles_hash": "d2bb42e9501cbf21c8ec59a2611496d6"
+    },
+    "local_postgresql_tests_passed": true,
+    "production_rollback_baseline_restored": true
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T12:58:42.255Z",
