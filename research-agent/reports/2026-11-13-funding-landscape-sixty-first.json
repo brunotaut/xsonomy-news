@@ -1,0 +1,1100 @@
+{
+  "status": "imported_awaiting_publication",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T12:46:24.602Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-sixty-first.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 7,
+    "new_or_retained_partial": 17,
+    "new_approved_events": 29,
+    "new_round_participations": 68,
+    "new_source_rows": 40,
+    "new_generic_portfolio_relationships": 4,
+    "new_companies_with_events": 10,
+    "new_investor_profiles": 31,
+    "group_search_queries_executed": 106,
+    "root_additional_search_queries": 6,
+    "search_queries_executed": 112,
+    "per_company_search_ledger_entries": 106,
+    "source_ledger_entries": 115,
+    "company_database_identity_contexts_checked": 4,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 29,
+    "mismatched_facts": 0,
+    "participant_matches": 68,
+    "source_matches": 40,
+    "relationship_matches": 4,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 2,
+    "contribution_fields_audited": true,
+    "db_total_events": 3502,
+    "db_approved_events": 3489,
+    "db_round_participations": 4573,
+    "db_investor_profiles": 2753,
+    "db_source_reconciliation_companies": 945,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "new_profile_exact_name_duplicates": 0
+  },
+  "production_before": {
+    "events": 3473,
+    "approved": 3460,
+    "links": 4505,
+    "sources": 4789,
+    "profiles": 2722,
+    "covered": 935,
+    "relationships": 439,
+    "preserved_profiles_hash": "4691acaf2b897248495d656954f37cc9"
+  },
+  "production_after": {
+    "events": 3502,
+    "approved": 3489,
+    "links": 4573,
+    "sources": 4829,
+    "profiles": 2753,
+    "covered": 945,
+    "relationships": 443,
+    "preserved_profiles_hash": "4691acaf2b897248495d656954f37cc9"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1096,
+    "source_review_partial": 669,
+    "queued": 799
+  },
+  "per_company": [
+    {
+      "id": "2abb4d66-6101-44dd-86f0-2f03899dffc0",
+      "slug": "navantia-uk",
+      "name": "Navantia UK",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "ExactUKLtd recipient and parent statements verified; approved own capital support and parent facility distinguished from Spanishparent SEPIloans and shipyardcapex.",
+      "hold_note": "GBP75mcapitalincrease appearsJan2025 in auditedparent andSH01; indexedUKaccounts incorrectlysaysJan2026. Cash/in-kind terms and originalUKPDF reconciliation held. Unknownfacilityamount/draws notinvented. FormalHIEinstrument remainsundisclosed;157mcapex,1.6bncontracts and acquisitionconsideration excluded.",
+      "searches_checked": [
+        "\"Navantia UK\" funding loan investment 2026 2025 financing",
+        "\"Navantia UK Ltd\" \"75 million\" capital increase",
+        "\"Navantia UK\" company number accounts 2024",
+        "site.hie.co.uk Navantia Arnish 2.05 million grant March 2026",
+        "\"Navantia UK\" \"credit facility\" parent 2025 2026",
+        "\"Navantia\" \"2.05\" \"grant\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.hie.co.uk/news-and-blogs/news/2026/march/23/6m-approved-for-offshore-wind-sites-in-highland-and-lewis/",
+          "disposition": "Opened exactNavantiaUKLtd own2050000GBP approvedsupport; formal instrument notexplicit."
+        },
+        {
+          "url": "https://navantia.co.uk/2026/03/23/investment-to-support-growth-at-arnish/",
+          "disposition": "Opened issuer corroborates same award; notanothergrant."
+        },
+        {
+          "url": "https://www.navantia.es/media2/pdf/Cuentas%20anuales%20ingl%C3%A9s%202024.pdf",
+          "disposition": "Opened audited parent original exactUKfacility. GBP75mfullysubscribedJan2025capitalincrease held for cash/in-kind reconciliation."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/14100400/filing-history",
+          "disposition": "Opened full filinghistory; SH01identifies22Jan2025allotment, not2026index typo. PDFsfailedexpiredredirect; no amount inferred from registeredcapital."
+        },
+        {
+          "url": "https://www.gov.scot/news/investing-in-energy-infrastructure/",
+          "disposition": "Opened government corroboration; project/programme totals excluded."
+        },
+        {
+          "url": "https://navantia.co.uk/about-us/",
+          "disposition": "Opened currentbrand/UKgroup history; own157mcapex notraisedcapital."
+        }
+      ]
+    },
+    {
+      "id": "293c16e3-01a9-47c3-829b-b8ab50b038fb",
+      "slug": "navigatepl",
+      "name": "NaviGate.pl",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Bounded Polish issuer/history, registryidentity and transaction/counterparty search confirm exactdrone/geodesy distributor; no originalincominground established.",
+      "hold_note": "Privatefinance unknown, notzero. Aggregator56012PLNde-minimisaid lacksreadableoriginalaward/date/instrument. Customerfinancingservices,5000PLNregisteredcapital and bankaccountlisting notrounds.",
+      "searches_checked": [
+        "\"NaviGate.pl\" inwestycja dofinansowanie kapitał",
+        "\"NaviGate\" \"0000547284\" dofinansowanie inwestor"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://navigate.pl/kontakt/",
+          "disposition": "Opened exactKRS0000547284issuer; registered5000PLNcapital notcashround; listedbanks notlenderproof."
+        },
+        {
+          "url": "https://navigate.pl/dla-firm/",
+          "disposition": "Opened customer financing/training assistance, not issuer fundraising."
+        },
+        {
+          "url": "https://szkolenia.navigate.pl/regulamin-serwisu/",
+          "disposition": "Original legal continuity and sameKRS indexed; no financing."
+        },
+        {
+          "url": "https://compabase.com/pl/companies/krs/0000547284",
+          "disposition": "Candidate56012PLNde-minimis aid unverified originalaward/instrument, held."
+        }
+      ]
+    },
+    {
+      "id": "a024174a-0f88-46d3-91ec-ee1d5bf7ab48",
+      "slug": "navmar",
+      "name": "NAVMAR",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "ExactNavmarAppliedSciences UAV issuer confirmed from ownsite; financingcandidate and investorparty search distinguishes procurement and namesakes.",
+      "hold_note": "HUSTLEaccelerator andNorthBridgePE ownership claims lackoriginalsupport, held. Navy/SBIRprocurementcontracts and settlement obligations notincomingequity/grants. Privatefinancing unknown.",
+      "searches_checked": [
+        "\"NAVMAR\" investment funding loan grants company",
+        "\"NAVMAR\" \"capital\" \"investment\" 2026",
+        "\"Navmar Applied Sciences\" investment funding acquisition investor",
+        "site.nasc.com \"investment\" \"funding\" Navmar",
+        "\"Navmar Applied Sciences\" \"HUSTLE\" accelerator",
+        "site.nasc.com HUSTLE investment Navmar 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.nasc.com/",
+          "disposition": "Opened exactNavmarAppliedSciences unmannedaircraft supplier, notmarine/creditunion namesakes."
+        },
+        {
+          "url": "https://www.nasc.com/about-us/",
+          "disposition": "Opened originalcompany history. Initial guessed/about failed; actualabout-us used."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/navmar-applied-sciences/financials",
+          "disposition": "Indexed HUSTLE OtherInvestor assertion held; nooriginalfinanceproof."
+        },
+        {
+          "url": "https://www.privco.com/company/navmar-applied-sciences-corporation",
+          "disposition": "IndexedNorthBridgePE100percentclaim heldwithoutprimaryidentity/ownershipproof."
+        },
+        {
+          "url": "https://www.justice.gov/d9/2023-09/navmar_settlement_agreement_executed_sept_15_2023.pdf",
+          "disposition": "Government settlement searchidentifies procurementcontracts, not companyfunding."
+        }
+      ]
+    },
+    {
+      "id": "c6201130-3f6f-4b93-9e79-39484fc9b9a8",
+      "slug": "ncell",
+      "name": "Ncell",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "ExactNepal telecomissuer currenthistory and primarycreditrating reviewed; ownership identified while ratedlimits and secondarytransfer not treated ascash.",
+      "hold_note": "Historical2020termloan drawdown, loaninception and originalamounts requireprimaryreconciliation.2026rated32bnNPRlimits mixterm/workingcapital/LC, notnewcash. SecondaryReynolds/Spectrlitetransfer legalapprovalpending perrating; no purchaseprice or200-250mconditionalcapex treated asfunding.",
+      "searches_checked": [
+        "\"Ncell\" financing loan 2026 2025 investment banks",
+        "site.ncell.com.np \"loan\" \"financing\"",
+        "site.icranepal.com Ncell 2026 loan limits",
+        "site.ncell.com.np \"shareholders\" Spectrlite",
+        "site.ncell.com.np 2026 ownership shareholders loans"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.ncell.com.np/en/about/company-profile",
+          "disposition": "Opened current originaldirectReynolds80percentequity; indirectSpectrlite acquisition notnewcash."
+        },
+        {
+          "url": "https://www.ncell.com.np/en/about/media-room/press-release/ncell-announces-sale-transaction",
+          "disposition": "Opened1Dec2023signedsecondarytransaction; notcompanyround."
+        },
+        {
+          "url": "https://www.icranepal.com/wp-content/uploads/2026/02/B.26-Ncell-Axiata_BLR-Surveillance_February-2026_Final.pdf",
+          "disposition": "Opened5Feb2026primaryrating: NPR20bnterm/4bnworkingcapital/8bnLC ratedlimits notnewloanissuance; regulatoryapprovalpending noted."
+        },
+        {
+          "url": "https://www.fiscalnepal.com/2026/02/10/24395/ncell-ready-to-invest-200-250-million-if-government-grants-approval-says-ceo-foley/",
+          "disposition": "Indexed conditionalcapexintention notincomingfinancing."
+        },
+        {
+          "url": "https://newsfile.futunn.com/MYX/MYX_3132367_213034.pdf",
+          "disposition": "Indexedhistoricalparent report mentionsNcell2020drawdown, amount/issuerallocation notverified; held."
+        }
+      ]
+    },
+    {
+      "id": "3845197e-ead4-4403-b983-8012b0583b96",
+      "slug": "ncsist",
+      "name": "NCSIST",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "ExactTaiwanadministrativecorporation and officiallegalfundingframework reviewed; supervision/procurement/publicbudgets distinguished from companyequity.",
+      "hold_note": "Extensiveannualgovernmentfundinghistory notfullyaudited. Statutory3percentreference notactualaward; proposedNT36.1bnbudget,industrialparkfunding, productcontracts and noncashagencyassettransfer excluded. Unknown isnotzero.",
+      "searches_checked": [
+        "\"NCSIST\" funding government grants capital institute 2026",
+        "\"NCSIST\" site:mnd.gov.tw establishment fund government 2014",
+        "\"NCSIST\" funding donation grant 2026 site:ncsist.org.tw",
+        "\"NCSIST\" site:ncsist.org.tw annual report funding 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.ncsist.org.tw/eng/csistdup/main/Default.aspx",
+          "disposition": "Opened exactinstitutionwebsite; updatedproductpages notfundingdisclosures."
+        },
+        {
+          "url": "https://law.mnd.gov.tw/English/EngLawData.aspx?lsid=FL072809",
+          "disposition": "Opened officialestablishmentAct: administrativecorporation, governmentsubsidies vsprocurement, legalfundingsources notspecificaward."
+        },
+        {
+          "url": "https://mna.mnd.gov.tw/en/news/detail/?UserKey=5e113320-d4eb-40f3-8980-5959559e9df7",
+          "disposition": "Indexed17July2026governmentcallsforspecialbudget notcompletedownfunding."
+        },
+        {
+          "url": "https://www.ncsist.org.tw/eng/csistdup/aboutus/History.aspx",
+          "disposition": "Originalhistoricalidentity searchchecked; institutional/publicbudgethistory remainsincomplete."
+        }
+      ]
+    },
+    {
+      "id": "800f9270-7ebd-430f-a819-e02e7634b871",
+      "slug": "near-earth-autonomy",
+      "name": "Near Earth Autonomy",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "OriginalBoeing/Kaman transactions and latestissuerarchive reviewed;2017investment and2022minorityequity confirmed.",
+      "hold_note": "SEC2022USD1mdebt+rightsofferingfirstsale15April mayconvert/overlap JuneKamaninvestment; noartificialseparatecashround untilreconciled. HistoricalNSF/NASAgrantamounts and ArmySBIRinstrument/recipientallocation unresolved. Procurement/programmetotals excluded.",
+      "searches_checked": [
+        "\"Near Earth Autonomy\" funding investment 2026 2025 10 million",
+        "\"Near Earth Autonomy\" Boeing HorizonX 2017 investment official",
+        "site.nearearth.aero funding investment 2026 2025",
+        "\"Near Earth Autonomy\" site:sec.gov/Archives \"1,000,000\" funding",
+        "\"Near Earth Autonomy\" site:nsf.gov award grant 2016",
+        "\"Near Earth Autonomy\" site:sec.gov 2025 1000000",
+        "\"Near Earth Autonomy\" site:sbir.gov/awards \"NSF\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://boeing.mediaroom.com/2017-10-19-Boeing-HorizonX-Invests-in-Unmanned-Systems-Technology-Leader-Near-Earth-Autonomy",
+          "disposition": "Opened original2017undisclosedinvestment."
+        },
+        {
+          "url": "https://kaman.com/kaman-announces-10-million-investment-in-near-earth-autonomy-to-accelerate-the-deployment-of-autonomous-systems/",
+          "disposition": "Opened exactcompleted10mminorityequity22June2022."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1719773/000171977322000002/xslFormDX08/primary_doc.xml",
+          "disposition": "Opened2022debt+rights FormD1msold firstsale15April2022oneunnamedinvestor; held conversion/overlap versusKamanequity."
+        },
+        {
+          "url": "https://www.nearearth.aero/press-releases",
+          "disposition": "Openedcurrent2026/2025issuernews; partnershipsand15mArmyprogramme notcompanyequity/grant bydefault."
+        },
+        {
+          "url": "https://www.nearearth.aero/archive",
+          "disposition": "OpenedhistoryNASA/SBIRawardmentions; exactowninstrument/allocations notverified."
+        },
+        {
+          "url": "https://armysbir.army.mil/wp-content/uploads/2026/03/FY25-SBIR-STTR_Performance-Report.pdf",
+          "disposition": "IndexedgovernmentSBIRprogrammefunding, procurement/ownallocation notseparatelyverified; held."
+        }
+      ]
+    },
+    {
+      "id": "87f02b53-847b-486c-b694-c02c4f2716b7",
+      "slug": "needltail",
+      "name": "Needltail",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original Oregon UAS19August2026 cohort release resolves Portland high-speed emergency drone issuer and links needltail.com. Broad financing, issuer and programme searches completed.",
+      "hold_note": "Aggregator says accelerator funding, but cohort participation/training/pitch showcase does not establish cash or issuer-specific grant amount. Own site inaccessible; unknown private finance notzero.13November showcase not assumed completed or funded.",
+      "searches_checked": [
+        "Needltail funding investment 2026 2025 drone startup",
+        "\"Needltail\" funding investment",
+        "\"Needltail\" drone investors",
+        "\"Needltail\" site:oregonuas.org",
+        "site.oregonuas.org \"Needltail\" \"$\"",
+        "\"Needltail\" site:oregonuas.org \"grant\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://oregonuas.org/blogs/news/oregon-uas-accelerator-welcomes-17-startups-to-its-fall-2026-cohort",
+          "disposition": "Opened programme original: exact issuer and cohort membership, not cash financing"
+        },
+        {
+          "url": "https://menafn.com/1111816687/Oregon-UAS-Accelerator-To-Showcase-17-Autonomy-Counter-UAS-Defense-Tech-Startups-At-Portland-Investor-Event-On-Nov-13",
+          "disposition": "Opened attributed programme release: investor event/pitches, no issuer cash"
+        },
+        {
+          "url": "https://www.crunchbase.com/organization/needltail",
+          "disposition": "Discovery accelerator-funding candidate held"
+        },
+        {
+          "url": "https://needltail.com/",
+          "disposition": "Direct fetch failed; no no-funding inference"
+        }
+      ]
+    },
+    {
+      "id": "8787ae04-2c9b-4ad3-be5b-deb190f45866",
+      "slug": "nelk-scientific-production-center",
+      "name": "NELK Scientific-Production Center",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original exact Moscow NELK company history and current news, Russian-language financing and shareholder searches checked; no source-confirmed incoming event established.",
+      "hold_note": "Private loans/equity unknown. Nominal registered capital, sales revenue and procurement contract totals are not raises. Technical partner Astra not assumed investor.",
+      "searches_checked": [
+        "НЕЛК инвестиции финансирование НПЦ",
+        "site.nelk.ru инвестиции финансирование субсидия",
+        "НЕЛК фирма инвесторы акционеры заем кредит 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://nelk.ru/company/",
+          "disposition": "Opened original exact issuer history"
+        },
+        {
+          "url": "https://nelk.ru/company/news/",
+          "disposition": "Opened original current news; product launches and exhibitions not financing"
+        },
+        {
+          "url": "https://astra.ru/ready-for-astra/companies-partners/41370/",
+          "disposition": "Indexed technical partnership only; not capital evidence"
+        },
+        {
+          "url": "https://inndex.ru/ul/region-12/ogrn-1037739371867-c19-zao-npts-firma-nelk/buhgalterskiy_otchet",
+          "disposition": "Indexed aggregate accounts/nominal capital not original funding event"
+        }
+      ]
+    },
+    {
+      "id": "6baeb5b6-9737-4005-9f08-a2e060e875af",
+      "slug": "neramo-distribution",
+      "name": "Neramo Distribution",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Romanian exact distributor identified through original cohort website and Romanian supplier/public-contract context; broad financing and counterparty searches completed.",
+      "hold_note": "No incoming company finance supported in checked sources; not proof ofzero. Public tender consideration is sales, not funding. Ukrainian-language storefront/domain does not change issuer geography.",
+      "searches_checked": [
+        "Neramo Distribution investment funding loan Romania Ukraine",
+        "\"Neramo Distribution\" company investment",
+        "\"Neramo\" finanțare investitii fonduri",
+        "\"Neramo Distribution\" actionari imprumut investitor"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://neramo.com.ua/en/page/12/about-us.html",
+          "disposition": "Opened original identifies Romanian supplier, current contact/product context"
+        },
+        {
+          "url": "https://www.primarie3.ro/images/uploads/formulare/2._Ctr_._449804-27_.11.2025.pdf",
+          "disposition": "Indexed original municipal supply contract: Neramo supplier, not borrower/grantee"
+        },
+        {
+          "url": "https://ted.europa.eu/ro/notice/611284-2020/pdfs",
+          "disposition": "Indexed official procurement record exactRO16174216, no funding inference"
+        },
+        {
+          "url": "https://www.linkedin.com/company/neramo-distribution-srl",
+          "disposition": "Indexed issuer counterparty identity"
+        }
+      ]
+    },
+    {
+      "id": "3b95fe4f-ba81-47a0-84ec-7edf5ceb6e79",
+      "slug": "neros-technologies",
+      "name": "Neros Technologies",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 5,
+      "relationship_count": 0,
+      "evidence_note": "Original issuer A/B/C and latest OSC commitment, original Sequoia seed statement and Reuters direct issuer interview reviewed. Five supported events with conditional financing visibly separated.",
+      "hold_note": "Exact security terms, subscribing vehicles and actual close/draw dates unspecified where noted. Claimed government equity interest not established by opened primary text; no separate equity stake imported. Contracts500m/100m/17m, valuation2.5bn and165m own project co-investment excluded.",
+      "searches_checked": [
+        "Neros funding Series B 2026 seed 2023 Sequoia",
+        "site.neros.tech \"35M\"",
+        "site.neros.tech \"10.9\"",
+        "site.war.gov Neros November 2026 loan",
+        "\"Neros\" \"loan\" \"November\" \"2026\"",
+        "site.neros.tech \"450\" conditional",
+        "site.neros.tech \"35M\" Series A",
+        "\"Neros Signs $450M Conditional\" prnewswire",
+        "site.war.gov \"Neros\" \"450\"",
+        "site.gunder.com Neros \"35\" \"2025\"",
+        "site.sequoiacap.com Neros \"10.9\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.reuters.com/business/aerospace-defense/drone-startup-neros-raises-funding-sequoia-eyes-supplies-ukraine-us-military-2024-05-20/",
+          "disposition": "Opened original direct issuer interview;10.9mseed"
+        },
+        {
+          "url": "https://sequoiacap.com/article/partnering-with-neros-next-gen-drones-made-in-america",
+          "disposition": "Opened investor same-day seed partnership, no inferred lead"
+        },
+        {
+          "url": "https://www.neros.tech/articles/neros-raises-35m-series-a-to-accelerate-american-drone-manufacturing",
+          "disposition": "Opened original amount/date heading; body missing"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/neros-tech_neros-raises-35m-series-a-to-accelerate-activity-7307482556231294976-O1-m",
+          "disposition": "Opened original issuer lead/participant list"
+        },
+        {
+          "url": "https://www.neros.tech/articles/neros-closes-75m-series-b-fundraise-led-by-sequoia-capital",
+          "disposition": "Opened original closed75mSeriesB"
+        },
+        {
+          "url": "https://www.neros.tech/articles/neros-raises-250m-series-c-at-2-5b-valuation-to-scale-autonomous-and-interceptor-drone-programs",
+          "disposition": "Opened original250mSeriesC with two explicit co-leads"
+        },
+        {
+          "url": "https://www.neros.tech/articles/neros-signs-450m-conditional-loan-commitment-from-office-of-strategic-capital-to-establish-americas-drone-industrial-base",
+          "disposition": "Opened original conditional commitment, no draw assumed"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/neros-signs-450m-conditional-loan-commitment-with-the-office-of-strategic-capital-to-establish-americas-drone-industrial-base-302926692.html",
+          "disposition": "Opened original issuer-distributed same450m commitment, not duplicate"
+        },
+        {
+          "url": "https://www.caplight.com/company/neros",
+          "disposition": "Discovery debt candidate resolved to conditional commitment, not cash"
+        }
+      ]
+    },
+    {
+      "id": "76c0e35f-7c9e-40fd-8ed7-c468083b8a41",
+      "slug": "nescom-gids-with-pakistan-air-force",
+      "name": "NESCOM / GIDS (with Pakistan Air Force)",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Broad issuer/history and counterparty financing searches identify Pakistan GIDS commercial/state-owned defence group context. Exact composite cohort NESCOM/GIDS/PAF is not one demonstrated legal borrower.",
+      "hold_note": "Group procurement/export budgets and national defence allocations not company financing. GIDS original homepage/terms fetch timed out/502, indexed identity only. No source-backed own incoming amount established; private/state finance remains unknown.",
+      "searches_checked": [
+        "\"NESCOM\" \"GIDS\" funding investment history",
+        "site.gids.com.pk \"about\"",
+        "\"NESCOM\" \"GIDS\" investment financing budget grants"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://gids.com.pk/",
+          "disposition": "Official indexed state-owned conglomerate identity; direct fetch timeout"
+        },
+        {
+          "url": "https://gids.com.pk/terms-conditions/",
+          "disposition": "Official indexed export/marketing role; direct502"
+        },
+        {
+          "url": "https://quwa.org/quwa-premium/pakistans-defence-industry-lays-out-ambitious-future-roadmap/",
+          "disposition": "Indexed commercial-wing context, not financing proof"
+        },
+        {
+          "url": "https://www.gids.org.pk/introduction/",
+          "disposition": "Excluded Graduate Institute of Development Studies namesake"
+        }
+      ]
+    },
+    {
+      "id": "2797a0b6-0c0f-4cfc-8108-0d64b78b12a6",
+      "slug": "netline-communications-technologies",
+      "name": "Netline Communications Technologies",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Official Israeli export brochure confirms exact NCT jamming/counter-UAS issuer and netlinetech.com continuity. Hebrew legal identity and broad historical/latest/investor searches reviewed.",
+      "hold_note": "IVC lists March/May2000 SeriesA/extended candidates but masked terms/vehicles and no original transaction confirmation; held. US NetLine lead-generation company and2.6m NEA/OVP/DFW claims namesake not transferred. Original sites unavailable; no zero-funding inference.",
+      "searches_checked": [
+        "Netline Communications Technologies investment acquisition financing 2026",
+        "\"Netline\" \"Communications Technologies\" acquisition investor",
+        "\"Netline\" \"investment\" \"NCT\"",
+        "\"Netline\" \"2000\" \"venture\" investment",
+        "\"Netline Communications\" investment investors 2026 financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sibat.mod.gov.il/Exhibitions/ADEXBAKU/Documents/netline.pdf",
+          "disposition": "Opened official exact Israeli issuer original brochure"
+        },
+        {
+          "url": "https://www.ivc-online.com/Google-Card?id=efce5ff0-1f7a-e111-ac59-00155d32a403",
+          "disposition": "Opened masked historical round candidates; not imported"
+        },
+        {
+          "url": "https://next.obudget.org/i/org/company/512648981?theme=budgetkey",
+          "disposition": "Indexed Hebrew legal identity, not financing"
+        },
+        {
+          "url": "https://www.netline.co.il/",
+          "disposition": "Direct fetch failed"
+        },
+        {
+          "url": "https://www.netlinetech.com/",
+          "disposition": "Official brochure linked site; direct fetch failed"
+        },
+        {
+          "url": "https://www.cbinsights.com/company/netline-communications/financials",
+          "disposition": "Discovery2.6m namesake claim excluded pending issuer proof"
+        }
+      ]
+    },
+    {
+      "id": "125aacf3-cc8b-4d9f-9b81-8fb09d12b9c8",
+      "slug": "netro-optronics",
+      "name": "Netro Optronics",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Bounded exact division, issuer and financing searches completed.",
+      "hold_note": "Unknown division finance not zero. ParentMKU borrowing, capex and660crore procurement not transferred as Netro cash.",
+      "searches_checked": [
+        "\"Netro Optronics\" funding investment",
+        "\"Netro Optronics\" investment investors loan grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.mku.com/en-gb/netro-optronics-overview",
+          "disposition": "Opened original exact optronics business"
+        },
+        {
+          "url": "https://www.mku.com/en-gb/mku-signs-660-crore-contract-indian-army-night-vision-weapon-sights",
+          "disposition": "Opened exact division; contract not finance"
+        }
+      ]
+    },
+    {
+      "id": "20f23e1c-f22d-4262-9e1d-73c332b7a404",
+      "slug": "neura-robotics",
+      "name": "NEURA Robotics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Original four dated transactions and latest issuer news checked; conditional ceiling and currencies retained.",
+      "hold_note": "Historical2021HanGroup80m/86m and legal continuity require original registry terms; Cclosing/instrument and exact legalvehicles unresolved. PrimaryC names ten backers but nolead, so aggregatorTetherlead/GV/NVentures mappings not inferred.",
+      "searches_checked": [
+        "NEURA Robotics funding 2026 latest 2025 120 million company announcement",
+        "site.neura-robotics.com funding 2023 55 16 million",
+        "NEURA Robotics 2021 2022 funding Han laser investment 86 million",
+        "\"NEURA Robotics\" \"2026\" \"Tether\" \"EIB\" investment loan",
+        "site.neura-robotics.com 2026 financing latest November investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://neura-robotics.com/neura-robotics-raises-55-million-usd-in-fresh-capital-to-boost-cognitive-robotics/",
+          "disposition": "Opened original financing; extract only stated currency, qualifiers, roles and closing"
+        },
+        {
+          "url": "https://neura-robotics.com/ai-robotics-startup-neura-robotics-secures-16-million-from-american-firm-interalpen-partners/",
+          "disposition": "Opened original financing; extract only stated currency, qualifiers, roles and closing"
+        },
+        {
+          "url": "https://neura-robotics.com/neura-robotics-secures-euro-120-million-series-b/",
+          "disposition": "Opened original financing; extract only stated currency, qualifiers, roles and closing"
+        },
+        {
+          "url": "https://neura-robotics.com/record-series-c/",
+          "disposition": "Opened original financing; extract only stated currency, qualifiers, roles and closing"
+        },
+        {
+          "url": "https://neura-robotics.com/news/",
+          "disposition": "Opened current issuer November2026news; partnerships/ownresearchprogramme not incoming cash"
+        },
+        {
+          "url": "https://partners.dealroom.co/companies/neura_robotics",
+          "disposition": "Indexed historical86m and investor-vehicle candidates held, not primaryfacts"
+        },
+        {
+          "url": "https://www.gvw.com/en/news/press-releases/detail/deeptech-robotics-gvw-beraet-investoren-bei-50-mio-euro-finanzierungsrunde-von-neura-robotics",
+          "disposition": "Indexed counsel50mEUR same2023transaction; not duplicate or replacement of issuerUSD"
+        },
+        {
+          "url": "https://tether.io/news/tether-to-lead-neura-robotics-series-c-financing-one-of-the-largest-up-to-1-4bn-robotics-physical-ai-investment-rounds-on-record-to-power-the-financial-and-intelligence-layer/",
+          "disposition": "Writer opened original explicit Tether Investments lead and independent investment-arm identity; no specific cheque or full cash closing inferred."
+        }
+      ]
+    },
+    {
+      "id": "62bca8dc-8bdd-487b-bf8e-b10c0ca16ef7",
+      "slug": "neuromorphic-labs",
+      "name": "Neuromorphic Labs",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Cohort articles identify Israeli neuromorphic navigation graduate of operatorINNOFENSE.",
+      "hold_note": "Legal issuer/website and private financing remain unresolved. Seattle5.1m AItrustventure and academicNBELgrants are distinct; accelerator funding advice not an award.",
+      "searches_checked": [
+        "\"Neuromorphic Labs\" funding Israel investors",
+        "\"Neuromorphic Labs\" Israel drones company",
+        "\"Neuromorphic Labs\" Israel funding drone neuromorphic",
+        "\"Neuromorphic Labs\" \"INNOFENSE\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://i-hls.com/archives/137950",
+          "disposition": "Opened accelerator operator source identifies Israeli drone-navigation firm; training onfundraising not capital"
+        },
+        {
+          "url": "https://i-hls.com/archives/139795",
+          "disposition": "Opened original operator4November2026 exact graduate identity"
+        },
+        {
+          "url": "https://neuromorphiclabs.ai/press/seed-funding",
+          "disposition": "Opened Seattle AItrust namesake USD5.1m excluded"
+        },
+        {
+          "url": "https://nbel-lab.com/",
+          "disposition": "Opened academicNBELgrant issuer distinct, excluded"
+        }
+      ]
+    },
+    {
+      "id": "c06c69d9-cb73-4505-8a5e-98f97c7d4d0d",
+      "slug": "new-frontier-aerospace",
+      "name": "New Frontier Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Bounded issuer latest/history and transaction-party checks support one completed seed, undisclosed amount.",
+      "hold_note": "Private terms and earlier equity unknown, notzero. NSIC contracts750k/1.5m and SBIRprocurement excluded; cumulative2.7m aggregator not equityraised.",
+      "searches_checked": [
+        "New Frontier Aerospace funding 2026 2025 investors",
+        "site.nfaero.com investors funding NSIC 2023 2025",
+        "site.pacificbayscapital.com \"New Frontier\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/new-frontier-aerospace-closes-seed-round-with-pacific-bays-capital-302268427.html",
+          "disposition": "Opened original completed seed"
+        },
+        {
+          "url": "https://www.nfaero.com/post/dod-s-national-security-innovation-capital-awards-1-5m-to-new-frontier-aerospace",
+          "disposition": "Opened original explicitly1.5mcontractextension; notgrant"
+        },
+        {
+          "url": "https://www.nfaero.com/post/new-frontier-aerospace-awarded-750k-contract-by-dod-s-national-security-innovation-capital",
+          "disposition": "Opened original signed750kcontract; excluded"
+        },
+        {
+          "url": "https://pacificbayscapital.com/",
+          "disposition": "Indexed original portfolio confirms2024 firstinvestment; directopen no readable body"
+        },
+        {
+          "url": "https://www.nfaero.com/",
+          "disposition": "Indexed current original equityfunded issuer; no newamount inferred"
+        }
+      ]
+    },
+    {
+      "id": "1ff00197-964c-451a-a7c2-727993a1a4c4",
+      "slug": "new-wave-design",
+      "name": "New Wave Design",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Resolved exact Minnesota private embedded-computing issuer DBA; bounded history/latest and investor searches completed.",
+      "hold_note": "Private funding unknown, notzero. SBIR/firm-fixed-price procurement not grant, and construction/interiordesign/Singapore namesakes excluded.",
+      "searches_checked": [
+        "\"New Wave Design\" investment acquisition funding 2026",
+        "\"New Wave Design\" investor acquisition owner loan",
+        "site.newwavedesign.com \"investment\" funding capital",
+        "\"New Wave Design\" \"loan\" \"Verification\"",
+        "\"New Wave Design\" private investment equity investor Minnesota"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://newwavedesign.com/legal-and-privacy/",
+          "disposition": "Opened original NewWaveDesignandVerificationLLC DBA proof"
+        },
+        {
+          "url": "https://newwavedesign.com/meet-our-team/",
+          "disposition": "Opened current exact Minnesota issuer"
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1158159",
+          "disposition": "Indexed exact SBIR procurement candidate, no grant assumed"
+        },
+        {
+          "url": "https://newwavedesign.com/",
+          "disposition": "Directopen403; other ownpages readable"
+        },
+        {
+          "url": "https://prospeo.io/c/new-wave-design-revenue",
+          "disposition": "Aggregator neverraised claim excluded, not zero funding"
+        },
+        {
+          "url": "https://www.newwave.design/about",
+          "disposition": "Indexed interior design namesake excluded"
+        }
+      ]
+    },
+    {
+      "id": "b45a940c-d55f-4f7f-9874-e641694a8ca6",
+      "slug": "newsight-imaging",
+      "name": "Newsight Imaging",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "evidence_note": "Own history and dated original announcements distinguish two grants, angel funding and completed SeriesA.",
+      "hold_note": "Earlier2016cash and overlapping2019/2020round labels require reconciliation. Proposed2022SPAC30mPIPE/10mpreclose and trustvalues are not actualissuer proceeds; subsidiaryVirusight/Watersight finance and cumulative15m excluded.",
+      "searches_checked": [
+        "Newsight Imaging funding investors 2026 2024 2020 company announcement",
+        "site.newsight.com investment grants 2026 2025 2021",
+        "site.newsight.com \"SPAC\" \"terminated\" financing",
+        "\"Newsight Imaging\" \"Infinity\" \"2018\" grant 560000",
+        "site.newsight.com 2026 financing investment grants"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.newsight.com/our-history/",
+          "disposition": "Opened original issuer financing/history; preserved own amount, date precision and role"
+        },
+        {
+          "url": "https://www.newsight.com/news/newsight-imaging-granted-540000-by-israels-innovation-authority/",
+          "disposition": "Opened original issuer financing/history; preserved own amount, date precision and role"
+        },
+        {
+          "url": "https://www.newsight.com/news/newsight-imaging-awarded-second-year-560000-grant-by-the-israel-innovation-authority-2/",
+          "disposition": "Opened original issuer financing/history; preserved own amount, date precision and role"
+        },
+        {
+          "url": "https://www.newsight.com/news/newsight-imaging-secures-7-million-series-a-financing-round-led-by-infinity-capital/",
+          "disposition": "Opened original issuer financing/history; preserved own amount, date precision and role"
+        },
+        {
+          "url": "https://finder.startupnationcentral.org/company_page/newsight-imaging?section=financials",
+          "disposition": "Indexed5m2019/2mApr2020 and550k2018 conflicts held to issuer7m/560k"
+        },
+        {
+          "url": "https://www.spacinsider.com/news/deal-announcements-amendments/vision-sensing-vsac-terminates-newsight-deal",
+          "disposition": "Indexed terminatedSPAC and unfinalized30mPIPE/10mpreclose; no proceeds imported"
+        }
+      ]
+    },
+    {
+      "id": "6879e983-7967-48c8-9d06-a66228606972",
+      "slug": "next-geosolutions",
+      "name": "Next Geosolutions",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "OriginalIPO primary/secondary split and cash capital corroboration established; current group report and transaction-party history checked.",
+      "hold_note": "2026vesselloan70percent of112m Group allocation lacks exactborrower; no inferred78.4m.2025borrowingsgroupcashflow not single loan. Fincantieri acquisitionproposal and capitalraiseofbuyer excluded.",
+      "searches_checked": [
+        "site.nextgeo.eu IPO 2024 57.5 million capital increase financing",
+        "site.nextgeo.eu 2026 financing loan capital increase 2025",
+        "site.nextgeo.eu 2026 finanziamento prestito mutuo",
+        "site.nextgeo.eu 2026 loan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.nextgeo.eu/en/2024/05/20/next-geosoltuions-admitted-to-trading-on-the-euronext-growth-milan-market-of-borsa-italiana/",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        },
+        {
+          "url": "https://www.nextgeo.eu/wp-content/uploads/2026/04/NGE-Consolidated-Financial-Statements-2025.pdf",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        },
+        {
+          "url": "https://www.clearygottlieb.com/news-and-insights/news-listing/nextgeos-ipo",
+          "disposition": "Indexed transactioncounsel confirmsplacement, notbeneficialinvestor; primarysplit governs."
+        }
+      ]
+    },
+    {
+      "id": "2f89440a-4a9f-400d-9376-32109d03529e",
+      "slug": "nextech-solutions",
+      "name": "NexTech Solutions",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "CohortBoomslang context resolves US NTS, primaryissuer confirmsClairvest backing; Canadianmetadata unchanged.",
+      "hold_note": "Clairvest21.4m initial purchase and2.4m/2.7m followons need exactprimary/secondaryproceeds allocation, fundvehicle and dates. Acquisitionprices and federalcontracts not finance. CanadianARissuer excluded.",
+      "searches_checked": [
+        "NexTech Solutions drone Canada investment funding",
+        "site.clairvest.com NexTech Solutions 2023 investment 100 million",
+        "site.nextechsol.com 2026 funding investment financing",
+        "site.clairvest.com NexTech 2023 21.4"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.nextechsol.com/news/new-leadership-strategic-investment",
+          "disposition": "Opened exactoriginal strategicinvestment; genericassociation only."
+        },
+        {
+          "url": "https://www.clairvest.com/wp-content/uploads/FS-Q1FY24-FINAL.pdf",
+          "disposition": "Opened investorfinancials21.4m and LLCunits; primary/secondaryallocation unresolved."
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2023/08/10/2723261/0/en/Clairvest-Reports-Fiscal-2024-First-Quarter-Results.html",
+          "disposition": "Opened originalJuly2023investment; no duplicateSeptemberround."
+        },
+        {
+          "url": "https://unmannedairspace.info/counter-uas-systems-and-policies/nextech-solutions-acquires-boomslang-aerospace",
+          "disposition": "Cohortidentitycontext supplied bywriter; acquisitionprice notissuerfunding."
+        }
+      ]
+    },
+    {
+      "id": "cadf0782-95df-4fb8-88fd-ee85ff03a214",
+      "slug": "nextnav",
+      "name": "NextNav",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 6,
+      "relationship_count": 0,
+      "evidence_note": "Original historical and latestSEC sources reconcile legacyLLC/publicparent financing and actualwarrantcash.",
+      "hold_note": "Earlier rounds/SPAC PIPE versus trustcash and precise subscribingfunds remain unresolved.2026noncashnoteconversions, balances and futurewarrantcapacity excluded. Q32026 no disclosed subsequentfinancing not proofzero.",
+      "searches_checked": [
+        "site.nextnav.com 2026 financing notes funding 2025",
+        "site.nextnav.com 2014 70 million 2019 120 million financing",
+        "site.nextnav.com 2026 announced funding financing 2026 spectrum",
+        "site.nextnav.com 2026 financing warrants"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/nextnav-closes-70-million-series-d-financing-268436782.html",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        },
+        {
+          "url": "https://nextnav.com/nextnav-raises-120-million-in-latest-round-of-funding-to-launch-phased-3d-geolocation-services-across-u-s/",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/nextnav-inc-announces-additional-20-million-in-debt-financing-301848639.html",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1865631/000155485526002348/nn-20260930.htm",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2025/03/27/3050999/0/en/NextNav-Announces-Closing-of-190-Million-of-5-Redeemable-Senior-Secured-Convertible-Notes-Transaction.html",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1865631/000155485526001788/ex991_1.htm",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        }
+      ]
+    },
+    {
+      "id": "12996bbd-1bc4-4eaf-a40c-e77235de704a",
+      "slug": "nextvision",
+      "name": "NextVision",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Resolved cohortTaloncamera alias to IsraeliNextVision via originalRotronTalonRaptor page; funding assigned canonicalstabilizedsystems only.",
+      "hold_note": "No duplicate financing onalias. UScohortgeography notchanged. No independentUSissuer inferred from metadata.",
+      "searches_checked": [
+        "NextVision Talon DT-300 camera"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://rotronaero.com/products/talon-dt-300",
+          "disposition": "Opened original platformpartner confirmsNextVisionRaptorcamera, sameIsraeliissuer."
+        },
+        {
+          "url": "https://dronexl.co/2026/07/21/mountain-horse-talon-dt-300-blue-uas",
+          "disposition": "Cohortidentitycontext suppliedbywriter, notfinancialsource."
+        },
+        {
+          "url": "https://investor-relations.nextvision-sys.com/about-us/",
+          "disposition": "Indexedexactissuer identityand2021IPO; no duplicatealiasround."
+        }
+      ]
+    },
+    {
+      "id": "b78f6441-1dc9-4fbe-b0ff-6bf38abd1f1a",
+      "slug": "nextvision-stabilized-systems",
+      "name": "NextVision Stabilized Systems",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Original pricing and laterissuercompletion confirm2025raise; alias reconciled; latest9November2026issuerresults reviewed.",
+      "hold_note": "2021IPO113.751m versus129m includingoption requires originalregistry reconciliation. Fidelityparticipation/chequeonlysecondaryassertions held.2026NIS575m secondarysale excluded; earlierprivatehistoryunknown.",
+      "searches_checked": [
+        "NextVision 2026 capital 414 million",
+        "site.nextvision-sys.com capital raise 2025 414 million IPO 2021",
+        "site.nextvision-sys.com IPO 2021 113 million shekel"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://investor-relations.nextvision-sys.com/press-releases/nextvision-announces-the-pricing-of-its-global-offering-of-ordinary-shares/",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        },
+        {
+          "url": "https://investor-relations.nextvision-sys.com/press-releases/nextvision-to-be-included-in-the-tel-aviv-35-index/",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/nextvision-announces-record-third-quarter-2026-results-302933202.html",
+          "disposition": "Opened latestissuerresults; operatingcashflow/revenue notfinancing."
+        },
+        {
+          "url": "https://financialfilings.com/filings/next-vision/interim-quarterly-report/2025/7703898/",
+          "disposition": "Indexed129mIPO optionconflict; exacthistoricalproceeds held pendingoriginal."
+        }
+      ]
+    },
+    {
+      "id": "f0a10987-848f-4643-a451-769ea9d96652",
+      "slug": "nikon",
+      "name": "Nikon",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Original Japanese/English issuerbondissue table and2025/2026ownSSFselection reviewed; parent distinguished subsidiaries.",
+      "hold_note": "Institutionalhistory extensive andpartial. Currentbankborrowings/netcashflows are not original loan events. OwnSSFamountandpayment remainunknown; no programmebudget attribution. Other grants and oldbondterms require followup.",
+      "searches_checked": [
+        "site.nikon.com corporate IR 2026 bonds issued 2025 2026 funding",
+        "site.nikon.com 2026 bonds 20000 10000 issued",
+        "site.nikon.com Funding 2026 Space Strategy",
+        "site.nikon.com 2020 23rd bonds"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.nikon.com/company/ir/stock_info/rating_bond/",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        },
+        {
+          "url": "https://www.nikon.com/company/news/2025/0227_02/",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        },
+        {
+          "url": "https://www.nikon.com/company/news/2026/0902_01/",
+          "disposition": "Opened primary original; imported only supported issuer facts."
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [
+      {
+        "from": "tether issuer shorthand",
+        "to": "tether-investments",
+        "basis": "Writer opened original investor release; independently named Tether Investments is lead and investment arm, not presumed stablecoin issuing vehicle."
+      }
+    ],
+    "canonical_company_aliases": [
+      {
+        "from": "nextvision",
+        "to": "nextvision-stabilized-systems",
+        "basis": "Cohort camera article and original issuer publications establish same Israeli company; no company metadata merge or financing duplication."
+      }
+    ],
+    "root_verification": {
+      "search_queries_executed": 6,
+      "searches_checked": [
+        "NEURA Robotics 2026 funding 120 million 2025 1 billion",
+        "Neros Technologies 2026 121 million 75 million funding",
+        "NextVision 2026 capital raising 2025 2026 150 million",
+        "Navantia UK HIE 2.05 million 2026",
+        "site.neura-robotics.com \"2026\" \"financing\" \"1.4\"",
+        "site.neros.tech \"November\" \"2026\" \"450\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://neura-robotics.com/record-series-c/",
+          "disposition": "Opened10June2026original up-toUSD1.4bnSeriesC. Upper bound/structure distinct from Marchrumour and orderbook; no assumption wholecashclosed."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/neros-signs-450m-conditional-loan-commitment-with-the-office-of-strategic-capital-to-establish-americas-drone-industrial-base-302926692.html",
+          "disposition": "Opened2November2026original signedconditional450mcommitment, not cash receipt or finished loan; projectequity notnewround."
+        },
+        {
+          "url": "https://investor-relations.nextvision-sys.com/press-releases/nextvision-announces-the-pricing-of-its-global-offering-of-ordinary-shares/",
+          "disposition": "Opened16September2025primarygrossNIS1387000000 issuer financing; USDtranslation and2026shareholdersecondary separate."
+        },
+        {
+          "url": "https://www.hie.co.uk/news-and-blogs/news/2026/march/23/6m-approved-for-offshore-wind-sites-in-highland-and-lewis/",
+          "disposition": "Opened23March2026original NavantiaUKLtd recipientGBP2.05m approved capital contribution; not6mprogramme/5mproject/Spanishparent loan. Repayment/instrument terms not explicit: undisclosed financing instrument, not inferred grant."
+        },
+        {
+          "url": "https://tether.io/news/tether-to-lead-neura-robotics-series-c-financing-one-of-the-largest-up-to-1-4bn-robotics-physical-ai-investment-rounds-on-record-to-power-the-financial-and-intelligence-layer/",
+          "disposition": "Opened original10June2026explicit Tether Investments lead and independentinvestment-arm identity. Corrected issuer shorthandTether participant toactualsource arm and supportedlead; ceiling/closing unchanged."
+        }
+      ],
+      "company_database_contexts_checked": 4,
+      "identity_context_notes": [
+        "NeuromorphicLabs cohort linksIsraeliINNOFENSEanddronearticles; SeattleAItrustnamesakeexcluded.",
+        "NextVision cohortcameraonMountainHorseplatform; reconcileIsraeliissuer aliases.",
+        "NexTechcohortBoomslangacquisition pointsdefenceNTS, notCanadianARventure.",
+        "Needltail officialOregonUAScohort admission notcashfinancing."
+      ]
+    },
+    "notes": [
+      "NavantiaUK ownHIEGBP2.05m capital contribution instrument not explicit; not assumed grant,GBP5mproject or parentSEPIloan. Unknownamount UKfacility distinct. GBP75mcapitalincrease and cash/in-kind timing remainheld.",
+      "NearEarth original KamanUSD10m22June2022 minorityequity and Boeing2017unknownamount.2022SECdebt/rights potentialconversionoverlap held. Ncellratedlimits and acquisitionconsideration not funding.",
+      "Neros original history distinguishes unknownseedclose date, announcedA, closedB, announcedC, and signedup-toUSD450mconditional loan. Own165mprojectequity notnewraise. SourceVyCapitalUS wording retained without asserting exactsubscribingfund. Procurement excluded.",
+      "NEURA originalC up-toUSD1.4bn announced unknowninstrument. Writer originalTether release explicitly identifies Tether Investments independentarm aslead; no individual cheque/fullcashclosing inferred. Other issuer-namedbackers not assumed leads/lenders.",
+      "Newsight two distinct issuer-reported USDgrants separated from unknownangelround andUSD7mA. Originallegalawardcurrency unknown; no writerFXconversion. SPACprojection and cumulativefinancing excluded. NewFrontierNSIC contracts notgrants.",
+      "NextGeo ownEUR50mIPOprimary distinguished from secondary7.5mgreenshoe. NextVision exactILS1387000000gross stored onlycanonicalIsraeliissuer;2026shareholdersecondary575m andaliasduplicate excluded.",
+      "NextNav actualprimarydebt/equity/warrantcash separate from noncash conversions, netproceeds, redemption and historicaltotals. Two same-company extension parents verified, including Nikonexplicitadditionalaward with unknownamount.",
+      "Database articlecontext resolves IsraeliNeuromorphicLabs versusSeattleAItrustventure; Needltailadmission notcash, NexTechdefenceintegrator notCanadianARnamesake. Context doesnot justify companygeography/publication changes."
+    ]
+  },
+  "tool_limitations": [
+    "GroupB one four-query search call returned503; execution unknown, excluded from reported successful executed-query count. GroupB records32 successful queries and continued through available originals. No access blocker."
+  ],
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, repeat idempotency, conflicting amount rejection and participant-source FK rejection; two same-company extension parents audited.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T12:53:53.508Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 29,
+      "mismatched_facts": 0,
+      "participant_matches": 68,
+      "source_matches": 40,
+      "relationship_matches": 4,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 2
+    }
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Wider-cohort DB events do not enter European map. Profiles and generic relationships use existing directory publication gates; no geography/classification or company gates changed."
+  },
+  "preserved": [
+    "Legacy research-agent/STATE.json",
+    "Frozen snapshots",
+    "Curated investor profiles and legacy relationships",
+    "Company geography, classification and publication gates",
+    "Repository schedules",
+    "No paid external API backfill"
+  ],
+  "programme_complete": false
+}
