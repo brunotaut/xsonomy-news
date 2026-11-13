@@ -1,5 +1,5 @@
 {
-  "status": "imported_awaiting_publication",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T07:53:57.952Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-fifty-sixth.json",
@@ -37,8 +37,16 @@
     "db_investor_profiles": 2619,
     "db_source_reconciliation_companies": 889,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
-    "concurrency_speedup_claimed": false
+    "current_manifest_publication_verified": true,
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "new_profile_exact_name_duplicates": 0,
+    "active_minutes": 10.52,
+    "checked_identities_per_hour": 136.9,
+    "completed_reviews_per_hour": 34.2,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, original-source and canonical identity QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution audit and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3312,
@@ -1010,5 +1018,48 @@
     "Repository schedules",
     "No paid external API backfill"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T08:04:29.066Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T08:04:29.066Z",
+    "verified_at": "2026-11-13T08:04:29.066Z",
+    "catalogue_commit": "409900c46ea23d9c970c8b5bd9e414322ee20872",
+    "source_commit": "83d602e5bd92e18a689c43757ea960c6f2e375c1",
+    "workflow_run": {
+      "id": 43390061408,
+      "head": "409900c46ea23d9c970c8b5bd9e414322ee20872",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43390061408"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-sixth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-sixth.json",
+    "generated_at": "2026-11-13T08:02:51.090Z",
+    "investor_generated_at": "2026-11-13T08:02:53.461Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2610,
+    "portfolio_relationships": 399,
+    "expected_profiles": 65,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [
+      [
+        "european-space-agency",
+        "liveeo"
+      ]
+    ],
+    "targets_in_european_landscape": [],
+    "generic_profile_source_matches": 13,
+    "manifest_participation_source_matches": 70,
+    "manifest_generic_relationship_matches": 13,
+    "current_manifest_event_rows": 41,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 70,
+    "current_manifest_generic_relationship_matches": 13,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: DB2619 versus live2610. All24 targets remain outside the European landscape. All65 referenced profiles,70 participant source URLs and13 generic links and their source URLs verified. Forty new profiles published; curated-profile hash preserved. Wider-cohort DB funding is not asserted to be European map events. Gates unchanged."
+  }
 }
