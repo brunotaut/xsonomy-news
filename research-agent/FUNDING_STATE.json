@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1072,
   "next_action": "Continue next24 queued wider-cohort identities Micantis through ModalAI under a fresh short writer lease and up to four disjoint read-only groups. No pending import or publication. Prioritise exact issuer and acquisition/alias continuity (MicaSense/AgEagle, group subsidiaries), latest and historical financing and explicit roles. Preserve source-level holds, including unresolved published Liebherr issuer attribution, MatrixSpace filing overlap and initial Merlin PIPE instrument/closing reconciliation. No internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T10:47:23.436Z",
+  "updated_at": "2026-11-13T10:52:06.574Z",
   "source_reconciliation_companies": 909,
   "approved_funding_events": 3391,
   "round_participations": 4405,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T10:47:23.436Z",
     "expires_at": "2026-11-13T12:47:23.436Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "f9430fca-9fca-437d-9c29-e91f80ad4b3c",
       "23eb63ce-2fc2-4eb9-aeaa-a34b3d6214ed",
@@ -5374,7 +5374,32 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "ready_after_production_rollback",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-ninth.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-ninth.json",
+    "run_id": "funding-20261113T1046Z-next24",
+    "dataset": "funding-landscape-20261113-fifty-ninth",
+    "prepared_at": "2026-11-13T10:52:06.574Z",
+    "expected": {
+      "events": 32,
+      "participations": 29,
+      "sources": 42,
+      "relationships": 9
+    },
+    "production_before": {
+      "events": 3404,
+      "approved": 3391,
+      "links": 4405,
+      "sources": 4701,
+      "profiles": 2664,
+      "covered": 909,
+      "relationships": 421,
+      "preserved_profiles_hash": "6374c25baee37687e2ea194a57ec9e2d"
+    },
+    "local_postgresql_tests_passed": true,
+    "production_rollback_baseline_restored": true
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T10:07:20.694Z",
