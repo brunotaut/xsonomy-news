@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1124,
   "next_action": "Continue next24 queued wider-cohort identities PerimeterAI through Portal Aircraft under fresh short writer lease and up to four disjoint read-only groups. No pending import or publication. Resolve corporate/programme/product/alias identities before assigning finance; retain unresolved published Liebherr attribution and source-level holds. No internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T18:53:42.982Z",
+  "updated_at": "2026-11-13T19:05:07.710Z",
   "source_reconciliation_companies": 993,
   "approved_funding_events": 3625,
   "round_participations": 4766,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T18:53:42.982Z",
     "expires_at": "2026-11-13T20:53:42.982Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "cfd3dc19-020a-4137-a655-7c4cbe9a5f6f",
       "539ad543-f7dd-4901-bef7-cbd17f138aa6",
@@ -6595,7 +6595,28 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "rollback_verified_ready_for_atomic_import",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-seventh.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-seventh.json",
+    "expected": {
+      "events": 22,
+      "links": 29,
+      "sources": 33,
+      "relationships": 7
+    },
+    "baseline": {
+      "events": 3638,
+      "approved": 3625,
+      "links": 4766,
+      "sources": 5014,
+      "profiles": 2864,
+      "covered": 993,
+      "relationships": 476,
+      "preserved_profiles_hash": "33621ea31ecb66dab0ce40d15c7de3c0"
+    },
+    "recovery_note": "Check exact manifest keys/dataset for previously committed atomic import before retry. Idempotent importer rejects conflicts."
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T18:04:48.726Z",
