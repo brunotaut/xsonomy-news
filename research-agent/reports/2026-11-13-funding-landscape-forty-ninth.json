@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T00:47:14.705Z",
   "prior_preparation": "research-agent/prepared/funding-landscape-20261112-forty-eighth.json",
@@ -35,7 +35,15 @@
     "db_investor_profiles": 2448,
     "db_source_reconciliation_companies": 815,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false
+    "current_manifest_publication_verified": true,
+    "durable_queue_identity_count": 2564,
+    "durable_queue_readback_verified": true,
+    "new_profile_exact_name_duplicates": 0,
+    "active_minutes": 7.73,
+    "checked_identities_per_hour": 186.3,
+    "completed_reviews_per_hour": 38.8,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed current writer lease: recovery of24 previously prepared identities, four read-only original-source QA groups, canonical reconciliation, PostgreSQL tests, production rollback, atomic import, exact source/fact audit, idempotency and verified live publication. Prior research time is not counted as new work."
   },
   "production_before": {
     "events": 3062,
@@ -960,7 +968,8 @@
       "Delek Investments and Delek Motors remain source-specific; exact equivalence not proven.",
       "Inertial acquisition USD150m initial plus up toUSD175m contingent; neither amount imported as primary funding."
     ],
-    "held": "Private histories, IMoD identity, INFOX issuer continuity, Innovaero legacy placements, Insignito exact fund vehicle, Innoviz SPAC/ATM/options, and acquisition/contract/consortium totals remain explicit holds. Unknown is not zero."
+    "held": "Private histories, IMoD identity, INFOX issuer continuity, Innovaero legacy placements, Insignito exact fund vehicle, Innoviz SPAC/ATM/options, and acquisition/contract/consortium totals remain explicit holds. Unknown is not zero.",
+    "additional_canonical_note": "Sigma audited report establishes formerly Megasoft; neither existing alias found in full investor inventory. Distinct corporate/country vehicles retained. Fifty unique proposed profiles reconciled to thirteen existing and thirty-seven new profiles; normalized exact-name duplicate check passed."
   },
   "validation": {
     "tested_importer": "scripts/prepare-funding-pilot.mjs",
@@ -982,5 +991,40 @@
     "Existing curated profiles",
     "Repository schedules"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T00:54:58.443Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T00:54:58.443Z",
+    "verified_at": "2026-11-13T00:54:58.443Z",
+    "catalogue_commit": "4fe4e537d98bdbba78d46a81f36402090e6d9d01",
+    "source_commit": "4f82b1b0f8ef8ea82dbdc572beaff3ed3d8da7b2",
+    "workflow_run": {
+      "id": 43340558952,
+      "head": "4fe4e537d98bdbba78d46a81f36402090e6d9d01",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43340558952"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-forty-ninth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-forty-ninth.json",
+    "generated_at": "2026-11-13T00:53:32.381Z",
+    "investor_generated_at": "2026-11-13T00:53:34.530Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2439,
+    "portfolio_relationships": 337,
+    "expected_profiles": 50,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "current_manifest_event_rows": 24,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 47,
+    "current_manifest_generic_relationship_matches": 16,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "All24 company identities remain outside European landscape. No financing events claimed on European map. All50 referenced participant/owner/support profiles, all47 event-participant source URLs and all16 full-catalogue portfolio links verified in live investor directory. Nine pre-existing anonymous placeholders remain excluded:DB2448 versuslive2439. Existing curated profiles preserved. 37 new profiles and16 generic links published."
+  }
 }
