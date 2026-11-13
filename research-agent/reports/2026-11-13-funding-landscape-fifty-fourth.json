@@ -1,0 +1,1186 @@
+{
+  "status": "imported_awaiting_publication",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T05:56:16.178Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-fifty-fourth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 25,
+    "new_queue_identities_checked": 24,
+    "published_landscape_followups": 1,
+    "newly_completed_bounded_reviews": 7,
+    "new_or_retained_partial": 18,
+    "new_approved_events": 77,
+    "new_round_participations": 40,
+    "new_source_rows": 98,
+    "new_generic_portfolio_relationships": 8,
+    "confirmed_generic_relationships": 9,
+    "existing_generic_relationships_preserved": 1,
+    "new_companies_with_events": 13,
+    "new_investor_profiles": 25,
+    "group_search_queries_executed": 106,
+    "root_additional_search_queries": 3,
+    "search_queries_executed": 109,
+    "per_company_search_ledger_entries": 109,
+    "shared_alias_query_reuse": 2,
+    "source_ledger_entries": 131,
+    "database_identities_inspected": 25,
+    "existing_target_events_inspected": 1,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 77,
+    "mismatched_facts": 0,
+    "participant_matches": 40,
+    "source_matches": 98,
+    "relationship_matches": 8,
+    "missing_link_sources": 0,
+    "relationship_identity_matches": 9,
+    "relationship_profile_source_matches": 9,
+    "contribution_fields_audited": true,
+    "db_total_events": 3250,
+    "db_approved_events": 3237,
+    "db_approved_round_participations": 4187,
+    "db_investor_profiles": 2539,
+    "db_source_reconciliation_companies": 862,
+    "queue_dispositions_applied": 24,
+    "new_profile_exact_name_duplicates": 0,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 3173,
+    "approved": 3160,
+    "links": 4147,
+    "sources": 4424,
+    "profiles": 2514,
+    "covered": 849,
+    "relationships": 377,
+    "preserved_profiles_hash": "c025e835a7df6418a555ab813c62d1ac"
+  },
+  "production_after": {
+    "events": 3250,
+    "approved": 3237,
+    "links": 4187,
+    "sources": 4522,
+    "profiles": 2539,
+    "covered": 862,
+    "relationships": 385,
+    "preserved_profiles_hash": "c025e835a7df6418a555ab813c62d1ac"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1041,
+    "source_review_partial": 556,
+    "queued": 967
+  },
+  "per_company": [
+    {
+      "id": "1b6eeee9-e029-42cf-bf9d-62f87f1dd5d8",
+      "slug": "kongsberg-nanoavionics",
+      "name": "Kongsberg NanoAvionics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Seed, exact EPSS2 grant and AST capital infusion verified for Lithuanian issuer.",
+      "hold_note": "History partial: Intelektas grant split and 2022 revolving loan original remain unresolved; Kongsberg acquisition consideration excluded.",
+      "searches_checked": [
+        "NanoAvionics investment funding seed 2017 AST Science 2018 2026",
+        "site.nanoavionics.com investment funding grant 2015 2026",
+        "site.cordis.europa.eu NanoAvionika EPSS",
+        "site.cordis.europa.eu/project EPSS 2",
+        "site.sec.gov/Archives/edgar/data/1780312 January 12 2022 €1.5 million",
+        "site.nanoavionics.com funding 2025 2026 loan grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://practica.vc/en/news/practica-capital-one-of-the-first-european-vc-investors-in-the-space-industry-with-nanoavionics",
+          "disposition": "Confirmed seed amount; investor-republished original coverage."
+        },
+        {
+          "url": "https://practica.vc/en/investments/nanoavionics",
+          "disposition": "Confirmed seed year and prior ownership."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/768434",
+          "disposition": "Confirmed exact beneficiary contribution EUR1175655.43 and EC signature."
+        },
+        {
+          "url": "https://nanoavionics.com/news/nanoavionics-secures-investment-astscience-expands-global-operations-u-s/",
+          "disposition": "Confirmed capital infusion; unknown primary/secondary split retained."
+        },
+        {
+          "url": "https://nanoavionics.com/news/nanoavionics-receives-3-2-million-eur-investment-commercialize-smallsat-propulsion-system/",
+          "disposition": "Combined EUR3.2m Intelektas/H2020 grants not duplicated as separate aggregate round."
+        },
+        {
+          "url": "https://ast-science.com/wp-content/uploads/2022/08/q2-2022-10q.pdf",
+          "disposition": "Original loan disclosure candidate fetch404; EUR1.5m revolving facility claim held pending original text."
+        }
+      ]
+    },
+    {
+      "id": "8d158167-b170-4dbc-b6a2-69d46d98e842",
+      "slug": "kord",
+      "name": "Kord",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Exact KBR directed-energy subsidiary established.",
+      "hold_note": "Acquisition-related credit candidate lacks exact borrower terms; parent financing and procurement excluded; not evidence of zero funding.",
+      "searches_checked": [
+        "Kord KBR acquired funding directed energy 2026",
+        "site.kbr.com Kord acquired Centauri 2020 funding",
+        "Kord Technologies Arlington acquisition 2019",
+        "Kord Technologies funding investment loans 2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://solutions.kbr.com/high-energy-laser-solutions/directed-energy",
+          "disposition": "Verified KBR subsidiary exact identity; generic ownership only."
+        },
+        {
+          "url": "https://www.kbr.com/en/insights-news/press-release/kbr-successfully-demonstrates-first-combat-capable-directed-energy",
+          "disposition": "Search-original candidate identifies procurement role; not financing."
+        },
+        {
+          "url": "https://www.nxtcapital.com/transactions/",
+          "disposition": "Acquisition credit facility candidate; borrower/issuer terms unresolved, excluded."
+        }
+      ]
+    },
+    {
+      "id": "58c291d8-0f26-4aae-b246-16ebf7be6123",
+      "slug": "korea-aerospace-industries",
+      "name": "Korea Aerospace Industries",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "evidence_note": "Five issuer debt events verified through original Korean regulator-hosted annual tables.",
+      "hold_note": "History partial: earlier bonds, commercial paper, IPO and post-Q1 borrowing require reconciliation; no capital-market completeness claimed.",
+      "searches_checked": [
+        "Korea Aerospace Industries bonds financing 2026 2025",
+        "한국항공우주산업 2026 5000억원 회사채 발행 1월 27",
+        "Korea Aerospace 2026 March 4 convertible"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kind.krx.co.kr/external/2026/05/15/001893/20260515004208/11013.htm",
+          "disposition": "Confirmed issuer-specific bond tranches and convertible; subsidiary securities excluded."
+        },
+        {
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260127000331",
+          "disposition": "Original filing wrapper only; terms corroborated through KRX."
+        },
+        {
+          "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260126000524",
+          "disposition": "Original final-terms wrapper only; no underwriter inferred as investor."
+        },
+        {
+          "url": "https://www.infradefence.co.uk/financings/korea-aerospace-industries-kai-krw-500bn-unsecured-bonds-2026/",
+          "disposition": "Discovery pointer only; original KRX used."
+        }
+      ]
+    },
+    {
+      "id": "33da68c3-2c01-424e-83ba-d80f01a3abf0",
+      "slug": "korea-robot-manufacturing",
+      "name": "Korea Robot Manufacturing",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Tamul Multimedia continuity, 2023 primary equity and two convertible issues verified.",
+      "hold_note": "History partial: earlier rounds, 2026 report and Shinhan candidate remain unresolved; outgoing Hoverfly investment excluded; fifth-bond investor allocation not extrapolated.",
+      "searches_checked": [
+        "Korea Robot Manufacturing funding investment",
+        "Korea Robot Manufacturing funding 2026",
+        "site.krm.co.kr 유상증자 전환사채 2023 2026",
+        "케이알엠 2023 200 전환사채",
+        "Korea Robot Manufacturing investment Shinhan historical funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kind.krx.co.kr/external/2024/03/21/002314/20240321009200/11011.htm",
+          "disposition": "Confirmed continuity, primary equity and actual convertible principal/issue dates."
+        },
+        {
+          "url": "https://kind.krx.co.kr/external/2024/03/14/001388/20240314003318/00591.htm",
+          "disposition": "Early shareholder notice: related-party allocation differs from whole fifth-bond amount, not copied as whole round."
+        },
+        {
+          "url": "https://www.krm.co.kr/",
+          "disposition": "Official current identity and investor section checked."
+        },
+        {
+          "url": "https://www.krm.co.kr/investor/disclosure.php",
+          "disposition": "Official filings list; current history not fully reconciled."
+        }
+      ]
+    },
+    {
+      "id": "f93fc321-a61a-470b-9048-c0aa99e7cd0b",
+      "slug": "kova-labs",
+      "name": "Kova Labs",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Bounded official news, history and investor review confirms initial round and two distinct company awards through checked date.",
+      "hold_note": "Private amount/instrument/date and unnamed backers remain undisclosed; programme totals and paid military work are not extra funding.",
+      "searches_checked": [
+        "Kova Labs investment funding Ukraine",
+        "Kova Labs Lifeline funding 2025",
+        "site.lifelineventures.com Kova",
+        "Kova Labs funding investment grant 2026 latest"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.linkedin.com/posts/kova-labs_weve-raised-our-initial-funding-round-led-activity-7367122615334748160-iWuY",
+          "disposition": "Original raised round names co-leaders; no exact date/instrument inferred."
+        },
+        {
+          "url": "https://www.kovahq.com/news/chapter-ii",
+          "disposition": "Original continuity and backers, 13June2026; Finnish military engagement not financing."
+        },
+        {
+          "url": "https://www.kovahq.com/news/kova-bravetech",
+          "disposition": "Confirmed own EUR120k award, announcement13July versus article15July."
+        },
+        {
+          "url": "https://www.kovahq.com/news/kova-labs-bravetech-phase-2",
+          "disposition": "Confirmed own EUR300k award14October versus article15October."
+        },
+        {
+          "url": "https://www.lifelineventures.com/companies/",
+          "disposition": "Investor portfolio checked."
+        },
+        {
+          "url": "https://deeptechfinland.fi/c/kova-labs",
+          "disposition": "Secondary identity/backing corroboration; UK same-name not merged."
+        }
+      ]
+    },
+    {
+      "id": "c1940768-cf13-4e80-9e4e-4d7deb1f8d27",
+      "slug": "kovo-armor",
+      "name": "KOVO Armor",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Bounded Lithuanian company, public development bank and transaction-party review reconciles capex with two financing disclosures.",
+      "hold_note": "Unknown private terms remain unknown; no EUR3m round or individual angel cheque inferred.",
+      "searches_checked": [
+        "KOVO Armor investment funding",
+        "KOVO Armor ILTE paskol",
+        "site.ilte.lt Kovo 2 Startuok",
+        "site.kovo-armor.com investment",
+        "KOVO Armor funding investment 2025 2026 investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.fez.lt/kovo-armor-to-manufacture-ballistic-protection-products-in-klaipeda-fez/",
+          "disposition": "Recipient-specific ILTE amount and named angels; factorycapex is not financing round."
+        },
+        {
+          "url": "https://ilte.lt/visi-finansavimo-sprendimai/paskolos-startuok-90",
+          "disposition": "Confirmed loan programme; borrower terms not disclosed."
+        },
+        {
+          "url": "https://kovo-armor.com/",
+          "disposition": "Official business checked; no claim of zero funding."
+        }
+      ]
+    },
+    {
+      "id": "04c9ef6e-ea90-4143-a469-59256bd548b9",
+      "slug": "kp-labs",
+      "name": "KP Labs",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 13,
+      "relationship_count": 0,
+      "evidence_note": "Exact KP Labs Sp. z o.o. own growth equity plus12 separate sole-beneficiary EU project disclosures verified. Announcement dates left null for undated grant page; implementation periods preserved only in notes.",
+      "hold_note": "PLN60m historical public financing is cumulative; PLN16,127,371.99 high-performance DPU consortium grant andPLN6,906,253.79 aviation cluster grant excluded because own allocation absent. ARP loan claim needs original lender terms; rejected17m application is not funding. Grant payments/award dates unknown.",
+      "searches_checked": [
+        "KP Labs funding investment grant NCBR ESA financing",
+        "site.kplabs.space funding projects dofinansowanie 2026 Momentum",
+        "KP Labs dofinansowanie projekt",
+        "site.momentumcp.pl KP Labs"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kplabs.space/press-releases/momentum-capital-partners-inwestuje-19-4-mln-zl-w-kp-labs-spolke-dostarczajaca-rozwiazania-do-przetwarzania-danych-na-orbicie-ziemi",
+          "disposition": "confirmed PLN19.4m equity, first fund shareholder"
+        },
+        {
+          "url": "https://www.kplabs.space/eu-projects",
+          "disposition": "confirmed12 own grants; held consortium and cluster allocations"
+        },
+        {
+          "url": "https://www.gov.pl/web/fundusze-regiony/wsparcie-z-feng-dla-innowacyjnych-projektow-z-branzy-kosmicznej",
+          "disposition": "search candidate public financing support; no direct cheque attribution"
+        },
+        {
+          "url": "https://momentumcap.pl/media/notatka-prasowa-kp-labs",
+          "disposition": "fetch unavailable; own issuer original substitutes"
+        },
+        {
+          "url": "https://arp.pl/documents/299/Raport_Kosmiczny_2025_ARP_C8rpRqN.pdf",
+          "disposition": "search candidate loan history; original financing terms still required"
+        }
+      ]
+    },
+    {
+      "id": "ed4dc287-b58a-402e-987f-f1fee8af40f6",
+      "slug": "kpler",
+      "name": "Kpler",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 1,
+      "evidence_note": "Primary2022EUR20m distinguished from >USD200m mostlysecondary transaction; counsel confirms undisclosed ARR debt2023. Latest2026SixthStreet equity backing recorded generically.",
+      "hold_note": "June2026>USD1bn transaction includes FiveArrows exit and Insight rollover; primary company cash amount unsupported, not imported as funding. Current Singapore cohort geography untouched; economic parent KplerHoldingSA distinguished from acquired MarineTraffic/Spire business.",
+      "searches_checked": [
+        "Kpler investment funding 2022 200 million Five Arrows Insight",
+        "site.kpler.com funding investment financing 2026 2025",
+        "site.insightpartners.com Kpler Five Arrows 2022 investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kpler.com/blog/kpler-attracts-over-200-million-strategic-growth-investment-led-by-insight-partners-five-arrows",
+          "disposition": "confirmed initial transaction, headline not all primary"
+        },
+        {
+          "url": "https://www.rothschildandco.com/siteassets/publications/rothschildandco/global_advisory/2022/en_ga_growth_equity_review_20_july_2022.pdf",
+          "disposition": "confirmed primary EUR20m plussecondary"
+        },
+        {
+          "url": "https://www.mcdermottlaw.com/news/mcdermott-advises-kpler-on-arr-financing-for-strategic-growth-investment/",
+          "disposition": "confirmed debt obtained; amount unknown"
+        },
+        {
+          "url": "https://sixthstreet.com/newsroom/kpler-announces-strategic-growth-equity-investment-from-sixth-street",
+          "disposition": "confirmed equity backing and secondary exit; hold primary allocation"
+        },
+        {
+          "url": "https://www.insightpartners.com/portfolio/kpler/",
+          "disposition": "investor portfolio search confirms economic company, no newamount"
+        }
+      ]
+    },
+    {
+      "id": "2482bbf3-9d7f-4a19-bda2-c1684a6383d6",
+      "slug": "kraken",
+      "name": "Kraken",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Ambiguous cohort record website points to Canadian KrakenRobotics but UK country/source refers RoyalNavy craft; exactissuer cannot be safely resolved from this row.",
+      "hold_note": "Neither Canadian financing nor UKKTG SeriesB copied into ambiguousidentity. No geography/classification/website mutation; identity hold requires originalentity-resolution evidence.",
+      "searches_checked": [
+        "site.krakenrobotics.com financing 2026 2025 2024 bought deal offering",
+        "site.krakentechnology.com investment funding seed Series A 2025 2024"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defence-industry.eu/royal-navy-launches-uncrewed-systems-centre-in-swindon-to-accelerate-use-of-drones-autonomous-boats-and-minehunting-systems/",
+          "disposition": "source mentions Kraken craft without exact legalissuer"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/press-releases/",
+          "disposition": "Canadian canonical issuer differs from UK craft record"
+        },
+        {
+          "url": "https://krakentechnology.com/",
+          "disposition": "UK canonical issuer platform identity; no row merge"
+        }
+      ]
+    },
+    {
+      "id": "02c4ca2c-c3aa-4cda-b9f6-0774f3c171a2",
+      "slug": "kraken-kinetics",
+      "name": "Kraken Kinetics",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Own website identifies US warhead/payload manufacturer; original Neros collaboration confirms exactcompany. Bounded history/issuer/transaction searches did not establish a public financing event.",
+      "hold_note": "Private funding unknown, notzero. Neros SeriesC250m and droneprocurement not KrakenKinetics funding; aggregator zero rows not evidence. No transfer from unrelated marine or crypto Kraken.",
+      "searches_checked": [
+        "Kraken Kinetics funding investment Neros",
+        "Kraken Kinetics investment funding investors",
+        "site.neros.tech Kraken Kinetics"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.krakenkinetics.com/",
+          "disposition": "confirmed exactmanufacturer; no financing disclosure"
+        },
+        {
+          "url": "https://www.neros.tech/articles/project-millennium",
+          "disposition": "confirmed collaboration; Neros investment strategy not a KrakenKinetics cheque"
+        },
+        {
+          "url": "https://www.crunchbase.com/organization/kraken-kinetics-llc",
+          "disposition": "search candidate identity only; pooledcategoryfunding not companyamount"
+        }
+      ]
+    },
+    {
+      "id": "2eb477b4-1190-4561-be31-de88cde79bea",
+      "slug": "kraken-robotics",
+      "name": "Kraken Robotics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 11,
+      "relationship_count": 0,
+      "evidence_note": "Canadian parent exactoriginal offerings2018-2026, committedfacilities2024 and fullCAD125m termdraw2026 verified. CADcurrency crosschecked original accounts. Underwritingserviceproviders notinvestorroles.",
+      "hold_note": "Earlier2012-2017equity/grants,2018warrantexercise,2019-2021projectassistance remain followup. OceanSupercluster GeoScan recipient KrakenRoboticsServices and Brazilian energyR&D subsidiary contract not parentgrant; consortiumOceanVisionbudget and undrawncapacity notcash. No events copiedto ambiguousKraken.",
+      "searches_checked": [
+        "site.krakenrobotics.com financing 2026 2025 2024 bought deal offering",
+        "site.krakenrobotics.com financing 2023 2022 2021",
+        "site.krakenrobotics.com 2018 6,000,000 financing",
+        "site.krakenrobotics.com Kraken Closes 2.3 Million Equity Financing With Ocean Infinity",
+        "site.krakenrobotics.com Kraken Completes Equity Financing 2018",
+        "site.krakenrobotics.com Canadian dollars 2020 financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.krakenrobotics.com/news-releases/kraken-completes-equity-financing/",
+          "disposition": "confirmed exactparent event; gross/net/option/escrow/facility distinctions retained"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/news-releases/kraken-closes-2-3-million-equity-financing-with-ocean-infinity/",
+          "disposition": "confirmed exactparent event; gross/net/option/escrow/facility distinctions retained"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/news-releases/kraken-announces-closing-of-6000000-bought-deal-financing/",
+          "disposition": "confirmed exactparent event; gross/net/option/escrow/facility distinctions retained"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/news-releases/kraken-bought-deal-financing-closing-over-allotment/",
+          "disposition": "confirmed exactparent event; gross/net/option/escrow/facility distinctions retained"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/news-releases/kraken-announces-closing-of-10-million-bought-deal-financing/",
+          "disposition": "confirmed exactparent event; gross/net/option/escrow/facility distinctions retained"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/news-releases/kraken-robotics-completes-20-million-bought-deal-equity-financing/",
+          "disposition": "confirmed exactparent event; gross/net/option/escrow/facility distinctions retained"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/news-releases/kraken-robotics-completes-51-75-million-bought-deal-public-offering/",
+          "disposition": "confirmed exactparent event; gross/net/option/escrow/facility distinctions retained"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/news-releases/kraken-robotics-completes-115-million-bought-deal-public-offering/",
+          "disposition": "confirmed exactparent event; gross/net/option/escrow/facility distinctions retained"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/news-releases/kraken-robotics-enters-into-new-credit-agreement-to-support-continued-growth/",
+          "disposition": "confirmed exactparent event; gross/net/option/escrow/facility distinctions retained"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/news-releases/kraken-robotics-announces-closing-of-402-5-million-public-offering-of-subscription-receipts/",
+          "disposition": "confirmed exactparent event; gross/net/option/escrow/facility distinctions retained"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/news-releases/kraken-robotics-announces-closing-of-strategic-acquisition-of-covelya-group-limited-updated-2026-guidance-and-appointments-to-executive-team/",
+          "disposition": "confirmed exactparent event; gross/net/option/escrow/facility distinctions retained"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/wp-content/uploads/2022/04/Kraken-Q4-2021-Financials-Final.pdf",
+          "disposition": "confirmed CAD2020/2021 exactproceeds and subsidiary separation"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/wp-content/uploads/2026/05/Kraken-MDA-Q1-2026-FINAL.pdf",
+          "disposition": "confirmed CAD2024/2025 amounts and currencies"
+        },
+        {
+          "url": "https://www.krakenrobotics.com/press-releases/",
+          "disposition": "historical/latest issuer news index checked; older holds retained"
+        }
+      ]
+    },
+    {
+      "id": "12bd6887-0bc4-4322-b8ee-c97743abfb42",
+      "slug": "kraken-technology-group",
+      "name": "Kraken Technology Group",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 3,
+      "evidence_note": "UK issuer latestSeriesB and2025strategicfunding confirmed on issuer and transaction parties, with BBB ownGBP27m contribution explicit. Same namedCanadian publiccompany notrecipient.",
+      "hold_note": "Earlier SmartCap/Notion/Speedinvest backing known but datesamountsinstrumentunknown; genericlinks only. Conversions not newcash; alternateGBP130m sameSeriesB; manufacturingpartnerships/USSOCOM49mOTAcontract notinvestment. No generic Kratos/Canadian Kraken transfer.",
+      "searches_checked": [
+        "site.krakentechnology.com investment funding seed Series A 2025 2024",
+        "site.krakentechnology.com funding 2025 2024",
+        "site.krakentechnology.com NSSIF 2025",
+        "site.krakentechnology.com NIF 2024",
+        "Kraken Technology Group funding 2024 3 million seed Notion Speedinvest SmartCap",
+        "site.krakentechnology.com SmartCap Notion Speedinvest funding 2024 2023"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://krakentechnology.com/articles/kraken-technology-group-raises-160m-at-1bn-valuation",
+          "disposition": "confirmed closedUSD175m; updateddate notsecond event"
+        },
+        {
+          "url": "https://www.dtcp.capital/news-and-insights/detail/dtcp-defence-leads-175-million-series-b-financing-round-in-kraken-technology-group/",
+          "disposition": "confirmed DTCPDefencefund leads, namedparticipants"
+        },
+        {
+          "url": "https://www.british-business-bank.co.uk/news-and-events/news/british-business-bank-invests-ps27m-maritime-defence-company-kraken-technology",
+          "disposition": "confirmed ownGBP27m; alternateGBP130m round"
+        },
+        {
+          "url": "https://krakentechnology.com/articles/nato-innovation-fund-and-nssif",
+          "disposition": "confirmed23June2025 funding"
+        },
+        {
+          "url": "https://www.nif.fund/news/nato-innovation-fund-invests-in-kraken-technology-group-to-expand-the-alliances-autonomous-maritime-capabilities/",
+          "disposition": "confirmed27June2025post sameevent"
+        },
+        {
+          "url": "https://krakentechnology.com/news",
+          "disposition": "issuer newsthroughNovember2026; contractsnotfunding"
+        }
+      ]
+    },
+    {
+      "id": "7fe083bd-6314-4bff-8a77-db4c07e601f3",
+      "slug": "krakenrf",
+      "name": "KrakenRF",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.krakenrf.com funding investment company crowdfunding",
+        "KrakenRF investment funding RTL SDR company",
+        "\"KrakenRF\" investor seed venture funding 2026 2024"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.krakenrf.com/",
+          "disposition": "Issuer identity and current product site; no named company financing."
+        },
+        {
+          "url": "https://www.krakenrf.com/about-krakensdr",
+          "disposition": "Distinct RF hardware issuer, not marine or cryptocurrency Kraken."
+        },
+        {
+          "url": "https://www.crowdsupply.com/krakenrf/krakensdr",
+          "disposition": "403 direct fetch; changing campaign total not imported."
+        },
+        {
+          "url": "https://www.crowdsupply.com/krakenrf/krakensdr/updates/kraken-campaign-succeeds",
+          "disposition": "2021-12-01 creator update: product crowdfunding and continued orders, not equity."
+        },
+        {
+          "url": "https://www.krakenrf.com/post/welcome-to-krakenrf",
+          "disposition": "Published2022-09-07 updated2023-07-05: confirms Kerberos2018/Kraken2021 product crowdfunding."
+        },
+        {
+          "url": "https://www.crowdsupply.com/krakenrf",
+          "disposition": "Indexed creator/product listings only; campaign sums not company equity."
+        }
+      ],
+      "evidence_note": "Bounded review distinguished hardware preorder funding from investment. No source-confirmed public company equity, credit or grant event found in the checked sources.",
+      "hold_note": "Unknown private funding remains unknown; do not treat product campaign receipts or live sales aggregates as an investment round."
+    },
+    {
+      "id": "90901ba3-3615-4b17-8366-be71d0a8725b",
+      "slug": "kratos-defense-and-security-solutions",
+      "name": "Kratos Defense & Security Solutions",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 8,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.ir.kratosdefense.com offering closes 2026 2025 common stock notes",
+        "site.kratosdefense.com completes offering 2026 2024 2023 2020 notes",
+        "site.kratosdefense.com \"Completion\" \"2026\" \"$1\"",
+        "site.kratosdefense.com \"offering\" \"2020\" \"million\"",
+        "site.kratosdefense.com \"offering\" \"2017\" \"million\"",
+        "site.kratosdefense.com \"Credit Facility\" \"2026\"",
+        "site.kratosdefense.com \"Completion\" \"2024\" \"offering\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kratosdefense.com/newsroom/kratos-closes-625-million-7-senior-secured-notes-offering-and-refinancing",
+          "disposition": "Verified parent financing; preserve face/gross versus net and capacity distinctions."
+        },
+        {
+          "url": "https://www.kratosdefense.com/newsroom/kratos-completes-300-million-6-50-senior-secured-notes-offering-and-establishes-new-90-million-line-of-credit",
+          "disposition": "Verified parent financing; preserve face/gross versus net and capacity distinctions."
+        },
+        {
+          "url": "https://www.kratosdefense.com/newsroom/kratos-completes-300-million-6-50-senior-secured-notes-offering-and-establishes-new-90-million-line-of-credit",
+          "disposition": "Verified parent financing; preserve face/gross versus net and capacity distinctions."
+        },
+        {
+          "url": "https://www.rwbaird.com/transactions/investment-banking/dealcard/5562/",
+          "disposition": "Verified parent financing; preserve face/gross versus net and capacity distinctions."
+        },
+        {
+          "url": "https://www.rwbaird.com/transactions/investment-banking/dealcard/6303/",
+          "disposition": "Verified parent financing; preserve face/gross versus net and capacity distinctions."
+        },
+        {
+          "url": "https://www.kratosdefense.com/newsroom/kratos-defense-security-solutions-inc-announces-completion-of-public-offering-of-575-million-of-common-stock-at-38-50-per-share",
+          "disposition": "Verified parent financing; preserve face/gross versus net and capacity distinctions."
+        },
+        {
+          "url": "https://www.rwbaird.com/transactions/investment-banking/dealcard/6666/",
+          "disposition": "Verified parent financing; preserve face/gross versus net and capacity distinctions."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000013/ktos20251228ex-1027.htm",
+          "disposition": "Verified parent financing; preserve face/gross versus net and capacity distinctions."
+        },
+        {
+          "url": "https://www.kratosdefense.com/newsroom/kratos-reports-third-quarter-2026-financial-results",
+          "disposition": "Current issuer Q3 results read; procurement/backlog is not financing."
+        },
+        {
+          "url": "https://kratosdefense.gcs-web.com/node/33181/ixbrl-viewer",
+          "disposition": "Viewer shell did not expose full filing; indexed details are candidates only."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000024/exhibit992offering20260302.htm",
+          "disposition": "Initial 2026 price announcement superseded by completed full-option transaction; not a separate event."
+        }
+      ],
+      "evidence_note": "Eight confirmed parent events, including historical refinancing and 2026 signed facility; named lender schedule supports roles.",
+      "hold_note": "Earlier Wireless Facilities/Kratos2007-2013,2016/2017equities,2022term/revolver need further original reconciliation. Q3SECday and exact2026gross not inferred from share arithmetic. Anonymous bond/equity buyers unknown."
+    },
+    {
+      "id": "305da5a8-fbaa-491b-befd-c3d684b18f75",
+      "slug": "kraus-hamdani-aerospace",
+      "name": "Kraus Hamdani Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Kraus Hamdani Aerospace funding investors investment series",
+        "\"Kraus Hamdani\" \"investor\" \"venture\" funding",
+        "\"Kraus Hamdani Aerospace\" funding investor seed"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.khaero.com/",
+          "disposition": "Issuer names and contacts establish same economic issuer as previously reviewed kha alias; no named investor listing."
+        },
+        {
+          "url": "https://www.khaero.com/post/apfitaward2024",
+          "disposition": "Original dateline2024-10-30; page2024-11-30 updated2025-11-07: USD20m procurement production contract, excluded."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/194503",
+          "disposition": "Original SBA award2021startAug6 USD749348 explicit contract FA8649-21-P-1442, not grant by default."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/kraus_aerospace",
+          "disposition": "Conflicting candidate USD1.5m seed2016 and USD799k grant2021 lacks original proof."
+        },
+        {
+          "url": "https://aventure.vc/companies/kraus-hamdani-aerospace-reno-nv-us/fundraising",
+          "disposition": "Conflicting candidate USD1000 preseed2016 not confirmed."
+        }
+      ],
+      "evidence_note": "Fresh alias, issuer and transaction-party searches added no confirmed financing event. Existing kha alias did not hold event rows.",
+      "hold_note": "Conflict between aggregator2016amounts unresolved; SBIR procurement, APFIT and AFCENTcontracts excluded. Private investors unknown; adviser affiliation is not investor participation."
+    },
+    {
+      "id": "423fa7c7-a423-4e1d-be9c-f84cdfc7b5ce",
+      "slug": "kronshtadt-group",
+      "name": "Kronshtadt Group",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Кронштадт компания инвестиции кредит облигации финансирование",
+        "site.psbank.ru \"Кронштадт\" \"3\" \"2021\"",
+        "site.kronshtadt.ru финансирование кредит инвестор"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.vedomosti.ru/press_releases/2021/09/01/psb-finansiruet-proizvodstvo-bespilotnikov-kompanii-kronshtadt",
+          "disposition": "Creditor-origin press release read: AO Kronshtadt RUB3bn signed credit line."
+        },
+        {
+          "url": "https://www.psbank.ru/bank/press/news/2021/09/01-02",
+          "disposition": "Original creditor fetch timed out twice; preserved linked original and read attributable syndicated release."
+        },
+        {
+          "url": "https://kronshtadt.ru/",
+          "disposition": "Issuer site timeout, no negative funding inference."
+        },
+        {
+          "url": "https://www.cbr.ru/rbr/insideDKO/doc?id=35828",
+          "disposition": "Indexed2023additionalissue belongs differently named engineering centre; excluded pending identity continuity."
+        },
+        {
+          "url": "https://www.kommersant.ru/doc/8671992",
+          "disposition": "2026-05-18 restructuring report: Aeromax parent and Technofund control; ownership change not primary funding."
+        }
+      ],
+      "evidence_note": "One signed creditor capacity confirmed for exact historical AO Kronshtadt.",
+      "hold_note": "2026group restructuring, control transfer and other engineering-entity share issuance unresolved at legal issuer level; factory capex, debt balances and acquisition consideration not financing rounds."
+    },
+    {
+      "id": "dd52ed68-4436-462a-8a9d-22ed93f99394",
+      "slug": "ksat-kongsberg-satellite-services",
+      "name": "KSAT (Kongsberg Satellite Services)",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 2,
+      "searches_checked": [
+        "KSAT financing loan investment Kongsberg Satellite Services",
+        "\"Kongsberg Satellite Services\" \"loan\" \"2025\" financing",
+        "site.ksat.no bond loan financing 2026 2025",
+        "\"KSAT\" \"lån\" \"finansiering\" 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.ksat.no/about-us/",
+          "disposition": "Primary history/current owners 50/50 confirmed; two generic associations only."
+        },
+        {
+          "url": "https://www.ksat.no/globalassets/ksat/documents/ksat_annual-and-sustainability-report-2024.pdf",
+          "disposition": "Primary2024groupannual: 15yearloan outstanding115m and revolver100m→300m; exact borrower/date and originaldraw unresolved."
+        },
+        {
+          "url": "https://www.ksat.no/globalassets/ksat/documents/annual-report-2025.pdf",
+          "disposition": "Primary2025annual: group105mloanbalance and450mavailablefacility; balances not new rounds."
+        },
+        {
+          "url": "https://www.finansavisen.no/teknologi/2026/08/02/8364799/ksat-leverer-rakettvekst-pa-romfart-vil-hente-milliarder-i-markedet",
+          "disposition": "Indexedconsideredbondraising and6bninvestmentplan not closed financing."
+        },
+        {
+          "url": "https://www.ksat.no/",
+          "disposition": "Current services/news distinguish commercialcustomercontracts from investment."
+        }
+      ],
+      "evidence_note": "Two current owner links supported directly; facility and loan disclosed at group level remain held for exact issuer attribution.",
+      "hold_note": "No loan balance converted into original round size; facility reset450m not assumed incremental150m. Proposed financing plans and KAMSsiblingownerloans not transferred to KSAT."
+    },
+    {
+      "id": "05614144-90ff-4852-9c7d-a2bc8dfb3609",
+      "slug": "kubota",
+      "name": "Kubota",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.kubota.com bonds issuance 2026 2025 Kubota Corporation",
+        "site.kubota.com \"2025\" \"U.S. dollar\" \"bonds\"",
+        "site.kubota.com \"2024\" \"bonds\" \"500\"",
+        "site.kubota.com/ir/financial/securities \"2025\" \"Due 2028 USD\"",
+        "site.kubota.com \"500 million\" \"May\" \"2025\" \"bonds\"",
+        "site.kubota.com \"USD\" \"2026\" \"bonds\" issue",
+        "site.kubota.co.jp 2026 社債 発行 クボタ",
+        "site.kubota.com 2026 bonds \"Issued\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kubota.com/ir/stock/bond-rating/index.html",
+          "disposition": "Four exact parent JPY issues confirmed, faceamountunits millionsJPY; issuance date retained."
+        },
+        {
+          "url": "https://www.kubota.co.jp/ir/stock/bond-rating/index.html",
+          "disposition": "Japaneseprimary corroborates same four parent issues."
+        },
+        {
+          "url": "https://www.kubota.com/ir/financial/securities/data/yh135q2e.pdf",
+          "disposition": "Consolidatedgroup USD2023/24bondfigures do not establishparent issuer."
+        },
+        {
+          "url": "https://www.kubota.com/ir/financial/securities/data/yh136q2e.pdf",
+          "disposition": "Filed2025-08-08; companydefinition includes subsidiaries;USD500mnot attributedparent."
+        },
+        {
+          "url": "https://links.sgx.com/FileOpen/Kubota%20USD%20Offering%20Circular%202026.ashx?App=Prospectus&FileID=70381",
+          "disposition": "Primaryofferingcover explicitly KubotaCreditCorporationUSA issuer, Kubotaparentguarantor; no transfer."
+        },
+        {
+          "url": "https://links.sgx.com/1.0.0/corporate-announcements/GS6GK6T0M1U24SN8/775954306e4fb273ecf52e8c1b0df8c18a7a6e337d4e919a60358779ae43ccac",
+          "disposition": "PrimarySGX2026-05-26 explicitlysubsidiaryissuer, notparent."
+        }
+      ],
+      "evidence_note": "Four source-confirmed parent domestic bonds; Japanese/English IR concordant. USD subsidiary financing separated from parent guarantee.",
+      "hold_note": "Earlier redeemed parent bonds and private credit history remain partial. Consolidated USDissues2023/24/25 and explicit2026CreditUSAissue excluded from parent; no subsidiary financing or trust ABS transferred."
+    },
+    {
+      "id": "911d7ef9-9890-4cda-a111-570c94cbf1de",
+      "slug": "kuznetsov-research-institute-of-applied-mechanics",
+      "name": "Kuznetsov Research Institute of Applied Mechanics",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Official TsENKI branch page and September 2025 anniversary identify this exact Moscow institution as a branch since 2006; English/Russian finance and investor searches found no separately attributable public financing event.",
+      "hold_note": "No independent issuer financing verified. Group or university research budgets, papers by unrelated Kuznetsov authors, and the 2005 reorganisation are not institute funding rounds. Unknown internal allocations remain unknown.",
+      "searches_checked": [
+        "\"НИИ прикладной механики\" \"Кузнецова\" финансирование кредит",
+        "\"НИИ ПМ\" \"Кузнецова\" \"инвестиции\"",
+        "\"Kuznetsov\" \"Applied Mechanics\" funding grant investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.russian.space/filialy/nii-pm.html",
+          "disposition": "Exact institutional branch identity and history, not a financing announcement."
+        },
+        {
+          "url": "https://www.russian.space/press-tsentr/novosti/nii-pm-im-akademika-v-i-kuznetsova-70-let.html",
+          "disposition": "Dated 2025-09-15 official continuity and TsENKI affiliation; no financing award."
+        }
+      ]
+    },
+    {
+      "id": "57b0f05c-1285-4d75-8322-15e8bc180aa7",
+      "slug": "kvand",
+      "name": "KVAND",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Issuer about/product pages establish KVAND Aircraft Interiors / AO NPF KVAND-ASXM; company sources and Russian finance searches do not establish a financing transaction.",
+      "hold_note": "Historical Husky/Shtil UAV project continuity and legacy financial history not fully resolved. Belarus Kvand IS and microfinance Kvant Finance are not assumed same issuer. Failed news page and partner fetch not negative financing evidence.",
+      "searches_checked": [
+        "\"KVAND\" funding investment helicopter",
+        "\"KVAND\" инвестиции финансирование компания",
+        "\"KVAND\" \"кредит\" \"Кванд-АСХМ\"",
+        "\"KVAND-ASXM\" investment OR \"КВАНД-АСХМ\" грант инвестиции банк",
+        "\"KVAND\" aircraft interiors investor funding 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kvand.com/en/company/o-nas",
+          "disposition": "Official current aircraft interiors identity; no financing disclosure."
+        },
+        {
+          "url": "https://kvand.com/en/news",
+          "disposition": "Fetch inaccessible; history remains partial."
+        },
+        {
+          "url": "https://aviafond.ru/partner.php?id=116",
+          "disposition": "Partner identity search candidate fetched with timeout; no financing relied upon."
+        },
+        {
+          "url": "https://kvand.com/en/",
+          "disposition": "Official issuer profile/product scope, no financing amount supported."
+        }
+      ]
+    },
+    {
+      "id": "7fdc6d2e-096b-4678-8d82-be6d60e11094",
+      "slug": "kwoon-chung-smart-mobility",
+      "name": "Kwoon Chung Smart Mobility",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Parent audited subsidiary listing, official business page and EHang transaction-party announcement establish KC Smart Mobility Company Limited identity and 100% indirect parent ownership; financing searches through checked date found no discrete supported public round.",
+      "hold_note": "HKD 10 million issued ordinary share capital is a balance/ownership disclosure, not a dated fresh cash raise. EHang aircraft order, Cyberport MOU and sandbox selection are partnerships/procurement, not investor rounds; parent bank debt not allocated.",
+      "searches_checked": [
+        "\"Kwoon Chung Smart Mobility\" investment funding",
+        "\"KC Smart Mobility\" investment funding EHang Kwoon",
+        "\"Kwoon Chung\" \"Smart Mobility\" funding investors loans 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.kcbh.com.hk/upload/ew0306_AR.pdf",
+          "disposition": "Audited 31 March 2024: KC Smart Mobility capital HKD10m, 100% owned; generic association only."
+        },
+        {
+          "url": "https://www.kcbh.com.hk/smart_mobility.php?lang=en",
+          "disposition": "Exact parent subsidiary official description."
+        },
+        {
+          "url": "https://ir.ehang.com/news-releases/news-release-details/ehang-partners-kc-smart-mobility-advance-eh216-s-pilotless-evtol/",
+          "disposition": "2024-07-19 purchase/operation partnership; not financing."
+        },
+        {
+          "url": "https://www.prnewswire.com/apac/news-releases/kwoon-chung-smart-mobility-hong-kong-cyberport-and-ehang-sign-mou-302326033.html",
+          "disposition": "2024-12-09 parent-issued MOU, not financing."
+        },
+        {
+          "url": "https://global.geelycv.com/news/press-releases/202606/20250619/",
+          "disposition": "2026 robotaxi collaboration original page no readable body; not financing evidence."
+        }
+      ]
+    },
+    {
+      "id": "39a5cdcd-acea-40dc-8abf-f55da93423e4",
+      "slug": "l-and-s-advanced-equipment",
+      "name": "L&S Advanced Equipment",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Official DronTech November 2026 show guide confirms L&S Advanced Equipment Company Limited booth C23; DSA exhibitor source lists China.",
+      "hold_note": "Legal website/registry identity not yet resolved; exhibitor appearance does not establish company financing. Broad history/investor searches yielded no source-backed financing claim, but limited identity precludes closure.",
+      "searches_checked": [
+        "\"L&S Advanced Equipment\" funding company",
+        "\"L&S Advanced Equipment\" company investment",
+        "\"L&S ADVANCED EQUIPMENT\" investors company website",
+        "\"L&S Advanced Equipment\" financing investors funding China",
+        "\"L&S Advanced Equipment\" investment company financing",
+        "\"L&S ADVANCED EQUIPMENT\" investors venture capital"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://dronetechasia.com/2026/en/news_update_dt.asp?id=6",
+          "disposition": "Organizer confirms exhibitor only; industry market budget excluded."
+        },
+        {
+          "url": "https://www.dsaexhibition.com/data/editor/2026/exhibitor-list/Participating-Companies-as-updated-on-17-april-2026.pdf",
+          "disposition": "Exhibitor L&S Advanced Equipment Co Ltd, China; not financing."
+        },
+        {
+          "url": "https://dronetechasia.com/2026/download/DronTech2026_ShowGuide.pdf",
+          "disposition": "Show guide 11-13 November 2026: exact displayed name and booth, no funding."
+        }
+      ]
+    },
+    {
+      "id": "39070bd1-52e3-4439-9001-b5e0438bdaa6",
+      "slug": "l3harris",
+      "name": "L3Harris",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 20,
+      "relationship_count": 0,
+      "evidence_note": "SEC parent filings establish historical debt issuance and committed facilities through completed 5 November 2026 USD1bn notes. Harris Corporation former-name continuity explicit in current Form10-K.",
+      "hold_note": "Predecessor Harris instruments before 2015, some expired facilities, individual commercial-paper issuances and 2023 revolver draw timing remain unreconciled. 2019/2020 debt exchanges excluded from new cash rounds. Missile Solutions USD1bn convertible/IPO is subsidiary financing and not assigned to parent. Note principal, capacity, refinancing and net cash are distinguished; underwriting banks not assumed investors.",
+      "searches_checked": [
+        "L3Harris 2026 2025 2023 senior notes offering financing 2022",
+        "site.sec.gov/Archives/edgar/data/202058/ \"November\" \"2026\" \"completed\" \"notes\"",
+        "\"L3Harris\" \"March 14, 2024\" notes issued",
+        "site.sec.gov/Archives/edgar/data/202058/ \"November 5, 2026\" \"completed\" notes L3Harris",
+        "\"L3Harris\" \"2023\" \"3.25 billion\" notes offering",
+        "site.sec.gov/Archives/edgar/data/202058/000020205826000089 \"notes\"",
+        "site.sec.gov/Archives/edgar/data/202058 \"July 31, 2023\" \"closed\"",
+        "\"L3Harris\" \"2020\" \"650 million\" notes 1.8",
+        "\"L3Harris\" \"2026\" \"364-day\" credit February"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/202058/000020205822000015/R22.htm",
+          "disposition": "Verified original historical issues; excluded 2019/2020 noncash debt exchange."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/202058/000020205826000015/hrs-20260102.htm",
+          "disposition": "Current annual debt note and issuer continuity; no cumulative debt balance as fresh financing."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/202058/000110465924032439/tm248147d1_ars.pdf",
+          "disposition": "2023 issued notes, actual term draws and 2022 revolver supported."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/202058/000110465924034532/tm248668d1_8k.htm",
+          "disposition": "Three March2024 tranche closings and nextday filing verified."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/202058/000110465925016161/tm257010d1_8k.htm",
+          "disposition": "Signed February2025 facilities; JPMorgan swingline lender only where explicitly supported."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/202058/000020205826000089/hrs-20261102.htm",
+          "disposition": "Latest actual issue closed 2026-11-05; two USD500m principal tranches."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/202058/000110465926122699/tm2628504-2_424b5.htm",
+          "disposition": "2026 prospectus priced November2; net proceeds and issue face value distinct."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/202058/000020205820000068/hrs-20201125.htm",
+          "disposition": "2020 issue closedNovember25; redemption not extra funding."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/202058/000110465924084296/tm2420126-2_424b5.htm",
+          "disposition": "2024-07-31 prospectus for August2 USD600m notes; annualreport closing confirmed."
+        }
+      ]
+    },
+    {
+      "id": "10596a3a-7101-4842-930b-51d32f651f2c",
+      "slug": "l3harris-wescam",
+      "name": "L3Harris WESCAM",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Canadian ownership registry, L3Harris capability and original contract/capex announcements establish WESCAM business and indirect group ownership; broad financing/government/investor searches found no source-supported separate company raise.",
+      "hold_note": "Parent debt not allocated; USD110m Waterdown facility is L3Harris capital expenditure. 16 systems procurement and 2026 counterdrone IDIQ ceilings are sales, not funding. Registry no-government-funding field applies to reporting registrant and period, not universal zero financing.",
+      "searches_checked": [
+        "\"L3Harris WESCAM\" funding grant investment",
+        "\"L3Harris WESCAM\" grant investment loan Canada 2026",
+        "\"L3Harris WESCAM\" \"$110 million\" facility investment 2021"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.l3harris.com/all-capabilities/wescam-mx-series",
+          "disposition": "Official capability and company identity."
+        },
+        {
+          "url": "https://www.l3harris.com/newsroom/press-release/2025/05/l3harris-support-canadas-national-security-imaging-technology",
+          "disposition": "2025-05-26 original procurement announcement; excluded sales."
+        },
+        {
+          "url": "https://lobbycanada.gc.ca/app/secure/ocl/lrs/do/clntSmmry?clientOrgCorpNumber=377657&sMdKy=1724409723779",
+          "disposition": "Official ownership chain; no transfer of parent financing to WESCAM."
+        },
+        {
+          "url": "https://publicsafetyaviation.org/wp-content/uploads/apsa-images/Corp%20Press%20Releases%202/11.16.21_L3Harris_Opens_New_110_Million_USD_Canadian_Facility_to_Address_Growing_WESCAM_MX_Product_Demand.pdf",
+          "disposition": "Original issuer release dated2021-11-16; USD110m facility capital investment, not financing event."
+        }
+      ]
+    },
+    {
+      "id": "e03035a9-991b-4b7c-89f0-fad6866db061",
+      "slug": "liebherr-aerospace",
+      "name": "Liebherr Aerospace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "new_event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Priority follow-up of the sole remaining partial published-landscape identity. Current originals distinguish the Toulouse divisional control company, Toulouse operating company and German Lindenberg issuer. Existing Toulouse EUR2.4m record retained; no new financing attributed.",
+      "hold_note": "Generic cohort brand does not establish the legal recipient of seven previously held grant candidates. Latest October2026 Campsas EUR40m-plus industrial spending is capex, not a funding round; DGAC, Occitanie and water-agency support do not disclose own award allocations. No geography, identity or publication gate changed.",
+      "searches_checked": [
+        "site.liebherr.com aerospace Toulouse Lindenberg legal companies financing 2026 grants"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.liebherr.com/en/int/products/aerospace/aerospace.html",
+          "disposition": "Legacy issuer URL failed; current original used instead."
+        },
+        {
+          "url": "https://www.liebherr.com/en-pt/aerospace-and-transportation-systems/about-us/about-us/about-us-7165453",
+          "disposition": "Opened current divisional control and governance identity; no financing fact."
+        },
+        {
+          "url": "https://www.liebherr.com/ja-jp/n/liebherr-aerospace-opens-new-industrial-center-of-excellence-for-aerospace-heat-transfer-equipment-in-france-293376-4497463",
+          "disposition": "Opened original19October2026 release; capex excluded, support allocation and issuer mapping held."
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [
+      {
+        "from": "us-bank-national-association",
+        "to": "u-s-bank-national-association"
+      },
+      {
+        "from": "jpmorgan-chase-bank-na",
+        "to": "jpmorgan-chase-bank-n-a"
+      },
+      {
+        "from": "jpmorgan-chase-bank",
+        "to": "jpmorgan-chase-bank-n-a"
+      }
+    ],
+    "original_investor_name_retained": {
+      "historical_name": "AST&Science",
+      "slug": "ast-and-science",
+      "reason": "Original2018 investor name retained; no unsupported successor vehicle mapping."
+    },
+    "root_verification": {
+      "search_queries_executed": 2,
+      "searches_checked": [
+        "Kpler 2022 Rothschild Five Arrows 20 million primary 200 million secondary",
+        "Kova Labs 120000 300000 European Defence Agency 2026 funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.dtcp.capital/news-and-insights/detail/dtcp-defence-leads-175-million-series-b-financing-round-in-kraken-technology-group/",
+          "disposition": "Opened original investor source; USD175m SeriesB, conversion of earlier funding is not extra cash."
+        },
+        {
+          "url": "https://www.rothschildandco.com/siteassets/publications/rothschildandco/global_advisory/2022/en_ga_growth_equity_review_september_2022.pdf",
+          "disposition": "Opened transaction adviser PDF: primary EUR20m distinct from secondary share purchase."
+        },
+        {
+          "url": "https://www.eda.europa.eu/news-and-events/news/2026/10/14/eda-accelerates-defence-innovation-through-operational-experimentation-in-portugal",
+          "disposition": "Opened official award: Kova own EUR300000 prize, not programme total."
+        },
+        {
+          "url": "https://kovahq.com/news/kova-bravetech",
+          "disposition": "Opened original dated 15July2026; reports selection announced13July and ownEUR120000."
+        },
+        {
+          "url": "https://www.kpler.com/blog/kpler-attracts-over-200-million-strategic-growth-investment-led-by-insight-partners-five-arrows",
+          "disposition": "Opened original13Apr2022; headlineUSD200m includes secondary, not allissuer proceeds."
+        }
+      ]
+    },
+    "root_additional_issuer_checks": [
+      "KP Labs own allocations distinguished from consortium totals; implementation periods are not grant award dates.",
+      "Kubota parent domestic JPY bonds verified; subsidiary USD debt excluded.",
+      "Liebherr published-map identity follow-up retains legal issuer hold."
+    ],
+    "existing_smartcap_relationship_preserved": {
+      "company": "kraken-technology-group",
+      "investor": "smartcap",
+      "stored_source": "https://smartcap.ee/sc_portfolio/",
+      "additional_profile_source": "https://krakentechnology.com/articles/kraken-technology-group-raises-160m-at-1bn-valuation",
+      "new_generic_relationships": 8,
+      "confirmed_generic_relationships": 9
+    },
+    "publication_source_types_note": "Government registry and issuer filings retain source URLs and source publication dates in the versioned manifest; published dates unknown remain null."
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting stored amount rejection and participant-source foreign key rejection.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T06:05:51.589Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 77,
+      "mismatched_facts": 0,
+      "participant_matches": 40,
+      "source_matches": 98,
+      "relationship_matches": 8,
+      "missing_link_sources": 0
+    },
+    "generic_identity_and_profile_source_audit": {
+      "relationship_identity_matches": 9,
+      "relationship_profile_source_matches": 9
+    }
+  },
+  "publication_scope": {
+    "new_target_identities": 24,
+    "all_new_targets_outside_european_landscape": true,
+    "existing_published_liebherr_followup_events_changed": 0,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Wider-cohort DB funding is not asserted to appear on the European map; profiles and supported generic portfolio links publish through the existing directory build."
+  },
+  "preserved": [
+    "Legacy research-agent/STATE.json",
+    "Frozen V1/V2 snapshots",
+    "Curated investor profiles and legacy relationships",
+    "Company geography, classification and publication gates",
+    "Repository schedules",
+    "No paid external API backfill"
+  ],
+  "programme_complete": false
+}
