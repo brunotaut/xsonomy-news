@@ -1,0 +1,1098 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T20:45:43.528Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-sixty-ninth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 5,
+    "new_or_retained_partial": 19,
+    "new_approved_events": 25,
+    "new_round_participations": 51,
+    "new_source_rows": 36,
+    "new_generic_portfolio_relationships": 0,
+    "new_companies_with_events": 11,
+    "new_investor_profiles": 33,
+    "group_search_queries_executed": 114,
+    "root_additional_search_queries": 4,
+    "per_company_search_ledger_entries": 114,
+    "source_ledger_entries": 105,
+    "company_database_identity_contexts_checked": 24,
+    "existing_canonical_events_inspected": 0,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 25,
+    "mismatched_facts": 0,
+    "participant_matches": 51,
+    "source_matches": 36,
+    "relationship_matches": 0,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 0,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "db_total_events": 3720,
+    "db_approved_events": 3707,
+    "db_round_participations": 4920,
+    "db_investor_profiles": 2967,
+    "db_source_reconciliation_companies": 1027,
+    "concurrency_speedup_claimed": false,
+    "search_queries_executed": 118
+  },
+  "production_before": {
+    "events": 3695,
+    "approved": 3682,
+    "links": 4869,
+    "sources": 5102,
+    "profiles": 2934,
+    "covered": 1016,
+    "relationships": 484,
+    "preserved_profiles_hash": "73c627852a73246b33db9ce02f4ed2f6"
+  },
+  "production_after": {
+    "events": 3720,
+    "approved": 3707,
+    "links": 4920,
+    "sources": 5138,
+    "profiles": 2967,
+    "covered": 1027,
+    "relationships": 484,
+    "preserved_profiles_hash": "73c627852a73246b33db9ce02f4ed2f6"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1136,
+    "source_review_partial": 821,
+    "queued": 607
+  },
+  "per_company": [
+    {
+      "id": "c471b4ab-9c63-4208-a2fc-10cfa6aa3b84",
+      "slug": "pvp-advanced-eo-systems",
+      "name": "PVP Advanced EO Systems",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "PVP Advanced EO Systems funding investment acquisition 2026",
+        "\"PVP Advanced\" \"investment\" \"Rafael\" funding",
+        "\"PVP Advanced EO\" \"seed\" funding",
+        "site:pvp-aeo.com company history funding investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.hklaw.com/en/news/pressreleases/2022/06/holland-knight-advises-pvp-advanced-eo-systems-inc",
+          "disposition": "Opened original transaction counsel: Rafael USA acquisition, announcedJune1/2022, not own-company proceeds."
+        },
+        {
+          "url": "https://www.capstonepartners.com/transactions/capstone-partners-advised-rafael-advanced-defense-systems-on-its-acquisition-of-pvp-advanced-eo-systems/",
+          "disposition": "Indexed original financial adviser confirms undisclosed acquisition terms; no primary capital allocation."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/284049",
+          "disposition": "Official SBIR portfolio candidate identified; historical instrument/own-award amounts not yet reconciled."
+        },
+        {
+          "url": "https://www.highergov.com/news/pvp-advanced-eo-systems-wins-up-to-250-million-ar-6490116/",
+          "disposition": "Indexed procurement candidate identifies250mIDIQ ceiling, funding at orders; no corporate funding inferred."
+        }
+      ],
+      "evidence_note": "Exact California EO issuer matched counsel and defence procurement context.",
+      "hold_note": "Historical SBIR instrument/amounts, private capital and acquisition primary/secondary split remain unknown. IDIQ ceiling/order revenue not corporate funding."
+    },
+    {
+      "id": "50b9a17b-6b2b-4f95-a657-7b4bcbf0a5bb",
+      "slug": "px4",
+      "name": "PX4",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "PX4 funding investment Dronecode project company investors 2026 2025",
+        "\"PX4\" \"funding\" \"Dronecode\" investment 2026",
+        "\"PX4\" \"investment\" \"company\" funding 2026",
+        "site:px4.io \"Dronecode\" \"open source\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://github.com/PX4",
+          "disposition": "Opened original project organization: software stack hosted by Dronecode, legal guardian/trademark holder. PX4 not independently established company issuer."
+        },
+        {
+          "url": "https://px4.io/about/",
+          "disposition": "Direct inaccessible; no negative funding inference."
+        },
+        {
+          "url": "https://dronecode.org/the-2024-year-in-review/",
+          "disposition": "Opened original governance/funding report, project supported via nonprofit memberships and ecosystem work; member financings not PX4 company rounds."
+        },
+        {
+          "url": "https://docs.px4.io/v1.16/en/contribute/maintainers",
+          "disposition": "Indexed original confirms hosted open-source project; no identity mutation."
+        }
+      ],
+      "evidence_note": "Bounded identity review establishes PX4 as open-source software project under Dronecode stewardship.",
+      "hold_note": "Non-company project for own-company financing scope; foundation/member revenues, donations and contributor company rounds are not PX4 securities rounds. No company metadata changed."
+    },
+    {
+      "id": "a2d802f9-c8da-457b-a240-556c628c0168",
+      "slug": "pyka",
+      "name": "Pyka",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Pyka funding 2026 2025 2024 Series B 40 million 2019 seed",
+        "site:flypyka.com \"funding\" \"2026\"",
+        "site:flypyka.com \"Series A\" 37 funding",
+        "site:primemoverslab.com Pyka 2019 8 million seed",
+        "Pyka August 2026 Series C 40 million funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.flypyka.com/about-us",
+          "disposition": "Opened original chronology: earlier3m and later8m distinct, followed by37mA/40mB; unclear early announcement date retained null."
+        },
+        {
+          "url": "https://www.flypyka.com/press-releases/pyka-closes-37m-in-series-a-funding-to-accelerate-aircraft-deliveries-and-r-d",
+          "disposition": "Opened original closed37m USD and explicit two lead investors."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/pyka-secures-40m-series-b-to-advance-commercialization-of-dual-use-autonomous-electric-aircraft-302255688.html",
+          "disposition": "Opened original funding section:40m B and five participants, explicit Obviouslead."
+        },
+        {
+          "url": "https://forgeglobal.com/pyka_stock/",
+          "disposition": "NewerAug2026SeriesC40m secondary candidate lacks originaltransaction-source verification; held."
+        },
+        {
+          "url": "https://www.primemoverslab.com/portfolio/",
+          "disposition": "Indexed original investorportfolio establishes genericbacking; not assigned to an unsupported earlierround."
+        }
+      ],
+      "evidence_note": "Four distinct original-issuer historical financings supported; precise roles retained.",
+      "hold_note": "Earlier transaction dates/security unknown;2026ForgeSeriesCcandidate held. April2023USD7mCalifornia taxcredit is not grantcash. Orders, AirForceprocurement and YCmembership not incomingequity amounts."
+    },
+    {
+      "id": "c27d6a3e-6baa-4b13-9647-9fd5b664bad8",
+      "slug": "pyrodelta-energy",
+      "name": "PyroDelta Energy",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "PyroDelta Energy financing investment funding Firefly 2026",
+        "site:pyrodelta.com financing investment \"240,000\"",
+        "site:firsttellurium.com PyroDelta \"loan\" \"investment\" 2023 2024",
+        "\"PyroDelta\" \"investment\" \"2023\" \"First Tellurium\"",
+        "site:firsttellurium.com \"PyroDelta\" \"funding\" 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://pyrodelta.com/about-us/",
+          "disposition": "Opened original establishes exact83%-owned FirstTellurium subsidiary and MichaelAbdelmaseh identity."
+        },
+        {
+          "url": "https://pyrodelta.com/first-tellurium-to-acquire-additional-interest-in-subsidiary-pyrodelta-energy/",
+          "disposition": "Opened original Dec3/2025:240kUSD paid to seller Abdelmaseh, not company primary proceeds."
+        },
+        {
+          "url": "https://firsttellurium.com/first-tellurium-completes-acquisition-of-75-interest-in-pyrodelta-energy/",
+          "disposition": "Opened original acquisition announcement; no own-capital amount extracted."
+        },
+        {
+          "url": "https://firsttellurium.com/first-tellurium-and-resolve-sign-mou-to-fund-and-develop-new-thermoelectric-device/",
+          "disposition": "Indexed original up-toapprox29mUSD fundraising MOU; not closed or signed financing facility."
+        },
+        {
+          "url": "https://firsttellurium.com/first-tellurium-announces-invitation-from-u-s-national-science-foundation-to-consider-research-grant-for-thermoelectric-device/",
+          "disposition": "Indexed original invitation tosubmit proposal is notgrantaward; DARPAprizepool also not company proceeds."
+        }
+      ],
+      "evidence_note": "Exact FirstTellurium-controlled thermoelectric/UAV developer established.",
+      "hold_note": "USD240k seller purchase excluded. RESOLVEup-to29mMOU, NSFproposal invitation andDARPA6.5mprizepool not confirmedincomingcash. Earlierparentcontributions/privatehistory unresolved."
+    },
+    {
+      "id": "b5226d7d-3b77-4aa6-9c4d-467dabd48d52",
+      "slug": "pzl-mielec",
+      "name": "PZL Mielec",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "PZL Mielec dofinansowanie dotacja 2026 2025 inwestycje NCBR",
+        "site:pzlmielec.pl \"dofinansowanie\" \"projekt\"",
+        "\"PZL Mielec\" \"finansowanie\" \"pożyczka\"",
+        "site:pzlmielec.pl \"2026\" \"wsparcia\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://pzlmielec.pl/firma/projekty-unijne/utworzenie-centrum-badawczo-rozwojowego-na-potrzeby-przemyslu-lotniczego,100",
+          "disposition": "Opened original beneficiary/agreement date and exactsubsidy amount vs totalprojectcost."
+        },
+        {
+          "url": "https://pzlmielec.pl/firma/projekty-unijne/opracowanie-technologii-double-in-situ-afp-z-wykorzystaniem-weglowych-kompozytow-termoplastycznych,1023",
+          "disposition": "Opened original2025project candidate; consortium/allocation need further reconciliation beforegrantamountattribution."
+        },
+        {
+          "url": "https://pzlmielec.pl/firma/projekty-unijne",
+          "disposition": "Indexed original earlier INNOLOT/EU projecthistory; otherownallocations remainheld."
+        },
+        {
+          "url": "https://orka2.sejm.gov.pl/IZ4.nsf/main/01FBE0DB",
+          "disposition": "Official parliamentary older32mPLNloan/restructuringcandidate indexed; exactlegalcontinuity anddebtconversionhistory held."
+        }
+      ],
+      "evidence_note": "Original issuer identifies own signed2010R&Dgrant, exactPLN subsidy.",
+      "hold_note": "OtherINNOLOT/2025jointprojectallocations, olderARPloan/possibleconversion andlegalcontinuity unresolved. Parentfunding, capex andtaxsupport not automaticallycompanyfinancing."
+    },
+    {
+      "id": "5fa7d5a4-6645-474b-8087-836647a3f602",
+      "slug": "qlm-technology",
+      "name": "QLM Technology",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "QLM Technology funding 2026 2025 series A 12 million seed 3.1",
+        "site:qlmtec.com \"funding\" \"2025\" OR \"2026\"",
+        "site:qlmtec.com \"Innovate UK\" \"grant\" 1.2 million",
+        "QLM Technology 2025 2026 funding investment latest",
+        "site:thefsegroup.com \"QLM\" \"3.5\"",
+        "\"QLM\" \"funding boost\" \"FSE\"",
+        "\"QLM Technology\" \"FSE\" \"funding\"",
+        "site:thefsegroup.com \"QLM\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://qlmtec.com/news/6498fc7b60b3a103becb8cf1",
+          "disposition": "Opened original completedseed and sevennamedparticipants."
+        },
+        {
+          "url": "https://qlmtec.com/news/6488fad110d2be4862e662fd",
+          "disposition": "Opened original completedSeriesA, namedinvestors and strategiccollaboration."
+        },
+        {
+          "url": "https://www.lse.co.uk/rns/quantum-exponential-invests-in-qlm-technology-ltd-e8u4or981oh72e2.html",
+          "disposition": "Opened originalRNS identifiesexactSchlumbergerOilfieldUKlead,shareinstrument,450kGBPQuantumExponentialcontribution andadditionalreturningfunds."
+        },
+        {
+          "url": "https://www.fsp-law.com/south-west-investment-fund-advised-by-fsp-on-its-1m-investment-into-qlm-technology-to-scale-world-leading-methane-monitoring/",
+          "disposition": "Opened originaltransactioncounsel confirms1mequitySWIFpart3.5m widerround; monthprecisionretained."
+        },
+        {
+          "url": "https://qlmtec.com/news/",
+          "disposition": "Opened currentissuerarchive; grant/debtcandidates andany2026awardunresolved."
+        },
+        {
+          "url": "https://developmentbank.wales/case-studies/qlm",
+          "disposition": "Indexed original corroborates seed/A; direct403, access limitation recorded."
+        },
+        {
+          "url": "https://datacommons.dealroom.co/companies/qlm",
+          "disposition": "Candidate-only2020/2022/2024/2026grants and2024debt remainunverified, not facts orzero."
+        }
+      ],
+      "evidence_note": "Three original-source financing events withexactfundvehicles andsupported450kQuantumExponentialcontribution.",
+      "hold_note": "Remaining2025GBP3.5mroundterms/participants/closing, older/newerUKRIgrants anddebt candidates unresolved.2026GBP9maggregatorgrantnotverified. FundmanagerFSEnotsecondcheque."
+    },
+    {
+      "id": "20bb359a-1404-4cf7-ba3b-3f7929c6500c",
+      "slug": "quadmovr",
+      "name": "Quadmovr",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Creator identity established from own link hub and Patreon biography; securities financing not established in bounded history/latest search.",
+      "hold_note": "Patreon memberships and content sales are creator revenue/support, not equity/debt. Legal incorporation and undisclosed private capital remain unknown, not zero.",
+      "searches_checked": [
+        "\"Quadmovr\" funding investment company",
+        "\"Quadmovr\" company investor drone",
+        "\"Quadmovr\" investor financing seed 2025 2026",
+        "\"quadmovr\" site:patreon.com funding support"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://linktr.ee/quadmovr",
+          "disposition": "Opened creator-original link hub: self-made drones, creator channels, Patreon support, frame kits; not evidence of incorporated issuer."
+        },
+        {
+          "url": "https://www.patreon.com/cw/quadmovr",
+          "disposition": "Opened full creator-original biography identifies individual hobby designer; supporting memberships receive content/files, not securities."
+        },
+        {
+          "url": "https://dronexl.co/2026/10/05/quadmovr-160-gram-5-inch-los-drone/",
+          "disposition": "Indexed cohort article confirms exact creator/video context; no company financing claim."
+        }
+      ]
+    },
+    {
+      "id": "560488a2-a625-4431-9729-212adc01b17a",
+      "slug": "quantum-cyber",
+      "name": "Quantum Cyber",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Same Netherlands legal issuer formerly Mainz Biomed verified; completed preferred equity and separate undrawn support commitment preserved.",
+      "hold_note": "Earlier Mainz IPO/2022–2025financings and2026ATM net-vs-gross still require reconciliation.100mTitanATM no sales throughNov12; share conversions, acquisitions/licenses and settlement expenses not newfinancing.",
+      "searches_checked": [
+        "\"Quantum Cyber\" financing funding 2026 drones",
+        "\"Quantum Cyber\" 2026 Lazar preferred 6 million funding",
+        "\"Quantum Cyber\" Mainz Biomed financing 2021 IPO 2025 2026",
+        "\"Quantum Cyber\" site:sec.gov \"2026\" \"March\" \"Series A\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1874252/000121390026118975/ea0311637-10q_quantum.htm",
+          "disposition": "Opened latest original SEC filing; located April22 rename continuity, USD6m preferred purchase, no funding under up-to8m commitment, ATM zero-sales and accounting context."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1874252/000121390026028672/ea028198501ex99-1.htm",
+          "disposition": "Opened original March17 issuer release: total6m cash received under same February13 agreement, second3m prepaid before issuance."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1874252/000121390026063589/ea0292584-def14a_quantum.htm",
+          "disposition": "Opened original proxy for exact issuer identity/transaction history; earlier Mainz financing not fully reconciled."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1874252/000121390026118975/ea031163701ex10-4.htm",
+          "disposition": "Indexed original written support letter checked: up-to8m, terms/instrument to agree, not new cash."
+        }
+      ]
+    },
+    {
+      "id": "58d1efe2-495b-4d88-9e89-29e312441455",
+      "slug": "quantum-tencore-industries",
+      "name": "Quantum Tencore Industries",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact German-Ukrainian joint venture established by original parent and transaction counsel, despite USmetadata.",
+      "hold_note": "2000UGV German-funded first contract is procurement. ParentQuantumSystems raises and parentTencoreMITS3.74m cannot be reassigned toJV. Private formation capital terms unknown; no zero-funding claim.",
+      "searches_checked": [
+        "\"Quantum Tencore Industries\" investment funding",
+        "\"Quantum Tencore Industries\" financing investment capital 2026",
+        "\"Quantum Tencore Industries\" site:quantum-systems.com investment capital 2026",
+        "\"Quantum Tencore Industries\" site:hillmont.com financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://quantum-systems.com/news/quantum-systems-tencore-termit-ugvs-germany/",
+          "disposition": "Opened original June19 announcement and found funded programme: first contract for2000UGVs, German defence procurement not equity/grant allocation."
+        },
+        {
+          "url": "https://hillmont.com/publ/news/ukrayinska-hillmont-partners-suprovodila-stvorennya-nimetsko-ukrayinskogo-spilnogo-pidpriyemstva-quantum-tencore-industries",
+          "disposition": "Opened original counsel August14 statement: exact German-Ukrainian JV announcedApril14; parentTencore investments notJVcash."
+        },
+        {
+          "url": "https://quantum-systems.com/news/quantum-systems-ukrainian-joint-ventures/",
+          "disposition": "Indexed original April14 JV announcement; ownership/formation not quantified own funding."
+        }
+      ]
+    },
+    {
+      "id": "28b533ab-c5ed-46a4-8e14-4faec9d2c5ab",
+      "slug": "quectel",
+      "name": "Quectel",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Exact Shanghai listed issuer and2019IPO/2021closedplacement verified with original currency and actualsubscribers.",
+      "hold_note": "2025Decclosedissuance2.22958bn candidate and earlierprivatehistory still require fullyverified originals; latestcashuse is not new2026round. Netproceeds,registeredcapital and subsidiarycashnotadded.",
+      "searches_checked": [
+        "\"Quectel\" financing IPO 2019 private placement 2021 2026",
+        "site:quectel.com 2026 2025 private placement shares fundraising",
+        "移远通信 2021 非公开发行 募集资金 总额 2020",
+        "移远通信 2026 2025 定增 募集资金 到账",
+        "\"移远通信\" \"2,229,584,835.65\" \"static\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/quectel-announces-listing-on-shanghai-stock-exchange-300885434.html",
+          "disposition": "Opened original issuer IPO release:22.3mshares×RMB43.93 gross calculation."
+        },
+        {
+          "url": "https://static.cninfo.com.cn/finalpage/2021-04-01/1209566213.PDF",
+          "disposition": "Opened original28-page placement report, located cash/gross/net prose; screenshots pages9–10 checked nine final allocated subscribers/cheques, not bid table."
+        },
+        {
+          "url": "https://paper.cnstock.com/html/2026-08/13/content_2254431.htm",
+          "disposition": "Indexed issuer interim disclosure candidate says2025Dec12 cash2,229,584,835.65CNY; directfetch timedout, original latest issuance terms not fully reconciled. Held, not imported."
+        },
+        {
+          "url": "https://static.sse.com.cn/stock/disclosure/announcement/c/202506/603236_20250609_HFGS.pdf",
+          "disposition": "Indexed exchange2025listing-sponsor candidate; approval/target not actual2025cash without final report."
+        }
+      ]
+    },
+    {
+      "id": "83c2924f-0cda-40f8-8aa7-e06aece2f3a3",
+      "slug": "r-g-ai",
+      "name": "R-G. ai",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Platform/investor identity indexed from officialsource; Swarmer incomingfinancing separated from R-G.AI investmentsmade.",
+      "hold_note": "Exactlegaloperator and earlier/private owncapital remain unresolved; officialsite directfetchunavailable. CatalogueUkraine versusUSinvestor context inconsistency retained withoutmutation.",
+      "searches_checked": [
+        "\"R-G.ai\" funding investment \"грант\"",
+        "\"R-G.AI\" company investors funding raised",
+        "site:r-g.ai funding investors capital",
+        "\"R-G.AI\" інвестиції фінансування компанія"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.r-g.ai/",
+          "disposition": "Official current page indexed identifies platform investor investing in software/hardware entrepreneurs; directopen twice timedout. No unsupported claim of full body access."
+        },
+        {
+          "url": "https://forbes.ua/news/ukrainskiy-oboronniy-startap-swarmer-zaluchiv-26-mln-investitsiy-vid-amerikanskikh-fondiv-16092024-23628",
+          "disposition": "Indexed source attributes R-G.AI as investing into Swarmer; money belongs to Swarmer issuer, not R-G.AI capital received."
+        },
+        {
+          "url": "https://en.ain.ua/2024/09/16/ukrainian-startup-swarmer-closes-27m-seed-round-to-develop-coordinated-swarm-drones/",
+          "disposition": "Indexed contemporary financing context distinguishes American R-G.AI investor from cohort Ukraine metadata; no metadata changed."
+        }
+      ]
+    },
+    {
+      "id": "fd4e4ae2-1abf-4fc9-8822-620e43547223",
+      "slug": "r2-wireless",
+      "name": "R2 Wireless",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Original closed5.3m equity January8, exactsixnamedparticipants andOriginlead verified; Brazil isdeployment geography.",
+      "hold_note": "Earlier2021seed955k/2024capital,March2026morethan5m overlap/13maggregate constituents andgovernmentgrant/xTechpayment details unresolved. SeriesA aggregatorlabel not substituted forissuer seed-extension; parentroundunknown.",
+      "searches_checked": [
+        "\"R2 Wireless\" funding investment investors",
+        "\"R2 Wireless\" seed financing 2023 2024 2026 Origin Ventures",
+        "site:r2-wireless.com \"funding\" \"2026\" \"2021\"",
+        "\"R2 Wireless\" \"March\" \"January\" funding \"2026\"",
+        "\"R2 Wireless\" \"March 10\" \"2026\" \"additional\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.linkedin.com/posts/r2-wireless_we-are-thrilled-to-announce-the-successful-activity-7414908860206923776-oAny",
+          "disposition": "Opened full original issuer post: closed5.3m equity and six named participants; no lead wording here, lead sourced separately."
+        },
+        {
+          "url": "https://www.originventures.com/blog/the-invisible-battlefield-rf-sensing-and-the-new-frontier-of-security",
+          "disposition": "Opened full original investor article: explicitly Origin leading5.3m; named co-participants."
+        },
+        {
+          "url": "https://r2-wireless.com/news/",
+          "disposition": "Opened original newsroom and found Jan8 2026 seed-extension label/date, later operational announcements not new funding."
+        },
+        {
+          "url": "https://r2-wireless.com/about-r2/",
+          "disposition": "Opened original ODIN issuer identity; Israel/USbusiness distinct from Brazil deployment geography."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260310035891/en/R2-Wireless-Expands-U.S.-Footprint-After-Crossing-%2413M-in-Funding-Delivering-Operational-Resilience-for-the-Modern-Battlefield-of-Asymmetric-Warfare",
+          "disposition": "Opened original March10 issuer release:morethan5mnew andover13maggregate; Jan overlap/constituents not fully established, no extraevent imported."
+        },
+        {
+          "url": "https://www.tectonicdefense.com/exclusive-r2-wireless-raises-an-additional-5m/",
+          "disposition": "Opened contemporaneous exclusive-release article candidate; no extra proceeds added without full overlap reconciliation."
+        },
+        {
+          "url": "https://innovationisrael.org.il/en/importWinner/516086352/",
+          "disposition": "Indexed regulator identifies exact R2WIRELESSLTD; award amount/date not established, no grant imported."
+        }
+      ]
+    },
+    {
+      "id": "d6777eea-d6b7-4f04-a53c-f9ca31b77809",
+      "slug": "rada-electronic-industries",
+      "name": "RADA Electronic Industries",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 6,
+      "relationship_count": 0,
+      "searches_checked": [
+        "RADA Electronic Industries financing public offering 2021 2020 2017 DBSI",
+        "RADA March2021 offering closing59.8",
+        "RADA2026 2025 financing LeonardoDRS subsidiary",
+        "site:drsrada.com DBSI financing2019"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/761238/000091066216000222/ex99_1.htm",
+          "disposition": "Opened original and located exact financing facts; dates/qualifiers preserved."
+        },
+        {
+          "url": "https://www.drsrada.com/blog/rada-provides-update-on-recent-capital-raising-activity",
+          "disposition": "Opened original and located exact financing facts; dates/qualifiers preserved."
+        },
+        {
+          "url": "https://www.drsrada.com/blog/rada-raises-12-5-million-from-leading-israeli-institutional-investors",
+          "disposition": "Opened original and located exact financing facts; dates/qualifiers preserved."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/761238/000117891320001060/zk2024233.htm",
+          "disposition": "Opened original and located exact financing facts; dates/qualifiers preserved."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/761238/000117891322001245/zk2227477.htm",
+          "disposition": "Opened original and located exact financing facts; dates/qualifiers preserved."
+        },
+        {
+          "url": "https://www.drsrada.com/blog/rada-announces-closing-of-public-offering-of-5175000-ordinary-shares",
+          "disposition": "Opened original and located exact financing facts; dates/qualifiers preserved."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1833756/000162828024007359/drs-20231231.htm",
+          "disposition": "Indexed original successor filing confirms all-stock merger and surviving RADA subsidiary. Parent DRS financing not assigned; no merger consideration imported."
+        }
+      ],
+      "evidence_note": "Historical Israeli issuer matched original SEC releases and surviving business archive; six financing events supported.",
+      "hold_note": "Earlier IPO, pre2016 loans/grants, warrant exercises/conversions and postmerger exact subsidiary assistance remain partial. Parent DRS debt and all-stock merger are not RADA cash."
+    },
+    {
+      "id": "e759c1e6-7431-455c-9370-4125cb960f17",
+      "slug": "radd",
+      "name": "RADD",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "RADD GLADIUS TurbineOne funding investment seed",
+        "RADD funding Gladius",
+        "RADD General Partnership capital",
+        "site:radd-co.com funding capital investor",
+        "site:thegp.com RADD",
+        "RADD preseed2026 investment GeneralPartnership latest"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://radd-co.com/",
+          "disposition": "Opened original exact GLADIUS business and Dave Lucas/Court Vanzant founders; TurbineOne spinout."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/dave-l35_i-am-immensely-proud-to-build-radd-co-with-activity-7464431539217448960-_xQY",
+          "disposition": "Opened full company-authored original repost; raised pre-seed from General Partnership explicit, year2026 only."
+        },
+        {
+          "url": "https://www.linkedin.com/company/radd-co-cuas",
+          "disposition": "Indexed original latest posts; generic awardee repost does not establish RADD grant receipt."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1587900/000146806813000003/xslFormDX07/primary_doc.xml",
+          "disposition": "Indexed SEC search candidate is Texas oil-and-gas RADD Partnership, not GLADIUS issuer. Real-estate/crypto/Foods/radd.ai namesakes excluded."
+        }
+      ],
+      "evidence_note": "Exact GLADIUS spinout issuer and its original company financing post confirmed.",
+      "hold_note": "Pre-seed amount/security/date precision undisclosed; spinout predecessor funds, government contract and generic seed-award repost not own grant evidence."
+    },
+    {
+      "id": "1cbfb92c-5075-46e8-9439-7e24cb9a60a1",
+      "slug": "radiant",
+      "name": "Radiant",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Radiant Singularity rocket motor low cost interceptors2026 funding",
+        "Radiant Singularity Oswald startup",
+        "Radiant Singularity rocketmotor",
+        "Radiant site:defensedaily.com/singularity-successfully-static-firing-rocket-motor-for-low-cost-interceptors",
+        "Radiant funding2026 nuclear NavyCrane",
+        "site:radiantnuclear.com funding series2026 2025 investors",
+        "Radiant DefenseDaily funding2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defensedaily.com/singularity-successfully-static-firing-rocket-motor-for-low-cost-interceptors/business-financial",
+          "disposition": "Catalogue provenance attempted; direct source inaccessible. Exact context/issuer mapping remains unresolved."
+        },
+        {
+          "url": "https://www.defensedaily.com/issues/page/2/",
+          "disposition": "Indexed issue lists Singularity motor article alongside Radiant nuclear news; adjacency does not establish alias."
+        },
+        {
+          "url": "https://radiantnuclear.com/news/navy-selects-radiant",
+          "disposition": "Opened original identifies nuclear microreactor business and October20 Navy selection, distinct Singularity rocket company."
+        },
+        {
+          "url": "https://www.radiantnuclear.com/news/series-d-announcement",
+          "disposition": "Indexed original more-than300m funding candidate; not assigned without exact cohort identity continuity. Latest Lockheed strategic addition similarly held."
+        }
+      ],
+      "evidence_note": "Nuclear Radiant candidate separated from Singularity rocket-motor issuer; catalogue article provenance insufficient for exact mapping.",
+      "hold_note": "Do not attach nuclear venture rounds or Singularity80m to sparse Radiant record without direct identity evidence. Private history unknown, not zero."
+    },
+    {
+      "id": "04202ed4-4109-40ce-8a23-2b175cd8c4f8",
+      "slug": "radiomaster",
+      "name": "RadioMaster",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "RadioMaster company funding investment 深圳 瑞科",
+        "RadioMaster funding radio control",
+        "RadioMaster 深圳阿尔木 融资 投资",
+        "深圳阿尔木创新科技 融资 RadioMaster"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://radiomasterrc.com/pages/about-radiomaster",
+          "disposition": "Opened original Shenzhen RC transmitter/receiver manufacturer."
+        },
+        {
+          "url": "https://radiomasterrc.com/policies/terms-of-service",
+          "disposition": "Opened current original operator terms."
+        },
+        {
+          "url": "https://radiomaster.com.cn/",
+          "disposition": "Opened original wireless-test Radio Master namesake; 5G/IoT instruments differ from RC hobby issuer."
+        },
+        {
+          "url": "https://ee.ckgsb.com/chuang/content/news_detail/1181",
+          "disposition": "Indexed2022 wireless-test company SeriesA candidate excluded; not RC manufacturer."
+        },
+        {
+          "url": "https://m.zhipin.com/companys/28c67816d2b9b11e1HB52du_ElM~.html",
+          "disposition": "Indexed employer recruitment legal-operator candidate. Registered capital and no-financing-required label not evidence of a round or zero funding."
+        }
+      ],
+      "evidence_note": "Exact RC manufacturer distinct from wireless-testing Radio Master namesake.",
+      "hold_note": "Legal operator continuity and private financing history not completely established.2022 testing-company SeriesA excluded. Registered capital and recruitment financing labels not facts of incoming funding."
+    },
+    {
+      "id": "632a8a76-0abb-4016-a969-d1f00959facc",
+      "slug": "radionix",
+      "name": "Radionix",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Radionix інвестиції фінансування інвестор2026 2025",
+        "Radionix investment funding Ukraine",
+        "Radionix інвестиції грант фінансування",
+        "Radionix site:radionix.com.ua інвестор капітал"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://radionix.ua",
+          "disposition": "Original domain inaccessible through research tool; no absence claim."
+        },
+        {
+          "url": "https://www.saab.com/uk-UA/markets/ukraine/news/saab-and-radionix-sign-mou-for-sensors-and-defence-electronics",
+          "disposition": "Opened March12/2025 original transaction-party MoU; strategic cooperation, no equity or own capital allocation."
+        },
+        {
+          "url": "https://naudi.com.ua/pages/partners/radionix-llc",
+          "disposition": "Opened original trade-association member profile confirms Ukrainian RADIONIX LLC defense electronics."
+        },
+        {
+          "url": "https://biz.nv.ua/ukr/experts/bornyakov-programisti-ta-rozvitok-startapiv-v-ukrajini-yak-zaluchayut-investiciji-pid-chas-viyni-50298067.html",
+          "disposition": "Indexed original minister column describes up-toUAH15m planned own equipment/R&D spending due to tax regime, not incoming financing. Keenfinity intrusion-brand and medical software namesakes excluded."
+        }
+      ],
+      "evidence_note": "Ukrainian defense electronics RADIONIX LLC matched by original Saab/NAUDI evidence.",
+      "hold_note": "MoU has no financing terms; own planned equipment spending is not investor proceeds. Earlier/private capital, grants and latest exact award allocations remain unknown."
+    },
+    {
+      "id": "5ef24579-8889-4075-854a-a26dd2b48342",
+      "slug": "rafael",
+      "name": "Rafael",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:rafael.co.il bonds loan financing2026 2025",
+        "Rafael financing bonds loans2026 2025 2020",
+        "site:rafael.co.il AdvancedDefenseSystems about",
+        "Rafael earlier bonds financing defense systems"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rafael.co.il/our-story/",
+          "disposition": "Indexed original explicitly RAFAEL Advanced Defense Systems Ltd established1948; direct open has no readable body. Exact website and catalogue overview/LinkedIn match canonical company."
+        },
+        {
+          "url": "https://www.rafael.co.il/wp-content/uploads/2026/02/Refael_ESG2024_ENG_170226digital.pdf",
+          "disposition": "Indexed original exact issuer-name corroboration; employee fund discussion not issuer financing."
+        },
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/rjiqzrf7me",
+          "disposition": "Indexed2026 proposed IPO remains preparatory, not proceeds. Debt/IPO historical details belong canonical laneD and remain under its ledger."
+        }
+      ],
+      "evidence_note": "Exact official brand matches canonical Rafael Advanced Defense Systems Ltd; evidenced duplicate-identity review, no events assigned to alias row.",
+      "hold_note": "Canonical laneD owns issuer financing once. No merge/delete or metadata gate changes; IPO plans and procurement are not cash rounds.",
+      "duplicate_of": "rafael-advanced-defense-systems",
+      "identity_disposition": "Evidenced alias of canonical issuer; retain cohort ID without duplicate funding events."
+    },
+    {
+      "id": "5fcf0c97-8f20-4467-99b1-4b7063ce5a07",
+      "slug": "rafael-advanced-defense-systems",
+      "name": "Rafael Advanced Defense Systems",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Canonical Israeli defense issuer distinct from US biotech namesake; short Rafael alias reviewed separately without duplicated funding.",
+      "hold_note": "Earlier state capital and public financing history incomplete. RDC300mplan is outgoing conditional JVcapital; contracts, advance payments and proposedprivatization notownverifiedround.",
+      "searches_checked": [
+        "\"Rafael Advanced Defense\" bond financing 2025 2026 capital",
+        "\"Rafael\" \"bond\" \"2026\" financing company",
+        "site:rafael.co.il \"2025\" \"financial\" bonds financing",
+        "\"Rafael Advanced Defense Systems\" funding loan bonds history 2026 2024",
+        "site:rafael.co.il \"2026\" \"results\" financing investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rafael.co.il/our-story/",
+          "disposition": "Official identity indexed; direct body empty. Same issuer as short Rafael alias, coordinated with laneC."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/elron-ventures-announces-investment-of-up-to-300-million-with-rafael-advanced-defense-systems-to-advance-its-ma-strategy-focused-on-acquiring-dual-use-defense-tech-companies-302787323.html",
+          "disposition": "Opened original and located June1/2026 outgoing conditional up-to300mRDC jointventure plan, not incomingRafael funding."
+        },
+        {
+          "url": "https://he.rafael.co.il/wp-content/uploads/2024/07/RatingsDirect_ResearchUpdateIsraelBasedRafaelAdvancedDefenseSystemsLtdUpgradedToAOutlookStable_58725889_Jul-11-2024.pdf",
+          "disposition": "Indexed original-hosted rating note: cash position and bankline context; not a new loan draw."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1713863/000121390026113659/ea0309115-10k_rafael.htm",
+          "disposition": "Indexed original namesake Rafael Holdings biotech excluded; issuer is not Israeli defense company."
+        }
+      ]
+    },
+    {
+      "id": "424dd957-7a72-4312-8673-ae01b346a34d",
+      "slug": "raft",
+      "name": "Raft",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Exact US defense software Raft LLC confirmed by investor and buyer originals; freight logistics namesake excluded.",
+      "hold_note": "Earlierseedcandidate and exactsecurity/primarysecondaryallocation unknown.450m acquisition notnewcompanyproceeds.",
+      "searches_checked": [
+        "\"Raft\" defense investment funding Washington Harbour 2025 2026",
+        "site:raft.com \"investment\" \"2025\" \"2026\"",
+        "\"Raft\" funding seed 2019 2020 2024",
+        "site:raft.com site:goraft.tech funding investor Washington Harbour 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://washingtonharbour.com/raft-receives-significant-growth-investment-from-washington-harbour-partners/",
+          "disposition": "Opened investor original10Apr2024 exactover60m investment; instrument/primarysecondary undisclosed."
+        },
+        {
+          "url": "https://www.hklaw.com/en/news/pressreleases/2024/04/holland--knight-advises-raft-llc-on-significant-investment-from",
+          "disposition": "Original counsel indexed corroboration60m, noextraevent."
+        },
+        {
+          "url": "https://www.leonardodrs.com/news/press-releases/leonardo-drs-to-acquire-raft-expanding-multi-domain-ai-data-fusion-and-mission-software-capabilities/",
+          "disposition": "Opened original buyer450m acquisition release and financing paragraph; acquisitionvalue/buyerrevolver notRaftfinancing."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/raft_4",
+          "disposition": "Namesake freight/Vector.ai funding excluded; defenseRaft earlierseedcandidate remainsunverified."
+        }
+      ]
+    },
+    {
+      "id": "cfe9d37c-fd72-4e7f-ae79-1084cea16aef",
+      "slug": "rakuten",
+      "name": "Rakuten",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Exact Rakuten Group parent issuer; latest October2026notes confirmed in today November13originalresults.",
+      "hold_note": "Long earlier equity/debt history and2025othertranches incomplete. RakutenBank/Mobile/Securities proceeds and parentassetdisposals excluded. Futureperpetualplan notclosedcash.",
+      "searches_checked": [
+        "\"Rakuten Group\" 2026 bonds issuance financing 2025 equity",
+        "\"Rakuten Group\" \"2026\" \"October\" \"400 billion\" bonds",
+        "site:global.rakuten.com/corp/news/press/2026 \"October 16\" bonds",
+        "site:global.rakuten.com \"2025\" \"2024\" \"bonds\" \"issuance\" \"financing\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://global.rakuten.com/corp/investors/stock/bond.html",
+          "disposition": "Opened full original and found exact2026October40bn/360bn issuepayment dates and2025October82bn perpetual; current outstanding amounts alone not historical original issuance."
+        },
+        {
+          "url": "https://global.rakuten.com/corp/news/press/2026/1113_01.html",
+          "disposition": "Indexed originalNov13full financingexcerpt confirms400bntotal issuedOctober; directopen inaccessible. No anotheraggregateevent."
+        },
+        {
+          "url": "https://global.rakuten.com/corp/news/press/2025/1017_11.html",
+          "disposition": "Opened original terms:82bnJPY issuance,23Oct2025payment, debtwithratingequitycredit."
+        },
+        {
+          "url": "https://global.rakuten.com/corp/news/press/2026/0810_01.html?month=8",
+          "disposition": "Indexed originalQ2 securitiesdisposals notprimarycompanyfinancing."
+        },
+        {
+          "url": "https://links.sgx.com/FileOpen/Annual%20Securities%20Report%20FY2025.ashx?App=Announcement&FileID=891469",
+          "disposition": "Indexed officialexchange annualhistory candidate; earliercurrency/tranche/issueamount reconciliation stillpartial, no balancesusedasrounds."
+        }
+      ]
+    },
+    {
+      "id": "b1f278d4-640e-4eb8-86f7-6667bf402adb",
+      "slug": "ramy-rc",
+      "name": "Ramy RC",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Bounded review establishes RCairplane creator/channel with Patreon memberships, not Natilus operatingissuer.",
+      "hold_note": "Privatelegaloperator/financing unknown, notzero. Patronage, revenue estimates and Natilusrounds notimported asRamyRCsecurities.",
+      "searches_checked": [
+        "\"Ramy RC\" funding investment Patreon company",
+        "\"Ramy RC\" investors seed venture financing 2025 2026",
+        "\"Ramy RC\" \"Natilus\" site:natilus.co",
+        "\"Ramy RC\" \"investment\" \"funding\" -Natilus -wikipedia -newikis -handwiki",
+        "\"Ramy RC\" \"investor\" financing capital"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.patreon.com/ramyrc/about",
+          "disposition": "Opened original creator account identifiesRCairplane hobby/channel and memberships; ownfunds/patronage notsecuritiesround."
+        },
+        {
+          "url": "https://dronexl.co/2026/10/05/ramy-rc-natilus-horizon-models-crash-before-landing/",
+          "disposition": "Indexed catalogue-origin article identifies modelbuilder workingwithNatilus. Natiluscapital notRamyRCfunding."
+        },
+        {
+          "url": "https://www.patreon.com/ramyrc/posts/building-blended-145604567",
+          "disposition": "Original indexed creatorpost confirmsprototypeproject; gatedpost nottreatedasfinancingevidence."
+        }
+      ]
+    },
+    {
+      "id": "07003505-5c90-4a88-a4be-594ce7ba0db6",
+      "slug": "randle-engineering",
+      "name": "Randle Engineering",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact UK consultancy RandleEngineeringSolutionsLtd established throughoriginalissuer andregistry.",
+      "hold_note": "Joint2016proposedgrant has noownrecipientallocation/payment; older/privatecapitalunknown. CertoCAPSTONE andMorrisCommercialfinancing belongtoclients.",
+      "searches_checked": [
+        "\"Randle Engineering\" investment funding grant",
+        "site:randle.co.uk grant investment investors funding 2025 2026",
+        "\"Randle Engineering\" \"funding\" \"investors\"",
+        "\"Randle Engineering Solutions\" loan grant investment shareholders",
+        "\"Randle Engineering\" \"Innovate UK\" grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.randle.co.uk/about-us/",
+          "disposition": "Opened original legalfooterRandleEngineeringSolutionsLtd andhistory1994; exactconsultancyidentity."
+        },
+        {
+          "url": "https://www.randle.co.uk/news/",
+          "disposition": "Opened currentissuernews:clientengineering,CAPSTONEconsultancy,appointments notowncashround."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/02910694/filing-history?page=1",
+          "disposition": "Opened originalregistry exactcompanynumber; sharecapitalentries notnewfundinground."
+        },
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/5a7f4c18e5274a2e8ab4b529/Seeding_tomorrow_s_vehicle_technologies_today_-_IDP12_CRD_-_Competition_Results.pdf",
+          "disposition": "Original2016competitionPDF opened:jointproposedgrant1,135,184GBP conditionaloffer; recipientallocation/paymentunestablished, notRandleownaward."
+        }
+      ]
+    },
+    {
+      "id": "e0201828-6b85-4d23-845f-db20182ad414",
+      "slug": "rannon",
+      "name": "Rannon",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "evidence_note": "Latvian cUAV ammunition issuer confirmed by ownnews andEDA;moneyprize evidenced withunknownterms.",
+      "hold_note": "LatvianMinistrygrantcandidate unresolved;programmeLIAAincubation andEUphaseIIselection notcashamount. Prizepaymentdate/payer andearlierprivatehistoryunknown.",
+      "searches_checked": [
+        "\"Rannon\" Ukraine funding investment drone",
+        "\"Rannon\" funding investment investors grant",
+        "site:mod.gov.lv Rannon grantu 2025 2026",
+        "\"Rannon\" \"grantu\" ministrija",
+        "\"Rannon\" \"Ministry\" \"grant\"",
+        "\"RANNON\" \"Latvia\" investment seed financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rannon.eu/news/params/post/5279243/",
+          "disposition": "Opened original July14issuerarticle:moneyprizepresentedJuly13, amount/payer/paymentdate unknown."
+        },
+        {
+          "url": "https://www.rannon.eu/news/",
+          "disposition": "Opened currentissuerarchive throughOctober18/2026; PhaseIItesting notnewquantifiedfunding."
+        },
+        {
+          "url": "https://www.eda.europa.eu/news-and-events/news/2026/07/14/eda-starts-working-with-the-first-group-of-innovators-under-bravetech-eu-phase-ii",
+          "disposition": "Opened originalEDA confirmsLatvianRannonselectedinnovator; noownawardamount."
+        },
+        {
+          "url": "https://www.mod.gov.lv/lv/uznemejiem/atbalsts-uznemejiem/grantu-programma",
+          "disposition": "OriginalMinistryprogrammerules inspected throughsearch;2.4mpool/300kmaximum notownRannonaward."
+        },
+        {
+          "url": "https://www.crunchbase.com/organization/rannon",
+          "disposition": "MinistryofDefence grantcandidate only; nooriginalaward verified,held."
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [],
+    "root_verification": {
+      "search_queries_executed": 4,
+      "searches_checked": [
+        "Pyka 2026 Series C 40 million funding official",
+        "QLM Technology 2025 3.5 million funding South West Investment Fund official",
+        "Quantum Cyber Mainz Biomed April 2026 rename Lazar financing",
+        "Raft over 60 million April 10 2024 Washington Harbour investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.fsp-law.com/south-west-investment-fund-advised-by-fsp-on-its-1m-investment-into-qlm-technology-to-scale-world-leading-methane-monitoring/",
+          "disposition": "Root original transaction counsel confirms GBP1m SWIF equity as part GBP3.5m round, no duplicate extra round or manager cheque. Programme GBP200m notcompanycapital."
+        },
+        {
+          "url": "https://www.flypyka.com/about-us",
+          "disposition": "Root original issuer history checked;2024USD40mB,2026ForgeCcandidate remains non-original and held, notautomaticcopy."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1874252/000121390026118975/ea0311637-10q_quantum.htm",
+          "disposition": "Root latest SEC filing confirms Quantum Cyber formerlyMainzBiomed samelegalissuer; notsimilarnamesake. Historical andactualcash versuscapacity boundaries reviewed by laneB."
+        },
+        {
+          "url": "https://washingtonharbour.com/news/raft-receives-significant-growth-investment-from-washington-harbour-partners/",
+          "disposition": "Original investor confirms overUSD60m growthinvestmentintoRaftLLC; instrument andprimary/secondarysplit notinvented."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/761238/000117891320001060/zk2024233.htm",
+          "disposition": "Root opened original RADA annual filing and located historical share-sale/DBSI sections; exact Psagot/Phoenix contributions reconciled by lane C. New loan/conversion details remain separate historical holds."
+        }
+      ],
+      "company_database_identity_contexts_checked": 24,
+      "existing_canonical_events_inspected": 0
+    },
+    "notes": [
+      "Rafael alias matches canonical Advanced Defense Systems issuer and receives no duplicate event; company metadata preserved. PX4 is a software project; Quadmovr and Ramy RC creator patronage are not securities financing. QTI procurement and R-G.AI investments made are not incoming capital.",
+      "Pyka original chronology supports distinct earlier USD3m and 2019USD8m; dates/security unknown remain qualified.2026SeriesC aggregator candidate held. QLM exact fund/legal subscriber identities and original GBP currency retained; SWIF1m equity is part of3.5m wider round, not an extra full closing. PZL grant signed status does not establish disbursement.",
+      "Quantum Cyber legal continuity with Mainz Biomed verified. Actual6m preferred-share placement differs from signed undrawn up-to8m liquidity commitment and100m ATM capacity; no sum or fullcapacityasraisedcash. Q3 warrant exercise15.2m/Maxim ATM2.1m histories remain source-reconciliation holds.",
+      "Quectel originalCNY IPO gross calculation and nine exact2021subscription contributions reconcile; original final-allocation table visually checked by laneB. Bid invitation list not investors.2025placement candidate held.",
+      "RADA historical share placements distinct from warrant exercises, conversions, secondary sales and all-stock merger. Psagot/Phoenix explicit contributions retained. RADD own company post supports unknown-amount preseed; namesake Radiant and RadioMaster financings excluded pending exact identity.",
+      "Raft over60m transaction retains lower bound and unknownprimary-secondarysplit as investment_disclosure. Rakuten parentnotes separate from Bank/Mobile/Securities financing; ratingequitycredit doesnotchange subordinated debt. Rannon prize announced without amount,payer orcashsettlement invented; Randle consortium allocations held."
+    ]
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting amount rejection and participant-source FK rejection.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T20:51:43.255Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 25,
+      "mismatched_facts": 0,
+      "participant_matches": 51,
+      "source_matches": 36,
+      "relationship_matches": 0,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 0
+    },
+    "quectel_nine_contributions_reconcile_to_gross": true
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Fresh baseline confirms all24 targets outside existing European map. Preserve gates; new directory profiles publish under existing rules."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false,
+  "publication": {
+    "status": "pending"
+  }
+}
