@@ -1,5 +1,5 @@
 {
-  "status": "imported_awaiting_publication",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T16:53:52.738Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-sixty-fifth.json",
@@ -36,13 +36,22 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 3603,
     "db_approved_events": 3590,
     "db_round_participations": 4731,
     "db_investor_profiles": 2843,
     "db_source_reconciliation_companies": 981,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 9,
+    "clickable_generic_company_links_verified": 9,
+    "active_minutes": 12.5,
+    "checked_identities_per_hour": 115.2,
+    "completed_reviews_per_hour": 24,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only research groups, source/canonical issuer/profile checks, current importer/schema validation, PostgreSQL tests, production rollback, atomic import, idempotency and exact fact/role/source/contribution audit, durable queue readback and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3577,
@@ -1063,6 +1072,12 @@
       "relationship_matches": 9,
       "missing_link_sources": 0,
       "extension_parent_matches": 0
+    },
+    "live_generic_entry_verification": {
+      "entries": 9,
+      "source_urls": 9,
+      "clickable_company_links": 9,
+      "unlinked": []
     }
   },
   "publication_scope": {
@@ -1080,5 +1095,47 @@
     "Repository schedules",
     "No paid external API"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T17:06:22.817Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T17:06:22.817Z",
+    "verified_at": "2026-11-13T17:06:22.817Z",
+    "catalogue_commit": "43856536cb7e2c9e52d417404c1ffbae775a48a2",
+    "source_commit": "93fcf5969097ea63ea21865f8c4612f12c762d73",
+    "workflow_run": {
+      "id": 43469027144,
+      "head": "43856536cb7e2c9e52d417404c1ffbae775a48a2",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43469027144"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-fifth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-fifth.json",
+    "generated_at": "2026-11-13T17:05:27.365Z",
+    "investor_generated_at": "2026-11-13T17:05:31.273Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2834,
+    "portfolio_relationships": 470,
+    "expected_profiles": 51,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 9,
+    "generic_portfolio_entries_verified": 9,
+    "clickable_company_links_verified": 9,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 53,
+    "manifest_generic_relationship_matches": 9,
+    "current_manifest_event_rows": 26,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 53,
+    "current_manifest_generic_relationship_matches": 9,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine legacy anonymous profile placeholders excluded: DB2843 versus live2834. All24 targets remain outside European map. All51 referenced profiles,53 participation source URLs and9 generic portfolio entries/source URLs verified; all9 have clickable company links. Twenty-seven new profiles published. Existing company gates/classifications/geography retained, including draftOrbotix."
+  }
 }
