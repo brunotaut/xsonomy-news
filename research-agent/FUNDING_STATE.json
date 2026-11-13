@@ -6730,7 +6730,33 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "manifest": "research-agent/imports/funding-landscape-20261113-seventy-first.json",
+    "dataset": "funding-landscape-20261113-seventy-first",
+    "status": "rollback_rehearsed_ready_for_atomic_commit",
+    "production_before": {
+      "events": 3755,
+      "approved": 3742,
+      "links": 5040,
+      "sources": 5181,
+      "profiles": 3020,
+      "covered": 1039,
+      "relationships": 487,
+      "preserved_profiles_hash": "b3ff9469e7885aa1ccad697538186490"
+    },
+    "expected": {
+      "events": 23,
+      "links": 18,
+      "sources": 27,
+      "relationships": 1,
+      "profiles": 9,
+      "covered": 12,
+      "extensions": 0
+    },
+    "local_postgresql_tests_passed": true,
+    "production_rollback_baseline_restored": true,
+    "recovery_note": "Before retry after interruption query exact manifest event matches/counts. Atomic importer is idempotent and rejects conflicting stored facts."
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T21:59:01.242Z",
