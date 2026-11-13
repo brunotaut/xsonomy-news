@@ -1,5 +1,5 @@
 {
-  "status": "imported_awaiting_publication",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T17:53:51.038Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-sixty-sixth.json",
@@ -36,13 +36,22 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 3638,
     "db_approved_events": 3625,
     "db_round_participations": 4766,
     "db_investor_profiles": 2864,
     "db_source_reconciliation_companies": 993,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 3,
+    "clickable_generic_company_links_verified": 2,
+    "active_minutes": 10.96,
+    "checked_identities_per_hour": 131.4,
+    "completed_reviews_per_hour": 32.8,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only research groups, source/canonical issuer/profile checks, current importer/schema validation, PostgreSQL tests, production rollback, atomic import, idempotency and exact fact/role/source/contribution/extension-parent audit, durable queue readback and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3603,
@@ -992,6 +1001,19 @@
       "relationship_matches": 3,
       "missing_link_sources": 0,
       "extension_parent_matches": 1
+    },
+    "live_generic_entry_verification": {
+      "entries": 3,
+      "source_urls": 3,
+      "clickable_company_links": 2,
+      "unlinked": [
+        {
+          "investor": "destinus",
+          "company": "perciv-ai",
+          "published": false,
+          "url": null
+        }
+      ]
     }
   },
   "publication_scope": {
@@ -1009,5 +1031,54 @@
     "Repository schedules",
     "No paid external API"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T18:04:48.726Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T18:04:48.726Z",
+    "verified_at": "2026-11-13T18:04:48.726Z",
+    "catalogue_commit": "3c5cff8606a1b5b6d20254060449d28e4a97117c",
+    "source_commit": "d8f2fc53e6c1728efcf178134fc643b911c072f1",
+    "workflow_run": {
+      "id": 43478811207,
+      "head": "3c5cff8606a1b5b6d20254060449d28e4a97117c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43478811207"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-sixth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-sixth.json",
+    "generated_at": "2026-11-13T18:04:03.466Z",
+    "investor_generated_at": "2026-11-13T18:04:06.265Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2855,
+    "portfolio_relationships": 473,
+    "expected_profiles": 30,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 3,
+    "generic_portfolio_entries_verified": 3,
+    "clickable_company_links_verified": 2,
+    "unlinked_under_existing_publication_gates": [
+      {
+        "investor": "destinus",
+        "company": "perciv-ai",
+        "published": false,
+        "url": null
+      }
+    ],
+    "manifest_participation_source_matches": 35,
+    "manifest_generic_relationship_matches": 3,
+    "current_manifest_event_rows": 35,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 35,
+    "current_manifest_generic_relationship_matches": 3,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine legacy anonymous profile placeholders excluded: DB2864 versus live2855. All24 targets remain outside European map. All30 referenced profiles,35 participation source URLs and3 generic portfolio entries/source URLs verified. Two generic company links clickable; Perciv remains unpublished under existing draft gate, so its Destinus portfolio entry has publishedfalse and no company URL. Twenty-one new profiles published. Existing company gates/classifications/geography retained."
+  }
 }
