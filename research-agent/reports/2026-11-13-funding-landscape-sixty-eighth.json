@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T19:55:00Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-sixty-eighth.json",
@@ -16,8 +16,8 @@
     "new_companies_with_events": 12,
     "new_investor_profiles": 38,
     "group_search_queries_executed": 140,
-    "root_additional_search_queries": 6,
-    "search_queries_executed": 146,
+    "root_additional_search_queries": 8,
+    "search_queries_executed": 148,
     "per_company_search_ledger_entries": 140,
     "source_ledger_entries": 119,
     "company_database_identity_contexts_checked": 24,
@@ -37,13 +37,24 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 3695,
     "db_approved_events": 3682,
     "db_round_participations": 4869,
     "db_investor_profiles": 2934,
     "db_source_reconciliation_companies": 1016,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_generic_company_links_verified": 1,
+    "reviewed_existing_fact_corrections": 0,
+    "root_source_ledger_entries": 13,
+    "active_minutes": 12.29,
+    "checked_identities_per_hour": 117.2,
+    "completed_reviews_per_hour": 19.5,
+    "timing_scope": "Elapsed short writer lease through four disjoint read-only groups, additional published Liebherr follow-up, exact issuer/profile/source QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution audit, durable queue/manifest readback and successful existing build with both fresh live JSON datasets. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3660,
@@ -1063,14 +1074,16 @@
   "source_and_identity_reconciliation": {
     "canonical_profile_mappings": [],
     "root_verification": {
-      "search_queries_executed": 6,
+      "search_queries_executed": 8,
       "searches_checked": [
         "Liebherr 2026 financing bonds loan issuer Liebherr International Liebherr Aerospace funding",
         "Liebherr 2025 2026 financing EIB loan Liebherr Aerospace Toulouse Lindenberg",
         "site:liebherr.com Aerospace grant funding 2025 2026 Toulouse Lindenberg",
         "site:eib.org Liebherr loan financing",
         "Procore 2026 700 million bridge facility BofA J.P. Morgan acquisition financing",
-        "Powerus 2026 April June KCGI 50 million 30 million Aureus financing"
+        "Powerus 2026 April June KCGI 50 million 30 million Aureus financing",
+        "site:pressreleasepoint.com/psi-services-receives-new-investment-and-continues-partnership-waud-capital \"completed\" \"equity\"",
+        "site:marketscreener.com/news/latest/PSI-Services-LLC-Announces-Growth-Equity-Investment-and-Partnership-with-Waud-Capital-Partners-19953719 \"equity\""
       ],
       "sources_checked": [
         {
@@ -1111,7 +1124,7 @@
         },
         {
           "url": "https://www.pressreleasepoint.com/psi-services-receives-new-investment-and-continues-partnership-waud-capital?lang=es",
-          "disposition": "Root direct fetch timeout; laneD indexedoriginal full release was checked. Primary/secondary undisclosed; PSI events conservatively investment_disclosure with noamount rather than quantifiedcompanyproceeds."
+          "disposition": "Root direct fetch timed out; subsequently searched original indexed issuer release and confirmed explicit completion of significant equity investment led by Waud. Lane D checked full indexed release. Primary/secondary split remains unknown; investment_disclosure with null amount retained."
         },
         {
           "url": "https://www.procore.com/press/procore-announces-closing-of-initial-public-offering-and-full-exercise-of-underwriters-option-to-purchase-additional-shares",
@@ -1143,16 +1156,16 @@
       "PSI primary/secondary allocation unknown: two events classified investment_disclosure; amount remains null."
     ],
     "notes": [
-      "Operating POSCO steel issuer distinguished from post-demerger Holdings, International, FutureM, Argentina and joint-venture entities. Two2026note tranches400m/300m are not duplicated as700m aggregate. Earlier issuance history remains partial.",
-      "Poseidon confirmed11mseed and60mA; preseed1.4m candidate still held. HanwhaUSA sourcelegalidentity and KCGI exactfundvehicles retained. Potensic Botan legalcontinuity unresolved, POWERTECHparentM&A notcompanycash, POWERUPrewards campaigns notsecurities orKickstarterinvestor.",
-      "Powerus APC economicissuer confirmed separate from AGH predecessor. Actual5mcash note+warrant package distinct5,555,555OIDface,20mbridge refinances oldnote without deductingcashtransaction orduplicateaggregate. KCGI exact50,000,582 receivedApr3;30mUMACprefundedwarrants notaccountingfairvalue, issuance/cashdate precision qualified. Initial6.07m placement conflicts withlaterH1shares/receivables andremainsheld. AGHPIPE/golfIPO/shelf/resales/mergerconsideration excluded.",
-      "PraetorianAustralian andPrevailUK issuers matched originalproducts/transactioncounterparties despite countrymetadatainconsistencies; no metadatachanged. PrattCanadian/Polish andRTXparentfunding excluded; PrecisionApproachprojectallocations held.",
-      "PrecisionHawk originaldatedreleases used because currentdomain redirects togambling. Fourdistincthistoricalfinancings; explicit2018ThirdPointlead, historicalfooter investors notassigned, unnamedUSAAsubsidiary notparentidentity. Primordial2022/2023seedoverlap and2026SEC18.5mheadlineconflict held ratherthanduplicate18mSeriesA.",
-      "Procore primaryIPO gross697.47m disclosedshares×price calculation, fulloptiononce; August2026closed950mconvertibleprincipal vs927.3mnet,125moptionnotextraevent. LatestQ3confirms700mbridge undrawn/terminated, excluded. EarlierF/Iextension histories remainpartial.",
-      "JapaneseProdrone manufacturer separated UkrainianPROdronesretailer.2017JPY1bn andfive2026implementedallotmentdisclosures plusannouncedJICNJPY300mapproval; unknownwiderprogramme affiliation, amountsandchequesnotinvented. Manager/fundvehicle identitiesdistinct; JICNapprovalnotdisbursement.",
-      "SOFIDjointprojectsupport notallocatedtoProOptica. Project35cancelled2.5mfundingobligation andreturnedacquisitionconsideration excluded. Protegoisfund/investor,125mFundInotmanagementcompanyround.",
-      "ProtolabsIPOroundedgross79.1mapproximate,netnotadded. PSI2015/2019unknownprimary-secondarysplit preservedasinvestment_disclosure withnullamount, notquantifiedcompanycash. PT PALstatecapitalIDR1.5tn/1.28tn separateyearsinjections,notgrantsorprocurement. Pteroallthree2023coleads and2026exactONEBowRiverfund;TACFIprocurement/private-matchnotinferredgrants. Protora/C SpeedcontinuitysupportsNewSpringHoldingsFederalgenericbacking,notacquisitioncash.",
-      "AdditionalpublishedLiebherrfollowup retainslegalissuerallocationhold:genericGermanbrand withnulllegal_name cannotreceiveFrenchsubsidiarygrants automatically;2026LuFoLindenbergconsortiumleadnotice doesnotdiscloseownawardallocation."
+      "Operating POSCO is distinct from post-demerger POSCO Holdings, International, Future M, Argentina and joint-venture entities. Two 2026 USD400m/USD300m note tranches are not duplicated as a USD700m aggregate. Earlier issuance history remains partial.",
+      "Poseidon confirmed USD11m seed and USD60m Series A; the earlier USD1.4m pre-seed candidate remains held. Hanwha Asset Management USA and the exact KCGI subscribing fund vehicles remain separate identities. Potensic/Botan legal continuity is unresolved. POWERTECH parent acquisitions are not incoming company capital. POWERUP product reward campaigns are not securities rounds, and Kickstarter is not an investor.",
+      "Powerus Autonomous Power Corporation is the operating economic issuer, distinct from AGH predecessor funding. Actual USD5m cash for a note/warrant package differs from USD5,555,555 OID face value. The USD20m AGH bridge refinanced prior debt; repayments are not new proceeds. KCGI supplied exact USD50,000,582 on April3. UMAC USD30m pre-funded warrants differ from accounting fair value; issuance/cash date qualifications remain. Initial USD6.07m placement conflicts with later H1 share and receivable disclosures and remains held. AGH PIPE, golf IPO, shelf capacity, resales and merger consideration are excluded.",
+      "Praetorian Australian and Prevail UK issuers match original product and transaction-counterparty evidence despite inconsistent country metadata, which was preserved. Pratt Canadian/Polish subsidiary and RTX parent funding is excluded. Precision Approach project award allocations remain held.",
+      "PrecisionHawk uses dated original issuer releases because its current domain redirects to gambling. Four historical financings remain separate; Third Point is explicitly the 2018 lead. Historical footer investors are not attributed to that round. The unnamed USAA subsidiary is not replaced with its parent. Primordial 2022/2023 seed overlap and the 2026 SEC USD18.5m candidate versus USD18m announced Series A remain holds, without duplicate events.",
+      "Procore IPO gross USD697.47m is explicitly calculated from disclosed shares times price, with the full option included once. Completed August2026 convertible principal is USD950m versus USD927.3m net; USD125m option is not another event. Latest Q3 confirms the USD700m bridge terminated undrawn, so it is excluded. Earlier Series F and Series I extension histories remain partial.",
+      "Japanese Prodrone is distinct from Ukrainian PRO drones retailer. Historical JPY1bn Series A, five implemented 2026 allotment disclosures and announced JICN JPY300m approval remain separate dated records. Wider programme affiliation and undisclosed amounts remain unknown; no cumulative funding total is calculated. Exact fund vehicles are retained; JICN approval is not confirmed disbursement.",
+      "SOFID joint-project assistance is not allocated to Pro Optica without recipient evidence. Project35 cancelled its USD2.5m funding obligation and returned acquisition consideration; neither is imported. Protego is an investment fund, and USD125m Fund I commitments are not a venture round into its management company.",
+      "Protolabs IPO rounded gross USD79.1m remains approximate, without adding net proceeds. PSI 2015/2019 transactions have unknown primary/secondary split and are investment disclosures with null amounts. PT PAL state capital IDR1.5tn/IDR1.28tn injections are separate equity transactions, not grants or procurement revenue. PteroDynamics retains all three 2023 co-leads and the exact 2026 ONE Bow River fund; TACFI contracts and unproven private matching funds are not inferred as grants. Protora/C Speed continuity supports NewSpring Holdings Federal generic backing, without inventing acquisition proceeds.",
+      "An additional published Liebherr follow-up retains the legal-recipient allocation hold. Generic German brand metadata with null legal_name does not establish a French subsidiary grant recipient. The 2026 LuFo Lindenberg consortium-leader notice does not disclose its own award allocation."
     ]
   },
   "validation": {
@@ -1169,6 +1182,12 @@
       "relationship_matches": 1,
       "missing_link_sources": 0,
       "extension_parent_matches": 0
+    },
+    "live_generic_entry_verification": {
+      "entries": 1,
+      "source_urls": 1,
+      "clickable_company_links": 1,
+      "unlinked": []
     }
   },
   "publication_scope": {
@@ -1188,6 +1207,45 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "pending"
-  }
+    "status": "verified",
+    "checked_at": "2026-11-13T20:07:17.388Z",
+    "verified_at": "2026-11-13T20:07:17.388Z",
+    "catalogue_commit": "9f62081ccb10a9d9d48bd87a6bb8008d403e0a1a",
+    "source_commit": "3a739bd7c62e1c579b5dd6c383649e67ad4e5c6f",
+    "workflow_run": {
+      "id": 43498173878,
+      "head": "9f62081ccb10a9d9d48bd87a6bb8008d403e0a1a",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43498173878"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-eighth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-eighth.json",
+    "generated_at": "2026-11-13T20:05:28.361Z",
+    "investor_generated_at": "2026-11-13T20:05:31.083Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2925,
+    "portfolio_relationships": 481,
+    "expected_profiles": 57,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 1,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_company_links_verified": 1,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 74,
+    "manifest_generic_relationship_matches": 1,
+    "current_manifest_event_rows": 35,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 74,
+    "current_manifest_generic_relationship_matches": 1,
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "Nine pre-existing anonymous profile placeholders remain excluded: DB2934 versus live2925. All24 cohort targets remain outside European map under existing gates. All57 referenced investor profiles,74 participation source URLs andone generic Protora/NewSpring Holdings Federal entry with originalsource andclickable companylink verified. Thirty-eight new profiles published. No company geography, classification or publication gate changed."
+  },
+  "completed_at": "2026-11-13T20:07:17.388Z"
 }
