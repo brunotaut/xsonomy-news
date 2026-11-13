@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T04:53:14.755Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-fifty-third.json",
@@ -42,7 +42,14 @@
     "db_source_reconciliation_companies": 849,
     "queue_dispositions_applied": 24,
     "new_profile_exact_name_duplicates": 0,
-    "current_manifest_publication_verified": false
+    "current_manifest_publication_verified": true,
+    "durable_queue_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "active_minutes": 17.87,
+    "checked_identities_per_hour": 80.6,
+    "completed_reviews_per_hour": 26.9,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, source/canonical QA, related-issuer inspection, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution audit and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3155,
@@ -960,5 +967,40 @@
     "Geography/classification/publication gates",
     "Repository schedules"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T05:11:06.879Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T05:11:06.879Z",
+    "verified_at": "2026-11-13T05:11:06.879Z",
+    "catalogue_commit": "43ad9ed617d9d776e632fb0b3d49557d3c7b226a",
+    "source_commit": "2ffc3134a9310be7be56d6deef2f1c322fe4c40c",
+    "workflow_run": {
+      "id": 43369980981,
+      "head": "43ad9ed617d9d776e632fb0b3d49557d3c7b226a",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43369980981"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-third.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-third.json",
+    "generated_at": "2026-11-13T05:09:09.645Z",
+    "investor_generated_at": "2026-11-13T05:09:13.280Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2505,
+    "portfolio_relationships": 374,
+    "expected_profiles": 25,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "current_manifest_event_rows": 18,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 19,
+    "current_manifest_generic_relationship_matches": 10,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: DB2514 versus live2505. All24 target identities remain outside the European landscape. All25 referenced profiles,19 participant source URLs and10 new generic links verified. Eleven new profiles published; existing curated-profile hash preserved. Wider-cohort funding is confirmed in DB without claiming European map events. Gates unchanged."
+  }
 }
