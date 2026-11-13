@@ -1,0 +1,28 @@
+{
+  "company_slug": "pni-sensor",
+  "round_key": "xtechsearch-7-cash-prize-disclosure",
+  "reason": "Prize winner announcement does not confirm cash disbursement; conservative announcement status replaces unsupported closed status.",
+  "expected_old": {
+    "closing_status": "closed",
+    "note_en": "Army names Protonex LLC dba PNI Sensor among ten cash-prize winners. USD450,000 is the shared winners pool, not this issuer allocation; no equal division inferred. Potential USD250,000 SBIR contract opportunity is not a received grant. Date held because Army text has inconsistent year references. Cash prize, not equity or debt.",
+    "amount": null,
+    "financing_type": "undisclosed"
+  },
+  "reviewed_new": {
+    "closing_status": "announced",
+    "note_en": "Army names Protonex LLC dba PNI Sensor among ten cash-prize winners. USD450,000 is the shared winners pool, not this issuer allocation; no equal division inferred. Potential USD250,000 SBIR contract opportunity is not a received grant. Date held because Army text has inconsistent year references. Cash prize, not equity or debt. Award announcement establishes a prize, not confirmed disbursement; payment date and amount remain unknown."
+  },
+  "rollback_rehearsal_passed": true,
+  "reversal_record": {
+    "expected_old": {
+      "closing_status": "announced",
+      "note_en": "Army names Protonex LLC dba PNI Sensor among ten cash-prize winners. USD450,000 is the shared winners pool, not this issuer allocation; no equal division inferred. Potential USD250,000 SBIR contract opportunity is not a received grant. Date held because Army text has inconsistent year references. Cash prize, not equity or debt. Award announcement establishes a prize, not confirmed disbursement; payment date and amount remain unknown."
+    },
+    "restore": {
+      "closing_status": "closed",
+      "note_en": "Army names Protonex LLC dba PNI Sensor among ten cash-prize winners. USD450,000 is the shared winners pool, not this issuer allocation; no equal division inferred. Potential USD250,000 SBIR contract opportunity is not a received grant. Date held because Army text has inconsistent year references. Cash prize, not equity or debt."
+    },
+    "execute_only_after_new_source_review": true
+  },
+  "sql": "DO $reviewed_correction$ DECLARE n integer; BEGIN\nSELECT count(*) INTO n FROM company_funding_rounds f JOIN companies c ON c.id=f.company_id WHERE c.slug='pni-sensor' AND f.round_key='xtechsearch-7-cash-prize-disclosure' AND f.closing_status='closed' AND f.note_en='Army names Protonex LLC dba PNI Sensor among ten cash-prize winners. USD450,000 is the shared winners pool, not this issuer allocation; no equal division inferred. Potential USD250,000 SBIR contract opportunity is not a received grant. Date held because Army text has inconsistent year references. Cash prize, not equity or debt.' AND f.amount IS NULL AND f.financing_type='undisclosed';\nIF n<>1 THEN RAISE EXCEPTION 'PNI expected old prize fact mismatch'; END IF;\nUPDATE company_funding_rounds f SET closing_status='announced',note_en='Army names Protonex LLC dba PNI Sensor among ten cash-prize winners. USD450,000 is the shared winners pool, not this issuer allocation; no equal division inferred. Potential USD250,000 SBIR contract opportunity is not a received grant. Date held because Army text has inconsistent year references. Cash prize, not equity or debt. Award announcement establishes a prize, not confirmed disbursement; payment date and amount remain unknown.',updated_at=now() FROM companies c WHERE c.id=f.company_id AND c.slug='pni-sensor' AND f.round_key='xtechsearch-7-cash-prize-disclosure' AND f.closing_status='closed' AND f.note_en='Army names Protonex LLC dba PNI Sensor among ten cash-prize winners. USD450,000 is the shared winners pool, not this issuer allocation; no equal division inferred. Potential USD250,000 SBIR contract opportunity is not a received grant. Date held because Army text has inconsistent year references. Cash prize, not equity or debt.';\nGET DIAGNOSTICS n=ROW_COUNT; IF n<>1 THEN RAISE EXCEPTION 'PNI correction row count mismatch'; END IF;\nEND $reviewed_correction$;"
+}
