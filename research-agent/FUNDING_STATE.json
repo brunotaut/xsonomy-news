@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1118,
   "next_action": "Continue next24 queued wider-cohort identities PAE Aviation through Performance Drone Works under fresh short writer lease and up to four disjoint read-only groups. No pending import or publication. Reconcile PAE/PDW/Perennial and Paramount parent/brand aliases before assigning finance. Preserve unresolved published Liebherr attribution and source-level holds. No internal batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T17:53:51.039Z",
+  "updated_at": "2026-11-13T18:00:50.203Z",
   "source_reconciliation_companies": 981,
   "approved_funding_events": 3590,
   "round_participations": 4731,
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T17:53:51.038Z",
     "expires_at": "2026-11-13T19:53:51.039Z",
-    "status": "researching",
+    "status": "importing",
     "planned_company_ids": [
       "c5d3b557-c8f1-4102-ae64-b159911bd430",
       "8ff8701d-d51d-461d-967a-746fc4a37f6e",
@@ -6480,7 +6480,28 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "status": "rollback_verified_ready_for_atomic_import",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-sixth.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-sixth.json",
+    "expected": {
+      "events": 35,
+      "links": 35,
+      "sources": 46,
+      "relationships": 3
+    },
+    "baseline": {
+      "events": 3603,
+      "approved": 3590,
+      "links": 4731,
+      "sources": 4968,
+      "profiles": 2843,
+      "covered": 981,
+      "relationships": 473,
+      "preserved_profiles_hash": "f215f02d89508987d4788c8508074650"
+    },
+    "recovery_note": "Check exact manifest keys/dataset for previously committed atomic import before retry. Idempotent importer rejects conflicts."
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-13T17:06:22.817Z",
