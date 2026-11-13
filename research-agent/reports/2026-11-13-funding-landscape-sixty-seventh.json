@@ -1,5 +1,5 @@
 {
-  "status": "imported_awaiting_publication",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T18:53:42.982Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-sixty-seventh.json",
@@ -36,13 +36,23 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 3660,
     "db_approved_events": 3647,
     "db_round_participations": 4795,
     "db_investor_profiles": 2896,
     "db_source_reconciliation_companies": 1004,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 7,
+    "clickable_generic_company_links_verified": 7,
+    "reviewed_existing_fact_corrections": 1,
+    "active_minutes": 17.37,
+    "checked_identities_per_hour": 82.9,
+    "completed_reviews_per_hour": 10.4,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only research groups, source/canonical issuer/profile checks, current importer/schema validation, PostgreSQL tests, production rollback, atomic import, idempotency and exact fact/role/source/contribution/extension-parent audit, reviewed PNI status correction with expected-old checks/reversal record and rollback, durable queue/manifest readback and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3638,
@@ -1011,12 +1021,13 @@
       "Planet2018SeriesD168m cash disclosed2019 excludesGoogleTerraBella noncashstock andcumulative384m.2021PIPE252m actualprimary distinct SPACtrustcash/combinedgross/fees;2025convert460m includes60moptiononce, not400mplus460m.2026ATMprogramme histories held for separateperiodreconciliation, noceilingasraisedcash.",
       "Pixhawk openhardwareproject notissuer; Pivotal eVTOL notsoftwarenamesake, OTAprocurementnotgrant andLarryPagebackingsecondaryheld. PlasanKibbutzSasaowner generic;plannedIPO/mergerconsideration notprimaryfunding. PlatformAerospace versusPlatformSystems legalissuer/sold/instrument reconciliation held.",
       "Porsche exactPorscheAutomobilHoldingSE notPorscheAG. RootfreshH1 originalexplicitMarch740m increasedadditional320mMayidenticalterms; Q3confirms1060mdisbursedSept. Marchrounded0.7bn refinedto740m; Mayextension linksMarchsameissuer, noadditional1060maggregate orrepaymentsasrounds. EarlierSchuldschein/bonds retainprimaryEURprincipal.2025settlementretainedconservativeannounced.",
-      "Polaris US vehiclemaker notGermanPolaris spaceplane; earlier2011/2013/2018note originations remainheld, supported2023and2025USD500missues separate. PNIArmycashprize ownallocation/dateunknown;shared450kpoolnotdividedandpotentialSBIRcontractnotgrant. Portal ownpreseedclose unknownamount/date/security, Cowtownexplicitlead;500knotetarget andDARPAprizecandidate held pendingoriginal. PLATHparentgeneric;groupfacilityallocation andPLAZinaccessiblesources remainholds."
+      "Polaris US vehiclemaker notGermanPolaris spaceplane; earlier2011/2013/2018note originations remainheld, supported2023and2025USD500missues separate. PNIArmycashprize ownallocation/dateunknown;shared450kpoolnotdividedandpotentialSBIRcontractnotgrant. Portal ownpreseedclose unknownamount/date/security, Cowtownexplicitlead;500knotetarget andDARPAprizecandidate held pendingoriginal. PLATHparentgeneric;groupfacilityallocation andPLAZinaccessiblesources remainholds.",
+      "Final source QA changed PNI prize closing status from closed to announced: winner announcement does not confirm disbursement. Guarded exact-old-value update and reversal record preserved; amount/date remain unknown. No new event created."
     ]
   },
   "validation": {
     "current_importer_and_three_schema_fixtures_unchanged": true,
-    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflict rejection and participant-source FK rejection after final Porsche May extension reconciliation. Source URL uniqueness/date precision checked. Production rollback restored baseline; atomic import and postimport repeat verified. Exact facts/roles/sources/contributions and same-company extension parent audited.",
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting amount rejection and participant-source FK rejection again with final corrected PNI manifest. Exact fact/role/source/contribution and same-company Porsche extension audit passed. Guarded PNI correction had its own production rollback, atomic update, reversal record and corrected-manifest idempotency rehearsal.",
     "production_rollback_baseline_restored": true,
     "atomic_import_committed_at": "2026-11-13T19:05:23.157Z",
     "post_import_idempotency_baseline_restored": true,
@@ -1038,6 +1049,12 @@
       "corrected_manifest_idempotency_passed": true,
       "counts_and_curated_profiles_unchanged": true,
       "reversal_record_preserved": true
+    },
+    "live_generic_entry_verification": {
+      "entries": 7,
+      "source_urls": 7,
+      "clickable_company_links": 7,
+      "unlinked": []
     }
   },
   "publication_scope": {
@@ -1055,5 +1072,48 @@
     "Repository schedules",
     "No paid external API"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T19:11:04.940Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T19:11:04.940Z",
+    "verified_at": "2026-11-13T19:11:04.940Z",
+    "catalogue_commit": "d994c29e2dd6db3d1cddbc701e1f8cce5c98250c",
+    "source_commit": "2e350ac40d474777488d1363fecd2a316267ddd4",
+    "workflow_run": {
+      "id": 43489246256,
+      "head": "d994c29e2dd6db3d1cddbc701e1f8cce5c98250c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43489246256"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-seventh.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-seventh.json",
+    "reviewed_correction_record": "research-agent/imports/funding-landscape-20261113-sixty-seventh-correction.json",
+    "generated_at": "2026-11-13T19:08:47.057Z",
+    "investor_generated_at": "2026-11-13T19:08:49.396Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2887,
+    "portfolio_relationships": 480,
+    "expected_profiles": 36,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 7,
+    "generic_portfolio_entries_verified": 7,
+    "clickable_company_links_verified": 7,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 29,
+    "manifest_generic_relationship_matches": 7,
+    "current_manifest_event_rows": 22,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 29,
+    "current_manifest_generic_relationship_matches": 7,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine legacy anonymous profile placeholders excluded: DB2896 versus live2887. All24 targets remain outside European map, including PNI prize status correction. All36 referenced profiles,29 participation source URLs and7 generic portfolio entries/source URLs verified; all7 company links clickable. Thirty-two new profiles published. PNI correction concerns a DB event outside existing map scope and does not change these published profiles/relationships; no duplicate build needed. Company gates/classifications/geography retained."
+  }
 }
