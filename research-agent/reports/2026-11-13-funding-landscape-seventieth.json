@@ -1,0 +1,1096 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T21:46:17.782Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-seventieth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 3,
+    "new_or_retained_partial": 21,
+    "new_approved_events": 35,
+    "new_round_participations": 120,
+    "new_source_rows": 43,
+    "new_generic_portfolio_relationships": 3,
+    "new_companies_with_events": 12,
+    "new_investor_profiles": 53,
+    "group_search_queries_executed": 113,
+    "root_additional_search_queries": 6,
+    "per_company_search_ledger_entries": 116,
+    "source_ledger_entries": 100,
+    "company_database_identity_contexts_checked": 24,
+    "existing_canonical_events_inspected": 0,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 35,
+    "mismatched_facts": 0,
+    "participant_matches": 120,
+    "source_matches": 43,
+    "relationship_matches": 3,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 2,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "db_total_events": 3755,
+    "db_approved_events": 3742,
+    "db_round_participations": 5040,
+    "db_investor_profiles": 3020,
+    "db_source_reconciliation_companies": 1039,
+    "concurrency_speedup_claimed": false,
+    "search_queries_executed": 119
+  },
+  "production_before": {
+    "events": 3720,
+    "approved": 3707,
+    "links": 4920,
+    "sources": 5138,
+    "profiles": 2967,
+    "covered": 1027,
+    "relationships": 484,
+    "preserved_profiles_hash": "94292c8efba644d82369ab94ef1d2680"
+  },
+  "production_after": {
+    "events": 3755,
+    "approved": 3742,
+    "links": 5040,
+    "sources": 5181,
+    "profiles": 3020,
+    "covered": 1039,
+    "relationships": 487,
+    "preserved_profiles_hash": "94292c8efba644d82369ab94ef1d2680"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1139,
+    "source_review_partial": 842,
+    "queued": 583
+  },
+  "per_company": [
+    {
+      "id": "0ff6c6b6-028a-4af8-afce-37d8899f0532",
+      "slug": "rantizo",
+      "name": "Rantizo",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Rantizo funding Series A 2020 2023 2026 Nasdaq issuer",
+        "\"Rantizo\" site:rantizo.com funding 2026 financing 2023 Bayer",
+        "\"Rantizo\" site:leaps.bayer.com investment 2020 2023",
+        "site:sec.gov/Archives/edgar/data/1991261 Rantizo October November 2026 \"capital raise\" \"10 million\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rantizo.com/investors/",
+          "disposition": "Opened original currentissuer distinguishes listedSKK-renamed company fromsellerRantizoInc."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1991261/000149315226046697/form6-k.htm",
+          "disposition": "Opened original: Oct9assetpurchase,258.83mshares and10mcapitalraise/sellerPIPE10m deferred toOct16, notconfirmedcash."
+        },
+        {
+          "url": "https://www.rantizo.com/news/skk-holdings-completes-acquisition-of-rantizo/",
+          "disposition": "Opened issuer closingrelease; acquisition shares and8msecondaryshare purchase not incoming round."
+        },
+        {
+          "url": "https://lewisandclarkpartners.com/news/2g9d2cwu3f63fbhk83wqdb7w9q1xxf",
+          "disposition": "Opened original2020legacyRantizo7.5mSeriesA: identityattributionheld becauseassetpurchase doesnotprove samelegalcashrecipient."
+        },
+        {
+          "url": "https://www.rantizo.com/news/",
+          "disposition": "Indexed currentnews checked; orders/prototypes notfinancing."
+        }
+      ],
+      "evidence_note": "CurrentNasdaqissuer andlegacyRantizoInc distinguishable via originalassetpurchase.",
+      "hold_note": "2020/2023sellerrounds, SKKIPO,258.83mnoncashassetconsideration,8msecondarypurchase anddeferred10m+10mclosingfunding remainheldforactualcash/issuerreconciliation; noautomaticbrandcashtransfer."
+    },
+    {
+      "id": "e0478562-5878-45d2-bfe1-ac0d8b66592b",
+      "slug": "raptor-defense",
+      "name": "Raptor Defense",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 2,
+      "searches_checked": [
+        "\"Raptor Defense\" funding investment Hawaii robot vehicles",
+        "\"Raptor Defense\" \"funding\" \"2026\" \"2025\"",
+        "\"Raptor Defense\" site:benfranklin.org investment 2025 2026",
+        "\"Raptor Defense\" \"investment\" \"2024\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://drexel.edu/engineering/news-events/news/archive/2026/March/andy-zhang-raptor-defense-mechanical-engineering/",
+          "disposition": "Opened full university original:20kearnedlate2024 investment, exactinstrument/paymentunknown."
+        },
+        {
+          "url": "https://benfranklin.org/company_spotlight/raptor-defense/",
+          "disposition": "Opened full investor confirmation firstinstitutionalfunding, termsundisclosed."
+        },
+        {
+          "url": "https://onthemarkinvesting.com/raptor-defense/",
+          "disposition": "Opened full original:DanMiley equityposition, individualnotOTMfund."
+        },
+        {
+          "url": "https://www.raptordefenseco.com/",
+          "disposition": "Indexed currentexactPITVIPERissuer; Armyfinalist prizepool not ownaward."
+        },
+        {
+          "url": "https://defence-blog.com/u-s-army-to-test-robot-supply-vehicles-in-hawaii/",
+          "disposition": "Catalogueprovenance checked againstoriginalexactrobotidentity; procurement/testentry notfunding."
+        }
+      ],
+      "evidence_note": "ExactPITVIPERissuer,20kprogrammeinvestment andtwo genericbackerssupported.",
+      "hold_note": "Unknownsecurity/payoutforaward; BenFranklin/Mileydates/roundoverlapunknown. Armyprizepools/contractsnotownfunding."
+    },
+    {
+      "id": "b3c90117-da98-466e-8378-306a74fe7c79",
+      "slug": "rayneo",
+      "name": "RayNeo",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"RayNeo\" funding 2025 2026 financing investment",
+        "site:rayneo.com funding 2025 2026 investors",
+        "雷鸟创新 2026 1月 融资 中信金石 中国移动 中国联通 官方",
+        "\"RayNeo\" funding 2023 2024 2025 site:winrealvc.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/rayneo-unveils-worlds-first-esim-enabled-ar-glasses-for-ces-2026-302652091.html",
+          "disposition": "Opened originalissuerfundingsection:3exacttelecomfundnames."
+        },
+        {
+          "url": "https://finance.cnr.cn/ycbd/20260105/t20260105_527483387.shtml",
+          "disposition": "Opened full originalcompany-directreport:CNYover1bn,closingandGoldstonecolead."
+        },
+        {
+          "url": "https://www.winrealvc.com/nd.jsp?fromMid=452&id=481",
+          "disposition": "Indexed full originalinvestorupdate checked; direct502 andalternateURLtimeout, accesslimitsretained."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/rayneo-leads-global-ar-market-with-one-third-share-302731103.html",
+          "disposition": "Indexed issuerAprilretrospective fundingamountsameQ1event; notnewround."
+        },
+        {
+          "url": "https://vc.pedaily.cn/company/677701.html",
+          "disposition": "Later2026D+/D++ andearlierclaims candidatesonly, primaryreconciliationheld; stageconflictsnotfacts."
+        }
+      ],
+      "evidence_note": "Originalissuer andinvestorChinese/Englishsourcesconfirm2025and2026financings.",
+      "hold_note": "Earlier/latest2026D+/D++claims andstageconflictsheld; fund/manageridentityboundaries andunknownchequespreserved."
+    },
+    {
+      "id": "4e61a5a1-9634-4667-983e-c16c3bdd590b",
+      "slug": "raytheon-rtx",
+      "name": "Raytheon (RTX)",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:rtx.com 2026 notes financing 2025 2026 2.5 billion",
+        "site:sec.gov RTX 2026 \"issued\" \"notes\" \"2026\"",
+        "site:rtx.com \"2023\" \"5.150%\" notes",
+        "site:rtx.com \"2026\" \"issued\" \"notes\" financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/101829/000114036123008911/ny20007664x4_8k.htm",
+          "disposition": "Opened full originalSEC2023parent3tranches, issuednotpricingonly."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000031/rtx-20260930.htm",
+          "disposition": "Opened latestoriginalQ3Borrowingssection:renewedAug5bnundrawnline,CPcapacitysamebacking,repaymentsnotfinancing."
+        },
+        {
+          "url": "https://www.rtx.com/news/news-center/2026/10/20/rtx-reports-q3-2026-results",
+          "disposition": "Indexed latestissuerresults; procurementbacklog/R&Drevenue notcapital."
+        }
+      ],
+      "evidence_note": "Cohortticker/overview/websiteexplicitlyRTXparent; parentnotesandlatestundrawncapacityverified.",
+      "hold_note": "Long2020–2025issuancehistory,termloansandoldUTCcontinuitynotfullyreconciled. Contracts,backlog,loanrepayments andborrowedparentmoney notassignedUKoroperatingRaytheon."
+    },
+    {
+      "id": "6c6d8ac4-460a-4808-bdfc-a9f5e8ee2af5",
+      "slug": "raytheon-uk",
+      "name": "Raytheon UK",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Raytheon UK grant investment funding loan Raytheon Systems Limited 2025 2026",
+        "\"Raytheon UK\" site:raytheon.co.uk \"Systems Limited\"",
+        "\"Raytheon UK\" \"grant\" \"2026\" \"2025\" funding",
+        "\"Raytheon UK\" Innovate UK funding 2026 2024"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.raytheon.co.uk/news/2022/01/25/collaborating-partners-produce-innovative-solutions",
+          "disposition": "Opened originalexplicitRaytheonSystemsLimited(RaytheonUK)legalmapping."
+        },
+        {
+          "url": "https://www.scottish-enterprise.com/media/ow4hpfdn/2024-25-over-25k.pdf",
+          "disposition": "Opened grantororiginalPDF andvisuallycheckedpage5 row250kGBP03Jul2024GrantContribution."
+        },
+        {
+          "url": "https://www.raytheon.co.uk/en/who-we-are/rtx-in-the-uk",
+          "disposition": "Opened currentissuerparent/subsidiaryboundaries."
+        },
+        {
+          "url": "https://gtr.ukri.org/organisation/942F530E-2559-4569-A9A0-5820120CCFBB",
+          "disposition": "Indexed grantcandidates requireownaward/allocationverification; notimported."
+        },
+        {
+          "url": "https://www.scottish-enterprise.com/our-organisation/accessing-our-information/freedom-of-information/freedom-of-information-releases/funding-given-to-defence-aerospace-and-marine-firms-in-202122",
+          "disposition": "Indexed600kannualaggregate notsingleevent; heldconstituentreconciliation."
+        }
+      ],
+      "evidence_note": "OriginalissuerexplicitlymapsRaytheonSystemsLimited; onegrantpaymentverified.",
+      "hold_note": "Earlier600kannualfundingaggregate andUKRIawardsrequireconstituents/allocationreconciliation. Contracts,pensionfunding,parentRTXline notownfunding."
+    },
+    {
+      "id": "7953c938-ce03-4c1c-a4c4-3115dc6072b0",
+      "slug": "rcinpower",
+      "name": "RCinPower",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"RCinPower\" 融资 投资 公司",
+        "\"RCINPOWER\" investment funding investor 2026",
+        "\"RCinPower\" \"融资\" \"投资\" \"2025\"",
+        "\"RCinPower\" site:rcinpower.com ABOUT",
+        "\"RC-IN-POWER\" investment capital company history"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rcinpower.com/NEWS/",
+          "disposition": "Opened originalbrandnews/contactbody establishesZhongshanRCcomponentmanufacturer, nocompanyfundingfacts."
+        },
+        {
+          "url": "https://www.rcinpower.com/ABOUT-US/",
+          "disposition": "Directoriginaltechnicaldatabaseerror; failedfetchnotnegativefundingproof."
+        },
+        {
+          "url": "https://www.rcinpower.com/",
+          "disposition": "Directoriginaltechnicaldatabaseerror; indexedproduct/technicalsupportpagesmatchedmanufacturer."
+        },
+        {
+          "url": "https://www.crunchbase.com/organization/rc-in-power-co",
+          "disposition": "Aggregatoridentitycandidateonly; private/noentrynotzerofunding, exactlegaloperatorunresolved."
+        }
+      ],
+      "evidence_note": "ExactRCmotormanufacturerbrandmatchedoriginalcontact/news.",
+      "hold_note": "Fulllegaloperatorcontinuity andprivatecapitalhistoryunresolved; technicalpagefailure andaggregatorabsence notzerofunding."
+    },
+    {
+      "id": "be7969e6-bf38-4532-9201-467c13c56f35",
+      "slug": "reactive-dynamics",
+      "name": "Reactive Dynamics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Reactive Dynamics\" funding investment company",
+        "\"Reactive Dynamics\" seed financing 2026 investors",
+        "\"Reactive Dynamics\" \"Finanzierung\" OR \"Investoren\" OR \"investment\"",
+        "site:reactive-dynamics.com investment investors funding",
+        "\"Reactive Dynamics\" Quantum Systems investment 2026 seed funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.reactive-dynamics.com/",
+          "disposition": "Opened original RDX1 platform and QuantumSystems integration partnership, not capital."
+        },
+        {
+          "url": "https://www.reactive-dynamics.com/privacy",
+          "disposition": "Opened original identifies German Reactive Dynamics GmbH and three directors;US metadata not altered."
+        },
+        {
+          "url": "https://www.presseportal.de/pm/176824/6297111",
+          "disposition": "Original partner indexed release confirms German late2025startup and Eurosatory collaboration, no funding terms."
+        },
+        {
+          "url": "https://www.behindrobotics.com/company/reactive-dynamics",
+          "disposition": "Aggregator earlystage label is candidate only; no financial fact. MarketingdataReactiveDynamics.io and Canadian ReactionDynamics excluded."
+        }
+      ],
+      "evidence_note": "Exact German RDX1 UGV issuer confirmed by legal policy and original platform, despite US cataloguemetadata.",
+      "hold_note": "Earlier/private financing unverified; partner integration and earlystageaggregator label not investment. UKmarketingdata andCanadianrocket namesakes excluded."
+    },
+    {
+      "id": "9bbe183e-9335-4f0a-bf07-643ffec95b20",
+      "slug": "real-time-robotics",
+      "name": "Real-Time Robotics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Real Time Robotics\" Hera funding investment",
+        "\"Real-time Robotics\" \"funding\" \"Vietnam\" \"investor\"",
+        "\"Real-time Robotics\" site:aiviet.ventures OR site:aivietventure.com",
+        "\"Real-time Robotics\" \"gọi vốn\" \"đầu tư\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://rtrobotics.com/about",
+          "disposition": "Opened original HERA drone issuer, QuocLuong,CastroValley/Vietnam sites; differs industrialrobotics namesake and stale cataloguewebsite."
+        },
+        {
+          "url": "https://rtrobotics.com/news",
+          "disposition": "Opened current original archive through2026 product/compliance/R&Dsite news, not incoming capital."
+        },
+        {
+          "url": "https://baodautu.vn/start-up-trong-doi-vao-nguon-von-dau-tu-thien-than-d211621.html",
+          "disposition": "Indexed founder interview acknowledges historical angel capital but amounts/dates/legalrecipient not reconciled; held."
+        },
+        {
+          "url": "https://dronexl.co/2024/06/17/drone-maker-realtime-robotics-vietnam-factory/",
+          "disposition": "Indexed13.5mVietnamfactory is own capex/subsidiary plan, not verified incoming funding. Proposed publicfund access not completed investment."
+        }
+      ],
+      "evidence_note": "Exact HERA drone issuer confirmed; catalogue industrialautomation description/domain is inconsistent and preserved, no namesake funds transferred.",
+      "hold_note": "Historical founderangel statement andAiVietcandidate need originalvehicle/legalrecipient/date reconciliation. Factory13.5mcapex,proposedpublicfundaccess andBostonautomationnamesake rounds excluded."
+    },
+    {
+      "id": "41093d90-c7b8-49ca-8170-5ca0816a3046",
+      "slug": "rebton",
+      "name": "Rebton",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Rebton\" funding INNOFENSE",
+        "\"Rebton\" INNOFENSE grant investment",
+        "\"Rebton\" startup INNOFENSE funding 2026",
+        "\"Rebton\" site:i-hls.com",
+        "\"Rebton\" \"רבטון\" investment funding",
+        "\"Rebton\" startup grants investors 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://i-hls.com/archives/137950",
+          "disposition": "Opened full programmeoperator original July25/2026, exact recycledconstructionwaste startup. Workshop discusses grants/fundraising, no own award."
+        },
+        {
+          "url": "https://i-hls.com/he/archives/137075",
+          "disposition": "Indexed operator Hebrew priorworkshop confirms same buildingblocks company. UKRebton1–5 and Indianpharma namesakes excluded."
+        }
+      ],
+      "evidence_note": "Exact Israeli recycledbuildingmaterials startup identified by programmeoperator; sparse legalidentity remains.",
+      "hold_note": "Legaloperator, earlierprivatecapital andactualgrantallocations unknown. INNOFENSEworkshop participation doesnot prove funding; UK/India namesakes excluded."
+    },
+    {
+      "id": "8de9257b-4d04-474c-aa29-255e5d625e40",
+      "slug": "reconcraft",
+      "name": "ReconCraft",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"ReconCraft\" investment funding",
+        "\"ReconCraft\" site:reconcraft.com investment company history",
+        "\"ReconCraft\" \"loan\" OR \"equity\" OR \"grant\" funding",
+        "\"ReconCraft\" site:copperriverfamily.com OR site:copperrivermc.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://reconcraft.com/",
+          "disposition": "Opened original Oregon militaryvessel builder identity."
+        },
+        {
+          "url": "https://reconcraft.com/why-reconcraft/",
+          "disposition": "Opened issuer history/capabilities; owncompany financing not established."
+        },
+        {
+          "url": "https://copperrivermc.com/family-of-companies/",
+          "disposition": "Opened parent original family listing ofReconCraft; ownership not quantified capitaltransfer."
+        },
+        {
+          "url": "https://reconcraft.com/reconcraft-awarded-4-year-njpa-contract-for-federalstate-agencies/",
+          "disposition": "Indexed issuer governmentprocurement award,not corporate equity/grant. UFORCEmanufacturing partnership andNAVSEA ceiling not incomingfunding. Aggregatorneverraisedclaim rejected."
+        }
+      ],
+      "evidence_note": "Bounded incoming-finance review completed for exact militaryvessel builder using issuer/parent and transactioncontext sources.",
+      "hold_note": "No substantiated ownfinancingevent in bounded review. Undisclosedcapital remainsunknown,notzero. Parentownership,awards,orderceilings andUFORCEpartnership notverifiednewcapital."
+    },
+    {
+      "id": "29ee2522-f8ad-44f4-81b2-32e25d19cb17",
+      "slug": "red-cat-holdings",
+      "name": "Red Cat Holdings",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 8,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Red Cat\" financing offering closed 2026 2025 official",
+        "site:ir.redcatholdings.com \"closing\" \"offering\" \"2026\" \"2025\"",
+        "site:ir.redcatholdings.com \"2021\" \"60 million\" offering closed",
+        "site:ir.redcatholdings.com \"2026\" \"November\" financing offering",
+        "site:ir.redcatholdings.com \"2025\" \"closing\" \"$172\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ir.redcatholdings.com/sec-filings/all-sec-filings/content/0001554795-21-000346/rcat0909form10q.htm",
+          "disposition": "Opened original and located May4/July21 2021 actualclosedgross/net sections."
+        },
+        {
+          "url": "https://ir.redcatholdings.com/sec-filings/all-sec-filings/content/0001554795-23-000369/rcat1215form10q.htm",
+          "disposition": "Opened original and located December11 offering actualgross9.2m;ATM capacity/57kperiodsales separatelyheld."
+        },
+        {
+          "url": "https://ir.redcatholdings.com/sec-filings/all-sec-filings/content/0001628280-26-054368/rcat-20260630.htm",
+          "disposition": "Opened latestavailableQ2 original;located completedApril/June/Sept2025 andMay2026 offerings,fulloptions andLindXI15mactualcash vs16.5mface."
+        },
+        {
+          "url": "https://ir.redcatholdings.com/news-events/press-releases/detail/171/red-cat-raises-up-to-20-million-in-debt-financing",
+          "disposition": "Opened original actual15mtrancheproceeds;20mcapacity andOSC58mapplication excluded."
+        },
+        {
+          "url": "https://ir.redcatholdings.com/sec-filings/all-sec-filings/content/0001104659-26-061333/tm2614279d7_8k.htm",
+          "disposition": "Opened original base225mclosing; latestQ2 supersedeswith258.75mwholeincludingoption,notduplicateevent."
+        },
+        {
+          "url": "https://ir.redcatholdings.com/",
+          "disposition": "Current originalindexedIR November13 check:Q3results scheduledNov16,notpublishedyet;Nov2latestnews partnershipnotfunding."
+        }
+      ],
+      "evidence_note": "Eight original completed equity/convertiblecashfinancings supported, with finaloptionamount reconciled.",
+      "hold_note": "Earlier2020convertibles,2024LindX,ATM/exercises andpotentiallaterpostQ2transactions remainpartial. OSCapplication/shelfcapacity,repayments,acquisitionconsideration/subsidiaryprocurementnotnewfunding. Q3notdueuntilNov16."
+    },
+    {
+      "id": "0ad4c552-cd1d-4169-ac2f-fd0e00407994",
+      "slug": "red-dot-drone-japan",
+      "name": "Red Dot Drone Japan",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Red Dot Drone\" funding investment Japan",
+        "\"Red Dot Drone Japan\" \"増資\" 2025 2026",
+        "\"Red Dot Drone\" site:dronefund.vc investment 2018",
+        "\"Red Dot Drone Japan\" 2026 funding capital investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://prtimes.jp/main/html/rd/p/000000010.000120350.html",
+          "disposition": "Opened full Japanese issuer original names three finalsubscribers andJune2024completedallocation; amountundisclosed."
+        },
+        {
+          "url": "https://reddotdrone.jp/en/company-en/",
+          "disposition": "Opened exact Japancompany profile,2019incorporation andSingaporeoffice distinction; registeredcapitalnotroundamount."
+        },
+        {
+          "url": "https://dronefund.vc/en/portfolio/",
+          "disposition": "Opened original exactJapanesecompanyportfolio listing;genericrelationshiponly."
+        },
+        {
+          "url": "https://dronefund.vc/wp-content/uploads/2019/09/20181112_pressrelease.pdf",
+          "disposition": "Opened originalPDF proseexplicit2018investment intoSingapore RedDotDrone. Japaneseissuerformed2019;do nottransferhistoricalround."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/red_dot_drone",
+          "disposition": "Indexed43m2024candidate and2018seed mergeissuerclaims;originalneithergives43m norJapanese2018financing."
+        }
+      ],
+      "evidence_note": "Exact Japaneseissuer2024allotment andcurrentDRONEFUNDgenericbacking supported;Singaporehistory separate.",
+      "hold_note": "2018Singaporefunding not automaticallyJapanissuerhistory. JPY43maggregatoramount unsupported;registeredcapitalnotproceeds. Laterprojectgrantallocation andearlierprivatehistoryunknown."
+    },
+    {
+      "id": "da5d3b2e-44aa-4dbb-915e-355e14f55c81",
+      "slug": "redwire",
+      "name": "Redwire",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Redwire 2026 2025 financing 250 million equity debt closed official investor",
+        "site:rdw.com \"2025\" \"offering\" \"15,525,000\"",
+        "\"Redwire\" \"2022\" \"$81.25\" investment agreement"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ir.rdw.com/sec-filings/all-sec-filings/content/0001819810-26-000142/rdw-20260930.htm",
+          "disposition": "Opened full original; located financing, preferred-share and actual ATM sections. Gross/net/capacity distinguished."
+        },
+        {
+          "url": "https://rdw.com/newsroom/redwire-announces-pricing-of-its-upsized-offering-of-common-stock/",
+          "disposition": "Indexed original pricing checked against completed issued shares in Q3 filing."
+        },
+        {
+          "url": "https://ir.rdw.com/sec-filings/all-sec-filings/xbrl_doc_only/2685",
+          "disposition": "Original XBRL fragment open returned navigation; full filing used instead."
+        }
+      ],
+      "evidence_note": "Parent Redwire Corporation financing confirmed, distinct subsidiary credit issuers.",
+      "hold_note": "SPAC/PIPE, earlier debt, November2025/May2026 ATM periods and warrant exercises remain incomplete. No subsidiary90m loan transferred to parent; acquisition consideration not company proceeds."
+    },
+    {
+      "id": "60c49489-0161-490f-bb25-3071a4a69fd5",
+      "slug": "redwire-defense-tech",
+      "name": "Redwire Defense Tech",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Redwire Defense Tech\" \"Edge Autonomy\" renamed 2026 official",
+        "Redwire 2026 2025 financing 250 million equity debt closed official investor"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://rdw.com/newsroom/redwire-announces-sunsetting-of-edge-autonomy-brand-and-new-organizational-structure-to-align-with-market-opportunities-for-accelerated-growth/",
+          "disposition": "Opened original January13/2026: Defense Tech is business segment under Redwire branding, Edge Autonomy integrated."
+        },
+        {
+          "url": "https://ir.rdw.com/sec-filings/all-sec-filings/content/0001819810-26-000142/rdw-20260930.htm",
+          "disposition": "Original identifies Intermediate Holdings and IntermediateII Holdings Lead Borrower for credit, not generic segment identity."
+        }
+      ],
+      "evidence_note": "Exact operating segment and former Edge Autonomy branding established.",
+      "hold_note": "Generic segment record not exact legal borrower.90m2025 loan/2026refinancing held pending exact borrower-to-cohort mapping. Parent equity and acquisition price not reassigned."
+    },
+    {
+      "id": "e82cef60-217d-4198-ac77-764e895fa908",
+      "slug": "reference-technologies-inc",
+      "name": "Reference Technologies Inc.",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Reference Technologies\" funding investment investors drone",
+        "\"Reference Technologies\" UAV \"investment\" OR \"funding\"",
+        "\"Reference Technologies\" referencetek funding grant investor 2026",
+        "\"Reference Technologies\" \"Hummingbird\" \"funding\"",
+        "\"Reference Technologies Inc\" \"grant\" OR \"capital\"",
+        "site:colorado.gov \"Reference Technologies\" \"$250,000\"",
+        "site:oedit.colorado.gov \"Reference Technologies\"",
+        "\"Reference Technologies\" \"Advanced Industries\" 2014 grant original Colorado",
+        "site:referencetek.com investment investors funding",
+        "\"Reference Technologies\" \"250,000\" grant Colorado",
+        "site:referencetek.com Hummingbird funding investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.referencetek.com",
+          "disposition": "Direct original site did not return usable content; limitation retained."
+        },
+        {
+          "url": "https://j.futurefacts.votesmart.io/public-statement/888227/advanced-industries-accelerator-program-grants-almost-2-million-to-colorado-organizations",
+          "disposition": "Indexed rehost of Colorado press statement identifies250kgrant candidate and Lafayette Hummingbird issuer; original issuer/grant agency archive not verified."
+        },
+        {
+          "url": "https://prospeo.io/c/reference-technologies-email-format",
+          "disposition": "Candidate claim never raised funding excluded as unsupported absence inference."
+        }
+      ],
+      "evidence_note": "Historical Lafayette Hummingbird UAS company candidate matched exact brand but current legal continuation unresolved.",
+      "hold_note": "Colorado250k support candidate remains original-source/date/payment hold; namesake Reference/ Hummingbird financings excluded. Unknown private history is not zero."
+    },
+    {
+      "id": "e3790646-6592-4f9c-9b8f-16dccb2b5a24",
+      "slug": "regal-partners-limited",
+      "name": "Regal Partners Limited",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Regal Partners Limited\" capital raising 2025 2026 official",
+        "site:regalpartners.com \"credit facility\" \"$130\"",
+        "\"Regal Partners\" \"HSBC\" \"130\" facility",
+        "\"Regal Partners\" \"capital raising\" \"2026\"",
+        "site:regalpartners.com \"2022\" \"$110\" \"capital\"",
+        "\"Regal Partners\" \"2025 annual report\" \"130 million\"",
+        "\"Regal Partners\" \"2025\" \"130\" \"Standard Chartered\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://investorpa.com/announcement-pdf/20260224/259993.pdf",
+          "disposition": "Opened issuer annual report; located notes17, currency policy and corporate facility prose.130mcapacity undrawn at yearend,2025drawn portion repaid."
+        },
+        {
+          "url": "https://regalpartners.com/shareholders",
+          "disposition": "Opened current investor centre; exact listed asset-manager issuer."
+        },
+        {
+          "url": "https://wcsecure.weblink.com.au/clients/regalpartners/v2/headline.aspx?headlineid=21615886",
+          "disposition": "Indexed original H1 confirms100m then130m syndication;20mdrawn snapshot not new round."
+        },
+        {
+          "url": "https://regalpartners.com/wp-content/uploads/2023/11/RPL-2023-11-03_PM-Capital-Acquisition-1.pdf",
+          "disposition": "Indexed issuer history of2022VGI merger; earlier equity continuity requires reconciliation."
+        }
+      ],
+      "evidence_note": "Exact ASX RPL manager, original AUD corporate debt capacity distinct fund inflows.",
+      "hold_note": "Earlier110m2022 equity/legacyVGI history and subsequent facility use remain partial. PGF221m and FUM inflows belong to managed funds, not manager capital."
+    },
+    {
+      "id": "0bd8f677-c7b3-46a6-92a2-4ce33e8e3e89",
+      "slug": "regent",
+      "name": "REGENT",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"REGENT\" \"Silent Swarm\" \"Squire\" 2026 dronesworldmag",
+        "REGENT Craft funding 2026 240 million 2023 series official"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.dronesworldmag.com/regent-advances-squire-seaglider-drone-toward-mission-readiness-at-silent-swarm-event/",
+          "disposition": "Opened exact catalogue provenance: Squire Seaglider and CEO Billy Thalheimer identify REGENT Craft, despite erroneous regent.com metadata."
+        },
+        {
+          "url": "https://www.regentcraft.com/company",
+          "disposition": "Opened original exact founder Billy Thalheimer and Squire/Viceroy company identity."
+        }
+      ],
+      "evidence_note": "Evidenced duplicate alias of canonical regent-craft; source article identifies seaglider company rather than regent.com private-equity namesake.",
+      "hold_note": "No financing duplicated. Wrong website metadata left unchanged; neither name similarity nor private-equity website was identity evidence.",
+      "duplicate_of": "regent-craft"
+    },
+    {
+      "id": "40e89562-0050-41dc-af4a-d706d98f5a2f",
+      "slug": "regent-craft",
+      "name": "REGENT Craft",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "REGENT Craft funding 2026 240 million 2023 series official",
+        "\"REGENT\" seed funding 2021 2022 official investors",
+        "site:regentcraft.com \"2021\" \"$9\"",
+        "\"REGENT\" \"$9 million\" \"2021\" investors",
+        "\"REGENT\" \"Silent Swarm\" \"Squire\" 2026 dronesworldmag",
+        "\"REGENT\" site:regentcraft.com \"2026\" \"funding\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prweb.com/releases/regent-raises-18m-from-strategic-investors-to-accelerate-development-of-its-full-scale-12-passenger-prototype-859363170.html",
+          "disposition": "Opened full syndicated issuer release and located closed18m, two co-leads and separate prior9m."
+        },
+        {
+          "url": "https://www.regentcraft.com/news/regent-raises-60m-series-a-to-define-new-era-of-sustainable-transportation",
+          "disposition": "Opened original October5/2023 financing statement; prior strategic investments expressly inside60m."
+        },
+        {
+          "url": "https://www.regentcraft.com/news/regent-secures-240-million-series-b-funding-to-scale-seaglider-manufacturing-and-transform-maritime-mobility",
+          "disposition": "Opened original full body:240m equal mix equity/debt, co-leads, lender and explicit participant list; no draw schedule asserted."
+        },
+        {
+          "url": "https://www.regentcraft.com/company",
+          "disposition": "Opened issuer chronology and founder identity. ChronologyApril2023 SeriesA date conflicts originalOctober5 release; original transaction date used."
+        },
+        {
+          "url": "https://www.regentcraft.com/faq",
+          "disposition": "Opened current exact seaglider business context; orders/contracts not fundraising."
+        },
+        {
+          "url": "https://www.regentcraft.com/news/series-b-unlocking-regents-next-phase-of-growth-mare-liberum-ae-ventures",
+          "disposition": "Indexed latestOctober20original co-lead discussion corroborates existing240m, not new event."
+        }
+      ],
+      "evidence_note": "Four distinct original-source financing events on canonical Craft identity; mixed debt/equity preserved.",
+      "hold_note": "Individual securities/cheques, precise2021seedparticipants and later strategic rounds/overlap remain incomplete.60mSeriesA includes earlierstrategic announcements; cumulative340m andcommercialorders not new rounds."
+    },
+    {
+      "id": "a7fa0649-ba33-41ad-8f4c-3bd775528ad4",
+      "slug": "regulus",
+      "name": "Regulus",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Regulus\" \"LiDAR\" investment funding counter drone",
+        "\"Regulus\" \"Deep Insight\" \"Greenfield\" funding official",
+        "site:regulus.com funding seed series investors 2025 2026",
+        "\"Regulus Cyber\" \"4 million\" \"2020\" funding",
+        "\"Regulus Cyber\" site:prnewswire.com funding",
+        "\"Regulus\" site:greenfield-growth.com OR site:deepinsight.co.il investment",
+        "\"Regulus\" \"Deep Insight\" \"2025\" funding investor"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/regulus-cyber-raises-4m-after-signing-deal-with-automotive-tier-1-and-expanding-gps-cybersecurity-product-capabilities-301060649.html",
+          "disposition": "Opened original complete financing section;futureBnotfinalB andeightnamedparticipants."
+        },
+        {
+          "url": "https://regulus.com/about",
+          "disposition": "Opened original exactC-UAScompanyhistory;notbiotech."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/regulus-integrates-innoviz-lidars-to-improve-counter-uas-performance-in-complex-operational-environments-302814449.html",
+          "disposition": "Opened originalcounterparty identityconsistentwithcatalogueLiDARarticle."
+        },
+        {
+          "url": "https://finder.startupnationcentral.org/company_page/regulus",
+          "disposition": "Indexed2025DeepInsight/Greenfield candidate only; notoriginaltransactionevidence."
+        }
+      ],
+      "evidence_note": "Exact issuer context and original company/transaction-party sources checked; supported subset or scoped negative finding retained.",
+      "hold_note": "Earlier2016/2018history,2025DeepInsight/Greenfield amount/date/security and2020SAFElabel remainheld. Innovizcontractsnotfunding;biotechRegulusexcluded."
+    },
+    {
+      "id": "7c3c4586-78c9-4bd7-a74d-18dac534fb22",
+      "slug": "relativity-space",
+      "name": "Relativity Space",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Relativity Space\" funding 2026 2025 investment official",
+        "\"Relativity Space\" series B 35 million series E 650 million official",
+        "\"Relativity Space\" site:relativityspace.com 2025 2026 Schmidt financing investment",
+        "\"Relativity\" \"$140\" site:relativityspace.com \"October 1\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.relativityspace.com/press-release/2019/3/27/learn-more-i-agree-relativity-space-raises-35m-series-b-funding-led-by-playground-global-as-it-extends-full-stack-rocket-production-leadership-and-reinvents-satellite-launch-and-deployment",
+          "disposition": "Opened full original;footerMarch2018contradictsURL2019path, laterCconfirms2018."
+        },
+        {
+          "url": "https://www.relativityspace.com/press-release/2019/10/1/relativity-space-closes-140-million-series-c-funding-round-led-by-bond-and-tribe-capital",
+          "disposition": "Opened originalclosed140m andexplicit11participants/co-leads."
+        },
+        {
+          "url": "https://www.relativityspace.com/press-release/2020/11/23/relativity-space-closes-500m-series-d-financing-as-it-solidifies-sector-leading-momentum",
+          "disposition": "Opened originalclosed500mequity and16namedparticipants;Allenalsoadvisory."
+        },
+        {
+          "url": "https://www.relativityspace.com/press-release/2021/6/08/relativity-space-fundraise-series-e",
+          "disposition": "Opened originalclosed650mequity;unnamedBlackRockfundsnotparent."
+        },
+        {
+          "url": "https://www.relativityspace.com/press-release",
+          "disposition": "Opened currentarchive throughOct2026."
+        },
+        {
+          "url": "https://www.relativityspace.com/about",
+          "disposition": "Opened currentissuer;Schmidtleadership and3bnpre-soldcontractsnotfinancingterms."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/relativity-space/financials",
+          "disposition": "Indexed2023F/2025Schmidt/2026round candidates held;notverifiedfacts."
+        }
+      ],
+      "evidence_note": "Exact issuer context and original company/transaction-party sources checked; supported subset or scoped negative finding retained.",
+      "hold_note": "Earlierseed/A,2023F,2025Schmidtprimary-secondaryand2026newfinancing remainpartial. SPVsubscriberchequesnotissuercontributions;orders/NASAleaseandvaluationsnotfunding."
+    },
+    {
+      "id": "5a83c5f4-bc60-4c4b-824c-8cd9e51a3f63",
+      "slug": "reliable-robotics",
+      "name": "Reliable Robotics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Reliable Robotics\" funding investors 2026 2025 official",
+        "site:reliable.co funding \"2020\" \"2021\"",
+        "\"Reliable Robotics\" \"Series B\" \"25\" Fenwick",
+        "\"Reliable Robotics\" \"100 million\" 2021 company",
+        "\"Reliable Robotics\" \"115M\" site:reliable.co",
+        "\"Nimble Ventures\" \"Nimble Partners\" Reliable Robotics 2026",
+        "\"Reliable Robotics\" \"115\" site:svb.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.fenwick.com/insights/experience/fenwick-represents-reliable-robotics-in-25-million-series-b",
+          "disposition": "Opened originaltransactioncounsel25mSeriesB;33.5mcumulativenotseparateround."
+        },
+        {
+          "url": "https://investor.wedbush.com/wedbush/article/bizwire-2021-10-14-reliable-robotics-raises-100-million-to-expand-access-to-more-places-with-remotely-piloted-cargo-operations",
+          "disposition": "Opened fulloriginalsyndicatedissuer100mSeriesC;historicalbackersnotcurrentparticipants."
+        },
+        {
+          "url": "https://www.airframer.com/news/release/reliable-robotics-announces-160m-in-new-investment",
+          "disposition": "Opened fulloriginalissuer160mSeriesD withNimblePartnerslead."
+        },
+        {
+          "url": "https://www.fenwick.com/insights/experience/fenwick-represents-reliable-robotics-in-160m-series-d-funding",
+          "disposition": "Opened counselconfirmsD;NimbleVenturesnamevsissuerPartners noted."
+        },
+        {
+          "url": "https://www.vcaonline.com/news/2026102012/reliable-robotics-secures-115m-in-new-capital/",
+          "disposition": "Opened fulloriginalsyndicatedissuer115mextensionincluding25mtermloan;noaggregate275mduplicate."
+        },
+        {
+          "url": "https://www.airframer.com/news/release/reliable-robotics-secures-115m-in-new-capital",
+          "disposition": "Opened originalsyndication usesFirstCitizensInnovationBankingbrand;loancommitmentvsdrawnstatusunknown."
+        },
+        {
+          "url": "https://reliable.co/pr/reliable-robotics-$160M-funding",
+          "disposition": "Followedoriginalcounsellink;extractorreturnszero-body,syndicatedfullissuerreleaseused."
+        }
+      ],
+      "evidence_note": "Exact issuer context and original company/transaction-party sources checked; supported subset or scoped negative finding retained.",
+      "hold_note": "Earlier8.5mclaimmaybedifferenceof33.5maggregate;notimported.2024TACFIprocurement/private-match allocation andtermloandrawunknown. IslandGreenPartners/Capitalaliasheld;unknownsecurityterms retained."
+    },
+    {
+      "id": "378f9cc6-de18-41d1-ba60-a67f35edea8d",
+      "slug": "remazel",
+      "name": "Remazel",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Remazel\" financing investment loan funding",
+        "\"Remazel\" site:fincantieri.com acquisition 2024 78 million",
+        "\"Remazel\" site:remazel.com \"financing\" OR \"capital\" OR \"investment\"",
+        "\"Remazel Engineering\" \"prestito\" OR \"finanziamento\" OR \"aumento capitale\"",
+        "\"Remazel\" \"finanziamento\" \"2025\" \"2026\"",
+        "\"Remazel Engineering\" \"Alpha\" \"investment\" 2012"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://remazel.com/company/",
+          "disposition": "Opened issueroriginal;ItalianRemazelEngineeringSpa/FincantieriidentitydespitecatalogueFrancecountry."
+        },
+        {
+          "url": "https://www.fincantieri.com/en/newsroom/press-releases/2024/fincantieri-completes-the-acquisition-of-100-of-remazel",
+          "disposition": "Opened originalbuyer:65msharepurchasefromseller,notcompanycapital."
+        },
+        {
+          "url": "https://alphape.com/portfolio/21",
+          "disposition": "Indexed originalolderinvestorJuly2014buyoutcandidate,amount/primaryallocationunknown."
+        },
+        {
+          "url": "https://www.fincantieri.com/it/newsroom/news-e-comunicati-stampa/2026/approvati-i-risultati-al-31-marzo-2026",
+          "disposition": "Indexedlatestparentresults:subsidiaryorders/operatingperformance,notownfinancing."
+        }
+      ],
+      "evidence_note": "Exact issuer context and original company/transaction-party sources checked; supported subset or scoped negative finding retained.",
+      "hold_note": "2014buyoutfinancing/primarycashandolderowncapitalhistory unknown.2024seller65m/EV78m,2026parentM&A/borrowings,subsidiarycapexandordersnottransferred."
+    },
+    {
+      "id": "d9852055-0dab-49aa-b4d0-4fc510234284",
+      "slug": "remote-robotic-systems",
+      "name": "Remote Robotic Systems",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Remote Robotic Systems\" funding investment Orqa",
+        "\"Remote Robotic Systems\" \"funding\" \"investors\" 2025 2026",
+        "\"Remote Robotic Systems\" site:remoterobotic.com \"investment\" OR \"funding\"",
+        "\"Remote Robotic Systems\" \"2026\" \"capital\" financing loan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://airmetal.com/news",
+          "disposition": "Opened originalmanufacturingdivisionnews;20mfacilityplan/150mestimated5yeardeal."
+        },
+        {
+          "url": "https://www.newswire.ca/news-releases/orqa-and-remote-robotic-systems-launch-150m-partnership-to-build-canadian-sovereign-capability-in-drones-ai-and-counter-uas-systems-818320945.html",
+          "disposition": "Opened andlocatedoriginaljointissuerrelease;noexactpayer/security/confirmedcashtransfer."
+        },
+        {
+          "url": "https://remoterobotic.com/",
+          "disposition": "IndexedoriginalCanadianRRS/AirMetalidentity;unrelatedSovatofundingexcluded."
+        }
+      ],
+      "evidence_note": "Exact issuer context and original company/transaction-party sources checked; supported subset or scoped negative finding retained.",
+      "hold_note": "InitialCAD20mfacilityinvestmentisforwardplan,notprovenincomingissuerfundingwithpayer/security. CAD150mestimatedfiveyeardealnotround. Earlierprivatecapitalunknown."
+    },
+    {
+      "id": "e31aa73b-007d-4d3d-9656-203955e5ddbb",
+      "slug": "remote-tactical-solutions-group",
+      "name": "Remote Tactical Solutions Group",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Remote Tactical Solutions Group\" funding investors",
+        "\"Remote Tactical Solutions Group\" \"investment\" \"funding\" 2026 2025",
+        "\"Remote Tactical Solutions\" site:rts-group.us grant investors funding",
+        "\"Remote Tactical Solutions Group\" investors loan equity grant 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://rts-group.us/who-we-are/",
+          "disposition": "Opened exactpublicsafetytrainingissuer;trainingrevenueandpartnershipsnotrounds."
+        },
+        {
+          "url": "https://news.engin.umich.edu/2026/03/michigan-first-responders-train-on-drone-technology-and-use-with-experts-at-u-m/",
+          "disposition": "Opened originaluniversitycounterparty confirmsRTStrainingrole."
+        },
+        {
+          "url": "https://cbrneworld.com/news/new-iaff-drone-program-aims-to-reduce-fire-fighter-exposure-at-hazmat-scenes",
+          "disposition": "IndexedprogrammegrantrecipientIAFF notRTS;allocationheld,notowncompanygrant."
+        }
+      ],
+      "evidence_note": "Exact issuer context and original company/transaction-party sources checked; supported subset or scoped negative finding retained.",
+      "hold_note": "Boundedreviewfoundnosupportedowncompanyfinancingevent. IAFF/NIEHSprogrammegrantnotRTSgrantwithoutallocation. Privatefinancingunknown,notzero."
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [
+      {
+        "from": "allen-company-llc",
+        "to": "allen-company",
+        "basis": "Existing canonical brand with original Neros investor source, issuer/counsel explicitly identifies Allen & Company LLC as participant and advisor. Existing profile preserved; source name in event note."
+      },
+      {
+        "from": "senator-investment-group",
+        "to": "senator-investor-group",
+        "basis": "Original SEC same filing uses Investment Group in body and Investor Group in signature. Existing PrecisionHawk source spelling retained; no new duplicate or profile overwrite."
+      }
+    ],
+    "root_verification": {
+      "search_queries_executed": 6,
+      "searches_checked": [
+        "REGENT regent.com Regent Craft seaglider 2026 private equity",
+        "Rantizo SKK 2026 acquisition assets Rantizo Inc financing",
+        "site.redcatholdings.com 2026 financing convertible notes cash October",
+        "site.redwirespace.com June 2025 closing public offering 15525000 16.75",
+        "\"Senator Investor Group\" \"Senator Investment Group\" PrecisionHawk Relativity",
+        "\"Allen & Company\" \"Relativity\" 2020 investor"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rantizo.com/investors/",
+          "disposition": "Root original investor page distinguishes seller RantizoInc fromlistedSKK renamedRantizo: asset transfer forshares, secondaryclassBpurchase and258.8mconsideration notnewcompanyfinancing. Legal issuer/history boundary held."
+        },
+        {
+          "url": "https://www.dlapiper.com/en/news/2026/09/dla-piper-advises-regent-craft-on-series-b-funding-round",
+          "disposition": "Root originaltransaction counsel confirms240mSeriesBclosed and340m aggregateacrossequityanddebt; do notderive all240mequity orseparate340mround. Exactsource/entity boundaries checked laneC."
+        },
+        {
+          "url": "https://content.equisolve.net/sec/0001819810-26-000142/rdw-20260930.htm",
+          "disposition": "Root latest RedwireQ3 original identified July2025partialoption600,100shares, actualJune2026ATM149.6mgross andundrawn350.4mcapacity; sent laneC fororiginalsectionreconciliation, notcapacityascash."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1443689/000101143812000109/form_sc13ga-celera.htm",
+          "disposition": "OriginalSEC filing names same SenatorInvestmentGroupLP inbody andSenatorInvestorGroupLP signature; reusedexistingprofile spelling insteadnewduplicate, existingprofilepreserved."
+        },
+        {
+          "url": "https://www.fenwick.com/insights/experience/fenwick-represents-relativity-space-in-500-million-series-d-financing",
+          "disposition": "Originalcounsel independentlynamesAllen&CompanyLLC asactualparticipatinginvestor, notjustadvisor. ExistingAllen&CompanyprofileanditsNerosoriginalsource reviewed; reusedwithoutprofileoverwrite."
+        }
+      ],
+      "company_database_identity_contexts_checked": 24,
+      "existing_canonical_events_inspected": 0
+    },
+    "pre_import_root_adjustments": [
+      "RayNeo CNY1bn amount qualifier corrected to more_than to preserve original lower bound.",
+      "Mark Cuban individual investor type corrected before canonical reconciliation.",
+      "Allen and Senator existing profiles reused after source/identity checks; source spellings retained in notes."
+    ],
+    "notes": [
+      "Rantizo seller and listed SKK renamed entity distinguished. Historical seller rounds, acquisition share consideration and deferred closing capital remain held; no automatic brand financing transfer. RTX cohort maps parent; UK exact legal issuer is Raytheon Systems Limited, with one original grantor paid-ledger item rather than parent funding.",
+      "RayNeo original currency CNY lower bound retained, no converted USD exactness. Earlier and latest stage/round overlap holds remain. Raptor award instrument and payout unknown; investor/transaction-party generic backing is not assigned to guessed round/date/cheque. Generic source types are investor publications, not assertions that the issuer itself published each source; unchanged importer retains legacy evidence-status labels.",
+      "Red Cat final offering option is counted once, actual Lind cash differs from note face and capacity. Red Dot Japan does not inherit Singapore financing. HERA drone identity and industrial-automation namesake conflict retained. Reactive Dynamics German legal identity retained without metadata mutation.",
+      "Redwire parent equity, partial overallotment extension and actual June ATM sales separated from capacity, net proceeds, secondary sales and subsidiary legal-borrower credit. Generic Defense Tech segment is not presumed the financing issuer. Regal AUD corporate facility is capacity, not managed-fund capital or undrawn cash.",
+      "REGENT alias exact source article identifies seaglider/Squire/CEO despite wrong private-equity website metadata, so no duplicate events on alias. Four canonical Craft events, mixed2026 financing and debt draw uncertainty retained.",
+      "Regulus cybersecurity financing distinct biotech namesake. Relativity original source dates and migrated URLs distinguished; unnamed BlackRock funds not parent or invented vehicle, Allen actual participation supported separately from advisory role. Reliable announced mixed extension includes term-loan component without assuming draw; source Nimble and Island Green naming differences retained. Remazel seller consideration, RRS forward plans and RTS programme grant allocations not own incoming financing."
+    ]
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting amount rejection and participant-source FK rejection again with final canonical mappings and RayNeo qualifier.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T21:54:47.402Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 35,
+      "mismatched_facts": 0,
+      "participant_matches": 120,
+      "source_matches": 43,
+      "relationship_matches": 3,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 2
+    }
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Fresh baseline confirms all24 targets outside existing European map. Preserve gates; directory profiles and generic relationships publish under existing rules."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false,
+  "publication": {
+    "status": "pending"
+  }
+}
