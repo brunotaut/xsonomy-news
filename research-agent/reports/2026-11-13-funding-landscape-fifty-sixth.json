@@ -1,0 +1,1014 @@
+{
+  "status": "imported_awaiting_publication",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T07:53:57.952Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-fifty-sixth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 6,
+    "new_or_retained_partial": 18,
+    "new_approved_events": 41,
+    "new_round_participations": 70,
+    "new_source_rows": 48,
+    "new_generic_portfolio_relationships": 13,
+    "new_companies_with_events": 11,
+    "new_investor_profiles": 40,
+    "search_queries_executed": 99,
+    "group_search_queries_executed": 96,
+    "root_additional_search_queries": 3,
+    "per_company_search_ledger_entries": 96,
+    "source_ledger_entries": 101,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 41,
+    "mismatched_facts": 0,
+    "participant_matches": 70,
+    "source_matches": 48,
+    "relationship_matches": 13,
+    "missing_link_sources": 0,
+    "contribution_fields_audited": true,
+    "db_total_events": 3353,
+    "db_approved_events": 3340,
+    "db_approved_round_participations": 4329,
+    "db_investor_profiles": 2619,
+    "db_source_reconciliation_companies": 889,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 3312,
+    "approved": 3299,
+    "links": 4259,
+    "sources": 4590,
+    "profiles": 2579,
+    "covered": 878,
+    "relationships": 389,
+    "preserved_profiles_hash": "dad55485b55e18daf4a54a6651fd68c6"
+  },
+  "production_after": {
+    "events": 3353,
+    "approved": 3340,
+    "links": 4329,
+    "sources": 4638,
+    "profiles": 2619,
+    "covered": 889,
+    "relationships": 402,
+    "preserved_profiles_hash": "dad55485b55e18daf4a54a6651fd68c6"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1053,
+    "source_review_partial": 592,
+    "queued": 919
+  },
+  "per_company": [
+    {
+      "id": "5001364f-33c4-4119-867e-e97e843d386e",
+      "slug": "lily-robotics",
+      "name": "Lily Robotics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Exact original sources reconciled against cohort identity; supported events and bounded limitations retained.",
+      "hold_note": "History partial: USD1m seed and participant claims require original reconciliation. USD34m customer preorders not investment. Court-filed borrowing account is attributed; later product-brand asset buyers not same financing issuer.",
+      "searches_checked": [
+        "Lily Robotics 2015 15 million seed Spark capital SV Angel funding official",
+        "site.sfdistrictattorney.org Lily Robotics 2017 14 million"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://regmedia.co.uk/2017/01/13/lily_restraining_order.pdf",
+          "disposition": "Opened original supporting own event; amount/date/instrument limits retained."
+        },
+        {
+          "url": "https://globalventuring.com/university/lily-leaps-along-with-funding/",
+          "disposition": "Secondary historical claims checked; seed and named backers held pending originals."
+        }
+      ]
+    },
+    {
+      "id": "213c9d3a-9c25-4df5-9d1b-fb65bfdb3272",
+      "slug": "liminal-industries",
+      "name": "Liminal Industries",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact original sources reconciled against cohort identity; supported events and bounded limitations retained.",
+      "hold_note": "Private financing unknown, not zero. Liminal AI, battery analytics and custody namesakes have different issuers. Hunter WOLF source concerns HDT/BLADE, not own DUEL-V. GroundBreaker selection not a cash award.",
+      "searches_checked": [
+        "Liminal Industries funding investment Blades Hunter Wolf",
+        "Liminal Industries investors funding DUEL-V 2026",
+        "site.liminalindustries.com investment funding",
+        "site.liminalindustries.com investor funding seed GroundBreaker"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.liminalindustries.com/",
+          "disposition": "Opened original DUEL-V identity and competition selection; no financing disclosure."
+        },
+        {
+          "url": "https://www.hdtglobal.com/2026/10/07/blades-hunter-wolf-selected-for-armys-infantry-last-tactical-mile-initiative/",
+          "disposition": "Indexed original confirms Hunter WOLF belongs to HDT/BLADE, not Liminal."
+        },
+        {
+          "url": "https://www.liminal.ai/blog/liminal-secures-additional-funding-to-accelerate-generative-ai-adoption-in-regulated-industries-through-robust-data-protection-and-secure-workflow-tooling",
+          "disposition": "Indexed unrelated AI issuer; excluded."
+        }
+      ]
+    },
+    {
+      "id": "096bdc03-ab53-4ff3-9e78-f3fa9861e844",
+      "slug": "limitless-aeronautics",
+      "name": "Limitless Aeronautics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "evidence_note": "Exact original sources reconciled against cohort identity; supported events and bounded limitations retained.",
+      "hold_note": "Unknown private amount/instrument/investors remain unknown. Blue Arrow/Limitless software namesakes and federal procurement excluded; ACMI campus support/capex not own financing. Further history remains partial.",
+      "searches_checked": [
+        "Limitless Aeronautics funding investors Blue Arrow",
+        "Limitless Aeronautics investors seed investment Innovation Challenge 2023"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.volusiabusiness.org/media-center/news-and-stories/limitless-aeronautics-wins-2023-volusia-county-innovation-challenge.stml",
+          "disposition": "Opened original supporting own event; amount/date/instrument limits retained."
+        },
+        {
+          "url": "https://volusiainnovationhub.com/strategic-pivot-leads-to-federal-contract-award-for-limitless-aeronautics/",
+          "disposition": "Opened original supporting own event; amount/date/instrument limits retained."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/acmi-adds-limitless-aeronautics-to-national-security-industrial-hub-to-rapidly-scale-mass-production-of-drone-payloads-to-modernize-capabilities-and-close-the-munitions-gap-302900734.html",
+          "disposition": "Opened original ACMI release; manufacturing tenancy not company financing."
+        }
+      ]
+    },
+    {
+      "id": "4167a775-62e4-4aca-a732-35ac0cf7dd70",
+      "slug": "linkdata",
+      "name": "Linkdata",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Exact original sources reconciled against cohort identity; supported events and bounded limitations retained.",
+      "hold_note": "Issuer identity remains unresolved between Linkdata65P cell label and Beijing LinkData/Linkage Tianyi entities. Panasonic strategic cooperation is not automatically verified primary equity; OEM capex and outbound investments excluded.",
+      "searches_checked": [
+        "Linkdata battery company funding investment drone",
+        "LinkData New Energy 融资 投资 无人机 电池",
+        "Linkdata battery 1s lithium ion FPV drone linkdata investor company",
+        "联动天翼 融资 Linkdata 2025 2026",
+        "Linkdata 联动天翼 松下 投资 2016 Panasonic original"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://dronexl.co/2026/08/24/1s-lithium-ion-fpv-build-34-minutes-single-cell/",
+          "disposition": "Opened cohort source; only Linkdata65P label, no legal issuer evidence."
+        },
+        {
+          "url": "https://exhibitors.iaa-mobility.com/exhibitordirectory/2023/list-of-exhibitors/exhibitordetails/linkdata-new-energy-coltd/?elb=106.1100.2471.1.111",
+          "disposition": "Original exhibitor entry redirects to2025directory; cannot establish legal continuity."
+        },
+        {
+          "url": "https://panasonic.cn/about/news/all/6719/",
+          "disposition": "Indexed transaction-party cooperation, not proof of primary issuer financing."
+        },
+        {
+          "url": "https://pitchhub.36kr.com/project/2181110368210311",
+          "disposition": "Indexed secondary financing claims held pending exactissuer and originalterms."
+        }
+      ]
+    },
+    {
+      "id": "56e99471-b7ce-4e48-8fef-27f4c7e9aa6a",
+      "slug": "liteye-systems",
+      "name": "Liteye Systems",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Exact original sources reconciled against cohort identity; supported events and bounded limitations retained.",
+      "hold_note": "Bounded review found historical ownership transaction only; no issuer primary financing established. Acquisition financing aggregators and parent Highlander/DZYNE/Ondas proceeds not attributable. Private funding unknown, not zero.",
+      "searches_checked": [
+        "Liteye Systems Highlander Partners investment 2022 2026 official",
+        "Liteye Systems funding investment loan 2025 2026 Highlander High Point",
+        "site.liteye.com funding investment loan Highlander 2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://highlander-partners.com/news-posts/highlander-partners-announces-the-acquisition-of-liteye-systems-a-leader-in-counter-uas-technology-and-solutions/",
+          "disposition": "Opened investor original; historical ownership only."
+        },
+        {
+          "url": "https://www.liteye.com/",
+          "disposition": "Opened URL redirects to DZYNE CUAS products; later parent proceeds not transferred."
+        }
+      ]
+    },
+    {
+      "id": "489df67d-6c74-4daf-a99c-443d027b8b51",
+      "slug": "liveeo",
+      "name": "LiveEO",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 7,
+      "relationship_count": 1,
+      "evidence_note": "Exact original sources reconciled against cohort identity; supported events and bounded limitations retained.",
+      "hold_note": "History partial: November2023USD10m first close may overlap2024SeriesB; public2022funds split, ESA/IBB/EIC award histories and precise Kyuden vehicle need reconciliation. Earlier seed dates conflict. No cumulative, governmentbudget or issuer capex imported. Writer QA retains ESA cofinancing as a generic support association pending grant-versus-procurement instrument verification, not a funding round.",
+      "searches_checked": [
+        "LiveEO funding rounds 2026 2024 2022 investor seed",
+        "LiveEO 2022 19 million 2021 5.25 million press release",
+        "site.live-eo.com Kyuden investment 2024 funding 2026 EIC 28",
+        "site.helantic.com LiveEO 28 million May 2026",
+        "site.live-eo.com funding 2026 2025 2020 seed EIC",
+        "LiveEO 2019 2020 DvH Ventures six figure seed press release"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://dvhventures.de/updates-insights/dvh-ventures-investiert-in-liveeo-siebenstelliger-betrag-fuer-satellitengestuetzte-ueberwachung-von-infrastrukturen/",
+          "disposition": "Opened original supporting own event; amount/date/instrument limits retained."
+        },
+        {
+          "url": "https://dvhventures.de/updates-insights/liveeo-secures-further-capital/",
+          "disposition": "Opened original supporting own event; amount/date/instrument limits retained."
+        },
+        {
+          "url": "https://www.live-eo.com/company/press/liveeo-secures-e5-25-million-series-a-investment",
+          "disposition": "Opened original supporting own event; amount/date/instrument limits retained."
+        },
+        {
+          "url": "https://www.live-eo.com/company/press/liveeo-secures-e19m-to-bring-space-data-insights-to-industry-4-0",
+          "disposition": "Opened original supporting own event; amount/date/instrument limits retained."
+        },
+        {
+          "url": "https://www.live-eo.com/company/press/liveeo-raises-eu25-million-to-leverage-ai-powered-satellite-data-for-critical-infrastructure-and-climate-risk-management",
+          "disposition": "Opened original supporting own event; amount/date/instrument limits retained."
+        },
+        {
+          "url": "https://www.live-eo.com/company/press/liveeo-secures-kyuden-investment-japan-expansion-satellite-monitoring",
+          "disposition": "Opened original supporting own event; amount/date/instrument limits retained."
+        },
+        {
+          "url": "https://www.kyuden-intl.co.jp/en/news/detail/100",
+          "disposition": "Opened original supporting own event; amount/date/instrument limits retained."
+        },
+        {
+          "url": "https://www.live-eo.com/company/press/liveeo-raises-28m-to-scale-geospatial-intelligence-across-civil-infrastructure-and-defense",
+          "disposition": "Opened original supporting own event; amount/date/instrument limits retained."
+        },
+        {
+          "url": "https://www.live-eo.com/company/press/successful-funding-of-10m-enabling-our-head-start-in-deforestation-compliance-market",
+          "disposition": "Opened first-close2023 source; possible overlap2024 held."
+        },
+        {
+          "url": "https://eic.ec.europa.eu/eic-fund/eic-fund-invested-companies/liveeo_en",
+          "disposition": "Opened original EIC portfolio identity; no distinct cash amount/date inferred."
+        },
+        {
+          "url": "https://www.hannover-digital-invest.com/en/news/liveeo",
+          "disposition": "Opened investor corroboration2022; public assistance separate."
+        }
+      ]
+    },
+    {
+      "id": "26c31cf5-549c-47cf-a555-7f72b5d9eb0c",
+      "slug": "liveu",
+      "name": "LiveU",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "One original2012 round verified and current Carlyle majority ownership confirmed.",
+      "hold_note": "Earlier2007/2008/2010 rounds remain unreconciled to original terms. AroundUSD50m cumulative and Carlyle/Francisco acquisition consideration not company financing.",
+      "searches_checked": [
+        "LiveU funding rounds 2007 2012 2014 2016 investors",
+        "site.liveu.tv funding 2010",
+        "site.liveu.tv 2026 2025 Carlyle investment acquisition",
+        "LiveU 2010 11 million PRNewswire",
+        "site.viola-group.com Carmel Ventures renamed Viola Ventures 2017"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/liveu-closes-27m-funding-round-to-drive-growth-178893861.html",
+          "disposition": "Opened original issuer-distributed funding release; explicit round and lead"
+        },
+        {
+          "url": "https://www.liveu.tv/company",
+          "disposition": "Opened current official majority owner"
+        },
+        {
+          "url": "https://www.liveutv.net/en/company/press-releases/carlyle-to-acquire-liveu-to-further-accelerate-global-growth",
+          "disposition": "Indexed issuer acquisition source; secondary consideration excluded"
+        },
+        {
+          "url": "https://www.viola-group.com/violanotes/carmel-now-viola-ventures/",
+          "disposition": "Opened original1November2017 manager rebrand; Carmel nowViola Ventures"
+        }
+      ]
+    },
+    {
+      "id": "01ff6f3a-d721-4e19-8013-cc316bacddae",
+      "slug": "living-optics",
+      "name": "Living Optics",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 4,
+      "evidence_note": "Exact2020seed,2022A andJanuary2026 round confirmed by own investor originals; explicit fund cheques retained.",
+      "hold_note": "LatestSeptemberUSD20m/OctoberBBB announcements overlapJanuaryGBP16m investor syndicate and remain potential duplicate. Earlier Foresight2020 disclosures and grant candidates need reconciliation; no assumed extra financing.",
+      "searches_checked": [
+        "Living Optics funding 2025 2026 seed Series A investor",
+        "site.livingoptics.com funding seed Oxford 2020 2026 grant",
+        "site.oxfordscienceenterprises.com Oxford Sciences Innovation name changed 2021"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://otif.vc/2020/04/22/oxford-technology-innovations-eis-fund-otif-invests-250005-into-university-of-oxford-spinout-company-living-optics-ltd/",
+          "disposition": "Opened exactseed original, ownOTIFcheque"
+        },
+        {
+          "url": "https://otif.vc/2022/10/07/living-optics-20m-series-a/",
+          "disposition": "Opened explicitAlead and completion"
+        },
+        {
+          "url": "https://media.umbraco.io/foresight/21xo3ppy/foresight-technology-vct-annual-report-2025.pdf?1761696000022=",
+          "disposition": "Opened exactVCTownsubscriptionAugust2022"
+        },
+        {
+          "url": "https://www.livingoptics.com/living-optics-closes-20-milion-in-series-a/",
+          "disposition": "Opened issuerAcompletion"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/07/22/3331560/0/en/Final-Results.html",
+          "disposition": "Opened actualJanuary2026funding andnamedVCTcheque"
+        },
+        {
+          "url": "https://www.livingoptics.com/news-release-september-2026/",
+          "disposition": "Opened latestUSD20m possibleduplicate, backinglist only"
+        },
+        {
+          "url": "https://www.british-business-bank.co.uk/news-and-events/news/british-business-bank-invests-living-optics-which-has-secured-20-million-financial-and-strategic",
+          "disposition": "Indexed original5October2026 confirms same latestsyndicate; ownchequeunknown"
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/09093331",
+          "disposition": "Opened original registry samePLC formerlyOxfordSciencesInnovation through30September2021; notseparateholdingLtd"
+        }
+      ]
+    },
+    {
+      "id": "4bcf5d44-78a1-46c6-a3bc-6f174ed2ff8c",
+      "slug": "livox",
+      "name": "Livox",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Bounded official issuer/incubator and local-language review identifies independent Livox Technology Company Limited from DJI innovation programme; no confirmed public financing event in checked originals.",
+      "hold_note": "DJI incubation and engineering support do not disclose equity investment amount or legal role; DJI corporate rounds and unrelated lidar names not transferred. Private financing unknown, not zero.",
+      "searches_checked": [
+        "Livox funding DJI investment financing 2026",
+        "site.livoxtech.com DJI independent company investment funding",
+        "site.livoxtech.com funding investment DJI",
+        "Livox 融资 投资 大疆 2025 2026",
+        "site.livoxtech.com About independent"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.dji.com/media-center/announcements/dji-showcases-wide-product-portfolio-at-ces-2020",
+          "disposition": "Opened original6January2020 independentissuer/incubation only"
+        },
+        {
+          "url": "https://www.livoxtech.com/about-us",
+          "disposition": "Fetch inaccessible"
+        },
+        {
+          "url": "https://www.linkedin.com/company/livox-tech/",
+          "disposition": "Own indexed profile identitycorroboration; not financialevidence"
+        }
+      ]
+    },
+    {
+      "id": "a36ed8fc-5ae1-41b7-b598-6a2a7da4c29e",
+      "slug": "lmi",
+      "name": "LMI",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 3,
+      "evidence_note": "Current lmi.org redirects to LMI Solutions; transaction parties confirm LMI Consulting retained brand and three sponsors after nonprofit separation.",
+      "hold_note": "Macquarie acquisition financing names buyer rather than exact issuer borrower; no debt event attached. Sponsor fund raise, purchase price and former nonprofit assets not company funding.",
+      "searches_checked": [
+        "LMI lmi.org 2026 2025 investment funding acquisition financial",
+        "site.lmi.org 2026 2025 investment acquisition capital consortium",
+        "site.lmi.org Capitol Meridian 2022 investment",
+        "site.lmi.org Agrees to Sell 2022",
+        "site.lmi.org investment Capitol 2026 2025",
+        "site.lmi.org Capitol Meridian Partners 22C"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.lmi.org",
+          "disposition": "Opened original redirecttolmisolutions.com"
+        },
+        {
+          "url": "https://www.paulweiss.com/insights/client-news/declaration-partners-makes-equity-investment-in-lmi-consulting",
+          "disposition": "Opened original18July2022 legalparty: exactforprofitvsNobleReach"
+        },
+        {
+          "url": "https://hl.com/about-us/transactions/jjr-lmi-capitol-meridian-declaration-partners-22c-capital/",
+          "disposition": "Opened original currentthreeowners andJJRclosing18March2024"
+        },
+        {
+          "url": "https://www.macquarie.com/us/en/insights/supporting-investments-in-the-digital-transformation-of-the-us-defense-and-government-services-sector.html",
+          "disposition": "Indexed lender describes acquisitionbuyerfinancing, issuertermsunknown"
+        },
+        {
+          "url": "https://www.lmi.org/press-release/lmi-agrees-sell-profit-subsidiary-consortium-investors",
+          "disposition": "Legacyoriginaltimeout"
+        },
+        {
+          "url": "https://www.declarationpartners.com/lmi-agrees-to-sell-for-profit-subsidiary-to-consortium-of-investors/",
+          "disposition": "Opened investorpageheadline only, no financialterms"
+        }
+      ]
+    },
+    {
+      "id": "ca6b5651-adc4-4fb4-8d78-f4902b49a41d",
+      "slug": "lockheed-martin",
+      "name": "Lockheed Martin",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 11,
+      "relationship_count": 0,
+      "evidence_note": "Eight exact principal tranches from2024/2025 and three signed revolvers through2026 verified in original corporate filings.",
+      "hold_note": "Earlier1970s-2023 notes and2010/2016 exchanges require full historical reconciliation; outstanding balances, commercial-paper period flows and customer advances not artificial rounds. Ultimate bondholders unknown.",
+      "searches_checked": [
+        "site.lockheedmartin.com 2026 notes offering 2025 debt 2024",
+        "site.sec.gov/Archives/edgar/data/936468 2026 issued billion notes",
+        "Lockheed Martin 2026 issued 4.75 notes 2026 financing notes October 2026",
+        "site.lockheedmartin.com 2025 issued $2.0 billion"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://investors.lockheedmartin.com/static-files/3f4ed8fd-18bb-43a3-8e17-334875df0cba",
+          "disposition": "Opened exactdatedprincipal andcommittedfacilities"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/936468/000119312526371750/d177255d8k.htm",
+          "disposition": "Opened latestsignedcapacity replacement andextensionnotdraw"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/936468/000162828026066928/lmt-20260927.htm",
+          "disposition": "Opened Q3 original22October2026 confirmsnodraw andmaturity"
+        }
+      ]
+    },
+    {
+      "id": "40904f35-0eae-4688-9db7-17d1b6f45f3f",
+      "slug": "lom-praha",
+      "name": "LOM PRAHA",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "State enterprise IČO00000515 identity confirmed; own and group grant totals distinguished in public registries.",
+      "hold_note": "Issuer website timed out. Indexed public aid totals and annual aggregates conflict across databases; award-level official decisions not verified, so no grant cash or zero-funding inference. VR Group subsidiary awards and procurement excluded.",
+      "searches_checked": [
+        "LOM PRAHA úvěr dotace 2026 2025 financování",
+        "site.lompraha.cz dotace 2025",
+        "LOM PRAHA banka úvěr dotace ministerstvo 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.lompraha.cz",
+          "disposition": "Originaltimeout"
+        },
+        {
+          "url": "https://www.hlidacstatu.cz/subjekt/Dotace/00000515",
+          "disposition": "Opened identity andownvsdaughtergrantaggregates, notawardlevelproof"
+        },
+        {
+          "url": "https://www.hlidacstatu.cz/dotace/hledat?Q=ico:00000515+AND+rozhodnuti.cerpani.guessedYear:2025",
+          "disposition": "Opened annualfilteredaidlist, cashreceiptsnotaward"
+        },
+        {
+          "url": "https://www.dataprehledne.cz/subjekt/00000515",
+          "disposition": "Indexed ISReDaidcandidate totals, unresolvedwithotherregistry"
+        },
+        {
+          "url": "https://statnifinance.cz/subjekt/00000515",
+          "disposition": "Indexed warningnotadddecisions/payments, noexacteventused"
+        }
+      ]
+    },
+    {
+      "id": "dd23d2ac-3ed1-4337-8087-9eef16b1ccb3",
+      "slug": "longbow-group",
+      "name": "Longbow Group",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original company and NASA identify The Longbow Group LLC aerospace/autonomy issuer; no incoming company investment verified.",
+      "hold_note": "NASA SBIR records and Space Act collaboration are not automatically grants or equity; award-level procurement terms need reconciliation. UK ICG property debt, UK LongbowGroupLtd and Skyfly Longbow product financing are different issuers. Private financing unknown, not zero.",
+      "searches_checked": [
+        "\"Longbow Group\" investment funding drones",
+        "\"Longbow Group\" investors seed funding loan",
+        "\"Longbow Group\" \"funding\" NASA SBIR2026",
+        "\"Longbow Group\" investment investor loan2025 2026",
+        "site.thelongbowgroup.com funding investment2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.thelongbowgroup.com/",
+          "disposition": "Opened original exact identity and leadership."
+        },
+        {
+          "url": "https://www.nasa.gov/news-release/nasa-enters-space-act-agreement-with-longbow-to-develop-drone-flight-research-corridors/",
+          "disposition": "Opened2021 original collaboration; no funding amount stated."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1664155",
+          "disposition": "Opened original firm awards; not inferred grant without instrument reconciliation."
+        }
+      ]
+    },
+    {
+      "id": "dcc9af11-800c-43cd-9159-a8f0e62694ca",
+      "slug": "look-up",
+      "name": "Look Up",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 1,
+      "evidence_note": "Original2023 and2025 sources separate private equity, public support and bank debt; brand continuity LookUpSpace toLookUp confirmed.",
+      "hold_note": "Possible ATLAS2 EIC grant2,411,490 and other public support require original award/overlap reconciliation before adding to15mEU component. Latest2026radar100mcapex and20mterritorial project are not funding rounds. No bank residual or individual cheque inferred.",
+      "searches_checked": [
+        "\"Look Up\" space funding investors2026 2023",
+        "site.lookupspace.com2026 funding investment EIC radar100million",
+        "site.lookupspace.com2026 investment funding latest"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.eqs-news.com/de/news/corporate/look-up-space-raises-e14m-to-secure-in-orbit-space-activities-and-make-space-sustainable/90e7ffe1-cb92-487d-ac7e-8dd37ff1d99a_en",
+          "disposition": "Opened original21June2023 issuer disclosure; not22June investor repost date."
+        },
+        {
+          "url": "https://www.mig.ag/en/2338-2/",
+          "disposition": "Opened original fund17 and co-leaders."
+        },
+        {
+          "url": "https://www.karista.vc/stories/look-up-space-raises-eu14m-to-secure-in-orbit-space-activities-and-make-space-sustainable-with-karista-as-co-leads-funding-round",
+          "disposition": "Opened exact private/public split."
+        },
+        {
+          "url": "https://www.lookupspace.com/blog/look-up-secures-eu50-million-in-funding-to-accelerate-the-global-deployment",
+          "disposition": "Opened24m equity/15mEU/unknownbank split; no50mduplicate."
+        },
+        {
+          "url": "https://www.lookupspace.com/partners-and-ecosystem",
+          "disposition": "Opened investor and government support listings; Bpifrance generic only."
+        },
+        {
+          "url": "https://www.lookupspace.com/press",
+          "disposition": "Opened current originals index throughOctober2026; capex excluded."
+        }
+      ]
+    },
+    {
+      "id": "9488cc77-809a-4290-9913-5163d12172a9",
+      "slug": "lorica-technologies",
+      "name": "Lorica Technologies",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original accelerator confirms Ashland issuer, capital-raised achievement and future financing discussion.",
+      "hold_note": "Capital-raised aggregate and undated future expectedinvestment do not establish separate round terms. GenericFallcohort5kgrant not assigned toSpringrecipient. Militarydemonstration and programmebudgets not company financing.",
+      "searches_checked": [
+        "\"Lorica Technologies\" funding investment",
+        "\"Lorica Technologies\" seed funding investment2026",
+        "site.loricatechnologies.com funding investors2026",
+        "\"Lorica Technologies\" accelerator grant40000 investment",
+        "site.oregonuas.org \"Lorica\" \"grant\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://loricatechnologies.com/about-us/",
+          "disposition": "OriginallegacyURL404."
+        },
+        {
+          "url": "https://loricatechnologies.com/",
+          "disposition": "Opened issuer shell, no terms."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/oregon-uas-accelerator_christopher-dye-of-lorica-technologies-on-activity-7482531812834029568-lJSB",
+          "disposition": "Opened programme interview transcript; future investment notclosed."
+        },
+        {
+          "url": "https://oregonuas.org/blogs/news/oregon-uas-accelerator-lorica-technologies-drone-explosive-demonstration",
+          "disposition": "Opened original2026programme outcome, aggregatecapital notsingle event."
+        }
+      ]
+    },
+    {
+      "id": "095ec363-dc2f-4108-868b-9580f01d899e",
+      "slug": "lpp-holding",
+      "name": "LPP Holding",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original Czech defence group and Czech embassy contradict Polishapparel website/description in cohort row.",
+      "hold_note": "Identity unresolved; CzechL.P.P.holding financing not assigned to PolishLPPapparel or viceversa. NATOinnovationrecognition no stated monetary award; Elbitpartnership, subsidiary revenue and capex excluded. No country/website/classification changes.",
+      "searches_checked": [
+        "\"LPP Holding\" funding investment drones",
+        "\"LPP Holding\" investice financování úvěr",
+        "\"LPP Holding\" investor financing bond2026 -site:lpp.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.lpp-holding.com/about-us/",
+          "disposition": "Opened exact Czechdefence original, differentissuer from suppliedapparel website."
+        },
+        {
+          "url": "https://www.lpp.com/",
+          "disposition": "Suppliedwebsite403, notzero funding evidence."
+        },
+        {
+          "url": "https://mzv.gov.cz/hague/en/economy_and_trade/lpp_holding_triumphs_in_nato_innovation.html",
+          "disposition": "Opened officialCzech8Sep2026identity/award; no monetaryamount."
+        },
+        {
+          "url": "https://czechinvest.gov.cz/en/Key-sectors/Smart-mobility-catalog/Firmy/LPP-Holding",
+          "disposition": "Indexed officialidentity corroboration; nofinancialterms used."
+        }
+      ]
+    },
+    {
+      "id": "26ec7891-c1f9-4ed4-b39e-6efeba60f0ac",
+      "slug": "lucid-bots",
+      "name": "Lucid Bots",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Original investor2021 and issuer2024/2026 verify same cleaningdrone company and three investment disclosures.",
+      "hold_note": "Earlier seed2018-2023 grants/equity amounts from aggregators remain unreconciled; noYCdefault cheque or cumulative34mextraevent. Lucid Motors PIF borrowing belongs differentissuer. FrontPorchVentures source name retained pendingcanonicalQA.",
+      "searches_checked": [
+        "\"Lucid Bots\" funding2026 2024 2021 investors",
+        "site.lucidbots.com \"Series A\"2024 funding",
+        "site.ideafundpartners.com \"Lucid\"2026 2024",
+        "\"Lucid Drone Technologies\" \"seed\"2021 investors official",
+        "site.defianceventures.com \"Investment in Lucid Drone\"2021"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defianceventures.com/defiance-ventures-announces-investment-in-lucid-drone-technologies/",
+          "disposition": "Opened original investment, amount/instrument unknown."
+        },
+        {
+          "url": "https://defianceventures.com/news/",
+          "disposition": "Opened originalindex, dates2Aug2021."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/lucid-bots-inc-raises-9m-series-a-to-scale-productive-robotics-solutions-302138863.html",
+          "disposition": "Opened original detailed9.1m and namedroles."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/lucid-bots-raises-20-million-series-b-to-accelerate-the-buildout-of-americas-leading-exterior-cleaning-platform-302724037.html",
+          "disposition": "Opened original20m co-leaders and namedparticipants."
+        },
+        {
+          "url": "https://www.ideafundpartners.com/portfolio",
+          "disposition": "Opened investorportfolio corroboration; typicalticket notactualcheque."
+        },
+        {
+          "url": "https://lucidbots.com/about-us",
+          "disposition": "Indexed issuer continuity, no acquisitionprice asfunding."
+        }
+      ]
+    },
+    {
+      "id": "c66020d4-e898-4508-9524-127e0f132247",
+      "slug": "lumenier",
+      "name": "Lumenier",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "evidence_note": "Bounded company, history and investor-party research confirms Pfingsten ownership; no verified separate issuer financing in checked sources.",
+      "hold_note": "Private financing unknown, notzero.2017acquisitionprice, PfingstenFundV342m and Army99mprocurement notcompanyround. AggregatorAcq-Fin label insufficient.",
+      "searches_checked": [
+        "\"Lumenier\" investment funding Pfingsten2026",
+        "\"Lumenier\" financing credit investment2025 2026 Pfingsten",
+        "\"Lumenier\" \"funding\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://pfingsten.com/portfolio/lumenier-2/",
+          "disposition": "Opened originalownerportfolio currentlisting."
+        },
+        {
+          "url": "https://www-pfingsten-com-files.s3.amazonaws.com/726b-46040957-20171003_P_PfingstenAcquiresLumenier.pdf?versionId=Ad8xs0S9H.JRLuWYt9trAd7Jy6YV6kyD",
+          "disposition": "Opened original3Oct2017acquisition, closed29Sep; noissuerproceeds disclosed."
+        },
+        {
+          "url": "https://www.lumenier.com/",
+          "disposition": "Opened currentissuer product/news site; notproof of nofunding."
+        }
+      ]
+    },
+    {
+      "id": "b62985fa-6d1a-4097-b11f-4fe2a3879552",
+      "slug": "luna",
+      "name": "LUNA",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original Innovitech identifies a next-generation mobility partner LUNA in Oman GUAMobility consortium; no safe legal issuer resolution.",
+      "hold_note": "Not German EMT LUNA aircraft or US Luna Innovations. Consortium mandate and programme financing are not company capital; private funding unknown.",
+      "searches_checked": [
+        "\"LUNA\" \"Guamobility\" Oman company funding",
+        "\"LUNA\" GUAMobility investors company mobility",
+        "\"LUNA\" \"GUAMobility\" investors venture financing",
+        "site.innovitech.com Oman LUNA July 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://innovitech.com/en/news/oman-launches-its-national-advanced-air-mobility-strategy-and-entrusts-its-development-to-the-international-consortium-guamobility/",
+          "disposition": "Opened original consortium identity; partner services not funding."
+        },
+        {
+          "url": "https://unmannedairspace.info/uncategorized/guamobility-consortium-to-lead-advanced-air-mobility-programme-in-oman",
+          "disposition": "Cohort URL failed; original transaction-party page used."
+        },
+        {
+          "url": "https://www.publicnow.com/view/4A5FA88F36015755B84FF288DF2B9D100C10E3EC",
+          "disposition": "Syndicated original indexed; actual fetch403, original publisher subsequently read."
+        }
+      ]
+    },
+    {
+      "id": "9eaf5fd7-1514-4ee1-8005-720643e1b9c5",
+      "slug": "lurssen",
+      "name": "Lürssen",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Bounded German/English issuer, financing and investor searches; own current yacht issuer site checked. No attributable incoming round confirmed.",
+      "hold_note": "Unknown private financing is not zero. Naval Vessels sale, outbound Kraken association, yacht construction capex and investment-company powers are not incoming company funding.",
+      "searches_checked": [
+        "Lürssen financing loan investment 2026 bonds",
+        "site.luerssen.de financing loan shareholders grant",
+        "\"Lürssen\" \"financing\" \"loan\" bank 2026 2025",
+        "\"Lürssen\" capital equity investors funding bank",
+        "site.lurssen.com family owned investment financing news"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.luerssen.de",
+          "disposition": "Opened original, redirects to current Lurssen yacht website."
+        },
+        {
+          "url": "https://www.lurssen.com/de/",
+          "disposition": "Official issuer and current operations checked."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/lurssen",
+          "disposition": "Indexed no-known-funding claim not evidence; excluded."
+        },
+        {
+          "url": "https://www.companyhouse.de/en/Luerssen-Verwaltungs-GmbH-Bremen",
+          "disposition": "Registry-derived corporate lending powers not actual financing event."
+        }
+      ]
+    },
+    {
+      "id": "ad967d12-80f8-4b43-ae4d-97137c3c6987",
+      "slug": "luxspace",
+      "name": "LuxSpace",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "evidence_note": "Own exact THEIA allocation and EC signature verified; issuer confirms OHB subsidiary.",
+      "hold_note": "Other ESA/LuxIMPULSE and historical grants need beneficiary-level review. OHB parent capital increase, loans, whole programme budgets and services contracts excluded.",
+      "searches_checked": [
+        "LuxSpace financing grant CORDIS investment OHB 2026",
+        "LuxSpace CORDIS beneficiary grant site:cordis.europa.eu/project",
+        "site.luxspace.lu funding investment grant European Union THEIA",
+        "site.luxspace.lu OHB shareholders funding 2026",
+        "\"LUXSPACE SARL\" \"Net EU contribution\"",
+        "site.luxspace.lu \"OHB\" \"shareholder\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://cordis.europa.eu/project/id/101190051",
+          "disposition": "Opened exact LuxSpace EUR352133.06 and signature6November2024."
+        },
+        {
+          "url": "https://luxspace.lu/",
+          "disposition": "Opened original subsidiary identity."
+        },
+        {
+          "url": "https://space-agency.public.lu/en/space-directory/ohb-luxspace.html",
+          "disposition": "Official directory checked; programme/service amounts not own grants."
+        },
+        {
+          "url": "https://www.ohb.de/en/ad-hoc-announcements/ohb-se-beabsichtigt-bezugsrechtskapitalerhoehung-in-hoehe-von-rund-eur-500-millionen-und-ausweitung-des-streubesitzes",
+          "disposition": "Parent financing discovery only; excluded from subsidiary."
+        }
+      ]
+    },
+    {
+      "id": "8adceee8-7207-4dad-80d1-1c18616e6cb2",
+      "slug": "lyntris",
+      "name": "Lyntris",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Latest SEC primary issuer accounts verify IPO net issuer proceeds, exact parent term principal and actual revolver draw; predecessor continuity distinguished.",
+      "hold_note": "Predecessor Accelint and Vitesse facilities remain separately scoped. Trive vehicles sold/distributed earlier holdings; no fresh cheque inferred. IPO primary/secondary and net estimates distinct; lenders not inferred from administrative agents.",
+      "searches_checked": [
+        "\"Lyntris\" investment funding maritime",
+        "site.investors.lyntris.com IPO closes August 2026 100 million",
+        "site.lyntris.com Trive Capital investment 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2132582/000213258226000007/lynx-20260930.htm",
+          "disposition": "Opened latest original10Q and exact parent financing notes."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2132582/000119312526330874/d23330ds1a.htm",
+          "disposition": "Opened original pre-IPO identity, credit and secondary disclosures."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2132582/000119312526359991/d821382dex991.htm",
+          "disposition": "Original IPO pricing indexed; actual closing verified latest10Q."
+        },
+        {
+          "url": "https://partners.dealroom.co/companies/lyntris",
+          "disposition": "Discovery USD298m headline excluded as all-issuer cash."
+        }
+      ]
+    },
+    {
+      "id": "bece30df-ee57-417f-9480-9d5f3d48e41c",
+      "slug": "m-air",
+      "name": "M-Air",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "evidence_note": "Original university pages establish M-air is U-M mobility research initiative and distinguish recipient blueflite from collaborating facility.",
+      "hold_note": "University source reports USD1m establishment grant17July2025; legal recipient is institution/programme, not separately established company, so held from company import. Blueflite own2026award not assigned to M-air.",
+      "searches_checked": [
+        "M-Air University Michigan 2026 funding grant pilot",
+        "\"M-air\" university investment grant funder 2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://mcity.umich.edu/m-air-builds-momentum-six-months-after-launch/",
+          "disposition": "Opened university original; initiative identity and USD1m establishment support."
+        },
+        {
+          "url": "https://mcity.umich.edu/blueflite-joins-mcity-wins-state-grant-to-pioneer-autonomous-organ-transport-in-michigan/",
+          "disposition": "Opened original; exact2026grant recipient blueflite not M-air."
+        },
+        {
+          "url": "https://news.engin.umich.edu/2025/07/new-air-mobility-corridor-to-advance-evtols-and-beyond-line-of-sight-uavs/",
+          "disposition": "Official university identity and ecosystem discovery; not private financing."
+        }
+      ]
+    },
+    {
+      "id": "7ddc46f8-c44b-49b4-bc21-c21667db286e",
+      "slug": "m-tron-industries",
+      "name": "M-tron Industries",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "evidence_note": "Latest issuer10Q reconciles actual warrant cash, completed rights offering and signed undrawn facilities.",
+      "hold_note": "Historical spin-off, LGL ownership and earlier credit history partial. Warrant distribution and receivables not fresh cash; net41.8m distinct from gross42.1m rights. No unnamed subscriber cheque inferred.",
+      "searches_checked": [
+        "M-tron Industries financing offering loan 2026",
+        "site.ir.mtron.com 2026 completes rights 42.7 million warrants 27.7",
+        "\"M-tron\" \"2026\" \"41.8\" sec.gov",
+        "\"M-tron\" \"2026\" \"warrants\" \"27.7\" sec.gov"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1902314/000143774926036399/mpti20260930_10q.htm",
+          "disposition": "Opened latest issuer10Q: rights completed27April; gross42.1m; actual warrant settlement and capacity."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1902314/000143774926016657/mpti20260512_ars.pdf",
+          "disposition": "Opened original annual report and shareholder letter, prior warrant dates and gross42.1m."
+        },
+        {
+          "url": "https://ir.mtronpti.com/news/news-details/2026/M-tron-Industries-Inc--Announces-Subscription-Rights-Offering-To-Address-Rapid-Changes-in-US-Defense-Sector/default.aspx",
+          "disposition": "Opened original18March terms: target42.7m not completed proceeds."
+        }
+      ]
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "canonical_profile_mappings": [
+      {
+        "from": "lockheed-martin",
+        "to": "lockheed-martin-corporation"
+      },
+      {
+        "from": "carlyle",
+        "to": "carlyle-group"
+      }
+    ],
+    "root_verification": {
+      "search_queries_executed": 3,
+      "searches_checked": [
+        "site.live-eo.com 2026 first close more than 28 million",
+        "site.livingoptics.com 2026 20 million funding January Foresight",
+        "site.oxfordscienceenterprises.com Oxford Sciences Innovation renamed 2021"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.live-eo.com/company/press/liveeo-raises-28m-to-scale-geospatial-intelligence-across-civil-infrastructure-and-defense",
+          "disposition": "Opened original6May2026; morethanEUR28m firstclose, not exact28m orfinalclose."
+        },
+        {
+          "url": "https://www.livingoptics.com/news-release-september-2026/",
+          "disposition": "Opened issuer20mUSDadd-on; comparedJanuaryGBP16m disclosure, potentialsamefinancing notanothercashround."
+        },
+        {
+          "url": "https://www.british-business-bank.co.uk/news-and-events/news/british-business-bank-invests-living-optics-which-has-secured-20-million-financial-and-strategic?trk=public_post_comment-text",
+          "disposition": "Opened investor5October2026same20mUSDsyndicate; announcementdateisnotindependentround."
+        },
+        {
+          "url": "https://www.live-eo.com/company/press/liveeo-secures-e5-25-million-series-a-investment",
+          "disposition": "Opened ESA support wording; grant versus procurement not established, generic support only."
+        },
+        {
+          "url": "https://dvhventures.de/updates-insights/liveeo-secures-further-capital/",
+          "disposition": "Opened original confirms specific ESA SIM cofinancing; exact instrument held."
+        }
+      ]
+    },
+    "esa_review": {
+      "excluded_round_key": "esa-space-solutions-support-disclosed-2021",
+      "disposition": "Generic ESA support association; grant or procurement instrument not established."
+    },
+    "notes": [
+      "LiveEO first-close amount is a lower bound; 2022 public component and possible2023/2024 overlap held.",
+      "Living Optics JanuaryGBP16m versus SeptemberUSD20m syndicate overlap held, not imported twice.",
+      "Original historical Carmel and Oxford investor names reconciled by agent against official continuity sources; exact fund contributions retained.",
+      "LPP Polish/Czech conflict, LUNA Oman/aircraft namesake and M-Air institutional recipient distinction retained.",
+      "IPO secondary sales and acquisition consideration excluded; actual draws and net versus gross proceeds remain explicit."
+    ]
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting stored amount rejection and participant-source foreign key rejection.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13T08:00:31.667Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 41,
+      "mismatched_facts": 0,
+      "participant_matches": 70,
+      "source_matches": 48,
+      "relationship_matches": 13,
+      "missing_link_sources": 0
+    }
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Wider-cohort DB events are not claimed to appear on European map. Profiles and generic portfolio associations publish through existing directory build."
+  },
+  "preserved": [
+    "Legacy research-agent/STATE.json",
+    "Frozen snapshots",
+    "Curated investor profiles and legacy relationships",
+    "Company geography, classification and publication gates",
+    "Repository schedules",
+    "No paid external API backfill"
+  ],
+  "programme_complete": false
+}

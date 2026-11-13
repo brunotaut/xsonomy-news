@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 574,
-  "fully_reviewed_companies": 1047,
-  "next_action": "Continue next24 queued wider-cohort identities Lily Robotics through M-tron Industries under a fresh short writer lease and up to four disjoint read-only groups. No pending import/publication. Preserve documented legal-issuer, conditional-financing, inaccessible-source and history holds; no internal batch approval required.",
+  "partial_companies": 592,
+  "fully_reviewed_companies": 1053,
+  "next_action": "Verify current catalogue publication then continue next24 queued Mach Industries through Marvin Test Solutions. Reconcile potential Manna/Manna Drone Delivery alias before attributing existing rounds. Preserve source-backed issuer/history holds; no batch approval required.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-13T08:00:18.541Z",
-  "source_reconciliation_companies": 878,
-  "approved_funding_events": 3299,
-  "round_participations": 4259,
-  "investor_profiles": 2579,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261113-fifty-fifth.json",
+  "updated_at": "2026-11-13T08:01:56.172Z",
+  "source_reconciliation_companies": 889,
+  "approved_funding_events": 3340,
+  "round_participations": 4329,
+  "investor_profiles": 2619,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261113-fifty-sixth.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -28,7 +28,7 @@
     "owner": "chatgpt",
     "started_at": "2026-11-13T07:53:57.952Z",
     "expires_at": "2026-11-13T09:53:57.953Z",
-    "status": "importing",
+    "status": "publishing",
     "planned_company_ids": [
       "5001364f-33c4-4119-867e-e97e843d386e",
       "213c9d3a-9c25-4df5-9d1b-fb65bfdb3272",
@@ -4348,55 +4348,46 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 1047,
-    "source_review_partial": 574,
-    "queued": 943
+    "reviewed_public_sources": 1053,
+    "source_review_partial": 592,
+    "queued": 919
   },
   "last_execution_metrics": {
     "parallel_read_only_groups": 4,
     "identities_checked": 24,
     "newly_completed_bounded_reviews": 6,
     "new_or_retained_partial": 18,
-    "new_approved_events": 62,
-    "new_round_participations": 72,
-    "new_source_rows": 68,
-    "new_generic_portfolio_relationships": 4,
-    "new_companies_with_events": 16,
+    "new_approved_events": 41,
+    "new_round_participations": 70,
+    "new_source_rows": 48,
+    "new_generic_portfolio_relationships": 13,
+    "new_companies_with_events": 11,
     "new_investor_profiles": 40,
-    "search_queries_executed": 118,
-    "group_search_queries_executed": 116,
-    "root_additional_search_queries": 2,
-    "per_company_search_ledger_entries": 116,
-    "source_ledger_entries": 107,
-    "existing_related_issuer_events_inspected": 19,
+    "search_queries_executed": 99,
+    "group_search_queries_executed": 96,
+    "root_additional_search_queries": 3,
+    "per_company_search_ledger_entries": 96,
+    "source_ledger_entries": 101,
     "local_postgresql_tests_passed": true,
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "post_import_idempotency_rehearsal_passed": true,
     "curated_profile_hash_preserved": true,
-    "event_matches": 62,
+    "event_matches": 41,
     "mismatched_facts": 0,
-    "participant_matches": 72,
-    "source_matches": 68,
-    "relationship_matches": 4,
+    "participant_matches": 70,
+    "source_matches": 48,
+    "relationship_matches": 13,
     "missing_link_sources": 0,
     "contribution_fields_audited": true,
-    "db_total_events": 3312,
-    "db_approved_events": 3299,
-    "db_approved_round_participations": 4259,
-    "db_investor_profiles": 2579,
-    "db_source_reconciliation_companies": 878,
+    "db_total_events": 3353,
+    "db_approved_events": 3340,
+    "db_approved_round_participations": 4329,
+    "db_investor_profiles": 2619,
+    "db_source_reconciliation_companies": 889,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": true,
-    "concurrency_speedup_claimed": false,
-    "durable_queue_readback_verified": true,
-    "durable_manifest_readback_verified": true,
-    "durable_queue_identity_count": 2564,
-    "new_profile_exact_name_duplicates": 0,
-    "active_minutes": 11.58,
-    "checked_identities_per_hour": 124.3,
-    "completed_reviews_per_hour": 31.1,
-    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, original-source and canonical identity QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution audit and verified live publication. Concurrent durations not summed."
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false
   },
   "latest_followup_metrics": {
     "parallel_read_only_groups": 4,
@@ -4434,7 +4425,7 @@
   },
   "fully_reviewed_count_note": "Counts reconciled against the current queue. Bounded public-source closure and DB coverage are tracked separately.",
   "legacy_reported_fully_reviewed_companies": 455,
-  "source_reviewed_or_partial_companies": 1621,
+  "source_reviewed_or_partial_companies": 1645,
   "latest_manual_checkpoint": {
     "identities_reconciled": 21,
     "newly_completed_bounded_reviews": 5,
@@ -4840,62 +4831,11 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": {
-    "status": "ready_after_verified_production_rollback",
-    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-sixth.json",
-    "expected_events": 41,
-    "expected_participations": 70,
-    "expected_source_rows": 48,
-    "expected_generic_relationships": 13,
-    "production_before": {
-      "events": 3312,
-      "approved": 3299,
-      "links": 4259,
-      "sources": 4590,
-      "profiles": 2579,
-      "covered": 878,
-      "relationships": 389,
-      "preserved_profiles_hash": "dad55485b55e18daf4a54a6651fd68c6"
-    },
-    "rollback_rehearsal_passed": true,
-    "local_postgresql_tests_passed": true
-  },
+  "pending_import": null,
   "pending_publication": {
-    "status": "verified",
-    "checked_at": "2026-11-13T07:04:30.451Z",
-    "verified_at": "2026-11-13T07:04:30.451Z",
-    "catalogue_commit": "18e2dc1572ffd8dccd9bf2eda06dac23e3897333",
-    "source_commit": "5030199487bc751be7153ef19d5d8a0f90fd4082",
-    "workflow_run": {
-      "id": 43382795721,
-      "head": "18e2dc1572ffd8dccd9bf2eda06dac23e3897333",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43382795721"
-    },
-    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-fifth.json",
-    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-fifth.json",
-    "generated_at": "2026-11-13T07:02:45.532Z",
-    "investor_generated_at": "2026-11-13T07:02:47.443Z",
-    "companies": 567,
-    "events": 1590,
-    "links": 1390,
-    "profiles": 2570,
-    "portfolio_relationships": 386,
-    "expected_profiles": 62,
-    "missing_profiles": [],
-    "missing_participant_sources": [],
-    "missing_relationships": [],
-    "targets_in_european_landscape": [],
-    "generic_profile_source_matches": 4,
-    "manifest_participation_source_matches": 72,
-    "manifest_generic_relationship_matches": 4,
-    "current_manifest_event_rows": 62,
-    "current_manifest_live_matches": 0,
-    "current_manifest_participation_source_matches": 72,
-    "current_manifest_generic_relationship_matches": 4,
-    "catalogue_trigger_required": false,
-    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: DB2579 versus live2570. All24 targets remain outside the European landscape. All62 referenced profiles,72 participant source URLs and4 generic links and their source URLs verified. Forty new profiles published; curated-profile hash preserved. Wider-cohort DB funding is not asserted to be European map events. Gates unchanged."
+    "status": "awaiting_catalogue_trigger",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-sixth.json",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-sixth.json"
   },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -5808,124 +5748,124 @@
   },
   "next_batch_preview": [
     {
-      "id": "5001364f-33c4-4119-867e-e97e843d386e",
-      "slug": "lily-robotics",
-      "name": "Lily Robotics"
+      "id": "8d034f23-0f04-4142-b397-cad998235834",
+      "slug": "mach-industries",
+      "name": "Mach Industries"
     },
     {
-      "id": "213c9d3a-9c25-4df5-9d1b-fb65bfdb3272",
-      "slug": "liminal-industries",
-      "name": "Liminal Industries"
+      "id": "c6cf3c51-b9d7-408a-beba-a70226e29b74",
+      "slug": "maglev-aero",
+      "name": "MagLev Aero"
     },
     {
-      "id": "096bdc03-ab53-4ff3-9e78-f3fa9861e844",
-      "slug": "limitless-aeronautics",
-      "name": "Limitless Aeronautics"
+      "id": "a5d2a31a-7a94-4cb6-ae43-3b3bc2100213",
+      "slug": "magnet-defense",
+      "name": "Magnet Defense"
     },
     {
-      "id": "4167a775-62e4-4aca-a732-35ac0cf7dd70",
-      "slug": "linkdata",
-      "name": "Linkdata"
+      "id": "0c7c6097-156e-49ea-8e4e-c8e899aec296",
+      "slug": "magnix",
+      "name": "magniX"
     },
     {
-      "id": "56e99471-b7ce-4e48-8fef-27f4c7e9aa6a",
-      "slug": "liteye-systems",
-      "name": "Liteye Systems"
+      "id": "b7a03c09-9e18-48ec-a1de-2582c8a4065b",
+      "slug": "magos-systems",
+      "name": "Magos Systems"
     },
     {
-      "id": "489df67d-6c74-4daf-a99c-443d027b8b51",
-      "slug": "liveeo",
-      "name": "LiveEO"
+      "id": "b8366a2e-ae26-4edc-8ed7-778394be3a4c",
+      "slug": "mahindra",
+      "name": "Mahindra"
     },
     {
-      "id": "26c31cf5-549c-47cf-a555-7f72b5d9eb0c",
-      "slug": "liveu",
-      "name": "LiveU"
+      "id": "0d0add6a-a40a-41d9-b2c4-28b5b2b6a4f3",
+      "slug": "makera",
+      "name": "Makera"
     },
     {
-      "id": "01ff6f3a-d721-4e19-8013-cc316bacddae",
-      "slug": "living-optics",
-      "name": "Living Optics"
+      "id": "40dd78c2-0572-4a2f-8adc-b303e09d1c1a",
+      "slug": "manna",
+      "name": "Manna"
     },
     {
-      "id": "4bcf5d44-78a1-46c6-a3bc-6f174ed2ff8c",
-      "slug": "livox",
-      "name": "Livox"
+      "id": "d2714807-7a41-485e-a345-97bff3f66f4f",
+      "slug": "manor-marine",
+      "name": "Manor Marine"
     },
     {
-      "id": "a36ed8fc-5ae1-41b7-b598-6a2a7da4c29e",
-      "slug": "lmi",
-      "name": "LMI"
+      "id": "b547cb62-cf08-4129-a4a0-22ed52819d21",
+      "slug": "mantech-international",
+      "name": "ManTech International"
     },
     {
-      "id": "ca6b5651-adc4-4fb4-8d78-f4902b49a41d",
-      "slug": "lockheed-martin",
-      "name": "Lockheed Martin"
+      "id": "728c53cd-fd0c-466a-b1ab-e428a62e3539",
+      "slug": "mantis-analytics",
+      "name": "Mantis Analytics"
     },
     {
-      "id": "40904f35-0eae-4688-9db7-17d1b6f45f3f",
-      "slug": "lom-praha",
-      "name": "LOM PRAHA"
+      "id": "016f97dd-2201-4a99-b131-6c1a7f025334",
+      "slug": "mara",
+      "name": "Mara"
     },
     {
-      "id": "dd23d2ac-3ed1-4337-8087-9eef16b1ccb3",
-      "slug": "longbow-group",
-      "name": "Longbow Group"
+      "id": "a3e8073b-4069-4b87-80be-d905dc31e8e9",
+      "slug": "marand",
+      "name": "Marand"
     },
     {
-      "id": "dcc9af11-800c-43cd-9159-a8f0e62694ca",
-      "slug": "look-up",
-      "name": "Look Up"
+      "id": "516ada7a-f3d0-4998-91c6-1ec2986be620",
+      "slug": "marcos-aerospace",
+      "name": "Marcos Aerospace"
     },
     {
-      "id": "9488cc77-809a-4290-9913-5163d12172a9",
-      "slug": "lorica-technologies",
-      "name": "Lorica Technologies"
+      "id": "ad17c896-3814-4b54-bad6-1a1d3dfed7c6",
+      "slug": "maren-go",
+      "name": "Maren-Go"
     },
     {
-      "id": "095ec363-dc2f-4108-868b-9580f01d899e",
-      "slug": "lpp-holding",
-      "name": "LPP Holding"
+      "id": "8ce31c8d-3a15-43a7-aa04-9d4ceb9cd5fa",
+      "slug": "marine-alutech",
+      "name": "Marine Alutech"
     },
     {
-      "id": "26ec7891-c1f9-4ed4-b39e-6efeba60f0ac",
-      "slug": "lucid-bots",
-      "name": "Lucid Bots"
+      "id": "24a85184-fd93-4fbe-86f6-2e71bd2622f1",
+      "slug": "marineai",
+      "name": "MarineAI"
     },
     {
-      "id": "c66020d4-e898-4508-9524-127e0f132247",
-      "slug": "lumenier",
-      "name": "Lumenier"
+      "id": "6c5cd3ca-43a0-48c2-8c66-383036d10276",
+      "slug": "markets-and-markets",
+      "name": "Markets and Markets"
     },
     {
-      "id": "b62985fa-6d1a-4097-b11f-4fe2a3879552",
-      "slug": "luna",
-      "name": "LUNA"
+      "id": "f00a5b38-229a-4f4a-bac7-363daaba7931",
+      "slug": "markready",
+      "name": "MarkReady"
     },
     {
-      "id": "9eaf5fd7-1514-4ee1-8005-720643e1b9c5",
-      "slug": "lurssen",
-      "name": "Lürssen"
+      "id": "92f259a0-fc8f-41e9-8871-e501aae5ca0e",
+      "slug": "marshall-aerospace",
+      "name": "Marshall Aerospace"
     },
     {
-      "id": "ad967d12-80f8-4b43-ae4d-97137c3c6987",
-      "slug": "luxspace",
-      "name": "LuxSpace"
+      "id": "af671ef4-9941-4e09-bd9b-79d29eea2229",
+      "slug": "martac",
+      "name": "MARTAC"
     },
     {
-      "id": "8adceee8-7207-4dad-80d1-1c18616e6cb2",
-      "slug": "lyntris",
-      "name": "Lyntris"
+      "id": "b6e10b79-e74c-43d0-b14c-da7d82842859",
+      "slug": "martin-baker",
+      "name": "Martin-Baker"
     },
     {
-      "id": "bece30df-ee57-417f-9480-9d5f3d48e41c",
-      "slug": "m-air",
-      "name": "M-Air"
+      "id": "409b71c5-f440-40ba-a0c1-a1dbb76742d0",
+      "slug": "marubeni-aerospace",
+      "name": "Marubeni Aerospace"
     },
     {
-      "id": "7ddc46f8-c44b-49b4-bc21-c21667db286e",
-      "slug": "m-tron-industries",
-      "name": "M-tron Industries"
+      "id": "9e9f9779-fe4c-4489-a291-b1b79cdef970",
+      "slug": "marvin-test-solutions",
+      "name": "Marvin Test Solutions"
     }
   ],
   "latest_twenty_second_reconciliation": {
@@ -6409,7 +6349,7 @@
       "completed_reviews_per_active_hour": 51.4
     }
   },
-  "total_funding_events": 3312,
+  "total_funding_events": 3353,
   "latest_thirty_sixth_reconciliation": {
     "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-sixth.json",
     "manifest": "research-agent/imports/funding-landscape-20261112-thirty-sixth.json",
@@ -7358,6 +7298,48 @@
       "checked_identities_per_hour": 124.3,
       "completed_reviews_per_hour": 31.1,
       "timing_scope": "Elapsed writer lease through four disjoint read-only groups, original-source and canonical identity QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution audit and verified live publication. Concurrent durations not summed."
+    }
+  },
+  "latest_fifty_sixth_reconciliation": {
+    "status": "imported_awaiting_publication",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-sixth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-sixth.json",
+    "metrics": {
+      "parallel_read_only_groups": 4,
+      "identities_checked": 24,
+      "newly_completed_bounded_reviews": 6,
+      "new_or_retained_partial": 18,
+      "new_approved_events": 41,
+      "new_round_participations": 70,
+      "new_source_rows": 48,
+      "new_generic_portfolio_relationships": 13,
+      "new_companies_with_events": 11,
+      "new_investor_profiles": 40,
+      "search_queries_executed": 99,
+      "group_search_queries_executed": 96,
+      "root_additional_search_queries": 3,
+      "per_company_search_ledger_entries": 96,
+      "source_ledger_entries": 101,
+      "local_postgresql_tests_passed": true,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "post_import_idempotency_rehearsal_passed": true,
+      "curated_profile_hash_preserved": true,
+      "event_matches": 41,
+      "mismatched_facts": 0,
+      "participant_matches": 70,
+      "source_matches": 48,
+      "relationship_matches": 13,
+      "missing_link_sources": 0,
+      "contribution_fields_audited": true,
+      "db_total_events": 3353,
+      "db_approved_events": 3340,
+      "db_approved_round_participations": 4329,
+      "db_investor_profiles": 2619,
+      "db_source_reconciliation_companies": 889,
+      "queue_dispositions_applied": 24,
+      "current_manifest_publication_verified": false,
+      "concurrency_speedup_claimed": false
     }
   }
 }
