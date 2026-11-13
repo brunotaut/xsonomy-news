@@ -1,0 +1,1210 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-13",
+  "started_at": "2026-11-13T23:48:00Z",
+  "manifest": "research-agent/imports/funding-landscape-20261113-seventy-second.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 2,
+    "new_or_retained_partial": 22,
+    "new_approved_events": 24,
+    "new_round_participations": 61,
+    "new_source_rows": 38,
+    "new_generic_portfolio_relationships": 1,
+    "new_companies_with_events": 11,
+    "new_investor_profiles": 19,
+    "group_search_queries_executed": 129,
+    "root_additional_search_queries": 6,
+    "search_queries_executed": 135,
+    "per_company_search_ledger_entries": 129,
+    "source_ledger_entries": 106,
+    "company_database_identity_contexts_checked": 24,
+    "existing_canonical_events_inspected": 0,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 24,
+    "mismatched_facts": 0,
+    "participant_matches": 61,
+    "source_matches": 38,
+    "relationship_matches": 1,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 0,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "db_total_events": 3802,
+    "db_approved_events": 3789,
+    "db_round_participations": 5119,
+    "db_investor_profiles": 3048,
+    "db_source_reconciliation_companies": 1062,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 3778,
+    "approved": 3765,
+    "links": 5058,
+    "sources": 5208,
+    "profiles": 3029,
+    "covered": 1051,
+    "relationships": 488,
+    "preserved_profiles_hash": "655285210c6403800ffba6f5453fb63a"
+  },
+  "production_after": {
+    "events": 3802,
+    "approved": 3789,
+    "links": 5119,
+    "sources": 5246,
+    "profiles": 3048,
+    "covered": 1062,
+    "relationships": 489,
+    "preserved_profiles_hash": "655285210c6403800ffba6f5453fb63a"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1144,
+    "source_review_partial": 885,
+    "queued": 535
+  },
+  "per_company": [
+    {
+      "id": "f57699d1-2426-4b49-8646-ce85d9e6cbbb",
+      "slug": "romarm",
+      "name": "Romarm",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Romarm finanțare majorare capital împrumut investiții 2026 2024",
+        "site.romarm.ro finanțare împrumut 220 milioane 2026",
+        "\"Romarm\" \"capital\" \"2026\" finanțare site:romarm.ro",
+        "\"Romarm\" \"2025\" \"2026\" \"capital social\"",
+        "\"Romarm\" site:romarm.ro \"finanțare\" \"2024\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://legislatie.just.ro/Public/DetaliiDocumentAfis/288839",
+          "published_date": "2024-09-24",
+          "disposition": "Opened original gazetted decision. Government USD920m authorization includes conditional subloan up to USD220m for CN ROMARM. No signed subsidiary agreement or draw established; held, not cash received."
+        },
+        {
+          "url": "https://www.curteadeconturi.ro/wp-content/uploads/2026/04/2026_MF.pdf",
+          "published_date": "2026-03-25",
+          "disposition": "Indexed original Court of Accounts report calls for subsidiary agreement completion by May29/2026. Full PDF not opened; latest signing/disbursement unresolved."
+        },
+        {
+          "url": "https://romarm.ro/wp-content/uploads/2026/01/Program-Investitii-CN-Romarm-2025.pdf",
+          "published_date": null,
+          "disposition": "Indexed original investment budget candidate, not an audited financing event. Budget periods and group allocations require table review."
+        },
+        {
+          "url": "https://romarm.ro/",
+          "published_date": null,
+          "disposition": "Direct original homepage timed out. Failure not negative funding evidence."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer/financial and transaction-party source searches executed. Exact source-supported subset retained; unknown is not zero.",
+      "hold_note": "USD220m conditional subsidiary loan authorization held pending actual signing/status and allocation. Parent and15 subsidiaries not interchangeable. Earlier public capital/budget claims require source-table review; not zero funding."
+    },
+    {
+      "id": "dd79ef32-d936-4d19-b4da-25ab232a05a7",
+      "slug": "roselectronics",
+      "name": "Roselectronics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Росэлектроника финансирование облигации заем капитал 2026 2025",
+        "\"Росэлектроника\" \"кредит\" site:rostec.ru",
+        "\"Росэлектроника\" \"инвестиции\" \"2026\" \"капитал\"",
+        "\"Росэлектроника\" site:ruselectronics.ru \"инвестиции\"",
+        "\"Росэлектроника\" site:novikom.ru финансирование"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://electronintorg.ru/pages/investitsionnaya-deyatelnost/",
+          "published_date": null,
+          "disposition": "Opened page labelled Roselectronics on Electronintorg subsidiary domain. RUB200bn2020–25 programme is planned expenditure, not an incoming round and not proof of exact issuer."
+        },
+        {
+          "url": "https://ruselectronics.ru/news/19253-v-innovatsionnoe-razvitie-kholdinga-roselektronika-budet-investirovano-bolee-210-mlrd-rub/",
+          "published_date": "2014-08-06",
+          "disposition": "Indexed original body: multi-year RUB210.296bn programme across92 projects; expenditure budget, no financing event."
+        },
+        {
+          "url": "https://ruselectronics.ru/news/25443-predpriyatie-roselektroniki-v-2-raza-uvelichilo-proizvodstvo-svchmoduley-dlya-radiolokatsii-i-naviga/",
+          "published_date": "2023-10-05",
+          "disposition": "Indexed original body identifies NPP Salyut as borrower of RUB185m FRP loan, not Roselectronics parent. Direct fetch timed out; subsidiary borrowing excluded."
+        },
+        {
+          "url": "https://novikom.ru/about/press-center/novikombank-uspeshno-realizuet-strategiyu-postroeniya-opornogo-banka-goskorporatsii-rostekh/?sphrase_id=133111",
+          "published_date": "2020-03-04",
+          "disposition": "Indexed bank original general group financing support; no parent-specific transaction amount or commitment identified."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer/financial and transaction-party source searches executed. Exact source-supported subset retained; unknown is not zero.",
+      "hold_note": "Catalogue brand versus holding/subsidiary legal identities unresolved. Salyut/Kontakt/Start financing and capex not parent rounds. Original history/latest issuer financial disclosures incomplete."
+    },
+    {
+      "id": "36e59ed7-923b-4a5c-8428-8b6026ae54a5",
+      "slug": "rosomak",
+      "name": "Rosomak",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Rosomak SA dofinansowanie kapitał kredyt 2026 2024",
+        "\"Rosomak\" \"dofinansowanie\" \"kapitału\" site:pgzsa.pl",
+        "\"Rosomak\" \"dokapitalizowanie\" 2025 2026",
+        "\"Rosomak\" site:rosomaksa.pl \"środki\" \"2026\"",
+        "site:rosomaksa.pl \"spółka\" \"Polskiej Strefy Inwestycji\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.gov.pl/web/rozwoj-technologia/trzy-spolki-pgz-otrzymaly-wsparcie-w-ramach-polskiej-strefy-inwestycji",
+          "published_date": "2026-10-28",
+          "disposition": "Original page opened; indexed original body explicitly describes future tax relief for Rosomak/Jelcz/Bumar investments. Aggregate PLN1.3bn capex is not a grant or Rosomak funding. Follow-up direct body request timed out."
+        },
+        {
+          "url": "https://www.rosomaksa.pl/aktualnosci",
+          "published_date": null,
+          "disposition": "Original news archive direct502. Indexed historical archive mainly deliveries; no absence-of-funding inference."
+        },
+        {
+          "url": "https://api.sejm.gov.pl/sejm/term10/committees/OBN/sittings/59/html",
+          "published_date": "2025-09-11",
+          "disposition": "Indexed parliamentary transcript discusses Bumar and HSW capitalization; nearby Rosomak mentions do not establish Rosomak issuer allocation."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer/financial and transaction-party source searches executed. Exact source-supported subset retained; unknown is not zero.",
+      "hold_note": "Tax incentives and procurement/capex excluded. Jelcz/Bumar/HSW capital injections not transferred to Rosomak. Earlier shareholder capital/loans and current full archive remain partial."
+    },
+    {
+      "id": "aaf6c67b-9860-4370-bf0c-1abebc97a390",
+      "slug": "rostec",
+      "name": "Rostec",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Rostec loan bonds capital injection financing 2026 2025",
+        "site:rostec.ru облигации ФНБ 2025 2026",
+        "\"Rostec\" \"bonds\" site:minfin.gov.ru 2026",
+        "\"Ростех\" \"облигации\" \"2026\" site:minfin.gov.ru",
+        "\"Ростех\" \"облигации\" \"2015\" \"ФНБ\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.isin.ru/en/ru_isin/news_c/printable.php?id22=679314&print22=1",
+          "published_date": "2026-06-08",
+          "disposition": "Opened NSD original exact Rostec issuer taxID7704274402, issue4-08-00016-T-001P. RUB1,000 unit face is not total proceeds; ISIN allocation is not a completed placement."
+        },
+        {
+          "url": "https://rostec.ru/media/news/odk-planiruet-vpervye-vyyti-na-rynok-birzhevykh-obligatsiy/",
+          "published_date": null,
+          "disposition": "Indexed original body discusses United Engine Corporation programme and planned issue, not Rostec parent cash; direct502."
+        },
+        {
+          "url": "https://www.rostec.ru/media/news/novikombank-voshel-v-top-10-organizatorov-rossiyskogo-obligatsionnogo-rynka-/",
+          "published_date": null,
+          "disposition": "Original release opened: Novikombank arranging bonds across multiple issuers and Aviakapital-Service subsidiary lease project. RUB142.1bn aggregate not assigned to parent."
+        },
+        {
+          "url": "https://www.isin.ru/en/ru_isin/news_c/printable.php?id22=680444",
+          "published_date": "2026-08-13",
+          "disposition": "Indexed NSD issue4-06-00016-T-002P allocation candidate; no verified cash amount. Historical FNB holdings and programme budget not a new round."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer/financial and transaction-party source searches executed. Exact source-supported subset retained; unknown is not zero.",
+      "hold_note": "2026 ISIN registrations do not prove placement/cash. FNB bond holdings are stock balances, not new rounds; historical annual funding tranches need primary Ministry transaction confirmation. UEC/Aviakapital/GTLC project issuers remain separate."
+    },
+    {
+      "id": "16604464-8651-409a-b5e4-2a9f6f945c6c",
+      "slug": "rotax",
+      "name": "Rotax",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:rotax.com funding grant financing investment 2026 2025",
+        "\"BRP-Rotax\" grant financing Austrian FFG",
+        "\"Rotax\" \"funding\" site:cordis.europa.eu",
+        "\"Rotax\" \"2026\" \"grant\" \"investment\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rotax.com/ueber-uns",
+          "published_date": null,
+          "disposition": "Opened issuer identifies exact BRP-Rotax GmbH & Co KG Austrian subsidiary; BRP parent debt/retail consumer financing excluded."
+        },
+        {
+          "url": "https://projekte.ffg.at/partner/1349",
+          "published_date": null,
+          "disposition": "Opened FFG exact legal-entity portfolio2024–27 SAF and older projects. Company-specific grant allocations not stated on listing; consortium totals not imported."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/284607",
+          "published_date": null,
+          "disposition": "Opened original recipient allocation EUR82,597 for BRP-Rotax; grant dates not public announcement dates."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/690925",
+          "published_date": null,
+          "disposition": "Opened original recipient net EU contribution EUR216,000; signature2015-12-09 and start2015-12-01 not announcement dates."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/769392",
+          "published_date": null,
+          "disposition": "Opened original recipient net EU contribution EUR1,299,797.50; signature2018-04-24 and start2018-05-01 not announcement dates."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101006817",
+          "published_date": null,
+          "disposition": "Opened original recipient net EU contribution EUR137,219.25, distinct from EUR196,027.50 recipient total cost and consortium19.89m grant; signature2020-11-27 not announcement date."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer/financial and transaction-party source searches executed. Exact source-supported subset retained; unknown is not zero.",
+      "hold_note": "Four recipient-specific EU grants confirmed, no private equity/BRP parent debt inferred. Remaining FFG/HyFleet/other EU allocations and historical private/intragroup financing unreviewed; actual grant disbursement and public announcement dates unknown."
+    },
+    {
+      "id": "f78991bd-d21b-40a6-8c03-7ba8fa1d5b9a",
+      "slug": "rotor-riot",
+      "name": "Rotor Riot",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Rotor Riot\" funding loan investment acquisition 2026 2024",
+        "\"Rotor Riot\" \"loan\" site:sec.gov",
+        "\"Rotor Riot\" \"2026\" \"financing\"",
+        "\"Rotor Riot\" \"funding\" \"2016\" \"2019\" \"2025\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1956955/000168316823001467/unusual_s1.htm",
+          "published_date": "2023-03-14",
+          "disposition": "Opened original Rotor Riot standalone notes in buyer filing affirm Red Cat historic operating funding. Period related-party cash flows are aggregates, no artificial single round."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1956955/000168316824002538/unusual_424b3.htm",
+          "published_date": "2024-04-19",
+          "disposition": "Opened original shows acquisition by UMAC February16/2024 and selling stockholder resale with no issuer proceeds. Seller acquisition price is not Rotor Riot financing."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1956955/000168316824005426/R10.htm",
+          "published_date": null,
+          "disposition": "Opened original UMAC note discloses USD45,222 related-party receivable at2021year-end fully repaid2022. Outstanding balance/date is not a new dated round."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1956955/000168316826006016/umac_i10q-063026.htm",
+          "published_date": null,
+          "disposition": "Indexed latest2026 parent filing candidate; parent borrowing/equity not automatically Rotor Riot financing."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer/financial and transaction-party source searches executed. Exact source-supported subset retained; unknown is not zero.",
+      "hold_note": "Red Cat historical parent funding confirmed generically. Original amounts are balance/period aggregates, not new rounds. Acquisition seller consideration and parent UMAC2024–26 equity/debt excluded. Other standalone grant/loan history partial."
+    },
+    {
+      "id": "8cebb591-61d6-4035-ad0f-66032ff12f00",
+      "slug": "rotorx",
+      "name": "RotorX",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"RotorX\" racing drone funding investment history",
+        "\"RotorX\" site:rotorxracing.com",
+        "\"RotorX Racing\" investment funding Kickstarter",
+        "\"RotorX\" \"MassChallenge\" \"Palledrone\"",
+        "\"RotorX Racing\" funding 2026 investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://the-atom-the-ultimate-micro-racing-drone.backerkit.com/faq",
+          "published_date": null,
+          "disposition": "Original campaign team FAQ checked: rotorxracing.com, Martin White racing identity and product fulfilment; reward/preorder crowdfunding does not establish equity/debt/grant."
+        },
+        {
+          "url": "https://www.launchboom.com/campaigns/rotor-x/",
+          "published_date": null,
+          "disposition": "Transaction-party case study checked: $178589 reward campaign, 621 backers; currency label only dollar sign and no security. Not imported as financial round."
+        },
+        {
+          "url": "https://blackambitionprize.com/prize_winners/rotorx/",
+          "published_date": null,
+          "disposition": "Original prize profile is separate rotor-x.us Georgia Tech Palledrone heavy-lift team with cumulative over$300k, not catalogue rotorxracing.com. No namesake funding assigned."
+        }
+      ],
+      "evidence_note": "Catalogue website identifies racing team; namesake Palledrone funding and preorders excluded.",
+      "hold_note": "Legal current status, earlier/latest financing histories unresolved; no zero-funding conclusion."
+    },
+    {
+      "id": "467a852b-b031-4591-a877-fa5c73fee8cb",
+      "slug": "rotowings",
+      "name": "RotoWings",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"RotoWings\" DARPA lift prize 2026 funding",
+        "\"RotoWings\" site:darpa.mil",
+        "\"RotoWings\" funding company prize",
+        "\"RotoWings\" site:darpa.mil lift 2026",
+        "\"RotoWings\" \"investment\" \"grant\"",
+        "\"RotoWings\" \"team\" drone company funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.darpa.mil/news/2026/meet-lift-challenge-teams",
+          "published_date": "2026-07-09",
+          "disposition": "Original selected-team roster checked; does not verify RotoWings legal entity, recipient or prize award."
+        },
+        {
+          "url": "https://www.darpa.mil/research/challenges/lift",
+          "published_date": null,
+          "disposition": "Original challenge overview and programme prize context checked. Competition-wide budgets are not company receipts."
+        }
+      ],
+      "evidence_note": "Published story describes a competition design/team; no source-audited financial award attributed.",
+      "hold_note": "Exact legal recipient/team alias and original prize outcome unresolved. No company round or zero-funding assertion."
+    },
+    {
+      "id": "dda7e944-c56b-4c32-b71b-95c2fbe292c5",
+      "slug": "rotron-aerospace",
+      "name": "Rotron Aerospace",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Rotron Aerospace\" funding investment acquisition",
+        "\"Rotron\" site:gov.uk funding DASA",
+        "\"Rotron Aerospace\" investment funding earlier 2015 2024",
+        "\"Rotron Power\" \"AIRSTART\" site:ukri.org",
+        "site:gtr.ukri.org \"ROTRON\" \"AIRSTART\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/07120913",
+          "published_date": null,
+          "disposition": "Original legal record checked: UK company07120913, Rotron Power Limited until September14/2023. Catalogue US label not altered."
+        },
+        {
+          "url": "https://www.ondas.com/post/ondas-completes-acquisition-of-rotron-aerospace-ltd-expanding-long-range-propulsion-technologies-f",
+          "published_date": "2026-03-16",
+          "disposition": "Original acquirer confirms Rotron Aerospace UK acquisition completed. Seller consideration and parent capital not company primary proceeds."
+        },
+        {
+          "url": "https://www.gov.uk/government/news/uk-accelerates-long-range-strike-capability-for-ukraine",
+          "published_date": "2026-06-22",
+          "disposition": "Original MOD announcement identifies Rotron and Brakestop development/procurement contracts; not grants or equity. AroundGBP15m contract not financing."
+        },
+        {
+          "url": "https://www.bymetric.com/company/07120913/rotron-aerospace-limited",
+          "published_date": null,
+          "disposition": "Indexed secondary candidate only: GBP150527 award, project start2015-11-01/end2018-04-30 and totalcost301054. Original UKRI/Innovate award not retrieved; amount and dates held."
+        }
+      ],
+      "evidence_note": "UK legal continuity confirmed; acquisition and MOD procurement excluded from primary financing.",
+      "hold_note": "Original AIRSTART recipient award and filing financing history remain unresolved; source amount is candidate only."
+    },
+    {
+      "id": "dc51f1ec-e373-4629-b9e7-a3a21b022551",
+      "slug": "rovertech",
+      "name": "Rovertech",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Rovertech\" investment funding Ukraine 2026",
+        "\"Rovertech\" інвестиції грант Sikorsky 2025",
+        "\"Rovertech\" site:usf.com.ua",
+        "\"Ровер Тек\" \"Український фонд стартапів\" грант"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://rovertech.co.ua/en/rovertech-wins-international-humanitarian-demining-solutions-competition-sikorsky-innovation-challenge/",
+          "published_date": "2025-10-10",
+          "disposition": "Original company grant announcement fully checked; unknown amount and disbursement retained."
+        },
+        {
+          "url": "https://kpi.ua/2025-TechBridge",
+          "published_date": null,
+          "disposition": "Original organiser identifies exact LLC ROVER TEK and project winner; no grant amount or sole paying grantor established."
+        },
+        {
+          "url": "https://rovertech.co.ua/",
+          "published_date": null,
+          "disposition": "Original company latest news feed checked through November11/2026; donations and equipment/customer leasing distinct from external financing."
+        },
+        {
+          "url": "https://ain.ua/2025/10/23/rovertech/",
+          "published_date": "2025-10-23",
+          "disposition": "Indexed founder interview checked: self-funded business and USF grant candidate. Earlier no-investor statement does not establish absence of grants/latest funding."
+        }
+      ],
+      "evidence_note": "Exact LLC and one development grant award confirmed.",
+      "hold_note": "USF earlier grant original terms/amount unresolved; latest full history and disbursement unknown. Earlier self-funding statements are scoped, not zero funding."
+    },
+    {
+      "id": "3fdeaee6-83ac-440c-b354-8577749cddaf",
+      "slug": "rownd",
+      "name": "Rownd",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Rownd\" drone funding investment Wisconsin",
+        "\"Rownd\" seed funding 2022 2023 investors",
+        "site:rownd.com funding investors",
+        "\"Rownd\" \"autonomous\" \"pivot\" Robert Thelen",
+        "\"Rownd\" drone \"funding\" \"2026\"",
+        "site:rownd.com \"Robert\" \"Y Combinator\"",
+        "site:rownd.io \"raised\" \"2.2\"",
+        "site:ycombinator.com/companies/rownd",
+        "site:rownd.com authentication retired June 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.av.vc/blog/alumni-ventures-invests-in-rownd-a-game-changer-in-user-authentication",
+          "published_date": "2024-08-16",
+          "disposition": "Original investor full page checked; USD2.2m seed and named participants verified."
+        },
+        {
+          "url": "https://www.ycombinator.com/companies/rownd",
+          "published_date": null,
+          "disposition": "Original current accelerator profile checked; direct continuity of founders, auth seed news and current drone business."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20261014768720/en/Rownd-Launches-Economical-Autonomous-Drones-to-Keep-America-Safe",
+          "published_date": "2026-10-14",
+          "disposition": "Original issuer release checked: YC backing, same founders and Raleigh/Wisconsin; USD10m contract excluded as procurement."
+        },
+        {
+          "url": "https://rownd.io/press/rownd-funding-annoucement",
+          "published_date": null,
+          "disposition": "Original investor link followed; redirect to rownd.com returned inaccessible500. Not claimed as body read; exact date unresolved."
+        },
+        {
+          "url": "https://rownd.com/",
+          "published_date": null,
+          "disposition": "Original current homepage title retrieved but body iframe-only; no funding facts extracted."
+        }
+      ],
+      "evidence_note": "Original YC and issuer release resolve auth-to-defense continuity; USD2.2m seed eight named resolved participants confirmed.",
+      "hold_note": "DVC identity unresolved; earlier preseed, accelerator cheque/security and claimed later grants/financing require original records. No amount inherited from a standard YC programme."
+    },
+    {
+      "id": "1851686c-7a95-4dd7-bd5b-5ae3ce152875",
+      "slug": "rsted",
+      "name": "Ørsted",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:orsted.com 2025 rights issue gross proceeds DKK 60 billion",
+        "site:orsted.com 2026 bond issued financing",
+        "site:orsted.com/en/company-announcement-list/2026 \"issued\" \"bonds\"",
+        "site:orsted.com rights issue final result 2025 59.9 proceeds Danish state"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://orsted.com/en/company-announcement-list/2025/08/rightsissue",
+          "published_date": "2025-08-11",
+          "disposition": "Original rights plan checked; first public announcement and gross target."
+        },
+        {
+          "url": "https://orsted.com/en/company-announcement-list/2025/10/result",
+          "published_date": "2025-10-06",
+          "disposition": "Original subscribed-share result checked: Danish State actual participant, bank underwriting no subscription."
+        },
+        {
+          "url": "https://orsted.com/en/investors/rightsissue",
+          "published_date": null,
+          "disposition": "Original completed-issue page checked: completion October2025, DKK60bn gross, source links."
+        },
+        {
+          "url": "https://orsted.com/en/company-announcement-list/2025/11/completion-of-rights-issue-and-strong-execution-of-146586841",
+          "published_date": "2025-11-05",
+          "disposition": "Original November5 update confirms completed rights issue DKK60bn gross; farm-down separate."
+        },
+        {
+          "url": "https://orsted.com/en/investors/debt/outstanding-bonds",
+          "published_date": null,
+          "disposition": "Original debt register checked: three explicit Ørsted A/S issued nominal amounts; no announcement dates inferred from issue dates. Other debt and hybrids remain unreconciled."
+        }
+      ],
+      "evidence_note": "Rights gross equity and three original-parent senior note issues verified separately; subsidiary and underwriting boundaries retained.",
+      "hold_note": "Extensive earlier/DONG and latest public financing, project SPVs, hybrids, renewals and precise net issue proceeds remain partial. No exhaustive or latest-round claim."
+    },
+    {
+      "id": "7d985440-0d6d-425e-8c17-04f02d4a8621",
+      "slug": "rti-aerospace-systems",
+      "name": "RTI Aerospace Systems",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "RTI Systems РТИ финансирование кредит облигации инвестиции 2026 2025",
+        "\"RTI\" \"aorti.ru\" \"investment\" financing",
+        "site:aorti.ru \"кредит\" \"финансирование\"",
+        "\"RTI\" \"Система\" \"ВТБ\" \"2017\" 28.5",
+        "\"RTI Systems\" \"aorti.ru\" issuer 2021 Sistema"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.aorti.ru",
+          "published_date": null,
+          "disposition": "Direct issuer website fetch inaccessible; not proof of absence."
+        },
+        {
+          "url": "https://www.cbr.ru/rbr/insideDKO/doc?id=32696",
+          "published_date": "2022-10-05",
+          "disposition": "Opened original regulator: completed closed subscription registration for Concern RTI Systems INN7713269230, issue1-02-05186-A-001D. Amount/subscribers absent; low-confidence catalogue versus wider RTI parent/concern mapping held."
+        },
+        {
+          "url": "https://www.edisclosure.ru/press-release-bd.shtml?id=1733",
+          "published_date": null,
+          "disposition": "Indexed original issuer release candidate describes groupwide VTB refinancing up to RUB28.5bn in2016–2017; direct fetch timeout. Aggregate group borrowing not allocated to catalogue issuer."
+        }
+      ],
+      "evidence_note": "Russian catalogue domain aorti.ru and RTI/Concern names examined against original CBR securities disclosure.",
+      "hold_note": "Exact economic/legal boundary of catalogue RTI Aerospace Systems versus Concern/parent RTI not fully established.2022placement and2016–17group refinancing remain held; registered issue is not assumed cash proceeds. New financing absence not inferred."
+    },
+    {
+      "id": "15857c56-65eb-4998-a66d-2fa2d244c92f",
+      "slug": "ruevit",
+      "name": "Ruevit",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Ruevit Руєвіт дрони інвестиції фінансування",
+        "\"Ruevit\" investment grant funding",
+        "\"Руєвіт\" \"грант\"",
+        "\"Руєвіт-Україна\" фінансування пожертви",
+        "\"БФ\" \"РУЄВІТ-УКРАЇНА\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.drone-directory.com.ua/profile/ruevit/",
+          "published_date": null,
+          "disposition": "Opened actual catalogue discovery entry: charitable RUEVIT-Ukraine in Rivne, donations/volunteer assistance, not an established financing round issuer. Directory contact and name differ from several LLC registry search namesakes; identity hold retained."
+        }
+      ],
+      "evidence_note": "Catalogue actual discovery URL describes a Rivne charitable foundation, not necessarily Ukrainian industrial LLC Ruevit2025.",
+      "hold_note": "Identity conflict unresolved: directory claims2024charity while LLC45776397founded2025andotherLLCs have similar names. Donations/procurement and company registered capital not investment rounds. No automatic duplicate/non-company disposition until original legal identity confirmed."
+    },
+    {
+      "id": "2c1709a1-c4e9-46cf-97bf-7baa5b471a1d",
+      "slug": "runcam",
+      "name": "RunCam",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "RunCam 融资 投资 深圳 公司",
+        "\"RunCam\" funding investors financing",
+        "\"RunCam\" \"融资\"",
+        "\"RunCam\" investors loan capital funding 2026",
+        "site:runcam.com funding investment investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://runcam.com/pages/runcam-about",
+          "published_date": null,
+          "disposition": "Opened original brand history: established2013, compact FPV/drone imaging cameras. No financing claims in scoped history; does not prove zero funding."
+        },
+        {
+          "url": "https://runcam.com/",
+          "published_date": null,
+          "disposition": "Opened current original product/news storefront. Customer payments, product launches and retailer cooperation are not investment."
+        },
+        {
+          "url": "https://www.runcam.com/aboutus/",
+          "published_date": null,
+          "disposition": "Initial obsolete about route inaccessible; recovered current original about page."
+        }
+      ],
+      "evidence_note": "Bounded English/Chinese funding, company history/currentnews and external investor searches found no verified public own-issuer financing event.",
+      "hold_note": "Scoped no_public_round_found; undisclosed financing remains unknown. Aggregator zero/未融资 claims rejected as evidence; no lender, investor, amount or date invented."
+    },
+    {
+      "id": "988d7184-14bd-49b3-b591-e59ca703575e",
+      "slug": "rune-technologies",
+      "name": "Rune Technologies",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Rune Technologies funding seed Series A investors 2025 2026 site:runetech.com",
+        "Rune Technologies raises funding seed Series A 2025 2026",
+        "site:runetech.co \"$6.2\" funding",
+        "site:runetech.co funding investment 2026 September grant",
+        "site:runetech.co \"Raises $6.2M\" seed",
+        "site:iqt.org Rune Technologies investment",
+        "\"Rune Technologies Raises $6.2M\" \"businesswire.com\"",
+        "\"Rune Technologies Signs Agreements\" In-Q-Tel September 24 2025",
+        "\"Rune Technologies\" funding 2026 4.1 grant",
+        "\"Rune Technologies Closes $24M\" \"businesswire.com/news\"",
+        "\"Rune Technologies Signs Agreements\" \"businesswire.com/news\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.businesswire.com/news/home/20250226366515/en/",
+          "published_date": "2025-02-26",
+          "disposition": "Opened issuer original: seed original amount/participants and explicit lead verified."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20250721838717/en/",
+          "published_date": "2025-07-21",
+          "disposition": "Opened issuer original: closed Series A; source date matched syndication. Pax VC canonical identity subsequently corroborated by root original portfolio check."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20250924360888/en/",
+          "published_date": "2025-09-24",
+          "disposition": "Opened issuer original: IQT strategic investment distinct from collaboration/CRADA."
+        },
+        {
+          "url": "https://www.iqt.org/portfolio?c6fb1237_page=4&region=Europe",
+          "published_date": null,
+          "disposition": "Opened original investor portfolio, explicit Rune entry links runetech.co."
+        },
+        {
+          "url": "https://runetech.co/about",
+          "published_date": null,
+          "disposition": "Opened original current timeline: founders and earlier/latest business events. Contract awards not equity rounds."
+        },
+        {
+          "url": "https://runetech.co/news",
+          "published_date": null,
+          "disposition": "Opened issuer current archive through October7/2026."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260917806470/en/",
+          "published_date": "2026-09-17",
+          "disposition": "Opened issuer September17/2026 original USD4.1m TMI award. Legal instrument and procurement versus grant boundary unresolved, held rather than assume grant or repeat private equity investors."
+        },
+        {
+          "url": "https://runetech.co/news/crada-mcwl",
+          "published_date": null,
+          "disposition": "Old issuer route inaccessible after site migration; recovered full original on BusinessWire."
+        },
+        {
+          "url": "https://runetech.co/news/x925j2wnqhsie4twptv2tl3x1dg24u",
+          "published_date": null,
+          "disposition": "Old issuer route inaccessible after site migration; recovered full original on BusinessWire."
+        },
+        {
+          "url": "https://pax.vc/",
+          "published_date": null,
+          "disposition": "Root independently verified original investor portfolio links Rune, Chariot Defense and CX2. Canonical Pax reused based on common Chariot issuer financing source. Root searches counted separately."
+        }
+      ],
+      "evidence_note": "Exact military logistics issuer matched founders/TyrOS and original press releases; seed, closedA and separateIQT investment existence confirmed.",
+      "hold_note": "Pax VC source name preserved; root corroboration reused canonical Pax profile without merging profiles.USD4.1mTMI award instrument versus procurement unresolved.USD2mSBIR explicitlycontract,USD99mIDIQprocurement,collectiveUSD93.6mNGC2notRuneallocation; nofinancingimport. AcquisitionaliasSalesforce/RuneLabs aggregatorclaim excluded asnamesake. Private histories remain partial."
+    },
+    {
+      "id": "568fde50-926b-4fb3-aa61-22a0665b8a7c",
+      "slug": "rzeszow-university-of-technology",
+      "name": "Rzeszów University of Technology",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Politechnika Rzeszowska\" dofinansowanie 2026 grant",
+        "site:prz.edu.pl \"dofinansowanie\" \"2025\" \"dron\"",
+        "site:prz.edu.pl \"dofinansowanie\" \"2026\" \"500 000\"",
+        "site:prz.edu.pl grant dofinansowanie \"2024\" \"projekt\"",
+        "site:prz.edu.pl \"grant\" \"2026\" \"dofinansowanie\"",
+        "site:prz.edu.pl \"500 tys\" samolotu 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://mts.prz.edu.pl/",
+          "published_date": null,
+          "disposition": "Opened university original exact own grant and agreement; total project budget/prize pool distinct."
+        },
+        {
+          "url": "https://podkarpackie.pl/index.php/edukacja/aktualnosci/podkarpackie-uczelnie-otrzymaly-wsparcie-na-rozwoj",
+          "published_date": null,
+          "disposition": "Original regional authority indexed candidate: PLN500k university training aircraft support with June23/2026 decision. Direct403; retained as follow-up, not imported from partial candidate."
+        }
+      ],
+      "evidence_note": "Exact Polish university own project support verified with grant authority and funding amount, distinct from project budget.",
+      "hold_note": "Many university project histories and earlier/latest ownallocations remainpartial. Regionalaircraftsupportoriginal403andotherconsortiumbudgetsheld; announcement/cashdatesofverifiedgrantunknown."
+    },
+    {
+      "id": "c6fe5da5-540f-4013-97d8-0e1131b57fd7",
+      "slug": "s-tech",
+      "name": "S-Tech",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"S-Tech\" drone jammer funding investment",
+        "\"S-Tech Ventures\" investment financing shareholders 2026",
+        "\"S-Tech\" \"Shephard\" CUAS",
+        "\"S-Tech Ventures\" financování investoři kapitál"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://s-techventures.com/en/news/",
+          "published_date": null,
+          "disposition": "Opened original current archive: own industrial group project/investor activity, not evidence of its own financing."
+        },
+        {
+          "url": "https://s-techventures.com/en/astravidya-secures-investment-from-s-tech-ventures-to-scale-ukrainian-motor-production/",
+          "published_date": "2026-06-04",
+          "disposition": "Opened original: S-Tech invests outward for20% of Astravidya; Astravidya financing not S-Tech fundraising."
+        },
+        {
+          "url": "https://s-techventures.com/",
+          "published_date": null,
+          "disposition": "Main original fetch timeout; original news/archive and transaction page recovered."
+        }
+      ],
+      "evidence_note": "Catalogue linkedreport AnnaRuzickova/Murmus identifiesCzechS-Techgroup; original industrial group transaction archive examined.",
+      "hold_note": "Outward Astravidya investment/portfolio operations not own financing. UK17399703namesake and Czechregisteredsharecapitalnotraisedcash; parent/projectsubsidiaryboundarieskept. Own earlier/latest financinghistory partial."
+    },
+    {
+      "id": "7f61fa76-a37c-40be-9f0e-7a4faa86e9aa",
+      "slug": "s2m-equipment",
+      "name": "S2M Equipment",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "S2M Equipment financement levée fonds capital investissement",
+        "site:s2m-equipment.fr investissement financement actualités 2026 capital",
+        "\"S2M-EQUIPMENT\" \"subvention\" prêt capital",
+        "\"S2M-EQUIPMENT\" \"investisseur\" OMAT financement"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.s2m-equipment.fr/mentions-legales/",
+          "disposition": "Opened original legal notice: SARL SIREN818764078 and EUR250k nominal capital, not raised cash."
+        },
+        {
+          "url": "https://www.s2m-equipment.fr/qui-sommes-nous/",
+          "disposition": "Opened original military refurbishment identity."
+        },
+        {
+          "url": "https://www.s2m-equipment.fr/nos-actualites/",
+          "disposition": "Opened original news archive; OMAT rename and trade shows do not prove financing."
+        },
+        {
+          "url": "https://entreprises.lefigaro.fr/s2m-equipment-37/entreprise-818764078",
+          "disposition": "Indexed legal-notice candidate EUR200k2023 increase by retained-earnings capitalisation, not cash; primary deed pending."
+        }
+      ],
+      "evidence_note": "Original-source identity and source-level dispositions recorded; unknown financing remains unknown.",
+      "hold_note": "No own external financing established in bounded original-site/local-language searches. EUR250k registered capital and retained-earnings increase are not cash rounds; S2M Equipment2 distinct identity. Private debt/grants unknown, not zero."
+    },
+    {
+      "id": "71104278-8e5a-445a-ab44-f0094916361e",
+      "slug": "sabena-aerospace-engineering",
+      "name": "Sabena Aerospace Engineering",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sabena Aerospace Engineering financing investment loan equity Sabena Engineering",
+        "site:sabena-engineering.com funding investment loan shareholders 2026",
+        "site:andera.eu Sabena Aerospace 2026 investment",
+        "\"Sabena Aerospace Engineering\" loan grant financing SFPIM 2020"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sabena-engineering.com/about-us/",
+          "disposition": "Opened original operating identity and Orizio context."
+        },
+        {
+          "url": "https://www.sabena-engineering.com/news/sabena-engineering-welcomes-andera-partners-alongside-sfpim-to-support-a-new-phase-of-development/",
+          "disposition": "Opened September22/2026 original: Andera entry at controlling Sabena Aerospace Holding, not operating-company round."
+        },
+        {
+          "url": "https://www.belgiancompetition.be/sites/default/files/content/download/files/20261109_Press_release_43_BCA.pdf",
+          "disposition": "Opened regulator November9/2026 release confirms October30 holding acquisition/joint control, not primary proceeds."
+        },
+        {
+          "url": "https://www.lydian.be/en/news-insights/lydian-assisted-andera-partners-acquisition-stake-sabena-aerospace-holding",
+          "disposition": "Opened transaction counsel confirms holding recipient."
+        },
+        {
+          "url": "https://sfpim.be/uploads/2022/05/sfpi_annualreport_2020_fr.pdf",
+          "disposition": "Indexed original annual report candidate; EUR58m holding/SABCA loan and in-kind transfers not attributed to operating issuer pending full allocation."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101114732",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": null
+        }
+      ],
+      "evidence_note": "Original-source identity and source-level dispositions recorded; unknown financing remains unknown.",
+      "hold_note": "Earlier capital/in-kind transfers and loans need original legal issuer reconciliation. Andera2026 holding acquisition excluded from operating issuer. ENSURE own grant allocation verified; other grants/history incomplete."
+    },
+    {
+      "id": "a178a9ce-6e7e-4051-8c04-8773e2c20dd4",
+      "slug": "saf-tehnika",
+      "name": "SAF Tehnika",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SAF Tehnika loan grant financing shares IPO",
+        "site:saftehnika.com grant borrowing loan 2026 annual report",
+        "site:saftehnika.com \"IPO\" \"2004\" funding",
+        "site:saftehnika.com financing credit grant government 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://view.news.eu.nasdaq.com/view?id=b1d88cf34992711c3610d1d02696fee9f&lang=en&src=listed",
+          "disposition": "Opened November2/2026 original audited-release summary; annual PDF attachment fetch failed; FY grant aggregate not an individual round."
+        },
+        {
+          "url": "https://saftehnika.com/news-posts/saf-tehnika-has-successfully-participated-at-the-gitex-2024",
+          "disposition": "Opened original export-assistance agreement disclosure; no amount or instrument breakdown imported."
+        },
+        {
+          "url": "https://saftehnika.com/news-posts/saf-tehnika-consolidated-interim-report-for-q4-and-12-months-of-financial-year-2023-24",
+          "disposition": "Opened August14/2024 original confirms same capacity and EUR26k use, not new facility."
+        },
+        {
+          "url": "https://saftehnika.com/company/investors-eng",
+          "disposition": "Opened original full investor archive including November11/2026 report and earliest2022 facility disclosure. Public trading/shareholdings not company cash."
+        }
+      ],
+      "evidence_note": "Original-source identity and source-level dispositions recorded; unknown financing remains unknown.",
+      "hold_note": "Earlier IPO primary/secondary split and individual grants unresolved. FY2025/2026 government-grant receipts are aggregate and not new single event; failed PDF fetch not absence. SAF acquiring AeroVictory/PLUFF is outgoing investment."
+    },
+    {
+      "id": "26bc9bd9-728a-40ae-861a-2a903be7f619",
+      "slug": "safran-electrical-and-power",
+      "name": "Safran Electrical & Power",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Safran Electrical Power funding grant financing 2026",
+        "site:safran-group.com \"Electrical & Power\" grant funding 2024 2025",
+        "site:safran-group.com \"Electrical & Power\" financement prêt subvention 2026",
+        "site:safran-group.com \"Electrical & Power\" \"grant\" \"2023\" \"2025\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://gtr.ukri.org/organisation/C9A5EDCA-79B5-4191-ACB9-584CFB187A67",
+          "disposition": "Indexed UK subsidiary grant candidate, not assigned to French recipient."
+        },
+        {
+          "url": "https://www.safran-group.com/pressroom?companies%5B%5D=612-safran-electrical-power",
+          "disposition": "Indexed company press archive confirms latest direct grant and commercial integration news; parent financing not assigned."
+        },
+        {
+          "url": "https://www.safran-group.com/pressroom/safran-awarded-innovation-fund-grant-engineus-pull-project-2026-05-29",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2026-05-29"
+        }
+      ],
+      "evidence_note": "Original-source identity and source-level dispositions recorded; unknown financing remains unknown.",
+      "hold_note": "Verified direct French issuer grant only; wider earlier EU projects and UK/Chatou affiliates require legal allocation. Parent Safran finance and supplier agreements excluded."
+    },
+    {
+      "id": "2f81cd36-be60-44c0-ae93-2ef9acfce093",
+      "slug": "saildrone",
+      "name": "Saildrone",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.saildrone.com funding 2026 2025 2021 2018 2016",
+        "site:saildrone.com \"funding\" \"2018\" \"2016\"",
+        "site:saildrone.com \"Series A\" \"2016\"",
+        "site:saildrone.com \"Series B\" \"2018\"",
+        "site:saildrone.com Lockheed Martin 50 million October 2025 investment",
+        "Saildrone EIFO funding equity 2025 Denmark 60 million"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.fenwick.com/insights/experience/fenwick-represents-saildrone-in-60m-funding",
+          "disposition": "Opened transaction counsel May13/2025 confirms financing."
+        },
+        {
+          "url": "https://washingtonharbour.com/news/saildrone-closes-60m-financing-to-bring-maritime-autonomy-to-europe/",
+          "disposition": "Opened actual investor release, source spelling reconciled."
+        },
+        {
+          "url": "https://www.saildrone.com/media-room/press-releases?0ee8940d_page=2",
+          "disposition": "Indexed original latest press archive2026; procurement/European production operations not financing."
+        },
+        {
+          "url": "https://d17th0s7i8wl11.cloudfront.net/Saildrone_Sacra_Disclosure_Page_04_06_2026_0cfee65e58.pdf",
+          "disposition": "Indexed third-party candidate $75mC-1/2024 and seed2015/2017 financing held for original verification; conflicting aggregate totals not imported."
+        },
+        {
+          "url": "https://www.saildrone.com/news/expanding-fleet-sailing-drones",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2016-09-05"
+        },
+        {
+          "url": "https://www.saildrone.com/eu-en/news/step-towards-quantified-planet-announcing-60-million-series-b-funding",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2018-05-15"
+        },
+        {
+          "url": "https://www.saildrone.com/media-room/press-releases/saildrone-announces-series-c-funding",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2021-10-18"
+        },
+        {
+          "url": "https://www.saildrone.com/media-room/press-releases/saildrone-closes-60m-funding-maritime-autonomy-europe",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2025-05-13"
+        },
+        {
+          "url": "https://via.ritzau.dk/pressemeddelelse/14403057/eifo-investerer-i-maritime-forsvarsdroner-og-traekker-selskab-til-danmark?lang=da&publisherId=13561323",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2025-05-13"
+        },
+        {
+          "url": "https://www.saildrone.com/media-room/press-releases/lockheed-martin-invests-usd-50m-saildrone-advance-unmanned-surface-vehicle-capabilities-us-navy",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2025-10-29"
+        },
+        {
+          "url": "https://www.saildrone.com/news/introducing-saildrone-spectre-next-generation-usv-anti-submarine-warfare-vls-strike",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2026-04-20"
+        }
+      ],
+      "evidence_note": "Original-source identity and source-level dispositions recorded; unknown financing remains unknown.",
+      "hold_note": "Verified five original financing disclosures; exact securities largely undisclosed. Seed2015, 2017 extension, 2024C-1 and grants require original confirmation. Procurement/European subsidiary establishment not own financing round."
+    },
+    {
+      "id": "6489b307-f368-47d7-9c89-b773431c3410",
+      "slug": "sandboxaq",
+      "name": "SandboxAQ",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-13",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:sandboxaq.com \"funding\" \"2025\" \"2026\"",
+        "site:sandboxaq.com \"500 million\" \"2023\"",
+        "site:sandboxaq.com \"2023\" \"500 million\" funding",
+        "site:sandboxaq.com/press \"2023\" \"500\"",
+        "SandboxAQ raises 500 million February 14 2023 Breyer official",
+        "SandboxAQ December 2024 April 2025 same Series E funding round 450",
+        "site:commerce.gov SandboxAQ June 17 2026 500 equity",
+        "site:chips.gov SandboxAQ 500 2026 equity",
+        "site:nist.gov SandboxAQ 2026 500 award equity",
+        "SandboxAQ 500 million CHIPS award June 2026 Commerce nonvoting equity"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sandboxaq.com/sandboxaq-insights/what-is-sandboxaq",
+          "disposition": "Opened March11/2026 official retrospective. $500mFebruary2023 SeriesD label and nine-figure2022 initial financing require contemporary announcement/overlap reconciliation; held to avoid cumulative double count."
+        },
+        {
+          "url": "https://www.sandboxaq.com/press-releases",
+          "disposition": "Opened latest original archive through October19/2026; operational partnerships not new rounds."
+        },
+        {
+          "url": "https://www.sandboxaq.com/press/sandboxaq-closes-450m-series-e-round-with-expanded-investor-base",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2025-04-04"
+        },
+        {
+          "url": "https://www.sandboxaq.com/press/sandboxaq-announces-more-than-300-million-of-funding-to-drive-next-era-of-ai",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2024-12-18"
+        },
+        {
+          "url": "https://www.sandboxaq.com/press/sandboxaq-us-department-of-commerce-500-million-chips-award",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2026-06-17"
+        },
+        {
+          "url": "https://www.nist.gov/news-events/news/2026/06/department-commerce-announces-definitive-agreement-sandboxaq-500-million",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2026-06-17"
+        },
+        {
+          "url": "https://www.skadden.com/about/news-and-rankings/news/2026/06/sandboxaq-announces-agreement-with-us-department-of-commerce",
+          "disposition": "Opened original/transaction-party body; verified imported event and explicit roles; limitations retained in event note.",
+          "published_date": "2026-06-22"
+        },
+        {
+          "url": "https://www.sandboxaq.com/post/ai-that-touches-the-real-world-why-quantitative-ai-is-the-future-of-industry",
+          "published_date": "2025-07-14",
+          "disposition": "Root opened original body; exact USD452m April primary raise is a refinement of same final SeriesE, separate USD95m secondary excluded."
+        }
+      ],
+      "evidence_note": "Original-source identity and source-level dispositions recorded; unknown financing remains unknown.",
+      "hold_note": "Verified one final SeriesE total and signed mixed CHIPS award. Earlier2022/2023 overlap and round participants unresolved; no cumulative aggregate double-count. No disbursement schedule/equity percentage inferred. Root reconciled later exact USD452m April primary disclosure; no duplicate final round. Secondary investor relationships not imported as company financing."
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "actual_search_queries_executed": 6,
+    "searches_checked": [
+      "site.liebherr.com 2026 aerospace Lindenberg LuFo Fördermittel financement Liebherr Aerospace SAS",
+      "site:liebherr.com 2026 Liebherr-Aerospace Lindenberg Förder",
+      "site:commerce.gov SandboxAQ 500 million 2026 June 17 equity CHIPS",
+      "site:sandboxaq.com 2026 CHIPS 500 million non-voting equity",
+      "Rune Pax 24 million Human Capital",
+      "Pax Chariot Rune venture capital"
+    ],
+    "followup_company_slug": "liebherr-aerospace",
+    "counted_as_new_identity": false,
+    "sources_checked": [
+      {
+        "url": "https://www.liebherr.com/en-us/n/liebherr-aerospace-lindenberg-gmbh-leading-innovation-in-lufo-vii-projects-218944-3782185",
+        "published_date": "2026-02-06",
+        "disposition": "Opened original US-localized news body; consortium leadership for SONRISA/NewFlAir, no beneficiary allocation or own payment established."
+      },
+      {
+        "url": "https://www.liebherr.com/de-at/n/aviation-research-projects-with-participation-of-liebherraAerospace-lindenberg-gmbh-238720-4445452",
+        "published_date": "2026-03-17",
+        "disposition": "Opened original FAUST/TiReGo notice; German GmbH programme partner, no company-specific amount or payment established."
+      }
+    ],
+    "disposition": "Retain existing published-landscape issuer/allocation hold. Consortium participation and lead status do not assign a consortium budget to this catalogue identity. No additional event or duplicate reviewed-company count.",
+    "additional_root_quality_checks": [
+      {
+        "company_slug": "sandboxaq",
+        "sources": [
+          "https://www.sandboxaq.com/press/sandboxaq-us-department-of-commerce-500-million-chips-award",
+          "https://www.sandboxaq.com/press/sandboxaq-closes-450m-series-e-round-with-expanded-investor-base",
+          "https://www.sandboxaq.com/post/ai-that-touches-the-real-world-why-quantitative-ai-is-the-future-of-industry"
+        ],
+        "finding": "Original June17 definitive award grants government minority nonvoting equity, payment not established. July14 original explicitly refines April primary raise to USD452m; separate USD95m employee secondary is not primary financing."
+      },
+      {
+        "company_slug": "rune-technologies",
+        "sources": [
+          "https://pax.vc/",
+          "https://www.chariotdefense.com/blog/out-of-stealth-chariots-8m-seed-round"
+        ],
+        "finding": "Original Pax portfolio links exact Rune runetech.co, Chariot and CX2. Existing pax source Chariot names Pax. Reuse existing pax profile for source-name Pax VC, no new duplicate or global profile merge."
+      },
+      {
+        "company_slug": "rsted",
+        "sources": [
+          "https://orsted.com/en/investors/debt/outstanding-bonds"
+        ],
+        "finding": "Root opened original table. Three ISIN amounts and legal parent issuer verified; TW holding is guarantor, not assigned as borrower. Nominal principal distinct from cash and issue dates distinct from public announcement."
+      }
+    ]
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting amount rejection and participant-source FK rejection using final canonical mapping and exact SandboxAQ refinement.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-13 23:53:42 UTC",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 24,
+      "mismatched_facts": 0,
+      "participant_matches": 61,
+      "source_matches": 38,
+      "relationship_matches": 1,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 0
+    },
+    "reviewed_corrections_required": false
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Fresh live baseline verifies all24 targets outside existing European map. No publication gates or geography changed. New directory profiles and historical backing publish under existing rules."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false,
+  "publication": {
+    "status": "pending",
+    "report": "research-agent/reports/2026-11-13-funding-landscape-seventy-second.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-seventy-second.json"
+  }
+}
