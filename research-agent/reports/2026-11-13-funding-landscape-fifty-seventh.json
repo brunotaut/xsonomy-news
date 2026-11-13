@@ -1,5 +1,5 @@
 {
-  "status": "imported_awaiting_publication",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T08:51:21.417Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-fifty-seventh.json",
@@ -39,8 +39,18 @@
     "db_investor_profiles": 2654,
     "db_source_reconciliation_companies": 900,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
-    "concurrency_speedup_claimed": false
+    "current_manifest_publication_verified": true,
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "new_profile_exact_name_duplicates": 0,
+    "generic_portfolio_entries_verified": 15,
+    "clickable_generic_company_links_verified": 15,
+    "active_minutes": 12.53,
+    "checked_identities_per_hour": 114.9,
+    "completed_reviews_per_hour": 38.3,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, original-source and canonical identity QA, current importer/schema checks, PostgreSQL tests, production rollback, atomic import, idempotency, exact fact/role/source/contribution and extension-parent audit, and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3353,
@@ -1047,6 +1057,12 @@
     },
     "extension_parent_audit": {
       "extension_parent_matches": 1
+    },
+    "live_generic_entry_verification": {
+      "entries": 15,
+      "source_urls": 15,
+      "clickable_company_links": 15,
+      "unlinked": []
     }
   },
   "publication_scope": {
@@ -1064,5 +1080,46 @@
     "Repository schedules",
     "No paid external API backfill"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T09:03:53.464Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T09:03:53.464Z",
+    "verified_at": "2026-11-13T09:03:53.464Z",
+    "catalogue_commit": "7eae5e58a17b7d4d3896c6ed7457f53917113676",
+    "source_commit": "802d8913eed6c386b4e3dccd27dfbe2da582c616",
+    "workflow_run": {
+      "id": 43397783455,
+      "head": "7eae5e58a17b7d4d3896c6ed7457f53917113676",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43397783455"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-fifty-seventh.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-fifty-seventh.json",
+    "generated_at": "2026-11-13T09:01:48.146Z",
+    "investor_generated_at": "2026-11-13T09:01:50.623Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2645,
+    "portfolio_relationships": 414,
+    "expected_profiles": 53,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "generic_profile_source_matches": 15,
+    "generic_portfolio_entries_verified": 15,
+    "clickable_company_links_verified": 15,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 55,
+    "manifest_generic_relationship_matches": 15,
+    "current_manifest_event_rows": 29,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 55,
+    "current_manifest_generic_relationship_matches": 15,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine pre-existing anonymous placeholders excluded: DB2654 versus live2645. All24 target identities remain outside European map. All53 referenced profiles,55 participant source URLs and15 generic portfolio entries with their original source URLs verified; all15 current entries have company links. Thirty-five new profiles published; curated-profile hash preserved. No publication gate changed."
+  }
 }
