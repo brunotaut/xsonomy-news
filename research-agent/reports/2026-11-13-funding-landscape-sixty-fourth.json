@@ -1,5 +1,5 @@
 {
-  "status": "imported_awaiting_publication",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-13",
   "started_at": "2026-11-13T15:48:30.526Z",
   "manifest": "research-agent/imports/funding-landscape-20261113-sixty-fourth.json",
@@ -36,13 +36,22 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 3577,
     "db_approved_events": 3564,
     "db_round_participations": 4678,
     "db_investor_profiles": 2816,
     "db_source_reconciliation_companies": 970,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 9,
+    "clickable_generic_company_links_verified": 9,
+    "active_minutes": 8.9,
+    "checked_identities_per_hour": 161.7,
+    "completed_reviews_per_hour": 27,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only research groups, source and canonical issuer/profile checks, current importer/schema validation, PostgreSQL tests, production rollback, atomic import, idempotency and exact fact/role/source/contribution/extension-parent audit, durable queue readback and verified live publication. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3566,
@@ -938,7 +947,14 @@
       "relationship_matches": 9,
       "missing_link_sources": 0,
       "extension_parent_matches": 1
-    }
+    },
+    "live_generic_entry_verification": {
+      "entries": 9,
+      "source_urls": 9,
+      "clickable_company_links": 9,
+      "unlinked": []
+    },
+    "initial_check_rejected_stale_dataset_while_build_running": true
   },
   "publication_scope": {
     "all_new_targets_outside_european_landscape": true,
@@ -955,5 +971,47 @@
     "Repository schedules",
     "No paid external API"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "completed_at": "2026-11-13T15:57:24.698Z",
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-13T15:57:24.698Z",
+    "verified_at": "2026-11-13T15:57:24.698Z",
+    "catalogue_commit": "d7cc6e0a546f954068781959de801324342b3938",
+    "source_commit": "a3cc6a0a8731d9f3b38d57996f9482b76f4c8878",
+    "workflow_run": {
+      "id": 43457520353,
+      "head": "d7cc6e0a546f954068781959de801324342b3938",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43457520353"
+    },
+    "report": "research-agent/reports/2026-11-13-funding-landscape-sixty-fourth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261113-sixty-fourth.json",
+    "generated_at": "2026-11-13T15:56:35.056Z",
+    "investor_generated_at": "2026-11-13T15:56:37.405Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 2807,
+    "portfolio_relationships": 461,
+    "expected_profiles": 27,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 9,
+    "generic_portfolio_entries_verified": 9,
+    "clickable_company_links_verified": 9,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 25,
+    "manifest_generic_relationship_matches": 9,
+    "current_manifest_event_rows": 11,
+    "current_manifest_live_matches": 0,
+    "current_manifest_participation_source_matches": 25,
+    "current_manifest_generic_relationship_matches": 9,
+    "catalogue_trigger_required": false,
+    "directory_filter_note": "Nine legacy anonymous profile placeholders excluded: DB2816 versus live2807. All24 targets remain outside European map. All27 referenced profiles,25 participation source URLs and9 generic portfolio entries/source URLs verified; all9 have clickable company links. Thirteen new profiles published. Existing company gates/classifications/geography retained."
+  }
 }
