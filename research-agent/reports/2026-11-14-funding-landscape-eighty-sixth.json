@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-14",
   "started_at": "2026-11-14T16:52:20.513Z",
   "manifest": "research-agent/imports/funding-landscape-20261114-eighty-sixth.json",
@@ -36,14 +36,23 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
     "reviewed_existing_fact_corrections": 0,
     "db_total_events": 4183,
     "db_approved_events": 4170,
     "db_round_participations": 5776,
     "db_investor_profiles": 3387,
-    "db_source_reconciliation_companies": 1204
+    "db_source_reconciliation_companies": 1204,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 4,
+    "clickable_generic_company_links_verified": 4,
+    "active_minutes": 15.72,
+    "checked_identities_per_hour": 91.6,
+    "completed_reviews_per_hour": 30.5,
+    "timing_scope": "Elapsed single writer lease through four disjoint read-only groups, exact issuer/vehicle/recipient/date/qualifier checks, early durable group checkpoint, current importer/schema verification, PostgreSQL tests, production rollback, one atomic import, fact/role/source/contribution audit, idempotency, durable readbacks, successful existing build and both fresh datasets. Eight bounded reviews completed;16 retain concrete holds. Concurrent durations not summed; no speedup or ETA claimed."
   },
   "production_before": {
     "events": 4155,
@@ -1314,7 +1323,13 @@
         "relationship_type": null,
         "source_url": null
       }
-    ]
+    ],
+    "live_generic_entry_verification": {
+      "entries": 4,
+      "source_urls": 4,
+      "clickable_company_links": 4,
+      "unlinked": []
+    }
   },
   "publication_scope": {
     "all_new_targets_outside_european_landscape": true,
@@ -1331,5 +1346,45 @@
     "Repository schedules",
     "No paid external API"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-14T17:08:04Z",
+    "verified_at": "2026-11-14T17:08:04Z",
+    "catalogue_commit": "735188e732e24d80be5c2b63223c09b3cf556519",
+    "source_commit": "1a1c978c7b9377c11fe87d9ed3bdbea17f77394a",
+    "workflow_run": {
+      "id": 43619182358,
+      "head": "735188e732e24d80be5c2b63223c09b3cf556519",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43619182358"
+    },
+    "report": "research-agent/reports/2026-11-14-funding-landscape-eighty-sixth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261114-eighty-sixth.json",
+    "generated_at": "2026-11-14T17:06:26.755Z",
+    "investor_generated_at": "2026-11-14T17:06:30.842Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3378,
+    "portfolio_relationships": 614,
+    "expected_profiles": 23,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 4,
+    "generic_portfolio_entries_verified": 4,
+    "clickable_company_links_verified": 4,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 24,
+    "manifest_generic_relationship_matches": 4,
+    "current_manifest_event_rows": 28,
+    "current_manifest_live_matches": 0,
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "Nine pre-existing anonymous profiles excluded: DB3387 versus live3378; three prior generic entries remain excluded. All24target slugs absent from European map before/after import under existing gates. All23referenced profiles,24participation source URLs and4generic entries/source URLs/clickable links verified;10new investor profiles published. European map567/1590/1390 unchanged.28new financing disclosures remain source-audited in DB under existing scope gates. Fourselecteddraft company identities and Sienna legacy association unchanged; no metadata/gate changes."
+  },
+  "completed_at": "2026-11-14T17:08:04Z"
 }
