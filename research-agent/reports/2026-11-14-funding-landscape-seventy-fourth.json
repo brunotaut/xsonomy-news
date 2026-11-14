@@ -1,0 +1,1173 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-14",
+  "started_at": "2026-11-14T01:53:08Z",
+  "manifest": "research-agent/imports/funding-landscape-20261114-seventy-fourth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 1,
+    "new_or_retained_partial": 23,
+    "new_approved_events": 19,
+    "new_round_participations": 59,
+    "new_source_rows": 25,
+    "new_generic_portfolio_relationships": 7,
+    "new_companies_with_events": 10,
+    "new_investor_profiles": 34,
+    "group_search_queries_executed": 120,
+    "root_additional_search_queries": 2,
+    "search_queries_executed": 122,
+    "per_company_search_ledger_entries": 121,
+    "source_ledger_entries": 106,
+    "company_database_identity_contexts_checked": 24,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 19,
+    "mismatched_facts": 0,
+    "participant_matches": 59,
+    "source_matches": 25,
+    "relationship_matches": 7,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 1,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 3835,
+    "approved": 3822,
+    "links": 5243,
+    "sources": 5286,
+    "profiles": 3087,
+    "covered": 1073,
+    "relationships": 493,
+    "preserved_profiles_hash": "4aeebc60ccc026b1b3032d39f3301172"
+  },
+  "production_after": {
+    "events": 3854,
+    "approved": 3841,
+    "links": 5302,
+    "sources": 5311,
+    "profiles": 3121,
+    "covered": 1083,
+    "relationships": 500,
+    "preserved_profiles_hash": "4aeebc60ccc026b1b3032d39f3301172"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1146,
+    "source_review_partial": 931,
+    "queued": 487
+  },
+  "per_company": [
+    {
+      "id": "81e673e7-279f-4e3c-8788-e021f7354ac8",
+      "slug": "seaowl-group",
+      "name": "SeaOwl Group",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 3,
+      "searches_checked": [
+        "Seaowl Group financement levée fonds Eurazeo Societe Generale 2026 2024",
+        "SeaOwl Butler financement acquisition capital",
+        "site:seaowlgroup.com capital investissement 2026 2025 2024 financement",
+        "SeaOwl Cathay Capital investment 2013 2016 original"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.cathaycapital.com/fr/cathay-capital-investit-dans-seaowl/",
+          "published_date": "2015-06-26",
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://seaowlgroup.com/press-release-butler-eng/",
+          "published_date": "2022-01-18",
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://www.pappers.fr/entreprise/seaowl-844755504",
+          "disposition": "Registry secondary identifies legal restructurings; balances/capital stock not new financing."
+        },
+        {
+          "url": "https://fr.linkedin.com/posts/seaowl_le-conseil-dadministration-de-seaowl-a-valid%C3%A9-activity-7438187360212811776-7d9i",
+          "disposition": "Indexed original group post near10m subsidiaryfactorycapex; no attributable incoming groupround."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, original issuer and investor/official searches executed. Exact identity and original currency/date/instrument distinctions retained; unknown is not zero.",
+      "hold_note": "Historicalstakepurchasebacking known, primarycapital/instrumentamountunresolved. LegalSeaOwlholding/SeaOwlExpansion/TechnologySolutionssubsidiarycapitaland2026capex not assigned as groupcash; wider historypartial."
+    },
+    {
+      "id": "045f346c-097e-4664-9c78-b5c96c72ba24",
+      "slug": "seasats",
+      "name": "Seasats",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Seasats funding investment L3Harris 2026 2025 series",
+        "site:seasats.com funding 2025 10 million L3Harris investment",
+        "site:l3harris.com Seasats strategic investment 2022",
+        "Seasats Secures Funding 2025 EIN Presswire",
+        "Seasats Closes Pre-Seed Investment Round Thorium"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.einpresswire.com/article/567270770/seasats-closes-pre-seed-investment-round",
+          "published_date": "2022-04-06",
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/l3harris-invests-in-seasats-to-accelerate-delivery-of-new-autonomous-maritime",
+          "published_date": "2022-10-19",
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://www.einpresswire.com/article/782917139/seasats-secures-funding-to-accelerate-growth-of-autonomous-maritime-solutions",
+          "published_date": "2025-02-05",
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/seasats-raises-20-million-series-a-to-scale-production-of-small-uncrewed-surface-vehicles-302688401.html",
+          "published_date": "2026-02-17",
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://www.l3harris.com/newsroom/press-release/2024/06/l3harris-and-startup-seasats-accomplish-milestone-proving-resilient",
+          "published_date": "2024-06-18",
+          "disposition": "Original indexed body confirms2022investment only;2024demonstrationnotnewround."
+        },
+        {
+          "url": "https://www.l3harris.com/newsroom/press-release/2022/10/l3harris-invests-seasats-accelerate-delivery-new-autonomous-maritime",
+          "disposition": "Directoriginalfailed; Nasdaqsyndicatedoriginalbodyopened instead."
+        },
+        {
+          "url": "https://www.prnewswire.com/news/seasats/",
+          "disposition": "Original release archive APFIT24m and89mSBIRPhase3IDIQ are procurement; not grants/equity."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, original issuer and investor/official searches executed. Exact identity and original currency/date/instrument distinctions retained; unknown is not zero.",
+      "hold_note": "2022strategicamount andexactsecuritiesunknown. Crumpton sourceidentity unresolved; APFIT/SBIR procurement excluded. Anonymousangels/aggregate40m not inventedrounds; widerhistorypartial."
+    },
+    {
+      "id": "f3417b47-9586-4a8e-8e37-539a1cb63fa8",
+      "slug": "seneca",
+      "name": "Seneca",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Seneca firefighting drones funding seed investors 2026",
+        "site:seneca.com funding seed Series A Caffeinated Convective 2026",
+        "site:dcvc.com Seneca 60 million October 2025",
+        "Seneca Amor Fati Industries financing latest 2026 investors funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://seneca.com/news/seneca-launches/",
+          "published_date": "2025-10-20",
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/seneca-launches-with-60-million-to-equip-firefighters-utilities-and-communities-with-advanced-wildfire-defense-technology-302589441.html",
+          "published_date": "2025-10-20",
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://www.wsj.com/articles/startup-aims-to-fight-wildfires-with-water-cannons-on-drones-16f26dbe",
+          "published_date": "2025-10-20",
+          "disposition": "Search excerpt secondary sayscombinedseedandA, sourceconflictretained; no component amounts invented."
+        },
+        {
+          "url": "https://www.dcvc.com/companies/seneca/",
+          "disposition": "Original portfolio firstinvestment2025 exactfirefightingcompany; not newamount."
+        },
+        {
+          "url": "https://seneca.com/",
+          "disposition": "Original ownfooterAmorFatiIndustriesInc andcurrentactivity corroboratesexactissuer."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, original issuer and investor/official searches executed. Exact identity and original currency/date/instrument distinctions retained; unknown is not zero.",
+      "hold_note": "Primary60mfinancingdisclosure retained; secondarycombinedseed/A history unresolved, no decomposedoradditionalround. TransitionVCcanonicalvehicle held. Procurement/partnershipsnotfunding; cashclosedate/securityunknown."
+    },
+    {
+      "id": "bc9b00b0-5797-4fb5-8006-a5fb8479095b",
+      "slug": "sener",
+      "name": "Sener",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sener financing loan EIB 2026 2025 2024",
+        "site:group.sener financiación préstamo 2026 2025 2024",
+        "Sener préstamo 2025 2026 BBVA Santander financiación",
+        "site:group.sener 110 2017 financiación",
+        "SENER financiación préstamo EIB 2026 2025 site:group.sener",
+        "site:group.sener financiación 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.eib.org/en/press/all/2017-159-eib-provides-eur-110m-in-juncker-plan-financing-for-sener-to-support-its-r-d-programme.htm",
+          "published_date": "2017-06-22",
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://www.group.sener/noticias/sener-coordina-sgan-next/",
+          "published_date": "2026-02-24",
+          "disposition": "Indexed original EUgrant101082611 participation; exactSenerlegalrecipientallocationunreviewed, consortiumfundingnotassigned."
+        },
+        {
+          "url": "https://www.group.sener/noticias/sener-gana-el-premio-de-la-ce-para-innovaciones-en-acceso-al-espacio/",
+          "disposition": "Indexedoriginal2026NAVITERM prize; ownamount/instrumentunverifiedheld."
+        },
+        {
+          "url": "https://www.group.sener/proyecto/plataforma-inteligente-hospital-cognitivo-hospital-henares-madrid/",
+          "disposition": "Originalindexedconsortiumfunding2024–26, exactownallocationnotverified."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, original issuer and investor/official searches executed. Exact identity and original currency/date/instrument distinctions retained; unknown is not zero.",
+      "hold_note": "2017signedEIBcommitment confirmed, draw/paymentunknown. Grouplegalrestructurings, ownEU/CDTInationalawardsandlatestNAVITERMprize ownallocation/historypartial. Customers/consortiumfinance andoutgoinginvestmentsexcluded."
+    },
+    {
+      "id": "90b35d76-6086-4f6c-97ae-15066d1e258c",
+      "slug": "sensenet",
+      "name": "SenseNet",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SenseNet wildfire funding investment 2026 2025",
+        "site:sensenet.ca funding 14 million 2025 Stormbreaker",
+        "site:sensenet.ca 14 2025",
+        "SenseNet Stormbreaker Ventures 2025 Series A official",
+        "SenseNet Series A site:sensenet.ca",
+        "SenseNet Series A site:stormbreaker.vc",
+        "SenseNet 14 million Stormbreaker press release",
+        "site:sensenet.ai Series A 14",
+        "site:sensenet.ai seed funding 2023"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://search.open.canada.ca/grants/record/nrc-cnrc,172-2025-2026-Q2-1033645,current",
+          "published_date": null,
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://sensenet.ai/press/",
+          "disposition": "Opened current issuerpressdirectorylinks AIJournal14mfundingreportOctober22/2025; doesnotestablish originalcurrency or security."
+        },
+        {
+          "url": "https://aijourn.com/sensenet-raises-14m-to-spot-wildfires-before-theyre-visible-with-ai/",
+          "published_date": "2025-10-22",
+          "disposition": "Opened issuer-linked report14mSeriesA andinvestors; originalcurrency ambiguousagainstCanada/USreporting andCB10mconversion, heldstructuredamount."
+        },
+        {
+          "url": "https://www.lobbyistsregistrar.bc.ca/app/secure/orl/lrs/do/clntSmmry?clientOrgCorpNumber=6277&sMdKy=1770120799222&wbdisable=true",
+          "disposition": "Indexed original100kIRAPannualsupport couldoverlap other agreements; not duplicate90kaward."
+        },
+        {
+          "url": "https://search.open.canada.ca/grants/?search_text=%22Sensenet+Inc%22",
+          "disposition": "Officialawardindex furtheragreements; recipient-levelhistorynotcompleted."
+        },
+        {
+          "url": "https://www.sensenet.ca/",
+          "disposition": "Opened original redirects sensenet.ai, exactwildfireAIcompany; no HungarianCMSnamesakefunding."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, original issuer and investor/official searches executed. Exact identity and original currency/date/instrument distinctions retained; unknown is not zero.",
+      "hold_note": "NRC90kexactcontribution confirmed, repayment/disbursementunknown. 14mSeriesA originalcurrency/security andearlier2.75mseed not verified; cannot inferzero or convertCAD/USD. OtherNRCagreements/100kannualsupport overlapheld."
+    },
+    {
+      "id": "cc24861e-485d-4cb6-a406-1a3d3862a20b",
+      "slug": "sensorama-lab",
+      "name": "Sensorama Lab",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sensorama Lab investment funding grant Ukraine",
+        "site:sensoramalab.com grant funding SENSOR 2026 2024",
+        "Sensorama 2024 site:cordis.europa.eu",
+        "Sensorama Seeds of Bravery funding",
+        "Sensorama site:cordis.europa.eu/project/id Net EU"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://cordis.europa.eu/project/id/101312937",
+          "published_date": null,
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://seedsofbravery.eu/news/38-startups-will-receive-e2224531-25-in-funding-from-the-seeds-of-bravery-consortium/",
+          "published_date": "2025-03-10",
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://vr.sensoramalab.com/case-studies/speecha-xr-training-app-for-realistic-conversations",
+          "published_date": "2026-08-05",
+          "disposition": "Opened original issuer/investor/official body; supported subset and exact source-specific roles retained."
+        },
+        {
+          "url": "https://sensoramalab.com/",
+          "disposition": "Opened original KyivXRstudio/academy exactidentity."
+        },
+        {
+          "url": "https://vctr.media/en/transforming-professional-training-the-power-of-immersive-scenarios-how-ukrainian-startup-sensorama-lab-works-285152/",
+          "disposition": "Indexed founderinterview160kgrants/400kpersonalhistoricaggregate and60kSeedsclaim held, not artificialsingleevent."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101297303",
+          "disposition": "SearchcandidateSENSORAMAproject isnotautomaticallySensoramaLabrecipient; excludedpendingidentity."
+        },
+        {
+          "url": "https://eic.ec.europa.eu/document/download/5edf3595-66bf-4f4d-97b8-919a21244ab6_en?filename=EIC+UATech+2025+-+selected+comapnies.pdf",
+          "disposition": "Officialindexedlist namesSensoramaSENSOR; CORDISawardownallocationusedinstead ofprogramme maxima."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, original issuer and investor/official searches executed. Exact identity and original currency/date/instrument distinctions retained; unknown is not zero.",
+      "hold_note": "OwnSENSOR500kallocationconfirmed andSeedsfundingknown withunknowncomponents. Exact2025Seedsawardamount60kclaimedinterview notofficiallyreconciled. Founder400k/160kgrantsaggregatesnotrounds; otherbeneficiaryprojects/historypartial."
+    },
+    {
+      "id": "bf695e22-9b91-46a4-ad2a-cacad9a870aa",
+      "slug": "sentera",
+      "name": "Sentera",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sentera funding Series A B C 2020 2021 2025 investor press release",
+        "site:sentera.com funding 2016 8.5 million 2025 Deere acquisition",
+        "site:sentera.com funding investment 2026 2025",
+        "\"Sentera\" \"2016\" \"8.5\" funding investor",
+        "site:sentera.com \"2016\" \"funding\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/sentera-announces-series-a-funding-300707562.html",
+          "published_date": "2018-09-05",
+          "disposition": "Opened original additional14m,threeco-leads; not16.5m aggregator."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/sentera-secures-25-million-series-c-funding-to-accelerate-the-delivery-of-ai-powered-decision-support-for-food-and-agriculture-301309088.html",
+          "published_date": "2021-06-09",
+          "disposition": "Opened original25m and full7participants."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/sentera-announces-series-c-funding-expansion-301812294.html",
+          "published_date": "2023-05-02",
+          "disposition": "Opened original unknownamount sameSeriesCextension."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/john-deere-acquires-sentera-to-integrate-aerial-field-scouting-302463458.html",
+          "published_date": "2025-05-23",
+          "disposition": "Opened buyer original acquisition, no own financing proceeds."
+        },
+        {
+          "url": "https://sentera.com/resources/news/",
+          "published_date": null,
+          "disposition": "Opened current original archive, products/earlyaccess not funding."
+        },
+        {
+          "url": "https://www.startribune.com/ag-drone-tech-firm-sentera-completes-8-5-million-capital-round/382233561",
+          "published_date": null,
+          "disposition": "Indexed earlier2016claim8.5m; primary transaction original not established, held."
+        }
+      ],
+      "evidence_note": "Original issuer/transaction-party and dated financial-source subset checked. Unknown public/private details are not zero funding.",
+      "hold_note": "Earlier2016original8.5m/2020loan/2022incremental claim needs primary reconciliation. Exactsecurity undisclosed. Acquisition seller proceeds excluded; earlier/latest complete history partial."
+    },
+    {
+      "id": "e4b90429-c955-4a96-99e3-ebbdb977c845",
+      "slug": "sentient-vision-systems",
+      "name": "Sentient Vision Systems",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sentient Vision Systems funding grant investment acquisition Shield AI 2024",
+        "site:industry.gov.au \"Sentient\" \"2024\" grant",
+        "site:sentientvision.com grant investment 2024 2026",
+        "\"Sentient\" \"2.1 million\" grant government",
+        "\"Sentient\" \"Defence Global Competitiveness\" 2024 150000",
+        "\"Sentient Vision\" site:minister.industry.gov.au grant manufacturing",
+        "site:minister.defence.gov.au \"Sentient\" \"108,000\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.minister.defence.gov.au/media-releases/2024-04-16/millions-grants-help-industry-deliver-priority-capabilities-defence",
+          "published_date": "2024-04-16",
+          "disposition": "Opened original body/find exact108k award, announced not paid."
+        },
+        {
+          "url": "https://www.industry.gov.au/sites/default/files/2019-murray-senate-order.pdf",
+          "published_date": null,
+          "disposition": "Opened original extracted table250800GSTinclusive; grantstartJuly15/2014 not announcement. Visual row not audited; held."
+        },
+        {
+          "url": "https://www.industry.gov.au/sites/default/files/2025-02/senate-order-13-2024-calendar-year.pdf",
+          "published_date": null,
+          "disposition": "Indexed original2327905.90 inclusive candidate versus2.1m news; GST/version reconciliation and PDFvisual remain held."
+        },
+        {
+          "url": "https://shield.ai/shield-ai-to-acquire-australia-based-sentient-vision-systems-and-establish-shield-ai-australia/",
+          "published_date": null,
+          "disposition": "Original indexed acquisition release: seller transaction, no new financing; direct body not opened."
+        }
+      ],
+      "evidence_note": "Original issuer/transaction-party and dated financial-source subset checked. Unknown public/private details are not zero funding.",
+      "hold_note": "2014GSTinclusivegrant and2022MMI2.1m versus2327905.90inclusive candidate held pending original visual/version reconciliation; own private history incomplete. ShieldAIparentfunding not Sentient proceeds."
+    },
+    {
+      "id": "503916e2-aa0a-4345-b178-6d1eb467f705",
+      "slug": "sentinel-2",
+      "name": "Sentinel",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Sentinel\" \"Airlogix\" 2026 investor",
+        "\"Sentinel\" \"Airlogix\" investment funding capital round",
+        "\"Sentinel\" \"Ondas\" investment company",
+        "\"Sentinel Research and Development\" investor seed venture funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://dronexl.co/2026/10/11/airlogix-100-million-2-billion-valuation-ukraine-drone-maker/",
+          "published_date": "2026-10-11",
+          "disposition": "Opened exact catalogue provenance; Hamilton Sentinel is CanadianR&D partner, Airlogix100m is sought not Sentinel raise."
+        },
+        {
+          "url": "https://www.canada.ca/en/department-national-defence/news/2026/05/canada-and-ukraine-sign-arrangement-on-drone-production.html",
+          "published_date": "2026-05-29",
+          "disposition": "Opened original exactSentinelR&D partnership, no own funding allocation."
+        },
+        {
+          "url": "https://www.ondas.com/our-business-units",
+          "published_date": null,
+          "disposition": "Opened original OndasSentinel businessunit, different issuer/provenance; not combined with Canadianbrand."
+        }
+      ],
+      "evidence_note": "Original issuer/transaction-party and dated financial-source subset checked. Unknown public/private details are not zero funding.",
+      "hold_note": "Exact Airlogix provenance maps to Canadian SentinelR&D, while DZYNE/Ondas articles attached to same genericrecord are conflicting namesake provenance. No automatic metadata merge or duplicate events. Suppliercontracts/JVsupport not own round."
+    },
+    {
+      "id": "af0ed9c9-28b3-44c2-8627-9e1bae26673e",
+      "slug": "sentinel-research-and-development",
+      "name": "Sentinel Research and Development",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Sentinel Research\" funding seed investment 2026 Kath Intson",
+        "site:sentinelrd.com funding investment grants",
+        "\"Sentinel Research and Development\" investor seed venture funding",
+        "\"Sentinel Research and Development\" \"2026\" \"investment\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sentinelrd.com/",
+          "published_date": null,
+          "disposition": "Opened exact own modularUAVcompany, Ontariofacility; USmetadata preserved."
+        },
+        {
+          "url": "https://airlogix.io/en/news/airlogix-and-sentinel-rd-scaling-uav-production-for-ukraine",
+          "published_date": "2026-05-29",
+          "disposition": "Opened transactionparty production cooperation, no own capital amount."
+        },
+        {
+          "url": "https://www.canada.ca/en/department-national-defence/news/2026/05/canada-and-ukraine-sign-arrangement-on-drone-production.html",
+          "published_date": "2026-05-29",
+          "disposition": "Opened government exact partner identity. Government support/supply arrangement not recipient-specific equity/grant."
+        }
+      ],
+      "evidence_note": "Original issuer/transaction-party and dated financial-source subset checked. Unknown public/private details are not zero funding.",
+      "hold_note": "Canadian ownsite/government/partner identity overrides no metadata; existingUScountry untouched. GovernmentUkraineassistance and JVmanufacturing contract not own grantallocation. Financing/privatehistory partial; no assumedzero."
+    },
+    {
+      "id": "97240efd-cfbd-4799-a84a-21600d0b8252",
+      "slug": "septier-communication",
+      "name": "Septier Communication",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Septier\" funding investment investors",
+        "site:septier.com investors funding company",
+        "site:septier.com grant BIRD Telcordia funding",
+        "\"Septier\" \"BIRD\" \"Telcordia\"",
+        "\"ספטייר\" \"השקעה\" מימון"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.septier.com/company",
+          "published_date": null,
+          "disposition": "Opened original Israeli1999SeptierCommunicationLtd identity/currentoperatingmodel."
+        },
+        {
+          "url": "https://www.septier.com/",
+          "published_date": null,
+          "disposition": "Opened original product/company page; sales not funding."
+        },
+        {
+          "url": "https://en.globes.co.il/en/article-848166",
+          "published_date": null,
+          "disposition": "Indexed2004USD1.6m cumulativeprivatebacking claim, original event breakdown not established."
+        },
+        {
+          "url": "https://www.ivc-online.com/Google-Card?id=22A6DB50-207A-E111-AC59-00155D32A403",
+          "published_date": null,
+          "disposition": "Indexed BIRD2006USD0.5mcooperationwithTelcordia candidate; original beneficiaryallocation/instrumentterms held. Zero-fundingaggregatorclaims rejected."
+        }
+      ],
+      "evidence_note": "Original issuer/transaction-party and dated financial-source subset checked. Unknown public/private details are not zero funding.",
+      "hold_note": "Earlier1.6mcumulativeprivatefinancing andBIRD500kcooperation only secondary/indexed candidates. No source-supported dated round amount or owngrant allocation. Unknownnotzero; currentprivatehistorypartial."
+    },
+    {
+      "id": "f8c0b6e1-c764-4bba-8dfc-00dc0c2bf63d",
+      "slug": "sesai",
+      "name": "SES.AI",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:ses.ai \"funding\" \"2021\" \"139\"",
+        "site:ses.ai 2026 financing PIPE equity 2022 merger proceeds",
+        "site:ses.ai \"Series C\" funding 2018 34",
+        "\"SES\" \"Completes\" \"139\" \"Honda\" 2021 funding",
+        "\"SES\" \"139M\" \"GM\" \"SK\" 2021 funding",
+        "site:ses.ai \"2018\" \"funding\" \"34\"",
+        "site:ses.ai 2026 \"at-the-market\" \"November\" shares sold",
+        "site:ses.ai \"November\" \"2026\" \"shares\" \"ATM\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/ses-completes-series-d-funding-round-led-by-general-motors-301270624.html",
+          "published_date": "2021-04-19",
+          "disposition": "Opened original139mroundedannouncementleadandsyndicate."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1819142/000119312522103066/d297913ds1a.htm",
+          "published_date": null,
+          "disposition": "Opened original and findprose exact138.5m,50mMayequity, explicit contributionvehicles; no table arithmetic."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1819142/000119312522031167/d294425dex991.htm",
+          "published_date": "2022-02-03",
+          "disposition": "Opened original commonPIPEclosingandselectedparticipants."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1819142/000155837022009020/ses-20220516x424b3.htm",
+          "published_date": null,
+          "disposition": "Opened original/find actual274.5mPIPEgross vs51.6mtrust; no duplicate326.1maggregate."
+        },
+        {
+          "url": "https://archive.ses.ai/news/",
+          "published_date": null,
+          "disposition": "Opened predecessor original archive corroborates publicApril19SeriesD; linked originalPDF404 not negative evidence."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1819142/000181914226000028/ses-20260424xs3.htm",
+          "published_date": null,
+          "disposition": "Indexed original300mshelf/150mATMcapacity, not actualsales."
+        },
+        {
+          "url": "https://investors.ses.ai/financials/sec-filings/default.aspx",
+          "published_date": null,
+          "disposition": "Fresh indexed filing directory throughOctober2026; latest full actualsales reconciliation unresolved."
+        }
+      ],
+      "evidence_note": "Original issuer/transaction-party and dated financial-source subset checked. Unknown public/private details are not zero funding.",
+      "hold_note": "EarlierA/B/C/Cplus issuance originals, completePIPEsubscriber fund identities, SPACtrust/netcost differences, PPPgrantforgiveness and2026ATMactualsales remainpartial. Shelf/ATMcapacity not soldshares. July2021Hyundai100maggregate is not newevent; May50m pluslaterPIPE distinct."
+    },
+    {
+      "id": "3c4ce899-f249-45af-b6b5-50c4c12a0043",
+      "slug": "sesame-solar",
+      "name": "Sesame Solar",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 4,
+      "searches_checked": [
+        "Sesame Solar funding investment seed 2026 2025 investors",
+        "Sesame Solar grant 2026 Michigan",
+        "Sesame Solar Verizon prize 2022",
+        "site:sesame.solar funding 2021 2026",
+        "site:sesame.solar investment seed",
+        "site:sesame.solar Morgan Stanley investment",
+        "site:sesame.solar Michigan grant 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2023/10/04/2754642/0/en/Verizon-Announces-Winners-of-the-Second-Climate-Resilience-Prize.html",
+          "published_date": "2023-10-04",
+          "disposition": "Opened sponsor original; explicit USD125000 each, award/payment distinction retained."
+        },
+        {
+          "url": "https://www.sesame.solar/blog/sesame-solar-named-verizon-climate-resilience-prize-winner",
+          "published_date": "2023-10-04",
+          "disposition": "Opened issuer original confirms prize; collaborator support not equity."
+        },
+        {
+          "url": "https://www.michigan.gov/leo/news/2026/09/17/michigan-awards-2m-to-advance-mobility-and-manufacturing-technologies-through-grant-program",
+          "published_date": "2026-09-17",
+          "disposition": "Opened state body and recipient section; programme total excluded."
+        },
+        {
+          "url": "https://www.sesame.solar/leadership",
+          "published_date": null,
+          "disposition": "Opened original Our Investors list and named logo alt text; four generic backers."
+        },
+        {
+          "url": "https://www.sesame.solar/blog/decarbonizing-disaster-response",
+          "published_date": "2024-01-15",
+          "disposition": "Opened issuer-hosted article repeats financial backers; no new dated round."
+        },
+        {
+          "url": "https://www.sesame.solar/blog",
+          "published_date": null,
+          "disposition": "Opened latest issuer news; Sourcewell pilot selection not automatic cash. Templated dates rejected."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/sesame-solar/financials",
+          "published_date": null,
+          "disposition": "Indexed aggregator early2021seed/valuation claim candidate only; no original terms established."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer and transaction-party sources checked; exact supported subset retained. Unknown is not zero.",
+      "hold_note": "Earlier2021/2022seed and later aggregateUSD3.5m claims require original granular terms. GoogleforStartups10k/non-equity assistance candidate not original verified. Current backing list does not establish round cheques; prize instrument/payment and Michigan ownamount unknown."
+    },
+    {
+      "id": "9710637d-8f17-4cad-a47a-a9214112b63a",
+      "slug": "setec",
+      "name": "SETEC",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:setec.fr financement capital actionnaires 2026",
+        "site:setec.fr financement emprunt capital",
+        "setec groupe levée fonds prêt 2024 2025 2026",
+        "site:setec.fr 2026 financement capital"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://als.setec.fr/qui-sommes-nous/notre-groupe",
+          "published_date": null,
+          "disposition": "Opened group original: management/engineer ownership, revenue not round."
+        },
+        {
+          "url": "https://opency.setec.fr/mentions-legales/",
+          "published_date": null,
+          "disposition": "Opened exact affiliate legal notice; EUR11m registered capital not an external financing event."
+        },
+        {
+          "url": "https://fondation.setec.fr/",
+          "published_date": null,
+          "disposition": "Indexed original foundation budgets are outward philanthropy, not group capital."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer and transaction-party sources checked; exact supported subset retained. Unknown is not zero.",
+      "hold_note": "Generic French group comprises many legal affiliates; registeredcapital and bank balances not discrete financing. Exact group borrower/recipient and earlier/current original financing disclosures incomplete. Omanconsortium business and foundation outgoinggrants excluded."
+    },
+    {
+      "id": "c5cbb0e4-1185-41d8-ac22-46db4da8e61f",
+      "slug": "sgs-cstc",
+      "name": "SGS-CSTC",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SGS CSTC financing capital shareholders investment 2026",
+        "SGS-CSTC 融资 投资 2026 2025",
+        "SGS-CSTC site:sgs.com joint venture",
+        "SGS-CSTC 2026 grant funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sgsgroup.com.cn/en-cn/our-company/about-sgs/sgs-in-china",
+          "published_date": null,
+          "disposition": "Opened original distinguishes legally independent entities and SGS-CSTC1991 joint venture."
+        },
+        {
+          "url": "https://www.sgs.com/en-sg/news/2019/04/partnership-to-provide-one-stop-solutions-for-intelligent-connected-vehicles",
+          "published_date": null,
+          "disposition": "Indexed issuer original; Allion JV differs from1991CSTC and no own financing amount."
+        },
+        {
+          "url": "https://pitchhub.36kr.com/project/2182962625468809",
+          "published_date": null,
+          "disposition": "Indexed aggregator profile; empty financing fields not zero funding. Shanghai/Suzhou legal entities separate."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer and transaction-party sources checked; exact supported subset retained. Unknown is not zero.",
+      "hold_note": "Parent SGS SA bonds/shareholders not SGS-CSTC financing. Exact JV versus Shanghai/Suzhou subsidiaries, registeredcapital versus new paidcapital remain distinct. No recipient-specific ownloan/grant original established; not zero."
+    },
+    {
+      "id": "58457b12-9ec2-49d1-8377-0f3f326fbe7f",
+      "slug": "sgs-north-america",
+      "name": "SGS North America",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SGS North America Inc financing loan capital grant",
+        "SGS North America grant site:sd.gov",
+        "SGS North America site:sgs.com loan",
+        "SGS North America 2026 funding capital"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://env.sgs.com/document-library/",
+          "published_date": null,
+          "disposition": "Opened original current2026 tax forms and laboratory documents; exact entity context, no incoming round."
+        },
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_140L3925P0086_1422_-NONE-_-NONE-",
+          "published_date": null,
+          "disposition": "Indexed official CONTRACT award, not equity/grant."
+        },
+        {
+          "url": "https://subsidytracker.goodjobsfirst.org/parent/sgs-sa",
+          "published_date": null,
+          "disposition": "Indexed2012SouthDakotaUSD10kgrant candidate; original award and exact terms not obtained, held."
+        },
+        {
+          "url": "https://www.sgs.com/en-us/service-groups/transaction-and-financing",
+          "published_date": null,
+          "disposition": "Indexed original describes customer services; not SGS borrowing."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer and transaction-party sources checked; exact supported subset retained. Unknown is not zero.",
+      "hold_note": "2012SouthDakota10kgrant awaits original award, date and exact recipient/instrument. Current federal/local laboratory payments are procurement, FreePumpLoan is equipmentloan to customers, parentfinance and other SGS subsidiaries excluded. History partial."
+    },
+    {
+      "id": "d567445c-514c-4c20-9e66-1c07fe781aa1",
+      "slug": "shadowfaxuas",
+      "name": "ShadowfaxUAS",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "ShadowfaxUAS funding investment grant South Africa 2026",
+        "ShadowfaxUAS funding investment",
+        "site:shadowfaxuas.com company investment funding",
+        "ShadowfaxUAS seed investors grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.shadowfaxuas.com/",
+          "published_date": null,
+          "disposition": "Opened company original SF45 and SHADOWFAX UAS PTY LTD footer."
+        },
+        {
+          "url": "https://www.shadowfaxuas.com/about",
+          "published_date": null,
+          "disposition": "Opened exact CapeTown manufacturer and NCACC exporter identity; no public round terms."
+        },
+        {
+          "url": "https://www.shadowfaxuas.com/privacy-policy",
+          "published_date": null,
+          "disposition": "Indexed legal boilerplate about possible financing is not actual transaction evidence."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer and transaction-party sources checked; exact supported subset retained. Unknown is not zero.",
+      "hold_note": "Scoped no_public_round_found after bounded original-site and dated financing searches. Undisclosed private capital remains unknown, not zero; Indian Shadowfax logistics rounds and forecast articles not attributable."
+    },
+    {
+      "id": "5583563d-87b8-4f2a-9027-4c4f7a9e10b5",
+      "slug": "shahed-aviation-industries-hesa",
+      "name": "Shahed Aviation Industries",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Shahed Aviation Industries HESA financing capital loan Treasury sanctions",
+        "Shahed Aviation Industries funding site:home.treasury.gov",
+        "HESA loan capital Iran company",
+        "Shahed Aviation Industries financing capital investment 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://home.treasury.gov/news/press-releases/jy1104",
+          "published_date": "2022-11-15",
+          "disposition": "Opened Treasury original names SAIRC subordinate to IRGC aerospace force; not HESA."
+        },
+        {
+          "url": "https://home.treasury.gov/news/press-releases/sb0217",
+          "published_date": "2025-07-31",
+          "disposition": "Opened Treasury original HESA state-owned MODAFL subsidiary; government structure not a round."
+        },
+        {
+          "url": "https://home.treasury.gov/news/press-releases/jy1745",
+          "published_date": "2023-09-19",
+          "disposition": "Opened Treasury original HESA aliasShahin and supplier payment facilitation; procurement payments not incoming capital."
+        }
+      ],
+      "evidence_note": "Broad dated financing, issuer and transaction-party sources checked; exact supported subset retained. Unknown is not zero.",
+      "hold_note": "Catalogue conflates SAIRC/IRGC with HESA/MODAFL; distinct authoritative identities preserved without metadata alteration. Procurement remittances and financial/material support sanctions language do not establish financing rounds. Earlier/latest exactrecipient history unresolved; no stateprogramme totals assigned."
+    },
+    {
+      "id": "06d5dbd8-bd18-409c-83e8-4c47fcf1c323",
+      "slug": "shark-aviation-dynamics",
+      "name": "Shark Aviation Dynamics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Shark Aviation yatırım finansman sermaye 2026",
+        "Shark Aviation yatırım site:sharkaviation.com.tr",
+        "Shark Aviation funding grant investor 2025 2026",
+        "Shark Aviation destek hibe yatırım site:mbfgroup.pl"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://sharkaviation.com.tr/",
+          "published_date": null,
+          "disposition": "Opened original current Turkish UAV site and dated2026product news. US seaplane and Slovak Shark namesakes excluded."
+        },
+        {
+          "url": "https://mbfgroup.pl/en/projects/iryda-plus-x1/",
+          "published_date": null,
+          "disposition": "Opened transaction-party original: MBF project integrator and Shark technology partner, capital cooperation not a disclosed own financing round."
+        },
+        {
+          "url": "https://mbfgroup.pl/tr/yapay-zeka-suru-sistemleri-ve-yeni-nesil-ihalar-iryda-x1-shark-aviation-ile-ortaklasa-gelistiriliyor/",
+          "published_date": null,
+          "disposition": "Indexed original MBF describes separate Polish organisational vehicle and planned noncash contribution into MBF, not incoming cash for Turkish issuer."
+        }
+      ],
+      "evidence_note": "Broad dated history, issuer originals and investor/regulator searches checked; unknown is not zero. Legal issuer, cash versus capacity and namesake boundaries retained.",
+      "hold_note": "Turkish operating issuer and Polish Shark Aviation Dynamics vehicle remain separate. MBF proposed shares against noncash technology contribution are outgoing investment, not Shark cash raise. Own earlier/latest private financing unknown; project-finance comments do not disclose an attributable closed round."
+    },
+    {
+      "id": "9b867489-2abd-4b82-8bbe-7faa972a3bef",
+      "slug": "shengying-technology",
+      "name": "Shengying Technology",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Shengying Technology financing H-07 company",
+        "盛鹰 H-07 融资",
+        "湖北盛鹰 融资 投资",
+        "Shengying Information Technology investment funding",
+        "site:hbsyzn.com 融资 投资"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.hbsyzn.com/about-us.html",
+          "published_date": null,
+          "disposition": "Opened original issuer identifies Hubei Shengying Information Technology and exact H-07 interceptor business."
+        },
+        {
+          "url": "https://www.linkedin.com/company/hubei-shengying-information-technology-co-ltd",
+          "published_date": null,
+          "disposition": "Opened original company profile links hbsyzn.com and exact H-07 DroneX2026 activity; financing not disclosed."
+        },
+        {
+          "url": "https://www.meritsandtree.com/en/personnel/267/down.pdf",
+          "published_date": null,
+          "disposition": "Indexed counsel biography mentions Shengying angel/preA financing candidate, but exact legal recipient not established. Not assigned to Hubei interceptor issuer; namesakes include flooring and Zhejiang software firms."
+        }
+      ],
+      "evidence_note": "Broad dated history, issuer originals and investor/regulator searches checked; unknown is not zero. Legal issuer, cash versus capacity and namesake boundaries retained.",
+      "hold_note": "Exact Hubei H-07 issuer corroborated. Counsel angel/preA Shengying claim lacks exact recipient continuity; HongKong/Zhejiang/flooring namesakes excluded. Current products and exhibitions do not establish financing; earlier/latest capital remains partial."
+    },
+    {
+      "id": "5f993169-dfb6-46c3-bd30-04782d509e93",
+      "slug": "shenyang-aircraft-corporation-avic",
+      "name": "Shenyang Aircraft Corporation (AVIC)",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Shenyang Aircraft Corporation financing capital loan 2026 2025",
+        "中航沈飞 348,123.66 增资",
+        "沈阳飞机工业 增资 2025 348123",
+        "沈阳飞机工业（集团）有限公司 增资 2026 site:static.cninfo.com.cn",
+        "沈阳飞机工业（集团）有限公司 sac.avic.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://static.cninfo.com.cn/finalpage/2025-10-11/1224706400.PDF",
+          "published_date": "2025-10-11",
+          "disposition": "Opened original2025-051 and visually checked legal-entity page: operating SAC exact credit ID and proposed parent capital injection, distinct from listed parent placement."
+        },
+        {
+          "url": "https://file.finance.sina.com.cn/211.154.219.97%3A9494/MRGG/CNSESH_STOCK/2025/2025-12/2025-12-13/11702434.PDF",
+          "published_date": "2025-12-13",
+          "disposition": "Opened original2025-065 on disclosure mirror and visually checked entire one-page notice: exact cash received and registered capital change completed."
+        },
+        {
+          "url": "https://static.cninfo.com.cn/finalpage/2025-10-11/1224706398.PDF",
+          "published_date": "2025-10-11",
+          "disposition": "Opened original sponsor verification confirms exact operating recipient, sole listed-parent ownership and use of proceeds."
+        },
+        {
+          "url": "https://sac.avic.com",
+          "published_date": null,
+          "disposition": "Catalogue original site inaccessible; not treated as negative financing evidence. Exact operating manufacturing identity corroborated by issuer disclosure."
+        }
+      ],
+      "evidence_note": "Broad dated history, issuer originals and investor/regulator searches checked; unknown is not zero. Legal issuer, cash versus capacity and namesake boundaries retained.",
+      "hold_note": "Verified own parent equity injection only. Listed600760 CNY4bn placement belongs to distinct parent; downstream injection not added to parent proceeds or global funding totals. Earlier operating loans/grants and2026entrusted-loan candidates need further origination reconciliation; parent umbrella AVIC not substituted."
+    },
+    {
+      "id": "e8e6653b-3b82-4d8a-a03e-b822bc917f8b",
+      "slug": "shenzhen-sts-test-services",
+      "name": "Shenzhen STS Test Services",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Shenzhen STS Test investment funding 深圳 检测",
+        "深圳市德普华电子测试技术 融资 投资",
+        "Shenzhen STS Test capital investor",
+        "site:stsapp.com 投资 融资",
+        "2016年深圳市第二批计算机软件著作权登记资助拨款 5400 2016"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.stsapp.com/en/companyprofile.html",
+          "published_date": null,
+          "disposition": "Opened original English issuer profile confirms testing business, exact English name and CNAS L7649; Chinese site identifies 德普华检测."
+        },
+        {
+          "url": "https://www.stsapp.com/",
+          "published_date": null,
+          "disposition": "Opened original Chinese homepage and issuer news; no automatic financial inference from testing accreditation."
+        },
+        {
+          "url": "https://amr.sz.gov.cn/xxgk/zjxx/qtzjxx/content/post_2391683.html",
+          "published_date": "2016-10-28",
+          "disposition": "Official indexed October28/2016 subsidy table row696 names exact Chinese company with CNY5400. Direct403 prevented full original-body/table check, held."
+        },
+        {
+          "url": "https://stic.sz.gov.cn/xxgk/tzgg/content/post_2913843.html",
+          "published_date": null,
+          "disposition": "Indexed official2016voucher list names STS as eligible testing service supplier; provider eligibility is not own grant proceeds."
+        },
+        {
+          "url": "https://www.hcwgx.com/4724.html",
+          "published_date": null,
+          "disposition": "Secondary candidate reports CNY969295.50 voucher settlement. Supplier-reimbursement versus grant instrument, original award and date unresolved; not imported."
+        }
+      ],
+      "evidence_note": "Broad dated history, issuer originals and investor/regulator searches checked; unknown is not zero. Legal issuer, cash versus capacity and namesake boundaries retained.",
+      "hold_note": "Official2016CNY5400 subsidy candidate held after direct403; indexed row alone not imported. Voucher settlements may reimburse supplied testing services rather than own financing. Broader earlier/latest private and government financing remain partial; unknown not zero."
+    },
+    {
+      "id": "77eac8e8-bf27-4472-ba1c-54506ca148e4",
+      "slug": "shenzhen-xianghao",
+      "name": "Shenzhen Xianghao",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Shenzhen Xianghao funding company engine",
+        "Shenzhen Xianghao jet engine company 融资",
+        "Shenzhen Xianghao Communication Equipment financing investment",
+        "深圳市祥昊 通信 融资"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.uasvision.com/2026/10/12/chinese-jet-engines-power-russias-geran-drones/",
+          "published_date": "2026-10-12",
+          "disposition": "Indexed catalogue provenance identifies Shenzhen Xianghao Communication Equipment and Telefly, not lithium-battery Xianghao."
+        },
+        {
+          "url": "https://www.telefly.com/",
+          "published_date": null,
+          "disposition": "Opened original Telefly corporate site describes communication equipment and total investment50million; no currency, dated financing transaction or legal-entity attribution established."
+        },
+        {
+          "url": "https://www.telefly.com/about.html",
+          "published_date": null,
+          "disposition": "Opened original company profile. Exact cross-border Telefly HongKong/Chinese company ownership and financing boundary remains held."
+        },
+        {
+          "url": "https://www.xianghao-power.com/about.html",
+          "published_date": null,
+          "disposition": "Indexed original battery-company site is a namesake; not assigned to communication-equipment catalogue identity."
+        }
+      ],
+      "evidence_note": "Broad dated history, issuer originals and investor/regulator searches checked; unknown is not zero. Legal issuer, cash versus capacity and namesake boundaries retained.",
+      "hold_note": "Legal bridge between Shenzhen Xianghao Communication Equipment and HongKong Telefly still partial. Original totalinvestment50million lacks currency/date/instrument and is not discrete round. Battery Xianghao, engine supplier Lianxin and registered capital not assigned."
+    },
+    {
+      "id": "c7aef958-2dbb-4d23-a309-b4838ad7be85",
+      "slug": "shenzhen-xindong-energy-technology",
+      "name": "Shenzhen Xindong Energy Technology",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "深圳市鑫动能科技 融资 投资",
+        "Shenzhen Xindong Energy Technology financing investment",
+        "Shenzhen Xindong Energy Jovistar FCC company",
+        "深圳 欣动能源 Jovistar",
+        "Shenzhen Xindong Energy Technology funding grant loan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://dronexl.co/2026/10/17/jovistar-dji-shell-fcc-grant-dismissed/",
+          "published_date": "2026-10-17",
+          "disposition": "Opened exact catalogue provenance: name from battery label in FCC equipment photos; FCC equipment approval is not financial grant."
+        },
+        {
+          "url": "https://en.sunwoda.com/upload/portal/20240410/693e9246d3487190322cdf19ebfb4779.pdf",
+          "published_date": null,
+          "disposition": "Opened original Sunwoda annual report and found prose stating Shenzhen Xindong Energy deregistered2023. No proven bridge from battery-label supplier to that legal entity or later similarly named subsidiary."
+        },
+        {
+          "url": "https://en.sunwoda.com/upload/portal/20250827/3da078ce6dd869be2a276b175627640c.pdf",
+          "published_date": null,
+          "disposition": "Indexed original2025interim candidate; exact Chinese legal name and continuity need table reconciliation, not assumed same recipient."
+        },
+        {
+          "url": "https://numinor.io/api/gadgets/event-threads/300207_SZ.html?embed=1&lang=en",
+          "published_date": null,
+          "disposition": "Secondary2024RMB10m registered-capital candidate not actual paid financing, and conflicts with earlier deregistration. Parent Sunwoda Power rounds excluded."
+        }
+      ],
+      "evidence_note": "Broad dated history, issuer originals and investor/regulator searches checked; unknown is not zero. Legal issuer, cash versus capacity and namesake boundaries retained.",
+      "hold_note": "Battery-label exact legal identity and Sunwoda subsidiary continuity unresolved;2023deregistration versus2024newcompany are not assumed same issuer. Registered capital and parent financing not own closed round. FCC grant means equipment authorisation, not financial award."
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "actual_search_queries_executed": 2,
+    "searches_checked": [
+      "site:ses.ai 2022 business combination gross proceeds PIPE 2022 275 2026 financing",
+      "site:liebherr.com Liebherr-Aerospace Lindenberg Transportation SAS legal"
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1819142/000155837022009020/ses-20220516x424b3.htm",
+        "published_date": null,
+        "disposition": "Original filed prospectus reconciles actual USD274.5m PIPE,51.6m trust net redemptions and326.1m gross total; primary secondary registration and gross/net remain distinct. Prospectus attachment datedMay13/2022; filenameMay16 not assumed first public publication date."
+      },
+      {
+        "url": "https://www.liebherr.com/en-us/aerospace-and-transportation-systems/about-us/about-us/about-us-7173805",
+        "published_date": null,
+        "disposition": "Original governance describes French SAS divisional control; exact German operating recipient is not silently replaced. Published-landscape issuer/allocation hold retained."
+      }
+    ],
+    "source_candidates_not_verified": [
+      "SES April24/2026 USD150m ATM capacity does not establish actual sales.",
+      "Liebherr group governance does not resolve beneficiary-specific award allocation."
+    ],
+    "followup_company_count_not_added": true
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting amount and participant-source FK rejection.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-14 02:01:38 UTC",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 19,
+      "mismatched_facts": 0,
+      "participant_matches": 59,
+      "source_matches": 25,
+      "relationship_matches": 7,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 1
+    },
+    "reviewed_corrections_required": false
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "All24 targets outside existing European map, verified fresh baseline. No gate/geography/classification changes."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false,
+  "publication": {
+    "status": "pending",
+    "report": "research-agent/reports/2026-11-14-funding-landscape-seventy-fourth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261114-seventy-fourth.json"
+  }
+}
