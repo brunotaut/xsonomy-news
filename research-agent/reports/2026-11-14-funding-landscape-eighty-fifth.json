@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-14",
   "started_at": "2026-11-14T15:50:08.002Z",
   "original_interrupted_run_started_at": "2026-11-14T12:51:59.666Z",
@@ -39,7 +39,7 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
     "reviewed_existing_fact_corrections": 0,
     "db_total_events": 4155,
@@ -48,7 +48,17 @@
     "db_investor_profiles": 3377,
     "db_source_reconciliation_companies": 1192,
     "recovered_expired_lease": true,
-    "prior_committed_import_check": "No events for selected24IDs before recovery import; globals exactly matched last verified run84 baseline."
+    "prior_committed_import_check": "No events for selected24IDs before recovery import; globals exactly matched last verified run84 baseline.",
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 7,
+    "clickable_generic_company_links_verified": 7,
+    "end_to_end_elapsed_minutes": 187.42,
+    "recovery_elapsed_minutes": 9.28,
+    "checked_identities_per_hour": 7.7,
+    "completed_reviews_per_hour": 1.9,
+    "timing_scope": "End-to-end elapsed time includes the usage interruption between original research and expired-lease recovery; not claimed as active working time. Recovery elapsed measures restoration, fresh committed-fact/issuer/source checks, PostgreSQL tests, rollback, one atomic import, fact/role/source/contribution audit, idempotency, durable readbacks, successful existing build and both fresh live datasets. Four disjoint groups checked24 identities once; no duplicated throughput for restored work. Six bounded reviews completed;18 retain holds. No concurrency speedup or ETA claimed."
   },
   "production_before": {
     "events": 4123,
@@ -1320,7 +1330,13 @@
         "relationship_type": "direct_investment",
         "source_url": "https://defencebuilder.com/fund"
       }
-    ]
+    ],
+    "live_generic_entry_verification": {
+      "entries": 7,
+      "source_urls": 7,
+      "clickable_company_links": 7,
+      "unlinked": []
+    }
   },
   "publication_scope": {
     "all_new_targets_outside_european_landscape": true,
@@ -1337,5 +1353,45 @@
     "Repository schedules",
     "No paid external API"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-14T15:59:25Z",
+    "verified_at": "2026-11-14T15:59:25Z",
+    "catalogue_commit": "289613eb3de935d857c89a9507310aaa1d276640",
+    "source_commit": "87b03746bcb87f3129b089938a201c03b09f022c",
+    "workflow_run": {
+      "id": 43612860618,
+      "head": "289613eb3de935d857c89a9507310aaa1d276640",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43612860618"
+    },
+    "report": "research-agent/reports/2026-11-14-funding-landscape-eighty-fifth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261114-eighty-fifth.json",
+    "generated_at": "2026-11-14T15:57:42.675Z",
+    "investor_generated_at": "2026-11-14T15:57:46.480Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3368,
+    "portfolio_relationships": 610,
+    "expected_profiles": 35,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 7,
+    "generic_portfolio_entries_verified": 7,
+    "clickable_company_links_verified": 7,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 56,
+    "manifest_generic_relationship_matches": 7,
+    "current_manifest_event_rows": 32,
+    "current_manifest_live_matches": 0,
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "Nine pre-existing anonymous profiles excluded: DB3377 versus live3368; three prior generic entries remain excluded. All24target slugs absent from European map before/after import under existing gates. All35 referenced profiles,56 participation source URLs and7 generic entries/source URLs/clickable links verified;19 new investor profiles published. European map567/1590/1390 unchanged.32 new financing disclosures remain source-audited in DB under existing scope gates. DraftTriadaTrade and existingTrinity direct associations unchanged; no metadata/gate changes."
+  },
+  "completed_at": "2026-11-14T15:59:25Z"
 }
