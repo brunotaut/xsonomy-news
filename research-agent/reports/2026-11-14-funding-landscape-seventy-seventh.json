@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-14",
   "started_at": "2026-11-14T04:46:00Z",
   "manifest": "research-agent/imports/funding-landscape-20261114-seventy-seventh.json",
@@ -37,9 +37,23 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
-    "reviewed_existing_fact_corrections": 0
+    "reviewed_existing_fact_corrections": 0,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 4,
+    "clickable_generic_company_links_verified": 4,
+    "db_total_events": 3934,
+    "db_approved_events": 3921,
+    "db_round_participations": 5475,
+    "db_investor_profiles": 3215,
+    "db_source_reconciliation_companies": 1118,
+    "active_minutes": 17.65,
+    "checked_identities_per_hour": 81.6,
+    "completed_reviews_per_hour": 0,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, original source/issuer/profile reconciliation, current importer/schema verification, PostgreSQL tests, production rollback, atomic import, exact fact/role/source/contribution audit, idempotency, durable queue/manifest readback, successful existing build and both fresh live datasets. All24 retain partial-history holds; concurrent durations not summed."
   },
   "production_before": {
     "events": 3904,
@@ -1026,51 +1040,51 @@
     {
       "company_slug": "skydio",
       "url": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026071150/axon-20261105.htm",
-      "disposition": "Primary Axon purchase only, approximatelyUSD254.9m. Investment disclosure, not complete SeriesG total; cash/stock split50/50 and delayed stock settlement explicit. Secondary1.2bn headline excluded."
+      "disposition": "Axon’s primary purchase only, approximately USD254.9m. Recorded as an investment disclosure, not the entire Series G round. The 50/50 cash and Axon-stock consideration and later stock settlement are explicit; secondary purchases in the USD1.2bn headline are excluded."
     },
     {
       "company_slug": "skydweller-2",
       "url": "https://www.skydweller.aero/news/skydweller-aero-inc-raises-40m-in-oversubscribed-series-a-funding-round-to-continue-rapid-technological-development-to-meet-demand-for-persistent-flight/",
-      "disposition": "Original expressly same SeriesA final40m total incl8madditionalafter2019; single total without duplicate32m/8m events. SubsidiarySkydwellerSL EIBdebt held."
+      "disposition": "The issuer expressly identifies the same Series A final USD40m total, including USD8m added after its 2019 close. Retained once without duplicate USD32m or USD8m events. EIB debt to subsidiary Skydweller SL remains held."
     },
     {
       "company_slug": "skyports-infrastructure",
       "url": "https://skyports.net/post/skyports-raises-usd-23-million-in-first-close-of-series-b-funding-round",
-      "disposition": "Group financing supports both divisions. Currentfooter cannot establish samehistoriclegalissuer. Existingcanonicalskyports history preserved; no duplicate."
+      "disposition": "Group financing supports both infrastructure and drone services. The current site footer does not establish the historic legal issuer. Existing canonical Skyports events remain unchanged and are not duplicated."
     },
     {
       "company_slug": "skyports-infrastructure",
       "url": "https://www.proskauer.com/insights/get-pdf/27478",
-      "disposition": "Original counsel confirms in excessUSD110m andACSviaIridium. Existing canonicalevent inspected alreadyhasmore_than; no correction needed."
+      "disposition": "Transaction counsel confirms in excess of USD110m and ACS investment through Iridium. The existing canonical event already has the more_than qualifier; no correction was needed."
     },
     {
       "company_slug": "skydrive",
       "url": "https://www.mufg.jp/dam/pressrelease/2018/pdf/pressrelease-20180401-001_en.pdf",
-      "disposition": "Original bank legal-name continuity;MUFG Bank retained as existingmitsubishi-ufj-bank, notholdingcompanynewcheque."
+      "disposition": "The bank’s original legal-name announcement confirms continuity. MUFG Bank reuses the existing Mitsubishi UFJ Bank profile; the holding company is not assigned a second cheque."
     },
     {
       "company_slug": "skyebrowse",
       "url": "https://www.unpopular.vc/",
-      "disposition": "Original UnpopularVentures branding underunpopular.vc supports reusedUnpopularVCprofile; exactfundseriesnotinvented."
+      "disposition": "The original Unpopular Ventures site and unpopular.vc branding support reuse of the existing Unpopular VC profile. An undisclosed fund series is not invented."
     },
     {
       "company_slug": "skyfly-technologies",
       "url": "https://skyfly.aero/evtol-pioneer-skyfly-lands-10-million-to-bring-personal-vertical-flight-to-market/",
-      "disposition": "SourceLondon/TallinnArchangeldefencefund distinctfromexistingAustralianArchangelVentures. New localizedfundprofile; legalmanagercontextnotseparatecheque. ExistingHICOreused."
+      "disposition": "The source describes a London/Tallinn Archangel defence fund, distinct from the existing Australian Archangel Ventures. A separate fund profile preserves the published brand; legal-manager context does not establish a separate manager cheque. Existing HICO is reused."
     },
     {
       "company_slug": "skydrive",
       "url": "https://www.astroscale.com/en/news/astroscale-raises-us-76-million-continuing-to-lead-the-growing-on-orbit-servicing-sector",
-      "disposition": "ExistingMitsubishiUFJBankprofileprovenancesourcechecked;rootfetchfailed;identitycontinuityinsteadestablishedbyofficialMUFGoriginal."
+      "disposition": "The existing Mitsubishi UFJ Bank profile’s original provenance URL was checked but the root fetch failed. Official MUFG name-change evidence supports the identity mapping instead."
     },
     {
       "company_slug": "skydrive",
       "url": "https://skydrive.co.jp/en/news/15904/",
-      "disposition": "Readoriginal2025PreSeriesD:JPY8.3bnallotment;explicitMUFGBanklead and11names; LPvehicleSuMiTRUSTretainedwithoutmanagerduplication."
+      "disposition": "The original 2025 release confirms JPY8.3bn through an allotment, expressly names MUFG Bank as lead and lists eleven investors. The SuMi TRUST fund vehicle is retained without a second manager cheque."
     },
     {
       "company_slug": "skysafe",
-      "disposition": "GroupDconfirmedA/Bsourcesdonotexplicitequityinstrument. Rootchangedbothfundingtypesundisclosed, avoidingstage-onlyinference."
+      "disposition": "Group D confirmed neither SkySafe Series A nor Series B source specifies equity securities. Both financing types remain undisclosed; stage alone is not treated as instrument evidence."
     }
   ],
   "validation": {
@@ -1088,7 +1102,17 @@
       "missing_link_sources": 0,
       "extension_parent_matches": 0
     },
-    "reviewed_corrections_required": false
+    "reviewed_corrections_required": false,
+    "live_generic_entry_verification": {
+      "entries": 4,
+      "source_urls": 4,
+      "clickable_company_links": 4,
+      "unlinked": []
+    },
+    "company_investment_research_actual_count": {
+      "rows": 1118,
+      "partial": 1118
+    }
   },
   "publication_scope": {
     "all_new_targets_outside_european_landscape": true,
@@ -1107,6 +1131,71 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "awaiting_existing_catalogue_push_build"
-  }
+    "status": "verified",
+    "checked_at": "2026-11-14T05:03:39Z",
+    "verified_at": "2026-11-14T05:03:39Z",
+    "catalogue_commit": "bcd718d87561b4911eab381ca9318bacbf7a4036",
+    "source_commit": "ab7fbf3edb5e08e594a89377b6113e857138c59c",
+    "workflow_run": {
+      "id": 43559440065,
+      "head": "bcd718d87561b4911eab381ca9318bacbf7a4036",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43559440065"
+    },
+    "report": "research-agent/reports/2026-11-14-funding-landscape-seventy-seventh.json",
+    "manifest": "research-agent/imports/funding-landscape-20261114-seventy-seventh.json",
+    "generated_at": "2026-11-14T05:02:00.328Z",
+    "investor_generated_at": "2026-11-14T05:02:03.603Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3206,
+    "portfolio_relationships": 517,
+    "expected_profiles": 71,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 4,
+    "generic_portfolio_entries_verified": 4,
+    "clickable_company_links_verified": 4,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 78,
+    "manifest_generic_relationship_matches": 4,
+    "current_manifest_event_rows": 30,
+    "current_manifest_live_matches": 0,
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "Nine pre-existing anonymous profiles excluded: DB3215 versus live3206. All24 targets outside European map under existing gates. All71 referenced profiles,78 participation sourceURLs and4 generic entries with original sources/clickable company links verified;45 new profiles published.30 financing events remain source-audited in DB under existing scope gates. No metadata/gate changes."
+  },
+  "root_searches_checked": [
+    {
+      "q": "site:skyports.net 2024 \"110\" \"Infrastructure\" funding",
+      "checked_at": "2026-11-14"
+    },
+    {
+      "q": "site:skydrop.com \"formerly\" \"Flirtey\" investment 2022",
+      "checked_at": "2026-11-14"
+    },
+    {
+      "q": "site:sec.gov \"Skydio\" \"254.9\" \"2026\"",
+      "checked_at": "2026-11-14",
+      "note": "Tool response exceeded context; root then directly opened exact primary8-K."
+    },
+    {
+      "q": "site:axon.com \"Skydio\" \"November\" \"2026\" primary",
+      "checked_at": "2026-11-14",
+      "note": "Tool response exceeded context; root then directly opened exact primary8-K."
+    },
+    {
+      "q": "site.bk.mufg.jp MUFG Bank name change April 2018 Bank of Tokyo Mitsubishi UFJ",
+      "checked_at": "2026-11-14"
+    },
+    {
+      "q": "Unpopular Ventures Unpopular VC rename official",
+      "checked_at": "2026-11-14"
+    }
+  ],
+  "completed_at": "2026-11-14T05:03:39Z"
 }
