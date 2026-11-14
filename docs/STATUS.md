@@ -2277,3 +2277,8 @@ Reviewed24cohort identities in four read-only groups;38approved financing disclo
 
 
 Run87 publication verified 2026-11-14T18:07:25.490Z: existing build [43624569704](https://github.com/brunotaut/xSonomy/actions/runs/43624569704) succeeded. Both fresh datasets generated at 2026-11-14T18:05:31.185Z / 2026-11-14T18:05:34.168Z. Directory: 3,410 profiles and 624 generic portfolio entries; all 62 referenced profiles, 61 participant-source links and 10 generic entries verified. Nine generic company links are clickable; UAVLAS remains an unlinked draft. European map remains 567 companies, 1,590 events and 1,390 links under existing gates. All 24 company metadata hashes and curated-profile hash preserved. Queue: 1,215 reviewed, 1,174 partial and 175 queued. Writer lease cleared; programme incomplete and continuation enabled.
+
+
+## Funding source audit — 14 November 2026, run88
+
+Checked 24 identities in four read-only groups. Imported 41 financing disclosures,100participations,50source associations,14new generic links and50profiles;15manifest generic links verified including an unchanged prior LitBAN association. Initial import and final UPS-only idempotent replay both tested with production rollback; no duplicated events. Exact facts/roles/contributions and preserved-data hashes passed. Two bounded reviews complete;22 retain explicit holds. Queue:1217reviewed/1196partial/151queued. [Audit](../research-agent/reports/2026-11-14-funding-landscape-eighty-eighth.json). Existing build verification pending.

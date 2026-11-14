@@ -1,0 +1,1431 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-14",
+  "started_at": "2026-11-14T18:48:00.174Z",
+  "manifest": "research-agent/imports/funding-landscape-20261114-eighty-eighth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 2,
+    "new_or_retained_partial": 22,
+    "new_approved_events": 41,
+    "new_round_participations": 100,
+    "new_source_rows": 50,
+    "new_generic_portfolio_relationships": 14,
+    "manifest_generic_relationships_verified": 15,
+    "existing_generic_relationships_reused": 1,
+    "new_companies_with_events": 11,
+    "new_investor_profiles": 50,
+    "group_search_queries_executed": 144,
+    "root_additional_search_queries": 7,
+    "search_queries_executed": 151,
+    "per_company_search_ledger_entries": 144,
+    "source_ledger_entries": 131,
+    "root_source_ledger_entries": 6,
+    "company_database_identity_contexts_checked": 24,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "atomic_import_invocations": 2,
+    "incremental_replay_note": "Initial41events plus13new generic links committed. Final groupC added one UPS ownership link after initial consolidation; full final manifest was retested with production rollback, then idempotently replayed adding only one owner profile/link. No event inserted twice. One pre-existing LitBAN relationship reused unchanged.",
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "prior_rounds_and_unselected_relationship_hashes_preserved": true,
+    "company_metadata_hashes_preserved": 24,
+    "event_matches": 41,
+    "mismatched_facts": 0,
+    "participant_matches": 100,
+    "source_matches": 50,
+    "relationship_matches": 15,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 1,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "reviewed_existing_fact_corrections": 0,
+    "db_total_events": 4262,
+    "db_approved_events": 4249,
+    "db_round_participations": 5937,
+    "db_investor_profiles": 3469,
+    "db_source_reconciliation_companies": 1230
+  },
+  "production_before": {
+    "events": 4221,
+    "approved": 4208,
+    "links": 5837,
+    "sources": 5785,
+    "profiles": 3419,
+    "covered": 1219,
+    "relationships": 627,
+    "preserved_profiles_hash": "18782a53982375030fd3e0df9f049679"
+  },
+  "production_after": {
+    "events": 4262,
+    "approved": 4249,
+    "links": 5937,
+    "sources": 5835,
+    "profiles": 3469,
+    "covered": 1230,
+    "relationships": 641,
+    "preserved_profiles_hash": "18782a53982375030fd3e0df9f049679"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1217,
+    "source_review_partial": 1196,
+    "queued": 151
+  },
+  "per_company": [
+    {
+      "id": "51573483-e288-4860-87f5-44f436ee4e72",
+      "slug": "university-of-tokyo",
+      "name": "University of Tokyo",
+      "website": "https://www.u-tokyo.ac.jp",
+      "hq_country": "Japan",
+      "company_type": "university",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:u-tokyo.ac.jp robotics grant 2025 2026 KAKEN funding cyborg cockroach",
+        "site:u-tokyo.ac.jp \"cockroach\" \"funding\"",
+        "site:kaken.nii.ac.jp \"東京大学\" \"昆虫\" \"サイボーグ\" 2025",
+        "site:u-tokyo.ac.jp \"cyborg\" \"JSPS\" 2026",
+        "\"東京大学\" \"2026\" \"ロボット\" \"助成\" 研究資金",
+        "\"25K22112\" 日本学術振興会"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kaken.nii.ac.jp/en/grant/KAKENHI-PROJECT-25K22112/",
+          "published_date": "2025-06-30",
+          "disposition": "Opened original confirms exact grant/institution/total and initial publication date."
+        },
+        {
+          "url": "https://www.robot.t.u-tokyo.ac.jp/~yamashita/budget-j.html",
+          "published_date": null,
+          "disposition": "Opened laboratory funding history through2026; explicitly JSPS project25K22112 and two Tokyo investigators; other multi-institution projects need recipient allocations."
+        },
+        {
+          "url": "https://www.robot.t.u-tokyo.ac.jp/anlab/index.php/grant/",
+          "published_date": null,
+          "disposition": "Opened history of earlier/latest grants, including2026 projects; programme labels/start dates not amounts or public announcement dates."
+        },
+        {
+          "url": "https://www.tateisi-f.org/documents/research/list/2026grantlist.html",
+          "published_date": null,
+          "disposition": "Opened awardee list: Tokyo researchers identified but individual approved sums not shown; held."
+        },
+        {
+          "url": "https://www.omron.com/jp/ja/news/2026/04/c0424-2.html",
+          "published_date": null,
+          "disposition": "Opened sponsor original; grant-category ceiling is not each Tokyo researcher actual award."
+        },
+        {
+          "url": "https://www.u-tokyo.ac.jp/en/about/financial.html",
+          "published_date": null,
+          "disposition": "Attempted page inaccessible; not evidence of absent financing."
+        }
+      ],
+      "evidence_note": "Verified one exact institution-attributed robotics research grant; no institution-wide equity financing inferred.",
+      "hold_note": "Broader earlier/latest university research grants,2026foundation allocations and researcher transfer dates remain partial; programme ceilings, consortium budgets and donation running totals excluded.",
+      "checked_at": "2026-11-14"
+    },
+    {
+      "id": "721df38f-86bd-48fb-b57e-b4f93f5e118d",
+      "slug": "unmanned-airspace",
+      "name": "Unmanned Airspace",
+      "website": "https://www.unmannedairspace.info",
+      "hq_country": "United Kingdom",
+      "company_type": "sme",
+      "publication_status": "draft",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Unmanned Airspace\" merger FoxATM funding",
+        "\"Unmanned Airspace\" FoxATM investment funding 2026 merger",
+        "\"Unmanned Airspace\" \"FoxATM\" acquisition terms funding",
+        "site:foxatm.com \"Unmanned Airspace\" merger July 2026",
+        "\"Unmanned Airspace\" funding investment 2018 2025 2026 FoxATM"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.unmannedairspace.info/uncategorized/unmanned-airspace-and-global-airspace-radar-announce-merger/",
+          "published_date": "2026-07-13",
+          "disposition": "Opened original establishes July13 merger/group membership, no issuer primary financing disclosed."
+        },
+        {
+          "url": "https://foxatm.com/industry-directory/unmanned-airspace/",
+          "published_date": null,
+          "disposition": "Opened parent directory corroborates publication identity."
+        },
+        {
+          "url": "https://www.unmannedairspace.info/about-us/",
+          "published_date": null,
+          "disposition": "Attempted page inaccessible. Financing articles about other issuers on media domain not company rounds."
+        }
+      ],
+      "evidence_note": "Original media-group merger and identity reviewed; no own primary financing identified in bounded public-source searches.",
+      "hold_note": "Private merger terms, legal receiving vehicle and undisclosed funding remain unknown. News reports on other companies are not this publication funding.",
+      "checked_at": "2026-11-14"
+    },
+    {
+      "id": "e15e8f9e-f390-401e-8f9d-8966c140766c",
+      "slug": "unmanned-cowboys-llc",
+      "name": "Unmanned Cowboys, LLC",
+      "website": "",
+      "hq_country": "United States",
+      "company_type": "",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Unmanned Cowboys\" investment funding grant",
+        "\"Unmanned Cowboys\" \"Cowboy Technologies\" investment",
+        "\"Unmanned Cowboys\" funding 2016 2020 2025 2026",
+        "\"Unmanned Cowboys\" \"investment\" OSURF 2014 2015",
+        "\"Unmanned Cowboys\" site:i2e.org",
+        "\"Unmanned Cowboys\" SBIR grant investment 2014 2015 2016"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://news.okstate.edu/articles/communications/2015/osu-startup-unmanned-cowboys-launches-uav-system-trade-show.html",
+          "published_date": "2015-05-06",
+          "disposition": "Opened original bridges ATLAS/LLC founded2014 and university licence; commercial contract/FAA exemption not grant."
+        },
+        {
+          "url": "https://adminfinance.okstate.edu/site-files/documents/financial-statements/2015-osurf-6-30-2015-final.pdf",
+          "published_date": null,
+          "disposition": "Opened audited report; exact investor Cowboy Technologies. Parent investment values and rent excluded."
+        },
+        {
+          "url": "https://journalrecord.com/2015/08/17/innovators-unmanned-cowboys-general-news-2/",
+          "published_date": "2015-08-17",
+          "disposition": "Search result reports angel negotiations, not completed round. No amount imported."
+        },
+        {
+          "url": "https://www.faa.gov/media/60011",
+          "published_date": null,
+          "disposition": "Official search result names Inc rather than LLC; exact legal conversion remains held; authorization not financing."
+        },
+        {
+          "url": "https://www.slideshare.net/slideshow/tracxn-drones-startup-landscape/110804304",
+          "published_date": null,
+          "disposition": "Search-only secondary i2E association remains candidate; no original corroboration or cheque imported."
+        }
+      ],
+      "evidence_note": "Original university licence and audited Cowboy Technologies investor link verified.",
+      "hold_note": "Round dates/amounts, i2E candidate, angel negotiations outcome and LLC-to-Inc continuity need originals; parent cash not attributed.",
+      "checked_at": "2026-11-14"
+    },
+    {
+      "id": "cd9a0881-e295-4392-81dc-0ce930339b40",
+      "slug": "unmanned-defence-systems",
+      "name": "Unmanned Defence Systems",
+      "website": "https://www.udefenses.com",
+      "hq_country": "Lithuania",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Unmanned Defense Systems\" funding 2024 2025 2026 3.2",
+        "site:udefenses.com investment funding 2025 2026",
+        "\"Unmanned Defense Systems\" investment 2023 2025 2026 Coinvest",
+        "\"02-121-K-0084\" finansavimas dotacija",
+        "\"Unmanned Defense Systems\" \"119 991\" finansavimas"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.coinvest.lt/post/unmanned-defense-systems-raises-3-2m-to-scale-battlefield-tested-uavs-and-advance-ai-based-swarm-in",
+          "published_date": "2024-05-24",
+          "disposition": "Opened original;3.2m package includes0.5m future reserve,0.9m fund share,0.4m exact2NGLS and named angels."
+        },
+        {
+          "url": "https://www.ngl.vc/blog/unmanned-defense-systems-raises-eur-3-2m-to-scale-battlefield-tested-uavs-and-advance-ai-based-swarm-integrations-with-contemporary-bms",
+          "published_date": null,
+          "disposition": "Opened network original corroborates syndication, not manager second cheque."
+        },
+        {
+          "url": "https://tegos.legal/deals-and-cases/unmanned-defense-systems-secures-a-eur-3-2-million-investment/",
+          "published_date": "2024-08-22",
+          "disposition": "Opened transaction adviser original; August22 repost not new second3.2m event."
+        },
+        {
+          "url": "https://www.udefenses.com/about-us",
+          "published_date": null,
+          "disposition": "Opened issuer investor list; LitBAN generic only."
+        },
+        {
+          "url": "https://www.udefenses.com/projects",
+          "published_date": null,
+          "disposition": "Opened issuer-specific72,720.50EU share;145,441project total excluded.119,991.51second project value lacks grant share and date."
+        },
+        {
+          "url": "https://eimin.lrv.lt/public/canonical/1770988162/6350/20260213_Nr_4-61.pdf",
+          "published_date": null,
+          "disposition": "Opened ministry order and table annex2 page14; code306079694/project0084/up-to72,720.50state aid, loan columns zero; table screenshot checked."
+        }
+      ],
+      "evidence_note": "Verified combined2024announced package and recipient-specific EU support; actual fund/vehicle and explicit allocations retained.",
+      "hold_note": "0.5mreserve final close, earlier/private rounds, security terms, later fundportfolio cumulative exposure and secondproject119,991.51allocation/date unresolved.",
+      "checked_at": "2026-11-14"
+    },
+    {
+      "id": "a49e3a30-2fb2-4597-991d-3ec16b817a62",
+      "slug": "unmanned-systems-group-supercam-bas",
+      "name": "Unmanned Systems Group",
+      "website": "https://en.supercam.aero",
+      "hq_country": "Russia",
+      "company_type": "",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Беспилотные системы\" \"Суперкам\" инвестиции финансирование 2025 2026",
+        "\"Суперкам\" кредит \"фонд\" 2024 2025 2026",
+        "\"Беспилотные системы\" инвестиции \"руб\" Удмуртия",
+        "\"Supercam\" \"loan\" \"Guarantee\" fund",
+        "\"Supercam\" \"получила кредитные средства\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://supercam.aero/news/gk-%C2%ABbespilotnyie-sistemyi%C2%BB-stala-uchastnikom-programmyi-podderzhki-s",
+          "published_date": null,
+          "disposition": "Opened group original explicitly confirms credit funds received; amount/lender/date undisclosed, public guarantee not lender."
+        },
+        {
+          "url": "https://en.supercam.aero/",
+          "published_date": null,
+          "disposition": "Attempted English site timed out; Russian original available."
+        },
+        {
+          "url": "https://www.kommersant.ru/doc/8739656",
+          "published_date": null,
+          "disposition": "Search-only2026subsidiary land and ownership candidate; not group incoming financing."
+        },
+        {
+          "url": "https://gisp.gov.ru/nmp/measure/12448567",
+          "published_date": null,
+          "disposition": "Search-only similarly named programme ceiling is not Supercam recipient award."
+        }
+      ],
+      "evidence_note": "Issuer group original confirms received working-capital credit, without invented lender or value.",
+      "hold_note": "Exact legal borrower within economic group, date, amount/currency and later facilities; subsidiary land/capital and regionalprogrammebudgets not attributed.",
+      "checked_at": "2026-11-14"
+    },
+    {
+      "id": "d1677715-08fa-4559-9082-dc95854bb8e8",
+      "slug": "unmanned-technologies",
+      "name": "Unmanned Technologies",
+      "website": "",
+      "hq_country": "France",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Unmanned Technologies\" France Ukraine financement levée",
+        "\"Unmanned Technologies\" \"Eurosatory\" 2026 robot",
+        "\"Unmanned Technologies\" UUT funding grant investment",
+        "\"Unmanned Technologies\" UUT \"інвестиції\" \"грант\"",
+        "\"Unmanned Technologies\" \"UUT\" investors funding 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://forcesoperations.com/eurosatory-2026-un-robot-franco-ukrainien-pour-epaissir-la-ligne-de-front/",
+          "published_date": "2026-06-24",
+          "disposition": "Opened cohort source identifies Ukrainian UUT partner, not French financing issuer."
+        },
+        {
+          "url": "https://www.haulotte.com/en/ukrainian-unmanned-technologies-uut-partners-haulotte-industrialize-unmanned-ground-vehicles",
+          "published_date": "2026-06-17",
+          "disposition": "Opened transaction-party original establishes UUT engineering company and manufacturing partnership; no primary financing/ownership terms."
+        },
+        {
+          "url": "https://uut.com.ua/",
+          "published_date": null,
+          "disposition": "Attempted issuer website502; not evidence of no funding."
+        },
+        {
+          "url": "https://forbes.ua/news/ukrainian-unmanned-technologies-ta-frantsuzka-haulotte-domovilisya-pro-virobnitstvo-nazemnikh-robotiv-ravlyk-18062026-39732",
+          "published_date": null,
+          "disposition": "Search-only Mergewave advisory role is not investor cheque."
+        }
+      ],
+      "evidence_note": "Original cohort article and industrial partner establish Ukrainian UUT economic identity despite France metadata; no metadata changed.",
+      "hold_note": "Legal recipient continuity, private financing and possible grants remain unestablished; industrial/advisory partnerships are not ownership or cash rounds.",
+      "checked_at": "2026-11-14"
+    },
+    {
+      "id": "185bf341-edf7-4326-a1fe-557bf4c49835",
+      "slug": "unmanned-vehicle-technologies",
+      "name": "Unmanned Vehicle Technologies",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Unmanned Vehicle Technologies\" investment funding acquired",
+        "\"Unmanned Vehicle Technologies\" investors acquisition UVT funding",
+        "site.uvt.us investment funding news Airwise",
+        "\"Unmanned Vehicle Technologies\" \"investment\" Chris Fink",
+        "site.uvt.us about funding news investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://uvt.us",
+          "published_date": null,
+          "disposition": "Issuer domain failed fetch; failure is not negative evidence."
+        },
+        {
+          "url": "https://uavionix.com/press/uavionix-and-airwise-solutions-partner-to-advance-real-time-utm-capabilities-for-skyway-range/",
+          "published_date": "2026-08-18",
+          "disposition": "Transaction-party original confirms operational integration; no UVT financing or ownership transfer."
+        },
+        {
+          "url": "https://prospeo.io/c/unmanned-vehicle-technologies-uvt-revenue",
+          "published_date": null,
+          "disposition": "Aggregator no-funding claim rejected as evidence of zero funding."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/chrisfink479_12-years-ago-today-i-transferred-150-of-activity-7456100351428169729-pAGL",
+          "published_date": null,
+          "disposition": "Founder search says150dollar incorporation spend; not an issuer investment round."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/uvt",
+          "published_date": null,
+          "disposition": "Airwise strategic partnership candidate; Airwise financing cannot be allocated to UVT."
+        }
+      ],
+      "evidence_note": "UVT Arkansas operational identity and Airwise partner boundary researched; no supported own financing extracted.",
+      "hold_note": "Official domain unavailable; private rounds and exact registry/owner financing remain unresolved. Public-sector customer grants/contracts not UVT proceeds."
+    },
+    {
+      "id": "ff0ff15f-dc3a-4642-9e17-4826b8098023",
+      "slug": "unmanned4you",
+      "name": "Unmanned4you",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Unmanned4you\" finanziamento investitori",
+        "\"Unmanned4you\" finanziamento Aetos Elyhub investitori",
+        "site.unmanned4you.com finanziamenti fondi investitori",
+        "\"Unmanned4you\" \"investimento\" \"soci\"",
+        "\"Unmanned4you\" \"grant\" \"funding\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://unmanned4you.com/chi-siamo/",
+          "published_date": null,
+          "disposition": "Issuer original identifies Naples UAS operator and Aetos/Elyhub R&D; sector partners not equity investors."
+        },
+        {
+          "url": "https://unmanned4you.com/aetos/",
+          "published_date": null,
+          "disposition": "Original medical-logistics demonstrator; generic sector investment language not recipient grant."
+        },
+        {
+          "url": "https://unmanned4you.com/contatti/",
+          "published_date": null,
+          "disposition": "Issuer original confirms Naples address and domain continuity."
+        },
+        {
+          "url": "https://atoka.io/public/it/azienda/unmanned4you-srl/81e1cb3df563",
+          "published_date": null,
+          "disposition": "Registry-derived company-object candidate not a financing announcement."
+        }
+      ],
+      "evidence_note": "Issuer identity and project pages checked with Italian financing searches; no evidenced round extracted.",
+      "hold_note": "Hold private capital and specific public project grants; project activity and partner logos do not prove investor roles or recipient allocations."
+    },
+    {
+      "id": "313e377f-a885-4239-99c0-428b71bbc8de",
+      "slug": "unseenlabs",
+      "name": "Unseenlabs",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Unseenlabs funding 2024 2025 2026 85 million 20 7.5",
+        "site.unseenlabs.com 2018 7.5 Hemeria Definvest",
+        "site.unseenlabs.com \"2018\" \"7.5\"",
+        "site.bpifrance.fr Unseenlabs 2018 7,5 Definvest",
+        "site.unexopartenaire.fr Unseenlabs 2024 capital",
+        "site.isalt.fr Unseenlabs FST 85 capital",
+        "\"Unseenlabs\" \"2025\" \"2026\" financing funding debt"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://presse.bpifrance.fr/definvest-nexeya-et-breizh-up-placent-en-orbite-unseenlabs-la-start-up-rennaise-qui-surveille-les-mers-depuis-lespace/?lang=fra",
+          "published_date": "2018-09-07",
+          "disposition": "Original first financing amount/three parties verified."
+        },
+        {
+          "url": "https://www.unseenlabs.com/app/uploads/2025/03/press-release-unseenlabs-fundraising.pdf",
+          "published_date": "2021-04-27",
+          "disposition": "Original20mB and six participants verified."
+        },
+        {
+          "url": "https://www.unseenlabs.com/app/uploads/2025/03/unseenlabs-press-release-_-fundraising_compressed.pdf",
+          "published_date": "2024-02-27",
+          "disposition": "Original85m total; bank pool and investment-bank adviser distinguished; no split inferred."
+        },
+        {
+          "url": "https://unseenlabs.com/en/news/record-breaking-fundraising-of-85-million/",
+          "published_date": "2024-02-27",
+          "disposition": "Issuer webpage corroborates third financing, not additional round."
+        },
+        {
+          "url": "https://www.defense.gouv.fr/aid/actualites/fonds-innovation-defense-participe-levee-fonds-85-millions-deuros-faveur-societe-unseenlabs",
+          "published_date": "2024-02-27",
+          "disposition": "Search candidate names FID lead; original page times out, exact attribution held."
+        },
+        {
+          "url": "https://www.unexo.fr/capital-innovation/unexo-accompagne-la-societe-unseenlabs/",
+          "published_date": "2024-02-28",
+          "disposition": "Original investor article opened; participation supported, no individual cheque inferred."
+        },
+        {
+          "url": "https://unseenlabs.com/en/company/",
+          "published_date": null,
+          "disposition": "Current issuer history searched; launch/product milestones not rounds."
+        }
+      ],
+      "evidence_note": "Three original public financings verified with original currencies and explicitly named participants.",
+      "hold_note": "Hold early grants/seed, primary equity/debt split of85m, exact Bpifrance vehicles/FID lead, beneficial bank allocations and newer private funding.120m cumulative versus112.5m event sum not bridged by invented7.5m event."
+    },
+    {
+      "id": "f098f77b-6da0-46cc-a357-834dafbcc8af",
+      "slug": "unusual-machines",
+      "name": "Unusual Machines",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 7,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Unusual Machines closes offering 2026 2025 2024 IPO financing",
+        "site.unusualmachines.com \"Closing\" \"Offering\" 2025 2026",
+        "site.unusualmachines.com \"closes\" \"million\" \"2025\"",
+        "site.unusualmachines.com \"closes\" \"million\" \"2024\"",
+        "\"Unusual Machines\" \"2025\" \"offering\" \"100 million\"",
+        "\"Unusual Machines\" \"2024\" \"1.955\"",
+        "site.sec.gov/Archives/edgar/data/1956955/ \"2026\" \"May\" \"at-the-market\" \"gross proceeds\"",
+        "site.sec.gov/Archives/edgar/data/1956955/ \"2025\" \"48.5 million\"",
+        "site.sec.gov/Archives/edgar/data/1956955/ \"2025\" \"$100\" \"October\"",
+        "site.unusualmachines.com \"financing update\" \"2025\"",
+        "site.sec.gov/Archives/edgar/data/1956955/ \"September 30, 2026\" \"ATM\"",
+        "site.sec.gov/Archives/edgar/data/1956955/ \"July\" \"48,500,000\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1956955/000168316824008413/umac_s1.htm",
+          "published_date": null,
+          "disposition": "SEC original verifies5mIPO,1.955m units placement; seller resales and acquisition consideration excluded."
+        },
+        {
+          "url": "https://www.newswire.com/news/unusual-machines-provides-financing-update",
+          "published_date": "2025-11-03",
+          "disposition": "Issuer update verifies40mMay,48.5mJuly and72,144,881October gross actual financings."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1956955/000168316826002113/umac_8k.htm",
+          "published_date": null,
+          "disposition": "Original8K confirms19March agreement,23March close and approximate150m gross."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1956955/000168316826003923/umac_i10q-033126.htm",
+          "published_date": "2026-05-14",
+          "disposition": "Original Q1 financials corroborate150m offering;138.8m net distinct."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1956955/000168316826008346/umac_ex9901.htm",
+          "published_date": "2026-11-05",
+          "disposition": "Latest issuer letter/equity statement confirms MayATM net58,198,764; cash balance and service shares not financing."
+        },
+        {
+          "url": "https://www.unusualmachines.com",
+          "published_date": null,
+          "disposition": "Current issuer investor/SEC navigation opened."
+        },
+        {
+          "url": "https://www.unusualmachines.com/news/",
+          "published_date": null,
+          "disposition": "Failed page fetch not evidence of no financing."
+        }
+      ],
+      "evidence_note": "Seven verified primary-financing disclosures; unnamed buyers remain unknown.",
+      "hold_note": "Hold preIPO private rounds, acquisition seller-note/noncash exchange boundaries, January2026 warrant exercises and earlier warrant cash episodes, exact May2026 ATM gross and original announcement dates, newer beneficial buyer roles; programme ceilings not raised money."
+    },
+    {
+      "id": "66212c82-49b4-48d8-9068-39a2aded99a6",
+      "slug": "uomz",
+      "name": "UOMZ",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"УОМЗ\" кредит заем облигации финансирование 2025 2026",
+        "\"УОМЗ\" облигации БО-05 2023 3 миллиарда"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://xn--g1ajft.xn--p1ai/storage/app/media/uploaded-files/shareholder/documents/2023/investmemobo-2023.pdf",
+          "published_date": null,
+          "disposition": "Exact Urals issuer and five previously placed nominal principals verified."
+        },
+        {
+          "url": "https://www.e-disclosure.ru/portal/files.aspx?id=9179&type=8",
+          "published_date": null,
+          "disposition": "2025 bond issuer report and May2026 correction indexed; ZIP originals not fully reviewed."
+        },
+        {
+          "url": "https://raexpert.ru/releases/2026/oct12b",
+          "published_date": "2026-10-12",
+          "disposition": "Rating original search corroborates subsidies/cash pooling and debtstock; stock not new round."
+        },
+        {
+          "url": "https://www.moex.com/ru/bonds/ru000a106cl4",
+          "published_date": null,
+          "disposition": "Exchange BO05 candidate and2023registration found; registration not placement cash."
+        },
+        {
+          "url": "https://boomin.ru/publications/news/uomz-zaversil-razmesenie-vypuska",
+          "published_date": "2023-06-13",
+          "disposition": "Candidate2.5bnBO05 closed placement held for original issuer reconciliation; not imported."
+        }
+      ],
+      "evidence_note": "Urals issuer confirmed; Ulyanovsk metadata unchanged. Five nominal bond principals verified.",
+      "hold_note": "Hold2022/2023 and later bonds, gross cash versus face value, subsidies/loans and bank/cashpool allocations; current17.254bn debtstock not a financing event."
+    },
+    {
+      "id": "3085c33b-d9bc-4f6a-b4fc-057d731e43c2",
+      "slug": "up-innovations",
+      "name": "UP Innovations",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"UP Innovations\" Ukraine investment funding",
+        "\"УП-ІННОВАЦІЇ\" грант інвестиції",
+        "\"UP-Innovations\" \"Brave1\"",
+        "\"UP Innovations\" investors company Ukraine funding round",
+        "\"УП-ІННОВАЦІЇ\" \"грант\" Шевчук"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.drone-directory.com.ua/profile/up-innovations/",
+          "published_date": null,
+          "disposition": "Directory names2023founding and TarasShevchuk; website unavailable."
+        },
+        {
+          "url": "https://opendatabot.ua/c/45400830",
+          "published_date": null,
+          "disposition": "Opened current registry-derived snapshot names same manager/code45400830. Current nominal capital90.61mUAH conflicts with cached10k figure; neither is verified paid-in financing."
+        },
+        {
+          "url": "https://youcontrol.com.ua/en/catalog/company_details/45400830/",
+          "published_date": null,
+          "disposition": "Registry candidate identity cross-check, no verified round terms."
+        }
+      ],
+      "evidence_note": "Exact Ukrainian LLC candidate linked by TarasShevchuk; no private financing details invented.",
+      "hold_note": "Hold founder capital-payment date/cash versus nominal registration, registry change history, Brave1/grant recipient originals and private investment terms. Low-context draft identity retained."
+    },
+    {
+      "id": "0115544b-485d-4835-b748-8060bd2982b1",
+      "slug": "ups-flight-forward",
+      "name": "UPS Flight Forward",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"UPS Flight Forward\" funding investment subsidiary 2026",
+        "\"UPS Flight Forward\" seed funding capital investment loan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://about.ups.com/sg/en/newsroom/press-releases/innovation-driven/ups-flight-forward-adds-new-aircraft.html",
+          "published_date": "2021-04-08",
+          "disposition": "ParentoriginalexplicitFlightForwardsubsidiary; BETAaircraftprocurement notissuerfunding."
+        },
+        {
+          "url": "https://investor.matternet.com/sec-filings/all-sec-filings/content/0001213900-26-084193/ea0299883-s1a1_matternet.htm",
+          "published_date": "2026-08-03",
+          "disposition": "MatternetSEC financingbelongsMatternet; UPSFlightForwardoperatorpartnershipnotissuerround."
+        },
+        {
+          "url": "https://ecorp.sos.ga.gov/BusinessSearch/BusinessInformation?businessId=3126584&businessType=Foreign+Profit+Corporation&fromSearch=True",
+          "published_date": null,
+          "disposition": "RegistrycandidateexactUPSFlightForwardInc/Delaware,notparententity."
+        }
+      ],
+      "evidence_note": "Exact database identity and public history checked; 0 supported financing events retained, unsupported candidate claims held individually.",
+      "hold_note": "Noownissuerfinancingverified inboundedreview; private/intercompanyfundingunknown. ParentUPSbonds andMatternetfinancingnotinherited."
+    },
+    {
+      "id": "4d69c97b-4f80-49a0-a42b-9ff33451a3f1",
+      "slug": "upstage",
+      "name": "Upstage",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Upstage\" Airbility investment 2026",
+        "site.upstage.ai news funding Series C 2026 180 million",
+        "site.upstage.ai/ko/news \"1,800\" 시리즈C",
+        "site.upstage.ai/ko/news \"엔비디아\" 투자 2026",
+        "site.upstage.ai \"2021\" \"316\" 투자",
+        "site.upstage.ai \"2026\" \"1,800\" 투자",
+        "site.sazze.vc Upstage 2026 180",
+        "site.sknetworks.co.kr 업스테이지 400억원 2026 10",
+        "site.nvidianews.nvidia.com Upstage November 2026",
+        "site.sknetworks.co.kr \"업스테이지\" \"400\" 투자",
+        "site.upstage.ai/ko/news \"1,000억원\" 시리즈B",
+        "site.upstage.ai \"2020\" \"시드\" 투자",
+        "site.nvidianews.nvidia.com \"New Planned Investments\" Korean Startups"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.unmannedairspace.info/counter-uas-systems-and-policies/airbility-raises-usd4-7m-to-fund-c-uas-interceptor-development/",
+          "published_date": "2026-09-15",
+          "disposition": "Context explicitly identifies KoreanAI Upstage as Sazze portfolio; Airbility round excluded."
+        },
+        {
+          "url": "https://www.upstage.ai/news",
+          "published_date": null,
+          "disposition": "Issuer legal identity/footer and current news checked; industrysoftwarefirm notmisidentified droneissuer."
+        },
+        {
+          "url": "https://www.upstage.ai/ko/news/series-a-startup",
+          "published_date": "2021-09-02",
+          "disposition": "KRW31.6bnA andco-leads confirmed;1Septemberannouncement vs2Septemberrepost."
+        },
+        {
+          "url": "https://www.upstage.ai/news/upstage-series-b-funding",
+          "published_date": "2024-04-16",
+          "disposition": "OriginalB listssevenleadgroup andfourparticipants; English72mUSDsame round."
+        },
+        {
+          "url": "https://www.upstage.ai/ko/news/upstage-series-b-bridge-funding",
+          "published_date": "2025-08-20",
+          "disposition": "KRW62bnbridge andKRW100bnpriorB; Amazonminorityequity notfullinstrumentproof."
+        },
+        {
+          "url": "https://www.upstage.ai/news/upstage-series-b-bridge",
+          "published_date": "2025-08-20",
+          "disposition": "USD45m samebridge notduplicate."
+        },
+        {
+          "url": "https://www.upstage.ai/blog/ja/upstage-series-c-3500",
+          "published_date": "2026-04-14",
+          "disposition": "OriginalJapanese135mUSDfirstclose,Sazzelead; nootherparticipantsinvented."
+        },
+        {
+          "url": "https://www.upstage.ai/news/upstage-amd-partnership",
+          "published_date": "2026-03-19",
+          "disposition": "GPUcollaboration no newfinancing announced."
+        },
+        {
+          "url": "https://www.sknetworks.co.kr/pr/news-room/mLBaoMcYRK0tiYKS",
+          "published_date": "2026-11-06",
+          "disposition": "November6 original mentions2026Feb27bn/March50bninvestment andOctober20bnstockdecision; primaryvssecondary andoverlapunresolved,held."
+        },
+        {
+          "url": "https://www.yna.co.kr/view/AKR20261109146400017",
+          "published_date": "2026-11-09",
+          "disposition": "NVIDIAexpectedC2,notcompleted; originalplannedinvestmentcandidateheld."
+        },
+        {
+          "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/171796/view",
+          "published_date": null,
+          "disposition": "Initialgovernmentsearchcandidate followedbyfulloriginalread (laterledgerentry); no extraevent."
+        },
+        {
+          "url": "https://www.sbvacorp.com/en/company",
+          "disposition": "Original corporate history confirmsSoftBankVenturesKorea→Asia→SBVA; reusedexistingprofile, parentGroupnotcheque.",
+          "published_date": null
+        },
+        {
+          "url": "https://blogs.nvidia.com/blog/korean-startup-investments-msit/",
+          "disposition": "Original9NovemberNVIDIAplannedinvestmentonly; neitherclosed norundisclosedcompletedround imported.",
+          "published_date": "2026-11-09"
+        },
+        {
+          "url": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/171796/view",
+          "disposition": "FulloriginalgovernmentMay4publication confirmsApril30approvalfor100bnKRWadvancedfunddirectequity withinplanned560bncapitalization. Payment/closing andoverlapwithprivateCfirstclose unresolved; heldratherthandoublecounted.",
+          "published_date": "2026-05-04"
+        }
+      ],
+      "evidence_note": "Exact database identity and public history checked; 5 supported financing events retained, unsupported candidate claims held individually.",
+      "hold_note": "Keep2026C2/NVIDIAplanned andSKNetworks2026primary-v-secondary/overlap unresolved; government560bncapitalizationapprovalneedsfulloriginalterms. Seedterms andbeneficialfundsunknown. SBVA/Sazzeidentityaliasesrequirecanonicalreview. No cumulativeorvaluationfunding."
+    },
+    {
+      "id": "2a5d6cce-01f6-49b9-8ee8-ab705fd51ce1",
+      "slug": "ural-works-of-civil-aviation-uzga",
+      "name": "Ural Works of Civil Aviation (UZGA)",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "УЗГА кредит финансирование инвестиции заем 2025 2026",
+        "site.rostec.ru УЗГА Новикомбанк 500 млн 2021",
+        "site.uwca.ru кредит финансирование 2026 2025",
+        "site.novikom.ru \"Уральским заводом\" \"500\"",
+        "\"УЗГА\" финансирование кредит 2024 2025 2026 Новикомбанк"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.uwca.ru",
+          "published_date": null,
+          "disposition": "IssuerdomaininDB; directfetchinaccessible,notnegativeevidence."
+        },
+        {
+          "url": "https://www.rostec.ru/media/news/novikombank-profinansiruet-sozdanie-perspektivnykh-samoletov/",
+          "published_date": "2021-08-04",
+          "disposition": "Originalcandidate timedout; lender-suppliedsyndication verifiedinstead."
+        },
+        {
+          "url": "https://elements.rostec.ru/media/news/novikombank-profinansiruet-sozdanie-perspektivnykh-samoletov/",
+          "published_date": "2021-08-04",
+          "disposition": "Mirror timedout; notadditionalround."
+        },
+        {
+          "url": "https://bosfera.ru/press-release/novikombank-profinansiruet-sozdanie-perspektivnyh-obrazcov-samoletov",
+          "published_date": "2021-08-04",
+          "disposition": "Bank-supplied original signed500mRUB exactUZGA borrower."
+        }
+      ],
+      "evidence_note": "Exact database identity and public history checked; 1 supported financing events retained, unsupported candidate claims held individually.",
+      "hold_note": "Earlier/latest loan/subsidy history anddrawdowns remainpartial; issuerdomainunavailableandRostecmirrortimeouts notnegativefindings."
+    },
+    {
+      "id": "53dcf038-5eb5-42a1-9c4a-0b3a386e7f8a",
+      "slug": "uralvagonzavod",
+      "name": "Uralvagonzavod",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Уралвагонзавод кредит облигации 2025 2026 ВТБ",
+        "site.novikom.ru Уралвагонзавод кредит",
+        "site.rostec.ru Уралвагонзавод кредит облигации финансирование",
+        "site.rostec.ru \"Уралвагонзавод\" \"кредит\" \"2015\"",
+        "\"Уралвагонзавод\" \"Новикомбанк\" соглашение 2022 2023",
+        "\"Уралвагонзавод\" облигации кредит 2010 2015 2026",
+        "\"Уралвагонзавод\" site.uvz.ru кредит облигации"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.interfax.ru/russia/734918",
+          "published_date": "2020-10-30",
+          "disposition": "2020loanassignment/restructuring notnewcash;25.7bguaranteescoverparentandsubsidiariesnotparentround."
+        },
+        {
+          "url": "https://bosfera.ru/press-release/novikombank-zaklyuchil-v-hode-innoprom-soglasheniya-na-245-mlrd-rubley",
+          "published_date": null,
+          "disposition": "Lender-supplied2022syndication searchcandidate:24.5baggregate severalcompaniesnotissueramount."
+        },
+        {
+          "url": "https://www.interfax.ru/business/443622",
+          "published_date": "2015-05-25",
+          "disposition": "12bnbondredemptionandup-to60brequestedguarantees notnewissueproceeds."
+        },
+        {
+          "url": "https://www.veb.ru/common/upload/files/veb/news/review/2015/op20150204.pdf",
+          "published_date": null,
+          "disposition": "VEBpressdigestcandidate2.4bnSvyazBankloan needsoriginalloanissuer/paymentreconciliation;held."
+        },
+        {
+          "url": "https://www.interfax-russia.ru/ural/news/uvz-vyplatil-134-64-mln-rub-po-8-mu-kuponu-debyutnyh-obligaciy",
+          "published_date": null,
+          "disposition": "Historical3bn2010bondcandidateunderliescouponpayment; seekoriginalissueplacementbeforeimport."
+        },
+        {
+          "url": "https://bonds.finam.ru/issue/details017B000002/default.asp",
+          "published_date": null,
+          "disposition": "Brokerbondcandidate notprimaryissuerdisclosure; no couponamountasfinancing."
+        }
+      ],
+      "evidence_note": "Exact database identity and public history checked; 0 supported financing events retained, unsupported candidate claims held individually.",
+      "hold_note": "Historic3bn2010bond/2.4bn2015loancandidatesneedoriginals, legalissuerandcash/refinancingaudit. Parent/subsidiaryguaranteeandassignmentamountsexcluded; nozerofundingclaim."
+    },
+    {
+      "id": "66832b8f-e5f4-486b-a4ef-6709b39764fa",
+      "slug": "urban-sky",
+      "name": "Urban Sky",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Urban Sky\" funding Series A Series B 2025 2026",
+        "site.urbansky.com raises seed series funding",
+        "site.urbansky.com \"4.1\" Seed 2021",
+        "\"Urban Sky\" \"National Science Foundation\" award 2020",
+        "\"Urban Sky\" \"Catapult\" \"2021\" seed funding Union Labs",
+        "site.nsf.gov/awardsearch 2112381 Urban Sky",
+        "site.urbansky.com grant 250000 Colorado 2020"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.urbansky.com/company/about",
+          "published_date": null,
+          "disposition": "Issueridentity/history andthreeprivate milestones; cumulative45m+notround."
+        },
+        {
+          "url": "https://www.urbansky.com/news",
+          "published_date": null,
+          "disposition": "Issuerdatedarchive andearlier/latestprivate/govclaimschecked."
+        },
+        {
+          "url": "https://www.newstack.com/blog/urban-sky-raises-4m-unveils-microballoon",
+          "published_date": null,
+          "disposition": "Investororiginal5participants andexplicitco-leads confirmed."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20231016936712/en/Urban-Sky-Announces-$9.75M-Series-A-Funding-Round",
+          "published_date": "2023-10-16",
+          "disposition": "Issueroriginal9750000A;co-leads/participantsverified."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20250206094005/en/Urban-Sky-Raises-$30-Million-in-Series-B-Funding-to-Unlock-Routine-and-Easy-Global-Access-to-the-Stratosphere",
+          "published_date": "2025-02-06",
+          "disposition": "Issueroriginal30mB;leadAltosandnineparticipantsverified."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/197320",
+          "published_date": null,
+          "disposition": "ExactrecipientNSF254685 award verified; no start-date substitution."
+        },
+        {
+          "url": "https://seedfund.nsf.gov/news/urban-sky/",
+          "published_date": null,
+          "disposition": "NSForiginallinks2112381toissuer; sameawardnotduplicate."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1642945",
+          "published_date": null,
+          "disposition": "16historicalSBIRawards total33.998834m notonegrant; fullindividualhistory andcontract/grantterms held."
+        },
+        {
+          "url": "https://www.urbansky.com/press/urban-sky-apfit-award-2026-07-20.pdf",
+          "published_date": "2026-07-20",
+          "disposition": "11.3mAPFIT procurement/fieldingaward notverifiedgrant; notimportedascapital."
+        },
+        {
+          "url": "https://fullratchet.net/310-why-we-invested-in-urban-sky-andrew-antonio-nate-williams/",
+          "published_date": null,
+          "disposition": "Primaryfounder/investorinterview statesNewStack2019preseed andAlanEustacefirstinvestor; AItranscript anddate/amount/roundallocationneedcorroboration,held."
+        },
+        {
+          "url": "https://seedtable.com/companies/urban-sky/funding-rounds",
+          "published_date": null,
+          "disposition": "SECfilingcandidates4,160,806/9,749,995/30,020,979 need originalreconciliation; noaddedoverlap."
+        }
+      ],
+      "evidence_note": "Exact database identity and public history checked; 4 supported financing events retained, unsupported candidate claims held individually.",
+      "hold_note": "Full16SBIRawardhistory,Colorado250kgrantoriginal,2019/2020SECoffering andprivate-roundpreciseamountoverlaps remainpartial. APFIT11.3mprocurement and99mcontractceiling notimportedascapital. Noownershipfromboardmembership."
+    },
+    {
+      "id": "af4e929e-d466-4b2c-bf8a-5dff6707cd8a",
+      "slug": "urbanlink-air-mobility",
+      "name": "UrbanLink Air Mobility",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"UrbanLink\" funding investment seed 2024 2025 2026",
+        "\"UrbanLink Air Mobility\" seed investment raised financing 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.flyurbanlink.com/news",
+          "published_date": null,
+          "disposition": "Currentissuerarchivechecked,2026aircraftplans notcapitalreceipts."
+        },
+        {
+          "url": "https://www.flyurbanlink.com/news/urbanlink-beta",
+          "published_date": "2025-07-28",
+          "disposition": "Unnamedfinancecompanyinitialleaseagreementup-to10aircraft,notverifiedborrowerloan orgrant."
+        },
+        {
+          "url": "https://www.flyurbanlink.com/news/urbanlink-air-mobility-appoints-aircraft-leasing-veteran-raymond-sisson-as-president",
+          "published_date": "2024-06-11",
+          "disposition": "1bnraisinggoal notclosed;15bnSissoncareer/500mTailwindsdifferentissuerexcluded."
+        }
+      ],
+      "evidence_note": "Exact database identity and public history checked; 0 supported financing events retained, unsupported candidate claims held individually.",
+      "hold_note": "1bnpublicraisinggoal andinitialunnamedleaseproposal remainunquantified/unclosed; privateinitialcapitalunknown. Nozerofundingclaim."
+    },
+    {
+      "id": "6f8d92d2-ee76-4ca8-8b83-4abd48318e00",
+      "slug": "urbanv",
+      "name": "UrbanV",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 4,
+      "searches_checked": [
+        "UrbanV financing investment shareholders 2025 2026",
+        "site.urbanv.com shareholders investment",
+        "site.urbanv.com \"investment\" \"capital\"",
+        "\"UrbanV\" \"investment\" \"2026\" funding financing",
+        "site.urbanv.com \"shareholders\" OR \"azionisti\"",
+        "site.adr.it \"UrbanV\" \"SAVE\" \"Bologna\" 2026",
+        "site.urbanv.com \"shareholders\" \"Aeroporti\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://prelios.com/it/comunicati-stampa/prelios-integra-sottoscritto-accordo-con-urbanv-prestazioni-tecnico-professionali",
+          "published_date": "2024-01-31",
+          "disposition": "Exact Italian UrbanV founded by four airport companies; engineering-servicesagreement is not equityround."
+        },
+        {
+          "url": "https://www.urbanv.com/en/about",
+          "published_date": null,
+          "disposition": "Issuer operations and globalpresence checked; metadata US geography not edited."
+        },
+        {
+          "url": "https://www.adr.it/documents/d/aeroporti-di-roma-en/adr_rel_fin_con_30-giu-2025_eng_def-pdf",
+          "published_date": null,
+          "disposition": "Original report returns403.2025 capitalincrease candidate needs primary nominal/premium/cash reconciliation; no amount imported."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/urbanv/financials",
+          "published_date": null,
+          "disposition": "Startupcompetition attribution not enough to verify an issuerround; UrbanVolt financing is unrelated."
+        }
+      ],
+      "evidence_note": "Bounded current original-source review with supported facts and issuer-specific exclusions recorded above. No empty-row or zero-funding inference.",
+      "hold_note": "2025capitalincrease originalblocked; historicalrecapitalization primaryproceeds and premiums, exactvehicles and latestfinancing unresolved. Foundersownership only, noUrbanVolt confusion."
+    },
+    {
+      "id": "a8c51d48-d849-4c67-8a87-ebd2a17a495c",
+      "slug": "ursa-major",
+      "name": "Ursa Major",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 9,
+      "relationship_count": 7,
+      "searches_checked": [
+        "Ursa Major funding 2025 2026 Series D E 274 million 100 million",
+        "site.ursamajor.com funding Series C 2021 85 million 2017 2018",
+        "site.ursamajor.com \"138 Million\" ",
+        "\"Ursa Major\" \"138\" site:ursamajor.com/media",
+        "site.ursamajor.com \"funding\" \"2017\" \"2019\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1723727/000172372717000001/primary_doc.xml",
+          "published_date": "2017-11-28",
+          "disposition": "Client fetched original XML after web tool rejected text/xml; sold/total/first-sale/security fields checked. No named investor inferred."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1723727/000172372720000003/primary_doc.xml",
+          "published_date": "2020-11-18",
+          "disposition": "Client fetched original XML after web tool rejected text/xml; sold/total/first-sale/security fields checked. No named investor inferred."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1723727/000172372721000003/primary_doc.xml",
+          "published_date": "2021-01-12",
+          "disposition": "Client fetched original XML after web tool rejected text/xml; sold/total/first-sale/security fields checked. No named investor inferred."
+        },
+        {
+          "url": "https://ursamajor.com/media/press-release/ursa-major-raises-85-million-in-series-c-funding/",
+          "published_date": "2021-12-07",
+          "disposition": "Verified dated issuer85mC, explicit lead/participants; no exact legal security."
+        },
+        {
+          "url": "https://ursamajor.com/media/press-release/ursa-majors-dollar138m-boost-new-solid-rocket-motors-and-scaled-propulsion/",
+          "published_date": "2023-12-01",
+          "disposition": "Two disclosed rounds kept separate with NULL amounts; combined138m not another round; no allocation of aggregate participants."
+        },
+        {
+          "url": "https://ursamajor.com/media/press-release/ursa-major-raises-100-million-closes-series-e/",
+          "published_date": "2025-11-18",
+          "disposition": "Verified100mE and separate50m debt commitments; bookings excluded."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2128045/000121390026093229/ea030301301ex99-1.htm",
+          "published_date": "2026-08-25",
+          "disposition": "Signed at-least350mPIPE conditional2027close;110m future funding language not receipt."
+        }
+      ],
+      "evidence_note": "Bounded current original-source review with supported facts and issuer-specific exclusions recorded above. No empty-row or zero-funding inference.",
+      "hold_note": "Seed and earlier2019amendment chronology, D/D1split andspecificparticipation, individualvehicles, SeriesEsecurity anddebtterms; futurePIPEactualfunding/closing unproven."
+    },
+    {
+      "id": "1c10b6c8-c085-4869-bf40-7f0b67687fde",
+      "slug": "usa-drone-motors",
+      "name": "USA Drone Motors",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"USA Drone Motors\" funding investment",
+        "\"USA Drone Motors\" \"investment\" OR \"funding\" OR \"about\"",
+        "\"USA Drone Motors\" company funding loan grant",
+        "\"Pendulum Robotics\" funding investors",
+        "site.ycombinator.com/companies \"Pendulum Robotics\"",
+        "site.ycombinator.com \"Open Actuation\"",
+        "\"USA Drone Motors\" \"Jon Facer\" funding seed investor 2026",
+        "\"USA Drone Motors\" investor loan grant 2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://usadronemotors.com/",
+          "published_date": null,
+          "disposition": "Footer identifies PendulumRoboticsInc. Product design seed files are not seed financing."
+        },
+        {
+          "url": "https://agfundernews.com/usa-drone-motors-emerges-from-stealth-to-target-gap-in-domestic-drone-supply-chain",
+          "published_date": "2026-07-24",
+          "disposition": "Founder JonFacer plans seed after prototype validation; not completed fundraise."
+        },
+        {
+          "url": "https://www.ycombinator.com/companies/open-actuation",
+          "published_date": null,
+          "disposition": "Same founder and similaroperations suggest continuity; exact legal/brand transition notproved, so YCterms notallocated toUSADroneMotors."
+        },
+        {
+          "url": "https://pendulumrobotics.com/",
+          "published_date": null,
+          "disposition": "US componentsbusiness checked; source supplies no capitalterms."
+        },
+        {
+          "url": "https://dronexl.co/2026/08/03/american-drone-component-gap-commercial-fcc-january-2027/",
+          "published_date": "2026-08-03",
+          "disposition": "PDW820mconditional loan andWestmag11m belongotherissuers, notUSA DroneMotors."
+        }
+      ],
+      "evidence_note": "Bounded current original-source review with supported facts and issuer-specific exclusions recorded above. No empty-row or zero-funding inference.",
+      "hold_note": "Exactlegal continuity among USA DroneMotors/Pendulum/OpenActuation andYCvehicle/actualfinancialterms needsproof; seedplansnotcash."
+    },
+    {
+      "id": "e3455d5e-76f4-4d63-9a0a-c08b0836ea8e",
+      "slug": "ustrazakapl",
+      "name": "uStrażaka.pl",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"uStrazaka\" dofinansowanie dotacja inwestor",
+        "\"uStrażaka.pl\" \"dofinansowanie\"",
+        "site.ustrazaka.pl \"dotacje\" OR \"NIP\" OR \"dofinansowanie\"",
+        "\"uStrażaka.pl\" \"9372750742\" dotacja",
+        "\"uStrażaka.pl\" inwestycja kapitał pożyczka 2026",
+        "site.ustrazaka.pl \"finansowanie\" OR \"dotacja\" OR \"inwestor\"",
+        "site.ustrazaka.pl \"pożyczka\" \"kapitał\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ustrazaka.pl/",
+          "published_date": null,
+          "disposition": "ExactKRS0001026242/NIP9372750742. Retail/trainingoperations notcapitalraising."
+        },
+        {
+          "url": "https://rejestr.io/krs/1026242/ustrazaka-pl",
+          "published_date": "2026-06-29",
+          "disposition": "NominalPLN6000 capital andthreeowners not a verified fundraisingevent; cash/premium/date terms unavailable."
+        },
+        {
+          "url": "https://ustrazaka.pl/oferty/",
+          "published_date": null,
+          "disposition": "Customerprocurement support andequipment offers notrecipientgrants."
+        },
+        {
+          "url": "https://www.imsig.pl/krs/0001026242",
+          "published_date": null,
+          "disposition": "Registerannouncements identifyentity; no subscription cashfinancingterms checked."
+        }
+      ],
+      "evidence_note": "Bounded current original-source review with supported facts and issuer-specific exclusions recorded above. No empty-row or zero-funding inference.",
+      "hold_note": "OriginalKRSfinancial/subscription andSUDOPgrant disclosures notfullyreconciled; nominalcapital notcashround."
+    },
+    {
+      "id": "7912b859-9fb9-4ed1-b019-45c70c86c828",
+      "slug": "utopia-compression",
+      "name": "Utopia Compression",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Utopia Compression funding SBIR grant investors",
+        "site.utopiacompression.com SBIR contract grant",
+        "\"UtopiaCompression\" venture funding seed equity loan",
+        "\"UtopiaCompression\" \"funding\" 2026 2025 equity"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://utopiacompression.com/about-us/",
+          "published_date": null,
+          "disposition": "Founded2002, LosAngeles/Utah business. Founderprofessional fundinghistory is notcompany capital."
+        },
+        {
+          "url": "https://utopiacompression.com/capability-statement/",
+          "published_date": null,
+          "disposition": "Government/commercialresearchcounterparties, notnamed equityinvestors."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/211298",
+          "published_date": null,
+          "disposition": "N00024-24-C-S048USD174905 explicitcontract; not assumedgrant or investmentround."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/343189",
+          "published_date": null,
+          "disposition": "Multi-award history needscontract/grant instrument andoverlap reconciliation; no programme totals imported."
+        },
+        {
+          "url": "https://projects.propublica.org/coronavirus/bailouts/loans/utopiacompression-corporation-9098017104",
+          "published_date": null,
+          "disposition": "OriginalSBAloanamount/approval/forgiveness notchecked; candidateheld."
+        },
+        {
+          "url": "https://utopiacompression.com/news/",
+          "published_date": null,
+          "disposition": "Fetchinaccessible, notnegativefunding evidence."
+        }
+      ],
+      "evidence_note": "Bounded current original-source review with supported facts and issuer-specific exclusions recorded above. No empty-row or zero-funding inference.",
+      "hold_note": "PPP loanoriginal/terms andlongSBIRcontract/grant distinction remainunreconciled; governmentprocurement not equity."
+    },
+    {
+      "id": "8888d600-9c37-4d85-b3ad-161632a71026",
+      "slug": "uvify",
+      "name": "UVify",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "UVify funding seed investment 2016 2026",
+        "site.uvify.com investment funding Naver 2026",
+        "site.uvify.com NAVER investment",
+        "\"UVify\" \"투자\" \"2026\"",
+        "site.uvify.com \"funding\" OR \"investors\"",
+        "site.navercorp.com \"유비파이\"",
+        "\"UVify\" \"K Cube\" 300 million 2014",
+        "site.kakao.vc 유비파이 투자 3억",
+        "\"UVify\" \"600\" site.crit.vc"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.uvify.com/discover",
+          "published_date": null,
+          "disposition": "Issuer self-identifies US/Korean operating business and approximate60bn2026 financing; dated linked February news."
+        },
+        {
+          "url": "https://zdnet.co.kr/view/?no=20260225091941",
+          "published_date": "2026-02-25",
+          "disposition": "Read body: CRIT/NXC first-stage600억원; ongoing round; no invented security or stage."
+        },
+        {
+          "url": "https://www.seumlaw.com/insights/case/1634",
+          "published_date": "2026-08-14",
+          "disposition": "Original HTML retrieved client-side and rendered content checked: February600억원 from CRIT/NXC. August14 adviser publication is not new financing date."
+        },
+        {
+          "url": "https://navercorp.com/media/pressReleasesDetail?seq=10034314",
+          "published_date": "2026-06-01",
+          "disposition": "Investor original June1 confirms investment; monetary amount and legal instrument not disclosed."
+        },
+        {
+          "url": "https://www.koreajoongangdaily.com/business/300-million-won-deal-a-sign-drone-market-has-lifted-off/11211434",
+          "published_date": "2015-09-02",
+          "disposition": "Read dated2015report KRW300m. Combined agency600m not split or treated as confirmedgrant."
+        }
+      ],
+      "evidence_note": "Bounded current original-source review with supported facts and issuer-specific exclusions recorded above. No empty-row or zero-funding inference.",
+      "hold_note": "Historic2016USD4m/NCSOFTdates and2015combinedagency600m, beneficialfundvehicles, legalUS/Koreanrecipient, February/NAVERoverlap andspecificsecurity unknown."
+    }
+  ],
+  "source_and_identity_reconciliation": [
+    {
+      "company_slug": "unseenlabs",
+      "sources": [
+        {
+          "url": "https://unseenlabs.com/en/news/record-breaking-fundraising-of-85-million/",
+          "disposition": "Root independently opened issuer27February2024 EUR85m closing. Named Strategic Transition Fund separated from ISALT manager; cumulative totals not additional rounds."
+        }
+      ]
+    },
+    {
+      "company_slug": "ursa-major",
+      "sources": [
+        {
+          "url": "https://ursamajor.com/media/press-release/ursa-major-to-go-public/",
+          "disposition": "Root independently opened2026 announced SPAC transaction: at least350mPIPEcommitments; approximate110msigningfunding must reconcile original filing. Valuation and potential trust proceeds not closed financing."
+        },
+        {
+          "url": "https://ursamajor.com/media/press-release/ursa-major-raises-100-million-closes-series-e/",
+          "disposition": "Root issuer18November2025 confirms100mclosedSeriesE plus50mdebtcommitments distinct; contract bookings excluded."
+        }
+      ]
+    },
+    {
+      "company_slug": "upstage",
+      "sources": [
+        {
+          "url": "https://www.sbvacorp.com/en/company",
+          "disposition": "Root checked original investor corporate history; Korea to Asia to SBVA continuity. Reuse existing SoftBank Ventures Korea profile, preserve fields, retain current source name in notes. No attribution to former SoftBank Group parent or unnamed fund."
+        },
+        {
+          "url": "https://www.sbva.vc/en/press/12?page=1",
+          "disposition": "29January2024 press-release search candidate timed out on direct open; not treated as independently verified page. Corporate-history original independently supports exact rebrand sequence."
+        }
+      ]
+    },
+    {
+      "company_slug": "uvify",
+      "sources": [
+        {
+          "url": "https://www.kakaocorp.com/page/detail/9854",
+          "disposition": "Root corporate original confirms K-Cube former name of Kakao Ventures. No pre-existing either profile; create one current Kakao Ventures profile, retaining historical source name in note; no parent cheque."
+        }
+      ]
+    },
+    {
+      "disposition": "Initial41events plus13new generic links committed. Final groupC added one UPS ownership link after initial consolidation; full final manifest was retested with production rollback, then idempotently replayed adding only one owner profile/link. No event inserted twice. One pre-existing LitBAN relationship reused unchanged."
+    }
+  ],
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Rollback, atomic counts, idempotence, conflicting amount and participant-source FK rejection passed for both initial and final manifest.",
+    "production_rollback_baseline_restored": true,
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 41,
+      "mismatched_facts": 0,
+      "participant_matches": 100,
+      "source_matches": 50,
+      "relationship_matches": 15,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 1
+    },
+    "company_investment_research_actual_count": {
+      "research_rows": 1230,
+      "partial_rows": 1230,
+      "new_exact_name_duplicate_groups": 0
+    },
+    "prior_data_hashes": {
+      "prior_relationships_hash": "f08702014090805db924d5f27947026f",
+      "prior_rounds_hash": "60e5a134057e5040facd9c8a6a883b71"
+    },
+    "all24_company_metadata_hashes_preserved": true,
+    "legacy_selected_relationship_note": "Existing Coinvest and LitBAN associations dated2026-11-01 preserved; importer uses conflict-do-nothing. LitBAN manifest matches existing original URL."
+  },
+  "publication_scope": {
+    "current_manifest_event_rows": 41,
+    "current_manifest_live_matches": 0,
+    "targets_in_european_map_before": [],
+    "note": "All24 targets absent from European map under existing geography gates. Draft UnmannedAirspace ownership entry must remain unlinked. Approved DB facts do not override map scope."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and legacy relationships",
+    "Company metadata and publication/geography gates",
+    "Repository schedules",
+    "No new paid external API"
+  ],
+  "programme_complete": false,
+  "publication": {
+    "status": "awaiting_existing_build_trigger",
+    "report": "research-agent/reports/2026-11-14-funding-landscape-eighty-eighth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261114-eighty-eighth.json"
+  }
+}
