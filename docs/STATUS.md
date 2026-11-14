@@ -2251,3 +2251,10 @@ Reviewed24 distinct cohort identities in four read-only groups:8 bounded reviews
 Audit: https://github.com/brunotaut/xsonomy-news/blob/main/research-agent/reports/2026-11-14-funding-landscape-eighty-fourth.json
 
 Publication verified 2026-11-14T12:09:46Z: https://github.com/brunotaut/xSonomy/actions/runs/43593210392 succeeded. Fresh map 2026-11-14T12:07:43.548Z and investor data 2026-11-14T12:07:46.726Z verified:567 map companies,1590 events,1390 participations;3349 investor profiles and603 portfolio entries. All33 referenced profiles,30 participation source URLs and15 generic entries verified;13 clickable links plus2 draftTiberius holdings correctly unlinked. New targets remain outside existing European map. Queue:1198 bounded source reviews,1119 partial,247 queued;2564 identities total. Lease released; continuation enabled.
+
+
+### 2026-11-14 — recovered eighty-fifth funding reconciliation
+
+Recovered expired writer lease after interrupted research; checked selected24identities had no previously committed events. Restored four read-only groups:6 bounded reviews completed,18 retain explicit holds. Imported32 approved financing disclosures,56 source-linked participations,43 source rows and7 ownership associations;19 new investor profiles. PostgreSQL tests, production rollback restoration, exact fact/role/source/contribution audit and idempotency passed; curated profiles, existingTrinity associations and draft gates preserved. Existing catalogue build pending. Programme incomplete; schedules unchanged.
+
+Audit: https://github.com/brunotaut/xsonomy-news/blob/main/research-agent/reports/2026-11-14-funding-landscape-eighty-fifth.json
