@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1148,
   "next_action": "Continue Skydio through SLI, then remaining cohort and partial histories. Seventy-sixth25 events already committed and both fresh live datasets verified; do not retry import. Retain published Liebherr issuer/allocation hold and source-specific limitations. Programme incomplete; continuation enabled.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-14T04:04:58Z",
+  "updated_at": "2026-11-14T04:57:35Z",
   "source_reconciliation_companies": 1104,
   "approved_funding_events": 3891,
   "round_participations": 5397,
@@ -6721,7 +6721,29 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "run_id": "funding-20261114-seventy-seventh",
+    "manifest": "research-agent/imports/funding-landscape-20261114-seventy-seventh.json",
+    "status": "validated_production_rollback_passed_awaiting_atomic_import",
+    "prepared_at": "2026-11-14T04:57:35Z",
+    "baseline": {
+      "events": 3904,
+      "approved": 3891,
+      "links": 5397,
+      "sources": 5375,
+      "profiles": 3170,
+      "covered": 1104,
+      "relationships": 516,
+      "preserved_profiles_hash": "71fc78ad6ad56ed4a8b03314705b6414"
+    },
+    "expected": {
+      "events": 30,
+      "links": 78,
+      "sources": 35,
+      "relationships": 4
+    },
+    "recovery_note": "Before retry inspect dataset and exact manifest facts; production rollback restored baseline. Local PostgreSQL rollback/atomicity/idempotency/conflict/source-FK tests passed. No atomic commit yet."
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-14T04:04:58Z",
