@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-14",
   "started_at": "2026-11-14T17:52:12.237Z",
   "manifest": "research-agent/imports/funding-landscape-20261114-eighty-seventh.json",
@@ -36,7 +36,7 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
     "reviewed_existing_fact_corrections": 0,
     "db_total_events": 4221,
@@ -44,7 +44,17 @@
     "db_round_participations": 5837,
     "db_investor_profiles": 3419,
     "db_source_reconciliation_companies": 1219,
-    "company_metadata_hashes_preserved": 24
+    "company_metadata_hashes_preserved": 24,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 10,
+    "clickable_generic_company_links_verified": 9,
+    "draft_generic_entries_remain_unlinked": 1,
+    "active_minutes": 15.22,
+    "checked_identities_per_hour": 94.6,
+    "completed_reviews_per_hour": 11.8,
+    "timing_scope": "Elapsed single writer lease through four disjoint read-only groups, exact issuer/vehicle/date/security and original-currency checks, early durable checkpoints, current importer/schema fixtures, PostgreSQL tests, production rollback, one atomic import, exact facts/roles/sources/contributions and extension-parent audit, replay, durable readbacks, successful existing build and both fresh datasets. Three bounded reviews completed;21 retain concrete holds. Concurrent durations not summed; no speedup or ETA claimed."
   },
   "production_before": {
     "events": 4183,
@@ -1546,7 +1556,20 @@
     },
     "all24_company_metadata_hashes_preserved": true,
     "existing_selected_generic_relationships_before": [],
-    "existing_selected_generic_relationships_preserved": true
+    "existing_selected_generic_relationships_preserved": true,
+    "live_generic_entry_verification": {
+      "entries": 10,
+      "source_urls": 10,
+      "clickable_company_links": 9,
+      "unlinked": [
+        {
+          "investor": "advanced-autonomous-solutions-fund",
+          "company": "uavlas",
+          "published": false,
+          "url": null
+        }
+      ]
+    }
   },
   "publication_scope": {
     "current_manifest_event_rows": 38,
@@ -1564,8 +1587,50 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "awaiting_existing_build_trigger",
+    "status": "verified",
+    "checked_at": "2026-11-14T18:07:25.490Z",
+    "verified_at": "2026-11-14T18:07:25.490Z",
+    "catalogue_commit": "d5cc88693e0afce146d11c81bd9bd407e51ba0cc",
+    "source_commit": "3f877ffde0153fe882575e6b8bc83f46bc549ca2",
+    "workflow_run": {
+      "id": 43624569704,
+      "head": "d5cc88693e0afce146d11c81bd9bd407e51ba0cc",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43624569704"
+    },
     "report": "research-agent/reports/2026-11-14-funding-landscape-eighty-seventh.json",
-    "manifest": "research-agent/imports/funding-landscape-20261114-eighty-seventh.json"
-  }
+    "manifest": "research-agent/imports/funding-landscape-20261114-eighty-seventh.json",
+    "generated_at": "2026-11-14T18:05:31.185Z",
+    "investor_generated_at": "2026-11-14T18:05:34.168Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3410,
+    "portfolio_relationships": 624,
+    "expected_profiles": 62,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 10,
+    "generic_portfolio_entries_verified": 10,
+    "clickable_company_links_verified": 9,
+    "unlinked_under_existing_publication_gates": [
+      {
+        "investor": "advanced-autonomous-solutions-fund",
+        "company": "uavlas",
+        "published": false,
+        "url": null
+      }
+    ],
+    "manifest_participation_source_matches": 61,
+    "manifest_generic_relationship_matches": 10,
+    "current_manifest_event_rows": 38,
+    "current_manifest_live_matches": 0,
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "Nine pre-existing anonymous profiles excluded: DB3419 versus live3410; three prior generic entries remain excluded. All24target slugs absent from the European map before/after import under existing gates. All62referenced profiles,61participation source URLs and10generic entries/source URLs verified;9company links clickable, UAVLAS draft entry remains unlinked.32new investor profiles published. European map567companies/1590events/1390links unchanged.38new financing disclosures remain source-audited in DB under existing scope gates. All24company metadata hashes and prior investor-profile hash preserved."
+  },
+  "completed_at": "2026-11-14T18:07:25.490Z"
 }
