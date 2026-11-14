@@ -1,0 +1,1112 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-14",
+  "started_at": "2026-11-14T04:46:00Z",
+  "manifest": "research-agent/imports/funding-landscape-20261114-seventy-seventh.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 0,
+    "new_or_retained_partial": 24,
+    "new_approved_events": 30,
+    "new_round_participations": 78,
+    "new_source_rows": 35,
+    "new_generic_portfolio_relationships": 4,
+    "new_companies_with_events": 14,
+    "new_investor_profiles": 45,
+    "group_search_queries_executed": 115,
+    "root_additional_search_queries": 6,
+    "search_queries_executed": 121,
+    "per_company_search_ledger_entries": 116,
+    "source_ledger_entries": 86,
+    "root_source_ledger_entries": 9,
+    "company_database_identity_contexts_checked": 24,
+    "existing_canonical_events_inspected": 15,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 30,
+    "mismatched_facts": 0,
+    "participant_matches": 78,
+    "source_matches": 35,
+    "relationship_matches": 4,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 0,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "reviewed_existing_fact_corrections": 0
+  },
+  "production_before": {
+    "events": 3904,
+    "approved": 3891,
+    "links": 5397,
+    "sources": 5375,
+    "profiles": 3170,
+    "covered": 1104,
+    "relationships": 516,
+    "preserved_profiles_hash": "71fc78ad6ad56ed4a8b03314705b6414"
+  },
+  "production_after": {
+    "events": 3934,
+    "approved": 3921,
+    "links": 5475,
+    "sources": 5410,
+    "profiles": 3215,
+    "covered": 1118,
+    "relationships": 520,
+    "preserved_profiles_hash": "71fc78ad6ad56ed4a8b03314705b6414"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1148,
+    "source_review_partial": 1001,
+    "queued": 415
+  },
+  "per_company": [
+    {
+      "id": "38f36345-7133-4c52-93b0-b98643e5539c",
+      "slug": "skydio",
+      "name": "Skydio",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:skydio.com funding Series 2026 2025 2023 230 million",
+        "site:skydio.com \"2018\" \"42\" funding",
+        "Skydio funding seed Series A 2015 2016 Andreessen 3 million",
+        "Skydio funding Series B 42 million 2018 official",
+        "Skydio Axon 1.2 billion investment November 2026 funding",
+        "site:skydio.com funding 2026 November Axon"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.skydio.com/blog/skydio-raises-100-million",
+          "published_date": "2020-07-13",
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        },
+        {
+          "url": "https://www.skydio.com/ja-jp/blog/autonomous-drone-skydio-announces-170-million-series-d-funding",
+          "published_date": "2021-03-01",
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        },
+        {
+          "url": "https://www.skydio.com/ja-jp/blog/skydio-raises-230-million-series-e-funding-round",
+          "published_date": "2023-02-27",
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        },
+        {
+          "url": "https://www.skydio.com/blog/skydio-series-f",
+          "published_date": "2026-04-23",
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026071150/axon-20261105.htm",
+          "published_date": "2026-11-05",
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        }
+      ],
+      "evidence_note": "Actual primary-source and earlier/latest searches executed; source candidates and empty rows are not zero funding. Existing vehicle profiles reused where supported.",
+      "hold_note": "Earlier seed/A/B and possible2024 extension need original full-history reconciliation; latest Series G primary separated from secondary. DoCoMo vehicle held; security class in C/D/E/F undisclosed."
+    },
+    {
+      "id": "3590438b-0507-4349-b64d-1db1dd609248",
+      "slug": "skydrive",
+      "name": "SkyDrive",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:skydrive2020.com funding Series 2026 2024 2022",
+        "site:skydrive2020.com \"Series\" \"funding\" 2026",
+        "site:skydrive2020.com \"JPY\" \"2022\" funding",
+        "site:skydrive2020.com funding 2025 2026 Series C",
+        "site:skydrive2020.com \"2022\" \"9.6\"",
+        "SkyDrive funding Series C 9.6 billion 2022 2025 Suzuki",
+        "SkyDrive 資金調達 2026 2025 シリーズC",
+        "site:skydrive.co.jp \"2026.08.21\"",
+        "site:skydrive.co.jp \"2020\" \"3.9\" funding",
+        "SkyDrive funding November 2026 August 2026 Resona"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://skydrive.co.jp/news/13864/",
+          "published_date": "2022-09-26",
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        },
+        {
+          "url": "https://skydrive.co.jp/en/news/15904/",
+          "published_date": "2025-07-04",
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        },
+        {
+          "url": "https://skydrive.co.jp/en/news/72896/",
+          "published_date": "2026-08-21",
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        },
+        {
+          "url": "https://skydrive.co.jp/en/news/73149/",
+          "published_date": "2026-11-12",
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        }
+      ],
+      "evidence_note": "Actual primary-source and earlier/latest searches executed; source candidates and empty rows are not zero funding. Existing vehicle profiles reused where supported.",
+      "hold_note": "Earlier A/B,2023/2024 Series C extensions, government support remain held. JPY8bn extension aggregate is not independent incremental round. Resona managed funds unnamed.2022mixed allocation unverified."
+    },
+    {
+      "id": "6c91daed-e775-4d3f-a937-d28fed88ac0d",
+      "slug": "skydrop",
+      "name": "SkyDrop",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SkyDrop Flirtey funding investment official",
+        "SkyDrop Flirtey 2024 insolvency funding 15 million 2021",
+        "SkyDrop Flirtey SEC form D 2022 funding",
+        "SkyDrop Flirtey investor official Icehouse Ventures Sierra Angels 2023"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/skydrop-dominos-gear-up-to-launch-commercial-drone-delivery-trial-in-new-zealand-301573821.html",
+          "published_date": "2022-06-23",
+          "disposition": "Opened issuer original: SkyDrop formerly Flirtey; recentUSD2m already on existing issuer,40m cumulative excluded."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/valqari-expands-drone-industry-leadership-with-acquisition-of-skydrop-intellectual-property-portfolio-302617705.html",
+          "published_date": "2025-11-18",
+          "disposition": "Opened buyer original publishedNov18 withNov17dateline: Flirtey laterSkyDrop patentacquisition; excluded buyer asset purchase and insolvent seller proceeds from funding."
+        }
+      ],
+      "evidence_note": "Actual primary-source and earlier/latest searches executed; source candidates and empty rows are not zero funding. Existing vehicle profiles reused where supported.",
+      "hold_note": "Confirmed alias Flirtey. Root DB reconciliation identifies existing flirtey series-a-2017-01 USD16m,series-b-disclosed-2021-03 USD15m,skydrop-investment-disclosed-2022-06 USD2m; no reimport to duplicate issuer. Publication identity bridge remains held; bankruptcy/IP acquisition not financing."
+    },
+    {
+      "id": "f761f374-da29-417b-b48e-99ee1226b97e",
+      "slug": "skydweller-2",
+      "name": "Skydweller",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skydweller Aero funding series A 2021 2025 official",
+        "site:eib.org Skydweller 20220902 30 million",
+        "Skydweller Aero funding 2024 2025 2026 series B",
+        "\"Skydweller Aero\" financing SEC Series 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.skydweller.aero/news/skydweller-aero-inc-raises-40m-in-oversubscribed-series-a-funding-round-to-continue-rapid-technological-development-to-meet-demand-for-persistent-flight/",
+          "published_date": "2021-09-09",
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/neva-sgr-intesa-sanpaolo-groups-venture-capital-fund-invests-in-skydweller-aero-inc-301386578.html",
+          "published_date": "2021-09-28",
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        },
+        {
+          "url": "https://www.eib.org/en/press/all/2023-425-investeu-supports-eib-and-skydweller-eur30-million-loan-agreement-to-expand-solar-powered-autonomous-aircraft-programme",
+          "published_date": null,
+          "disposition": "Opened lender original: SkydwellerSL is subsidiary and borrower;EUR30m signedventureloan held from parent. SignatureNov14/2023 not assumed announcement/payment."
+        },
+        {
+          "url": "https://dronexl.co/2026/09/01/alteon-dynamic-soaring-25m-pre-seed/",
+          "published_date": "2026-09-01",
+          "disposition": "Opened identity provenance: comparative Skydweller solaraircraft text links same original skydweller.aero site. USD2.5m belongs Alteon, not Skydweller."
+        }
+      ],
+      "evidence_note": "Actual primary-source and earlier/latest searches executed; source candidates and empty rows are not zero funding. Existing vehicle profiles reused where supported.",
+      "hold_note": "One Series A total on canonical website identity; earlier tranche details not extra rounds. EUR30m EIB loan borrower is Skydweller SL subsidiary, not parent AeroInc; held to exact issuer mapping. Later funding and grants incomplete."
+    },
+    {
+      "id": "2e366318-fe95-43ca-8eb6-a831ec721de9",
+      "slug": "skydweller-aero",
+      "name": "Skydweller Aero",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skydweller Alteon September 2026 funding",
+        "\"Skydweller\" \"funding\" \"2026\" \"2025\"",
+        "\"Skydweller Aero\" \"Neva\" 2021 investment",
+        "Skydweller Aero funding series A 2021 2025 official"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.eib.org/en/press/all/2023-425-investeu-supports-eib-and-skydweller-eur30-million-loan-agreement-to-expand-solar-powered-autonomous-aircraft-programme",
+          "published_date": null,
+          "disposition": "Opened lender original: SkydwellerSL is subsidiary and borrower;EUR30m signedventureloan held from parent. SignatureNov14/2023 not assumed announcement/payment."
+        },
+        {
+          "url": "https://dronexl.co/2026/09/01/alteon-dynamic-soaring-25m-pre-seed/",
+          "published_date": "2026-09-01",
+          "disposition": "Opened identity provenance: comparative Skydweller solaraircraft text links same original skydweller.aero site. USD2.5m belongs Alteon, not Skydweller."
+        }
+      ],
+      "evidence_note": "Actual primary-source and earlier/latest searches executed; source candidates and empty rows are not zero funding. Existing vehicle profiles reused where supported.",
+      "hold_note": "Duplicate provenance resolves to same Skydweller Aero Inc solar aircraft and original skydweller.aero site; canonical skydweller-2 carries single Series A record. No duplicated events. EUR30m loan actual subsidiary Skydweller SL, held."
+    },
+    {
+      "id": "5060950b-3b5d-4af6-88ff-322db458fe5a",
+      "slug": "skyebrowse",
+      "name": "SkyeBrowse",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SkyeBrowse funding seed investment official 2026",
+        "SkyeBrowse investment funding seed founders capital",
+        "SkyeBrowse site:brinc.io investment",
+        "SkyeBrowse site:signia.vc",
+        "SkyeBrowse funding 2026 latest"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.skyebrowse.com/news/posts/skye-browse-raises-2-3-m-seed-round",
+          "published_date": null,
+          "disposition": "Opened original; supported subset recorded, exact issuer and original currency retained."
+        }
+      ],
+      "evidence_note": "Actual primary-source and earlier/latest searches executed; source candidates and empty rows are not zero funding. Existing vehicle profiles reused where supported.",
+      "hold_note": "Earlier2017academic grant and2018/2019 accelerator financing require actual company issuer/cheques; university research budgets not assigned. February27/28 issuer date discrepancy held. Latest review bounded incomplete."
+    },
+    {
+      "id": "bc2b7af0-d28e-442b-afe5-16b16d38534d",
+      "slug": "skyfireai",
+      "name": "SkyfireAI",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SkyfireAI funding investment 2024 2025 2026 official merger Skyfire Consulting",
+        "site:skyfireai.com \"11 million\" funding",
+        "SkyfireAI 11 million April 28 2026 AccessNewswire",
+        "SkyfireAI 500000 GENIUS NY 2025 original",
+        "\"SkyfireAI\" \"GENIUS NY\" 2025 $500,000",
+        "SkyfireAI raises 11 million April 28 2026 site:accessnewswire.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.accessnewswire.com/newsroom/en/aerospace-and-defense/skyfireai-raises-11-million-seed-to-advance-autonomous-multi-ship-drone-opera-1161412",
+          "published_date": "2026-04-28",
+          "disposition": "Opened original transaction-party announcement; supported event included with original currency, amount qualification and disclosed roles."
+        },
+        {
+          "url": "https://www.esd.ny.gov/esd-media-center/press-releases/empire-state-development-announces-round-nine-winners-genius-ny",
+          "published_date": "2026-05-08",
+          "disposition": "Opened original transaction-party announcement; supported event included with original currency, amount qualification and disclosed roles."
+        },
+        {
+          "url": "https://www.auvsi.org/news/skyfire-joins-forces-with-echelon-to-form-skyfireai-shaping-the-future-of-drone-technology-with-advanced-ai-for-autonomy-and-swarming/",
+          "published_date": "2024-09-18",
+          "disposition": "Opened member company release: Sep12 body dateline, Sep18 publication; Echelon acquired Skyfire Consulting to form SkyfireAI. No consideration or new issuer financing inferred. AI Fund earlier Echelon backing not fabricated as another priced round."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance and primary-source financing subset reviewed; candidate search results are not verified facts. No evidence of zero funding inferred.",
+      "hold_note": "Earlier Echelon/AI Fund founding capital amount/security/date remain unverified; 2024 merger consideration not new cash. Halogen precise vehicle and GENIUS payment/security remain undisclosed. No inference of zero other funding."
+    },
+    {
+      "id": "ef1c0645-6a0b-41e4-a84c-acf818d7e48c",
+      "slug": "skyfly-technologies",
+      "name": "Skyfly Technologies",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skyfly Technologies 10 million October 2026 funding official",
+        "Skyfly Technologies earlier investment HICO 2022 2023 2024 funding",
+        "Skyfly Technologies Florida Department Transportation investment 2026 letter intent",
+        "\"HICO\" \"Skyfly\" \"Archangel\" investment Nicholas Nelson"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://skyfly.aero/evtol-pioneer-skyfly-lands-10-million-to-bring-personal-vertical-flight-to-market/",
+          "published_date": "2026-10-20",
+          "disposition": "Opened original transaction-party announcement; supported event included with original currency, amount qualification and disclosed roles. Original About Archangel section explicitly names Archangel Capital Partners LLP, London/Tallinn defence fund; separate Australian Archangel Ventures profile excluded."
+        },
+        {
+          "url": "https://skyfly.aero/skyfly-signs-letter-of-intent-with-florida-department-of-transportation-fdot-to-establish-u-s-operations-hub-in-florida-at-suntrax/",
+          "published_date": null,
+          "disposition": "Opened own FDOT LOI: testing/lease intent and grant guidance, no awarded funding. Body July2026 conflicts with Aug10 showcase reference; no invented announcement day. UK issuer identified; catalogue US geography not modified."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance and primary-source financing subset reviewed; candidate search results are not verified facts. No evidence of zero funding inferred.",
+      "hold_note": "Earlier 2022/2023/2024 aggregator rounds remain candidates without verified original amounts/closing dates. FDOT LOI not funding. Original release itself identifies Archangel Capital Partners LLP legal entity for London/Tallinn defence fund; existing Australian archangel-ventures profile is a separate namesake and not reused. Wider earlier/latest coverage incomplete."
+    },
+    {
+      "id": "1d075156-cb9b-4398-b3a4-9b01d66d6a5c",
+      "slug": "skyfoundry-2",
+      "name": "SkyFoundry",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"SkyFoundry\" Army Vulcan Elements funding 2026",
+        "\"SkyFoundry\" initiative site:army.mil funding",
+        "\"SkyFoundry\" Vulcan initiative company investment 2025 2026",
+        "\"SkyFoundry\" \"investment\" company Army software SkySpark"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/us-army-competitively-selects-vulcan-elements-to-supply-high-performance-rare-earth-magnets-for-skyfoundry-drone-initiative-302886553.html",
+          "published_date": "2026-09-23",
+          "disposition": "Opened supplier Vulcan Elements original release: SkyFoundry is Army vertically integrated drone initiative at Tobyhanna, not a company issuer. Magnet contract and Vulcan financing not assigned to programme."
+        },
+        {
+          "url": "https://www.army.mil/article/289562",
+          "published_date": null,
+          "disposition": "Opened Army original year-in-review confirming SkyFoundry pilot programme under Army Materiel Command. Army industrial-base budgets and manufacturing capacity excluded as company financing; exact publication date not displayed in retrieved excerpt."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance and primary-source financing subset reviewed; candidate search results are not verified facts. No evidence of zero funding inferred.",
+      "hold_note": "Exact provenance identifies non-company Army programme. Identity-resolution hold retained: no mapping to similarly named SkySpark software firm or advisory studio, no Vulcan loan/contract misassignment. Programme budget is not company financing; catalogue metadata untouched."
+    },
+    {
+      "id": "8f8b9590-88f0-4c91-a109-d2bc8e083f1a",
+      "slug": "skygrid",
+      "name": "SkyGrid",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 2,
+      "searches_checked": [
+        "\"SkyGrid\" funding investment Boeing Wisk Archer 2026",
+        "\"SkyGrid\" \"investment\" \"SparkCognition\" Boeing 2018 2019 funding",
+        "\"SkyGrid\" site:skygrid.com Wisk ownership 2025 funding",
+        "\"SkyGrid\" financing raised seed series funding 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.skygrid.com/skygrid-announces-chief-executive-officer-transition/",
+          "published_date": "2023-08-28",
+          "disposition": "Opened original transaction-party announcement; supported event included with original currency, amount qualification and disclosed roles."
+        },
+        {
+          "url": "https://www.skygrid.com/skygrid-joins-wisk-to-accelerate-autonomy-and-airspace-integration/",
+          "published_date": "2025-06-09",
+          "disposition": "Opened own Wisk subsidiary announcement; generic backing only, no invented acquisition financing."
+        },
+        {
+          "url": "https://investors.boeing.com/investors/news/press-release-details/2026/Archer-to-Shape-Physical-AI-Future-of-Aerospace-and-Defense-with-Acquisition-of-Boeings-Wisk-Aero-Insitu-and-SkyGrid-Subsidiaries-Boeing-to-Invest-in-Archer-and-Collaborate/default.aspx",
+          "published_date": "2026-08-10",
+          "disposition": "Opened Boeing definitive transaction announcement: Archer acquisition agreement and Boeing stake in Archer concern seller/buyer equity, not new SkyGrid financing. No purchase price allocated across SkyGrid/Wisk/Insitu; completion not inferred from agreement."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance and primary-source financing subset reviewed; candidate search results are not verified facts. No evidence of zero funding inferred.",
+      "hold_note": "Earlier JV capitalization and latest issuer cash financing incomplete. Wisk ownership generic; Archer pending transaction not SkyGrid investment. Skygrid.ai pre-seed, 2008 Skygrid Series B and SparkCognition own financing excluded as namesake/parent rounds."
+    },
+    {
+      "id": "d35869d1-6bb2-4acd-b0c7-795032ee8a5c",
+      "slug": "skykraft",
+      "name": "Skykraft",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:skykraft.com.au funding investment 2023 2025 2026",
+        "Skykraft investment round extension 2024 2025 2026 funding Australia",
+        "Skykraft site:industry.gov.au 2024 \"3.7\" grant India",
+        "Skykraft site:skykraft.com.au funding 2026 2025 2024 grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.skykraft.com.au/post/skykraft-awarded-1m-act-government-priority-investment-programme-grant-for-satellite-development",
+          "published_date": "2019-09-12",
+          "disposition": "Opened original transaction-party announcement; supported event included with original currency, amount qualification and disclosed roles."
+        },
+        {
+          "url": "https://www.skykraft.com.au/post/skykraft-announces-3-5m-investment",
+          "published_date": "2021-12-08",
+          "disposition": "Opened original transaction-party announcement; supported event included with original currency, amount qualification and disclosed roles."
+        },
+        {
+          "url": "https://www.skykraft.com.au/post/skykraft-secures-100m-of-investment-to-transform-air-traffic-management",
+          "published_date": "2023-10-19",
+          "disposition": "Opened original transaction-party announcement; supported event included with original currency, amount qualification and disclosed roles."
+        },
+        {
+          "url": "https://www.minister.industry.gov.au/ministers/husic/media-releases/funding-australian-indian-space-projects",
+          "published_date": "2024-04-30",
+          "disposition": "Opened original transaction-party announcement; supported event included with original currency, amount qualification and disclosed roles."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance and primary-source financing subset reviewed; candidate search results are not verified facts. No evidence of zero funding inferred.",
+      "hold_note": "2020 XTEK consortium grant individual Skykraft allocation and other earlier/latest awards need original reconciliation. 2023 secondary AUD120m estimate does not replace original >AUD100m. Swedish SkyKraft eSAF JV and supplier Extraterrestrial Power financing excluded."
+    },
+    {
+      "id": "c8de8f1b-6934-47f1-82b8-03874c80d989",
+      "slug": "skylift",
+      "name": "Skylift",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Skylift\" \"Hornsea 2\" 2026 Ørsted",
+        "\"Skylift\" drone operator investment funding raised UK Orsted",
+        "\"Skylift\" drones funding site:skyliftuav.com",
+        "\"Skylift UAV\" funding investment grant Innovate UK 2024 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://dronexl.co/2026/10/19/orsted-skyports-dji-flycart-100-hornsea-2-toolkits/",
+          "published_date": "2026-10-19",
+          "disposition": "Opened exact catalogue provenance: Skylift was 2025 FlyingBasket operator, while Skyports operates 2026 trial. Distinct companies and service procurement, no funding statement."
+        },
+        {
+          "url": "https://orsted.co.uk/media/newsroom/news/2025/08/uk-first-as-orsted-uses-giant-drones-to-service-worlds-largest-offshore-wind-farms",
+          "published_date": "2025-08-21",
+          "disposition": "Opened Ørsted original confirms UK-based operator Skylift, FlyingBasket aircraft and offshore programme. Commercial service partnership does not establish investor backing."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/11676707",
+          "published_date": null,
+          "disposition": "Opened registry: active UK SKYLIFT UAV LTD 11676707, incorporated Nov14 2018. No cash financing inferred from registry identity, accounts dates or capital stock."
+        },
+        {
+          "url": "https://www.find-tender.service.gov.uk/Notice/010314-2025",
+          "published_date": null,
+          "disposition": "Original procurement notice fetch returned403; indexed procurement candidate is not financing evidence. No contract cash or grant imported."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance and primary-source financing subset reviewed; candidate search results are not verified facts. No evidence of zero funding inferred.",
+      "hold_note": "No supported issuer financing found within bounded source review; unknown does not mean zero. Own earlier/latest rounds, grant recipient allocations and registry filings still incomplete. Ørsted/Skyports/FlyingBasket programmes and procurement contracts not company funding."
+    },
+    {
+      "id": "c5336120-2458-4817-a8c1-a4c2d4c9fb51",
+      "slug": "skyline-nav-ai",
+      "name": "Skyline Nav AI",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skyline Nav AI funding seed investment 2026 2024",
+        "Skyline Nav AI funding site:skylinenav.com grant NASA",
+        "Skyline Nav AI seed funding investment investor NASA entrepreneurs challenge",
+        "Skyline Nav AI NASA 101000 funding 2023 2024 2026 investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.skylinenav.com/news",
+          "published_date": null,
+          "disposition": "Opened original dated and undated history, NASA prize and AFRL contracts. Research procurement and accelerator labels not converted automatically into equity/grants."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/216798",
+          "published_date": null,
+          "disposition": "Search-discovered official2025USD1.25m award candidate; instrument/procurement details still held; not imported."
+        },
+        {
+          "url": "https://science.nasa.gov/science-research/science-enabling-technology/technology-highlights/2023-entrepreneurs-challenge-winner-skyline-nav-ai-revolutionizing-gps-independent-navigation-with-computer-vision/",
+          "published_date": null,
+          "disposition": "Official search discovery confirms2023winner, not an independent investment round; prize split and earliest public date need follow-up."
+        }
+      ],
+      "evidence_note": "Four actual broad earlier/latest and issuer/investor searches executed per identity; opened originals support only the retained subset. Unknown is not zero funding.",
+      "hold_note": "Partial. NASA2023USD101k stated newprize funding held for phase split/prize instrument audit. AFRL200k/750kjointcontract and2025USD1.25m SBIR procurement not converted into grants; MassChallenge/non-equity accelerator entries not verified cash. Earlier/latest history remains open; noVCmoney statement applies only its2025source date."
+    },
+    {
+      "id": "cadf68ac-2288-49e2-8614-d2422f9a39d5",
+      "slug": "skylock-autonomous-guard",
+      "name": "Skylock (Autonomous Guard)",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Skylock investment financing site:sec.gov Airobotics 2022 2023",
+        "Skylock Autonomous Guard Airobotics acquisition 2023 2026 funding",
+        "\"Skylock\" \"גיוס\" \"2026\"",
+        "\"Autonomous Guard\" equity financing private placement 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://mayafiles.tase.co.il/rpdf/1752001-1753000/P1752319-00.pdf",
+          "published_date": "2026-06-29",
+          "disposition": "Opened original Hebrew TASE100%ownership and conditional supply LOI."
+        },
+        {
+          "url": "https://aguard-sys.com/about-us/",
+          "published_date": null,
+          "disposition": "Opened original parent portfolio convergence and listed identity."
+        },
+        {
+          "url": "https://uk.marketscreener.com/news/autonomous-guard-ltd-announced-that-it-has-received-funding-ce7e5dd9dd8bff23",
+          "published_date": null,
+          "disposition": "Search candidate parentPIPE June2025; original filing and issuer allocation held."
+        }
+      ],
+      "evidence_note": "Four actual broad earlier/latest and issuer/investor searches executed per identity; opened originals support only the retained subset. Unknown is not zero funding.",
+      "hold_note": "Partial. Skylock Systems subsidiary separated from listed AutonomousGuard/Technoplus predecessor and Airobotics/Skylock unrelated transaction candidates. ParentPIPE2025, sellerconsideration and2026customerorders not allocated to Skylock. Original2025transaction financing filing pending."
+    },
+    {
+      "id": "ae506583-109a-45f7-b4ed-99ca7227df1c",
+      "slug": "skyports-infrastructure",
+      "name": "Skyports Infrastructure",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skyports funding Series A B C ACS 2024 2026 official",
+        "Skyports raises Series A site:skyports.net 2019",
+        "site:skyports.net funding \"Series A\" 2019 2020",
+        "site:skyports.net funding \"110\" 2024 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://skyports.net/post/skyports-raises-usd-23-million-in-first-close-of-series-b-funding-round",
+          "published_date": null,
+          "disposition": "Opened original expressly group infrastructure and DroneServices use; already represented on canonicalskyports identity. No duplication ontoInfrastructure."
+        },
+        {
+          "url": "https://skyports.net/news-views",
+          "published_date": null,
+          "disposition": "Current official indexed2026project/subsidy news; not proof exact own-issuer financing."
+        }
+      ],
+      "evidence_note": "Four actual broad earlier/latest and issuer/investor searches executed per identity; opened originals support only the retained subset. Unknown is not zero funding.",
+      "hold_note": "Partial alias/parent issuer boundary. Canonicalcompanyskyports already hasgroup A/B/C andgrant events. Original migrated infrastructure-sitefooter13839872 doesnot prove parent historicalfunding belongs to thissubsidiary. No group, DubaiJVproject, acquisition seller, Japanese consortiumbudget or contract duplicated. ExactInfrastructureownfunding review remains open."
+    },
+    {
+      "id": "7205ba6e-e7fa-40a9-80c6-2266eeaa6a1e",
+      "slug": "skypuzzler",
+      "name": "Skypuzzler",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skypuzzler funding investment 2026 seed",
+        "Skypuzzler seed financing funding EIC 2023 2024 2026",
+        "Skypuzzler investering kapital finansiering 2026 2022 2023",
+        "Skypuzzler United Airlines Ventures investment March 2026 500000"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.skypuzzler.com/news/skypuzzler-successfully-closes-its-seed-funding-round-with-rethink-ventures-and-the-eic-fund/",
+          "published_date": "2025-08-21",
+          "disposition": "Opened original closedseed; EICgrant distinct."
+        },
+        {
+          "url": "https://www.skypuzzler.com/news/united-airlines-ventures-invests-in-danish-deep-tech-startup-skypuzzler-to-advance-the-future-of-airspace-management/",
+          "published_date": "2026-03-05",
+          "disposition": "Opened original dated investor addition."
+        },
+        {
+          "url": "https://www.unitedairlinesventures.com/news/united-airlines-ventures-invests-in-danish-deep-tech-startup-skypuzzler-to-advance-the-future-of-airspace-management",
+          "published_date": null,
+          "disposition": "Opened investor original confirming completed investment."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101188110",
+          "published_date": null,
+          "disposition": "Opened original sole legalbeneficiary, exact net contribution, ECsignature andprojectdates; no paymentdate inferred."
+        }
+      ],
+      "evidence_note": "Four actual broad earlier/latest and issuer/investor searches executed per identity; opened originals support only the retained subset. Unknown is not zero funding.",
+      "hold_note": "Partial. Earlier founder/angel financing and original2025annualreport behind EUR0.5mJanuary2026UAVcandidate stillneed audit. 2026SeriesAfundraisingplans notclosed. No undisclosed round amount or cheque invented."
+    },
+    {
+      "id": "dd7121d6-4444-444b-bb87-aebebb99a61c",
+      "slug": "skyral",
+      "name": "Skyral",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skyral funding investment Improbable 2023 2026",
+        "site:skyral.com funding investment 2026 2024 2023",
+        "Skyral NOIA Accrete funding 2026 November latest",
+        "Skyral 2023 NOIA acquisition Improbable financing original"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.skyral.com/2025/06/16/skyral-secures-usd-20-million-series-a-funding-to-accelerate-modelling-simulation-technology/",
+          "published_date": "2025-06-16",
+          "disposition": "Opened company original, June4dateline versus republicationJune16."
+        },
+        {
+          "url": "https://www.prnewswire.co.uk/news-releases/skyral-secures-usd-20-million-series-a-funding-to-accelerate-modelling--simulation-technology-302472527.html",
+          "published_date": "2025-06-04",
+          "disposition": "Company-issued original release found in search; June4dateline independently visible on company page."
+        },
+        {
+          "url": "https://www.improbable.io/news/improbable-sells-defence-business-to-group-of-investors-led-by-noia-capital",
+          "published_date": "2023-06-05",
+          "disposition": "Opened selleroriginal terms of spinout; not a newcash round."
+        },
+        {
+          "url": "https://www.skyral.com/news/",
+          "published_date": null,
+          "disposition": "Current original indexed throughNovember10/2026; operational releases not financing."
+        }
+      ],
+      "evidence_note": "Four actual broad earlier/latest and issuer/investor searches executed per identity; opened originals support only the retained subset. Unknown is not zero funding.",
+      "hold_note": "Partial.2023spinout newinvestment wording notcashallocation; sellerterms, earlier/privatecapital andlatest subsequenthistory requirefurtherreview. CumulativeR&D, Improbablegroupfunding and customerprocurement excluded."
+    },
+    {
+      "id": "e9e367ba-499b-4480-8e29-deea20b74c48",
+      "slug": "skyrunner",
+      "name": "SkyRunner",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "SkyRunner investment funding company flying car 2025 2026",
+        "SkyRunner flying car investment funding Stewart Hamel SkyRunner LLC",
+        "\"SkyRunner\" \"funding\" Hamel 2026 2025",
+        "\"SkyRunner\" investment site:flyskyrunner.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prweb.com/releases/skyrunner_what_an_adrenaline_rush_gravity_defying_vehicle_soars_skyward_on_bbc_america_s_top_gear_/prweb15276948.htm",
+          "published_date": "2018-03-05",
+          "disposition": "Opened original company-sponsored funding-arm identity, historical generic backing."
+        },
+        {
+          "url": "https://www.embention.com/news/embention-usa-and-skyrunner-announce-strategic-integration-delivering-autonomous-remote-piloted-capabilities-for-the-new-battlespace/",
+          "published_date": "2026-07-23",
+          "disposition": "Opened original exactMK3.2/StewartHamel integration; no financing stated."
+        },
+        {
+          "url": "https://www.flyskyrunner.com/how-to-buy/",
+          "published_date": null,
+          "disposition": "Own sales agreement indexed identifies LouisianaSkyRunnerLLC. Customer deposits/productprices not financing."
+        }
+      ],
+      "evidence_note": "Four actual broad earlier/latest and issuer/investor searches executed per identity; opened originals support only the retained subset. Unknown is not zero funding.",
+      "hold_note": "Partial. Historicalfundingarm verified withoutamount/security/date; earlier/latest external funding notfullybounded. Embention strategicintegration, FAAcertification, customerdeposits and aircraft prices notfunding. No namesakeSkyRunnerinvestment entities imported."
+    },
+    {
+      "id": "b9f48b63-de71-447d-94b7-c5638944fe87",
+      "slug": "skysafe",
+      "name": "SkySafe",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SkySafe funding Series A B 2026 site:skysafe.io",
+        "\"SkySafe\" \"funding\" \"Series B\"",
+        "site:skysafe.io \"million\" \"funding\"",
+        "site:a16z.com \"SkySafe\" \"2017\"",
+        "\"SkySafe\" \"$30 million\" \"Kingfisher\"",
+        "site:a16z.com SkySafe 11.5 million 2017",
+        "site:businesswire.com \"SkySafe Raises $30 Million\"",
+        "\"SkySafe\" \"2017\" \"11.5\" funding",
+        "\"SkySafe\" \"2025\" \"Motorola\" investment",
+        "\"SkySafe\" \"January\" \"2025\" debt Leonid"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.fastcompany.com/40441928/this-mobile-drone-shield-is-getting-backed-by-the-valley-and-the-seals",
+          "published_date": "2017-07-20",
+          "disposition": "Opened original reporting; Series A verified, earlier seed amount conflicts across secondary indexes and remains held."
+        },
+        {
+          "url": "https://www.citybiz.co/article/192139/skysafe-closes-30-million-series-b/",
+          "published_date": "2021-12-20",
+          "disposition": "Opened distributed issuer release; Series B amount/lead and participants verified, exact first announcement day held."
+        },
+        {
+          "url": "https://www.av.vc/blog/skysafe-safer-skies-on-the-rise",
+          "published_date": "2022-01-31",
+          "disposition": "Opened original investor account; named sibling fund participation verified."
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/motorola-solutions-forms-strategic-alliances-brinc-and-skysafe-drone-first-responder",
+          "published_date": "2025-04-08",
+          "disposition": "Opened investor Business Wire release reproduced on Nasdaq; undisclosed strategic investment confirmed."
+        },
+        {
+          "url": "https://www.skysafe.io/press",
+          "published_date": null,
+          "disposition": "Opened issuer current archive;2026 partnerships/products not funding."
+        },
+        {
+          "url": "https://www.skysafe.io/press/skysafe-with-motorola-solutions-deliver-counter-drone-intelligence-through-command-center-integration",
+          "published_date": "2025-04-08",
+          "disposition": "Opened company integration announcement; body lacks investment terms, investor announcement supports financing separately."
+        },
+        {
+          "url": "https://www.prweb.com/releases/skysafe-forms-strategic-alliance-with-motorola-solutions-to-deliver-counter-drone-intelligence-through-command-center-integration-and-investment-302422980.html",
+          "published_date": "2025-04-08",
+          "disposition": "Opened issuer distributed release; title mentions investment but body only integration, no amounts inferred."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/skysafe/financials",
+          "published_date": null,
+          "disposition": "Indexed source candidate only:2025 debt record and earlier2016 seed require original SEC filing; no indexed amount imported."
+        },
+        {
+          "url": "https://dronelife.com/2017/07/21/skysafe-raises-11-5-mill-counter-uas-technology-secures-dod-contract/",
+          "published_date": "2017-07-21",
+          "disposition": "403 direct open; search candidate only, not used as evidence."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, exact provenance, investor/issuer and local-language identity checks performed. Only supported financing subset retained; source candidates and empty rows are not zero funding.",
+      "hold_note": "Earlier2016 seed USD3m vsUSD3.5m discrepancy and January2025FormD debt amounts/convertibility await original SEC filing review; not assumed from offering target or database. Latest2025Motorola investment verified but terms undisclosed. Complete history not established."
+    },
+    {
+      "id": "c40ea1f4-ce85-461f-bd44-88ec1dac2379",
+      "slug": "skyvalor-2",
+      "name": "SkyValor",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SkyValor drones funding investment",
+        "\"SkyValor\" CACI company investor funding",
+        "site:caci.com \"SkyValor\" system",
+        "\"SkyValor\" incorporation investment startup"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.caci.com/skyvalor",
+          "published_date": null,
+          "disposition": "Opened original product page explicitly CACI advanced drone defense system, not standalone issuer."
+        },
+        {
+          "url": "https://investor.caci.com/2026-07-30-CACI-Secures-500M-C-UAS-IDIQ-Contract-SkyValor-Selected-as-First-Task-Order-for-JIATF-401s-Domestic-Shield-Effort",
+          "published_date": "2026-07-30",
+          "disposition": "Original issuer release indexed: three-yearUSD500mIDIQ ceiling and first taskorder procurement; excluded from financing."
+        },
+        {
+          "url": "https://investor.caci.com/2026-07-13-CACIs-SkyValor-Selected-to-Strengthen-Drone-Defense-at-the-Southern-Border",
+          "published_date": "2026-07-13",
+          "disposition": "Original issuer release indexed named product deployment contract, not equity/grant."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, exact provenance, investor/issuer and local-language identity checks performed. Only supported financing subset retained; source candidates and empty rows are not zero funding.",
+      "hold_note": "Original product identity established as CACI SkyValor. No standalone legal financing issuer verified; productrow not assigned CACI company financing or procurement. Catalogueidentity disposition remains held for owner metadata reconciliation, nofundingzeroassertion."
+    },
+    {
+      "id": "47318596-098f-4d74-8749-90a244eba2f9",
+      "slug": "skyways",
+      "name": "Skyways",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skyways funding investment seed Series 2026 site:skyways.com",
+        "\"Skyways\" \"investment\" \"ANA\" \"funding\"",
+        "site:skyways.com \"funding\" \"investors\"",
+        "site:leonidcp.com \"Skyways\"",
+        "site:anahd.co.jp Skyways investment 2025 fund",
+        "\"Skyways\" \"$1 million\" \"ANA\" fund"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.airframer.com/news_story.html?release=96887",
+          "published_date": "2025-06-26",
+          "disposition": "Opened issuer press release body; facility capacity and actual issuer verified, procurement excluded."
+        },
+        {
+          "url": "https://www.skyways.com/company",
+          "published_date": null,
+          "disposition": "Opened current issuer timeline;2025 investment amount verified, exactCVCvehicle/date/security held."
+        },
+        {
+          "url": "https://www.anahd.co.jp/group/en/pr/202603/20260305.html",
+          "published_date": "2026-03-05",
+          "disposition": "Original partner announcement indexed; names Skyways Air Transportation Inc., partnership/trials not investment terms."
+        },
+        {
+          "url": "https://www.skyways.com/newsroom/",
+          "published_date": null,
+          "disposition": "Issuer newsroom indexed current2026 product/partnership announcements; no later financing verified."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, exact provenance, investor/issuer and local-language identity checks performed. Only supported financing subset retained; source candidates and empty rows are not zero funding.",
+      "hold_note": "Earlier2017seed/accelerator cash and laterfinancing promised in2025release unverified. ANA exactCVCvehicle unknown, therefore no participant linked.2025timelineyear is transactiondate, announcementNULL. Debt draws/security unknown. Current2026commercial news is notfunding."
+    },
+    {
+      "id": "5148da50-8772-4868-984b-a0523da49331",
+      "slug": "skyy-network",
+      "name": "SKYY Network",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SKYY Network funding investment seed",
+        "\"SKYY Network\" \"GENIUS NY\" 2023 investment",
+        "site:skyy.network \"A2Z\" \"Grab\"",
+        "\"SKYY Network\" funding seed investor"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://centerstateceo.com/news/governor-cuomo-and-centerstate-ceo-announce-round-four-winner-genius-ny-uas-competition",
+          "published_date": "2020-09-20",
+          "disposition": "Opened programme operator award announcement; exact Australian recipient and USD500k verified."
+        },
+        {
+          "url": "https://skyy.network/investors/",
+          "published_date": null,
+          "disposition": "Issuer investor page indexed explicit securedUSD500k; date and instrument not given."
+        },
+        {
+          "url": "https://skyy.network/",
+          "published_date": null,
+          "disposition": "Opened original issuer: Indonesia autonomous delivery uses A2Z Longtail Dual and indexed Grab9kmBali operation; bridges exact catalogue provenance."
+        },
+        {
+          "url": "https://eic.ec.europa.eu/sorin-moisa_en",
+          "published_date": null,
+          "disposition": "Official EIC biography indexed Australian SkyyNetwork/SkyyHoldings founder bridge; no personal cheque inferred."
+        },
+        {
+          "url": "https://geniusny.com/portfolio/",
+          "published_date": null,
+          "disposition": "Programme original portfolio indexed SkyyNetwork; no additional financing event inferred."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, exact provenance, investor/issuer and local-language identity checks performed. Only supported financing subset retained; source candidates and empty rows are not zero funding.",
+      "hold_note": "Secondary2019seed andgrantlabel conflict with2020operator award; original instrument/security unknown. Current operational Indonesian country metadata not altered; exactlegalentitySkyyHoldings nomenclature held beyond brand/source bridge. Fullhistorypartial."
+    },
+    {
+      "id": "5f7aabb4-8029-43cb-8ab3-e36633a75636",
+      "slug": "slg-cpc",
+      "name": "SLG-CPC",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"SLG-CPC\" company financing",
+        "\"SLG-CPC\" investment funding shareholder",
+        "\"经续检验技术\" 融资 股东",
+        "\"SLG-CPC\" \"SLG\" \"joint\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.cpcteam.com/about/xinwenzixun/jingxudongtai/118.html",
+          "published_date": "2022-01-20",
+          "disposition": "Opened original notice signed18Jan2022: Central Point Testing &Technology renamedSLG-CPC Testlaboratory, same legal entity/taxID/accounts."
+        },
+        {
+          "url": "https://www.slg.de.com/en/about-us/facts-figures.html",
+          "published_date": null,
+          "disposition": "Opened German counterparty original history names2004SLG-CPCjointventure. Expansion investment programmes are parentcapex not company funding."
+        },
+        {
+          "url": "https://www.slg-cpc.com/about/",
+          "published_date": null,
+          "disposition": "Chinese issuer indexed body identifiesSLG/CPC2004JV, but directopen timeout; current shareallocations not verified."
+        },
+        {
+          "url": "https://cpcteam.cn/about/",
+          "published_date": null,
+          "disposition": "Chinese issuer indexed body sameJVidentity; directopen timeout. Historical timeline2003/2004 inconsistency held."
+        },
+        {
+          "url": "https://www.slgcpc.com/en/index.html",
+          "published_date": null,
+          "disposition": "Indexed company identity, direct502. No financing inferred from certification activities or registered capital secondary listings."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, exact provenance, investor/issuer and local-language identity checks performed. Only supported financing subset retained; source candidates and empty rows are not zero funding.",
+      "hold_note": "Original legal Englishrename bridge established. Historical2003timeline/2004JV intro inconsistency; current shareholder allocations and any equity/debt/grants unverified. Registeredcapital/recruitment nofinancingclaims not fundingevents. Noownershiprelationshipimport based on historicalJValone."
+    },
+    {
+      "id": "adf8464e-0e68-45d4-863b-5d6d9937cb45",
+      "slug": "sli",
+      "name": "SLI",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"SLI\" \"Elroy\" \"2026\"",
+        "site:sliaerospace.com funding loan equity facility SLI",
+        "\"SLI\" \"Libra Group\" investment capital launch",
+        "\"SLI\" aerospace \"debt\" \"funding\"",
+        "site:newsroom.firstcitizens.com \"Space Leasing International\" \"50 Million\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://newsroom.firstcitizens.com/2025-05-15-First-Citizens-Bank-Provides-50-Million-to-Space-Leasing-International,-an-Aerospace-Subsidiary-of-Libra-Group,-to-Refinance-Aerospace-Assets",
+          "published_date": "2025-05-15",
+          "disposition": "Opened original lender announcement: exactSpaceLeasingInternational borrower,50mUSD contribution not overall transaction size."
+        },
+        {
+          "url": "https://dronedj.com/2026/07/02/elroy-air-nasdaq-drone-company/",
+          "published_date": "2026-07-02",
+          "disposition": "Opened exact catalogue provenance: SLI named prospectiveElroycustomer, ElroyPIPEbelongsElroy."
+        },
+        {
+          "url": "https://www.libra.com/what-we-do/aerospace/sli/",
+          "published_date": null,
+          "disposition": "Opened owner original: SLI aerospace subsidiary ownsElroyautonomousaircraft; bridges catalogue customer with namedSpaceLeasingInternational lenderborrower."
+        },
+        {
+          "url": "https://www.sliaerospace.com/who-we-are/",
+          "published_date": null,
+          "disposition": "Opened original: Libra establishedSLI2023; footerSLIAerospaceHoldingsLimited, formerSpaceLeasingInternational history; LCIlegacy not ownrounds."
+        },
+        {
+          "url": "https://www.sliaerospace.com/knowledge/",
+          "published_date": null,
+          "disposition": "Opened original currentSeptember2026: SophiaSpace300mframework andeSmartleases areSLIoutgoing financing, notSLIcapitalraised."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest, exact provenance, investor/issuer and local-language identity checks performed. Only supported financing subset retained; source candidates and empty rows are not zero funding.",
+      "hold_note": "Exact catalogueElroycustomer matchesLibraSLI/SpaceLeasingInternational via originalowner/issuer history. FirstCitizens50m allocation known; overallrefinancingtotal, unnamedotherlenders/security/maturity unknown. LCIlegacy facilities andoutgoingElroy/Sophiafinancing notreassigned. Complete privatecapitalhistorypartial."
+    }
+  ],
+  "source_and_identity_reconciliation": [
+    {
+      "company_slug": "skydio",
+      "url": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026071150/axon-20261105.htm",
+      "disposition": "Primary Axon purchase only, approximatelyUSD254.9m. Investment disclosure, not complete SeriesG total; cash/stock split50/50 and delayed stock settlement explicit. Secondary1.2bn headline excluded."
+    },
+    {
+      "company_slug": "skydweller-2",
+      "url": "https://www.skydweller.aero/news/skydweller-aero-inc-raises-40m-in-oversubscribed-series-a-funding-round-to-continue-rapid-technological-development-to-meet-demand-for-persistent-flight/",
+      "disposition": "Original expressly same SeriesA final40m total incl8madditionalafter2019; single total without duplicate32m/8m events. SubsidiarySkydwellerSL EIBdebt held."
+    },
+    {
+      "company_slug": "skyports-infrastructure",
+      "url": "https://skyports.net/post/skyports-raises-usd-23-million-in-first-close-of-series-b-funding-round",
+      "disposition": "Group financing supports both divisions. Currentfooter cannot establish samehistoriclegalissuer. Existingcanonicalskyports history preserved; no duplicate."
+    },
+    {
+      "company_slug": "skyports-infrastructure",
+      "url": "https://www.proskauer.com/insights/get-pdf/27478",
+      "disposition": "Original counsel confirms in excessUSD110m andACSviaIridium. Existing canonicalevent inspected alreadyhasmore_than; no correction needed."
+    },
+    {
+      "company_slug": "skydrive",
+      "url": "https://www.mufg.jp/dam/pressrelease/2018/pdf/pressrelease-20180401-001_en.pdf",
+      "disposition": "Original bank legal-name continuity;MUFG Bank retained as existingmitsubishi-ufj-bank, notholdingcompanynewcheque."
+    },
+    {
+      "company_slug": "skyebrowse",
+      "url": "https://www.unpopular.vc/",
+      "disposition": "Original UnpopularVentures branding underunpopular.vc supports reusedUnpopularVCprofile; exactfundseriesnotinvented."
+    },
+    {
+      "company_slug": "skyfly-technologies",
+      "url": "https://skyfly.aero/evtol-pioneer-skyfly-lands-10-million-to-bring-personal-vertical-flight-to-market/",
+      "disposition": "SourceLondon/TallinnArchangeldefencefund distinctfromexistingAustralianArchangelVentures. New localizedfundprofile; legalmanagercontextnotseparatecheque. ExistingHICOreused."
+    },
+    {
+      "company_slug": "skydrive",
+      "url": "https://www.astroscale.com/en/news/astroscale-raises-us-76-million-continuing-to-lead-the-growing-on-orbit-servicing-sector",
+      "disposition": "ExistingMitsubishiUFJBankprofileprovenancesourcechecked;rootfetchfailed;identitycontinuityinsteadestablishedbyofficialMUFGoriginal."
+    },
+    {
+      "company_slug": "skydrive",
+      "url": "https://skydrive.co.jp/en/news/15904/",
+      "disposition": "Readoriginal2025PreSeriesD:JPY8.3bnallotment;explicitMUFGBanklead and11names; LPvehicleSuMiTRUSTretainedwithoutmanagerduplication."
+    },
+    {
+      "company_slug": "skysafe",
+      "disposition": "GroupDconfirmedA/Bsourcesdonotexplicitequityinstrument. Rootchangedbothfundingtypesundisclosed, avoidingstage-onlyinference."
+    }
+  ],
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting amount and participant-source FK rejection.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_verified_at": "2026-11-14T04:59:57Z",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 30,
+      "mismatched_facts": 0,
+      "participant_matches": 78,
+      "source_matches": 35,
+      "relationship_matches": 4,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 0
+    },
+    "reviewed_corrections_required": false
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "All24 targets outside existing European map, verified fresh baseline. No gate/geography/classification changes."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false,
+  "publication": {
+    "status": "awaiting_existing_catalogue_push_build"
+  }
+}
