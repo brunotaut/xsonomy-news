@@ -1,0 +1,1383 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-14",
+  "started_at": "2026-11-14T11:54:10.969Z",
+  "manifest": "research-agent/imports/funding-landscape-20261114-eighty-fourth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 8,
+    "new_or_retained_partial": 16,
+    "new_approved_events": 34,
+    "new_round_participations": 30,
+    "new_source_rows": 40,
+    "new_generic_portfolio_relationships": 15,
+    "new_companies_with_events": 11,
+    "new_investor_profiles": 16,
+    "group_search_queries_executed": 137,
+    "root_additional_search_queries": 2,
+    "search_queries_executed": 139,
+    "per_company_search_ledger_entries": 137,
+    "source_ledger_entries": 116,
+    "root_source_ledger_entries": 4,
+    "company_database_identity_contexts_checked": 24,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 34,
+    "mismatched_facts": 0,
+    "participant_matches": 30,
+    "source_matches": 40,
+    "relationship_matches": 15,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 1,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "reviewed_existing_fact_corrections": 0,
+    "db_total_events": 4123,
+    "db_approved_events": 4110,
+    "db_round_participations": 5696,
+    "db_investor_profiles": 3358,
+    "db_source_reconciliation_companies": 1183
+  },
+  "production_before": {
+    "events": 4089,
+    "approved": 4076,
+    "links": 5666,
+    "sources": 5608,
+    "profiles": 3342,
+    "covered": 1172,
+    "relationships": 591,
+    "preserved_profiles_hash": "2d8a524b6d1aaa52a6c3724d0c183947"
+  },
+  "production_after": {
+    "events": 4123,
+    "approved": 4110,
+    "links": 5696,
+    "sources": 5648,
+    "profiles": 3358,
+    "covered": 1183,
+    "relationships": 606,
+    "preserved_profiles_hash": "2d8a524b6d1aaa52a6c3724d0c183947"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1198,
+    "source_review_partial": 1119,
+    "queued": 247
+  },
+  "per_company": [
+    {
+      "id": "6cc39b34-a661-403d-8c08-58e0faa3e2a6",
+      "slug": "terrafort",
+      "name": "TerraFort",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"TerraFort\" funding investment company drone",
+        "\"TerraFort\" \"Disasters Inc\" funding investors seed",
+        "\"Disasters Inc\" funding investors TerraFort",
+        "\"TerraFort\" seed investors 2025 2026 Disasters",
+        "site:terrafort.com news investors financing funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.terrafort.com/tos",
+          "published_date": "2026-03-05",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://www.terrafort.com/privacy",
+          "published_date": "2026-03-05",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://www.terrafort.com/",
+          "published_date": null,
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/07/28/3334316/0/en/flyguys-and-terrafort-partner-on-ai-powered-damage-assessments-to-speed-disaster-aid-after-typhoon-sinlaku.html",
+          "published_date": "2026-07-28",
+          "disposition": "original_FlyGuys_partner_release_read; service partnership and disaster aid to clients, not incoming TerraFort round"
+        }
+      ],
+      "evidence_note": "Exact platform resolved to Disasters Inc. via originals. Broad/history, issuer and counterpart checks found no supported incoming financing. FlyGuys partnership and recovery aid unlocked for customers are not TerraFort investment. Unrelated Terrafort Capital excluded. Bounded public-source review; private financing unknown, not zero.",
+      "hold_note": ""
+    },
+    {
+      "id": "88643be1-d31f-46c6-bd54-f818edab9072",
+      "slug": "terrestrial-imaging",
+      "name": "Terrestrial Imaging",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Terrestrial Imaging\" funding investors round",
+        "\"Terrestrial Imaging\" investment acquisition funding history",
+        "site:terrestrialimaging.com investor acquisition funding",
+        "\"Terrestrial Imaging\" YellowScan investors loan acquisition"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.yellowscan.com/press-news/yellowscan-welcomes-a-new-distributor-in-the-usa-terrestrial-imaging/",
+          "published_date": null,
+          "disposition": "original_counterparty_read; NewJerseyLLC distributor, not equity investor"
+        },
+        {
+          "url": "https://www.terrestrialimaging.com/blogs/news",
+          "published_date": null,
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://www.terrestrialimaging.com/pages/about-us",
+          "published_date": null,
+          "disposition": "fetch_inaccessible; no financing conclusion drawn from failure"
+        }
+      ],
+      "evidence_note": "Exact New Jersey Terrestrial Imaging LLC resolved by original YellowScan and own news. Distributor/customer transactions and equipment sales are not equity. Broad/history/issuer/counterparty searches found no supported round. Aggregator never-funded claims are not evidence of zero. Bounded review completed with inaccessible about-page limitation recorded.",
+      "hold_note": ""
+    },
+    {
+      "id": "b5da112c-7f14-4d68-b750-edb059387b8f",
+      "slug": "texas-drone-company",
+      "name": "Texas Drone Company",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Texas Drone Company\" funding investment investors",
+        "\"Texas Drone Company\" investors acquisition funding 2025 2026",
+        "site:txdroneco.com investors funding history Jared",
+        "\"Texas Drone Company\" \"Jared\" investment loan seed"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.txdroneco.com/privacy-policy",
+          "published_date": "2026-04-01",
+          "disposition": "original_exact_txDroneCoLLC_Argyle_identity"
+        },
+        {
+          "url": "https://www.txdroneco.com/data-analyst",
+          "published_date": null,
+          "disposition": "original_published_JaredJanacek_owner; no cheque inferred"
+        },
+        {
+          "url": "https://pilotinstitute.com/course/drone-lidar/",
+          "published_date": null,
+          "disposition": "original_course_counterparty_confirms_Jared_founder; course sales notfinancing"
+        },
+        {
+          "url": "https://dronexl.co/2026/09/01/greg-reverdiau-drone-hiring-pipeline-uav-expo/",
+          "published_date": "2026-09-01",
+          "disposition": "provenance_article_read; sector hiring not issuer funding"
+        }
+      ],
+      "evidence_note": "Exact txDroneCoLLC/Argyle owner-run mapping business resolved from original privacy, owner page and course counterparty. Other TexasDroneCompany domain and generic Texas-based drone company raises not transferred. Sector hiring/news and training revenue not financing. Broad/history/issuer/party review found no supported own round; private details unknown, not zero.",
+      "hold_note": ""
+    },
+    {
+      "id": "6a2ba799-8c07-4c75-8890-9b092579e92d",
+      "slug": "texas-instruments",
+      "name": "Texas Instruments",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 10,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:investor.ti.com 2026 notes offering Texas Instruments",
+        "site:investor.ti.com 2025 notes offering credit agreement",
+        "site:ti.com Texas Instruments CHIPS award final 2024 2025 2026 1.6 billion",
+        "\"Texas Instruments\" \"2026\" \"credit\" \"loan\"",
+        "site:sec.gov/Archives/edgar/data/97476/ \"2026\" \"June\" \"$5 billion\"",
+        "site:sec.gov/Archives/edgar/data/97476/ \"2025\" \"issued\" \"$1.2 billion\"",
+        "site:investor.ti.com \"2011\" \"3.5 billion\" notes",
+        "site:investor.ti.com notes 2011 2020 2021 2025 funding",
+        "site:ti.com CHIPS 2026 direct funding grant loan update",
+        "site:investor.ti.com \"2011\" \"notes\" financing history"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://investor.ti.com/news-releases/news-release-details/texas-instruments-prices-750-million-investment-grade-notes-1",
+          "published_date": "2020-03-03",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://investor.ti.com/static-files/6b1fd819-940b-403a-8a51-55b070a101bf",
+          "published_date": "2020-03-12",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://investor.ti.com/news-releases/news-release-details/texas-instruments-prices-700-million-investment-grade-notes",
+          "published_date": "2022-08-10",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://investor.ti.com/news-releases/news-release-details/texas-instruments-prices-800-million-investment-grade-notes",
+          "published_date": "2022-11-15",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://investor.ti.com/news-releases/news-release-details/texas-instruments-prices-14-billion-investment-grade-notes",
+          "published_date": "2023-03-07",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://investor.ti.com/node/35821",
+          "published_date": "2024-02-05",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://investor.ti.com/news-releases/news-release-details/texas-instruments-prices-12-billion-investment-grade-notes",
+          "published_date": "2025-05-20",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://investor.ti.com/news-releases/news-release-details/texas-instruments-prices-20-billion-investment-grade-notes",
+          "published_date": "2026-10-26",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/97476/000119312526453606/d180182d8k.htm",
+          "published_date": "2026-11-09",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/R12.htm",
+          "published_date": null,
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://www.ti.com/en-us/about-ti/newsroom/news-releases/2024/2024-12-20-texas-instruments-announces-award-agreement-for-chips-and-science-act-funding",
+          "published_date": "2024-12-20",
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/R12.htm",
+          "published_date": null,
+          "disposition": "original_Q2debtnote_read; Q3samefacility supersedesbalance"
+        },
+        {
+          "url": "https://investor.ti.com/news-releases/news-release-details/texas-instruments-prices-15-billion-investment-grade-notes-0",
+          "published_date": null,
+          "disposition": "403 fetch;2021candidateheld, not verified fromsearchsnippet"
+        }
+      ],
+      "evidence_note": "Ten issuer financing disclosures verified:7notes offerings2020–2026,2qualified undrawn facilities,1milestone-based finalCHIPSgrant. LatestNovember9/2026closed2bn notes confirmed. Original amounts, dates, instrument and ceilings retained. Pricing-only historical rows do not falsely claim completed cash. Banks asunderwriters excluded.",
+      "hold_note": "Earlier2011/2016/2021issuance candidates, full2018–2024 history and additional taps require original reconciliation;2021pricing403. Historical pricing-only offering completions not asserted. Original1bnrevolver announcement day unknown. FinalCHIPS1.6bn grant replacesprelim;10m workforcepartallocation and possible3bnloans unestablished asadditionalawards.6–8bn estimatedtaxcredits excluded; no compound total_funding."
+    },
+    {
+      "id": "a8e6dbe4-b5fb-43d7-93d7-fa5f24e9b94a",
+      "slug": "textron-systems-aai",
+      "name": "Textron Systems (AAI)",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Textron Systems\" AAI funding loan investment financing 2026",
+        "\"Textron Systems\" \"AAI\" \"investment\" financing investors",
+        "site:textronsystems.com AAI Textron subsidiary financing loan",
+        "site:textron.com AAI acquisition 2007 United Industrial"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.textronsystems.com/our-company/news-events/articles/inside-ts/history-textron-systems",
+          "published_date": null,
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/217346/000021734626000044/txt-20261003.htm",
+          "published_date": null,
+          "disposition": "original_parent_Q3segment disclosure; no parent financing inherited"
+        },
+        {
+          "url": "https://www.textronsystems.com/terms-use",
+          "published_date": null,
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://www.textronsystems.com/legal",
+          "published_date": null,
+          "disposition": "incorrectpath_fetch_inaccessible; followed originalnavigation to terms-use"
+        }
+      ],
+      "evidence_note": "Original history bridges AAI1950 to2007Textron enterprise; database1971/1970s narrative not reliedupon or modified. ParentQ3discloses Systems operatingsegment. Government contracts, backlog and Textron parent finance not incoming unit funding. Bounded earlier/latest source review found no supported own event; generic parent only; private details unknown.",
+      "hold_note": ""
+    },
+    {
+      "id": "b069b9b0-40fd-455c-8f33-4a3cc64f483a",
+      "slug": "thai-sky-vision",
+      "name": "Thai Sky Vision",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Thai Sky Vision\" funding investment investors",
+        "\"Thai Sky Vision\" ลงทุน เงินทุน",
+        "\"Thai Sky Vision\" investor funding acquisition history",
+        "site:thaiskyvision.com news investment funding partner",
+        "\"ไทยสกายวิชั่น\" \"เงินทุน\" \"ลงทุน\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.thaiskyvision.com/about-us",
+          "published_date": null,
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://www.thaiskyvision.com/news-1",
+          "published_date": null,
+          "disposition": "original_read_identity_financing_or_qualified_exclusion"
+        },
+        {
+          "url": "https://ddi.dip.go.th/en/news-detail/2023-07-25-14-57-25/2023-07-25-14-29-49",
+          "published_date": "2023-07-25",
+          "disposition": "originalgovernmentcase; DIPROM brandingtraining support, no attributable cash award"
+        },
+        {
+          "url": "https://www.thaiskyvision.com/news",
+          "published_date": null,
+          "disposition": "openattempt yielded no page; correct news-1 used"
+        }
+      ],
+      "evidence_note": "Exact ThaiSkyVisionCompanyLimited resolved through own team/news and originalThaiDIP case. Broad/history, originalissuer, counterparty and Thai-language checks found no supported own financing. Distributor relationships, INSEEUAV product activity and DIPROM branding assistance not equity or quantified cash grants. Registered capital secondarycandidate not funding. Bounded review; private details unknown.",
+      "hold_note": ""
+    },
+    {
+      "id": "71a3fbe1-da90-46b7-85ca-398780d20eca",
+      "slug": "thales-alenia-space",
+      "name": "Thales Alenia Space",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 2,
+      "searches_checked": [
+        "\"Thales Alenia Space\" financing investment grant loan history 2026 2025",
+        "\"Thales Alenia Space\" investor funding \"2026\" \"2025\" capital",
+        "\"Thales Alenia Space\" \"2016\" \"2021\" grant European Union funding",
+        "site:thalesaleniaspace.com 2026 2025 financement subvention capital prêt investissement"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.thalesaleniaspace.com/en/press-releases/thales-alenia-space-provide-digital-and-secure-payloads-330-iris2-telecommunications",
+          "published_date": "2026-09-10",
+          "disposition": "Original confirms67%Thales33%Leonardo JV. EUR500m tranche of >EUR3bn IRIS2 is procurement, not equity/grant proceeds."
+        },
+        {
+          "url": "https://www.thalesaleniaspace.com/fr/press-releases/thales-alenia-space-inaugure-la-space-smart-factory",
+          "published_date": "2025-10-07",
+          "disposition": "Original Rome factory >EUR100m investment cofunded ASI PNRR/Thales/Leonardo; total project cost and unnamed allocations not an incoming group financing round."
+        },
+        {
+          "url": "https://www.thalesaleniaspace.com/en/press-releases/thales-alenia-space-lead-eross-iod-orbit-servicing-project",
+          "published_date": "2022-09-20",
+          "disposition": "Original EROSS IOD selection, grant agreement preparation at announcement. No group-specific signed amount; France/Italia beneficiary subsidiaries must remain distinct."
+        }
+      ],
+      "evidence_note": "Exact multinational JV resolved via issuer67/33 ownership. Broad/history and issuer/party checks distinguish contracts, regional entities and incoming financing.",
+      "hold_note": "Secondary EUgrantUSD215k/352119andother2016-2021figures have no project IDs/original issuer attribution. TASFrance1.2bn related credit candidate not assigned to group. Romefactory>100m pooled investment allocation/instrument unestablished; separate subsidiary grants not inherited."
+    },
+    {
+      "id": "8d1e8be1-e5a6-484f-b4a6-7f37414b4db5",
+      "slug": "thales-alenia-space-italia-e-geos",
+      "name": "Thales Alenia Space Italia / e-GEOS",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Thales Alenia Space Italia\" \"e-GEOS\" ownership financing",
+        "\"Thales Alenia Space Italia\" finanziamento \"e-GEOS\" investitori",
+        "site:asi.it \"e-GEOS\" \"Thales Alenia Space Italia\" \"società\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.thalesaleniaspace.com/it/press-releases/lanciato-con-successo-il-terzo-satellite-cosmo-skymed-di-seconda-generazione",
+          "published_date": "2026-01-03",
+          "disposition": "Original separately identifies TAS manufacturer, Telespazio operator and eGEOS20%ASI80%Telespazio data company. Composite label is not a single issuer; no grant or ownership assigned to mixture."
+        },
+        {
+          "url": "https://www.thalesaleniaspace.com/fr/press-releases/thales-alenia-space-inaugure-la-space-smart-factory",
+          "published_date": "2025-10-07",
+          "disposition": "Original Rome factory >EUR100m investment cofunded ASI PNRR/Thales/Leonardo; total project cost and unnamed allocations not an incoming group financing round."
+        }
+      ],
+      "evidence_note": "Original issuer identifies distinct TASItalia manufacturer and eGEOS data operator with separate ownership; catalogue composite is not one company. No event or shareholder relationship is assigned to this draft mixture.",
+      "hold_note": "Evidenced composite/non-single-issuer disposition. ASI procurement and PNRR factory budgets not allocated to composite; unknown financing of each separate company not zero.",
+      "public_source_result": "composite_non_single_issuer"
+    },
+    {
+      "id": "f1b42491-1fc5-4994-8a38-14b841a31d49",
+      "slug": "thales-australia",
+      "name": "Thales Australia",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Thales Australia\" funding grant investment 2026 2025",
+        "site:thalesgroup.com \"Thales Australia\" \"grant\" \"EATP\"",
+        "site:infrastructure.gov.au \"Thales Australia\" \"Emerging Aviation\" grant",
+        "\"Thales Australia\" bank loan funding capital history",
+        "\"Thales Australia\" \"grant\" \"2024\" \"2025\" funding government"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.thalesgroup.com/sites/default/files/2025-09/List-of-non-French-companies-held-by-Thales-2025-06-EN.pdf",
+          "published_date": null,
+          "disposition": "Original list asof30June2025:100%group interests Australia/Italia/UK, separate TASItalia67%,TUSAustralia100%. Group ownership not assertion of direct legal holding or capital injection."
+        },
+        {
+          "url": "https://www.thalesgroup.com/sites/default/files/investor/documents/Thales_-_Consolidated_Financial_Statements_at_31_December_2024_0_1.pdf",
+          "published_date": null,
+          "disposition": "Original2024 consolidated statements show Australia/UK100%; parent debt, subsidiary pension buyout and proceeds not inherited by selected subsidiaries."
+        },
+        {
+          "url": "https://www.revn.aero/post/revolution-aerospace-australia-revaero-enabling-regional-aerial-logistics-and-air-taxi-operations",
+          "published_date": "2023-08-02",
+          "disposition": "Original consortium lead RevAero received AUD5.3m EATP grant. ThalesAustralia partner allocation absent; not assigned as AUD5.3m to Thales."
+        },
+        {
+          "url": "https://www.anao.gov.au/work/performance-audit/defences-management-of-contracts-for-the-supply-of-munitions-part-2",
+          "published_date": "2026-07-08",
+          "disposition": "Original audit: Commonwealth owns Benalla/Mulwala, Thales contractor/operator. AUD9.2m June2026 modernisation is government asset/contract expenditure, not established company grant/equity. AUD1.9bn SDMM contract excluded."
+        },
+        {
+          "url": "https://tasdcrc.com.au/thales-and-revolution-aerospace-progressing-unified-traffic-management-from-a-tas-detect-and-avoid-investment-through-eatp/",
+          "published_date": null,
+          "disposition": "Open redirects to LiminalSystems current homepage; historical article body not verified there. Original RevAero source independently checked instead."
+        }
+      ],
+      "evidence_note": "Original group ownership, RevAero grant recipient and ANAO government-owned factory contracts checked. Broad/history/official and transactionparty searches found no separately supported issuer financing event; unknown private funding not zero.",
+      "hold_note": "EATP AUD5.3m belongs to RevAero consortium lead without Thales allocation. AUD9.2m Benalla refurbishment and AUD1.9bn operating contract are government assets/procurement, not company grant or equity.",
+      "public_source_result": "no_public_round_found_in_checked_sources"
+    },
+    {
+      "id": "e693e235-38c2-49ac-a463-6e73be0968e1",
+      "slug": "thales-italia",
+      "name": "Thales Italia",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Thales Italia\" finanziamento contributo finanziamenti 2026 2025",
+        "site:thalesgroup.com \"Thales Italia\" \"finanziamento\"",
+        "site:thalesgroup.com \"Thales Italia\" company subsidiary",
+        "site:cordis.europa.eu \"THALES ITALIA SPA\" \"2010\" grant",
+        "\"Thales Italia\" banca finanziamento contributo 2026",
+        "site:cordis.europa.eu \"THALES ITALIA SPA\" \"2026\" grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.thalesgroup.com/sites/default/files/2025-09/List-of-non-French-companies-held-by-Thales-2025-06-EN.pdf",
+          "published_date": null,
+          "disposition": "Original list asof30June2025:100%group interests Australia/Italia/UK, separate TASItalia67%,TUSAustralia100%. Group ownership not assertion of direct legal holding or capital injection."
+        },
+        {
+          "url": "https://www.thalesgroup.com/sites/default/files/2025-06/Thales%20Modello%20231%20parte%20generale.pdf",
+          "published_date": null,
+          "disposition": "Search-index primary PDF mentions direct ThalesEuropeSAS shareholder, but web open and direct download return HTML iframe, not PDF. Direct vehicle held; original group list supports ultimate Thales association only."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/269362",
+          "published_date": null,
+          "disposition": "Opened original beneficiary section explicitly THALESITALIASPA, ViaProvincialeLucchese33 SestoFiorentino; its own EU contribution EUR200400, not consortium total. Agreement/start dates not public announcement dates."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/270683",
+          "published_date": null,
+          "disposition": "Opened original beneficiary section explicitly THALESITALIASPA, ViaProvincialeLucchese33 SestoFiorentino; its own EU contribution EUR207915, not consortium total. Agreement/start dates not public announcement dates."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/825473/it",
+          "published_date": null,
+          "disposition": "Opened original beneficiary section explicitly THALESITALIASPA, ViaProvincialeLucchese33 SestoFiorentino; its own EU contribution EUR921875, not consortium total. Agreement/start dates not public announcement dates."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101263875/it",
+          "published_date": null,
+          "disposition": "Opened original beneficiary section explicitly THALESITALIASPA, ViaProvincialeLucchese33 SestoFiorentino; its own EU contribution EUR1107778.83, not consortium total. Agreement/start dates not public announcement dates."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101286684/it",
+          "published_date": null,
+          "disposition": "Opened original beneficiary section explicitly THALESITALIASPA, ViaProvincialeLucchese33 SestoFiorentino; its own EU contribution EUR224981.05, not consortium total. Agreement/start dates not public announcement dates."
+        }
+      ],
+      "evidence_note": "Exact ThalesItaliaSPA at SestoFiorentino resolved in original CORDIS and group ownership record. Five recipient-specific EUallocations verified from2011to2026; France/TASItalia/parent not conflated.",
+      "hold_note": "Other CORDISprojects, national aid EUR2.606943m2023candidate and totals require source-level reconciliation. Direct ThalesEuropeSAS ownership PDF not rendered; ultimate group link only. Complete history not asserted."
+    },
+    {
+      "id": "b1e77886-4dff-4168-8c92-d35d55ad865d",
+      "slug": "thales-uk",
+      "name": "Thales UK",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Thales UK\" grant funding investment 2026 2025 history",
+        "site:thalesgroup.com \"Thales UK\" grant funding Innovate UK",
+        "site:thalesgroup.com \"Thales UK\" \"grant\" \"2026\"",
+        "\"Thales UK\" investor bank loan funding 2026 latest",
+        "site:thalesgroup.com \"Thales UK\" \"funding\" \"2015\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.thalesgroup.com/sites/default/files/2025-09/List-of-non-French-companies-held-by-Thales-2025-06-EN.pdf",
+          "published_date": null,
+          "disposition": "Original list asof30June2025:100%group interests Australia/Italia/UK, separate TASItalia67%,TUSAustralia100%. Group ownership not assertion of direct legal holding or capital injection."
+        },
+        {
+          "url": "https://www.thalesgroup.com/sites/default/files/investor/documents/Thales_-_Consolidated_Financial_Statements_at_31_December_2024_0_1.pdf",
+          "published_date": null,
+          "disposition": "Original2024 consolidated statements show Australia/UK100%; parent debt, subsidiary pension buyout and proceeds not inherited by selected subsidiaries."
+        },
+        {
+          "url": "https://www.gov.scot/binaries/content/documents/govscot/publications/foi-eir-release/2024/06-c/foi-202400401013/documents/foi-202400401013---information-released---annex/foi-202400401013---information-released---annex/govscot%3Adocument/FOI%2B202400401013%2B-%2BInformation%2BReleased%2B-%2BAnnex.pdf",
+          "published_date": null,
+          "disposition": "Original FOI annex confirms ThalesUKLtd GBP2960094 grant contribution payments:287000,593000,871000,98000,75000,561594,474500 during2019-2022. No award IDs/project linkage; do not turn payment instalments or cumulative sum into separate rounds. Payment dates not announcement dates."
+        },
+        {
+          "url": "https://gtr.ukri.org/organisation/AD7920F4-75C5-4607-84F0-FDFCBDE58D05?fetchSize=100&fields=&page=1&selectedFacets=&selectedSortOrder=DESC&selectedSortableField=pro.am&term=&type=",
+          "published_date": null,
+          "disposition": "Current open redirects to generic organisation index. Indexed GBP6820882 and other project amounts not independently resolved in current project record; held, not verified import."
+        },
+        {
+          "url": "https://www.gov.uk/government/news/long-term-defence-commitment-in-scotland-helps-secure-jobs-and-billions-in-export-deals",
+          "published_date": "2026-03-16",
+          "disposition": "Original GBP1.1bn inward investment consists export deals; no security subscription or company funding round."
+        },
+        {
+          "url": "https://www.gov.uk/government/publications/uk-export-finance-business-supported-2025-to-2026/business-supported-2025-to-2026",
+          "published_date": "2026-07-21",
+          "disposition": "Original buyer credit guarantee for UkraineMoD with ThalesUK as exporter. Maximum liability not Thales borrowing or company financing."
+        }
+      ],
+      "evidence_note": "Exact ThalesUKLtd separated from HoldingsUKPLC and other Thalesentities. Original FOI confirms historical grant payments, but not award linkage; export support/procurement/pension movements excluded.",
+      "hold_note": "Seven FOIpayments cannot yet be reconciled to original award IDs, so no artificial rounds or cumulative single event. UKRI indexed amounts redirect to generic index; exactprojectrecords held. Unknown private funding not zero."
+    },
+    {
+      "id": "a26a9469-e5b5-458c-ac65-924025913aea",
+      "slug": "thales-underwater-systems",
+      "name": "Thales Underwater Systems",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Thales Underwater Systems\" funding grant loan investment history 2026",
+        "\"Thales Underwater Systems\" investor ownership Thales 2026",
+        "\"Thales Underwater Systems\" \"capital\" \"loan\"",
+        "\"Thales Underwater Systems\" official Thales ownership current sonar 2026",
+        "site:thalesgroup.com \"Thales Underwater Systems\" \"2026\" sonar"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.globalsecurity.org/military/library/news/2001/09/mil-010927-thales01.htm",
+          "published_date": "2001-09-27",
+          "disposition": "Original Thales release syndicated verbatim:completed BAE49.9% secondary acquisition, became sole shareholder; TMS renamed TUS. Seller purchase is not incoming issuer cash."
+        },
+        {
+          "url": "https://www.thalesgroup.com/sites/default/files/2025-09/List-of-non-French-companies-held-by-Thales-2025-06-EN.pdf",
+          "published_date": null,
+          "disposition": "Original list asof30June2025:100%group interests Australia/Italia/UK, separate TASItalia67%,TUSAustralia100%. Group ownership not assertion of direct legal holding or capital injection."
+        },
+        {
+          "url": "https://careers.thalesgroup.com/global/en/job/TGPTGWGLOBALR0336734EXTERNALENGLOBAL/Project-Manager",
+          "published_date": null,
+          "disposition": "Search candidate October2026current sonar role; open returned410Gone. Not verified funding evidence."
+        },
+        {
+          "url": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Communiqu%C3%A9_Livraison%20par%20la%20DGA%20du%20premier%20drone%20de%20surface%20de%20guerre%20des%20mines%20%C3%A0%20la%20Marine%20nationale%20dans%20le%20cadre%20du%20programme%20SLAM-F%20V2.pdf",
+          "published_date": null,
+          "disposition": "DGA procurement candidate; open timed out. No funding facts derived from snippet."
+        }
+      ],
+      "evidence_note": "TUS historical business continuity and sole Thales ownership verified by original2001release; separate French/UK/Australian legal entities identified rather than importing group debt.",
+      "hold_note": "Specific legal-issuer boundary and historical French entity succession remain unresolved; currentjob410 and DGA timeout are only candidates. No acquisition price, seismic export financing or group/UK namesake financing inherited."
+    },
+    {
+      "id": "aa8de6e5-95ce-481b-a25a-a2100b07f3e9",
+      "slug": "thayermahan",
+      "name": "ThayerMahan",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "ThayerMahan funding investment rounds 2026 2025 2023",
+        "site:thayermahan.com funding 2026 2024 2020 Series",
+        "site:thayermahan.com \"funding\" \"2020\"",
+        "ThayerMahan May 7 2020 10 million Hegemon investment",
+        "site:thayermahan.com \"investment\" \"2026\"",
+        "\"ThayerMahan\" \"AE Industrial\" \"2020\" investment",
+        "\"ThayerMahan raises $20 million\" January 9 2024 PRNewswire"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/thayermahan-raises-30-million-in-series-c-funding-301796929.html",
+          "published_date": "2023-04-13",
+          "disposition": "ThayerMahan original Series C announcement. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/thayermahan-raises-20-million-of-additional-series-c-funding-302030175.html",
+          "published_date": "2024-01-09",
+          "disposition": "ThayerMahan original follow-on Series C announcement. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.aeroequity.com/thayermahan-closes-on-10-million-in-financing-from-ae-industrial-partners/",
+          "published_date": "2020-05-05",
+          "disposition": "AE Industrial original closed financing announcement. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.aeroequity.com/thayermahan-raises-20-million-of-additional-series-c-funding/",
+          "published_date": "2024-01-10",
+          "disposition": "Investor corroboration of2024followon. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://thayermahan.com/tag/2026/",
+          "published_date": null,
+          "disposition": "Issuer2026news checked throughNovember; contracts notrounds. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.wsgr.com/print/v2/content/172129/Firm-Represents-ThayerMahan-in-%2410-Million-in-Financing-from-AE-Industrial-Partners.pdf",
+          "published_date": null,
+          "disposition": "Counsel originalcandidate May4 date; fetch timeout. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        }
+      ],
+      "evidence_note": "Original issuer/transactionparty confirms earlierA/B,2020fundfinancing,2023C and2024followon; current2026news checked.",
+      "hold_note": "Earlier A/B exact dates/amounts and2021USD710kpublicgrant requireoriginals; secondarytotals notfacts. RiverParkaffiliatelegalvehicle unknown; no managercheque invented."
+    },
+    {
+      "id": "cc7b1f9d-c035-4647-bd20-ab6ed4c2faa8",
+      "slug": "thermopylae-aerospace",
+      "name": "Thermopylae Aerospace",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 2,
+      "searches_checked": [
+        "Thermopylae Aerospace funding investment company",
+        "site:thermopylae.aero investment pre seed",
+        "site:ua1.vc Thermopylae funding",
+        "\"Thermopylae\" \"funding\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://f.inc/portfolio/thermopylae-aerospace/",
+          "published_date": null,
+          "disposition": "Founders Inc original Thermopylae portfolio identity. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.ua1.vc/",
+          "published_date": null,
+          "disposition": "UA1 original Thermopylae portfolio. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.ua1.vc/blank",
+          "published_date": "2025-11-26",
+          "disposition": "Investor curated news linksUSD1.6m externalreport. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.thermopylae.aero",
+          "published_date": null,
+          "disposition": "Catalogue ownsite fetch inaccessible; notnegativefunding evidence. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.janes.com/defence-intelligence-insights/defence-news/air/thermopylae-aerospace-develops-low-cost-c-uas-system",
+          "published_date": null,
+          "disposition": "SearchcandidateUSD2.5m conflicts1.6m; notimported. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        }
+      ],
+      "evidence_note": "Original Founders/UA1portfolio resolves exact aerospace startup; fundingheadline curated but no ownroundterms independentlyretrieved.",
+      "hold_note": "USD1.6mNov2025 externalreport andUSD2.5mJanesclaim conflict; hold amounts, Naval/Norgardroles and lead. Owncataloguesiteinaccessible, notzero funding."
+    },
+    {
+      "id": "f78e3625-6ec7-44dd-8133-185b1cb25ba4",
+      "slug": "thinkom-solutions",
+      "name": "ThinKom Solutions",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "ThinKom Solutions investment funding company history",
+        "site:thinkom.com IQT investment",
+        "\"ThinKom\" \"In-Q-Tel\" investment",
+        "\"ThinKom\" \"IQT\" \"2008\"",
+        "site:iqt.org \"ThinKom\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.alsop-louie.com/team/joe-addiego",
+          "published_date": null,
+          "disposition": "Original investment partner biography confirms prior IQT ThinKom investment. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.thinkom.com/about",
+          "published_date": null,
+          "disposition": "Ownidentity and privatecompany chronology. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.thinkom.com/news",
+          "published_date": null,
+          "disposition": "Original current/oldernews: OTA49m andSBIR1.9m explicitcontracts, excluded asgrants. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        }
+      ],
+      "evidence_note": "Original formerIQTpartner confirms historicalinvestment. Ownsite2026andearliernews explicitlylabelsOTA/SBIR/contracts.",
+      "hold_note": "Investmentdate/security/amount unknown; secondary2008date notproved. SBIR/OTA procurement notgrants. Unknownprivatehistorynotzero."
+    },
+    {
+      "id": "8a5b321e-db15-41f4-994d-2f881a7a6178",
+      "slug": "thinkon",
+      "name": "ThinkOn",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "ThinkOn investment funding rounds 2026",
+        "site:thinkon.com FedNor funding 2022",
+        "site:canada.ca ThinkOn 2022 1000000 repayable",
+        "site:thinkon.com \"investment\" \"funding\" \"2026\"",
+        "\"ThinkOn\" \"FedNor\" \"$1\" 2022",
+        "site:thinkon.com \"2025\" \"funding\"",
+        "\"ThinkOn\" \"EDC\" funding",
+        "site:thinkon.com \"NRC\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.canada.ca/fr/fednor/nouvelles/2022/08/le-gouvernement-du-canada-investit-pres-de-3millions-pour-soutenir-linnovation-la-cybersecurite-et-les-aines-a-northbay-et-ailleurs.html",
+          "published_date": "2022-08-16",
+          "disposition": "FedNor original exact ThinkOn allocation CAD1000920. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://thinkon.com/resources/thinkon-opens-global-command-centre-north-bay/",
+          "published_date": "2022-08-16",
+          "disposition": "ThinkOn original confirms repayable FedNor funding. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://ised-isde.canada.ca/site/accelerated-growth-service/en/impact-stories-thinkon",
+          "published_date": null,
+          "disposition": "Government candidateNRCIRAP/EDCsupport lacks separateterms. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://thinkon.com/sovereign-cloud-news/",
+          "published_date": null,
+          "disposition": "Ownnews searchcandidateEDCsupport; no paidamount/security inferred. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        }
+      ],
+      "evidence_note": "ExactCanadianThinkOn issuer/agencyoriginals supportCAD1000920repayablefacility; ChineseThinkonSemiconductor excluded.",
+      "hold_note": "NRCIRAP/EDCsupport and consortium300kThinkONSHIELDcandidate requireindividualagreements/terms; no aggregate allocation. Partnerships/revenue/contracts notrounds."
+    },
+    {
+      "id": "f53ec319-1df2-4c21-bc04-f40b062b6d10",
+      "slug": "thiot-ingenierie",
+      "name": "Thiot Ingénierie",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Thiot Ingénierie levée fonds investissement actionnaires",
+        "\"Thiot\" \"subvention\" \"2026\"",
+        "\"Thiot Ingénierie\" financement actionnaires 2024 Eurenco",
+        "\"Thiot Ingénierie\" \"820819\" financement"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prefectures-regions.gouv.fr/occitanie/content/download/79025/511053/file/20210308_Programme_Territoires_d_industrie_13_nouveaux_laureats_en_Occitanie_fussionne.pdf",
+          "published_date": "2021-03-08",
+          "disposition": "Original Occitanie France Relance named Thiot grant recipient. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/820819",
+          "published_date": null,
+          "disposition": "CORDIS PANTHER820819 original company-specific net EU contribution. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://eurenco-engineering.com/en/2024/12/20/thiot-ingenierie-joins-the-eurenco-group/",
+          "published_date": "2024-12-20",
+          "disposition": "Thiot original confirms Eurenco group acquisition. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://eurenco-engineering.com/fr/qui-sommes-nous/",
+          "published_date": null,
+          "disposition": "Current ownidentity bridges renamedbusiness. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://eurenco.com/eurenco-announces-the-acquisition-of-thiot-ingenierie-and-strengthens-its-expertise-in-the-field-of-fast-dynamics-and-shock-physics/",
+          "published_date": null,
+          "disposition": "Parent original candidate fetch502; owncompanysource separatelyread. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        }
+      ],
+      "evidence_note": "Owncompany/agency originals resolve Thiot/EurencoEngineering, recipientFranceRelanceaward andPANTHERownnetEUallocation. Acquisitionnotprimarycash.",
+      "hold_note": "FranceRelanceindividualamount/payer split unknown; balance-sheetgrantstocks notnewawards. Earlierprivaterounds andothergrantallocations remainpartial."
+    },
+    {
+      "id": "48323df9-5fcf-40ee-86c4-31cf4706ef6f",
+      "slug": "thirdeye-systems",
+      "name": "Thirdeye Systems",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "ThirdEye Systems EDGE 2025 investment shares 10 million 30 percent",
+        "site:edgegroup.ae Thirdeye investment 2026 2025",
+        "site:eaglenxt.com ThirdEye April 2026 investment 10 million",
+        "site:thirdeye-systems.com EDGE investment 2026",
+        "Thirdeye Systems EDGE 27 May 2026 completion investment original",
+        "site:highlander.io ThirdEye systems partnership 2026",
+        "site:thirdeye-systems.com \"High Lander\"",
+        "\"ThirdEye\" \"Johnson Controls\" investment 2016"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://eaglenxt.com/eaglenxt-acquires-10m-stake-in-israels-thirdeye-systems-ltd-and-launches-us-joint-venture-for-counter-drone-systems/",
+          "published_date": "2026-04-14",
+          "disposition": "EagleNXT original ThirdEye investment announcement. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/8504/000143774926028026/R10.htm",
+          "published_date": "2026-08-14",
+          "disposition": "AgEagle original Form10Q Note4 closed ThirdEye private placement. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://cdn.financialreports.eu/financialreports/media/filings/7086/2026/RNS/7086_rns_2026-08-27_b867e51d-eaa1-476e-9f09-33c00e9caf66.pdf",
+          "published_date": "2026-08-27",
+          "disposition": "Original issuer-authored ThirdEye H12026 financial report mirrored PDF, Note6b. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/8504/000149315226016470/form8-k.htm",
+          "published_date": "2026-04-14",
+          "disposition": "Original privateplacementagreement13April2026. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://www.highlander.io/post/high-lander-and-thirdeye-systems-partner-to-bring-optical-drone-detection-into-utm-infrastructure",
+          "published_date": "2026-05-27",
+          "disposition": "Original provenanceidentitybridge MeduzaX/CEO LiorSegal. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://thirdeye-systems.com/investors/",
+          "published_date": null,
+          "disposition": "Ownpublicissuer/investors page. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        },
+        {
+          "url": "https://thirdeye-systems.com/media/",
+          "published_date": null,
+          "disposition": "OwnsearchcandidateIIA funding23April2026; terms/allocation held. Source opened and relevant facts reviewed unless expressly candidate/failed-fetch limitation."
+        }
+      ],
+      "evidence_note": "ExactIsraeliThirdEyeMeduzaX/LiorSegal identity bridged despiteUSmetadata. Issuer-authoredH1report andSECinvestor confirm newshareplacements, notsellersecondary.",
+      "hold_note": "Earlier2016JohnsonControls,2019/2021/2024ILScapital andApril2026IIAsupport requirefurtheroriginalreconciliation. NoIPO amount orJVfinancing inherited. Primaryreport firstannouncementdatesnotassumedfromsigning."
+    },
+    {
+      "id": "b9769806-4375-40f1-9cf3-89da66708b4d",
+      "slug": "thor-industries",
+      "name": "Thor Industries",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Thor Industries\" UK funding Odin Defence investment",
+        "\"Thor Industries Ltd\" funding investor loan",
+        "\"Thor Industries Ltd\" \"investment\" \"holdings\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://thorindustries.uk/",
+          "title": "Thor own identity",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original UK Salisburyengineeringissuer distinctUSRV."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/13022211/persons-with-significant-control",
+          "title": "Companies House original Thor Industries PSC record",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "OriginalPSC75%+holdingcompany; no cashinferred."
+        },
+        {
+          "url": "https://www.kaitseinvesteeringud.ee/en/estonia-signs-agreements-with-four-manufacturers-for-ermistu-defence-industrial-park/",
+          "title": "Estonian Centre DefenceInvestments original Ermistu release",
+          "published_date": "2026-03-18",
+          "source_type": "company_announcement",
+          "disposition": "Thor operates viaOdinDefenceOU. Infrastructureagreement notincomingparentfinance;29.5mjointEUaward notparentallocation."
+        }
+      ],
+      "evidence_note": "Bounded broad/history, owncompany andtransactionparty/registry review completed for exact UKThorIndustriesLtd. No supported incomingparentfundingevent found incheckedsources. USRVbonds, subsidiaryEUjointaward andprocurement excluded. Unknownprivatefinance isnotzero.",
+      "hold_note": ""
+    },
+    {
+      "id": "bb1f36e2-1398-4581-884e-0a6b9221b3c4",
+      "slug": "thunder-tiger",
+      "name": "Thunder Tiger",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Thunder Tiger\" capital increase investment financing 雷虎 2026",
+        "site:ttg.thundertiger.com 2026 2025 現金增資 發行 債",
+        "site:ttg.thundertiger.com \"115Q\"",
+        "site:ttg.thundertiger.com \"115\" \"160,000\"",
+        "\"Thunder Tiger\" \"2026\" \"cash\" \"price\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ttg.thundertiger.com/stock/file/quarterly_report/112Q2.pdf",
+          "title": "Thunder Tiger original2023Q2 financial report",
+          "published_date": "2023-08-07",
+          "source_type": "company_announcement",
+          "disposition": "Originalsharequantity/price andearlierexecutedprivateplacements; amountunitsTWDthousands recognized."
+        },
+        {
+          "url": "https://ttg.thundertiger.com/stock/file/quarterly_report/114Q2.pdf",
+          "title": "Thunder Tiger original2025Q2 financial report",
+          "published_date": "2025-08-12",
+          "source_type": "company_announcement",
+          "disposition": "Completed2025cashissue, noaggregateparent/subsidiarycashflows imported."
+        },
+        {
+          "url": "https://ttg.thundertiger.com/stock/file/quarterly_report/115Q2.pdf",
+          "title": "Thunder Tiger original2026Q2 financial report",
+          "published_date": "2026-08-11",
+          "source_type": "company_announcement",
+          "disposition": "Original2026latestcashissue,115=2026;12m×108 gross1.296bn.40m2025authorizationexpired;2026authorizationunexecuted."
+        },
+        {
+          "url": "https://ttg.thundertiger.com/stock/file/quarterly_report/115Q3.pdf",
+          "title": "2026Q3 candidate",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Fetchnotaccessible, nofactsasserted. RemaininghistoricalIPO/privateprices/parent-specificloans hold."
+        }
+      ],
+      "evidence_note": "ExactTaiwanThunderTigerCorporation8033 resolved. Fiveoriginalequitydisclosures;2023/2025/2026cashconsideration separatedfromparcapital/authorizations/subsidiaryfinance.",
+      "hold_note": "Earlierprivateplacementprices/investors,IPOprimaryamount,andlatest2026Q3/parentloansnotfullyreconciled. Nooutstandingbalanceasround."
+    },
+    {
+      "id": "bc70b38c-2edd-43e4-ad54-84f0d45be610",
+      "slug": "thyssenkrupp-marine-systems",
+      "name": "ThyssenKrupp Marine Systems",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"TKMS\" financing IPO credit facility 2026",
+        "site:tkmsgroup.com \"300\" \"credit\"",
+        "\"TKMS\" \"2026\" \"financing\" \"facility\"",
+        "\"TKMS\" \"credit facility\" site:tkmsgroup.com 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.tkmsgroup.com/fileadmin/website/downloads/20250929_TKMS_CMD_Presentation_UPLOAD_vF.pdf",
+          "title": "TKMS original Capital Markets Day presentation, September29/2025",
+          "published_date": "2025-09-29",
+          "source_type": "company_announcement",
+          "disposition": "Webfetchtoo-large; original12MBPDF successfullydownloadedclient-side andpdftotext inspectedpages85/147. Exact300mfacilityundrawn; notcash."
+        },
+        {
+          "url": "https://ir.tkmsgroup.com/publications",
+          "title": "TKMS reportingindex",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Searchcandidateonlylatest2026reports; detailedterms/latestdrawdownsheld."
+        },
+        {
+          "url": "https://www.tkmsgroup.com/company/press/press-releases",
+          "title": "TKMS news candidate",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Fetchinaccessible, notverifiednegative."
+        }
+      ],
+      "evidence_note": "ExactTKMS economicissuer resolved throughoriginalCMD. Parent300mrevolver ceilingretainedwithlender; spin-offexisting-sharelistingnotcashraise.",
+      "hold_note": "Latest2026drawdowns/earlierissuer-specificfacilities remainpartial; parentthyssenkruppotherdebt/guaranteesnotinherited."
+    },
+    {
+      "id": "91f70d10-cc25-4277-a573-19ce5aec3c48",
+      "slug": "tiami-networks",
+      "name": "Tiami Networks",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Tiami Networks\" funding investors seed",
+        "site:tiaminetworks.com funding grant seed SBIR investors",
+        "\"Tiami Networks\" \"funding\" \"SBIR\"",
+        "\"Tiami Networks\" \"seed\" \"2026\"",
+        "\"Tiami Networks\" site:nsf.gov \"275,000\"",
+        "\"Tiami Networks\" \"NSF\" \"award\" \"275\"",
+        "site:tiaminetworks.com grant award NSF funding",
+        "\"Tiami Networks\" site:nsf.gov/awardsearch",
+        "\"Tiami Networks\" NSF award 2024 233"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sbir.gov/awards/208185",
+          "title": "SBA official NSF SBIR award2335455 for Tiami Networks",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Originalofficial2335455 awardamountandperiod; unknownfirstpublicday/legalinstrument leftNULL/undisclosed."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1975309",
+          "title": "OfficialTiamiSBIRportfolio",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "UEIandcompanywebsitebridge;3.915646maggregate notevent; LLC/Inc labeldifferences recorded."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/215350",
+          "title": "OfficialArmyTiamiSBIRaward",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original1.890369m contractW51701-25-C-A141 excludedfrominvestment."
+        },
+        {
+          "url": "https://tiaminetworks.com/tiami-networks-futureg-office-award-vitaledge/",
+          "title": "Tiami originalFutureGVitalEdge award",
+          "published_date": "2026-07-29",
+          "source_type": "company_announcement",
+          "disposition": "Original2.1mcontractnotinvestmentgrant. PartnersMoUs notfunding."
+        },
+        {
+          "url": "https://capitalfactory.com/portfolio/tiami-networks-inc",
+          "title": "Capital Factory original Tiami portfolio",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Originalbackerportfolio associationonly."
+        },
+        {
+          "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2335455",
+          "title": "NSForiginalawardterms",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Inaccessible; preciseclassificationheld, noassumptiongrant."
+        },
+        {
+          "url": "https://nsf.elsevierpure.com/en/projects/sbir-phaseintelligent-repeaters-for-pervasive-millimeter-wave-wir/",
+          "title": "NSFhostedcandidate",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "404; snippetnotusedasfactualsource."
+        }
+      ],
+      "evidence_note": "OriginalofficialNSF275kaward andexactUEI/ownsitebridge verified; CapitalFactoryassociationonly. Army/FutureG procurement separatedfrominvestment.",
+      "hold_note": "LegalNSFgrant/contractterms andprivatehistoryunestablished; expiredoriginal404andnonverified1.9maggregatorhistory notimported."
+    },
+    {
+      "id": "33c36b57-cf23-4a9c-8621-e8efe4fd8de0",
+      "slug": "tiber",
+      "name": "Tiber",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Тибер\" беспилотники инвестиции финансирование",
+        "site:tiber.su инвестиции компания",
+        "\"Тибер\" \"БПЛА\" \"финансирование\"",
+        "\"Тибер\" \"tiber.su\" \"дроны\"",
+        "\"tiber.su\" Тибер инвестиции",
+        "\"Тибер\" беспилотники компания разработчик",
+        "\"Тайбер\" инвестиции финансирование грант",
+        "\"ТАЙБЕР\" \"инвестор\"",
+        "\"Тайбер\" \"инвестиции\" \"РТИ\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://tiber.su",
+          "title": "Catalogueoriginalwebsite",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Timeoutonhttpsandwww/httpaliases; failedfetchnotnofunding."
+        },
+        {
+          "url": "https://www.aviaport.ru/aviafirms/3163/",
+          "title": "Aviaportindustryissuerdirectory",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Actualopened28Apr2026listinglinks tiber.su andОООТАЙБЕР Moscowautopilots. Catalogue transliterationwrong; unrelatedОООТИБЕРfinancials excluded. Identity/formalprimarybridgeheld."
+        },
+        {
+          "url": "https://robotrends.ru/robopedia/proizvoditeli-bespilotnikov-rossiya",
+          "title": "HistoricalRTIpartnershipcandidate",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Searchcandidateonly2015partnershipnotincomingfinance; noamountorownershipinferred."
+        }
+      ],
+      "evidence_note": "Actualindustryprofilelinks exacttiber.su toОООТАЙБЕРautopilotcompany; catalogueTiber/Тибер namesakefinancialsnotassigned.",
+      "hold_note": "Originalsiteunreachable; formalissuerandearlier/latestfinancinghistorypartial. Partnershipnotinvestment; unknownnotzero."
+    },
+    {
+      "id": "8748eb7d-d49b-421e-9673-3f066b06291a",
+      "slug": "tiberius-aerospace",
+      "name": "Tiberius Aerospace",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 2,
+      "searches_checked": [
+        "\"Tiberius Aerospace\" funding investment investors",
+        "site:tiberiusaerospace.com funding investors D3 2026",
+        "\"Tiberius Aerospace\" \"investment\" \"seed\"",
+        "site:beatenzone.vc Tiberius 4.5",
+        "\"Tiberius Aerospace\" \"funding\" 2026 investment investors",
+        "Tiberius Aerospace 85 million Lakestar Rochefort November 2026",
+        "site:tiberius.com \"85\"",
+        "site:lakestar.com Tiberius 2026",
+        "site:rochefort.com \"Tiberius\"",
+        "site:lakestar.com Tiberius portfolio",
+        "site:rochefortam.com Tiberius"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.beatenzone.vc/beaten-zone-venture-partners-backs-tiberius-aerospace-in-us4-5m-round-to-transform-defence-as-a-service/",
+          "title": "Beaten Zone original Tiberius founders round release",
+          "published_date": "2025-09-10",
+          "source_type": "investor_announcement",
+          "disposition": "Original4.5mfoundersround; exactFund1LP, nolead/cheques inferred."
+        },
+        {
+          "url": "https://d3.vc/portfolio/",
+          "title": "D3 original portfolio linkingTiberiusAerospace",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "OriginalD3directcompanylink."
+        },
+        {
+          "url": "https://www.lakestar.com/resiliencepress",
+          "title": "Lakestar original cross-generation defence portfolio release",
+          "published_date": "2026-07-17",
+          "source_type": "investor_announcement",
+          "disposition": "OriginalLakestarportfolioacrossfundgenerations; noResilienceIcheque inferred."
+        },
+        {
+          "url": "https://www.tiberius.com/",
+          "title": "Tiberiusissuerownsite",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "ActualUSlegalissuerTiberiusAerospaceInc NewportBeach; ownsSceptre/GRAIL.500mcontractexcluded."
+        },
+        {
+          "url": "https://www.tiberius.com/blog",
+          "title": "Issuerownnewsroom",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Actual2026newscontract/productmilestones notinvestment."
+        },
+        {
+          "url": "https://dealroom.co/news/172575-tiberius-aerospace-raises-85m-series-a-at-1b-valuation-for-ramjet-artill/",
+          "title": "SecondaryNov13SeriesAcandidate",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Searchonly85mSeriesA+undiscloseddebt; nooriginallocated."
+        },
+        {
+          "url": "https://www.aviation-defence-universe.com/lakestar-and-rochefort-asset-management-co-lead-series-a-for-tiberius-aerospace-at-over-1-billion-valuation/",
+          "title": "Syndicatedreleasecandidate",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Searchdateline17Nov2026 isfuturevschecked14Nov;85m/debt/rolesheldpendingdatedoriginal. Secondaryestimatesindividualchequesexcluded."
+        }
+      ],
+      "evidence_note": "Original4.5mfoundersround andD3/Lakestarportfolio verifiedforUSissuer; draftholdpreserved.",
+      "hold_note": "85mSeriesA/debtcandidatefuture-datedsyndicatedrelease17Nov versuschecked14Nov; nodatedoriginalfound. Individualamounts/security/firstannouncementunknown. Sisyphusexistingrelationshippreserved;500mcommercialcontractnotfunding."
+    }
+  ],
+  "source_and_identity_reconciliation": [
+    {
+      "company_slug": "texas-instruments",
+      "sources": [
+        {
+          "url": "https://www.ti.com/en-us/about-ti/newsroom/news-releases/2026/2026-10-27-texas-instruments-prices-2-0-billion-of-investment-grade-notes",
+          "disposition": "Root independently opened original fourUSD500m pricing release. Dateline26October2026 precedes pageheader27October;9November closing independently confirmed by original8K."
+        }
+      ],
+      "disposition": "Bond gross principal, historical pricing-only status, undrawn conditional facilities and final up-to CHIPS award remain distinct. No bookrunner as beneficial investor, no workforce allocation duplicated, taxcredits or possible loan treated as grant."
+    },
+    {
+      "company_slug": "thales-italia",
+      "disposition": "Five exact CORDIS recipient allocations; no consortium-wide budgets, Thales parent or Nederland finance inherited. Agreement/project dates are not announcement dates or cash receipt."
+    },
+    {
+      "company_slug": "thales-alenia-space-italia-e-geos",
+      "disposition": "Composite two separate issuers TASItalia and eGEOS; no funding or owner allocated under ambiguous record. Draft preserved; no metadata changes."
+    },
+    {
+      "company_slug": "thales-uk",
+      "disposition": "Seven government payment rows are held without award IDs rather than converted into rounds or cumulative new award. Redirected UKRI pages are candidates only; export deals/Ukraine buyer guarantee not company borrowing."
+    },
+    {
+      "company_slug": "thales-australia",
+      "disposition": "Government-owned assets/contracts and RevAero consortium grantee not assigned as Thales proceeds. Ultimate corporate association is not a claim of direct legal vehicle funding."
+    },
+    {
+      "company_slug": "thirdeye-systems",
+      "sources": [
+        {
+          "url": "https://www.highlander.io/post/high-lander-and-thirdeye-systems-partner-to-bring-optical-drone-detection-into-utm-infrastructure",
+          "disposition": "Root original HighLander provenance identifies MeduzaX and LiorSegal, bridging Israeli ThirdEye despite catalogueUS metadata; partnership is not financing."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/8504/000143774926028026/R10.htm",
+          "disposition": "Root original investorSEC confirmsUSD10m contributed for3268608newshares. Additional4.95m rights expired; separate4m ThirdEyeUSA commitment unmade. OtherAerodrome investment onpage excluded."
+        }
+      ],
+      "disposition": "EDGE exact legal investor and original issuer statement paidUSD10.03m/newshare allocation retained separately. No seller consideration or subsidiaryJV budget attributed to issuer."
+    },
+    {
+      "company_slug": "thayermahan",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/thayermahan-raises-30-million-in-series-c-funding-301796929.html",
+          "disposition": "Root original issuer release confirms MC2lead plus separately namedDucenta/I-Squared/Compass and historicalHegemonlead. Compass is both investor/advisor. Unnamed RiverParkaffiliate not replaced by manager."
+        }
+      ],
+      "disposition": "Actual AEIStructuredSolutionsIfund reused, source-specific Hanwha AssetManagement preserved. Additional20m is same-issuer extension to30m, not a50m newraise."
+    },
+    {
+      "company_slug": "thinkon",
+      "disposition": "ExactCAD1000920 repayable FedNor allocation; not pooled regional award or USD conversion. Payment timing unknown."
+    },
+    {
+      "company_slug": "thiot-ingenierie",
+      "disposition": "FranceRelance namedaward amountNULL plus exact PANTHER beneficiary EUR549512.50; consortium sums and sourcepage updates not substituted."
+    },
+    {
+      "company_slug": "thunder-tiger",
+      "disposition": "Three original TWD cashissues and two older privateplacement disclosures; expired2025authorization not a completed round, issue/registrationdates not invented public dates."
+    },
+    {
+      "company_slug": "thyssenkrupp-marine-systems",
+      "disposition": "Up-toEUR300m undrawn parent revolver is capacity. Spin-offIPO secondary distribution does not establish issuer cash proceeds."
+    },
+    {
+      "company_slug": "tiami-networks",
+      "disposition": "Official NSF275k award instrument left undisclosed pending accessible terms. Army/FutureG procurement contracts excluded as financing."
+    },
+    {
+      "company_slug": "tiberius-aerospace",
+      "disposition": "Original2025USD4.5m foundersround names BeatenZoneFund1LP participant, not manager or inferred lead. Secondary85m/debt claim with17November2026 future dateline held pending dated original. ExistingSisyphus association preserved. NewD3/Lakestar generic entries must remain unlinked under draft gate."
+    },
+    {
+      "company_slug": "thor-industries",
+      "disposition": "UK ThorIndustriesLtd resolved; US recreationalvehicle issuer excluded. OdinDefence/RSI subsidiary project29.5m not parent funding."
+    }
+  ],
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed importer rollback, atomic counts, idempotency, conflicting amount and participant-source FK rejection.",
+    "production_rollback_baseline_restored": true,
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 34,
+      "mismatched_facts": 0,
+      "participant_matches": 30,
+      "source_matches": 40,
+      "relationship_matches": 15,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 1
+    },
+    "company_investment_research_actual_count": {
+      "research_rows": 1183,
+      "partial_rows": 1183
+    },
+    "draft_and_legacy_relationship_preservation": [
+      {
+        "slug": "thales-alenia-space-italia-e-geos",
+        "publication_status": "draft",
+        "preserved_sisyphus_source": null
+      },
+      {
+        "slug": "tiberius-aerospace",
+        "publication_status": "draft",
+        "preserved_sisyphus_source": "https://www.vestbee.com/insights/articles/europes-defence-and-dual-use-investors"
+      }
+    ]
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Fresh567company map before import has none24target slugs. Existing gates/classifications unchanged. DraftTiberius and compositeTAS/eGEOS remain unpublished; sourced investor holdings can appear with nullURL under existing view."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false
+}
