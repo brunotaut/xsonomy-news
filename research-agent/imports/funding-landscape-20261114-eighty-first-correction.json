@@ -1,0 +1,42 @@
+{
+  "id": "funding-landscape-20261114-eighty-first-advent-canonical-participation",
+  "checked_at": "2026-11-14",
+  "company_slug": "quantum-systems",
+  "round_key": "series-d-2026",
+  "round_id": "85a41612-e98c-4d51-9b81-fa9760d0aa84",
+  "expected_old": {
+    "role": "co_lead",
+    "round_id": "85a41612-e98c-4d51-9b81-fa9760d0aa84",
+    "checked_at": "2026-11-02",
+    "source_url": "https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/",
+    "contribution_amount": null,
+    "investor_research_id": "e0f4d57f-72ee-4043-bdb3-587ddf84ec78",
+    "contribution_currency": null
+  },
+  "replacement": {
+    "role": "co_lead",
+    "round_id": "85a41612-e98c-4d51-9b81-fa9760d0aa84",
+    "checked_at": "2026-11-14",
+    "source_url": "https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/",
+    "contribution_amount": null,
+    "investor_research_id": "629400f6-c8b6-43ba-a23d-fed0c2d5e47e",
+    "contribution_currency": null
+  },
+  "evidence": [
+    {
+      "url": "https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/",
+      "basis": "Original issuer identifies Advent as co-lead."
+    },
+    {
+      "url": "https://www.adventinternational.com/investments/",
+      "basis": "Original Advent International portfolio directly links Quantum Systems and gives July2026."
+    }
+  ],
+  "scope": "Reassign one existing participation to canonical source-confirmed investor identity. Keep both existing profiles, every legacy profile field and source row. No profile deletion, archival or merge; legacy profile remains an explicitly documented alias.",
+  "reversal": {
+    "action": "Restore original investor_research_id and checked_at with expected-current guards; retain valid appended evidence sources on canonical profile."
+  },
+  "forward_sql": "do $reviewed_identity$ begin\nif not exists(select 1 from company_funding_rounds f join companies c on c.id=f.company_id where f.id='85a41612-e98c-4d51-9b81-fa9760d0aa84' and c.slug='quantum-systems' and f.round_key='series-d-2026') then raise exception 'Reviewed identity issuer guard failed';end if;\nif not exists(select 1 from investor_research where id='e0f4d57f-72ee-4043-bdb3-587ddf84ec78' and slug='advent') or not exists(select 1 from investor_research where id='629400f6-c8b6-43ba-a23d-fed0c2d5e47e' and slug='advent-international' and publication_status='approved') then raise exception 'Reviewed identity profile guard failed';end if;\nif (select count(*) from company_funding_round_investors where round_id='85a41612-e98c-4d51-9b81-fa9760d0aa84' and investor_research_id='e0f4d57f-72ee-4043-bdb3-587ddf84ec78' and role='co_lead' and source_url='https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/' and contribution_amount is null and contribution_currency is null and checked_at='2026-11-02')=1 and not exists(select 1 from company_funding_round_investors where round_id='85a41612-e98c-4d51-9b81-fa9760d0aa84' and investor_research_id='629400f6-c8b6-43ba-a23d-fed0c2d5e47e') then\nupdate company_funding_round_investors set investor_research_id='629400f6-c8b6-43ba-a23d-fed0c2d5e47e',checked_at='2026-11-14' where round_id='85a41612-e98c-4d51-9b81-fa9760d0aa84' and investor_research_id='e0f4d57f-72ee-4043-bdb3-587ddf84ec78' and role='co_lead' and source_url='https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/' and contribution_amount is null and contribution_currency is null and checked_at='2026-11-02';\nelsif not exists(select 1 from company_funding_round_investors where round_id='85a41612-e98c-4d51-9b81-fa9760d0aa84' and investor_research_id='e0f4d57f-72ee-4043-bdb3-587ddf84ec78') and (select count(*) from company_funding_round_investors where round_id='85a41612-e98c-4d51-9b81-fa9760d0aa84' and investor_research_id='629400f6-c8b6-43ba-a23d-fed0c2d5e47e' and role='co_lead' and source_url='https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/' and contribution_amount is null and contribution_currency is null and checked_at='2026-11-14')=1 then null;\nelse raise exception 'Reviewed identity expected-old guard failed';end if;\ninsert into investor_research_sources(investor_id,url,title,accessed_at) select '629400f6-c8b6-43ba-a23d-fed0c2d5e47e','https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/','Quantum Systems original USD1.2bn SeriesD co-lead evidence','2026-11-14' where not exists(select 1 from investor_research_sources where investor_id='629400f6-c8b6-43ba-a23d-fed0c2d5e47e' and url='https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/');\ninsert into investor_research_sources(investor_id,url,title,accessed_at) select '629400f6-c8b6-43ba-a23d-fed0c2d5e47e','https://www.adventinternational.com/investments/','Advent International original portfolio identity bridge','2026-11-14' where not exists(select 1 from investor_research_sources where investor_id='629400f6-c8b6-43ba-a23d-fed0c2d5e47e' and url='https://www.adventinternational.com/investments/');\nend $reviewed_identity$;",
+  "reversal_sql": "do $reverse_identity$ begin\nif (select count(*) from company_funding_round_investors where round_id='85a41612-e98c-4d51-9b81-fa9760d0aa84' and investor_research_id='629400f6-c8b6-43ba-a23d-fed0c2d5e47e' and role='co_lead' and source_url='https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/' and contribution_amount is null and contribution_currency is null and checked_at='2026-11-14')<>1 or exists(select 1 from company_funding_round_investors where round_id='85a41612-e98c-4d51-9b81-fa9760d0aa84' and investor_research_id='e0f4d57f-72ee-4043-bdb3-587ddf84ec78') then raise exception 'Identity reversal expected-current guard failed';end if;\nupdate company_funding_round_investors set investor_research_id='e0f4d57f-72ee-4043-bdb3-587ddf84ec78',checked_at='2026-11-02' where round_id='85a41612-e98c-4d51-9b81-fa9760d0aa84' and investor_research_id='629400f6-c8b6-43ba-a23d-fed0c2d5e47e' and role='co_lead' and source_url='https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/' and contribution_amount is null and contribution_currency is null and checked_at='2026-11-14';\nend $reverse_identity$;",
+  "validation": "PGlite rollback, idempotency, reversal, expected-old rejection passed; combined production rollback restored all baseline counts, profile hash and investor-source count."
+}

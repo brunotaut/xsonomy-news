@@ -6728,7 +6728,31 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "run_id": "funding-20261114-eighty-first",
+    "manifest": "research-agent/imports/funding-landscape-20261114-eighty-first.json",
+    "correction": "research-agent/imports/funding-landscape-20261114-eighty-first-correction.json",
+    "status": "validated_combined_production_rollback_passed_awaiting_atomic_import",
+    "baseline": {
+      "events": 4017,
+      "approved": 4004,
+      "links": 5594,
+      "sources": 5509,
+      "profiles": 3278,
+      "covered": 1148,
+      "relationships": 540,
+      "preserved_profiles_hash": "6ccdc70a459e9b1545e60363c3b9e680",
+      "investor_sources": 6021
+    },
+    "expected": {
+      "events": 18,
+      "links": 25,
+      "sources": 24,
+      "relationships": 14,
+      "reviewed_corrections": 1
+    },
+    "recovery_note": "Inspect manifest facts AND correction expected-old/new investor identity before retry. Combined production rollback restored baseline; no atomic commit yet."
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-14T08:01:31Z",
@@ -10157,7 +10181,28 @@
       "timing_scope": "Elapsed writer lease through four disjoint read-only research groups, exact issuer/profile/source reconciliation, current importer/schema validation, PostgreSQL tests, production rollback, atomic import, exact fact/role/source/contribution audit, idempotency, guarded NRC announcement-date correction with reversal record/rollback and corrected-manifest tests, durable queue/manifest readback and successful build with both fresh live JSON datasets. Concurrent durations not summed."
     }
   },
-  "pending_reviewed_correction": null,
+  "pending_reviewed_correction": {
+    "path": "research-agent/imports/funding-landscape-20261114-eighty-first-correction.json",
+    "status": "validated_awaiting_atomic_import",
+    "expected_old": {
+      "role": "co_lead",
+      "round_id": "85a41612-e98c-4d51-9b81-fa9760d0aa84",
+      "checked_at": "2026-11-02",
+      "source_url": "https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/",
+      "contribution_amount": null,
+      "investor_research_id": "e0f4d57f-72ee-4043-bdb3-587ddf84ec78",
+      "contribution_currency": null
+    },
+    "replacement": {
+      "role": "co_lead",
+      "round_id": "85a41612-e98c-4d51-9b81-fa9760d0aa84",
+      "checked_at": "2026-11-14",
+      "source_url": "https://quantum-systems.com/us/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/",
+      "contribution_amount": null,
+      "investor_research_id": "629400f6-c8b6-43ba-a23d-fed0c2d5e47e",
+      "contribution_currency": null
+    }
+  },
   "latest_seventy_second_reconciliation": {
     "status": "imported_and_publication_verified",
     "report": "research-agent/reports/2026-11-13-funding-landscape-seventy-second.json",
