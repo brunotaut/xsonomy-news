@@ -114,6 +114,7 @@ export function buildIssuePage({
       <nav>
         <a href="../../">News</a>
         <a href="../" aria-current="page">Monthly Digest</a>
+        <a href="/articles/">Articles</a>
       </nav>
     </div>
   </header>

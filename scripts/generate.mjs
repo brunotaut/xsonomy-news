@@ -15,6 +15,8 @@ import { loadDotenv } from "./lib/http.mjs";
 import { fetchRecent, countArticles } from "./lib/supabase.mjs";
 import { siteFooter, analyticsTag, consentBanner } from "./lib/chrome.mjs";
 
+import { publishEditorial } from "./lib/editorial.mjs";
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = join(ROOT, "src");
 const OUT = join(ROOT, "public");
@@ -24,7 +26,7 @@ const OUT = join(ROOT, "public");
 // is how a shipped consent-bar fix looked like it had not deployed at all.
 function cssVersion() {
   try {
-    return createHash("sha1").update(readFileSync(join(SRC, "assets", "styles.css"))).digest("hex").slice(0, 8);
+    return createHash("sha1").update(readFileSync(join(SRC, "assets", "styles.css"))).update(readFileSync(join(SRC, "assets", "articles.css"))).digest("hex").slice(0, 8);
   } catch { return "0"; }
 }
 
@@ -134,6 +136,7 @@ async function publishDigestArchive() {
       // Stamp the current CSS version on copy, so an issue generated months ago
       // still points at the freshest stylesheet.
       const issueHtml = (await readFile(page, "utf8"))
+        .replace(/(<a href="[^"]*" aria-current="page">Monthly Digest<\/a>)(?!\s*<a href="\/articles\/")/, '$1\n        <a href="/articles/">Articles</a>')
         .replace(/(href="\.\.\/\.\.\/assets\/styles\.css)(\?v=[^"]*)?"/, `$1?v=${CSS_V}"`);
       await writeFile(join(OUT, "digest", meta.slug, "index.html"), issueHtml);
       issues.push(meta);
@@ -218,6 +221,7 @@ async function main() {
   // Digest archive: archive/digests/<slug>.html (written by digest.mjs and
   // committed) becomes /digest/<slug>/ here, plus an index listing every issue.
   const issues = await publishDigestArchive();
+  const editorials = await publishEditorial({root: ROOT, out: OUT, siteUrl: SITE_URL, cssVersion: CSS_V});
 
   // data + feeds
   await mkdir(join(OUT, "data"), { recursive: true });
@@ -226,6 +230,8 @@ async function main() {
   await writeFile(join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`);
   const today = new Date().toISOString().slice(0, 10);
   const urls = [
+    `  <url><loc>${SITE_URL}/articles/</loc><lastmod>${editorials[0]?.published || today}</lastmod></url>`,
+    ...editorials.map(a => `  <url><loc>${SITE_URL}/articles/${a.slug}/</loc><lastmod>${a.published}</lastmod></url>`),
     `  <url><loc>${SITE_URL}/</loc><lastmod>${today}</lastmod></url>`,
     ...(issues.length ? [`  <url><loc>${SITE_URL}/digest/</loc><lastmod>${today}</lastmod></url>`] : []),
     ...issues.map((i) =>
