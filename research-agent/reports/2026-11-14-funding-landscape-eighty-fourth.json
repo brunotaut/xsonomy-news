@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-14",
   "started_at": "2026-11-14T11:54:10.969Z",
   "manifest": "research-agent/imports/funding-landscape-20261114-eighty-fourth.json",
@@ -36,14 +36,24 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
     "reviewed_existing_fact_corrections": 0,
     "db_total_events": 4123,
     "db_approved_events": 4110,
     "db_round_participations": 5696,
     "db_investor_profiles": 3358,
-    "db_source_reconciliation_companies": 1183
+    "db_source_reconciliation_companies": 1183,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 15,
+    "clickable_generic_company_links_verified": 13,
+    "draft_generic_entries_remain_unlinked": 2,
+    "active_minutes": 15.58,
+    "checked_identities_per_hour": 92.4,
+    "completed_reviews_per_hour": 30.8,
+    "timing_scope": "Elapsed single writer lease through four disjoint read-only groups, exact issuer/vehicle/source-date QA, current importer/schema verification, PostgreSQL tests, production rollback, one atomic import, fact/role/source/contribution and same-issuer extension audit, idempotency, durable readbacks, successful existing build and both fresh live datasets. Eight bounded reviews completed;16 retain concrete holds. Concurrent durations not summed."
   },
   "production_before": {
     "events": 4089,
@@ -1362,7 +1372,27 @@
         "publication_status": "draft",
         "preserved_sisyphus_source": "https://www.vestbee.com/insights/articles/europes-defence-and-dual-use-investors"
       }
-    ]
+    ],
+    "live_generic_entry_verification": {
+      "entries": 15,
+      "source_urls": 15,
+      "clickable_company_links": 13,
+      "unlinked": [
+        {
+          "investor": "d3",
+          "company": "tiberius-aerospace",
+          "published": false,
+          "url": null
+        },
+        {
+          "investor": "lakestar",
+          "company": "tiberius-aerospace",
+          "published": false,
+          "url": null
+        }
+      ],
+      "draft_gates_verified": true
+    }
   },
   "publication_scope": {
     "all_new_targets_outside_european_landscape": true,
@@ -1379,5 +1409,58 @@
     "Repository schedules",
     "No paid external API"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-14T12:09:46Z",
+    "verified_at": "2026-11-14T12:09:46Z",
+    "catalogue_commit": "3a33fa27d27a207fca8008adb5c0b315772957b2",
+    "source_commit": "3e895cd8f866f5ff41e5d65ee471852a80ee4e16",
+    "workflow_run": {
+      "id": 43593210392,
+      "head": "3a33fa27d27a207fca8008adb5c0b315772957b2",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43593210392"
+    },
+    "report": "research-agent/reports/2026-11-14-funding-landscape-eighty-fourth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261114-eighty-fourth.json",
+    "generated_at": "2026-11-14T12:07:43.548Z",
+    "investor_generated_at": "2026-11-14T12:07:46.726Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3349,
+    "portfolio_relationships": 603,
+    "expected_profiles": 33,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 15,
+    "generic_portfolio_entries_verified": 15,
+    "clickable_company_links_verified": 13,
+    "unlinked_under_existing_publication_gates": [
+      {
+        "investor": "d3",
+        "company": "tiberius-aerospace",
+        "published": false,
+        "url": null
+      },
+      {
+        "investor": "lakestar",
+        "company": "tiberius-aerospace",
+        "published": false,
+        "url": null
+      }
+    ],
+    "manifest_participation_source_matches": 30,
+    "manifest_generic_relationship_matches": 15,
+    "current_manifest_event_rows": 34,
+    "current_manifest_live_matches": 0,
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "Nine pre-existing anonymous profiles excluded: DB3358 versus live3349; three prior generic entries remain excluded. All24 target slugs absent from European map before/after import under existing gates. All33 referenced profiles,30 participation source URLs and15 generic entries with sources verified;13 clickable company links and2 Tiberius draft holdings correctly published=false/urlNULL.16 new investor profiles published. European map567/1590/1390 unchanged.34 new financing disclosures remain source-audited in DB under existing scope gates. No company metadata or publication gate changes."
+  },
+  "completed_at": "2026-11-14T12:09:46Z"
 }
