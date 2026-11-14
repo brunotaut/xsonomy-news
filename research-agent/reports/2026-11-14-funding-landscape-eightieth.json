@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-14",
   "started_at": "2026-11-14T07:46:04Z",
   "manifest": "research-agent/imports/funding-landscape-20261114-eightieth.json",
@@ -37,9 +37,23 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
-    "reviewed_existing_fact_corrections": 0
+    "reviewed_existing_fact_corrections": 0,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 9,
+    "clickable_generic_company_links_verified": 9,
+    "db_total_events": 4017,
+    "db_approved_events": 4004,
+    "db_round_participations": 5594,
+    "db_investor_profiles": 3278,
+    "db_source_reconciliation_companies": 1148,
+    "active_minutes": 15.45,
+    "checked_identities_per_hour": 93.2,
+    "completed_reviews_per_hour": 31.1,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups, original source/issuer/profile reconciliation, current importer/schema verification, PostgreSQL tests, production rollback, atomic import, exact fact/role/source/contribution audit, idempotency, durable queue/manifest readbacks, successful existing build and both fresh live datasets. Eight bounded reviews completed;16 retain concrete partial-history holds. Concurrent durations not summed."
   },
   "production_before": {
     "events": 3984,
@@ -1163,6 +1177,12 @@
     "company_investment_research_actual_count": {
       "rows": 1148,
       "partial": 1148
+    },
+    "live_generic_entry_verification": {
+      "entries": 9,
+      "source_urls": 9,
+      "clickable_company_links": 9,
+      "unlinked": []
     }
   },
   "publication_scope": {
@@ -1182,6 +1202,43 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "awaiting_existing_catalogue_push_build"
-  }
+    "status": "verified",
+    "checked_at": "2026-11-14T08:01:31Z",
+    "verified_at": "2026-11-14T08:01:31Z",
+    "catalogue_commit": "28d794872f8e34b305f2e30dd7fc5b98d8901e1d",
+    "source_commit": "98fb9812c766f4da4252fed3030ac4c3618a0e6c",
+    "workflow_run": {
+      "id": 43573568730,
+      "head": "28d794872f8e34b305f2e30dd7fc5b98d8901e1d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43573568730"
+    },
+    "report": "research-agent/reports/2026-11-14-funding-landscape-eightieth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261114-eightieth.json",
+    "generated_at": "2026-11-14T07:59:24.510Z",
+    "investor_generated_at": "2026-11-14T07:59:27.395Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3269,
+    "portfolio_relationships": 537,
+    "expected_profiles": 37,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 9,
+    "generic_portfolio_entries_verified": 9,
+    "clickable_company_links_verified": 9,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 35,
+    "manifest_generic_relationship_matches": 9,
+    "current_manifest_event_rows": 33,
+    "current_manifest_live_matches": 0,
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "Nine pre-existing anonymous profiles excluded: DB3278 versus live3269. All24 targets remain outside European map under existing gates. All37 referenced profiles,35 participation sourceURLs and9 generic entries with original sources/clickable company links verified;16 new profiles published.33 financing events remain source-audited in DB under existing scope gates. No metadata/gate changes."
+  },
+  "completed_at": "2026-11-14T08:01:31Z"
 }
