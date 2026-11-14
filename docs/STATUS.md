@@ -2293,3 +2293,8 @@ Checked 24 identities in four disjoint read-only groups; all final freezes confi
 
 
 Run89 publication verified 2026-11-14T20:04:29.323Z: [existing build43635266481](https://github.com/brunotaut/xSonomy/actions/runs/43635266481) succeeded. Fresh datasets generated 2026-11-14T20:02:42.083Z / 2026-11-14T20:02:45.789Z. Directory now has 3,510 profiles and 644 portfolio entries; all 91 referenced profiles,126 participant-source links and6 generic entries/source URLs/clickable links checked. European map remains 567 companies,1,590 events and1,390 participations under existing gates. Three selected draft identities unchanged. Prior round/profile/relationship hashes, exact selected legacy relationship and all24company metadata hashes preserved. Queue:1,218reviewed/1,219partial/127queued. Lease cleared; programme incomplete and continuation enabled.
+
+
+## Funding source audit — 14 November 2026, run90
+
+Checked 24 identities in four disjoint read-only groups; all final freezes confirmed before consolidation. One tested atomic import added62 financing disclosures,28 participations,101 source associations,8 generic links and20 investor profiles. Exact facts/roles/contributions, rollback, replay and preserved-data hashes passed. Existing Vermeer/Draper relationship retained unchanged. Three bounded reviews completed;21 retain source-specific holds. Queue:1,221reviewed/1,240partial/103queued. [Audit](../research-agent/reports/2026-11-14-funding-landscape-ninetieth.json). Existing build verification pending.
