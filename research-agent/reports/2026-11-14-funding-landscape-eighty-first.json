@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-14",
   "started_at": "2026-11-14T08:51:15Z",
   "manifest": "research-agent/imports/funding-landscape-20261114-eighty-first.json",
@@ -40,14 +40,30 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
     "reviewed_existing_fact_corrections": 1,
     "canonical_participation_audit": {
       "canonical_matches": 1,
       "old_matches": 0,
       "profiles_retained": 2
-    }
+    },
+    "reviewed_correction_publication_verified": true,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 14,
+    "clickable_generic_company_links_verified": 14,
+    "db_total_events": 4035,
+    "db_approved_events": 4022,
+    "db_round_participations": 5619,
+    "db_investor_profiles": 3294,
+    "db_source_reconciliation_companies": 1156,
+    "active_minutes": 15.67,
+    "checked_identities_per_hour": 91.9,
+    "completed_reviews_per_hour": 30.6,
+    "timing_scope": "Elapsed writer lease through four disjoint read-only groups and one published investor-identity reconciliation, original source/issuer/profile checks, current importer/schema verification, PostgreSQL importer and correction tests, combined production rollback, one atomic import, expected-old guarded correction with saved reversal, exact fact/role/source/contribution audit, combined idempotency, durable readbacks, successful existing build and both fresh live datasets. Eight bounded reviews completed;16 retain concrete holds. Concurrent durations not summed."
   },
   "production_before": {
     "events": 4017,
@@ -1177,14 +1193,27 @@
     "company_investment_research_actual_count": {
       "rows": 1156,
       "partial": 1156
-    }
+    },
+    "live_generic_entry_verification": {
+      "entries": 14,
+      "source_urls": 14,
+      "clickable_company_links": 14,
+      "unlinked": []
+    },
+    "reviewed_correction_live_verified": true
   },
   "publication_scope": {
     "all_new_targets_outside_european_landscape": true,
     "expected_european_companies": 567,
     "expected_european_events": 1590,
     "expected_european_participations": 1390,
-    "note": "All24 targets outside existing European map, verified fresh baseline. No gate/geography/classification changes."
+    "note": "All24 targets outside existing European map, verified fresh baseline. No gate/geography/classification changes.",
+    "reviewed_published_identity_correction": {
+      "company_slug": "quantum-systems",
+      "canonical_investor_slug": "advent-international",
+      "counts_unchanged": true,
+      "source_and_role_verified": true
+    }
   },
   "preserved": [
     "Legacy STATE.json",
@@ -1196,6 +1225,46 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "awaiting_existing_catalogue_push_build"
-  }
+    "status": "verified",
+    "checked_at": "2026-11-14T09:06:55Z",
+    "verified_at": "2026-11-14T09:06:55Z",
+    "catalogue_commit": "be87bc5b2f1423006d4f3863dcce184768496f27",
+    "source_commit": "988b45af5a36b52f9b4ce012745c86a016441ce9",
+    "workflow_run": {
+      "id": 43578800275,
+      "head": "be87bc5b2f1423006d4f3863dcce184768496f27",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43578800275"
+    },
+    "report": "research-agent/reports/2026-11-14-funding-landscape-eighty-first.json",
+    "manifest": "research-agent/imports/funding-landscape-20261114-eighty-first.json",
+    "correction": "research-agent/imports/funding-landscape-20261114-eighty-first-correction.json",
+    "generated_at": "2026-11-14T09:05:22.380Z",
+    "investor_generated_at": "2026-11-14T09:05:25.740Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3285,
+    "portfolio_relationships": 551,
+    "expected_profiles": 34,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 14,
+    "generic_portfolio_entries_verified": 14,
+    "clickable_company_links_verified": 14,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 25,
+    "manifest_generic_relationship_matches": 14,
+    "reviewed_quantum_canonical_investor_link_verified": true,
+    "current_manifest_event_rows": 18,
+    "current_manifest_live_matches": 0,
+    "reviewed_correction_live_matches": 1,
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "Nine pre-existing anonymous profiles excluded: DB3294 versus live3285. All24 new targets remain outside European map under existing gates. All34 referenced profiles,25 participation sourceURLs and14 generic entries with sources/clickable company links verified;16 new profiles published. The reviewed QuantumSystems co-lead now links Advent International with original source; legacy alias profile retained. European map counts567/1590/1390 unchanged.18 new financing events remain source-audited in DB under existing scope gates. No metadata/gate changes."
+  },
+  "completed_at": "2026-11-14T09:06:55Z"
 }
