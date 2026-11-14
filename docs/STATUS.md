@@ -2285,3 +2285,8 @@ Checked 24 identities in four read-only groups. Imported 41 financing disclosure
 
 
 Run88 publication verified 2026-11-14T19:04:29.135Z: [existing build43629859303](https://github.com/brunotaut/xSonomy/actions/runs/43629859303) succeeded. Fresh datasets generated 2026-11-14T19:02:49.531Z / 2026-11-14T19:02:52.516Z. Directory now has 3,460 profiles and 638 portfolio entries; all 81 referenced profiles,100 participant-source links and15 generic entries checked. Fourteen company links are clickable; draft Unmanned Airspace remains unlinked. European map remains 567 companies,1,590 events and1,390 participations under existing gates. Prior round/profile/relationship hashes and all24company metadata hashes preserved. Queue:1,217reviewed/1,196partial/151queued. Lease cleared; programme incomplete and continuation enabled.
+
+
+## Funding source audit — 14 November 2026, run89
+
+Checked 24 identities in four disjoint read-only groups; all final freezes confirmed before consolidation. One tested atomic import added 43 financing disclosures,126 participations,53 source associations,6 generic links and50 investor profiles. Exact facts/roles/contributions, rollback, replay and preserved-data hashes passed. Existing MD One/Valarian association retained unchanged. One bounded review completed;23 retain source-specific holds. Queue:1,218reviewed/1,219partial/127queued. [Audit](../research-agent/reports/2026-11-14-funding-landscape-eighty-ninth.json). Existing build verification pending.

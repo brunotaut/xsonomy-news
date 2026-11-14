@@ -1,0 +1,1393 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-14",
+  "started_at": "2026-11-14T19:49:50.545Z",
+  "manifest": "research-agent/imports/funding-landscape-20261114-eighty-ninth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 1,
+    "new_or_retained_partial": 23,
+    "new_approved_events": 43,
+    "new_round_participations": 126,
+    "new_source_rows": 53,
+    "new_generic_portfolio_relationships": 6,
+    "new_companies_with_events": 13,
+    "new_investor_profiles": 50,
+    "group_search_queries_executed": 132,
+    "root_additional_search_queries": 9,
+    "search_queries_executed": 141,
+    "per_company_search_ledger_entries": 132,
+    "source_ledger_entries": 116,
+    "root_source_ledger_entries": 5,
+    "company_database_identity_contexts_checked": 24,
+    "all_four_final_freezes_confirmed_before_consolidation": true,
+    "frozen_source_hashes_unchanged": true,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "atomic_import_invocations": 1,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "prior_rounds_and_unselected_relationship_hashes_preserved": true,
+    "selected_legacy_relationships_exactly_preserved": true,
+    "company_metadata_hashes_preserved": 24,
+    "event_matches": 43,
+    "mismatched_facts": 0,
+    "participant_matches": 126,
+    "source_matches": 53,
+    "relationship_matches": 6,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 0,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "reviewed_existing_fact_corrections": 0,
+    "db_total_events": 4305,
+    "db_approved_events": 4292,
+    "db_round_participations": 6063,
+    "db_investor_profiles": 3519,
+    "db_source_reconciliation_companies": 1243
+  },
+  "production_before": {
+    "events": 4262,
+    "approved": 4249,
+    "links": 5937,
+    "sources": 5835,
+    "profiles": 3469,
+    "covered": 1230,
+    "relationships": 641,
+    "preserved_profiles_hash": "204f99547f0e02b84c7d7fff99b106d7"
+  },
+  "production_after": {
+    "events": 4305,
+    "approved": 4292,
+    "links": 6063,
+    "sources": 5888,
+    "profiles": 3519,
+    "covered": 1243,
+    "relationships": 647,
+    "preserved_profiles_hash": "204f99547f0e02b84c7d7fff99b106d7"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1218,
+    "source_review_partial": 1219,
+    "queued": 127
+  },
+  "per_company": [
+    {
+      "id": "ab140618-1e58-4529-8333-1b553cbb0140",
+      "slug": "uvision",
+      "name": "UVision",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "UVision Air investment funding 2026 2025 ownership",
+        "UVision Air Frenkel ownership 2026 2025 Magnus official",
+        "\"u-s-army-begins-testing-four-rival-drones-for-future-soldiers\" UVision"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defence-blog.com/u-s-army-begins-testing-four-rival-drones-for-future-soldiers/",
+          "published_date": null,
+          "disposition": "Supplied source directfetch403. Context Israel/UVision and issuerHeroportfolio indicate duplicate economic identity of fuller uvision-air-ltd; no duplicated financing imported."
+        },
+        {
+          "url": "https://uvisionuav.com/about-us/global-presence/",
+          "published_date": null,
+          "disposition": "Original UVisionHeroissuer and subsidiaries distinguished; subsidiary orders/capital not inherited. Alias disposition scoped to economic brand, no metadata merge."
+        }
+      ],
+      "evidence_note": "Israeli UVision brand context strongly suggests alias of fuller UVisionAirLtd identity; supplied article directfetch403 prevents complete legal/economic issuer reconciliation. No duplicated financing assigned.",
+      "hold_note": "Hold exact supplied-article issuer identity. Canonical richer uvision-air-ltd used for its directly evidenced disclosures, but no formal duplicate closure or metadata merge asserted."
+    },
+    {
+      "id": "cda3c98e-2e4c-4a51-b609-df7b47a73d5e",
+      "slug": "uvision-air-ltd",
+      "name": "UVision Air Ltd",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"UVision\" funding investment seed 2011 2014 2026",
+        "site.uvisionuav.com Frenkel Magnus investment funding",
+        "site.aaronfrenkel.com UVision Magnus",
+        "site.uvisionuav.com \"Frenkel\"",
+        "\"UVision\" \"Nasdaq\" November 2026 funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.calcalistech.com/ctechnews/article/86dsfir8s",
+          "published_date": "2026-10-13",
+          "disposition": "Original reports historical Frenkel shareholder loans and postponed IPO. Loan size/date unknown; IPO target and valuation are not closed financing."
+        },
+        {
+          "url": "https://uvisionuav.com/news-and-press-release/",
+          "published_date": null,
+          "disposition": "Issuer searchindex carries982mIDIQ/73mcontracts and subsidiarynews, not primaryrounds."
+        },
+        {
+          "url": "https://startupim.com/company/uvision-air",
+          "published_date": null,
+          "disposition": "110m2011seed and127mtotal aggregator candidates unverified; no residual or cheque inferred."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1912964/000166919122000806/reviewletter.pdf",
+          "published_date": null,
+          "disposition": "SECsearchcandidate concerns unrelated DelawareUVISIONfilm/NFTissuer, excluded."
+        }
+      ],
+      "evidence_note": "Exact economic/legal issuer and checked public sources reconciled; confirmed facts imported only once under their evidenced issuer.",
+      "hold_note": "Hold seed110m, undiscloseddatedloans andfullhistory, originalownershipvehicleallocation, IPOtargetcompletion and governmentgrantcandidates. Contracts/valuation/unrelatedNFTissuer excluded."
+    },
+    {
+      "id": "b46392d2-23c8-4803-a2a8-551293c8f703",
+      "slug": "v2x",
+      "name": "V2X",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "V2X 2026 2025 credit agreement term loan financing 2022",
+        "site.ir.gov2x.com 2026 refinancing May 29 term loans",
+        "site.investors.gov2x.com 2025 March credit agreement 737.5 million",
+        "site.investors.gov2x.com 2023 credit 750 million facility",
+        "\"V2X\" financing November 2026 term loan"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://investors.gov2x.com/news/news-details/2023/V2X-Announces-Fourth-Quarter-and-Full-Year-2022-Results/default.aspx",
+          "published_date": "2023-03-02",
+          "disposition": "Original bridges2022Vectrus/Vertexmerger and confirms750mFebruaryfacility."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1601548/000160154825000013/vec-20250331.htm",
+          "published_date": "2025-04-03",
+          "disposition": "Original exact237.5mterm and500mrevolver replacement, actualborrower identified; agentsnotbuyers."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1601548/000162828026039479/vec-20260529.htm",
+          "published_date": "2026-06-01",
+          "disposition": "Original exact868522978.38 termreplacement and indirectwhollyownedV2XLLCborrower."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1601548/000160154826000038/R13.htm",
+          "published_date": null,
+          "disposition": "Official debt note corroboratesfacilities andborrower; carryingvalues/quarterlyamortisation notnewfinancing."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1601548/000160154826000049/vec-20261002.htm",
+          "published_date": null,
+          "disposition": "Latest Q3 original confirms exact V2XLLC borrower, prior facilities and refinancings. Carryingvalue864.2m not anothernewround. January2025refinance still requires separate exactprincipal/originaleventreconciliation."
+        },
+        {
+          "url": "https://investors.gov2x.com/news/news-details/2026/V2X-to-Generate-Interest-Expense-Savings-Through-Successful-Term-Loan-Repricing/default.aspx",
+          "published_date": "2026-06-03",
+          "disposition": "Issuer confirms May29closing of same refinancing; approximate869m headline not substituted for SECexactprincipal. Not additionalnewcash."
+        }
+      ],
+      "evidence_note": "Exact economic/legal issuer and checked public sources reconciled; confirmed facts imported only once under their evidenced issuer.",
+      "hold_note": "Group disclosure explicitly names actualoperatingsubsidiaryborrower; no directIncissuance. Holdpremergerdebt,2021/2022Vertexborrowings,2024/January2025termrefinancings, latestQ3otherfacilities, beneficiallenders/contributions and securitiescapitalhistory."
+    },
+    {
+      "id": "aa89c848-f863-4bac-986d-569c66f71428",
+      "slug": "v4smart",
+      "name": "V4Smart",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 2,
+      "searches_checked": [
+        "V4Smart GmbH financing Porsche Varta 2025 capital",
+        "site.v4smart.com funding capital 2026 investment",
+        "site.varta-ag.com V4Drive investment Porsche 2024 2025",
+        "\"V4Smart\" funding 2026 capital investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://newsroom.porsche.com/en/2025/company/porsche-v4smart-varta-ag-ultra-high-performance-lithium-ion-cylindrical-cells-38766.html",
+          "published_date": "2025-03-04",
+          "disposition": "Original exactPorscheAG/VARTAAGownership andrename; no primarycashamount disclosed."
+        },
+        {
+          "url": "https://www.v4smart.com/about-us/",
+          "published_date": null,
+          "disposition": "Issuer original independently bridgesV4Drive andV4SmartGermanJV."
+        },
+        {
+          "url": "https://newsroom.porsche.com/en/2024/company/porsche-varta-deepen-strategic-partnership-37095.html",
+          "published_date": "2024-08-17",
+          "disposition": "Searchcandidate30m explicitly benefitsVARTAAGparent, notV4Smartissuer; excluded."
+        }
+      ],
+      "evidence_note": "Exact economic/legal issuer and checked public sources reconciled; confirmed facts imported only once under their evidenced issuer.",
+      "hold_note": "Hold primarycapitalversusassetcontribution/acquisition split andexactamount/receivingvehicle. ParentVARTA30m/60mrestructuring and20mpatentpresale notautomaticallyV4Smartfinancing."
+    },
+    {
+      "id": "d55d89ae-0eeb-468b-9774-70335853493b",
+      "slug": "va-degtyarev-plant",
+      "name": "V.A. Degtyarev Plant",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.zid.ru кредит облигации 2024 2025",
+        "\"Завод имени Дегтярева\" кредит Сбербанк ВТБ финансирование",
+        "\"Завод имени В.А. Дегтярева\" облигации кредит",
+        "site.zid.ru \"кредит\" \"млн\"",
+        "site.sberbank.ru \"Дегтярева\" \"380\"",
+        "site.zid.ru \"заем\" \"банк\"",
+        "\"V.A. Degtyarev\" \"loan\" financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.zid.ru/shareholders/",
+          "published_date": null,
+          "disposition": "Issuer original identifiesKovrovAOplant; shareholdersecondaryoffer notissuerprimaryproceeds."
+        },
+        {
+          "url": "https://www.sberleasing.ru/about/news/2014/sberbank-lizing-peredaet-oborudovanie-dlya-modernizatsii-proizvodstva-oao-zavod-im-v-a-degtyaryeva/",
+          "published_date": "2014-04-17",
+          "disposition": "Lessor original confirms equipmentlease andmorethan380mprojectcost. Borrowerprincipal/leaseaccountingtreatmentnotestablished; no380mcashloanimport."
+        },
+        {
+          "url": "https://www.interfax-russia.ru/military/news/337766",
+          "published_date": null,
+          "disposition": "Searchcandidatebankfinancingleaseproject380m is not independently established issuerborrowerprincipal; heldpendingterms."
+        }
+      ],
+      "evidence_note": "Exact economic/legal issuer and checked public sources reconciled; confirmed facts imported only once under their evidenced issuer.",
+      "hold_note": "Holdequipmentleasefinancingprincipal, actualborrower/lessorchain and debt/grant/equityhistoricaldisclosures; projectcostnotcash. Registry/secondarysharedata notzerofundingproof."
+    },
+    {
+      "id": "7219ca55-c725-4ee4-93b1-a7f9890377a1",
+      "slug": "vaeridion",
+      "name": "VAERIDION",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "VAERIDION funding 2026 2025 2024 seed 2022 3.2 million 14 million",
+        "site.vaeridion.com 2022 funding 3.2",
+        "site.vaeridion.com funding InnovationQuarter 2025 2026 seed",
+        "site.project-a.com Vaeridion 3.2 million 2022"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.goerg.de/en/insights/publications/10-06-2022/gorg-advises-vaeridion-on-a-financing-round",
+          "published_date": "2022-06-10",
+          "disposition": "Legaladviseroriginal confirms3.2mearlierclosedventurecapital; exactannouncementandsecurityunknown."
+        },
+        {
+          "url": "https://vaeridion.com/2024/12/19/vaeridion-raises-e14-million-to-roll-out-its-electric-microliner-by-2030-and-meet-the-urgent-need-to-decarbonise-short-haul-flights/",
+          "published_date": "2024-12-19",
+          "disposition": "Issuer14mequity andnamedroundparties; separate1.4maggregatepriorpublicfundingnotnewgrant."
+        },
+        {
+          "url": "https://vaeridion.com/2026/11/05/vaeridion-attracts-over-e124-million-investment-in-equity-and-grant-funding-to-scale-electric-aviation/",
+          "published_date": "2026-11-05",
+          "disposition": "Issuer30mclosedA2explicit equity;94.5mgrantselectedsubject2027agreement;orderbookexcluded."
+        },
+        {
+          "url": "https://www.shiftinvest.com/news/vaeridion-investment",
+          "published_date": "2026-11",
+          "disposition": "Investororiginal additionalInnovationQuartercurrentroundparticipant, co-leadsconfirmed."
+        },
+        {
+          "url": "https://www.munich-startup.de/en/83278/vaeridion-receives-32-million-euros-in-financing/",
+          "published_date": null,
+          "disposition": "Directfetch404, notverifiedinvestorallocation. Noamount/dateinferredfromfailedpage."
+        }
+      ],
+      "evidence_note": "Exact economic/legal issuer and checked public sources reconciled; confirmed facts imported only once under their evidenced issuer.",
+      "hold_note": "Holdearliestseedannouncement/investors/security,1.4mpriorpublicfundingindividualawards, Dutchsubsidiaryallocation, specificfundvehicles/contributions andCAROLUSagreement/disbursement. CanonicalProjectAprofilealiasneedsrootQA; notduplicated."
+    },
+    {
+      "id": "cf1c37f0-61d4-4e18-8cd5-77a40f9a662b",
+      "slug": "valarian",
+      "name": "Valarian",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Valarian funding investment MD One RJI Partners 2025 2026",
+        "Worldr seed funding 2021 2022 Valarian"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://medium.com/worldr/announcing-our-3m-raise-the-launch-of-zero-trust-encryption-for-microsoft-teams-8e04ab9661e8",
+          "published_date": "2021-07-28",
+          "disposition": "Original checked: Founder original confirms USD3m finalised seed. Investor original explicitly bridges Worldr to Valarian rebrand in November2023. Named individuals are investors personally; their employers are not extra cheques. Security and contributions undisclosed."
+        },
+        {
+          "url": "https://www.moltenventures.com/news/molten-ventures-leads-seed-round-in-valarian-formerly-worldr",
+          "published_date": "2022-11-07",
+          "disposition": "Original checked: Founder original confirms USD3m finalised seed. Investor original explicitly bridges Worldr to Valarian rebrand in November2023. Named individuals are investors personally; their employers are not extra cheques. Security and contributions undisclosed."
+        },
+        {
+          "url": "https://www.prnewswire.co.uk/news-releases/valarian-emerges-from-stealth-with-20m-in-seed-funding-launches-valarian-defence-amid-global-infrastructure-shift-302449126.html",
+          "published_date": "2025-05-08",
+          "disposition": "Original checked: Issuer identifies USD7m NEW capital; USD20m is cumulative seed and excluded. Scout and Artis explicitly co-led; prior backers not assigned to this round. Security and fund allocations unknown."
+        },
+        {
+          "url": "https://www.nea.com/blog/our-investment-in-valarian-sovereign-infrastructure-for-the-free-world",
+          "published_date": "2026-07-14",
+          "disposition": "Original checked: NEA July14 original announces USD50m with explicit lead. Issuer list supports six other participants; URL July13 and aggregator July13 dates not substituted for verified investor announcement day. USD70m cumulative total excluded; legal instrument undisclosed. Existing nea profile reused; duplicate pre-existing new-enterprise-associates profile preserved for final alias audit."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260713784977/en/Valarian-Raises-$50-Million-Series-a-Led-by-NEA-to-Deliver-the-Sovereign-Infrastructure-Layer-for-High-Consequence-Operations-and-AI-Driven-Systems",
+          "published_date": null,
+          "disposition": "Original checked: NEA July14 original announces USD50m with explicit lead. Issuer list supports six other participants; URL July13 and aggregator July13 dates not substituted for verified investor announcement day. USD70m cumulative total excluded; legal instrument undisclosed. Existing nea profile reused; duplicate pre-existing new-enterprise-associates profile preserved for final alias audit."
+        },
+        {
+          "url": "https://www.valarian.com/about",
+          "published_date": null,
+          "disposition": "Issuer identity/team checked; investor original explicitly proves former Worldr continuity."
+        }
+      ],
+      "evidence_note": "Dated public-history and issuer/transaction-party review; supported subset imported, source candidates held separately.",
+      "hold_note": "Hold2022roundamount, earlier2019/2020orotherseed,270kgrantcandidateoriginal,2026source-dateconflicts,specificfundvehicles/security/contributions. Cumulative11m/20m/70mnotroundamounts. ExistingNEAnamealiasrequiresfinalprofileaudit; nofieldmerge."
+    },
+    {
+      "id": "515c577a-e716-409d-9a25-bcef39e28c52",
+      "slug": "valeo",
+      "name": "Valeo",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 6,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.valeo.com bond issue 2026 2025 2024 financing loan",
+        "site.valeo.com \"bond issue\" \"2025\" \"500\"",
+        "site.valeo.com \"bond issue\" \"2024\" \"850\"",
+        "site.valeo.com \"bond issue\" \"2021\" \"700\"",
+        "site.valeo.com \"bond\" \"2023\" \"600\"",
+        "site.valeo.com \"2021\" \"700 million\" \"bond\"",
+        "site.valeo.com \"2025\" \"650 million\" \"bond\"",
+        "site.eib.org \"Valeo\" \"150 million\" 2023"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.valeo.com/en/valeo-becomes-the-first-european-player-in-the-automotive-to-issue-a-sustainability-linked-bond-with-a-700-million-euros-bond/",
+          "published_date": "2021-07-27",
+          "disposition": "Original checked: Exact Valeo issuer primary placed bond principal, not subsidiary borrowing or a redeemed issue. 1.00%; maturity3August2028. Bookrunners/structuring agents not presumed beneficial lenders. Net cash proceeds not substituted for principal. Refinancing use does not create another financing event."
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2023/10/06/2755909/0/en/Valeo-announces-the-outcome-of-its-600-million-euro-debut-green-bond-issue-with-maturity-April-2029.html",
+          "published_date": "2023-10-06",
+          "disposition": "Original checked: Exact Valeo issuer primary placed bond principal, not subsidiary borrowing or a redeemed issue. 5.875%; maturity12April2029. Bookrunners/structuring agents not presumed beneficial lenders. Net cash proceeds not substituted for principal. Issuer October6 outcome explicitly dates original placement announcement October5. EIB150m subscription is within600m, not a second loan; no lead role inferred from leading investor wording."
+        },
+        {
+          "url": "https://www.eib.org/en/press/all/2023-361-france-la-bei-souscrit-a-hauteur-de-150-millions-d-euros-a-la-premiere-emission-obligataire-verte-emise-par-valeo-d-un-montant-de-600-millions-d-euros",
+          "published_date": null,
+          "disposition": "Original checked: Exact Valeo issuer primary placed bond principal, not subsidiary borrowing or a redeemed issue. 5.875%; maturity12April2029. Bookrunners/structuring agents not presumed beneficial lenders. Net cash proceeds not substituted for principal. Issuer October6 outcome explicitly dates original placement announcement October5. EIB150m subscription is within600m, not a second loan; no lead role inferred from leading investor wording."
+        },
+        {
+          "url": "https://www.valeo.com/en/valeo-announces-its-green-bond-issue-for-an-amount-of-850-million-euros-with-maturity-april-2030/",
+          "published_date": "2024-04-04",
+          "disposition": "Original checked: Exact Valeo issuer primary placed bond principal, not subsidiary borrowing or a redeemed issue. 4.50%; maturity11April2030. Bookrunners/structuring agents not presumed beneficial lenders. Net cash proceeds not substituted for principal. Refinancing use does not create another financing event."
+        },
+        {
+          "url": "https://www.valeo.com/en/valeo-announces-a-new-green-bond-issue-for-an-amount-of-650-million-euros-with-maturity-may-2031/",
+          "published_date": "2025-05-13",
+          "disposition": "Original checked: Exact Valeo issuer primary placed bond principal, not subsidiary borrowing or a redeemed issue. 5.125%; maturity20May2031. Bookrunners/structuring agents not presumed beneficial lenders. Net cash proceeds not substituted for principal. Refinancing use does not create another financing event."
+        },
+        {
+          "url": "https://www.valeo.com/en/valeo-announces-a-new-green-bond-issue-for-an-amount-of-500-million-euros-with-maturity-march-2032/",
+          "published_date": "2025-09-16",
+          "disposition": "Original checked: Exact Valeo issuer primary placed bond principal, not subsidiary borrowing or a redeemed issue. 4.625%; maturity23March2032. Bookrunners/structuring agents not presumed beneficial lenders. Net cash proceeds not substituted for principal. Refinancing use does not create another financing event."
+        },
+        {
+          "url": "https://www.valeo.com/en/valeo-announces-a-new-bond-issue-for-an-amount-of-600-million-euros-with-maturity-february-2033/",
+          "published_date": "2026-05-27",
+          "disposition": "Original checked: Exact Valeo issuer primary placed bond principal, not subsidiary borrowing or a redeemed issue. 4.875%; maturity3February2033. Bookrunners/structuring agents not presumed beneficial lenders. Net cash proceeds not substituted for principal. Refinancing use does not create another financing event."
+        },
+        {
+          "url": "https://www.valeo.com/en/debt-and-rating/",
+          "published_date": null,
+          "disposition": "Issuer current outstanding-debt index checked; outstanding rows and pooled1.6bn facilities/2.5bnCPcapacity not treated as individual cash raises."
+        },
+        {
+          "url": "https://www.valeo.com/wp-content/uploads/2025/06/Valeo_Final-Terms-07302021.pdf",
+          "published_date": null,
+          "disposition": "Original LEI5493006IH2N2WMIBB742 and700m principal corroborated; final-terms date not announcement day."
+        },
+        {
+          "url": "https://www.valeo.com/wp-content/uploads/2025/06/Valeo_Final-Terms-10102023.pdf",
+          "published_date": null,
+          "disposition": "Opened original scanned final terms/screenshots; press original supplies amount/date."
+        },
+        {
+          "url": "https://www.valeo.com/wp-content/uploads/2025/06/Valeo_Final-Terms-04092024.pdf",
+          "published_date": null,
+          "disposition": "Opened original scanned final terms/screenshots; press original supplies amount/date."
+        },
+        {
+          "url": "https://www.valeo.com/wp-content/uploads/2025/06/Valeo_Final-Terms-05162025.pdf",
+          "published_date": null,
+          "disposition": "Opened original scanned final terms/screenshots; press original supplies amount/date."
+        },
+        {
+          "url": "https://www.valeo.com/wp-content/uploads/2025/09/2032-Green-Bonds-Final-terms.pdf",
+          "published_date": null,
+          "disposition": "Opened original scanned final terms/screenshots; press original supplies amount/date."
+        }
+      ],
+      "evidence_note": "Dated public-history and issuer/transaction-party review; supported subset imported, source candidates held separately.",
+      "hold_note": "Holdolder2016/2018/2022bonds,EIBloanhistory/750mcumulativeoverlap,2019/2022Schuldschein,2025bilateralloans100m/25m/30m untilissueroriginalborrower/datedisclosuresreconciled. CurrentfacilityandCPcapacitynotdraws. Sixbondsubsetnotcompletehistory."
+    },
+    {
+      "id": "15353eb4-c7c2-4016-8045-965501f2f9a4",
+      "slug": "valkyrie-dynamics",
+      "name": "Valkyrie Dynamics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Valkyrie Dynamics HEIMDALL funding investors 2026",
+        "\"Valkyrie Dynamics\" funding investment Hexa 2025 2026 Heimdall",
+        "site.valkyriedynamics.ai funding investment seed"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.hexa.com/blog/news/ahead-of-shahed-season-valkyrie-raises-eu1m-to-help-interceptors-hunt-in-any-weather",
+          "published_date": "2026-11-10",
+          "disposition": "Original checked: Investor original confirms EUR1m raised alongside unnamed defence angels. Exact Heimdall product and own issuer product page bridge economic company despite US country/old domain in DB; metadata unchanged. Hexa is named participant, not inferred lead from secondary wording. Legal receiving vehicle, instrument and founder self-financing details unknown."
+        },
+        {
+          "url": "https://www.valkyriedynamics.ai/products/heimdall",
+          "published_date": null,
+          "disposition": "Own product page names Heimdall and Kyiv/Vilnius offices, exacteconomicproduct bridge; DBmetadata notedited."
+        },
+        {
+          "url": "https://suasnews.com/2026/07/valkyrie-dynamics-heimdall",
+          "published_date": null,
+          "disposition": "Supplied legacy source inaccessible; not proof of no funding or a differentissuer."
+        }
+      ],
+      "evidence_note": "Dated public-history and issuer/transaction-party review; supported subset imported, source candidates held separately.",
+      "hold_note": "Holdreceivinglegalvehicle/security/angelnames/cheques andfounderbootstrapterms. ProductuniqueHeimdallbridge supports economicissuer despiteUSmetadata/legacydomain; nolegalmetadatachange. Earliergrant/support unknown."
+    },
+    {
+      "id": "9b8ce598-d244-4865-a11a-d115cfd750c1",
+      "slug": "valqari",
+      "name": "Valqari",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Valqari funding investment 2025 2026 seed",
+        "Valqari funding 2.5 million 2020 official",
+        "site.valqari.com funding investment 2020 2022",
+        "Valqari raises 2020 2019 seed 2.5 million pressrelease",
+        "site.valqari.com investors 2026 Stony Lonesome funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/8504/000157570522000351/uavs_1q22.htm",
+          "published_date": "2022-05-16",
+          "disposition": "Original checked: SEC original identifies exact Valqari LLC borrower and USD500,000 convertible loan made14October2020,3% interest. October15 public release date retained. Press equity headline is not imported as a separate event; legal note controls instrument. November2021 principal repayment USD315k and remaining185k are not new financing."
+        },
+        {
+          "url": "https://www.globenewswire.com/fr/news-release/2020/10/15/2109196/0/en/ageagle-aerial-systems-partners-with-valqari-to-manufacture-drone-delivery-stations.html",
+          "published_date": "2020-10-15",
+          "disposition": "Original checked: SEC original identifies exact Valqari LLC borrower and USD500,000 convertible loan made14October2020,3% interest. October15 public release date retained. Press equity headline is not imported as a separate event; legal note controls instrument. November2021 principal repayment USD315k and remaining185k are not new financing."
+        },
+        {
+          "url": "https://www.valqari.com/news-and-press/",
+          "published_date": null,
+          "disposition": "Issuer archive checked; partnership/acquisition news not an extra primary financing."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/valqari",
+          "published_date": null,
+          "disposition": "Search candidate conflicting2019amount versusotherdatabases; not verified original financing."
+        }
+      ],
+      "evidence_note": "Dated public-history and issuer/transaction-party review; supported subset imported, source candidates held separately.",
+      "hold_note": "Holdconflicting2017/2019/2022fundingamounts,StonyLonesome/Propellant/angelroundattribution,2022grantcandidateoriginal, laternewcapital andlegalholdingstructure. Do notduplicatepress-equityheadlineoverSECconvertiblenote."
+    },
+    {
+      "id": "9c3737ef-44a9-4ea3-a2d0-7f2ef848052f",
+      "slug": "van-der-valk-shipyard",
+      "name": "Van Der Valk Shipyard",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Van der Valk Shipyard investment acquisition 2024 2025 2026",
+        "\"Van der Valk Shipyard\" financing investors 2025 2026 MBO",
+        "\"Van der Valk Shipyard\" investment family owners 2024",
+        "\"Van der Valk\" \"shipyard\" bank loan financing 2023 2024"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://vandervalkshipyard.com/news/wim-van-der-valk-retires-management-buyout-of-dutch-shipyard/",
+          "published_date": null,
+          "disposition": "Original20April2024 describes purchase of founder shares supported by unnamed yacht-ownerfamily. Significant capital wording does not allocate primary issuer proceeds; no financinground or anonymousprofilecreated."
+        },
+        {
+          "url": "https://vandervalkshipyard.com/shipyard/",
+          "published_date": null,
+          "disposition": "Current issuer confirms management ownership transition and unnamed family support, no dated primarycapital amount."
+        }
+      ],
+      "evidence_note": "Dated public-history and issuer/transaction-party review; supported subset imported, source candidates held separately.",
+      "hold_note": "Holdexactlegalentity, namedfamilyvehicles, MBOprimary/secondarysplit, lender/creditterms, historicalcapitalandanynewerfinancing. OrderbookandSaildroneproductionpartnershipnotfunding; nozero-fundingclaim."
+    },
+    {
+      "id": "9e4c7f5a-90e5-4090-9e45-9479ff7d1fbe",
+      "slug": "van-s-aircraft",
+      "name": "Van's Aircraft",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.vansaircraft.com bankruptcy loan financing 2023 2024 2025 2026",
+        "site.vansaircraft.com \"loan\" \"2024\"",
+        "site.vansaircraft.com \"Chapter 11\" financing",
+        "site.vansaircraft.com \"reorganization\" \"2024\" \"loan\"",
+        "\"Van's Aircraft\" funding 2025 2026 investor loan",
+        "\"Van's Aircraft\" \"DIP\" \"6,000,000\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.vansaircraft.com/reorganization/",
+          "published_date": null,
+          "disposition": "Original issuer reorganisation URL404; cannotverify financingterms from missingpage."
+        },
+        {
+          "url": "https://cases.creditorinfo.com/vansaircraft/documents/docket",
+          "published_date": null,
+          "disposition": "Officialcaseagentdocket opened but dynamicbody unreadable; originalfinancialorders not independentlyretrieved."
+        },
+        {
+          "url": "https://flyer.co.uk/vans-aircraft-files-for-chapter-11-bankruptcy/",
+          "published_date": null,
+          "disposition": "Search candidate quotes court declaration for owner loans and proposed up-toUSD6mDIP; direct page timed out. Not a verified original court financing record; held, not imported."
+        },
+        {
+          "url": "https://www.aopa.org/news-and-media/all-news/2024/may/16/vans-aircraft-exits-bankruptcy",
+          "published_date": null,
+          "disposition": "Secondaryreorganisationexitcoverage notproofDIPfulldrawn ornewcapitalreceived. Customerdeposits/claimsnotinvestment."
+        }
+      ],
+      "evidence_note": "Dated public-history and issuer/transaction-party review; supported subset imported, source candidates held separately.",
+      "hold_note": "Holdoriginalcourtdeclaration/2023DIPorder/drawschedule/2024plan, actualVanGrunsventrustlenderandpriorownerloanallocations,2025caseclosureterms andnewerfinancing. No sourceverifiedzero-fundingclaim; customeraircraftfinanceexcluded."
+    },
+    {
+      "id": "80f5f656-1725-4f69-a89f-df04be70762d",
+      "slug": "vanea-defence",
+      "name": "VANEA Defence",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "VANEA Defence funding investment company ATOMZA",
+        "site.vanea.ai funding capital shares convertible loan",
+        "site:vanea.ai financing OR capital increase OR loan",
+        "VANEA Defence funding 2026 2025 investor capital stock",
+        "\"VANEA Defence\" \"investment\" \"funding\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.vanea.ai/en/investors/updates/adhoc/scp-standard-capital-partners-ag-completes-its-strategic-shift-towards-defence-technology-through-the-acquisition-of-vanea/",
+          "published_date": "2026-08-20",
+          "disposition": "Original confirms acquisition of Vanea Technologies and Nocturne through cash and parent shares; seller consideration, not incoming target funding. ParentAG versus operating brand financing perimeter requires reconciliation."
+        },
+        {
+          "url": "https://www.vanea.ai/en/investors/updates/corporate-news/vanea-defence-unveils-atomza-the-first-production-ready-drone-defence-system-for-civilian-operators/",
+          "published_date": "2026-08-27",
+          "disposition": "Original confirms exact ATOMZA/VANEA Defence brand; product launch not financing."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/vanea-technologies/financials",
+          "published_date": null,
+          "disposition": "Acquisition funding label is only candidate; no primary cash inferred."
+        }
+      ],
+      "evidence_note": "Checked broad dated history, issuer/registry and investor/transaction-party originals. Imported only supported recipient facts; source candidates and empty rows are not zero funding.",
+      "hold_note": "Reconcile listedAG versus VaneaTechnologies/Nocturne operating perimeter before allocating parent share issues, in-kind acquisition capital or earlier financial history; no verified primary target round in checked originals."
+    },
+    {
+      "id": "4ae12073-0a19-4399-97c0-fa0b1968cccc",
+      "slug": "vanilla-unmanned-vanilla-aircraft",
+      "name": "Vanilla Unmanned (Vanilla Aircraft)",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Vanilla Unmanned funding acquisition Platform Aerospace 2018 2026",
+        "Vanilla Aircraft AUVSI Startup Showdown 2016 15000 investment winner",
+        "site:vanillaunmanned.squarespace.com funding investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://vanillaunmanned.squarespace.com/news/2020/10/13/vanilla-unmanned-is-now-solely-owned-and-operated-by-platform-aerospace",
+          "published_date": "2020-10-13",
+          "disposition": "Original confirms sole Platform ownership; no amount or new primary proceeds."
+        },
+        {
+          "url": "https://vanillaunmanned.squarespace.com/news/2018/12/6/vanilla-aircraft-becomes-vanilla-unmanned-new-owners",
+          "published_date": null,
+          "disposition": "Issuer-origin search result describes newJV acquisition of predecessor assets. Earlier legal recipient not automatically newJV."
+        },
+        {
+          "url": "https://d7-archive.auvsi.org/industry-news/vanilla-aircrafts-heely-says-more-come-long-duration-va001-aircraft",
+          "published_date": "2017-11-03",
+          "disposition": "AUVSI original confirms2016USD15k predecessor prize; held under newJV row pending legal-recipient continuity. ONR-funded flight instrument/amount unestablished."
+        },
+        {
+          "url": "https://vanillaunmanned.squarespace.com/news",
+          "published_date": null,
+          "disposition": "Issuer archive describes Platform SBIR procurement; not automatically grant or Vanilla financing."
+        }
+      ],
+      "evidence_note": "Checked broad dated history, issuer/registry and investor/transaction-party originals. Imported only supported recipient facts; source candidates and empty rows are not zero funding.",
+      "hold_note": "Hold2016predecessor prize and earlier financing until asset-purchase/newJV legal continuity established; parent Platform seed and Navy/SBIR procurement not inherited; unknown private primary capital remains unknown."
+    },
+    {
+      "id": "1de63ed5-9398-4186-9003-cb12606eca77",
+      "slug": "vantage-robotics",
+      "name": "Vantage Robotics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 6,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Vantage Robotics funding investment series 2025 2026",
+        "site.sec.gov/Archives \"Vantage Robotics\" \"totalAmountSold\"",
+        "site:ideaforgetech.com Vantage 1.83 convertible 2025",
+        "site:prnewswire.com \"ideaForge\" \"Vantage Robotics\" February 20 2025",
+        "\"Vantage Robotics\" \"$\" funding 2014 2015 2016 2017",
+        "site:ideaforgetech.com \"Vantage\" \"1.83\"",
+        "site:bseindia.com \"Vantage Robotics\" \"convertible\"",
+        "Vantage Robotics funding seed series A 2025 2026 investor official",
+        "site:sec.gov/Archives \"Vantage Robotics\" \"1629981\"",
+        "site:ideaforgetech.com \"Vantage\" \"Convertible\"",
+        "site:refinery.com \"Vantage Robotics\" investment",
+        "site:sec.gov/Archives/edgar/data/1651938 \"2016\" \"totalAmountSold\"",
+        "site:vantagerobotics.com \"investment\" funding 2026 2025",
+        "site:vantagerobotics.com \"investors\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1651938/000165193816000005/primary_doc.xml",
+          "published_date": null,
+          "disposition": "Original financing fact imported with exact disclosed basis; unknown terms and date precision retained."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1651938/000165193817000004/primary_doc.xml",
+          "published_date": null,
+          "disposition": "Original financing fact imported with exact disclosed basis; unknown terms and date precision retained."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1651938/000165193818000004/primary_doc.xml",
+          "published_date": null,
+          "disposition": "Original financing fact imported with exact disclosed basis; unknown terms and date precision retained."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1651938/000165193822000001/primary_doc.xml",
+          "published_date": null,
+          "disposition": "Original financing fact imported with exact disclosed basis; unknown terms and date precision retained."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/veteran-ventures-invests-with-vantage-robotics-301816717.html",
+          "published_date": "2023-05-05",
+          "disposition": "Original financing fact imported with exact disclosed basis; unknown terms and date precision retained."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/ideaforge-strengthens-its-global-reach-and-rd-capabilities-with-strategic-investment-and-partnership-with-vantage-robotics-302381424.html",
+          "published_date": "2025-02-20",
+          "disposition": "Original financing fact imported with exact disclosed basis; unknown terms and date precision retained."
+        },
+        {
+          "url": "https://refinery.com/portfolio/vantage-robotics/",
+          "published_date": null,
+          "disposition": "Original confirms2021convertible investment; generic only because exactSEC offering linkage not proved."
+        },
+        {
+          "url": "https://vantagerobotics.com/about/",
+          "published_date": null,
+          "disposition": "Issuer SanLeandro operations and investor backing; unnamed investors not invented."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1651938/000165193817000003/primary_doc.xml",
+          "published_date": null,
+          "disposition": "Raw XML fetched: initial330570 sold superseded by amended1629981; not another additive event."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1651938/000165193818000002/primary_doc.xml",
+          "published_date": null,
+          "disposition": "Raw XML fetched: initial7934034 sold superseded by8941554 amendment; no double count."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/vantage-robotics/financials",
+          "published_date": null,
+          "disposition": "Candidate histories and2025USD1.83m/privateinstrument claims not substituted for originals."
+        }
+      ],
+      "evidence_note": "Checked broad dated history, issuer/registry and investor/transaction-party originals. Imported only supported recipient facts; source candidates and empty rows are not zero funding.",
+      "hold_note": "Earlier2015claims,2016subsequent closes and latest private/SEC offerings need full amendment-chain reconciliation.2025ideaForge amount/security claims and legal LLC→Inc conversion unverified; Refinery2021note not assigned to SEC offering without proof. Individual funds/contributions unknown."
+    },
+    {
+      "id": "28b25e4f-7b73-4269-8a79-7bf324a7bf2a",
+      "slug": "vantor",
+      "name": "Vantor",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Vantor Maxar 2026 debt financing refinancing",
+        "site:vantor.com Maxar rebrand Advent 2025",
+        "site:adventinternational.com Maxar Intelligence Vantor acquired 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.lw.com/en/news/latham-advises-on-refinancing-for-vantor",
+          "published_date": "2026-03-12",
+          "disposition": "Original financing fact imported with exact disclosed basis; unknown terms and date precision retained."
+        },
+        {
+          "url": "https://vantor.com/blog/vantor-rebrands-from-maxar-intelligence-unveils-ai-powered-platform/",
+          "published_date": "2025-10-01",
+          "disposition": "Original proves October2025 MaxarIntelligence→Vantor; does not bridge divested Space finance."
+        },
+        {
+          "url": "https://www.adventinternational.com/news/advent-completes-acquisition-of-u-blox/",
+          "published_date": "2025-11-26",
+          "disposition": "Original investor names Vantor formerlyMaxarIntelligence in portfolio; generic ownership only."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1018593/000094040026035566/primary_doc.xml",
+          "published_date": null,
+          "disposition": "Search candidate holdings in VantorHoldings TermLoanB do not establish borrower draw or source lender role at origination; held."
+        },
+        {
+          "url": "https://www.adventinternational.com/news/u-s-private-equity-firm-advent-international-and-bci-complete-acquisition-of-maxar-technologies/",
+          "published_date": "2023-05-03",
+          "disposition": "Investor original search candidate concerns whole Maxar takeover, not primary Vantor operating cash; no USD6.4bn financing event or current BCI allocation inferred."
+        }
+      ],
+      "evidence_note": "Checked broad dated history, issuer/registry and investor/transaction-party originals. Imported only supported recipient facts; source candidates and empty rows are not zero funding.",
+      "hold_note": "Exact legal borrower/component split/lenders/draws of2026facilities unknown. Reconcile MaxarTechnologies parent and separated Space perimeter before importing earlier bonds/acquisition debt/preferred capital; refinancing is not all fresh incremental cash."
+    },
+    {
+      "id": "aa129f04-499d-4f4d-a343-53937788b430",
+      "slug": "varangians",
+      "name": "Varangians",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Varangians drones company investment funding Sweden Ukraine",
+        "site:varangians.se \"100\" \"million\"",
+        "site:varangians.se news fund closed June 2026",
+        "Varangians closes 100 million kronor June 2026 founders investment",
+        "site:varangians.se \"fund\" \"closed\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://varangians.se/investment-philosophy/",
+          "published_date": null,
+          "disposition": "Original identifies Swedish limited company investing in other startups; portfolio cheque sizes are not its own capital raise."
+        },
+        {
+          "url": "https://varangians.se/about/",
+          "published_date": null,
+          "disposition": "Original identifies founders and unnamed Swedish family office; no beneficial investment amounts or distinct issuer financing terms."
+        },
+        {
+          "url": "https://www.eu-startups.com/2026/06/ukraine-focused-defencetech-fund-varangians-closes-e9-1-million-in-stockholm",
+          "published_date": "2026-06-12",
+          "disposition": "Opened secondary reports SEK100m/overEUR10m fundclose. Exact receivingvehicle, original-denomination qualifier and primary closing disclosure not verified; held."
+        },
+        {
+          "url": "https://aequo.ua/en/news/varangians-investuvala-u-dvi-ukrayinski-oboronno-tehnologichni-kompaniyi",
+          "published_date": "2026-11-05",
+          "disposition": "Original counsel page opened: two unnamed outward investees; reported per-company cheque ranges are not Varangians own financing."
+        }
+      ],
+      "evidence_note": "Checked broad dated history, issuer/registry and investor/transaction-party originals. Imported only supported recipient facts; source candidates and empty rows are not zero funding.",
+      "hold_note": "SEK100m/overEUR10m2026close remains secondary-source candidate pending exact AB/fund receivingvehicle, original closing disclosure and currency qualifier. Outward investments not own company rounds; no unnamed family office cheque invented."
+    },
+    {
+      "id": "5793da1c-ff81-4f35-ba2a-ec874a33aee0",
+      "slug": "vardian",
+      "name": "VARDIAN",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "VARDIAN Україна дрони інвестиції грант",
+        "\"VARDIAN\" drone Ukraine company funding",
+        "\"VARDIAN\" \"Defence Builder\" investment",
+        "site:vardian.dk investment funding grant",
+        "site:vardian.dk grant capital investors funding",
+        "\"VARDIAN\" \"investment\" \"2026\" \"2025\" -site:vardian.io -site:linkedin.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.drone-directory.com.ua/profile/vardian/",
+          "published_date": null,
+          "disposition": "Directory bridges exact Danish/Ukraine consultancy and founders to vardian.dk, not US vardian.io."
+        },
+        {
+          "url": "https://vardian.dk/",
+          "published_date": null,
+          "disposition": "Original confirms consultancy identity/founders and services; no dated financing disclosure on checked page."
+        },
+        {
+          "url": "https://defencebuilder.com/accelerator",
+          "published_date": null,
+          "disposition": "Programme original lists VARDIAN as consultancy ecosystem partner, not a funded portfolio recipient."
+        },
+        {
+          "url": "https://defencebuilder.com/news/defen%D1%81e-builder-launches-the-third-batch",
+          "published_date": "2026-03-16",
+          "disposition": "Original explicitly identifies VARDIAN workshop representatives/partner, not investee."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/vardian",
+          "published_date": null,
+          "disposition": "Database calls DefenceBuilder investor; original programme only establishes partner role, so unverified investment excluded."
+        },
+        {
+          "url": "https://vardian.io/legal/privacy",
+          "published_date": "2026-10-07",
+          "disposition": "USCulverCity software namesake; excluded from Denmark/Ukraine consultancy identity."
+        }
+      ],
+      "evidence_note": "Checked broad dated history, issuer/registry and investor/transaction-party originals. Imported only supported recipient facts; source candidates and empty rows are not zero funding.",
+      "hold_note": "Bounded public-source review complete with private amounts unknown. DefenceBuilder investor claim not corroborated by originals; partner/mentor role alone is not investment. No assertion of zero funding."
+    },
+    {
+      "id": "e41c9fde-b9f0-4bb1-88a6-be21fb0eef1a",
+      "slug": "varioedge",
+      "name": "VarioEdge",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "VarioEdge finansowanie inwestor 2026 VDL funding loan credit 2026",
+        "Varioedge dofinansowanie unijne PARP projekt",
+        "VarioEdge \"dotac\" \"projekt\"",
+        "\"VarioEdge\" \"finansowanie\"",
+        "\"VarioEdge\" \"projekty\" \"eu\"",
+        "\"VarioEdge\" inwestor startup drony Głogów",
+        "\"VarioEdge\" \"Carpathian\" finansowanie"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://zbiam.pl/carpathian-drone-summit-2026-drony-systemy-autonomiczne-i-zarzadzanie-kryzysowe/",
+          "title": "Original source-context VarioEdge summit report",
+          "published_date": "2026-10-03",
+          "source_type": "third_party_report",
+          "disposition": "Summitparticipationestablishesbrand; no investmentamount/issuerlegalIDgiven."
+        },
+        {
+          "url": "https://rejestr.io/krs/537428/varioedge",
+          "title": "Polish register-derived identity candidate",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "VARIOEDGEspzooKRS537428 telecomcompany,300kPLNregisteredcapital andpublicaidsummaries; exactbridgefromsummitbrandnotproved. Registeredcapitalnotcashraise; yearlyaidaggregatesnotindividualawards."
+        },
+        {
+          "url": "https://varioedge.com",
+          "title": "Possible issuer website",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Fetch failed; notnegativefunding evidence."
+        }
+      ],
+      "evidence_note": "Checked exact source context, broad earlier/latest searches, issuer and transaction-party originals; supported subset only, no absence-as-zero assertion.",
+      "hold_note": "Exact summitbrand-to-KRS537428 bridge unresolved. Primaryregistry/publicaidaward terms and historicalcapitalcontributions needed; no cash fromnominalcapital/aggregateaid inferred."
+    },
+    {
+      "id": "3b874f01-3d73-43fe-8573-25abf352df42",
+      "slug": "varjo",
+      "name": "Varjo",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 8,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.varjo.com funding series 2017 2018 2020 2022 2025 2026",
+        "site.varjo.com \"2017\" \"8.2\" funding",
+        "site.varjo.com \"2018\" \"31\" funding",
+        "site.eib.org Varjo 2025 2021 20 million",
+        "site.varjo.com \"2025\" \"million\" funding THEON Business Finland",
+        "site.varjo.com \"2024\" \"funding\" NVIDIA Beyond",
+        "site.atomico.com Varjo 31 million October 2018",
+        "site.varjo.com \"8.2\" \"2017\"",
+        "\"Varjo\" \"NVIDIA\" \"November\" \"2024\" funding extension",
+        "site.eqtventures.com Varjo \"2017\" \"8.2\"",
+        "site.businessfinland.fi Varjo 2025 12 miljoonaa avustus",
+        "Varjo funding financing 2026 2025 November",
+        "site.varjo.com \"funding\" \"2017\" \"Tekes\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://roadtovr.com/varjo-technologies-raises-8-2m-series-investment-develop-human-eye-resolution-headsets/",
+          "title": "Contemporaneous Varjo Series A announcement report",
+          "published_date": "2017-09-29",
+          "source_type": "third_party_report",
+          "disposition": "Contemporaneous report quotes issuer CEO and lists exact fund names; no security terms. Primary archived release remains a hold."
+        },
+        {
+          "url": "https://varjo.com/news/varjo-raises-31m-series-b-from-atomico-to-transform-heavy-industry-with-worlds-first-human-eye-resolution-vr-product",
+          "title": "Varjo original Series B release",
+          "published_date": "2018-10-08",
+          "source_type": "company_announcement",
+          "disposition": "USD31m, Atomico explicit lead; four named investors. Cumulative46m not an extra round."
+        },
+        {
+          "url": "https://varjo.com/news/varjo-secures-54-million-series-c-funding",
+          "title": "Varjo original Series C closing",
+          "published_date": "2020-08-12",
+          "source_type": "company_announcement",
+          "disposition": "USD54m closed; seven named participants. Source does not designate leads."
+        },
+        {
+          "url": "https://www.eib.org/en/projects/all/20210232",
+          "title": "EIB original Varjo project and signed financing",
+          "published_date": "2021-12-03",
+          "source_type": "investor_announcement",
+          "disposition": "Exact borrower VARJO TECHNOLOGIES OY,20mEUR signature3November; publication3December.47mprojectcost excluded."
+        },
+        {
+          "url": "https://varjo.com/news/varjo-raises-40-million-series-d-funding-to-build-an-industrial-metaverse",
+          "title": "Varjo original Series D announcement",
+          "published_date": "2022-09-02",
+          "source_type": "company_announcement",
+          "disposition": "USD40m equivalentEUR41m one round. Header2September, dateline6September conflict; announcement date NULL."
+        },
+        {
+          "url": "https://varjo.com/news/varjo-announces-general-availability-of-teleport-the-worlds-first-high-resolution-scan-to-vr-solution",
+          "title": "Varjo original new strategic investors announcement",
+          "published_date": "2024-11-25",
+          "source_type": "company_announcement",
+          "disposition": "Original explicitly expands latest funding with BeyondCapital/Nishikawa/NVIDIA. Amount and parent round unnamed."
+        },
+        {
+          "url": "https://theon.com/en/news/2025/theon-announces-new-strategic-us-and-european-investments-and-partnerships-to-build-global-leadership-in-digital-and-augmented-reality-defense-optronics-domain-under-the-theon-next-initiative",
+          "title": "THEON original Varjo convertible commitment",
+          "published_date": "2025-08-11",
+          "source_type": "investor_announcement",
+          "disposition": "EUR5m agreed convertible loan; optional further5m excluded."
+        },
+        {
+          "url": "https://varjo.com/news/varjo-welcomes-theon-as-strategic-investor-to-accelerate-military-grade-vr-xr-innovation",
+          "title": "Varjo original confirms THEON convertible commitment",
+          "published_date": "2025-08-13",
+          "source_type": "company_announcement",
+          "disposition": "Issuer corroborates5m convertible and additional5m option; no disbursement or conversion proved."
+        },
+        {
+          "url": "https://varjo.com/news/varjo-invests-over-40-million-in-next-generation-defense-technologies-business-finland-grants-significant-funding-to-support-the-program",
+          "title": "Varjo original Business Finland award disclosure",
+          "published_date": "2025-10-15",
+          "source_type": "company_announcement",
+          "disposition": "EUR12m funding distinct44mR&Dprogramme; body does not establish grant versus repayable loan."
+        }
+      ],
+      "evidence_note": "Checked exact source context, broad earlier/latest searches, issuer and transaction-party originals; supported subset only, no absence-as-zero assertion.",
+      "hold_note": "Hold original2017A archivedrelease/security,2017Tekes6.7m originalEUR/instrument,2018EIC2.4mrecipientaward,2023privateclaim,2024expansionparentround andamount; BF12mrepayability; THEONpayment/conversion/options; fundvehiclealiases and allundisclosedcontributions."
+    },
+    {
+      "id": "cd9442fb-48b5-4fc9-9789-e1e05f936ccc",
+      "slug": "vatn-systems",
+      "name": "Vatn Systems",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.vatn.com funding seed series 2023 2024 2025 2026",
+        "site.vatn.com \"60 Million\" \"Series A\"",
+        "Vatn Systems pre seed 2023 3.5 million Decisive Point",
+        "Vatn Systems funding 2023 2026 seed Decisive Point investment",
+        "site.hanwha.com \"Vatn\" \"investment\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.vatn.com/news/vatn-raises-13-million-seed-round-to-advance-autonomous-underwater-vehicles-for-us-defense",
+          "title": "Vatn original seed announcement",
+          "published_date": "2024-11-12",
+          "source_type": "company_announcement",
+          "disposition": "USD13m raised,12namedparties; total16.5m not newevent."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/vatn-systems-raises-60-million-series-a-to-redefine-underwater-naval-warfare-at-scale-302637203.html",
+          "title": "Vatn original Series A announcement",
+          "published_date": "2025-12-10",
+          "source_type": "company_announcement",
+          "disposition": "USD60m; BVVC explicit lead,13othernamedparties. Hanwhaexactentity held, no genericparentassigned."
+        },
+        {
+          "url": "https://www.vatn.com/news",
+          "title": "Vatn current original archive",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Archive throughOctober2026 DIUprize; acquisition/customercontractnot newraise. Prizeamount/awardterms needoriginal."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1991611/000199161123000001/xslFormDX08/primary_doc.xml",
+          "title": "Decisive Point Vatn SPV candidate",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Search identifies investorSPV issuer, notVatn borrower. No SPVfundraise or derived3.5m added tocompany."
+        }
+      ],
+      "evidence_note": "Checked exact source context, broad earlier/latest searches, issuer and transaction-party originals; supported subset only, no absence-as-zero assertion.",
+      "hold_note": "Earlierpreseed3.5m cannot derive fromtotal; investorSPVFormDnotcompany. 2024companyFormDmayoverlap13m;2025Hanwhaexactlegalentity, specificfundvehicles andDIUprizeamount/terms unresolved. No acquisition/contractproceeds imported."
+    },
+    {
+      "id": "f3e2e23e-e0ee-46c7-bdca-b0076684df95",
+      "slug": "vayyar-imaging",
+      "name": "Vayyar Imaging",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.vayyar.com funding series 2015 2017 2019 2022 2026",
+        "Vayyar Imaging 108 million 2022 funding 2019 109 million 2017",
+        "Vayyar \"22 million\" \"2015\" funding investors businesswire",
+        "site.vayyar.com \"45 million\" \"2017\"",
+        "\"Vayyar Imaging Announces $45 Million Series C\" businesswire",
+        "Vayyar funding 2024 2025 2026 financing round",
+        "site.morevc.com ICV formerly Israel Cleantech Ventures",
+        "site.celesta.vc Walden Riverwood renamed",
+        "site.vayyar.com funding 2024 25 million ITI",
+        "\"GLy New Mobility Fund\" \"Vayyar\" \"2022\" mediaoutreach",
+        "site.celesta.vc \"Walden Riverwood\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/vayyar-imaging-launches-globally-announces-22m-series-b-funding-led-by-walden-riverwood-300192969.html",
+          "title": "Vayyar original Series B and prior Series A disclosure",
+          "published_date": "2015-12-15",
+          "source_type": "company_announcement",
+          "disposition": "Original B22m overrides tracker24m. Retrospective Battery A lead, no Aamount derived34minus22."
+        },
+        {
+          "url": "https://eijournal.com/news/business-2/vayyar-imaging-announces-45-million-series-c-financing",
+          "title": "Syndicated Vayyar issuer Series C release",
+          "published_date": "2017-12-14",
+          "source_type": "company_announcement",
+          "disposition": "Reproduces issuer45mclosed/co-leads and7participants. Repost14December notproven original13December announcementday."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/koch-disruptive-technologies-leads-109-million-financing-in-vayyar-imaging-300961623.html",
+          "title": "KDT original Vayyar Series D financing",
+          "published_date": "2019-11-20",
+          "source_type": "investor_announcement",
+          "disposition": "USD109m; KDT explicit lead; eight named investors. RegalFour not explicit co-lead."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/vayyar-imaging-secures-108m-in-series-e-funding-led-by-koch-disruptive-technologies-301559574.html",
+          "title": "Vayyar original Series E closing",
+          "published_date": "2022-06-06",
+          "source_type": "company_announcement",
+          "disposition": "USD108m finalised; eight parties; CICCfinancialadviser excluded, customer/JVpartnersnotinvestors."
+        },
+        {
+          "url": "https://glycm.com/2022/06/08/gly-new-mobility-fund-invests-in-israeli-unicorn-vayyar/",
+          "title": "GLy original identifies actual New Mobility Fund",
+          "published_date": "2022-06-08",
+          "source_type": "investor_announcement",
+          "disposition": "Actual GLyNewMobilityFund shareholder; manager andGeelybacker not extra cheques."
+        },
+        {
+          "url": "https://morevc.com/about/",
+          "title": "MoreVC original identity continuity",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Explicitly also IsraelCleantech andICV; one currentprofile, exactfundunknown."
+        },
+        {
+          "url": "https://www.vayyar.com/about/",
+          "title": "Vayyar current original corporate history",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "IsraeliHQ andseparateUS/Japan/China subsidiaries;2017C45m corroborated. No subsidiary finances inherited."
+        },
+        {
+          "url": "https://finder.startupnationcentral.org/company_page/vayyar-imaging?section=financials",
+          "title": "Funding tracker candidates",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "2024October25mITIcandidate held withoutoriginal;2015B24m conflict overriddenissuer22m; A12m needsoriginal."
+        }
+      ],
+      "evidence_note": "Checked exact source context, broad earlier/latest searches, issuer and transaction-party originals; supported subset only, no absence-as-zero assertion.",
+      "hold_note": "A12m2012 candidate needsoriginal;2015B24mtracker conflict excludes24m. 2017originalday/BusinessWirearchive,2024ITI25m claim original, legalfundvehicles/security/allcheques andlatestprivatehistory remainheld."
+    },
+    {
+      "id": "f7cbb39a-862f-4e61-a5aa-0304afd01b59",
+      "slug": "vdl",
+      "name": "VDL",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "VDL Groep krediet faciliteit financiering lening bank 2025 2026",
+        "site.vdlgroep.com financiering krediet consortium banken 2025",
+        "site.vdlgroep.com \"2025\" \"facility\" banks financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.vdlgroep.com/_asset/_public/__site_282/jaarverslag/246_GRO_25001_VDL-Jaarverslag-2024_binnenwerk_EN_006-WEB.pdf",
+          "title": "VDL original 2024 annual report liquidity note",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "OriginalVDLGroepBV p113 hasbankconsortiumfacility,1.5yearremaining+2yearoption. No principal/date/banks specified;7May2025auditdate notpublicationday."
+        },
+        {
+          "url": "https://www.vdlgroep.com/en/nieuws/vdl-groeps-turnover-and-results-increase-in-first-half-of-2026",
+          "title": "VDL original2026 halfyear update",
+          "published_date": "2026-09-04",
+          "source_type": "company_announcement",
+          "disposition": "Latest issuerresults/orderbook/strategicproductionnotfinancinground. No contract or defenceclusterprojectbudget imported."
+        }
+      ],
+      "evidence_note": "Checked exact source context, broad earlier/latest searches, issuer and transaction-party originals; supported subset only, no absence-as-zero assertion.",
+      "hold_note": "Originalfacilitysigning/amount/lenders/draws and earlier/latestfinancing require fullfinancialstatements ratherthanabbreviatedannual. Group/subsidiaryreceipts notinterchangeable."
+    },
+    {
+      "id": "65fcb8f1-4e89-4133-bb8b-96cf4c445abf",
+      "slug": "vdl-defentec",
+      "name": "VDL Defentec",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "VDL Defentec investor funding ownership VDL group"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.werkenbijvdl.be/en/vdl-defentec",
+          "title": "VDL original identifies Defentec within group",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Officialgroupcompanypage confirmsDefentecgroupmembership; notgroupbankfacilityborrower."
+        },
+        {
+          "url": "https://www.vdldefentec.com/en/about-us/about-us",
+          "title": "Defentec original operations and group footer",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Operations/clearances are notfinancing; noMilremfunding orgroupfacility inherited."
+        }
+      ],
+      "evidence_note": "Checked exact source context, broad earlier/latest searches, issuer and transaction-party originals; supported subset only, no absence-as-zero assertion.",
+      "hold_note": "ExactDefentecBV/Beheer/Vehicles legalvehiclefinancing unresolved. Groupcapacity, Milremproducts/procurement andstateprojectbudgets notissuerrounds; nozero-funding claim."
+    }
+  ],
+  "source_and_identity_reconciliation": [
+    {
+      "company_slug": "vaeridion",
+      "sources": [
+        {
+          "url": "https://vaeridion.com/wp-content/uploads/2026/11/VAERIDION_PR_EN.pdf",
+          "disposition": "Root independently opened5November2026 issuer original:30mEUR closed equity SeriesA2 distinct from94.5m grant selection subject to2027 agreement. Aircraft orders and cumulative totals not new financing."
+        }
+      ]
+    },
+    {
+      "company_slug": "varjo",
+      "sources": [
+        {
+          "url": "https://varjo.com/news/varjo-invests-over-40-million-in-next-generation-defense-technologies-business-finland-grants-significant-funding-to-support-the-program",
+          "disposition": "Root independently opened15October2025 original:12mEUR BusinessFinland funding versus44mR&Dprogramme. Verify support instrument rather than infer from headline."
+        }
+      ]
+    },
+    {
+      "company_slug": "vayyar-imaging",
+      "sources": [
+        {
+          "url": "https://www.vayyar.com/blog/vayyar/vayyar-wins-108m-series-e-funding/",
+          "disposition": "Root independently opened6June2022 issuer original108mUSD closed SeriesE;KDTlead, named participants. CICC financial adviser is not a beneficial investor."
+        }
+      ]
+    },
+    {
+      "company_slug": "vayyar-imaging",
+      "sources": [
+        {
+          "url": "https://morevc.com/about/",
+          "disposition": "Root original manager says it also conducts activities under Israel Cleantech and ICV names; economic manager continuity supports one profile while beneficial fund remains unspecified."
+        },
+        {
+          "url": "https://morevc.com/team/",
+          "disposition": "Root original team biography explicitly bridges ICV to MoreVC and Vayyar investment. No duplicate manager cheque inferred."
+        }
+      ]
+    },
+    {
+      "disposition": "UVision possible duplicate cohort records: only canonical uvision-air-ltd receives evidenced Frenkel shareholder-loan disclosure; supplied alias-page fetch limitation remains documented, no formal merge/deletion. No IPO target or tracker seed imported."
+    },
+    {
+      "disposition": "V2X economic-group record explicitly names indirect wholly owned borrower V2X LLC (formerly Vertex Aerospace Services LLC) in every facility stage/note; no direct V2X Inc borrowing or agent-as-lender asserted. Vantor new facilities remain within proven renamed operating group; legacy Maxar Space/Technologies liabilities not allocated."
+    },
+    {
+      "disposition": "Existing NEA and Project A alias profiles retained without merges or new duplicate profiles. Source-named Walden Riverwood distinct from Walden Israel; MoreVC/ICV manager continuity verified from original pages, beneficial funds unknown."
+    }
+  ],
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "frozen_group_sha256": {
+      "a": "d45ae768daf3e5d3ff8d0d26f329a1973dde539584a46cfd80e4d54691b9f7dd",
+      "b": "c0134ee4148cd091b61d4e14c5a0759ee028757d04666a6848a4d9ad82f113ce",
+      "c": "209398d881fa841133efc1488a386ca8d35c347a0a6a40549468ca89595c31a4",
+      "d": "77bf5de55baf23cac6cdc659cf56f7558d9b6e9a6e5bfede489dcc267f53a385"
+    },
+    "meaningful_postgresql_tests": "Rollback, atomic counts, idempotence, conflicting amount and participant-source FK rejection passed.",
+    "production_rollback_baseline_restored": true,
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 43,
+      "mismatched_facts": 0,
+      "participant_matches": 126,
+      "source_matches": 53,
+      "relationship_matches": 6,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 0
+    },
+    "company_investment_research_actual_count": {
+      "research_rows": 1243,
+      "partial_rows": 1243,
+      "new_exact_name_duplicate_groups": 0
+    },
+    "prior_data_hashes": {
+      "prior_relationships_hash": "433f8700eb631a0db1b344512f1dd650",
+      "prior_rounds_hash": "8686b66a15dbf2aa0a6753792216a732"
+    },
+    "all24_company_metadata_hashes_preserved": true,
+    "selected_legacy_relationships_before": [
+      {
+        "slug": "valarian",
+        "relationships": [
+          {
+            "id": "0c3aac9e-6acf-4d2b-aca0-9ac534eefe64",
+            "company_id": "cf1c37f0-61d4-4e18-8cd5-77a40f9a662b",
+            "created_at": "2026-11-01T00:27:36.648362+00:00",
+            "retired_at": null,
+            "source_url": "https://uk.linkedin.com/company/md-one-ventures",
+            "updated_at": "2026-11-01T00:27:36.648362+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-01",
+            "match_method": "draft_company",
+            "retired_kind": null,
+            "investor_role": null,
+            "match_note_en": "Resolved to an existing company whose profile is not published; the relationship is stored, the link is not shown until the company is published.",
+            "retired_reason": null,
+            "evidence_status": "third_party_reported",
+            "investment_date": null,
+            "investment_round": null,
+            "relationship_type": "portfolio_listed",
+            "round_total_amount": null,
+            "investor_research_id": "840a8857-f4fb-481b-8fc2-7d71d4e58f51",
+            "round_total_currency": null,
+            "portfolio_name_as_published": "Valarian",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          }
+        ]
+      }
+    ],
+    "selected_legacy_relationships_exactly_preserved": true
+  },
+  "publication_scope": {
+    "current_manifest_event_rows": 43,
+    "current_manifest_live_matches": 0,
+    "targets_in_european_map_before": [],
+    "note": "All24 targets absent from European map under current geography/publication gates. Valarian, Varangians and VARDIAN draft identities remain draft; no gate changes. Approved source-audited DB facts do not override map scope."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and legacy relationships",
+    "Company metadata and publication/geography gates",
+    "Repository schedules",
+    "No new paid external API"
+  ],
+  "programme_complete": false,
+  "publication": {
+    "status": "awaiting_existing_build_trigger",
+    "report": "research-agent/reports/2026-11-14-funding-landscape-eighty-ninth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261114-eighty-ninth.json"
+  }
+}
