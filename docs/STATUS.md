@@ -2260,3 +2260,10 @@ Recovered expired writer lease after interrupted research; checked selected24ide
 Audit: https://github.com/brunotaut/xsonomy-news/blob/main/research-agent/reports/2026-11-14-funding-landscape-eighty-fifth.json
 
 Publication verified 2026-11-14T15:59:25Z: https://github.com/brunotaut/xSonomy/actions/runs/43612860618 succeeded. Fresh map 2026-11-14T15:57:42.675Z and investor data 2026-11-14T15:57:46.480Z verified:567 map companies,1590 events,1390 participations;3368 investor profiles and610 portfolio entries. All35 referenced profiles,56 participation source URLs and7 generic entries/clickable links verified. New financing targets remain outside existing European map. Queue:1204 bounded source reviews,1137 partial,223 queued;2564 identities total. Timing records interruption and recovery separately; no duplicated throughput. Lease released; continuation enabled.
+
+
+### 2026-11-14 — eighty-sixth funding reconciliation
+
+Reviewed24 distinct cohort identities in four read-only groups:8 bounded reviews completed,16 retain explicit source/issuer holds. Imported28 approved financing disclosures,24 source-linked participations,44 source rows and4 ownership/portfolio associations;10 new investor profiles. PostgreSQL tests, production rollback restoration, exact fact/role/source/contribution audit and idempotency passed; curated profiles, existingSienna association and fourdraft gates preserved. Existing catalogue build pending. Programme incomplete; schedules unchanged.
+
+Audit: https://github.com/brunotaut/xsonomy-news/blob/main/research-agent/reports/2026-11-14-funding-landscape-eighty-sixth.json

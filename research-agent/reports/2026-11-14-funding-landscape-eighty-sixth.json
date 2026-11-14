@@ -1,0 +1,1335 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-14",
+  "started_at": "2026-11-14T16:52:20.513Z",
+  "manifest": "research-agent/imports/funding-landscape-20261114-eighty-sixth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 8,
+    "new_or_retained_partial": 16,
+    "new_approved_events": 28,
+    "new_round_participations": 24,
+    "new_source_rows": 44,
+    "new_generic_portfolio_relationships": 4,
+    "new_companies_with_events": 12,
+    "new_investor_profiles": 10,
+    "group_search_queries_executed": 146,
+    "root_additional_search_queries": 4,
+    "search_queries_executed": 150,
+    "per_company_search_ledger_entries": 146,
+    "source_ledger_entries": 102,
+    "root_source_ledger_entries": 4,
+    "company_database_identity_contexts_checked": 24,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 28,
+    "mismatched_facts": 0,
+    "participant_matches": 24,
+    "source_matches": 44,
+    "relationship_matches": 4,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 0,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "reviewed_existing_fact_corrections": 0,
+    "db_total_events": 4183,
+    "db_approved_events": 4170,
+    "db_round_participations": 5776,
+    "db_investor_profiles": 3387,
+    "db_source_reconciliation_companies": 1204
+  },
+  "production_before": {
+    "events": 4155,
+    "approved": 4142,
+    "links": 5752,
+    "sources": 5691,
+    "profiles": 3377,
+    "covered": 1192,
+    "relationships": 613,
+    "preserved_profiles_hash": "31f2e0d3b4cb7623123692c9ffed24a1"
+  },
+  "production_after": {
+    "events": 4183,
+    "approved": 4170,
+    "links": 5776,
+    "sources": 5735,
+    "profiles": 3387,
+    "covered": 1204,
+    "relationships": 617,
+    "preserved_profiles_hash": "31f2e0d3b4cb7623123692c9ffed24a1"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1212,
+    "source_review_partial": 1153,
+    "queued": 199
+  },
+  "per_company": [
+    {
+      "id": "7f929ee0-cef9-4ca4-b52f-8d350adfc164",
+      "slug": "trust-automation",
+      "name": "Trust Automation",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Trust Automation\" funding investment loan acquisition history 2026",
+        "site:trustautomation.com investment funding ownership history",
+        "\"Trust Automation\" investors seed equity loan SBIR history",
+        "site:sbir.gov \"TRUST AUTOMATION\" awards"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://trustautomation.com/about-us/",
+          "published_date": null,
+          "disposition": "Exact San Luis Obispo motion/power and counter-UAS issuer; original corporate history checked."
+        },
+        {
+          "url": "https://trustautomation.com/press-releases/trust-automation-secures-490-million-contract-from-us-air-force-to-deliver-counter-drone-technologies/",
+          "published_date": "2025-12-17",
+          "disposition": "USD490m USAF IDIQ procurement ceiling, not incoming investment or grant; excluded."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/205984",
+          "published_date": null,
+          "disposition": "Exact TRUST AUTOMATION INC award USD1,720,867, FA8650-23-C-9205 is a contract; not relabelled grant or equity."
+        }
+      ],
+      "evidence_note": "Broad dated/history, issuer originals and investor/transaction-party searches executed through2026-11-14; exact economic issuer, earlier/latest public claims, currencies and instruments checked. Candidates, failed originals and empty database rows are not financing evidence or zero funding.",
+      "hold_note": "No supported issuer financing in bounded original/history and transaction-party review. Procurement/SBIR contract figures excluded; unknown private financing is not zero funding."
+    },
+    {
+      "id": "9945ea27-f4c1-44c0-8cc3-cd20959f4573",
+      "slug": "truweather-solutions",
+      "name": "TruWeather Solutions",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"TruWeather Solutions\" funding investment grant history 2026",
+        "site:truweathersolutions.com investment funding 2026 2025",
+        "\"TruWeather\" \"Supernal\" \"2023\" investment",
+        "\"TruWeather\" \"GENIUS NY\" \"400,000\"",
+        "\"TruWeather\" \"450,000\" site:centerstateceo.com",
+        "\"TruWeather\" \"450,000\" site:centerstateceo.com",
+        "\"TruWeather\" \"450,000\" investment",
+        "\"TruWeather\" \"Kluz\" \"2019\"",
+        "\"TruWeather\" \"2020\" \"125,000\"",
+        "\"TruWeather\" \"450,000\" site:thetechgarden.com",
+        "\"TruWeather\" \"May 2025\" investment",
+        "\"GENIUS NY Startups Raise Over\" site:geniusny.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://centerstateceo.com/news/governor-cuomo-announces-1-million-grand-prize-winner-genius-ny-one-worlds-largest-business",
+          "published_date": "2018-04-09",
+          "disposition": "Supports April9,2018 USD400k programme award; instrument undisclosed, no assumed grant."
+        },
+        {
+          "url": "https://truweathersolutions.com/micro-weather-analytics-firm-focused-on-drones-gains-investors/",
+          "published_date": "2019-06-03",
+          "disposition": "Confirms closed Series Seed and actual two Kluz funds, no amount or lead role."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/supernal-and-truweather-solutions-to-introduce-real-time-micro-weather-forecasting-to-advanced-air-mobility-ecosystem-301840547.html",
+          "published_date": "2023-06-01",
+          "disposition": "Investor-issued June1,2023 minority investment; value and round series absent."
+        },
+        {
+          "url": "https://www.newmanlickstein.com/truweather-solutions-inc-receives-strategic-investment-from-supernal-llc-a-part-of-hyundai-motor-group/",
+          "published_date": "2023-06-02",
+          "disposition": "Confirms exact Inc issuer received Supernal investment alongside unnamed existing investors."
+        },
+        {
+          "url": "https://truweathersolutions.com/wp-content/uploads/2025/05/Investor-Deck-April-2025-2M-A-Round-Short-12-May.pdf",
+          "published_date": null,
+          "disposition": "Direct open returned404; search-snippet USD6.5m October2023,325k convertible commitment2025 and2m raise target not verified or imported."
+        },
+        {
+          "url": "https://www.suasnews.com/2019/09/genius-ny-startups-raise-over-10-million-in-follow-on-funding/",
+          "published_date": null,
+          "disposition": "Opened press reproduction reports450k Kluz follow-on; first-party amount/day/round equivalence unresolved, not added to original amount-NULL seed."
+        },
+        {
+          "url": "https://www.thecompanycheck.com/company/b/truweather-solutions/rq8ijpbiuyeuwmy8u",
+          "published_date": null,
+          "disposition": "Secondary450k/125k/5.3m and extra2019/2020 rows are discovery candidates, not verified financing facts."
+        }
+      ],
+      "evidence_note": "Broad dated/history, issuer originals and investor/transaction-party searches executed through2026-11-14; exact economic issuer, earlier/latest public claims, currencies and instruments checked. Candidates, failed originals and empty database rows are not financing evidence or zero funding.",
+      "hold_note": "Earlier/latest history partial. Reconcile2019 USD450k timing/aggregate,2020 USD125k and2023 USD5.3m versus inaccessible deck6.5m;2025 convertible commitment not proved closed. Michigan104k recipient is Future Flight Global, TruWeather partner only: excluded."
+    },
+    {
+      "id": "f2be36a5-eb53-4e1d-bdc1-6b6474f11c1e",
+      "slug": "trypillian",
+      "name": "Trypillian",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Trypillian\" funding investment 2026 2025",
+        "site:trypillian.com investment Newmark 2025 2026",
+        "\"Trypillian\" \"Brooks Newmark\" investment site:trypillian.com",
+        "\"Trypillian\" investment interview Ivan earlier 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://trypillian.com/en",
+          "published_date": null,
+          "disposition": "British-Ukrainian brand, London address and CEO; issuer adopts May2025 investment coverage."
+        },
+        {
+          "url": "https://thedefender.media/en/insights/trypillian-ceo-interview/",
+          "published_date": "2025-07-10",
+          "disposition": "Named CEO directly confirms Newmark5m and use for central team/M&A; no instrument or legal receiving vehicle identified."
+        },
+        {
+          "url": "https://trypillian.com/team",
+          "published_date": null,
+          "disposition": "Brooks Newmark chairman and Ivan Matveichenko CEO resolve brand/people; former Apollo employment not Apollo investment."
+        }
+      ],
+      "evidence_note": "Broad dated/history, issuer originals and investor/transaction-party searches executed through2026-11-14; exact economic issuer, earlier/latest public claims, currencies and instruments checked. Candidates, failed originals and empty database rows are not financing evidence or zero funding.",
+      "hold_note": "Company remains draft. UK/Ukraine exact legal receiving vehicle and instrument unresolved; date is lateMay2025 retrospective, not invented precise day. Funding cannot be assigned to acquired unnamed teams. Earlier/latest private terms remain partial."
+    },
+    {
+      "id": "be14de87-7618-4737-9752-8f4509d6af17",
+      "slug": "tsg-group",
+      "name": "TSG Group",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 2,
+      "searches_checked": [
+        "\"TSG Group\" Israel funding investment 2026",
+        "site:tsg-solutions.com IPO investors 2024 2026",
+        "\"TSG\" \"IPO\" \"2024\" site:sec.gov/Archives/edgar/data/1045986",
+        "\"TSG Systems\" \"January 2026\" \"capital\"",
+        "\"TSG\" \"2026\" \"private placement\" \"192\" site:formulasystems.com",
+        "\"TSG Group\" counter swarm official 2026 investors",
+        "\"TSG\" \"2026\" \"private placement\" \"192\" site:formulasystems.com",
+        "\"TSG Systems\" \"2026\" \"capital\" \"Formula\"",
+        "\"TSG\" \"counter-swarm\" \"2026\"",
+        "\"TSG\" \"Native\" \"Counter\" \"2026\" Israel",
+        "\"TSG\" \"Pini Yungman\" site:tsgitsystems.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.tsgitsystems.com/en/about/",
+          "published_date": null,
+          "disposition": "Original ownsite matches Pini Yungman, Israeli TSG Group, Formula/IAI2016 sale and2024TASE listing; distinct from French mobility TSG."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1045986/000121390026055948/R18.htm",
+          "published_date": null,
+          "disposition": "Audited IPO gross NIS62m and2025 private placement103.5m; conditional options, fees and shareholder gains excluded."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1045986/000121390026055948/R35.htm",
+          "published_date": null,
+          "disposition": "Jan2026 approximately NIS192m private placement;92m conditional option exercise not assumed."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1045986/000121390026055948/ea0289446-20f_formula.htm",
+          "published_date": null,
+          "disposition": "Full20-F confirms postclosing dilution and capital raises conducted2025/2026; no publicday/investor allocation manufactured."
+        },
+        {
+          "url": "https://www.uasvision.com/2026/10/20/iron-dome-architect-unveils-worlds-first-native-counter-swarm-platform/",
+          "published_date": "2026-10-20",
+          "disposition": "Database provenance concerns Skapion; Pini Yungman mention resolves TSG presidency, but Skapion USD36m seed is not TSG financing."
+        }
+      ],
+      "evidence_note": "Broad dated/history, issuer originals and investor/transaction-party searches executed through2026-11-14; exact economic issuer, earlier/latest public claims, currencies and instruments checked. Candidates, failed originals and empty database rows are not financing evidence or zero funding.",
+      "hold_note": "Israeli TSG issuer resolved. Precise original IPO/placement public dates and unnamed subscribers remain unknown. Earlier acquisition consideration, loans and later2026 option exercises need issuer/TASE originals; French TSG mobility/HLD/Capvest and Skapion36m excluded."
+    },
+    {
+      "id": "3a6c79f0-4cc0-45c6-88d0-6e8eab898341",
+      "slug": "tsuru-robotics",
+      "name": "Tsuru Robotics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Tsuru Robotics\" инвестиции грант финансирование",
+        "site:tsuru.su грант инвестиции история",
+        "\"Tsuru Robotics\" грант инвестиции Skolkovo 2015 2016",
+        "\"Tsuru Robotics\" \"инвестор\" \"грант\"",
+        "\"Tsuru Robotics\" \"грант\" site:sk.ru"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://tsuru.su/",
+          "published_date": null,
+          "disposition": "Original exact Moscow R&D bureau founded2015 by Skoltech graduates; no incoming financing disclosed."
+        },
+        {
+          "url": "https://back.skoltech.ru/storage/app/media/archive/sites/2/2016/03/2015_Results_Newsletter_En.pdf",
+          "published_date": null,
+          "disposition": "Original report identifies Skolkovo support/residency for Tsuru; specific Bortnik grant belongs to TermoMotors, not Tsuru. Generic support is not proven cash financing."
+        }
+      ],
+      "evidence_note": "Broad dated/history, issuer originals and investor/transaction-party searches executed through2026-11-14; exact economic issuer, earlier/latest public claims, currencies and instruments checked. Candidates, failed originals and empty database rows are not financing evidence or zero funding.",
+      "hold_note": "Bounded earlier/latest public review yields no confirmed issuer financing; Skolkovo residency/support does not establish grant/equity or amount. No Bortnik-grant or zero-funding inference."
+    },
+    {
+      "id": "a3fd9890-101d-4895-a445-2df3e5eeb976",
+      "slug": "tualcom",
+      "name": "Tualcom",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Tualcom\" yatırım finansman hisse 2026",
+        "site:tualcom.com investment funding shareholders",
+        "\"TUALCOM\" yatırımcı ortak sermaye kredi",
+        "\"Tualcom\" yatırım sermaye yatırımcı haber"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.tualcom.com/information-security-policy/",
+          "published_date": null,
+          "disposition": "Original legal entity TUALCOM Elektronik A.Ş. and RF/defence business identified."
+        },
+        {
+          "url": "https://www.tualcom.com/tualcom-uk-is-now-open/",
+          "published_date": "2023-09-09",
+          "disposition": "Own UK branch expansion; wholly owned Turkish entrepreneurs unnamed. Expansion/acquisition roadmap is not external funding."
+        },
+        {
+          "url": "https://www.baesystems.com/en-uk/article/BAE-Systems-and-TUALCOM-to-collaborate-on-autonomous-technologies-",
+          "published_date": "2026-08-12",
+          "disposition": "Aug12,2026 strategic MoU for collaboration, no investment or finance terms; BAE not assigned investor."
+        }
+      ],
+      "evidence_note": "Broad dated/history, issuer originals and investor/transaction-party searches executed through2026-11-14; exact economic issuer, earlier/latest public claims, currencies and instruments checked. Candidates, failed originals and empty database rows are not financing evidence or zero funding.",
+      "hold_note": "No supported incoming issuer financing in bounded Turkish/English earlier/latest review. UK subsidiaries/holding companies, collaboration and internal R&D spending not imported as Turkish issuer raises; no zero-funding inference."
+    },
+    {
+      "id": "09fc8118-6c11-4de8-acc1-cad522ce60d7",
+      "slug": "tubitak-uzay",
+      "name": "TUBITAK UZAY",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"TUBITAK UZAY\" funding investment grants history 2026",
+        "site:uzay.tubitak.gov.tr grant funding \"project\" EU",
+        "\"TUBITAK UZAY\" \"CORDIS\" funding",
+        "site:uzay.tubitak.gov.tr \"THOR\" \"2013\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://uzay.tubitak.gov.tr/en/explore-uzay/",
+          "published_date": null,
+          "disposition": "Original institute identity and activities; institution under TÜBİTAK, not standalone commercial fundraising issuer."
+        },
+        {
+          "url": "https://uzay.tubitak.gov.tr/en/we-celebrated-the-launch-of-turksat-6-with-enthusiasm/",
+          "published_date": "2024-07-12",
+          "disposition": "Original identifies UZAY project-management role and separate ASELSAN/TUSAS/C2TECH workshares. Public sponsors/project financing not recipient allocation."
+        },
+        {
+          "url": "https://uzay.tubitak.gov.tr/en/thor-project-started-on-january-1-2013/",
+          "published_date": "2013-01-09",
+          "disposition": "Original confirms EC signed consortium FP7 THOR contract and January1,2013 project start. No institute-specific allocation or exact legal grant beneficiary established."
+        },
+        {
+          "url": "https://uzay.tubitak.gov.tr/en/gamalink-project-started-on-january-1-2013%E2%80%B2/",
+          "published_date": "2013-01-07",
+          "disposition": "Original institute project-start announcement; EC consortium funding does not establish UZAY-specific amount."
+        },
+        {
+          "url": "https://uzay.tubitak.gov.tr/en/tubitak-uzay-joins-the-kabev-project/",
+          "published_date": "2024-12-18",
+          "disposition": "Institute accepted into World Bank-financed public-building works. No direct loan/grant agreement to institute established."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/268276/reporting",
+          "published_date": null,
+          "disposition": "CORDIS search candidate COGSENSE hosted at UZAY; precise umbrella legal beneficiary and allocation unverified. Search candidate only, not imported."
+        }
+      ],
+      "evidence_note": "Earlier FP7 and later KABEV/project originals reviewed through current October2026 issuer news. Public research-institute funding exists as programme/project support; no amount or equity event promoted from consortium totals.",
+      "hold_note": "Hold institute-specific EC grant legal recipient/allocation, THOR/GAMALINK and COGSENSE agreement details; KABEV direct financial instrument; whole TUBITAK budgets are not institute cash rounds. Draft review gate preserved. Unknown history is not zero funding."
+    },
+    {
+      "id": "af434585-1fbb-4592-a30a-5d11ad1ac900",
+      "slug": "tubitak-uzay-aselsan",
+      "name": "TUBITAK UZAY / ASELSAN",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"TUBITAK UZAY\" \"ASELSAN\" funding investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://uzay.tubitak.gov.tr/en/explore-uzay/",
+          "published_date": null,
+          "disposition": "Original identifies UZAY as institute."
+        },
+        {
+          "url": "https://uzay.tubitak.gov.tr/en/we-celebrated-the-launch-of-turksat-6-with-enthusiasm/",
+          "published_date": "2024-07-12",
+          "disposition": "Original distinguishes project manager UZAY and contractor ASELSAN, with other executors and project sponsors."
+        }
+      ],
+      "evidence_note": "Bounded issuer review: catalogue composite TUBITAK UZAY / ASELSAN does not establish a single legal capital recipient. Original project description separates its participants. No composite-issuer financing event approved.",
+      "hold_note": "Composite identity requires legal issuer resolution before allocating funding. Do not copy ASELSAN equity, TÜBİTAK public budget, Turksat customer contracts or full consortium budgets. Draft gate preserved."
+    },
+    {
+      "id": "5498ff86-6414-4f4e-9a70-6e45902501bf",
+      "slug": "tubular-network",
+      "name": "Tubular Network",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Tubular Network\" funding investment grant 2026 2025",
+        "site:tubular.network grant investment funding",
+        "site:michigan.gov \"Tubular Network\" 2026 grant",
+        "site:michigan.gov \"Tubular\" \"$\" grant October 2026",
+        "site:grr.org \"Tubular\" FLITE 2025",
+        "site:tubular.network \"grant\"",
+        "\"Tubular Network\" seed investor earlier grant 2024 2023",
+        "\"Tubular Network\" \"Michigan Mobility Funding Platform\" grant amount",
+        "\"Tubular Network\" \"Michigan Mobility Funding Platform\" grant",
+        "site.michigancentral.com \"Michigan Scale\" \"Tubular\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.tubular.network/",
+          "published_date": null,
+          "disposition": "Original homepage confirms FLITE amount and links dated Scale Fund award."
+        },
+        {
+          "url": "https://www.linkedin.com/pulse/tubular-network-wins-prestigious-100000-michigan-scale-jp41c/",
+          "published_date": "2024-02-07",
+          "disposition": "Issuer original confirms USD100,000 grant."
+        },
+        {
+          "url": "https://www.linkedin.com/pulse/tubular-network-secures-75000-flite-grant-drive-logistics-5fapf",
+          "published_date": "2025-01-23",
+          "disposition": "Issuer original confirms USD75,000 FLITE grant; second Michigan award in as many years."
+        },
+        {
+          "url": "https://www.grr.org/news/flite-round-vii",
+          "published_date": "2025-01-23",
+          "disposition": "Official programme cohort verifies Tubular grant recipient, but aggregate not individual cheque."
+        },
+        {
+          "url": "https://www.michigan.gov/leo/news/2026/10/21/whitmer-awards-funds-to-launch-12-advanced-air-mobility-projects-statewide",
+          "published_date": "2026-10-21",
+          "disposition": "Original lists Blueflite USD70,000 Detroit grant using Tubular system. Tubular is partner, not named recipient."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/detroit-smart-parking-lab_we-are-excited-to-host-tubular-network-at-activity-7386389523846361088-Zbji",
+          "published_date": null,
+          "disposition": "Testing-site original confirms MMFP grant for Tubular drone-to-building project; amount/exact date and distinction from other awards still held."
+        },
+        {
+          "url": "https://detroitsmartparkinglab.com/project/tubular-network/",
+          "published_date": null,
+          "disposition": "Original host project confirms identity and testing partnership; no equity amount."
+        },
+        {
+          "url": "https://www.linkedin.com/company/tubular-network",
+          "published_date": null,
+          "disposition": "Issuer updates current project collaborations. Relative dates not promoted to exact announcement date."
+        }
+      ],
+      "evidence_note": "Two dated issuer grant awards approved, total USD175,000, separate non-dilutive events. Current Michigan announcement disambiguated to Blueflite rather than Tubular. Earlier seed leads and separate MMFP mention remain unresolved, not zero.",
+      "hold_note": "Hold MMFP direct award details/amount/date and relationship to known grants before a third event; earlier seed investor claims need original transaction evidence. Do not import Blueflite USD70,000, programme aggregates, Newlab membership, customer contracts or sponsor lists as equity."
+    },
+    {
+      "id": "693215d2-2051-4e5c-b6d8-c5c329b3ba01",
+      "slug": "tuladrone",
+      "name": "TulaDrone",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"TulaDrone\" Туладрон финансирование инвестиции",
+        "\"Туладрон\" субсидия 700 миллионов официальный",
+        "\"Туладрон\" site:tularegion.ru субсидии",
+        "\"ТулаДрон\" \"субсидии\" site:tularegion.ru",
+        "\"ТулаДрон\" \"700\" site:government.ru",
+        "\"ТулаДрон\" \"субсидии\" \"соглашение\" 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defence-blog.com/russian-drone-center-director-arrested-on-fraud-charges/",
+          "published_date": "2026-08-25",
+          "disposition": "Secondary provenance identifies state-backed center; cumulative >RUB1bn setup and approx RUB700m federal figures not auditable individual round allocations."
+        },
+        {
+          "url": "https://base.garant.ru/411490979/",
+          "published_date": "2025-02-13",
+          "disposition": "Search-retrieved legal text: Tula ministry February13,2025 order12 subsidy procedure identifies ANO NPTs BAS TulaDron INN7100046820. Rules/application procedure do not prove individual executed award."
+        },
+        {
+          "url": "https://base.garant.ru/411490957/",
+          "published_date": "2025-02-13",
+          "disposition": "Search-retrieved legal text: order15 operating-subsidy procedure, future application and approval requirements, not actual signed disbursement."
+        },
+        {
+          "url": "https://base.garant.ru/414965828/daf75cc17d0d1b8b796480bc59f740b8/",
+          "published_date": "2026-09-24",
+          "disposition": "Budget appropriation search candidate RUB183m; direct open403. Cannot verify agreement/payment or treat appropriations as completed company financing."
+        }
+      ],
+      "evidence_note": "Identity bridged to autonomous nonprofit drone-center ANO rather than inferred venture brand. Subsidy rules and budget candidates found, but no source-audited executed recipient award approved. Secondary cumulative setup figures are held.",
+      "hold_note": "Hold original regional/federal grant decisions, agreement schedules, executed awards and actual recipient allocation; distinguish operating contribution, equipment expenditure, appropriations and programme totals. Inaccessible budget page is not a verified fact. No zero-funding claim."
+    },
+    {
+      "id": "501f86cb-05fc-45e1-80e2-c1c4165527e8",
+      "slug": "tulip-tech",
+      "name": "Tulip Tech",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Tulip Tech\" funding investment grant battery 2026",
+        "site:tulip.tech investment funding history Parcom Keen 2025 2024",
+        "site:parcom.com \"Tulip\"",
+        "site:keenventurepartners.com \"Tulip\" investment",
+        "\"Tulip Tech\" \"Netshield\" subsidie",
+        "\"Tulip Tech\" \"Netshield\" grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.tulip.tech/news/tulip-tech-scales-european-uav-battery-technology-with-strategic-investment-from-parcom-and-keen/?p=1413",
+          "published_date": "2026-05-19",
+          "disposition": "Original May19,2026 strategic growth investment from Parcom and Keen; approved amount undisclosed."
+        },
+        {
+          "url": "https://parcom.com/en/partner-companies/tulip-tech/",
+          "published_date": null,
+          "disposition": "Original investor confirms May2026 partnership and correct DenBosch battery issuer."
+        },
+        {
+          "url": "https://www.keenventurepartners.com/posts/our-strategic-investment-alongside-parcom-and-why-we-invested-in-tulip-tech",
+          "published_date": null,
+          "disposition": "Original investor confirms backing alongside Parcom; no amount/security/lead role."
+        },
+        {
+          "url": "https://www.tulip.tech/news/tulip-tech-signs-partnership-with-ministry-of-defence/",
+          "published_date": "2025-10-15",
+          "disposition": "Body describes procurement battery contract; funding headline not separate investment or grant. October6 dateline, October15 page."
+        },
+        {
+          "url": "https://www.tulip.tech/news/tulip-tech-participates-in-project-netshield-opzuid-2021-2027/",
+          "published_date": "2026-05-05",
+          "disposition": "Own participation in EU co-funded project; no recipient allocation."
+        },
+        {
+          "url": "https://www.stimulus.nl/opzuid-2021-2027/avada_portfolio/netshield/",
+          "published_date": null,
+          "disposition": "Official consortium funding: pooled EUR2,198,232 public, EUR4,079,500 eligible project cost; no Tulip split. Project starts May1,2024, not assumed announcement date."
+        }
+      ],
+      "evidence_note": "May2026 issuer and both investment-party originals corroborate one undisclosed strategic growth investment. Correct Dutch battery company distinguished from US manufacturing-software Tulip namesake. Earlier grant project and latest technical partnerships checked separately.",
+      "hold_note": "Hold original security/stage/individual cheques and earlier funding history. NETSHIELD consortium budgets are not Tulip cash grant allocation. Defence battery procurement and Factorial technology partnership are not financing rounds. Unknown amount stays NULL."
+    },
+    {
+      "id": "27e0c6fb-4c18-4725-94b3-be061b80e4a6",
+      "slug": "tupolev",
+      "name": "Tupolev",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Tupolev\" financing loan capital shares 2026 2025",
+        "site:tupolev.ru кредит 42 млрд 2023 2024",
+        "site:uacrussia.ru Туполев кредит заем 2025 2026",
+        "\"Туполев\" site:frprf.ru заем",
+        "\"Туполев\" \"42\" \"кредит\" site:rostec.ru",
+        "\"Туполев\" \"кредит\" \"42 млрд\"",
+        "\"Туполев\" \"42 млрд\" кредит 2025 официальный",
+        "site:government.ru \"41,8\" \"Туполев\"",
+        "site:uacrussia.ru \"Туполев\" \"входит\" 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.tupolev.ru/",
+          "published_date": null,
+          "disposition": "Direct issuer fetch timed out; no claimed page-body verification."
+        },
+        {
+          "url": "https://corpmsp.ru/about/press/news/novosti-msp/mishustin_soobshchil_o_prinyatom_reshenii_vydelit_41_8_mlrd_rubley_na_rasshirenie_vypuska_tu_214/",
+          "published_date": "2023-06-21",
+          "disposition": "Public corporation reproduces June2023 government statement: RUB41.8bn project decision and approx RUB42bn possible future Rostec bonds. No direct Tupolev loan/security allocation proven."
+        },
+        {
+          "url": "https://uacrussia.ru/ru/press-center/news/kompaniya-sukhoy-odin-iz-liderov-reytinga-fundamentalnoy-effektivnosti-rossiyskikh-kompaniy-top-150-/tupolev-poluchil-obedinennyy-sertifikat-tipa-na-samolety-tu-204-214",
+          "published_date": "2026-08-18",
+          "disposition": "Primary parent search body confirms AO Tupolev part of UAC/Rostec. Direct open timed out; no cash transaction evidence."
+        },
+        {
+          "url": "https://www.akm.ru/eng/news/tupolev-sells-shares-of-kapo-avia-and-kapo-tupolev/",
+          "published_date": "2026-10-23",
+          "disposition": "Secondary Oct2026 share-disposal lead; not Tupolev primary capital funding. Search candidate only."
+        }
+      ],
+      "evidence_note": "Earlier modernisation and latest2026 searches checked issuer and parent boundaries. Quoted project financing includes possible parent Rostec bond issuance and public project allocations; no directly supported Tupolev funding round approved.",
+      "hold_note": "Hold original executed borrower/lender/recipient agreements and instrument of National Wealth Fund project financing; approx RUB42bn prospective Rostec bonds are not direct Tupolev closed loan. UAC capital issuance and subsidiary share sales not company cash rounds. Issuer access limits and no audited full history remain."
+    },
+    {
+      "id": "777c1fea-4384-4727-82a0-8dc137b3a6a5",
+      "slug": "turgis-gaillard",
+      "name": "Turgis & Gaillard",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Turgis Gaillard financement Sienna dette 2026 capital levée",
+        "site:sienna-im.com Turgis Gaillard refinancing January March 2026 loan",
+        "Turgis Gaillard financement levée capital 2011 2026 investisseurs DGA"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sienna-im.com/news/a-dynamic-start-for-the-deployment-by-sienna-im-of-its-financing-strategy-focused-on-the-defence-industry/",
+          "published_date": "2026-01-27",
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://www.fiparc.fr/avis-clients-temoignages/turgis-gaillard",
+          "published_date": null,
+          "disposition": "Identity, current/history review or explicit hold; not additional verified financing"
+        }
+      ],
+      "evidence_note": "Verified Jan2026 EUR7m completed refinancing; preserved existing Sienna association without duplicate generic link. Earlier startup/group identity and FIPARC envelope reviewed separately.",
+      "hold_note": "DGA Aarok financial support lacks grant/contract split, amount and issuer certainty. FIPARC undated envelope is arranged finance, not explicit lender cheque. March fund exposure not additional raise; exact financing fund unallocated."
+    },
+    {
+      "id": "2a5e21c9-b08a-4daf-a216-4b421e2cb1d2",
+      "slug": "twenty-six-defense",
+      "name": "Twenty-Six Defense",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Twenty Six Defense funding investment 2026 seed",
+        "site:26defense.com Elbit Systems America brand September 2026 financing",
+        "Twenty26 Defense OR Twenty-Six Defense Elbit brand launch",
+        "Twenty-Six Defense funding investors capital 2026",
+        "Twenty Six Defense launch 2026 VSE sale government services"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.26defense.com/our-mission",
+          "published_date": null,
+          "disposition": "Identity, current/history review or explicit hold; not additional verified financing"
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/twenty-six-defense-strengthen-innovation-and-domestic-manufacturing-americas",
+          "published_date": "2026-09-09",
+          "disposition": "Identity, current/history review or explicit hold; not additional verified financing"
+        }
+      ],
+      "evidence_note": "Original Elbit9September2026 release and issuer mission identify wholly owned U.S. operating segment Twenty-Six Defense; Elbit America is now its subsidiary. No standalone incoming financing verified in bounded earlier/latest review.",
+      "hold_note": "Rebrand and ownership are not a new financing round. Parent Elbit debt, segment revenue and U.S. procurement contracts excluded; no zero-funding claim."
+    },
+    {
+      "id": "866c2e98-9b38-4d4a-a2b2-03a88c6c5cbe",
+      "slug": "twenty20-insight",
+      "name": "Twenty20 Insight",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Twenty20 Insight funding investment drone Canada 2026",
+        "site:twenty20insight.com funding investment grant",
+        "Twenty20 Insight investment funding history",
+        "Twenty20 Insight site:twenty20insight.ca",
+        "Twenty20 Insight funding investors seed",
+        "site:twenty20insight.ca investors funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://search.open.canada.ca/grants/record/dnd-mdn,018-2024-2025-Q2-RD-021,current",
+          "published_date": null,
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://canadabuys.canada.ca/en/tender-opportunities/contract-history/w8486-228557/001/bm-001",
+          "published_date": null,
+          "disposition": "Identity, current/history review or explicit hold; not additional verified financing"
+        },
+        {
+          "url": "https://www.pm.gc.ca/en/news/backgrounders/2026/09/10/canada-and-ukraine-scale-drone-production-build-canadas-defence",
+          "published_date": "2026-09-10",
+          "disposition": "Identity, current/history review or explicit hold; not additional verified financing"
+        }
+      ],
+      "evidence_note": "Exact Ottawa legal recipient confirmed by DND grant registry; CAD20k verified. Company is military-technology distributor and contract-services vendor, not a namesake investment fund.",
+      "hold_note": "Earlier/latest equity/debt history remains undisclosed in checked originals. CanadaBuys multimillion procurement and September2026 Canadian/Ukraine drone programme are commercial contracts, not grants or rounds."
+    },
+    {
+      "id": "4d428c9a-1e73-4f0b-80d9-dff14317a52a",
+      "slug": "tychoai",
+      "name": "Tycho.AI",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Tycho AI funding seed investment 2026 investors",
+        "site:tycho.ai seed Pillar funding 2022 2026",
+        "site:tycho.ai seed Pillar FirstMark 2026 financing",
+        "site:sec.gov Tycho AI 2026 8,000,000",
+        "site:tycho.ai 2026 funding Series Pillar FirstMark",
+        "Tycho AI 2026 Form D",
+        "site:pillar.vc tycho seed",
+        "site:sec.gov/Archives/edgar/data/1954117/000195411722000001 Tycho",
+        "site:firstmark.com Tycho 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://tycho.ai/news-posts/tycho-ai-raises-10m-series-a-for-unmanned-aerial-vehicle-technology",
+          "published_date": "2025-10-07",
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1954117/000195411726000001/xslFormDX08/primary_doc.xml",
+          "published_date": null,
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1954117/000195411725000002/xslFormDX01/primary_doc.xml",
+          "published_date": null,
+          "disposition": "Identity, current/history review or explicit hold; not additional verified financing"
+        },
+        {
+          "url": "https://tycho.ai/news",
+          "published_date": null,
+          "disposition": "Identity, current/history review or explicit hold; not additional verified financing"
+        },
+        {
+          "url": "https://tycho.ai/news-posts/tycho-ai-secures-2m-afrl-tacfi-contract-to-advance-maritime-autonomy-in-gps-denied-environments",
+          "published_date": "2026-05-28",
+          "disposition": "Identity, current/history review or explicit hold; not additional verified financing"
+        },
+        {
+          "url": "https://www.pillar.vc/team/jamie-goldstein/",
+          "published_date": null,
+          "disposition": "Identity, current/history review or explicit hold; not additional verified financing"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1954117/000195411722000001/primary_doc.xml",
+          "published_date": null,
+          "disposition": "Original SEC XML recovered by authoritative search after open failures; verified USD2m equity sold of USD3m offering; no named investors."
+        },
+        {
+          "url": "https://firstmark.com/perspectives/page/3/?filter=cto-summit%2Cnews",
+          "published_date": null,
+          "disposition": "Investor original news index explicitly confirms leading Tycho Series A; no separate financing inferred."
+        }
+      ],
+      "evidence_note": "Original SEC2022 USD2m equity first close of USD3m offering; issuer2025 USD10m Series A and originalSEC2026 USD8m option/right securities sold verified. Historical Pillar seed relationship retained without tying it to2022 filing. First-sale/signature dates not announcement dates; directors not investors. Current issuer news checked through Nov2026.",
+      "hold_note": "April2025 USD9.8m FormD likely overlaps Oct2025 USD10m and is not duplicated.2026 FormD checks only option/warrant rights, no equity/debt subtype inferred. USD2mTACFI explicitly contract excluded;2024 USD1m SBIR called grant by issuer but actual federal instrument remains unresolved."
+    },
+    {
+      "id": "8ab2579e-ed58-4409-885a-cc8393b645de",
+      "slug": "tyler-technologies",
+      "name": "Tyler Technologies",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Tyler Technologies financing notes credit facility 2026 2021 convertible",
+        "site:tylertech.com 2026 credit agreement convertible notes",
+        "site:tylertech.com investors 2026 1.44 billion pricing notes 2021 600",
+        "site:tylertech.com 2024 700 million credit agreement 2021 term loan",
+        "site:tylertech.com 2026 1.44 billion convertible notes pricing",
+        "site:tylertech.com 2021 $600 million convertible notes pricing",
+        "site:investors.tylertech.com 2026 Pricing Notes"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/860731/000086073126000016/tyl-20251231.htm",
+          "published_date": "2026-02-18",
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://investors.tylertech.com/news/news-details/2021/Tyler-Technologies-Reports-Earnings-for-First-Quarter-2021/default.aspx",
+          "published_date": "2021-04-28",
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://investors.tylertech.com/news/news-details/2026/Tyler-Technologies-Inc--Announces-Proposed-Offering-of-Convertible-Senior-Notes-Due-2031/default.aspx",
+          "published_date": "2026-05-11",
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://investors.tylertech.com/news/news-details/2026/Tyler-Technologies-Inc--Prices-Upsized-Offering-of-1-25-Billion-Convertible-Senior-Notes-due-2031/default.aspx",
+          "published_date": "2026-05-12",
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/860731/000086073126000058/tyl-20260930.htm",
+          "published_date": null,
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/860731/000086073126000042/tyl-20260529.htm",
+          "published_date": null,
+          "disposition": "Confirmed event evidence"
+        }
+      ],
+      "evidence_note": "Exact parent-issuer finance:2021 convertible and combined credit agreement,2024 replacement revolver,2026 convertible and replacement revolver. Gross/nets, capacity/cash and primary/secondary distinguished.",
+      "hold_note": "1969 public-market debut primary proceeds not verified; older pre2021 facilities/history still partial. Beneficial note buyers unnamed and lender schedule not audited, so agent/trustee not investor.2021/2024/2026 facility agreement dates not promoted to announcement dates."
+    },
+    {
+      "id": "7a4e5141-8b6b-4e93-ac9c-d01d9aa78e72",
+      "slug": "tyto-robotics",
+      "name": "Tyto Robotics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Tyto Robotics RCbenchmark funding investment grant Canada",
+        "Tyto Robotics RCbenchmark investment funding grant 2014 2026",
+        "site:tytorobotics.com funding investment investors government",
+        "Tyto Robotics CRIAQ 400000",
+        "site:tytorobotics.com CRIAQ 400",
+        "Tyto Robotics CRIAQ $400",
+        "site:tytorobotics.com CRIAQ investment",
+        "site:tytorobotics.com 400,000",
+        "site:criaq.aero Tyto 2023 financement"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.canada.ca/en/economic-development-quebec-regions/news/2017/09/tyto_robotics_ingatineautopursueitsmarketingactivitiesincanadath.html",
+          "published_date": "2017-09-25",
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://search.open.canada.ca/grants/record/nrc-cnrc,172-2025-2026-Q3-1036963,current",
+          "published_date": null,
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://search.open.canada.ca/grants/record/nrc-cnrc,172-2025-2026-Q4-1040455,current",
+          "published_date": null,
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://www.canada.ca/en/economic-development-quebec-regions/news/2026/02/backgrounder-dis-rdii---regional-defence-investment-initiative---projects-quebec.html",
+          "published_date": "2026-02-18",
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://www.tytorobotics.com/blogs/updates/tyto-receives-250k-from-government-of-canada-to-support-quebecs-defence-sector",
+          "published_date": "2026-05-29",
+          "disposition": "Confirmed event evidence"
+        },
+        {
+          "url": "https://www.tytorobotics.com/blogs/updates/rcbenchmark-rebrands-as-tyto-robotics",
+          "published_date": "2023-02-13",
+          "disposition": "Identity, current/history review or explicit hold; not additional verified financing"
+        },
+        {
+          "url": "https://unmanned-network.com/tyto-robotics-receives-400000-investment-from-criaq/",
+          "published_date": "2023-05-03",
+          "disposition": "Identity, current/history review or explicit hold; not additional verified financing"
+        },
+        {
+          "url": "https://www.criaq.aero/investissement-de-38m-en-recherche-et-innovation-en-aerospatiale-au-quebec/",
+          "published_date": null,
+          "disposition": "CRIAQ original confirms DEEPS partner project Tyto/Mejzlik/UQO among announced2022 projects, but no recipient-specific400k allocation or instrument; candidate held."
+        }
+      ],
+      "evidence_note": "Government exact legal recipient/business number and issuer RCbenchmark→Tyto2023 rebrand establish Canadian propulsion-testing business despite catalogue U.S. metadata; no metadata change.2017 package and2025/2026 agreements verified with repayment semantics.",
+      "hold_note": "2023 CRIAQ CAD400k candidate in trade publication held: original recipient-specific allocation/instrument not yet recovered.2014 formation not a funding event.2017 package not repeated as components; NRC contribution repayability unknown; announcement dates not inferred from agreement starts."
+    },
+    {
+      "id": "d698eef6-55d5-4120-b0ed-cba63072b747",
+      "slug": "u-and-c-uas",
+      "name": "U&C UAS",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"U&C UAS\" investment funding",
+        "site:uacuas.com investment funding",
+        "\"U&C UAS\" official company funding",
+        "\"U&C UAS\" investor financování investice",
+        "\"U&C UAS\" site:uacuas.com investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://aobp.cz/en/companies/148/uc-uas-sro/",
+          "title": "Czech defence industry association member listing",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Read original member profile: Czech company ID17332737; DeViRo explicitly Ukrainian partner, not automatic same issuer."
+        },
+        {
+          "url": "https://ares.gov.cz/ekonomicke-subjekty/res/17332737",
+          "title": "ARES company register record",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Opened but no readable lines; indexed registration information only a candidate, no funding fact imported."
+        },
+        {
+          "url": "https://www.uacuas.com/",
+          "title": "U&C UAS official website",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Fetch failure; not evidence of any round or absence of funding."
+        }
+      ],
+      "evidence_note": "Exact Czech U&C UAS ID17332737 distinguished from Ukrainian partner DeViRo; no qualifying financing event verified in bounded multilingual earlier/latest search.",
+      "hold_note": "Official company fetch failed and registry unreadable. Need issuer-original funding/ownership evidence; never import DeViRo subsidiary/partner funding, nominal capital, customer orders or directory never-raised statements."
+    },
+    {
+      "id": "aaaefa32-3fa6-4e65-b0e9-75203179c310",
+      "slug": "u-s-naval-research-laboratory-nrl",
+      "name": "U.S. Naval Research Laboratory (NRL)",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:nrl.navy.mil funding budget research laboratory corporate Navy",
+        "\"NRL\" venture capital financing Naval Research Laboratory history 2026",
+        "site:onr.navy.mil \"Naval Research Laboratory\" \"Working Capital\"",
+        "site:nrl.navy.mil \"working capital fund\" \"Naval Research Laboratory\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.nrl.navy.mil/News-Media/Images/igphoto/2003880191/",
+          "title": "NRL original2025 review graphic caption",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Readable original states reimbursable revolving Navy working capital funding. This is government research financing, not corporate equity or a new financing round."
+        },
+        {
+          "url": "https://www.nrl.navy.mil/About-Us/",
+          "title": "NRL official About page",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "403 fetch; indexed context not independently treated as a financing event."
+        },
+        {
+          "url": "https://www.nrl.navy.mil/Doing-Business/",
+          "title": "NRL official business page",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "403 fetch; no event asserted."
+        },
+        {
+          "url": "https://www.nrl.navy.mil/About-Us/History/History-Timeline/",
+          "title": "NRL original history timeline",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "403 fetch; indexed sponsored research history not equity raise."
+        },
+        {
+          "url": "https://www.onr.navy.mil/media/document/code-35-focus-area-forum-briefing-slides",
+          "title": "ONR official code35 forum presentation",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Search indexed working capital model; full fetch exceeds size limit, no numerical allocation/event imported."
+        }
+      ],
+      "evidence_note": "Government laboratory identity and reimbursable working capital model confirmed by readable official original; broad earlier/latest search produced no corporate financing event.",
+      "hold_note": "Government program allocations, sponsored research and budgets excluded from company financing rounds. Full article/history fetch403 noted; absence of company rounds is not zero funding."
+    },
+    {
+      "id": "c8136ee5-39a9-44ae-860a-4bd3c650d3bf",
+      "slug": "ua-dynamics",
+      "name": "UA Dynamics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"UA Dynamics\" funding investment Punisher",
+        "\"UA Dynamics\" \"інвестиції\"",
+        "\"UA Dynamics\" official Punisher funding Cosmolot",
+        "\"UA Dynamics\" site:punisher.com.ua funding",
+        "\"UA Dynamics\" site:cosmolot.ua"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://dev.ua/news/punisher-cosmolot-airlines",
+          "title": "Founder and sponsor account of Punisher financing",
+          "published_date": "2023-09-01",
+          "source_type": "third_party_report",
+          "disposition": "Read partnership material and company quotations: UAH100m Cosmolot drone manufacturing/donation project for Army, not established issuer capital round."
+        },
+        {
+          "url": "https://www.facebook.com/punisher.drone",
+          "title": "Punisher project social identity candidate",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Candidate from directory/press only, not evidence of financing issuer or ownership."
+        }
+      ],
+      "evidence_note": "Punisher manufacturer brand corroborated, but exact legal issuer remains unresolved. Cosmolot project supports production of donated aircraft for Armed Forces; no proven company equity/debt/grant event.",
+      "hold_note": "UAH100m production/donation budget not presumed issuer capital. Uforce700m news uses Punisher photo but concerns different issuer. Preserve draft company status. Need exact issuer, original financial agreement/allocation, instrument and earlier/latest evidence; unknown funding not zero."
+    },
+    {
+      "id": "427f07d5-7f3c-4c2b-84a2-be4c69cf561f",
+      "slug": "uas-sentry",
+      "name": "UAS Sentry",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"UAS Sentry\" funding investors history",
+        "\"UAS Sentry\" investors funding capital loan",
+        "\"UAS Sentry\" investment investor loan grant venture 2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://uassentry.com/eula.php",
+          "title": "UAS Sentry original legal terms",
+          "published_date": "2025-06-01",
+          "source_type": "company_announcement",
+          "disposition": "Read original identifies UAS Sentry LLC; software license grant not financial grant."
+        },
+        {
+          "url": "https://www.uassentry.com/",
+          "title": "UAS Sentry current own product/partner site",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Read Nexus product launch and distributor/partner context; sales and integration are not investor rounds."
+        }
+      ],
+      "evidence_note": "Exact UAS Sentry LLC confirmed by original EULA and current product site; bounded earlier/latest investor, loan and grant searches found no qualifying financing original.",
+      "hold_note": "Licenses, distributor purchases and commercial partnerships excluded. No claim of zero funding, bootstrapping or complete private history."
+    },
+    {
+      "id": "2888e393-bbdf-4bfe-95c2-088201924158",
+      "slug": "uasidekick",
+      "name": "UASidekick",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "UASidekick funding investment acquired investors 2026",
+        "site:uasidekick.com investment SC Launch acquired",
+        "\"UASidekick\" \"investment\"",
+        "\"UASidekick\" \"acquisition\"",
+        "site:scra.org \"UASidekick\" \"2020\"",
+        "site:uasidekick.com funding 2022 2023 2024 2025 2026 Airwise",
+        "site:airwisesolutions.com \"UASidekick\" acquisition",
+        "\"UASidekick\" \"Acceleration Grant\" SCRA 2020",
+        "site:scra.org UASidekick acceleration grant 2019 2020",
+        "site:airwisesolutions.com investment funding raised UASidekick"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://scra.org/4-companies-receive-grants/",
+          "title": "SCRA original Acceleration Grant allocation",
+          "published_date": "2020-02-04",
+          "source_type": "investor_announcement",
+          "disposition": "Verified recipient-specific USD50k original grant; retrospective2021 same grant confirms history."
+        },
+        {
+          "url": "https://scra.org/scra-announces-investment-in-drone-related-startup-uasidekick/",
+          "title": "SCRA original SC Launch investment announcement",
+          "published_date": "2021-02-16",
+          "source_type": "investor_announcement",
+          "disposition": "Verified actual SC Launch Inc USD200k investment and earlier grant; instrument undisclosed."
+        },
+        {
+          "url": "https://airwisesolutions.com/terms-and-conditions/",
+          "title": "Airwise original legal affiliate identity",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Airwise Solutions Inc Delaware and UASidekick Inc affiliate explicitly identified. Affiliation alone not imported as investor role."
+        },
+        {
+          "url": "https://airwisesolutions.com/insights/uasidekick-launches-digital-sgis-in-partnership-with-faa/",
+          "title": "Airwise original UASidekick FAA integration announcement",
+          "published_date": "2026-02-17",
+          "source_type": "company_announcement",
+          "disposition": "Own source repeats Airwise affiliate; FAA operational integration is not investment."
+        }
+      ],
+      "evidence_note": "Two recipient-specific original events verified, one grant and separate later investment. Current original legal terms establish UASidekick Inc Airwise affiliate.",
+      "hold_note": "2020 original says UA Sidekick LLC, same domain/history linked by2021 issuer account; conversion date unknown. Secondary USD1m March2021 seed candidate unsupported. SC Launch security type and Airwise acquisition/ownership transaction terms unresolved; affiliate alone not investor."
+    },
+    {
+      "id": "c9917c6b-2352-4ad8-86c3-ffc6968213ec",
+      "slug": "uavionix",
+      "name": "uAvionix",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 2,
+      "relationship_count": 1,
+      "searches_checked": [
+        "uAvionix funding investment rounds 2016 2017 2022 DC Capital 2026",
+        "site:uavionix.com 2026 investment funding 2025 Redpoint",
+        "uAvionix latest funding 2026 investment 2025 Series C",
+        "site:uavionix.com \"Series B\" \"additional\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/playground-global-leads-uavionix-series-a-300258743.html",
+          "title": "uAvionix original Series A release",
+          "published_date": "2016-04-27",
+          "source_type": "company_announcement",
+          "disposition": "Verified USD5m closed A and Playground lead; original April27 release date."
+        },
+        {
+          "url": "https://uavionix.com/press/uavionix-leader-in-drone-communications-navigation-and-surveillance-systems-secures-series-b-funding-from-airbus-ventures-playground-global-and-redpoint-ventures/",
+          "title": "uAvionix original Series B release",
+          "published_date": "2017-11-27",
+          "source_type": "company_announcement",
+          "disposition": "Verified USD5m closed equity B and three explicit roles; later unnamed participants remain hold."
+        },
+        {
+          "url": "https://uavionix.com/press/uavionix-announces-acquisition-by-dc-capital-partners/",
+          "title": "uAvionix original acquisition announcement",
+          "published_date": "2022-03-09",
+          "source_type": "company_announcement",
+          "disposition": "Verified acquisition/portfolio ownership only, no fresh company financing imported."
+        },
+        {
+          "url": "https://uavionix.com/press/uavionix-and-capital-sciences-complete-the-installation-of-55-more-surface-awareness-systems-for-the-faa-bringing-the-total-to-69-atc-towers/",
+          "title": "uAvionix original FAA deployment update",
+          "published_date": "2026-11-05",
+          "source_type": "company_announcement",
+          "disposition": "Original search text identifies contract deployment/procurement and airport funding, not venture financing; not used for round facts."
+        }
+      ],
+      "evidence_note": "Two original historical financing rounds and explicit roles verified;2022 DCCP acquisition preserved as generic ownership only. Earlier/latest and investor-party queries through2026-11-14 distinguish FAA procurement from capital raises.",
+      "hold_note": "2017 expected additional participants not yet source-confirmed. No primary cash amount or fund vehicle inferred for2022 acquisition. Private/undisclosed history remains unknown; cumulative10m not separate round."
+    }
+  ],
+  "source_and_identity_reconciliation": [
+    {
+      "company_slug": "turgis-gaillard",
+      "sources": [
+        {
+          "url": "https://www.sienna-im.com/news/a-dynamic-start-for-the-deployment-by-sienna-im-of-its-financing-strategy-focused-on-the-defence-industry/",
+          "disposition": "Root independently opened27January2026 original:EUR7m private-credit refinancing. Two managed funds are described but no allocation proves a specific cheque. ExistingSienna association preserved; no manager/fund inferred as sole lender."
+        }
+      ],
+      "disposition": "March fund exposure/assignment not another borrower raise. Advisors not capital providers."
+    },
+    {
+      "company_slug": "uavionix",
+      "sources": [
+        {
+          "url": "https://uavionix.com/press/uavionix-announces-acquisition-by-dc-capital-partners/",
+          "disposition": "Root original9March2022 confirms DC Capital acquisition. Generic ownership only; acquisition does not establish incoming primarycash."
+        },
+        {
+          "url": "https://uavionix.com/press/uavionix-receives-tso-authorization-from-faa-for-skybeacon-ads-b-out-solution/",
+          "disposition": "Root4September2018 original confirms SeriesA/B and named Playground/Airbus backing; contemporaneous original announcements establish respective5m rounds. Not another retrospective round."
+        }
+      ],
+      "disposition": "DC Capital existing profile retained. Initial unrelated BrightonPark search hypothesis excluded, no facts inferred from it."
+    },
+    {
+      "company_slug": "uasidekick",
+      "sources": [
+        {
+          "url": "https://scra.org/4-companies-receive-grants/",
+          "disposition": "Root original4February2020 explicitly allocates50kgrant to UA Sidekick LLC at same issuer domain. Source distinguishes SCRA grants from independent affiliated SC Launch loans/investments."
+        }
+      ],
+      "disposition": "Later200k actual SC Launch Inc investment instrument unknown; no parent SCRA second cheque. Prior grant not duplicated in2021. Airwise affiliate-only evidence not an investor/ownership relationship."
+    },
+    {
+      "company_slug": "truweather-solutions",
+      "disposition": "GENIUSNY400k prize/investment instrument unknown, not assumedgrant. SeriesSeed uses two actual Kluz funds, manager notthirdcheque. Supernal minority investment amountNULL; Hyundai parent notassumed. Michigan104k award recipientFutureFlightGlobal, TruWeather partner only."
+    },
+    {
+      "company_slug": "trypillian",
+      "disposition": "CEO interview supports5m founder BrooksNewmark investment announcement for economicTrypillianbrand; legal receiving vehicle, instrument, disbursement day unestablished. Draftcompany retained; no portfolio subsidiary financing or Apollo investment inferred."
+    },
+    {
+      "company_slug": "tsg-group",
+      "disposition": "Exact IsraeliTSG issuer bridged through ownAbout, PiniYungman,Formula/IAI andTASE originals. Threeprimaryshareissues approximatelyILS62m/103.5m/192m; conditional options andSkapion36m unrelated issuer excluded. Actual unnamed buyers not ownerroundcheques."
+    },
+    {
+      "company_slug": "tsuru-robotics",
+      "disposition": "Original residency/support evidence not a grant; adjacentBortnik-fundedTermoMotors notTsuru recipient."
+    },
+    {
+      "company_slug": "tubitak-uzay-aselsan",
+      "disposition": "Composite institution/industrial partner is not single issuer. Neither programme budget nor partner financing duplicated under draftcomposite; metadata unchanged."
+    },
+    {
+      "company_slug": "tubular-network",
+      "disposition": "Original100kMichiganScaleFund grant distinct75kFLITE. Blueflite70k2026award belongs toBlueflite; Tubular onlypartner. Other MMFP grant details held where overlap/date/amount unknown."
+    },
+    {
+      "company_slug": "tulip-tech",
+      "disposition": "Original Parcom/Keen growth investment has unknown amount/security. Netshield public budget is pooled without recipient-specific allocation."
+    },
+    {
+      "company_slug": "tychoai",
+      "disposition": "Original2022FormD2m equity sold of3moffering is firstclose, not3mclosed. Pillar historical seed link generic, notassigned to2022filing.2025D9.8m/10m possible overlap with10mA notduplicated.2026warrant-only8m is securities reported sold, notverifiedcash/exercisereceipt; no investors inferred fromdirectors."
+    },
+    {
+      "company_slug": "tyler-technologies",
+      "disposition": "Exact2026 convertible principalUSD1437500000 from10Q table inthousands, notrounded1.44bn, netproceeds or capped-call/sharebuyback. Ceilingfacilities replace oldlimits; no fullcashdraw/agentasbeneficiallender assumption."
+    },
+    {
+      "company_slug": "tyto-robotics",
+      "disposition": "Canada RCbenchmark continuity verified despiteUSmetadata; no metadata change. Government18Feb2026 repayable250k predates laterissuerpage.2017package kept unsplit; NRCexplicit75kgrant distinct200kContribution with repaymentunknown. CRIAQprojectbudget notcompany400kgrant withoutallocation."
+    },
+    {
+      "company_slug": "ua-dynamics",
+      "disposition": "100m Cosmolot donation/productionproject not verified issuer primarycapital; Uforce photograph contamination excluded. Existing draft gate retained."
+    },
+    {
+      "company_slug": "u-s-naval-research-laboratory-nrl",
+      "disposition": "Institutional budget andprocurement do notestablish an equityissuer financinground. Bounded public-source identity review; no zero-funding assertion."
+    }
+  ],
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed importer rollback, atomic counts, idempotency, conflicting amount and participant-source FK rejection.",
+    "production_rollback_baseline_restored": true,
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 28,
+      "mismatched_facts": 0,
+      "participant_matches": 24,
+      "source_matches": 44,
+      "relationship_matches": 4,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 0
+    },
+    "company_investment_research_actual_count": {
+      "research_rows": 1204,
+      "partial_rows": 1204
+    },
+    "draft_and_legacy_relationship_preservation": [
+      {
+        "slug": "trypillian",
+        "publication_status": "draft",
+        "investor_slug": null,
+        "relationship_type": null,
+        "source_url": null
+      },
+      {
+        "slug": "tubitak-uzay",
+        "publication_status": "draft",
+        "investor_slug": null,
+        "relationship_type": null,
+        "source_url": null
+      },
+      {
+        "slug": "tubitak-uzay-aselsan",
+        "publication_status": "draft",
+        "investor_slug": null,
+        "relationship_type": null,
+        "source_url": null
+      },
+      {
+        "slug": "turgis-gaillard",
+        "publication_status": "live",
+        "investor_slug": "sienna-investment-managers",
+        "relationship_type": "direct_investment",
+        "source_url": "https://www.sienna-im.com/news/a-dynamic-start-for-the-deployment-by-sienna-im-of-its-financing-strategy-focused-on-the-defence-industry/"
+      },
+      {
+        "slug": "ua-dynamics",
+        "publication_status": "draft",
+        "investor_slug": null,
+        "relationship_type": null,
+        "source_url": null
+      }
+    ]
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "Fresh567company map before import has none24target slugs. Existing geography/classification/publication gates unchanged; four selected draft identities remain unpublished."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false
+}
