@@ -2305,3 +2305,5 @@ Run90 publication verified 2026-11-14T21:01:49.348Z: [existing build 43640331323
 
 ### Funding research run91 — 2026-11-14
 Reviewed24 distinct cohort identities in four read-only groups:28 approved events,40 participations,42 source rows,13 generic associations and24 new investor profiles. All24 retain concrete source-level history holds. PostgreSQL tests, production rollback, one atomic import, exact fact/role/source/contribution checks, idempotent replay rollback and preserved-data hashes passed. Queue:1221 reviewed,1264 partial,79 queued. Publication pending existing catalogue build; see `research-agent/reports/2026-11-14-funding-landscape-ninety-first.json`.
+
+Run91 publication verified 2026-11-14T22:05:35.469Z: catalogue `64174bfff0760420bf8086425dfe97fb48f7f670`, successful workflow43646029674. Both fresh datasets checked; directory3554profiles/665portfolio entries,44referenced profiles/40participation-source links/13clickable generic entries verified. European map scope preserved567companies/1590events/1390links; no current run target is in map. Lease cleared; programme remains incomplete.
