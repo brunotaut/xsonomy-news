@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-14",
   "started_at": "2026-11-14T23:48:38.235Z",
   "manifest": "research-agent/imports/funding-landscape-20261114-ninety-third.json",
@@ -42,14 +42,23 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
     "reviewed_existing_fact_corrections": 0,
     "db_total_events": 4448,
     "db_approved_events": 4435,
     "db_round_participations": 6227,
     "db_investor_profiles": 3618,
-    "db_source_reconciliation_companies": 1293
+    "db_source_reconciliation_companies": 1293,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 5,
+    "clickable_generic_company_links_verified": 5,
+    "active_minutes": 10.54,
+    "checked_identities_per_hour": 136.6,
+    "completed_reviews_per_hour": 0,
+    "timing_scope": "Elapsed single writer lease through four disjoint read-only groups, all four explicit final freezes, issuer/currency/date/instrument and staged round/commitment versus cash reconciliation, durable early ledgers, PostgreSQL tests, production rollback, one atomic import, exact facts/roles/sources/contributions and extension audit, preserved hashes and metadata, idempotent replay rollback, durable readbacks, successful existing build, both fresh datasets and live pageHTTP200.24partial histories retain source-level holds; no bounded closure claimed. Concurrent durations not summed; no speedup or ETA claimed."
   },
   "production_before": {
     "events": 4420,
@@ -1504,7 +1513,13 @@
     },
     "all24_company_metadata_hashes_preserved": true,
     "selected_legacy_relationships_before": [],
-    "selected_legacy_relationships_exactly_preserved": true
+    "selected_legacy_relationships_exactly_preserved": true,
+    "live_generic_entry_verification": {
+      "entries": 5,
+      "source_urls": 5,
+      "clickable_company_links": 5,
+      "unlinked": []
+    }
   },
   "publication_scope": {
     "current_manifest_event_rows": 28,
@@ -1520,5 +1535,46 @@
     "Repository schedules",
     "No new paid API"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-14T23:59:10.704Z",
+    "verified_at": "2026-11-14T23:59:10.704Z",
+    "catalogue_commit": "c6f29c4e8268b39d21517aa9e7a3ca9786f60574",
+    "source_commit": "8e470bc16f6190ef848f2de76cecfe478cdde7dd",
+    "workflow_run": {
+      "id": 43655718295,
+      "head": "c6f29c4e8268b39d21517aa9e7a3ca9786f60574",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43655718295"
+    },
+    "report": "research-agent/reports/2026-11-14-funding-landscape-ninety-third.json",
+    "manifest": "research-agent/imports/funding-landscape-20261114-ninety-third.json",
+    "generated_at": "2026-11-14T23:57:37.067Z",
+    "investor_generated_at": "2026-11-14T23:57:41.692Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3609,
+    "portfolio_relationships": 679,
+    "expected_profiles": 56,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 5,
+    "generic_portfolio_entries_verified": 5,
+    "clickable_company_links_verified": 5,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 62,
+    "manifest_generic_relationship_matches": 5,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 28,
+    "current_manifest_live_matches": 0,
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "DB3618profiles versus live3609 reflects nine pre-existing anonymous exclusions; DB682relationships versus live679 reflects three prior exclusions. All56referenced profiles,62participation sourceURLs and5generic entries/sourceURLs/clickable company links verified.30new profiles and5generic associations published. All24targets outside current European map;28approved database events do not override geography/publication gates. Map567companies/1590events/1390links."
+  },
+  "completed_at": "2026-11-14T23:59:10.704Z"
 }

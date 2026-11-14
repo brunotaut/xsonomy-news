@@ -2317,3 +2317,5 @@ Run92 publication verified 2026-11-14T23:01:46.157Z: successful workflow43650942
 
 ### Funding research run93 — 2026-11-14
 24 distinct cohort reviews in four frozen read-only groups;28approved events,62participations,34sources,5generic associations,30new profiles. All24retain concrete source-level holds. PostgreSQL tests, production rollback, one atomic import, exact fact/role/source/contribution and extension audit, idempotent replay rollback and preserved hashes passed. Queue1221reviewed/1312partial/31queued. Publication pending existing build. Audit `research-agent/reports/2026-11-14-funding-landscape-ninety-third.json`.
+
+Run93 publication verified 2026-11-14T23:59:10.704Z: successful workflow43655718295, catalogue `c6f29c4e8268b39d21517aa9e7a3ca9786f60574`. Both fresh datasets;56referenced profiles/62participation sources/5clickable generic entries verified. Directory3609profiles/679portfolio; map567companies/1590events/1390links unchanged in scope. Lease cleared; programme incomplete.
