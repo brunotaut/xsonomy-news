@@ -2233,3 +2233,10 @@ Reviewed24 distinct cohort identities in four read-only groups:9 bounded reviews
 Audit: [research-agent/reports/2026-11-14-funding-landscape-eighty-second.json](https://github.com/brunotaut/xsonomy-news/blob/main/research-agent/reports/2026-11-14-funding-landscape-eighty-second.json).
 
 Publication verified 2026-11-14T10:02:52Z: existing catalogue workflow https://github.com/brunotaut/xSonomy/actions/runs/43583199546 succeeded. Fresh landscape 2026-11-14T10:01:21.526Z and investor data 2026-11-14T10:01:24.841Z verified:567 map companies,1590 events,1390 participations;3314 investor profiles and570 portfolio entries. All40 referenced profiles,24 participation source URLs and19 generic entries/clickable company links verified. New targets remain outside existing European scope. Queue:1182 bounded source reviews,1087 partial,295 queued;2564 identities total. Lease released; continuation remains enabled.
+
+
+### 2026-11-14 — eighty-third funding reconciliation
+
+Reviewed24 distinct cohort identities in four read-only groups:8 bounded reviews completed,16 retain concrete source/issuer holds. Imported27 approved financing disclosures,23 source-linked participations,41 source rows and18 ownership/portfolio associations;19 new investor profiles. PostgreSQL tests, production rollback restoration, exact fact/role/source/contribution audit and idempotency passed; curated profiles preserved. Existing catalogue build pending. Programme incomplete; schedules unchanged.
+
+Audit: https://github.com/brunotaut/xsonomy-news/blob/main/research-agent/reports/2026-11-14-funding-landscape-eighty-third.json
