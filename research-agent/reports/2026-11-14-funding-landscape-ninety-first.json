@@ -1,0 +1,1280 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-14",
+  "started_at": "2026-11-14T21:51:54.137Z",
+  "manifest": "research-agent/imports/funding-landscape-20261114-ninety-first.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 0,
+    "new_or_retained_partial": 24,
+    "new_approved_events": 28,
+    "new_round_participations": 40,
+    "new_source_rows": 42,
+    "new_generic_portfolio_relationships": 13,
+    "new_companies_with_events": 15,
+    "new_investor_profiles": 24,
+    "group_search_queries_executed": 124,
+    "root_additional_search_queries": 4,
+    "search_queries_executed": 128,
+    "per_company_search_ledger_entries": 123,
+    "source_ledger_entries": 94,
+    "root_source_ledger_entries": 4,
+    "company_database_identity_contexts_checked": 24,
+    "all_four_final_freezes_confirmed_before_consolidation": true,
+    "frozen_source_hashes_unchanged": true,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "atomic_import_invocations": 1,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "prior_rounds_and_unselected_relationship_hashes_preserved": true,
+    "selected_legacy_relationships_exactly_preserved": true,
+    "company_metadata_hashes_preserved": 24,
+    "event_matches": 28,
+    "mismatched_facts": 0,
+    "participant_matches": 40,
+    "source_matches": 42,
+    "relationship_matches": 13,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 2,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "reviewed_existing_fact_corrections": 0,
+    "db_total_events": 4395,
+    "db_approved_events": 4382,
+    "db_round_participations": 6131,
+    "db_investor_profiles": 3563,
+    "db_source_reconciliation_companies": 1270
+  },
+  "production_before": {
+    "events": 4367,
+    "approved": 4354,
+    "links": 6091,
+    "sources": 5989,
+    "profiles": 3539,
+    "covered": 1255,
+    "relationships": 655,
+    "preserved_profiles_hash": "7be4c19517a2327c96129f232d94140f"
+  },
+  "production_after": {
+    "events": 4395,
+    "approved": 4382,
+    "links": 6131,
+    "sources": 6031,
+    "profiles": 3563,
+    "covered": 1270,
+    "relationships": 668,
+    "preserved_profiles_hash": "7be4c19517a2327c96129f232d94140f"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1221,
+    "source_review_partial": 1264,
+    "queued": 79
+  },
+  "per_company": [
+    {
+      "id": "6a7d15b2-c450-4e9e-bd32-802bd3386d49",
+      "slug": "virginia-commonwealth-university",
+      "name": "Virginia Commonwealth University",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.vcu.edu drones grant funding 2026 2025",
+        "site.vcu.edu drone grant funding AED",
+        "site.news.vcu.edu AED drones grant",
+        "Virginia Commonwealth drone AED grant James City funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.vcuhealth.org/news/vcu-health-researchers-plot-a-new-course-toward-improved-heart-health/",
+          "published_date": "2025-04-11",
+          "disposition": "OriginalVCUHealthcoversNIHhistoricaldronegrant withoutamount/exactlegalrecipient; currentAHAprojectcollaborationnotVCUallocatedproceeds."
+        },
+        {
+          "url": "https://documents.jamescitycountyva.gov/Minutes/BOS/2024/05282024BOSBM.pdf",
+          "published_date": null,
+          "disposition": "OfficialcountyminutessearchresultidentifiesDukeasAHArecipient, notVCU; do not transferprogrammegrant. Fullrecipientawardreview remainsheld."
+        }
+      ],
+      "evidence_note": "Bounded earlier/latest source review through 14 November 2026 completed for this pass. Only the supported subset is approved. An empty row does not mean zero funding.",
+      "hold_note": "Institutionalgrantrecipient allocation remains unresolved; AHAstudyDukelead,countyUASIawardanduniversityannualresearchtotalnotVCUfundraising. Need exactNIHaward/granteeandVCUsubaward history."
+    },
+    {
+      "id": "72df5924-a376-4ad6-a7c1-5a97c362f551",
+      "slug": "virtower-llc",
+      "name": "Virtower LLC",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Virtower investment funding acquisition",
+        "\"Virtower\" funding investor investment",
+        "\"Virtower\" investment funding airport",
+        "\"Virtower\" LLC investors funding SEC"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://virtower.com/contracts",
+          "published_date": null,
+          "disposition": "Original2026contracts page:stategrantprogrammesfundAIRPORTS;1mUtahregistrationrevenuebelongsstate. Vendorcontracts/RemoteIDservice not fundraising."
+        },
+        {
+          "url": "https://virtower.com/",
+          "published_date": null,
+          "disposition": "ExactVirtowerLLCFlorida airportoperations/RemoteIDissuer; no disclosedinvestmentterms in reviewedoriginal. Nozerofundingclaim."
+        }
+      ],
+      "evidence_note": "Bounded earlier/latest source review through 14 November 2026 completed for this pass. Only the supported subset is approved. An empty row does not mean zero funding.",
+      "hold_note": "No issuer financing original located in bounded searches. Continue registry/privateowner andearlier/latestcapitalhistory;stategrantfundedcustomers notVirtowergrants."
+    },
+    {
+      "id": "11a3ff29-7a02-4666-bcd3-9a9665b1da56",
+      "slug": "virtuix",
+      "name": "Virtuix",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 3,
+      "searches_checked": [
+        "Virtuix funding 2026 2025 2014 2016 investor",
+        "site.sec.gov/Archives/edgar/data/1606242 \"2026\" \"Streeterville\" \"10,000,000\"",
+        "\"Virtuix\" \"Streeterville\" \"$11\"",
+        "\"Virtuix\" \"2026\" financing proceeds November August",
+        "\"Virtuix\" 2026 November funding September Streeterville",
+        "\"Virtuix\" \"November\" \"2026\" investment funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1606242/000121390026092213/ea0302834-10qa1_virtuix.htm",
+          "published_date": null,
+          "disposition": "Approved source-confirmed subset; terms and date limitations recorded in event note."
+        }
+      ],
+      "evidence_note": "Bounded earlier/latest source review through 14 November 2026 completed for this pass. Only the supported subset is approved. An empty row does not mean zero funding.",
+      "hold_note": "Continue originalSECFormD2014-2025andRegA/CFcashreconciliation; cumulative50m/SeriesB18m notnewround; debtfacevsnet,2024-2026notes, warrants July2026andlatestquarter; directlistingsecondaryresalesnotprimary. ConfirmhistoricalissuerHoldings/Inccontinuity."
+    },
+    {
+      "id": "c7fcb052-5a7e-4279-b0bb-5f45d1601184",
+      "slug": "vision-aerial",
+      "name": "Vision Aerial",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Vision Aerial\" investment funding acquired",
+        "\"Vision Aerial\" funding acquired Mobix",
+        "\"Vision Aerial\" investment seed funding Shane Beams"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://mobixlabs.gcs-web.com/news-releases/news-release-details/mobix-labs-signs-definitive-agreement-acquire-vision-aerial",
+          "published_date": "2026-07-24",
+          "disposition": "Buyer original definitiveagreement approximate15mcash/stockM&Aconsideration pendingconditions. Notrecipientprimaryfunding; MobixfinancingnotassignedtoVisionAerial."
+        }
+      ],
+      "evidence_note": "Bounded earlier/latest source review through 14 November 2026 completed for this pass. Only the supported subset is approved. An empty row does not mean zero funding.",
+      "hold_note": "Pending15macquisitionJuly2026notprimarycapital; needclosingstatusandoriginalSECprivatefinancinghistory. Customercontracts/revenueprojectionexcluded; parentMobixloan/PIPEcannotbeassigned."
+    },
+    {
+      "id": "3d7a63b3-9c01-49db-bdd4-f726b9af1cab",
+      "slug": "visionary-ai",
+      "name": "Visionary AI",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Visionary AI funding 2021 2023 2026",
+        "\"Visionary AI\" funding seed 2021 Doral",
+        "\"Visionary AI\" funding seed 2021 2023",
+        "\"Visionary.ai\" \"$4.5\" businesswire 2021",
+        "site.nationalgrid.com \"Visionary.ai\" investment",
+        "\"Visionary.ai\" 2026 2025 funding investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://visionary.ai/news/visionary-ai-raises",
+          "published_date": "2021-04-22",
+          "disposition": "Approved source-confirmed subset; terms and date limitations recorded in event note."
+        },
+        {
+          "url": "https://visionary.ai/news/visionary-ai-celebrates-1st-birthday-with-2-5m-in-extended-seed-funding",
+          "published_date": "2022-03-02",
+          "disposition": "Approved source-confirmed subset; terms and date limitations recorded in event note."
+        },
+        {
+          "url": "https://visionary.ai/news/visionary-ai-wins-1-million-dollar-investment",
+          "published_date": "2022-07-20",
+          "disposition": "Approved source-confirmed subset; terms and date limitations recorded in event note."
+        },
+        {
+          "url": "https://www.visionary.ai/news/visionary-ai-receives-investment-from-national-grid-partners",
+          "published_date": "2022-11-22",
+          "disposition": "Approved source-confirmed subset; terms and date limitations recorded in event note."
+        },
+        {
+          "url": "https://visionary.ai/news",
+          "published_date": null,
+          "disposition": "Currentissuerarchive2021-2026reviewed:partnerships andproductawards notfinancing; funding originals reconciled."
+        }
+      ],
+      "evidence_note": "Bounded earlier/latest source review through 14 November 2026 completed for this pass. Only the supported subset is approved. An empty row does not mean zero funding.",
+      "hold_note": "LatestfundingverifiedNov2022NGPexactamount/securityundisclosed. Togetherinvestmentsecurity/receiptunknown. InitialseedFebfundingmonth,Aprissuerpublication,Maywirepublicationreconciledasoneevent. No laterfundingoriginallocated; legalLtdregistrycontinuityneedsfullreview."
+    },
+    {
+      "id": "547e3dc4-b3d3-4c3c-bd1f-a3a903c20056",
+      "slug": "visionary-machines",
+      "name": "Visionary Machines",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Visionary Machines funding investment 2026",
+        "\"Visionary Machines\" \"7.5\" \"2021\"",
+        "\"Visionary Machines\" \"3.5\" \"A$\"",
+        "\"Visionary Machines\" 2022 funding Salus 7 million",
+        "\"Visionary Machines\" \"3.5 million\" \"Australian dollars\"",
+        "site.visionarymachines.com \"4.4\" grant",
+        "\"Visionary Machines\" \"3.5\" \"Startup Daily\"",
+        "site.business.gov.au \"Visionary Machines\" \"4,375\"",
+        "site.visionarymachines.com \"Thales\" \"2026\"",
+        "\"Visionary Machines\" \"Industry Growth\" government 2025",
+        "site.abr.business.gov.au \"VISIONARY MACHINES PTY LTD\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.folklore.vc/insights/our-investment-in-visionary-machines",
+          "published_date": "2021-07-27",
+          "disposition": "Approved source-confirmed subset; terms and date limitations recorded in event note."
+        },
+        {
+          "url": "https://www.oifventures.com.au/insights/cia-backed-aussie-start-up-goes-to-seed-funding",
+          "published_date": "2021-11-01",
+          "disposition": "Approved source-confirmed subset; terms and date limitations recorded in event note."
+        },
+        {
+          "url": "https://www.startupdaily.net/topic/funding/3d-computer-vision-startup-visionary-machines-raises-7-5-million-seed-round-led-by-folklore-ventures/",
+          "published_date": "2021-07-26",
+          "disposition": "Approved source-confirmed subset; terms and date limitations recorded in event note."
+        },
+        {
+          "url": "https://visionarymachines.com/visionary-machines-closes-3-5m-round/",
+          "published_date": "2025-07-16",
+          "disposition": "Approved source-confirmed subset; terms and date limitations recorded in event note."
+        },
+        {
+          "url": "https://visionarymachines.com/visionary-machines-secures-4-4m-industry-growth-program-grant-to-accelerate-counter-drone-commercialisation/",
+          "published_date": "2025-08",
+          "disposition": "Approved source-confirmed subset; terms and date limitations recorded in event note."
+        },
+        {
+          "url": "https://business.gov.au/grants-and-programs/industry-growth-program/grant-recipients",
+          "published_date": null,
+          "disposition": "Approved source-confirmed subset; terms and date limitations recorded in event note."
+        },
+        {
+          "url": "https://visionarymachines.com/visionary-machines-and-thales-to-advance-passive-counter-drone-detection/",
+          "published_date": "2026-08-27",
+          "disposition": "ThalesC-UAScontractandPandionSentinel bridgescohortidentity; commercialcollaborationnotinvestment."
+        },
+        {
+          "url": "https://abr.business.gov.au/ABN/View?id=39631141341",
+          "published_date": null,
+          "disposition": "GovernmentregistryexactVisionaryMachinesPtyLtdABN39631141341active2019NSW; hqmetadataUSdoesnotoverrideprimaryidentity."
+        }
+      ],
+      "evidence_note": "Bounded earlier/latest source review through 14 November 2026 completed for this pass. Only the supported subset is approved. An empty row does not mean zero funding.",
+      "hold_note": "2025private3.5mdenominationheld;2020/2022trackerroundsheldwithoutoriginals.2025grantmatchingcapitalnotadditionalround. Need2026GroupLtdrestructuringbridgeandlatestcorporatefilings; defenceprocurementcontractsnotgrants/equity."
+    },
+    {
+      "id": "5eb98107-137a-4a98-9819-725bbe9f0c47",
+      "slug": "visionmap-analytics",
+      "name": "VisionMap Analytics",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"VisionMap Analytics\" funding company",
+        "\"VisionMap Analytics\" funding company"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.drone-directory.com.ua/profile/visionmap-analytics/",
+          "published_date": null,
+          "disposition": "Composite directory names VisionMap Ltd but external website points ailandsystems.com; exact legal issuer unresolved."
+        },
+        {
+          "url": "https://finder.startupnationcentral.org/company_page/visionmap?section=team",
+          "published_date": null,
+          "disposition": "Secondary namesake candidate reports September2008 USD9m; held pending original issuer and exact identity bridge."
+        }
+      ],
+      "evidence_note": "Directory identity checked; no attributable financing approved.",
+      "hold_note": "Resolve composite VisionMap Analytics / VisionMap Ltd identity and original2008 investors; no zero-funding inference."
+    },
+    {
+      "id": "e704681d-392c-44e9-8547-42baeb368c9b",
+      "slug": "visionwave",
+      "name": "VisionWave",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.vwav.inc financing 2026 convertible loan",
+        "site.vwav.inc \"20 million\" \"2026\" financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2038439/000173112226001265/e7955_424b5.htm",
+          "published_date": "2026-09-18",
+          "disposition": "Accepted February principal/cash reconciliation and July first-close debenture. Excluded September5m cashless refinancing; Adrian10m and xClibre6m seller notes are asset consideration; USD50m SEPA and USD30m ATM are capacity. Aegis is sales agent."
+        },
+        {
+          "url": "https://www.vwav.inc/visionwave-secures-strategic-50-million-equity-line-to-accelerate-ai-driven-defense-platform-pr-newswire/",
+          "published_date": "2025-07-25",
+          "disposition": "Capacity source candidate, not USD50m raised; embedded5m note tranches require earlier ledger reconciliation."
+        }
+      ],
+      "evidence_note": "Two issuer-specific funded events supported with principal versus proceeds distinguished.",
+      "hold_note": "Earlier2025 SEPA advances USD3m/2m and cancellation of additional2m commitment require separate cash reconciliation; later2026 ATM execution not established."
+    },
+    {
+      "id": "f2db136a-7658-45c4-9aa4-e059731732b5",
+      "slug": "vnii-gradient",
+      "name": "VNII Gradient",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"ВНИИ Градиент\" кредит заем инвестиции финансирование",
+        "\"ВНИИ Градиент\" кредит заем финансирование инвестиции 2026 2025",
+        "\"ВНИИ Градиент\" заем инвестиции Ростех банк",
+        "\"VNII Gradient\" funding investment loan Rostec"
+      ],
+      "sources_checked": [
+        {
+          "url": "http://www.gradient.aaanet.ru",
+          "published_date": null,
+          "disposition": "Issuer site inaccessible."
+        },
+        {
+          "url": "https://saby.ru/profile/6163111477-616301001",
+          "published_date": null,
+          "disposition": "Registry-derived secondary confirms INN6163111477, OGRN1116195013934; share capital is stock, not financing event; current loans hidden."
+        }
+      ],
+      "evidence_note": "Exact Rostov legal-entity candidate identified; no issuer-specific financing found in reviewed accessible material.",
+      "hold_note": "Need actual borrower/issuer original debt or capital disclosure; do not allocate Rostec/KRET parent facilities or infer zero."
+    },
+    {
+      "id": "d8934505-79bf-4198-aa62-f6be32d083a4",
+      "slug": "volatus-aerospace",
+      "name": "Volatus Aerospace",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.volatusaerospace.com financing closed 2026 2025",
+        "site.volatusaerospace.com \"June 5, 2026\" \"financing\"",
+        "\"Volatus\" \"November 26, 2025\" \"23,011,500\" gl obenewswire",
+        "site.globenewswire.com \"Volatus\" \"November 26, 2025\" \"closed\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2025/07/17/3117660/0/en/volatus-announces-closing-of-fully-subscribed-life-offering-of-10-000-000.html",
+          "published_date": "2025-07-17",
+          "disposition": "Accepted approxCAD10m LIFE units."
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/06/05/3307375/0/en/volatus-aerospace-closes-34-5m-bought-deal-public-offering.html",
+          "published_date": "2026-06-05",
+          "disposition": "Accepted CAD34,534,500 gross including over-allotment."
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/11/10/3400203/0/en/volatus-aerospace-releases-q3-2026-financial-results.html",
+          "published_date": "2026-11-10",
+          "disposition": "Latest dated issuer update; explicitly CAD. Cash balances, contracts and acquisition spending are not new financing."
+        },
+        {
+          "url": "https://financialfilings.com/filings/volatus-aerospace-inc/interim-quarterly-report/2026/75806301/",
+          "published_date": null,
+          "disposition": "Secondary interim copy candidate: November2025 brokered23,011,500 and private3,380,000; originals still needed."
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2025/11/10/3184323/0/en/volatus-aerospace-inc-announces-non-brokered-private-placement-of-up-to-4-66-million-bringing-total-financing-to-over-24-6-million-provides-corporate-update.html",
+          "published_date": "2025-11-10",
+          "disposition": "Proposed private4,662,000 and public20,010,000/23,011,500 capacity not final closing; held."
+        }
+      ],
+      "evidence_note": "Two postmerger common-equity financings approved; latestNovember2026 financial context checked.",
+      "hold_note": "Earlier financing including2021-24 and November2025 closures needs issuer originals; 2024stock merger is not new cash; do not import premerger DDC financing twice."
+    },
+    {
+      "id": "212022ad-fc34-49c0-a62d-376d871de25c",
+      "slug": "voltaero",
+      "name": "Voltaero",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.voltaero.aero funding series 2023 2024",
+        "\"Voltaero\" funding Kawasaki Series A 2020",
+        "site.voltaero.aero Kawasaki investment May 2023 Series B",
+        "\"Voltaero\" 2026 2025 financement aide 12 millions"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.voltaero.aero/fr/communiques-de-presse/voltaero-recoit-un-financement-europeen-important-pour-le-developpement-de-son-avion-hybride-electrique-cassio/",
+          "published_date": "2020-11-19",
+          "disposition": "Accepted initial EUR2.1m grant award, not designated EUR11m equity capacity."
+        },
+        {
+          "url": "https://www.voltaero.aero/press-releases/voltaero-funding-seriesb-round-tesi/",
+          "published_date": "2022-11-01",
+          "disposition": "Accepted first-close existence with NULL amount; EUR32m broader target held."
+        },
+        {
+          "url": "https://www.voltaero.aero/press-releases/kawasaki-strategic-investor-voltaero-cassio-series-b-funding/",
+          "published_date": "2023-05-22",
+          "disposition": "Accepted Series B continuation with NULL amount/instrument."
+        },
+        {
+          "url": "https://www.aura-aero.com/en/actualites/aura-aero-reprend-voltaero-et-acc%C3%A9l%C3%A8re-la-d%C3%A9carbonation-de-l%27aviation",
+          "published_date": "2026-06-23",
+          "disposition": "Buyer confirms acquisition of facilities and technologies; no primary capital proceeds verified."
+        },
+        {
+          "url": "https://www.latribune.fr/melody/article/3377768/preview",
+          "published_date": null,
+          "disposition": "Secondary rescue history: ACI10%>EUR10m commitment reportedly unfulfilled; cumulative regional support and32m historical claim need original reconciliations."
+        }
+      ],
+      "evidence_note": "Three distinct grant/Series B records with continuation linkage; latestacquisition excluded from capital raised.",
+      "hold_note": "Earlier2018/2019 funding, regional cumulative10.3m, France2030 5.6m and2025 commitments not event-audited; buyer purchase not issuer financing."
+    },
+    {
+      "id": "c6a32615-cd32-4aaf-abad-d615fed084df",
+      "slug": "voltaic-marine",
+      "name": "Voltaic Marine",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Voltaic Marine\" funding investment",
+        "\"Voltaic Marine\" \"funding\" Antler",
+        "site.antler.co \"Voltaic Marine\" funding",
+        "site.voltaicmarine.com \"$3\" funding 2025",
+        "site.michiganrise.com \"Voltaic\"",
+        "\"Voltaic Marine\" \"3M\" \"2025\" \"press\"",
+        "site.voltaicmarine.com \"funding\"",
+        "\"Voltaic Marine\" \"$3\" Antler October 2025 investment pressrelease"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://michiganrise.com/2025/08/14/michigan-rise-announces-four-new-investments-in-july-2025/",
+          "published_date": "2025-08-14",
+          "disposition": "Investor original directly confirms July investment; relationship accepted, no separately quantified round to avoid overlap."
+        },
+        {
+          "url": "https://voltaicmarine.com/",
+          "published_date": null,
+          "disposition": "Issuer establishes AEW24 and AEU39 defense/consumer identity; no financing details."
+        },
+        {
+          "url": "https://www.start-midwest.com/news/michigan-electric-boat-startup-voltaic-marine-raises-3-million",
+          "published_date": "2025-10-28",
+          "disposition": "Secondary corroborates closed3m pre-seed; primary originals now found. Date remains report date only."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/voltaic_marine",
+          "published_date": null,
+          "disposition": "Candidates115kMEDCgrant,200kAntler and3m; no additive totals accepted."
+        },
+        {
+          "url": "https://www.startengine.com/offering/voltaicmarine",
+          "published_date": null,
+          "disposition": "2023 crowdfunding candidate; no verified final proceeds from reviewed search result."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/voltaicmarine_voltaicmarine-aew24-electricboats-activity-7388605464176939013-pg2W",
+          "published_date": null,
+          "disposition": "Accepted original issuer3m pre-seed with six explicit investors; exact social-post date unavailable."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/fridtjof-berge-15058625_us-based-voltaic-marine-just-raised-us3m-activity-7391810350251323392-QTaa",
+          "published_date": null,
+          "disposition": "Investor original explicitly US$3m; acceptedcurrency; no additional financing."
+        },
+        {
+          "url": "https://www.antler.co/blog/announcing-the-fall-2025-u-s-portfolio-showcase",
+          "published_date": "2025-09-22",
+          "disposition": "Original investor portfolio corroborates entity/founders, not separate200k round."
+        }
+      ],
+      "evidence_note": "Issuer and investor originals support USD3m pre-seed with six explicit investors; July investor relationship also supported without additive round.",
+      "hold_note": "Security and exact original announcement day undisclosed; Antler200k and115kMEDCgrant candidates require overlap/allocation review; later2026 broader financing history remains partial."
+    },
+    {
+      "id": "cff563a9-085f-46a3-9193-f64c1be91c92",
+      "slug": "vop-cz",
+      "name": "VOP CZ",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.vop.cz dotace úvěr 2025 výroční zpráva",
+        "\"VOP CZ\" \"úvěr\" \"2025\"",
+        "\"VOP CZ\" dotace 2026 2025 2024 financování"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://vop.cz/media/baff1g0a/publicita_laser-a-palici-stroj.pdf",
+          "published_date": null,
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://vop.cz/o-nas/",
+          "published_date": null,
+          "disposition": "Original confirms state enterprise ICO00000493 and links grant project posters and2024annual report; procurement not financing."
+        },
+        {
+          "url": "https://vop.cz/media/ntpnhm1x/vyrocni-zprava-2024-1.pdf",
+          "published_date": null,
+          "disposition": "Original49page scanned annual report has no extracted text; detailed bank/award parsing held, not absence of funding."
+        },
+        {
+          "url": "https://vop.cz/media/ocvitbwm/2202080114-a3horizontal.pdf",
+          "published_date": null,
+          "disposition": "Autonomous logistics project ERDF cofinancing poster; no amount or recipient allocation table, held separately from confirmed laser project."
+        },
+        {
+          "url": "https://statnifinance.cz/rispf/prijemce/00000493",
+          "published_date": null,
+          "disposition": "Secondary payment series explicitly warns amounts are disbursements not grant decisions; not imported as award rounds."
+        }
+      ],
+      "evidence_note": "Confirmed issuer-specific ERDF laser project cofinancing with amount/date unknown; annual report and other grant candidates retained for reconciliation.",
+      "hold_note": "Hold other grants, exact laser award amount/date/payment status and annual-report bank facilities. Secondary payment series not grant decisions; project budget not recipient grant. No zero-funding claim."
+    },
+    {
+      "id": "32e72299-569b-494c-8e76-2d98fbecd234",
+      "slug": "votix",
+      "name": "Votix",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "VOTIX funding seed investment 2026 2025",
+        "VOTIX funding investment Draper seed",
+        "\"VOTIX\" \"funding\"",
+        "\"VOTIX\" \"investors\"",
+        "site.geniusny.com VOTIX 2023 \"$500,000\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.esd.ny.gov/esd-media-center/press-releases/governor-hochul-announces-1-million-grand-prize-winner-genius-ny-worlds-largest-accelerator-uas",
+          "published_date": "2023-10-04",
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://votix.com/press-releases/",
+          "published_date": null,
+          "disposition": "Issuer latest/earlier press index reviewed; partnerships, product launch and Endeavor admission not funding."
+        },
+        {
+          "url": "https://geniusny.com/blueflite-wins-one-million-dollars-in-worlds-largest-drone-accelerator/",
+          "published_date": null,
+          "disposition": "Programme administrator corroborates VOTIX500k award and original payer programme; all-cohort totals excluded."
+        }
+      ],
+      "evidence_note": "Issuer, investor and transaction-party originals checked; no cumulative, seller or parent amounts fabricated as financing.",
+      "hold_note": "Hold exact award instrument/payment and earlier/private funding; accelerator admission and all-cohort follow-on total are not recipient cash."
+    },
+    {
+      "id": "259cafff-f6de-4474-815d-4823e8cd19ed",
+      "slug": "voyage81-acq-lightricks",
+      "name": "Voyage81 (acq. Lightricks)",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 5,
+      "searches_checked": [
+        "Voyage81 funding seed 2018 2019 Oddity acquisition original",
+        "\"Voyage81\" \"seed\" \"3.5\"",
+        "Voyage81 True Ventures 2019 3.5 funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://investors.oddity.com/news-releases/news-release-details/il-makiage-acquires-leading-israeli-computer-vision-startup",
+          "published_date": "2021-08-12",
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://directory.startupluxembourg.com/companies/voyage81",
+          "published_date": null,
+          "disposition": "Secondary3.5mseed/6.5mA/40macquisition candidates held; original amount/date/security not established."
+        }
+      ],
+      "evidence_note": "Issuer, investor and transaction-party originals checked; no cumulative, seller or parent amounts fabricated as financing.",
+      "hold_note": "Hold secondary3.5mseed/6.5mAclaims pending originals; unknown amount retained. Acquisition correct acquirer IL MAKIAGE/ODDITY; metadata discrepancy preserved, Lightricks not investor. Seller price not primary cash."
+    },
+    {
+      "id": "60377980-24cd-4acc-87e0-0b2d3f8257f9",
+      "slug": "voyager-technologies",
+      "name": "Voyager Technologies",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.voyagertechnologies.com 2026 financing IPO 2025 2024",
+        "site.voyagertechnologies.com \"2026\" \"notes\"",
+        "site.voyagertechnologies.com \"2023\" \"funding\"",
+        "\"Voyager\" \"2026\" \"Convertible\" \"$\" notes VOYG financing",
+        "\"Voyager Technologies\" \"2026\" \"offering\" closing",
+        "\"Voyager Technologies\" \"2025\" \"2030\" \"460\"",
+        "site.investors.voyagertechnologies.com \"460\" \"2025\" \"Completes\"",
+        "\"Voyager\" \"460 million\" \"November\" convertible 2025",
+        "\"Voyager Space\" funding 2023 2021 2020 raise capital",
+        "site.voyagertechnologies.com \"2026\" \"offering\" \"217\"",
+        "site.investors.voyagertechnologies.com \"2026\" \"250\" \"credit\"",
+        "site.investors.voyagertechnologies.com \"2025\" \"460,000,000\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://voyagertechnologies.com/press-releases/voyager-announces-closing-of-initial-public-offering/",
+          "published_date": "2025-06-12",
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://investors.voyagertechnologies.com/news/news-details/2026/Voyager-Technologies-Inc--Completes-402-5-Million-Convertible-Senior-Notes-Offering/default.aspx",
+          "published_date": "2026-09-28",
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://investors.voyagertechnologies.com/news/news-details/2026/Voyager-Closes-Upsized-250-Million-Credit-Facility/default.aspx",
+          "published_date": "2026-07-06",
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1788060/000162828026025857/voyagertechnologiesfy25-ars.pdf",
+          "published_date": null,
+          "disposition": "Original annual report fetch exceeded22MB limit;2025notes460mcandidate not imported without full option reconciliation."
+        },
+        {
+          "url": "https://investors.voyagertechnologies.com/news/news-details/2025/Voyager-Technologies-Inc--Prices-Upsized-435-0-Million-Convertible-Senior-Notes-Offering/default.aspx",
+          "published_date": "2025-11-07",
+          "disposition": "Issuer original pricing result435mbase/65moption conflicts later460mcandidate unless partial option proven; held as same financing, not duplicate cash."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/voyager_technologies",
+          "published_date": null,
+          "disposition": "Secondary earlier5.1m/56.6m/80.2m and June2026equity217mcandidates held pending original issuer, dates and cash allocation."
+        }
+      ],
+      "evidence_note": "Issuer, investor and transaction-party originals checked; no cumulative, seller or parent amounts fabricated as financing.",
+      "hold_note": "Hold earlier private5.1m/56.6m/80.2m,2025convertible435mbase/65moption vs460mcompletedcandidate, prior200mfacility and June2026equity217mcandidate until original reconciliation.2026revolver250m is total cap, not cash or incremental250m. Starlab grant/customer milestones not inherited."
+    },
+    {
+      "id": "ee6d6156-78af-4a1a-826c-f7261333bd18",
+      "slug": "voyageur-aviation",
+      "name": "Voyageur Aviation",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "site.flyvoyageur.com Chorus acquisition 2015 80 million",
+        "\"Voyageur Aviation\" \"funding\" \"2026\"",
+        "\"Voyageur Aviation\" \"loan\" \"2025\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://chorusaviation.com/corporate-overview/",
+          "published_date": null,
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://chorusaviation.com/chorus-aviation-inc-completes-acquisition-of-voyageur-airways/",
+          "published_date": "2015-05-01",
+          "disposition": "OriginalCAD80mpurchase of519222OntarioLimited group is seller consideration, excluded as primary funding."
+        },
+        {
+          "url": "https://chorusaviation.com/wp-content/uploads/2026/11/2026-Q3-Chorus-Aviation-Inc-MDA.pdf",
+          "published_date": null,
+          "disposition": "Latest parent original surfaced; parent financing not automatically Voyageur issuer funding, full subsidiary-specific parsing held."
+        }
+      ],
+      "evidence_note": "Issuer, investor and transaction-party originals checked; no cumulative, seller or parent amounts fabricated as financing.",
+      "hold_note": "Hold subsidiary-specific borrowing/grants and older history.2015CAD80mseller consideration and Chorus parent loans/equity excluded. Airbus equipment order procurement not financing."
+    },
+    {
+      "id": "8f39e122-de72-4c6d-ac69-5bcc5d8d9bad",
+      "slug": "vrgineers",
+      "name": "VRgineers",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "searches_checked": [
+        "site.vrgineers.com investment funding 2025 2026 2023",
+        "VRgineers funding 2023 2025 2026 6 million Taiwan Taiwania",
+        "site.vrgineers.com investment November 2023 Nation1 Purple Taiwania",
+        "site.taiwaniacapital.com Vrgineers fund 2023",
+        "site.vrgineers.com Purple Ventures investment 2020 2019",
+        "\"VRgineers\" \"2026\" \"investment\" funding",
+        "site.taiwaniacapital.com \"VRgineers\" \"CEE Fund\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://vrgineers.com/press-release/vrgineers-successfully-closes-6-million-usd-series-a-investment/",
+          "published_date": "2023-11-14",
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/vrgineers-successfully-closes-6-million-usd-series-a-investment-301998176.html",
+          "published_date": "2023-11-28",
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://en.mofa.gov.tw/News_Content.aspx?n=1328&s=100019&sms=273",
+          "published_date": "2023-03-29",
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://www.taiwaniacapital.com/en/portfolios/category",
+          "published_date": null,
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://www.purple-ventures.com/",
+          "published_date": null,
+          "disposition": "Original checked; supported facts and limitations recorded in event/association note."
+        },
+        {
+          "url": "https://www.squirepattonboggs.com/news/firm-advises-taiwanese-venture-capital-fund-on-series-a-investment-in-czech-vr-and-flight-simulator-start-up/",
+          "published_date": "2023-11-27",
+          "disposition": "Transaction counsel confirms sameTaiwaniaSeriesA;200mCEEfund size notVRgineersround."
+        },
+        {
+          "url": "https://www.taiwaniacapital.com/en/portfolios/category/vrgineers",
+          "published_date": null,
+          "disposition": "Investor original VRgineers portfolio identity confirmed; full index mapscompanytoCEEfund."
+        },
+        {
+          "url": "https://bouncewatch.com/company/vrgineers-inc",
+          "published_date": null,
+          "disposition": "Secondary2019EUR2m/2020USD2m/2021USD2.5m/2022undisclosedhistory candidates held for originals and security/date reconciliation."
+        }
+      ],
+      "evidence_note": "Six million USD closed A, earliest issuerNovember14publication; Nation1half-millionwithinround; exactCEEfundvehicle verified and manager not double-counted. Purple original PV1invested2021 association without cheque size.",
+      "hold_note": "Hold older2019/2020seed amounts, exact security, subsequent private rounds and remaining participants until originals; no manager/fund double counting or board-member cheque inference."
+    },
+    {
+      "id": "6bfb281b-aef2-4e36-8594-fb2ec95a65ef",
+      "slug": "vulcan-elements",
+      "name": "Vulcan Elements",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Vulcan Elements funding Series A seed 2025 2026 government 620 50 million",
+        "site.vulcanelements.com 620 million 2026 50 million 200",
+        "site.osc.mil Vulcan 620 conditional loan November 2025",
+        "site.commerce.gov Vulcan Elements 50 million 2025",
+        "site.sec.gov/Archives/edgar \"Vulcan Elements Holdings\" \"430\"",
+        "site.sec.gov/Archives/edgar \"Vulcan Elements Holdings\" 2026",
+        "site.commerce.gov \"Vulcan\" \"50 million\" 2025",
+        "site.osc.mil \"Vulcan\" \"620\" 2025",
+        "site.vulcanelements.com \"seed\"",
+        "site.vulcanelements.com \"2023\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://vulcanelements.com/company/updates/vulcan-elements-announces-65-million-series-a-and-produces-high-performance-rare-earth-magnets-in-the-united-states",
+          "title": "Vulcan Elements closes USD65m Series A",
+          "published_date": "2025-08-11",
+          "source_type": "company_announcement",
+          "disposition": "Supports stated issuer-specific subset and qualifications; no complete-history or disbursement inference."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2005797/000200579725000002/xslFormDX01/primary_doc.xml",
+          "title": "Vulcan Elements Inc 2025 Form D",
+          "published_date": "2025-08-20",
+          "source_type": "company_announcement",
+          "disposition": "Supports stated issuer-specific subset and qualifications; no complete-history or disbursement inference."
+        },
+        {
+          "url": "https://vulcanelements.com/company/updates/vulcan-elements-forges-1-4-billion",
+          "title": "Vulcan Elements government/private expansion package",
+          "published_date": "2025-11-03",
+          "source_type": "company_announcement",
+          "disposition": "USD550m private package future financing; no closed proceeds or named private investors confirmed. ReElement portion excluded."
+        },
+        {
+          "url": "https://www.nist.gov/news-events/news/2025/11/department-commerce-announces-chips-incentives-letter-intent-vulcan",
+          "title": "Commerce preliminary CHIPS letter of intent",
+          "published_date": "2025-11-03",
+          "source_type": "investor_announcement",
+          "disposition": "Supports stated issuer-specific subset and qualifications; no complete-history or disbursement inference."
+        },
+        {
+          "url": "https://www.nist.gov/chips/vulcan-elements-inc-north-carolina-benson",
+          "title": "NIST Vulcan Elements Inc USD50m CHIPS Final Award",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Final award status confirmed; no disbursement or separate equity cheque inferred."
+        },
+        {
+          "url": "https://files.gao.gov/reports/GAO-26-109121/index.html",
+          "title": "GAO CHIPS awards through July15 2026",
+          "published_date": "2026-08-06",
+          "source_type": "third_party_report",
+          "disposition": "Supports stated issuer-specific subset and qualifications; no complete-history or disbursement inference."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2125775/000131586326000258/xslFormDX08/primary_doc.xml",
+          "title": "Vulcan Elements Holdings Corp Form D",
+          "published_date": "2026-04-02",
+          "source_type": "company_announcement",
+          "disposition": "Hold: distinct2025-formed issuer reports USD430,723,746 sold of USD545m; corporate structure bridge and overlap with announced550m private package unverified. No extra round or cheque assigned."
+        }
+      ],
+      "evidence_note": "Original issuer/registry/transaction-party sources reviewed; only supported subset approved, no inference of zero funding.",
+      "hold_note": "Reconcile Aug11 fullclose claim vs Aug20 sold amount. Seed2023/2024convertible candidates require originals. Holdings2026FormD structural bridge/overlap with550mfutureprivate package held. OSC conditional loan is not disbursed;50mCHIPS final award exactdate/instrument/cashstatus held. PartnerReElement80mloan/privatecapital excluded; ARPA-E university award not automatically issuer grant."
+    },
+    {
+      "id": "204ca44a-2d0d-438a-b5ea-1c5f8a4d4098",
+      "slug": "vulcanuav",
+      "name": "VulcanUAV",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"VulcanUAV\" funding investment company",
+        "\"VULCANUAV\" grant funding investment 2024 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/08120427",
+          "title": "Companies House VULCANUAV LIMITED08120427",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Registry confirms dissolution4July2023, incorporation26June2012. Historical legal company only; no automatic conclusion about current business extinction."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/665066",
+          "title": "CORDIS DigiArt grant665066",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Historical VULCANUAV LIMITED beneficiary EUR149,687.50; project signature21May2015 not public announcement date. Held pending exact current cohort entity bridge; consortium EUR2.354m not company funding."
+        },
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/5a75714640f0b6397f35e762/Research_and_Development_Competition_for_RAI_in_Extreme_and_Challenging_Environments_-_Competition_Results.pdf",
+          "title": "Innovate UK RAI competition1706_EE_CRD_RFHE",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Historical company proposedGBP180,599 againstGBP257,998 costs; successful assessment explicitly subject grant offer/conditions. Consortium grant989,926 not company award. Held legal bridge and final award."
+        },
+        {
+          "url": "https://vulcanuav.com",
+          "title": "VulcanUAV issuer website",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Read attempted; inaccessible. No current legal operator established."
+        }
+      ],
+      "evidence_note": "Original issuer/registry/transaction-party sources reviewed; only supported subset approved, no inference of zero funding.",
+      "hold_note": "Preserve draft gate. Current business legal operator versus dissolved08120427 unresolved. Historical CORDIS149687.50EUR/proposedInnovateUK180599GBP evidence held for exactissuerbridge, announcementdate and finalaward. No corporate extinction or zerofunding claim."
+    },
+    {
+      "id": "0ce06855-fdd6-4e2e-809d-58cbe96bfd8f",
+      "slug": "w-and-e-platt",
+      "name": "W&E Platt",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "W E Platt acquisition investment funding 2026 2025",
+        "\"W&E Platt\" funding investment acquisition",
+        "\"W&E Platt\" official company history funding",
+        "\"W&E Platt\" grant investment acquisition",
+        "\"W & E PLATT\" site.grants.gov.au",
+        "site.grants.gov.au \"PLATT\" \"Export\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://abr.business.gov.au/ABN/View?abn=18127236266",
+          "title": "Australian Business Register W & E PLATT PTY LTD",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Original identifies ABN18127236266/ACN127236266 activeNSW2565. Unrelated Wilfred & Elizabeth entity not assumed legal predecessor."
+        },
+        {
+          "url": "https://plattmounts.com/contact-us.html",
+          "title": "W&E Platt official contact and activities",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Company original establishes operating brand/manufacturer, no financing terms."
+        },
+        {
+          "url": "https://canadabuys.canada.ca/en/tender-opportunities/contract-history/w8486-195254/001/hn-000",
+          "title": "CanadaBuys W&E Platt contract history",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Procurement candidate excluded from funding. Secondary Austrade148,188across2grants not original verified; hold."
+        }
+      ],
+      "evidence_note": "Original issuer/registry/transaction-party sources reviewed; only supported subset approved, no inference of zero funding.",
+      "hold_note": "Earlier/latest primary capital and investor history not established. Austrade grant candidate148188aggregate lacks original individualaward/dates; customer contracts, Thales UGV partnership and registered capital excluded. No zero funding inference."
+    },
+    {
+      "id": "e6672448-a054-47fe-89c1-aceb96a3fd12",
+      "slug": "walaris",
+      "name": "Walaris",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Walaris funding investment 2026 2025",
+        "site.meruscap.com Walaris investment",
+        "site.sec.gov/Archives/edgar \"Walaris\" \"2025\" \"4,6\"",
+        "site.sec.gov/Archives/edgar \"Walaris\" \"2025\"",
+        "\"Walaris\" \"Tarsier\" Merus 2019 2021",
+        "\"Walaris\" funding 2026 investment Merus Alchemist",
+        "site.walaris.com \"funding\" \"Merus\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2070438/000207043825000001/xslFormDX01/primary_doc.xml",
+          "title": "Walaris Corp Form D equity offering sold including convertible cancellation",
+          "published_date": "2025-05-28",
+          "source_type": "company_announcement",
+          "disposition": "Supports stated issuer-specific subset and qualifications; no complete-history or disbursement inference."
+        },
+        {
+          "url": "https://www.meruscap.com/portfolio/",
+          "title": "Merus Capital portfolio identifies Walaris",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Investor original portfolio names Walaris; no date, cheque, instrument or linkage to 2025 Form D inferred."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1546497",
+          "title": "SBIR Walaris LLC portfolio",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Original identifies Walaris LLC, same address, UEIG1S8TMZUWVR1;2020PhaseI50000/PhaseII1499810 are LLC awards, not automatically Corp equity issuer. Hold reorganisation bridge and contract-versus-grant classification."
+        },
+        {
+          "url": "https://walaris.com/media/",
+          "title": "Walaris issuer press archive",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Read attempted; redirected empty. Search index identifies2022Tarsierrename; no public round terms verified there."
+        }
+      ],
+      "evidence_note": "Original issuer/registry/transaction-party sources reviewed; only supported subset approved, no inference of zero funding.",
+      "hold_note": "SEC Corp previousnameTarsierTechnologies established; USLLC/GmbH issuer perimeter and reorganisation bridge remain.2019/2021earlier round candidates require issuer/investor originals;2025aggregate includes conversion not allfreshcash. Merus generic backing not assigned datedround orleadrole; SBIR procurement award instrument/actuallegalrecipient held."
+    },
+    {
+      "id": "cd05a9ce-38cb-4af8-ae26-b0ea825d8335",
+      "slug": "walkera",
+      "name": "Walkera",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Walkera 华科尔 融资 投资 2026",
+        "\"华科尔\" \"融资\" 股份",
+        "site.walkera.com \"国家级\" 孵化 项目 2026",
+        "\"广州市华科尔科技股份有限公司\" 补助 投资 增资",
+        "site.gz.gov.cn \"2024年度\" \"科技型中小企业\" \"免申即享\" \"领取\" 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.gz.gov.cn/attachment/7/7762/7762702/10123873.pdf",
+          "title": "Guangzhou 2024 innovation subsidy list: Walkera issuer row19",
+          "published_date": "2025-02-18",
+          "source_type": "investor_announcement",
+          "disposition": "Exact legal issuer, credit code,2万元 column verified by text and screenshotpage3. Announced claimant subsidy only."
+        },
+        {
+          "url": "https://kjj.gz.gov.cn/xxgk/zwdt/tztg/wjgg/content/post_10119612.html",
+          "title": "Guangzhou Science and Technology Bureau 2024 innovation subsidy collection notice",
+          "published_date": "2025-02-18",
+          "source_type": "investor_announcement",
+          "disposition": "Notice confirms announcement date and conditionalclaim/disbursement."
+        },
+        {
+          "url": "https://www.walkera.com/index.php?cate=company&id=news",
+          "title": "Walkera official Chinese company news",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Repeated fetch502. Search index exact Chinese legalname and emergency-equipmentincubationselection; selection alone not cash award."
+        }
+      ],
+      "evidence_note": "Original issuer/registry/transaction-party sources reviewed; only supported subset approved, no inference of zero funding.",
+      "hold_note": "Public subsidy subset only. Exactcashreceipt unverified; nationalemergencyincubationselection not grantproof; registrysharecapital and hiring nofinancinglabels not proofzero. Earlier2023awards and2025/2026aid history remain unaudited."
+    },
+    {
+      "id": "c9c49507-b9a7-4adb-ba0f-5a21ec18acf7",
+      "slug": "warnke-precision-machining",
+      "name": "Warnke Precision Machining",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "site.palladyneai.com Warnke acquisition November 2025",
+        "\"Warnke Precision\" investment Crucis acquisition history"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.palladyneai.com/press-releases/palladyne-ai-palladyne-defense/",
+          "title": "Palladyne AI announces acquisition of Warnke Precision Machining",
+          "published_date": "2025-11-17",
+          "source_type": "investor_announcement",
+          "disposition": "Acquirer announces purchase of Warnke, a Crucis company. Ownership relationship only: seller consideration and Palladyne parent funding are not Warnke primary capital."
+        },
+        {
+          "url": "https://warnkeprecision.com/",
+          "title": "Warnke Precision issuer site",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "OxfordMichigan operating identity confirmed; Palladyne branded image, no primary financing terms."
+        },
+        {
+          "url": "https://investor.palladyneai.com/node/10726/ixbrl-viewer",
+          "title": "Palladyne Q22026 acquisition footnote",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Acquirer filing identifies Warnke Precision Machining LLC,100%equity acquired14Nov2025. Aggregate22.6m consideration spans3targets and seller proceeds; no Warnke primary financing inferred."
+        }
+      ],
+      "evidence_note": "Original issuer/registry/transaction-party sources reviewed; only supported subset approved, no inference of zero funding.",
+      "hold_note": "Acquisition ownership relationship only; aggregatecash/shares/contingentconsideration belongs to purchaseprice and spans3targets. Crucishistoricalownership no provenprimarycheque. ParentPalladynefinancing not subsidiaryfunding; earlier/latestWarnkeprimarycapitalhistory held."
+    }
+  ],
+  "source_and_identity_reconciliation": [
+    {
+      "company_slug": "vulcan-elements",
+      "sources": [
+        {
+          "url": "https://vulcanelements.com/company/updates/vulcan-elements-forges-1-4-billion",
+          "disposition": "Root independently opened issuer partnership original: Vulcan620mOSC loan,50mCommerce incentives and550mprivate capital planned separately. ReElement80mloan and whole1.4bn partnership not issuer receipts."
+        },
+        {
+          "url": "https://vulcanelements.com/company/updates/vulcan-elements-announces-65-million-series-a-and-produces-high-performance-rare-earth-magnets-in-the-united-states",
+          "disposition": "Root issuer11August2025 original confirms65mSeriesA closed, Altimeter lead and OneInvestmentManagement participation. No allocation inferred from scale-up package."
+        }
+      ]
+    },
+    {
+      "company_slug": "voyager-technologies",
+      "sources": [
+        {
+          "url": "https://investors.voyagertechnologies.com/news/news-details/2026/Voyager-Technologies-Inc--Completes-402-5-Million-Convertible-Senior-Notes-Offering/default.aspx",
+          "disposition": "Root issuer28September2026 confirms402.5mUSD nominal convertible completed including52.5mfulloption. Prior350mpricing not another issue;391.6mnet and capped-call cost distinct."
+        }
+      ]
+    },
+    {
+      "company_slug": "volatus-aerospace",
+      "sources": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/06/05/3307375/0/en/volatus-aerospace-closes-34-5m-bought-deal-public-offering.html",
+          "disposition": "Root issuer5June2026 confirms CAD34,534,500 gross including full overallotment; no banker-as-beneficial-investor or separate option duplicate."
+        }
+      ]
+    },
+    {
+      "disposition": "VisionWave face debt is distinct from actual purchase price/net cash; September debt setoff excluded. Virtuix actual PPP cash8m separated from8.64mprincipal/50mceiling. Voyager250m is total facility commitment, not incremental cash; IPO gross derived from issuer share count and price, option counted once."
+    },
+    {
+      "disposition": "Vulcan CHIPS50m incentive final award represented once with unknown legal instrument and date; no assumed grant/equity extra cheque. OSC620m conditional commitment is not received cash. Walaris sold equity includes convertible cancellation, not all fresh cash. Walkera recipient-specific subsidy20,000CNY is conditional announcement. Company public identifiers verified in source ledgers."
+    },
+    {
+      "disposition": "Italian TESI distinct from Finnish Tesi. Taiwania manager distinguished from CEE investment fund. Nation1USD500k is within6mround. Parent/owner relationships and acquisitions not primary funding; Voyage81 issuer original establishes IL MAKIAGE, while existing metadata and publication gates remain unchanged."
+    }
+  ],
+  "canonical_profile_mappings": [],
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "frozen_group_sha256": {
+      "group-a.json": "77a33ddd7ecd770260694a9e54cda13966834abea16766bbec49555f84a7a072",
+      "group-b.json": "a8c90413b06d6bbc5f45e7a145f71003fd44ab0d67f1dcae466b3c5954249f97",
+      "group-c.json": "a0286b57075e04a114595403332cd11b974dcc214c7029c34a07e93a964b5c3d",
+      "group-d.json": "04b27de1cce876101d22f70dd987a1decafd63e401a31b725f6b58666ee58674"
+    },
+    "meaningful_postgresql_tests": "Rollback, atomic counts, idempotence, conflicting amount and participant-source FK rejection passed.",
+    "production_rollback_baseline_restored": true,
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 28,
+      "mismatched_facts": 0,
+      "participant_matches": 40,
+      "source_matches": 42,
+      "relationship_matches": 13,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 2
+    },
+    "company_investment_research_actual_count": {
+      "research_rows": 1270,
+      "partial_rows": 1270,
+      "new_exact_name_duplicate_groups": 0
+    },
+    "prior_data_hashes": {
+      "prior_relationships_hash": "448bad6644f3ca95f864a5db0c557a55",
+      "prior_rounds_hash": "aba939d4a3495959a1b72392d4f76d76"
+    },
+    "all24_company_metadata_hashes_preserved": true,
+    "selected_legacy_relationships_before": [
+      {
+        "slug": "vrgineers",
+        "relationships": [
+          {
+            "id": "61fa3c73-537b-487b-97b1-41a97b021416",
+            "company_id": "8f39e122-de72-4c6d-ac69-5bcc5d8d9bad",
+            "created_at": "2026-11-01T17:17:09.601014+00:00",
+            "retired_at": null,
+            "source_url": "https://www.lupa.cz/aktuality/daniel-vavra-prusa-a-dalsi-investuji-do-ceskych-vr-bryli-vrgineers/",
+            "updated_at": "2026-11-01T17:17:09.601014+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-01",
+            "match_method": "verified_new_record",
+            "retired_kind": null,
+            "investor_role": "co_investor",
+            "match_note_en": "Resolved away from the unreachable Czech government directory. Lupa.cz (4 August 2021) names \"fondem Nation 1\" among the investors entering VRgineers alongside Daniel Vavra, Prusa Research, PV 110, Michael Poplar and Somnium Space, in an additional $2.5m. N1 is the current name of Nation 1. The $2.5m is the round, not N1's own cheque, which is not disclosed. Later coverage reports N1 increasing its stake by about $0.5m in the 2023 Taiwania-led Series A; that round is not stored separately here.",
+            "retired_reason": null,
+            "evidence_status": "third_party_reported",
+            "investment_date": "2021-08-04",
+            "investment_round": null,
+            "relationship_type": "direct_investment",
+            "round_total_amount": 2500000,
+            "investor_research_id": "cd2cefa0-036c-4dca-ba48-e29573ae96dc",
+            "round_total_currency": "USD",
+            "portfolio_name_as_published": "VRgineers",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          },
+          {
+            "id": "bf98da44-2566-42a7-aa98-ffac78750345",
+            "company_id": "8f39e122-de72-4c6d-ac69-5bcc5d8d9bad",
+            "created_at": "2026-11-01T17:17:09.601014+00:00",
+            "retired_at": null,
+            "source_url": "https://www.purple-ventures.com/",
+            "updated_at": "2026-11-01T17:17:09.601014+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-01",
+            "match_method": "verified_new_record",
+            "retired_kind": null,
+            "investor_role": "undisclosed",
+            "match_note_en": "Resolved from the investor's own portfolio, replacing the unreachable Czech government directory the pair previously rested on. Purple Ventures' site lists \"VRgineers Inc.\" with its website and the tag \"PV 1 | Invested in 2021\". Amount and holding not disclosed. Czech reporting of August 2021 separately names \"firmou PV 110\" in a VRgineers round, consistent with that date, but this record does not assert that PV 110 and Purple Ventures are the same entity.",
+            "retired_reason": null,
+            "evidence_status": "investor_published_portfolio",
+            "investment_date": null,
+            "investment_round": null,
+            "relationship_type": "direct_investment",
+            "round_total_amount": null,
+            "investor_research_id": "78423129-cbbb-4c35-b871-839d435cb611",
+            "round_total_currency": null,
+            "portfolio_name_as_published": "VRgineers",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          }
+        ]
+      }
+    ],
+    "selected_legacy_relationships_exactly_preserved": true,
+    "verification_query_correction": "Read-only coverage audit initially used nonexistent research_status; corrected to current coverage_status. No data mutation or import replay needed."
+  },
+  "publication_scope": {
+    "current_manifest_event_rows": 28,
+    "current_manifest_live_matches": 0,
+    "targets_in_european_map_before": [],
+    "note": "All24targets absent from European map under existing geography/publication gates. VulcanUAV and VisionMap remain draft. Approved database facts do not override map scope."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and legacy relationships",
+    "Company metadata and publication/geography gates",
+    "Repository schedules",
+    "No new paid external API"
+  ],
+  "programme_complete": false
+}

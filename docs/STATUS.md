@@ -2301,3 +2301,7 @@ Checked 24 identities in four disjoint read-only groups; all final freezes confi
 
 
 Run90 publication verified 2026-11-14T21:01:49.348Z: [existing build 43640331323](https://github.com/brunotaut/xSonomy/actions/runs/43640331323) succeeded. Fresh datasets generated 2026-11-14T20:59:44.305Z / 2026-11-14T20:59:47.413Z. Directory now has 3,530 profiles and 652 portfolio entries; all 30 referenced profiles, 28 participant-source links and 8 generic entries/source URLs/clickable links checked. The landscape page returned HTTP 200. European map remains 567 companies, 1,590 events and 1,390 participations under existing gates. Vinnytsia Avionics remains draft. Prior round/profile/relationship hashes, exact selected legacy relationship and all 24 company metadata hashes preserved. Queue: 1,221 reviewed, 1,240 partial and 103 queued. Lease cleared; programme incomplete and continuation enabled.
+
+
+### Funding research run91 — 2026-11-14
+Reviewed24 distinct cohort identities in four read-only groups:28 approved events,40 participations,42 source rows,13 generic associations and24 new investor profiles. All24 retain concrete source-level history holds. PostgreSQL tests, production rollback, one atomic import, exact fact/role/source/contribution checks, idempotent replay rollback and preserved-data hashes passed. Queue:1221 reviewed,1264 partial,79 queued. Publication pending existing catalogue build; see `research-agent/reports/2026-11-14-funding-landscape-ninety-first.json`.
