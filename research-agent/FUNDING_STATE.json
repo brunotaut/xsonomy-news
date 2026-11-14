@@ -6728,7 +6728,28 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "run_id": "funding-20261114-seventy-eighth",
+    "manifest": "research-agent/imports/funding-landscape-20261114-seventy-eighth.json",
+    "status": "validated_production_rollback_passed_awaiting_atomic_import",
+    "baseline": {
+      "events": 3934,
+      "approved": 3921,
+      "links": 5475,
+      "sources": 5410,
+      "profiles": 3215,
+      "covered": 1118,
+      "relationships": 520,
+      "preserved_profiles_hash": "3eb02dd6007c724a547af348b582d73b"
+    },
+    "expected": {
+      "events": 37,
+      "links": 43,
+      "sources": 45,
+      "relationships": 5
+    },
+    "recovery_note": "Before retry inspect exact manifest facts for committed import. Local PostgreSQL rollback/atomicity/idempotency/conflict/source-FK tests passed; production rollback restored baseline. No atomic commit yet."
+  },
   "pending_publication": {
     "status": "verified",
     "checked_at": "2026-11-14T05:03:39Z",
