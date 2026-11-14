@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-14",
   "started_at": "2026-11-14T19:49:50.545Z",
   "manifest": "research-agent/imports/funding-landscape-20261114-eighty-ninth.json",
@@ -42,14 +42,23 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
     "reviewed_existing_fact_corrections": 0,
     "db_total_events": 4305,
     "db_approved_events": 4292,
     "db_round_participations": 6063,
     "db_investor_profiles": 3519,
-    "db_source_reconciliation_companies": 1243
+    "db_source_reconciliation_companies": 1243,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 6,
+    "clickable_generic_company_links_verified": 6,
+    "active_minutes": 14.65,
+    "checked_identities_per_hour": 98.3,
+    "completed_reviews_per_hour": 4.1,
+    "timing_scope": "Elapsed single writer lease through four disjoint read-only groups, all four explicit final freezes before consolidation, issuer/currency/date/instrument and profile alias reconciliation, early durable ledgers, PostgreSQL tests, production rollback, one atomic import, exact facts/roles/sources/contributions audit, preserved hashes and selected legacy-row equality, idempotent replay rollback, durable readbacks, successful existing build and both fresh datasets. One bounded review completed;23 retain concrete source-specific holds. Overlapping group durations not summed; no speedup or ETA claimed."
   },
   "production_before": {
     "events": 4262,
@@ -1368,7 +1377,13 @@
         ]
       }
     ],
-    "selected_legacy_relationships_exactly_preserved": true
+    "selected_legacy_relationships_exactly_preserved": true,
+    "live_generic_entry_verification": {
+      "entries": 6,
+      "source_urls": 6,
+      "clickable_company_links": 6,
+      "unlinked": []
+    }
   },
   "publication_scope": {
     "current_manifest_event_rows": 43,
@@ -1386,8 +1401,43 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "awaiting_existing_build_trigger",
+    "status": "verified",
+    "checked_at": "2026-11-14T20:04:29.323Z",
+    "verified_at": "2026-11-14T20:04:29.323Z",
+    "catalogue_commit": "22b979ff786c08b3155899beaa2ad37253c56523",
+    "source_commit": "e22251cfa521ee48e07d1ef877e0affcd7e1d281",
+    "workflow_run": {
+      "id": 43635266481,
+      "head": "22b979ff786c08b3155899beaa2ad37253c56523",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43635266481"
+    },
     "report": "research-agent/reports/2026-11-14-funding-landscape-eighty-ninth.json",
-    "manifest": "research-agent/imports/funding-landscape-20261114-eighty-ninth.json"
-  }
+    "manifest": "research-agent/imports/funding-landscape-20261114-eighty-ninth.json",
+    "generated_at": "2026-11-14T20:02:42.083Z",
+    "investor_generated_at": "2026-11-14T20:02:45.789Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3510,
+    "portfolio_relationships": 644,
+    "expected_profiles": 91,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 6,
+    "generic_portfolio_entries_verified": 6,
+    "clickable_company_links_verified": 6,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 126,
+    "manifest_generic_relationship_matches": 6,
+    "current_manifest_event_rows": 43,
+    "current_manifest_live_matches": 0,
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "DB3519 profiles versus live3510 reflects nine pre-existing anonymous exclusions. DB647 generic relations versus live644 reflects three prior exclusions. All91referenced profiles,126participation source URLs and6generic entries/source URLs/clickable company links verified.50new profiles and6new generic relations published. All24target companies remain outside the current European map under existing gates;43approved source-audited DB events do not override map scope. Valarian, Varangians and VARDIAN remain draft. European map remains567companies/1590events/1390links."
+  },
+  "completed_at": "2026-11-14T20:04:29.323Z"
 }
