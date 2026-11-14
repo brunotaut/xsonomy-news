@@ -1,0 +1,1580 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-14",
+  "started_at": "2026-11-14T22:52:01.870Z",
+  "manifest": "research-agent/imports/funding-landscape-20261114-ninety-second.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 0,
+    "new_or_retained_partial": 24,
+    "new_approved_events": 25,
+    "new_round_participations": 34,
+    "new_source_rows": 30,
+    "new_generic_portfolio_relationships": 9,
+    "new_companies_with_events": 10,
+    "new_investor_profiles": 25,
+    "group_search_queries_executed": 112,
+    "root_additional_search_queries": 4,
+    "search_queries_executed": 116,
+    "per_company_search_ledger_entries": 112,
+    "source_ledger_entries": 118,
+    "root_source_ledger_entries": 3,
+    "company_database_identity_contexts_checked": 24,
+    "all_four_final_freezes_confirmed_before_consolidation": true,
+    "frozen_source_hashes_unchanged": true,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "atomic_import_invocations": 1,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "prior_rounds_and_unselected_relationship_hashes_preserved": true,
+    "selected_legacy_relationships_exactly_preserved": true,
+    "company_metadata_hashes_preserved": 24,
+    "event_matches": 25,
+    "mismatched_facts": 0,
+    "participant_matches": 34,
+    "source_matches": 30,
+    "relationship_matches": 9,
+    "missing_link_sources": 0,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "reviewed_existing_fact_corrections": 0,
+    "db_total_events": 4420,
+    "db_approved_events": 4407,
+    "db_round_participations": 6165,
+    "db_investor_profiles": 3588,
+    "db_source_reconciliation_companies": 1280
+  },
+  "production_before": {
+    "events": 4395,
+    "approved": 4382,
+    "links": 6131,
+    "sources": 6031,
+    "profiles": 3563,
+    "covered": 1270,
+    "relationships": 668,
+    "preserved_profiles_hash": "3d6070c9e1185a0c18e69a015b6768a2"
+  },
+  "production_after": {
+    "events": 4420,
+    "approved": 4407,
+    "links": 6165,
+    "sources": 6061,
+    "profiles": 3588,
+    "covered": 1280,
+    "relationships": 677,
+    "preserved_profiles_hash": "3d6070c9e1185a0c18e69a015b6768a2"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1221,
+    "source_review_partial": 1288,
+    "queued": 55
+  },
+  "per_company": [
+    {
+      "id": "df2486b3-75f3-407c-bf72-c06a2837f0d4",
+      "slug": "warrenuas",
+      "name": "WarrenUAS",
+      "website": "",
+      "hq_country": "",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "WarrenUAS FirstEnergy grant September 2026 funding",
+        "site:firstenergycorp.com \"Warren\" \"15,000\" 2026",
+        "\"WarrenUAS\" \"grant\" site:nsf.gov"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.warren.edu/academics/drones-unmanned-systems/in-the-news/",
+          "published_date": null,
+          "disposition": "College original archive establishes WarrenUAS as Warren County Community College programme, not separate startup; source links identify grant reports."
+        },
+        {
+          "url": "https://www.firstenergycorp.com/newsroom/news_articles/firstenergy-foundation-energizing-the-future-of-stem.html",
+          "published_date": "2025-11-14",
+          "disposition": "Grantor original actually Nov14 2025, not2026. USD15krecipient Warren County College Foundation RISE drone training; USD55kfive-programme total excluded. Exact funding attribution to standalone WarrenUAS record held."
+        },
+        {
+          "url": "https://www.ccdaily.com/2026/08/drone-program-flies-high-with-new-nsf-ate-grant/",
+          "published_date": "2026-08-19",
+          "disposition": "Reported USD288,318 NSF ATE college grant; exact official award ID, legal college versus programme allocation held."
+        }
+      ],
+      "evidence_note": "Issuer, investor and earlier/latest public candidates checked; import only exact attributable financing subset. Missing event rows never mean zero funding.",
+      "hold_note": "Programme-to-legal-beneficiary boundary needs exact attribution before grants; FirstEnergy2025original versus2026reposts same15knotnewround. NSFgrantofficialaward/recipientallocationandolderfederal699krequire originals."
+    },
+    {
+      "id": "c05a6c78-8339-48f6-9802-8b1feccf7479",
+      "slug": "waseda-university",
+      "name": "Waseda University",
+      "website": "https://www.waseda.jp",
+      "hq_country": "Japan",
+      "company_type": "university",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:waseda.jp 2026 donation endowment funding research bond",
+        "site:waseda.jp \"research\" \"funding\" \"2026\" drone",
+        "\"Waseda University\" \"donation\" \"2026\"",
+        "site:waseda.jp \"bond\" \"funding\"",
+        "site:waseda.jp \"cyborg\" \"funding\"",
+        "site:waseda.jp \"cockroach\" \"supported\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://kifu.waseda.jp/report/result",
+          "published_date": null,
+          "disposition": "University original FY2025donations approximatelyJPY4.3bn and cumulative campaign sub-totals. Annual donation aggregate not a single financing event."
+        },
+        {
+          "url": "https://kifu.waseda.jp/privilege/name",
+          "published_date": null,
+          "disposition": "Original monthly donor lists throughJuly2026; names do not establish specific dated investment or individual cheque."
+        },
+        {
+          "url": "https://www.waseda.jp/inst/wasedahighlights/assets/uploads/2026/01/CN-seihoku202601_web.pdf",
+          "published_date": "2026-01",
+          "disposition": "Original campaign asksJPY30bn through2033; target and whole project cost not closed financing."
+        }
+      ],
+      "evidence_note": "Issuer, investor and earlier/latest public candidates checked; import only exact attributable financing subset. Missing event rows never mean zero funding.",
+      "hold_note": "Researchgrantrecipient/project allocations and event dates remain unaudited; annualdonations and campaign targets cannot be inserted as rounds. Donor names notinvestors."
+    },
+    {
+      "id": "bd276aea-6d35-4997-bbc5-5da6ea46ced9",
+      "slug": "wass",
+      "name": "WASS",
+      "website": "https://electronics.leonardo.com/en/products/wass",
+      "hq_country": "Italy",
+      "company_type": "tier2",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"WASS\" Fincantieri financing loan capital 2026",
+        "\"WASS\" \"grant\" \"financing\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.fincantieri.com/en/newsroom/press-releases/2025/fincantieri-completes-the-acquisition-of-leonardos-uas-underwater-business",
+          "published_date": "2025-01-14",
+          "disposition": "Original proves WASS carve-out and Fincantieri100%ownership. Acquisitionprice not primarycash."
+        },
+        {
+          "url": "https://www.fincantieri.com/en/newsroom/press-releases/2026/first-half-2026-results-approved",
+          "published_date": null,
+          "disposition": "Current parent original separates parent ABB capital increase and WASS customercontracts. No parent financing assigned toWASS."
+        }
+      ],
+      "evidence_note": "Issuer, investor and earlier/latest public candidates checked; import only exact attributable financing subset. Missing event rows never mean zero funding.",
+      "hold_note": "HistoricalWASSbusiness-line versusnew2024legalentityfinancingcontinuity, grants andintercompanycapital held. Parent financing/acquisitionpriceexcluded."
+    },
+    {
+      "id": "7df4be4b-498b-49f4-8d06-260c83556309",
+      "slug": "watchtower",
+      "name": "Watchtower",
+      "website": "",
+      "hq_country": "United States",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Watchtower\" drone startup funding 2026",
+        "site:watchtower.vet nonprofit Mullis donations",
+        "\"Watchtower\" \"Mullis\" official",
+        "\"Watchtower\" \"Mullis\" nonprofit funding",
+        "\"watchtowerus.org\" funding donation grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.defensenews.com/unmanned/2026/07/21/how-startups-are-reshaping-the-pentagons-drone-industry/",
+          "published_date": "2026-07-21",
+          "disposition": "Originating article identifies JR Mullis nonprofit Watchtower, not WatchtowerLabsAI issuer."
+        },
+        {
+          "url": "https://www.watchtowerus.org/",
+          "published_date": null,
+          "disposition": "Issuer original JR Mullis/501c3 identity. USD85mhelpedclientcompanies and sector66bneconomy are not Watchtowerfunding."
+        },
+        {
+          "url": "https://www.watchtowerus.org/sponsors",
+          "published_date": null,
+          "disposition": "Issuer original EIN39-4764390; supporters/logos mix government/academic/in-kind sponsorship. Asking10k-100kannual tiers not actualreceipt; do notinferinvestors."
+        },
+        {
+          "url": "https://www.watchtowerlabs.ai/news-releases/watchtower-labs-emerges-from-stealth-with-35-million-to-build-ai-native-decision-tools-for-military-operations",
+          "published_date": null,
+          "disposition": "Searchcandidate35mOctober2026 belongs different BellevueAI WatchtowerLabs; excluded fromMullisnonprofit."
+        }
+      ],
+      "evidence_note": "Issuer, investor and earlier/latest public candidates checked; import only exact attributable financing subset. Missing event rows never mean zero funding.",
+      "hold_note": "Earlier/latestactualnonprofitdonationandgrantamount/dateunsupported; sponsorlogos not cheque evidence. SeparateWatchtowerLabs35m never assigned."
+    },
+    {
+      "id": "4e471495-9947-4d40-be65-15b961fe7aa9",
+      "slug": "wayland-autonomy",
+      "name": "Wayland Autonomy",
+      "website": "https://waylandautonomy.com",
+      "hq_country": "United States",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Wayland Autonomy\" funding investment",
+        "site:waylandautonomy.com investment IMS",
+        "\"IMS Group\" \"Wayland\" investment",
+        "\"Wayland Autonomy\" \"seed\" funding",
+        "site:waylandautonomy.com \"IMS\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://waylandautonomy.com/press/",
+          "published_date": null,
+          "disposition": "Current issuer archive only12October2026Uvisiontechnicalintegration; legalfooter WaylandIntegratedTechnologiesLLC."
+        },
+        {
+          "url": "https://waylandautonomy.com/",
+          "published_date": null,
+          "disposition": "USedgeplatformidentitycurrentoriginal; nofundingamount."
+        },
+        {
+          "url": "https://groupims.com/digital-ventures/",
+          "published_date": null,
+          "disposition": "IMSdivisionofficialactiveWaylandportfolio; genericassociationonly."
+        },
+        {
+          "url": "https://www.tatlerasia.com/power-purpose/business/how-anastasios-papadopoulos-is-capitalising-on-family-offices",
+          "published_date": null,
+          "disposition": "Investorinterviewcandidate says earlyWaylandinvestment; IMS500mvaluation is not Waylandraisedcapital."
+        }
+      ],
+      "evidence_note": "Issuer, investor and earlier/latest public candidates checked; import only exact attributable financing subset. Missing event rows never mean zero funding.",
+      "hold_note": "Exactcapitaltransactiondate/amount/securityandIMSdivisionversusbeneficialvehicle unresolved; UVisionintegrationnotinvestment."
+    },
+    {
+      "id": "382d5451-1a41-487c-b259-0585aac8c1d5",
+      "slug": "wb-electronics",
+      "name": "WB Electronics",
+      "website": "https://www.wbgroup.pl",
+      "hq_country": "Poland",
+      "company_type": "",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "WB Electronics PFR investment loan 2026 2025",
+        "site:pfr.pl \"WB Electronics\" 2017 128",
+        "site:wbgroup.pl \"WB Electronics\" \"kredyt\" 2026",
+        "site:wbgroup.pl \"WB Electronics\" \"obligacji\" emisji",
+        "site:wbgroup.pl \"2023\" \"przydział\" obligacji",
+        "site:wbgroup.pl \"2020\" \"80\" \"obligacji\"",
+        "site:wbgroup.pl \"2023\" \"100 mln\" obligacji"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.wbgroup.pl/aktualnosci/nowy-inwestor-w-grupie-wb/",
+          "published_date": "2017-11-09",
+          "disposition": "Issuer new-share announcement128mPLN plus distinctNovember2017bond80m."
+        },
+        {
+          "url": "https://www.wbgroup.pl/app/uploads/2018/02/rb-2018_2_aktualizacja-informacji-nt-umowy-inwestycyjnej-zawartej-pomiedzy-akcjonariuszami-spolki-a-inwestorem.pdf",
+          "published_date": "2018-03-13",
+          "disposition": "OriginalcompletionexactFIPPvehicle; futurewarrantsnotanotherreceipt."
+        },
+        {
+          "url": "https://www.wbgroup.pl/aktualnosci/wb-electronics-debiutuje-na-catalyst-rynku-obligacji-gpw/",
+          "published_date": "2015-05-04",
+          "disposition": "OriginalcompletedNovember2014bond80m; retrospectiveannouncementdateNULL."
+        },
+        {
+          "url": "https://pfr.pl/zrealizowane-inwestycje/technologie-zbrojeniowe-wb-electronics",
+          "published_date": null,
+          "disposition": "Investororiginal128m corroborates, generic2017year superseded by issuer March2018actualsubscription."
+        },
+        {
+          "url": "https://www.wbgroup.pl/raporty/raporty-biezace-esbi/",
+          "published_date": null,
+          "disposition": "CurrentofficialESPIarchive inspected earlier/laterdisclosures. 2020/2023 bond history requires completedactualamounts."
+        },
+        {
+          "url": "https://www.wbgroup.pl/app/uploads/2026/10/rb-2026-7-zawarcie-umowy-istotnej.pdf",
+          "published_date": "2026-10-27",
+          "disposition": "Original598.9mPLNplus8.6mUSD supplyorders, notfunding."
+        },
+        {
+          "url": "https://www.wbgroup.pl/app/uploads/2026/05/rb_2026_4-zawarcie-umowy-istotnej.pdf",
+          "published_date": "2026-05-28",
+          "disposition": "OriginalSAFEprocurement9.3bnPLNcustomercontract, notissuerloan/grant."
+        },
+        {
+          "url": "https://www.wbgroup.pl/app/uploads/2026/03/rb_2026_1-zawarcie-umowy-istotnej.pdf",
+          "published_date": "2026-03-31",
+          "disposition": "OriginalHanwha987.3mPLNcomponentsales, notfunding."
+        },
+        {
+          "url": "https://www.wbgroup.pl/app/uploads/2025/03/rb-2025_2-zmiana-weo-z-1-oswiadczenie-emitenta-o-zgodzie-na-zmiane-weo.pdf",
+          "published_date": "2025-03-12",
+          "disposition": "Indexedoriginal2023bondprogrammeup-to100mterms notactualsoldamount; holdcompletionand2020refinancedamount."
+        },
+        {
+          "url": "https://www.wbgroup.pl/app/uploads/2018/02/rb-2017_13_aktualizacja-informacji-nt-emisji-obligacji.pdf",
+          "published_date": "2017-11-03",
+          "disposition": "WB issuer ESPI13/2017 actual bond settlement; primary financing facts reconciled; future capacity is not cash."
+        },
+        {
+          "url": "https://www.wbgroup.pl/app/uploads/2018/02/rb-2017_4_informacja-nt-podjecia-decyzji-o-emisji-obligacji.pdf",
+          "published_date": "2017-08-10",
+          "disposition": "WB issuer ESPI4/2017 initial110mmaximum; primary financing facts reconciled; future capacity is not cash."
+        },
+        {
+          "url": "https://www.wbgroup.pl/app/uploads/2018/02/rb-2017_7_informacja-nt-wspolpracy-z-mbank-s-a.pdf",
+          "published_date": "2017-09-04",
+          "disposition": "WB issuer signed35mPLN mBank working-capital loan; primary financing facts reconciled; future capacity is not cash."
+        },
+        {
+          "url": "https://www.wbgroup.pl/app/uploads/2017/06/rb-2023_5-emisja-obligacji-serii-1-2023.pdf",
+          "published_date": "2023-10-25",
+          "disposition": "WB originalplanned2023up-to100mbondterms; primary financing facts reconciled; future capacity is not cash."
+        },
+        {
+          "url": "https://www.wbgroup.pl/app/uploads/2017/06/rb-2020_4-aktualizacja-informacji-nt.pdf",
+          "published_date": "2020-10-13",
+          "disposition": "WB original2020allocation60,000bonds; primary financing facts reconciled; future capacity is not cash."
+        }
+      ],
+      "evidence_note": "Issuer, investor and earlier/latest public candidates checked; import only exact attributable financing subset. Missing event rows never mean zero funding.",
+      "hold_note": "Actual2020settlement and2023bondcompletion amounts, earliest2014publicfundingdate, additionalmBank/BREfacilities andsharedoverdraftamendments, grants/latestfinancing remain held.2023reportconfirms2020issuedOctober27butearlierannouncementandtransactiontermsneedfullreconciliation; no60moutstandingbalanceimport. IPOplansnotclosedraise."
+    },
+    {
+      "id": "77a9722a-b911-48d8-a7e0-d290331a899d",
+      "slug": "werobotics",
+      "name": "WeRobotics",
+      "website": "https://werobotics.org",
+      "hq_country": "United States",
+      "company_type": "research_institute",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "WeRobotics funding grant 2026 2025 Rockefeller Omidyar",
+        "site.rockefellerfoundation.org \"WeRobotics\" grant",
+        "site.werobotics.org 2026 2025 funding grant",
+        "site.rockefellerfoundation.org \"WeRobotics\" \"2016\"",
+        "site.rockefellerfoundation.org \"WeRobotics\" \"2018\"",
+        "site.gatesfoundation.org \"WeRobotics\" committed grants",
+        "site.hewlett.org \"WeRobotics\" grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://werobotics.org/blog/big-news-rockefeller-foundation",
+          "published_date": "2016-05-17",
+          "disposition": "Original/transaction-party evidence supports recorded recipient-specific event and stated qualifications."
+        },
+        {
+          "url": "https://werobotics.org/blog/hewlett-foundation-funds-werobotics",
+          "published_date": "2017-09-14",
+          "disposition": "Original/transaction-party evidence supports recorded recipient-specific event and stated qualifications."
+        },
+        {
+          "url": "https://werobotics.org/blog/autodesk-foundation",
+          "published_date": "2018-01-16",
+          "disposition": "Original/transaction-party evidence supports recorded recipient-specific event and stated qualifications."
+        },
+        {
+          "url": "https://werobotics.org/blog/rockefeller-foundation-awards",
+          "published_date": "2018-04-03",
+          "disposition": "Original/transaction-party evidence supports recorded recipient-specific event and stated qualifications."
+        },
+        {
+          "url": "https://www.gatesfoundation.org/about/committed-grants/2021/02/inv-029257",
+          "published_date": "2021-02",
+          "disposition": "Original/transaction-party evidence supports recorded recipient-specific event and stated qualifications."
+        },
+        {
+          "url": "https://werobotics.org/about/organization",
+          "published_date": null,
+          "disposition": "Issuer identifies US501C3andSwisspubliccharity; oldergrant legalpayeeunknown."
+        },
+        {
+          "url": "https://werobotics.org/blog/werobotics-turns-10",
+          "published_date": "2026-03-25",
+          "disposition": "Currentissuerhistoricalreview, not anotheraward."
+        },
+        {
+          "url": "https://hewlett.org/grants/werobotics-for-a-project-to-inform-policy-through-the-use-of-remotely-sensed-data/",
+          "published_date": null,
+          "disposition": "Originalrecordinaccessible; third-party600kclaimheld."
+        },
+        {
+          "url": "https://werobotics.org/about/resources",
+          "published_date": null,
+          "disposition": "Financialreportsinventory; donor/yearawardsneedgranularreconciliation."
+        }
+      ],
+      "evidence_note": "Issuer, current organization, funding-history and financier sources checked through2026-11-14; verified subset only; missingrowsnotzero funding.",
+      "hold_note": "Donor-year amounts, exact US/Swiss legal payees,2019Gates and2020-2025tax-return claims, latest2026awards remain unreconciled. Rockefeller1.4mcumulative excluded; Hewlett600kprimary inaccessible. Flying Labs separate recipients not inherited."
+    },
+    {
+      "id": "57bf5923-d2e3-432f-a390-4cf1709e7ea6",
+      "slug": "wescam",
+      "name": "WESCAM",
+      "website": "",
+      "hq_country": "Canada",
+      "company_type": "tier2",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "WESCAM investment financing acquisition 2002 L3",
+        "site.l3harris.com WESCAM \"division\" \"2026\"",
+        "site.l3harris.com \"WESCAM\" \"Canada\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1056239/000095013603000535/file001.txt",
+          "published_date": null,
+          "disposition": "Acquirer2002original:124.3mpurchaseconsiderationtoWescamstockholders, notprimaryfunding."
+        },
+        {
+          "url": "https://www.l3harris.com/en-ca/canada",
+          "published_date": null,
+          "disposition": "Currentparentoriginal identifies WESCAMoperations."
+        },
+        {
+          "url": "https://www.l3harris.com/newsroom/press-release/2025/05/l3harris-support-canadas-national-security-imaging-technology",
+          "published_date": "2025-05-26",
+          "disposition": "Customercontract, notinvestment."
+        }
+      ],
+      "evidence_note": "Issuer, current organization, funding-history and financier sources checked through2026-11-14; verified subset only; missingrowsnotzero funding.",
+      "hold_note": "Pre-acquisition public equity and credit history unresolved.2002sharepurchase, parent debt, factorycapex and customercontracts excluded from primary funding."
+    },
+    {
+      "id": "867821fd-aab1-49e4-8aa8-ea74ba60f392",
+      "slug": "wescam-usa",
+      "name": "Wescam USA",
+      "website": "",
+      "hq_country": "Canada",
+      "company_type": "division",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Wescam USA\" L3Harris financing 2026",
+        "site.l3harris.com \"WESCAM USA\"",
+        "\"Wescam USA\" \"funding\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://careers.l3harris.com/en/job/loveland/manufacturing-technician-c/4832/101318759968",
+          "published_date": null,
+          "disposition": "OfficialindexedWUSAservicecenterbutdirect404; not financing."
+        },
+        {
+          "url": "https://www.l3harris.com/sites/default/files/2025-11/WESCAM%20MX-Series-Authorized-Service-Centers-2025.pdf",
+          "published_date": null,
+          "disposition": "Officialindexedrepaircenterlist identifiesWUSAoperations; notcapitaltransaction."
+        },
+        {
+          "url": "https://www.publicnow.com/view/D72F20D2344B457906E909B7A5C53D6847206B25",
+          "published_date": "2026-09-29",
+          "disposition": "Governmentcontractsyndication500mIDIQwithfundingbyorders; notrecipientfunding."
+        }
+      ],
+      "evidence_note": "Issuer, current organization, funding-history and financier sources checked through2026-11-14; verified subset only; missingrowsnotzero funding.",
+      "hold_note": "Exact NashvilleWescamUSAInc versus LovelandWUSAserviceoperation versus CanadianWescam legal bridge remains unresolved. Cohort metadata preserved.500mIDIQceiling and orders not financing; parent capitalnotinherited."
+    },
+    {
+      "id": "6c527f1b-e85d-4f7f-8319-6d6fc5751559",
+      "slug": "westwood-ai",
+      "name": "Westwood AI",
+      "website": "",
+      "hq_country": "United States",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Westwood AI\" funding investment grant",
+        "site.michigan.gov \"Westwood AI\" \"100,000\"",
+        "site.grr.org \"Westwood AI\"",
+        "site.grr.org/news \"Westwood\" \"2026\"",
+        "\"Westwood AI\" site.grr.org",
+        "site.michigan.gov \"Westwood AI\" \"August 12, 2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.rightplace.org/news/westwood-ai-awarded-grant-to-participate-in-flite-program",
+          "published_date": "2026-02-06",
+          "disposition": "Original/transaction-party evidence supports recorded recipient-specific event and stated qualifications."
+        },
+        {
+          "url": "https://www.michigan.gov/leo/news/2026/10/21/whitmer-awards-funds-to-launch-12-advanced-air-mobility-projects-statewide",
+          "published_date": "2026-10-21",
+          "disposition": "Original/transaction-party evidence supports recorded recipient-specific event and stated qualifications."
+        },
+        {
+          "url": "https://www.westwoodai.com/about",
+          "published_date": null,
+          "disposition": "IssuerMichiganUASAIbusinessCEO DakoytaGreenmanverified."
+        },
+        {
+          "url": "https://www.michigan.gov/leo/news/2026/08/12/2m-awarded-to-advanced-air-mobility-companies-to-tackle-statewide-challenges",
+          "published_date": "2026-08-12",
+          "disposition": "Original fundedMDOTpilot, only2mwholefiveprojectbudget; instrumentcontractversusgrantheld."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/grandville-public-schools-announces-five-year-partnership-with-westwood-ai-to-support-the-grandville-robotics-competition-center-302034938.html",
+          "published_date": "2024-01-15",
+          "disposition": "SchooloriginalWestwood250koutgoingsponsorship, notraisedcapital."
+        }
+      ],
+      "evidence_note": "Issuer, current organization, funding-history and financier sources checked through2026-11-14; verified subset only; missingrowsnotzero funding.",
+      "hold_note": "August2026fundedpilot instrument/allocation, earliestFLITEannouncement/amount and actualpayments unresolved. Octoberaward instrumentNULL; Westwood250koutgoingsponsorship not raisedcash. Earlierprivatehistoryunknown."
+    },
+    {
+      "id": "c5e67fc2-1661-46eb-baac-58e9394257e9",
+      "slug": "wezom",
+      "name": "Wezom",
+      "website": "",
+      "hq_country": "",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"WEZOM\" funding investment company",
+        "site.wezom.com funding investment 2026",
+        "\"WEZOM\" \"investors\" \"2026\"",
+        "site.wezom.com \"investor\" \"funding\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://wezom.com/blog/what-is-wezom-solutions",
+          "published_date": "2023-08-25",
+          "disposition": "OriginalowneridentifiesrealWEZOMdomain; unrelatedimpersonatorexcluded."
+        },
+        {
+          "url": "https://startups.wezom.com/",
+          "published_date": null,
+          "disposition": "Issuer15.7mclientfundraisingportfolio, notownproceeds."
+        },
+        {
+          "url": "https://wezom.com/",
+          "published_date": null,
+          "disposition": "Currentsoftwareservices/droneengineeringbusiness, notcapitalraise."
+        },
+        {
+          "url": "https://getlatka.com/companies/WEZOM_SOFTWARE/funding",
+          "published_date": null,
+          "disposition": "Secondarybootstrappedassertionnotverifiedabsenceofcapital."
+        }
+      ],
+      "evidence_note": "Issuer, current organization, funding-history and financier sources checked through2026-11-14; verified subset only; missingrowsnotzero funding.",
+      "hold_note": "Privatehistory and exactcorporateentities unresolved; no public original pricedround found. Secondarybootstrapped assertionnotzero-fundingproof;15.7mclientsraised notWEZOMfunding."
+    },
+    {
+      "id": "57b5fb78-be93-4115-b792-9943ef43a38e",
+      "slug": "wharton-school",
+      "name": "Wharton School",
+      "website": "https://www.wharton.upenn.edu",
+      "hq_country": "United States",
+      "company_type": "",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.wharton.upenn.edu \"funding\" \"2026\" gift school",
+        "site.wharton.upenn.edu \"gift\" \"2026\"",
+        "site.wharton.upenn.edu \"Jacobs\" \"60 Million\" \"September\"",
+        "site.wharton.upenn.edu \"Jacobs\" \"2018\" \"25 million\"",
+        "\"Wharton\" \"2018\" \"50 million\" Rowan site.upenn.edu"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://news.wharton.upenn.edu/press-releases/2018/10/wharton-receives-50-million-gift-from-marc-j-rowan-and-carolyn-rowan-for-teaching-research-and-leadership/",
+          "published_date": "2018-10-02",
+          "disposition": "Original/transaction-party evidence supports recorded recipient-specific event and stated qualifications."
+        },
+        {
+          "url": "https://news.wharton.upenn.edu/press-releases/2025/09/the-wharton-school-launches-master-of-science-in-quantitative-finance-with-60-million-gift-from-dr-bruce-i-jacobs/",
+          "published_date": "2025-09-15",
+          "disposition": "Original/transaction-party evidence supports recorded recipient-specific event and stated qualifications."
+        },
+        {
+          "url": "https://statistics.wharton.upenn.edu/story/penn-receives-20m-commitment-from-scott-and-elena-shleifer-to-expand-student-opportunity/",
+          "published_date": "2026-10-23",
+          "disposition": "Original20mtoPennuniversity notWhartonallocation."
+        },
+        {
+          "url": "https://giving.upenn.edu/penn-fundraising-2026/",
+          "published_date": "2026-09-09",
+          "disposition": "2026rounduprepeatssame2025Jacobs60m, notduplicate."
+        },
+        {
+          "url": "https://alumni.wharton.upenn.edu/welcome-to-the-wharton-fund/",
+          "published_date": null,
+          "disposition": "FY2026honorrollnotasinglepricedfundinground."
+        }
+      ],
+      "evidence_note": "Issuer, current organization, funding-history and financier sources checked through2026-11-14; verified subset only; missingrowsnotzero funding.",
+      "hold_note": "UniversityofPennsylvaniaschool not standalonelegalcompany. Olderendowment and2026school-specificgifts notexhaustive. Paymentscheduleunknown; university-wide20mShleifer/Mondre excluded;Jacobs80mcumulative notextraevent."
+    },
+    {
+      "id": "7536883e-21bf-4690-a4eb-c27c32095eed",
+      "slug": "whisper-aero",
+      "name": "Whisper Aero",
+      "website": "https://www.whisper.aero/",
+      "hq_country": "United States",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Whisper Aero funding Series A 2023 2026 investors",
+        "site:whisper.aero funding 2026 2025 seed",
+        "site:whisper.aero \"7.5\" funding seed",
+        "site:whisper.aero \"Series B\" 2026",
+        "site:whisper.aero \"funding\" \"2026\"",
+        "\"Whisper Aero\" \"sec.gov\" \"2026\"",
+        "\"Whisper Aero\" \"seed\" site:menlovc.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.whisper.aero/news/series-a-press-release",
+          "title": "Whisper Aero original Series A",
+          "published_date": "2023-04-18",
+          "source_type": "company_announcement",
+          "disposition": "Original issuer page inspected for identity and earlier/latest history. Product, customer, procurement and partnership activity not treated as financing; remaining source-specific limitations recorded in hold_note."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1984798/000198479826000003/xslFormDX01/primary_doc.xml",
+          "title": "Whisper Aero Inc original equity Form D",
+          "published_date": "2026-09-17",
+          "source_type": "company_announcement",
+          "disposition": "Original SEC filing read: issuer identity, securities, offered/sold amount, first-sale and public filing dates checked. 2023expanded-offering bridge held;2026equity amount imported once."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1984798/000198479823000002/xslFormDX01/primary_doc.xml",
+          "title": "2023SECconflictingexpandedoffering",
+          "published_date": "2023-07-13",
+          "source_type": "company_announcement",
+          "disposition": "Original SEC filing read: issuer identity, securities, offered/sold amount, first-sale and public filing dates checked. 2023expanded-offering bridge held;2026equity amount imported once."
+        },
+        {
+          "url": "https://www.whisper.aero/news",
+          "title": "Current issuerarchive",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original issuer page inspected for identity and earlier/latest history. Product, customer, procurement and partnership activity not treated as financing; remaining source-specific limitations recorded in hold_note."
+        },
+        {
+          "url": "https://www.whisper.aero/news/whisper-aero-and-tennessee-tech-awarded-tngo-grant-for-whisper-glider-ultraquiet-flights-in-tennessee",
+          "title": "Joint500kTNGOaward",
+          "published_date": "2025-04-02",
+          "source_type": "company_announcement",
+          "disposition": "Issueroriginaljointaward500kwithTennesseeTech;allocationnotdisclosed,not500kWhispergrant. STRATFI/OECIFmentionedascontracts."
+        },
+        {
+          "url": "https://www.whisper.aero/news/whisper-aero-announces-jetfoil-tm-enabled-collaborative-logistics-aircraft-for-the-us-department-of-defense",
+          "title": "STRATFI/OECIF contracts",
+          "published_date": "2025-05-06",
+          "source_type": "company_announcement",
+          "disposition": "Original issuer page inspected for identity and earlier/latest history. Product, customer, procurement and partnership activity not treated as financing; remaining source-specific limitations recorded in hold_note."
+        }
+      ],
+      "evidence_note": "Research checked issuer, financing/history and transaction-party sources. Import only supported subset; unknown history remains explicit.",
+      "hold_note": "Hold2021seed/SAFE timing,2023SEC41,399,996versus32mA bridge and2026SeriesBlabel/50mclaims. JointTennesseeTech500kallocationunknown, no500kissuergrant. STRATFI/OECIFarecontracts with no attributableamount, not ordinaryequity/grants. NASAgrant/contracttermsrequireindividualaudit."
+    },
+    {
+      "id": "689576a2-83a2-4623-b662-b5654fadedb5",
+      "slug": "widetronix",
+      "name": "Widetronix",
+      "website": "",
+      "hq_country": "United States",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Widetronix funding investment grant 2026",
+        "\"Widetronix\" investment funding Primary Gotham NYSERDA",
+        "\"Widetronix\" site:primary.vc",
+        "\"Widetronix\" site:widetronix.com \"funding\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/EIBD/Research/Power-Systems/2016-17-CAIR-NY-BEST-annual-report.pdf",
+          "title": "NYSERDA official2016CAIR report",
+          "published_date": "2017-06",
+          "source_type": "investor_announcement",
+          "disposition": "Official report page24 recipient share246347 verified;397159cofund excluded;800kangel and2.2maggregate need round bridge."
+        },
+        {
+          "url": "https://news.cornell.edu/stories/2010/05/widetronix-corp-receives-federal-funding",
+          "title": "Cornell original public announcement with issuer CEO and award-provider representative",
+          "published_date": "2010-05-04",
+          "source_type": "company_announcement",
+          "disposition": "Original university report of May3public announcement with companyCEO/funder representative establishes TSEC1.2mgrant andDoD1maward; issuer2.2mDoDheadline corrected by source split."
+        },
+        {
+          "url": "https://www.widetronix.com/news",
+          "title": "Issuerarchive2.2mDoDconflict",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original historicalarchive labels2.2mDoD, but linked contemporaneous Cornell original identifies two funders; do not create aggregateadditionalround."
+        },
+        {
+          "url": "https://www.widetronix.com/applications",
+          "title": "Issuer historicalDoDfunding",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original issuer page inspected for identity and earlier/latest history. Product, customer, procurement and partnership activity not treated as financing; remaining source-specific limitations recorded in hold_note."
+        },
+        {
+          "url": "https://gothamvc.com/portfolio/widetronix/",
+          "title": "Gothamoriginalportfolio",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Original investorportfolio confirmsWidetronix;noindividualround orchequeassigned."
+        },
+        {
+          "url": "https://aventure.vc/companies/widetronix-ithaca-ny-us/fundraising",
+          "title": "Secondaryeventcandidates",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Secondary venture/grantcandidate amountsanddatesrequireoriginalreconciliation;notverifiedfacts."
+        }
+      ],
+      "evidence_note": "Research checked issuer, financing/history and transaction-party sources. Import only supported subset; unknown history remains explicit.",
+      "hold_note": "Hold exactdates andsoldamounts2008/2010/2011/2015ventureclaims,Primaryvehicle,SBIRawardterms,800kangelversus2.2mcumulativeoverlap andlatestprivatehistory.246347officialprojectshare replacesnoexistingfact;249067secondaryconflict retained."
+    },
+    {
+      "id": "05a0f5b1-7f1d-4bd5-bb66-bd4f8ae226a4",
+      "slug": "wilcox-cherry-defense",
+      "name": "Wilcox Cherry Defense",
+      "website": "",
+      "hq_country": "United States",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Wilcox Cherry Defense\" investment funding",
+        "\"Wilcox Cherry Defense\" site:wilcoxind.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.linkedin.com/posts/wilcoxindustries_were-excited-to-partner-with-general-cherry-activity-7444450618515034112-9vhJ",
+          "title": "Wilcoxoriginaljointventureproposal",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original Wilcox post and GeneralCherry quoted proposal disclose pendingJV and approvalconditions, no attributablecash/security/ownershippercentage."
+        },
+        {
+          "url": "https://gencherry.com/en/news/heneral-chereshnia-u-druhomu-raundi-drone-dominance-program",
+          "title": "GeneralCherrycurrentJVindexedoriginal",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Indexed current issuer page says USJV; directfetch403. No completed capitalcontribution imported from inaccessibletext."
+        },
+        {
+          "url": "https://cage.report/CAGE/20KL5",
+          "title": "CAGE/SAMidentitycandidate",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Original issuer page inspected for identity and earlier/latest history. Product, customer, procurement and partnership activity not treated as financing; remaining source-specific limitations recorded in hold_note."
+        }
+      ],
+      "evidence_note": "Research checked issuer, financing/history and transaction-party sources. Import only supported subset; unknown history remains explicit.",
+      "hold_note": "Jointventureproposaloriginalsubjecttoapprovals; laterissuerindexedpage403 saysJV,but exactlegalcapitalizationandactualcontributionsunknown. SAM/CAGEregistrationnotcapitalreceipt. DroneDominanceprocurementawardsnotfinancing. No parentfundinginherited."
+    },
+    {
+      "id": "b68fc67a-a6ac-4dec-b987-a5bce29829b3",
+      "slug": "wilcox-industries",
+      "name": "Wilcox Industries",
+      "website": "https://www.wilcoxind.com",
+      "hq_country": "United States",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Wilcox Industries\" investment acquisition funding",
+        "site:wilcoxind.com \"funding\" \"2026\"",
+        "\"Wilcox Industries\" \"investors\" \"loan\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://wilcoxind.com/about",
+          "title": "Issueroriginalidentity",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original issuer page inspected for identity and earlier/latest history. Product, customer, procurement and partnership activity not treated as financing; remaining source-specific limitations recorded in hold_note."
+        },
+        {
+          "url": "https://wilcoxind.com/",
+          "title": "Currentissuernews",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original issuer page inspected for identity and earlier/latest history. Product, customer, procurement and partnership activity not treated as financing; remaining source-specific limitations recorded in hold_note."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/wilcoxindustries_were-excited-to-partner-with-general-cherry-activity-7444450618515034112-9vhJ",
+          "title": "IssuerJVproposal",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original Wilcox post and GeneralCherry quoted proposal disclose pendingJV and approvalconditions, no attributablecash/security/ownershippercentage."
+        }
+      ],
+      "evidence_note": "Research checked issuer, financing/history and transaction-party sources. Import only supported subset; unknown history remains explicit.",
+      "hold_note": "Exactprivatefundinghistory/owners/borrowingsunresolved. JointventurewithGeneralCherryisoutboundbusinessactivitynotWilcoxcapitalraised. Babcock&WilcoxandWilcoxEmbarcaderounrelatedissuersexcluded. Procurementnotprimaryfunding."
+    },
+    {
+      "id": "a92a9708-91de-43c8-8c38-6f9e37de100e",
+      "slug": "williams-international",
+      "name": "Williams International",
+      "website": "https://www.williams-int.com",
+      "hq_country": "United States",
+      "company_type": "tier1",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Williams International\" financing investment 2026 2025",
+        "\"Williams International\" \"financing\" \"2026\"",
+        "\"Williams International\" \"investor\" \"loan\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.williams-int.com/",
+          "title": "Issuerprivatecompanyoriginal",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original issuer page inspected for identity and earlier/latest history. Product, customer, procurement and partnership activity not treated as financing; remaining source-specific limitations recorded in hold_note."
+        },
+        {
+          "url": "https://www.williams-int.com/press-releases/",
+          "title": "Currentissuer2026archive",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original issuer page inspected for identity and earlier/latest history. Product, customer, procurement and partnership activity not treated as financing; remaining source-specific limitations recorded in hold_note."
+        },
+        {
+          "url": "https://ogdencity.gov/m/newsflash/home/detail/880",
+          "title": "OgdenmixedinfrastructureTIF",
+          "published_date": "2025-03-12",
+          "source_type": "investor_announcement",
+          "disposition": "Approvedup-to22mTIFincludesup-to17melectricalinfrastructurebenefitingotherbusinesses;5.5mwaterlineseparate. No exactissuer cashallocation."
+        },
+        {
+          "url": "https://www.utah.gov/pmn/files/1207543.pdf",
+          "title": "GOEOownershipandproposed29mcredit",
+          "published_date": "2024-12-12",
+          "source_type": "investor_announcement",
+          "disposition": "Official executive summary explicitlyGreggWilliams100%owner since1999;29,024,460taxcredit recommendation andissuer1bncapexnotreceivedfunding."
+        },
+        {
+          "url": "https://floridajobs.org/news/detail/2026/05/20/icymi--state-of-florida-and-williams-international-announce-billion-dollar-investment-in-northwest-florida",
+          "title": "Floridaissuerbillioncapex",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Official announcement describesissuerplanned1bnfactorycapitalexpenditure;3.2mcountyinfrastructuregrantnotWilliamsreceipt. URLdateversusbodyMay29 2025conflictretained."
+        }
+      ],
+      "evidence_note": "Research checked issuer, financing/history and transaction-party sources. Import only supported subset; unknown history remains explicit.",
+      "hold_note": "Utah29,024,460postperformancetaxcreditisproposedrecommendation,notapprovedcash. Ogdenup-to22mTIFincludesup-to17msharedinfrastructure,5.5mwaterlineseparate;recipientcashallocationunknown. Florida1bnisplannedissuerCAPEX,notraise. Williamsenergy/oilbusinessunrelated. Earlier/privateborrowingsunknown."
+    },
+    {
+      "id": "960b2865-ab39-470f-886e-3fc0e2eb3960",
+      "slug": "windward",
+      "name": "Windward",
+      "website": "https://www.windward.ai",
+      "hq_country": "Israel",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Windward funding series B C IPO FTV 2026 2025",
+        "site:windward.ai \"16.5\" funding",
+        "site:windward.ai \"10.8\" funding",
+        "\"Windward\" \"16.5 million\" \"XL\" 2018",
+        "\"Windward\" \"5 million\" Aleph 2013"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.leadersmag.com/issues/2014.2_Apr/PDFs/LEADERS-Ami-Daniel-Windward.pdf",
+          "title": "Windward CEO original interview confirms first institutional financing",
+          "published_date": "2014-04",
+          "source_type": "third_party_report",
+          "disposition": "CEO first-person primaryinterview confirmsraised5mfromAleph;Nov2013announcementdaycorroboratedbycontemporaneousGlobes originalinterview/report."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/windward-to-use-108m-horizons-ventures-led-strategic-investment-to-expand-maritime-data-platform-501477221.html",
+          "title": "Windward issuer strategic investment original",
+          "published_date": "2015-04-27",
+          "source_type": "company_announcement",
+          "disposition": "IssuerApril27 2015original confirms10.8mUSD,Horizonslead,AlephparticipantandTomGloceradditionalinvestor;securityundisclosed."
+        },
+        {
+          "url": "https://windward.ai/company/investors/",
+          "title": "Issueractualowner",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "IssuercurrentIRconfirmsactualacquirerOctopusUKBidcoLimited whollyownedFTVVIIIandaffiliates, completed18March2025; acquisitionnotprimaryfunding."
+        },
+        {
+          "url": "https://ftvcapital.com/2025/ftv-capital-completes-acquisition-of-maritime-ai-leader-windward/",
+          "title": "Acquirercompletedtakeprivate",
+          "published_date": "2025-03-18",
+          "source_type": "investor_announcement",
+          "disposition": "OriginalacquirerconfirmsMarch18 2025takeprivate;noissuerprimarycapitalallocation."
+        },
+        {
+          "url": "https://investors.windward.ai/wp-content/uploads/2021/10/Windward-Ltd-Admission-Document.pdf",
+          "title": "Admissiondocumentindexedoriginalredirects",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Indexed original exposescredit/financingterms but directPDFredirectstoIR. Hold2018C/2021CFA/IPOshareallocationandNISfacilitydraws beforeimportevidence."
+        },
+        {
+          "url": "https://ftvcapital.com/portfolio-item/windward/",
+          "title": "Latest2026investorportfolio",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "CurrentinvestorportfolioandApril13 2026ProminentEdgeacquisitionlisted;outboundacquisitionnotWindwardnewfunding."
+        }
+      ],
+      "evidence_note": "Research checked issuer, financing/history and transaction-party sources. Import only supported subset; unknown history remains explicit.",
+      "hold_note": "Hold2018SeriesC13.3m versus16.5m and2021CFA3.3mrelationship;2021IPOprimaryversussellerallocation,originalcurrencies,creditfacilitydraws andlatestposttakeprivatecapitalization. AdmissionPDFredirectstoIR; indexedfacilityNIS14.7mnotcash.2026ProminentEdgeacquisitionoutboundspendnotraise."
+    },
+    {
+      "id": "6df37bd0-5d99-4602-96ef-8df34db1753e",
+      "slug": "wing-alphabet-inc",
+      "name": "Wing (Alphabet Inc.)",
+      "website": "https://wing.com",
+      "hq_country": "United States",
+      "company_type": "division",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Wing Alphabet funding investment 2026 2025 parent",
+        "site:wing.com \"Alphabet\" \"2026\"",
+        "site:wing.com \"125\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://wing.com/about",
+          "title": "Wing current issuer identity",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Current issuer identity and parent ownership only."
+        },
+        {
+          "url": "https://www.x.company/projects/wing/",
+          "title": "Alphabet X original Wing graduation",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Graduated Alphabet company2018; no distinct financing amount."
+        },
+        {
+          "url": "https://www.wsj.com/business/alphabets-drone-unit-to-invest-up-to-125-million-in-new-texas-facility-d9725c3b",
+          "title": "Factory spending report",
+          "published_date": "2026-11-06",
+          "source_type": "third_party_report",
+          "disposition": "125mcapitalexpenditure, not evidenced financing proceeds; original investment instrument unavailable."
+        }
+      ],
+      "evidence_note": "Issuer/transaction-party public sources checked across earlier history and current financing/identity. Only supported recipient-specific subset imported; no zero-funding inference.",
+      "hold_note": "Earlier/latest internal capitalization amounts and intercompany instruments remain undisclosed;125mTexasfactoryspending is not a round. Parent bonds and retailerpartnerships excluded."
+    },
+    {
+      "id": "80675d36-4b48-48f5-9430-2ba5d66938b5",
+      "slug": "wingsland",
+      "name": "Wingsland",
+      "website": "https://www.wingsland.org",
+      "hq_country": "China",
+      "company_type": "",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Wingsland 深圳 曼塔 投资 融资",
+        "\"Wingsland\" \"曼塔\" \"增资\"",
+        "\"Wingsland\" site:cninfo.com.cn 曼塔",
+        "\"曼塔智能\" \"融资\" \"雪莱特\" 2015",
+        "\"Wingsland\" \"2026\" investment funding",
+        "\"曼塔\" \"WINGSLAND\" \"2015\" \"1500\"",
+        "site:static.cninfo.com.cn \"2015\" \"增资深圳曼塔\" \"1500\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.wingsland.org/",
+          "title": "Supplied cohort website",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Footer identifies Amazon affiliate; cannot assume legal issuer website."
+        },
+        {
+          "url": "https://www.bhphotovideo.com/lit_files/319647.pdf",
+          "title": "Manufacturer original Wingsland Minivet manual",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Manufacturer footer Shenzhen WINGSLAND Technology; Chinese Manta legal continuity needs reconciliation."
+        },
+        {
+          "url": "https://static.cninfo.com.cn/finalpage/2015-05-18/1201026989.PDF",
+          "title": "Original Cnlight Manta capital increase",
+          "published_date": "2015-05-18",
+          "source_type": "investor_announcement",
+          "disposition": "15mCNYprimarycapital signedMay15/announcedMay18; exactbridge to cohort manufacturer held."
+        },
+        {
+          "url": "https://pdf.dfcfw.com/pdf/H2_AN201603300014143480_1.pdf",
+          "title": "Cnlight original2015annualreport",
+          "published_date": "2016-03",
+          "source_type": "investor_announcement",
+          "disposition": "Original company report completedManta15mcapitalincrease candidate; not imported without brand/legal bridge."
+        },
+        {
+          "url": "https://static.cninfo.com.cn/finalpage/2016-10-27/1202791820.PDF",
+          "title": "Cnlight2016Q3original",
+          "published_date": "2016-10-27",
+          "source_type": "investor_announcement",
+          "disposition": "US500ksubsidiary formation and plannedGerman500k are not Chineseparent proceeds."
+        },
+        {
+          "url": "https://www.csrc.gov.cn/guangdong/c104548/c1383299/content.shtml",
+          "title": "CSRC guarantee-procedure findings",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "2016Manta guarantee limits not actual drawn debt; no loan inferred."
+        }
+      ],
+      "evidence_note": "Issuer/transaction-party public sources checked across earlier history and current financing/identity. Only supported recipient-specific subset imported; no zero-funding inference.",
+      "hold_note": "Resolve ShenzhenManta-to-ShenzhenWINGSLAND legalcontinuity and affiliatecohortURL;15mCNYprimary candidate held, US/German subsidiary formation notinherited. Laterguarantees actualdraws held."
+    },
+    {
+      "id": "1efcab95-4181-4bb3-b56c-764d745c4ec7",
+      "slug": "wingxpand",
+      "name": "WingXpand",
+      "website": "",
+      "hq_country": "",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "WingXpand funding investment round investors",
+        "site:wingxpand.com funding Techstars Arch Grants",
+        "\"WingXpand\" site:archgrants.org",
+        "site:wingxpand.com \"funding\" 2026 2025",
+        "\"WingXpand\" \"50,000\" site:washu.edu",
+        "\"WingXpand\" \"2022\" \"75,000\" grant",
+        "\"WingXpand\" site:techstars.com \"2022\"",
+        "\"WingXpand\" \"Arch Grants\" \"2022\" site:archgrants.org"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://source.washu.edu/2025/04/first-washu-venture-network-follow-on-investments-awarded/",
+          "title": "WashU original recipient-specific follow-on award",
+          "published_date": "2025-04-18",
+          "source_type": "investor_announcement",
+          "disposition": "Received50krecipient allocation verified."
+        },
+        {
+          "url": "https://archgrants.org/companies/wingxpand/",
+          "title": "Arch Grants original 2022 recipient identity",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "2022recipient grant confirmed, exactamount held."
+        },
+        {
+          "url": "https://www.techstars.com/blog/impact/techstars-update-december-2022",
+          "title": "Techstars original new investments cohort",
+          "published_date": "2022-12-28",
+          "source_type": "investor_announcement",
+          "disposition": "Named newinvestedcohort confirmed; standardticket notassumed."
+        },
+        {
+          "url": "https://archgrants.org/three-arch-grants-companies-win-washu-follow-on-funding/",
+          "title": "Arch Grants WashU followon",
+          "published_date": "2025-04-20",
+          "source_type": "investor_announcement",
+          "disposition": "Same50k, not extra event."
+        },
+        {
+          "url": "https://www.wingxpand.com/",
+          "title": "Current issuer site",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Operationalawards/partnership logos not newfinancing."
+        },
+        {
+          "url": "https://www.wingxpand.com/media/st-louis-startup-scales-u-s--made-drone-manufacturing-as-states-consider-foreign-drone-restrictions",
+          "title": "Issuer-indexed media repost",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Indexed500kpreseed2023 candidate; direct404 and republicationdate unreliable; held."
+        },
+        {
+          "url": "https://archgrants.org/wp-content/uploads/2024/12/Arch-Grants-2023-Impact-Report.pdf",
+          "title": "Arch Grants original impact report",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Growthgrantmentioned; amount/date and originalIRSschedule held; AirForceSBIRcontract excludedasprocurement."
+        }
+      ],
+      "evidence_note": "Issuer/transaction-party public sources checked across earlier history and current financing/identity. Only supported recipient-specific subset imported; no zero-funding inference.",
+      "hold_note": "Reconcile2023preseed500k original,2022grant75k andgrowthgrant100k claims, namedangelvehicles, Armyawardgrantversusprocurement. Techstarsrecipientexecutedterms unknown."
+    },
+    {
+      "id": "e9451ac4-e815-4a98-89bd-4770867400cb",
+      "slug": "wiremasters",
+      "name": "WireMasters",
+      "website": "",
+      "hq_country": "",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"WireMasters\" investment financing capital equity",
+        "\"WireMasters\" \"capital\" \"investment\" owner",
+        "\"WireMasters\" \"2026\" \"funding\" OR \"loan\"",
+        "site:wiremasters.com \"2026\" \"investment\" OR \"funding\" OR \"loan\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.wiremasters.com/about/our-history",
+          "title": "WireMasters original history",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original2001Hillpurchase is ownership, noprimary funding."
+        },
+        {
+          "url": "https://www.wiremasters.com/about/leadership",
+          "title": "WireMasters owner board",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "IndexedcurrentownersDavid/Brad/BrentHill; direct403. No inventedcorporatefund."
+        },
+        {
+          "url": "https://www.wiremasters.com/news",
+          "title": "WireMasters currentnews",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Directpage unavailable; recentdistribution/staffnews notfundraising."
+        },
+        {
+          "url": "https://prospeo.io/c/wiremasters",
+          "title": "Aggregator empty funding field",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Never raised claim rejected: missingdatabasenotzerofunding."
+        }
+      ],
+      "evidence_note": "Issuer/transaction-party public sources checked across earlier history and current financing/identity. Only supported recipient-specific subset imported; no zero-funding inference.",
+      "hold_note": "HistoricHillpurchasefinancing, currentprivatecapital anddebt terms unverified. Owneridentity does notestablish primarycash; emptydatabases notzerofunding."
+    },
+    {
+      "id": "13c1b6a9-10d0-4153-bafa-a7d141090c62",
+      "slug": "wisk-aero",
+      "name": "Wisk Aero",
+      "website": "https://www.wisk.aero",
+      "hq_country": "United States",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Wisk Aero funding Boeing 450 million 2022",
+        "site:wisk.aero \"2026\" \"Boeing\" Archer",
+        "\"Wisk\" \"2019\" site:boeing.com joint venture Kitty Hawk"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://wisk.aero/newsroom/wisk-aero-secures-450-million-from-boeing",
+          "title": "Wisk original Boeing funding announcement",
+          "published_date": "2022-01-24",
+          "source_type": "company_announcement",
+          "disposition": "450mannounced separately from undisclosed priorJVfinancings."
+        },
+        {
+          "url": "https://wisk.aero/newsroom/archeracquireswisk",
+          "title": "Original proposedArcheracquisition",
+          "published_date": "2026-08-09",
+          "source_type": "company_announcement",
+          "disposition": "HeaderAug9 vsdatelineAug10; definitive agreement stillclosingconditions. ConsiderationtoBoeing notprimaryWiskfunding."
+        },
+        {
+          "url": "https://wisk.aero/newsroom",
+          "title": "Current issuer archive",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "October30vertiport andNovember6blog latestentries; operational notrounds."
+        },
+        {
+          "url": "https://www.boeing.com/content/theboeingcompany/us/en/innovation/innovation-quarterly/2025/02/iq2025q1-evtolevolution.html",
+          "title": "Boeing original JVhistory",
+          "published_date": "2025-02",
+          "source_type": "investor_announcement",
+          "disposition": "2019JV/2023ownership succession; no additionalamounts."
+        }
+      ],
+      "evidence_note": "Issuer/transaction-party public sources checked across earlier history and current financing/identity. Only supported recipient-specific subset imported; no zero-funding inference.",
+      "hold_note": "EarlierJVrounds cannot beaggregated;2019formation moneyunknown.450mdisbursement/securityunreported.2026Archeragreementclosing andissuer-specific postacquisition capitalization held; no sellerconsideration imported."
+    },
+    {
+      "id": "080629b5-6196-4870-81b5-518a9803797d",
+      "slug": "wispr-systems",
+      "name": "WISPR Systems",
+      "website": "",
+      "hq_country": "United States",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "queued",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"WISPR Systems\" investment funding seed 2026 2025",
+        "\"WISPR\" site:msstate.edu investment",
+        "site:wisprsystems.com \"funding\" OR \"investment\" OR \"grant\"",
+        "\"WISPR\" \"2024\" site:msstate.edu",
+        "\"WISPR\" \"300,000\" funding",
+        "\"WISPR Systems\" \"2017\" \"grant\" Mississippi",
+        "\"WISPR Systems\" site:sec.gov/Archives/edgar"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.newsarchive.msstate.edu/newsroom/article/2018/05/skys-limit-msu-student-venture-may-have-global-impact-rural-internet",
+          "title": "MSU original WISPr Bulldog investment",
+          "published_date": "2018-05-03",
+          "source_type": "investor_announcement",
+          "disposition": "2018May3received450k, notDecemberdatabase duplicate."
+        },
+        {
+          "url": "https://wisprsystems.com/",
+          "title": "Current issuer",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Batesvilledronecompany distinct fromWisprFlowvoiceAI; products/compliance notfinancing."
+        },
+        {
+          "url": "https://wisprsystems.com/financing/",
+          "title": "Issuer financinglink",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Customer-finance navigation; inaccessible, notissuerborrower evidence."
+        },
+        {
+          "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/veto/HB1707.pdf",
+          "title": "Governor originalHB1707veto",
+          "published_date": "2024-05-13",
+          "source_type": "investor_announcement",
+          "disposition": "Indexedveto includes500kWISPRappropriation; direct502. Do not importasclosedgrant."
+        },
+        {
+          "url": "https://billstatus.ls.state.ms.us/documents/2023/pdf/HB/1500-1599/HB1510IN.pdf",
+          "title": "Introduced2023WISPRappropriationbill",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "500kproposal notlaw/recipientreceipt."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/wispr-systems/financials",
+          "title": "Secondary funding claims",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "2024USD300k and2018dates inconsistent; originalsheld. 2017genericprogrammegrant notrecipient-specific amount."
+        }
+      ],
+      "evidence_note": "Issuer/transaction-party public sources checked across earlier history and current financing/identity. Only supported recipient-specific subset imported; no zero-funding inference.",
+      "hold_note": "2017grant recipientamount and2024USD300k round need originals;500klegislativeveto/proposal notgrantreceipt. DistinguishvoiceAIWisprFlow. Unknownsecurity/actualangelvehicles retained."
+    }
+  ],
+  "source_and_identity_reconciliation": [
+    {
+      "company_slug": "wisk-aero",
+      "sources": [
+        {
+          "url": "https://wisk.aero/newsroom/wisk-aero-secures-450-million-from-boeing",
+          "disposition": "Root opened24January2022 issuer original:450mUSD new Boeing funding separate from unspecified prior funding; no JV cumulative invented round."
+        }
+      ]
+    },
+    {
+      "company_slug": "whisper-aero",
+      "sources": [
+        {
+          "url": "https://www.whisper.aero/news/series-a-press-release",
+          "disposition": "Root original18April2023 names32mSeriesA and explicit syndicate/co-leads; named actualfund CapricornTechnologyImpactFund distinguished frommanager."
+        }
+      ]
+    },
+    {
+      "company_slug": "windward",
+      "sources": [
+        {
+          "url": "https://windward.ai/company/investors/",
+          "disposition": "Root currentissuer confirms18March2025 acquisition byOctopusUKBidco,FTVVIII LPandaffiliates; sharepurchase notprimaryround."
+        }
+      ]
+    },
+    {
+      "disposition": "WB new-share128mPLN completed2018 exact FIPP vehicle; bond refinancing actual80m once versus110mcapacity, mBank35mcommitment notdraw. Watchtower nonprofit distinct fromAI WatchtowerLabs. WASSacquisition notprimary. University charitable gifts explicitly philanthropic commitments, not equity. WeRobotics own grants distinguished from individual FlyingLabs recipients; US/Swisspayee limitations retained. Westwoodaward excludesprogramme totals. Whisper2026equity actual SECsold46,317,349 not unverified B/B1/B2 or50m;2013/2015Windward issuer history distinct fromIPO/secondarytakeprivate. WingXpandactual recipient awards and investedcohort do not inherit standard programme terms. WISPRveto/proposedappropriation excluded. WingslandlegalbrandMantaandforeigninvestment bridge remainsheld."
+    }
+  ],
+  "canonical_profile_mappings": [],
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "frozen_group_sha256": {
+      "group-a.json": "df8e4b2ac627d7fe7819127b17d7a62dbf9ab0301283bc9a3610f2c84ba02833",
+      "group-b.json": "c65aa6d860d06676ca7fbcb316d7c42f26df94f25ef140637fff5282de10403b",
+      "group-c.json": "88a6c7d584b8037817893ab682312a7c82f6b674e7c967eb9ca023f5558afacc",
+      "group-d.json": "0979bfc56dcfdc54bcb39607c1ab0b51402e17ebd5d12cea7ef37c9aca42f787"
+    },
+    "meaningful_postgresql_tests": "Rollback, atomic counts, idempotence, conflict rejection and participant-source FK passed.",
+    "production_rollback_baseline_restored": true,
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 25,
+      "mismatched_facts": 0,
+      "participant_matches": 34,
+      "source_matches": 30,
+      "relationship_matches": 9,
+      "missing_link_sources": 0
+    },
+    "company_investment_research_actual_count": {
+      "research_rows": 1280,
+      "partial_rows": 1280,
+      "new_exact_name_duplicate_groups": 0
+    },
+    "prior_data_hashes": {
+      "prior_relationships_hash": "1cd54a99ec55114903c1ab3b0b5ae799",
+      "prior_rounds_hash": "9a5b07c89c82e46af53a4cac1fb7c86e"
+    },
+    "all24_company_metadata_hashes_preserved": true,
+    "selected_legacy_relationships_before": [],
+    "selected_legacy_relationships_exactly_preserved": true
+  },
+  "publication_scope": {
+    "current_manifest_event_rows": 25,
+    "current_manifest_live_matches": 0,
+    "targets_in_european_map_before": [],
+    "note": "All24targets outside current European map; existing geography/publication gates preserved."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles/legacy relationships",
+    "Company metadata/publication gates",
+    "Repository schedules",
+    "No new paid API"
+  ],
+  "programme_complete": false
+}
