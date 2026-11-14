@@ -1,0 +1,1189 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-14",
+  "started_at": "2026-11-14T03:47:31Z",
+  "manifest": "research-agent/imports/funding-landscape-20261114-seventy-sixth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 2,
+    "new_or_retained_partial": 22,
+    "new_approved_events": 25,
+    "new_round_participations": 53,
+    "new_source_rows": 31,
+    "new_generic_portfolio_relationships": 8,
+    "new_companies_with_events": 11,
+    "new_investor_profiles": 32,
+    "group_search_queries_executed": 125,
+    "root_additional_search_queries": 6,
+    "search_queries_executed": 131,
+    "per_company_search_ledger_entries": 125,
+    "source_ledger_entries": 101,
+    "company_database_identity_contexts_checked": 24,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "event_matches": 25,
+    "mismatched_facts": 0,
+    "participant_matches": 53,
+    "source_matches": 31,
+    "relationship_matches": 8,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 1,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 3879,
+    "approved": 3866,
+    "links": 5344,
+    "sources": 5344,
+    "profiles": 3138,
+    "covered": 1093,
+    "relationships": 508,
+    "preserved_profiles_hash": "5adbdff79777d22232cff29b4945e97d"
+  },
+  "production_after": {
+    "events": 3904,
+    "approved": 3891,
+    "links": 5397,
+    "sources": 5375,
+    "profiles": 3170,
+    "covered": 1104,
+    "relationships": 516,
+    "preserved_profiles_hash": "5adbdff79777d22232cff29b4945e97d"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1148,
+    "source_review_partial": 977,
+    "queued": 439
+  },
+  "per_company": [
+    {
+      "id": "13d1a4a5-190d-4d70-85e7-ad7a14847d04",
+      "slug": "sinab-technologies",
+      "name": "SiNAB Technologies",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SiNAB Technologies investment funding seed grant 2026",
+        "SiNAB site:sinab.com grant investment funding",
+        "site:sinab.com grant 2025 2026",
+        "site:sinab.com investment funding grant Phoenix 2024 2026",
+        "SiNAB site:nsw.gov.au 215000 Bushfire Commercialisation",
+        "site:sinab.com Defence Innovation grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.nsw.gov.au/grants-and-funding/bushfire-commercialisation-fund",
+          "published_date": null,
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://www.sinab.com/sinab-secures-grant/",
+          "published_date": null,
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://www.sinab.com/sinab-phoenix-rises-from-defence-innovation-grant/",
+          "published_date": null,
+          "disposition": "Opened original retrospective Defence Innovation Hub/RAAF development support; separate legal award/instrument/amount/date held."
+        },
+        {
+          "url": "https://www.sinab.com/news/",
+          "published_date": null,
+          "disposition": "Indexed original current archive; exhibitions/partnerships not incoming financing."
+        }
+      ],
+      "evidence_note": "Original issuer, investor, registry and local-language sources checked as applicable. Unknown and held candidates do not establish zero financing.",
+      "hold_note": "Earlier Defence Innovation Hub financing has unverified instrument/amount/first date. NSW approval is not payment; grant commercial-success terms require contract before repayment assertions."
+    },
+    {
+      "id": "17e877a0-fb67-497b-841d-f8db287fe1ef",
+      "slug": "singularity",
+      "name": "Singularity",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Singularity rocket interceptor funding investment 2026",
+        "Singularity site:singularityus.com 80 million financing",
+        "site:singularityus.com 80 July",
+        "site:singularityus.com funding 2026",
+        "site:singularityus.com Series A",
+        "site:singularityus.com seed investors",
+        "Singularity 80 million July2026 site:businesswire.com",
+        "Singularity $80 site:felicis.com",
+        "Singularity 80M khosla ventures",
+        "Singularity 80million BusinessWire",
+        "\"Singularity Emerges from Stealth with $80M Series A\" \"Business Wire\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://finance.yahoo.com/technology/articles/singularity-emerges-stealth-80m-series-133500204.html",
+          "published_date": "2026-07-14",
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260714185502/en/",
+          "published_date": "2026-07-14",
+          "disposition": "Direct fetch inaccessible; exact issuer paid release full text indexed on Yahoo syndication, not independent reporting."
+        },
+        {
+          "url": "https://www.singularityus.com/post/singularity-x-nawcwd-rocket-motor-milestone",
+          "published_date": "2026-10-22",
+          "disposition": "Original indexed rocket milestone confirms exact issuer; CRADA not an allocated financing award."
+        },
+        {
+          "url": "https://www.singularityus.com/",
+          "published_date": null,
+          "disposition": "Opened homepage returned no readable body; no zero-funding inference."
+        }
+      ],
+      "evidence_note": "Original issuer, investor, registry and local-language sources checked as applicable. Unknown and held candidates do not establish zero financing.",
+      "hold_note": "Earlier seed timing, amounts and possible separate closings unverified. Additional named short investor brands need exact profile identity mapping. YC accelerator standard cheque not assigned. Security instrument undisclosed."
+    },
+    {
+      "id": "9be5799b-f966-4808-a388-8366f0f6d6e7",
+      "slug": "sinosun-technology",
+      "name": "Sinosun Technology",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sinosun radio technology drone company financing",
+        "site:sinosunmesh.com investment funding 融资 华夏盛",
+        "深圳市华夏盛科技有限公司 融资 投资 补助",
+        "Sinosun financing Shenzhen"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://sinosun.cn/",
+          "published_date": null,
+          "disposition": "Opened original Chinese site identity 深圳市华夏盛科技有限公司 and Futian address align English Sinosun radio manufacturer."
+        },
+        {
+          "url": "https://www.sinosunmesh.com/aboutus-more.html",
+          "published_date": null,
+          "disposition": "Opened original English company profile; listed financial-software namesake excluded."
+        },
+        {
+          "url": "https://www.szft.gov.cn/attachment/0/949/949685/9587276.pdf",
+          "published_date": null,
+          "disposition": "Opened official2021 support list names exact entity row217 国高认定支持, no amount; final award status/date and recipient payment unverified, no table-derived event imported."
+        }
+      ],
+      "evidence_note": "Original issuer, investor, registry and local-language sources checked as applicable. Unknown and held candidates do not establish zero financing.",
+      "hold_note": "Exact Chinese radio issuer identified; government support-list candidate lacks final award notice, amount/date/status. Registered capital is not cash funding; financial software namesakes excluded. Earlier/latest financing unresolved."
+    },
+    {
+      "id": "5326e6fc-de94-4224-874f-36b0ad595059",
+      "slug": "sintela",
+      "name": "Sintela",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sintela funding investment BGF 2026",
+        "Sintela investment financing shareholders funding2026",
+        "site:sintela.com funding grant shareholders investment2026",
+        "Sintela investors founders financing2017 2024"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://sintela.com/10m-investment-in-dfos-centre-of-excellence-strengthens-national-security/",
+          "published_date": "2026-01-14",
+          "disposition": "Original indexed full text; direct403. USD10m own capital expenditure and USD70m orders are not incoming financing."
+        },
+        {
+          "url": "https://sintela.com/media/",
+          "published_date": null,
+          "disposition": "Indexed original current archive; USD200m procurement ceiling not financing."
+        },
+        {
+          "url": "https://sintela.com/kaynes-technology-acquires-54-of-sensonic-sintelas-rail-focused-joint-venture/?amp=1",
+          "published_date": null,
+          "disposition": "Original indexed Kaynes investment in Sensonic JV; not assigned to Sintela."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/11015440",
+          "published_date": null,
+          "disposition": "Opened official operating Sintela Limited registry identity; holding10551516 separate issuer."
+        },
+        {
+          "url": "https://www.adsgroup.org.uk/members/sintela-ltd-2/",
+          "published_date": null,
+          "disposition": "Original member profile describes founder-owned SME; not evidence of zero funding."
+        }
+      ],
+      "evidence_note": "Original issuer, investor, registry and local-language sources checked as applicable. Unknown and held candidates do not establish zero financing.",
+      "hold_note": "Operating/holding issuers distinct; secondary holding allotment figures need original SH01 and cash/premium reconciliation. Procurement, capex and SensonicJV investment not own funding. Earlier/latest financing incomplete."
+    },
+    {
+      "id": "26da1ed2-c14f-43e0-8a83-b8294f2c5c7d",
+      "slug": "sintermat",
+      "name": "SinterMAT",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sintermat levée fonds Definvest2026 2022 6millions",
+        "site:sintermat.com2026 6 Orano",
+        "site:orano.group Sintermat2026 investissement",
+        "Sintermat OranoVentureFund site:supernova-invest.com",
+        "Sintermat2026 Supernova6 site:ui-investissement.com",
+        "Sintermat Sayens amorçage 2 juin 2022 quatre ans"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sayens.fr/en/success-stories/start-up/sintermat-2/",
+          "published_date": null,
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://presse.bpifrance.fr/la-startup-deeptech-sintermat-leve-6-millions-deuros-pour-accelerer-lindustrialisation-de-materiaux-innovants/?lang=fra",
+          "published_date": "2022-05-31",
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://www.ui-investissement.com/notre-actualite/ui-investissement-participe-a-la-levee-de-fonds-de-sintermat-pour-accelerer-lindustrialisation-de-materiaux-innovants/",
+          "published_date": "2022-05-31",
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://www.safran-group.com/pressroom/safran-invests-sintermat-deep-tech-startup-specialized-innovative-materials-2022-06-01",
+          "published_date": "2022-06-01",
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://fr.linkedin.com/posts/sinter-mat_mat%C3%A9riaux-augment%C3%A9s-orano-venture-fund-activity-7516135360343556096-CSax",
+          "published_date": null,
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://www.sayens.fr/actualites/start-up/levee-de-fonds-sintermat/",
+          "published_date": "2022-06-02",
+          "disposition": "Original investor retrospective seed participation; primary first investment chronology supplies21November2018, announcement date unknown."
+        },
+        {
+          "url": "https://sinter-mat.com/presse/",
+          "published_date": null,
+          "disposition": "Indexed original press archive; partnership announcement not additional financing."
+        }
+      ],
+      "evidence_note": "Original issuer, investor, registry and local-language sources checked as applicable. Unknown and held candidates do not establish zero financing.",
+      "hold_note": "2022 EUR6m rounded vs Safran exceeding6m conflict: common lower bound recorded, exact amount held.2026 original relative date not first announcement date; current UI fund unknown. Other grants/loans and full financing history incomplete."
+    },
+    {
+      "id": "9540620e-4249-4353-82b8-f6243754582a",
+      "slug": "sion-power",
+      "name": "Sion Power",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sion Power financing2024 75million LG2012 BASF50million",
+        "Sion Power BASF50million site:basf.com2012",
+        "site:sionpower.com investment funding Cummins2021 2026",
+        "site:basf.com SionPower2012 $50",
+        "Sion Power2025 2026 fundingSeriesLGinvestmentsite:lgcorp.com",
+        "Sion Power BASF January13/2012",
+        "Sion Power2026 funding site:sionpower.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.basf.com/dam/jcr%3Afe38b4bb-0c2c-3d51-ad3e-8d799ca64ebe/basf/www/global/documents/en/investor-relations/basf-at-a-glance/strategy/portfolio-optimization/press-releases/2012_02_14_P140.pdf",
+          "published_date": "2012-02-14",
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://investor.cummins.com/news/detail/536/cummins-invests-in-sion-power-to-develop-lithium-metal",
+          "published_date": "2021-11-30",
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://sionpower.com/2024/01/sion-power-raises-75-million-to-commercialize-its-proprietary-licerion-technology-for-electric-vehicles/",
+          "published_date": "2024-01-24",
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://www.lgcorp.com/media/release/27270",
+          "published_date": "2024-01-25",
+          "disposition": "Primary issuer/investor original reviewed; supported event subset recorded with source dates, currencies and qualifications."
+        },
+        {
+          "url": "https://sionpower.com/2021/11/cummins-invests-in-sion-power-to-develop-licerion-lithium-metal-battery-technology-for-commercial-electric-vehicle-applications/",
+          "published_date": "2021-11-30",
+          "disposition": "Indexed original company counterpart confirms Cummins minority equity; amount not public in source."
+        }
+      ],
+      "evidence_note": "Original issuer, investor, registry and local-language sources checked as applicable. Unknown and held candidates do not establish zero financing.",
+      "hold_note": "2012 first announcement date/actual BASF subscribing vehicle unresolved;2021 secondary amount held.2024 source date discrepancy recorded and full round closing unverified. Earlier/latest history incomplete; manager/board affiliations not additional investors."
+    },
+    {
+      "id": "8e8612e8-2b15-4c11-852c-d97bf99a0fe7",
+      "slug": "sirehna",
+      "name": "SIREHNA",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "site:sirehna.com financement capital subvention investissement Naval Group",
+        "\"SIREHNA\" subvention prêt financement 2026 2025",
+        "\"SIREHNA\" site:cordis.europa.eu \"contribution\"",
+        "site:sirehna.com \"2026\" \"funding\" grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sirehna.com/about-sirehna/",
+          "published_date": null,
+          "disposition": "Opened original ownership/portfolio evidence; generic backing only."
+        },
+        {
+          "url": "https://www.sirehna.com/privacy-terms-of-use/",
+          "published_date": null,
+          "disposition": "Opened own legal terms: SA SIREN337680342, EUR300k capital stock not new financing."
+        },
+        {
+          "url": "https://www.sirehna.com/sirehna-europe-life-seadetect/",
+          "published_date": "2022-12-14",
+          "disposition": "Opened original LIFE SEADETECT involvement: affiliated Naval Group subsidiary/work-package leader; grant101070722 consortium budget not allocated as SIREHNA financing."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance, original identity and supported public-source financing subset reviewed. Candidate pages and unknown rows are not facts or evidence of zero funding.",
+      "hold_note": "Earlier/latest own financing and recipient-level EU grant allocations remain incomplete. Naval Group procurement/support, consortium budgets and legal capital stock excluded; no evidence of zero funding."
+    },
+    {
+      "id": "71c455d1-c8fc-4dc9-ac5e-bdc53b05cf75",
+      "slug": "skapion",
+      "name": "Skapion",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skapion seed funding 2026 36 million original investors",
+        "site:skapion.com funding seed 36 July 2026 investors",
+        "\"Skapion\" \"seed\" site:prnewswire.com",
+        "\"Skapion\" site:uppartners.vc funding",
+        "\"Skapion\" \"funding\" \"Business Wire\"",
+        "site:up.partners Skapion",
+        "site:skapion.com \"36\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.defence-industries.com/modules/public/index.php/industry-exclusives/press-releases/skapion-secures-36-million-seed-funding-to-accelerate",
+          "published_date": "2026-07-10",
+          "disposition": "Opened original financing source; exact disclosed amount, currency and explicit roles reviewed."
+        },
+        {
+          "url": "https://www.skapion.com",
+          "published_date": null,
+          "disposition": "Opened original exact counter-swarm issuer identity/products; no own funding announcement found in bounded pass."
+        },
+        {
+          "url": "https://up.partners/companies/",
+          "published_date": null,
+          "disposition": "Opened investor portfolio; no text match for Skapion, not used as additional financing evidence."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance, original identity and supported public-source financing subset reviewed. Candidate pages and unknown rows are not facts or evidence of zero funding.",
+      "hold_note": "Primary investor/issuer hosted funding release and earlier stealth financing remain open. Syndicated release body is supported; erroneous38m/3.6m titles rejected. No unknown investor identities invented."
+    },
+    {
+      "id": "f8cc032c-024b-434d-b4bb-0c6a8014ebd8",
+      "slug": "skb-miigaik-moscow-state-university-of-geodesy-and-cartography",
+      "name": "SKB MIIGAiK (Moscow State University of Geodesy and Cartography)",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:miigaik.ru СКБ грант финансирование беспилотник",
+        "site:miigaik.ru \"СКБ\" \"финансирование\" \"2026\"",
+        "site:miigaik.ru \"СКБ\" \"грант\" \"2025\"",
+        "site:miigaik.ru \"конструкторское бюро\" финансирование грант"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.miigaik.ru/youth-policy/studencheskaya-zhizn/",
+          "published_date": null,
+          "disposition": "Opened university original youth-policy page: student design/project bureau within institutional student ecosystem."
+        },
+        {
+          "url": "https://www.miigaik.ru/about/news/7176/",
+          "published_date": null,
+          "disposition": "Original indexed2026 design-bureau competition context; direct opening502. Generic grant/industry cofinancing programme not proof of exact bureau cash allocation."
+        },
+        {
+          "url": "https://www.miigaik.ru/student-research-and-development-center/",
+          "published_date": null,
+          "disposition": "Indexed original student research-centre programmes; university awards and research funds not assigned as company financing."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance, original identity and supported public-source financing subset reviewed. Candidate pages and unknown rows are not facts or evidence of zero funding.",
+      "hold_note": "Exact legal issuer boundary remains open: catalogue research/design bureau may not equal current student programme. University or laboratory grants not independent company cash rounds. No fabricated zero-funding conclusion."
+    },
+    {
+      "id": "55c31f32-2280-4310-8981-9b214410d254",
+      "slug": "skedflex",
+      "name": "SkedFlex",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 2,
+      "searches_checked": [
+        "SkedFlex funding investment acquisition eTT aviation investors",
+        "\"SkedFlex\" \"investment\" \"funding\" eTripTrader",
+        "\"SkedFlex\" \"eTT\" \"seed\" \"investment\"",
+        "site:sagegrowthcapital.com \"eTT\"",
+        "site:timia.com \"eTT\" aviation financing",
+        "\"eTT Aviation\" \"TIMIA\" financing",
+        "\"eTT Aviation\" \"Sage Growth\" investment",
+        "site:sagegrowthcapital.com \"400,000\" \"eTT\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://timiacapital.com/timia-portfolio-companies/",
+          "published_date": null,
+          "disposition": "Opened original ownership/portfolio evidence; generic backing only."
+        },
+        {
+          "url": "https://www.sagegrowthcapital.com/portfolio",
+          "published_date": null,
+          "disposition": "Opened original ownership/portfolio evidence; generic backing only."
+        },
+        {
+          "url": "https://skedflex.com/ett-aviation-a-leading-provider-of-aviation-management-software-will-officially-rebrand-as-skedflex-effective-september-1-2025/",
+          "published_date": "2025-09-01",
+          "disposition": "Opened original rebrand: eTT Aviation to SkedFlex, same ownership/leadership; eTripTrader continuity. Rebrand not cash financing."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance, original identity and supported public-source financing subset reviewed. Candidate pages and unknown rows are not facts or evidence of zero funding.",
+      "hold_note": "Earlier/latest financing amounts, dates and instruments remain partial. Secondary USD400k revenue-based financing candidate not imported without original dated terms; TIMIA exited portfolio does not identify facility cash draw. Acquisitions/product deals excluded."
+    },
+    {
+      "id": "5b862897-b05c-40ae-b705-0105ca7a0087",
+      "slug": "skeleton-technologies",
+      "name": "Skeleton Technologies",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 6,
+      "relationship_count": 1,
+      "searches_checked": [
+        "site:skeletontech.com funding raised 2026 2025 2023 Siemens Marubeni",
+        "site:skeletontech.com \"funding\" \"2015\" \"2017\" 15 million",
+        "site:skeletontech.com \"EIB\" \"loan\" 2026 2024 2017",
+        "\"Skeleton\" \"investment\" \"2026\" \"Taiwania\" site:siemens.com",
+        "site.smartcap.ee Skeleton 2026 33 million Defence Fund",
+        "site:smartcap.ee Skeleton 2026 investment 10 million",
+        "site:axonpartnersgroup.com Skeleton 2026 investment fund"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.skeletontech.com/news/skeleton-technologies-raises-e9-8-million-for-deploying-graphene-ultracapacitors/",
+          "published_date": "2015-06-03",
+          "disposition": "Opened original financing source; exact disclosed amount, currency and explicit roles reviewed."
+        },
+        {
+          "url": "https://www.skeletontech.com/news/skeleton-technologies-receives-13m-investment-boost-led-by-firstfloor-capital",
+          "published_date": "2016-08-03",
+          "disposition": "Opened original financing source; exact disclosed amount, currency and explicit roles reviewed."
+        },
+        {
+          "url": "https://www.skeletontech.com/news/skeleton-technologies-raises-41.3-million-in-equity-round-from-top-european-entrepreneurs",
+          "published_date": "2020-11-03",
+          "disposition": "Opened original financing source; exact disclosed amount, currency and explicit roles reviewed."
+        },
+        {
+          "url": "https://www.skeletontech.com/news/skeleton-technologies-brings-in-additional-capital-to-close-a-total-of-70-million-equity-in-round-d-financing",
+          "published_date": "2021-07-01",
+          "disposition": "Opened original financing source; exact disclosed amount, currency and explicit roles reviewed."
+        },
+        {
+          "url": "https://www.skeletontech.com/news/skeleton-technologies-secures-108m-eur-of-financing-with-top-investors-including-siemens-and-marubeni",
+          "published_date": "2023-10-13",
+          "disposition": "Opened original financing source; exact disclosed amount, currency and explicit roles reviewed."
+        },
+        {
+          "url": "https://www.skeletontech.com/news/skeleton-announces-first-close-of-pre-ipo-funding-round",
+          "published_date": "2026-05-07",
+          "disposition": "Opened original financing source; exact disclosed amount, currency and explicit roles reviewed."
+        },
+        {
+          "url": "https://smartcap.ee/sc_portfolio/",
+          "published_date": null,
+          "disposition": "Opened original ownership/portfolio evidence; generic backing only."
+        },
+        {
+          "url": "https://www.skeletontech.com/news/skeleton-technologies-secures-strategic-investment-led-by-siemens-to-expand-us-manufacturing",
+          "published_date": "2026-10-14",
+          "disposition": "Opened latest issuer original: Siemens-led strategic investment,9-digit descriptor and >USD1bn valuation. No exact original currency/amount; relationship to larger Maypre-IPO round unresolved, so no separate additive round imported."
+        },
+        {
+          "url": "https://press.siemens.com/global/ie/node/7475",
+          "published_date": "2026-10-14",
+          "disposition": "Opened original Siemens investment confirmation: completion subject to customary formalities; planned USmanufacturing spending/valuation not proceeds."
+        },
+        {
+          "url": "https://www.skeletontech.com/news/skeleton-technologies-sign-an-investment-loan-agreement-for-15-million-euros-with-the-eib",
+          "published_date": "2017-02-10",
+          "disposition": "Indexed original EIB loan agreement EUR15m candidate; exact legal borrower/structure and draw versus facility need EIB reconciliation, not imported."
+        },
+        {
+          "url": "https://www.skeletontech.com/news/skeleton-technologies-secures-2.5m-to-boost-graphene-production",
+          "published_date": "2016-02-08",
+          "disposition": "Indexed original H2020 EUR2.5m candidate; exact German/entity recipient allocation held."
+        },
+        {
+          "url": "https://www.skeletontech.com/news/skeleton-technologies-and-taiwania-capital-announce-strategic-investment-partnership-to-strengthen-sovereign-ai-infrastructure",
+          "published_date": "2026-03-11",
+          "disposition": "Indexed original Taiwania partnership with Februarydateline: possible overlap with Mayfirstclose, not new additive round."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance, original identity and supported public-source financing subset reviewed. Candidate pages and unknown rows are not facts or evidence of zero funding.",
+      "hold_note": "History remains incomplete: D3EUR37.6m, 2017EIB facility legal borrower, 2016H2020 award, 2021German/Saxony EUR51m grants and subsidiary allocation, 2026May/October round overlap/closing/currency and Taiwania date overlap held. SmartCap2025GreenFund chronology needs reconciliation; not misassigned Defence Fund. No factory-capex budgets, loan capacity or cumulative raised totals imported as fresh funding."
+    },
+    {
+      "id": "088d4b3b-f0b5-475a-a0c4-f1a3041bbe23",
+      "slug": "skeydrone",
+      "name": "SkeyDrone",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 1,
+      "searches_checked": [
+        "site:skeydrone.com investment Brussels Airport skeyes 2022 capital",
+        "site:skeyes.be \"SkeyDrone\" \"capital\" \"2022\"",
+        "\"SkeyDrone\" \"2026\" \"funding\" \"investment\" Brussels",
+        "\"SkeyDrone\" capital increase \"2022\" \"Brussels Airport Ventures\"",
+        "site:skeyes.be \"2023\" \"annual report\" SkeyDrone 4325713"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://annualreport.skeyes.be/pdf/Skeyes_25_001_RA24_EN_WEB.pdf",
+          "published_date": null,
+          "disposition": "Opened original financing source; exact disclosed amount, currency and explicit roles reviewed."
+        },
+        {
+          "url": "https://annualreport.skeyes.be/pdf/Skeyes_25_001_RA24_EN_WEB.pdf",
+          "published_date": null,
+          "disposition": "Opened original ownership/portfolio evidence; generic backing only."
+        },
+        {
+          "url": "https://pressroom.brusselsairport.be/en-skeydrone",
+          "published_date": "2021-10-18",
+          "disposition": "Opened original signed conditional agreement to subscribe new shares; 50%minusone ownership not seller acquisition cash. Reconciled to later original accounts actualsubscriber BAVSA."
+        },
+        {
+          "url": "https://www.skeydrone.aero/about/",
+          "published_date": null,
+          "disposition": "Indexed original Belgian founding/JV ownership history; no JVpercentage used to manufacture contribution."
+        }
+      ],
+      "evidence_note": "Exact catalogue provenance, original identity and supported public-source financing subset reviewed. Candidate pages and unknown rows are not facts or evidence of zero funding.",
+      "hold_note": "Earlier founding paid-in capital, latest financing and exact original public announcement day remain open. Actual subscriber BAVSA distinguished from BrusselsAirportCompany brand; split2022/2023payments one cash financing. 2026capital loss-absorption reduction not funding. CatalogueUSmetadata untouched."
+    },
+    {
+      "id": "9daec632-9c9b-427d-8a27-a02618cd92f4",
+      "slug": "skk-holdings",
+      "name": "SKK Holdings",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SKK Holdings IPO closed 2024 2025 2026 public offering proceeds",
+        "SKK Holdings 2026 2025 private placement registered direct offering warrants loan site:sec.gov",
+        "SKK Holdings 2026 November October financing IPO Rantizo primary proceeds",
+        "site:sec.gov/Archives/edgar/data/1991261 November 2026 proceeds"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1991261/000149315224040558/form6-k.htm",
+          "published_date": null,
+          "disposition": "Opened original primary/secondary split and actual IPO close."
+        },
+        {
+          "url": "https://global.skkworks.com.sg/announcement-and-press-release/",
+          "published_date": null,
+          "disposition": "Opened original dated issuer pricing/closing directory."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1991261/000149315226039007/form6-k.htm",
+          "published_date": null,
+          "disposition": "Opened original actual USDT consideration and issuer USD valuation."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1991261/000149315226038282/form424b5.htm",
+          "published_date": null,
+          "disposition": "Opened original actual ATM sales and approximate qualifier."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1991261/000149315226046697/form6-k.htm",
+          "published_date": null,
+          "disposition": "Opened exact CIK continuity/name change; Delaware seller distinct."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1991261/000149315226046697/ex99-2.htm",
+          "published_date": null,
+          "disposition": "Opened original capital condition waiver; not proof buyer10m cash was raised."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest financing, issuer and transaction-party searches executed; only supported original-source facts retained. Unknown is not zero funding.",
+      "hold_note": "Earlier private capital and latest subsequent sales histories partial. USD3.4342m is issuer-reported valuation of USDT, not USD cash. October8m ClassB secondary,258.8m acquisition shares,12m management shares and waived10m buyer raise excluded. No old Rantizo seller venture money inherited."
+    },
+    {
+      "id": "aea91e42-c0e5-4010-bef1-2e2c9ff310f2",
+      "slug": "skoltech",
+      "name": "Skoltech",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skoltech grants funding university 2026 2025 РНФ грант",
+        "site:skoltech.ru funding grants 2026 РНФ 2026",
+        "site:skoltech.ru грант финансирование 2024 2023 2022 2025",
+        "site:skoltech.ru 2026 грант финансирование"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.skoltech.ru/en/news/skoltech-wins-rssf-megagrant",
+          "published_date": null,
+          "disposition": "Opened original own award with50m annual schedule, unknown total."
+        },
+        {
+          "url": "https://www.skoltech.ru/archived-news/skoltech-to-create-ai-research-center-for-carbon-footprint-reduction",
+          "published_date": null,
+          "disposition": "Opened original up-to1bn own AI-centre grant."
+        },
+        {
+          "url": "https://www.skoltech.ru/archived-news/russian-science-foundation-awards-288m-rubles-worth-in-grants-to-skoltech-researchers",
+          "published_date": null,
+          "disposition": "Opened original2022 multi-project award list; no artificial288m single grant."
+        },
+        {
+          "url": "https://www.skoltech.ru/news/ot-idei-do-proizvodstva-rektor-yuliya-gorbunova-ob-uspehah-i-budushchem-skolteha",
+          "published_date": null,
+          "disposition": "Opened original October23/2026 rector interview confirms state/commercial mix, not a new round."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest financing, issuer and transaction-party searches executed; only supported original-source facts retained. Unknown is not zero funding.",
+      "hold_note": "Further2020~RUB500m project own allocation,2025VelikhovRUB100m/year and other project grants need separate exact legal-recipient/term reconciliation. Multi-projectRUB288m totals, state budget mix and university spinout investments are not a new single round. Megagrant total/payment remain unknown."
+    },
+    {
+      "id": "a3277ce8-c03c-44bf-9ece-7c047cc61232",
+      "slug": "skunk-works",
+      "name": "Skunk Works",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skunk Works funding financing grant site:lockheedmartin.com division",
+        "site:lockheedmartin.com Skunk Works funding grant contract 2026",
+        "Skunk Works division financing funding investment debt venture history",
+        "site:lockheedmartin.com Skunk Works grant 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://news.lockheedmartin.com/2024-07-23-Lockheed-Martins-Skunk-Works-R-and-KX-Shaping-the-Future-of-Open-Mission-System-Architectures",
+          "published_date": null,
+          "disposition": "Opened original expressly Advanced Development Programs division; partnership not financing."
+        },
+        {
+          "url": "https://lockheedmartin.com/en-us/who-we-are/business-areas/aeronautics/skunkworks.html",
+          "published_date": null,
+          "disposition": "Original official division page and latest programme material indexed; no parent debt assigned."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest financing, issuer and transaction-party searches executed; only supported original-source facts retained. Unknown is not zero funding.",
+      "hold_note": "Evidenced Advanced Development Programs division, not separate financed issuer. Parent Lockheed notes/equity, procurement, internal R&D/capex and project contract budgets excluded. No assertion of zero classified or private funding."
+    },
+    {
+      "id": "34e5f2fc-7186-486c-8ca7-261757c7ba1d",
+      "slug": "sky-elements",
+      "name": "Sky Elements",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sky Elements drone funding investment investors 2026",
+        "site:skyelementsdrones.com investment funding loan investors",
+        "Sky Elements drones debt loan funding 2024 2025 investors",
+        "Sky Elements investors funding site:skyelementsdrones.com",
+        "Sky Elements LLC loan investor funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://skyelementsdrones.com/",
+          "published_date": null,
+          "disposition": "Opened exact original drone-show issuer website."
+        },
+        {
+          "url": "https://www.prnewswire.com/news/sky-elements-drones/",
+          "published_date": null,
+          "disposition": "Opened original issuer release directory; show records not funding."
+        },
+        {
+          "url": "https://www.avonindiana.gov/AgendaCenter/ViewFile/Item/2593?fileID=2772",
+          "published_date": null,
+          "disposition": "Indexed original2023 service contract identifies Sky Elements LLC, procurement not grant."
+        },
+        {
+          "url": "https://www.loanround.com/loans/sky-elements-llc-north-richland-hills-tx-41ead79c9830",
+          "published_date": null,
+          "disposition": "Secondary SBA loan candidate only; original award row not verified."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/sky_elements",
+          "published_date": null,
+          "disposition": "Secondary2024USD1.6m debt candidate, no original amount/date/lender established; not zero."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest financing, issuer and transaction-party searches executed; only supported original-source facts retained. Unknown is not zero funding.",
+      "hold_note": "Secondary debt1.6m and SBA7a loan candidates require original official row/date/principal/lender and exact legal match. Municipal funding pays customer service contracts, not own grant. UKSkylon/ElementsTopco and unrelatedSkyWatch financing excluded."
+    },
+    {
+      "id": "d163b472-1f23-4e82-9df0-56255dc30c3b",
+      "slug": "sky-eye",
+      "name": "Sky Eye",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "Sky Eye drone EDF forcesoperations Sky Eye company financing",
+        "site:skyeyesystems.it finanziamento contributo capitale investimento",
+        "Sky Eye SR-X1 funding investment EDF",
+        "site:skyeyesystems.it finanziamenti contributi PNRR",
+        "Sky Eye SR-X1 SKY EYE SYSTEMS grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://forcesoperations.com/trois-projets-europeens-au-decollage-pour-massifier-la-frappe-de-precision/",
+          "published_date": null,
+          "disposition": "Opened exact catalogue provenance SR-X1/Tuscany identity; consortium totals not recipient allocation."
+        },
+        {
+          "url": "https://www.skyeyesystems.it/about-us/",
+          "published_date": null,
+          "disposition": "Opened exact legal company,100% OMA owner and VAT."
+        },
+        {
+          "url": "https://www.omafoligno.it/oma-group-sky-eye-systems",
+          "published_date": null,
+          "disposition": "Opened parent original confirms exact Sky Eye Systems company and locations."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest financing, issuer and transaction-party searches executed; only supported original-source facts retained. Unknown is not zero funding.",
+      "hold_note": "Original economic identity confirmed Italian Sky Eye Systems; D-STORM consortium grant cap not own beneficiary amount. Earlier capital formation, national/EU own allocations and private debt remain unreviewed. OMA ownership does not prove a cash contribution."
+    },
+    {
+      "id": "67f10721-c68d-4c72-bf66-867a47a4ba4f",
+      "slug": "sky-hunter",
+      "name": "Sky Hunter",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sky Hunter Front Ventures pre seed 2026 funding",
+        "Sky Hunter site:frontventures.se 500000 investment Hede January2026",
+        "site:frontventures.se SkyHunter 0,5 2025",
+        "Sky Hunter investment site:hedecapital.com",
+        "site:frontventures.se SkyHunter september 500",
+        "site:skyhuntertech.com investment funding pre seed2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.frontventures.se/company/skyhunter",
+          "published_date": null,
+          "disposition": "Opened investor original portfolio and ownSEK0.5m investment historical timeline."
+        },
+        {
+          "url": "https://thedefender.media/en/2026/01/sky-hunter-closed-pre-seed/",
+          "published_date": null,
+          "disposition": "Opened original founder interview; closed one pre-seed, unknown amount, valuation separate."
+        },
+        {
+          "url": "https://skyhuntertech.com/",
+          "published_date": null,
+          "disposition": "Original exact website linked by investor has no readable body; not absence evidence."
+        },
+        {
+          "url": "https://mfn.se/a/front-ventures/front-ventures-ab-front-ventures-investerar-i-ukrainskt-bolag-inom-luftforsvarsteknik-9f1d3a21",
+          "published_date": null,
+          "disposition": "Original linked investor September26 release direct404; portfolio timeline itself read."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest financing, issuer and transaction-party searches executed; only supported original-source facts retained. Unknown is not zero funding.",
+      "hold_note": "GrantBrave12025 reported by cluster/issuer interview but award-level directgrantor record not opened, held. Fundraising planned seed not closed. Securityclass/roundtotal and LLC ArtDevelopment legal bridge unknown; Jan22 daily precision not established in opened source, month used."
+    },
+    {
+      "id": "2b4c3201-f204-4419-ab6d-91784933eeca",
+      "slug": "sky-map",
+      "name": "Sky Map",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Sky Map Ukraine developer company funding",
+        "Sky Map Sky Fortress Brave1 official funding",
+        "Sky Map site:army.mil",
+        "Sky Map site:brave1.gov.ua funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.reuters.com/business/aerospace-defense/us-turns-ukrainian-counter-drone-tech-after-iran-attacks-sources-say-2026-04-22/",
+          "published_date": "2026-04-22",
+          "disposition": "Opened original reporting identifies Sky Map as product owned by Sky Fortress; anonymous-source Brave1 support not a Sky Map company round."
+        },
+        {
+          "url": "https://brave1.gov.ua/en/news/1000-grants-brave1",
+          "published_date": "2026-09-14",
+          "disposition": "Opened official programme notice, no Sky Map own legal recipient allocation. Programme totals excluded."
+        },
+        {
+          "url": "https://mezha.net/eng/news/ukraine_deployed_sky/",
+          "published_date": null,
+          "disposition": "Catalogue provenance names product; funding of an unnamed underlying developer cannot be reassigned to product record."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest history, exact catalogue provenance and original issuer/transaction-party sources checked. Only source-supported findings retained; unknown financing is not zero.",
+      "hold_note": "Product identity owned by Sky Fortress in original reporting. Underlying issuer Brave1 support is not reassigned to this product row. Exact legal recipient and award terms still unverified; no automatic non-company completion from catalogue metadata alone."
+    },
+    {
+      "id": "dc84df7f-3804-4f23-a0be-d1f13f3a0fc4",
+      "slug": "sky-sapience",
+      "name": "Sky Sapience",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 2,
+      "searches_checked": [
+        "Sky Sapience funding investment loan",
+        "Sky Sapience site:sec.gov loan 2.7",
+        "Sky Sapience site:skysapience.com investment news financing",
+        "Sky Sapience site:cogitocapital.com"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1178727/000121390021012369/ea136683ex10-1_comsovereign.htm",
+          "published_date": null,
+          "disposition": "Opened original agreement, exact Israeli SKS issuer, Cogito financing2017 and Misara convertible note2018 explicitly defined; principal and first announcement dates unknown."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1178727/000121390021012369/ea136683-8k_comsovereign.htm",
+          "published_date": null,
+          "disposition": "Opened original closing release; approximately USD2.7m payoff and buyer shares are not new company financing."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1178727/000121390023093792/R32.htm",
+          "published_date": null,
+          "disposition": "Opened original SEC financial-note prose confirms completed Titan acquisition March20/2023; December2022 approval is not closing."
+        },
+        {
+          "url": "https://www.skysapience.com/",
+          "published_date": null,
+          "disposition": "Opened current original HoverMast site, footer SkySapienceCorporation and USaddress; historical Israeli issuer continuity to latest brand/privatefinance requires further reconciliation."
+        },
+        {
+          "url": "https://www.ivc-online.com/Google-Card?id=8dd806b9-6880-e511-bd22-80c16e7d3630",
+          "published_date": null,
+          "disposition": "Indexed third-party2026USD10m being sought is candidate/target, not completed financing. Caveret/FIBA investor claims require original confirmation."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest history, exact catalogue provenance and original issuer/transaction-party sources checked. Only source-supported findings retained; unknown financing is not zero.",
+      "hold_note": "Historical funded-credit instruments verified, but original principals, public announcement dates and complete private history unknown. Acquisition/payoff balances not financing-round amounts. Latest USbrand/Israeliissuer continuity and 2026capital-seeking claim remain partial."
+    },
+    {
+      "id": "8459a4fd-4b66-4f7d-97ee-dfeb0942fdfb",
+      "slug": "skyany",
+      "name": "Skyany",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Skyany 融资 投资",
+        "Skyany drone company 融资",
+        "Skyany investors financing 2026 2025",
+        "Skyany site:skyanydrone.com investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.skyanydrone.com/",
+          "published_date": null,
+          "disposition": "Opened original brand website with Shenzhen/Malaysia facilities, no exact legal issuer or financing terms."
+        },
+        {
+          "url": "https://dronexl.co/2026/10/17/jovistar-dji-shell-fcc-grant-dismissed/",
+          "published_date": "2026-10-17",
+          "disposition": "Indexed provenance links Jovistar quickstart to Skyany website; supply-chain relationship is not proof of investor or financing."
+        },
+        {
+          "url": "https://www.ssm.com.my/Pages/Services/Other-Services/Status%20308550/23072025A1.pdf",
+          "published_date": null,
+          "disposition": "Indexed official Malaysian namesake registry notice; no original brand-to-company identity bridge, not treated as brand financing."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest history, exact catalogue provenance and original issuer/transaction-party sources checked. Only source-supported findings retained; unknown financing is not zero.",
+      "hold_note": "Brand legal recipient and relationship to Jovistar, Aestin, Knowact and Malaysian namesakes unresolved. FCC equipment grants are regulatory approvals, not cash funding; allegedDJI links not investor evidence. Unknown is not zero."
+    },
+    {
+      "id": "399f167d-e630-4108-a77b-fc7fc0bd4516",
+      "slug": "skycomm-vertiports",
+      "name": "SkyComm Vertiports",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SkyComm Vertiports funding investment",
+        "SkyComm Vertiports site:skycommvertiports.com investment",
+        "SkyComm Vertiports loan grant investors 2026",
+        "SkyComm Vertiports official company news investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16015083",
+          "published_date": null,
+          "disposition": "Opened original active legal identity, incorporatedOctober14/2024."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/16015083/filing-history",
+          "published_date": null,
+          "disposition": "Opened original register lists dormant2025accounts filedJuly20/2026 and GBP100 incorporation capital; not financing-round cash."
+        },
+        {
+          "url": "https://www.goodgrowthfoundation.co.uk/a-golden-ticket-for-government",
+          "published_date": "2026-09",
+          "disposition": "Opened original Sept2026 thinktank report says QatariRoyalFamily project funding ready conditional on regulation. No exact subscriber, executed company round, allocation or currency established."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest history, exact catalogue provenance and original issuer/transaction-party sources checked. Only source-supported findings retained; unknown financing is not zero.",
+      "hold_note": "Exact corporate identity established but proposed Qatari project support is not an executed attributable company financing. Dormancy and GBP100 incorporation capital do not establish zero funding. Latest financing/status/history partial."
+    },
+    {
+      "id": "6065acee-8b57-461b-9576-613054679c1b",
+      "slug": "skyd",
+      "name": "SKYD",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SKYD Україна дрони інвестиції грант",
+        "SKYD дрони грант",
+        "SKYD site:drone-directory.com.ua funding",
+        "SKYD FPV виробник інвестиції фінансування"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.drone-directory.com.ua/profile/skyd-2/",
+          "published_date": null,
+          "disposition": "Opened exact catalogue provenance describes Ukrainian payload-release supplier and links skyd_ua; legal name/founder not disclosed."
+        },
+        {
+          "url": "https://www.instagram.com/skyd_ua/",
+          "published_date": null,
+          "disposition": "Followed original directory company link; fetch throttled. Failure is not evidence of no funding."
+        },
+        {
+          "url": "https://www.linkedin.com/company/skyd-vanguard",
+          "published_date": null,
+          "disposition": "Indexed company-name candidate, continuity to payload-release supplier not established. Media ticker SKYD and FPV supplier product mentions excluded."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest history, exact catalogue provenance and original issuer/transaction-party sources checked. Only source-supported findings retained; unknown financing is not zero.",
+      "hold_note": "Payload-release supplier exact directory identity checked; legal entity and original financing history unresolved. Instagram access limitation and unrelated SKYDstock/Skydio/namesake companies not negative funding evidence."
+    },
+    {
+      "id": "5e6b373f-bf41-4c3d-92f1-20532956df63",
+      "slug": "skydefense",
+      "name": "SkyDefense",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-14",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "SkyDefense CobraJet funding investors",
+        "SkyDefense investment funding capital Nick Verini",
+        "SkyDefense site:sec.gov",
+        "SkyDefense site:skydefensellc.com investment funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://skydefensellc.com/",
+          "published_date": null,
+          "disposition": "Opened original exact CobraJet company, NickVerini, Colorado. Service capital investment refers customer spending, not incoming financing."
+        },
+        {
+          "url": "https://skydefensellc.com/news/",
+          "published_date": null,
+          "disposition": "Opened original news page; product/trial coverage does not establish funding."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/cobrajet---vtol-multirole-jet-for-counter-uas-with-low-cost-interceptors-302817839.html",
+          "published_date": "2026-07-06",
+          "disposition": "Opened original issuer release, exact product and president; plans Q42026trials/Q12027production, no financing disclosed."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/skydefense-counter-uas-weapon-system-302039951.html",
+          "published_date": null,
+          "disposition": "Indexed earlier original product release, no funding terms."
+        }
+      ],
+      "evidence_note": "Broad earlier/latest history, exact catalogue provenance and original issuer/transaction-party sources checked. Only source-supported findings retained; unknown financing is not zero.",
+      "hold_note": "Scoped no_public_round_found after original issuer news and dated financing searches. Private capital remains unknown, not zero. No investors, amounts or dates inferred from product trials and service offerings."
+    }
+  ],
+  "source_and_identity_reconciliation": {
+    "actual_search_queries_executed": 6,
+    "searches_checked": [
+      "site:sec.gov/Archives/edgar/data/1991261 2024 7,000,000 offering proceeds",
+      "site:nsw.gov.au SiNAB 215 grant",
+      "SKK Holdings IPO 7 2024 proceeds",
+      "SiNAB $215,400",
+      "QFund Skapion Esh",
+      "Q Fund Esh-Tech website"
+    ],
+    "sources_checked": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1991261/000149315224040558/form6-k.htm",
+        "published_date": null,
+        "disposition": "Original SKK report distinguishes combined IPO gross, own approximately5.26m net and zero proceeds from selling shareholders; no reseller proceeds assigned to issuer."
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1991261/000149315226016229/form20-f.htm",
+        "published_date": null,
+        "disposition": "Original annual report states1.75m primary shares atUSD4; primary gross7m distinct from combined10m and net proceeds."
+      },
+      {
+        "url": "https://www.nsw.gov.au/grants-and-funding/bushfire-commercialisation-fund/recipients",
+        "published_date": null,
+        "disposition": "Original recipient list names SiNAB exact215400; programme budget not own allocation."
+      },
+      {
+        "url": "https://www.nsw.gov.au/grants-and-funding/bushfire-commercialisation-fund",
+        "published_date": null,
+        "disposition": "Original programme calls this a grant but lists EBITDA-based term. Exact recipient contract repayment/disbursement terms not inferred; approval month not public announcement."
+      },
+      {
+        "url": "https://qfund.io/",
+        "published_date": null,
+        "disposition": "Original investor portfolio/news names both Skapion and Esh-Tech, corroborating exact existing Q Fund profile provenance. Source QFund reuses q-fund without creating a namesake duplicate."
+      }
+    ],
+    "identity_recovery_check": "CurrentDB targetskk-holdings and previously reviewedrantizo both had zero funding events. New listed-issuer facts therefore not a retry of earlier imported Rantizo financing. Listed successor and Delaware seller remain distinct.",
+    "scope_note": "Root quality checks supplement four disjoint company-ID groups; no extra throughput identity added. Published Liebherr source-level issuer/allocation hold remains unresolved, not an access blocker.",
+    "canonical_mapping": {
+      "from": "qfund",
+      "to": "q-fund",
+      "basis": "Unicode-aware name match additionally corroborated by original qfund.io portfolio for both current Skapion and existing Esh-Tech issuer source."
+    }
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "meaningful_postgresql_tests": "Passed rollback, atomic counts, idempotency, conflicting amount and participant-source FK rejection.",
+    "production_rollback_baseline_restored": true,
+    "atomic_import_committed_at": "2026-11-14 03:59:24 UTC",
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 25,
+      "mismatched_facts": 0,
+      "participant_matches": 53,
+      "source_matches": 31,
+      "relationship_matches": 8,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 1
+    },
+    "reviewed_corrections_required": false
+  },
+  "publication_scope": {
+    "all_new_targets_outside_european_landscape": true,
+    "expected_european_companies": 567,
+    "expected_european_events": 1590,
+    "expected_european_participations": 1390,
+    "note": "All24 targets outside existing European map, verified fresh baseline. No gate/geography/classification changes."
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles and existing relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules",
+    "No paid external API"
+  ],
+  "programme_complete": false,
+  "publication": {
+    "status": "pending",
+    "report": "research-agent/reports/2026-11-14-funding-landscape-seventy-sixth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261114-seventy-sixth.json"
+  }
+}
