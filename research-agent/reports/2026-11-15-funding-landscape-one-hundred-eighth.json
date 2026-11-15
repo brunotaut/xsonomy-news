@@ -1,5 +1,5 @@
 {
-  "status": "atomic_import_verified_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T14:45:44.055Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-eighth.json",
@@ -1014,7 +1014,26 @@
     "concurrency_speedup_claimed": false,
     "per_company_search_ledger_entries": 81,
     "source_ledger_entries": 82,
-    "prepared_source_ledger_entries": 9
+    "prepared_source_ledger_entries": 9,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_source_ledger_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "referenced_directory_profiles_verified": 10,
+    "manifest_profile_source_matches": 5,
+    "guarded_existing_round_participation_citation_verified": true,
+    "guarded_profile_source_additions_verified": 3,
+    "generic_portfolio_entries_verified": 4,
+    "clickable_generic_company_links_verified": 4,
+    "unique_generic_company_routes_verified": 4,
+    "current_manifest_publication_verified": true,
+    "active_minutes": 19.7,
+    "checked_identities_per_hour": 82.2,
+    "new_queue_identities_per_hour": 73.1,
+    "completed_reviews_per_hour": 18.3,
+    "timing_scope": "Elapsed writer lease for24 next cohort identities in three frozen groups, FlyGuys original-source reconciliation, Emrgy limited-access/prior checks and Factorial prior-row check in a fourth read-only group. Prior checks overlap those prepared identities and are not added again. Includes87 actual search queries, primary issuer/currency/date/role checks, exact Garuda cash allotment and source signature-date override, new full-parent/absence/exact-replay participant guards, parent and child conflict atomicity tests, production rollback restoring four exact rows/absent child/eight preservation hashes, one atomic import, exact facts/source audits, idempotent rollback replay, seven durable readbacks, successful catalogue build, fresh datasets and five HTTP200 routes. Six bounded closures and18 partial histories retained. No concurrency speedup or ETA claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1189,7 +1208,91 @@
       ],
       "duplicate_new_names": 0,
       "missing_link_sources": 0
-    }
+    },
+    "frozen_group_sha256": {
+      "a": "2ca7eb3a996f76c52c7ca2f6490d43b70213b3dbb35509320b9632c3539b63ab",
+      "a_corrections": "7c4c5787f37b97325f73bfc8b0b07231ad70000e268f43a259f91458f2cf5613",
+      "b": "b0c2c1867b15919938b1575bdd1a2c17e9d79183b07e0accfc3c7e5e27b89b2c",
+      "b_corrections": "542f41d8403e3cdedd1387374c85238cff2134d179d4e1a153454c9c23d5f66f",
+      "c": "93e1b9f3fdd29adeaedcbe39547000ed1992113bd0c37d9643cec5586bab2f45",
+      "c_corrections": "542f41d8403e3cdedd1387374c85238cff2134d179d4e1a153454c9c23d5f66f",
+      "prepared": "f00107bf5873deb4136b7e89289b6ca4007d5a6353efca194b2e12598871afe6"
+    },
+    "production_rollback_exact_original_rows_restored": 4,
+    "production_rollback_prepared_child_absence_restored": true,
+    "preservation_hashes_after": [
+      {
+        "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+        "rows": 2718,
+        "audit": "companies"
+      },
+      {
+        "md5": "0fb3e838578c411f1d7c6bc0cc50a38f",
+        "rows": 4721,
+        "audit": "uncorrected_events"
+      },
+      {
+        "md5": "db5d823bd14e95d0227fc96d703fa69f",
+        "rows": 6519,
+        "audit": "uncorrected_existing_participants"
+      },
+      {
+        "md5": "2bed29fe5bd39bc07b830c682ea0f3a3",
+        "rows": 6495,
+        "audit": "existing_unrelated_event_sources"
+      },
+      {
+        "md5": "9de68751428181bc872415c5dcf842f6",
+        "rows": 3749,
+        "audit": "curated_profiles_full_rows"
+      },
+      {
+        "md5": "e4bb2750d4d8fbcdcb7dee291d333aca",
+        "rows": 7121,
+        "audit": "existing_unrelated_profile_sources"
+      },
+      {
+        "md5": "ab31b3b1bc1537ba501cbc6f75f963a8",
+        "rows": 748,
+        "audit": "uncorrected_existing_generic_rows"
+      },
+      {
+        "md5": "a268da57832564113837adc53c21f5fd",
+        "rows": 1326,
+        "audit": "unrelated_research_coverage"
+      }
+    ],
+    "durable_readback_blobs": {
+      "research-agent/imports/funding-landscape-20261115-one-hundred-eighth.json": "8c28ba9302201df2f0ac9d9662060a6b27c32e91",
+      "research-agent/imports/funding-landscape-20261115-one-hundred-eighth-reviewed-corrections.json": "5b3498f93ae0c50530592e86fdffe1a3a0ceb186",
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-eighth.json": "ccc5fc7bf7551369b7829f7f3fde426825ee09e2",
+      "research-agent/reports/2026-11-15-funding-one-hundred-eighth-source-ledger.json": "0920c1777ca91092bad7262caa90204770cd5a3b",
+      "research-agent/recovery/2026-11-15-funding-one-hundred-eighth-prepared-reconciliations.json": "9a152ae0ed7d8e195eb5cfff25a412e29d160de8",
+      "research-agent/queues/company-funding-all.csv": "f3977a6d13a222f5681a2fde782296a49facff56",
+      "research-agent/FUNDING_STATE.json": "ec5522c3e4862f60c67bf4628a4a9bad28c22562"
+    },
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/companies/furukawa-battery/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/fusus/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/g42/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/gabler/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      }
+    ]
   },
   "production_after": {
     "events": 4729,
@@ -1213,10 +1316,71 @@
     "retained_partial": 242
   },
   "publication": {
-    "status": "catalogue_build_in_progress",
+    "status": "verified",
+    "checked_at": "2026-11-15",
+    "verified_at": "2026-11-15T15:05:26.211Z",
     "source_commit": "1822149a83ede9a2b1aff302770d85e8008eff11",
     "catalogue_commit": "bfe8dcae1c7fc95d3f3adc59ab7a6ce6bd1dc132",
     "workflow_run": 43727429410,
-    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-eighth.json"
-  }
+    "workflow_conclusion": "success",
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43727429410",
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-eighth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-eighth.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-eighth-reviewed-corrections.json",
+    "generated_at": "2026-11-15T15:01:30.099Z",
+    "investor_generated_at": "2026-11-15T15:01:33.065Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3746,
+    "portfolio_relationships": 747,
+    "expected_profiles": 10,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 4,
+    "generic_portfolio_entries_verified": 4,
+    "clickable_company_links_verified": 4,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 5,
+    "manifest_generic_relationship_matches": 4,
+    "guarded_existing_round_participant_citations_verified": 1,
+    "guarded_profile_source_additions_verified": 3,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 5,
+    "current_manifest_live_matches": 0,
+    "directory_filter_note": "Nine pre-existing anonymous profiles and five retired portfolios remain excluded by existing filters. Current targets remain outside the European map. Ten referenced profiles, five manifest participation citations, one guarded existing-round citation, three added curated-profile citations and four portfolios verified in fresh directory. Company gates retained.",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/companies/furukawa-battery/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/fusus/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/g42/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/gabler/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      }
+    ]
+  },
+  "completed_at": "2026-11-15T15:05:26.211Z",
+  "preserved": [
+    "Legacy research STATE.json and frozen V1/V2",
+    "Curated investor profiles and existing portfolio relationships",
+    "All uncorrected events, participants and source history",
+    "Company metadata, geography and publication gates",
+    "Repository schedules"
+  ]
 }
