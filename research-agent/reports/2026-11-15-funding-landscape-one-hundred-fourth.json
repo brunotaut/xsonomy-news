@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T10:44:20.353Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-fourth.json",
@@ -53,13 +53,28 @@
     "new_exact_name_duplicate_groups": 0,
     "queue_dispositions_applied": 24,
     "approved_event_counts_refreshed_for_identities": 26,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 4682,
     "db_approved_events": 4664,
     "db_round_participations": 6478,
     "db_investor_profiles": 3734,
     "db_source_reconciliation_companies": 1327,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_source_ledger_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "referenced_directory_profiles_verified": 10,
+    "manifest_profile_source_matches": 13,
+    "generic_portfolio_entries_verified": 2,
+    "clickable_generic_company_links_verified": 2,
+    "active_minutes": 19.59,
+    "checked_identities_per_hour": 85.8,
+    "new_queue_identities_per_hour": 73.5,
+    "completed_reviews_per_hour": 12.3,
+    "timing_scope": "Elapsed writer lease covering24 next cohort identities in three frozen read-only groups plus3 prepared source reviews andone previously committed issuer-retirement identity check in a fourth. Includes91 actual searches, original-source issuer/currency/date/instrument/role checks, tested contract-value basis reconciliation, full event/participant guards, late-conflict rollback, reversals/replay/source FK checks, production rollback with11 exact original snapshots restored, one atomic import, exact fact/source/role/generic audits, prior-data hashes, idempotent rollback replay, seven durable readbacks, successful existing catalogue build, both fresh live datasets, landscapeHTTP200 andtwo clickable generic company links. Four bounded closures/20 specific holds; no speedup or ETA claim."
   },
   "production_before": {
     "links": 6465,
@@ -1294,7 +1309,24 @@
       "No neworiginal evidence resolved CSSC/CiS/CyPhy/Dataminr/D-TA/Draken earlier targetedholds, so they remain un-researched in this execution beyond checkpoint triage; no freshchecked_at is attributed to those held identities.",
       "DGVK charge security value is not evidence of paid cash; MCAoriginal unavailable within existing publictools.",
       "DG capital amount is retained from current curatedrecord; issuerpage independently supports formation/publication only."
-    ]
+    ],
+    "durable_readback_blobs": {
+      "research-agent/imports/funding-landscape-20261115-one-hundred-fourth.json": "1214ea1afe8fccdc48adff4222156a61661f069a",
+      "research-agent/imports/funding-landscape-20261115-one-hundred-fourth-reviewed-corrections.json": "303963c1c7159bbbf9704b0d14b0478353e8eb87",
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-fourth.json": "f37a5b72ce9178f0b092af4aba82b55649c86dff",
+      "research-agent/reports/2026-11-15-funding-one-hundred-fourth-source-ledger.json": "c0c420a1f5bfb75847d7bf15d75e3084102b4de7",
+      "research-agent/recovery/2026-11-15-funding-one-hundred-fourth-prepared-reconciliations.json": "aab735d9bb4283799a00c70e2852ea3e6398dfc5",
+      "research-agent/queues/company-funding-all.csv": "81ee7e4bae5a16e320808eb0193429db5d6bf49d",
+      "research-agent/FUNDING_STATE.json": "a18b2a62c7c61ba9e69c0721166d4e3854b1f525"
+    },
+    "frozen_group_sha256": {
+      "a": "939abbaaa32ae346272af50f019687f1d6fd9e75771ffd30cc773619f5e7bf75",
+      "a_corrections": "b2e4fc9ba32b8aeacdebd2974b400815f7f2206ec7ce5a9aee0c976079da59a6",
+      "b": "840334c37c240635cda4a33043a647b92183b66a8ea0045af06254c0bf71bc10",
+      "c": "7393263ee84aba0eff9e5c01bbfa8a47d5bd3e702cf7063bff028bfd816a1494",
+      "c_corrections": "de96bff47da86da8d4a820872be1db000babe1c7a3434c4242faaf2a6977d062",
+      "prepared": "8d93c8b074dc8103a368805ee8a950b9e69eda18a0943fafa52c23189376431b"
+    }
   },
   "publication_scope": {
     "site": "https://xsonomy.com/landscape/",
@@ -1309,5 +1341,52 @@
     "unique_checked_this_pass": 240,
     "remaining_initial_pass_identities": 1103
   },
-  "publication": null
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-15T11:03:55.573Z",
+    "verified_at": "2026-11-15T11:03:55.573Z",
+    "source_commit": "61d3bd0d38219de38ef67681217e523080c23bb9",
+    "catalogue_commit": "54f7573773525763568770a8e564bdec35a4ac98",
+    "workflow_run": {
+      "id": 43706817725,
+      "head": "54f7573773525763568770a8e564bdec35a4ac98",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43706817725"
+    },
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-fourth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-fourth.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-fourth-reviewed-corrections.json",
+    "generated_at": "2026-11-15T11:01:38.806Z",
+    "investor_generated_at": "2026-11-15T11:01:42.554Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3725,
+    "portfolio_relationships": 734,
+    "expected_profiles": 10,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 2,
+    "generic_portfolio_entries_verified": 2,
+    "clickable_company_links_verified": 2,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 13,
+    "manifest_generic_relationship_matches": 2,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 15,
+    "current_manifest_live_matches": 0,
+    "directory_filter_note": "DB3734 profiles/live3725 retains nine prior anonymous-profile exclusions; DB739 generic rows/live734 retains five prior retirements. All10 referenced profiles,13 manifest participant-source URLs andtwo new generic entries/source URLs/clickable company links verified. New financing targets and corrected records are outside the published European map; geography/publication gates unchanged. Nine corrected events andtwo agency-participation rows separately audited exactly; earlier Dornier retirement checked as completed and not retried."
+  },
+  "completed_at": "2026-11-15T11:03:55.573Z",
+  "preserved": [
+    "Legacy research-agent/STATE.json and frozen V1/V2 snapshots",
+    "Curated investor profiles and existing generic relationships",
+    "All uncorrected prior financial events, participants and source history",
+    "Company metadata/geography/publication gates",
+    "Repository schedules"
+  ]
 }
