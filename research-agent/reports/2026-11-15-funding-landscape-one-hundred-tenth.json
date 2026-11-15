@@ -1,5 +1,5 @@
 {
-  "status": "production_rollback_verified_ready_for_atomic_import",
+  "status": "atomic_import_verified_publication_pending",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T16:53:16.328Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-tenth.json",
@@ -1002,7 +1002,13 @@
     "search_queries_executed": 101,
     "local_postgresql_tests_passed": true,
     "all_four_final_freezes_confirmed_before_consolidation": true,
-    "rollback_rehearsal_passed": true
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "atomic_import_invocations": 1,
+    "new_investor_profiles": 0,
+    "new_coverage_rows": 3,
+    "all_prior_company_metadata_preserved": true,
+    "all_prior_financial_events_participants_sources_profiles_relationships_preserved": true
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1051,6 +1057,138 @@
       "Fresh importer manifest rollback/import/replay/financial-conflict/source FK",
       "Combined additive transaction rollback/replay and exact counts; no existing-row corrections or participant additions in this execution"
     ],
-    "importer_sha256": "8e90426e43c954b7c2ffb0f01beb870fe790e38c92036db8a95634e89af9ca78"
+    "importer_sha256": "8e90426e43c954b7c2ffb0f01beb870fe790e38c92036db8a95634e89af9ca78",
+    "exact_post_import_audit": {
+      "facts": [
+        {
+          "audit": "manifest_event_exact_fields_and_parent",
+          "failed": 0,
+          "expected": 11,
+          "failures": []
+        },
+        {
+          "audit": "manifest_sources_exact",
+          "failed": 0,
+          "expected": 15,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participants_exact_role_source_contribution",
+          "failed": 0,
+          "expected": 4,
+          "failures": []
+        },
+        {
+          "audit": "manifest_generic_portfolios_exact",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participant_and_portfolio_profile_source_exists",
+          "failed": 0,
+          "expected": 4,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_source_additions_exact",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_profile_source_additions_exist",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "guarded_participant_additions_exact_parent_unchanged",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_events",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_participants",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_generic_relationships",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        }
+      ],
+      "counts": {
+        "links": 6535,
+        "events": 4746,
+        "covered": 1333,
+        "sources": 6531,
+        "approved": 4728,
+        "profiles": 3758,
+        "relationships": 755
+      },
+      "preserved": [
+        {
+          "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+          "rows": 2718,
+          "audit": "companies"
+        },
+        {
+          "md5": "569bd2bc28913d915c510521e4059178",
+          "rows": 4735,
+          "audit": "uncorrected_events"
+        },
+        {
+          "md5": "4d88feeee6c056bbb503b47bc61329a9",
+          "rows": 6531,
+          "audit": "uncorrected_existing_participants"
+        },
+        {
+          "md5": "9aa1eec686016d6b84b7a363e0168333",
+          "rows": 6516,
+          "audit": "existing_unrelated_event_sources"
+        },
+        {
+          "md5": "3a7e64c6e01eacbae740eacd8051dc75",
+          "rows": 3758,
+          "audit": "curated_profiles_full_rows"
+        },
+        {
+          "md5": "8fb61dfd6f3481ca5cd94024545d0ffc",
+          "rows": 7142,
+          "audit": "existing_unrelated_profile_sources"
+        },
+        {
+          "md5": "ea08fcf9602a02ec4b50893570a401a2",
+          "rows": 755,
+          "audit": "uncorrected_existing_generic_rows"
+        },
+        {
+          "md5": "58810937cd79d0ffadaa203b6bfffd9d",
+          "rows": 1325,
+          "audit": "unrelated_research_coverage"
+        }
+      ],
+      "duplicate_new_names": 0,
+      "missing_link_sources": 0
+    }
+  },
+  "production_after": {
+    "events": 4746,
+    "approved": 4728,
+    "links": 6535,
+    "sources": 6531,
+    "profiles": 3758,
+    "relationships": 755,
+    "covered": 1333
   }
 }
