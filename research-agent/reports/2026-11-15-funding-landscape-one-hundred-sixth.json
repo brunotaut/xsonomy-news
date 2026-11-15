@@ -1,5 +1,5 @@
 {
-  "status": "atomic_import_verified_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T12:48:40.881Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-sixth.json",
@@ -972,7 +972,23 @@
     "concurrency_speedup_claimed": false,
     "per_company_search_ledger_entries": 79,
     "source_ledger_entries": 64,
-    "prepared_source_ledger_entries": 25
+    "prepared_source_ledger_entries": 25,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_source_ledger_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "referenced_directory_profiles_verified": 3,
+    "manifest_profile_source_matches": 3,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_generic_company_links_verified": 1,
+    "current_manifest_publication_verified": true,
+    "active_minutes": 12.01,
+    "checked_identities_per_hour": 134.9,
+    "new_queue_identities_per_hour": 119.9,
+    "completed_reviews_per_hour": 25,
+    "timing_scope": "Elapsed writer lease for 24 next cohort identities in three frozen groups, two prepared original-source identities and one prior-import identity check in a fourth read-only group. Includes 90 actual search queries, original issuer/currency/date/amount-basis checks, local PostgreSQL tests and guards/reversal/conflict/replay, production rollback restoring ten exact original rows and eight preservation hash sets, one atomic import, exact facts/source audits, idempotent rollback replay, durable Git readbacks, successful catalogue build, two fresh datasets and two HTTP200 routes. Five bounded closures and19 specific partial histories retained. No concurrency speedup or ETA claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1137,7 +1153,78 @@
         }
       ],
       "missing_link_sources": 0
-    }
+    },
+    "frozen_group_sha256": {
+      "a": "25ad4d81781bc8907e219baaf3169040753b5272ba737f3d9cc1670de56d8fd9",
+      "a_corrections": "49a056e82f7b0a717a2484b6e4b68a3eae1c5d563d72f86f35d0971d547aa99f",
+      "b": "54c16c00d545eecff94a402f92bff913c8c36d78d97077f7bf13ff693eaf86fa",
+      "b_corrections": "d88d81667be14f3a520d11e10c682fb615bed22c5da7fc666558db31fa1e6da8",
+      "c": "9c6d13939fa51bbb20f3191fed85af2f55e58537b1b8a8479d23d8cf2a97f260",
+      "c_corrections": "100ed64467606bd510121a2c0a2930f6e0e55f09508b60067a1e6c4162725bdd",
+      "prepared": "68ecd1271e9032da7268bdde71d43d584a96aa95f5d03bca3c4044661be8d440"
+    },
+    "production_rollback_exact_original_rows_restored": 10,
+    "preservation_hashes_after": [
+      {
+        "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+        "rows": 2718,
+        "audit": "companies"
+      },
+      {
+        "md5": "390a856bfdf7e18a10ed7b187b5a83f9",
+        "rows": 4698,
+        "audit": "uncorrected_events"
+      },
+      {
+        "md5": "62786479fb512593db889996ac3982ce",
+        "rows": 6500,
+        "audit": "uncorrected_existing_participants"
+      },
+      {
+        "md5": "42a4e82b1779ddfdc40e75b51044d694",
+        "rows": 6469,
+        "audit": "existing_unrelated_event_sources"
+      },
+      {
+        "md5": "89561951e8f5ebd6c5af435faf7e5f92",
+        "rows": 3741,
+        "audit": "curated_profiles_full_rows"
+      },
+      {
+        "md5": "a8d35a6e984b2a6024b526b25be95613",
+        "rows": 7099,
+        "audit": "existing_unrelated_profile_sources"
+      },
+      {
+        "md5": "dbe61f1472c6008e73c81776d49168d8",
+        "rows": 744,
+        "audit": "uncorrected_existing_generic_rows"
+      },
+      {
+        "md5": "337ccf5cb8ab1fa3cf6539fd23d1b8bb",
+        "rows": 1324,
+        "audit": "unrelated_research_coverage"
+      }
+    ],
+    "durable_readback_blobs": {
+      "research-agent/imports/funding-landscape-20261115-one-hundred-sixth.json": "04bf13532d82e8fdfcadfbcacc9c8fbd263f9296",
+      "research-agent/imports/funding-landscape-20261115-one-hundred-sixth-reviewed-corrections.json": "32c171e26e94a735df3c388f85f7853405fab2a2",
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-sixth.json": "9839b69e513e2c8997f30031ed84c4d64c4548c5",
+      "research-agent/reports/2026-11-15-funding-one-hundred-sixth-source-ledger.json": "1b2295095ad8f33e40b0758f56aef483f548b78c",
+      "research-agent/recovery/2026-11-15-funding-one-hundred-sixth-prepared-reconciliations.json": "c899d12c18fc7c4ef7fd2e36eb56661b5ca3d8fc",
+      "research-agent/queues/company-funding-all.csv": "f1bf681debcb9f8497d728eb75b6139cf4498e8d",
+      "research-agent/FUNDING_STATE.json": "a213fbdd07ee36db2e5e6ae8ef9e4692da2b1f94"
+    },
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/fat-shark/",
+        "status": 200
+      }
+    ]
   },
   "production_after": {
     "events": 4717,
@@ -1161,10 +1248,57 @@
     "retained_partial": 202
   },
   "publication": {
-    "status": "catalogue_build_in_progress",
+    "status": "verified",
+    "checked_at": "2026-11-15",
+    "verified_at": "2026-11-15T13:00:41.532Z",
     "source_commit": "849f9fc3634a106b362bdfb7a2ce4cb86f16e9d4",
     "catalogue_commit": "c9586af1de2cbc72ad53f5ddef0b091bc615e6a6",
     "workflow_run": 43716533771,
-    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-sixth.json"
-  }
+    "workflow_conclusion": "success",
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43716533771",
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-sixth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-sixth.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-sixth-reviewed-corrections.json",
+    "generated_at": "2026-11-15T12:59:06.625Z",
+    "investor_generated_at": "2026-11-15T12:59:09.913Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3732,
+    "portfolio_relationships": 740,
+    "expected_profiles": 3,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 1,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_company_links_verified": 1,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 3,
+    "manifest_generic_relationship_matches": 1,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 9,
+    "current_manifest_live_matches": 0,
+    "directory_filter_note": "Existing gates exclude nine prior anonymous profiles and five retired portfolio records. All current targets remain outside the European map; three referenced profiles, three participation citations and one historical portfolio verified in fresh directory.",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/fat-shark/",
+        "status": 200
+      }
+    ]
+  },
+  "completed_at": "2026-11-15T13:00:41.532Z",
+  "preserved": [
+    "Legacy research STATE.json and frozen V1/V2",
+    "Curated investor profiles and existing portfolio relationships",
+    "All uncorrected financial events, participants and source history",
+    "Company metadata, geography and publication gates",
+    "Repository schedules"
+  ]
 }
