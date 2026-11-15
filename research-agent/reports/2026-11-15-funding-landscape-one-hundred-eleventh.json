@@ -1,5 +1,5 @@
 {
-  "status": "imported_and_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T17:25:45.270Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-eleventh.json",
@@ -1230,7 +1230,18 @@
     "durable_source_ledger_readback_verified": true,
     "durable_prepared_reconciliations_readback_verified": true,
     "durable_issuer_guard_instruction_readback_verified": true,
-    "durable_queue_identity_count": 2564
+    "durable_queue_identity_count": 2564,
+    "referenced_directory_profiles_verified": 22,
+    "new_directory_profiles_verified": 9,
+    "manifest_profile_source_matches": 31,
+    "generic_portfolio_entries_verified": 0,
+    "live_target_company_routes_verified": 16,
+    "current_manifest_publication_scope_verified": true,
+    "active_minutes": 17.62,
+    "checked_identities_per_hour": 95.4,
+    "new_queue_identities_per_hour": 81.7,
+    "completed_reviews_per_hour": 20.4,
+    "timing_scope": "Elapsed writer lease for24 new cohort identities, two fresh CSSC/CiS original-source reconciliations and two prior-import identity checks.124 web query items, issuer/amount/date/role checks, exact legal subscribers and stated contribution values, two documented root schema/consideration overrides, fresh importer and full issuer-guard PostgreSQL tests, production rollback with exact baseline restoration, one atomic import, exact field/source/role/preservation audits, idempotent rollback replay, durable readbacks, successful catalogue build/deployment, fresh two datasets and17 HTTP200 routes. Six bounded closures and18 specific partial histories retained. No concurrency speedup or ETA claimed."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1484,15 +1495,184 @@
       "research-agent/reports/2026-11-15-funding-landscape-one-hundred-eleventh.json": "d8e578ebcbc1fe3531483029ef97b01e5febef77",
       "research-agent/FUNDING_STATE.json": "f6657f4980d390ed1194dba439b5f091db671472",
       "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md": "ba33ae4d9188418d3b18b0ffc062543d837667f5"
-    }
+    },
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/china-state-shipbuilding-corporation/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/cis/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hd-hyundai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hellbender/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hemeria/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hermeus/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/heven-aerotech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hidden-level/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/high-lander/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/himera/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hinetics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hipert/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hobbywing/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/holywater-tech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/honeywell/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/horizon-aircraft/",
+        "status": 200
+      }
+    ],
+    "final_frozen_inputs_unchanged": true,
+    "durable_readback_commit": "2e3ee01f6ce2d0b03f9054a99ec38a2baf689cd4"
   },
   "publication": {
-    "status": "build_triggered",
+    "status": "verified",
     "checked_at": "2026-11-15",
     "source_commit": "73aa779079411c8b8baf625593b842542b9bacc8",
     "catalogue_commit": "e436a652ec2aec6bc0789fad89bdcd06a389b204",
     "workflow_run": 43742401212,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43742401212"
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43742401212",
+    "generated_at": "2026-11-15T17:41:02.852Z",
+    "investor_generated_at": "2026-11-15T17:41:06.252Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3758,
+    "portfolio_relationships": 750,
+    "expected_profiles": 22,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 0,
+    "generic_portfolio_entries_verified": 0,
+    "clickable_company_links_verified": 0,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 31,
+    "manifest_generic_relationship_matches": 0,
+    "verified_at": "2026-11-15T17:43:22.352Z",
+    "workflow_conclusion": "success",
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-eleventh.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-eleventh.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-eleventh-reviewed-corrections.json",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/china-state-shipbuilding-corporation/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/cis/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hd-hyundai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hellbender/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hemeria/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hermeus/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/heven-aerotech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hidden-level/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/high-lander/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/himera/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hinetics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hipert/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hobbywing/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/holywater-tech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/honeywell/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/horizon-aircraft/",
+        "status": 200
+      }
+    ],
+    "current_manifest_event_rows": 26,
+    "current_manifest_live_matches": 0,
+    "directory_filter_note": "Nine pre-existing anonymous profiles and five retired portfolios excluded by existing filters. All current new financing targets and prepared correction targets lie outside European map. Fresh directory confirms22 referenced profiles including9 additions and31 participation source citations. No claim that26 wider-cohort financial rows render inside the European map; gates preserved."
   },
   "preserved": [
     "Legacy research STATE.json and frozen V1/V2",
@@ -1522,5 +1702,6 @@
     "bounded_closed": 104,
     "retained_partial": 304
   },
-  "updated_at": "2026-11-15T17:41:04.696Z"
+  "updated_at": "2026-11-15T17:43:22.358Z",
+  "completed_at": "2026-11-15T17:43:22.352Z"
 }
