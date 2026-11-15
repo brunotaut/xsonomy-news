@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T02:46:02.757Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-ninety-sixth.json",
@@ -52,7 +52,7 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
     "reviewed_existing_fact_corrections": 8,
     "reviewed_coverage_corrections": 1,
@@ -60,7 +60,17 @@
     "db_approved_events": 4475,
     "db_round_participations": 6311,
     "db_investor_profiles": 3672,
-    "db_source_reconciliation_companies": 1312
+    "db_source_reconciliation_companies": 1312,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 11,
+    "clickable_generic_company_links_verified": 11,
+    "active_minutes": 23.61,
+    "checked_identities_per_hour": 61,
+    "completed_reviews_per_hour": 40.7,
+    "timing_scope": "Elapsed single writer lease through24 identities in four disjoint read-only groups, prior source/current database checks, four frozen final ledgers, issuer/date/currency/instrument/role review, tested guarded corrections and reversals, production combined rollback, one atomic combined import, exact fact/source/correction audit, idempotent rollback replay, preserved hashes, durable manifests/queue readbacks, successful existing catalogue build, both fresh live datasets and landscape HTTP200. Sixteen bounded closures and eight specific holds; no concurrency speedup or ETA claimed."
   },
   "production_before": {
     "events": 4488,
@@ -1653,7 +1663,15 @@
       "Two raw group-B shorthand partial dispositions normalized to source_review_partial only in consolidated queue metadata; frozen evidence retained.",
       "A read-only correction audit query needed parentheses around JSON subtraction; corrected audit passed. No second atomic import.",
       "Two unrelated AMAX Engineering PPP rows retired from approved publication; row amounts, original sources, lender links and curated profiles retained. Zero approved AMAX motor events is not evidence of zero funding."
-    ]
+    ],
+    "unselected_queue_rows_preserved": 2540,
+    "live_generic_entry_verification": {
+      "entries": 11,
+      "source_urls": 11,
+      "clickable_company_links": 11,
+      "unlinked": []
+    },
+    "predeployment_freshness_gate": "Initial live check correctly rejected previous publication while deployment was in progress; after successful deployment both fresh datasets passed all checks."
   },
   "publication_scope": {
     "current_manifest_event_rows": 2,
@@ -1889,6 +1907,46 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "pending_catalogue_trigger"
-  }
+    "status": "verified",
+    "checked_at": "2026-11-15T03:09:39.414Z",
+    "verified_at": "2026-11-15T03:09:39.414Z",
+    "catalogue_commit": "97139b23927600717f0a44a205f5f4c81212fa47",
+    "source_commit": "d30ce163db1862b725e488b27bf7e4f5e78853dc",
+    "workflow_run": {
+      "id": 43670891972,
+      "head": "97139b23927600717f0a44a205f5f4c81212fa47",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43670891972"
+    },
+    "report": "research-agent/reports/2026-11-15-funding-landscape-ninety-sixth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-ninety-sixth.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-ninety-sixth-reviewed-corrections.json",
+    "generated_at": "2026-11-15T03:08:02.151Z",
+    "investor_generated_at": "2026-11-15T03:08:06.761Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3663,
+    "portfolio_relationships": 705,
+    "expected_profiles": 13,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 11,
+    "generic_portfolio_entries_verified": 11,
+    "clickable_company_links_verified": 11,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 2,
+    "manifest_generic_relationship_matches": 11,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 2,
+    "current_manifest_live_matches": 0,
+    "reviewed_identities_in_european_map": [],
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "Database3672 profiles versus live3663 reflects nine existing anonymous exclusions; database708 generic relationships versus live705 reflects three prior exclusions. All13 referenced profiles,2 participation source URLs and11 generic entries/source URLs/clickable company links verified. New and corrected financing targets are outside the European map; map remains567companies/1590events/1390links without changing publication gates."
+  },
+  "completed_at": "2026-11-15T03:09:39.414Z"
 }
