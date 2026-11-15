@@ -1,0 +1,290 @@
+{
+  "id": "funding-landscape-20261115-one-hundred-seventh-reviewed-corrections",
+  "checked_at": "2026-11-15",
+  "corrections": [
+    {
+      "table": "company_funding_rounds",
+      "key": "ec7a163e-4aa2-46e3-a3dd-3795fbf9170f",
+      "company_slug": "factorial-energy",
+      "expected_before": {
+        "id": "ec7a163e-4aa2-46e3-a3dd-3795fbf9170f",
+        "stage": "convertible_notes",
+        "amount": 10000000,
+        "note_en": "Principal of August 2025 notes. Named economic investors and amounts retained; Gatemore controlled vehicles unspecified. Later conversion is not new cash.",
+        "currency": "USD",
+        "round_key": "convertible-notes-2025",
+        "checked_at": "2026-11-12",
+        "company_id": "69197254-122f-4099-abee-19257e06a65e",
+        "created_at": "2026-11-12T13:59:53.604862+00:00",
+        "updated_at": "2026-11-12T13:59:53.604862+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2025-08-01",
+        "closing_status": "signed",
+        "financing_type": "convertible",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "ec7a163e-4aa2-46e3-a3dd-3795fbf9170f",
+        "stage": "convertible_notes",
+        "amount": 10000000,
+        "note_en": "The original Q3 2026 filing identifies 1 August 2025 as the date of the convertible note agreements, not a public announcement date. It states that USD10 million of notes were issued with initial principal balances of USD2 million to Stellantis, USD2 million to Mercedes-Benz and USD6 million to Gatemore Capital Management controlled entities; the comparative 2025 cash-flow statement reports USD10 million of note issuance proceeds. Preserve this exact principal as issued financing, with public date unknown. Gatemore vehicles are not individually named. The later USD22.7 million conversion value, accrued interest and the separate USD2 million Stellantis services payment are not additional incoming financing.",
+        "currency": "USD",
+        "round_key": "convertible-notes-2025",
+        "checked_at": "2026-11-15",
+        "company_id": "69197254-122f-4099-abee-19257e06a65e",
+        "created_at": "2026-11-12T13:59:53.604862+00:00",
+        "updated_at": "2026-11-12T13:59:53.604862+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": null,
+        "closing_status": "closed",
+        "financing_type": "convertible",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "note_en",
+        "checked_at",
+        "amount_basis",
+        "announced_date",
+        "closing_status"
+      ],
+      "reason": "Agreement date does not establish public disclosure; issued principal and comparative cash flow support closed amount rather than unreceived facility capacity.",
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2049662/000162828026072741/fac-20260930.htm",
+          "title": "Factorial Q3 2026 Form 10-Q, Notes8/14 and comparative cash flows"
+        }
+      ]
+    },
+    {
+      "table": "company_funding_rounds",
+      "key": "a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a",
+      "company_slug": "emrgy",
+      "expected_before": {
+        "id": "a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a",
+        "stage": "debt_financing",
+        "amount": 750000,
+        "note_en": "Emrgy's Form D reports USD 750,000 of debt sold, equal to the total offering, with first sale on 28 April 2017.",
+        "currency": "USD",
+        "round_key": "emrgy-2017-04-28-form-d-debt",
+        "checked_at": "2026-11-12",
+        "company_id": "48326477-2f01-49f9-868c-e9a117a1ef16",
+        "created_at": "2026-11-12T11:56:48.5293+00:00",
+        "updated_at": "2026-11-12T11:56:48.5293+00:00",
+        "record_kind": "investment_disclosure",
+        "amount_basis": "closed_amount",
+        "announced_date": "2017-04-28",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a",
+        "stage": "debt_financing",
+        "amount": 750000,
+        "note_en": "Emrgy Inc. (CIK1672740) publicly filed this Form D on 11 May 2017, reporting USD750,000 of debt sold against an equal offering total. The first sale was 28 April 2017; signature and SEC acceptance were 11 May 2017. The first-sale day is retained as transaction chronology, not public announcement date. The filing reports seven investors without attributable identities; directors and officers are not inferred as investors.",
+        "currency": "USD",
+        "round_key": "emrgy-2017-04-28-form-d-debt",
+        "checked_at": "2026-11-15",
+        "company_id": "48326477-2f01-49f9-868c-e9a117a1ef16",
+        "created_at": "2026-11-12T11:56:48.5293+00:00",
+        "updated_at": "2026-11-12T11:56:48.5293+00:00",
+        "record_kind": "investment_disclosure",
+        "amount_basis": "closed_amount",
+        "announced_date": "2017-05-11",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "note_en",
+        "checked_at",
+        "announced_date"
+      ],
+      "reason": "SEC filing index and complete submission independently establish public filing date, which differs from first sale. Original debt amount and closed status are preserved.",
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1672740/000167274017000001/0001672740-17-000001-index.htm",
+          "title": "SEC Emrgy Form D filing detail, 11 May2017"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1672740/000167274017000001/0001672740-17-000001.txt",
+          "title": "SEC Emrgy Form D complete submission, 11 May2017"
+        }
+      ]
+    },
+    {
+      "table": "company_funding_rounds",
+      "key": "d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d",
+      "company_slug": "first-breach",
+      "expected_before": {
+        "id": "d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d",
+        "stage": "may-convertible-note-agreement-2026",
+        "amount": 5000000,
+        "note_en": "Cash funding amount; face principal about USD7.692m includes 35% original issue discount. Agreement signed May21; funding conditional on August direct listing.",
+        "currency": "USD",
+        "round_key": "may-convertible-note-agreement-2026",
+        "checked_at": "2026-11-12",
+        "company_id": "b2270aa0-4dd6-4dec-9143-042c2e6fb358",
+        "created_at": "2026-11-12T15:01:30.936727+00:00",
+        "updated_at": "2026-11-12T15:01:30.936727+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2026-05-21",
+        "closing_status": "signed",
+        "financing_type": "convertible",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d",
+        "stage": "may-convertible-note-agreement-2026",
+        "amount": 5000000,
+        "note_en": "Cash funding amount; face principal about USD7.692m includes 35% original issue discount. Agreement signed May21; funding conditional on August direct listing. Public issuer disclosure is verified by the 2026-05-27 SEC filing. May21 is the agreement date and funding was conditioned on the direct listing.",
+        "currency": "USD",
+        "round_key": "may-convertible-note-agreement-2026",
+        "checked_at": "2026-11-15",
+        "company_id": "b2270aa0-4dd6-4dec-9143-042c2e6fb358",
+        "created_at": "2026-11-12T15:01:30.936727+00:00",
+        "updated_at": "2026-11-12T15:01:30.936727+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2026-05-27",
+        "closing_status": "signed",
+        "financing_type": "convertible",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "announced_date",
+        "checked_at",
+        "note_en"
+      ],
+      "reason": "Transaction agreement/closing chronology is distinct from public filing date; retain original amounts, currencies and financing terms.",
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1892704/000149315226025360/forms-1a.htm",
+          "title": "First Breach27May2026S1A"
+        }
+      ]
+    },
+    {
+      "table": "company_funding_rounds",
+      "key": "0a27e4f4-3063-44ed-9f0f-93e5e285ec1a",
+      "company_slug": "first-breach",
+      "expected_before": {
+        "id": "0a27e4f4-3063-44ed-9f0f-93e5e285ec1a",
+        "stage": "senior-convertible-notes-cash-2026",
+        "amount": 10150000,
+        "note_en": "Cash proceeds; face principal USD15,615,385 includes 35% original issue discount. Conversion into shares is not a second raise.",
+        "currency": "USD",
+        "round_key": "senior-convertible-notes-cash-2026",
+        "checked_at": "2026-11-12",
+        "company_id": "b2270aa0-4dd6-4dec-9143-042c2e6fb358",
+        "created_at": "2026-11-12T15:01:30.936727+00:00",
+        "updated_at": "2026-11-12T15:01:30.936727+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2026-04-24",
+        "closing_status": "closed",
+        "financing_type": "convertible",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "0a27e4f4-3063-44ed-9f0f-93e5e285ec1a",
+        "stage": "senior-convertible-notes-cash-2026",
+        "amount": 10150000,
+        "note_en": "Cash proceeds; face principal USD15,615,385 includes 35% original issue discount. Conversion into shares is not a second raise. Public issuer disclosure is verified by the 2026-04-30 SEC filing. April24 is the agreement date and the initial closing occurred April29. The retainedUSD10.15m cash proceeds are corroborated by the later sixmonthcashflow; OID facevalue is not cash.",
+        "currency": "USD",
+        "round_key": "senior-convertible-notes-cash-2026",
+        "checked_at": "2026-11-15",
+        "company_id": "b2270aa0-4dd6-4dec-9143-042c2e6fb358",
+        "created_at": "2026-11-12T15:01:30.936727+00:00",
+        "updated_at": "2026-11-12T15:01:30.936727+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2026-04-30",
+        "closing_status": "closed",
+        "financing_type": "convertible",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "announced_date",
+        "checked_at",
+        "note_en"
+      ],
+      "reason": "Transaction agreement/closing chronology is distinct from public filing date; retain original amounts, currencies and financing terms.",
+      "evidence": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1892704/000149315226020336/forms-1.htm",
+          "title": "First Breach30April2026S1"
+        }
+      ]
+    }
+  ],
+  "participant_corrections": [],
+  "relationship_corrections": [],
+  "source_additions": [
+    {
+      "round_id": "ec7a163e-4aa2-46e3-a3dd-3795fbf9170f",
+      "url": "https://www.sec.gov/Archives/edgar/data/2049662/000162828026072741/fac-20260930.htm",
+      "title": "Factorial Q3 2026 Form 10-Q, Notes8/14 and comparative cash flows",
+      "source_type": "company_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a",
+      "url": "https://www.sec.gov/Archives/edgar/data/1672740/000167274017000001/0001672740-17-000001-index.htm",
+      "title": "SEC Emrgy Form D filing detail, 11 May2017",
+      "source_type": "company_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a",
+      "url": "https://www.sec.gov/Archives/edgar/data/1672740/000167274017000001/0001672740-17-000001.txt",
+      "title": "SEC Emrgy Form D complete submission, 11 May2017",
+      "source_type": "company_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d",
+      "url": "https://www.sec.gov/Archives/edgar/data/1892704/000149315226025360/forms-1a.htm",
+      "title": "First Breach27May2026S1A",
+      "source_type": "company_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "0a27e4f4-3063-44ed-9f0f-93e5e285ec1a",
+      "url": "https://www.sec.gov/Archives/edgar/data/1892704/000149315226020336/forms-1.htm",
+      "title": "First Breach30April2026S1",
+      "source_type": "company_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "62b5801a-c538-454f-b142-c7549681af38",
+      "url": "https://mitchellgrowthequity.com/flyguys-raises-13m-to-drive-global-growth-in-reality-data/",
+      "title": "Mitchell Companies confirms participation in FlyGuys USD13m Series A-1",
+      "source_type": "investor_announcement",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "profile_source_additions": [],
+  "forward_sql": "INSERT INTO company_funding_round_sources(round_id,url,title,source_type,checked_at) VALUES ('ec7a163e-4aa2-46e3-a3dd-3795fbf9170f','https://www.sec.gov/Archives/edgar/data/2049662/000162828026072741/fac-20260930.htm','Factorial Q3 2026 Form 10-Q, Notes8/14 and comparative cash flows','company_announcement','2026-11-15') ON CONFLICT(round_id,url) DO NOTHING;\nINSERT INTO company_funding_round_sources(round_id,url,title,source_type,checked_at) VALUES ('a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a','https://www.sec.gov/Archives/edgar/data/1672740/000167274017000001/0001672740-17-000001-index.htm','SEC Emrgy Form D filing detail, 11 May2017','company_announcement','2026-11-15') ON CONFLICT(round_id,url) DO NOTHING;\nINSERT INTO company_funding_round_sources(round_id,url,title,source_type,checked_at) VALUES ('a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a','https://www.sec.gov/Archives/edgar/data/1672740/000167274017000001/0001672740-17-000001.txt','SEC Emrgy Form D complete submission, 11 May2017','company_announcement','2026-11-15') ON CONFLICT(round_id,url) DO NOTHING;\nINSERT INTO company_funding_round_sources(round_id,url,title,source_type,checked_at) VALUES ('d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d','https://www.sec.gov/Archives/edgar/data/1892704/000149315226025360/forms-1a.htm','First Breach27May2026S1A','company_announcement','2026-11-15') ON CONFLICT(round_id,url) DO NOTHING;\nINSERT INTO company_funding_round_sources(round_id,url,title,source_type,checked_at) VALUES ('0a27e4f4-3063-44ed-9f0f-93e5e285ec1a','https://www.sec.gov/Archives/edgar/data/1892704/000149315226020336/forms-1.htm','First Breach30April2026S1','company_announcement','2026-11-15') ON CONFLICT(round_id,url) DO NOTHING;\nINSERT INTO company_funding_round_sources(round_id,url,title,source_type,checked_at) VALUES ('62b5801a-c538-454f-b142-c7549681af38','https://mitchellgrowthequity.com/flyguys-raises-13m-to-drive-global-growth-in-reality-data/','Mitchell Companies confirms participation in FlyGuys USD13m Series A-1','investor_announcement','2026-11-15') ON CONFLICT(round_id,url) DO NOTHING;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM company_funding_rounds r WHERE id='ec7a163e-4aa2-46e3-a3dd-3795fbf9170f' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"ec7a163e-4aa2-46e3-a3dd-3795fbf9170f\",\"stage\":\"convertible_notes\",\"amount\":10000000,\"note_en\":\"Principal of August 2025 notes. Named economic investors and amounts retained; Gatemore controlled vehicles unspecified. Later conversion is not new cash.\",\"currency\":\"USD\",\"round_key\":\"convertible-notes-2025\",\"checked_at\":\"2026-11-12\",\"company_id\":\"69197254-122f-4099-abee-19257e06a65e\",\"created_at\":\"2026-11-12T13:59:53.604862+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2025-08-01\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"ec7a163e-4aa2-46e3-a3dd-3795fbf9170f\",\"stage\":\"convertible_notes\",\"amount\":10000000,\"note_en\":\"The original Q3 2026 filing identifies 1 August 2025 as the date of the convertible note agreements, not a public announcement date. It states that USD10 million of notes were issued with initial principal balances of USD2 million to Stellantis, USD2 million to Mercedes-Benz and USD6 million to Gatemore Capital Management controlled entities; the comparative 2025 cash-flow statement reports USD10 million of note issuance proceeds. Preserve this exact principal as issued financing, with public date unknown. Gatemore vehicles are not individually named. The later USD22.7 million conversion value, accrued interest and the separate USD2 million Stellantis services payment are not additional incoming financing.\",\"currency\":\"USD\",\"round_key\":\"convertible-notes-2025\",\"checked_at\":\"2026-11-15\",\"company_id\":\"69197254-122f-4099-abee-19257e06a65e\",\"created_at\":\"2026-11-12T13:59:53.604862+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":null,\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"ec7a163e-4aa2-46e3-a3dd-3795fbf9170f\",\"stage\":\"convertible_notes\",\"amount\":10000000,\"note_en\":\"The original Q3 2026 filing identifies 1 August 2025 as the date of the convertible note agreements, not a public announcement date. It states that USD10 million of notes were issued with initial principal balances of USD2 million to Stellantis, USD2 million to Mercedes-Benz and USD6 million to Gatemore Capital Management controlled entities; the comparative 2025 cash-flow statement reports USD10 million of note issuance proceeds. Preserve this exact principal as issued financing, with public date unknown. Gatemore vehicles are not individually named. The later USD22.7 million conversion value, accrued interest and the separate USD2 million Stellantis services payment are not additional incoming financing.\",\"currency\":\"USD\",\"round_key\":\"convertible-notes-2025\",\"checked_at\":\"2026-11-15\",\"company_id\":\"69197254-122f-4099-abee-19257e06a65e\",\"created_at\":\"2026-11-12T13:59:53.604862+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":null,\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"ec7a163e-4aa2-46e3-a3dd-3795fbf9170f\",\"stage\":\"convertible_notes\",\"amount\":10000000,\"note_en\":\"The original Q3 2026 filing identifies 1 August 2025 as the date of the convertible note agreements, not a public announcement date. It states that USD10 million of notes were issued with initial principal balances of USD2 million to Stellantis, USD2 million to Mercedes-Benz and USD6 million to Gatemore Capital Management controlled entities; the comparative 2025 cash-flow statement reports USD10 million of note issuance proceeds. Preserve this exact principal as issued financing, with public date unknown. Gatemore vehicles are not individually named. The later USD22.7 million conversion value, accrued interest and the separate USD2 million Stellantis services payment are not additional incoming financing.\",\"currency\":\"USD\",\"round_key\":\"convertible-notes-2025\",\"checked_at\":\"2026-11-15\",\"company_id\":\"69197254-122f-4099-abee-19257e06a65e\",\"created_at\":\"2026-11-12T13:59:53.604862+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":null,\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE company_funding_rounds SET note_en=target.note_en,checked_at=target.checked_at,amount_basis=target.amount_basis,announced_date=target.announced_date,closing_status=target.closing_status,updated_at=now() WHERE id='ec7a163e-4aa2-46e3-a3dd-3795fbf9170f'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM company_funding_rounds r WHERE id='a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a\",\"stage\":\"debt_financing\",\"amount\":750000,\"note_en\":\"Emrgy''s Form D reports USD 750,000 of debt sold, equal to the total offering, with first sale on 28 April 2017.\",\"currency\":\"USD\",\"round_key\":\"emrgy-2017-04-28-form-d-debt\",\"checked_at\":\"2026-11-12\",\"company_id\":\"48326477-2f01-49f9-868c-e9a117a1ef16\",\"created_at\":\"2026-11-12T11:56:48.5293+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2017-04-28\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a\",\"stage\":\"debt_financing\",\"amount\":750000,\"note_en\":\"Emrgy Inc. (CIK1672740) publicly filed this Form D on 11 May 2017, reporting USD750,000 of debt sold against an equal offering total. The first sale was 28 April 2017; signature and SEC acceptance were 11 May 2017. The first-sale day is retained as transaction chronology, not public announcement date. The filing reports seven investors without attributable identities; directors and officers are not inferred as investors.\",\"currency\":\"USD\",\"round_key\":\"emrgy-2017-04-28-form-d-debt\",\"checked_at\":\"2026-11-15\",\"company_id\":\"48326477-2f01-49f9-868c-e9a117a1ef16\",\"created_at\":\"2026-11-12T11:56:48.5293+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2017-05-11\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a\",\"stage\":\"debt_financing\",\"amount\":750000,\"note_en\":\"Emrgy Inc. (CIK1672740) publicly filed this Form D on 11 May 2017, reporting USD750,000 of debt sold against an equal offering total. The first sale was 28 April 2017; signature and SEC acceptance were 11 May 2017. The first-sale day is retained as transaction chronology, not public announcement date. The filing reports seven investors without attributable identities; directors and officers are not inferred as investors.\",\"currency\":\"USD\",\"round_key\":\"emrgy-2017-04-28-form-d-debt\",\"checked_at\":\"2026-11-15\",\"company_id\":\"48326477-2f01-49f9-868c-e9a117a1ef16\",\"created_at\":\"2026-11-12T11:56:48.5293+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2017-05-11\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a\",\"stage\":\"debt_financing\",\"amount\":750000,\"note_en\":\"Emrgy Inc. (CIK1672740) publicly filed this Form D on 11 May 2017, reporting USD750,000 of debt sold against an equal offering total. The first sale was 28 April 2017; signature and SEC acceptance were 11 May 2017. The first-sale day is retained as transaction chronology, not public announcement date. The filing reports seven investors without attributable identities; directors and officers are not inferred as investors.\",\"currency\":\"USD\",\"round_key\":\"emrgy-2017-04-28-form-d-debt\",\"checked_at\":\"2026-11-15\",\"company_id\":\"48326477-2f01-49f9-868c-e9a117a1ef16\",\"created_at\":\"2026-11-12T11:56:48.5293+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2017-05-11\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE company_funding_rounds SET note_en=target.note_en,checked_at=target.checked_at,announced_date=target.announced_date,updated_at=now() WHERE id='a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM company_funding_rounds r WHERE id='d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d\",\"stage\":\"may-convertible-note-agreement-2026\",\"amount\":5000000,\"note_en\":\"Cash funding amount; face principal about USD7.692m includes 35% original issue discount. Agreement signed May21; funding conditional on August direct listing.\",\"currency\":\"USD\",\"round_key\":\"may-convertible-note-agreement-2026\",\"checked_at\":\"2026-11-12\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2026-05-21\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d\",\"stage\":\"may-convertible-note-agreement-2026\",\"amount\":5000000,\"note_en\":\"Cash funding amount; face principal about USD7.692m includes 35% original issue discount. Agreement signed May21; funding conditional on August direct listing. Public issuer disclosure is verified by the 2026-05-27 SEC filing. May21 is the agreement date and funding was conditioned on the direct listing.\",\"currency\":\"USD\",\"round_key\":\"may-convertible-note-agreement-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2026-05-27\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d\",\"stage\":\"may-convertible-note-agreement-2026\",\"amount\":5000000,\"note_en\":\"Cash funding amount; face principal about USD7.692m includes 35% original issue discount. Agreement signed May21; funding conditional on August direct listing. Public issuer disclosure is verified by the 2026-05-27 SEC filing. May21 is the agreement date and funding was conditioned on the direct listing.\",\"currency\":\"USD\",\"round_key\":\"may-convertible-note-agreement-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2026-05-27\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d\",\"stage\":\"may-convertible-note-agreement-2026\",\"amount\":5000000,\"note_en\":\"Cash funding amount; face principal about USD7.692m includes 35% original issue discount. Agreement signed May21; funding conditional on August direct listing. Public issuer disclosure is verified by the 2026-05-27 SEC filing. May21 is the agreement date and funding was conditioned on the direct listing.\",\"currency\":\"USD\",\"round_key\":\"may-convertible-note-agreement-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2026-05-27\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE company_funding_rounds SET announced_date=target.announced_date,checked_at=target.checked_at,note_en=target.note_en,updated_at=now() WHERE id='d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM company_funding_rounds r WHERE id='0a27e4f4-3063-44ed-9f0f-93e5e285ec1a' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"0a27e4f4-3063-44ed-9f0f-93e5e285ec1a\",\"stage\":\"senior-convertible-notes-cash-2026\",\"amount\":10150000,\"note_en\":\"Cash proceeds; face principal USD15,615,385 includes 35% original issue discount. Conversion into shares is not a second raise.\",\"currency\":\"USD\",\"round_key\":\"senior-convertible-notes-cash-2026\",\"checked_at\":\"2026-11-12\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-04-24\",\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"0a27e4f4-3063-44ed-9f0f-93e5e285ec1a\",\"stage\":\"senior-convertible-notes-cash-2026\",\"amount\":10150000,\"note_en\":\"Cash proceeds; face principal USD15,615,385 includes 35% original issue discount. Conversion into shares is not a second raise. Public issuer disclosure is verified by the 2026-04-30 SEC filing. April24 is the agreement date and the initial closing occurred April29. The retainedUSD10.15m cash proceeds are corroborated by the later sixmonthcashflow; OID facevalue is not cash.\",\"currency\":\"USD\",\"round_key\":\"senior-convertible-notes-cash-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-04-30\",\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"0a27e4f4-3063-44ed-9f0f-93e5e285ec1a\",\"stage\":\"senior-convertible-notes-cash-2026\",\"amount\":10150000,\"note_en\":\"Cash proceeds; face principal USD15,615,385 includes 35% original issue discount. Conversion into shares is not a second raise. Public issuer disclosure is verified by the 2026-04-30 SEC filing. April24 is the agreement date and the initial closing occurred April29. The retainedUSD10.15m cash proceeds are corroborated by the later sixmonthcashflow; OID facevalue is not cash.\",\"currency\":\"USD\",\"round_key\":\"senior-convertible-notes-cash-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-04-30\",\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"0a27e4f4-3063-44ed-9f0f-93e5e285ec1a\",\"stage\":\"senior-convertible-notes-cash-2026\",\"amount\":10150000,\"note_en\":\"Cash proceeds; face principal USD15,615,385 includes 35% original issue discount. Conversion into shares is not a second raise. Public issuer disclosure is verified by the 2026-04-30 SEC filing. April24 is the agreement date and the initial closing occurred April29. The retainedUSD10.15m cash proceeds are corroborated by the later sixmonthcashflow; OID facevalue is not cash.\",\"currency\":\"USD\",\"round_key\":\"senior-convertible-notes-cash-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-04-30\",\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE company_funding_rounds SET announced_date=target.announced_date,checked_at=target.checked_at,note_en=target.note_en,updated_at=now() WHERE id='0a27e4f4-3063-44ed-9f0f-93e5e285ec1a'; END IF; END $reviewed$;\n",
+  "reversal_sql": "DO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM company_funding_rounds r WHERE id='0a27e4f4-3063-44ed-9f0f-93e5e285ec1a' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"0a27e4f4-3063-44ed-9f0f-93e5e285ec1a\",\"stage\":\"senior-convertible-notes-cash-2026\",\"amount\":10150000,\"note_en\":\"Cash proceeds; face principal USD15,615,385 includes 35% original issue discount. Conversion into shares is not a second raise. Public issuer disclosure is verified by the 2026-04-30 SEC filing. April24 is the agreement date and the initial closing occurred April29. The retainedUSD10.15m cash proceeds are corroborated by the later sixmonthcashflow; OID facevalue is not cash.\",\"currency\":\"USD\",\"round_key\":\"senior-convertible-notes-cash-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-04-30\",\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"0a27e4f4-3063-44ed-9f0f-93e5e285ec1a\",\"stage\":\"senior-convertible-notes-cash-2026\",\"amount\":10150000,\"note_en\":\"Cash proceeds; face principal USD15,615,385 includes 35% original issue discount. Conversion into shares is not a second raise.\",\"currency\":\"USD\",\"round_key\":\"senior-convertible-notes-cash-2026\",\"checked_at\":\"2026-11-12\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-04-24\",\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"0a27e4f4-3063-44ed-9f0f-93e5e285ec1a\",\"stage\":\"senior-convertible-notes-cash-2026\",\"amount\":10150000,\"note_en\":\"Cash proceeds; face principal USD15,615,385 includes 35% original issue discount. Conversion into shares is not a second raise.\",\"currency\":\"USD\",\"round_key\":\"senior-convertible-notes-cash-2026\",\"checked_at\":\"2026-11-12\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-04-24\",\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"0a27e4f4-3063-44ed-9f0f-93e5e285ec1a\",\"stage\":\"senior-convertible-notes-cash-2026\",\"amount\":10150000,\"note_en\":\"Cash proceeds; face principal USD15,615,385 includes 35% original issue discount. Conversion into shares is not a second raise.\",\"currency\":\"USD\",\"round_key\":\"senior-convertible-notes-cash-2026\",\"checked_at\":\"2026-11-12\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-04-24\",\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE company_funding_rounds SET announced_date=target.announced_date,checked_at=target.checked_at,note_en=target.note_en,updated_at=now() WHERE id='0a27e4f4-3063-44ed-9f0f-93e5e285ec1a'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM company_funding_rounds r WHERE id='d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d\",\"stage\":\"may-convertible-note-agreement-2026\",\"amount\":5000000,\"note_en\":\"Cash funding amount; face principal about USD7.692m includes 35% original issue discount. Agreement signed May21; funding conditional on August direct listing. Public issuer disclosure is verified by the 2026-05-27 SEC filing. May21 is the agreement date and funding was conditioned on the direct listing.\",\"currency\":\"USD\",\"round_key\":\"may-convertible-note-agreement-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2026-05-27\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d\",\"stage\":\"may-convertible-note-agreement-2026\",\"amount\":5000000,\"note_en\":\"Cash funding amount; face principal about USD7.692m includes 35% original issue discount. Agreement signed May21; funding conditional on August direct listing.\",\"currency\":\"USD\",\"round_key\":\"may-convertible-note-agreement-2026\",\"checked_at\":\"2026-11-12\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2026-05-21\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d\",\"stage\":\"may-convertible-note-agreement-2026\",\"amount\":5000000,\"note_en\":\"Cash funding amount; face principal about USD7.692m includes 35% original issue discount. Agreement signed May21; funding conditional on August direct listing.\",\"currency\":\"USD\",\"round_key\":\"may-convertible-note-agreement-2026\",\"checked_at\":\"2026-11-12\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2026-05-21\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d\",\"stage\":\"may-convertible-note-agreement-2026\",\"amount\":5000000,\"note_en\":\"Cash funding amount; face principal about USD7.692m includes 35% original issue discount. Agreement signed May21; funding conditional on August direct listing.\",\"currency\":\"USD\",\"round_key\":\"may-convertible-note-agreement-2026\",\"checked_at\":\"2026-11-12\",\"company_id\":\"b2270aa0-4dd6-4dec-9143-042c2e6fb358\",\"created_at\":\"2026-11-12T15:01:30.936727+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2026-05-21\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE company_funding_rounds SET announced_date=target.announced_date,checked_at=target.checked_at,note_en=target.note_en,updated_at=now() WHERE id='d9be77cb-8fc1-4b3f-bbc6-5bda9aeeee5d'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM company_funding_rounds r WHERE id='a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a\",\"stage\":\"debt_financing\",\"amount\":750000,\"note_en\":\"Emrgy Inc. (CIK1672740) publicly filed this Form D on 11 May 2017, reporting USD750,000 of debt sold against an equal offering total. The first sale was 28 April 2017; signature and SEC acceptance were 11 May 2017. The first-sale day is retained as transaction chronology, not public announcement date. The filing reports seven investors without attributable identities; directors and officers are not inferred as investors.\",\"currency\":\"USD\",\"round_key\":\"emrgy-2017-04-28-form-d-debt\",\"checked_at\":\"2026-11-15\",\"company_id\":\"48326477-2f01-49f9-868c-e9a117a1ef16\",\"created_at\":\"2026-11-12T11:56:48.5293+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2017-05-11\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a\",\"stage\":\"debt_financing\",\"amount\":750000,\"note_en\":\"Emrgy''s Form D reports USD 750,000 of debt sold, equal to the total offering, with first sale on 28 April 2017.\",\"currency\":\"USD\",\"round_key\":\"emrgy-2017-04-28-form-d-debt\",\"checked_at\":\"2026-11-12\",\"company_id\":\"48326477-2f01-49f9-868c-e9a117a1ef16\",\"created_at\":\"2026-11-12T11:56:48.5293+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2017-04-28\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a\",\"stage\":\"debt_financing\",\"amount\":750000,\"note_en\":\"Emrgy''s Form D reports USD 750,000 of debt sold, equal to the total offering, with first sale on 28 April 2017.\",\"currency\":\"USD\",\"round_key\":\"emrgy-2017-04-28-form-d-debt\",\"checked_at\":\"2026-11-12\",\"company_id\":\"48326477-2f01-49f9-868c-e9a117a1ef16\",\"created_at\":\"2026-11-12T11:56:48.5293+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2017-04-28\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a\",\"stage\":\"debt_financing\",\"amount\":750000,\"note_en\":\"Emrgy''s Form D reports USD 750,000 of debt sold, equal to the total offering, with first sale on 28 April 2017.\",\"currency\":\"USD\",\"round_key\":\"emrgy-2017-04-28-form-d-debt\",\"checked_at\":\"2026-11-12\",\"company_id\":\"48326477-2f01-49f9-868c-e9a117a1ef16\",\"created_at\":\"2026-11-12T11:56:48.5293+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2017-04-28\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE company_funding_rounds SET note_en=target.note_en,checked_at=target.checked_at,announced_date=target.announced_date,updated_at=now() WHERE id='a6f5bcf3-46bf-4ab9-8ec8-bbc5dbd6fe4a'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM company_funding_rounds r WHERE id='ec7a163e-4aa2-46e3-a3dd-3795fbf9170f' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"ec7a163e-4aa2-46e3-a3dd-3795fbf9170f\",\"stage\":\"convertible_notes\",\"amount\":10000000,\"note_en\":\"The original Q3 2026 filing identifies 1 August 2025 as the date of the convertible note agreements, not a public announcement date. It states that USD10 million of notes were issued with initial principal balances of USD2 million to Stellantis, USD2 million to Mercedes-Benz and USD6 million to Gatemore Capital Management controlled entities; the comparative 2025 cash-flow statement reports USD10 million of note issuance proceeds. Preserve this exact principal as issued financing, with public date unknown. Gatemore vehicles are not individually named. The later USD22.7 million conversion value, accrued interest and the separate USD2 million Stellantis services payment are not additional incoming financing.\",\"currency\":\"USD\",\"round_key\":\"convertible-notes-2025\",\"checked_at\":\"2026-11-15\",\"company_id\":\"69197254-122f-4099-abee-19257e06a65e\",\"created_at\":\"2026-11-12T13:59:53.604862+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":null,\"closing_status\":\"closed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"ec7a163e-4aa2-46e3-a3dd-3795fbf9170f\",\"stage\":\"convertible_notes\",\"amount\":10000000,\"note_en\":\"Principal of August 2025 notes. Named economic investors and amounts retained; Gatemore controlled vehicles unspecified. Later conversion is not new cash.\",\"currency\":\"USD\",\"round_key\":\"convertible-notes-2025\",\"checked_at\":\"2026-11-12\",\"company_id\":\"69197254-122f-4099-abee-19257e06a65e\",\"created_at\":\"2026-11-12T13:59:53.604862+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2025-08-01\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"ec7a163e-4aa2-46e3-a3dd-3795fbf9170f\",\"stage\":\"convertible_notes\",\"amount\":10000000,\"note_en\":\"Principal of August 2025 notes. Named economic investors and amounts retained; Gatemore controlled vehicles unspecified. Later conversion is not new cash.\",\"currency\":\"USD\",\"round_key\":\"convertible-notes-2025\",\"checked_at\":\"2026-11-12\",\"company_id\":\"69197254-122f-4099-abee-19257e06a65e\",\"created_at\":\"2026-11-12T13:59:53.604862+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2025-08-01\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"ec7a163e-4aa2-46e3-a3dd-3795fbf9170f\",\"stage\":\"convertible_notes\",\"amount\":10000000,\"note_en\":\"Principal of August 2025 notes. Named economic investors and amounts retained; Gatemore controlled vehicles unspecified. Later conversion is not new cash.\",\"currency\":\"USD\",\"round_key\":\"convertible-notes-2025\",\"checked_at\":\"2026-11-12\",\"company_id\":\"69197254-122f-4099-abee-19257e06a65e\",\"created_at\":\"2026-11-12T13:59:53.604862+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2025-08-01\",\"closing_status\":\"signed\",\"financing_type\":\"convertible\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE company_funding_rounds SET note_en=target.note_en,checked_at=target.checked_at,amount_basis=target.amount_basis,announced_date=target.announced_date,closing_status=target.closing_status,updated_at=now() WHERE id='ec7a163e-4aa2-46e3-a3dd-3795fbf9170f'; END IF; END $reviewed$;\n",
+  "reversal_scope": "Restore reviewed event/participant/generic fields with full-row guards; valid corroborating sources retained, no record deletion."
+}
