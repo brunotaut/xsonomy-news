@@ -1,0 +1,1350 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-15",
+  "started_at": "2026-11-15T08:50:25.078Z",
+  "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-second.json",
+  "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-second-reviewed-corrections.json",
+  "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-second-source-ledger.json",
+  "new_prepared_reconciliations": "research-agent/recovery/2026-11-15-funding-one-hundred-second-prepared-reconciliations.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 31,
+    "new_queue_identities_checked": 24,
+    "prepared_identities_rechecked": 7,
+    "additional_alias_database_contexts": 1,
+    "newly_completed_bounded_reviews": 1,
+    "new_or_retained_partial": 23,
+    "new_approved_events": 22,
+    "retired_exact_duplicate_events": 2,
+    "net_approved_event_change": 20,
+    "new_round_participations": 16,
+    "new_manifest_source_rows": 33,
+    "new_existing_event_corroboration_sources": 6,
+    "new_source_rows": 39,
+    "new_generic_portfolio_relationships": 0,
+    "new_investor_profiles": 0,
+    "new_coverage_rows": 4,
+    "group_search_queries_executed": 110,
+    "prepared_reconciliation_search_queries": 5,
+    "root_additional_search_queries": 4,
+    "search_queries_executed": 119,
+    "per_company_search_ledger_entries": 110,
+    "source_ledger_entries": 95,
+    "prepared_source_ledger_urls": 15,
+    "all_four_final_freezes_confirmed_before_final_consolidation": true,
+    "local_postgresql_tests_passed": true,
+    "combined_fullrow_guards_canonical_conflict_late_failure_reversal_and_replay_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "atomic_import_invocations": 1,
+    "post_import_idempotency_rehearsal_passed": true,
+    "all_prior_uncorrected_events_links_sources_and_profiles_preserved": true,
+    "all_prior_company_metadata_preserved": true,
+    "selected_legacy_relationships_preserved": 7,
+    "reviewed_existing_fact_corrections": 14,
+    "canonical_duplicate_guards_verified": 2,
+    "event_matches": 22,
+    "mismatched_facts": 0,
+    "participant_matches": 16,
+    "source_matches": 33,
+    "added_evidence_source_matches": 6,
+    "missing_link_sources": 0,
+    "new_exact_name_duplicate_groups": 0,
+    "queue_dispositions_applied": 24,
+    "approved_event_counts_refreshed_for_identities": 32,
+    "current_manifest_publication_verified": false,
+    "db_total_events": 4655,
+    "db_approved_events": 4638,
+    "db_round_participations": 6459,
+    "db_investor_profiles": 3726,
+    "db_source_reconciliation_companies": 1323,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "links": 6443,
+    "events": 4633,
+    "covered": 1319,
+    "sources": 6356,
+    "approved": 4618,
+    "profiles": 3726,
+    "relationships": 734
+  },
+  "production_after": {
+    "links": 6459,
+    "events": 4655,
+    "covered": 1323,
+    "sources": 6395,
+    "approved": 4638,
+    "profiles": 3726,
+    "relationships": 734
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1288,
+    "source_review_partial": 1276,
+    "queued": 0
+  },
+  "per_company": [
+    {
+      "id": "13f81732-4495-488b-a7e8-a8a808f68f0c",
+      "slug": "crystal-group",
+      "name": "Crystal Group",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 2,
+      "searches_checked": [
+        "\"Crystal Group\" Iowa grant investment financing 2026 2025 2023",
+        "site:crystalrugged.com ownership equity funding",
+        "site:crystalrugged.com \"2017\" \"grant\"",
+        "\"Crystal Group\" \"100,000\" Iowa \"2017\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.crystalrugged.com/employee-owned/",
+          "title": "Crystal Group original ownership statement",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Exact Iowa manufacturer;100% employee-owned business unit of Employee Owned Brands. Ownership is not cash financing."
+        },
+        {
+          "url": "https://www.crystalrugged.com/crystal-group-joins-dexter-apache-holdings-inc-family/",
+          "title": "Crystal Group original2011 acquisition release",
+          "published_date": "2011-08-02",
+          "source_type": "company_announcement",
+          "disposition": "100% acquisition by Dexter Apache; seller consideration excluded."
+        },
+        {
+          "url": "https://www.crystalrugged.com/crystal-group-elevates-employee-learning-with-future-ready-iowa-employer-innovation-fund-award/",
+          "title": "Crystal Group original Employer Innovation Fund disclosure",
+          "published_date": "2022-09-07",
+          "source_type": "company_announcement",
+          "disposition": "Existing2022 award corroborated; release proves support, not necessarily first announcement or complete grant disbursement."
+        },
+        {
+          "url": "https://opportunityiowa.gov/media/6492/download?inline=",
+          "title": "IEDA2024 annual report indexed2017 award candidate",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Search-index candidate shows17-HQJDF-048,100000 direct funding plus513750 taxbenefit; grant/loan classification unresolved. Full PDF not opened; no new verified event inferred."
+        }
+      ],
+      "evidence_note": "Fresh bounded history, issuer/registry and transaction-party checks completed; confirmed facts represented selectively in the proposed manifest, existing curated facts retained. Source candidates and failed fetches are not evidence of zero funding.",
+      "hold_note": "Resolve2017 IEDA100000 direct funding grant/loan classification apart from513750 taxbenefit; existing grantaward lifecycle/announcement precision requires guarded review. No equity round inferred from employee acquisition."
+    },
+    {
+      "id": "918b9949-8986-4351-b3b4-5da7aab4248a",
+      "slug": "culver-aerospace",
+      "name": "Culver Aerospace",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Culver Aerospace\" funding investment company",
+        "\"Culver Aerospace\" aircraft company funding Culver",
+        "site:techiia.com Culver investment 2021",
+        "site:culver.aero investment funding",
+        "site:techiia.com \"Culver\" \"invested\"",
+        "site:culver.aero \"investment\" OR \"TECHIIA\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://culver.aero",
+          "title": "Culver issuer site",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Fresh fetch403; not a negative financing finding."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/15010661",
+          "title": "CULVER AEROSPACE UK LTD official registry",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "UK holding company incorporated18July2023, SIC64209; not automatically identical to cohort US-labelled record."
+        },
+        {
+          "url": "https://techiia.com/news/velike-intervyu-olega-krota-pro-biznes-komandu-i-zberezhennya-liderstva",
+          "title": "TECHIIA original founder interview",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Holding confirms acquisition and Culver Aviation name. No cheque or primary cash inferred; brand/legal bridge to Culver Aerospace remains unresolved."
+        }
+      ],
+      "evidence_note": "Fresh bounded history, issuer/registry and transaction-party checks completed; confirmed facts represented selectively in the proposed manifest, existing curated facts retained. Source candidates and failed fetches are not evidence of zero funding.",
+      "hold_note": "Official holding acquisition/CulverAviation and UKregistry do not fully resolve legalcontinuity to cohort CulverAerospace (US metadata). Issuersite403; no funding assigned across aliases or operatingcompanies."
+    },
+    {
+      "id": "89b9182f-1486-4395-a3c3-60a5a53340fe",
+      "slug": "cyark",
+      "name": "CyArk",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 6,
+      "searches_checked": [
+        "CyArk grants funding 2025 2026 foundation",
+        "site:cyark.org \"support\" \"foundation\" \"2025\"",
+        "site:cyark.org annual report 2025 donors foundation",
+        "site:cyark.org \"Iron Mountain\" funding support",
+        "site:cyark.org \"annual report\" funding Kacyra"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.cyark.org/whoweare/mission/",
+          "title": "CyArk original mission and funders list",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Nonprofit identity and named donors/funders confirmed; logos alone do not establish per-round cash allocations."
+        },
+        {
+          "url": "https://www.cyark.org/grants/heritageAmplified/",
+          "title": "CyArk current Heritage Amplified programme",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "2026/2027 programme gives CyArk services and smallcash to third-party grantees, backed by Iron Mountain; outgoing programme is not a new corporate investment."
+        },
+        {
+          "url": "https://www.cyark.org/projects/pauli-murray",
+          "title": "CyArk Pauli Murray project",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Own collaboration supported by Iron Mountain, documented2024; no exact owncash amount or announcementday."
+        }
+      ],
+      "evidence_note": "Fresh bounded history, issuer/registry and transaction-party checks completed; confirmed facts represented selectively in the proposed manifest, existing curated facts retained. Source candidates and failed fetches are not evidence of zero funding.",
+      "hold_note": "Donor/project support not allocated to owncorporatecash; foundationfiscalyears in existingrecords are not necessarily publicannouncementyears. Individual IRS grants/release dates need future reconciliation; outgoing grants excluded."
+    },
+    {
+      "id": "4e8e0229-d31e-49c2-a668-1d2a5f19a2c0",
+      "slug": "cyborg-dynamics-engineering",
+      "name": "Cyborg Dynamics Engineering",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 3,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Cyborg Dynamics Engineering\" investment funding grant",
+        "site:cyborgdynamics.com investment grant 2026 2025",
+        "site:cyborgdynamics.com \"funding\" OR \"grant\"",
+        "\"Cyborg Dynamics Engineering\" \"2026\" funding investment",
+        "\"Cyborg Dynamics Engineering\" official company about funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.minister.defence.gov.au/media-releases/2020-04-20/building-our-defence-industry-capability",
+          "title": "Sovereign Industrial Capability Priority grants original",
+          "published_date": "2020-04-20",
+          "source_type": "investor_announcement",
+          "disposition": "Exact named grant426150AUD."
+        },
+        {
+          "url": "https://www.minister.industry.gov.au/ministers/husic/media-releases/industry-growth-program-boosting-aussie-manufacturing",
+          "title": "Industry Growth Program ministerial announcement",
+          "published_date": "2025-01-09",
+          "source_type": "investor_announcement",
+          "disposition": "Names Cyborg with597000AUD; whole400m programme excluded."
+        },
+        {
+          "url": "https://business.gov.au/grants-and-programs/industry-growth-program/grant-recipients",
+          "title": "Industry Growth Program original recipient table",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Exact PtyLtd recipient and597000AUD grant corroborated."
+        },
+        {
+          "url": "https://www.minister.defence.gov.au/media-releases/2021-10-15/brisbane-company-gets-33-million-boost-pursuit-aussie-first",
+          "title": "Defence Innovation Hub original contract announcement",
+          "published_date": "2021-10-15",
+          "source_type": "investor_announcement",
+          "disposition": "AUD3.3m R&D contract award, not equity/grant/cash."
+        },
+        {
+          "url": "https://www.scimex.org/newsfeed/ai-powered-robot-vehicles-team-up-to-fight-fires",
+          "title": "University research release candidate",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Search result identifies QDSA_2023_OUT/063 collaboration; no exact Cyborg own allocation established, not imported."
+        }
+      ],
+      "evidence_note": "Fresh bounded history, issuer/registry and transaction-party checks completed; confirmed facts represented selectively in the proposed manifest, existing curated facts retained. Source candidates and failed fetches are not evidence of zero funding.",
+      "hold_note": "2026QDSA_2023_OUT/063 collaboration ownallocation and earlier/private rounds remain unresolved. New2020/2025grants and2021R&Dcontract verified; no total-company funding sum."
+    },
+    {
+      "id": "edb46351-4a5f-4e32-bc59-795e070c44b7",
+      "slug": "cyphy-works",
+      "name": "CyPhy Works",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 4,
+      "searches_checked": [
+        "\"CyPhy Works\" funding 2013 2009 2019 investors",
+        "site:luxcapital.com \"CyPhy\" \"7\"",
+        "site:sec.gov \"CyPhy Works\" \"2010\" \"1482765\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.motorolasolutions.com/newsroom/press-releases/motorola-solutions-invests-in-drone-maker-cyphy-works.html",
+          "title": "Motorola original strategic investment",
+          "published_date": "2015-03-16",
+          "source_type": "investor_announcement",
+          "disposition": "Undisclosed strategic investment predates October2015B; overlap/round mapping held."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/draper-nexus-invests-in-drone-trailblazer-cyphy-works-300087314.html",
+          "title": "CyPhy issuer Draper Nexus announcement",
+          "published_date": "2015-05-21",
+          "source_type": "company_announcement",
+          "disposition": "New investor disclosure, not itself evidence of additional round independent of October2015B."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1482765/000148276518000002/xslFormDX01/primary_doc.xml",
+          "title": "CyPhy original2018 debt FormD",
+          "published_date": "2018-06-13",
+          "source_type": "company_announcement",
+          "disposition": "Exact old amount retained; first sale differs from public filing. No directors inferred investors."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1482765/000148276518000003/xslFormDX01/primary_doc.xml",
+          "title": "CyPhy original2018 equity FormD",
+          "published_date": "2018-07-13",
+          "source_type": "company_announcement",
+          "disposition": "Direct SEC submission metadata verifies2018-07-13 public filing and canonicalxslFormDX01 path. Browser originalbody fetchfailed; existingamount preserved and datecorrection prepared only. July12 first-sale distinction awaits fullbodyconfirmation."
+        },
+        {
+          "url": "https://media.defense.gov/2023/Jan/27/2003150941/-1/-1/0/CYPHY_WORKS_STORY.PDF",
+          "title": "DoD SBIR history original candidate",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Indexed NSF2009/DARPA2010/RIF history; individual award numbers/values unresolved, not imported."
+        }
+      ],
+      "evidence_note": "Fresh bounded history, issuer/registry and transaction-party checks completed; confirmed facts represented selectively in the proposed manifest, existing curated facts retained. Source candidates and failed fetches are not evidence of zero funding.",
+      "hold_note": "March/May2015 strategicdisclosures may overlap October2015B; retain source chronology proposals rather than manufacture extra rounds.2009NSF/2010DARPA/RIF award identifiers and earlyseed history unresolved;2018 sale vsfilingdates require correction."
+    },
+    {
+      "id": "df42a769-d0f7-499a-8642-fca9eb352bdc",
+      "slug": "czechoslovak-group",
+      "name": "Czechoslovak Group",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 4,
+      "relationship_count": 0,
+      "existing_event_count": 5,
+      "searches_checked": [
+        "site:csg.com financing notes 2026 2025 credit revolving",
+        "\"CSG\" \"July 2026\" \"BNP\" facility",
+        "\"Czechoslovak Group\" loans financing 2020 2023 banks"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://csg.com/en/news/csg-new-debt-structure-reduces-cost-of-debt-and-extends-maturity",
+          "title": "CSG original refinancing announcement",
+          "published_date": "2026-07-23",
+          "source_type": "company_announcement",
+          "disposition": "Body names actual borrowerCSGN.V.; HTML article:published_time2026-07-23T10:04:10.000Z verified directly. Four original-currency tranches, no extra converted aggregate."
+        },
+        {
+          "url": "https://csg.com/cs/news/nova-struktura-financovani-csg-snizuje-naklady-a-prodluzuje-splatnost",
+          "title": "CSG Czech original refinancing announcement",
+          "published_date": "2026-07-23",
+          "source_type": "company_announcement",
+          "disposition": "Original-language capacity and refinancing corroboration; approx1.7bn drawings unchanged."
+        },
+        {
+          "url": "https://www.dentons.com/en/about-dentons/news-events-and-awards/news/2026/august/dentons-advises-banks-on-complex-3-billion-eur-cross-border-financing-for-czechoslovak-group",
+          "title": "Lender counsel transaction corroboration",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Fresh fetch403; search-only candidate, no lender profile linked from coordinator/counsel names."
+        },
+        {
+          "url": "https://investors.csg.com/prospectus/CZECHOSLOVAK%20GROUP%20-%20Final%20Prospectus%20%5BAFM%5D%20-%2020%20January%202026%20-%20Compressed2.pdf",
+          "title": "CSG earlier loans prospectus candidate",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Indexed older collateralised borrowing history and2026MONETAcapex candidate retained for precise origination review; no balance treated as new financing."
+        }
+      ],
+      "evidence_note": "Fresh bounded history, issuer/registry and transaction-party checks completed; confirmed facts represented selectively in the proposed manifest, existing curated facts retained. Source candidates and failed fetches are not evidence of zero funding.",
+      "hold_note": "Pre2024 loan/bond origination and2026 MONETA30m capex candidate require originals and issuer-level allocation. Refinancingcapacity is not incremental proceeds; existingbondcash statuses need closing-source checks."
+    },
+    {
+      "id": "6a3cda0c-52dd-4b27-b1cc-f05fb441c7c1",
+      "slug": "d-fend-solutions",
+      "name": "D-Fend Solutions",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 2,
+      "searches_checked": [
+        "site:d-fendsolutions.com funding investment 2026 2025 2017",
+        "site:d-fendsolutions.com \"2025\" \"funding\"",
+        "site:vertexventures.co.il \"D-Fend\" \"2026\" OR \"2025\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://d-fendsolutions.com/newsroom/press-releases/",
+          "title": "D-Fend latest original archive",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "June1 2026 acquisition agreement andAugust20 completion; acquisition proceeds excluded."
+        },
+        {
+          "url": "https://www.vertexventures.co.il/news/motorola-solutions-acquires-israeli-drone-defense-startup-d-fend-for-1-5-billion/",
+          "title": "Vertex investor original acquisition account",
+          "published_date": "2026-06-01",
+          "source_type": "investor_announcement",
+          "disposition": "Cumulative67m and shareholder gains not new rounds; earlier seed detail remains unknown."
+        },
+        {
+          "url": "https://d-fendsolutions.com/press_releases/d-fend-solutions-raises-31m-to-fortify-cyber-counter-drone-technology-and-market-leadership/",
+          "title": "D-Fend original31m initial closing",
+          "published_date": "2024-12-04",
+          "source_type": "company_announcement",
+          "disposition": "Existing public first closing retained; no later additional closing identified in fresh archive."
+        }
+      ],
+      "evidence_note": "Fresh bounded history, issuer/registry and transaction-party checks completed; confirmed facts represented selectively in the proposed manifest, existing curated facts retained. Source candidates and failed fetches are not evidence of zero funding.",
+      "hold_note": "Earlier seed history and any post2024 furtherclosing not established. Investor cumulative67m cannot be decomposed into a guessed8mseed.2026 acquisition/valuation/shareholder returns excluded from funding."
+    },
+    {
+      "id": "9a393518-4e21-402e-847f-e8957353f08f",
+      "slug": "d-ta-systems",
+      "name": "D-TA Systems",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 1,
+      "relationship_count": 0,
+      "existing_event_count": 4,
+      "searches_checked": [
+        "\"D-TA Systems\" financing investment grant 2025 2026",
+        "\"D-TA Systems\" \"investment\" \"2015\"",
+        "site:search.open.canada.ca/grants/ \"D-TA\" \"2025\" \"28,000\"",
+        "\"D-TA Systems\" \"CanExport\" \"2020\"",
+        "site:tradecommissioner.gc.ca \"CanExport SMEs\" \"non-repayable\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://search.open.canada.ca/grants/record/nrc-cnrc%2C172-2019-2020-Q4-944929%2Ccurrent",
+          "title": "D-TA CanExport agreement944929 original",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Exact CAD42750 contribution andrecipientBN859672594;2020-04-01–08-31 are agreementperiod, not public announcement/cash."
+        },
+        {
+          "url": "https://www.tradecommissioner.gc.ca/en/step-by-step-guide-exporting/optimizing-adjusting-scaling.html",
+          "title": "CanExport official nonrepayable programme explanation",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Official policy confirms CanExport SME nonrepayable support; recipient record supplies exact amount."
+        },
+        {
+          "url": "https://www.ised-isde.canada.ca/site/industrial-technologies-office/en/strategic-aerospace-and-defence-initiative-sadi/project-portfolio",
+          "title": "SADI original portfolio",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "D-TA own1,790,140CAD repayable commitment, agreement2010-08-25/publicannounced2010-10-07. Not Edgewater2016 grant; existing approximate1.8m row retained pending reviewed precise update."
+        },
+        {
+          "url": "https://search.open.canada.ca/grants/?owner_org=feddevontario&page=2&sort=agreement_start_date+desc",
+          "title": "RDII original agreement listing",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Existing5mCAD agreement starts2026-01-01; not proof of announcement date or paidcash."
+        }
+      ],
+      "evidence_note": "Fresh bounded history, issuer/registry and transaction-party checks completed; confirmed facts represented selectively in the proposed manifest, existing curated facts retained. Source candidates and failed fetches are not evidence of zero funding.",
+      "hold_note": "Multiple older2012/2016/2018/2025 contributioncandidates require exactgovernmentrecords and amendment mapping. Existing2022/2026 startdates andclosed_amount statuses need publicdate/cash correction; SADIexact1,790,140 vsapprox1.8m proposed not silently overwritten."
+    },
+    {
+      "id": "935aa6f2-a909-4aa0-8ca1-d85633cf3106",
+      "slug": "damen",
+      "name": "Damen",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:damen.com financing credit facility 2025 2026 loan",
+        "Damen Shipyards Group refinancing loan 2024 2025 banks 2026",
+        "site:damen.com \"2026\" \"financing\" annual report",
+        "site:damen.com \"Annual Report 2025\" financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.lobbyregister.bundestag.de/media/ec/63/640533/DSG-Annual-Report-2024.pdf",
+          "title": "Damen Shipyards Group N.V. annual report2024, original filed in German parliamentary register",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Pages70/80 give own2024 refinance components; page108 cross-checks obligors and workingcapital88m. Guarantees, saleleaseback and subsidiary grants excluded."
+        },
+        {
+          "url": "https://www.damen.com/insights-center/news/damen-books-records-for-revenue-and-order-book",
+          "title": "Damen original2023 results and refinancing announcement",
+          "published_date": "2024-08-02",
+          "source_type": "company_announcement",
+          "disposition": "Completed three-year refinancing confirmed; later year report supplies components."
+        },
+        {
+          "url": "https://www.damen.com/insights-center/news/damen-reports-profit-and-full-order-book-in-2024-annual-report",
+          "title": "Damen original2024 results",
+          "published_date": "2025-10-30",
+          "source_type": "company_announcement",
+          "disposition": "EUR270m state bridge was available but not taken; no cash import."
+        }
+      ],
+      "evidence_note": "Original annuals and dated issuer releases verify three separated2024 financing components; guarantees, asset saleleaseback and undrawn270mstatebridge excluded.",
+      "hold_note": "Earlier facilityhistory, exact original announcement dates, borrower-level group attribution and contingent guarantees require separate review; no named bank inferred."
+    },
+    {
+      "id": "52188d58-3a4f-4b63-8e0c-d9570bd2655b",
+      "slug": "dark-wolf-solutions",
+      "name": "Dark Wolf Solutions",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Dark Wolf Solutions\" investment financing Razors Edge 2025 2026",
+        "site:darkwolfsolutions.com \"investment\" \"2026\"",
+        "site:darkwolfsolutions.com \"Razor\" investment history",
+        "site:darkwolf.io \"Razor\" \"2025\"",
+        "\"Dark Wolf Solutions\" \"2019\" investment funding",
+        "\"Dark Wolf Solutions\" \"2018\" financing investors"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://darkwolf.io/",
+          "title": "Dark Wolf original current issuer",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Prior site redirects here; current operations and RackTop products not evidence of additive funding."
+        },
+        {
+          "url": "https://www.razorsvc.com/blog/dark-wolf-solutions-investment.html",
+          "title": "Razor Edge original portfolio page",
+          "published_date": "2025-11-06",
+          "source_type": "investor_announcement",
+          "disposition": "Existing investment corroborated; page lists portfolio only, no independent lead-role or amount support."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1154237",
+          "title": "Dark Wolf original SBIR company portfolio",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Exact name/website/UEI K8KVUFQMGYV5, five awards; aggregate2,893,457 not extra event."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/179989",
+          "title": "Dark Wolf original SBIR award FA8652-19-P-HB02",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Exact contract amount140781USD; awardyear2019, execution2019-03-06–2019-06-04; dates not public announcement."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/186089",
+          "title": "Dark Wolf original SBIR award FA8771-20-C-0001",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Exact contract amount748636USD; awardyear2020, execution2019-10-24–2020-10-24; dates not public announcement."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/190820",
+          "title": "Dark Wolf original SBIR award FA8649-21-C-0008",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Exact contract amount1706531USD; awardyear2021, execution2021-01-22–2022-04-22; dates not public announcement."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/198059",
+          "title": "Dark Wolf original SBIR award W52P1J-22-P-0015",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Exact contract amount223738USD; awardyear2022, execution2022-08-15–2022-12-13; dates not public announcement."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/204676",
+          "title": "Dark Wolf original SBIR award FA8649-23-P-0272",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Exact contract amount73771USD; awardyear2023, execution2022-11-01–2023-02-03; dates not public announcement."
+        }
+      ],
+      "evidence_note": "Five exact individual original SBIR contracts totaling2893457USD added separately from existing RazorEdge equity.",
+      "hold_note": "RazorEdgelead role original support unresolved; predecessorWolfDen spinout capital and PhaseIII contract vehicles need distinct review;75mprocurementceiling notinvestment."
+    },
+    {
+      "id": "b3b1bc70-1e3c-487c-bdbc-6ebbd6c37a79",
+      "slug": "dataminr",
+      "name": "Dataminr",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:dataminr.com funding 2009 2013 2015 2019 financing",
+        "site:dataminr.com \"2015\" \"130\" financing",
+        "\"Dataminr\" \"30 million\" \"2013\" investors",
+        "site:dataminr.com \"130 million\" \"2015\"",
+        "site:ivp.com Dataminr 2013 30 funding",
+        "site:dataminr.com \"130\" funding 2015",
+        "\"Dataminr Raises $30 Million\" \"Business Wire\"",
+        "site:venrock.com Dataminr \"30\" \"2013\"",
+        "site:ivp.com \"Dataminr\" \"June 12, 2013\"",
+        "site:dataminr.com \"2026\" \"funding\" financing",
+        "\"Dataminr\" \"20130612005515\"",
+        "\"Dataminr\" \"130 million\" \"Fidelity\" press release 2015"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.dataminr.com/press/announcement/dataminr-intel-agents-for-the-physical-world/",
+          "title": "Dataminr original physicalworld IntelAgents release",
+          "published_date": "2025-09-29",
+          "source_type": "company_announcement",
+          "disposition": "August250m total says initial Fortress/NightDragon investments; no additive250m event because overlap with March85m/April100m/September300m unclear."
+        },
+        {
+          "url": "https://www.dataminr.com/press/announcement/dataminr-to-acquire-threatconnect/",
+          "title": "Dataminr original ThreatConnect announcement",
+          "published_date": "2025-10-21",
+          "source_type": "company_announcement",
+          "disposition": "Existing September300m corroborated; acquisition price and customer contract318m excluded."
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20130612005515/en/Dataminr-Raises-30-Million-in-Funding-Led-by-Venrock-and-IVP",
+          "title": "Original2013 issuer release candidate",
+          "published_date": "2013-06-12",
+          "source_type": "company_announcement",
+          "disposition": "Fresh original fetch unavailable.30m claim and33.874m later FormD amendment not imported before mapping."
+        },
+        {
+          "url": "https://www.vcnewsdaily.com/dataminr/venture-capital-funding/hfbqlfqsbv",
+          "title": "Syndicated2013 release candidate",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Fresh fetch unavailable; held."
+        }
+      ],
+      "evidence_note": "Five existing public rounds retained; current original pages establish250mAugust/300mSeptember chronological overlap question.",
+      "hold_note": "2009–2015SECoffering amendments and2013/2015original rounds need source recovery; no additive250m or estimatedinvestorcheques imported."
+    },
+    {
+      "id": "72f24cab-e557-419f-83ad-afed154372c2",
+      "slug": "datashapes-ai",
+      "name": "DataShapes AI",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"DataShapes AI\" funding investment 2025 2026",
+        "site:datashapesai.com \"funding\" \"2026\"",
+        "\"DataShapes\" \"NSF\" funding 2019 2020",
+        "site:datashapesai.com \"Berg\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://datashapesai.com/",
+          "title": "DataShapes AI original current site",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "GlobalEdge RF platform identity confirmed."
+        },
+        {
+          "url": "https://datashapesai.com/who-we-are/",
+          "title": "DataShapes AI original leadership",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "LoganSelby CEO confirms original award recipient identity; board memberships are not round participations."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/1543287",
+          "title": "DataShapes original SBIR portfolio",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Single139835USD award not additional company total."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/217913",
+          "title": "DataShapes original MORPHEUS SBIR award N68335-26-C-0037",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Exact139835USD; UEIXGPNSJ1MLTF3, LoganSelby and SarahCuellar issuer domains; fiscal2026 award starts2025-11-03, no publicdate."
+        }
+      ],
+      "evidence_note": "One exact new SBIR R&D contract verified with names/domain/UEI bridge, preserving existing two equity rounds.",
+      "hold_note": "2019NSF/DataShapesLLC legalcontinuity and earlierfounderfinance remain unresolved; board/observer seats not roundinvestorrole."
+    },
+    {
+      "id": "0b40f241-63db-445e-b570-f92dc17e25c0",
+      "slug": "datium",
+      "name": "Datium",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Datium\" investment drone radio Korea 2025 2026",
+        "\"Datium\" \"오토호스\" \"드론\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://en.koreainvestment.ac/portfolio",
+          "title": "Korea Investment Accelerator original portfolio",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Datium explicitly automotive repair workflow AI, not radio module manufacturer."
+        },
+        {
+          "url": "https://oregonuas.org/blogs/news/oregon-uas-accelerator-welcomes-17-startups-to-its-fall-2026-cohort",
+          "title": "OregonUAS original cohort release",
+          "published_date": "2026-08-19",
+          "source_type": "company_announcement",
+          "disposition": "Datium/gethaist explicitly extends repair-data AI into UASmaintenance; NuCode makes radios and Vexil aerial repeaters. Same automotive identity bridge, no extra investment cheque."
+        },
+        {
+          "url": "https://datium.xyz",
+          "title": "Earlier Datium issuer website",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Fetch unavailable."
+        },
+        {
+          "url": "https://gethaist.com",
+          "title": "Current Datium Haist site",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Opened but no readable body; no financial assertions added."
+        }
+      ],
+      "evidence_note": "Investororiginal and Oregonprogramme resolve automotiveAI company extending into UASrepair; existing PreA entity attribution plausible and retained.",
+      "hold_note": "Earlier seed/TIPS allocation originals and exact legalcontinuity need mapping; programme participation does not prove cashgrant or round."
+    },
+    {
+      "id": "206b69b0-d1a4-4f72-8625-ede32a3547d2",
+      "slug": "datum-submarine-technologies",
+      "name": "DATUM Submarine Technologies",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"DATUM Submarine\" yatırım finansman 2025 2026",
+        "site:datum-subs.com yatırım destek TUBITAK",
+        "site:datum-subs.com \"Istanbul Technical University\" \"2018\"",
+        "\"DATUM\" \"İTÜ\" \"sermaye\"",
+        "site:itu.edu.tr \"DATUM\" \"2018\" ortak",
+        "\"DATUM\" \"yatırım\" \"2018\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://datum-subs.com/en",
+          "title": "DATUM original current homepage",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Own2018 strategic/financial partnership with ITU disclosed without financing terms."
+        },
+        {
+          "url": "https://datum-subs.com/en/about",
+          "title": "DATUM original legal identity and history",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Exact legal DATUM Denizalti Teknolojileri Uygulama ve Muhendislik AS, founder and SSB projects corroborated. Partnership not automatically primary capital or grant."
+        }
+      ],
+      "evidence_note": "Issuer history confirms2018ITU financial/strategicpartnership and exactTurkishlegalcompany.",
+      "hold_note": "Partnership instrument, investorownership, amount and primarycapitalunknown; SSBdevelopmentprocurement isnot automaticallygrant. No companyfinance row invented."
+    },
+    {
+      "id": "bec7d9a1-5d61-4c76-944f-7fc76e472f44",
+      "slug": "davie-shipbuilding",
+      "name": "Davie Shipbuilding",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Davie Shipbuilding loan Quebec investment financing 2025 2026",
+        "\"Davie\" \"519\" \"loan\" \"2023\" Quebec",
+        "\"Davie\" \"519 millions\" \"prêt\" Québec 2023",
+        "\"Davie\" \"financing\" \"2012\" Investissement Québec"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.davie.ca/en/news/2024-12-10-pearlson-en/",
+          "title": "Davie original facility-upgrade announcement",
+          "published_date": "2024-12-10",
+          "source_type": "company_announcement",
+          "disposition": "519mCAD support within840m expansion, not840m financing. Vehicle and instrument split unresolved, no primary company assignment."
+        },
+        {
+          "url": "https://www.davie.ca/en/news/2026-04-15-davie-investit-1-5m-naval-quebec-en/",
+          "title": "Davie original NavalQuebec investment",
+          "published_date": "2026-04-15",
+          "source_type": "company_announcement",
+          "disposition": "1.5mCAD outbound support byDavie, excluded from capital received; groupInocea/Canada/US/Finland distinguished."
+        },
+        {
+          "url": "https://www.quebec.ca/nouvelles/actualites/details/favoriser-la-croissance-internationale-de-davie-quebec-soutient-davie-pour-lacquisition-dun-chantier-naval-finlandais-51767",
+          "title": "Quebec original Helsinki acquisition financing",
+          "published_date": "2023-11-03",
+          "source_type": "investor_announcement",
+          "disposition": "Original body challengewall; official indexed77mEUR financing belongs acquisitionvehicles, not automatically shipyard primary proceeds."
+        }
+      ],
+      "evidence_note": "Own originals separate outbound1.5m investment,519m expansion support and shipbuildingcustomercontracts.",
+      "hold_note": "519mInfrastructurevehicle, Finland77mEURacquisitionvehicles and2012/2013YorkCapital/legacydebt require actualborrower mapping; none assigned automatically to shipyard."
+    },
+    {
+      "id": "821e6d86-04ef-462e-9849-5567e38d5700",
+      "slug": "dbox",
+      "name": "DBOX",
+      "priority_group": "2",
+      "priority": "100",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "DBOX IT logika investment grant funding 2025 2026",
+        "site:dbox.lt \"investment\" \"funding\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://dbox.lt/eu-export.html",
+          "title": "DBOX / UAB IT logika original EU export-market development grant",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original names UAB IT logika as project implementer and own funding amount EUR89738, distinct from EUR179475 project budget. Project2026-03-03 through2027-03-03; commencement not public announcement or proof paid. Exact funding instrument within EU programme not further specified."
+        },
+        {
+          "url": "https://dbox.lt/eu-5g-sandbox.html",
+          "title": "DBOX / UAB IT logika original EU NextGenerationEU 5G project funding disclosure",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "UAB IT logika is applicant and project implementer, partners Pixpro, VilniusUniversity and TaikomasisDirbtinisIntelektas. Consortium funding EUR2897286.55 and budgetEUR5160157.24 are excluded from own amount, which remains undisclosed. Project2024-01 through2026-03 does not establish publicannouncement or cash paid."
+        },
+        {
+          "url": "https://dbox.lt/eu-ecommerce.html",
+          "title": "DBOX original e-commerce allocation",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Existing36720EUR verified; recorded2021-09-03 is explicitly project start, not public announcement; correction prepared."
+        }
+      ],
+      "evidence_note": "Added own89738EURexportallocation and 5G grantdisclosure with ownamountNULL; consortiumtotal excluded.",
+      "hold_note": "Existing fourgrant dates/bases include projectstart/signature/closedcash semantics needing guarded correction; orthodonticproject legalactivity and earliestownallocationoriginals need revisit."
+    },
+    {
+      "id": "3652d0ac-1774-46c2-b42d-e4c3a20bb16f",
+      "slug": "de-havilland-canada",
+      "name": "De Havilland Canada",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"De Havilland Canada\" financing investment funding 2026 2025 government repayable",
+        "site:dehavilland.com financing funding investment government 2024 2023 2022",
+        "site:edc.ca \"De Havilland\" \"2.5\" 2026",
+        "site:canada.ca \"De Havilland\" \"2.5\" 2026",
+        "site:budget.canada.ca \"De Havilland\" 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://dehavilland.com/production/de-havilland-canada-announces-agreement-and-de-havilland-canadair-515-production-increase/",
+          "title": "DHC original financing agreement and production increase",
+          "published_date": "2026-10-30",
+          "source_type": "company_announcement",
+          "disposition": "Own issuer agreement; financing ceiling, expected Q12027 completion, not paid cash."
+        },
+        {
+          "url": "https://www.budget.canada.ca/2026/report-rapport/chap5-en.html",
+          "title": "Canada Budget2026 Chapter5",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Official named company financing delivered by EDC, denominated in Canadian national-budget dollars."
+        },
+        {
+          "url": "https://dehavilland.com/corporate-initiatives/de-havilland-canada-working-with-pratt-whitney-canada-to-support-the-development-of-sustainable-hybrid-electric-aircraft-propulsion-technology/",
+          "title": "DHC hybrid-electric demonstrator announcement",
+          "published_date": "2021-07-15",
+          "source_type": "company_announcement",
+          "disposition": "CAD163m programme investment belongs to wider P&W programme; own allocation not disclosed, excluded."
+        },
+        {
+          "url": "https://lobbycanada.gc.ca/app/secure/ocl/lrs/do/clntSmmry?clientOrgCorpNumber=370933&sMdKy=",
+          "title": "Canadian official DHC lobbying registration",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Indexed issuer/parent relationships checked; not treated as proof of zero government funding."
+        }
+      ],
+      "evidence_note": "Current issuer De Havilland Aircraft of Canada Limited confirmed. Added one up-to-CAD2.5bn financing commitment, with delivery and completion limitations. Hybrid programme and aircraft purchase/leasing MOUs do not establish separate own corporate cash.",
+      "hold_note": "Older historical predecessor/Longview/Viking financing requires legal continuity and issuer allocation. Commitment components and terms remain undisclosed; no default equity/grant or fully drawn loan assumption.",
+      "existing_event_count": 0
+    },
+    {
+      "id": "c6bf2fbc-f6c2-4dcc-aad5-ccb704861cbe",
+      "slug": "decision-sciences",
+      "name": "Decision Sciences",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Decision Sciences\" funding financing investment 2026 2025",
+        "site:decisionsciences.com investment funding financing equity 2026 2025",
+        "\"Decision Sciences International\" investors financing older funding 2024 2026 Form D",
+        "\"Decision Sciences\" \"Form D\" \"2025\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.decisionsciences.com/news/",
+          "title": "Exact issuer current news",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "December2025 government detection contract and2024KoBold MOU are research/procurement partnership, no financing inferred."
+        },
+        {
+          "url": "https://www.decisionsciences.com/about/",
+          "title": "Issuer original identity and board",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "DSIC/Poway security detection issuer identified; directors careerfund links not investors."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1347065/000089843224000046/primary_doc.xml",
+          "title": "Existing debt/warrant amendment original",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Fresh open unavailable; existingUSD25,434,228 retained, not duplicated as2024newcash."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1347065/000089843224000076/primary_doc.xml",
+          "title": "Existing equity amendment original",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Fresh open unavailable; existingUSD13,454,382 retained, not duplicate2024newround."
+        }
+      ],
+      "evidence_note": "Sixteen existing financing/grant records preserved. Broad/latest/issuer searches corroborate security-imaging identity; amendments and cumulative sold amounts are not additive rounds. No investors inferred from director biographies.",
+      "hold_note": "Original chronology of fourteen FormD offerings/amendments, including first-sale versus public filing dates, remains unresolved. Failed fresh SEC opens are source holds, not zero funding or permission to invent dates.",
+      "existing_event_count": 17
+    },
+    {
+      "id": "9b926e95-3171-4d60-a6d0-a018243f4284",
+      "slug": "dedienne-aerospace",
+      "name": "Dedienne Aerospace",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Dedienne Aerospace\" financement investissement capital 2026 2025",
+        "site:dedienne-aero.com financement capital subvention investisseurs",
+        "\"Dedienne Aerospace\" \"Crédit Mutuel Equity\" \"Irdi\"",
+        "site:dedienne-aero.com \"capital\" \"IRDI\"",
+        "site:creditmutuel-equity.eu \"Dedienne\"",
+        "\"Dedienne\" site:creditmutuel-equity.eu 2025",
+        "\"Dedienne\" site:irdi.fr \"2025\"",
+        "\"Dedienne Aerospace\" \"2025\" \"MBO\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://dedienne-aero.com/values/",
+          "title": "Dedienne original values and subventions",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Own FranceRelance2020–22 digital transformation support explicit; amount unknown."
+        },
+        {
+          "url": "https://www.dedienne-aero.com/news/",
+          "title": "Dedienne latest original news",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "November5 2026 Rolls-Royce agreement and other industrial licences are sales/partnerships, not financing."
+        },
+        {
+          "url": "https://www.winston.com/en/professionals/pulcini-thomas",
+          "title": "Winston transaction counsel: Dedienne Aerospace MBO",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "CréditMutuelEquity/IRDI/GSO structured MBO; no date or primary proceeds inferred."
+        },
+        {
+          "url": "https://www.creditmutuel-equity.eu/en/portfolio.html",
+          "title": "CME portfolio",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Index has Dedienne2025 entry, but opened rendering paginates; date does not resolve older shareholder evidence."
+        },
+        {
+          "url": "https://www.irdi.fr/participations/",
+          "title": "IRDI portfolio",
+          "published_date": null,
+          "source_type": "investor_announcement",
+          "disposition": "Opened paginated listing does not expose Dedienne detail; no invented allocation."
+        },
+        {
+          "url": "https://www.dedienne-aero.com/terms-of-use/",
+          "title": "Dedienne legal imprint",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "SAS Toulouse registration560801706 confirms exact tooling issuer; share capital not funding."
+        }
+      ],
+      "evidence_note": "Added only own FranceRelance support disclosure at undisclosed amount/date. Existing CME and IRDI generic shareholder records preserved, not duplicated. MBO consideration, share capital and acquisition prices are excluded from company financing.",
+      "hold_note": "MBO legal vehicle, date and primary-versus-secondary allocation unresolved; GSO identity not expanded from acronym. Existing ADEME date/amount sourced partly from secondary registry requires original award reconciliation. DEMGY/Dedienne Multiplasturgy is a distinct issuer and its2004MBO excluded.",
+      "existing_event_count": 1
+    },
+    {
+      "id": "29859041-8896-4250-b561-4a7afb2ad64b",
+      "slug": "deepspace",
+      "name": "DeepSpace",
+      "status": "reviewed_public_sources",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"DeepSpace\" \"FPV\" funding Kinzua",
+        "\"DeepSpace\" Kinzua FPV pilot funding company",
+        "site:deepspacefpv.com investment about funding",
+        "site:deepspacefpv.com funding investor investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://dronexl.co/2026/10/03/fpv-pilot-kinzua-bridge-pennsylvania-state-park-permission/",
+          "title": "Cohort origin: DeepSpace SEEKER5",
+          "published_date": "2026-10-03",
+          "source_type": "third_party_report",
+          "disposition": "Exact source names FPV equipment brand, not unrelated space-tech venture."
+        },
+        {
+          "url": "https://www.deepspacefpv.com/pages/about-us-11836541.html",
+          "title": "DeepSpace issuer About",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original describes FPV design/production/sales and China telephone contacts; no financial facts disclosed."
+        },
+        {
+          "url": "https://www.deepspacefpv.com/pages/contactus",
+          "title": "DeepSpace issuer contacts",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Exact brand/website bridge; legal corporate name and ownership remain undisclosed."
+        }
+      ],
+      "evidence_note": "Bounded public-source financing review resolves cohort brand to DeepSpace FPV via exact SEEKER5 product and original issuer site. Searches found no supported corporate financing event; no zero-funding claim and no unrelated DeepSpace Technologies financing assigned.",
+      "hold_note": "Legal corporate name, investor roster and private financing remain unknown. These unknown private details are not represented as zero funding.",
+      "existing_event_count": 0
+    },
+    {
+      "id": "2d191e91-5ac0-4a0d-b9cd-54220a0d3011",
+      "slug": "deere-and-company",
+      "name": "Deere & Company",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:deere.com 2026 2025 notes financing offering Deere Company",
+        "site:investor.deere.com \"2026\" \"Deere & Company\" \"notes\" offering",
+        "site:sec.gov/Archives/edgar/data/315189/ \"2026\" \"aggregate principal\" \"Notes\"",
+        "site:sec.gov/Archives/edgar/data/315189/ \"2026\" \"offering\" \"notes\"",
+        "site:investor.deere.com \"2026\" \"notes\" \"Company\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://investor.deere.com/fixed-income/default.aspx",
+          "title": "Official Deere fixed-income portal",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "JDCC InterNotes and securitization issuers distinct from parent; not automatically parent proceeds."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926083165/tm2619892-2_424b2.htm",
+          "title": "July2026 original prospectus",
+          "published_date": "2026-07-13",
+          "source_type": "company_announcement",
+          "disposition": "USD300m issuer Deere Funding Canada Corporation; Deere&Company guarantor only. Excluded from parent financing."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465926083910/de-20260710x8k.htm",
+          "title": "July2026 original8-K",
+          "published_date": "2026-07-15",
+          "source_type": "company_announcement",
+          "disposition": "Confirms subsidiaryissuer, parentguarantee, termsJuly10, publicfilingJuly15."
+        },
+        {
+          "url": "https://data.sec.gov/submissions/CIK0000315189.json",
+          "title": "SEC current submission metadata",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Direct metadata checked throughNovember2 2026 recent8-K; no subsidiary offering assigned to parent."
+        }
+      ],
+      "evidence_note": "Current parent SEC financing review preserves four existing notes/debentures. Newly examined2026USD300m offering is subsidiary financing even though filed under parentCIK and guaranteed; no parent event added.",
+      "hold_note": "Longstanding parent debt and original issue/public announcement dates require wider instrument-by-instrument review. Currentfour rows are not complete lifetime financing; JDCC/Canadian finance affiliate issuance remains separate.",
+      "existing_event_count": 4
+    },
+    {
+      "id": "2bebe5d1-4cdb-4daf-bcc7-cdfe76ad7dd7",
+      "slug": "defcomm",
+      "name": "Defcomm",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Defcomm\" France financement investissement",
+        "\"Defcomm\" \"Fincantieri\" investment capital",
+        "\"Defcomm\" company French France Exail Fincantieri",
+        "\"Defcomm\" \"finanziamento\" \"capitale\" startup 2024 2026",
+        "\"Defcomm\" site:fincantieri.com \"2026\" \"November\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.fincantieri.com/en/newsroom/press-releases/2026/fincantieri-creates-an-international-underwater-champion-acquisition-of-four-companies-to-accelerate-growth-in-marine-drone-and-in-commercial-and-defense-underwater-activities-with-an-initial-expenditur-of-approzimately-euro-600-million",
+          "title": "Fincantieri original binding Defcomm investment agreement",
+          "published_date": "2026-07-06",
+          "source_type": "investor_announcement",
+          "disposition": "Own primary capital increase explicitly part of initial49% acquisition; secondary share purchase separated."
+        },
+        {
+          "url": "https://www.fincantieri.com/en/newsroom/press-releases/2025/fincantieri-agreement-with-defcomm-for-the-future-of-autonomous-naval-units-and-surface-drones",
+          "title": "Fincantieri original strategic co-investment agreement",
+          "published_date": "2025-10-20",
+          "source_type": "investor_announcement",
+          "disposition": "Italian marine-drone issuer identified; no quantified financing established by2025 cooperation announcement."
+        },
+        {
+          "url": "https://www.fincantieri.com/en/newsroom/press-releases/2026/first-half-2026-results-approved",
+          "title": "Fincantieri half-year results",
+          "published_date": "2026-07-29",
+          "source_type": "investor_announcement",
+          "disposition": "Reconfirms July agreements, not completed cash or four-company aggregate assigned to Defcomm."
+        },
+        {
+          "url": "https://www.defensenews.com/global/europe/2026/07/06/thales-to-buy-french-underwater-drone-maker-exail-in-45-billion-deal/",
+          "title": "Cohort original article",
+          "published_date": "2026-07-06",
+          "source_type": "third_party_report",
+          "disposition": "Article separates FrenchExail from ItalianDefcomm; currentcompanycountry preserved."
+        }
+      ],
+      "evidence_note": "Exact cohort article and investor originals resolve Italian Defcomm, distinct from FrenchExail. One explicitly supported primary equity commitment disclosure added. No metadata/geography changes; Fincantieri parentABB fundraising and EUR600m four-company acquisition aggregate excluded.",
+      "hold_note": "Later closing and precise primary/secondary cash split unestablished; no49% company valuation or per-company share of EUR600m invented. Historical company capital structure still requires exact registry evidence.",
+      "existing_event_count": 0
+    },
+    {
+      "id": "73149c22-048f-49ba-b98e-11022820b811",
+      "slug": "defence-builder",
+      "name": "Defence Builder",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Defence Builder\" funding fund investment 2026 2025",
+        "site:defencebuilder.com investment Sigma KSE Buntar fund capital first close 2024 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defencebuilder.com/news/defence-builder-expands-into-a-full-ecosystem-investment-fund-and-new-capabilities-added-to-accelerator",
+          "title": "Original ecosystem and FundI launch",
+          "published_date": "2026-03-24",
+          "source_type": "company_announcement",
+          "disposition": "USD5m venture-fund size andUSD1.5m founding-partner contribution are fund capital, not proven operating-company financing."
+        },
+        {
+          "url": "https://defencebuilder.com/fund",
+          "title": "Original DBFund page",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Distinct fund investing into portfolio companies; ticket ranges/combined teamportfolio not issuer fundraising."
+        },
+        {
+          "url": "https://defencebuilder.com/news/defence-builder-fund-i-invests-in-dod-solution",
+          "title": "Original DODSolution round announcement",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "DB is investor, DODSolution issuer; do not assign itsUSD2.1m round to DB."
+        },
+        {
+          "url": "https://defencebuilder.com/newsroom",
+          "title": "Latest issuer newsroom",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "November2026 accelerator and partnership activity checked; fund versus accelerator boundaries preserved."
+        }
+      ],
+      "evidence_note": "Issuer operates accelerator/fund/advisory ecosystem. Portfolio investee rounds, collective valuations, programme cheques and fund capital are not recorded as operating-company fundraising. Draft gate preserved.",
+      "hold_note": "Own operator legal entity and distinct FundI capital-recipient mapping remain unresolved. FundUSD1.5m founder contributions are real source candidates, not verified operating-company equity; do not infer founding partners individual cheques.",
+      "existing_event_count": 0
+    },
+    {
+      "id": "c8f6a3e0-edf7-40f2-975f-c79c3deaf665",
+      "slug": "defenture",
+      "name": "Defenture",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Defenture\" kapitaal financiering investering 2026 2025",
+        "\"Defenture\" site:azurinvestmentgroup.com 2026 2025",
+        "\"Defenture\" site:navarre.nl capital investment financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://en.azurinvestmentgroup.com/post/azur-investment-group-takes-capital-interest-in-defenture",
+          "title": "Azur original Defenture capital injection",
+          "published_date": "2021-03-09",
+          "source_type": "investor_announcement",
+          "disposition": "Existing2021 stake and capital injection corroborated; Dutch originalMarch9 date distinct from laterEnglish repost."
+        },
+        {
+          "url": "https://navarre.nl/navarre-supports-defenture/",
+          "title": "Navarre original advisory mandate",
+          "published_date": "2025-03-10",
+          "source_type": "third_party_report",
+          "disposition": "Fresh open failed; indexed original states strategic scaling advisory, not proved capital round."
+        },
+        {
+          "url": "https://defenture.com/defenture-strengthens-governance-structure/",
+          "title": "Defenture issuer governance announcement",
+          "published_date": "2025-04-03",
+          "source_type": "company_announcement",
+          "disposition": "Fresh open502; indexedApril3 2025 governance restructuring, not standalone financing amount."
+        },
+        {
+          "url": "https://nltimes.nl/2025/03/31/dutch-combat-vehicle-builder-defenture-narrowly-escaped-bankruptcy",
+          "title": "Existing shareholder recapitalization source",
+          "published_date": "2025-03-31",
+          "source_type": "third_party_report",
+          "disposition": "Existing2025 unnamed shareholder capital preserved; no new amount from indexedsecondary material."
+        }
+      ],
+      "evidence_note": "Existing2021Azur injection and2025shareholder recapitalization retained without duplicateevents or investorprofiles. Navarre is adviser, procurement awards are revenue contracts, shareholder litigation is not freshcapital.",
+      "hold_note": "Original2025recapitalization shareholder roster and cash terms remain unavailable.2024negative-equity/2025accounts and debt prefinancing require instrument-specific originalreview; recentgovernancerestructuring does not establish another fundinground.",
+      "existing_event_count": 2
+    }
+  ],
+  "prepared_identity_reconciliations": [
+    {
+      "company_slug": "china-electronics-technology-group-corporation",
+      "event_corrections": 2,
+      "disposition": "prepared_reconciliation_checked_not_new_queue_review",
+      "note": "Source-specific reconciliation, not a claim of complete public financing history."
+    },
+    {
+      "company_slug": "china-state-shipbuilding-corporation",
+      "event_corrections": 2,
+      "disposition": "prepared_reconciliation_checked_not_new_queue_review",
+      "note": "Source-specific reconciliation, not a claim of complete public financing history."
+    },
+    {
+      "company_slug": "cis",
+      "event_corrections": 2,
+      "disposition": "prepared_reconciliation_checked_not_new_queue_review",
+      "note": "Source-specific reconciliation, not a claim of complete public financing history."
+    },
+    {
+      "company_slug": "colt",
+      "event_corrections": 2,
+      "disposition": "prepared_reconciliation_checked_not_new_queue_review",
+      "note": "Source-specific reconciliation, not a claim of complete public financing history."
+    },
+    {
+      "company_slug": "corvus-robotics",
+      "event_corrections": 1,
+      "disposition": "prepared_reconciliation_checked_not_new_queue_review",
+      "note": "Source-specific reconciliation, not a claim of complete public financing history."
+    },
+    {
+      "company_slug": "cosine",
+      "event_corrections": 4,
+      "disposition": "prepared_reconciliation_checked_not_new_queue_review",
+      "note": "Source-specific reconciliation, not a claim of complete public financing history."
+    },
+    {
+      "company_slug": "couach",
+      "event_corrections": 1,
+      "disposition": "prepared_reconciliation_checked_not_new_queue_review",
+      "note": "Source-specific reconciliation, not a claim of complete public financing history."
+    }
+  ],
+  "validation": {
+    "current_importer_and_three_fixtures_read": true,
+    "postgresql_tests": [
+      "Manifest import/rollback/idempotence/conflicting-fact rejection/source FK",
+      "Fourteen full-row correction guards, canonical-issuer guard failure, late correction failure atomicity, guarded reversal and replay"
+    ],
+    "production_rollback_original_rows_restored": 16,
+    "exact_fact_audit": {
+      "event_matches": 22,
+      "source_matches": 33,
+      "mismatched_facts": 0,
+      "participant_matches": 16,
+      "missing_link_sources": 0
+    },
+    "reviewed_event_matches": 14,
+    "canonical_matches": 2,
+    "added_original_source_matches": 6,
+    "preservation_hashes_before": {
+      "metadata": "293f21fca87ee43588150d29be04ee34",
+      "old_events": "27f13fa883e5be27560bb7217c5c975a",
+      "old_links": "4d557663d06286d00d76a3e311bafb74",
+      "old_sources": "f64c7fe48e4c7b25f96bf9591027d704",
+      "curated_profiles": "c6d0208d4cd9faf62c33f38b07656f56",
+      "old_relationships": "652513b141696cc47ac18c240ff4ac96"
+    },
+    "preservation_hashes_after": {
+      "metadata": "293f21fca87ee43588150d29be04ee34",
+      "old_links": "4d557663d06286d00d76a3e311bafb74",
+      "old_events": "27f13fa883e5be27560bb7217c5c975a",
+      "old_sources": "f64c7fe48e4c7b25f96bf9591027d704",
+      "curated_profiles": "c6d0208d4cd9faf62c33f38b07656f56",
+      "old_relationships": "652513b141696cc47ac18c240ff4ac96"
+    },
+    "source_and_identity_limitations": [
+      "Couach direct original article and authenticated issuePDF returned403; official issueindex was opened and exactpublishedorder reproduction independently opened.",
+      "CSSC first prospectusdates unresolved; original results closures retained in notes with publicannounced_date null.",
+      "Canonical CETC dates intentionally unchanged by exactduplicate retirement guards; separate canonical21interest-date hold recorded."
+    ]
+  },
+  "publication_scope": {
+    "site": "https://xsonomy.com/landscape/",
+    "geography_and_publication_gates_unchanged": true,
+    "expected_directory_profiles": 3717,
+    "expected_generic_relationships": 731
+  },
+  "programme_complete": false,
+  "reconciliation_phase": {
+    "unique_checked_this_pass": 192,
+    "remaining_initial_pass_identities": 1151
+  },
+  "publication": null
+}

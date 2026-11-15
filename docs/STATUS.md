@@ -2366,3 +2366,8 @@ Publication verified 2026-11-15T07:12:48.255Z: catalogue f01dd128fbd9ba77e4f8e0d
 ### Funding reconciliation — 2026-11-15, run 101
 
 Reviewed 24 next cohort identities in four disjoint read-only groups plus prepared Carnegie Robotics corrections. Imported 37 confirmed events, 26 participant links and 56 event-source rows in one tested atomic transaction; corrected three contract/date records and three agency roles under full-row guards. Three bounded reviews closed; 21 specific history/source holds retained. Queue: 1,287 reviewed / 1,277 partial. Production rollback, exact facts, guarded reversals, idempotence and prior-data hashes passed. Catalogue `8efd41435b786aad4dc0976cde6f136701d0ec9e`, workflow 43693025443 succeeded. Both live datasets regenerated; 13 referenced profiles / 26 participant source URLs verified, landscape HTTP200. Report: `research-agent/reports/2026-11-15-funding-landscape-one-hundred-first.json`. Programme remains in progress; continuation stays enabled.
+
+
+### Funding reconciliation — 2026-11-15, run102
+
+Checked24 next cohort identities plus7 prepared issuer reconciliations and canonicalCETC context. One tested atomic import added22 events,16 participants,39 source rows;14 full-row guarded corrections include retirement of2 exact CETC duplicates with canonical guards. One bounded review closed;23 specific holds retained. Queue1288 reviewed/1276 partial. Production rollback, financial/source/role audits, reversals, idempotence and prior-data hashes passed. Publication pending; report `research-agent/reports/2026-11-15-funding-landscape-one-hundred-second.json`.
