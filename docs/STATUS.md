@@ -2371,3 +2371,8 @@ Reviewed 24 next cohort identities in four disjoint read-only groups plus prepar
 ### Funding reconciliation — 2026-11-15, run102
 
 Checked24 next cohort identities plus7 prepared issuer reconciliations and canonicalCETC context. One tested atomic import added22 events,16 participants,39 source rows;14 full-row guarded corrections include retirement of2 exact CETC duplicates with canonical guards. One bounded review closed;23 specific holds retained. Queue1288 reviewed/1276 partial. Production rollback, financial/source/role audits, reversals, idempotence and prior-data hashes passed. Catalogue `d193ed7f41e667751166af702fa07cf7bd9b6dfa`, workflow43697195864 succeeded. Both live datasets regenerated;11 profiles and16 participant sources verified; landscapeHTTP200. Programme remains in progress; report `research-agent/reports/2026-11-15-funding-landscape-one-hundred-second.json`.
+
+
+### Funding reconciliation — 2026-11-15, run103
+
+Checked24 next cohort identities and8 prepared company reconciliations. One tested atomic import added12 events,6 participants,23 event-source rows and3 generic ownership links. Twelve full-row financial corrections, one agency/investor-role correction and two ownership corrections include retirement ofDornierSeawings facts misassigned toDornierGroup, without deleting history or merging identities. Seven bounded reviews closed;17 specific holds retained. Queue1295 reviewed/1269 partial. Rollback, exact financial/source/role/generic audits, guarded reversals, idempotence and prior-data hashes passed. Publication pending; report `research-agent/reports/2026-11-15-funding-landscape-one-hundred-third.json`.
