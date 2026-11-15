@@ -1,0 +1,352 @@
+{
+  "id": "funding-landscape-20261115-ninety-ninth-reviewed-corrections",
+  "checked_at": "2026-11-15",
+  "method": "Full expected-old/current JSON guards excluding operational updated_at; idempotent corrections and guarded reversal. Historical links/sources/profiles preserved.",
+  "corrections": [
+    {
+      "table": "company_funding_rounds",
+      "key": "7f4f936f-9ed5-4959-a721-a0e526c099b6",
+      "company_slug": "atos",
+      "expected_before": {
+        "id": "7f4f936f-9ed5-4959-a721-a0e526c099b6",
+        "stage": "Rights Issue",
+        "amount": 233332768.4985,
+        "note_en": "Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash.",
+        "currency": "EUR",
+        "round_key": "atos-2024-rights-issue",
+        "checked_at": "2026-11-11",
+        "company_id": "65c7da7b-8de0-4f35-837f-f1b4e97d0ab2",
+        "created_at": "2026-11-11T18:58:13.873699+00:00",
+        "updated_at": "2026-11-11T18:58:13.873699+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2024-12-10",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "approximate",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "7f4f936f-9ed5-4959-a721-a0e526c099b6",
+        "stage": "Rights Issue",
+        "amount": 233332768.4985,
+        "note_en": "Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash. Review 2026-11-15: this is a new-share equity rights issue paid through cash subscriptions and debt offset, not a new borrowing. Other fields retained.",
+        "currency": "EUR",
+        "round_key": "atos-2024-rights-issue",
+        "checked_at": "2026-11-15",
+        "company_id": "65c7da7b-8de0-4f35-837f-f1b4e97d0ab2",
+        "created_at": "2026-11-11T18:58:13.873699+00:00",
+        "updated_at": "2026-11-11T18:58:13.873699+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2024-12-10",
+        "closing_status": "closed",
+        "financing_type": "equity",
+        "parent_round_id": null,
+        "amount_qualifier": "approximate",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "financing_type",
+        "note_en",
+        "checked_at"
+      ],
+      "reason": "Issuer confirms new shares with cash and debt equitization; debt category was incorrect.",
+      "evidence": [
+        {
+          "url": "https://www.atosgroup.com/en/press/atos-opens-a-new-chapter-with-the-successful-closing-of-its-financial-restructuring",
+          "published_date": "2024-12-19",
+          "note": "Rights issue settled10December,143mcash+90mequitization; no amount/date changes proposed."
+        }
+      ],
+      "reversal": {
+        "id": "7f4f936f-9ed5-4959-a721-a0e526c099b6",
+        "stage": "Rights Issue",
+        "amount": 233332768.4985,
+        "note_en": "Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash.",
+        "currency": "EUR",
+        "round_key": "atos-2024-rights-issue",
+        "checked_at": "2026-11-11",
+        "company_id": "65c7da7b-8de0-4f35-837f-f1b4e97d0ab2",
+        "created_at": "2026-11-11T18:58:13.873699+00:00",
+        "updated_at": "2026-11-11T18:58:13.873699+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2024-12-10",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "approximate",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key": "6f0e489c-22a7-424a-bbf0-81476c3a7e3d",
+      "company_slug": "avolon",
+      "expected_before": {
+        "id": "6f0e489c-22a7-424a-bbf0-81476c3a7e3d",
+        "stage": "Debt",
+        "amount": 420000000,
+        "note_en": "Issuer: Avolon Holdings Limited.",
+        "currency": "USD",
+        "round_key": "2026-03-samurai-loan-facility",
+        "checked_at": "2026-11-11",
+        "company_id": "ec8f8da3-9146-42b7-ba13-8e40c43f6cc1",
+        "created_at": "2026-11-11T20:15:05.011456+00:00",
+        "updated_at": "2026-11-11T20:15:05.011456+00:00",
+        "record_kind": "credit_facility",
+        "amount_basis": "closed_amount",
+        "announced_date": "2026-03-04",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "approximate",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "6f0e489c-22a7-424a-bbf0-81476c3a7e3d",
+        "stage": "Debt",
+        "amount": null,
+        "note_en": "Issuer/economic borrower: Avolon Holdings Limited. Original five-year unsecured Samurai facility contains approximately USD346 million and JPY11.7 billion. The USD420 million headline is an approximate translated equivalent, not an original USD-only principal. The single-currency amount fields are null to avoid false currency precision or a duplicate event; both original tranches are retained here. Completed facility is not proof of full cash draw; exact legal borrowing vehicle and individual allocations undisclosed.",
+        "currency": null,
+        "round_key": "2026-03-samurai-loan-facility",
+        "checked_at": "2026-11-15",
+        "company_id": "ec8f8da3-9146-42b7-ba13-8e40c43f6cc1",
+        "created_at": "2026-11-11T20:15:05.011456+00:00",
+        "updated_at": "2026-11-11T20:15:05.011456+00:00",
+        "record_kind": "credit_facility",
+        "amount_basis": "undisclosed",
+        "announced_date": "2026-03-04",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "amount",
+        "currency",
+        "amount_basis",
+        "amount_qualifier",
+        "note_en",
+        "checked_at"
+      ],
+      "reason": "Mixed original currencies cannot be represented as one USD amount without misstatement.",
+      "evidence": [
+        {
+          "url": "https://avolon.aero/newsrooms/avolon-raises-us420million-through-inaugural-samurai-loan-facility"
+        }
+      ],
+      "reversal": {
+        "id": "6f0e489c-22a7-424a-bbf0-81476c3a7e3d",
+        "stage": "Debt",
+        "amount": 420000000,
+        "note_en": "Issuer: Avolon Holdings Limited.",
+        "currency": "USD",
+        "round_key": "2026-03-samurai-loan-facility",
+        "checked_at": "2026-11-11",
+        "company_id": "ec8f8da3-9146-42b7-ba13-8e40c43f6cc1",
+        "created_at": "2026-11-11T20:15:05.011456+00:00",
+        "updated_at": "2026-11-11T20:15:05.011456+00:00",
+        "record_kind": "credit_facility",
+        "amount_basis": "closed_amount",
+        "announced_date": "2026-03-04",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "approximate",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key": "edb823d2-1407-469e-909e-dc9e413b7904",
+      "company_slug": "avolon",
+      "expected_before": {
+        "id": "edb823d2-1407-469e-909e-dc9e413b7904",
+        "stage": "Debt",
+        "amount": 1500000000,
+        "note_en": "Issuer: Avolon Holdings Funding Limited.",
+        "currency": "USD",
+        "round_key": "2026-02-senior-unsecured-notes",
+        "checked_at": "2026-11-11",
+        "company_id": "ec8f8da3-9146-42b7-ba13-8e40c43f6cc1",
+        "created_at": "2026-11-11T20:15:05.011456+00:00",
+        "updated_at": "2026-11-11T20:15:05.011456+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2026-02-23",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "edb823d2-1407-469e-909e-dc9e413b7904",
+        "stage": "Debt",
+        "amount": 1500000000,
+        "note_en": "Actual issuer: Avolon Holdings Funding Limited, guaranteed by Avolon Holdings Limited and certain subsidiaries. Original public pricing announcement is 18 February 2026 for USD750m 4.200% notes due2029 and USD750m 4.850% notes due2033. Expected23February closing is not the announcement date. Existing closed status is corroborated by the issuer March4 release reporting USD1.9bn raised including these USD1.5bn notes; exact cash receipt date not inferred. Aggregate face principal, not net proceeds.",
+        "currency": "USD",
+        "round_key": "2026-02-senior-unsecured-notes",
+        "checked_at": "2026-11-15",
+        "company_id": "ec8f8da3-9146-42b7-ba13-8e40c43f6cc1",
+        "created_at": "2026-11-11T20:15:05.011456+00:00",
+        "updated_at": "2026-11-11T20:15:05.011456+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2026-02-18",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "announced_date",
+        "note_en",
+        "checked_at"
+      ],
+      "reason": "Public announcement date was confused with expected settlement.",
+      "evidence": [
+        {
+          "url": "https://www.avolon.aero/newsrooms/avolon-announces-pricing-of-senior-unsecured-notes"
+        },
+        {
+          "url": "https://www.avolon.aero/news/q1-2026-business-update"
+        },
+        {
+          "url": "https://avolon.aero/newsrooms/avolon-raises-us420million-through-inaugural-samurai-loan-facility"
+        }
+      ],
+      "reversal": {
+        "id": "edb823d2-1407-469e-909e-dc9e413b7904",
+        "stage": "Debt",
+        "amount": 1500000000,
+        "note_en": "Issuer: Avolon Holdings Funding Limited.",
+        "currency": "USD",
+        "round_key": "2026-02-senior-unsecured-notes",
+        "checked_at": "2026-11-11",
+        "company_id": "ec8f8da3-9146-42b7-ba13-8e40c43f6cc1",
+        "created_at": "2026-11-11T20:15:05.011456+00:00",
+        "updated_at": "2026-11-11T20:15:05.011456+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2026-02-23",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key": "7f363dd8-db81-4e29-902c-9f1f8fcb6d63",
+      "company_slug": "ballistic-defense-system",
+      "expected_before": {
+        "id": "7f363dd8-db81-4e29-902c-9f1f8fcb6d63",
+        "stage": "Cumulative founder-funded prototype development",
+        "amount": 1150000,
+        "note_en": "The co-founder stated that founders invested USD 1.15 million over about 18 months to develop the Matador prototype. Security, tranches and dates were not disclosed; unnamed founders are not converted into investor profiles.",
+        "currency": "USD",
+        "round_key": "founder-capital-through-2026",
+        "checked_at": "2026-11-11",
+        "company_id": "7b8e4c26-b454-4074-ae98-d31c8a03bc9b",
+        "created_at": "2026-11-11T21:59:50.345862+00:00",
+        "updated_at": "2026-11-11T21:59:50.345862+00:00",
+        "record_kind": "investment_disclosure",
+        "amount_basis": "closed_amount",
+        "announced_date": null,
+        "closing_status": "closed",
+        "financing_type": "undisclosed",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "7f363dd8-db81-4e29-902c-9f1f8fcb6d63",
+        "stage": "Founder financing disclosure; amount unresolved",
+        "amount": null,
+        "note_en": "Founder support for prototype development is reported, but exact capital subscribed is unresolved. Breaking Defense's co-founder interview reports USD1.15m founder investment; Morocco World News quotes the CEO describing total development expenditure below USD1.15m and separately acknowledges public Innovation Support Fund backing. Development expenditure, translated headlines and subscribed founder capital are not interchangeable. Numeric amount/currency are null pending reconciliation; no new funding event or unnamed investor is created. Security, tranches and cash dates remain undisclosed.",
+        "currency": null,
+        "round_key": "founder-capital-through-2026",
+        "checked_at": "2026-11-15",
+        "company_id": "7b8e4c26-b454-4074-ae98-d31c8a03bc9b",
+        "created_at": "2026-11-11T21:59:50.345862+00:00",
+        "updated_at": "2026-11-11T21:59:50.345862+00:00",
+        "record_kind": "investment_disclosure",
+        "amount_basis": "undisclosed",
+        "announced_date": null,
+        "closing_status": "undisclosed",
+        "financing_type": "undisclosed",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "stage",
+        "amount",
+        "currency",
+        "amount_basis",
+        "amount_qualifier",
+        "closing_status",
+        "note_en",
+        "checked_at"
+      ],
+      "reason": "Conflicting original-interview accounts do not support exact subscribed founder capital; preserve reported backing without inventing amount or strict upper bound.",
+      "evidence": [
+        {
+          "url": "https://breakingdefense.com/2026/10/moroccan-startup-unveils-prototye-uav-that-operates-without-gps-signal/"
+        },
+        {
+          "url": "https://www.moroccoworldnews.com/2026/09/340179/moroccos-ballistic-defense-system-builds-a-drone-that-doesnt-need-gps/"
+        },
+        {
+          "url": "https://en.assahifa.com/morocco/moroccos-bds-interview/"
+        }
+      ],
+      "reversal": {
+        "id": "7f363dd8-db81-4e29-902c-9f1f8fcb6d63",
+        "stage": "Cumulative founder-funded prototype development",
+        "amount": 1150000,
+        "note_en": "The co-founder stated that founders invested USD 1.15 million over about 18 months to develop the Matador prototype. Security, tranches and dates were not disclosed; unnamed founders are not converted into investor profiles.",
+        "currency": "USD",
+        "round_key": "founder-capital-through-2026",
+        "checked_at": "2026-11-11",
+        "company_id": "7b8e4c26-b454-4074-ae98-d31c8a03bc9b",
+        "created_at": "2026-11-11T21:59:50.345862+00:00",
+        "updated_at": "2026-11-11T21:59:50.345862+00:00",
+        "record_kind": "investment_disclosure",
+        "amount_basis": "closed_amount",
+        "announced_date": null,
+        "closing_status": "closed",
+        "financing_type": "undisclosed",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    }
+  ],
+  "source_additions": [
+    {
+      "round_id": "7f4f936f-9ed5-4959-a721-a0e526c099b6",
+      "url": "https://www.atosgroup.com/en/press/atos-opens-a-new-chapter-with-the-successful-closing-of-its-financial-restructuring",
+      "title": "Atos original closing of financial restructuring: equity rights issue",
+      "source_type": "company_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "7f363dd8-db81-4e29-902c-9f1f8fcb6d63",
+      "url": "https://www.moroccoworldnews.com/2026/09/340179/moroccos-ballistic-defense-system-builds-a-drone-that-doesnt-need-gps/",
+      "title": "Morocco World News original CEO interview: development expenditure and public backing",
+      "source_type": "third_party_report",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "forward_sql": "DO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='7f4f936f-9ed5-4959-a721-a0e526c099b6' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"7f4f936f-9ed5-4959-a721-a0e526c099b6\",\"stage\":\"Rights Issue\",\"amount\":233332768.4985,\"note_en\":\"Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash.\",\"currency\":\"EUR\",\"round_key\":\"atos-2024-rights-issue\",\"checked_at\":\"2026-11-11\",\"company_id\":\"65c7da7b-8de0-4f35-837f-f1b4e97d0ab2\",\"created_at\":\"2026-11-11T18:58:13.873699+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2024-12-10\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"7f4f936f-9ed5-4959-a721-a0e526c099b6\",\"stage\":\"Rights Issue\",\"amount\":233332768.4985,\"note_en\":\"Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash. Review 2026-11-15: this is a new-share equity rights issue paid through cash subscriptions and debt offset, not a new borrowing. Other fields retained.\",\"currency\":\"EUR\",\"round_key\":\"atos-2024-rights-issue\",\"checked_at\":\"2026-11-15\",\"company_id\":\"65c7da7b-8de0-4f35-837f-f1b4e97d0ab2\",\"created_at\":\"2026-11-11T18:58:13.873699+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2024-12-10\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 7f4f936f-9ed5-4959-a721-a0e526c099b6'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"7f4f936f-9ed5-4959-a721-a0e526c099b6\",\"stage\":\"Rights Issue\",\"amount\":233332768.4985,\"note_en\":\"Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash. Review 2026-11-15: this is a new-share equity rights issue paid through cash subscriptions and debt offset, not a new borrowing. Other fields retained.\",\"currency\":\"EUR\",\"round_key\":\"atos-2024-rights-issue\",\"checked_at\":\"2026-11-15\",\"company_id\":\"65c7da7b-8de0-4f35-837f-f1b4e97d0ab2\",\"created_at\":\"2026-11-11T18:58:13.873699+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2024-12-10\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"7f4f936f-9ed5-4959-a721-a0e526c099b6\",\"stage\":\"Rights Issue\",\"amount\":233332768.4985,\"note_en\":\"Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash. Review 2026-11-15: this is a new-share equity rights issue paid through cash subscriptions and debt offset, not a new borrowing. Other fields retained.\",\"currency\":\"EUR\",\"round_key\":\"atos-2024-rights-issue\",\"checked_at\":\"2026-11-15\",\"company_id\":\"65c7da7b-8de0-4f35-837f-f1b4e97d0ab2\",\"created_at\":\"2026-11-11T18:58:13.873699+00:00\",\"updated_at\":\"2026-11-11T18:58:13.873699+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2024-12-10\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET financing_type=target.financing_type,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='7f4f936f-9ed5-4959-a721-a0e526c099b6'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='6f0e489c-22a7-424a-bbf0-81476c3a7e3d' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"6f0e489c-22a7-424a-bbf0-81476c3a7e3d\",\"stage\":\"Debt\",\"amount\":420000000,\"note_en\":\"Issuer: Avolon Holdings Limited.\",\"currency\":\"USD\",\"round_key\":\"2026-03-samurai-loan-facility\",\"checked_at\":\"2026-11-11\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"credit_facility\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-03-04\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"6f0e489c-22a7-424a-bbf0-81476c3a7e3d\",\"stage\":\"Debt\",\"amount\":null,\"note_en\":\"Issuer/economic borrower: Avolon Holdings Limited. Original five-year unsecured Samurai facility contains approximately USD346 million and JPY11.7 billion. The USD420 million headline is an approximate translated equivalent, not an original USD-only principal. The single-currency amount fields are null to avoid false currency precision or a duplicate event; both original tranches are retained here. Completed facility is not proof of full cash draw; exact legal borrowing vehicle and individual allocations undisclosed.\",\"currency\":null,\"round_key\":\"2026-03-samurai-loan-facility\",\"checked_at\":\"2026-11-15\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"credit_facility\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2026-03-04\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 6f0e489c-22a7-424a-bbf0-81476c3a7e3d'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"6f0e489c-22a7-424a-bbf0-81476c3a7e3d\",\"stage\":\"Debt\",\"amount\":null,\"note_en\":\"Issuer/economic borrower: Avolon Holdings Limited. Original five-year unsecured Samurai facility contains approximately USD346 million and JPY11.7 billion. The USD420 million headline is an approximate translated equivalent, not an original USD-only principal. The single-currency amount fields are null to avoid false currency precision or a duplicate event; both original tranches are retained here. Completed facility is not proof of full cash draw; exact legal borrowing vehicle and individual allocations undisclosed.\",\"currency\":null,\"round_key\":\"2026-03-samurai-loan-facility\",\"checked_at\":\"2026-11-15\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"credit_facility\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2026-03-04\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"6f0e489c-22a7-424a-bbf0-81476c3a7e3d\",\"stage\":\"Debt\",\"amount\":null,\"note_en\":\"Issuer/economic borrower: Avolon Holdings Limited. Original five-year unsecured Samurai facility contains approximately USD346 million and JPY11.7 billion. The USD420 million headline is an approximate translated equivalent, not an original USD-only principal. The single-currency amount fields are null to avoid false currency precision or a duplicate event; both original tranches are retained here. Completed facility is not proof of full cash draw; exact legal borrowing vehicle and individual allocations undisclosed.\",\"currency\":null,\"round_key\":\"2026-03-samurai-loan-facility\",\"checked_at\":\"2026-11-15\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"updated_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"credit_facility\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2026-03-04\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET amount=target.amount,currency=target.currency,amount_basis=target.amount_basis,amount_qualifier=target.amount_qualifier,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='6f0e489c-22a7-424a-bbf0-81476c3a7e3d'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='edb823d2-1407-469e-909e-dc9e413b7904' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"edb823d2-1407-469e-909e-dc9e413b7904\",\"stage\":\"Debt\",\"amount\":1500000000,\"note_en\":\"Issuer: Avolon Holdings Funding Limited.\",\"currency\":\"USD\",\"round_key\":\"2026-02-senior-unsecured-notes\",\"checked_at\":\"2026-11-11\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-02-23\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"edb823d2-1407-469e-909e-dc9e413b7904\",\"stage\":\"Debt\",\"amount\":1500000000,\"note_en\":\"Actual issuer: Avolon Holdings Funding Limited, guaranteed by Avolon Holdings Limited and certain subsidiaries. Original public pricing announcement is 18 February 2026 for USD750m 4.200% notes due2029 and USD750m 4.850% notes due2033. Expected23February closing is not the announcement date. Existing closed status is corroborated by the issuer March4 release reporting USD1.9bn raised including these USD1.5bn notes; exact cash receipt date not inferred. Aggregate face principal, not net proceeds.\",\"currency\":\"USD\",\"round_key\":\"2026-02-senior-unsecured-notes\",\"checked_at\":\"2026-11-15\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-02-18\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: edb823d2-1407-469e-909e-dc9e413b7904'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"edb823d2-1407-469e-909e-dc9e413b7904\",\"stage\":\"Debt\",\"amount\":1500000000,\"note_en\":\"Actual issuer: Avolon Holdings Funding Limited, guaranteed by Avolon Holdings Limited and certain subsidiaries. Original public pricing announcement is 18 February 2026 for USD750m 4.200% notes due2029 and USD750m 4.850% notes due2033. Expected23February closing is not the announcement date. Existing closed status is corroborated by the issuer March4 release reporting USD1.9bn raised including these USD1.5bn notes; exact cash receipt date not inferred. Aggregate face principal, not net proceeds.\",\"currency\":\"USD\",\"round_key\":\"2026-02-senior-unsecured-notes\",\"checked_at\":\"2026-11-15\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-02-18\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"edb823d2-1407-469e-909e-dc9e413b7904\",\"stage\":\"Debt\",\"amount\":1500000000,\"note_en\":\"Actual issuer: Avolon Holdings Funding Limited, guaranteed by Avolon Holdings Limited and certain subsidiaries. Original public pricing announcement is 18 February 2026 for USD750m 4.200% notes due2029 and USD750m 4.850% notes due2033. Expected23February closing is not the announcement date. Existing closed status is corroborated by the issuer March4 release reporting USD1.9bn raised including these USD1.5bn notes; exact cash receipt date not inferred. Aggregate face principal, not net proceeds.\",\"currency\":\"USD\",\"round_key\":\"2026-02-senior-unsecured-notes\",\"checked_at\":\"2026-11-15\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"updated_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-02-18\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET announced_date=target.announced_date,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='edb823d2-1407-469e-909e-dc9e413b7904'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='7f363dd8-db81-4e29-902c-9f1f8fcb6d63' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"7f363dd8-db81-4e29-902c-9f1f8fcb6d63\",\"stage\":\"Cumulative founder-funded prototype development\",\"amount\":1150000,\"note_en\":\"The co-founder stated that founders invested USD 1.15 million over about 18 months to develop the Matador prototype. Security, tranches and dates were not disclosed; unnamed founders are not converted into investor profiles.\",\"currency\":\"USD\",\"round_key\":\"founder-capital-through-2026\",\"checked_at\":\"2026-11-11\",\"company_id\":\"7b8e4c26-b454-4074-ae98-d31c8a03bc9b\",\"created_at\":\"2026-11-11T21:59:50.345862+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":null,\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"7f363dd8-db81-4e29-902c-9f1f8fcb6d63\",\"stage\":\"Founder financing disclosure; amount unresolved\",\"amount\":null,\"note_en\":\"Founder support for prototype development is reported, but exact capital subscribed is unresolved. Breaking Defense''s co-founder interview reports USD1.15m founder investment; Morocco World News quotes the CEO describing total development expenditure below USD1.15m and separately acknowledges public Innovation Support Fund backing. Development expenditure, translated headlines and subscribed founder capital are not interchangeable. Numeric amount/currency are null pending reconciliation; no new funding event or unnamed investor is created. Security, tranches and cash dates remain undisclosed.\",\"currency\":null,\"round_key\":\"founder-capital-through-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"7b8e4c26-b454-4074-ae98-d31c8a03bc9b\",\"created_at\":\"2026-11-11T21:59:50.345862+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"undisclosed\",\"announced_date\":null,\"closing_status\":\"undisclosed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 7f363dd8-db81-4e29-902c-9f1f8fcb6d63'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"7f363dd8-db81-4e29-902c-9f1f8fcb6d63\",\"stage\":\"Founder financing disclosure; amount unresolved\",\"amount\":null,\"note_en\":\"Founder support for prototype development is reported, but exact capital subscribed is unresolved. Breaking Defense''s co-founder interview reports USD1.15m founder investment; Morocco World News quotes the CEO describing total development expenditure below USD1.15m and separately acknowledges public Innovation Support Fund backing. Development expenditure, translated headlines and subscribed founder capital are not interchangeable. Numeric amount/currency are null pending reconciliation; no new funding event or unnamed investor is created. Security, tranches and cash dates remain undisclosed.\",\"currency\":null,\"round_key\":\"founder-capital-through-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"7b8e4c26-b454-4074-ae98-d31c8a03bc9b\",\"created_at\":\"2026-11-11T21:59:50.345862+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"undisclosed\",\"announced_date\":null,\"closing_status\":\"undisclosed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"7f363dd8-db81-4e29-902c-9f1f8fcb6d63\",\"stage\":\"Founder financing disclosure; amount unresolved\",\"amount\":null,\"note_en\":\"Founder support for prototype development is reported, but exact capital subscribed is unresolved. Breaking Defense''s co-founder interview reports USD1.15m founder investment; Morocco World News quotes the CEO describing total development expenditure below USD1.15m and separately acknowledges public Innovation Support Fund backing. Development expenditure, translated headlines and subscribed founder capital are not interchangeable. Numeric amount/currency are null pending reconciliation; no new funding event or unnamed investor is created. Security, tranches and cash dates remain undisclosed.\",\"currency\":null,\"round_key\":\"founder-capital-through-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"7b8e4c26-b454-4074-ae98-d31c8a03bc9b\",\"created_at\":\"2026-11-11T21:59:50.345862+00:00\",\"updated_at\":\"2026-11-11T21:59:50.345862+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"undisclosed\",\"announced_date\":null,\"closing_status\":\"undisclosed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET stage=target.stage,amount=target.amount,currency=target.currency,amount_basis=target.amount_basis,amount_qualifier=target.amount_qualifier,closing_status=target.closing_status,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='7f363dd8-db81-4e29-902c-9f1f8fcb6d63'; END IF; END $reviewed$;\nINSERT INTO public.company_funding_round_sources SELECT * FROM jsonb_populate_record(NULL::public.company_funding_round_sources,'{\"round_id\":\"7f4f936f-9ed5-4959-a721-a0e526c099b6\",\"url\":\"https://www.atosgroup.com/en/press/atos-opens-a-new-chapter-with-the-successful-closing-of-its-financial-restructuring\",\"title\":\"Atos original closing of financial restructuring: equity rights issue\",\"source_type\":\"company_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) ON CONFLICT(round_id,url) DO NOTHING;\nDO $source_guard$ BEGIN IF NOT EXISTS(SELECT 1 FROM public.company_funding_round_sources z WHERE z.round_id='7f4f936f-9ed5-4959-a721-a0e526c099b6' AND z.url='https://www.atosgroup.com/en/press/atos-opens-a-new-chapter-with-the-successful-closing-of-its-financial-restructuring' AND to_jsonb(z)='{\"round_id\":\"7f4f936f-9ed5-4959-a721-a0e526c099b6\",\"url\":\"https://www.atosgroup.com/en/press/atos-opens-a-new-chapter-with-the-successful-closing-of-its-financial-restructuring\",\"title\":\"Atos original closing of financial restructuring: equity rights issue\",\"source_type\":\"company_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) THEN RAISE EXCEPTION 'Corroborating source guard failed'; END IF; END $source_guard$;\nINSERT INTO public.company_funding_round_sources SELECT * FROM jsonb_populate_record(NULL::public.company_funding_round_sources,'{\"round_id\":\"7f363dd8-db81-4e29-902c-9f1f8fcb6d63\",\"url\":\"https://www.moroccoworldnews.com/2026/09/340179/moroccos-ballistic-defense-system-builds-a-drone-that-doesnt-need-gps/\",\"title\":\"Morocco World News original CEO interview: development expenditure and public backing\",\"source_type\":\"third_party_report\",\"checked_at\":\"2026-11-15\"}'::jsonb) ON CONFLICT(round_id,url) DO NOTHING;\nDO $source_guard$ BEGIN IF NOT EXISTS(SELECT 1 FROM public.company_funding_round_sources z WHERE z.round_id='7f363dd8-db81-4e29-902c-9f1f8fcb6d63' AND z.url='https://www.moroccoworldnews.com/2026/09/340179/moroccos-ballistic-defense-system-builds-a-drone-that-doesnt-need-gps/' AND to_jsonb(z)='{\"round_id\":\"7f363dd8-db81-4e29-902c-9f1f8fcb6d63\",\"url\":\"https://www.moroccoworldnews.com/2026/09/340179/moroccos-ballistic-defense-system-builds-a-drone-that-doesnt-need-gps/\",\"title\":\"Morocco World News original CEO interview: development expenditure and public backing\",\"source_type\":\"third_party_report\",\"checked_at\":\"2026-11-15\"}'::jsonb) THEN RAISE EXCEPTION 'Corroborating source guard failed'; END IF; END $source_guard$;",
+  "reversal_sql": "DO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='7f363dd8-db81-4e29-902c-9f1f8fcb6d63' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"7f363dd8-db81-4e29-902c-9f1f8fcb6d63\",\"stage\":\"Founder financing disclosure; amount unresolved\",\"amount\":null,\"note_en\":\"Founder support for prototype development is reported, but exact capital subscribed is unresolved. Breaking Defense''s co-founder interview reports USD1.15m founder investment; Morocco World News quotes the CEO describing total development expenditure below USD1.15m and separately acknowledges public Innovation Support Fund backing. Development expenditure, translated headlines and subscribed founder capital are not interchangeable. Numeric amount/currency are null pending reconciliation; no new funding event or unnamed investor is created. Security, tranches and cash dates remain undisclosed.\",\"currency\":null,\"round_key\":\"founder-capital-through-2026\",\"checked_at\":\"2026-11-15\",\"company_id\":\"7b8e4c26-b454-4074-ae98-d31c8a03bc9b\",\"created_at\":\"2026-11-11T21:59:50.345862+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"undisclosed\",\"announced_date\":null,\"closing_status\":\"undisclosed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"7f363dd8-db81-4e29-902c-9f1f8fcb6d63\",\"stage\":\"Cumulative founder-funded prototype development\",\"amount\":1150000,\"note_en\":\"The co-founder stated that founders invested USD 1.15 million over about 18 months to develop the Matador prototype. Security, tranches and dates were not disclosed; unnamed founders are not converted into investor profiles.\",\"currency\":\"USD\",\"round_key\":\"founder-capital-through-2026\",\"checked_at\":\"2026-11-11\",\"company_id\":\"7b8e4c26-b454-4074-ae98-d31c8a03bc9b\",\"created_at\":\"2026-11-11T21:59:50.345862+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":null,\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 7f363dd8-db81-4e29-902c-9f1f8fcb6d63'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"7f363dd8-db81-4e29-902c-9f1f8fcb6d63\",\"stage\":\"Cumulative founder-funded prototype development\",\"amount\":1150000,\"note_en\":\"The co-founder stated that founders invested USD 1.15 million over about 18 months to develop the Matador prototype. Security, tranches and dates were not disclosed; unnamed founders are not converted into investor profiles.\",\"currency\":\"USD\",\"round_key\":\"founder-capital-through-2026\",\"checked_at\":\"2026-11-11\",\"company_id\":\"7b8e4c26-b454-4074-ae98-d31c8a03bc9b\",\"created_at\":\"2026-11-11T21:59:50.345862+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":null,\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"7f363dd8-db81-4e29-902c-9f1f8fcb6d63\",\"stage\":\"Cumulative founder-funded prototype development\",\"amount\":1150000,\"note_en\":\"The co-founder stated that founders invested USD 1.15 million over about 18 months to develop the Matador prototype. Security, tranches and dates were not disclosed; unnamed founders are not converted into investor profiles.\",\"currency\":\"USD\",\"round_key\":\"founder-capital-through-2026\",\"checked_at\":\"2026-11-11\",\"company_id\":\"7b8e4c26-b454-4074-ae98-d31c8a03bc9b\",\"created_at\":\"2026-11-11T21:59:50.345862+00:00\",\"updated_at\":\"2026-11-11T21:59:50.345862+00:00\",\"record_kind\":\"investment_disclosure\",\"amount_basis\":\"closed_amount\",\"announced_date\":null,\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET stage=target.stage,amount=target.amount,currency=target.currency,amount_basis=target.amount_basis,amount_qualifier=target.amount_qualifier,closing_status=target.closing_status,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='7f363dd8-db81-4e29-902c-9f1f8fcb6d63'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='edb823d2-1407-469e-909e-dc9e413b7904' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"edb823d2-1407-469e-909e-dc9e413b7904\",\"stage\":\"Debt\",\"amount\":1500000000,\"note_en\":\"Actual issuer: Avolon Holdings Funding Limited, guaranteed by Avolon Holdings Limited and certain subsidiaries. Original public pricing announcement is 18 February 2026 for USD750m 4.200% notes due2029 and USD750m 4.850% notes due2033. Expected23February closing is not the announcement date. Existing closed status is corroborated by the issuer March4 release reporting USD1.9bn raised including these USD1.5bn notes; exact cash receipt date not inferred. Aggregate face principal, not net proceeds.\",\"currency\":\"USD\",\"round_key\":\"2026-02-senior-unsecured-notes\",\"checked_at\":\"2026-11-15\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-02-18\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"edb823d2-1407-469e-909e-dc9e413b7904\",\"stage\":\"Debt\",\"amount\":1500000000,\"note_en\":\"Issuer: Avolon Holdings Funding Limited.\",\"currency\":\"USD\",\"round_key\":\"2026-02-senior-unsecured-notes\",\"checked_at\":\"2026-11-11\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-02-23\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: edb823d2-1407-469e-909e-dc9e413b7904'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"edb823d2-1407-469e-909e-dc9e413b7904\",\"stage\":\"Debt\",\"amount\":1500000000,\"note_en\":\"Issuer: Avolon Holdings Funding Limited.\",\"currency\":\"USD\",\"round_key\":\"2026-02-senior-unsecured-notes\",\"checked_at\":\"2026-11-11\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-02-23\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"edb823d2-1407-469e-909e-dc9e413b7904\",\"stage\":\"Debt\",\"amount\":1500000000,\"note_en\":\"Issuer: Avolon Holdings Funding Limited.\",\"currency\":\"USD\",\"round_key\":\"2026-02-senior-unsecured-notes\",\"checked_at\":\"2026-11-11\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"updated_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-02-23\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET announced_date=target.announced_date,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='edb823d2-1407-469e-909e-dc9e413b7904'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='6f0e489c-22a7-424a-bbf0-81476c3a7e3d' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"6f0e489c-22a7-424a-bbf0-81476c3a7e3d\",\"stage\":\"Debt\",\"amount\":null,\"note_en\":\"Issuer/economic borrower: Avolon Holdings Limited. Original five-year unsecured Samurai facility contains approximately USD346 million and JPY11.7 billion. The USD420 million headline is an approximate translated equivalent, not an original USD-only principal. The single-currency amount fields are null to avoid false currency precision or a duplicate event; both original tranches are retained here. Completed facility is not proof of full cash draw; exact legal borrowing vehicle and individual allocations undisclosed.\",\"currency\":null,\"round_key\":\"2026-03-samurai-loan-facility\",\"checked_at\":\"2026-11-15\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"credit_facility\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2026-03-04\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"6f0e489c-22a7-424a-bbf0-81476c3a7e3d\",\"stage\":\"Debt\",\"amount\":420000000,\"note_en\":\"Issuer: Avolon Holdings Limited.\",\"currency\":\"USD\",\"round_key\":\"2026-03-samurai-loan-facility\",\"checked_at\":\"2026-11-11\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"credit_facility\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-03-04\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 6f0e489c-22a7-424a-bbf0-81476c3a7e3d'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"6f0e489c-22a7-424a-bbf0-81476c3a7e3d\",\"stage\":\"Debt\",\"amount\":420000000,\"note_en\":\"Issuer: Avolon Holdings Limited.\",\"currency\":\"USD\",\"round_key\":\"2026-03-samurai-loan-facility\",\"checked_at\":\"2026-11-11\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"credit_facility\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-03-04\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"6f0e489c-22a7-424a-bbf0-81476c3a7e3d\",\"stage\":\"Debt\",\"amount\":420000000,\"note_en\":\"Issuer: Avolon Holdings Limited.\",\"currency\":\"USD\",\"round_key\":\"2026-03-samurai-loan-facility\",\"checked_at\":\"2026-11-11\",\"company_id\":\"ec8f8da3-9146-42b7-ba13-8e40c43f6cc1\",\"created_at\":\"2026-11-11T20:15:05.011456+00:00\",\"updated_at\":\"2026-11-11T20:15:05.011456+00:00\",\"record_kind\":\"credit_facility\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2026-03-04\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET amount=target.amount,currency=target.currency,amount_basis=target.amount_basis,amount_qualifier=target.amount_qualifier,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='6f0e489c-22a7-424a-bbf0-81476c3a7e3d'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='7f4f936f-9ed5-4959-a721-a0e526c099b6' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"7f4f936f-9ed5-4959-a721-a0e526c099b6\",\"stage\":\"Rights Issue\",\"amount\":233332768.4985,\"note_en\":\"Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash. Review 2026-11-15: this is a new-share equity rights issue paid through cash subscriptions and debt offset, not a new borrowing. Other fields retained.\",\"currency\":\"EUR\",\"round_key\":\"atos-2024-rights-issue\",\"checked_at\":\"2026-11-15\",\"company_id\":\"65c7da7b-8de0-4f35-837f-f1b4e97d0ab2\",\"created_at\":\"2026-11-11T18:58:13.873699+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2024-12-10\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"7f4f936f-9ed5-4959-a721-a0e526c099b6\",\"stage\":\"Rights Issue\",\"amount\":233332768.4985,\"note_en\":\"Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash.\",\"currency\":\"EUR\",\"round_key\":\"atos-2024-rights-issue\",\"checked_at\":\"2026-11-11\",\"company_id\":\"65c7da7b-8de0-4f35-837f-f1b4e97d0ab2\",\"created_at\":\"2026-11-11T18:58:13.873699+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2024-12-10\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 7f4f936f-9ed5-4959-a721-a0e526c099b6'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"7f4f936f-9ed5-4959-a721-a0e526c099b6\",\"stage\":\"Rights Issue\",\"amount\":233332768.4985,\"note_en\":\"Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash.\",\"currency\":\"EUR\",\"round_key\":\"atos-2024-rights-issue\",\"checked_at\":\"2026-11-11\",\"company_id\":\"65c7da7b-8de0-4f35-837f-f1b4e97d0ab2\",\"created_at\":\"2026-11-11T18:58:13.873699+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2024-12-10\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"7f4f936f-9ed5-4959-a721-a0e526c099b6\",\"stage\":\"Rights Issue\",\"amount\":233332768.4985,\"note_en\":\"Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash.\",\"currency\":\"EUR\",\"round_key\":\"atos-2024-rights-issue\",\"checked_at\":\"2026-11-11\",\"company_id\":\"65c7da7b-8de0-4f35-837f-f1b4e97d0ab2\",\"created_at\":\"2026-11-11T18:58:13.873699+00:00\",\"updated_at\":\"2026-11-11T18:58:13.873699+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2024-12-10\",\"closing_status\":\"closed\",\"financing_type\":\"debt\",\"parent_round_id\":null,\"amount_qualifier\":\"approximate\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET financing_type=target.financing_type,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='7f4f936f-9ed5-4959-a721-a0e526c099b6'; END IF; END $reviewed$;",
+  "reversal_scope": "Restore reviewed financial fields under guards; valid appended corroboration sources are retained, not deleted."
+}
