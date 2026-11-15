@@ -1,5 +1,5 @@
 {
-  "status": "atomic_import_verified_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T15:50:14.155Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-ninth.json",
@@ -1043,7 +1043,8 @@
     "mislabelled_company_slug": "flyguys",
     "guarded_recovery_prepared": true,
     "financial_amount_and_participants_were_not_modified": true,
-    "guarded_recovery_applied": true
+    "guarded_recovery_applied": true,
+    "status": "repaired_and_verified"
   },
   "metrics": {
     "parallel_read_only_groups": 4,
@@ -1089,7 +1090,27 @@
     "concurrency_speedup_claimed": false,
     "per_company_search_ledger_entries": 77,
     "source_ledger_entries": 88,
-    "prepared_source_ledger_entries": 13
+    "prepared_source_ledger_entries": 13,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_source_ledger_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_target_identity_audit_readback_verified": true,
+    "durable_issuer_guard_instruction_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "referenced_directory_profiles_verified": 7,
+    "manifest_profile_source_matches": 6,
+    "generic_portfolio_entries_verified": 3,
+    "clickable_generic_company_links_verified": 3,
+    "unique_generic_company_routes_verified": 3,
+    "repaired_company_routes_verified": 2,
+    "current_manifest_publication_verified": true,
+    "active_minutes": 21.8,
+    "checked_identities_per_hour": 79.8,
+    "new_queue_identities_per_hour": 66.1,
+    "completed_reviews_per_hour": 8.3,
+    "timing_scope": "Elapsed writer lease for24 next identities plus5 prepared/prior-check identities: Forterra targeted hold, FlyGuys original SEC/source review, Garuda prior-error restoration, Emrgy and Factorial prior-row checks. Includes89 actual search queries, original issuer/currency/date/role checks, retrospective structural audit of90 event/participant targets across12 correction manifests (one known historical label error repaired), canonical issuer preflight/runtime regression tests, production rollback restoring13 exact rows/eight hashes, one atomic import, exact facts/source audits, idempotent rollback replay, nine durable readbacks, successful catalogue build, two fresh datasets and six HTTP200 routes. Three bounded closures/21 specific partial histories retained. Structural target checks are not counted as additional researched companies; no concurrency speedup or ETA claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1265,7 +1286,96 @@
       "duplicate_new_names": 0,
       "missing_link_sources": 0
     },
-    "dedicated_issuer_guard_instructions_persisted": true
+    "dedicated_issuer_guard_instructions_persisted": true,
+    "frozen_group_sha256": {
+      "a": "5bc37e17153dd233e7cd4b67da7bdb48cd3fa22897e804be4e5c87b3f755aec7",
+      "a_corrections": "ee2476c215371cfb8eb7ded83691293c0bfd71e38e7a3d82de3114f05cb13c3e",
+      "b": "08d0d0fe2569956f680184e68874dd3bf02310e6284e00174a6745060fcbfd20",
+      "b_corrections": "938130d272d1537485a9fd42225a6465598c3f65c21827f0ab0924c346e29ef3",
+      "c": "c18e62698b9134f4f3aa02df033b10511c2bf7bb190c2b6a95242c7783a15dd5",
+      "c_corrections": "1adde9fa0fd6d52637d3b6545530e83c7863b5fceebb7b0551d2f73a51890a0c",
+      "prepared": "c573dde55f8658fdac0811e30320f0aa202e75c8677fdd73c88ac625e976d2eb"
+    },
+    "production_rollback_exact_original_rows_restored": 13,
+    "preservation_hashes_after": [
+      {
+        "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+        "rows": 2718,
+        "audit": "companies"
+      },
+      {
+        "md5": "13d6a63a87a749c404162a72a0db35fe",
+        "rows": 4716,
+        "audit": "uncorrected_events"
+      },
+      {
+        "md5": "03ef0b8a6a3640b51e77b05494445942",
+        "rows": 6525,
+        "audit": "uncorrected_existing_participants"
+      },
+      {
+        "md5": "bb55d72d494b0a02e8de142a5c464ca2",
+        "rows": 6505,
+        "audit": "existing_unrelated_event_sources"
+      },
+      {
+        "md5": "d2ea87e58e1aced88074fd417b883f30",
+        "rows": 3755,
+        "audit": "curated_profiles_full_rows"
+      },
+      {
+        "md5": "c7905332321560555c89c495b85e925d",
+        "rows": 7133,
+        "audit": "existing_unrelated_profile_sources"
+      },
+      {
+        "md5": "3aab9ec9b66b6eaa5d2e945a67b1a1b2",
+        "rows": 752,
+        "audit": "uncorrected_existing_generic_rows"
+      },
+      {
+        "md5": "1a0918d4371924a2e9181f51f244f9fd",
+        "rows": 1327,
+        "audit": "unrelated_research_coverage"
+      }
+    ],
+    "durable_readback_blobs": {
+      "research-agent/imports/funding-landscape-20261115-one-hundred-ninth.json": "8f76676b749eb17d579ceefd1e697fa4a53fca9c",
+      "research-agent/imports/funding-landscape-20261115-one-hundred-ninth-reviewed-corrections.json": "26cf14b29ff763ecccbc980b2ee4ae3c0d7a8e1b",
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-ninth.json": "ee5f7b44911cbd50952bf635c09258bf9dcafe8b",
+      "research-agent/reports/2026-11-15-funding-one-hundred-ninth-source-ledger.json": "861706a3ad43583b6c01d08745de8daac7c4240b",
+      "research-agent/recovery/2026-11-15-funding-one-hundred-ninth-prepared-reconciliations.json": "cec13c2b69bacf3579991f34a8464724e65248e5",
+      "research-agent/reports/2026-11-15-funding-one-hundred-ninth-target-identity-audit.json": "9c4bcbd1e90fff610ecc1b43434088ee8308db6d",
+      "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md": "bcd360ecf130aee4f0fd740f3e6ccfac46f4bfc9",
+      "research-agent/queues/company-funding-all.csv": "5186f36459fd580bbdc4f22257c9349d1753886a",
+      "research-agent/FUNDING_STATE.json": "8075f7b2d81f5babd06c618bcf3261129b2d581a"
+    },
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/companies/flyguys/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/garuda-aerospace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/geoslam-faro/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ghost-robotics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/gogo/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      }
+    ]
   },
   "production_after": {
     "events": 4735,
@@ -1289,10 +1399,74 @@
     "retained_partial": 263
   },
   "publication": {
-    "status": "catalogue_build_in_progress",
+    "status": "verified",
+    "checked_at": "2026-11-15",
+    "verified_at": "2026-11-15T16:12:01.956Z",
     "source_commit": "bb6e4ce20b5ae28b82aec70299e314f212c4866f",
     "catalogue_commit": "86da578416f2c8102fd24b50ef469927792a6c11",
     "workflow_run": 43733614822,
-    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-ninth.json"
-  }
+    "workflow_conclusion": "success",
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43733614822",
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-ninth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-ninth.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-ninth-reviewed-corrections.json",
+    "target_identity_audit": "research-agent/reports/2026-11-15-funding-one-hundred-ninth-target-identity-audit.json",
+    "generated_at": "2026-11-15T16:07:52.507Z",
+    "investor_generated_at": "2026-11-15T16:07:57.072Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3749,
+    "portfolio_relationships": 750,
+    "expected_profiles": 7,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 3,
+    "generic_portfolio_entries_verified": 3,
+    "clickable_company_links_verified": 3,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 6,
+    "manifest_generic_relationship_matches": 3,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 6,
+    "current_manifest_live_matches": 0,
+    "directory_filter_note": "Nine pre-existing anonymous profiles and five retired portfolios remain excluded by existing filters. Current targets remain outside the European map; seven referenced profiles, six participant citations and three generic portfolios verified in fresh directory. Company gates retained; current repaired Garuda/FlyGuys rows verified exactly in DB and corresponding company routes returnedHTTP200.",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/companies/flyguys/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/garuda-aerospace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/geoslam-faro/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ghost-robotics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/gogo/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      }
+    ]
+  },
+  "completed_at": "2026-11-15T16:12:01.956Z",
+  "preserved": [
+    "Legacy research STATE.json and frozen V1/V2",
+    "Curated investor profiles and existing portfolio relationships",
+    "All uncorrected events, participants and source history",
+    "Company metadata, geography and publication gates",
+    "Repository schedules"
+  ]
 }
