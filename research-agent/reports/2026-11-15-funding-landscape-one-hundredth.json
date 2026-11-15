@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T06:53:12.768Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundredth.json",
@@ -53,13 +53,25 @@
     "queue_dispositions_applied": 24,
     "reviewed_existing_fact_corrections": 4,
     "new_prepared_correction_proposals": 3,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 4596,
     "db_approved_events": 4581,
     "db_round_participations": 6417,
     "db_investor_profiles": 3723,
     "db_source_reconciliation_companies": 1319,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 6,
+    "clickable_generic_company_links_verified": 6,
+    "active_minutes": 19.59,
+    "checked_identities_per_hour": 76.6,
+    "new_queue_identities_per_hour": 73.5,
+    "completed_reviews_per_hour": 18.4,
+    "timing_scope": "Elapsed single writer lease covering24 new queue identities in four frozen read-only groups plus prepared Birdstop reconciliation. Includes113 group and9 root searches, primary SEC metadata/XML and UKRI recipient precision checks, combined seeded guard/reversal/late-conflict tests, production rollback with four original snapshots restored, one atomic import, exact facts/roles/sources/corrections audit, prior-data hashes, idempotent rollback replay, durable readbacks, successful existing catalogue build, both fresh live datasets and landscape HTTP200. Six bounded closures and18 source holds. No concurrency speedup or ETA claimed."
   },
   "production_before": {
     "events": 4563,
@@ -1400,7 +1412,13 @@
       "Several SEC web index/XML renders failed; original free SEC metadata and XML were successfully fetched directly, with extracted facts durably saved. No paid API or credential used.",
       "Public dates, grant offers, actual cash receipts, tax incentives, R&D contracts, parent funding and secondary transactions remain distinct. Ambiguous Cellebrite net-proceeds bases are not guessed.",
       "Six valid original corroboration rows appended. Reversal restores reviewed fields and retains evidence; no historical record deletion."
-    ]
+    ],
+    "live_generic_entry_verification": {
+      "entries": 6,
+      "source_urls": 6,
+      "clickable_company_links": 6,
+      "unlinked": []
+    }
   },
   "publication_scope": {
     "current_manifest_event_rows": 33,
@@ -1504,7 +1522,7 @@
         "hold_note": "Other historical parent market debt/state resources remain partial. Subsidiary2026short-term financing and listed-company equity not assigned to CASC; no unnamed holders or custodian investor role invented."
       }
     ],
-    "next_selection_policy": "Prioritize newly prepared corrections with expected-old/reversal tests; use next preview excluding144 checked identities in this pass. Prepared Birdstop public dates and Cambridge grant allocations were reconciled this run; revisit retained holds only with a specific new original source.",
+    "next_selection_policy": "Prioritize newly prepared corrections with expected-old/reversal tests; use next preview excluding144 checked identities in this pass. Prepared Birdstop public dates and Cambridge grant allocations were reconciled this run; revisit retained holds only with a specific new original source. Check the next CETC alias against already reviewed cetc before any issuer attribution; no copied duplicate financing.",
     "next_batch_preview": [
       {
         "id": "fd077f5a-4744-4172-a4d2-898a90bbd008",
@@ -1687,6 +1705,46 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "awaiting_catalogue_trigger"
-  }
+    "status": "verified",
+    "checked_at": "2026-11-15T07:12:48.255Z",
+    "verified_at": "2026-11-15T07:12:48.255Z",
+    "catalogue_commit": "f01dd128fbd9ba77e4f8e0d0c221c4674a6dc3a0",
+    "source_commit": "020bd4abdf3dfec3af313c7425de722124d3ff0e",
+    "workflow_run": {
+      "id": 43688691135,
+      "head": "f01dd128fbd9ba77e4f8e0d0c221c4674a6dc3a0",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43688691135"
+    },
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundredth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundredth.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundredth-reviewed-corrections.json",
+    "generated_at": "2026-11-15T07:11:05.928Z",
+    "investor_generated_at": "2026-11-15T07:11:11.482Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3714,
+    "portfolio_relationships": 731,
+    "expected_profiles": 18,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 6,
+    "generic_portfolio_entries_verified": 6,
+    "clickable_company_links_verified": 6,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 24,
+    "manifest_generic_relationship_matches": 6,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 33,
+    "current_manifest_live_matches": 0,
+    "reviewed_identities_in_european_map": [],
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "DB3723 profiles versus live3714 reflects nine prior anonymous exclusions; DB734 generic relationships versus live731 reflects three prior exclusions. All18 referenced profiles,24 participant source URLs and6 generic entries/source URLs/clickable company links verified. New financing targets and corrected companies are outside the published European map; geography/publication gates unchanged. Four corrected rows and six appended original sources separately audited exactly in the database."
+  },
+  "completed_at": "2026-11-15T07:12:48.255Z"
 }
