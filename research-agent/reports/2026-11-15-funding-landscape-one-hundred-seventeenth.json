@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T22:52:39.943Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-seventeenth.json",
@@ -997,7 +997,20 @@
     "new_coverage_rows": 1,
     "post_import_idempotency_rehearsal_passed": true,
     "queue_dispositions_applied": 24,
-    "approved_event_counts_refreshed_for_identities": 26
+    "approved_event_counts_refreshed_for_identities": 26,
+    "live_referenced_profiles_verified": 6,
+    "live_manifest_profiles_verified": 6,
+    "live_participant_source_matches": 16,
+    "live_generic_profile_source_matches": 1,
+    "live_clickable_portfolio_links_verified": 1,
+    "live_company_routes_verified": 13,
+    "current_publication_scope_verified": true,
+    "active_minutes": 16.48,
+    "checked_identities_per_hour": 94.6,
+    "new_queue_identities_per_hour": 87.4,
+    "completed_reviews_per_hour": 14.6,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Writer lease covers24 new queue identities and two prepared CyPhy/Dataminr reconciliations.112 executed search query items across four read-only groups; seven unique root financing originals separately spotchecked (two table bodies reopened for units/payment chronology). Ten prior-import check records preserved, zero fresh check credit. Includes exact issuer/currency/date/role checks, fresh PostgreSQL corrected-parent dependency and late-conflict tests, production rollback/full restoration, one atomic import, exact preservation audits, idempotent replay, durable readbacks, successful build/deploy and fresh live datasets/HTTP checks. Four bounded closures,20 partial histories retained; no ETA or speedup claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1182,15 +1195,158 @@
       "missing_link_sources": 0
     },
     "durable_readbacks_verified": 8,
-    "frozen_inputs_unchanged": true
+    "frozen_inputs_unchanged": true,
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kinnami/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kongsberg-nanoavionics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ksat-kongsberg-satellite-services/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kratos-defense-and-security-solutions/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/knds-robotics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kpler/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/klein-marine-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/korea-robot-manufacturing/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kongsberg-discovery/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/korea-aerospace-industries/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kodiak-ai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/cyphy-works/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/dataminr/",
+        "status": 200
+      }
+    ]
   },
   "publication": {
-    "status": "build_requested",
+    "status": "verified",
     "requested_at": "2026-11-15T23:05:55.418Z",
     "source_commit": "881ccb774b23d3ada4dca8434da45b7782f43242",
     "catalogue_commit": "25f6296fd098fbc38d142edced12ce5e052897af",
     "workflow_run": 43772937379,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43772937379"
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43772937379",
+    "generated_at": "2026-11-15T23:06:55.673Z",
+    "investor_generated_at": "2026-11-15T23:06:59.063Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3788,
+    "portfolio_relationships": 762,
+    "expected_profiles": 6,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 1,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_company_links_verified": 1,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 15,
+    "manifest_generic_relationship_matches": 1,
+    "reviewed_correction_targets_in_european_landscape": [],
+    "dependent_lender_citation_in_directory_verified": 1,
+    "verified_at": "2026-11-15T23:09:08.873Z",
+    "workflow_conclusion": "success",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kinnami/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kongsberg-nanoavionics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ksat-kongsberg-satellite-services/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kratos-defense-and-security-solutions/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/knds-robotics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kpler/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/klein-marine-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/korea-robot-manufacturing/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kongsberg-discovery/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/korea-aerospace-industries/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kodiak-ai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/cyphy-works/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/dataminr/",
+        "status": 200
+      }
+    ],
+    "current_manifest_event_rows": 21,
+    "current_manifest_live_matches": 0,
+    "existing_draft_financing_targets": [],
+    "scope_note": "Fresh directory verifies6 referenced profiles,15 new round-participation citations, one dependent Horizon/Kodiak lender citation and one CapitalFactory/Kinnami generic source/clickable portfolio. Nine pre-existing anonymous profiles and five retired portfolios remain excluded. All current event/correction targets remain outside European map; wider-cohort financial rows are verified in DB, not claimed rendered as map or company-page financing sections. Existing company geography/publication gates and curated records unchanged."
   },
   "preserved": [
     "Legacy STATE.json and frozen snapshots",
@@ -1198,7 +1354,7 @@
     "Curated investor profiles and unrelated source/relationship history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-15T23:07:05.695Z",
+  "updated_at": "2026-11-15T23:09:08.889Z",
   "production_after": [
     {
       "events": 4950,
@@ -1221,5 +1377,6 @@
     "remaining": 791,
     "bounded_closed": 119,
     "retained_partial": 433
-  }
+  },
+  "completed_at": "2026-11-15T23:09:08.873Z"
 }
