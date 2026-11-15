@@ -1,5 +1,5 @@
 {
-  "status": "atomic_import_invoked",
+  "status": "imported_exact_audit_passed",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T20:46:00.744Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-fifteenth.json",
@@ -955,7 +955,10 @@
     "atomic_import_invocations": 1,
     "prior_import_checks_recorded": 10,
     "fresh_prior_import_row_checks": 4,
-    "rollback_rehearsal_passed": true
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "new_investor_profiles": 5,
+    "new_coverage_rows": 4
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1022,7 +1025,120 @@
       "https://www.thecfigroup.com/transactions/ixblue-issued-e25m-6-years-bond-from-tikehau-capital/",
       "https://www.sec.gov/Archives/edgar/data/2024306/000149315226006957/form8-k.htm"
     ],
-    "production_rollback_full_baseline_restored": true
+    "production_rollback_full_baseline_restored": true,
+    "exact_post_import_audit": {
+      "facts": [
+        {
+          "audit": "manifest_event_exact_fields_and_parent",
+          "failed": 0,
+          "expected": 24,
+          "failures": []
+        },
+        {
+          "audit": "manifest_sources_exact",
+          "failed": 0,
+          "expected": 34,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participants_exact_role_source_contribution",
+          "failed": 0,
+          "expected": 24,
+          "failures": []
+        },
+        {
+          "audit": "manifest_generic_portfolios_exact",
+          "failed": 0,
+          "expected": 1,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participant_and_portfolio_profile_source_exists",
+          "failed": 0,
+          "expected": 25,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_source_additions_exact",
+          "failed": 0,
+          "expected": 6,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_profile_source_additions_exist",
+          "failed": 0,
+          "expected": 1,
+          "failures": []
+        },
+        {
+          "audit": "guarded_participant_additions_exact_parent_unchanged",
+          "failed": 0,
+          "expected": 1,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_events",
+          "failed": 0,
+          "expected": 5,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_participants",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_generic_relationships",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        }
+      ],
+      "preserved": [
+        {
+          "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+          "rows": 2718,
+          "audit": "companies"
+        },
+        {
+          "md5": "18c1d25a879153c153c9a39558e7d8a2",
+          "rows": 4871,
+          "audit": "uncorrected_events"
+        },
+        {
+          "md5": "d7f8f1e61250038b33180697128e5251",
+          "rows": 6648,
+          "audit": "uncorrected_existing_participants"
+        },
+        {
+          "md5": "ce726e5b04c32958a887f75001916161",
+          "rows": 6726,
+          "audit": "existing_unrelated_event_sources"
+        },
+        {
+          "md5": "58040a74b9e6e5b086d9818f3e92f27b",
+          "rows": 3784,
+          "audit": "curated_profiles_full_rows"
+        },
+        {
+          "md5": "b7def30688193e13bc03ff33406c6084",
+          "rows": 7254,
+          "audit": "existing_unrelated_profile_sources"
+        },
+        {
+          "md5": "404c50cf49371dfdc4909506ce4b09cd",
+          "rows": 765,
+          "audit": "uncorrected_existing_generic_rows"
+        },
+        {
+          "md5": "bf42b691f191b82c45b5cab6266a2217",
+          "rows": 1340,
+          "audit": "unrelated_research_coverage"
+        }
+      ],
+      "missing_link_sources": 0
+    }
   },
   "publication": {
     "status": "not_started"
@@ -1033,5 +1149,16 @@
     "Curated profile rows and unrelated relationship/source history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-15T20:59:46.553Z"
+  "updated_at": "2026-11-15T21:00:15.105Z",
+  "production_after": [
+    {
+      "events": 4900,
+      "approved": 4882,
+      "links": 6673,
+      "sources": 6766,
+      "profiles": 3789,
+      "relationships": 766,
+      "covered": 1350
+    }
+  ]
 }
