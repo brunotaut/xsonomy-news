@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T21:50:16.694Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-sixteenth.json",
@@ -978,7 +978,20 @@
     "new_coverage_rows": 1,
     "post_import_idempotency_rehearsal_passed": true,
     "queue_dispositions_applied": 24,
-    "approved_event_counts_refreshed_for_identities": 26
+    "approved_event_counts_refreshed_for_identities": 26,
+    "live_referenced_profiles_verified": 15,
+    "live_manifest_profiles_verified": 14,
+    "live_participant_source_matches": 17,
+    "live_generic_profile_source_matches": 0,
+    "live_clickable_portfolio_links_verified": 0,
+    "live_company_routes_verified": 10,
+    "current_publication_scope_verified": true,
+    "active_minutes": 14.45,
+    "checked_identities_per_hour": 107.9,
+    "new_queue_identities_per_hour": 99.6,
+    "completed_reviews_per_hour": 16.6,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Writer lease covers24 new queue identities and two prepared Joby/ITlogika reconciliations.119 executed search query items across four read-only groups; five root financing-original opens separately recorded. Ten prior-import check records preserved with zero fresh check credit. Includes exact issuer/currency/date/role checks, fresh PostgreSQL tests including full-parent conflict rejection, production rollback/full restoration, single atomic import, exact preservation audits, idempotent rollback replay, durable readbacks, successful build/deploy and fresh live datasets/HTTP checks. Four bounded closures,20 partial histories retained; no ETA or speedup claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1161,15 +1174,137 @@
       "missing_link_sources": 0
     },
     "durable_readbacks_verified": 8,
-    "frozen_inputs_unchanged": true
+    "frozen_inputs_unchanged": true,
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kelluu/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kbr/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kawasaki-heavy-industries/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kamaz/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kela-technologies/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/keysight-technologies/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kanematsu/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kef-robotics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/it-logika/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/joby-aviation/",
+        "status": 200
+      }
+    ]
   },
   "publication": {
-    "status": "build_requested",
+    "status": "verified",
     "requested_at": "2026-11-15T22:01:20.724Z",
     "source_commit": "96b1c2be3cb4648898cb81ef13f7bd9f37a54f53",
     "catalogue_commit": "1543afd20ba618826a8b9d8fd9f3ee5e424440ca",
     "workflow_run": 43766937200,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43766937200"
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43766937200",
+    "generated_at": "2026-11-15T22:02:42.919Z",
+    "investor_generated_at": "2026-11-15T22:02:46.765Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3787,
+    "portfolio_relationships": 761,
+    "expected_profiles": 14,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 0,
+    "generic_portfolio_entries_verified": 0,
+    "clickable_company_links_verified": 0,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 16,
+    "manifest_generic_relationship_matches": 0,
+    "reviewed_correction_targets_in_european_landscape": [],
+    "reviewed_participant_citation_in_directory_verified": 1,
+    "reviewed_contribution_db_verified_usd": 50000000,
+    "verified_at": "2026-11-15T22:04:43.842Z",
+    "workflow_conclusion": "success",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kelluu/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kbr/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kawasaki-heavy-industries/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kamaz/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kela-technologies/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/keysight-technologies/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kanematsu/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kef-robotics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/it-logika/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/joby-aviation/",
+        "status": 200
+      }
+    ],
+    "current_manifest_event_rows": 29,
+    "current_manifest_live_matches": 0,
+    "existing_draft_financing_targets": [
+      "kalray"
+    ],
+    "scope_note": "Fresh directory verifies14 manifest profiles and16 new participation citations, plus existing Uber profile/citation for the guarded contribution correction. Nine pre-existing anonymous profiles and five retired portfolios remain excluded. Current event/correction targets remain outside European map; broader-cohort financial rows and the USD50m correction are verified in DB, not claimed rendered as map or company-page financing sections. Existing Kalray draft gate preserved; no draft company route published. Geography, publication gates and curated records unchanged."
   },
   "preserved": [
     "Legacy STATE.json and frozen snapshots",
@@ -1177,7 +1312,7 @@
     "Curated investor profiles and unrelated source/relationship history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-15T22:02:39.331Z",
+  "updated_at": "2026-11-15T22:04:43.863Z",
   "production_after": [
     {
       "events": 4929,
@@ -1200,5 +1335,6 @@
     "remaining": 815,
     "bounded_closed": 115,
     "retained_partial": 413
-  }
+  },
+  "completed_at": "2026-11-15T22:04:43.842Z"
 }
