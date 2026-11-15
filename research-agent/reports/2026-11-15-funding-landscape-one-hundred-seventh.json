@@ -1,5 +1,5 @@
 {
-  "status": "atomic_import_verified_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T13:51:19.674Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-seventh.json",
@@ -952,7 +952,24 @@
     "concurrency_speedup_claimed": false,
     "per_company_search_ledger_entries": 87,
     "source_ledger_entries": 72,
-    "prepared_source_ledger_entries": 18
+    "prepared_source_ledger_entries": 18,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_source_ledger_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "referenced_directory_profiles_verified": 17,
+    "manifest_profile_source_matches": 16,
+    "generic_portfolio_entries_verified": 3,
+    "clickable_generic_company_links_verified": 3,
+    "unique_generic_company_routes_verified": 2,
+    "current_manifest_publication_verified": true,
+    "active_minutes": 13.84,
+    "checked_identities_per_hour": 117.1,
+    "new_queue_identities_per_hour": 104.1,
+    "completed_reviews_per_hour": 8.7,
+    "timing_scope": "Elapsed writer lease for24 next cohort identities in three frozen groups, two prepared original-source identities and one search-only tranche review in a fourth read-only group. Prior-import checks overlap the two prepared identities and are not counted again. Includes99 actual search queries, original issuer/currency/date/amount-basis/role checks, private grant beneficiary/currency corroboration, local PostgreSQL guards/reversal/conflict/replay tests, production rollback restoring four exact rows and eight preservation hash sets, one atomic import, exact facts/source/role audits, idempotent rollback replay, durable Git readbacks, successful catalogue build, two fresh datasets and three HTTP200 routes. Two bounded closures and22 specific partial histories retained. No concurrency speedup or ETA claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1118,7 +1135,82 @@
       ],
       "duplicate_new_names": 0,
       "missing_link_sources": 0
-    }
+    },
+    "frozen_group_sha256": {
+      "a": "f4bfe6464b4d569f3c9b8234185ec98fdfd3c5d9cf24d01f2feb94834712e1b9",
+      "a_corrections": "c07a81c97f83802b58961cb96b29ba731e495a624da92118374fe1f8fd56c1d8",
+      "b": "07bbc87a2f0a5f85bf7061e97b9089c9ed22598e2e923177a1fc4c7f2bb7023c",
+      "b_corrections": "81d710addfce48699c3f9b3bbf10f46ee3d3144c9be16413d378431bb1f90f45",
+      "c": "22257a4b4bc0aa62edbb06b581ce239f604b73644d0712753e7857410d4aec9f",
+      "c_corrections": "542f41d8403e3cdedd1387374c85238cff2134d179d4e1a153454c9c23d5f66f",
+      "prepared": "886cff0b084b859d32f6d482e00a8b0f469be88433b79b7abef64c179659a684"
+    },
+    "production_rollback_exact_original_rows_restored": 4,
+    "preservation_hashes_after": [
+      {
+        "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+        "rows": 2718,
+        "audit": "companies"
+      },
+      {
+        "md5": "fa3cdd06408321ed457c8a0591beb4e0",
+        "rows": 4713,
+        "audit": "uncorrected_events"
+      },
+      {
+        "md5": "50f2bf753a66c498d4beb98cdf6230f5",
+        "rows": 6503,
+        "audit": "uncorrected_existing_participants"
+      },
+      {
+        "md5": "8a0cfedafa4d2c105c90773a226d2c53",
+        "rows": 6480,
+        "audit": "existing_unrelated_event_sources"
+      },
+      {
+        "md5": "89561951e8f5ebd6c5af435faf7e5f92",
+        "rows": 3741,
+        "audit": "curated_profiles_full_rows"
+      },
+      {
+        "md5": "3bbd6d07315454a4b4bd5e664cded3b1",
+        "rows": 7103,
+        "audit": "existing_unrelated_profile_sources"
+      },
+      {
+        "md5": "218022407533bc6d2ab9375a9d4d57eb",
+        "rows": 745,
+        "audit": "uncorrected_existing_generic_rows"
+      },
+      {
+        "md5": "e103463e0004fcb76f1e00c1bdf3da72",
+        "rows": 1325,
+        "audit": "unrelated_research_coverage"
+      }
+    ],
+    "durable_readback_blobs": {
+      "research-agent/imports/funding-landscape-20261115-one-hundred-seventh.json": "4de2456f576e9edc48beb4344a82a1481db681f7",
+      "research-agent/imports/funding-landscape-20261115-one-hundred-seventh-reviewed-corrections.json": "5572b953f38d2d1bb0b5161a8f9462aa3b5a70ea",
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventh.json": "67910a241e7e2e75ef8de41775ed53014660ae89",
+      "research-agent/reports/2026-11-15-funding-one-hundred-seventh-source-ledger.json": "3aaac066556407af678238c1871749d3e3193f24",
+      "research-agent/recovery/2026-11-15-funding-one-hundred-seventh-prepared-reconciliations.json": "78f053769c74a7cc595bdd84c2eb614d0b932ddd",
+      "research-agent/queues/company-funding-all.csv": "cb310ddd9f952bc435d7213055b3c332c3e439e9",
+      "research-agent/FUNDING_STATE.json": "01e3756204498bfd7663f524227442c05b5bb82b"
+    },
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/companies/flyfreely/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/force-development-services/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      }
+    ]
   },
   "production_after": {
     "events": 4724,
@@ -1142,10 +1234,61 @@
     "retained_partial": 224
   },
   "publication": {
-    "status": "catalogue_build_in_progress",
+    "status": "verified",
+    "checked_at": "2026-11-15",
+    "verified_at": "2026-11-15T14:05:10.040Z",
     "source_commit": "5e9ac0d1fd18f13dad2a1bde2ba7b5911c40d899",
     "catalogue_commit": "2e0d31648a260ad5c5e73de77f3cc256f98e3af5",
     "workflow_run": 43722172420,
-    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventh.json"
-  }
+    "workflow_conclusion": "success",
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43722172420",
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventh.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-seventh.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-seventh-reviewed-corrections.json",
+    "generated_at": "2026-11-15T14:03:21.394Z",
+    "investor_generated_at": "2026-11-15T14:03:24.146Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3740,
+    "portfolio_relationships": 743,
+    "expected_profiles": 17,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 3,
+    "generic_portfolio_entries_verified": 3,
+    "clickable_company_links_verified": 3,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 16,
+    "manifest_generic_relationship_matches": 3,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 7,
+    "current_manifest_live_matches": 0,
+    "directory_filter_note": "Nine prior anonymous profiles and five retired portfolios remain excluded by existing filters. All current targets remain outside the European map. Seventeen referenced profiles, sixteen participation citations and three generic portfolios are verified in the fresh directory; company gates retained.",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/companies/flyfreely/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/force-development-services/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      }
+    ]
+  },
+  "completed_at": "2026-11-15T14:05:10.040Z",
+  "preserved": [
+    "Legacy research STATE.json and frozen V1/V2",
+    "Curated investor profiles and existing portfolio relationships",
+    "All uncorrected events, participants and source history",
+    "Company metadata, geography and publication gates",
+    "Repository schedules"
+  ]
 }
