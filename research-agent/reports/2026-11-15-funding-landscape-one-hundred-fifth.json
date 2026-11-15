@@ -1,0 +1,1089 @@
+{
+  "status": "local_tests_passed_ready_for_production_rollback",
+  "checked_at": "2026-11-15",
+  "started_at": "2026-11-15T11:49:42.938Z",
+  "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-fifth.json",
+  "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-fifth-reviewed-corrections.json",
+  "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-fifth-source-ledger.json",
+  "new_prepared_reconciliations": "research-agent/recovery/2026-11-15-funding-one-hundred-fifth-prepared-reconciliations.json",
+  "production_before": {
+    "links": 6478,
+    "events": 4682,
+    "covered": 1327,
+    "sources": 6443,
+    "approved": 4664,
+    "profiles": 3734,
+    "relationships": 739
+  },
+  "programme_complete": false,
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "new_queue_identities_checked": 24,
+    "prepared_original_source_identities_rechecked": 2,
+    "completed_previous_import_identity_checks": 2,
+    "newly_completed_bounded_reviews": 3,
+    "new_or_retained_partial": 21,
+    "new_approved_events": 26,
+    "new_round_participations": 22,
+    "new_source_rows": 26,
+    "new_generic_portfolio_relationships": 5,
+    "group_search_queries_executed": 87,
+    "prepared_reconciliation_search_queries": 0,
+    "root_additional_search_queries": 4,
+    "search_queries_executed": 91,
+    "local_postgresql_tests_passed": true,
+    "all_four_final_freezes_confirmed_before_consolidation": true
+  },
+  "per_company": [
+    {
+      "id": "bc71b911-20f5-4afa-b37e-530a35bb3ee9",
+      "slug": "electrical-wings",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Electrical Wings\" funding investment Estonia 2026",
+        "\"Electric Wings Group\" funding 540000 630000",
+        "\"Electric Wings Group\" investment funding electricwings.ee"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://electricwings.ee/",
+          "title": "Electric Wings Group OÜ | Navigation & Stability",
+          "published_date": null,
+          "disposition": "Opened company site: navigation/control software, no financing announcement; catalogue spelling Electrical Wings to this legal entity remains a bridge to resolve."
+        },
+        {
+          "url": "https://regia.ee/en/entity/16908003-electric-wings-group-ou",
+          "title": "Electric Wings Group OÜ registry profile",
+          "published_date": null,
+          "disposition": "Rechecked registry16908003; EUR540k and630k are dated public transfers classified other grants, not necessarily announcement dates. Fresh EUR1510 state-aid candidate held pending primary decision and identity bridge."
+        },
+        {
+          "url": "https://infomasin.ee/en/16908003-Electric-Wings-Group-OU",
+          "title": "Electric Wings Group OÜ financials",
+          "published_date": null,
+          "disposition": "Search result cautions public-payment dataset combines invoice payments and grants; no new fact imported."
+        }
+      ],
+      "evidence_note": "Reviewed ElectricWingsGroup16908003 site/registry, laterstateaid candidate and publictransfer evidence. No new event cleared.",
+      "hold_note": "Resolve catalogueElectricalWings versusElectricWingsGroup identity and publictransfer classification/publicdate before extending grants; existing rows preserved for guarded reconciliation."
+    },
+    {
+      "id": "c170fd0c-f5ed-42de-8aa4-cafff8985e28",
+      "slug": "electroninks",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Electroninks funding 2026 2025 strategic investment",
+        "\"Electroninks\" funding investment Series C 2026 2025 2024",
+        "site:sbir.gov Electroninks award NSF 2014 2015",
+        "\"Electroninks\" \"Applied Ventures\" \"Merck Ventures\" investment 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sbir.gov/awards/210890",
+          "title": "SBIR award: All-in-One Printed Circuit Board Maker for On-Demand Manufacturing of Obsolete Parts",
+          "published_date": null,
+          "disposition": "Verified original; supports new event, with stated date/amount/issuer limitations."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/216110",
+          "title": "SBIR award: Advanced Materials for Soft Robotics Assisted Non-Destructive Inspection",
+          "published_date": null,
+          "disposition": "Verified original; supports new event, with stated date/amount/issuer limitations."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/216212",
+          "title": "SBIR award: Electroninks CircuitJet: The All-in-One Printed Circuit Board Maker for Obsolete Parts and Prototyping",
+          "published_date": null,
+          "disposition": "Verified original; supports new event, with stated date/amount/issuer limitations."
+        },
+        {
+          "url": "https://electroninks.com/electroninks-receives-u-s-air-force-contract-to-provide-particle-free-conductive-ink-and-printers-for-advanced-manufacturing/",
+          "title": "Electroninks Receives U.S. Air Force Contract",
+          "published_date": "2021-10-28",
+          "disposition": "Original explicitly calls nearlyUSD1.5m PhaseII SBIR contract; existing grant classification/agency grantor role needs guarded correction."
+        },
+        {
+          "url": "https://electroninks.com/newsroom/",
+          "title": "Electroninks Newsroom",
+          "published_date": null,
+          "disposition": "Company archive and investor-targeted search locate later product/collaboration releases, no newly verified equity financing. Historical NSF2015 and further SBIR awards remain backfill candidates, not absent funding."
+        }
+      ],
+      "evidence_note": "Three distinct USAFresearch contracts identified by contract IDs and legal UEI, no duplicate equity rounds.",
+      "hold_note": "Complete NSF/SBIR earlier award backfill and exact public dates remain open.2021grant classification requires correction; cumulative24mfunding is not a standalone round."
+    },
+    {
+      "id": "218d04cf-1569-407d-8a14-167889423e93",
+      "slug": "elitac-wearables",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Elitac Wearables funding investment 2026 2025",
+        "\"Elitac Wearables\" funding investment Teijin 2026 DIANA",
+        "\"Elitac Wearables\" investment funding Teijin Aramid 2025 2026",
+        "site:diana.nato.int \"Elitac\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://elitacwearables.com/about/partners-and-clients/teijin-2/",
+          "title": "Teijin Invests in Dutch Venture Elitac to Expand Total Safety Solutions",
+          "published_date": "2018-12-05",
+          "disposition": "Original supports public5Dec announcement of29Nov acquisition of20% via Teijin AramidB.V.; existingactual purchaser already mapped. Prepare date-only correction, no duplicate investment."
+        },
+        {
+          "url": "https://www.diana.nato.int/about-diana/2026-cohort-of-companies.html",
+          "title": "DIANA2026 Cohort",
+          "published_date": null,
+          "disposition": "Opened cohort primary; Elitac selected, already stored. No second round."
+        },
+        {
+          "url": "https://www.diana.nato.int/faq/how-will-funding-work.html",
+          "title": "How does DIANA provide funding to its innovators?",
+          "published_date": null,
+          "disposition": "EUR100k participation payment is contractual programme funding. Cohort membership alone is not proof of its payment date; no EUR300k phase2 award invented."
+        }
+      ],
+      "evidence_note": "ExistingTeijin20% investment andDIANAprogramme checked against originals; actual purchaser alreadymapped.",
+      "hold_note": "Existing2018event uses acquisitiondate rather thanDec5 publicdate; date-only correction prepared. DIANAsigned/paid state not inferred fromselection."
+    },
+    {
+      "id": "9a8b4d4d-ea94-47ec-891d-b7c5b2c4ec1c",
+      "slug": "elroy-air",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Elroy Air funding 2026 2025 financing",
+        "\"Elroy Air\" seed funding 2019 2017 2018 investors",
+        "\"Elroy Air\" \"2017\" \"$4.6\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://elroyair.com/company/news/press-releases/PIPE-upsizing-to-175-million-with-lockheed-martin-ventures/",
+          "title": "Elroy Air Announces Upsizing of PIPE Investments to175Million",
+          "published_date": "2026-09-24",
+          "disposition": "Body dated24Sept(header23Sept):175m commitments,75m now funded;75m existing row preserved,175m not additional cash. Existing mixed classification retained for notes/warrants."
+        },
+        {
+          "url": "https://elroyair.com/company/news/press-releases/elroy-series-a-financing/",
+          "title": "Elroy Air SeriesA Financing",
+          "published_date": "2021-08-03",
+          "disposition": "Opened primary via search:40mSeriesA and48mtotal already stored.2017/2019 press seed amounts conflict with cumulative48m and need reconciliation."
+        }
+      ],
+      "evidence_note": "Latest original separates175mPIPE commitments fromexisting75m funded; no duplicate added. Earlierseed candidates checked against2021total.",
+      "hold_note": "2017/2019seed4.6meach conflicts with2021cumulative48m andrequiresoriginalround reconciliation. Businesscombination closing pending; commitments notcash."
+    },
+    {
+      "id": "01fa19de-b262-4b1a-b4c2-f98da8871499",
+      "slug": "elsight",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Elsight capital raising placement funding 2026 2025 ASX",
+        "\"Elsight\" \"2026\" \"capital raising\" ASX November review",
+        "\"Elsight\" \"placement\" \"2023\" \"2024\" capital raising"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.elsight.com/investor-relations/",
+          "title": "Elsight investor relations archive",
+          "published_date": null,
+          "disposition": "Opened primary archive across earlier and latest disclosures; no additional approved financing sourced in this pass.2023 convertible-note issuance candidate requires bridge to existing2022note facility."
+        },
+        {
+          "url": "https://company-announcements.afr.com/asx/els/775fe594-d646-11f1-841d-9e1a94bc66ff.pdf",
+          "title": "Elsight announces review of capital management, revenue reporting and corporate governance",
+          "published_date": "2026-11-02",
+          "disposition": "Opened ASXoriginal: capital-management review,59.4mUSDcash/no debt asof30Sept. Third-party claims ofnewNovplacement not confirmed and excluded."
+        },
+        {
+          "url": "https://www.klgates.com/KL-Gates-Advises-Connectivity-Solutions-Provider-Elsight-in-AU60-Million-Capital-Raise-7-30-2025",
+          "title": "K&L Gates Advises Elsight inAU60m Capital Raise",
+          "published_date": "2025-07-30",
+          "disposition": "Transactionparty search corroborates existingA60m placement; not an additional round."
+        }
+      ],
+      "evidence_note": "Earlierarchive,currentASXoriginal and transactionparty corroboration assessed; no new supported financing.",
+      "hold_note": "2023notes may be draw/issue under existing2022convertibles; reconcile beforeadding. Nov2026capitalmanagementreview does not establish a newraise."
+    },
+    {
+      "id": "88b1962f-b4ee-4d3c-a7f5-24f844471ccd",
+      "slug": "embraer",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Embraer financing loan bonds BNDES Finep 2026 2025",
+        "site:embraer.com \"2025\" \"331.5\" Finep",
+        "Embraer Finep 331.5 million March 2025 innovation credit",
+        "Embraer BNDES agosto 2025 1,1 bilhão financiamento exportação",
+        "site:sec.gov/Archives/edgar/data/1355444 \"2025\" \"331.5\" \"1.10\"",
+        "site:embraer.com \"Finep\" \"2025\" \"331\"",
+        "\"Embraer\" \"000162828026021824\"",
+        "\"Embraer\" \"1.1 billion\" \"August\" \"2025\" BNDES",
+        "site:bndes.gov.br Embraer \"1,1 bilhão\" \"2025\" \"produção\"",
+        "site:agenciadenoticias.bndes.gov.br Embraer \"1,1 bilhão\" 2025",
+        "site:embraer.com \"331\" \"Finep\" \"2025\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1355444/000162828026021824/erj-20251231.htm",
+          "title": "Embraer 2025 Form20-F: FINEP innovation credit facility",
+          "published_date": "2026-03-30",
+          "disposition": "Verified original; supports new event, with stated date/amount/issuer limitations."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1355444/000162828026021824/0001628280-26-021824-index.htm",
+          "title": "EDGAR filing index2025Form20F",
+          "published_date": "2026-03-30",
+          "disposition": "Opened index confirms filing30March2026 and accepted27March. Subsidiary notes are retained as issuer-specific holds."
+        },
+        {
+          "url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2025/02/nib-completa-um-ano-e-mcti-ja-investiu-r-4-2-bilhoes-na-missao-6",
+          "title": "MCTI NIB mission6 FINEP credit announcement",
+          "published_date": "2025-02",
+          "disposition": "Indexed ministry text directly identifies331mcredit toEmbraer; open hit JS challenge. Used as issuer corroboration candidate, not earlier exact announcement/signing evidence."
+        }
+      ],
+      "evidence_note": "Bounded2025facility subset verified from2025Form20F plusissuer corroboration; oneFINEPcredit disclosure prepared.",
+      "hold_note": "Full older history remains open. BNDES2025exportagreement exactborrower bridge, EAH/Netherlands2024revolver, Netherlands2025bonds andEvefacilities allheld; no parent attribution invented. FINEPMarch/Maycontractmonth conflict retained."
+    },
+    {
+      "id": "dcb46913-3a1f-4834-808d-930572359eb0",
+      "slug": "embry-riddle-aeronautical-university",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site:erau.edu grants awarded million 2026 2025 research funding",
+        "site:erau.edu \"2026\" \"awarded\" \"million\" grant",
+        "site:erau.edu \"NASA-Funded Initiative\" \"300,000\" \"2026\"",
+        "site:erau.edu \"2026\" grant award \"NASA\" -commons -hub-spoke",
+        "\"Embry-Riddle Researchers Secure NIH Grant\" 523000 2026",
+        "\"Embry-Riddle Professor Earns NSF Grant\" \"2026\" AI"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/embry-riddle-professor-earns-nsf-grant-to-lead-undergrads-in-ai-research-for-safety-critical-systems",
+          "title": "Embry-Riddle Professor Earns NSF Grant to Lead Undergrads in AI Research for Safety-Critical Systems",
+          "published_date": "2026-08-31",
+          "disposition": "Verified original; supports new event, with stated date/amount/issuer limitations."
+        },
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/embry-riddle-researchers-secure-nih-grant-to-develop-exoskeleton-that-assists-walking",
+          "title": "Embry-Riddle Researchers Secure NIH Grant to Develop Exoskeleton That Assists Walking",
+          "published_date": "2026-09-28",
+          "disposition": "Verified original; supports new event, with stated date/amount/issuer limitations."
+        },
+        {
+          "url": "https://erau.edu/about/news-and-stories/news/embry-riddle-prepares-students-for-ai-driven-aerospace-careers-through-nasa-funded-initiative",
+          "title": "Embry-Riddle Prepares Students for AI-Driven Aerospace Careers Through NASA-Funded Initiative",
+          "published_date": "2026-10-08",
+          "disposition": "Verified original; supports new event, with stated date/amount/issuer limitations."
+        }
+      ],
+      "evidence_note": "Latest three distinctUniversitypublicgrant disclosures verified; explicit300kERAUshare used rather than600kconsortium.",
+      "hold_note": "FullUniversitygrant/historybackfill remains open; earlierNSF/NASAawards stored, no sourceabsencezero inference. NSFseparateUASREUwithoutamount held."
+    },
+    {
+      "id": "e5502629-d091-4714-8d90-52fb32d2e6a7",
+      "slug": "emesent",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Emesent funding 2026 NRFC 17 million venture debt",
+        "\"Emesent\" \"$2M\" grant 2026",
+        "site:emesent.com \"grant\" \"2026\" Cortex",
+        "site:emesent.com \"3M\" \"CRC-P\"",
+        "\"Emesent\" \"CRC-P\" \"3 million\" 2026 grant",
+        "\"Emesent\" \"2024\" \"Integrated Mining\" grant"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.emesent.com/news/emesent-secures-3m-aud-grant-to-develop-gps-denied-autonomy-open-platform-cortex-ai",
+          "title": "Emesent Secures $3M AUD Grant to Develop GPS-Denied Autonomy Open Platform Cortex AI",
+          "published_date": "2026-08-05",
+          "disposition": "Verified original; supports new event, with stated date/amount/issuer limitations."
+        },
+        {
+          "url": "https://business.gov.au/Grants-and-Programs/Cooperative-Research-Centres-Projects-CRCP-Grants/CRC-Projects-selection-round-outcomes",
+          "title": "CRC Projects selection round outcomes: Integrated Mining Digitalisation and Automation Platform",
+          "published_date": null,
+          "disposition": "Verified original; supports new event, with stated date/amount/issuer limitations."
+        },
+        {
+          "url": "https://www.emesent.com/news/emesent-secures-25-million-aud-to-accelerate-autonomous-intelligence-platform",
+          "title": "Emesent securesA25m",
+          "published_date": "2026-07-08",
+          "disposition": "Opened primary: existingA15mequity plusA10mNRFCventuredebt. No additionalUSD17mround; no SAFE classification inferred from aggregators."
+        }
+      ],
+      "evidence_note": "Two distinctCRC-Pprojectgrants verified fromcompany andgovernment originals; currentJuly equity/debt notduplicated.",
+      "hold_note": "OlderCRC-P projectlead award notasserted aswhollyunrestrictedcash; publicdateunknown. Govtprojects/otherunreconciledhistory stillpartial."
+    },
+    {
+      "id": "48326477-2f01-49f9-868c-e9a117a1ef16",
+      "slug": "emrgy",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Emrgy funding financing investment 2025 2026 official",
+        "Emrgy funding financing investment 2025 2026 official",
+        "Emrgy Avila December 2024 bridge 3 million"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://emrgy.com/about-us/",
+          "title": "Emrgy — About Us",
+          "published_date": null,
+          "disposition": "exact issuer cross-check from search"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1672740/000114036125001280/primary_doc.xml",
+          "title": "Emrgy Form D",
+          "published_date": null,
+          "disposition": "open attempted; unsupported XML content type; no new fact from failed retrieval"
+        },
+        {
+          "url": "https://static1.squarespace.com/static/685c144a30c61a14fe92f7fd/t/68712eb3f8e4ae60afe71702/1752247991659/Avila_Investor%2BReporting%2BQ1%2B2025.pdf",
+          "title": "Avila Fund I Q1 2025 investor update",
+          "published_date": null,
+          "disposition": "discovery only; marked confidential, excluded from import pending independent public corroboration"
+        }
+      ],
+      "evidence_note": "Rechecked exact hydroelectric issuer and existing eight grant/Form D/equity records. No distinct new public financing is added. A public-hosted investor report marked confidential surfaced a potentially overlapping bridge claim; held for independent public corroboration and SEC amendment reconciliation. SEC XML open failed with unsupported content type.",
+      "hold_note": "Reconcile 2024 bridge instrument/amount with SEC offering and verify first-sale versus filing dates in existing 2016, 2017, 2018, 2021 and 2025 disclosures before proposing guarded corrections."
+    },
+    {
+      "id": "a940dbf7-232d-41fb-af23-7168fd2723f5",
+      "slug": "eos-data-analytics",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "EOS Data Analytics funding investment 2025 2026 Noosphere",
+        "EOS Data Analytics funding investment Noosphere Ventures",
+        "site.eos.com GoldenEye EOS Data Analytics European Commission 300000",
+        "GoldenEye 869398 \"EOS\" CORDIS 300000"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://noosphereventures.com/portfolio/",
+          "title": "Noosphere Ventures — Portfolio",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://eos.com/blog/eos-data-analytics-joins-the-goldeneye-project/",
+          "title": "EOS Data Analytics Joins The Goldeneye Project",
+          "published_date": "2025-10-17",
+          "disposition": "programme participation; not a newly dated financing"
+        },
+        {
+          "url": "https://eos.com/company/horizon-2020/",
+          "title": "EOSDA participation in Horizon",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/869398",
+          "title": "GoldenEye — CORDIS 869398",
+          "published_date": null,
+          "disposition": "actual Ukrainian beneficiary; excluded from US issuer funding"
+        },
+        {
+          "url": "https://ukraineinvest.gov.ua/en/news/ukrainian-eos-team-to-receive-eur-300000-from-the-european-commission/",
+          "title": "UkraineInvest — EOS team grant claim",
+          "published_date": null,
+          "disposition": "approximately EUR300k claim checked against exact registry beneficiary"
+        }
+      ],
+      "evidence_note": "Added only Noosphere investor portfolio relationship. GoldenEye registry names FOREIGN COMPANY EOS UKRAINE, Dnipro, with EUR281,968.75 net EU contribution; not the US EOS Data Analytics issuer. The issuer blog currently displays 17 October 2025 for an older 2020 programme, so that display date is not treated as a new round. Programme total and approximate EUR300k media claim excluded.",
+      "hold_note": "Bounded source review through 2026-11-15; private terms and undisclosed rounds remain unknown."
+    },
+    {
+      "id": "f757fb79-15af-41d0-919b-db892e7644e3",
+      "slug": "eotech",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "EOTECH financing investment 2025 2026 official",
+        "EOTECH financing investment acquisition Koucar 2020 2021"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://senecapartners.com/portfolio/eotech/",
+          "title": "Seneca Partners — EOTech",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://www.merionpartners.com/2020/09/01/merion-announces-new-investment-in-specialized-optics-manufacturer/",
+          "title": "Merion investment in American Holoptics",
+          "published_date": "2020-09-01",
+          "disposition": "acquirer financing, excluded from EOTECH rounds"
+        },
+        {
+          "url": "https://hl.com/about-us/transactions/houlihan-lokey-advises-eotech-on-its-acquisition-of-intevac-photonics/",
+          "title": "Houlihan Lokey — EOTECH acquisition of Intevac Photonics",
+          "published_date": null,
+          "disposition": "existing transaction checked; no duplicate"
+        }
+      ],
+      "evidence_note": "Added Seneca historical portfolio relationship. Merion original explicitly places subordinated debt with warrants at American Holoptics to acquire EOTech, so it is excluded as EOTECH issuer financing. Existing acquisition-financing disclosure and American Holoptics relationship retained without duplicate.",
+      "hold_note": "Bounded history and latest-source searches completed; undisclosed financing terms remain unknown."
+    },
+    {
+      "id": "55f6e176-7987-40fe-9cee-ceed364c3f7f",
+      "slug": "epirus",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Epirus funding Series 2025 2026 official",
+        "Epirus funding 2026 investment Series D 2025",
+        "Epirus 2026 funding investment Washington Harbour 8VC SEC",
+        "Epirus \"October 9, 2025\" investment",
+        "Epirus \"2018\" \"million\" funding seed"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/epirus-closes-250m-series-d-to-hyperscale-leonidas-production-capability-for-critical-asset-protection-302392509.html",
+          "title": "Epirus closes USD250m Series D",
+          "published_date": "2025-03-05",
+          "disposition": "existing round confirmed; no duplicate"
+        },
+        {
+          "url": "https://www.epirusinc.com/newsroom",
+          "title": "Epirus — Newsroom",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://announcements.asx.com.au/asxpdf/20230227/pdf/45m2ggkn4ql2dm.pdf",
+          "title": "DroneShield investor presentation",
+          "published_date": "2023-02-27",
+          "disposition": "outgoing investment from Epirus, excluded"
+        },
+        {
+          "url": "https://www.streetinsider.com/ACCESS%2BNewswire/M42%2BAnnounces%2Ban%2BAgreement%2Bto%2BAcquire%2BStake%2Bin%2BDrone%2BDefense%2BCompany%2BEpirus/25441855.html",
+          "title": "M42 agreement to acquire minority Epirus stake",
+          "published_date": "2025-10-09",
+          "disposition": "conditional stakeholder announcement; structure and closing unverified"
+        },
+        {
+          "url": "https://www.epirusinc.com/press-releases/epirus-leonidas-selected-for-department-of-war-directed-energy-pilot-program",
+          "title": "Epirus directed-energy programme selection",
+          "published_date": "2026-10-09",
+          "disposition": "no disclosed amount or new equity"
+        },
+        {
+          "url": "https://www.epirusinc.com/press-releases/u-s-marine-corps-awards-epirus-11-million-contract-for-havoc-program",
+          "title": "Epirus HAVOC contract",
+          "published_date": "2026-08-10",
+          "disposition": "opened; excluded pending R&D-versus-procurement scope review"
+        }
+      ],
+      "evidence_note": "Confirmed existing USD250m March2025 round and current newsroom through October2026. DroneShield presentation describes Epirus investing in DroneShield, not proceeds to Epirus. Messier42 October2025 minority-stake agreement is conditional with unspecified primary/secondary structure, so no funding round or completed relationship is inferred. Ordinary systems procurement excluded.",
+      "hold_note": "2018 seed aggregators need original filing reconciliation; M42 stake transaction needs issuer/investor original and closing/primary-versus-secondary proof. Review detailed public R&D support separately without importing procurement."
+    },
+    {
+      "id": "ccf5b759-d6b8-42e4-aab5-81c13d4fb555",
+      "slug": "eplane-company",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "ePlane Company funding investment 2026 Ubifly",
+        "ePlane Ubifly 2020 funding 2026 Speciale Capital Antares"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.eplane.ai/about",
+          "title": "The ePlane Company — Company",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://www.tdb.gov.in/index.php/tdb-dst-backs-indias-next-generation-air-mobility-ambitions-rs285-crore-rdi-support-ubifly",
+          "title": "TDB RDI support to Ubifly",
+          "published_date": "2026-09-23",
+          "disposition": "existing approved convertible support, not disbursed cash"
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/tech/funding/air-taxi-startup-eplane-eyes-40-50-million-round-speciale-invest-co-leads/articleshow/128685403.cms",
+          "title": "ePlane eyes USD40–50m round",
+          "published_date": "2026-02-23",
+          "disposition": "search result only; fundraising plan excluded"
+        }
+      ],
+      "evidence_note": "Issuer timeline confirms Ubifly identity and USD14m SeriesB; TDB original confirms INR285crore approved OCD support, already present. The INR570crore total project cost is not issuer funding. 2026 planned USD40–50m raise is not a completed round. No duplicate added.",
+      "hold_note": "Resolve aggregator December2020 seed entry versus March2021 seed close before counting distinct event; planned fundraising has no verified closing."
+    },
+    {
+      "id": "bb3f2840-acbd-4898-adbe-b7bd13cd1220",
+      "slug": "epropelled",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "ePropelled financing investment 2025 2026 series A",
+        "ePropelled SEC Form D 2021 2025 2026 funding Grewal"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://epropelled.com/pages/investor-relations",
+          "title": "ePropelled — Investor Relations",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://epropelled.com/blogs/press-releases/epropelled-to-increase-manufacturing-footprint-with-60-million-in-u-s-government-funding-to-strengthen-u-s-drone-propulsion-supply-chain",
+          "title": "ePropelled manufacturing expansion supported by USD60m government funding",
+          "published_date": "2026-08-11",
+          "disposition": "issuer source obtained in current search; existing fact, no duplicate"
+        }
+      ],
+      "evidence_note": "Issuer investor-relations history confirms founder private investment and separate acquisition of ElectronicaUK. Current issuer release confirms USD60m IBAS government support already imported; no new duplicate and no unsupported grant/equity reclassification. SeriesA final close remains USD15m aggregate, not USD15m additional tranche.",
+      "hold_note": "Bounded public-source review through 2026-11-15; unknown private financing is not zero funding."
+    },
+    {
+      "id": "da79be84-f6df-4f15-8fac-e47fb271faac",
+      "slug": "erdyn-consultants",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "Erdyn Consultants financement capital levée fonds projets CORDIS",
+        "Erdyn Consultants CORDIS H2020 projects ID financement capital",
+        "Erdyn Consultants financement investissement capital acquisition 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.pappers.fr/entreprise/erdyn-consultants-330255175",
+          "title": "ERDYN CONSULTANTS — SIREN330255175",
+          "published_date": null,
+          "disposition": "exact legal identity/address; statutory capital not treated as round"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/769627",
+          "title": "ANIMA — CORDIS769627",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/860538",
+          "title": "INVENTOR — CORDIS860538",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101018342",
+          "title": "SOTERIA — CORDIS101018342",
+          "published_date": null,
+          "disposition": "verified original source"
+        }
+      ],
+      "evidence_note": "Verified exact Erdyn Consultants SAS address/registry identity and three additive own-beneficiary EU allocations: ANIMA EUR214875, INVENTOR EUR133750, SOTERIA EUR62637.07. Erdyn Atlantique allocations and consortium totals excluded. Dates remain null because EC signatures are not public announcements.",
+      "hold_note": "Public registry indicates wider project history beyond seven reviewed allocations. Reconcile remaining official CORDIS/EDF grants and existing four signature-date announcement fields; no full-history claim."
+    },
+    {
+      "id": "5c4f9532-8d33-468c-ae10-c18302e8567e",
+      "slug": "esaero",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "ESAero Empirical Systems Aerospace SBIR investment financing acquired 2026",
+        "ESAero funding investment capital NASA SBIR 2009 2016"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sbir.gov/portfolio/192575",
+          "title": "SBIR — Empirical Systems Aerospace Inc",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://www.sbir.gov/awards/209868",
+          "title": "SBIR HR001124C0436 — AHAB",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://www.sbir.gov/awards/209240",
+          "title": "SBIR FA8649-24-P-0218 — HyPE",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://www.sbir.gov/awards/205136",
+          "title": "SBIR FA8649-23-P-0727 — ESA-ALE",
+          "published_date": null,
+          "disposition": "verified original source"
+        },
+        {
+          "url": "https://www.sbir.gov/success/sbir-sttr-success-empirical-systems-aerospace-inc-esaero",
+          "title": "SBIR success story — ESAero",
+          "published_date": "2016-06-15",
+          "disposition": "earlier NASA support confirmed, no synthetic aggregate round"
+        },
+        {
+          "url": "https://investor.avinc.com/news-releases/news-release-details/av-acquires-empirical-systems-aerospace-inc",
+          "title": "AeroVironment acquires ESAero",
+          "published_date": "2026-03-16",
+          "disposition": "search-original transaction announcement; existing ownership fact, consideration excluded"
+        }
+      ],
+      "evidence_note": "Verified SBIR exact issuer UEI and three individually disclosed R&D-support awards; no equity or cash-received claim. Award and start dates are not announcement dates. Existing AeroVironment acquisition relationship retained; USD200m acquisition consideration excluded as primary issuer funding.",
+      "hold_note": "SBIR registry lists37 awards since2009; 34 additional awards and detailed NASA follow-on history require individual reconciliation. Not complete."
+    },
+    {
+      "id": "8e5f9a6a-f902-41de-8502-376792295103",
+      "slug": "esh-tech",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Esh-Tech\" funding investment 2025 2026 Kinetica",
+        "\"Esh-Tech\" funding 2023 2024 2025 investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.suasnews.com/2026/06/esh-tech-raises-18-million-to-accelerate-deployment-of-its-dronelight-c-uas-solution/",
+          "title": "Esh-Tech raises $18 million",
+          "published_date": null,
+          "disposition": "existing USD18m mixed round rechecked; no duplicate"
+        },
+        {
+          "url": "https://innovationisrael.org.il/en/invested-companies-2023/",
+          "title": "Israel Innovation Authority: Invested Companies 2023",
+          "published_date": null,
+          "disposition": "ESH - TECH SYSTEMS LTD listed under R&D Fund; no allocation or publication day disclosed"
+        }
+      ],
+      "evidence_note": "Existing USD18m mixed event and investors preserved; authority directory confirms earlier support relationship.",
+      "hold_note": "Earlier dated amount-specific R&D awards and instrument split remain unresolved; issuer named FFG not expanded."
+    },
+    {
+      "id": "5a63ff47-0ea3-45c6-8e0b-8b4b1875b709",
+      "slug": "esmart-systems",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.esmartsystems.com funding investment 2025 2026",
+        "site.esmartsystems.com \"2019\" investment",
+        "site.esmartsystems.com \"34.4\" 2019",
+        "site.esmartsystems.com \"34.4 million\"",
+        "\"eSmart\" \"34.4\" \"2019\" \"Nysnø\"",
+        "site.equinor.com \"esmart\" \"2019\"",
+        "site.energyimpactpartners.com \"esmart\" \"2019\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://nysnoinvest.no/en/equinor-og-nysno-investerer-i-esmart-systems/",
+          "title": "Equinor and Nysnø invest in eSmart Systems",
+          "published_date": "2019-01-16",
+          "disposition": "investor confirms successful USD18m capital raise, lead and named participants"
+        },
+        {
+          "url": "https://www.esmartsystems.com/news-and-resources/esmart-systems-raises-eur-30-million-in-investment-to-accelerate-growth/",
+          "title": "eSmart Systems raises EUR30 million",
+          "published_date": "2024-10",
+          "disposition": "existing 2024 event rechecked; EUR63m two-year cumulative excluded"
+        },
+        {
+          "url": "https://globalventuring.com/blog/2019/06/27/innogy-edges-esmart-upwards/",
+          "title": "Innogy edges eSmart upwards",
+          "published_date": "2019-06-27",
+          "disposition": "candidate describes second tranche of undisclosed size; June USD34.4m aggregate held"
+        }
+      ],
+      "evidence_note": "January2019 investor primary discloses USD18m with exact roles; existing2016/2022/2024 preserved.",
+      "hold_note": "June2019 USD34.4m is likely completed aggregate of tranches: incrementalamount and round-parent boundary held; 2016/2018 Innovation Norway candidates require original allocation."
+    },
+    {
+      "id": "917f71b6-de39-409d-9069-496116066a53",
+      "slug": "esox-group",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"ESOX Group\" investment funding 2026",
+        "\"ESOX Group\" investment funding 2026",
+        "\"ESOX Group Oy\" funding 2025 2026 investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://springvest.fi/portfolio/esox-group/",
+          "title": "ESOX Group — Springvest",
+          "published_date": null,
+          "disposition": "investor confirms shareholding received in 2025 Verge demerger"
+        },
+        {
+          "url": "https://esoxgroup.com/news/esox-next-gen-defence-vehicles/",
+          "title": "Newly formed ESOX Group assembles technology leaders",
+          "published_date": "2025-10-01",
+          "disposition": "issuer confirms Donut Defence demerge and ESOX Aero acquisition; no financing amount"
+        }
+      ],
+      "evidence_note": "Issuer identity corroborated; Springvest holding follows2025demerger, not freshcash financing.",
+      "hold_note": "Demerger/acquisition/JV activity not imported as round; exact registry legal structure and earlier grants need further work."
+    },
+    {
+      "id": "de2533a5-cf31-40c8-9fa9-904f30e639a1",
+      "slug": "esspi",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"ESSPI\" funding investment",
+        "\"ESSPI\" drone company funding",
+        "site.michigan.gov \"ESSPI\" \"$110,000\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.michigan.gov/leo/news/2026/10/21/whitmer-awards-funds-to-launch-12-advanced-air-mobility-projects-statewide",
+          "title": "Michigan awards 12 Advanced Air Mobility projects",
+          "published_date": "2026-10-21",
+          "disposition": "own ESSPI USD110k allocation, not USD1.7m programme total"
+        },
+        {
+          "url": "https://www.sbir.gov/awards/189927",
+          "title": "SBIR: BLISS Phase I",
+          "published_date": null,
+          "disposition": "registry exact awardee ENERGY STORAGE SAFETY PRODUCTS INTERNATIONAL LLC, UEI F768PY8LRJE7; contract value verified"
+        },
+        {
+          "url": "https://www.sbir.gov/awards/195919",
+          "title": "SBIR: BLISS Phase II",
+          "published_date": null,
+          "disposition": "registry exact awardee ENERGY STORAGE SAFETY PRODUCTS INTERNATIONAL LLC, UEI F768PY8LRJE7; contract value verified"
+        },
+        {
+          "url": "https://www.sbir.gov/awards/220086",
+          "title": "SBIR: BLISS Phase IIb",
+          "published_date": null,
+          "disposition": "registry exact awardee ENERGY STORAGE SAFETY PRODUCTS INTERNATIONAL LLC, UEI F768PY8LRJE7; contract value verified"
+        },
+        {
+          "url": "https://www.volpe.dot.gov/work-us/small-business-innovation-research/leveraging-smart-storage-technology-combat-lithium-ion",
+          "title": "USDOT: ESSPI smart storage technology",
+          "published_date": "2025-03-07",
+          "disposition": "official alias and Phase I/II development confirmed; no separate aggregate funding event"
+        }
+      ],
+      "evidence_note": "Exact issuer resolved; three DOT researchcontracts plus own2026MichiganUSD110k allocation verified.",
+      "hold_note": "2025 abstract references Michigan matching grant and MichiganCentralScaleFund, but amounts/dates unverified; potentialOEMinvestments not confirmed; more recent registry search remains bounded."
+    },
+    {
+      "id": "7ac24153-b28a-49ab-a779-4138cb9e9c7d",
+      "slug": "estes-energetics",
+      "status": "source_review_partial",
+      "event_count": 6,
+      "relationship_count": 1,
+      "searches_checked": [
+        "site.estesenergetics.com funding award investment",
+        "\"Estes Energetics\" \"$13\" award defense.gov",
+        "site.businessdefense.gov \"Estes\" \"13 million\"",
+        "\"Estes Energetics\" \"2026\" funding award investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sbir.gov/awards/204700",
+          "title": "SBIR/STTR: Low-cost in-situ carbon-carbon composite",
+          "published_date": null,
+          "disposition": "EOS ENERGETICS INC, UEI KVPVC6LALZL7, Estes website/address and project team match; award value verified"
+        },
+        {
+          "url": "https://www.sbir.gov/awards/207322",
+          "title": "SBIR/STTR: Versatile magnesium recovery",
+          "published_date": null,
+          "disposition": "EOS ENERGETICS INC, UEI KVPVC6LALZL7, Estes website/address and project team match; award value verified"
+        },
+        {
+          "url": "https://www.sbir.gov/awards/207319",
+          "title": "SBIR/STTR: Modular pilot-scale potassium nitrate",
+          "published_date": null,
+          "disposition": "EOS ENERGETICS INC, UEI KVPVC6LALZL7, Estes website/address and project team match; award value verified"
+        },
+        {
+          "url": "https://www.sbir.gov/awards/196587",
+          "title": "SBIR/STTR: High-capability hybrid rocket motor",
+          "published_date": null,
+          "disposition": "EOS ENERGETICS INC, UEI KVPVC6LALZL7, Estes website/address and project team match; award value verified"
+        },
+        {
+          "url": "https://www.sbir.gov/awards/198280",
+          "title": "SBIR/STTR: Lattice Boltzmann nozzle thermal management",
+          "published_date": null,
+          "disposition": "EOS ENERGETICS INC, UEI KVPVC6LALZL7, Estes website/address and project team match; award value verified"
+        },
+        {
+          "url": "https://www.sbir.gov/awards/195990",
+          "title": "SBIR/STTR: Modular production of potassium nitrate",
+          "published_date": null,
+          "disposition": "EOS ENERGETICS INC, UEI KVPVC6LALZL7, Estes website/address and project team match; award value verified"
+        },
+        {
+          "url": "https://voyagertechnologies.com/press-releases/voyager-acquires-estes-energetics-securing-critical-american-propulsion-capacity/",
+          "title": "Voyager acquires Estes Energetics",
+          "published_date": "2025-11-20",
+          "disposition": "acquirer primary announcement; acquisition excluded from primary funding"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1788060/000162828026069548/voyg-20260930.htm",
+          "title": "Voyager 2026 Q3 Form10-Q",
+          "published_date": null,
+          "disposition": "acquisition November19 2025 for USD64.1m consideration confirmed; no funding round"
+        },
+        {
+          "url": "https://www.estesenergetics.com/news",
+          "title": "Estes Energetics news",
+          "published_date": null,
+          "disposition": "GOEX contract and Estes Industries grant are different legal recipients; no transfer to parent"
+        }
+      ],
+      "evidence_note": "Six exact EOS/Estes SBIR/STTR R&D awards verified from federal records; Voyager acquisition excluded from primary capital.",
+      "hold_note": "2023 USD13m GOEX/Estes capacity award, 2026 USD17m Army candidate and USD1.7m nitroguanidine need recipient/instrument verification. GOEX subsidiary procurement, EstesIndustries grants, USD7.2m capex and EstesEnergy battery VC excluded."
+    },
+    {
+      "id": "f2d8a613-379f-4854-94b3-2dded616e97b",
+      "slug": "eu-motors",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"EU Motors\" funding investment 2024 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sunfish-partners.com/news-archive/",
+          "title": "Sunfish Partners news archive",
+          "published_date": "2025-12-19",
+          "disposition": "existing undisclosed Sunfish investment confirmed; no duplicate"
+        },
+        {
+          "url": "https://eumotors.eu/index.php/about-us/",
+          "title": "EU Motors about us",
+          "published_date": null,
+          "disposition": "issuer is EU Motors sp.z o.o., Krakow"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/eu-motors-opens-us-manufacturing-facility-in-florida-to-supply-american-made-electric-drone-motors-following-new-fcc-mandate-302697920.html",
+          "title": "EU Motors opens US manufacturing facility",
+          "published_date": "2026-02-26",
+          "disposition": "issuer release: Florida capacity expansion; no financing terms or amount"
+        }
+      ],
+      "evidence_note": "Existing Sunfish undisclosed investment corroborated; original issuer manufacturing release checked.",
+      "hold_note": "No additional amount-specific earlier/latest financing found in bounded searches; own-site entity vs USA subsidiary distinction retained; absence is not zero funding."
+    },
+    {
+      "id": "0ae0cff2-37c5-4473-aefc-4a2fdd1ccb39",
+      "slug": "eurenco",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.eurenco.com grant financing 2025 2026 ASAP",
+        "\"Eurenco\" \"ASAP\" \"76\" grants"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://eurenco.com/eurenco-raises-e300-million-to-accelerate-its-industrial-expansion-in-europe/",
+          "title": "EURENCO EUR300m syndicated loan",
+          "published_date": "2026-02-18",
+          "disposition": "current issuer search index confirms existing event; full original retrieval timed out"
+        },
+        {
+          "url": "https://eurenco.com/the-european-commission-awards-several-grants-to-support-eurencos-capacity-expansion-under-the-asap-plan/",
+          "title": "Commission ASAP grants to EURENCO",
+          "published_date": null,
+          "disposition": "older candidate almostEUR76m group subsidy; retrieval502/timeout; legal beneficiary allocation and date held"
+        }
+      ],
+      "evidence_note": "Existing latest EUR300m syndicatedfacility preserved; issuer index and older subsidy candidate reviewed.",
+      "hold_note": "Older ASAPalmostEUR76m is group support acrossFrance/Sweden, legalbeneficiary split/publicdate original unavailable; no unbounded backfill or capex-as-funding."
+    },
+    {
+      "id": "022d07c6-8d93-4cb5-b685-5105583cab48",
+      "slug": "europuls",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"EUROPULS\" KNDS Elbit company",
+        "\"EUROPULS GmbH\" Handelsregister investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://knds.com/en/press-releases/knds-and-elbit-systems-launch-euro-puls-joint-venture",
+          "title": "KNDS and Elbit Systems launch EuroPULS joint venture",
+          "published_date": "2026-03-26",
+          "disposition": "planned EuroPULS GmbH 50:50 partnership in Kassel; no contributed capital disclosed"
+        }
+      ],
+      "evidence_note": "Primary KNDS announcement resolves a proposed EuroPULS GmbH separate from rocket system; no funding inferred from five-launcher procurement.",
+      "hold_note": "Planned50:50JV is not verification of incorporated entity or capital contribution; registry completion and direct original financing remainheld."
+    }
+  ],
+  "prepared_identity_reconciliations": [
+    {
+      "company_slug": "ekspla",
+      "event_corrections": 6,
+      "participant_corrections": 0,
+      "disposition": "Six exact company allocations reverified; five non-public dates cleared; public issuer date retained; grants and grantor roles preserved."
+    },
+    {
+      "company_slug": "electra",
+      "event_corrections": 1,
+      "participant_corrections": 1,
+      "disposition": "Existing STRATFI contract corrected; no additive financing or amount change."
+    },
+    {
+      "company_slug": "droneup",
+      "event_corrections": 0,
+      "participant_corrections": 0,
+      "disposition": "Four previous corrections confirmed applied by fresh DB select; excluded from retry."
+    },
+    {
+      "company_slug": "eivie",
+      "event_corrections": 0,
+      "participant_corrections": 0,
+      "disposition": "Previous NASA correction confirmed applied in current context; excluded from retry."
+    }
+  ],
+  "completed_previous_import_checks": [
+    {
+      "company_slug": "dornier",
+      "round_id": "18ec8284-2c8f-4e60-a62b-f195cd627255",
+      "publication_status": "retired",
+      "checked_at": "2026-11-15",
+      "basis": "Fresh run104 database context shows reviewed run103 retirement and retained original sources/participants; no retry."
+    },
+    {
+      "company_slug": "dornier",
+      "generic_relationship_ids": [
+        "484174b2-2ed0-4b45-a6d4-ccf34ff69fd4",
+        "4f271298-4ffc-40ca-9059-6736983fdfa8"
+      ],
+      "retired_at": "2026-11-15",
+      "retired_kind": "unsupported_evidence",
+      "checked_at": "2026-11-15",
+      "basis": "Fresh read-only Supabase select confirmed both reviewed retirements; no relationship mutation or retry."
+    },
+    {
+      "company_slug": "droneup",
+      "round_id": "e9f05b54-16f2-4857-9eb8-9f90a9176272",
+      "status": "already_applied_not_retried",
+      "checked_at": "2026-11-15",
+      "basis": "Fresh read-only Supabase full-row select matches the run104 reviewed expected_after, excluding the operational updated_at timestamp.",
+      "current_announced_date": "2020-01-07",
+      "current_updated_at": "2026-11-15T10:57:21.139656+00:00"
+    },
+    {
+      "company_slug": "droneup",
+      "round_id": "0f7d4631-ec3f-4e8d-a236-56b4a0966627",
+      "status": "already_applied_not_retried",
+      "checked_at": "2026-11-15",
+      "basis": "Fresh read-only Supabase full-row select matches the run104 reviewed expected_after, excluding the operational updated_at timestamp.",
+      "current_announced_date": "2020-07-30",
+      "current_updated_at": "2026-11-15T10:57:21.139656+00:00"
+    },
+    {
+      "company_slug": "droneup",
+      "round_id": "bff94dc6-c166-4f87-bd34-197926912bd0",
+      "status": "already_applied_not_retried",
+      "checked_at": "2026-11-15",
+      "basis": "Fresh read-only Supabase full-row select matches the run104 reviewed expected_after, excluding the operational updated_at timestamp.",
+      "current_announced_date": "2021-04-02",
+      "current_updated_at": "2026-11-15T10:57:21.139656+00:00"
+    },
+    {
+      "company_slug": "droneup",
+      "round_id": "d08f1003-9a26-4585-a6fe-34fd8d0fd89d",
+      "status": "already_applied_not_retried",
+      "checked_at": "2026-11-15",
+      "basis": "Fresh read-only Supabase full-row select matches the run104 reviewed expected_after, excluding the operational updated_at timestamp.",
+      "current_announced_date": "2021-11-23",
+      "current_updated_at": "2026-11-15T10:57:21.139656+00:00"
+    },
+    {
+      "company_slug": "eivie",
+      "round_id": "fdf1ee06-8100-44a4-bdb7-22277ad4bc09",
+      "status": "already_applied_not_retried",
+      "checked_at": "2026-11-15",
+      "basis": "Current run105 database context confirms run104 NASA contract taxonomy, null public date and neutral agency role; no repeat correction.",
+      "current_updated_at": "2026-11-15T10:57:21.139656+00:00"
+    }
+  ],
+  "validation": {
+    "preservation_hashes_before": [
+      {
+        "audit": "companies",
+        "rows": 2716,
+        "md5": "2862af8b4e604842e2c75b4dbd37865d"
+      },
+      {
+        "audit": "uncorrected_events",
+        "rows": 4673,
+        "md5": "04ba306ffa3f52e0715f3f69d1ca1f19"
+      },
+      {
+        "audit": "uncorrected_existing_participants",
+        "rows": 6476,
+        "md5": "b1ba73f9205567326a5ae8c77b8c74b8"
+      },
+      {
+        "audit": "existing_unrelated_event_sources",
+        "rows": 6443,
+        "md5": "3a77568a1e32a1b14b3da31acd3eadf9"
+      },
+      {
+        "audit": "curated_profiles_full_rows",
+        "rows": 3734,
+        "md5": "df4dd7570146a32eb6b62fecccbfc087"
+      },
+      {
+        "audit": "existing_unrelated_profile_sources",
+        "rows": 7072,
+        "md5": "0fc74892835510c8772cfad3165748d1"
+      },
+      {
+        "audit": "uncorrected_existing_generic_rows",
+        "rows": 739,
+        "md5": "397551c06b189d03ab245309bd25d7a9"
+      },
+      {
+        "audit": "unrelated_research_coverage",
+        "rows": 1320,
+        "md5": "89217e8042f8a72019257a3664d79aeb"
+      }
+    ],
+    "reviewed_original_snapshots": 11,
+    "importer_sha256": "8e90426e43c954b7c2ffb0f01beb870fe790e38c92036db8a95634e89af9ca78",
+    "postgresql_tests": [
+      "Manifest rollback/import/replay/financial conflict/source FK",
+      "Full event and composite participant guards; late-conflict atomicity; guarded reversal; replay"
+    ]
+  },
+  "preserved": [
+    "Legacy research-agent/STATE.json and frozen V1/V2 snapshots",
+    "Curated investor profiles and existing generic relationships",
+    "All uncorrected prior financial events, participants and source history",
+    "Company metadata/geography/publication gates",
+    "Repository schedules"
+  ]
+}
