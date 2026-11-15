@@ -1304,7 +1304,14 @@
     "db_investor_profiles": 3774,
     "db_source_reconciliation_companies": 1339,
     "approved_event_counts_refreshed_for_identities": 26,
-    "post_import_idempotency_rehearsal_passed": true
+    "post_import_idempotency_rehearsal_passed": true,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_source_ledger_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_issuer_guard_instruction_readback_verified": true,
+    "durable_queue_identity_count": 2564
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1550,13 +1557,26 @@
         "audit": "unrelated_research_coverage"
       }
     ],
-    "post_import_idempotent_rollback_and_exact_audit_passed": true
+    "post_import_idempotent_rollback_and_exact_audit_passed": true,
+    "durable_readback_blobs": {
+      "research-agent/imports/funding-landscape-20261115-one-hundred-twelfth.json": "956d380e8aeee7db54e663f1bf9efb9064ec4d72",
+      "research-agent/imports/funding-landscape-20261115-one-hundred-twelfth-reviewed-corrections.json": "50def4961f29d2d5ec928219e77e5a33c3fdc871",
+      "research-agent/reports/2026-11-15-funding-one-hundred-twelfth-source-ledger.json": "9525cbb58a6c276f4c7975898a405c45b149447d",
+      "research-agent/recovery/2026-11-15-funding-one-hundred-twelfth-prepared-reconciliations.json": "7d8f34c579ab9a6d6c02977e6229cc1e27d021d6",
+      "research-agent/queues/company-funding-all.csv": "c04c80e978ff9df981a8dfedfe312186d059dc96",
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-twelfth.json": "8e3c124cd8d5bcbeab833c5bccfb87b767ccab42",
+      "research-agent/FUNDING_STATE.json": "094dc521bb669ab4916cf528ae9553b4a638953e",
+      "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md": "ba33ae4d9188418d3b18b0ffc062543d837667f5"
+    },
+    "durable_readback_commit": "bbbc94914e8a4e1d3d4c9d96059b4f0f9807150e"
   },
   "publication": {
     "status": "build_triggered",
     "checked_at": "2026-11-15",
     "source_commit": "8b38c414476a6eda12807f170707e7e6cf26e1e1",
-    "catalogue_commit": "23ceeb702f042f2cffe347cd52f893ae68a15b00"
+    "catalogue_commit": "23ceeb702f042f2cffe347cd52f893ae68a15b00",
+    "workflow_run": 43746086612,
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43746086612"
   },
   "preserved": [
     "Legacy research STATE.json and frozen V1/V2",
@@ -1565,7 +1585,7 @@
     "Company metadata, geography and publication gates",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-15T18:19:15.669Z",
+  "updated_at": "2026-11-15T18:21:29.541Z",
   "production_after": {
     "events": 4813,
     "approved": 4795,
