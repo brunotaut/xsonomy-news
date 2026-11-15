@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T20:46:00.744Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-fifteenth.json",
@@ -961,7 +961,19 @@
     "new_coverage_rows": 4,
     "post_import_idempotency_rehearsal_passed": true,
     "queue_dispositions_applied": 24,
-    "approved_event_counts_refreshed_for_identities": 26
+    "approved_event_counts_refreshed_for_identities": 26,
+    "live_referenced_profiles_verified": 20,
+    "live_participant_source_matches": 25,
+    "live_generic_profile_source_matches": 1,
+    "live_clickable_portfolio_links_verified": 1,
+    "live_company_routes_verified": 12,
+    "current_publication_scope_verified": true,
+    "active_minutes": 19.57,
+    "checked_identities_per_hour": 85.8,
+    "new_queue_identities_per_hour": 73.6,
+    "completed_reviews_per_hour": 0,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Writer lease covers24 new queue identities, two prepared Insta360/INFOX original-source identities and two distinct ideaForge/Intel canonical prior-import identity checks (four fresh rows; ten preserved check records total).149 executed search query items include38 group B executions across34 distinct strings, plus four root original-source opens counted separately. Includes original-source issuer/currency/date/role and cash-versus-capacity checks, fresh PostgreSQL tests, production rollback with exact restoration, one atomic import, exact preservation audits, idempotent rollback replay, durable readbacks, successful build/deploy and fresh dataset/HTTP checks. Zero bounded closures; all24 histories explicitly partial. No ETA or speedup claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1142,15 +1154,151 @@
       ],
       "missing_link_sources": 0
     },
-    "durable_readbacks_verified": 8
+    "durable_readbacks_verified": 8,
+    "frozen_inputs_unchanged": true,
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/it-logika/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ixblue/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/izhmash-kalashnikov-group/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jetzero/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jfb-construction-holdings/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jfg-composites/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/joby-aviation/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jouav/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jtekt/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jugoimport-sdpr/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jump-aero/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/insta360/",
+        "status": 200
+      }
+    ]
   },
   "publication": {
-    "status": "build_requested",
+    "status": "verified",
     "requested_at": "2026-11-15T21:01:57.315Z",
     "source_commit": "addf18b626bc192a958f9a4f3767a930f74a8af9",
     "catalogue_commit": "c8724ebf8e8f7223159ed70b4f6d2fcab992f892",
     "workflow_run": 43761389475,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43761389475"
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43761389475",
+    "generated_at": "2026-11-15T21:03:14.040Z",
+    "investor_generated_at": "2026-11-15T21:03:19.192Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3780,
+    "portfolio_relationships": 761,
+    "expected_profiles": 20,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 1,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_company_links_verified": 1,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 24,
+    "manifest_generic_relationship_matches": 1,
+    "reviewed_correction_targets_in_european_landscape": [],
+    "reviewed_profile_source_additions_verified": 1,
+    "guarded_participant_citation_in_directory_verified": 1,
+    "verified_at": "2026-11-15T21:05:35.062Z",
+    "workflow_conclusion": "success",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/it-logika/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ixblue/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/izhmash-kalashnikov-group/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jetzero/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jfb-construction-holdings/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jfg-composites/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/joby-aviation/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jouav/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jtekt/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jugoimport-sdpr/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/jump-aero/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/insta360/",
+        "status": 200
+      }
+    ],
+    "current_manifest_event_rows": 24,
+    "current_manifest_live_matches": 0,
+    "scope_note": "Fresh directory verifies20 referenced profiles,24 new participation citations, one guarded existing participant citation and one generic citation/clickable portfolio. Nine pre-existing anonymous profiles and five retired portfolios remain excluded. Current financing targets and all five corrected targets remain outside European map; broader-cohort financial rows are not claimed rendered by map or company-page funding sections. Company geography and publication gates unchanged."
   },
   "preserved": [
     "Legacy STATE.json and frozen snapshots",
@@ -1158,7 +1306,7 @@
     "Curated profile rows and unrelated relationship/source history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-15T21:03:02.368Z",
+  "updated_at": "2026-11-15T21:05:35.084Z",
   "production_after": [
     {
       "events": 4900,
@@ -1181,5 +1329,6 @@
     "remaining": 839,
     "bounded_closed": 111,
     "retained_partial": 393
-  }
+  },
+  "completed_at": "2026-11-15T21:05:35.062Z"
 }
