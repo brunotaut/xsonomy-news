@@ -1,5 +1,5 @@
 {
-  "status": "atomic_import_invoked",
+  "status": "imported_exact_audit_passed",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T22:52:39.943Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-seventeenth.json",
@@ -991,7 +991,10 @@
     "atomic_import_invocations": 1,
     "prior_import_checks_recorded": 10,
     "fresh_prior_import_row_checks": 0,
-    "rollback_rehearsal_passed": true
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "new_investor_profiles": 1,
+    "new_coverage_rows": 1
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1061,7 +1064,120 @@
       "https://www.kratosdefense.com/newsroom/kratos-announces-completion-of-refinancing-transaction",
       "https://www.sec.gov/Archives/edgar/data/1069258/000106925822000015/ktos-20220218.htm"
     ],
-    "production_rollback_full_baseline_restored": true
+    "production_rollback_full_baseline_restored": true,
+    "exact_post_import_audit": {
+      "facts": [
+        {
+          "audit": "manifest_event_exact_fields_and_parent",
+          "failed": 0,
+          "expected": 21,
+          "failures": []
+        },
+        {
+          "audit": "manifest_sources_exact",
+          "failed": 0,
+          "expected": 24,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participants_exact_role_source_contribution",
+          "failed": 0,
+          "expected": 15,
+          "failures": []
+        },
+        {
+          "audit": "manifest_generic_portfolios_exact",
+          "failed": 0,
+          "expected": 1,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participant_and_portfolio_profile_source_exists",
+          "failed": 0,
+          "expected": 16,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_source_additions_exact",
+          "failed": 0,
+          "expected": 9,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_profile_source_additions_exist",
+          "failed": 0,
+          "expected": 1,
+          "failures": []
+        },
+        {
+          "audit": "guarded_participant_additions_exact_parent_unchanged",
+          "failed": 0,
+          "expected": 1,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_events",
+          "failed": 0,
+          "expected": 20,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_participants",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_generic_relationships",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        }
+      ],
+      "preserved": [
+        {
+          "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+          "rows": 2718,
+          "audit": "companies"
+        },
+        {
+          "md5": "39b5862cd274c938eef89514f1099e07",
+          "rows": 4909,
+          "audit": "uncorrected_events"
+        },
+        {
+          "md5": "5f7b1fadb2207f78804182552902fa4a",
+          "rows": 6689,
+          "audit": "uncorrected_existing_participants"
+        },
+        {
+          "md5": "e3648b0409bd536ddac172120ecf5a5d",
+          "rows": 6816,
+          "audit": "existing_unrelated_event_sources"
+        },
+        {
+          "md5": "45c7834a5456936feaab94e6b2fb87e0",
+          "rows": 3796,
+          "audit": "curated_profiles_full_rows"
+        },
+        {
+          "md5": "aa06645ff5cfe5eecb0a9b482240c2d0",
+          "rows": 7293,
+          "audit": "existing_unrelated_profile_sources"
+        },
+        {
+          "md5": "7ad219901527608f66a9c659b0aa3c62",
+          "rows": 766,
+          "audit": "uncorrected_existing_generic_rows"
+        },
+        {
+          "md5": "26afde5bc925b1a7f107e9583b2fde79",
+          "rows": 1343,
+          "audit": "unrelated_research_coverage"
+        }
+      ],
+      "missing_link_sources": 0
+    }
   },
   "publication": {
     "status": "not_started"
@@ -1072,5 +1188,16 @@
     "Curated investor profiles and unrelated source/relationship history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-15T23:03:54.580Z"
+  "updated_at": "2026-11-15T23:04:11.761Z",
+  "production_after": [
+    {
+      "events": 4950,
+      "approved": 4932,
+      "links": 6705,
+      "sources": 6849,
+      "profiles": 3797,
+      "relationships": 767,
+      "covered": 1352
+    }
+  ]
 }
