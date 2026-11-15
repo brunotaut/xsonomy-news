@@ -1,5 +1,5 @@
 {
-  "status": "imported_verified",
+  "status": "imported_publication_pending",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T18:44:34.735Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-thirteenth.json",
@@ -1067,7 +1067,11 @@
     "atomic_import_invocations": 1,
     "rollback_rehearsal_passed": true,
     "existing_generic_relationships_confirmed_not_reimported": 1,
-    "atomic_import_passed": true
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "new_investor_profiles": 4,
+    "new_coverage_rows": 6,
+    "queue_dispositions_applied": 24
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1245,14 +1249,14 @@
     }
   },
   "publication": {
-    "status": "pending_import"
+    "status": "pending_build"
   },
   "preserved": [
     "Legacy STATE and frozen snapshots",
     "Unreviewed financial history, source links, curated profiles and portfolios",
     "Company metadata, geography, publication gates and schedules"
   ],
-  "updated_at": "2026-11-15T18:59:49.980Z",
+  "updated_at": "2026-11-15T19:00:58.814Z",
   "production_after": {
     "events": 4850,
     "approved": 4832,
@@ -1261,5 +1265,17 @@
     "profiles": 3778,
     "relationships": 758,
     "covered": 1345
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1330,
+    "source_review_partial": 1234,
+    "queued": 0
+  },
+  "reconciliation_phase": {
+    "id": "partial-source-pass-1",
+    "checked": 456,
+    "remaining": 887,
+    "bounded_closed": 109,
+    "retained_partial": 347
   }
 }
