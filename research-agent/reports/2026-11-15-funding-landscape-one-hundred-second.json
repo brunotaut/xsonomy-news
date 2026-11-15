@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T08:50:25.078Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-second.json",
@@ -52,13 +52,27 @@
     "new_exact_name_duplicate_groups": 0,
     "queue_dispositions_applied": 24,
     "approved_event_counts_refreshed_for_identities": 32,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 4655,
     "db_approved_events": 4638,
     "db_round_participations": 6459,
     "db_investor_profiles": 3726,
     "db_source_reconciliation_companies": 1323,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "frozen_source_hashes_unchanged": true,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_source_ledger_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "referenced_directory_profiles_verified": 11,
+    "manifest_profile_source_matches": 16,
+    "active_minutes": 13.93,
+    "checked_identities_per_hour": 133.5,
+    "new_queue_identities_per_hour": 103.4,
+    "completed_reviews_per_hour": 4.3,
+    "timing_scope": "Elapsed writer lease through24 next identities in three disjoint frozen research groups plus7 prepared issuer reviews and one canonical CETC alias context in a fourth read-only group. Includes119 actual searches, originals/issuer/currency/date/instrument/role checks, PostgreSQL guard/canonical-conflict/late-failure/reversal/idempotence tests, production rollback with16 exact original snapshots restored, one atomic import, exact facts/roles/sources, preservation hashes, replay rollback, seven durable readbacks, successful existing catalogue build, both fresh live datasets and landscapeHTTP200. One bounded closure/23 specific holds; no speedup or ETA claim."
   },
   "production_before": {
     "links": 6443,
@@ -1333,7 +1347,22 @@
       "Couach direct original article and authenticated issuePDF returned403; official issueindex was opened and exactpublishedorder reproduction independently opened.",
       "CSSC first prospectusdates unresolved; original results closures retained in notes with publicannounced_date null.",
       "Canonical CETC dates intentionally unchanged by exactduplicate retirement guards; separate canonical21interest-date hold recorded."
-    ]
+    ],
+    "durable_readback_blobs": {
+      "research-agent/imports/funding-landscape-20261115-one-hundred-second.json": "f43ee16617c0c9a27cd989a510b5e404869fb658",
+      "research-agent/imports/funding-landscape-20261115-one-hundred-second-reviewed-corrections.json": "f879dc2b0337f2b9a016567938110640951a49eb",
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-second.json": "cca0c88223dd32a687a88522a5929421a3e23b07",
+      "research-agent/reports/2026-11-15-funding-one-hundred-second-source-ledger.json": "8e724acc026c3786ffda85b4bcbe92a7ff9acd40",
+      "research-agent/recovery/2026-11-15-funding-one-hundred-second-prepared-reconciliations.json": "2d0d9893e7b5dacb9ef631dab2ec5b20237ce727",
+      "research-agent/queues/company-funding-all.csv": "26ffeb5d0f0d869e0606ad22f5f00e7067984317",
+      "research-agent/FUNDING_STATE.json": "f1a82d13f43461ed1dbd771b1b3f31eb4402a714"
+    },
+    "frozen_group_sha256": {
+      "a": "db4fbf56d5547e378f4a735c2af2014e294862978f1f863e00dbca288fabe51f",
+      "b": "528c43db56dd80adf567bd26b71941ae9040740c5496ed1b071f9c3f591b523d",
+      "c": "7d3a77a64789e5fdac00c1dd239de6b8bfef62aba11e2103d074873d3fbda504",
+      "prepared": "a6a83a39a9dae94a27b6a6694d73052fdd6f196e247a6c5ca7d4f24b0820912a"
+    }
   },
   "publication_scope": {
     "site": "https://xsonomy.com/landscape/",
@@ -1346,5 +1375,52 @@
     "unique_checked_this_pass": 192,
     "remaining_initial_pass_identities": 1151
   },
-  "publication": null
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-15T09:04:21.007Z",
+    "verified_at": "2026-11-15T09:04:21.007Z",
+    "source_commit": "939849f35db894e55df2a2e5e01775843c38b2f0",
+    "catalogue_commit": "d193ed7f41e667751166af702fa07cf7bd9b6dfa",
+    "workflow_run": {
+      "id": 43697195864,
+      "head": "d193ed7f41e667751166af702fa07cf7bd9b6dfa",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43697195864"
+    },
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-second.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-second.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-second-reviewed-corrections.json",
+    "generated_at": "2026-11-15T09:02:34.147Z",
+    "investor_generated_at": "2026-11-15T09:02:38.809Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3717,
+    "portfolio_relationships": 731,
+    "expected_profiles": 11,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 0,
+    "generic_portfolio_entries_verified": 0,
+    "clickable_company_links_verified": 0,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 16,
+    "manifest_generic_relationship_matches": 0,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 22,
+    "current_manifest_live_matches": 0,
+    "directory_filter_note": "DB3726 profiles/live3717 and DB734 generic relationships/live731 retain nine prior anonymous-profile and three prior generic exclusions. All11 referenced profiles and16 manifest participant-source URLs verified. New financing targets and prepared corrected issuers are outside the published European map; geography/publication gates unchanged. Fourteen corrected financial rows and two canonical issuer rows separately verified exactly in the database."
+  },
+  "completed_at": "2026-11-15T09:04:21.007Z",
+  "preserved": [
+    "Legacy research-agent/STATE.json and frozen V1/V2 snapshots",
+    "Curated investor profiles and prior relationships",
+    "All uncorrected prior financial rows, all prior participant links and source history",
+    "Company metadata/geography/publication gates",
+    "Repository schedules"
+  ]
 }
