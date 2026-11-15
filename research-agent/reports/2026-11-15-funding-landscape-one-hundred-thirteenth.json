@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T18:44:34.735Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-thirteenth.json",
@@ -1071,7 +1071,19 @@
     "post_import_idempotency_rehearsal_passed": true,
     "new_investor_profiles": 4,
     "new_coverage_rows": 6,
-    "queue_dispositions_applied": 24
+    "queue_dispositions_applied": 24,
+    "live_referenced_profiles_verified": 12,
+    "live_participant_source_matches": 27,
+    "live_generic_profile_source_matches": 3,
+    "live_clickable_portfolio_links_verified": 3,
+    "live_company_routes_verified": 17,
+    "current_publication_scope_verified": true,
+    "active_minutes": 19.25,
+    "checked_identities_per_hour": 81,
+    "new_queue_identities_per_hour": 74.8,
+    "completed_reviews_per_hour": 6.2,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Writer lease for24 new cohort identities plus2 prepared Hylio/Hydrix original-source reviews; five prior-row checks concern the same prepared identities and are not added as extra identities.128 actual web query items, exact issuer/currency/instrument/date/role checks, DOTC task hold, existingYC preservation, PostgreSQL tests, two production rollback rehearsals with exact baseline restoration, one atomic import, exact audits and idempotent rollback replay, durable readbacks, successful build/deploy and fresh datasets/HTTP routes. Two bounded closures and22 partial histories retained; no ETA claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1247,22 +1259,194 @@
       ],
       "missing_link_sources": 0
     },
-    "durable_readbacks_verified": 7,
-    "frozen_inputs_unchanged": true
+    "durable_readbacks_verified": 8,
+    "frozen_inputs_unchanged": true,
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/icarus/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/iai-elta-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/icarus-swarms/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/iceye-poland/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ici/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/icomat/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ideal-aerosmith/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/iknowhow/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/immersive-wisdom/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ineco/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/inertial-labs/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hylio/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hydrix/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/indrajaal/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hyundai-rotem/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/iceye/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/imagesat-international-isi/",
+        "status": 200
+      }
+    ]
   },
   "publication": {
-    "status": "build_triggered",
+    "status": "verified",
     "source_commit": "22405fe6c1a88a1c1b1b856c157be686ef457936",
     "catalogue_commit": "10170e5e9fc5785af39d96c57f0ec9ae344d66e3",
     "workflow_run": 43750001932,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43750001932"
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43750001932",
+    "generated_at": "2026-11-15T19:01:55.203Z",
+    "investor_generated_at": "2026-11-15T19:01:58.592Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3769,
+    "portfolio_relationships": 753,
+    "expected_profiles": 12,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 3,
+    "generic_portfolio_entries_verified": 3,
+    "clickable_company_links_verified": 3,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 27,
+    "manifest_generic_relationship_matches": 3,
+    "verified_at": "2026-11-15T19:03:49.974Z",
+    "workflow_conclusion": "success",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/icarus/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/iai-elta-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/icarus-swarms/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/iceye-poland/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ici/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/icomat/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ideal-aerosmith/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/iknowhow/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/immersive-wisdom/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ineco/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/inertial-labs/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hylio/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hydrix/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/indrajaal/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hyundai-rotem/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/iceye/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/imagesat-international-isi/",
+        "status": 200
+      }
+    ],
+    "current_manifest_event_rows": 37,
+    "current_manifest_live_matches": 0,
+    "scope_note": "Fresh directory verifies12 referenced profiles,27 participation citations and3 generic profile citations/clickable portfolio links. Existing nine anonymous profiles and five retired portfolios excluded. All current financing targets remain outside European map; wider-cohort financial rows are not claimed rendered by map or company-page funding sections. Geography and gates unchanged."
   },
   "preserved": [
     "Legacy STATE and frozen snapshots",
     "Unreviewed financial history, source links, curated profiles and portfolios",
     "Company metadata, geography, publication gates and schedules"
   ],
-  "updated_at": "2026-11-15T19:01:57.473Z",
+  "updated_at": "2026-11-15T19:03:49.985Z",
   "production_after": {
     "events": 4850,
     "approved": 4832,
@@ -1283,5 +1467,6 @@
     "remaining": 887,
     "bounded_closed": 109,
     "retained_partial": 347
-  }
+  },
+  "completed_at": "2026-11-15T19:03:49.974Z"
 }
