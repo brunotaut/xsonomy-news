@@ -1,5 +1,5 @@
 {
-  "status": "atomic_import_invoked",
+  "status": "imported_exact_audit_passed",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T21:50:16.694Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-sixteenth.json",
@@ -972,7 +972,10 @@
     "atomic_import_invocations": 1,
     "prior_import_checks_recorded": 10,
     "fresh_prior_import_row_checks": 0,
-    "rollback_rehearsal_passed": true
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "new_investor_profiles": 7,
+    "new_coverage_rows": 1
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1040,7 +1043,120 @@
       "https://www.safran-group.com/pressroom/safran-acquires-stake-kalray-european-leader-new-generation-processors-critical-onboard-systems-2017-06-22",
       "https://www.diana.nato.int/connect/nato-diana-announces-15-innovators-to-move-forward-to-next-phase-of-acceleration.html"
     ],
-    "production_rollback_full_baseline_restored": true
+    "production_rollback_full_baseline_restored": true,
+    "exact_post_import_audit": {
+      "facts": [
+        {
+          "audit": "manifest_event_exact_fields_and_parent",
+          "failed": 0,
+          "expected": 29,
+          "failures": []
+        },
+        {
+          "audit": "manifest_sources_exact",
+          "failed": 0,
+          "expected": 39,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participants_exact_role_source_contribution",
+          "failed": 0,
+          "expected": 16,
+          "failures": []
+        },
+        {
+          "audit": "manifest_generic_portfolios_exact",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participant_and_portfolio_profile_source_exists",
+          "failed": 0,
+          "expected": 16,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_source_additions_exact",
+          "failed": 0,
+          "expected": 11,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_profile_source_additions_exist",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "guarded_participant_additions_exact_parent_unchanged",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_events",
+          "failed": 0,
+          "expected": 16,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_participants",
+          "failed": 0,
+          "expected": 1,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_generic_relationships",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        }
+      ],
+      "preserved": [
+        {
+          "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+          "rows": 2718,
+          "audit": "companies"
+        },
+        {
+          "md5": "7a6aaa1d53b7bcad0f536c0916c1aa8f",
+          "rows": 4884,
+          "audit": "uncorrected_events"
+        },
+        {
+          "md5": "342626febb2666eff9bdce2a43f8292d",
+          "rows": 6672,
+          "audit": "uncorrected_existing_participants"
+        },
+        {
+          "md5": "2dd587ded41fb8c851bc2dcfb092b30b",
+          "rows": 6766,
+          "audit": "existing_unrelated_event_sources"
+        },
+        {
+          "md5": "5a76cd88013b3bedde37d5dff2c0f0ea",
+          "rows": 3789,
+          "audit": "curated_profiles_full_rows"
+        },
+        {
+          "md5": "772051a9b1e583f801f109218aa81baf",
+          "rows": 7278,
+          "audit": "existing_unrelated_profile_sources"
+        },
+        {
+          "md5": "7ad219901527608f66a9c659b0aa3c62",
+          "rows": 766,
+          "audit": "uncorrected_existing_generic_rows"
+        },
+        {
+          "md5": "c910fc749812555a85a9cd2d05789850",
+          "rows": 1345,
+          "audit": "unrelated_research_coverage"
+        }
+      ],
+      "missing_link_sources": 0
+    }
   },
   "publication": {
     "status": "not_started"
@@ -1051,5 +1167,16 @@
     "Curated investor profiles and unrelated source/relationship history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-15T21:59:21.720Z"
+  "updated_at": "2026-11-15T22:00:14.685Z",
+  "production_after": [
+    {
+      "events": 4929,
+      "approved": 4911,
+      "links": 6689,
+      "sources": 6816,
+      "profiles": 3796,
+      "relationships": 766,
+      "covered": 1351
+    }
+  ]
 }
