@@ -1,5 +1,5 @@
 {
-  "status": "local_tests_passed_ready_for_production_rollback",
+  "status": "production_rollback_passed_ready_for_one_atomic_import",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T11:49:42.938Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-fifth.json",
@@ -32,7 +32,8 @@
     "root_additional_search_queries": 4,
     "search_queries_executed": 91,
     "local_postgresql_tests_passed": true,
-    "all_four_final_freezes_confirmed_before_consolidation": true
+    "all_four_final_freezes_confirmed_before_consolidation": true,
+    "rollback_rehearsal_passed": true
   },
   "per_company": [
     {
@@ -1077,7 +1078,8 @@
     "postgresql_tests": [
       "Manifest rollback/import/replay/financial conflict/source FK",
       "Full event and composite participant guards; late-conflict atomicity; guarded reversal; replay"
-    ]
+    ],
+    "production_rollback_exact_original_snapshots_restored": 11
   },
   "preserved": [
     "Legacy research-agent/STATE.json and frozen V1/V2 snapshots",
