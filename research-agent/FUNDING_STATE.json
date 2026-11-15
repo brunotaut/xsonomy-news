@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1252,
   "next_action": "Continue partial-source-pass-1 from next_batch_preview (APC through ATmoto Technology), excluding48 already reviewed company IDs. Run96 checked24 identities, closed16 bounded reviews and retained8 source holds. Pass48/1343 checked,1295 remain; current queue1252 reviewed/1312 partial/0 queued. Two new events and eight guarded existing-event corrections were imported once; two misassigned AMAX PPP events retired without deleting history. Final programme coverage/source/duplicate/qualifier audit and post-baseline identity reconciliation remain. Preserve the dedicated workstream and private unknowns.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-15T03:09:39.414Z",
+  "updated_at": "2026-11-15T03:55:35.460Z",
   "source_reconciliation_companies": 1312,
   "approved_funding_events": 4475,
   "round_participations": 6311,
@@ -6906,7 +6906,20 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "run_id": "funding-20261115-ninety-seventh",
+    "status": "tested_production_rollback_passed_ready_atomic",
+    "manifest": "research-agent/imports/funding-landscape-20261115-ninety-seventh.json",
+    "production_before": {
+      "events": 4490,
+      "approved": 4475,
+      "links": 6311,
+      "sources": 6159,
+      "profiles": 3672,
+      "relationships": 708,
+      "covered": 1312
+    }
+  },
   "pending_publication": null,
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -8992,7 +9005,42 @@
       "completed_reviews_per_hour": 24.4
     }
   },
-  "pending_research": null,
+  "pending_research": {
+    "status": "four_final_frozen",
+    "company_ids": [
+      "f3cc69f0-2d1e-4d83-b27b-8c4caac8026c",
+      "6c5e9ac2-68b6-4b41-acbf-acc8984f5902",
+      "d199ed66-a807-4dbe-bd29-5b0e52cd6986",
+      "160653d7-9ff1-4121-b43c-1bd7d1ff3fff",
+      "016ffd0d-7745-4573-bfaa-b9d96d32294c",
+      "dd6b64dc-7005-4970-b4c4-3508922be924",
+      "6091ee18-949b-4c57-b104-64607a98b62c",
+      "a1a775fc-578c-46ee-a687-70fc64786ec7",
+      "7c71e21f-ff67-453f-87c2-5de4fc4c90d9",
+      "8aae336d-f0a8-480c-a5a7-9e365e801824",
+      "9982dbb6-d49b-4898-8da2-5929b376c68e",
+      "108f0e11-45f7-4cb3-a703-196319ad175a",
+      "8cc94e5d-cdc9-4f9c-a9c7-7e6d42b9f73e",
+      "29930bc6-5e1c-41cb-942d-d7ff2acf1948",
+      "daefdb8a-f3b2-4afe-a370-2783bda5cc18",
+      "dd62d42a-9026-48bc-94d4-3d3c2db1b025",
+      "b2b46a5a-3e72-4095-9dcb-3eaa1ef40d99",
+      "3ef6a610-cd23-42bb-99ce-ae908ec26ad3",
+      "0e687550-41c0-4bdf-9cd3-d8d938b0534e",
+      "94be2fcd-6a36-4229-a677-42bbfdd45683",
+      "b79b0ac4-6aca-4e07-b0b0-fbcedd141eb8",
+      "9e090618-1c3f-4a77-8a00-ce731b3485a8",
+      "80f3e01f-3c2d-49dd-8334-f7ecf9c03538",
+      "be7412eb-3efd-4d0f-a348-d1a99ffc934e"
+    ],
+    "recovery_files": [
+      "research-agent/recovery/2026-11-15-funding-ninety-seventh-prepared-archer-date-correction.json",
+      "research-agent/recovery/2026-11-15-funding-ninety-seventh-group-a.json",
+      "research-agent/recovery/2026-11-15-funding-ninety-seventh-group-b.json",
+      "research-agent/recovery/2026-11-15-funding-ninety-seventh-group-c.json",
+      "research-agent/recovery/2026-11-15-funding-ninety-seventh-group-d.json"
+    ]
+  },
   "latest_forty_eighth_reconciliation": {
     "status": "research_prepared_canonical_and_technical_validation_pending",
     "report": "research-agent/reports/2026-11-12-funding-landscape-forty-eighth.json",
@@ -10298,7 +10346,12 @@
       "timing_scope": "Elapsed writer lease through four disjoint read-only research groups, exact issuer/profile/source reconciliation, current importer/schema validation, PostgreSQL tests, production rollback, atomic import, exact fact/role/source/contribution audit, idempotency, guarded NRC announcement-date correction with reversal record/rollback and corrected-manifest tests, durable queue/manifest readback and successful build with both fresh live JSON datasets. Concurrent durations not summed."
     }
   },
-  "pending_reviewed_correction": null,
+  "pending_reviewed_correction": {
+    "status": "prepared_not_applied",
+    "proposal": "research-agent/recovery/2026-11-15-funding-ninety-seventh-prepared-archer-date-correction.json",
+    "company_slug": "archer-first-response-systems",
+    "next_action": "Validate expected-old guard, reversal and production rollback before combining with next supported import; current date remains untouched."
+  },
   "latest_seventy_second_reconciliation": {
     "status": "imported_and_publication_verified",
     "report": "research-agent/reports/2026-11-13-funding-landscape-seventy-second.json",
