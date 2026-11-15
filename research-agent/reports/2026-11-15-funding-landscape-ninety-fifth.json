@@ -1,0 +1,2051 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-15",
+  "started_at": "2026-11-15T01:48:28.043Z",
+  "manifest": "research-agent/imports/funding-landscape-20261115-ninety-fifth.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 24,
+    "newly_completed_bounded_reviews": 15,
+    "new_or_retained_partial": 9,
+    "new_approved_events": 12,
+    "new_round_participations": 13,
+    "new_source_rows": 22,
+    "new_generic_portfolio_relationships": 8,
+    "new_companies_with_events": 5,
+    "new_investor_profiles": 12,
+    "group_search_queries_executed": 112,
+    "root_additional_search_queries": 5,
+    "search_queries_executed": 117,
+    "per_company_search_ledger_entries": 112,
+    "source_ledger_entries": 108,
+    "root_source_ledger_entries": 4,
+    "company_database_identity_contexts_checked": 24,
+    "canonical_issuer_global_duplicate_checks": [
+      "ACS/Allen Control Systems",
+      "ACSL Global/ACSL",
+      "AIR/Govini/AIR VEV"
+    ],
+    "all_four_final_freezes_confirmed_before_consolidation": true,
+    "frozen_source_hashes_unchanged": true,
+    "local_postgresql_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "atomic_import_invocations": 1,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "prior_rounds_and_unselected_relationship_hashes_preserved": true,
+    "old_selected_rounds_exactly_preserved": 6,
+    "selected_legacy_relationships_exactly_preserved": 9,
+    "company_metadata_hashes_preserved": 24,
+    "event_matches": 12,
+    "mismatched_facts": 0,
+    "participant_matches": 13,
+    "source_matches": 22,
+    "relationship_matches": 8,
+    "missing_link_sources": 0,
+    "extension_parent_matches": 2,
+    "contribution_fields_audited": true,
+    "new_profile_exact_name_duplicates": 0,
+    "queue_dispositions_applied": 24,
+    "current_manifest_publication_verified": false,
+    "concurrency_speedup_claimed": false,
+    "reviewed_existing_fact_corrections": 0,
+    "db_total_events": 4488,
+    "db_approved_events": 4475,
+    "db_round_participations": 6309,
+    "db_investor_profiles": 3661,
+    "db_source_reconciliation_companies": 1312
+  },
+  "production_before": {
+    "events": 4476,
+    "approved": 4463,
+    "links": 6296,
+    "sources": 6131,
+    "profiles": 3649,
+    "covered": 1307,
+    "relationships": 689,
+    "preserved_profiles_hash": "f4ddc38ec2f14b40bed5ca697ffffdc6"
+  },
+  "production_after": {
+    "events": 4488,
+    "approved": 4475,
+    "links": 6309,
+    "sources": 6153,
+    "profiles": 3661,
+    "covered": 1312,
+    "relationships": 697,
+    "preserved_profiles_hash": "f4ddc38ec2f14b40bed5ca697ffffdc6"
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1236,
+    "source_review_partial": 1328,
+    "queued": 0
+  },
+  "per_company": [
+    {
+      "id": "e03035a9-991b-4b7c-89f0-fad6866db061",
+      "slug": "liebherr-aerospace",
+      "name": "Liebherr Aerospace",
+      "website": "https://www.liebherr.com/en/int/products/aerospace/aerospace.html",
+      "hq_country": "Germany",
+      "company_type": "tier1",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "True",
+      "research_state": "source_review_partial",
+      "funding_events": "1",
+      "priority_group": "1",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 1,
+      "searches_checked": [
+        "site.liebherr.com \"2026\" \"Aerospace\" \"LuFo\"",
+        "site.liebherr.com \"Aerospace\" \"2026\" \"Campsas\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.liebherr.com/en-us/n/liebherr-aerospace-lindenberg-gmbh-leading-innovation-in-lufo-vii-projects-218944-3782185",
+          "title": "Lindenberg original LuFo VII project notice",
+          "disposition": "Original names Lindenberg and two funded consortium projects; leadership is not recipient-specific allocation. Own grant amounts remain unreported. Page date convention not used to invent a funding announcement day.",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.liebherr.com/en-us/n/liebherr-aerospace-opens-new-industrial-center-of-excellence-for-aerospace-heat-transfer-equipment-in-france-293376-3782185",
+          "title": "Toulouse Campsas original investment notice",
+          "disposition": "Original explicitly Toulouse SAS industrial spending over EUR40m; capex, not a funding round. No additional grant amount established.",
+          "published_date": "2026-10-19",
+          "source_type": "company_announcement"
+        }
+      ],
+      "evidence_note": "Revisited earlier exact allocation and issuer holds against current French and German originals. No additional safely attributable event; existing France Relance record unchanged.",
+      "hold_note": "Generic German cohort brand still spans divisional control, Toulouse SAS and Lindenberg GmbH. Seven prior French/EU candidates and own LuFo allocations require canonical recipient mapping; consortium leadership and factory capex do not supply amounts."
+    },
+    {
+      "id": "3a0c94e6-de77-4a4e-950f-d7f90ff8e57c",
+      "slug": "3d-robotics-3dr",
+      "name": "3D Robotics (3DR)",
+      "website": "https://3dr.com",
+      "hq_country": "United States",
+      "company_type": "",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "site.3dr.com legacy 3D Robotics company distinct 2026",
+        "\"3D Robotics\" \"2026\" funding investor legacy",
+        "\"3D Robotics\" \"Series D\" \"2017\" site.prnewswire.com",
+        "site.mayfield.com \"3D Robotics\"",
+        "site.3dr.com \"funding\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.3dr.com/about",
+          "title": "Current 3DR issuer disclaimer",
+          "disposition": "Opened original: current electronics business explicitly distinct from pre-2023 entity, now with former Mayan Robotics team. Legacy rounds cannot be automatically inherited.",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.mayfield.com/introducing-our-newest-partner-rishi-garg/",
+          "title": "Legacy Mayfield portfolio context",
+          "disposition": "Primary investor search identifies Chris of 3D Robotics; historical context only, not a bridge to the current 2023 entity.",
+          "published_date": null,
+          "source_type": "investor_announcement"
+        }
+      ],
+      "evidence_note": "Current original confirms distinct pre/post2023 businesses. Seed metadata contains historical2009founding/ChrisAnderson but current domain names electronics issuer with former Mayan Robotics team. No silent reinterpretation or inherited funding.",
+      "hold_note": "Resolve composite legacy2009 metadata versus current2023domain before attaching historical A/B/C/D financings. Historical53mD includes debt conversion; no cumulative or all-fresh-cash assumption. Metadata untouched."
+    },
+    {
+      "id": "a365f605-632a-4545-9e10-78e36adbf321",
+      "slug": "3me-technology",
+      "name": "3ME Technology",
+      "website": "",
+      "hq_country": "Australia",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "3ME Technology Holdings Pty Ltd 3ME Technology Pty Ltd 2021 21 million grant ownership",
+        "\"Rixon\" \"3ME\" \"AUD\"",
+        "\"3ME Technology\" \"1,665,041\"",
+        "site.3me.technology \"Pty Ltd\" \"ABN\"",
+        "site.thalesgroup.com \"3ME\" \"Technology\" \"BladeHaul\"",
+        "\"3ME Technology\" \"Rixon\" \"$5\" financing 2023",
+        "\"3ME\" \"Holdings\" \"subsidiary\" \"Technology Pty\"",
+        "\"3ME Technology\" \"2026\" \"grant\" investment funding",
+        "\"GA166764\" \"3ME\"",
+        "\"Rixon\" \"3ME\" \"AUD5\"",
+        "\"3ME Technology\" \"working capital\" \"AUD\"",
+        "\"3ME Technology\" \"Rixon\" \"2023\" \"facility\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://3me.technology/contact/",
+          "title": "3ME issuer operating legal name and address",
+          "disposition": "Opened footer explicitly 3ME Technology Pty Ltd; Cardiff NSW2285 matches ABR operating issuer. Resolves operating grant recipient mapping.",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://abr.business.gov.au/ABN/View/69612468621",
+          "title": "Official Australian Business Register operating entity",
+          "disposition": "Opened original: 3ME Technology Pty Ltd, ABN69612468621/ACN612468621, active from2016, NSW2285. Distinct from Holdings.",
+          "published_date": null,
+          "source_type": "third_party_report"
+        },
+        {
+          "url": "https://business.gov.au/grants-and-programs/industry-growth-program/grant-recipients",
+          "title": "Government IGP recipient allocation",
+          "disposition": "Opened full original table: 3ME Technology Pty Ltd EdgeVolt L/XL grant AUD2,953,811 exGST. Search snippet incorrectly aligned AUD1,665,041 from ActionLaser; rejected.",
+          "published_date": null,
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://3me.technology/latest-capital-raise/",
+          "title": "3ME original Rixon senior secured facility",
+          "disposition": "Opened original confirms $5m asset-backed working-capital facility. Exact original currency and legal borrower/beneficial lender vehicle not explicit; amount held. Rixon is manager, not a second fund cheque.",
+          "published_date": "2023-07-19",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.vcfcapital.com.au/case-studies/3metechnology",
+          "title": "Transaction adviser 2021 growth financing",
+          "disposition": "Opened adviser original:20m convertible notes from ABGF15m/CEFC5m plus family-office1m. Holdings economic/legal bridge remains unresolved; not assigned operating grant entity.",
+          "published_date": null,
+          "source_type": "third_party_report"
+        },
+        {
+          "url": "https://abgf.com.au/portfolio/3me-technology/",
+          "title": "ABGF current investment portfolio",
+          "disposition": "Opened investor original confirms October2021 investment and current holding; no later round amount disclosed.",
+          "published_date": null,
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://www.defence.gov.au/sites/default/files/2022-08/Defence-Contract-List-July22%20.pdf",
+          "title": "Official Defence Senate Order grant GA166764",
+          "disposition": "Original indexed row1 explicitly Capability Improvement Grant GA166764 for operating PtyLtd with105,600AUD consideration and17May2021 start. GST/net award basis and announcement date unresolved; candidate held, not treated as procurement proceeds.",
+          "published_date": null,
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://3me.technology/wp-content/uploads/2024/06/3ME-Technology-Capability-Statement.pdf",
+          "title": "3ME capability statement access limitation",
+          "disposition": "Web fetch exceeded23.8MB limit; direct download returned HTML challenge rather than PDF. Not parsed or used as verified fresh original evidence.",
+          "published_date": null,
+          "source_type": "company_announcement"
+        }
+      ],
+      "evidence_note": "Operating recipient resolved by own legal footer, Cardiff address and official ABR. Exact2,953,811AUD IGP grant is now safely attributable to operating PtyLtd, independent of Holdings financing.",
+      "hold_note": "Hold2021Holdings21m financing, $5mRixon facility currency/legal borrower and GA166764GST/net award basis. New grant public date and disbursement unknown; no1,665,041misaligned snippet imported."
+    },
+    {
+      "id": "f829b7b2-67b4-4545-94d3-560f370154bf",
+      "slug": "61n-solutions",
+      "name": "61N Solutions",
+      "website": "https://www.61n.fi",
+      "hq_country": "Finland",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "site.61n.fi investor financing 2026 Härkönen",
+        "\"61N Solutions\" osakeanti sijoittaja rahoitus 2026",
+        "\"61N\" \"Härkönen\" \"sijoittaja\"",
+        "site.61n.fi rahoitus sijoitus osakeanti 2026",
+        "\"61N Solutions\" \"2026\" \"rahoitus\" \"osakeanti\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.61n.fi/",
+          "title": "Current 61N issuer",
+          "disposition": "Opened current original establishes exact company, operating scope and management; no round terms in checked page.",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.sttinfo.fi/tiedote/70462656/heikki-harkonen-vahvasti-kasvavan-puolustus-ja-turvallisuusalan-it-konsulttiyhtio-61nn-toimitusjohtajaksi?lang=fi&publisherId=69820654",
+          "title": "Krosswise original Heikki investor statement",
+          "disposition": "Opened original explicitly investor since founding; existing association preserved, no new event amount/date from executive appointment.",
+          "published_date": "2024-09-01",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.pia-fi.fi/sites/default/files/PIA%20Facts%26Figures%202025.pdf",
+          "title": "61N self-described industry profile",
+          "disposition": "Opened original association directory printed p26/PDFp13: employee owned,100%Finnish; company-provided profile. Employee ownership not paid-in capital amount.",
+          "published_date": "2025",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://firmavahti.fi/yritys/61n-solutions-oy",
+          "title": "PRH-derived share issue signal",
+          "disposition": "Candidate shows share issue active19May2026, not completed proceeds or original subscription terms. Not a round fact.",
+          "published_date": null,
+          "source_type": "third_party_report"
+        },
+        {
+          "url": "https://www.sttinfo.fi/uutishuone/69820654/krosswise-oy/r",
+          "title": "Krosswise issuer news archive",
+          "disposition": "Original archive search distinguishes April2026 MMGP investment into Krosswise group; no money assigned to61N subsidiary.",
+          "published_date": null,
+          "source_type": "company_announcement"
+        }
+      ],
+      "evidence_note": "Bounded earlier/latest financing review complete. Primary issuer/current directory and group releases establish employee ownership and existing Heikki investment association. No additional recipient-specific completed financing terms found.",
+      "hold_note": "Private cheque amounts and subscription terms remain unknown. PRH-derived active share issue signal is not verified completed cash; group MMGP financing not inherited. These unsupported/publicly unavailable details are documented limitations rather than an assertion of zero funding."
+    },
+    {
+      "id": "09c2c2ca-6cad-4050-9c17-f58a3ac8d84e",
+      "slug": "9-mothers",
+      "name": "9 Mothers",
+      "website": "",
+      "hq_country": "United States",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "site.ycombinator.com/companies \"9 Mothers\" funding",
+        "site.9mothers.com funding investment seed \"2026\"",
+        "site.pioneerfund.vc \"9 Mothers\"",
+        "\"9 Mothers\" \"2026\" \"funding\" site.sec.gov/Archives/edgar"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://9mothers.com/company",
+          "title": "9 Mothers issuer legal identity and backing",
+          "disposition": "Opened original:9MothersCorporation, CAGE11NF2, Austin; YCbacked P26. No recipient-specific cheque amount or security disclosed.",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.ycombinator.com/companies/9-mothers-corporation",
+          "title": "Official YC company profile",
+          "disposition": "Opened primary investor directory confirms Spring2026 and founders.1.6mUSD disclosed sales are procurement revenue, not funding.",
+          "published_date": null,
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://app.dealroom.co/companies/9_mothers",
+          "title": "Conflicting secondary funding candidate",
+          "disposition": "125kMarch2026 claim lacks recipient-specific issuer/investor terms; generic YCterms not substituted.",
+          "published_date": null,
+          "source_type": "third_party_report"
+        },
+        {
+          "url": "https://www.caplight.com/company/9mothers",
+          "title": "Secondary seed and accelerator history",
+          "disposition": "June2025seed/June2026accelerator dates and modeled valuation are not independently verified original transactions; withheld.",
+          "published_date": null,
+          "source_type": "third_party_report"
+        },
+        {
+          "url": "https://specstream.ai/data/form-d/week/2026-08-24",
+          "title": "Gaingels pooled vehicle identity",
+          "disposition": "Search candidate still refers to Gaingels9MothersLLC pooled-SPVfiling, not 9MothersCorporation proceeds; no new issuer amount assigned.",
+          "published_date": null,
+          "source_type": "third_party_report"
+        }
+      ],
+      "evidence_note": "Bounded public-source review complete: exact corporate identity and YC backing confirmed from both sides, current official profile and source candidates reconciled. Existing investor associations preserved.",
+      "hold_note": "Specific YC/other cheque amounts, security and closing dates remain undisclosed.125k/500k/1m conflicting third-party claims cannot be upgraded to facts; Gaingels pooledSPVnotissuer. YC standardterms not assigned;1.6msalesnotfunding. No zero-funding claim."
+    },
+    {
+      "id": "d0405036-eca9-47f7-83a1-f63447994a7c",
+      "slug": "a2z-drone-delivery",
+      "name": "A2Z Drone Delivery",
+      "website": "https://www.a2zdronedelivery.com",
+      "hq_country": "United States",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "1",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 1,
+      "searches_checked": [
+        "\"A2Z Drone Delivery\" funding investment SEC 2026 2025",
+        "\"A2Z Drone Delivery\" \"seed\" \"Aaron\" funding",
+        "site.a2zdronedelivery.com \"funding\" OR \"investment\"",
+        "\"A2Z Drone Delivery\" \"2026\" \"investors\" financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.dronesworldmag.com/drones-world-in-conversation-with-mr-aaron-zhang-co-founder-ceo-a2z-drone-delivery/",
+          "title": "A2Z founder first-person seed disclosure",
+          "disposition": "Opened original interview reconfirms early seed financing to develop preOctober2020winch; existing event retained with unknown amount, dates, participants and predecessor LLC limitation.",
+          "published_date": "2023-09-07",
+          "source_type": "third_party_report"
+        },
+        {
+          "url": "https://www.a2zdronedelivery.com/news",
+          "title": "Current issuer news archive",
+          "disposition": "Opened original through October2026: product releases, delivery trials, operational networks and Kazakhstan partner project, not a later funding raise.",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://prospeo.io/c/a2z-drone-delivery-revenue",
+          "title": "False zero-funding secondary claim",
+          "disposition": "Search result says never raised; rejected because founder original explicitly confirms seed financing. No empty-row inference.",
+          "published_date": null,
+          "source_type": "third_party_report"
+        }
+      ],
+      "evidence_note": "Bounded public-source financing review complete. Founder seed disclosure already recorded; current issuer archive and earlier/latest investor searches yielded no additional supported public event.",
+      "hold_note": "Seed amount/investors/security/date and precise predecessor LLC/currentInc capitalization remain private/unknown. Existing seed record retains limitation; operational contracts and capital raised by customers/partners excluded. No inference of zero funding."
+    },
+    {
+      "id": "92bcd4f8-833d-4a55-ab33-89b6e9059ddf",
+      "slug": "ab-surveying-solutions",
+      "name": "AB Surveying Solutions",
+      "website": "",
+      "hq_country": "",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"AB Surveying Solutions\" investment funding company",
+        "\"AB Surveying Solutions\" \"financiamiento\" OR \"inversión\"",
+        "site:abssolutions.cl inversión financiamiento empresa",
+        "\"AB SURVEYING SOLUTIONS\" \"capital\" OR \"inversión\" OR \"Corfo\"",
+        "\"AB Surveying Solutions\" \"funding\" OR \"investors\" OR \"grant\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.dgac.gob.cl/wp-content/uploads/2024/07/Lista-de-Empresas-RPA-con-AOC-y-CEO-05-JUL-2024.pdf",
+          "published_date": "2024-07-05",
+          "disposition": "Original aviation register names AB SURVEYING SOLUTIONS SpA, ABSS and issuer domain; identity established."
+        },
+        {
+          "url": "https://www.chilecompra.cl/wp-content/uploads/2024/01/ListadoProveedoresVigentes-26-01-2024.pdf",
+          "published_date": "2024-01-26",
+          "disposition": "Official indexed provider register gives RUT76832917-6; direct PDF parse failed. Not financing evidence."
+        },
+        {
+          "url": "https://abssolutions.cl/",
+          "published_date": null,
+          "disposition": "Issuer direct403. Financing-history/local-language/Corfo searches yield operations and identity material, not a verified financing event; access failure not evidence of zero funding."
+        },
+        {
+          "url": "https://www.linkedin.com/company/ab-surveying-solutions",
+          "published_date": null,
+          "disposition": "Original issuer profile bridges Chilean geospatial business and brand; unrelated Philippine AB Surveying and Development excluded."
+        }
+      ],
+      "evidence_note": "Chilean legal issuer AB Surveying Solutions SpA established by official aviation/provider registers, distinct from Philippine surveying homonym. Bounded earlier/latest financing, issuer and local-language searches completed. No public financing event confirmed in checked sources; not zero-funding evidence.",
+      "hold_note": "Private accounts, undisclosed capital and inaccessible issuer pages remain unknown; they do not create a specific verified round or prove absence of funding."
+    },
+    {
+      "id": "3ae0686d-b136-4d03-932c-bb34958beaf6",
+      "slug": "acs",
+      "name": "ACS",
+      "website": "",
+      "hq_country": "",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "Echodyne ACS strategic collaboration October 21 2026 Advanced",
+        "site:allencontrolsystems.com \"funding\" \"2026\" \"2025\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.echodyne.com/newsroom/echodyne-and-acs-sign-strategic-collaboration-agreement-to-advance-counter-uas-capabilities-worldwide",
+          "published_date": "2026-10-12",
+          "disposition": "Transaction-party original establishes ACS Bullfrog and CEO Mike Wior in originating article; collaboration, not funding."
+        },
+        {
+          "url": "https://www.allencontrolsystems.com/",
+          "published_date": null,
+          "disposition": "Issuer original on exact domain describes ACS Bullfrog and Austin operation, DUNS118967263/CAGE9G8G8. Latest November2026 manufacturing/laser news not new financing. Root global DB canonical Allen Control Systems already holds12m seed,30m A,200m B. No financing duplicated on ACS alias."
+        }
+      ],
+      "evidence_note": "Originating transaction and current issuer establish ACS as Allen Control Systems/Bullfrog alias. Root global canonical lookup confirms existing12m/30m/200m rounds on allen-control-systems; duplicating them on this alias would misrepresent funding.",
+      "hold_note": "Alias mapping recorded in audit without changing catalogue metadata; private details remain unknown and canonical financing audit remains on existing identity.",
+      "canonical_company_mapping": {
+        "company_id": "b48a57ed-ebae-42c1-a7c6-bb7705d8910f",
+        "slug": "allen-control-systems",
+        "existing_canonical_events": 3,
+        "basis": "Originating Echodyne collaboration, Bullfrog product and current exact issuer domain; root global DB snapshot allen-existing.json."
+      }
+    },
+    {
+      "id": "88375c63-b59b-427b-9ce5-a534ae1ab8bd",
+      "slug": "acsl-global",
+      "name": "ACSL Global",
+      "website": "https://www.acsl.co.jp",
+      "hq_country": "Japan",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"ACSL Global\" Chris Raabe ACSL Inc US company",
+        "\"ACSL\" \"Global CTO\" \"Chris Raabe\" company funding subsidiary",
+        "site:acsl.co.jp \"ACSL\" \"2026\" \"capital\" \"financing\"",
+        "site:acsl.co.jp \"2026\" \"financing\" \"November\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.acsl.co.jp/en/company/",
+          "published_date": null,
+          "disposition": "Parent original identifies ACSL Ltd, Tokyo and Global CTO Chris Raabe, US subsidiary ACSL Inc separately. Global is role adjective, not Belgian IT homonym."
+        },
+        {
+          "url": "https://www.acsl.co.jp/en/news-release/press-release/2900/",
+          "published_date": "2023-05-11",
+          "disposition": "Parent original establishes Raabe global CTO plus ACSL Inc board; no parent capital inherited to US subsidiary."
+        },
+        {
+          "url": "https://www.acsl.co.jp/en/news-release/press-release/4732/",
+          "published_date": "2026-04-15",
+          "disposition": "Current management confirms same parent role and US board. Cohort Japanese website/source wording map to parent alias; root canonical ACSL already holds7events."
+        },
+        {
+          "url": "https://dronelife.com/2026/08/06/six-years-after-the-pandemic-the-hard-lessons-still-matter-an-op-ed-from-acsl-global-cto-chris-raabe/",
+          "published_date": "2026-08-06",
+          "disposition": "Originating article direct403; title and current primary management distinguish global title from a separate financed issuer."
+        }
+      ],
+      "evidence_note": "Cohort Japanese domain and Global CTO author wording identify ACSL Ltd parent alias, not a separate Global company. Current parent originals distinguish US subsidiary/board role; root canonical ACSL has7existing events.",
+      "hold_note": "No parent financing duplicated on alias or inherited to subsidiary. Corporate private details remain unknown; existing parent records preserved.",
+      "canonical_company_mapping": {
+        "company_id": "64c111a6-6a51-4f90-b061-6287bcabf752",
+        "slug": "acsl",
+        "existing_canonical_events": 7,
+        "basis": "Exact Japanese domain, Global CTO role and parent management disclosures; root global DB snapshot govini-acsl-existing.json."
+      }
+    },
+    {
+      "id": "13a0b5ec-cc8a-4bbf-8e09-fc9a0e923187",
+      "slug": "adani-defence",
+      "name": "Adani Defence",
+      "website": "",
+      "hq_country": "India",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Adani Defence\" \"rights\" \"2026\" funding",
+        "\"Adani Defence Systems\" \"2017\" \"270\" annual report",
+        "site:adanienterprises.com \"Adani Defence\" \"Rights Issue\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.adanienterprises.com/businesses/infrastructure/defence-and-aerospace",
+          "published_date": null,
+          "disposition": "Current parent business page establishes economic brand and multiple defence activities, not a unique legal borrower."
+        },
+        {
+          "url": "https://www.adanienterprises.com/-/media/project/enterprises/investors/corporate-announcement/mediarelease05072026-signed.pdf",
+          "published_date": "2026-07-05",
+          "disposition": "Original calls Defence and Aerospace arm of AEL; INR2500crore missile facility is own planned capex, not capital received."
+        },
+        {
+          "url": "https://www.adanienterprises.com/investors/corporate-governance-and-statutory-disclosures/corporate-announcements",
+          "published_date": null,
+          "disposition": "Current original parent rights/QIP announcements, acquisitions and business transfers checked; parent proceeds cannot be reassigned to Defence brand."
+        },
+        {
+          "url": "https://www.thecompanycheck.com/company/adani-defence-systems-and-technologies-limited/U74900GJ2015PLC082700",
+          "published_date": null,
+          "disposition": "Secondary INR270.8crore2017/230crore2019 rights and later debt/charges require exact primary allotment and cash record. Charge registrations and nominal capital not imported."
+        }
+      ],
+      "evidence_note": "Economic group affiliation resolved to Adani Enterprises; latest original corporate activity distinguished from funding. No supported issuer-level cash event added.",
+      "hold_note": "Unresolved brand-to-specific borrower/allottee perimeter and secondary2017/2019rights/debt claims still need primary transaction/allotment records. Parent QIP/rights cash, acquisitions, nominal capital and planned capex excluded."
+    },
+    {
+      "id": "82c28394-e5c8-44d2-936a-92667e423d03",
+      "slug": "adlc",
+      "name": "ADLC",
+      "website": "",
+      "hq_country": "Singapore",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 2,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"ADLC\" \"2.08\" investment seed funding",
+        "\"ADLC\" Singapore BV Pte Ltd 2026 investment",
+        "\"ADLC\" \"Singapore\" \"Belgium\" \"seed\" 2026",
+        "\"ADLC\" \"2026\" \"investment\" \"funding\"",
+        "site:adlc.eu \"grant\" OR \"funding\" OR \"capital\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://adlc.eu/en/posts/adlc-secures-2-m-in-seed-funding-1",
+          "published_date": "2025-01-31",
+          "disposition": "Original exact EUR2.08m receiving issuer ADLC BV/legalVAT and named roles verified."
+        },
+        {
+          "url": "https://www.pwc.be/en/news-publications/client-case-studies/adlc.html",
+          "published_date": null,
+          "disposition": "Transaction adviser original independently confirms2.08m raised; adviser not investor."
+        },
+        {
+          "url": "https://www.unmannedairspace.info/latest-news-and-information/adlc-flies-bvlos-cargo-drone-mission-between-singapore-petroleum-terminal-and-mainland/",
+          "published_date": "2026-08-19",
+          "disposition": "Originating cohort article links adlc.eu and same Antwerp model; operating Singapore deployment not an independent funding issuer."
+        },
+        {
+          "url": "https://adlc.eu/en/posts/adlc-takes-flight-in-asia-new-office-in-singapore-1",
+          "published_date": "2025-09-22",
+          "disposition": "Issuer original describes Belgian company opening Singapore office; identity bridge to economic brand."
+        },
+        {
+          "url": "https://www.mpa.gov.sg/api/media/266fc8c2-df6a-4d66-a0f6-66bb7fbb418c/Joint-Media-Release---Smart-Port-Challenge-2026-Grand-Finale.pdf",
+          "published_date": "2026-11-11",
+          "disposition": "Government explicitly Belgian ADLC operating/establishing office in Singapore; no country metadata mutation or Singapore subsidiary proceeds assumed."
+        },
+        {
+          "url": "https://www.antwerpen.be/nieuws/antwerpen-ondersteunt-9-innovatieve-groeiprojecten-in-digitale-circulaire-en-gezondheidseconomie",
+          "published_date": "2026-06-30",
+          "disposition": "Each selected project up-to45k support plus named ADLC; actual upper bound, not entire scheme."
+        },
+        {
+          "url": "https://adlc.eu/en/posts/adlc-is-selected-for-the-city-of-antwerp-s-call-for-innovations-2",
+          "published_date": "2026-07-08",
+          "disposition": "Issuer confirms award project and links original city source. Archive through November2026 operational updates/awards checked; no invented private rounds."
+        }
+      ],
+      "evidence_note": "Economic-brand mapping resolved from originating Singapore mission to Belgian ADLC BV via exact domain, current issuer legalVAT and MPA confirmation. Seed and city support reconciled from originals; bounded earlier/latest issuer/investor review completed.",
+      "hold_note": "Exact seed security, award agreement/disbursement and undisclosed private/subsidiary financing remain unknown. No financing assigned to separately named Singapore subsidiary, and metadata preserved."
+    },
+    {
+      "id": "43640573-75a9-44fc-ab8a-9e793a760db6",
+      "slug": "advs",
+      "name": "ADVS",
+      "website": "",
+      "hq_country": "",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"ADVS\" \"chain gun\" counter UAS Advanced Defense Vehicle Systems",
+        "\"Advanced Defense Vehicle Systems\" funding investment ownership",
+        "\"ADVS\" \"investment\" \"Michigan\" funding",
+        "site:michigan.gov \"Advanced Defense Vehicle Systems\" \"2008\"",
+        "\"Advanced Defense Vehicle Systems\" \"2026\" OR \"2025\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.shephardmedia.com/news/landwarfareintl/new-uses-for-proven-weapons-adapting-the-chain-gun-for-cuas/",
+          "published_date": "2026-10-10",
+          "disposition": "Originating cohort source explicitly ADVS Desert Chameleon; specificity resolves earlier generic acronym hold."
+        },
+        {
+          "url": "https://www.advs.com/ADVS/News/Entries/2011/4/29_Introduction_to_the_ADVS_8x8x8_Desert_Chameleon_Vehicle.html",
+          "published_date": "2011-04-29",
+          "disposition": "Issuer original indexed product announcement identifies Michigan ADVS/DesertChameleon; direct timeout recorded."
+        },
+        {
+          "url": "https://www.michigan.gov/formergovernors/recent/granholm/press-releases/2008/10/14/granholm-announces-over-7500-new-jobs-planned-for-michigan",
+          "published_date": "2008-10-14",
+          "disposition": "Original government exact recipient/jobtrainingmax171750; conditional taxcredit/abatement excluded as fundingcash."
+        },
+        {
+          "url": "https://audgen.michigan.gov/wp-content/uploads/2017/09/r186041516-0809.pdf",
+          "published_date": null,
+          "disposition": "Official indexed audit lists same recipient and project; projectcapex not financing proceeds."
+        },
+        {
+          "url": "https://www.loanround.com/zip/48359",
+          "published_date": null,
+          "disposition": "Secondary newer SBA/FirstMerchants borrower candidate needs official loan-level original and continuity; held, not imported."
+        }
+      ],
+      "evidence_note": "Originating Desert Chameleon reference establishes Michigan Advanced Defense Vehicle Systems; official recipient-specific conditional jobtraining support added.",
+      "hold_note": "Recent secondary SBA borrower/loan and Florida homonym continuity remain unresolved; state tax credits, proposed abatement, Kuwait contracts and own capex are not cash funding. Actual disbursement unknown."
+    },
+    {
+      "id": "3dbda186-61af-4cac-b31b-ed3c15a683ef",
+      "slug": "aeon",
+      "name": "Aeon",
+      "website": "",
+      "hq_country": "United States",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "Aeon Texas fuze production funding 2026 18.6 million official",
+        "site.aeonindustrial.com investors funding Quiet 1789 Silent Ventures",
+        "\"Aeon Industrial\" \"funding\" \"2026\" \"Quiet\"",
+        "site.aeonindustrial.com \"Quiet\" \"Silent\" \"1789\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.aeonindustrial.com/",
+          "title": "Current issuer original operations/backer section",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.aeonindustrial.com/news",
+          "title": "Issuer current archive",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.aeonindustrial.com/news/aeon-army-applications-laboratory-tactical-weapons-contract",
+          "title": "Issuer original historical backers",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.axios.com/2025/04/30/aeon-army-rocket-launcher-black-flag",
+          "title": "Contemporaneous18.6m cumulative report",
+          "published_date": "2025-04-30",
+          "source_type": "third_party_report",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.caplight.com/company/aeonindustrial",
+          "title": "Conflicting16.6m aggregate and claimed rounds",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        }
+      ],
+      "evidence_note": "Exact Texas Aeon Industrial identity matched from fuze source and issuer website. Fresh issuer/archive/investor/history searches did not corroborate dated9.6m/16.6m/18.6m rounds; existing four backer associations preserved. Bounded public review complete.",
+      "hold_note": "Conflicting cumulative figures remain unverified and are not rounds or evidence of zero funding. No private allocation, lead or security invented. New13.8mSOCOM contract and production spending are sales/capex, not external financing."
+    },
+    {
+      "id": "bab01d9b-0a97-4e07-bba9-997417c7e265",
+      "slug": "aep",
+      "name": "AEP",
+      "website": "",
+      "hq_country": "United States",
+      "company_type": "prime",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "3",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "existing_event_count": 3,
+      "searches_checked": [
+        "site.aep.com 2026 financing senior notes November 2025 common stock equity",
+        "site.aep.com 2026 \"Senior Notes\" \"issued\" \"billion\"",
+        "site.aep.com \"2025\" \"$1.5 billion\" \"notes\"",
+        "site.sec.gov/Archives/edgar/data/4904 \"2025\" \"6.05%\" \"5.80%\"",
+        "site.sec.gov/Archives/edgar/data/4904 \"2025\" \"1,100\" \"900\" \"1,000\" \"Junior Subordinated\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://docs.aep.com/docs/investors/currentProspectus/AEPcoinceSeriesCdue2056SeriesDdue2056.pdf",
+          "title": "AEP original September2025 parent Series C and D prospectus",
+          "published_date": "2025-09-23",
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://docs.aep.com/docs/investors/currentProspectus/AEPcoincReopeningSeriesCdue2056SeriesDdue2056.pdf",
+          "title": "AEP original December2025 incremental reopening",
+          "published_date": "2025-12-03",
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000072/R65.htm",
+          "title": "Latest SEC financing note September2026",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.aep.com/investors/fixed/",
+          "title": "Current parent/subsidiary prospectus inventory",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.aep.com/investors/financial/",
+          "title": "Current original filing inventory",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/4904/000000490426000013/aep-20251231.htm",
+          "title": "Annual report original exceeds web size limit",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        }
+      ],
+      "evidence_note": "Four exact parent2025debt tranches newly represented with explicit incremental reopening links. Existing264mATM/500mforwardcash/50m2026bond unchanged; latest SEC identifies subsidiaryissuers separately.",
+      "hold_note": "Long historical capital-market series remains unaudited. December2025settlement confirmation, precise prior announcement dates and additional actual forward settlements require original evidence. Annual consolidated8.3bn and2026subsidiary7.092bn totals not parent rounds."
+    },
+    {
+      "id": "ac2bf0e3-3d31-4377-b11e-fc7a660e346c",
+      "slug": "aerialmetric",
+      "name": "AerialMetric",
+      "website": "",
+      "hq_country": "Madagascar",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 1,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "site.ietp.com AerialMetric 3 million equity Mauritius Madagascar",
+        "\"AerialMetric\" \"2026\" \"investment\" funding",
+        "site.aerialmetric.com \"2026\" \"funding\" OR \"investment\" OR \"capital\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://aerialmetric.com/wp-content/uploads/2024/06/2024-04-18-CP-IetP-AerialMetric.pdf",
+          "title": "Issuer-hosted original I&P equity investment release",
+          "published_date": "2024-04-18",
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.ietp.com/en/node/4319",
+          "title": "Investor portfolio current recipient/fund",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://aerialmetric.com/en/industrial-partners/",
+          "title": "Issuer distinguishes France contracting subsidiary",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.ietp.com/sites/default/files/2024-04-18-CP-AerialMetric.pdf",
+          "title": "Investor original dated18April2024 names exact Malagasy economic recipient and EUR3m equity",
+          "published_date": "2024-04-18",
+          "source_type": "investor_announcement",
+          "disposition": "Independently opened investor original PDF and linked article; explicit Malagasy economic recipient/EUR3m/fund verified. Portfolio entry2023 not substituted for announcement date."
+        },
+        {
+          "url": "https://ietp.com/fr/content/visite-IPAE-aerialmetric-heri-ultramaille",
+          "title": "I&P original confirms portfolio entry in2023 and links investment release",
+          "published_date": "2024-04-25",
+          "source_type": "investor_announcement",
+          "disposition": "Independently opened investor original PDF and linked article; explicit Malagasy economic recipient/EUR3m/fund verified. Portfolio entry2023 not substituted for announcement date."
+        }
+      ],
+      "evidence_note": "Prior issuer hold resolved at economic-company level by independently opened investor original PDF dated18April2024, explicitly naming Malagasy AerialMetric and exact3mEUR equity byIPAE2. Companion investor article confirms2023portfolio entry; single investment disclosed2024, not a new second receipt. Bounded source review complete.",
+      "hold_note": "Exact share-issuing registration/private terms unknown. Issuer-hosted mirror was readable as indexed PDF in this lane, while root observed redirect; investor-hosted original independently read instead. Do not inherit FranceSAS customer contracts or future group financing. Prior genericIPAE2 association preserved."
+    },
+    {
+      "id": "16f0727c-0cc3-4291-88ce-63a797e3f46c",
+      "slug": "aeronous-solutions",
+      "name": "AeroNous Solutions",
+      "website": "",
+      "hq_country": "",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "AeroNous Solutions Aernos funding Aeros Electric Airlines Aerosolutions funding",
+        "\"AeroNous Solutions\" investment funding \"Israel Shipyards\"",
+        "site.aero-nous.com \"investment\" OR \"funding\" OR \"finance\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://aero-nous.com/about-us/",
+          "title": "Indexed issuer legal and ownership description; direct fetch timeout",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://is-ind.com/?lang=en",
+          "title": "Parent original identifies Aeronous group company",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/aeronous-partners-innoviz-lidar-strengthen-real-time-localization-across-its-counter",
+          "title": "Innoviz original partner release corroborates identity",
+          "published_date": "2026-07-08",
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        }
+      ],
+      "evidence_note": "Own indexedAbout identifies AeroNous SolutionsLtd and Israeli parent; parent current group page independently links same brand/domain, resolving former brand identity hold. No attributable external round found in checked originals. Bounded source review complete.",
+      "hold_note": "DirectAbout fetch timed out; indexed original and readable parent source retained. Registration ID and private intra-group development funding undisclosed. PartnerLiDAR contract and parent budgets not external rounds; no zero-funding assertion."
+    },
+    {
+      "id": "38c3b8fe-a778-4eed-a61f-d86b42e892ad",
+      "slug": "aeros-electric-airlines",
+      "name": "Aeros Electric Airlines",
+      "website": "",
+      "hq_country": "",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Aeros Electric Airlines\" \"Aerosolutions\"",
+        "\"Aeros Electric Airlines\" funding investment grant company",
+        "\"Aeros Electric Airlines\" \"inversión\" \"financiación\"",
+        "\"Aeros Electric Airlines\" official website investor funding 2026",
+        "site.aerosolutionsgroup.com \"Aeros Electric\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.eveairmobility.com/eve-air-mobility-aerosolutions-and-bluenest-by-globalvia-sign-letter-of-intent-for-up-to-50-evtols-and-techcare-services/",
+          "title": "Transaction partner original identifies Aeros operating venture",
+          "published_date": "2025-06-30",
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.bluenest.io/press-releases/bluenest-by-globalvia-eve-air-mobility-and-aerosolutions-sign-letter-of-intent-for-up-to-50-evtols-and-techcare-services",
+          "title": "Other transaction partner confirms same operator/LOI",
+          "published_date": "2025-06-30",
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        }
+      ],
+      "evidence_note": "Two June2025transaction-party originals establish Aeros Electric Airlines as operating venture developed byAerosolutions. Bounded review complete for this economic brand; no source-supported independent financing found.",
+      "hold_note": "Independent share issuer/legal vehicle unknown. Up-to50eVTOLLOI is prospective procurement, not funding; parent turnover and SESARconsortium budgets not assigned. Unknown private backing retained, not zero funding."
+    },
+    {
+      "id": "fb7279c8-eb9b-469f-92d4-197363a60144",
+      "slug": "aerovel-corporation-acquired-by-aerovironment-2024",
+      "name": "Aerovel Corporation (acquired by AeroVironment, 2024)",
+      "website": "https://www.avinc.com",
+      "hq_country": "United States",
+      "company_type": "",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "1",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "existing_event_count": 1,
+      "searches_checked": [
+        "site.airbus.com Aerovel acquisition May 2024",
+        "\"Aerovel\" \"funding\" \"2026\" \"2024\"",
+        "\"Aerovel\" \"Series A\" funding investor",
+        "site.sec.gov/Archives/edgar/data/1846691 Aerovel \"2024\" OR \"2023\" OR \"2022\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.airbus.com/en/newsroom/press-releases/2024-05-airbus-finalises-acquisition-of-aerovel-and-its-uas-flexrotor",
+          "title": "Actual acquirer original completed Aerovel purchase",
+          "published_date": "2024-05-07",
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.airbus.com/sites/g/files/jlcbta136/files/2024-01/airbus_helicopters_to_expand_unmanned_aerial_system_portfolio_with_acquisition_of_aerovel.pdf",
+          "title": "Prior acquirer signed agreement",
+          "published_date": "2024-01-15",
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://rsadvisors.com/en/notable-transactions",
+          "title": "Transaction adviser confirms acquirer",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1846691/000121465921002028/xslFormDX01/primary_doc.xml",
+          "title": "Prior original2.40288m progress belongs to existing2.5mSeriesB",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Original or candidate inspected; specific inclusion, exclusions and access limits recorded in evidence/hold notes."
+        }
+      ],
+      "evidence_note": "Original Airbus signed and completed announcements resolve actual buyer and continuingAeroveloperations. Existing2.5m2021SeriesB preserved; fresh earlier/latest checks reveal no supported additive event. Bounded funding review complete.",
+      "hold_note": "Catalogue name/domain/history wronglysayAeroVironment; preserve metadata and flag independent correction. Acquisition consideration and Airbus group capital not primary Aerovel financing. Undisclosed private history remains unknown."
+    },
+    {
+      "id": "b316f5c1-8228-4c04-941c-1dfe7c9d38f9",
+      "slug": "aes-technology",
+      "name": "AES Technology",
+      "website": "",
+      "hq_country": "",
+      "company_type": "",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"AES Technology\" refuelling funding Germany GmbH",
+        "\"AES Technology GmbH\" Finanzierung Förderung Investor Beteiligung",
+        "\"AES Technology GmbH\" investor shareholders funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.aes-technology.com/en/imprint/",
+          "published_date": null,
+          "disposition": "Original imprint resolves AES Technology GmbH, HRB41965 Amtsgericht Bielefeld, operational Göttingen address and two managers; matches original EDA-project provenance."
+        },
+        {
+          "url": "https://www.aes-technology.com/en/news/",
+          "published_date": null,
+          "disposition": "Issuer archive explicitly December21 2022 EDA A3R project; subsequent Airbus/GMV SIRTAP development contract and current2026 operating news. Contracts and consortium budgets not own funding."
+        },
+        {
+          "url": "https://www.eda.europa.eu/news-and-events/news/2026/10/09/spain--germany--belgium-join-with-eda-to-test-refuelling-drones-in-mid-air",
+          "published_date": "2026-10-09",
+          "disposition": "Official current project precisely matches cohort originating news; EUR8m whole phase not own allocation."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/aes-technology-gmbh_aes-is-proud-to-be-a-part-of-this-project-activity-7015672540379422720-5ZAU",
+          "published_date": null,
+          "disposition": "Issuer first-person confirms same earlier project; EUR4m whole programme not financing receipt."
+        }
+      ],
+      "evidence_note": "Provenance-to-issuer hold resolved: EDA original and AES own2022project announcement match same German company; imprint provides exact legal registration. Bounded earlier/latest financing and investor search completed.",
+      "hold_note": "No verified issuer-specific public financing found in checked originals. Consortium4m/8mbudgets and customer contracts excluded; private financing remains unknown, never zero. Metadata left unchanged."
+    },
+    {
+      "id": "8c6a5ce8-cd64-44f2-b8df-75d0dbdcdc1a",
+      "slug": "agile-autonomy",
+      "name": "Agile Autonomy",
+      "website": "",
+      "hq_country": "United States",
+      "company_type": "startup",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Agile Autonomy\" funding investment Powerus",
+        "\"Agile Autonomy\" funding loan contribution members capital",
+        "\"Agile Autonomy LLC\" investment investors funding 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2009312/000149315226041764/form424b3.htm",
+          "published_date": "2026-09-08",
+          "disposition": "Read audited subsidiary-specific financial statements, including inceptionJuly17 2025 and member cashflows. USD20 nominal member capital, USD250k DronePire acquisition seller note, parent raises and purchase consideration excluded. Ownership actual Autonomous Power Corporation."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2009312/000149315226047462/ex99-1.htm",
+          "published_date": "2026-10-16",
+          "disposition": "Current original2026 parent financial update preserves acquisition boundary; parent fundraising and customer FPV orders not Agile round."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/agile-autonomy_agile-a-powerus-maritime-systems-company-activity-7430733701551960064-dKa3",
+          "published_date": null,
+          "disposition": "Issuer first-person confirms Powerus maritime subsidiary; shared autonomy resources do not establish separate new capital."
+        }
+      ],
+      "evidence_note": "Exact subsidiary and audited standalone historical statements establish financing perimeter; parent ownership confirmed. Bounded review completed through checked date.",
+      "hold_note": "No primary fundraising event established. Nominal20USDmembercapital, seller-financed acquisition note, parent raises, sales contracts and acquisition proceeds excluded. Undisclosed private terms remain unknown."
+    },
+    {
+      "id": "b0224b34-923e-4f52-b9f5-8cb11d4d75cd",
+      "slug": "agrowing",
+      "name": "Agrowing",
+      "website": "https://agrowing.com",
+      "hq_country": "Israel",
+      "company_type": "",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "Agrowing funding investment 2026 Space Florida Israel grant",
+        "\"Agrowing\" funding investment \"2.5\"",
+        "\"Agrowing\" funding investment grant investors",
+        "\"Agrowing\" \"Space Florida\" \"2017\"",
+        "site.agrowing.com investor funding grant Space Florida",
+        "site.spaceflorida.gov \"Agrowing\" \"2017\"",
+        "\"Agrowing\" \"2017\" \"Israel Innovation\" \"award\"",
+        "\"Agrowing\" \"investor\" \"investment\" grant company"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://agrowing.com/about-us/",
+          "published_date": null,
+          "disposition": "Exact Israeli Agrowing Ltd and multispectral sensor business verified."
+        },
+        {
+          "url": "https://agrowing.com/contact-us/",
+          "published_date": null,
+          "disposition": "Issuer own Israeli address matches named company; no new legal entity inferred."
+        },
+        {
+          "url": "https://agrowing.com/news-events/",
+          "published_date": null,
+          "disposition": "Current issuer archive checked: product, patents, partnership and competition recognition, not financing amounts."
+        },
+        {
+          "url": "https://www.prweb.com/releases/heurobotics_an_embry_riddle_venture_wins_innovation_partner_funding_from_space_florida_and_israel_innovation_authority/prweb14653359.htm",
+          "published_date": null,
+          "disposition": "Original research-partner release confirms Agrowing collaboration in funded2017 project but no Agrowing-specific allocation or payment; programmeUSD2m not own grant."
+        },
+        {
+          "url": "https://finder.startupnationcentral.org/company_page/agrowing",
+          "published_date": null,
+          "disposition": "CumulativeUSD2.5m across five rounds is secondary unsplit history; not imported as single event."
+        },
+        {
+          "url": "https://www.ivc-online.com/Google-Card?ID=0a9578d3-21e8-e811-80f9-0050569a1018&type=1",
+          "published_date": null,
+          "disposition": "Secondary2020SeriesA date with hidden terms not original evidence; no inferred amount/investor."
+        }
+      ],
+      "evidence_note": "Fresh original issuer and2017transaction-partner checks complete bounded public-source review; identity established as Israeli AgrowingLtd.",
+      "hold_note": "Secondary2.5mcumulative/fiverounds and hidden2020round cannot be split into supported events.2017award has no own share;2022competitionawardhasno disclosedcash. Unknown public/private amounts retained, no zero-funding assertion."
+    },
+    {
+      "id": "46605966-aad8-45b0-85d3-0514198e4bc7",
+      "slug": "aim-defence",
+      "name": "AIM Defence",
+      "website": "",
+      "hq_country": "Australia",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"AIM Defence\" funding grant \"Australian Intelligent Machines\"",
+        "site.aimdefence.com \"ABN\" OR \"Pty\" funding",
+        "\"AIM DEFENCE PTY LTD\" ABN 2026",
+        "site.business.gov.au \"Australian Intelligent Machines\" \"564\"",
+        "\"AIM Defence\" \"564,826\" ministers",
+        "site.aimdefence.com \"funding\" OR \"investor\" OR \"investment\"",
+        "site.aimdefence.com \"terms\" \"Pty\" OR \"ABN\"",
+        "site.minister.defence.gov.au \"Australian Intelligent Machines\" \"2025\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://abr.business.gov.au/AbnHistory/View?id=49623551388",
+          "published_date": null,
+          "disposition": "Original registry proves historic AIM DEFENCE business name under Australian Intelligent Machines Pty Ltd endingAug9 2026; company remains active."
+        },
+        {
+          "url": "https://abr.business.gov.au/ABN/View?id=52699375114",
+          "published_date": null,
+          "disposition": "Distinct active AIM Defence Pty Ltd ABN52699375114 fromJune29 2026 and business nameJuly27; no automatic legal succession."
+        },
+        {
+          "url": "https://www.minister.defence.gov.au/media-releases/2025-05-23/albanese-government-investment-defence-industry-provides-critical-support-local-manufacturing-jobs",
+          "published_date": "2025-05-23",
+          "disposition": "Official exact AUD564826 grant explicitly Australian Intelligent Machines; do not reassign to distinct2026 Pty without transfer evidence."
+        },
+        {
+          "url": "https://www.aimdefence.com/news",
+          "published_date": null,
+          "disposition": "Issuer current archive confirms same Fractl brand, government procurement and Canadian prize; brand continuity alone not legal transfer or Canadian payee proof."
+        },
+        {
+          "url": "https://www.defence.gov.au/sites/default/files/2026-01/SenateOrderonEntityContractsCY2025Consolidated.pdf",
+          "published_date": null,
+          "disposition": "Official GA442560 grant names Australian Intelligent Machines, AUD621308.60 inclusiveGST reconciles564826; not additional grant."
+        }
+      ],
+      "evidence_note": "Resolved exact two active Australian registrations and dated business-name history; verified historic government grant recipient and product family.",
+      "hold_note": "Require legal transfer/succession bridge fromABN49623551388 to52699375114 or explicit cohort-economic-perimeter normalization before historic grant import; Canadian prize exact payee also unbridged. Procurement not financing."
+    },
+    {
+      "id": "083f1884-07da-4bd2-985a-30cf8ccefefd",
+      "slug": "air",
+      "name": "AIR",
+      "website": "",
+      "hq_country": "United States",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 3,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"AIR\" \"Skydio ISR Command\" \"Wraith\"",
+        "\"AIR\" \"Mente Systems\" \"NGC2\"",
+        "AIR formerly Govini company funding rebrand 2026 official",
+        "site.air.ai Govini funding investment",
+        "Govini funding 2015 20 million Accel Salesforce Symphony official",
+        "\"Govini\" 2012 2013 funding Series A Series B"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/govini-declares-readiness-gap-a-national-security-crisis-at-2026-reindustrialize-summit-302801833.html",
+          "published_date": "2026-06-16",
+          "disposition": "Issuer expressly corporate-name change Govini to Air; key identity hold resolved; not AIR VEV."
+        },
+        {
+          "url": "https://air.ai/events/reindustrialize-2026",
+          "published_date": null,
+          "disposition": "Original company retrospective independently confirms Govini evolution to Air June16-17 2026."
+        },
+        {
+          "url": "https://www.army.mil/article/295991/new_contract_awards_support_army_next_generation_command_and_control_software_delivery_to_i_corps",
+          "published_date": "2026-10-07",
+          "disposition": "Official NGC2vendor matches originating cohort source; collective93.6mprocurement not company finance."
+        },
+        {
+          "url": "https://www.accel.com/companies/govini",
+          "published_date": null,
+          "disposition": "Original investor2012SeriesA supported with unknown announcement/amount."
+        },
+        {
+          "url": "https://stg.com/news/govini-secures-20m-to-power-its-big-data-approach-to-government-contracting/",
+          "published_date": "2015-05-08",
+          "disposition": "Original funding party20mSeriesC three named investors no lead inferred."
+        },
+        {
+          "url": "https://www.baincapital.com/news/defense-tech-unicorn-govini-surpasses-100-million-arr-milestone",
+          "published_date": "2025-10-13",
+          "disposition": "Original investor150mgrowth investment; Tech Opportunities team quoted, exact beneficial vehicle/securityunknown."
+        },
+        {
+          "url": "https://air.ai/pressroom",
+          "published_date": null,
+          "disposition": "Latest2026archive:450mplanneddecadeexpansion and200mcustomercontract not financing; no new public round asserted."
+        },
+        {
+          "url": "https://www.premieralts.com/companies/govini/funding-rounds",
+          "published_date": null,
+          "disposition": "Secondary2013B4.5m/2025March dates conflict other sources; originals needed, not imported."
+        }
+      ],
+      "evidence_note": "Original corporate rebrand and source-provenance NGC2 vendor resolve identity to formerGovini; root globallookupfoundno otherGovini record/round. Three own investment disclosures added, no AIRVEVinheritance.",
+      "hold_note": "Earlier2013/2014SeriesB4.5m claims and2012A2.88m lack original terms; dates conflict. Exact securities/beneficialBainfund not public. Planned450mcapex/200mcontract excluded."
+    },
+    {
+      "id": "4507ae9c-8e70-40f6-8ed1-01aefe6ef1c7",
+      "slug": "air-tanker",
+      "name": "Air Tanker",
+      "website": "https://www.airtanker.co.uk",
+      "hq_country": "United Kingdom",
+      "company_type": "sme",
+      "publication_status": "live",
+      "is_public": "False",
+      "in_published_landscape": "False",
+      "research_state": "source_review_partial",
+      "funding_events": "0",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 3,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"AirTanker\" \"finance\" refinancing 2026 2008 loan",
+        "\"AirTanker\" \"financing\" banks 2025 2026 refinancing",
+        "site.airtanker.co.uk shareholders finance funding 2008",
+        "\"AirTanker\" refinancing lenders financing 2026 2024 2015"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.airtanker.co.uk/about/strength-in-partnership/",
+          "published_date": null,
+          "disposition": "Exact issuer distinguishes AirTankerLimited fleetowner/currentAirbusThalesEquitix shareholders from ServicesLimited; retain SPV boundaries."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/06279734",
+          "published_date": null,
+          "disposition": "Original registry AirTankerLimited previouslyProjectco; one of distinct legal entities."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/06279732/charges",
+          "published_date": null,
+          "disposition": "FinanceLimited separate borrower, registered charges not proof new cash or whole package allocation."
+        },
+        {
+          "url": "https://www.airandspaceforces.com/SiteCollectionDocuments/Reports/2008/March/Day31/AirTanker_release032708.pdf",
+          "published_date": "2008-03-27",
+          "disposition": "Original consortium27March2008 release approx2.5bnfinancing package, not13bnservicecontract. Exact debt/equity/SPV allocation not established."
+        },
+        {
+          "url": "https://www.nao.org.uk/wp-content/uploads/2010/03/0910433.pdf",
+          "published_date": null,
+          "disposition": "Official audit corroborates2.5bnproject financing; does not resolve precise corporate borrower allocation."
+        },
+        {
+          "url": "https://questions-statements.parliament.uk/written-questions/detail/2025-07-04/HL9144/",
+          "published_date": null,
+          "disposition": "Official currentMODpayments are contractspend, not external round."
+        }
+      ],
+      "evidence_note": "Current issuer and registry resolve fleet-owningLimited entity, but consortium, Finance, Holdings and Services have distinct financial perimeters. Three exact Limited shareholder associations added.",
+      "hold_note": "Need original executedfacility schedule/borrower allocation for2008approx2.5bnpackage and subsequent refinancing/on-lending; year-end balances/accruedinterest and contractpayments not rounds. No amounts assigned acrossSPVs."
+    }
+  ],
+  "source_and_identity_reconciliation": [
+    {
+      "company_slug": "3me-technology",
+      "sources": [
+        {
+          "url": "https://business.gov.au/grants-and-programs/industry-growth-program/grant-recipients",
+          "disposition": "Root government original recipient table identifies3ME TechnologyPtyLtd AUD2,953,811excludingGST. Rowalignmentchecked; ActionLaser1,665,041not3ME. ExistingHoldingscapitalnotinherited."
+        }
+      ]
+    },
+    {
+      "company_slug": "aerialmetric",
+      "sources": [
+        {
+          "url": "https://aerialmetric.com/wp-content/uploads/2024/06/2024-04-18-CP-IetP-AerialMetric.pdf",
+          "disposition": "Root originalindexed release text explicitly18April2024 MalagasyAerialMetric3mEURviaIPAE2. Directopen redirects currentpresspage, limitationretained; grouporiginalsourceverification/corroboration required, no false directPDFread claim."
+        },
+        {
+          "url": "https://www.ietp.com/sites/default/files/2024-04-18-CP-AerialMetric.pdf",
+          "disposition": "Independent investor-hosted original18April2024 PDF corroborates3mEUR equityinto MalagasycompanyviaIPAE2; directissueroldURLredirect limitation retained. April2024 publicannouncement not invented transactionclosingdate."
+        }
+      ]
+    },
+    {
+      "company_slug": "acs",
+      "sources": [
+        {
+          "url": "https://www.echodyne.com/newsroom/echodyne-and-acs-sign-strategic-collaboration-agreement-to-advance-counter-uas-capabilities-worldwide",
+          "disposition": "Root Oct12 2026 original collaborator namesACS/Bullfrog/MikeWior exactAllenControlSystems. GlobalDBcanonicalAllenalready12m/30m/200m; noaliasroundduplication or commercialcollaboration asfinancing."
+        }
+      ]
+    },
+    {
+      "disposition": "Original government3MEPtyLtd award recipient and legalfooter/ABR bridge now proven; Holdings21m and Rixon5mcurrency/borrower unresolved remainexcluded. ACS andACSLGlobal sourceprovenance resolvescanonicalaliases;3Allen/7ACSL existingrounds notcopied. ADLCBelgianBV sourcebrand bridges Singaporeoffice metadata;2.08mseed plusup-to45kcitycommitment, actualgeographyunchanged. ADVS exactMichiganDesertChameleon resolvesissuer, up-to171750training support nottaxcredits/capex or receivedcash."
+    },
+    {
+      "disposition": "AerialMetric investor-hostedPDF independently opened after oldissuerPDFredirect;3mEUR actualMalagasy economicissuer viaIPAE2, oneinvestment entered2023/publiclydisclosedApr2024. AEP exactparent initial1.1bn/900mnotes distinct fromincremental400m/600mreopenings; faceprincipalnotnetcash; offeringsnotassumedsettled. Existing6selectedevents unchanged."
+    },
+    {
+      "disposition": "AIR rebrand fromGovini directlyverified; noAIRVEVfinancing inherited. Govini2012Aunknown,2015C20m,2025Bain150m fromoriginalparties. AES/AeroNous/Aerosbrand/Agile identities resolved, no inferredparentprivatefinancing. AerovelAirbusowner verified; incorrectAeroVironmentmetadata flaggedseparateproposal,preservedhere. UnverifiedAeon/Agrowing/9Motherscumulativeclaims remainunknown ratherthan inventedrounds. Boundedreviewclosure is not completeknowledge ofprivatecapital."
+    }
+  ],
+  "canonical_profile_mappings": [],
+  "validation": {
+    "current_importer_and_three_schema_fixtures_unchanged": true,
+    "frozen_group_sha256": {
+      "group-a.json": "23613f078367dba04947885685d71713d19c797e021d4b64d3492bb6ec595765",
+      "group-b.json": "543a20bdd11f4c911d722dc9995eefbabab2ad105c7c9700015a08d935b0bac5",
+      "group-c.json": "0ea44611369436ab06fc4682ae1f517acb4652b01868853815cc003d2cfcec97",
+      "group-d.json": "68ec4e2f2dba6ba451e57fd4aaa4a9ad31d42842290c81405d689fcf8b51cf42"
+    },
+    "meaningful_postgresql_tests": "Rollback, atomic counts, idempotence, conflict rejection and participant-source FK passed.",
+    "production_rollback_baseline_restored": true,
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 12,
+      "mismatched_facts": 0,
+      "participant_matches": 13,
+      "source_matches": 22,
+      "relationship_matches": 8,
+      "missing_link_sources": 0,
+      "extension_parent_matches": 2
+    },
+    "company_investment_research_actual_count": {
+      "research_rows": 1312,
+      "partial_rows": 1312,
+      "new_exact_name_duplicate_groups": 0
+    },
+    "prior_data_hashes": {
+      "prior_relationships_hash": "aa9e0b47845525c377174105a5201c2c",
+      "prior_rounds_hash": "dff84cccf0edec100650a42ca0e55eff"
+    },
+    "all24_company_metadata_hashes_preserved": true,
+    "old_selected_rounds_hash": {
+      "old_selected_rounds_hash": "4be192d34e3aebc85fd338c12d8e8823"
+    },
+    "old_selected_rounds_exactly_preserved": true,
+    "selected_legacy_relationships_before": [
+      {
+        "slug": "61n-solutions",
+        "relationships": [
+          {
+            "id": "8d0714c9-63a3-40af-b684-144a05694c4d",
+            "company_id": "f829b7b2-67b4-4545-94d3-560f370154bf",
+            "created_at": "2026-11-11T11:02:58.574788+00:00",
+            "retired_at": null,
+            "source_url": "https://www.sttinfo.fi/tiedote/70462656/heikki-harkonen-vahvasti-kasvavan-puolustus-ja-turvallisuusalan-it-konsulttiyhtio-61nn-toimitusjohtajaksi?lang=fi&publisherId=69820654",
+            "updated_at": "2026-11-11T11:02:58.574788+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-11",
+            "match_method": "manual",
+            "retired_kind": null,
+            "investor_role": null,
+            "match_note_en": "Company-group release supports investor relationship from company-building stage; no formal round,date,security or amount is inferred.",
+            "retired_reason": null,
+            "evidence_status": "company_published_investors",
+            "investment_date": null,
+            "investment_round": null,
+            "relationship_type": "portfolio_listed",
+            "round_total_amount": null,
+            "investor_research_id": "13d4ab23-def0-4cf6-a1c0-0a7ff991adfc",
+            "round_total_currency": null,
+            "portfolio_name_as_published": "61N Solutions",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          }
+        ]
+      },
+      {
+        "slug": "9-mothers",
+        "relationships": [
+          {
+            "id": "16e95628-550e-4c2b-a039-099c2803044b",
+            "company_id": "09c2c2ca-6cad-4050-9c17-f58a3ac8d84e",
+            "created_at": "2026-11-11T11:02:58.574788+00:00",
+            "retired_at": null,
+            "source_url": "https://www.ycombinator.com/companies/9-mothers-corporation/jobs",
+            "updated_at": "2026-11-11T11:02:58.574788+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-11",
+            "match_method": "manual",
+            "retired_kind": null,
+            "investor_role": null,
+            "match_note_en": "Official YC profile and company site confirm P26 backing; exact investment amount/date and common round structure remain undisclosed.",
+            "retired_reason": null,
+            "evidence_status": "company_published_investors",
+            "investment_date": null,
+            "investment_round": null,
+            "relationship_type": "portfolio_listed",
+            "round_total_amount": null,
+            "investor_research_id": "bd1389c8-7b86-46d9-8a31-95c1a3bd978d",
+            "round_total_currency": null,
+            "portfolio_name_as_published": "9 Mothers",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          },
+          {
+            "id": "2f6d55b3-34ed-4271-88c4-5e4fffa6a255",
+            "company_id": "09c2c2ca-6cad-4050-9c17-f58a3ac8d84e",
+            "created_at": "2026-11-11T11:02:58.574788+00:00",
+            "retired_at": null,
+            "source_url": "https://www.sterlingroad.com/portfolio",
+            "updated_at": "2026-11-11T11:02:58.574788+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-11",
+            "match_method": "manual",
+            "retired_kind": null,
+            "investor_role": null,
+            "match_note_en": "Investor portfolio supports backing relationship; exact security,amount and round membership undisclosed.",
+            "retired_reason": null,
+            "evidence_status": "company_published_investors",
+            "investment_date": null,
+            "investment_round": null,
+            "relationship_type": "portfolio_listed",
+            "round_total_amount": null,
+            "investor_research_id": "a726b400-dfe1-4b0a-9233-f6e04531c047",
+            "round_total_currency": null,
+            "portfolio_name_as_published": "9 Mothers",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          },
+          {
+            "id": "92d6fd36-d90f-41eb-af07-7fc76a16dda7",
+            "company_id": "09c2c2ca-6cad-4050-9c17-f58a3ac8d84e",
+            "created_at": "2026-11-11T11:02:58.574788+00:00",
+            "retired_at": null,
+            "source_url": "https://www.streamlined.vc/news",
+            "updated_at": "2026-11-11T11:02:58.574788+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-11",
+            "match_method": "manual",
+            "retired_kind": null,
+            "investor_role": null,
+            "match_note_en": "Investor source supports portfolio relationship; exact security,amount and common round membership undisclosed.",
+            "retired_reason": null,
+            "evidence_status": "company_published_investors",
+            "investment_date": null,
+            "investment_round": null,
+            "relationship_type": "portfolio_listed",
+            "round_total_amount": null,
+            "investor_research_id": "df9ac0d0-be2e-448e-b8d2-75be614edc13",
+            "round_total_currency": null,
+            "portfolio_name_as_published": "9 Mothers",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          }
+        ]
+      },
+      {
+        "slug": "aeon",
+        "relationships": [
+          {
+            "id": "44150cd4-881e-4bcb-ad5c-8c929b945abe",
+            "company_id": "3dbda186-61af-4cac-b31b-ed3c15a683ef",
+            "created_at": "2026-11-11T12:03:21.241248+00:00",
+            "retired_at": null,
+            "source_url": "https://www.aeonindustrial.com/news/aeon-army-applications-laboratory-tactical-weapons-contract",
+            "updated_at": "2026-11-11T12:03:21.241248+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-11",
+            "match_method": "manual",
+            "retired_kind": null,
+            "investor_role": null,
+            "match_note_en": "Official company release names Vanderbilt University as a backer; exact round, date, security and contribution are undisclosed.",
+            "retired_reason": null,
+            "evidence_status": "company_published_investors",
+            "investment_date": null,
+            "investment_round": null,
+            "relationship_type": "portfolio_listed",
+            "round_total_amount": null,
+            "investor_research_id": "e71a3516-a4ae-40f9-b628-e3df73bc722e",
+            "round_total_currency": null,
+            "portfolio_name_as_published": "Aeon",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          },
+          {
+            "id": "6bd7a4ab-f188-4667-a9eb-0245667dc2f2",
+            "company_id": "3dbda186-61af-4cac-b31b-ed3c15a683ef",
+            "created_at": "2026-11-11T12:03:21.241248+00:00",
+            "retired_at": null,
+            "source_url": "https://www.aeonindustrial.com/news/aeon-army-applications-laboratory-tactical-weapons-contract",
+            "updated_at": "2026-11-11T12:03:21.241248+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-11",
+            "match_method": "manual",
+            "retired_kind": null,
+            "investor_role": null,
+            "match_note_en": "Official company release names1789 Capital as a backer; exact round, date, security and contribution are undisclosed.",
+            "retired_reason": null,
+            "evidence_status": "company_published_investors",
+            "investment_date": null,
+            "investment_round": null,
+            "relationship_type": "portfolio_listed",
+            "round_total_amount": null,
+            "investor_research_id": "35371f50-793b-49fe-a694-1c2f1c758240",
+            "round_total_currency": null,
+            "portfolio_name_as_published": "Aeon",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          },
+          {
+            "id": "8e9d56d2-3b6d-45f4-a629-3920407681a5",
+            "company_id": "3dbda186-61af-4cac-b31b-ed3c15a683ef",
+            "created_at": "2026-11-11T12:03:21.241248+00:00",
+            "retired_at": null,
+            "source_url": "https://www.aeonindustrial.com/news/aeon-army-applications-laboratory-tactical-weapons-contract",
+            "updated_at": "2026-11-11T12:03:21.241248+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-11",
+            "match_method": "manual",
+            "retired_kind": null,
+            "investor_role": null,
+            "match_note_en": "Official company release names Quiet Capital as a backer; exact round, date, security and contribution are undisclosed.",
+            "retired_reason": null,
+            "evidence_status": "company_published_investors",
+            "investment_date": null,
+            "investment_round": null,
+            "relationship_type": "portfolio_listed",
+            "round_total_amount": null,
+            "investor_research_id": "429718ee-79d8-40fd-934f-11275893f85f",
+            "round_total_currency": null,
+            "portfolio_name_as_published": "Aeon",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          },
+          {
+            "id": "de8259de-a13c-4dd9-81e9-09b490478760",
+            "company_id": "3dbda186-61af-4cac-b31b-ed3c15a683ef",
+            "created_at": "2026-11-11T12:03:21.241248+00:00",
+            "retired_at": null,
+            "source_url": "https://www.aeonindustrial.com/news/aeon-army-applications-laboratory-tactical-weapons-contract",
+            "updated_at": "2026-11-11T12:03:21.241248+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-11",
+            "match_method": "manual",
+            "retired_kind": null,
+            "investor_role": null,
+            "match_note_en": "Official company release names Silent Ventures as a backer; exact round, date, security and contribution are undisclosed.",
+            "retired_reason": null,
+            "evidence_status": "company_published_investors",
+            "investment_date": null,
+            "investment_round": null,
+            "relationship_type": "portfolio_listed",
+            "round_total_amount": null,
+            "investor_research_id": "c33441c5-e418-4a34-8aec-26670c27dac6",
+            "round_total_currency": null,
+            "portfolio_name_as_published": "Aeon",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          }
+        ]
+      },
+      {
+        "slug": "aerialmetric",
+        "relationships": [
+          {
+            "id": "97da9e04-7d77-45e2-93a9-ad376d3dccd3",
+            "company_id": "ac2bf0e3-3d31-4377-b11e-fc7a660e346c",
+            "created_at": "2026-11-11T12:03:21.241248+00:00",
+            "retired_at": null,
+            "source_url": "https://www.ietp.com/sites/default/files/2024-04-18-CP-AerialMetric.pdf",
+            "updated_at": "2026-11-11T12:03:21.241248+00:00",
+            "vehicle_id": null,
+            "investor_id": null,
+            "reviewed_at": "2026-11-11",
+            "match_method": "manual",
+            "retired_kind": null,
+            "investor_role": null,
+            "match_note_en": "Transaction party confirms an EUR3m equity investment in the AerialMetric economic group, but the issuing legal entity is not identified; record only the investor relationship until parent-versus-operating issuer mapping is resolved.",
+            "retired_reason": null,
+            "evidence_status": "company_published_investors",
+            "investment_date": null,
+            "investment_round": null,
+            "relationship_type": "portfolio_listed",
+            "round_total_amount": null,
+            "investor_research_id": "c01be9ee-bcb2-4b75-a30b-93fb3e85208f",
+            "round_total_currency": null,
+            "portfolio_name_as_published": "AerialMetric",
+            "investor_contribution_amount": null,
+            "investor_contribution_currency": null
+          }
+        ]
+      }
+    ],
+    "selected_legacy_relationships_exactly_preserved": true,
+    "queue_event_counts_from_actual_db": true
+  },
+  "publication_scope": {
+    "current_manifest_event_rows": 12,
+    "current_manifest_live_matches": 0,
+    "reviewed_identity_in_european_map": [
+      "liebherr-aerospace"
+    ],
+    "new_manifest_targets_in_european_map": [],
+    "note": "Liebherr published identity reviewed with no safely attributable new allocation; prior event unchanged. All newmanifest targets outside current Europeanmap. No metadata/geography/publication gates changed."
+  },
+  "reconciliation_phase": {
+    "reviewed_this_pass": 24,
+    "bounded_closed": 15,
+    "retained_holds": [
+      {
+        "id": "e03035a9-991b-4b7c-89f0-fad6866db061",
+        "slug": "liebherr-aerospace",
+        "hold_note": "Generic German cohort brand still spans divisional control, Toulouse SAS and Lindenberg GmbH. Seven prior French/EU candidates and own LuFo allocations require canonical recipient mapping; consortium leadership and factory capex do not supply amounts."
+      },
+      {
+        "id": "3a0c94e6-de77-4a4e-950f-d7f90ff8e57c",
+        "slug": "3d-robotics-3dr",
+        "hold_note": "Resolve composite legacy2009 metadata versus current2023domain before attaching historical A/B/C/D financings. Historical53mD includes debt conversion; no cumulative or all-fresh-cash assumption. Metadata untouched."
+      },
+      {
+        "id": "a365f605-632a-4545-9e10-78e36adbf321",
+        "slug": "3me-technology",
+        "hold_note": "Hold2021Holdings21m financing, $5mRixon facility currency/legal borrower and GA166764GST/net award basis. New grant public date and disbursement unknown; no1,665,041misaligned snippet imported."
+      },
+      {
+        "id": "13a0b5ec-cc8a-4bbf-8e09-fc9a0e923187",
+        "slug": "adani-defence",
+        "hold_note": "Unresolved brand-to-specific borrower/allottee perimeter and secondary2017/2019rights/debt claims still need primary transaction/allotment records. Parent QIP/rights cash, acquisitions, nominal capital and planned capex excluded."
+      },
+      {
+        "id": "43640573-75a9-44fc-ab8a-9e793a760db6",
+        "slug": "advs",
+        "hold_note": "Recent secondary SBA borrower/loan and Florida homonym continuity remain unresolved; state tax credits, proposed abatement, Kuwait contracts and own capex are not cash funding. Actual disbursement unknown."
+      },
+      {
+        "id": "bab01d9b-0a97-4e07-bba9-997417c7e265",
+        "slug": "aep",
+        "hold_note": "Long historical capital-market series remains unaudited. December2025settlement confirmation, precise prior announcement dates and additional actual forward settlements require original evidence. Annual consolidated8.3bn and2026subsidiary7.092bn totals not parent rounds."
+      },
+      {
+        "id": "46605966-aad8-45b0-85d3-0514198e4bc7",
+        "slug": "aim-defence",
+        "hold_note": "Require legal transfer/succession bridge fromABN49623551388 to52699375114 or explicit cohort-economic-perimeter normalization before historic grant import; Canadian prize exact payee also unbridged. Procurement not financing."
+      },
+      {
+        "id": "083f1884-07da-4bd2-985a-30cf8ccefefd",
+        "slug": "air",
+        "hold_note": "Earlier2013/2014SeriesB4.5m claims and2012A2.88m lack original terms; dates conflict. Exact securities/beneficialBainfund not public. Planned450mcapex/200mcontract excluded."
+      },
+      {
+        "id": "4507ae9c-8e70-40f6-8ed1-01aefe6ef1c7",
+        "slug": "air-tanker",
+        "hold_note": "Need original executedfacility schedule/borrower allocation for2008approx2.5bnpackage and subsequent refinancing/on-lending; year-end balances/accruedinterest and contractpayments not rounds. No amounts assigned acrossSPVs."
+      }
+    ],
+    "next_selection_policy": "Exclude this execution’s24 just-reviewed identities for immediate rotation; revisit retained holds when a new original source or specific unresolved allocation warrants it. Published Liebherr reviewed this run and retained as explicit legal-recipient hold.",
+    "next_batch_preview": [
+      {
+        "id": "04167b4b-cb46-4a2c-a2b3-d21d4b4861ca",
+        "slug": "air-vev",
+        "name": "Air VEV",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "37c197ba-1647-456a-ad9e-a87a4e624391",
+        "slug": "air6",
+        "name": "Air6",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "515e4c20-5ce8-462c-8cd0-1503658fc659",
+        "slug": "air6-system",
+        "name": "Air6 System",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "1c2bf788-03d4-4fa6-b216-465a5ef226f8",
+        "slug": "airlift-nepal",
+        "name": "Airlift Nepal",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "34b78f17-1529-47e8-815c-69a9e09bb564",
+        "slug": "airlift-technology",
+        "name": "Airlift Technology",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "3e33ac32-3f00-49be-ab0e-81522a575959",
+        "slug": "airlogix",
+        "name": "Airlogix",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "bc5abc2d-1da9-4e60-8111-05eba8625e7a",
+        "slug": "airshaper",
+        "name": "AirShaper",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "5900c4b2-4e2f-4345-b138-ff6639099c7d",
+        "slug": "airspan-networks",
+        "name": "Airspan Networks",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "9ee4a1c4-f852-42fa-b0ce-5b35a3f98832",
+        "slug": "airspeeder",
+        "name": "Airspeeder",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "17c2e2db-b5c2-4352-9dbf-1b3eceaad917",
+        "slug": "airwayz",
+        "name": "Airwayz",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "57eb5688-d079-436a-91ea-9bd97858eb66",
+        "slug": "aive-systems",
+        "name": "AIVE Systems",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "1160f8d6-a472-42a4-8fc0-15c96e53431f",
+        "slug": "akute-networks",
+        "name": "Akute Networks",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "0f71a1f5-8e0c-4904-8126-1034b826f187",
+        "slug": "alberici",
+        "name": "Alberici",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "8bf8fa17-902a-42ce-a9b8-e3961bb91e3e",
+        "slug": "alcrons-frontier",
+        "name": "ALCRONS FRONTIER",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "7b611fb1-4e2d-4299-bc4a-ca19f3798648",
+        "slug": "alex-air-apparatus",
+        "name": "Alex Air Apparatus",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "2026c9a4-2998-43ef-90be-d90c153b0012",
+        "slug": "allan-control-systems",
+        "name": "Allan Control Systems",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "9ed0bd44-5ce9-44bf-abb0-46c3e8578d62",
+        "slug": "althimis",
+        "name": "Althimis",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "5525cf3e-0ddf-4b7e-937a-b57ece95bfe9",
+        "slug": "am-general",
+        "name": "AM General",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "dd5cd104-9081-4216-9c79-b30c93817d66",
+        "slug": "am32",
+        "name": "AM32",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "4a755697-38f1-480a-8607-286b4e923b76",
+        "slug": "amax",
+        "name": "Amax",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "4bd8cea3-7a6e-43bd-915a-40a5f9763853",
+        "slug": "amber-wings",
+        "name": "Amber Wings",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "edce4e55-6264-49d7-a35c-40ad7c9c742d",
+        "slug": "ambrey",
+        "name": "Ambrey",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "3fdd3c0b-3072-42cf-a9d9-2c12f3628ff1",
+        "slug": "andromach",
+        "name": "AndroMach",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "b20307ca-3ceb-4d1f-b262-656d5019ed4c",
+        "slug": "anker-solix",
+        "name": "Anker Solix",
+        "priority_group": "2",
+        "priority": "100"
+      }
+    ]
+  },
+  "preserved": [
+    "Legacy STATE.json",
+    "Frozen snapshots",
+    "Curated profiles/legacy relationships",
+    "Company metadata/publication gates",
+    "Repository schedules",
+    "No new paid API"
+  ],
+  "programme_complete": false
+}
