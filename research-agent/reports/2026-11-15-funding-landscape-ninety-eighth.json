@@ -1,0 +1,1674 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-15",
+  "started_at": "2026-11-15T04:53:11.821Z",
+  "manifest": "research-agent/imports/funding-landscape-20261115-ninety-eighth.json",
+  "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-ninety-eighth-reviewed-corrections.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 25,
+    "new_queue_identities_checked": 24,
+    "prepared_identity_rechecked": 1,
+    "newly_completed_bounded_reviews": 8,
+    "new_or_retained_partial": 16,
+    "new_approved_events": 28,
+    "new_round_participations": 23,
+    "new_source_rows": 36,
+    "new_generic_portfolio_relationships": 7,
+    "new_companies_with_events": 8,
+    "new_investor_profiles": 17,
+    "new_coverage_rows": 2,
+    "group_search_queries_executed": 118,
+    "root_additional_search_queries": 4,
+    "search_queries_executed": 122,
+    "per_company_search_ledger_entries": 118,
+    "source_ledger_entries": 134,
+    "root_source_ledger_entries": 7,
+    "all_four_final_freezes_confirmed_before_consolidation": true,
+    "frozen_source_hashes_unchanged": true,
+    "local_postgresql_tests_passed": true,
+    "combined_guard_reversal_late_failure_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "atomic_import_invocations": 1,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "all_prior_uncorrected_events_links_sources_hashes_preserved": true,
+    "old_selected_uncorrected_rounds_exactly_preserved": 42,
+    "selected_legacy_relationships_exactly_preserved": 0,
+    "company_metadata_hashes_preserved": 25,
+    "event_matches": 28,
+    "mismatched_facts": 0,
+    "participant_matches": 23,
+    "source_matches": 36,
+    "relationship_matches": 7,
+    "missing_link_sources": 0,
+    "event_correction_matches": 1,
+    "research_rows": 1317,
+    "partial_rows": 1317,
+    "new_exact_name_duplicate_groups": 0,
+    "queue_dispositions_applied": 24,
+    "reviewed_existing_fact_corrections": 1,
+    "new_prepared_correction_proposals": 4,
+    "current_manifest_publication_verified": false,
+    "db_total_events": 4536,
+    "db_approved_events": 4521,
+    "db_round_participations": 6352,
+    "db_investor_profiles": 3698,
+    "db_source_reconciliation_companies": 1317,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 4508,
+    "approved": 4493,
+    "links": 6329,
+    "sources": 6184,
+    "profiles": 3681,
+    "relationships": 716,
+    "covered": 1315
+  },
+  "production_after": {
+    "events": 4536,
+    "approved": 4521,
+    "links": 6352,
+    "sources": 6220,
+    "profiles": 3698,
+    "relationships": 723,
+    "covered": 1317
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1272,
+    "source_review_partial": 1292,
+    "queued": 0
+  },
+  "per_company": [
+    {
+      "id": "65c7da7b-8de0-4f35-837f-f1b4e97d0ab2",
+      "slug": "atos",
+      "name": "Atos",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 4,
+      "relationship_count": 0,
+      "existing_event_count": 4,
+      "searches_checked": [
+        "site.atos.net 2026 financing 2025 bonds refinancing 2024 capital increase",
+        "site.atosgroup.com \"May 21, 2026\" notes refinancing",
+        "site.atosgroup.com bonds \"2019\" \"750\" \"500\" financing",
+        "site.atosgroup.com \"2018\" \"€750 million\" bond",
+        "site.atosgroup.com \"2019\" \"€500 million\" bonds"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.atosgroup.com/en/press/atos-announces-successful-placement-e-1-8-billion-triple-tranche-bond-issue-consisting",
+          "published_date": "2018-11-05",
+          "disposition": "Original earlier2018 placement and refinancing use; no orderbook-as-proceeds."
+        },
+        {
+          "url": "https://www.atosgroup.com/en/investors/financial-publications/financial-press-releases/atos-completes-sale-worldline-shares-and",
+          "published_date": "2019-10-30",
+          "disposition": "Original separate Atos exchangeable debt; Worldline equity sale not company primary financing."
+        },
+        {
+          "url": "https://www.atosgroup.com/en/press/atos-se-has-successfully-priced-total-eu1250-million-senior-secured-fixed-rate-notes-due-2031",
+          "published_date": "2026-05-12",
+          "disposition": "Original page/body expressly12May; note pricing and expected21May settlement. No reliance on migrated IR metadata."
+        },
+        {
+          "url": "https://www.atosgroup.com/en/investors/debt",
+          "published_date": null,
+          "disposition": "Current original debt schedule confirms21May instruments and40m bonding sublimit."
+        },
+        {
+          "url": "https://www.atosgroup.com/en/press/atos-opens-a-new-chapter-with-the-successful-closing-of-its-financial-restructuring",
+          "published_date": "2024-12-19",
+          "disposition": "Original19Dec recapitalization reconciles2024 package and exposes rights-issue type conflict; existing rows preserved."
+        },
+        {
+          "url": "https://live.euronext.com/en/products/equities/company-news/2026-06-24-continuation-implementation-atos-groups-refinancing-0",
+          "published_date": null,
+          "disposition": "Direct bot wall; indexed continuation not sole closing evidence."
+        }
+      ],
+      "evidence_note": "Earlier and latest issuer capital-market originals add four distinct principal/commitment disclosures. New2026debt refinances old debt; no summing as all-fresh cash. Atos parent issuer is distinct from Eviden/Avantix subsidiaries.",
+      "hold_note": "Long earlier bond/bridge/NEUCP history remains to audit. Existing2024rights issue financing_type debt conflicts with own-share equity subscription structure; separate reviewed proposal only. Historical cash-offset/equitization distinctions preserved.",
+      "actual_approved_event_count": 8
+    },
+    {
+      "id": "6b879603-458f-430c-a462-bea34a290d56",
+      "slug": "autonodyne",
+      "name": "Autonodyne",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 6,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Autonodyne\" investment funding investor",
+        "site.autonodyne.com \"funding\" OR \"investor\" OR \"investment\"",
+        "site.autonodyne.com news funding investor 2026 2025 SBIR",
+        "\"Autonodyne\" \"investment\" \"Raptor\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://autonodyne.com/",
+          "published_date": null,
+          "disposition": "Current own command/control software identity; no equity terms disclosed."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/881607",
+          "published_date": null,
+          "disposition": "Official exact recipient/UEI and6awards total4,862,839; individual awards imported rather than aggregate. Supplemental exact dates not public announcement evidence."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/218348",
+          "published_date": null,
+          "disposition": "Direct original exact award and contract identifier; R&D contract distinguished from equity/grant."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/218353",
+          "published_date": null,
+          "disposition": "Direct original exact award and contract identifier; R&D contract distinguished from equity/grant."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/205154",
+          "published_date": null,
+          "disposition": "Direct original exact award and contract identifier; R&D contract distinguished from equity/grant."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/195100",
+          "published_date": null,
+          "disposition": "Direct original exact award and contract identifier; R&D contract distinguished from equity/grant."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/186660",
+          "published_date": null,
+          "disposition": "Direct original exact award and contract identifier; R&D contract distinguished from equity/grant."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/194549",
+          "published_date": null,
+          "disposition": "Direct original exact award and contract identifier; R&D contract distinguished from equity/grant."
+        },
+        {
+          "url": "https://www.startuphub.ai/startups/autonodyne",
+          "published_date": null,
+          "disposition": "Secondary24m aggregate candidate lacks original transaction breakdown; not imported."
+        }
+      ],
+      "evidence_note": "Bounded earlier/latest issuer and financial-party search resolves six official SBIR/STTR awards. All six current federal portfolio awards audited individually and exact recipient bridged; no equity funding invented.",
+      "hold_note": "Private capital and actual paid cash remain unknown. Secondary24m total has no verified source-supported dated equity round; discarded as unsupported candidate, not proof of zero funding.",
+      "actual_approved_event_count": 6
+    },
+    {
+      "id": "1797229f-d9a0-49c7-a9a4-e83214adeb9e",
+      "slug": "austin-powder",
+      "name": "Austin Powder",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 1,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Austin Powder\" financing loan revolving credit bank",
+        "site.americanindustrial.com Austin Powder investment 2024",
+        "site.austinpowder.com 2026 2025 financing investment partnership AIP"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://austinpowder.com/unitedstates/new-partnership/",
+          "published_date": "2024-07-01",
+          "disposition": "Issuer confirms received strategic investment; terms undisclosed."
+        },
+        {
+          "url": "https://americanindustrial.com/portfolio/austin-powder/?status=current",
+          "published_date": null,
+          "disposition": "Investor original names2024acquisition and FundAIPCFVIII."
+        },
+        {
+          "url": "https://www.key.com/businesses-institutions/our-transactions/deals/austin-powder-holdings.html",
+          "published_date": null,
+          "disposition": "Transaction advisor expressly identifies Holdings sale, not primary operating proceeds."
+        },
+        {
+          "url": "https://www.cahill.com/news/firm-news/2024-09-09-cahill-represents-lead-arrangers-in-a-ap-buyer-inc-800-million-credit-facility",
+          "published_date": "2024-09-09",
+          "disposition": "Original counsel attributes650mtermB+150mrevolver to A-AP Buyer Inc; held outside operating issuer."
+        },
+        {
+          "url": "https://www.federalreserve.gov/monetarypolicy/files/mslp-public-comments-202007012.pdf",
+          "published_date": null,
+          "disposition": "Indexed official2020borrower-comment candidate describes existing Cleveland revolver without terms; not an amount-bearing event."
+        }
+      ],
+      "evidence_note": "Original issuer/investor/advisor review supports AIP generic owner/backer association only; no primary proceeds amount invented. Acquisition borrowing not transplanted to operating company.",
+      "hold_note": "Private funding and historic revolver terms remain unknown; unknowns do not establish zero funding. A-AP Buyer debt remains separate issuer and is not assigned without explicit perimeter normalization.",
+      "actual_approved_event_count": 0
+    },
+    {
+      "id": "52675e34-2082-40bd-b5ff-bc0f80ddf672",
+      "slug": "aurora-flight-sciences",
+      "name": "Aurora Flight Sciences",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "existing_event_count": 3,
+      "searches_checked": [
+        "\"Aurora Flight Sciences\" funding investment 2026 2025 2013 2003",
+        "site.aurora.aero investment Boeing Enlightenment 2016",
+        "site.aurora.aero \"investment\" \"funding\" 2026 2025",
+        "site.aurora.aero \"SBIR\" \"funding\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.aurora.aero/our-timeline/",
+          "published_date": null,
+          "disposition": "Own timeline confirms Boeing closed acquisition8Nov2017; association only, no funding amount."
+        },
+        {
+          "url": "https://enlightenment-cap.com/enlightenment-capital-invests-in-aurora-flight-sciences/",
+          "published_date": "2016-03-14",
+          "disposition": "Original14Mar2016investment and terms undisclosed; existing record corroborated."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/869485/000086948513000003/primary_doc.xml",
+          "published_date": null,
+          "disposition": "Existing SEC FormD original attempted but inaccessible this pass; previous6.85m record preserved."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/101307",
+          "published_date": null,
+          "disposition": "Official recipient links ownwebsite, UEIK1L1BZLNPWC4;120PhaseI+55PhaseII awards cumulative53,703,869 are history candidate not one financing round."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/aurora_flight_sciences",
+          "published_date": null,
+          "disposition": "Secondary3.3m grant cannot be matched to an original discrete award; no import."
+        }
+      ],
+      "evidence_note": "Current issuer timeline and2016investment-party original corroborate ownership/existing backing. No new priced equity event established; Boeing acquisition remains generic association.",
+      "hold_note": "175historical SBIR awards require individual original allocation and contract review; cumulative53.7m not imported as new round. Earlier2003day precision and2013first-sale-versus-announcement remain to reconcile under reviewed guards; no silent corrections.",
+      "actual_approved_event_count": 3
+    },
+    {
+      "id": "d6d1bbdb-75ec-4c38-9c43-9ede8ce3fc4f",
+      "slug": "aura-aero",
+      "name": "Aura Aero",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 8,
+      "searches_checked": [
+        "site.aura-aero.com 2026 funding 50 million financing series b",
+        "site.aura-aero.com Innovacom financing 2026 2025 2024",
+        "site.aura-aero.com \"2026\" \"financement\" \"novembre\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.aura-aero.com/en/actualites/nouvelle-lev%C3%A9e-de-fonds-de-50-m%E2%82%AC",
+          "published_date": "2026-04-08",
+          "disposition": "Original8Apr2026exact50mSeriesB and named syndicate already recorded;340m aggregate includes grants/Florida support, not new round."
+        },
+        {
+          "url": "https://www.turennecapital.com/innovacom-investit-dans-aura-aero-le-nouveau-constructeur-aeronautique-numerique-et-eco-efficient/",
+          "published_date": "2021-02-08",
+          "disposition": "Investor original8Feb2021equity entry corroborates existing undisclosed first round."
+        },
+        {
+          "url": "https://innovacom.com/wp-content/uploads/2024/02/20022024-CP-Innovacom-renouvelle-son-soutien-a-AURA-AERO.pdf",
+          "published_date": null,
+          "disposition": "Prior original URL404 this pass; no inference of removal/invalidity, existing event preserved."
+        },
+        {
+          "url": "https://www.aura-aero.com/en/innovation-fund",
+          "published_date": null,
+          "disposition": "Original95mHERMES award corroborates existing grant; no duplicate."
+        }
+      ],
+      "evidence_note": "Earlier/latest original issuer and investor checks corroborate eight existing disclosures without a ninth event. SeriesB50m distinct from cumulative340m; Voltaero acquisition and factory construction are outbound uses, not financing.",
+      "hold_note": "Florida support exact beneficiary/instrument and detailed overlap between EIC equity approval and SeriesB funding remain unresolved. Historic Innovacom additional re-investment dates and awards need original event-level reconciliation; private details unknown.",
+      "actual_approved_event_count": 8
+    },
+    {
+      "id": "ab1f9339-f926-4eb8-a74c-8a9169ea5adc",
+      "slug": "autel-robotics",
+      "name": "Autel Robotics",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 4,
+      "searches_checked": [
+        "\"道通智能\" 融资 2026 2025 2020 亿元",
+        "site.autelrobotics.com investors funding financing",
+        "site.autelrobotics.com \"道通\" \"融资\"",
+        "\"道通智能\" \"达晨\" 投资 2020",
+        "site.ti-capital.cn \"道通智能\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.autelrobotics.com/about-us/",
+          "published_date": null,
+          "disposition": "Own drone product identity, distinct from listedAutelIntelligentTechnology688208."
+        },
+        {
+          "url": "https://www.ti-capital.cn/index/project.html",
+          "published_date": null,
+          "disposition": "Investor original explicitlySep2020SeriesA withDachen/Jundu andDec2021PreIPO reinvestment; amount/day notdisclosed. StatesIPO counseling began24Dec2025, not IPOclosed."
+        },
+        {
+          "url": "https://pitchhub.36kr.com/project/1713082351151625",
+          "published_date": null,
+          "disposition": "Secondary existing earlier-round claims retained as secondary, no additional amount/date inferred."
+        },
+        {
+          "url": "https://www.zhuhai-hitech.gov.cn/zhgxztzcjzx/gkmlpt/content/3/3879/post_3879995.html",
+          "published_date": null,
+          "disposition": "Indexed governmentFeb2026headquarters agreement describes project not issuer financing."
+        },
+        {
+          "url": "https://m.21jingji.com/article/20220920/herald/5bb3fa8727772596cb9d34a57f3fbd15_ths.html",
+          "published_date": null,
+          "disposition": "Founder interview candidate600m from selling sibling-company stake not directly audited new round/issuer proceeds."
+        }
+      ],
+      "evidence_note": "Original TiCapital case independently corroborates two existing investment histories at month precision, while disclosed R&Dspending500m is expenditure not funding. No new round added; sibling listedAutelTech financings excluded.",
+      "hold_note": "Existing80mCNY exactday A and2020PreA/B histories remain secondary-qualified; direct original terms unresolved. Two existing TixinCapital profile aliases appear to same manager and require canonical identity reconciliation; no third profile/new generic duplicate created.",
+      "actual_approved_event_count": 4
+    },
+    {
+      "id": "6791a268-3f5a-4bba-a3ec-844482b6f9cd",
+      "slug": "autospray-systems",
+      "name": "AutoSpray Systems",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "AutoSpray Systems funding investment company 2026",
+        "site.autospraysystems.com funding grant",
+        "site.autospraysystems.com investment investors grant equity",
+        "site.nfyfc.org.uk AutoSpray Defra scholarship"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://autospraysystems.com/about/our-journey/",
+          "published_date": null,
+          "disposition": "Originalfounders/history reviewed; regulatoryauthorisations anduniversitycollaboration notfunding."
+        },
+        {
+          "url": "https://autospraysystems.com/youngfarmers/",
+          "published_date": null,
+          "disposition": "Originalscholarship supportsfiveyoungfarmers, notproved companycapitalaward."
+        },
+        {
+          "url": "https://nfyfc.org.uk/the-young-farmers-spray-drone-scholarship",
+          "published_date": null,
+          "disposition": "Originalpartner confirmsDefra supportforNFYFC andcombined17500GBPvalueoftraining, notAutoSprayownproceeds."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/10334608",
+          "published_date": null,
+          "disposition": "Registrybrandmatch reviewed; incorporation/nominalcapital notexternalround."
+        }
+      ],
+      "evidence_note": "Boundedissuer/history/partner-financing review completed. Defra-supportedtraining andFETFcustomer equipmentgrants do notestablish externalproceeds toAutoSpray. USAutoSpraycoatingshomonym excluded.",
+      "hold_note": "Privatefunding and exact collaborativeprogramme payee/allocation unknown, notzero.17500trainingvalue and40percentcustomergrant notcompanyrounds.",
+      "actual_approved_event_count": 0
+    },
+    {
+      "id": "ffc1409e-20a0-4f92-ae0f-0de740c5d287",
+      "slug": "avengers-ai-labs",
+      "name": "Avengers AI Labs",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "Avengers AI Labs funding investment 2026",
+        "Avengers Labs investment funding company"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.gov.uk/government/news/new-partnership-set-to-see-the-uk-and-ukraine-develop-battle-winning-technology-as-britain-secures-access-to-ukraines-avengers-ai-labs",
+          "published_date": "2026-08-24",
+          "disposition": "OriginalAug24 partnershipgivescontrolleddatasetaccess; no issuerfinancing."
+        },
+        {
+          "url": "https://mod.gov.ua/en/news/uk-becomes-the-first-international-partner-to-join-avengers-labs",
+          "published_date": "2026-09-25",
+          "disposition": "OriginalUkraineMoDplatformdescription linksDELTAdata, notstandalonecommercialcompanycapital."
+        },
+        {
+          "url": "https://www.gov.uk/government/publications/tf-raid-avengers-ai-swarming-competition",
+          "published_date": null,
+          "disposition": "Selection/eligiblefutureMODcontracts concernplatformusers, notclosed fundingtoLabs."
+        }
+      ],
+      "evidence_note": "OriginalUK/Ukrainegovernmentidentity andcurrentpartnership review establishes MoDcontrolledAItrainingplatform ratherthanverifiedseparately financedissuer. Accessagreements notinvestment.",
+      "hold_note": "Programme operatingbudgets andfutureusercontracts unknown; notzero. SeparateAvengersLabsqueueidentitymayduplicateplatform butmetadataunchanged.",
+      "actual_approved_event_count": 0
+    },
+    {
+      "id": "25b5c439-a75c-40cb-818c-62bcf2d8f80c",
+      "slug": "avincis",
+      "name": "Avincis",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "Avincis refinancing debt 2026 2025 investor",
+        "Avincis Ancala financing investment loan",
+        "site.ancala.com Avincis financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://ancala.com/portfolio/avincis/",
+          "published_date": null,
+          "disposition": "Original completedFeb2023carveout andcurrentownership, genericassociation."
+        },
+        {
+          "url": "https://www.avincis.com/press-release-avincis-secures-future-growth-with-strategic-aircraft-acquisition/",
+          "published_date": "2026-06-15",
+          "disposition": "2026aircraftorders arepurchases, notcompanyfunding."
+        },
+        {
+          "url": "https://www.atriumpartners.dk/en/transactions/kn-avincis-uk",
+          "published_date": null,
+          "disposition": "Transactionadvisor saysAncala fundedKNacquisition; owncheque/security/date notseparable."
+        },
+        {
+          "url": "https://www.cliffordchance.com/news/news/2014/03/clifford-chance-babcock-international-group-on-its-acquisition-o.html",
+          "published_date": null,
+          "disposition": "Original2014Babcockacquisition/refinancing isparenttransaction, not2023carveoutownfunding."
+        }
+      ],
+      "evidence_note": "CurrentAncala economicownership established andstoredgenerically; earlierBabcock/WorldHelicopters versuscurrentcarveout notconflated. Aircraftpurchases, clientcontracts andsecondaryacquisitionconsideration excluded.",
+      "hold_note": "2023/24refinancing exactborrower/amount/currency andlaterAncalaacquisitioncapitalallocation remainunresolved; noinventedround.",
+      "actual_approved_event_count": 0
+    },
+    {
+      "id": "f872cacb-821a-43dd-9ba2-08349404f39e",
+      "slug": "avision",
+      "name": "Avision",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 1,
+      "existing_event_count": 2,
+      "searches_checked": [
+        "Avision Robotics funding 500 Startups investor 2026",
+        "site.avision.io investment funding 500",
+        "site.500.co Avision",
+        "Avision Robotics 500 startups batch 21 2017 site:500.co",
+        "Avision MagneticOne Ventures investment",
+        "site.avision.io funding investors grant IGNES",
+        "site.avision.io investment OR funding OR raised"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://avision.io/about/",
+          "published_date": null,
+          "disposition": "OriginalAvisionInc/UTM/NASAeconomicidentity andIGNESprojectparticipation, noownEUallocation."
+        },
+        {
+          "url": "https://ventures.magneticone.com/",
+          "published_date": null,
+          "disposition": "Originalportfolio explicitlylinksAvisionavision.io, genericbacking."
+        },
+        {
+          "url": "https://500.co/content/500-batch-21-demo-day-recap",
+          "published_date": "2017-08-08",
+          "disposition": "Original2017acceleratorcontext butnoAvisionamount/terms here, noextraevent."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/avision-1/financials",
+          "published_date": null,
+          "disposition": "Secondary2018USD10kdebt/otherinvestors claim uncorroborated; held."
+        },
+        {
+          "url": "https://www.crunchbase.com/organization/avision-robotics/financial_details",
+          "published_date": null,
+          "disposition": "Secondaryconvertiblenote/currentroundcounts notoriginalevidence; existingseedunchanged."
+        }
+      ],
+      "evidence_note": "ExistingUAHprize andUSDseed retained. MagneticOneeconomicidentitylinkverified. No additionalamountbearingroundestablished from2018debt orEUprojectparticipation. Scanner/Allvision/Reputationhomonyms excluded.",
+      "hold_note": "IGNESownbeneficiary/legalvehicleallocation andsecondary2018debt/security remainunreconciled; historicalseedtermsprivate. Existingfacts preserved.",
+      "actual_approved_event_count": 2
+    },
+    {
+      "id": "ec8f8da3-9146-42b7-ba13-8e40c43f6cc1",
+      "slug": "avolon",
+      "name": "Avolon",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 7,
+      "relationship_count": 0,
+      "existing_event_count": 3,
+      "searches_checked": [
+        "site.avolon.aero 2026 notes financing",
+        "site.avolon.aero 2025 loan facility",
+        "site.avolon.aero 2026 855 facility",
+        "site.avolon.aero 2025 pricing notes 2025",
+        "site.avolon.aero July 2025 650 million notes",
+        "site.avolon.aero US$650 July pricing",
+        "site.avolon.aero May 2025 1.0 billion facility"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://avolon.aero/news/avolon-prices-unsecured-notes-march-2025",
+          "published_date": "2025-03-24",
+          "disposition": "Actual legal issuer Avolon Holdings Funding Limited, wholly owned subsidiary of Avolon Holdings Limited. Parent and certain subsidiaries guarantee notes. Gross principal 5.375% due2030; pricing announcement, not inferred closing or net cash. Refinancing/general corporate uses do not create separate funding events. Note purchasers unnamed; no underwriting bank treated as investor."
+        },
+        {
+          "url": "https://avolon.aero/news/avolon-prices-unsecured-notes-september-2025",
+          "published_date": "2025-09-04",
+          "disposition": "Actual legal issuer Avolon Holdings Funding Limited, wholly owned subsidiary of Avolon Holdings Limited. Parent and certain subsidiaries guarantee notes. Gross principal 4.950% due2032; pricing announcement, not inferred closing or net cash. Refinancing/general corporate uses do not create separate funding events. Note purchasers unnamed; no underwriting bank treated as investor."
+        },
+        {
+          "url": "https://www.avolon.aero/newsrooms/avolon-prices-unsecured-notes-december-2025",
+          "published_date": "2025-12-03",
+          "disposition": "Actual legal issuer Avolon Holdings Funding Limited, wholly owned subsidiary of Avolon Holdings Limited. Parent and certain subsidiaries guarantee notes. Gross principal 4.700% due2031; pricing announcement, not inferred closing or net cash. Refinancing/general corporate uses do not create separate funding events. Note purchasers unnamed; no underwriting bank treated as investor."
+        },
+        {
+          "url": "https://www.avolon.aero/newsrooms/avolon-prices-unsecured-notes-july-2025",
+          "published_date": "2025-07-07",
+          "disposition": "Actual legal issuer Avolon Holdings Funding Limited, guaranteed by Avolon and certain subsidiaries. Original July7 pricing650mUSD 4.900% notes due2030. Later issuer/transaction-party originals confirm raised/closed inJuly; expectedJuly10 close is not asserted as actualday. Grossprincipal notnetproceeds. KeyBanc served jointbookrunner, not proven note purchaser, so no investor participation inferred."
+        },
+        {
+          "url": "https://www.key.com/businesses-institutions/our-transactions/deals.avolon-holdings-funding.html",
+          "published_date": null,
+          "disposition": "Actual legal issuer Avolon Holdings Funding Limited, guaranteed by Avolon and certain subsidiaries. Original July7 pricing650mUSD 4.900% notes due2030. Later issuer/transaction-party originals confirm raised/closed inJuly; expectedJuly10 close is not asserted as actualday. Grossprincipal notnetproceeds. KeyBanc served jointbookrunner, not proven note purchaser, so no investor participation inferred."
+        },
+        {
+          "url": "https://www.avolon.aero/newsrooms/avolon-2025-q2-results",
+          "published_date": "2025-07-24",
+          "disposition": "Actual legal issuer Avolon Holdings Funding Limited, guaranteed by Avolon and certain subsidiaries. Original July7 pricing650mUSD 4.900% notes due2030. Later issuer/transaction-party originals confirm raised/closed inJuly; expectedJuly10 close is not asserted as actualday. Grossprincipal notnetproceeds. KeyBanc served jointbookrunner, not proven note purchaser, so no investor participation inferred."
+        },
+        {
+          "url": "https://www.avolon.aero/news/unsecured-term-loan-facility-april-2025",
+          "published_date": "2025-04-29",
+          "disposition": "Borrower/economic issuer Avolon Holdings Limited. Completed five-year facility split equally between drawn loan and revolving commitment:550mUSD each, not1.1bncashreceived. Seventeen banks participated; six of the seven named mandatedleadarrangers represented, with no individualcheques or financing-lead status inferred. Source names Truist Financial; exact bridge to existing Truist Bank profile is not established, so its participation is held rather than creating a duplicate or misassigning a legal lending vehicle."
+        },
+        {
+          "url": "https://avolon.aero/news/middle-east-facility-may-2025",
+          "published_date": "2025-05-02",
+          "disposition": "Borrower/economic issuer Avolon Holdings Limited. Four-year facility includes conventional and Islamic tranches; six-bank syndicate, three named initialmandatedleadarrangers/bookrunners recorded as lenders only. No individualallocations or paidcash inferred. Distinct from April29 1.1bnfacility and June2024 750mfacility;2.1bnQ2aggregate notimported asanotherround."
+        },
+        {
+          "url": "https://www.avolon.aero/newsrooms/q3-2026-update",
+          "published_date": "2026-10-09",
+          "disposition": "Economic issuer Avolon Holdings Limited. Issuer reports a closed855mUSD unsecured term loan duringQ3 from primarilyAsianbank syndicate. Public announcementOct9; exact execution/day ofcashdrawing and specific legalborrowingvehicle not disclosed. Facilityamount is not proof fullcashdraw. No unnamedbanks invented. Separate1.5bn commercialpaperprogramme is issuancecapacity, notproven debtissued.1.4bn ConstellationJV andaircraftorders notassigned asAvolonfunding."
+        },
+        {
+          "url": "https://www.avolon.aero/news/avolon-q3-2026-net-income-results",
+          "published_date": "2026-11-05",
+          "disposition": "Economic issuer Avolon Holdings Limited. Issuer reports a closed855mUSD unsecured term loan duringQ3 from primarilyAsianbank syndicate. Public announcementOct9; exact execution/day ofcashdrawing and specific legalborrowingvehicle not disclosed. Facilityamount is not proof fullcashdraw. No unnamedbanks invented. Separate1.5bn commercialpaperprogramme is issuancecapacity, notproven debtissued.1.4bn ConstellationJV andaircraftorders notassigned asAvolonfunding."
+        },
+        {
+          "url": "https://avolon.aero/newsrooms/avolon-raises-us420million-through-inaugural-samurai-loan-facility",
+          "published_date": "2026-03-04",
+          "disposition": "Existing420mUSDheadline istranslatedaggregateofc346mUSDplus11.7bnJPY; preparedcorrectiononly."
+        },
+        {
+          "url": "https://www.avolon.aero/newsrooms/avolon-announces-pricing-of-senior-unsecured-notes",
+          "published_date": "2026-02-18",
+          "disposition": "OriginalFeb18announcement expectedFeb23close; currentdateFeb23requiresreviewedcorrection, notnewround."
+        }
+      ],
+      "evidence_note": "Sevennewdistinct debtfinancings sourceaudited; issuerFundingLimitednotesversusHoldingseconomicborrower kept explicit. Facilitycapacity/drawnsplit andnotepricing/actualclosing separated. Noannualtotals, tenderrepurchases, aircraftorders, JVcapitalorCPcapacity importedadditively.",
+      "hold_note": "Earlier2010-24debtseries and2025unallocatedfacilityresidual remainpartial. ExactQ3borrower/drawdates and2026Samuraioriginalcurrencyrepresentation require reconciliation. Twoexisting-eventproposals savedwithoutDBchanges.",
+      "actual_approved_event_count": 10
+    },
+    {
+      "id": "3d5cecea-fe3e-4cea-8163-7602b20b03e3",
+      "slug": "avr",
+      "name": "AVR",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "AVR NATO must figure UAS teams",
+        "AVR Martin Carr company funding investment",
+        "Martin Carr AVR company drones",
+        "site.avr.global investment funding",
+        "AVR Martin Carr Applied Virtual Simulation funding grants",
+        "site.appliedvirtual.net funding grant investors",
+        "site.appliedvirtual.net Martin Carr"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defenceline.in/nato-must-figure-out-how-to-command-and-exploit-uas-teams/",
+          "published_date": "2026-08-28",
+          "disposition": "CohortsyndicationnamesAVRfounderMartinCarr; possibletypo, notlegalissuerproof."
+        },
+        {
+          "url": "https://appliedvirtual.net/",
+          "published_date": null,
+          "disposition": "OriginalAVSsiteestablishesAustraliantraining/simulationbusiness."
+        },
+        {
+          "url": "https://appliedvirtual.net/news/applied-virtual-simulation-pty-ltd-avs-acquires-afv-sim-ltd-afv-sim/",
+          "published_date": "2025-08-21",
+          "disposition": "Original21Aug2025namesAppliedVirtualSimulationPtyLtdanddirectorMartinCarr; outboundAFVoperationsacquisition notfunding."
+        },
+        {
+          "url": "https://www.halldale.com/defence/ai-in-action-drone-warfare-training-ai-myths-and-the-simulation-reality",
+          "published_date": null,
+          "disposition": "IndependentinterviewidentifiesMartinCarrasAppliedVirtualSimulation, notAVR."
+        }
+      ],
+      "evidence_note": "Freshcohortorigin/issuer/directorhistory review suggestsAVRmaymislabelAVS. No externalfundingassigned acrossunconfirmedidentityboundary. AVS17.9mAUDdefenceprocurement andAFVbusinesspurchase are notAVRprimaryproceeds.",
+      "hold_note": "ExactAVRlegalidentityorconfirmedtyponormalization stillneeded; companymetadatauntouched. UnrelatedAppliedVRmedicalfundingexcluded.",
+      "actual_approved_event_count": 0
+    },
+    {
+      "id": "b53d88dc-158a-42bc-9570-8b15ddd94227",
+      "slug": "avtrain",
+      "name": "Avtrain",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "existing_event_count": 1,
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "site.avtrain.aero investment funding grant PEGASUS 2026 2025",
+        "site.avtrain.aero \"funding\" OR \"investment\" OR \"Di-PEGASUS\"",
+        "site.avtrain.aero \"Di-PEGASUS\" funding",
+        "\"Avtrain\" \"investment\" Enterprise Ireland funding",
+        "site.avtrain.aero \"Enterprise Ireland\" shareholder",
+        "site.cordis.europa.eu \"AVTRAIN LIMITED\"",
+        "\"Avtrain\" \"AIRMOB\" 2026 funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://avtrain.aero/",
+          "published_date": null,
+          "disposition": "Current issuer training/site and2026UK expansion checked; course prices and practical agency support are not funding."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101270568",
+          "published_date": null,
+          "disposition": "ExistingPEGASUS exact own allocation preserved. ECsignature not new financing."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101096000",
+          "published_date": null,
+          "disposition": "Di-PEGASUS fact sheet has no AVTRAIN participant; similarly named project not assigned."
+        },
+        {
+          "url": "https://avtrain.aero/article/cmbay4qhq002snxeui60wzdvk/major-european-initiative-to-transform-air-mobility-training-landscape",
+          "published_date": null,
+          "disposition": "OriginalAIRMOB participation confirmed;3.983m consortium budget not own allocation."
+        },
+        {
+          "url": "https://zagdaily.com/zag-air/avtrain-founder-drones-are-building-the-foundations-that-aam-depends-on/",
+          "published_date": null,
+          "disposition": "OriginalCEO interview directly supports EnterpriseIreland shareholding; no cheque inferred."
+        },
+        {
+          "url": "https://avtrain.aero/article/cl511vis09635446mlb9cvid2vt/digital-skies-cleared-for-take-off",
+          "published_date": null,
+          "disposition": "EALU-AER/FMCI consortium activity does not establish Avtrain-specific award."
+        }
+      ],
+      "evidence_note": "Current and earlier issuer/project sources corroborate Irish Avtrain identity and existingPEGASUSgrant. New genericEnterpriseIreland shareholder association supported by CEO interview.",
+      "hold_note": "AIRMOB/EALU-AER company allocations and earlyEnterpriseIreland investment terms remain unestablished; campus or consortium budgets excluded. No zero-funding assertion.",
+      "actual_approved_event_count": 1
+    },
+    {
+      "id": "65f705db-8490-4fe0-baf2-457f7f5444cc",
+      "slug": "axiom-precision-manufacturing",
+      "name": "Axiom Precision Manufacturing",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "existing_event_count": 2,
+      "event_count": 1,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Axiom Precision Manufacturing\" grants investment funding",
+        "\"Axiom\" \"809,998\" grant",
+        "\"Axiom Precision\" \"grant\" \"Nu Metric\" 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.minister.defence.gov.au/media-releases/2020-06-23/chasing-more-opportunities-australian-industry-joint-strike-fighter-program",
+          "published_date": "2020-06-23",
+          "disposition": "Original minister identifiesNuMetric tradingasAxiom exact809998AUDaward."
+        },
+        {
+          "url": "https://www.axiompm.com.au/about/",
+          "published_date": null,
+          "disposition": "Issuer manufacturing identity andWingfield site checked."
+        },
+        {
+          "url": "https://www.axiompm.com.au/capabilities/facilities/",
+          "published_date": null,
+          "disposition": "Own15m equipment investment is capex, not externalcapital."
+        },
+        {
+          "url": "https://statedevelopment.sa.gov.au/file/downloads/rif-recipients",
+          "published_date": null,
+          "disposition": "Original2026row exact50000 andfundingstartFeb3corroborate existingaward; fundingstart is not separately established publicday."
+        },
+        {
+          "url": "https://defencesa.com/industry/industry-directory/axiom-precision-manufacturing/",
+          "published_date": null,
+          "disposition": "Governmentindustrydirectory corroborates same operationalbrand."
+        },
+        {
+          "url": "https://www.defence.gov.au/sites/default/files/2020-06/fy_2018-19_senate_order_web_listing.pdf",
+          "published_date": null,
+          "disposition": "OfficialindexedNuMetric Manufacturing PtyLtd(t/aAxiom) legal bridge; no extra government order treatedasgrant."
+        }
+      ],
+      "evidence_note": "Bounded original-source review adds distinct2020JSFindustrygrant and corroborates existing2021/2026support. ActualrecipientNuMetric/brandAxiom bridge stated; commercialcontracts/capex excluded.",
+      "hold_note": "Private capital and grantcashpayment dates unknown. Existing records not silently changed; original2026table statesfundingstart notannouncementday.",
+      "actual_approved_event_count": 3
+    },
+    {
+      "id": "9235570c-38ac-47fa-ace5-6e88eeeafd0f",
+      "slug": "axon-vision",
+      "name": "Axon Vision",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "existing_event_count": 4,
+      "event_count": 3,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"Axon Vision\" investment financing 2026 grant",
+        "site.axon-vision.com \"Israel Innovation\" OR \"grant\"",
+        "site.birdf.com \"Axon Vision\" DermaSensor 2018",
+        "site.axon-vision.com OR site.magna.isa.gov.il \"אקסון\" \"מענקים\" 2026",
+        "site.birdf.com \"DermaSensor\" \"Axon\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://mayafiles.tase.co.il/rpdf/1729001-1730000/P1729437-00.pdf",
+          "published_date": null,
+          "disposition": "OriginalHebrewannualreport directlyopened: specificLiDARprogramme andSmartMoneyapprovals/receipts/royaltyterms; existingElbit/IPO/shareholderloans preserved."
+        },
+        {
+          "url": "https://innovationisrael.org.il/en/importWinner/515697936/",
+          "published_date": null,
+          "disposition": "Exactrecipient515697936 routes2023MAFAT,Horizonparticipation,2025MAFAT; noadditionalfunding0field treatedaszero."
+        },
+        {
+          "url": "https://www.axon-vision.com/",
+          "published_date": null,
+          "disposition": "CurrentissuerdefenceAI identity; customerpartnerships notinvestment."
+        },
+        {
+          "url": "https://www.axon-vision.com/investor-relations",
+          "published_date": null,
+          "disposition": "OriginalIRpage checked; no additional capitalannouncement readable."
+        },
+        {
+          "url": "https://www.ivc-online.com/Google-Card?id=5e02a9cf-baf3-e711-80e1-00155d0b8329",
+          "published_date": null,
+          "disposition": "Secondary2017/2021equity andoldR&Dclaims onlycandidates; amountsnotpromoted."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/axon-vision-accelerates-us-growth-strategy-with-expanded-us-operating-presence-and-strategic-leadership-302915562.html",
+          "published_date": null,
+          "disposition": "October21 2026issuerwireoperatingexpansion, notfreshcapital."
+        }
+      ],
+      "evidence_note": "OriginalTASEfiling resolves two distinctgrantprogrammes, separating approvals fromcash and royaltypayback. OfficialIIAregistersupports separateHorizonparticipationaward withoutamount. Existing2019investment/2025IPO/loanrecordspreserved.",
+      "hold_note": "Earlier2018BIRD/2019RLgrantdetails,bankfacilityorigination andlaterapprovedphase split need further original reconciliation. Programmeceilingsnotfundingtotals; secondary26mIPO claim conflictsactualILS40m andisexcluded.",
+      "actual_approved_event_count": 7
+    },
+    {
+      "id": "b4332def-ac72-4de7-9ead-91245f04052f",
+      "slug": "b-and-c-holding-osterreich",
+      "name": "B&C Holding Österreich",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "existing_event_count": 2,
+      "event_count": 0,
+      "relationship_count": 0,
+      "searches_checked": [
+        "\"B&C Holding Österreich\" credit facility 2025 2026",
+        "site.bcgruppe.at \"Kredit\" \"2026\" Holding Österreich",
+        "site.bcgruppe.at \"Kreditrahmen\" \"825\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.evi.gv.at/b/pi/bmq-b5s",
+          "published_date": null,
+          "disposition": "Official2024accountsfilingSept11 2025 opened; attachedPDFnotexposedasfetchablelink inparsedpage."
+        },
+        {
+          "url": "https://www.evi.gv.at/f/461491p",
+          "published_date": null,
+          "disposition": "Officialregisterconfirms exactFN461491p issuer."
+        },
+        {
+          "url": "https://bcgruppe.at/en/bc-group/press/",
+          "published_date": null,
+          "disposition": "Currentholdingpress/2026Semperitoffer disclosure checked; outboundacquisitionnotcompanyproceeds."
+        },
+        {
+          "url": "https://www.takeover.at/uploads/u/pxe/A1_Uebernahmeangebote/2026/Semperit/Statement_of_the_Executive_Board_of_Semperit_AG_Holding_-_30.04.2026_-convenience_translation.pdf",
+          "published_date": null,
+          "disposition": "Officialtargetboard identifiesexactofferor; doesnotprovide executedownborrowingdraw."
+        }
+      ],
+      "evidence_note": "ExactAustrianholding identity andcurrentregistry/transactionactivity checked. Existing425mjointfacility/400mextension preserved; nofreshdrawinferred.",
+      "hold_note": "Jointborrower allocation,lenders,actualdraws and2024/2025accountdetail remain unresolved; no newamount assigned fromparentorportfoliocompanies.",
+      "actual_approved_event_count": 2
+    },
+    {
+      "id": "5e0b65aa-9923-4e62-be0c-22e1beb76332",
+      "slug": "babcock-international",
+      "name": "Babcock International",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "existing_event_count": 5,
+      "event_count": 5,
+      "relationship_count": 0,
+      "searches_checked": [
+        "site.babcockinternational.com OR site.babcockintl.com \"rights issue\" \"2014\"",
+        "site.babcockinternational.com OR site.babcockintl.com \"revolving\" \"2025\" facility",
+        "site.babcockinternational.com \"2010\" \"rights issue\" \"650\"",
+        "site.babcockinternational.com \"2011\" \"US$650\" notes",
+        "site.babcockinternational.com \"rights issue\" \"1,077.4\"",
+        "site.babcockinternational.com \"2026\" \"bond\" financing",
+        "site.babcockinternational.com \"2014\" \"rights issue\" \"139,259,204\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.babcockinternational.com/wp-content/uploads/2025/06/annual_report_2011pdf.pdf",
+          "published_date": null,
+          "disposition": "Original2011annualp61 directlychecked exactparentborrower600mfacility,2010GBP60m/40m notes and2011USD150m/500mtranches; issueexecutiondatesnotassumedpublicdates."
+        },
+        {
+          "url": "https://www.babcockinternational.com/wp-content/uploads/pdf/babcockhalfyearstatementfinal201114.pdf",
+          "published_date": null,
+          "disposition": "Indexedrightsissue1077.4mnetcandidate; direct404, notpromoted."
+        },
+        {
+          "url": "https://www.babcockinternational.com/wp-content/uploads/pdf/Babcock%20International%20Annual%20Report%20and%20Accounts%202016.pdf",
+          "published_date": null,
+          "disposition": "Indexed1076.9mnetrightsissuecandidate conflictsfirst netfigure; direct404. Existingfundingnotchanged."
+        },
+        {
+          "url": "https://www.lse.co.uk/rns/BAB/results-of-rights-issue-3qtatfgsgx3j9jj.html",
+          "published_date": null,
+          "disposition": "DirectissuerRNSMay7 2014 confirmsrightsacceptancecloseMay6 andunderwriters. Underwritersnotordinaryinvestors; net/grossfinancingreconciliationheld."
+        },
+        {
+          "url": "https://www.babcockinternational.com/wp-content/uploads/2025/07/Babcock-2025-Annual-Report-Strategic-Report.pdf",
+          "published_date": null,
+          "disposition": "Currentannualindexed775mRCF balance/maturity notnewfundingevent."
+        },
+        {
+          "url": "https://www.londonstockexchange.com/en/news/article/BAB/final-terms/17683484",
+          "published_date": null,
+          "disposition": "2026latest250m5.125%bond originalexchangeannouncement indexed; existingJulyrecordretained, notduplicate."
+        }
+      ],
+      "evidence_note": "Fresh historicalandlatestissuerresearch adds five preciseparentfundingrecords from2011originalannual:600mcapacity,60m/40mGBPnotes,150m/500mUSDnotes. Parentborrower explicitlynamed; no unnamed21institution investorinvented. Existingfivebondrecordsunchanged.",
+      "hold_note": "2014rightsgross/net source reconciliation andhistoricalfacilityamendments/2010bridge remain forfurtherreview. Arrangementbanksnotassumedlenders; capacitiesnotcash; no currency aggregation.",
+      "actual_approved_event_count": 10
+    },
+    {
+      "id": "f57c9260-6d8b-41c7-9ef3-d423a29923ab",
+      "slug": "badland-batteries",
+      "name": "Badland Batteries",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "existing_event_count": 0,
+      "event_count": 0,
+      "relationship_count": 1,
+      "searches_checked": [
+        "\"Badland Batteries\" funding investment Packet Digital 2026",
+        "site.badlandbatteries.com investor investment ownership Packet Digital funding",
+        "\"Badland Batteries\" equity loan grant investors 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.badlandbatteries.com/",
+          "published_date": null,
+          "disposition": "OriginalsitePacketDigitalidentity andFargobrandchecked."
+        },
+        {
+          "url": "https://www.badlandbatteries.com/news/27million-contract-awarded-sbir-battery-manufacturing",
+          "published_date": null,
+          "disposition": "OriginalApr8 2026expresslyparentPacketDigital27mSBIRPhaseIIIprocurementaward, notownsubsidiaryfinancing."
+        },
+        {
+          "url": "https://packetdigital.com/packet-digital-awarded-10m-contract-to-scale-battery-cell-production/",
+          "published_date": null,
+          "disposition": "OriginalMay5 2026parent/subsidiary9.8mPhase3contract; noownallocation established."
+        },
+        {
+          "url": "https://packetdigital.com/media-apfit-award/",
+          "published_date": null,
+          "disposition": "Originalup-to50mAPFITparentaward; ceilingnotBadlandproceeds."
+        },
+        {
+          "url": "https://www.ndic.nd.gov/sites/www/files/documents/Clean-Sustainable-Energy-Authority/Meetings/2026/CSEA-Meeting-1-29-2026.pdf",
+          "published_date": null,
+          "disposition": "Official37MBbriefingindexed2,297,376grant/18,842,659loanforplant; directwebfetchoversizerejected. Actuallegalborrower/awardexecutionnotverified; amountsheld."
+        },
+        {
+          "url": "https://www.hoeven.senate.gov/newsroom/press-releases/hoeven-north-dakotas-leadership-in-defense-manufacturing-grows-with-badland-batteries-new-plant",
+          "published_date": null,
+          "disposition": "Officialgrandopeningnews aggregate52.6mover6years securedforPacket work; notnewcompanyround."
+        }
+      ],
+      "evidence_note": "Originalcompany/parent/officialsourcesverifyPacketDigitalparentassociation.27m,9.8m,andup-to50mparentprocurement awardsnotmisassignedtoBadland. Genericparentassociationadded.",
+      "hold_note": "OriginalCSEAplantgrant/loancandidate requiresfullpayee/terms/executionreview; oversizedPDFnotpaidAPIblocker. Parentfundingnotownfunding; privatecapitalunknown,notzero.",
+      "actual_approved_event_count": 0
+    },
+    {
+      "id": "e5a3ef15-c392-476d-a9ab-d15c50d2a681",
+      "slug": "bae-systems-hagglunds",
+      "name": "BAE Systems Hägglunds",
+      "website": null,
+      "hq_country": "Sweden",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"BAE Systems Hägglunds\" funding EDF grant investment 2026",
+        "\"BAE SYSTEMS HAGGLUNDS\" \"FIRES\" \"EU\"",
+        "site.baesystems.com Hägglunds EDF MARSEUS AURIGA grant",
+        "\"BAE SYSTEMS HAGGLUNDS\" \"101224662\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://defence-industry-space.ec.europa.eu/system/files/2023-01/Factsheet_EDF21_MARSEUS.pdf",
+          "published_date": null,
+          "disposition": "Original Commission factsheet names exact BAE SYSTEMS HAGGLUNDS beneficiary, but25mEUR is wholeconsortium ceiling, not ownallocation."
+        },
+        {
+          "url": "https://newsroom.mbda-systems.com/marseus-modular-architecture-solutions-for-eu-states-one-of-the-first-european-defence-fund-projects-to-be-selected-by-the-european-commission/?lang=en",
+          "published_date": "2022-07-19",
+          "disposition": "Original coordinator says grantnegotiation notclosedcash; exactSwedishpartner verified."
+        },
+        {
+          "url": "https://www.euacc.ai/organisations/bae-systems-hagglunds-884502261",
+          "published_date": null,
+          "disposition": "Secondary500kMARSEUS/596kAURIGA ownshare candidates; notimported withoutoriginalallocation."
+        },
+        {
+          "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/44181033/101224662/EDF",
+          "published_date": null,
+          "disposition": "OriginalAURIGAportal retrievedemptyJavaScript shell; beneficiaryallocationnotverified."
+        },
+        {
+          "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/44181033/101103595/EDF",
+          "published_date": null,
+          "disposition": "OriginalMARSEUSportal retrievedemptyJavaScript shell; beneficiaryallocationnotverified."
+        },
+        {
+          "url": "https://www.baesystems.com/investors/dam/jcr%3Af84dc82f-4530-419c-b993-74ebb562bf97/HY-2026-Half-Yearly-Report-Final.04078ad460b3959f428f65bc388abb6f.pdf",
+          "published_date": null,
+          "disposition": "Originalparent halfyear reportindexed300mUSDplannedSwedishcapacityspending; capexnotattributableexternalfinancing. Parentdebtandcustomerorders excluded."
+        },
+        {
+          "url": "https://www.baesystems.com/en/our-company/our-businesses/platforms-and-services/locations/sweden",
+          "published_date": null,
+          "disposition": "Originaloperatingpage inaccessible; nofactpromotedfromerror."
+        }
+      ],
+      "evidence_note": "ExactoperatingissuerandEDFparticipationcorroborated. Noownallocationpromotedfromsecondarydata orconsortiumceilings. Parentcapex/customersupplyordersnotexternalfunding.",
+      "hold_note": "RetainoriginalbeneficiaryallocationholdforMARSEUS/AURIGAandsecondaryMARTE/FEDERATES; parentandBofors/Pitchlegalentitiesmustnotbemixed.",
+      "actual_approved_event_count": 0
+    },
+    {
+      "id": "8a6835c8-2190-4c23-b939-f04a79c85ed6",
+      "slug": "bale-defence",
+      "name": "Bale Defence",
+      "website": "https://www.baledefence.com",
+      "hq_country": "Australia",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 2,
+      "searches_checked": [
+        "\"Bale Defence\" grant funding 2026 2025 2023",
+        "\"Bale Defence\" grant \"2019\" OR \"2020\" OR \"2021\"",
+        "site.baledefence.com grant funding",
+        "\"Bale Defence\" grant funding",
+        "site.baledefence.com \"grant\"",
+        "site.baledefence.com \"funding\" OR \"investment\" OR \"grant\"",
+        "\"Bale Defence\" \"GrantConnect\"",
+        "\"Bale Defence Engineering Systems\" \"grant\" \"2018\"",
+        "\"Bale Defence\" \"investor\" OR \"shareholder\"",
+        "\"Bale Defence\" grants 2026 GA"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.minister.defence.gov.au/media-releases/2025-07-25/albanese-government-backs-australian-defence-industry-local-jobs-170-million-grant-program",
+          "published_date": "2025-07-25",
+          "disposition": "Originalexact928160AUD ownaward corroboratesexistingevent, notcashdraw."
+        },
+        {
+          "url": "https://www.defence.gov.au/sites/default/files/2026-01/SenateOrderonEntityContractsCY2025Consolidated.pdf",
+          "published_date": null,
+          "disposition": "OriginalgovernmentindexedGA4746231020976AUD is GSTinclusive928160award, notnewround."
+        },
+        {
+          "url": "https://files.parliament.nsw.gov.au/fileapi/ParlFiles/GetArtifact/Department%20of%20Regional%20NSW%202022-23%20Annual%20Report.PDF?serverRelativeUrl=%2Ftp%2Ffiles%2F187236%2FDepartment+of+Regional+NSW+2022-23+Annual+Report.PDF",
+          "published_date": null,
+          "disposition": "Originalannualreportindexedtwoidentical60000AUD rows; retainexistingonce."
+        },
+        {
+          "url": "https://influencetrace.com/entity/org_gov_bale-defence-engineering-systems",
+          "published_date": null,
+          "disposition": "Secondaryfourgrantaggregate1167576AUD; originalthreeadditionalawardrecordsnotretrieved. No residualsum/newgrant inferred."
+        },
+        {
+          "url": "https://www.asa.gov.au/news-hub/first-aukus-defence-industry-vendor-qualification-contracts-awarded-australian-businesses",
+          "published_date": null,
+          "disposition": "Originalqualificationpipefittingscontract isprocurement, notgrant/equity; amountundisclosed."
+        },
+        {
+          "url": "https://www.baledefence.com/about.html",
+          "published_date": null,
+          "disposition": "Issueraboutpage timedout; checkedownsiteandcompanyLinkedIn foridentity/activity."
+        },
+        {
+          "url": "https://au.linkedin.com/company/bale-defence",
+          "published_date": null,
+          "disposition": "IssueractivitycorroboratesDIVQmanufacturingsupplychain, noadditionalfinancingterms."
+        }
+      ],
+      "evidence_note": "Existing928160AUDfederaland60000AUDstateawardsfreshlycorroborated; GSTinclusive/duplicatedrowsnotnewgrants. DIVQmanufacturingcontractseparatefromcapital.",
+      "hold_note": "Threeadditionalsecondarygrantclaimsneedawardleveloriginals; noaggregate/residualallocationorpaidcashassumption.",
+      "actual_approved_event_count": 2
+    },
+    {
+      "id": "7b8e4c26-b454-4074-ae98-d31c8a03bc9b",
+      "slug": "ballistic-defense-system",
+      "name": "Ballistic Defense System",
+      "website": null,
+      "hq_country": "Morocco",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "existing_event_count": 1,
+      "searches_checked": [
+        "\"Ballistic Defense System\" Morocco funding investment Matador",
+        "\"Ballistic Defense System\" \"Innovation Support\"",
+        "\"Ballistic Defense System\" investissement financement ministère",
+        "\"Ballistic Defense System\" \"Innovation Support Fund\" funding amount"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://bds-uav.com/our-mission/",
+          "published_date": null,
+          "disposition": "IssuerMoroccanidentityandprivatelyfundedR&D corroborated; nosplit/amount."
+        },
+        {
+          "url": "https://en.assahifa.com/morocco/moroccos-bds-interview/",
+          "published_date": "2026-09-28",
+          "disposition": "OriginalCEOinterview confirmsMinistryInnovationSupportFundsupport; instrument/amount/awarddate undisclosed; industrialroundstillfuture."
+        },
+        {
+          "url": "https://www.moroccoworldnews.com/2026/09/340179/moroccos-ballistic-defense-system-builds-a-drone-that-doesnt-need-gps/",
+          "published_date": "2026-09-29",
+          "disposition": "DirectCEOinterview explicitlyreceivedfundingfromInnovationSupportFund. Prototypecostlessthan1.15mUSD notidenticaltospecificfounderfunding; firstexternalroundbeingprepared."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/fahd-laamoumi_morocco-madeinmorocco-defensetech-activity-7509978752676675584-TGyb",
+          "published_date": null,
+          "disposition": "DirectCEOpostcorroboratesMinistry/Fundsupport andlessthan1.15mprototypecost; noadditionalnamedprivateinvestor."
+        },
+        {
+          "url": "https://breakingdefense.com/2026/10/moroccan-startup-unveils-prototye-uav-that-operates-without-gps-signal/",
+          "published_date": null,
+          "disposition": "Existingfounder1.15mdisclosurepreserved; precision/fundingversuscostconflictprepared separately, notsilentlyoverwritten."
+        }
+      ],
+      "evidence_note": "Newamount/instrumentundisclosedMinistryInnovationSupportFundfinancialsupportdisclosure verifiedfromoriginalCEOinterviews andownpost. OriginalSep28publicinterviewdateused, notawarddate. Plannedindustrialraiseexcluded.",
+      "hold_note": "Existingexact1.15mfoundercapitalversusdirectCEOlessthan1.15mdevelopmentcostremainprecision/perimeterconflict, preparedonly; noautomaticgrantpluscostsum.",
+      "actual_approved_event_count": 2
+    },
+    {
+      "id": "9505032f-1dcd-403e-afe3-2924783c5ee8",
+      "slug": "barzan-holdings",
+      "name": "Barzan Holdings",
+      "website": null,
+      "hq_country": "Qatar",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 1,
+      "relationship_count": 1,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Barzan Holdings\" funding financing capital 2026 2025",
+        "site.barzanholdings.com \"capital\" \"funding\"",
+        "\"Barzan Holdings\" \"fully funded\" Ministry",
+        "\"Barzan Holdings\" loan bond equity financing",
+        "site.barzanholdings.com \"Ministry\" owned",
+        "site.leshabank.com \"Qatar First Bank\" \"2022\"",
+        "site.leshabank.com \"Barzan\" credit facility"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.barzanholdings.com/",
+          "published_date": null,
+          "disposition": "OriginalissuerexplicitwhollyownedQatarMinistryDefence; noamount/datecapitalinferred."
+        },
+        {
+          "url": "https://www.diwan.gov.qa/briefing-room/news/activities-and-occasions/2018/november/1/hh-the-amir-visits-barzan-holding-research-and-development-center?sc_lang=en",
+          "published_date": "2018-11-01",
+          "disposition": "Originalsovereignownerconfirmsdefenceholdingissuer; unrelatedBarzangasprojectexcluded."
+        },
+        {
+          "url": "https://www.leshabank.com/wp-content/uploads/2021/05/Related-Party-Exemptions.pdf",
+          "published_date": null,
+          "disposition": "OriginalbankprovidesJanuary2019BarzanHoldingcreditfacility backedbyQatarMODletterofguarantee. Amountnotstated;3.78%ofbankassetsnotreverseengineered."
+        },
+        {
+          "url": "https://www.leshabank.com/lesha_news/qatar-first-bank-announces-official-name-change-to-lesha-bank/",
+          "published_date": "2022-10-01",
+          "disposition": "OriginalQFBofficialnamechangetoLeshaBank establishescanonicalcontinuity."
+        },
+        {
+          "url": "https://www.prnewswire.com/ae/news-releases/barzan-holdings-joint-venture-with-rheinmetall-ag-rheinmetal-barzan-advanced-technologies-rbat-and-shield-ai-to-advance-autonomy-on-qatari-unmanned-surface-vessels-usv-302920788.html",
+          "published_date": "2026-10-28",
+          "disposition": "OriginalOctober28Shield/RBATMoUispartnership, notBarzanfinancing."
+        },
+        {
+          "url": "https://www.ga-asi.com/ga-asi-and-barzan-holdings-sign-mou",
+          "published_date": "2026-01-19",
+          "disposition": "Originaloutboundpartnership/technologylocalisation, notownfunding."
+        }
+      ],
+      "evidence_note": "Boundedoriginalissuer/owner/lenderreviewestablishesJanuary2019creditfacilitywithMODguarantee andcurrentownershipassociation. QFBmappedtoLeshausingoriginalnamechange. Noamountreverseengineeredfromroundedassetspercentage.",
+      "hold_note": "Facilityprincipal/currency/draws/securitydetailbeyondguarantee/privatehistoryremainundisclosed, notzero. OutboundAeralisloans,BarzangasprojectfinanceandJVprocurementexcluded.",
+      "actual_approved_event_count": 1
+    },
+    {
+      "id": "180d405f-ac39-45bf-9040-aa2a12d4accd",
+      "slug": "barzan-holdings-rbat",
+      "name": "Barzan Holdings RBAT",
+      "website": null,
+      "hq_country": "Qatar",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 1,
+      "searches_checked": [
+        "\"Rheinmetall Barzan\" capital increase 2018 2019 2025",
+        "site.rheinmetall.com \"Barzan\" \"2017\" capital",
+        "site.barzanholdings.com \"RBAT\"",
+        "site.rheinmetall.com \"Barzan\" \"capital\"",
+        "\"Rheinmetall Barzan\" financing investment 2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://irpages2.equitystory.com/download/companies/rheinmetall/Annual%20Reports/DE0007030009-JA-2018-EQ-E-00.pdf",
+          "published_date": null,
+          "disposition": "Original2018investorannualreportcorroboratesprior2017EUR2mcapitalincreasecontribution; laterfindredirectfailed. Noadditionalcapitalrow."
+        },
+        {
+          "url": "https://www.prnewswire.com/ae/news-releases/barzan-holdings-joint-venture-with-rheinmetall-ag-rheinmetal-barzan-advanced-technologies-rbat-and-shield-ai-to-advance-autonomy-on-qatari-unmanned-surface-vessels-usv-302920788.html",
+          "published_date": "2026-10-28",
+          "disposition": "OriginalJVidentityandShieldMoUcurrentOctober2026; procurement/autonomyintegrationnotnewinvestment."
+        },
+        {
+          "url": "https://www.linkedin.com/company/rbat-qstp-llc",
+          "published_date": null,
+          "disposition": "IssuerprofilebridgesexactQSTP-LLC JVidentity."
+        },
+        {
+          "url": "https://www.rheinmetall.com/Rheinmetall%20Group/Investor%20Relations/Ver%C3%B6ffentlichungen/Pr%C3%A4sentationen%20und%20Berichte/2025/GB/Rheinmetall-2024-Annual-Financial-Report.pdf",
+          "published_date": null,
+          "disposition": "OriginalparentreportindexedexistingJV; equity/netassetsandprofitnotcapitalrounds."
+        }
+      ],
+      "evidence_note": "Freshoriginalparent/investorandJVreviewsconfirmexistingEUR2m2017contribution andcurrentBarzan/Rheinmetallidentity. Noadditionalpubliceventverified;October2026ShieldMoUisnotinvestment.",
+      "hold_note": "Totalcapitalincrease/Barzancontribution/exactdayandprivatehistoryremainunknown. Boundedreviewcompletewithoutinventingthosevalues.",
+      "actual_approved_event_count": 1
+    },
+    {
+      "id": "37818e41-afc6-48cc-804b-14591dd9a68c",
+      "slug": "bayards",
+      "name": "Bayards",
+      "website": "https://www.bayards.com",
+      "hq_country": "Netherlands",
+      "priority_group": "2",
+      "priority": "100",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Bayards\" financing loan investment bank guarantee",
+        "site.bayards.com investment financing funding bank",
+        "\"Bayards\" \"funding\" \"2026\"",
+        "\"Bayards\" bank financing investment family helidecks",
+        "\"Bayards\" \"investeerder\" OR \"financiering\"",
+        "site.bayards.com \"family\" ownership"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.bayards.com/",
+          "published_date": null,
+          "disposition": "OriginalDutchgroupcomprisesfiveindependentbusinessunits; noFrenchissuerfundinginherited."
+        },
+        {
+          "url": "https://atradiusdutchstatebusiness.nl/en_NL/kennisbank/news/bayards-ensures-a-safe-landing",
+          "published_date": "2025-02-27",
+          "disposition": "OriginaltransactionpartyexpresslyBayardsHelidecksBVcounterguarantee releasesbankcreditspace, notparentloan/cash. Bankname,exactterms/amount/dateundisclosed. Familyownershipcorroborated."
+        },
+        {
+          "url": "https://www.bayards.com/our-brands/bayards-helidecks",
+          "published_date": null,
+          "disposition": "Originaldivisionidentityandgroupbridgecorroborated; separatelegalborrowerretained."
+        },
+        {
+          "url": "https://bouncewatch.com/company/bayards-vertiports-1",
+          "published_date": null,
+          "disposition": "Secondaryemptyfundingprofileisnotzerofundingevidence."
+        },
+        {
+          "url": "https://www.thecompanycheck.com/company/bayards-india-private-limited/U29253MH2014PTC253345",
+          "published_date": null,
+          "disposition": "SecondaryIndia75.4lakh2015claimnotassignedtoDutchgroupparent."
+        }
+      ],
+      "evidence_note": "OriginalissuerandexportcreditpartyresolvebankcreditclaimasBayardsHelidecksBVsubsidiarycounterguarantee, notparentfinancing. Boundedpublichistoryreviewcomplete; noamount-bearingparentroundverified.",
+      "hold_note": "Unknownsubsidiarybank/amount/dateandprivateparentcapitalremainundisclosed. Indianaffiliatefundingandemptysecondaryprofilesnotparentfacts orzerofundingclaims.",
+      "actual_approved_event_count": 0
+    }
+  ],
+  "prepared_identity_reconciliation": {
+    "company_slug": "archer-first-response-systems",
+    "id": "dd6b64dc-7005-4970-b4c4-3508922be924",
+    "status": "source_review_partial",
+    "correction_applied": "research-agent/imports/funding-landscape-20261115-ninety-eighth-reviewed-corrections.json",
+    "note": "Rechecked prepared public-date conflict;2014awardyear preserved innotes, unsupportedDec31announcement clearedtoNULL. Private/issuercontinuityholds retained; notcountedagain asnewpassidentity."
+  },
+  "source_and_identity_reconciliation": [
+    {
+      "company_slug": "archer-first-response-systems",
+      "url": "https://archerfrs.com/about-us.html",
+      "note": "Root directly reopened originaltimeline:2014awardyear only, noDecember31announcement. Current typedDBrow exactlymatches prepared97snapshot; amount/issuer/link/source unchanged."
+    },
+    {
+      "company_slug": "avolon",
+      "url": "https://www.avolon.aero/news/q3-2026-update",
+      "note": "Root directlyverifiedOct9public855mUSDclosedfacility; aircraftorders and1.5bnCPprogramme notcashproceeds."
+    },
+    {
+      "company_slug": "axiom-precision-manufacturing",
+      "url": "https://www.minister.defence.gov.au/media-releases/2020-06-23/chasing-more-opportunities-australian-industry-joint-strike-fighter-program",
+      "note": "Root directlyverifiedJun23 2020AUD809998exactaward NuMetric tradingasAxiom; noF35wholeprogrammeproceeds assigned."
+    },
+    {
+      "company_slug": "ballistic-defense-system",
+      "url": "https://en.assahifa.com/morocco/moroccos-bds-interview/",
+      "note": "Root directlyverifiedSep28originalCEOinterviewMinistryInnovationSupportFundsupport. Publicdisclosuredate notawardexecution; noamount/instrument invented."
+    },
+    {
+      "company_slug": "atos",
+      "url": "https://live.euronext.com/en/products/equities/company-news/2026-05-12-atos-se-has-successfully-priced-total-eu1250-million",
+      "note": "Root found originalMay12pricingrelease indexed; directEuronextbotwall. Grouporiginalissuerdebtschedule supportsMay21instrumentexecution; distinguishprincipal fromnetcash and110mfacilitybondingcapacity."
+    },
+    {
+      "company_slug": "barzan-holdings",
+      "url": "https://www.leshabank.com/wp-content/uploads/2021/05/Related-Party-Exemptions.pdf",
+      "note": "Root directlyverifiedQFBownJanuary2019facility, MODguarantee,3.78%assets. Noassetsratio multiplicationasoriginalprincipal."
+    },
+    {
+      "company_slug": "axon-vision",
+      "url": "https://mayafiles.tase.co.il/rpdf/1729001-1730000/P1729437-00.pdf",
+      "note": "Root directlyreadp39-40 Hebreworiginal:approximatelyILS247.5kSmartMoneyapproved/243kreceived; specificLiDARup-toapprox4.531mapproved/1.055mreceived withphase3notapproved. Oneprojectapprovaldisclosure, notsinglecashround orannualduplicates."
+    }
+  ],
+  "canonical_profile_mappings": [],
+  "new_prepared_reconciliations": {
+    "status": "source_prepared_not_applied",
+    "proposal": "research-agent/recovery/2026-11-15-funding-ninety-eighth-prepared-reconciliations.json",
+    "companies": [
+      "atos",
+      "avolon",
+      "ballistic-defense-system"
+    ],
+    "count": 4,
+    "note": "Atosrightsissuecategory, Avolonpublicdate/mixedcurrency, BDSdevelopmentcostversusfoundercapital require nextguardedreconciliation; existingrows deliberatelypreserved thisrun."
+  },
+  "validation": {
+    "current_importer_and_three_schema_fixtures_freshly_read": true,
+    "meaningful_postgresql_tests": "Importer rollback/atomic counts/idempotence/amount-conflict rejection/participant-source FK passed. Combined tests seeded actual Archerrow, verified full guard, reversal, idempotence and late exception rolling back all earlier writes.",
+    "production_rollback_baseline_and_full_original_correction_row_restored": true,
+    "post_import_idempotency_baseline_restored": true,
+    "exact_fact_role_source_contribution_audit": {
+      "event_matches": 28,
+      "mismatched_facts": 0,
+      "participant_matches": 23,
+      "source_matches": 36,
+      "relationship_matches": 7,
+      "missing_link_sources": 0
+    },
+    "reviewed_correction_and_duplicate_audit": {
+      "event_correction_matches": 1,
+      "research_rows": 1317,
+      "partial_rows": 1317,
+      "new_exact_name_duplicate_groups": 0
+    },
+    "preserved_global_prior_data_hashes": {
+      "metadata_hash": "9bb9490af68dd9591d5f60a7a0942207",
+      "prior_uncorrected_events_hash": "722a87a2b7dae9409285a00d7b7ef735",
+      "all_prior_links_hash": "e5d1a0431f3ae39ab53eb0532b2ed707",
+      "all_prior_sources_hash": "b5e2e484d8ce96817c078bd1b60f2c5b",
+      "curated_profiles_hash": "99e198409596fb1c237eca9b2714aaa7",
+      "legacy_relationships_hash": "0895b06030e37ef8721499b72da543a8"
+    },
+    "unselected_queue_rows_preserved": 2540,
+    "queue_event_counts_from_actual_approved_db": true,
+    "notes": [
+      "Initial snapshot comparison normalized SQLnumeric/timestamp serialization by fetching typedto_jsonb; nosemanticdrift. Production fullrowguard uses actualtypedJSON.",
+      "SixnewAutonodyneSBIR/STTRR&Dcontracts explicitly undisclosed/investment_disclosure, notgrant/equity/cashreceived.",
+      "No amount inferred from programme budgets, parent guarantees, percentageofbankassets, developmentcost orbookrunners."
+    ]
+  },
+  "publication_scope": {
+    "current_manifest_event_rows": 28,
+    "current_manifest_live_matches": 0,
+    "new_manifest_targets_in_european_map": [],
+    "note": "Priority2identities plus priorArcherdatecheck; preserve allgeography/publicationgates."
+  },
+  "reconciliation_phase": {
+    "reviewed_this_execution": 25,
+    "new_source_pass_identities": 24,
+    "bounded_closed": 8,
+    "retained_holds": [
+      {
+        "id": "65c7da7b-8de0-4f35-837f-f1b4e97d0ab2",
+        "slug": "atos",
+        "hold_note": "Long earlier bond/bridge/NEUCP history remains to audit. Existing2024rights issue financing_type debt conflicts with own-share equity subscription structure; separate reviewed proposal only. Historical cash-offset/equitization distinctions preserved."
+      },
+      {
+        "id": "52675e34-2082-40bd-b5ff-bc0f80ddf672",
+        "slug": "aurora-flight-sciences",
+        "hold_note": "175historical SBIR awards require individual original allocation and contract review; cumulative53.7m not imported as new round. Earlier2003day precision and2013first-sale-versus-announcement remain to reconcile under reviewed guards; no silent corrections."
+      },
+      {
+        "id": "d6d1bbdb-75ec-4c38-9c43-9ede8ce3fc4f",
+        "slug": "aura-aero",
+        "hold_note": "Florida support exact beneficiary/instrument and detailed overlap between EIC equity approval and SeriesB funding remain unresolved. Historic Innovacom additional re-investment dates and awards need original event-level reconciliation; private details unknown."
+      },
+      {
+        "id": "ab1f9339-f926-4eb8-a74c-8a9169ea5adc",
+        "slug": "autel-robotics",
+        "hold_note": "Existing80mCNY exactday A and2020PreA/B histories remain secondary-qualified; direct original terms unresolved. Two existing TixinCapital profile aliases appear to same manager and require canonical identity reconciliation; no third profile/new generic duplicate created."
+      },
+      {
+        "id": "25b5c439-a75c-40cb-818c-62bcf2d8f80c",
+        "slug": "avincis",
+        "hold_note": "2023/24refinancing exactborrower/amount/currency andlaterAncalaacquisitioncapitalallocation remainunresolved; noinventedround."
+      },
+      {
+        "id": "f872cacb-821a-43dd-9ba2-08349404f39e",
+        "slug": "avision",
+        "hold_note": "IGNESownbeneficiary/legalvehicleallocation andsecondary2018debt/security remainunreconciled; historicalseedtermsprivate. Existingfacts preserved."
+      },
+      {
+        "id": "ec8f8da3-9146-42b7-ba13-8e40c43f6cc1",
+        "slug": "avolon",
+        "hold_note": "Earlier2010-24debtseries and2025unallocatedfacilityresidual remainpartial. ExactQ3borrower/drawdates and2026Samuraioriginalcurrencyrepresentation require reconciliation. Twoexisting-eventproposals savedwithoutDBchanges."
+      },
+      {
+        "id": "3d5cecea-fe3e-4cea-8163-7602b20b03e3",
+        "slug": "avr",
+        "hold_note": "ExactAVRlegalidentityorconfirmedtyponormalization stillneeded; companymetadatauntouched. UnrelatedAppliedVRmedicalfundingexcluded."
+      },
+      {
+        "id": "b53d88dc-158a-42bc-9570-8b15ddd94227",
+        "slug": "avtrain",
+        "hold_note": "AIRMOB/EALU-AER company allocations and earlyEnterpriseIreland investment terms remain unestablished; campus or consortium budgets excluded. No zero-funding assertion."
+      },
+      {
+        "id": "9235570c-38ac-47fa-ace5-6e88eeeafd0f",
+        "slug": "axon-vision",
+        "hold_note": "Earlier2018BIRD/2019RLgrantdetails,bankfacilityorigination andlaterapprovedphase split need further original reconciliation. Programmeceilingsnotfundingtotals; secondary26mIPO claim conflictsactualILS40m andisexcluded."
+      },
+      {
+        "id": "b4332def-ac72-4de7-9ead-91245f04052f",
+        "slug": "b-and-c-holding-osterreich",
+        "hold_note": "Jointborrower allocation,lenders,actualdraws and2024/2025accountdetail remain unresolved; no newamount assigned fromparentorportfoliocompanies."
+      },
+      {
+        "id": "5e0b65aa-9923-4e62-be0c-22e1beb76332",
+        "slug": "babcock-international",
+        "hold_note": "2014rightsgross/net source reconciliation andhistoricalfacilityamendments/2010bridge remain forfurtherreview. Arrangementbanksnotassumedlenders; capacitiesnotcash; no currency aggregation."
+      },
+      {
+        "id": "f57c9260-6d8b-41c7-9ef3-d423a29923ab",
+        "slug": "badland-batteries",
+        "hold_note": "OriginalCSEAplantgrant/loancandidate requiresfullpayee/terms/executionreview; oversizedPDFnotpaidAPIblocker. Parentfundingnotownfunding; privatecapitalunknown,notzero."
+      },
+      {
+        "id": "e5a3ef15-c392-476d-a9ab-d15c50d2a681",
+        "slug": "bae-systems-hagglunds",
+        "hold_note": "RetainoriginalbeneficiaryallocationholdforMARSEUS/AURIGAandsecondaryMARTE/FEDERATES; parentandBofors/Pitchlegalentitiesmustnotbemixed."
+      },
+      {
+        "id": "8a6835c8-2190-4c23-b939-f04a79c85ed6",
+        "slug": "bale-defence",
+        "hold_note": "Threeadditionalsecondarygrantclaimsneedawardleveloriginals; noaggregate/residualallocationorpaidcashassumption."
+      },
+      {
+        "id": "7b8e4c26-b454-4074-ae98-d31c8a03bc9b",
+        "slug": "ballistic-defense-system",
+        "hold_note": "Existingexact1.15mfoundercapitalversusdirectCEOlessthan1.15mdevelopmentcostremainprecision/perimeterconflict, preparedonly; noautomaticgrantpluscostsum."
+      }
+    ],
+    "next_selection_policy": "Prioritize newly prepared corrections with expected-old/reversal tests; use next preview excluding96 checked identities in this pass. Archer date correction was applied this run; revisit retained holds only with a specific new original source.",
+    "next_batch_preview": [
+      {
+        "id": "c56f5cce-d628-46e9-a0ec-2b510fc053a4",
+        "slug": "bayards-vertiports",
+        "name": "Bayards Vertiports",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "29e25e0a-b7cd-4367-9c75-8e7a0a9c3377",
+        "slug": "beechcraft",
+        "name": "Beechcraft",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "dbd07f17-2437-4fa3-a37b-efd547e50303",
+        "slug": "beeline",
+        "name": "Beeline",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "5ebbf569-4850-476c-bf9d-01ff3a7a829b",
+        "slug": "beonyx",
+        "name": "Beonyx",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "8ef7dc2d-cfbe-4fe4-8d50-82c7d6a16f7d",
+        "slug": "beta-technologies",
+        "name": "BETA Technologies",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "16c70fa2-bbc9-4e27-bc29-8a08fbbcb790",
+        "slug": "bharat-forge",
+        "name": "Bharat Forge",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "98645667-f6f6-4f2b-91ed-b6f6685953c4",
+        "slug": "biores",
+        "name": "BioRes",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "38578f3f-01d8-469b-adff-d0d4879ddb59",
+        "slug": "bird-aerosystems",
+        "name": "Bird Aerosystems",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "839acfa1-e778-4569-aba6-1bc441f2f84f",
+        "slug": "birdon",
+        "name": "Birdon",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "f61feced-2b45-411b-a21a-b6cd943648e8",
+        "slug": "birdstop",
+        "name": "Birdstop",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "a2f7c765-e84f-4e41-b6e3-4b5bea18f8b1",
+        "slug": "blacksea-technologies",
+        "name": "BlackSea Technologies",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "1e301d39-6a59-4716-b3fe-887468934108",
+        "slug": "blaskor",
+        "name": "Blaskor",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "76d74963-eedc-4422-a5f8-36577695ea51",
+        "slug": "blickfeld",
+        "name": "Blickfeld",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "e6801f34-baa3-4771-b98f-14c73d88b601",
+        "slug": "blue",
+        "name": "Blue",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "905c8aeb-8154-47c0-8430-fe3998f91c79",
+        "slug": "blue-arrow-defense",
+        "name": "Blue Arrow Defense",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "d495fb67-bd3f-42d2-956c-e01a7cefdf6e",
+        "slug": "blue-force-technologies",
+        "name": "Blue Force Technologies",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "fb4298f9-dabf-45e1-928d-724fd902d336",
+        "slug": "blue-halo",
+        "name": "Blue Halo",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "d98ff7f9-2665-4c39-940f-1f4e00f1dd07",
+        "slug": "blue-marble-geographics",
+        "name": "Blue Marble Geographics",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "738afb5f-1496-45e7-b654-832861e9fa0d",
+        "slug": "blue-origin",
+        "name": "Blue Origin",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "201a0ee0-f0b2-4c09-a634-905292634e5b",
+        "slug": "blueflite",
+        "name": "Blueflite",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "af2626a7-59e9-4594-bd4a-861e1bed6def",
+        "slug": "bmc",
+        "name": "BMC",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "9e855d0a-93bb-4cb4-8835-6dfb49bd9b8e",
+        "slug": "boeing",
+        "name": "Boeing",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "97ddc40d-858f-4b67-8363-f9c5cb5830d7",
+        "slug": "bofors",
+        "name": "Bofors",
+        "priority_group": "2",
+        "priority": "100"
+      },
+      {
+        "id": "1c5de58d-176a-4a14-815f-a025a9da24b2",
+        "slug": "bombardier-defense",
+        "name": "Bombardier Defense",
+        "priority_group": "2",
+        "priority": "100"
+      }
+    ]
+  },
+  "preserved": [
+    "Legacy STATE.json and frozen snapshots",
+    "Curated profiles/legacy relationships",
+    "Allpriorfinancialrows except explicitreviewedArcherdatecorrection",
+    "Allpriorfinancialsource/linkrows",
+    "Companymetadata/publicationgates",
+    "Repositoryschedules",
+    "No newpaidAPI"
+  ],
+  "programme_complete": false,
+  "publication": {
+    "status": "awaiting_catalogue_trigger"
+  }
+}
