@@ -41,7 +41,22 @@
     "new_investor_profiles": 7,
     "new_coverage_rows": 2,
     "all_prior_company_metadata_preserved": true,
-    "all_prior_uncorrected_financial_links_sources_profiles_relationships_preserved": true
+    "all_prior_uncorrected_financial_links_sources_profiles_relationships_preserved": true,
+    "identities_checked": 28,
+    "queue_dispositions_applied": 24,
+    "approved_event_counts_refreshed_for_identities": 26,
+    "post_import_idempotency_rehearsal_passed": true,
+    "per_company_search_ledger_entries": 87,
+    "source_ledger_entries": 84,
+    "prepared_source_ledger_entries": 8,
+    "root_primary_company_pages_checked": 2,
+    "db_total_events": 4708,
+    "db_approved_events": 4690,
+    "db_round_participations": 6500,
+    "db_investor_profiles": 3741,
+    "db_source_reconciliation_companies": 1329,
+    "concurrency_speedup_claimed": false,
+    "frozen_source_hashes_unchanged": true
   },
   "per_company": [
     {
@@ -1204,6 +1219,13 @@
       ],
       "duplicate_new_names": 0,
       "missing_link_sources": 0
+    },
+    "frozen_group_sha256": {
+      "a": "746764a864b123fc5a45c61be1a3a75f26b058beb160448d9d07983e8cd6bb3d",
+      "a_corrections": "8d0cc3b80d3f7c63be8e08bbc056071f750ac7a66d57eb209c23c82e087a7406",
+      "b": "646e1b6343fc3d865dd5ddbb0d4df73ebe355b4b852320e31d4569f06fc6c11f",
+      "c": "9610f2ab4f2c275691a53d17526b4f8e8d7a2b77eee739315fef9ee15fd33bc7",
+      "prepared": "b7d24e10d258b517d401a2d0cdf87962ace5d23fd240b2e43eb2ba209165ef8b"
     }
   },
   "preserved": [
@@ -1221,5 +1243,22 @@
     "profiles": 3741,
     "relationships": 744,
     "covered": 1329
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1302,
+    "source_review_partial": 1262,
+    "queued": 0
+  },
+  "reconciliation_phase": {
+    "id": "partial-source-pass-1",
+    "reviewed_identities": 264,
+    "remaining_initial_pass_identities": 1079,
+    "bounded_reviews_closed": 81,
+    "retained_partial_reviews": 183
+  },
+  "publication_scope": {
+    "company_geography_and_publication_gates_preserved": true,
+    "expected_published_european_companies": 567,
+    "new_rows_outside_european_map": true
   }
 }
