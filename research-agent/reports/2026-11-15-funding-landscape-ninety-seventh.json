@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T03:49:33.276Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-ninety-seventh.json",
@@ -39,7 +39,7 @@
     "relationship_matches": 8,
     "missing_link_sources": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "reviewed_existing_fact_corrections": 0,
     "prepared_correction_proposals": 1,
     "db_total_events": 4508,
@@ -47,7 +47,18 @@
     "db_round_participations": 6329,
     "db_investor_profiles": 3681,
     "db_source_reconciliation_companies": 1315,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_prepared_correction_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "new_profile_exact_name_duplicates": 0,
+    "generic_portfolio_entries_verified": 8,
+    "clickable_generic_company_links_verified": 8,
+    "active_minutes": 10.71,
+    "checked_identities_per_hour": 134.5,
+    "completed_reviews_per_hour": 67.2,
+    "timing_scope": "Elapsed single writer lease covering24identities in four disjoint final frozen read-only groups, prior/currentDBchecks,122group+4rootqueries, originalissuer/currency/date/instrument/roles review, localPostgreSQLtests, productionrollback/baselineverification, oneatomicimport, exactfact/source/role/contributionaudit, allpreviousfinancialdata/curatedprofile/metadata preservation, idempotentrollbackreplay, durablemanifest/queue/proposalreadbacks, successfulexistingcataloguebuild, freshlandscape/investordatasets and livepageHTTP200. Twelveboundedclosures/twelveexplicit sourceholds. No concurrencyspeedup orETAclaimed."
   },
   "production_before": {
     "events": 4490,
@@ -1365,7 +1376,26 @@
       "Nine SBIR R&Dcontract awards are explicitly labelled research contracts, financing_type undisclosed and investment_disclosure. No grant/equity/cash inference; financing taxonomy lacks contract value.",
       "No existing financial rows or metadata corrected in this run; Archer expected-old date correction is durably prepared, not claimed imported.",
       "Initial read-only hash queries used absent surrogate ID/source_dataset columns; adapted to inspected composite keys and prior-created rows before rehearsal. No DB mutation from failed reads."
-    ]
+    ],
+    "coverage_and_new_profile_duplicate_audit": {
+      "research_rows": 1315,
+      "partial_rows": 1315,
+      "new_exact_name_duplicate_groups": 0
+    },
+    "unselected_queue_rows_preserved": 2540,
+    "frozen_group_sha256": {
+      "group-a.json": "2b67da3ffe81e6cedcd38448c541f721612291da3d220ef02973a139d7d387e2",
+      "group-b.json": "08f90f203ff9ea1afd20e4ae7aa98d8a10569020fd53aaf32f1ecfa23c4871a2",
+      "group-c.json": "757bb15c6d9039962ee816a0aae241bd82929efb8abfac892b2ee0b3b4326198",
+      "group-d.json": "06a0b82cbc1f045595e1310c5cde6ee47fcd68fc556f5a18ed538305ea9ba256",
+      "prepared-archer-date-correction.json": "9655e8b9f628ba09550c6a78c0f57a385c94ec3940bfd550f473b096d5102700"
+    },
+    "live_generic_entry_verification": {
+      "entries": 8,
+      "source_urls": 8,
+      "clickable_company_links": 8,
+      "unlinked": []
+    }
   },
   "publication_scope": {
     "current_manifest_event_rows": 18,
@@ -1620,6 +1650,45 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "awaiting_catalogue_trigger"
-  }
+    "status": "verified",
+    "checked_at": "2026-11-15T04:00:15.900Z",
+    "verified_at": "2026-11-15T04:00:15.900Z",
+    "catalogue_commit": "a7e014ffd996d0d1a2729beb13c153f33cf7aef9",
+    "source_commit": "8561baa0245aede5fb97e507d23be50764987b21",
+    "workflow_run": {
+      "id": 43674675944,
+      "head": "a7e014ffd996d0d1a2729beb13c153f33cf7aef9",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43674675944"
+    },
+    "report": "research-agent/reports/2026-11-15-funding-landscape-ninety-seventh.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-ninety-seventh.json",
+    "generated_at": "2026-11-15T03:59:01.792Z",
+    "investor_generated_at": "2026-11-15T03:59:05.852Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3672,
+    "portfolio_relationships": 713,
+    "expected_profiles": 19,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 8,
+    "generic_portfolio_entries_verified": 8,
+    "clickable_company_links_verified": 8,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 18,
+    "manifest_generic_relationship_matches": 8,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 18,
+    "current_manifest_live_matches": 0,
+    "reviewed_identities_in_european_map": [],
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "DB3681profiles versus live3672 reflects nine existing anonymous exclusions; DB716generic relationships versus live713 reflects three prior exclusions. All19referenced profiles,18participant source URLs and8generic entries/sourceURLs/clickablecompanylinks verified. Allnewfinancingtargets outside publishedEuropeanmap; no geography/publicationgates changed."
+  },
+  "completed_at": "2026-11-15T04:00:15.900Z"
 }
