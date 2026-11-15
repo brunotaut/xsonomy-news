@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T04:53:11.821Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-ninety-eighth.json",
@@ -50,13 +50,25 @@
     "queue_dispositions_applied": 24,
     "reviewed_existing_fact_corrections": 1,
     "new_prepared_correction_proposals": 4,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 4536,
     "db_approved_events": 4521,
     "db_round_participations": 6352,
     "db_investor_profiles": 3698,
     "db_source_reconciliation_companies": 1317,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 7,
+    "clickable_generic_company_links_verified": 7,
+    "active_minutes": 16.47,
+    "checked_identities_per_hour": 91.1,
+    "new_queue_identities_per_hour": 87.4,
+    "completed_reviews_per_hour": 29.1,
+    "timing_scope": "Elapsed singlewriterlease through24newqueueidentities in four final frozen read-onlygroups plusonepreparedArcherreconciliation,118group+4rootqueries, originalissuer/currency/date/instrument/rolechecks, seededcombinedPostgreSQLguard/reversal/latefailuretests, productioncombinedrollback andfullbaseline/Archerrowverification, oneatomicimport, exactfacts/roles/sources/contributions/correctionaudit, allpreviousuncorrectedfinancialrows/profile/link/source/metadatahashes preserved, idempotentreplayrollback, durablemanifest/queue/correction/proposalreadbacks, successfulcataloguebuild, bothfreshdatasets andlivepageHTTP200. Eightboundedclosures/sixteenretainedsourceholds; no concurrencyspeedup orETAclaimed."
   },
   "production_before": {
     "events": 4508,
@@ -1392,7 +1404,19 @@
       "Initial snapshot comparison normalized SQLnumeric/timestamp serialization by fetching typedto_jsonb; nosemanticdrift. Production fullrowguard uses actualtypedJSON.",
       "SixnewAutonodyneSBIR/STTRR&Dcontracts explicitly undisclosed/investment_disclosure, notgrant/equity/cashreceived.",
       "No amount inferred from programme budgets, parent guarantees, percentageofbankassets, developmentcost orbookrunners."
-    ]
+    ],
+    "frozen_group_sha256": {
+      "group-a.json": "0b80dad753962972813ddeeff4942e77c85fd8def04384fbb5bf43d57f1c5b1c",
+      "group-b.json": "a81ab25359ede86dc5c5348b476f593bdebecc2736763cf40bb2b483fbda2d47",
+      "group-c.json": "796aebaf950849c8dca966da16b28381dc97b7650201b1873b445bba7fb74b9e",
+      "group-d.json": "b2275fc04f2066a4e1bb0dc7e1195c485b4b09e12f477c3c635887cbecee7277"
+    },
+    "live_generic_entry_verification": {
+      "entries": 7,
+      "source_urls": 7,
+      "clickable_company_links": 7,
+      "unlinked": []
+    }
   },
   "publication_scope": {
     "current_manifest_event_rows": 28,
@@ -1669,6 +1693,46 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "awaiting_catalogue_trigger"
-  }
+    "status": "verified",
+    "checked_at": "2026-11-15T05:09:39.941Z",
+    "verified_at": "2026-11-15T05:09:39.941Z",
+    "catalogue_commit": "35d91ede4a7e4ec8ae77fcd2d6ab1ac73d07f4cd",
+    "source_commit": "25e4618bd9155ed268fcbd853eb9021513568ba9",
+    "workflow_run": {
+      "id": 43679661286,
+      "head": "35d91ede4a7e4ec8ae77fcd2d6ab1ac73d07f4cd",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43679661286"
+    },
+    "report": "research-agent/reports/2026-11-15-funding-landscape-ninety-eighth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-ninety-eighth.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-ninety-eighth-reviewed-corrections.json",
+    "generated_at": "2026-11-15T05:07:43.911Z",
+    "investor_generated_at": "2026-11-15T05:07:46.769Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3689,
+    "portfolio_relationships": 720,
+    "expected_profiles": 24,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 7,
+    "generic_portfolio_entries_verified": 7,
+    "clickable_company_links_verified": 7,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 23,
+    "manifest_generic_relationship_matches": 7,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 28,
+    "current_manifest_live_matches": 0,
+    "reviewed_identities_in_european_map": [],
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "DB3698profiles versus live3689 reflects nine prior anonymous exclusions; DB723genericrelationships versus live720 reflects three prior exclusions. All24referenced profiles,23participant sourceURLs and7generic entries/sourceURLs/clickablecompanylinks verified. Allnewfundingtargets outsidepublishedEuropeanmap; gatesunchanged. Archerdatecorrection auditedexactlyinDB; itdoesnotcreateEuropeanmapvisibility."
+  },
+  "completed_at": "2026-11-15T05:09:39.941Z"
 }
