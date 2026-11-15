@@ -1,0 +1,72 @@
+{
+  "id": "funding-landscape-20261115-ninety-eighth-reviewed-corrections",
+  "checked_at": "2026-11-15",
+  "method": "Expected whole-row guard excluding operational updated_at; idempotent forward and guarded reversal. No amount/source/link/issuer changes.",
+  "corrections": [
+    {
+      "company_slug": "archer-first-response-systems",
+      "table": "company_funding_rounds",
+      "id": "6d38fa66-7d4e-49f4-85ab-dac9ffb980d3",
+      "expected_before": {
+        "id": "6d38fa66-7d4e-49f4-85ab-dac9ffb980d3",
+        "stage": "Grant",
+        "amount": 5000,
+        "note_en": "Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting.",
+        "currency": "USD",
+        "round_key": "archer-first-response-systems-genivia-grant-2014",
+        "checked_at": "2026-11-11",
+        "company_id": "dd6b64dc-7005-4970-b4c4-3508922be924",
+        "created_at": "2026-11-11T17:05:34.789434+00:00",
+        "updated_at": "2026-11-11T17:05:34.789434+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2014-12-31",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": {
+        "announced_date": null,
+        "checked_at": "2026-11-15",
+        "note_en": "Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting. Review2026-11-15: issuer timeline establishes2014award year only; no public announcement day established. PreviousDecember31placeholder removed; 2014awardyear and historicalpredecessor attribution remain in this note. No change to5000USD grant amount."
+      },
+      "reason": "Neither currentissuer2014timeline nor2024CEOreport establishes2014-12-31announcementdate; unknown date mustbeNULL.",
+      "evidence": [
+        {
+          "url": "https://archerfrs.com/about-us.html",
+          "published_date": null,
+          "note": "Originaltimeline identifies2014awardyear, notannouncementdate."
+        }
+      ],
+      "reversal": {
+        "announced_date": "2014-12-31",
+        "note_en": "Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting.",
+        "checked_at": "2026-11-11"
+      },
+      "expected_after": {
+        "id": "6d38fa66-7d4e-49f4-85ab-dac9ffb980d3",
+        "stage": "Grant",
+        "amount": 5000,
+        "note_en": "Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting. Review2026-11-15: issuer timeline establishes2014award year only; no public announcement day established. PreviousDecember31placeholder removed; 2014awardyear and historicalpredecessor attribution remain in this note. No change to5000USD grant amount.",
+        "currency": "USD",
+        "round_key": "archer-first-response-systems-genivia-grant-2014",
+        "checked_at": "2026-11-15",
+        "company_id": "dd6b64dc-7005-4970-b4c4-3508922be924",
+        "created_at": "2026-11-11T17:05:34.789434+00:00",
+        "updated_at": "2026-11-11T17:05:34.789434+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": null,
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    }
+  ],
+  "forward_sql": "DO $reviewed_correction$ DECLARE observed jsonb; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='6d38fa66-7d4e-49f4-85ab-dac9ffb980d3'::uuid FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"6d38fa66-7d4e-49f4-85ab-dac9ffb980d3\",\"stage\":\"Grant\",\"amount\":5000,\"note_en\":\"Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting.\",\"currency\":\"USD\",\"round_key\":\"archer-first-response-systems-genivia-grant-2014\",\"checked_at\":\"2026-11-11\",\"company_id\":\"dd6b64dc-7005-4970-b4c4-3508922be924\",\"created_at\":\"2026-11-11T17:05:34.789434+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2014-12-31\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"6d38fa66-7d4e-49f4-85ab-dac9ffb980d3\",\"stage\":\"Grant\",\"amount\":5000,\"note_en\":\"Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting. Review2026-11-15: issuer timeline establishes2014award year only; no public announcement day established. PreviousDecember31placeholder removed; 2014awardyear and historicalpredecessor attribution remain in this note. No change to5000USD grant amount.\",\"currency\":\"USD\",\"round_key\":\"archer-first-response-systems-genivia-grant-2014\",\"checked_at\":\"2026-11-15\",\"company_id\":\"dd6b64dc-7005-4970-b4c4-3508922be924\",\"created_at\":\"2026-11-11T17:05:34.789434+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":null,\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Archer date correction: expected-old/current guard failed'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"6d38fa66-7d4e-49f4-85ab-dac9ffb980d3\",\"stage\":\"Grant\",\"amount\":5000,\"note_en\":\"Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting. Review2026-11-15: issuer timeline establishes2014award year only; no public announcement day established. PreviousDecember31placeholder removed; 2014awardyear and historicalpredecessor attribution remain in this note. No change to5000USD grant amount.\",\"currency\":\"USD\",\"round_key\":\"archer-first-response-systems-genivia-grant-2014\",\"checked_at\":\"2026-11-15\",\"company_id\":\"dd6b64dc-7005-4970-b4c4-3508922be924\",\"created_at\":\"2026-11-11T17:05:34.789434+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":null,\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN UPDATE public.company_funding_rounds SET announced_date=NULL,checked_at='2026-11-15',note_en='Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting. Review2026-11-15: issuer timeline establishes2014award year only; no public announcement day established. PreviousDecember31placeholder removed; 2014awardyear and historicalpredecessor attribution remain in this note. No change to5000USD grant amount.',updated_at=now() WHERE id='6d38fa66-7d4e-49f4-85ab-dac9ffb980d3'::uuid; END IF; END $reviewed_correction$;",
+  "reversal_sql": "DO $reviewed_correction$ DECLARE observed jsonb; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='6d38fa66-7d4e-49f4-85ab-dac9ffb980d3'::uuid FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"6d38fa66-7d4e-49f4-85ab-dac9ffb980d3\",\"stage\":\"Grant\",\"amount\":5000,\"note_en\":\"Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting. Review2026-11-15: issuer timeline establishes2014award year only; no public announcement day established. PreviousDecember31placeholder removed; 2014awardyear and historicalpredecessor attribution remain in this note. No change to5000USD grant amount.\",\"currency\":\"USD\",\"round_key\":\"archer-first-response-systems-genivia-grant-2014\",\"checked_at\":\"2026-11-15\",\"company_id\":\"dd6b64dc-7005-4970-b4c4-3508922be924\",\"created_at\":\"2026-11-11T17:05:34.789434+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":null,\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"6d38fa66-7d4e-49f4-85ab-dac9ffb980d3\",\"stage\":\"Grant\",\"amount\":5000,\"note_en\":\"Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting.\",\"currency\":\"USD\",\"round_key\":\"archer-first-response-systems-genivia-grant-2014\",\"checked_at\":\"2026-11-11\",\"company_id\":\"dd6b64dc-7005-4970-b4c4-3508922be924\",\"created_at\":\"2026-11-11T17:05:34.789434+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2014-12-31\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Archer date reversal: expected-old/current guard failed'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"6d38fa66-7d4e-49f4-85ab-dac9ffb980d3\",\"stage\":\"Grant\",\"amount\":5000,\"note_en\":\"Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting.\",\"currency\":\"USD\",\"round_key\":\"archer-first-response-systems-genivia-grant-2014\",\"checked_at\":\"2026-11-11\",\"company_id\":\"dd6b64dc-7005-4970-b4c4-3508922be924\",\"created_at\":\"2026-11-11T17:05:34.789434+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2014-12-31\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN UPDATE public.company_funding_rounds SET announced_date='2014-12-31',checked_at='2026-11-11',note_en='Issuer: Archer First Response Systems LLC (Florida entity L14000044515; historical predecessor, later Fourth Wall Ventures LLC). Amount basis: exact_per_contemporaneous-business-history_reporting.',updated_at=now() WHERE id='6d38fa66-7d4e-49f4-85ab-dac9ffb980d3'::uuid; END IF; END $reviewed_correction$;"
+}

@@ -1,0 +1,114 @@
+{
+  "status": "source_prepared_not_applied",
+  "checked_at": "2026-11-15",
+  "group_a": {
+    "company_slug": "atos",
+    "table": "company_funding_rounds",
+    "id": "7f4f936f-9ed5-4959-a721-a0e526c099b6",
+    "expected_before": {
+      "id": "7f4f936f-9ed5-4959-a721-a0e526c099b6",
+      "company_id": "65c7da7b-8de0-4f35-837f-f1b4e97d0ab2",
+      "round_key": "atos-2024-rights-issue",
+      "stage": "Rights Issue",
+      "financing_type": "debt",
+      "announced_date": "2024-12-10",
+      "amount": "233332768.4985",
+      "currency": "EUR",
+      "amount_basis": "closed_amount",
+      "closing_status": "closed",
+      "note_en": "Issuer: Atos SE. Amount basis: subscription amount including issue premium; approximately EUR 143m cash and EUR 90m debt equitization. The gross subscribed amount is not all new cash.",
+      "publication_status": "approved",
+      "checked_at": "2026-11-11",
+      "created_at": "2026-11-11 18:58:13.873699+00",
+      "updated_at": "2026-11-11 18:58:13.873699+00",
+      "record_kind": "round",
+      "parent_round_id": null,
+      "amount_qualifier": "approximate"
+    },
+    "changed_fields": {
+      "financing_type": "equity"
+    },
+    "reason": "Issuer original describes capital increase by subscription for new shares, paid in cash and debt offset. Current debt category misstates the instrument. This is equity issuance with mixed consideration, not a new borrowing. Requires root reviewed expected-old guard/reversal tests before applying.",
+    "evidence": [
+      {
+        "url": "https://www.atosgroup.com/en/press/atos-opens-a-new-chapter-with-the-successful-closing-of-its-financial-restructuring",
+        "published_date": "2024-12-19",
+        "note": "Rights issue settled10December,143mcash+90mequitization; no amount/date changes proposed."
+      }
+    ],
+    "reversal": {
+      "financing_type": "debt"
+    },
+    "status": "prepared_not_applied"
+  },
+  "group_b": {
+    "status": "prepared_not_applied",
+    "checked_at": "2026-11-15",
+    "proposals": [
+      {
+        "company_slug": "avolon",
+        "id": "6f0e489c-22a7-424a-bbf0-81476c3a7e3d",
+        "expected_before": {
+          "id": "6f0e489c-22a7-424a-bbf0-81476c3a7e3d",
+          "company_id": "ec8f8da3-9146-42b7-ba13-8e40c43f6cc1",
+          "round_key": "2026-03-samurai-loan-facility",
+          "stage": "Debt",
+          "financing_type": "debt",
+          "announced_date": "2026-03-04",
+          "amount": "420000000",
+          "currency": "USD",
+          "amount_basis": "closed_amount",
+          "closing_status": "closed",
+          "note_en": "Issuer: Avolon Holdings Limited.",
+          "publication_status": "approved",
+          "checked_at": "2026-11-11",
+          "created_at": "2026-11-11 20:15:05.011456+00",
+          "updated_at": "2026-11-11 20:15:05.011456+00",
+          "record_kind": "credit_facility",
+          "parent_round_id": null,
+          "amount_qualifier": "approximate"
+        },
+        "proposal": "Reviewmixedoriginalcurrencyrepresentation:420mUSDheadlineisapproximateUSD-equivalentaggregate, notoriginalUSDonlyproceeds. Originaltranches c346mUSD and11.7bnJPY. Consideramount/currencyNULLwithbothtranchesandtranslatedheadlinepreservedinnotesuntilmulticurrencystructurecanrepresentwithoutdoublecount. Noadditionaleventorautomaticconversion.",
+        "source_url": "https://avolon.aero/newsrooms/avolon-raises-us420million-through-inaugural-samurai-loan-facility"
+      },
+      {
+        "company_slug": "avolon",
+        "id": "edb823d2-1407-469e-909e-dc9e413b7904",
+        "expected_before": {
+          "id": "edb823d2-1407-469e-909e-dc9e413b7904",
+          "company_id": "ec8f8da3-9146-42b7-ba13-8e40c43f6cc1",
+          "round_key": "2026-02-senior-unsecured-notes",
+          "stage": "Debt",
+          "financing_type": "debt",
+          "announced_date": "2026-02-23",
+          "amount": "1500000000",
+          "currency": "USD",
+          "amount_basis": "closed_amount",
+          "closing_status": "closed",
+          "note_en": "Issuer: Avolon Holdings Funding Limited.",
+          "publication_status": "approved",
+          "checked_at": "2026-11-11",
+          "created_at": "2026-11-11 20:15:05.011456+00",
+          "updated_at": "2026-11-11 20:15:05.011456+00",
+          "record_kind": "round",
+          "parent_round_id": null,
+          "amount_qualifier": "exact"
+        },
+        "proposal": "Changeannounced_date2026-02-23to2026-02-18(publicpricingdate), preservingactualissuer/amount andnotesclosingstatusuntilexactclosurecorroboration. Feb23wasexpectedclosedate, notpublicannouncement.",
+        "source_url": "https://www.avolon.aero/newsrooms/avolon-announces-pricing-of-senior-unsecured-notes"
+      }
+    ]
+  },
+  "group_d": [
+    {
+      "company_slug": "ballistic-defense-system",
+      "existing_round_key": "founder-capital-through-2026",
+      "status": "prepared_source_conflict_not_applied",
+      "reason": "ExistingexactfounderUSD1.15m conflictswithoriginalCEOlessthan1.15mdevelopmentcostandpublicsupportacknowledgement; resolvecapitalversusexpenditureperimeterbeforeexpected-old/reversalcorrection. No automaticupdateoradditionalcostevent.",
+      "evidence": [
+        "https://www.linkedin.com/posts/fahd-laamoumi_morocco-madeinmorocco-defensetech-activity-7509978752676675584-TGyb",
+        "https://www.moroccoworldnews.com/2026/09/340179/moroccos-ballistic-defense-system-builds-a-drone-that-doesnt-need-gps/"
+      ]
+    }
+  ]
+}
