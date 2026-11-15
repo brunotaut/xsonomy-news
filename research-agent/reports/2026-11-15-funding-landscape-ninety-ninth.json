@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T05:45:17.204Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-ninety-ninth.json",
@@ -54,13 +54,25 @@
     "queue_dispositions_applied": 24,
     "reviewed_existing_fact_corrections": 4,
     "new_prepared_correction_proposals": 2,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 4563,
     "db_approved_events": 4548,
     "db_round_participations": 6393,
     "db_investor_profiles": 3715,
     "db_source_reconciliation_companies": 1317,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 5,
+    "clickable_generic_company_links_verified": 5,
+    "active_minutes": 17.15,
+    "checked_identities_per_hour": 94.5,
+    "new_queue_identities_per_hour": 84,
+    "completed_reviews_per_hour": 21,
+    "timing_scope": "Elapsed single writer lease covering24 new queue identities in four frozen read-only groups plus3 prepared company checks. Includes122 group queries, one later alias query and4 root queries, original-source issuer/currency/date/instrument/role checks, seeded combined guard/reversal/late-conflict tests, production rollback with four original row snapshots restored, one atomic import, exact fact/source/correction audits, prior-data hashes, idempotent rollback replay, durable readbacks, successful catalogue build, both fresh live datasets and landscape HTTP200. Six bounded closures and18 source holds. No concurrency speedup or ETA claimed."
   },
   "production_before": {
     "events": 4536,
@@ -1557,7 +1569,13 @@
       "Prepared Atos/Avolon snapshots semantically match current typed rows; numeric/timestamp serialization normalized without accepting field drift.",
       "Two valid corroboration sources appended to corrected events. Reversal restores reviewed fields and retains evidence; no record deletion.",
       "Seven Blue Force SBIR contracts remain explicit non-equity R&D contract disclosures; Boeing replacement facilities are capacity, not additive cash."
-    ]
+    ],
+    "live_generic_entry_verification": {
+      "entries": 5,
+      "source_urls": 5,
+      "clickable_company_links": 5,
+      "unlinked": []
+    }
   },
   "publication_scope": {
     "current_manifest_event_rows": 27,
@@ -1844,6 +1862,46 @@
   ],
   "programme_complete": false,
   "publication": {
-    "status": "awaiting_catalogue_trigger"
-  }
+    "status": "verified",
+    "checked_at": "2026-11-15T06:02:26.260Z",
+    "verified_at": "2026-11-15T06:02:26.260Z",
+    "catalogue_commit": "4ffa1e286522692c22b8b579a1d5272c9bde5393",
+    "source_commit": "f4bee43aed86f2af76fde7a5bb5749e612354418",
+    "workflow_run": {
+      "id": 43683411964,
+      "head": "4ffa1e286522692c22b8b579a1d5272c9bde5393",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43683411964"
+    },
+    "report": "research-agent/reports/2026-11-15-funding-landscape-ninety-ninth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-ninety-ninth.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-ninety-ninth-reviewed-corrections.json",
+    "generated_at": "2026-11-15T06:00:39.382Z",
+    "investor_generated_at": "2026-11-15T06:00:43.647Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3706,
+    "portfolio_relationships": 725,
+    "expected_profiles": 40,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 5,
+    "generic_portfolio_entries_verified": 5,
+    "clickable_company_links_verified": 5,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 41,
+    "manifest_generic_relationship_matches": 5,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 27,
+    "current_manifest_live_matches": 0,
+    "reviewed_identities_in_european_map": [],
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "DB3715 profiles versus live3706 reflects nine existing anonymous exclusions; DB728 generic relationships versus live725 reflects three prior exclusions. All40 referenced profiles,41 participant source URLs and5 generic entries/source URLs/clickable company links verified. New financing targets and corrected companies are outside the published European map; no geography or publication gates changed. Corrected facts were audited exactly in the database."
+  },
+  "completed_at": "2026-11-15T06:02:26.260Z"
 }
