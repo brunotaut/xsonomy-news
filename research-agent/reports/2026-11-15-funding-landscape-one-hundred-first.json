@@ -1,0 +1,1604 @@
+{
+  "status": "imported_publication_pending",
+  "checked_at": "2026-11-15",
+  "started_at": "2026-11-15T07:48:58.560Z",
+  "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-first.json",
+  "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-first-reviewed-corrections.json",
+  "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-first-source-ledger.json",
+  "metrics": {
+    "parallel_read_only_groups": 4,
+    "identities_checked": 25,
+    "new_queue_identities_checked": 24,
+    "prepared_identity_rechecked": 1,
+    "additional_alias_database_identity_contexts_checked": 1,
+    "newly_completed_bounded_reviews": 3,
+    "new_or_retained_partial": 21,
+    "new_approved_events": 37,
+    "new_round_participations": 26,
+    "new_manifest_source_rows": 53,
+    "new_existing_event_corroboration_sources": 3,
+    "new_source_rows": 56,
+    "new_generic_portfolio_relationships": 0,
+    "new_companies_with_events": 10,
+    "new_investor_profiles": 3,
+    "new_coverage_rows": 0,
+    "group_search_queries_executed": 180,
+    "post_freeze_metadata_search_queries": 3,
+    "root_additional_search_queries": 4,
+    "search_queries_executed": 187,
+    "per_company_search_ledger_entries": 180,
+    "source_ledger_entries": 129,
+    "root_primary_company_source_pages": 8,
+    "root_sec_metadata_pages_checked": 2,
+    "all_four_final_freezes_confirmed_before_consolidation": true,
+    "frozen_source_hashes_unchanged": true,
+    "local_postgresql_tests_passed": true,
+    "combined_event_participant_fullrow_guards_reversal_and_late_failure_tests_passed": true,
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "atomic_import_invocations": 1,
+    "post_import_idempotency_rehearsal_passed": true,
+    "curated_profile_hash_preserved": true,
+    "all_prior_uncorrected_events_links_sources_hashes_preserved": true,
+    "old_selected_uncorrected_rounds_exactly_preserved": 55,
+    "selected_legacy_relationships_exactly_preserved": 12,
+    "company_metadata_hashes_preserved": 25,
+    "event_matches": 37,
+    "mismatched_facts": 0,
+    "participant_matches": 26,
+    "source_matches": 53,
+    "relationship_matches": 0,
+    "missing_link_sources": 0,
+    "event_correction_matches": 3,
+    "participant_correction_matches": 3,
+    "added_evidence_source_matches": 3,
+    "research_rows": 1319,
+    "partial_rows": 1319,
+    "new_exact_name_duplicate_groups": 0,
+    "queue_dispositions_applied": 24,
+    "reviewed_existing_fact_corrections": 3,
+    "reviewed_existing_participation_corrections": 3,
+    "new_prepared_reconciliation_groups": 11,
+    "current_manifest_publication_verified": false,
+    "db_total_events": 4633,
+    "db_approved_events": 4618,
+    "db_round_participations": 6443,
+    "db_investor_profiles": 3726,
+    "db_source_reconciliation_companies": 1319,
+    "concurrency_speedup_claimed": false
+  },
+  "production_before": {
+    "events": 4596,
+    "approved": 4581,
+    "links": 6417,
+    "sources": 6300,
+    "profiles": 3723,
+    "relationships": 734,
+    "covered": 1319
+  },
+  "production_after": {
+    "links": 6443,
+    "events": 4633,
+    "covered": 1319,
+    "sources": 6356,
+    "approved": 4618,
+    "profiles": 3726,
+    "relationships": 734
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1287,
+    "source_review_partial": 1277,
+    "queued": 0
+  },
+  "per_company": [
+    {
+      "id": "fd077f5a-4744-4172-a4d2-898a90bbd008",
+      "slug": "china-electronics-technology-group-corporation",
+      "name": "China Electronics Technology Group Corporation",
+      "priority_group": "2",
+      "priority": "100",
+      "website": "https://www.cetc.com.cn",
+      "hq_country": "China",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 2,
+      "sources_checked": [
+        {
+          "url": "https://static.cninfo.com.cn/finalpage/2023-08-31/1217733163.PDF",
+          "published_date": "2023-08-31",
+          "disposition": "Original issuer report explicitly bridges CETC acronym/full Englishname/www.cetc.com.cn and parent legal issuer; verifies112969 and185016 bonds."
+        },
+        {
+          "url": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2023-06-30/185016_20230630_PCR1.pdf",
+          "published_date": null,
+          "disposition": "Canonical cetc run100 already verified same19中电科 bond; reused audit, not fresh source retrieval."
+        }
+      ],
+      "evidence_note": "CETC full-name identity is the same parent legal/economic issuer as already-reviewed canonicalcetc. Both long-name bond rows overlap canonical events; no new round cloned.",
+      "hold_note": "Guarded duplicate retirement proposal only; no company metadata merge. Further parent history remains partial; underwriters not inferred investors.",
+      "searches_checked": [
+        "site.cetc.com.cn 中国电子科技集团有限公司 债券 2026 2025 融资",
+        "\"中国电子科技集团有限公司\" \"19中电科\" \"21电科01\""
+      ]
+    },
+    {
+      "id": "e7d34b7e-e6c6-4b0c-97b6-034d2053dd64",
+      "slug": "china-state-shipbuilding-corporation",
+      "name": "China State Shipbuilding Corporation",
+      "priority_group": "2",
+      "priority": "100",
+      "website": "https://www.cssc.net.cn",
+      "hq_country": "China",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "existing_event_count": 2,
+      "sources_checked": [
+        {
+          "url": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2025-10-24/243994_20251024_KFM5.pdf",
+          "published_date": "2025-10-24",
+          "disposition": "Original issuance-results confirms CNY2bn closedK1 and zero unissuedK2."
+        },
+        {
+          "url": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2025-11-19/244291_20251119_GG1K.pdf",
+          "published_date": "2025-11-19",
+          "disposition": "Original earlier parent prospectus; annualreport confirms issued2bn."
+        },
+        {
+          "url": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2026-04-30/244952_20260430_N3HW.pdf",
+          "published_date": "2026-04-30",
+          "disposition": "Original annualreport distinguishes parent issuer and two2025 plus two2026 original debt issues."
+        },
+        {
+          "url": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2026-02-06/244598_20260206_S8BR.pdf",
+          "published_date": "2026-02-06",
+          "disposition": "Original issuance results corrects laterJuly recap chronology: issue closed6February2026."
+        },
+        {
+          "url": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2026-04-03/244952_20260403_2JFC.pdf",
+          "published_date": "2026-04-03",
+          "disposition": "Original issuance results corrects laterJuly recap chronology: issue closed3April2026."
+        },
+        {
+          "url": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2026-06-02/245381_20260602_A9MU.pdf",
+          "published_date": "2026-06-02",
+          "disposition": "26K3 original announced up-to2bn offering; no retrieved finalresult, held."
+        },
+        {
+          "url": "https://aureliandataservices.com/alts?btype=%E5%85%AC%E5%8F%B8%E5%80%BA%E5%88%B8&dir=desc&per=100&sort=code",
+          "published_date": null,
+          "disposition": "26K4 code246399 discovery only, no original terms/closedsize verified."
+        }
+      ],
+      "evidence_note": "Fresh original exchange research verifies two earlier parent company bonds. Two existing2026 events preserved pending separately proposed date correction.",
+      "hold_note": "26K3 announced offering and26K4 discovery remain held pending final original issuance documentation; no subsidiary bonds, shelf capacity or zero-size25K2 imported.",
+      "searches_checked": [
+        "site.cssc.net.cn 2026 第二期 科技创新 公司债券 20亿元",
+        "\"中国船舶集团有限公司\" \"2026\" \"第二期\" 债券 20亿元",
+        "\"中国船舶集团有限公司\" \"2026\" \"第三期\" 公司债券",
+        "\"26船舶K3\" \"发行结果\"",
+        "\"中国船舶集团有限公司\" \"2026\" \"第四期\" 债券",
+        "\"26船舶K3\" \"20\" \"发行\"",
+        "\"26船舶K4\" \"发行结果\"",
+        "\"25船舶K1\" \"发行金额\"",
+        "\"25船舶K3\" \"发行金额\"",
+        "site.sse.com.cn \"26船舶K3\" \"实际发行\"",
+        "site.sse.com.cn \"26船舶K4\"",
+        "site.sse.com.cn \"25 船舶 K1\" \"发行金额\"",
+        "\"26船舶K3\" \"发行结果公告\"",
+        "\"26船舶K4\" \"246399\"",
+        "\"中国船舶集团有限公司\" \"2025\" \"第二期\" \"发行结果公告\"",
+        "\"中国船舶集团有限公司2026年面向专业投资者公开发行科技创新公司债券（第三期）发行结果公告\"",
+        "\"245381\" \"实际发行规模\"",
+        "\"246399\" \"中国船舶\" \"发行\"",
+        "\"中国船舶集团有限公司\" \"2026\" \"半年度报告\" \"26\"",
+        "\"26 船舶 K3\" \"实际\"",
+        "\"26 船舶 K4\" \"公告\""
+      ]
+    },
+    {
+      "id": "203e3823-25b0-458f-8b1d-d0387cc9ed8b",
+      "slug": "cis",
+      "name": "CiS",
+      "priority_group": "2",
+      "priority": "100",
+      "website": null,
+      "hq_country": "Germany",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 2,
+      "relationship_count": 0,
+      "existing_event_count": 3,
+      "sources_checked": [
+        {
+          "url": "https://cis-rostock.de/impressum/",
+          "published_date": null,
+          "disposition": "Issuer identity HRB325 Rostock, TomKaufmann, Bentwisch."
+        },
+        {
+          "url": "https://www.cis-rostock.de/forschung/forschungsprojekte/",
+          "published_date": null,
+          "disposition": "Own funded research subprojects; two EFRE grant disclosures imported with no invented financial details."
+        },
+        {
+          "url": "https://www.cis-rostock.de/uploads/file/plakat_cis_rotodrone(1).pdf",
+          "published_date": null,
+          "disposition": "Original EU/EFRE cofunding notice, no amount/date."
+        },
+        {
+          "url": "https://www.cis-rostock.de/uploads/file/plakat_minidrohnen.pdf",
+          "published_date": null,
+          "disposition": "Original EU/EFRE feasibilitystudy cofunding notice, no amount/date."
+        },
+        {
+          "url": "https://enargus.de/pub/bscw.cgi/?id=10536499&op=enargus.eps2&q=ISC+Inspection+GmbH&s=5&v=10",
+          "published_date": null,
+          "disposition": "LoCA396941.49EUR is approved sum;2022-07-01 is project-period start, not established announcement or cash close."
+        },
+        {
+          "url": "https://biooekonomie.de/service-infothek/projektdatenbank/3368/detail/2",
+          "published_date": null,
+          "disposition": "PHLIP260975EUR public grant;2020-01-01 is project start, not announcement or cash close."
+        },
+        {
+          "url": "https://biooekonomie.de/service-infothek/projektdatenbank/4715/detail/2",
+          "published_date": null,
+          "disposition": "PriorCorona-PRO source attempted twice but inaccessible, not newly verified."
+        },
+        {
+          "url": "https://www.cis-rostock.de/aktuell/neue-geschaftsleitung.html",
+          "published_date": "2022-08-01",
+          "disposition": "2022 ownershiphandover, no primary issuer financing/consideration disclosed."
+        },
+        {
+          "url": "https://cis-rostock.de/uploads/file/avaRES_Onepager_Projektvorstellung.pdf",
+          "published_date": null,
+          "disposition": "Consortium grantIDs13N17032–35; own award allocation, amount and preciseevent chronology held."
+        },
+        {
+          "url": "https://www.zim.de/ZIM/Redaktion/DE/Publikationen/Erfolgsbeispiele/Einzelprojekte/077-3d-inspektion-mit-drohnen.pdf?__blob=publicationFile&v=5",
+          "published_date": null,
+          "disposition": "Govt ZIM earlier funding candidate;429 on full retrieval; no new grant imported."
+        }
+      ],
+      "evidence_note": "CiS exactissuer bridged via imprint and ORKA product. Two own EFRE-funded research disclosures added with amounts/currencies/dates unknown; grants kept separate fromequity.",
+      "hold_note": "Three prior grant dates/cash-close assertions need reconciliation; avaRES and earlierZIM exactissuer award data remain open. No private funding absence inferred.",
+      "searches_checked": [
+        "\"CiS\" \"mini-drone\" \"dock\" German",
+        "\"CiS\" \"mini-drone\" \"dock\"",
+        "\"CiS\" \"Tom Kaufmann\" funding investment ORKA",
+        "site.cis-rostock.de Förderung Projekt LoCA PHLIP Corona Finanzierung",
+        "site.cis-rostock.de \"Förder\"",
+        "\"CiS GmbH\" \"Förder\" \"LoCA\" \"Corona\"",
+        "\"CiS GmbH\" funding investment financing 2026 2025",
+        "\"CiS\" \"Corona-PRO\" \"192.470\"",
+        "\"CiS GmbH\" \"avaRes\" Förderung",
+        "\"CiS GmbH\" \"RoToDrone\" Förderung",
+        "\"CiS GmbH\" \"Miniaturdrohnen\" Förderung",
+        "\"13N17032\" \"CiS\"",
+        "\"13N17035\" \"CiS\"",
+        "\"CiS GmbH\" \"192470\" grant Corona",
+        "\"CiS GmbH\" \"ZIM\" \"Fördersumme\"",
+        "site.sifo.de avaRES \"Förderung\" \"2025\"",
+        "\"avaRES\" \"CiS\" Projekt Förderung Bundesministerium",
+        "\"CiS\" \"Miniaturdrohnen\" \"2026\" Förderung"
+      ]
+    },
+    {
+      "id": "a867a890-2b91-4c30-8f6c-b00e212cc226",
+      "slug": "claymore-industries",
+      "name": "Claymore Industries",
+      "priority_group": "2",
+      "priority": "100",
+      "website": null,
+      "hq_country": "United Kingdom",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 2,
+      "sources_checked": [
+        {
+          "url": "https://www.greenflag.vc/portfolio/claymore",
+          "published_date": null,
+          "disposition": "Original investor confirms Scotland company, first funding2026Q1 and followon2026Q3 already recorded; no new amount, exact day or security disclosed."
+        },
+        {
+          "url": "https://www.claymoreindustries.co.uk/",
+          "published_date": null,
+          "disposition": "Investor-linked issuer domain inaccessible in researchtool."
+        },
+        {
+          "url": "https://find-and-update.company-information.service.gov.uk/company/SC883495",
+          "published_date": null,
+          "disposition": "Official registry discovery corroborates ClaymoreIndustriesLimited; incorporation/sharecapital not counted as a funding round."
+        }
+      ],
+      "evidence_note": "Bounded broad, investor and issuer-domain review confirms both existing GreenFlag2026 investments and resolves Scotlandidentity; no distinct additional public financing verified.",
+      "hold_note": "Private history, individual contribution, exactdate, stage/security remain unknown; investor-linked issuer site fetch failed.",
+      "searches_checked": [
+        "\"Claymore Industries\" investment funding 2026 2025 Green Flag",
+        "\"Claymore Industries\" \"Green Flag\"",
+        "\"Claymore Industries\" funding investment 2026 Green Flag round"
+      ]
+    },
+    {
+      "id": "5395f987-672a-4950-a538-37654d547665",
+      "slug": "click-and-power",
+      "name": "Click & Power",
+      "priority_group": "2",
+      "priority": "100",
+      "website": null,
+      "hq_country": "Germany",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "sources_checked": [
+        {
+          "url": "https://i-hls.com/archives/137850",
+          "published_date": "2026-09-20",
+          "disposition": "Original catalogue article names Click&PowerGmbH and AKKUTrailer; product disclosure."
+        },
+        {
+          "url": "https://expo.exponaut.me/exhibitors/akkutrailer",
+          "published_date": null,
+          "disposition": "Exhibitor identifies GermanClick&Power and links akkutrailer.com."
+        },
+        {
+          "url": "https://akkutrailer.com/",
+          "published_date": null,
+          "disposition": "Original issuer explicitly says Click&Power is now AkkutrailerGmbH and carries the sameAKKUboard/trailer product."
+        },
+        {
+          "url": "https://akkutrailer.com/imprint",
+          "published_date": null,
+          "disposition": "Original imprint identifies AkkutrailerGmbH, Kaisersbach, HRB787015 Stuttgart; no funding disclosure."
+        }
+      ],
+      "evidence_note": "Bounded broad and originalissuer/exhibitor review resolves formerly uncertain entity to present AkkutrailerGmbH HRB787015; no source-supported financing event found.",
+      "hold_note": "Unknown privatefinancing is not zero. Namechange/product capabilities are not funding events; no repository/company metadata changed.",
+      "searches_checked": [
+        "\"Click & Power\" drone",
+        "\"Click & Power GmbH\" Finanzierung Investor Förderung",
+        "\"Click & Power\" \"GmbH\" AKKUboard",
+        "site.akkutrailer.com funding investment Förderung Impressum",
+        "site.akkutrailer.com \"Impressum\"",
+        "\"Akkutrailer GmbH\" Finanzierung Investment Förderung",
+        "\"Click & Power\" funding finance grant investment capital"
+      ]
+    },
+    {
+      "id": "b7eea0d4-fb63-4a15-86d3-ba1fb2290374",
+      "slug": "cmn",
+      "name": "CMN",
+      "priority_group": "2",
+      "priority": "100",
+      "website": "https://www.cmn-group.com",
+      "hq_country": "France",
+      "checked_at": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "sources_checked": [
+        {
+          "url": "https://www.cmn-group.com/",
+          "published_date": null,
+          "disposition": "Original shipyard explicitly identifies itself as part of CMNNAVAL; distinct economic/legal perimeter."
+        },
+        {
+          "url": "https://cmnnaval.com/wp-content/uploads/2025/08/CMN-NAVAL_Press-Release_20250731.pdf",
+          "published_date": "2025-07-31",
+          "disposition": "Original31July2025 release names CMNNAVALSA as borrower of85mEUR plus25mEURcreditline/factoring; CMN subsidiary benefits, borrower not transferred."
+        },
+        {
+          "url": "https://cmnnaval.com/shipbuilding/",
+          "published_date": null,
+          "disposition": "Original parent groupperimeter includesCMN Cherbourg and GermanNavalYards."
+        }
+      ],
+      "evidence_note": "Bounded broad and original shipyard/parent review resolves85mEUR2025 financing to CMNNAVALSA, not CMN shipyard; no separateissuer financing verified.",
+      "hold_note": "Parent85mEUR facility,additional25mEURline and unspecified factoring excluded from shipyard. Private funding unknown; no financing absence inferred.",
+      "searches_checked": [
+        "CMN funding investment Privinvest 2026 2025",
+        "\"CMN\" \"shipyard\" financing investment 2026 2025",
+        "\"CMN NAVAL Scales for Global Expansion\" financing",
+        "\"CMN\" \"financement\" \"85 millions\" \"2025\""
+      ]
+    },
+    {
+      "id": "073c81cf-696a-406d-9b85-3928d464ec30",
+      "slug": "cobham",
+      "name": "Cobham",
+      "website": "https://www.cobham.com",
+      "hq_country": "United Kingdom",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 2,
+      "searches_checked": [
+        "site.cobham.com financing loan 2025 2026 rights issue funding",
+        "site.cobham.com \"financing\" OR \"facility\" OR \"funding\" 2026 2025 2024",
+        "\"Cobham\" \"2015\" \"revolving credit\"",
+        "site:cobham.com \"2019\" \"USD\" \"revolving\"",
+        "site:cobham.com \"2017\" \"senior notes\" \"2015\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.cobham.com/wp-content/uploads/scheme-document.pdf",
+          "title": "Cobham-hosted Ultra scheme: AI Convoy acquisition facilities",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Borrowers include AI Convoy Luxembourg/Bidco; not safely assigned as Cobham Limited primary proceeds."
+        },
+        {
+          "url": "https://www.cobham.com/wp-content/uploads/2019-annual-report-and-financial-statements-of-cobham-limited-formerly-cobham-plc.pdf",
+          "title": "Cobham2019 audited original",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Fresh open failed502; indexed excerpt exposes historical debt and planned accession, insufficient for new issuer cash record."
+        }
+      ],
+      "evidence_note": "Fresh earlier/latest financing and issuer searches plus prior run27 audit recheck preserve the two2016/2017 rights issues and Advent ownership relationship. AI Convoy facilities remain outside directly attributed company proceeds.",
+      "hold_note": "Original2019 report fetch failed; own pre-take-private bank/notes history and exact accession/borrower mechanics need instrument-level review. A2024 annual report candidate concerns AI Convoy group and is not imported from a mirror."
+    },
+    {
+      "id": "fc9c167d-e4f3-4f4b-814a-2f33ac2b7874",
+      "slug": "cogito",
+      "name": "Cogito",
+      "website": "https://www.cogitocorp.com",
+      "hq_country": "United States",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 7,
+      "searches_checked": [
+        "site.cogitocorp.com funding investment 2025 2026 2024",
+        "site.cogitocorp.com funding financing 2024 2025 2026",
+        "site.cogitocorp.com \"funding\" OR \"financing\" OR \"investment\"",
+        "site.cogitocorp.com \"2023\" financing",
+        "site:cogitocorp.com \"funding\" \"2023\"",
+        "\"Cogito\" \"Verint\" acquisition 2025 2026",
+        "site:sec.gov \"Cogito Corporation\" \"2021\" \"D\" \"17\"",
+        "site:sec.gov \"Cogito Corporation\" \"2022\" \"2020\"",
+        "site:openviewpartners.com Cogito investment 2016 2018",
+        "\"Cogito Corporation\" \"Form D\" 2021",
+        "\"Cogito Corporation\" \"2021\" \"17,405\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.cogitocorp.com/",
+          "title": "Cogito issuer website",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Redirects to Verint, consistent with asset acquisition; no financing facts inferred."
+        },
+        {
+          "url": "https://openviewpartners.com/blog/openview-cogito/",
+          "title": "OpenView original investor announcement",
+          "published_date": "2016-11-18",
+          "source_type": "investor_announcement",
+          "disposition": "Search index preserves announcement, but fresh open redirects to investor home; existing fact not expanded."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1166388/000116638825000014/vrnt-20250131.htm",
+          "title": "Verint original10-K: Cogito asset acquisition",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "October11 2024 assets acquired; cash/contingent seller consideration excluded from financing."
+        }
+      ],
+      "evidence_note": "Earlier/latest and investor searches confirm acquired Boston behavioral AI identity; seven existing2015-2023 events preserved. Verint asset purchase and contingent seller/employee payments are not equity financing proceeds.",
+      "hold_note": "Earlier FormD and2020-2022 amendment candidates remain unreconciled from direct issuer filings; no additive17.4m or other aggregator amounts imported.2023 financing amount stays undisclosed."
+    },
+    {
+      "id": "0bc08f96-26ec-4ec9-bdd1-9d24e943e865",
+      "slug": "cogniteam",
+      "name": "Cogniteam",
+      "website": null,
+      "hq_country": "Israel",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 2,
+      "searches_checked": [
+        "Cogniteam funding investment 2025 2026 2023 official",
+        "Cogniteam funding investment 2023 2024 2025 2026",
+        "site.cogniteam.com funding investment 2023 2024 2025 2026",
+        "site:cogniteam.com \"funding\"",
+        "\"Cogniteam\" \"3.3\" funding 2023",
+        "site:cogniteam.com \"Seabarn\" OR \"Panthera\" OR \"4.2\" OR \"5.6\"",
+        "\"Cogniteam\" \"Panthera\" funding",
+        "site:cogniteam.com \"4.2M\" OR \"5.6M\" OR \"funding\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.cogniteam.com/",
+          "title": "Cogniteam current original issuer site",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Nimbus robotics identity confirmed; partner badges are not investors."
+        },
+        {
+          "url": "https://www.cogniteam.com/resources/news/",
+          "title": "Cogniteam original news index",
+          "published_date": null,
+          "source_type": "company_announcement",
+          "disposition": "Inspected issuer news shows technical partnerships; no own2023 round substantiation."
+        },
+        {
+          "url": "https://app.dealroom.co/companies/cogniteam",
+          "title": "Cogniteam secondary2023 round candidate",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "USD3.3m October2023 candidate only; no issuer/investor original located."
+        },
+        {
+          "url": "https://finder.startupnationcentral.org/company_page/cogniteam",
+          "title": "SNC exact-identity cross-check",
+          "published_date": null,
+          "source_type": "third_party_report",
+          "disposition": "Lists2021/2022 rounds and2025/2026 Innoviz technical partnerships; funding databases conflict."
+        }
+      ],
+      "evidence_note": "Fresh broad, issuer, exact investor-name and latest-year searches rechecked existing2021 seed/2022 SeriesA. No new approved round is claimed.",
+      "hold_note": "USD3.3m2023 candidate remains held because only conflicting secondary entries were found. Seaborn Networks and Seabarn Management must not be conflated; existing curated participants retained pending originalparty confirmation."
+    },
+    {
+      "id": "204358e1-6b06-4f23-8cbd-17c8b321f67f",
+      "slug": "cognyte-formerly-verint",
+      "name": "Cognyte (formerly Verint)",
+      "website": "https://www.cognyte.com",
+      "hq_country": "Israel",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 1,
+      "relationship_count": 0,
+      "existing_event_count": 1,
+      "searches_checked": [
+        "site.cognyte.com credit facility 2026 2025 loan",
+        "site.cognyte.com \"2026\" \"credit\"",
+        "site:cognyte.com investors \"2026\" \"credit\" \"September\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1824814/000182481425000058/a6-kdec2025.htm",
+          "title": "Cognyte Form6-K: amended Hapoalim and Leumi credit facilities",
+          "published_date": "2025-12-30",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://cognyte.gcs-web.com/static-files/ba899535-46dd-44b0-a55d-9b59d5b989de",
+          "title": "Cognyte fiscal2026 Form20-F: undrawn credit facilities",
+          "published_date": "2026-03-25",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.cognyte.com/news/cognyte-reports-strong-second-quarter-results-with-accelerating-software-growth-and-expanding-profitability/",
+          "title": "Cognyte latest original results",
+          "published_date": "2026-09-09",
+          "source_type": "company_announcement",
+          "disposition": "Fresh latest issuer report checked; no new equity financing established."
+        }
+      ],
+      "evidence_note": "Direct2025 Form6-K verifies amended USD65m combined line with two named banks;2026 annual report confirms undrawn capacity. Added as explicit replacement-facility disclosure alongside existing2021 original, with no cash-receipt claim.",
+      "hold_note": "Historical2023 interest/draw/repaid timeline from earlier audit remains unresolved; no separate loan draw amount inferred. Spin-off share distribution was not a cash IPO."
+    },
+    {
+      "id": "24351dd9-bcfe-4c85-8b88-2623ae7abf30",
+      "slug": "coherent",
+      "name": "Coherent",
+      "website": "https://www.coherent.com",
+      "hq_country": "United States",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 7,
+      "relationship_count": 0,
+      "existing_event_count": 4,
+      "searches_checked": [
+        "site.coherent.com 2026 financing credit facility Bain 2021",
+        "site.ir.coherent.com \"Bain\" \"2021\" investment",
+        "site.ir.coherent.com \"2020\" \"offering\" \"convertible\"",
+        "site.ir.coherent.com \"2020\" \"460\" \"preferred\"",
+        "site.ir.coherent.com \"Bain\" \"1.8 billion\" \"2022\"",
+        "site:ir.coherent.com \"2020\" \"offering\" \"preferred\"",
+        "site:ir.coherent.com \"2022\" \"Bain\" \"1.4\"",
+        "\"Coherent\" \"September 26, 2025\" \"credit\"",
+        "site:baincapital.com \"II-VI\" \"$750\"",
+        "site:coherent.com \"July 7, 2020\" offering",
+        "\"II-VI\" \"Bain Capital\" \"March 31, 2021\"",
+        "site:coherent.com \"2020\" \"$920\" offerings",
+        "\"II-VI\" \"July 2, 2020\" \"priced\" offering",
+        "site:baincapital.com \"II-VI Incorporated\" investment"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.coherent.com/content/dam/coherent/site/en/documents/investors/annual-filings/2020/ii-vi-2020-annual-report.pdf",
+          "title": "II-VI fiscal2020 annual report: completed July2020 offerings",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://ir.coherent.com/static-files/fc2d3688-c95e-4572-9681-8b4e04d1654d",
+          "title": "II-VI fiscal2021 annual report: July2020 common and preferred offerings",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.coherent.com/content/dam/coherent/site/en/documents/investors/financial-releases/2021/june-9/ii-vi-20210609-bain-additional-equity-vf2.pdf",
+          "title": "II-VI original Bain preferred equity commitment update",
+          "published_date": "2021-06-09",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://ir.coherent.com/static-files/8ac23898-37c0-4118-b6a5-a22aad4fee28",
+          "title": "Coherent fiscal2023 Form10-K: completed preferred stock issuances",
+          "published_date": null,
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://ir.coherent.com/static-files/64441d0b-cef8-48e1-8e4d-d7817155e8af",
+          "title": "Coherent S-3: legal SeriesB-2 subscribing vehicles",
+          "published_date": "2025-12-16",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/820318/000119312525220656/d854664d8k.htm",
+          "title": "Coherent Form8-K: refinancing Amendments4 and5",
+          "published_date": "2025-09-26",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://ir.coherent.com/node/18426/xbrl-viewer",
+          "title": "Coherent November4 2026 Form10-Q: senior and subsidiary credit facilities",
+          "published_date": "2026-11-04",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Coherent-Announce-Strategic-Partnership-to-Develop-Optics-Technology-to-Scale-Next-Generation-Data-Center-Architecture/default.aspx",
+          "title": "NVIDIA original Coherent partnership announcement",
+          "published_date": "2026-03-02",
+          "source_type": "investor_announcement",
+          "disposition": "Latest strategic equity exists already; no duplicate."
+        }
+      ],
+      "evidence_note": "Current Coherent Corp. continues II-VI issuer. Added seven original-source events: separate2020 common/preferred offerings, two completed Bain preferred tranches with legal vehicles,2022 RCF and2025 TermA/RCF refinancing. Existing NVIDIA equity and original term facilities preserved.",
+      "hold_note": "Dense earlier debt history and2024 repricings remain to reconcile. August2026 approximatelyUSD950m foreign-subsidiary facility lacks exact borrower/original currency here and is not assigned to parent; SiC subsidiary equity also excluded. TermB-3 repricing and preferred conversions/resales create no additive company capital."
+    },
+    {
+      "id": "48388df4-3414-4d54-b0df-a3d11eb1fe8c",
+      "slug": "cohort",
+      "name": "Cohort",
+      "website": "https://www.cohortplc.com/",
+      "hq_country": "United Kingdom",
+      "status": "source_review_partial",
+      "checked_at": "2026-11-15",
+      "event_count": 2,
+      "relationship_count": 0,
+      "existing_event_count": 1,
+      "searches_checked": [
+        "site.cohortplc.com placing refinancing 2026 2025 funding",
+        "site.cohortplc.com \"2024\" \"placing\" \"40\"",
+        "site.cohortplc.com \"2026\" \"facility\" \"Lloyds\"",
+        "site.cohortplc.com \"Result of the Retail Offer\" \"2024\"",
+        "\"Cohort\" \"facility\" \"29 April 2026\"",
+        "\"Cohort\" \"2026\" \"£125m\" bank",
+        "\"Cohort\" \"banking facility\" \"AUD\" \"2026\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.investegate.co.uk/index.php/announcement/rns/cohort--chrt/result-of-the-placing/8564719",
+          "title": "Cohort issuer RNS: result of placing",
+          "published_date": "2024-11-21",
+          "source_type": "company_announcement"
+        },
+        {
+          "url": "https://www.investec.com/en_gb/deals/cohort-plc.html",
+          "title": "Investec transaction-party confirmation of Cohort GBP41m fundraises",
+          "published_date": "2024-11-28",
+          "source_type": "investor_announcement"
+        },
+        {
+          "url": "https://www.cohortplc.com/application/files/1417/8706/9655/Cohort_plc_Annual_Report_and_Accounts_2026-Interactive_UA_PDF-Final.pdf",
+          "title": "Cohort original2026 annual report: financing history and renewed RCF",
+          "published_date": null,
+          "source_type": "company_announcement"
+        }
+      ],
+      "evidence_note": "Added completed GBP41m2024 combined placing/retail fundraise and GBP125m2026 RCF capacity. Two offer components and aggregate are counted once. Existing2006 net IPO proceeds retained. Advisor and cash-deposit banks receive no unsupported investor/lender roles.",
+      "hold_note": "Historical facilities before2026 remain to audit. Original AUD/EUR term-loan principals require precise reconciliation before import; approximate sterling equivalents and uncommitted GBP50m accordion are not imported. Employee option exercises and acquisition prices are excluded."
+    },
+    {
+      "id": "533ac800-9dc3-4703-a95c-a3229b1d0eb7",
+      "slug": "colt",
+      "name": "Colt",
+      "website": null,
+      "publication_status": "live",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "existing_event_count": 2,
+      "searches_checked": [
+        "Colt financing loan equity investment 2026 2025 Colt Defense 2015 exit financing",
+        "\"Colt\" \"financing\" \"2015\" exit",
+        "\"Colt Defense\" \"2016\" \"$90 million\" facility",
+        "\"Colt\" \"2016\" \"financing\" Fidelity National original",
+        "\"Colt Defense\" \"January 13, 2016\" financing"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.willkie.com/news/2016/01/morgan-stanley-exit-loan-to-colt",
+          "published_date": "2016-01-15",
+          "disposition": "Original lender counsel confirms Colt Defense LLC USD90m facility and explicit Morgan Stanley Senior Funding lead-lender role. Source event-year inconsistency retained."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1512369/000110465915048873/a15-14899_18k.htm",
+          "published_date": "2015-06-30",
+          "disposition": "Existing DIP amounts verified: USD3.33m and USD6.67m approximately drawn by June26/25. June24 is legal agreement/report-earliest-event date; filing signed June30. Agents are not asserted lenders."
+        },
+        {
+          "url": "https://www.streetinsider.com/Press%2BReleases/Colt%2BDefense%2BEmerges%2BFrom%2BChapter%2B11%2BRestructuring/11218112.html",
+          "published_date": "2016-01-13",
+          "disposition": "Syndicated issuer release candidate reports USD50m new capital in2016 restructuring; not added to USD90m facility because overlap/instrument allocation unresolved."
+        }
+      ],
+      "evidence_note": "Existing 2015 DIP draws rechecked; a distinct USD90m senior exit facility is supported by lender counsel, with facility size distinguished from cash received. Broad and issuer/transaction-party searches covered earlier and latest public financing.",
+      "hold_note": "The Colt brand spans legal entities. Earlier 2009 notes, 2013 term debt, 2014–2015 amendments and 2016 new-capital allocation remain concrete reconciliation work. Counsel’s event-year typo and two existing DIP date proposals are preserved. The 2021 CZG acquisition price is not company funding."
+    },
+    {
+      "id": "7565994f-d835-4a9d-bb0a-438fb217a8a6",
+      "slug": "combat-vision",
+      "name": "ComBat Vision",
+      "website": "https://www.combat.ua",
+      "publication_status": "draft",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"ComBat Vision\" investment funding grant combat.ua",
+        "\"ComBat Vision\" funding investment grant",
+        "site:combat.ua інвестиції грант фінансування",
+        "site:combat.ua Brave1 grant",
+        "\"ComBat Vision\" \"BRAVE1\" grant",
+        "\"ComBat\" \"People’s Project\" funding",
+        "site:combat.vision \"grant\"",
+        "\"ComBat\" site:peoplesproject.com \"budget\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.combat.ua/",
+          "published_date": null,
+          "disposition": "Issuer product site matches CombatVision; no funding or legalrecipient details disclosed."
+        },
+        {
+          "url": "https://www.combat.vision/",
+          "published_date": null,
+          "disposition": "Same product site confirms issuer-brand continuity; no financing details."
+        },
+        {
+          "url": "https://www.linkedin.com/company/combat-vision",
+          "published_date": null,
+          "disposition": "Opened primary company page explicitly says supported by Brave1 grant program in KiteLink collaboration. Relative post dates only; grant recipient, cheque and legalissuer undisclosed; held."
+        },
+        {
+          "url": "https://www.peoplesproject.com/en/battlefield-management-system/",
+          "published_date": "2019-02-20",
+          "disposition": "Primary charitableproject ledger shows UAH1,053,518 donated againstUAH960,520 budget, updated2019-02-20. Hardware/software deployment campaign for militaryunits, not proven company investment; no company funding imported."
+        },
+        {
+          "url": "https://b1m.kcpn.info/combat-vision/",
+          "published_date": null,
+          "disposition": "Marketplace company/product listing candidate supports brand identification; marketplace participation not evidence of grant receipt."
+        }
+      ],
+      "evidence_note": "Primary issuer and social sources confirm a BRAVE1 grant-program support claim. No recipient legal entity, amount, day or investor role is invented. The People’s Project campaign is separated from issuer financing.",
+      "hold_note": "The draft publication gate is preserved. Resolve the recipient of the collaborative BRAVE1 grant and historical charitable hardware/software deployment campaign before representing corporate funding. No verified new round does not mean zero funding."
+    },
+    {
+      "id": "43081a28-8768-49f4-b942-5bf25f40ffa3",
+      "slug": "constellis",
+      "name": "Constellis",
+      "website": "https://www.constellis.com",
+      "publication_status": "live",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "existing_event_count": 2,
+      "searches_checked": [
+        "Constellis financing recapitalization 2026 2025 investment loans",
+        "site.constellis.com recapitalization 2024 2020 financing",
+        "\"Constellis\" financing recapitalization 2024 2020",
+        "site:constellis.com financing credit facility December 2019",
+        "\"Constellis\" \"2019\" \"credit\" financing",
+        "site:constellis.com \"110 million\"",
+        "\"Constellis\" \"110 million\" financing 2019 PRNewswire",
+        "site:constellis.com \"delayed-draw\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://constellis.com/constellis-announces-credit-agreement-amendments-and-maturity-extensions/",
+          "published_date": null,
+          "disposition": "Original issuer supports completed first/second lien extensions; no new cash assertion; page omits publication date."
+        },
+        {
+          "url": "https://www.akingump.com/en/insights/press-releases/akin-gump-advises-constellis-through-completion-of-debt-deleveraging-and-recapitalization",
+          "published_date": "2020-03-30",
+          "disposition": "Original transaction counsel corroborates existing 2020 debt-for-debt/equity recap, up toUSD50m new capital; USD1.1bn debt reduction is not funds raised."
+        },
+        {
+          "url": "https://constellis.com/constellis-holdings-llc-completes-a-recapitalization-transaction-with-existing-investors/",
+          "published_date": "2024-09-17",
+          "disposition": "Original exact-issuer2024 recap confirms new capital undisclosed; advisers not investors."
+        },
+        {
+          "url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/sourceId/11336723",
+          "published_date": null,
+          "disposition": "Primary ratings-page search snippet identifies late 2019 USD110m priority term facility; opened page body unavailable. Candidate held, no new fact imported."
+        },
+        {
+          "url": "https://constellis.com/our-history/",
+          "published_date": null,
+          "disposition": "Issuer timeline corroborates2020/2024 recapitalizations and Apollo acquisition ownership history; no acquisition consideration imported."
+        }
+      ],
+      "evidence_note": "Originals corroborate the existing 2020 and 2024 recapitalizations. Added an issuer-supported completed lien-maturity extension/exchange disclosure, with no new cash asserted.",
+      "hold_note": "The late-2019 USD110m delayed-draw priority facility remains held because the original ratings-page body was unavailable. Earlier acquisition financing and group-entity boundaries require original agreements. The existing up-to-USD50m disclosure is not replaced with cash received."
+    },
+    {
+      "id": "4a93ecaf-aaee-40cd-ab26-bac6d6cd6c17",
+      "slug": "continuous-composites",
+      "name": "Continuous Composites",
+      "website": null,
+      "publication_status": "live",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 11,
+      "relationship_count": 0,
+      "existing_event_count": 5,
+      "searches_checked": [
+        "Continuous Composites funding investment financing 2026 2025",
+        "site.continuouscomposites.com funding Series A Navy 2025 2026",
+        "site:continuouscomposites.com investment CC3D 2016 2018",
+        "\"Continuous Composites\" \"Sikorsky\" \"$25,000\"",
+        "site:continuouscomposites.com \"AFWERX Manufacturing Challenge\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.sbir.gov/awards/220078",
+          "published_date": null,
+          "disposition": "Exact-issuer original: FA8649-25-P-0510, award year 2025, USD1,245,037, Phase II (Direct to Phase II); award start 2025-09-29, not announcement date."
+        },
+        {
+          "url": "https://continuouscomposites.com/continuous-composites-awarded-1-25m-from-afwerx-manufacturing-challenge-to-advance-joining-methods-with-cf3d/",
+          "published_date": "2026-01-12",
+          "disposition": "Same SBIR event; issuer public release supplies announcement date and rounded headline, not an additional event."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/219919",
+          "published_date": null,
+          "disposition": "Exact-issuer original: W51701-25-C-0045, award year 2025, USD1,999,823, Phase II; award start 2024-11-12, not announcement date."
+        },
+        {
+          "url": "https://continuouscomposites.com/launched-effect-structures/",
+          "published_date": "2025-06-09",
+          "disposition": "Same SBIR event; issuer public release supplies announcement date and rounded headline, not an additional event."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/214571",
+          "published_date": null,
+          "disposition": "Exact-issuer original: FA2394-24-C-B044, award year 2024, USD1,899,999, Phase II TACFI; award start 2024-08-28, not announcement date."
+        },
+        {
+          "url": "https://continuouscomposites.com/tacfi-fea-tool-cf3d-composites/",
+          "published_date": "2025-08-11",
+          "disposition": "Same SBIR event; issuer public release supplies announcement date and rounded headline, not an additional event."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/214944",
+          "published_date": null,
+          "disposition": "Exact-issuer original: N68335-24-C-0129, award year 2024, USD139,119, Phase I; award start 2023-11-15, not announcement date."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/206683",
+          "published_date": null,
+          "disposition": "Exact-issuer original: N68335-23-C-0377, award year 2023, USD144,459, Phase I; award start 2023-07-17, not announcement date."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/205624",
+          "published_date": null,
+          "disposition": "Exact-issuer original: N68335-23-C-0623, award year 2023, USD144,651, Phase I; award start 2023-07-26, not announcement date."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/196496",
+          "published_date": null,
+          "disposition": "Exact-issuer original: 80NSSC22PA989, award year 2022, USD149,854, Phase I; award start 2022-07-20, not announcement date."
+        },
+        {
+          "url": "https://www.sbir.gov/awards/194506",
+          "published_date": null,
+          "disposition": "Exact-issuer original: FA8649-21-P-0924, award year 2021, USD749,995, Phase II (Direct to Phase II); award start 2021-03-11, not announcement date."
+        },
+        {
+          "url": "https://continuouscomposites.com/navy-multifunctional-uav-composite-structures/",
+          "published_date": "2026-08-30",
+          "disposition": "Verified distinct R&D programme; monetary amount undisclosed, contractual support separated from equity/grants."
+        },
+        {
+          "url": "https://continuouscomposites.com/continuous-composites-us-army-contract-cf3d-missile-manufacturing/",
+          "published_date": "2026-06-22",
+          "disposition": "Verified distinct R&D programme; monetary amount undisclosed, contractual support separated from equity/grants."
+        },
+        {
+          "url": "https://continuouscomposites.com/usaf-funds-cf3d-high-temp-materials/",
+          "published_date": "2025-07-14",
+          "disposition": "Verified distinct R&D programme; monetary amount undisclosed, contractual support separated from equity/grants."
+        },
+        {
+          "url": "https://www.sbir.gov/portfolio/797765",
+          "published_date": null,
+          "disposition": "Eight itemized awards total USD6,472,937; aggregate not a ninth round. Individual originals opened."
+        },
+        {
+          "url": "https://continuouscomposites.com/news/",
+          "published_date": null,
+          "disposition": "Current issuer news archive searched through check date; facilities, sales, litigation and aircraft/customer contracts excluded."
+        },
+        {
+          "url": "https://continuouscomposites.com/17-million-in-series-a-funding-raised/",
+          "published_date": "2021-07-26",
+          "disposition": "Existing July2021 USD17m Series A retained; issuer confirms closed round and B. Riley lead."
+        }
+      ],
+      "evidence_note": "Eight individual federal SBIR contracts were verified against originals, plus three distinct issuer R&D disclosures. Contractual support is separated from equity and grants. All five existing private-financing records are preserved.",
+      "hold_note": "The prior audit’s CC3D LLC 2016/2018 equity legal-continuity hold remains unresolved. The July 2025 high-temperature programme and 2026 Navy/ManTech amounts are undisclosed; no fabricated totals or disbursements. Sikorsky challenge award still needs original cash terms."
+    },
+    {
+      "id": "3d1d06ac-a73b-4003-984a-d29161199956",
+      "slug": "copenhagen-helicopter",
+      "name": "Copenhagen Helicopter",
+      "website": null,
+      "publication_status": "live",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Copenhagen Helicopter\" funding investment financing",
+        "site:cphhelicopter.dk investering finansiering ejer kapital",
+        "\"Copenhagen Helicopter\" investment grant Green Aviation funding",
+        "\"Copenhagen Helicopter\" \"NextGen\" funding EU amount",
+        "\"NextGen Robotics 2.0\" \"Copenhagen\" funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://crisalion.com/wp-content/uploads/2025/01/PR_CPH_Crisalion_280125.pdf",
+          "published_date": "2025-01-28",
+          "disposition": "Partner original confirms CopenhagenHelicopter collaboration and says it securedEUfunding withairport/university; no projectid/amount/recipientlegalentity. Held pending separation fromGreenAviationApS."
+        },
+        {
+          "url": "https://www.dufour.aero/post/dufour-aerospace-and-copenhagen-helicopter-sign-letter-of-intent",
+          "published_date": "2023-11-16",
+          "disposition": "Original conditional aircraftpurchaseLOI withCopenhagenAirTaxi; not an investment inCopenhagenHelicopter."
+        },
+        {
+          "url": "https://greenaviation.dk/about-us-2/",
+          "published_date": null,
+          "disposition": "Issuer-linked page says GreenAviation founded byCopenhagenHelicopter founders; common founders do not establish identical grantrecipient."
+        },
+        {
+          "url": "https://erhvervsfremmebestyrelsen.dk/sites/default/files/2026-04/Referat-fra-skriftlig-procedure-den-20-27.-marts-2026-a_0.pdf",
+          "published_date": null,
+          "disposition": "Government decision search result shows a CopenhagenHelicopter applicationDKK application rejected(Afslag), no award. Excluded; never imported asfunding."
+        },
+        {
+          "url": "https://www.linkedin.com/posts/gronluftfart_presse-activity-7501191011633745920-qkwx",
+          "published_date": null,
+          "disposition": "Primary project cofunding claim: NextGenRobotics2.0 AAM, EU+DanishBoard support; CopenhagenHelicopter/GreenAviation beneficiary split unresolved."
+        }
+      ],
+      "evidence_note": "Examined original partnership, conditional purchase LOI and EU project-support disclosures. Aircraft commitments are excluded. No financing is assigned across Green Aviation, Copenhagen AirTaxi and Copenhagen Helicopter without recipient mapping.",
+      "hold_note": "The EU/NextGen Robotics project’s actual beneficiary and award details remain unresolved. A rejected 2026 application is not funding. Unknown private financing remains unknown."
+    },
+    {
+      "id": "5bfbf5e2-9660-4186-afc0-5bf150c098f4",
+      "slug": "corvus-robotics",
+      "name": "Corvus Robotics",
+      "website": null,
+      "publication_status": "live",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 1,
+      "relationship_count": 0,
+      "existing_event_count": 3,
+      "searches_checked": [
+        "\"Corvus Robotics\" funding 2026 2024 2022",
+        "\"Corvus Robotics\" SBIR grant 2023 4.27",
+        "site:corvus.ai seed funding Spero 2022",
+        "site:sbir.gov \"Corvus Robotics\"",
+        "site:archgrants.org \"Corvus\" 2017",
+        "site:sbir.gov \"Corvus Robotics\" award",
+        "\"Corvus Robotics\" \"FA\" \"2021\"",
+        "\"Corvus Robotics\" \"SBIR\" \"49980\"",
+        "\"Indoor AI-based UAV installations\" Corvus",
+        "\"Corvus Robotics\" \"Arch Grants\" \"$50,000\" 2017",
+        "\"Corvus Robotics\" \"Indoor AI\" site:sbir.gov",
+        "site:sbir.gov \"Corvus\" \"Indoor\"",
+        "site:archgrants.org \"2017\" \"50,000\" Corvus",
+        "\"site:archgrants.org\" \"18\" \"2017\" \"Corvus\"",
+        "\"Corvus Robotics\" \"AFWERX\" \"2021\""
+      ],
+      "sources_checked": [
+        {
+          "url": "https://archgrants.org/companies/corvus-robotics/",
+          "published_date": null,
+          "disposition": "Grantor original confirms company and2017 cohort, but does not itself disclose cheque size or day."
+        },
+        {
+          "url": "https://hecmedia.org/posts/indoor-drones-for-warehouse-inventory-and-facility-inspection",
+          "published_date": null,
+          "disposition": "Original company interview description explicitly confirms receipt USD50,000 equity-free Arch Grants award; date omitted."
+        },
+        {
+          "url": "https://corvus.ai/pr-kabir-ceo",
+          "published_date": "2026-08-25",
+          "disposition": "Issuer latest USD20m new funding and roles corroborate existing 2026 SeriesA-2; cumulativeUSD38m is not a separate round."
+        },
+        {
+          "url": "https://cibusfund.com/press/cibus-backs-corvus-robotics/",
+          "published_date": "2026-09-02",
+          "disposition": "Investor original corroborates SeriesA-2, Catalyst lead and participating investors; Cibus Enterprise FundII underlying vehicle distinguished from adviser."
+        },
+        {
+          "url": "https://corvus.ai/pr-series-a",
+          "published_date": "2024-10-08",
+          "disposition": "Issuer says new round brings total company investment toUSD18m; cumulative seed+SeriesA amount not added as a newUSD18m round."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1931896/000193189622000001/xslFormDX01/primary_doc.xml",
+          "published_date": "2022-06-03",
+          "disposition": "Initial notice same2022 offering, USD7,984,633 sold; not a duplicate newUSD7.98m row pending reconciliation with existingUSD5mseed."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1931896/000193189623000001/xslFormDX01/primary_doc.xml",
+          "published_date": "2023-07-24",
+          "disposition": "Amendment: same May16,2022 first-sale offering; USD10,061,634 cumulative sold ofUSD10,484,633 offered, not an additionalUSD10m cash round."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1931896/000193189624000001/xslFormDX08/primary_doc.xml",
+          "published_date": "2024-10-15",
+          "disposition": "ExistingUSD7,507,999 amount verified; first sale2024-09-16 and filed2024-10-15. Filing does not establish that sold amount is a first close. No investor identities inferred from directors."
+        },
+        {
+          "url": "https://www.noairlab.ai/companies/corvus-robotics-inc",
+          "published_date": null,
+          "disposition": "USD49,980 2021 federalaward candidate only. Original SBIR award unavailable in bounded search, not imported or treated as grant fact."
+        }
+      ],
+      "evidence_note": "Added the 2017 USD50k equity-free Arch Grants award. Latest issuer/investor originals corroborate the existing USD20m Series A-2. SEC 2022/2023/2024 notices were rechecked. The cumulative USD18m headline is excluded as an additional round.",
+      "hold_note": "The existing USD5m seed versus 2022 Form D USD7.98m and 2023 cumulative USD10.06m requires offering mapping, as do YC 2018 terms and the 2021 USD49,980 SBIR candidate. The 2024 first-close classification lacks explicit support; proposal only. No director is inferred to be an investor."
+    },
+    {
+      "id": "419a9a36-d007-452d-8015-40b8b737efbe",
+      "slug": "cosine",
+      "name": "cosine",
+      "website": "https://www.cosine.nl",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 4,
+      "searches_checked": [
+        "site.cosine.nl funding investment financing 2026 2025 grants",
+        "site:cosine.nl funding investment grant",
+        "\"cosine\" \"Research\" funding grant space company",
+        "site:cordis.europa.eu/project \"COSINE RESEARCH BV\" contribution",
+        "site:cosine.eu grant funding investment 2026 2025",
+        "site:cosine.eu funding investment equity grant shareholder",
+        "\"cosine research\" grant 2020 2021 2025 investment",
+        "\"cosine\" \"50000\" grant",
+        "\"cosine research\" \"2020\" grant funding investment",
+        "\"cosine research\" \"EU contribution\" -AHEAD2020 -EUFAR -I3DS -SINPLEX"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://cordis.europa.eu/project/id/871158",
+          "published_date": null,
+          "disposition": "Existing AHEAD2020 own EUR27,295 grant amount corroborated; project closure does not prove closed financing or paid cash. Signature/start dates are distinct from public announcement."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/227159",
+          "published_date": null,
+          "disposition": "Existing EUFAR own EUR68,503.80 grant amount corroborated; project closure does not prove closed financing or paid cash. Signature/start dates are distinct from public announcement."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/730118",
+          "published_date": null,
+          "disposition": "Existing I3DS own EUR200,125 grant amount corroborated; project closure does not prove closed financing or paid cash. Signature/start dates are distinct from public announcement."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/284433",
+          "published_date": null,
+          "disposition": "Existing SINPLEX own EUR199,998.25 grant amount corroborated; project closure does not prove closed financing or paid cash. Signature/start dates are distinct from public announcement."
+        },
+        {
+          "url": "https://www.cosine.eu/einstein-telescope-a-new-window-on-the-universe/",
+          "published_date": "2025-03-18",
+          "disposition": "SPACE-ECHO consortium participation and multi-consortium funding above EUR12m identified; own cosine allocation undisclosed, no quantified import."
+        },
+        {
+          "url": "https://www.cosine.eu/cosine-signs-one-of-esas-ers-iod-a-consolidation-contracts-as-prime-contractor-advancing-sovereign-european-night-time-earth-observation/",
+          "published_date": "2026-09-03",
+          "disposition": "ESA consolidation procurement contract for cosine Remote Sensing; no equity or grant round inferred."
+        },
+        {
+          "url": "https://www.cosine.eu/news/",
+          "published_date": null,
+          "disposition": "Latest issuer news through November2026 checked; project contracts, subsidiary mission work and scientific updates are not financing facts."
+        },
+        {
+          "url": "https://www.thecompanycheck.com/company/b/cosine/513nf02qcn10zdx8n",
+          "published_date": null,
+          "disposition": "Directory March2020 USD62k grant candidate held: no original source/issuer/currency reconciliation. Not treated as verified funding."
+        }
+      ],
+      "evidence_note": "Fresh original-source review corroborates all four existing own grants and separates recent procurement and multi-consortium subsidies.",
+      "hold_note": "Remaining original-source reconciliation for directory March2020 grant, SPACE-ECHO own allocation and four existing CORDIS date/closure semantics; no zero-funding conclusion."
+    },
+    {
+      "id": "7f4904b3-a4d9-4a63-a9b7-36731bd625b2",
+      "slug": "couach",
+      "name": "Couach",
+      "website": "https://www.couach.com",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 1,
+      "searches_checked": [
+        "site.couach.com financement investissement prêt 2026 2025",
+        "\"Couach\" \"prêt\" \"2021\" 4 millions",
+        "site:couach.com financing loan investment 2026",
+        "\"CHANTIER NAVAL COUACH\" financement prêt augmentation capital 2025 2026"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000044265025",
+          "published_date": "2021-10-29",
+          "disposition": "Original order dated October25 and publicly published October29 authorises future EUR4m State loan via Bpifrance. Does not establish completed disbursement. Prepared correction separately, no duplicate event."
+        },
+        {
+          "url": "https://couach.com/en/heritage/",
+          "published_date": null,
+          "disposition": "Issuer history supports Nepteam ownership already preserved as relationship, without financing amount or round."
+        },
+        {
+          "url": "https://www.societe.com/societe/chantier-naval-couach-cnc-511791410.html",
+          "published_date": null,
+          "disposition": "2024 capital modification and 2020 capital increase/reduction candidates need original resolution and cash-versus-conversion reconciliation. No share-capital balance treated as raised cash."
+        }
+      ],
+      "evidence_note": "Original State order and company ownership history rechecked; existing EUR4m loan retained pending guarded semantic correction.",
+      "hold_note": "2020/2024 capital operations require original resolutions and cash/restructuring distinction. October25 order date is not October29 public publication; future disbursement language does not prove closed financing."
+    },
+    {
+      "id": "4b2ab763-d1d6-4112-9cc1-ff51cceb538a",
+      "slug": "covelya",
+      "name": "Covelya",
+      "website": "https://www.covelya.com",
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "Covelya financing ownership investment 2026 2025 founders",
+        "Covelya group ownership financing investment",
+        "site:covelya.com funding financing investment loan 2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://covelya.com/kraken-robotics-announces-closing-of-strategic-acquisition-of-covelya-group-limited/",
+          "published_date": "2026-07-03",
+          "disposition": "Issuer-hosted July2 release confirms CAD615m secondary acquisition consideration. CAD402.5m receipts and facilities are Kraken issuer financing, excluded from Covelya."
+        },
+        {
+          "url": "https://www.gbm.scotiabank.com/en/market-insights/article.advisory.kraken-robotics-acquisition.html",
+          "published_date": "2026-03-23",
+          "disposition": "Lender confirms financing support for Kraken acquisition; no Covelya standalone round or investor role inferred."
+        },
+        {
+          "url": "https://company-information.service.gov.uk/company/12493148/filing-history?page=1",
+          "published_date": null,
+          "disposition": "Registry identifies UK Covelya Group and July2 charge registration. Security/guarantee issuer and principal borrowing require instrument review before standalone funding attribution."
+        },
+        {
+          "url": "https://covelya.com/our-companies/",
+          "published_date": null,
+          "disposition": "Group subsidiary boundaries corroborated; acquisitions and subsidiary orders excluded."
+        }
+      ],
+      "evidence_note": "Official acquisition release and lender evidence distinguish Covelya ownership from Kraken issuance and borrowing. Existing ownership link retained.",
+      "hold_note": "July2026 registry security document needs borrower/guarantor review; do not misattribute parent credit to target. Catalogue country France conflicts with original UK entity identity; no catalogue write requested."
+    },
+    {
+      "id": "80fc1caf-e03f-473c-9621-21d67203c84e",
+      "slug": "covenant-industries",
+      "name": "Covenant Industries",
+      "website": null,
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Covenant Industries\" drone investment funding interceptor",
+        "\"Covenant Industries\" drone funding",
+        "site:covenant.com 250 million 2026 funding",
+        "\"Covenant\" \"Anthem\" \"funding\" September 2026",
+        "site:aleph.vc Covenant September 2026",
+        "site:a16z.com Covenant 2026 funding"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.businesswire.com/news/home/20260909151435/en/",
+          "published_date": "2026-09-09",
+          "disposition": "Company release verifies over USD250m across THREE rounds collectively and six lead firms collectively; no per-round amounts, dates, stages or lead allocation. Existing six relationships retained, no fabricated USD250m single round."
+        },
+        {
+          "url": "https://www.covenant.com/",
+          "published_date": null,
+          "disposition": "Issuer product and corporate identity match; latest product information provides no separable additional round."
+        },
+        {
+          "url": "https://www.aleph.vc/companies",
+          "published_date": null,
+          "disposition": "Investor portfolio independently corroborates Covenant; relationship already exists, no duplicate."
+        },
+        {
+          "url": "https://a16z.com/american-dynamism-50-2026/",
+          "published_date": null,
+          "disposition": "Investor original portfolio feature identifies Covenant and founders; no new round structure."
+        }
+      ],
+      "evidence_note": "Original company release and investor originals verify cumulative over USD250m across three rounds collectively; existing six investor relationships retained.",
+      "hold_note": "Individual round chronology, sizes, stages, instruments and investor lead-to-round allocation remain publicly undisclosed. Cumulative total is evidence, never a fabricated single round. Procurement orders excluded."
+    },
+    {
+      "id": "7d2b1de7-a090-4e77-a868-44c39961a91c",
+      "slug": "cover-tech",
+      "name": "Cover Tech",
+      "website": null,
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 0,
+      "relationship_count": 0,
+      "existing_event_count": 0,
+      "searches_checked": [
+        "\"Cover-Tech\" \"Falcon Peak\"",
+        "\"Cover Tech\" counter drone company funding",
+        "\"Cover Tech\" \"counter\" funding investment",
+        "\"Cover Tech\" defense startup company"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://www.dvidshub.net/news/574682/department-war-announces-industry-participants-falcon-peak-262",
+          "published_date": "2026-09-14",
+          "disposition": "Original Army roster names Cover Tech only, without legal entity, website, location or investment; identity cannot be linked safely to homonyms."
+        },
+        {
+          "url": "https://www.crunchbase.com/organization/cover-tech-dff2",
+          "published_date": null,
+          "disposition": "Italian Cover Tech directory is unlinked homonym candidate, not evidence for Army participant."
+        },
+        {
+          "url": "https://www.cbinsights.com/company/cover-tech",
+          "published_date": null,
+          "disposition": "Canadian fabric-building Cover-Tech homonym excluded absent roster identity bridge."
+        }
+      ],
+      "evidence_note": "Original Army experiment roster corroborates the name only; broad searches fail to establish a defensible legal identity or funding source.",
+      "hold_note": "Legal-entity/website bridge unresolved; Italy, Canada and Top Cover homonyms excluded. Empty event list is unknown funding, not zero."
+    },
+    {
+      "id": "6b84f4d2-df14-49e0-8eaf-65e2067e5d01",
+      "slug": "crida-aie",
+      "name": "CRIDA AIE",
+      "website": null,
+      "checked_at": "2026-11-15",
+      "status": "source_review_partial",
+      "event_count": 9,
+      "relationship_count": 0,
+      "existing_event_count": 2,
+      "searches_checked": [
+        "site:cordis.europa.eu \"CRIDA\" \"RAXUS\"",
+        "site:cordis.europa.eu/project \"CENTRO DE REFERENCIA\" \"RAXUS\"",
+        "site:cordis.europa.eu/project \"CENTRO DE REFERENCIA INVESTIGACION\" \"Net EU contribution\"",
+        "\"CRIDA\" financiación inversión préstamo 2026 2025"
+      ],
+      "sources_checked": [
+        {
+          "url": "https://cordis.europa.eu/project/id/699238",
+          "published_date": null,
+          "disposition": "Original EC record verifies own EUR195,500.00 allocation and EC signature 2016-02-29; CRIDA is direct coordinator. Imported as allocation, not consortium total or paid cash."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101114764",
+          "published_date": null,
+          "disposition": "Original EC record verifies own EUR458,431.75 allocation and EC signature 2023-05-22; CRIDA is named linked third party. Imported as allocation, not consortium total or paid cash."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101114694",
+          "published_date": null,
+          "disposition": "Original EC record verifies own EUR304,709.00 allocation and EC signature 2023-06-09; CRIDA is named linked third party. Imported as allocation, not consortium total or paid cash."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101114735",
+          "published_date": null,
+          "disposition": "Original EC record verifies own EUR262,937.50 allocation and EC signature 2023-06-14; CRIDA is named linked third party. Imported as allocation, not consortium total or paid cash."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101114676",
+          "published_date": null,
+          "disposition": "Original EC record verifies own EUR421,151.00 allocation and EC signature 2023-06-15; CRIDA is named linked third party. Imported as allocation, not consortium total or paid cash."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101287781",
+          "published_date": null,
+          "disposition": "Original EC record verifies own EUR332,412.50 allocation and EC signature 2026-04-30; CRIDA is named linked third party. Imported as allocation, not consortium total or paid cash."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101279640",
+          "published_date": null,
+          "disposition": "Original EC record verifies own EUR469,568.75 allocation and EC signature 2026-05-04; CRIDA is named linked third party. Imported as allocation, not consortium total or paid cash."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101288156",
+          "published_date": null,
+          "disposition": "Original EC record verifies own EUR99,968.75 allocation and EC signature 2026-05-15; CRIDA is named linked third party. Imported as allocation, not consortium total or paid cash."
+        },
+        {
+          "url": "https://cordis.europa.eu/project/id/101288834",
+          "published_date": null,
+          "disposition": "Original EC record verifies own EUR509,993.75 allocation and EC signature 2026-05-15; CRIDA is named linked third party. Imported as allocation, not consortium total or paid cash."
+        },
+        {
+          "url": "https://crida.es/webcrida/index.php/informacion-economica/",
+          "published_date": null,
+          "disposition": "Issuer transparency page with annual accounts and public budgets identifies further historical review route; budgets and member operating contributions are not equity rounds."
+        },
+        {
+          "url": "https://crida.es/webcrida/index.php/sobre-crida/",
+          "published_date": null,
+          "disposition": "Official entity description confirms public non-profit economic-interest grouping; no venture-equity assumption."
+        }
+      ],
+      "evidence_note": "Nine additional own EU allocations verified across 2016–2026, including eight explicitly linked-third-party allocations. Existing AIRMOB and IMPETUS records preserved.",
+      "hold_note": "Further historical PJ09 DCB, PJ15 COSER, PJ19-W2 CI, PJ24 NCM and PJ32-W3 VC own allocations remain candidates; no consortium totals imported. Existing IMPETUS closed semantics require separate future review."
+    }
+  ],
+  "prepared_identity_reconciliations": {
+    "company_slug": "carnegie-robotics",
+    "events": 3,
+    "participants": 3,
+    "amounts_preserved": true,
+    "original_awards": [
+      {
+        "round_id": "13bd17b4-a917-4a11-8a48-ddd743a7f476",
+        "url": "https://www.sbir.gov/awards/201121",
+        "title": "Carnegie Robotics LLC — original SBIR award 201121, contract W15QKN-22-P-0006",
+        "source_type": "third_party_report",
+        "checked_at": "2026-11-15"
+      },
+      {
+        "round_id": "26a5031d-8f8f-43a3-b042-b2b8fef116d0",
+        "url": "https://www.sbir.gov/awards/208725",
+        "title": "Carnegie Robotics LLC — original SBIR award 208725, contract 6SVL4-24-P-0006",
+        "source_type": "third_party_report",
+        "checked_at": "2026-11-15"
+      },
+      {
+        "round_id": "b2c164e0-a620-442b-bff6-d25f814d5817",
+        "url": "https://www.sbir.gov/awards/198239",
+        "title": "Carnegie Robotics LLC — original SBIR award 198239, contract W5170122C0011",
+        "source_type": "third_party_report",
+        "checked_at": "2026-11-15"
+      }
+    ],
+    "event_and_participation_fullrow_guards": true,
+    "reversal_record": "research-agent/imports/funding-landscape-20261115-one-hundred-first-reviewed-corrections.json"
+  },
+  "source_and_identity_reconciliation": [
+    {
+      "company_slug": "cognyte-formerly-verint",
+      "round_key": "revolving-credit-facilities-amendment-2025-12",
+      "fields": [
+        "announced_date",
+        "sources[0].published_date"
+      ],
+      "before": "2025-12-30",
+      "after": "2025-12-31",
+      "evidence": "https://data.sec.gov/submissions/CIK0001824814.json",
+      "reason": "Original SEC filing metadata distinguishes December31 public filing from December30 agreement."
+    },
+    {
+      "round_key": "sbir-fa8649-25-p-0510",
+      "field": "source_type",
+      "url": "https://www.sbir.gov/awards/220078",
+      "before": "company_announcement",
+      "after": "third_party_report",
+      "reason": "Official federal agency original, distinct from issuer announcement under existing three-value taxonomy."
+    },
+    {
+      "round_key": "sbir-w51701-25-c-0045",
+      "field": "source_type",
+      "url": "https://www.sbir.gov/awards/219919",
+      "before": "company_announcement",
+      "after": "third_party_report",
+      "reason": "Official federal agency original, distinct from issuer announcement under existing three-value taxonomy."
+    },
+    {
+      "round_key": "sbir-fa2394-24-c-b044",
+      "field": "source_type",
+      "url": "https://www.sbir.gov/awards/214571",
+      "before": "company_announcement",
+      "after": "third_party_report",
+      "reason": "Official federal agency original, distinct from issuer announcement under existing three-value taxonomy."
+    },
+    {
+      "round_key": "sbir-n68335-24-c-0129",
+      "field": "source_type",
+      "url": "https://www.sbir.gov/awards/214944",
+      "before": "company_announcement",
+      "after": "third_party_report",
+      "reason": "Official federal agency original, distinct from issuer announcement under existing three-value taxonomy."
+    },
+    {
+      "round_key": "sbir-n68335-23-c-0377",
+      "field": "source_type",
+      "url": "https://www.sbir.gov/awards/206683",
+      "before": "company_announcement",
+      "after": "third_party_report",
+      "reason": "Official federal agency original, distinct from issuer announcement under existing three-value taxonomy."
+    },
+    {
+      "round_key": "sbir-n68335-23-c-0623",
+      "field": "source_type",
+      "url": "https://www.sbir.gov/awards/205624",
+      "before": "company_announcement",
+      "after": "third_party_report",
+      "reason": "Official federal agency original, distinct from issuer announcement under existing three-value taxonomy."
+    },
+    {
+      "round_key": "sbir-80nssc22pa989",
+      "field": "source_type",
+      "url": "https://www.sbir.gov/awards/196496",
+      "before": "company_announcement",
+      "after": "third_party_report",
+      "reason": "Official federal agency original, distinct from issuer announcement under existing three-value taxonomy."
+    },
+    {
+      "round_key": "sbir-fa8649-21-p-0924",
+      "field": "source_type",
+      "url": "https://www.sbir.gov/awards/194506",
+      "before": "company_announcement",
+      "after": "third_party_report",
+      "reason": "Official federal agency original, distinct from issuer announcement under existing three-value taxonomy."
+    },
+    {
+      "company_slug": "continuous-composites",
+      "round_key": "navy-embedded-electrical-systems-sbir-phase-ii-2026",
+      "field": "announced_date",
+      "before": "2026-08-31",
+      "after": "2026-08-30",
+      "evidence": "https://continuouscomposites.com/navy-multifunctional-uav-composite-structures/",
+      "reason": "Issuer page publication header August30 used; August31 dateline conflict remains explicit."
+    }
+  ],
+  "canonical_profile_mappings": [],
+  "new_prepared_reconciliations": "research-agent/recovery/2026-11-15-funding-one-hundred-first-prepared-reconciliations.json",
+  "validation": {
+    "current_importer_and_three_schema_fixtures_read": true,
+    "postgresql_tests": [
+      "Manifest rollback/import/replay/conflicting financial fact/source FK",
+      "Full event and composite participant row guards",
+      "Late participant conflict rolls back earlier event corrections",
+      "Financial and participant reversal with valid source history retained"
+    ],
+    "production_rollback_baseline_exact": true,
+    "atomic_imports": 1,
+    "exact_fact_audit": {
+      "new_profiles": 3,
+      "partial_rows": 1319,
+      "event_matches": 37,
+      "research_rows": 1319,
+      "source_matches": 53,
+      "mismatched_facts": 0,
+      "participant_matches": 26,
+      "missing_link_sources": 0,
+      "new_exact_name_duplicate_groups": 0
+    },
+    "corrected_row_matches": 6,
+    "appended_original_source_matches": 3,
+    "preservation_hashes_before": {
+      "metadata": "46e92e9c8399002eb59e4ed56d01b1d2",
+      "old_events": "172e6ca7065ca0146b34bc5ab3fb616f",
+      "old_links": "09378fb29d4d3c5992e07e3ce0f4f339",
+      "old_sources": "b9123b12ea4a5ff940e4c5b2dbc5d7f2",
+      "curated_profiles": "64ea34bbfcab1e49b6d4f760663ea140",
+      "old_relationships": "652513b141696cc47ac18c240ff4ac96"
+    },
+    "preservation_hashes_after": {
+      "metadata": "46e92e9c8399002eb59e4ed56d01b1d2",
+      "old_links": "09378fb29d4d3c5992e07e3ce0f4f339",
+      "old_events": "172e6ca7065ca0146b34bc5ab3fb616f",
+      "old_sources": "b9123b12ea4a5ff940e4c5b2dbc5d7f2",
+      "curated_profiles": "64ea34bbfcab1e49b6d4f760663ea140",
+      "old_relationships": "652513b141696cc47ac18c240ff4ac96"
+    },
+    "post_import_rollback_replay_preserved": true,
+    "frozen_group_sha256": {
+      "group_a": "10af274d3e5accfd129f2242d24574cba48c36ee79a020d2d8cc0e39ea19b46b",
+      "group_b": "1f4b64c8d93584c61aa9228c189a436c28746523e8b585978feaa8ca11bcaf15",
+      "group_c": "65d1a4e9ddf481a264c787fc37ee1d5995e2e954eb1e8a6d5c25ef1fd5cf9c4d",
+      "group_d": "e2c6d749e20d8d2c708f24466a3307b63d05ea2d5eea51686b372783edd03f1d"
+    },
+    "root_sec_publication_metadata": {
+      "0001824814": {
+        "accessionNumber": "0001824814-25-000058",
+        "filingDate": "2025-12-31",
+        "reportDate": "2025-12-30",
+        "acceptanceDateTime": "2025-12-31T13:42:42.000Z",
+        "primaryDocument": "a6-kdec2025.htm"
+      },
+      "0000820318": {
+        "accessionNumber": "0001193125-25-220656",
+        "filingDate": "2025-09-26",
+        "reportDate": "2025-09-26",
+        "acceptanceDateTime": "2025-09-26T20:22:04.000Z",
+        "primaryDocument": "d854664d8k.htm"
+      }
+    }
+  },
+  "publication_scope": {
+    "site": "https://xsonomy.com/landscape/",
+    "geography_and_publication_gates_unchanged": true,
+    "trigger": "Append only current catalogue docs/STATUS.md to trigger existing push build; no schedule changes.",
+    "directory_expected_profiles": 3717,
+    "directory_expected_generic_relationships": 731,
+    "expected_prior_map_counts": {
+      "companies": 567,
+      "events": 1590,
+      "links": 1390
+    }
+  },
+  "reconciliation_phase": {
+    "id": "partial-source-pass-1",
+    "new_queue_identities": 24,
+    "total_unique_checked_this_pass": 168,
+    "remaining_initial_pass_identities": 1175
+  },
+  "preserved": [
+    "Legacy research-agent/STATE.json",
+    "Frozen V1/V2 snapshots",
+    "Curated investor profiles",
+    "All older uncorrected financial events, participants and sources",
+    "Existing generic investment relationships",
+    "Company geography/classification/publication gates",
+    "Repository schedules"
+  ],
+  "programme_complete": false,
+  "publication": null
+}
