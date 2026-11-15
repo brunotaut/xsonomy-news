@@ -1,5 +1,5 @@
 {
-  "status": "production_rollback_verified_ready_for_atomic_import",
+  "status": "atomic_import_verified_publication_pending",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T15:50:14.155Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-ninth.json",
@@ -1042,13 +1042,14 @@
     "actual_company_slug": "garuda-aerospace",
     "mislabelled_company_slug": "flyguys",
     "guarded_recovery_prepared": true,
-    "financial_amount_and_participants_were_not_modified": true
+    "financial_amount_and_participants_were_not_modified": true,
+    "guarded_recovery_applied": true
   },
   "metrics": {
     "parallel_read_only_groups": 4,
     "new_queue_identities_checked": 24,
-    "identities_checked": 28,
-    "prepared_identities_checked": 4,
+    "identities_checked": 29,
+    "prepared_identities_checked": 5,
     "prior_import_checks_overlap_prepared": true,
     "new_approved_events": 6,
     "new_round_participations": 6,
@@ -1067,7 +1068,13 @@
     "historical_structured_correction_manifests_audited": 12,
     "historical_event_participant_targets_audited": 90,
     "historical_target_label_errors": 1,
-    "rollback_rehearsal_passed": true
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "atomic_import_invocations": 1,
+    "new_investor_profiles": 3,
+    "new_coverage_rows": 0,
+    "all_prior_company_metadata_preserved": true,
+    "all_prior_uncorrected_financial_links_sources_profiles_relationships_preserved": true
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1119,6 +1126,138 @@
       "Wrong existing company with matching financial-row snapshot rejected atomically",
       "Full-row guards, late conflict, guarded reversals, retained sources and replay"
     ],
-    "importer_sha256": "8e90426e43c954b7c2ffb0f01beb870fe790e38c92036db8a95634e89af9ca78"
+    "importer_sha256": "8e90426e43c954b7c2ffb0f01beb870fe790e38c92036db8a95634e89af9ca78",
+    "exact_post_import_audit": {
+      "facts": [
+        {
+          "audit": "manifest_event_exact_fields_and_parent",
+          "failed": 0,
+          "expected": 6,
+          "failures": []
+        },
+        {
+          "audit": "manifest_sources_exact",
+          "failed": 0,
+          "expected": 6,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participants_exact_role_source_contribution",
+          "failed": 0,
+          "expected": 6,
+          "failures": []
+        },
+        {
+          "audit": "manifest_generic_portfolios_exact",
+          "failed": 0,
+          "expected": 3,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participant_and_portfolio_profile_source_exists",
+          "failed": 0,
+          "expected": 9,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_source_additions_exact",
+          "failed": 0,
+          "expected": 5,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_profile_source_additions_exist",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "guarded_participant_additions_exact_parent_unchanged",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_events",
+          "failed": 0,
+          "expected": 13,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_participants",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_generic_relationships",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        }
+      ],
+      "counts": {
+        "links": 6531,
+        "events": 4735,
+        "covered": 1330,
+        "sources": 6516,
+        "approved": 4717,
+        "profiles": 3758,
+        "relationships": 755
+      },
+      "preserved": [
+        {
+          "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+          "rows": 2718,
+          "audit": "companies"
+        },
+        {
+          "md5": "13d6a63a87a749c404162a72a0db35fe",
+          "rows": 4716,
+          "audit": "uncorrected_events"
+        },
+        {
+          "md5": "03ef0b8a6a3640b51e77b05494445942",
+          "rows": 6525,
+          "audit": "uncorrected_existing_participants"
+        },
+        {
+          "md5": "bb55d72d494b0a02e8de142a5c464ca2",
+          "rows": 6505,
+          "audit": "existing_unrelated_event_sources"
+        },
+        {
+          "md5": "d2ea87e58e1aced88074fd417b883f30",
+          "rows": 3755,
+          "audit": "curated_profiles_full_rows"
+        },
+        {
+          "md5": "c7905332321560555c89c495b85e925d",
+          "rows": 7133,
+          "audit": "existing_unrelated_profile_sources"
+        },
+        {
+          "md5": "3aab9ec9b66b6eaa5d2e945a67b1a1b2",
+          "rows": 752,
+          "audit": "uncorrected_existing_generic_rows"
+        },
+        {
+          "md5": "1a0918d4371924a2e9181f51f244f9fd",
+          "rows": 1327,
+          "audit": "unrelated_research_coverage"
+        }
+      ],
+      "duplicate_new_names": 0,
+      "missing_link_sources": 0
+    }
+  },
+  "production_after": {
+    "events": 4735,
+    "approved": 4717,
+    "links": 6531,
+    "sources": 6516,
+    "profiles": 3758,
+    "relationships": 755,
+    "covered": 1330
   }
 }
