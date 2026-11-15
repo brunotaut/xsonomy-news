@@ -1,5 +1,5 @@
 {
-  "status": "rollback_verified_ready",
+  "status": "imported_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T18:44:34.735Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-thirteenth.json",
@@ -1066,7 +1066,8 @@
     "local_postgresql_tests_passed": true,
     "atomic_import_invocations": 1,
     "rollback_rehearsal_passed": true,
-    "existing_generic_relationships_confirmed_not_reimported": 1
+    "existing_generic_relationships_confirmed_not_reimported": 1,
+    "atomic_import_passed": true
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1128,7 +1129,120 @@
       "reconciliation-rounds.json": "5d1f3ca7b839a2dffbf2f32bd5538baa13abaf94160acb3c6c86c1c317f66164"
     },
     "production_rollback_full_baseline_restored": true,
-    "production_rollback_rehearsals": 2
+    "production_rollback_rehearsals": 2,
+    "exact_post_import_audit": {
+      "facts": [
+        {
+          "audit": "manifest_event_exact_fields_and_parent",
+          "failed": 0,
+          "expected": 37,
+          "failures": []
+        },
+        {
+          "audit": "manifest_sources_exact",
+          "failed": 0,
+          "expected": 42,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participants_exact_role_source_contribution",
+          "failed": 0,
+          "expected": 27,
+          "failures": []
+        },
+        {
+          "audit": "manifest_generic_portfolios_exact",
+          "failed": 0,
+          "expected": 3,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participant_and_portfolio_profile_source_exists",
+          "failed": 0,
+          "expected": 30,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_source_additions_exact",
+          "failed": 0,
+          "expected": 1,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_profile_source_additions_exist",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "guarded_participant_additions_exact_parent_unchanged",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_events",
+          "failed": 0,
+          "expected": 10,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_participants",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_generic_relationships",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        }
+      ],
+      "preserved": [
+        {
+          "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+          "rows": 2718,
+          "audit": "companies"
+        },
+        {
+          "md5": "a98f43c62e1929bc98c428ea5676a012",
+          "rows": 4803,
+          "audit": "uncorrected_events"
+        },
+        {
+          "md5": "2ff1683c6198aa420beaba927bfabf38",
+          "rows": 6599,
+          "audit": "uncorrected_existing_participants"
+        },
+        {
+          "md5": "8dc005df2aa7c07b942488a44aa772e0",
+          "rows": 6638,
+          "audit": "existing_unrelated_event_sources"
+        },
+        {
+          "md5": "0b4acaeaacec2ae9a54989e5b0a2f04d",
+          "rows": 3774,
+          "audit": "curated_profiles_full_rows"
+        },
+        {
+          "md5": "a40704776cbe46278e159d383a32c974",
+          "rows": 7208,
+          "audit": "existing_unrelated_profile_sources"
+        },
+        {
+          "md5": "ea08fcf9602a02ec4b50893570a401a2",
+          "rows": 755,
+          "audit": "uncorrected_existing_generic_rows"
+        },
+        {
+          "md5": "06675e6be209c80fcf006e6b446d449e",
+          "rows": 1332,
+          "audit": "unrelated_research_coverage"
+        }
+      ],
+      "missing_link_sources": 0
+    }
   },
   "publication": {
     "status": "pending_import"
@@ -1138,5 +1252,14 @@
     "Unreviewed financial history, source links, curated profiles and portfolios",
     "Company metadata, geography, publication gates and schedules"
   ],
-  "updated_at": "2026-11-15T18:59:29.166Z"
+  "updated_at": "2026-11-15T18:59:49.980Z",
+  "production_after": {
+    "events": 4850,
+    "approved": 4832,
+    "links": 6626,
+    "sources": 6681,
+    "profiles": 3778,
+    "relationships": 758,
+    "covered": 1345
+  }
 }
