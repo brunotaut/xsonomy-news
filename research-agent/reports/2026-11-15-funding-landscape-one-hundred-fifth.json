@@ -1,5 +1,5 @@
 {
-  "status": "atomic_import_verified_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T11:49:42.938Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-fifth.json",
@@ -29,8 +29,8 @@
     "new_generic_portfolio_relationships": 5,
     "group_search_queries_executed": 87,
     "prepared_reconciliation_search_queries": 0,
-    "root_additional_search_queries": 4,
-    "search_queries_executed": 91,
+    "root_additional_search_queries": 6,
+    "search_queries_executed": 93,
     "local_postgresql_tests_passed": true,
     "all_four_final_freezes_confirmed_before_consolidation": true,
     "rollback_rehearsal_passed": true,
@@ -49,14 +49,30 @@
     "per_company_search_ledger_entries": 87,
     "source_ledger_entries": 84,
     "prepared_source_ledger_entries": 8,
-    "root_primary_company_pages_checked": 2,
+    "root_primary_company_pages_checked": 3,
     "db_total_events": 4708,
     "db_approved_events": 4690,
     "db_round_participations": 6500,
     "db_investor_profiles": 3741,
     "db_source_reconciliation_companies": 1329,
     "concurrency_speedup_claimed": false,
-    "frozen_source_hashes_unchanged": true
+    "frozen_source_hashes_unchanged": true,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_source_ledger_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "referenced_directory_profiles_verified": 18,
+    "manifest_profile_source_matches": 22,
+    "generic_portfolio_entries_verified": 5,
+    "clickable_generic_company_links_verified": 5,
+    "current_manifest_publication_verified": true,
+    "active_minutes": 15.3,
+    "checked_identities_per_hour": 109.8,
+    "new_queue_identities_per_hour": 94.1,
+    "completed_reviews_per_hour": 11.8,
+    "timing_scope": "Elapsed writer lease for 24 next cohort identities in three frozen read-only groups, two prepared source-reconciliation identities and two previously committed import identity checks in the fourth. Includes 93 actual search queries, original issuer/currency/date/instrument/role checks, two fresh root issuer-alias searches, local PostgreSQL guards/reversal/conflict/replay tests, exact production rollback restoration of 11 reviewed rows and eight prior-data hash sets, one atomic import, exact fact/source/role audits, idempotent rollback replay, durable Git readbacks, successful existing catalogue build, two fresh live datasets and six HTTP200 routes. Three bounded reviews closed; 21 specific partial histories retained. No concurrency speedup or ETA claim."
   },
   "per_company": [
     {
@@ -1226,7 +1242,84 @@
       "b": "646e1b6343fc3d865dd5ddbb0d4df73ebe355b4b852320e31d4569f06fc6c11f",
       "c": "9610f2ab4f2c275691a53d17526b4f8e8d7a2b77eee739315fef9ee15fd33bc7",
       "prepared": "b7d24e10d258b517d401a2d0cdf87962ace5d23fd240b2e43eb2ba209165ef8b"
-    }
+    },
+    "durable_readback_blobs": {
+      "research-agent/imports/funding-landscape-20261115-one-hundred-fifth.json": "df2736a511efc3042271b3625b911230749355a7",
+      "research-agent/imports/funding-landscape-20261115-one-hundred-fifth-reviewed-corrections.json": "4eb6050ada8510d4b59410a1df3510e00ccccd74",
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-fifth.json": "6ec5b1e3c2ab38988fae78ed9b19ca0bc59a5f48",
+      "research-agent/reports/2026-11-15-funding-one-hundred-fifth-source-ledger.json": "f458c408f79d52bb4476754470715a97621c3be7",
+      "research-agent/recovery/2026-11-15-funding-one-hundred-fifth-prepared-reconciliations.json": "286b765deeb28d088351e8e00d8e2bf67eced0ff",
+      "research-agent/queues/company-funding-all.csv": "5b49e81fcdb87b76ae785266808cc15f67ac506b",
+      "research-agent/FUNDING_STATE.json": "f1eb12d1fcd1327b171535b71b1a082e43542c2e"
+    },
+    "preservation_hashes_after": [
+      {
+        "md5": "2862af8b4e604842e2c75b4dbd37865d",
+        "rows": 2716,
+        "audit": "companies"
+      },
+      {
+        "md5": "04ba306ffa3f52e0715f3f69d1ca1f19",
+        "rows": 4673,
+        "audit": "uncorrected_events"
+      },
+      {
+        "md5": "b1ba73f9205567326a5ae8c77b8c74b8",
+        "rows": 6476,
+        "audit": "uncorrected_existing_participants"
+      },
+      {
+        "md5": "3a77568a1e32a1b14b3da31acd3eadf9",
+        "rows": 6443,
+        "audit": "existing_unrelated_event_sources"
+      },
+      {
+        "md5": "df4dd7570146a32eb6b62fecccbfc087",
+        "rows": 3734,
+        "audit": "curated_profiles_full_rows"
+      },
+      {
+        "md5": "0fc74892835510c8772cfad3165748d1",
+        "rows": 7072,
+        "audit": "existing_unrelated_profile_sources"
+      },
+      {
+        "md5": "397551c06b189d03ab245309bd25d7a9",
+        "rows": 739,
+        "audit": "uncorrected_existing_generic_rows"
+      },
+      {
+        "md5": "89217e8042f8a72019257a3664d79aeb",
+        "rows": 1320,
+        "audit": "unrelated_research_coverage"
+      }
+    ],
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/eos-data-analytics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/eotech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/esh-tech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/esox-group/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/estes-energetics/",
+        "status": 200
+      }
+    ]
   },
   "preserved": [
     "Legacy research-agent/STATE.json and frozen V1/V2 snapshots",
@@ -1262,9 +1355,95 @@
     "new_rows_outside_european_map": true
   },
   "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-15",
+    "verified_at": "2026-11-15T12:05:01.120Z",
     "source_commit": "6149ceb920141c9860fcc57848fdad2f0de11f4d",
     "catalogue_commit": "5ca94f24c05586cbbd8f6919ce59add90ab2e5f5",
     "workflow_run": 43711778416,
-    "status": "in_progress"
-  }
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43711778416",
+    "workflow_conclusion": "success",
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-fifth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-fifth.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-fifth-reviewed-corrections.json",
+    "generated_at": "2026-11-15T12:02:48.078Z",
+    "investor_generated_at": "2026-11-15T12:02:51.241Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3732,
+    "portfolio_relationships": 739,
+    "expected_profiles": 18,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 5,
+    "generic_portfolio_entries_verified": 5,
+    "clickable_company_links_verified": 5,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 22,
+    "manifest_generic_relationship_matches": 5,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 26,
+    "current_manifest_live_matches": 0,
+    "directory_filter_note": "Nine prior anonymous profiles and five retired generic relationships remain excluded by existing publication filters. All current target companies are outside the European map; 18 referenced profiles, all 22 participation citations and five historical portfolios verified in fresh directory. Company publication gates preserved.",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/eos-data-analytics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/eotech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/esh-tech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/esox-group/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/estes-energetics/",
+        "status": 200
+      }
+    ]
+  },
+  "root_financial_reconciliations": {
+    "actual_search_queries_executed": 6,
+    "queries": [
+      "site.embraer.com 2026 financing loan bond",
+      "site.eurenco.com 2026 financing funding loan",
+      "site.elroyair.com 2026 funding investment",
+      "site.epirusinc.com 2026 funding investment"
+    ],
+    "original_pages_checked": [
+      {
+        "url": "https://elroyair.com/company/news/press-releases/PIPE-upsizing-to-175-million-with-lockheed-martin-ventures/",
+        "disposition": "USD175m commitments distinct from funded USD75m already stored; header23/body24September discrepancy retained in company ledger; no duplicate cash event."
+      },
+      {
+        "url": "https://eurenco.com/eurenco-raises-e300-million-to-accelerate-its-industrial-expansion-in-europe/",
+        "disposition": "EUR300m signed facility already imported; no duplicate. Drawn cash remains undisclosed."
+      },
+      {
+        "url": "https://www.govinfo.gov/content/pkg/FR-2024-09-16/html/2024-20965.htm",
+        "title": "Federal Register 89 FR 75564, 16 September 2024",
+        "published_date": "2024-09-16",
+        "disposition": "DOJ notice explicitly identifies Eos Energetics Inc dba Estes Energetics in Penrose. Confirms direct legal-name/trade-name bridge for six exact-UEI SBIR awards, independently of website/address matching; no subsidiary proceeds shifted to parent."
+      }
+    ],
+    "additional_issuer_alias_queries": [
+      "\"EOS Energetics\" \"Estes\" subsidiary",
+      "\"Estes Energetics\" \"EOS\" legal name"
+    ]
+  },
+  "completed_at": "2026-11-15T12:05:01.120Z"
 }
