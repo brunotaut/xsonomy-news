@@ -1,0 +1,208 @@
+{
+  "status": "source_prepared_not_applied",
+  "checked_at": "2026-11-15",
+  "proposals": [
+    {
+      "company_slug": "china-electronics-technology-group-corporation",
+      "kind": "duplicate_alias_financing",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2023-08-31/1217733163.PDF",
+      "legal_issuer": "中国电子科技集团有限公司 / China Electronics Technology Group Corporation / CETC",
+      "canonical_company_id": "4c2b5ebd-6f02-4f23-9ee5-2addb321d55e",
+      "canonical_company_slug": "cetc",
+      "duplicate_company_id": "fd077f5a-4744-4172-a4d2-898a90bbd008",
+      "pairs": [
+        {
+          "duplicate_row_id": "54f03ee2-f878-424a-9a10-02c554753abf",
+          "canonical_round_key": "cetc-19-zhongdianke-2019",
+          "canonical_row_id": "0c9d9ef2-25ef-4b26-903c-56175092f381",
+          "bond_code": "112969",
+          "amount": 1500000000,
+          "currency": "CNY"
+        },
+        {
+          "duplicate_row_id": "a6c20f66-d1e2-4f13-b7a7-a3c6b7b4bad5",
+          "canonical_row_id": "5fc9c087-cbd5-4343-9efa-863f0614ddee",
+          "canonical_round_key": "cetc-21-dianke-01-2021",
+          "bond_code": "185016",
+          "amount": 4000000000,
+          "currency": "CNY"
+        }
+      ],
+      "proposal": "Retire only exact long-name duplicate financing rows after live canonical-row checks; preserve sources/audit and both company identities, no metadata merge. No third copy or cloning18电科01.",
+      "writer_live_canonical_match": "Both exact canonical rows verified live; no extra financing imported. Prepared retirement requires fresh fullrow guards and guarded reversal in the next reconciliation."
+    },
+    {
+      "company_slug": "china-state-shipbuilding-corporation",
+      "kind": "round_announcement_dates",
+      "rows": [
+        {
+          "id": "030ddd08-3198-4807-9bec-26e3a39371c1",
+          "old_announced_date": "2026-07-01",
+          "known_prospectus_date": "2026-02-03",
+          "closed_date": "2026-02-06",
+          "source_url": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2026-02-06/244598_20260206_S8BR.pdf"
+        },
+        {
+          "id": "182efd6b-d773-4077-ae70-b9212896b286",
+          "old_announced_date": "2026-07-01",
+          "known_prospectus_date": "2026-03-31",
+          "closed_date": "2026-04-03",
+          "source_url": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2026-04-03/244952_20260403_2JFC.pdf"
+        }
+      ],
+      "proposal": "Replace July recap announcement dates with verified earlier original disclosure dates, using importer convention; preserve CNY2bn closed amounts and originalsources."
+    },
+    {
+      "company_slug": "cis",
+      "kind": "grant_date_and_cash_assertion",
+      "rows": [
+        {
+          "id": "5df36729-cc70-40eb-baed-2cafce677ab2",
+          "source_url": "https://enargus.de/pub/bscw.cgi/?id=10536499&op=enargus.eps2&q=ISC+Inspection+GmbH&s=5&v=10",
+          "amount": 396941.49,
+          "currency": "EUR",
+          "project_start": "2022-07-01"
+        },
+        {
+          "id": "63060106-2feb-4b5d-b570-16fcad725829",
+          "source_url": "https://biooekonomie.de/service-infothek/projektdatenbank/3368/detail/2",
+          "amount": 260975,
+          "currency": "EUR",
+          "project_start": "2020-01-01"
+        }
+      ],
+      "proposal": "Original sources establish approved grant amount and projectperiod only; remove assertion projectstart is announcementdate and closed_amount/closed cash receipt. DateNULL, amount_basis announced_round_size and closing_status announced are defensible if testedconvention accepts; CoronaPRO original inaccessible, preserve hold."
+    },
+    {
+      "company_slug": "cosine",
+      "round_id": "3c21046e-9a15-498d-92f5-717a3c7ccb60",
+      "round_key": "ahead2020-eu-grant-2019",
+      "expected_before": {
+        "announced_date": "2019-11-20",
+        "amount_basis": "closed_amount",
+        "closing_status": "closed",
+        "note_en": "The European Commission reports a EUR27,295 net EU contribution to cosine Research B.V. for AHEAD2020."
+      },
+      "proposed_after": {
+        "announced_date": null,
+        "amount_basis": "announced_round_size",
+        "closing_status": "signed",
+        "note_en": "The European Commission reports a EUR27,295 net EU contribution to cosine Research B.V. for AHEAD2020. This is the named company allocation, not evidence of cash payment. The recorded date is the EC grant signature date, not an established public announcement day."
+      },
+      "source_url": "https://cordis.europa.eu/project/id/871158",
+      "reason": "Project closed means project lifecycle status, not financing closed or paid cash. Preserve own amounts while correcting date and lifecycle semantics. Prepared only; not applied."
+    },
+    {
+      "company_slug": "cosine",
+      "round_id": "b8f69566-42a6-44c3-8f59-f919c6567182",
+      "round_key": "eufar-eu-grant-2008",
+      "expected_before": {
+        "announced_date": "2008-10-01",
+        "amount_basis": "closed_amount",
+        "closing_status": "closed",
+        "note_en": "The European Commission reports a EUR68,503.80 EU contribution to cosine Research B.V. for the EUFAR project."
+      },
+      "proposed_after": {
+        "announced_date": null,
+        "amount_basis": "announced_round_size",
+        "closing_status": "announced",
+        "note_en": "The European Commission reports a EUR68,503.80 EU contribution to cosine Research B.V. for the EUFAR project. This is the named company allocation, not evidence of cash payment. The recorded date is the project start date, not an established grant announcement day; exact public announcement date is unknown."
+      },
+      "source_url": "https://cordis.europa.eu/project/id/227159",
+      "reason": "Project closed means project lifecycle status, not financing closed or paid cash. Preserve own amounts while correcting date and lifecycle semantics. Prepared only; not applied."
+    },
+    {
+      "company_slug": "cosine",
+      "round_id": "f1bcfe91-3b55-48fe-a498-dae4adf76c7d",
+      "round_key": "i3ds-eu-grant-2016",
+      "expected_before": {
+        "announced_date": "2016-10-24",
+        "amount_basis": "closed_amount",
+        "closing_status": "closed",
+        "note_en": "The European Commission reports a EUR200,125 net EU contribution to cosine Research B.V. for the I3DS space-robotics project."
+      },
+      "proposed_after": {
+        "announced_date": null,
+        "amount_basis": "announced_round_size",
+        "closing_status": "signed",
+        "note_en": "The European Commission reports a EUR200,125 net EU contribution to cosine Research B.V. for the I3DS space-robotics project. This is the named company allocation, not evidence of cash payment. The recorded date is the EC grant signature date, not an established public announcement day."
+      },
+      "source_url": "https://cordis.europa.eu/project/id/730118",
+      "reason": "Project closed means project lifecycle status, not financing closed or paid cash. Preserve own amounts while correcting date and lifecycle semantics. Prepared only; not applied."
+    },
+    {
+      "company_slug": "cosine",
+      "round_id": "4fefaea1-fd63-43d0-b9f3-3874a9573605",
+      "round_key": "sinplex-eu-grant-2012",
+      "expected_before": {
+        "announced_date": "2012-01-01",
+        "amount_basis": "closed_amount",
+        "closing_status": "closed",
+        "note_en": "The European Commission reports a EUR199,998.25 contribution to cosine Research B.V. for the SINPLEX space-exploration project."
+      },
+      "proposed_after": {
+        "announced_date": null,
+        "amount_basis": "announced_round_size",
+        "closing_status": "announced",
+        "note_en": "The European Commission reports a EUR199,998.25 contribution to cosine Research B.V. for the SINPLEX space-exploration project. This is the named company allocation, not evidence of cash payment. The recorded date is the project start date, not an established grant announcement day; exact public announcement date is unknown."
+      },
+      "source_url": "https://cordis.europa.eu/project/id/284433",
+      "reason": "Project closed means project lifecycle status, not financing closed or paid cash. Preserve own amounts while correcting date and lifecycle semantics. Prepared only; not applied."
+    },
+    {
+      "company_slug": "couach",
+      "round_id": "0751cd78-12b6-45ea-ab28-1ab363cbccad",
+      "round_key": "french-state-liquidity-loan-2021",
+      "expected_before": {
+        "announced_date": "2021-10-25",
+        "amount_basis": "closed_amount",
+        "closing_status": "closed",
+        "note_en": "The French State provided a EUR4 million liquidity-support loan to Chantier Naval Couach - CNC through Bpifrance Financement."
+      },
+      "proposed_after": {
+        "announced_date": "2021-10-29",
+        "amount_basis": "announced_round_size",
+        "closing_status": "announced",
+        "note_en": "French State order dated 25 October2021, published in the Journal officiel on 29 October2021, authorises a EUR4m liquidity-support loan to Chantier Naval Couach - CNC (SIREN511791410), to be disbursed by Bpifrance Financement on behalf of the State. The order does not establish completed cash disbursement; October29 is the documented public publication date."
+      },
+      "source_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000044265025",
+      "reason": "Future disbursement language and publication date distinguish announcement from closed loan. Prepared only; not applied."
+    },
+    {
+      "company_slug": "colt",
+      "round_id": "341077e8-94a0-4f3d-af29-8bcd237c3436",
+      "round_key": "senior-dip-cash-draws-2015",
+      "disposition": "prepared_only_no_mutation",
+      "current_announced_date": "2015-06-24",
+      "proposed_announced_date": "2015-06-30",
+      "reason": "June24 is agreement/earliest event date; drawn totals include June25/26. Public filing signed June30. Confirm SEC acceptance date before applying date correction. Preserve actual approximate drawn amounts and unnamed lenders.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1512369/000110465915048873/a15-14899_18k.htm"
+    },
+    {
+      "company_slug": "colt",
+      "round_id": "858459e7-aa0a-4a83-b60b-8d23703071f9",
+      "round_key": "term-dip-cash-draws-2015",
+      "disposition": "prepared_only_no_mutation",
+      "current_announced_date": "2015-06-24",
+      "proposed_announced_date": "2015-06-30",
+      "reason": "June24 is agreement/earliest event date; drawn totals include June25/26. Public filing signed June30. Confirm SEC acceptance date before applying date correction. Preserve actual approximate drawn amounts and unnamed lenders.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1512369/000110465915048873/a15-14899_18k.htm"
+    },
+    {
+      "company_slug": "corvus-robotics",
+      "round_id": "4d834de4-480e-4f23-b001-be041873412c",
+      "round_key": "series-a-first-close-2024-10",
+      "disposition": "prepared_only_no_mutation",
+      "current": {
+        "amount_basis": "first_close_amount",
+        "closing_status": "first_close"
+      },
+      "proposed": {
+        "amount_basis": "closed_amount",
+        "closing_status": "undisclosed"
+      },
+      "reason": "SEC notice establishes securities sold, not a labelled first close. ExistingUSD7,507,999 is a sold-to-date disclosure; direct mapping to namedSeriesA and investor roles remains source-specific. Preserve current record pending reviewed replacement.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1931896/000193189624000001/xslFormDX08/primary_doc.xml"
+    }
+  ]
+}
