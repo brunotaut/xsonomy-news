@@ -1,5 +1,5 @@
 {
-  "status": "imported_exact_audit_passed",
+  "status": "imported_publication_pending",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T20:46:00.744Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-fifteenth.json",
@@ -948,7 +948,7 @@
     "new_source_rows": 40,
     "new_generic_portfolio_relationships": 1,
     "reviewed_existing_fact_corrections": 5,
-    "search_queries_executed": 145,
+    "search_queries_executed": 149,
     "newly_completed_bounded_reviews": 0,
     "new_or_retained_partial": 24,
     "local_postgresql_tests_passed": true,
@@ -958,7 +958,10 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "new_investor_profiles": 5,
-    "new_coverage_rows": 4
+    "new_coverage_rows": 4,
+    "post_import_idempotency_rehearsal_passed": true,
+    "queue_dispositions_applied": 24,
+    "approved_event_counts_refreshed_for_identities": 26
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1141,7 +1144,8 @@
     }
   },
   "publication": {
-    "status": "not_started"
+    "status": "pending",
+    "requested_at": "2026-11-15T21:01:57.315Z"
   },
   "preserved": [
     "Legacy STATE.json and frozen snapshots",
@@ -1149,7 +1153,7 @@
     "Curated profile rows and unrelated relationship/source history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-15T21:00:15.105Z",
+  "updated_at": "2026-11-15T21:01:57.339Z",
   "production_after": [
     {
       "events": 4900,
@@ -1160,5 +1164,17 @@
       "relationships": 766,
       "covered": 1350
     }
-  ]
+  ],
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1332,
+    "source_review_partial": 1232,
+    "queued": 0
+  },
+  "reconciliation_phase": {
+    "id": "partial-source-pass-1",
+    "checked": 504,
+    "remaining": 839,
+    "bounded_closed": 111,
+    "retained_partial": 393
+  }
 }
