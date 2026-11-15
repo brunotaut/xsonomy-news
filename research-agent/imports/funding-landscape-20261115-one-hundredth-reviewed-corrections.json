@@ -1,0 +1,381 @@
+{
+  "id": "funding-landscape-20261115-one-hundredth-reviewed-corrections",
+  "checked_at": "2026-11-15",
+  "method": "Full expected-old/current JSON guards excluding operational updated_at; idempotent forward and guarded reversal. Existing links, profiles and source history retained.",
+  "corrections": [
+    {
+      "table": "company_funding_rounds",
+      "key": "7457055a-063d-4745-9e2d-6823b7a01354",
+      "company_slug": "birdstop",
+      "expected_before": {
+        "id": "7457055a-063d-4745-9e2d-6823b7a01354",
+        "stage": "Private placement",
+        "amount": 2300000,
+        "note_en": "Form D reports USD 2.3 million sold to nine investors. The company announcement names seven institutions and explicitly identifies Lerer Hippeau as lead; financing type is left undisclosed rather than guessed.",
+        "currency": "USD",
+        "round_key": "private-placement-2023",
+        "checked_at": "2026-11-11",
+        "company_id": "f61feced-2b45-411b-a21a-b6cd943648e8",
+        "created_at": "2026-11-11T22:58:58.309226+00:00",
+        "updated_at": "2026-11-11T22:58:58.309226+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2023-05-25",
+        "closing_status": "closed",
+        "financing_type": "undisclosed",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "7457055a-063d-4745-9e2d-6823b7a01354",
+        "stage": "Private placement",
+        "amount": 2300000,
+        "note_en": "Form D reports USD 2.3 million sold to nine investors. The company announcement names seven institutions and explicitly identifies Lerer Hippeau as lead; financing type is left undisclosed rather than guessed. Review 2026-11-15: original SEC submission metadata establishes public filing 2023-06-08; 2023-05-25 is the first sale, not the public announcement. The issuer press release dated 8 August 2023 is later than the 8 June filing and separately corroborates the same financing and named roles. No duplicate round or change to amount, issuer or existing participation is made.",
+        "currency": "USD",
+        "round_key": "private-placement-2023",
+        "checked_at": "2026-11-15",
+        "company_id": "f61feced-2b45-411b-a21a-b6cd943648e8",
+        "created_at": "2026-11-11T22:58:58.309226+00:00",
+        "updated_at": "2026-11-11T22:58:58.309226+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2023-06-08",
+        "closing_status": "closed",
+        "financing_type": "undisclosed",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "announced_date",
+        "note_en",
+        "checked_at"
+      ],
+      "reason": "First-sale date was stored as announcement; primary EDGAR metadata gives an evidenced public filing date.",
+      "evidence": [
+        {
+          "url": "https://data.sec.gov/submissions/CIK0001980743.json"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1980743/000198074323000001/primary_doc.xml"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/california-based-birdstop-raises-funding-to-expand-network-of-bvlos-drones-across-america-and-protect-critical-infrastructure-301895985.html"
+        }
+      ],
+      "reversal": {
+        "id": "7457055a-063d-4745-9e2d-6823b7a01354",
+        "stage": "Private placement",
+        "amount": 2300000,
+        "note_en": "Form D reports USD 2.3 million sold to nine investors. The company announcement names seven institutions and explicitly identifies Lerer Hippeau as lead; financing type is left undisclosed rather than guessed.",
+        "currency": "USD",
+        "round_key": "private-placement-2023",
+        "checked_at": "2026-11-11",
+        "company_id": "f61feced-2b45-411b-a21a-b6cd943648e8",
+        "created_at": "2026-11-11T22:58:58.309226+00:00",
+        "updated_at": "2026-11-11T22:58:58.309226+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2023-05-25",
+        "closing_status": "closed",
+        "financing_type": "undisclosed",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key": "010d7443-1e6d-4a08-9e6d-17e4184b032b",
+      "company_slug": "birdstop",
+      "expected_before": {
+        "id": "010d7443-1e6d-4a08-9e6d-17e4184b032b",
+        "stage": "Equity private placement",
+        "amount": 4600000,
+        "note_en": "Form D reports USD 4.6 million offered and sold to 16 investors with zero remaining; investor identities are undisclosed.",
+        "currency": "USD",
+        "round_key": "equity-private-placement-2025",
+        "checked_at": "2026-11-11",
+        "company_id": "f61feced-2b45-411b-a21a-b6cd943648e8",
+        "created_at": "2026-11-11T22:58:58.309226+00:00",
+        "updated_at": "2026-11-11T22:58:58.309226+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2025-08-01",
+        "closing_status": "closed",
+        "financing_type": "equity",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "010d7443-1e6d-4a08-9e6d-17e4184b032b",
+        "stage": "Equity private placement",
+        "amount": 4600000,
+        "note_en": "Form D reports USD 4.6 million offered and sold to 16 investors with zero remaining; investor identities are undisclosed. Review 2026-11-15: original SEC submission metadata establishes public filing 2025-08-15; 2025-08-01 is the first sale, not the public announcement. Original SEC Form D confirms USD4.6m sold to16 investors; identities remain undisclosed. No duplicate round or change to amount, issuer or existing participation is made.",
+        "currency": "USD",
+        "round_key": "equity-private-placement-2025",
+        "checked_at": "2026-11-15",
+        "company_id": "f61feced-2b45-411b-a21a-b6cd943648e8",
+        "created_at": "2026-11-11T22:58:58.309226+00:00",
+        "updated_at": "2026-11-11T22:58:58.309226+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2025-08-15",
+        "closing_status": "closed",
+        "financing_type": "equity",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "announced_date",
+        "note_en",
+        "checked_at"
+      ],
+      "reason": "First-sale date was stored as announcement; primary EDGAR metadata gives an evidenced public filing date.",
+      "evidence": [
+        {
+          "url": "https://data.sec.gov/submissions/CIK0001980743.json"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1980743/000198074325000001/primary_doc.xml"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/california-based-birdstop-raises-funding-to-expand-network-of-bvlos-drones-across-america-and-protect-critical-infrastructure-301895985.html"
+        }
+      ],
+      "reversal": {
+        "id": "010d7443-1e6d-4a08-9e6d-17e4184b032b",
+        "stage": "Equity private placement",
+        "amount": 4600000,
+        "note_en": "Form D reports USD 4.6 million offered and sold to 16 investors with zero remaining; investor identities are undisclosed.",
+        "currency": "USD",
+        "round_key": "equity-private-placement-2025",
+        "checked_at": "2026-11-11",
+        "company_id": "f61feced-2b45-411b-a21a-b6cd943648e8",
+        "created_at": "2026-11-11T22:58:58.309226+00:00",
+        "updated_at": "2026-11-11T22:58:58.309226+00:00",
+        "record_kind": "round",
+        "amount_basis": "closed_amount",
+        "announced_date": "2025-08-01",
+        "closing_status": "closed",
+        "financing_type": "equity",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key": "382fec92-16ee-4d81-bcb1-6b695b374efd",
+      "company_slug": "cambridge-sensoriis",
+      "expected_before": {
+        "id": "382fec92-16ee-4d81-bcb1-6b695b374efd",
+        "stage": "Future of Flight Phase 3 Project PORTAL grant",
+        "amount": null,
+        "note_en": "Cambridge Sensoriis announced that it had been awarded a grant for Project PORTAL. The same announcement says PORTAL and ALIAS together are worth more than GBP500,000 to the business over two years, but it does not allocate an amount to either project, so the event amount is left undisclosed.",
+        "currency": null,
+        "round_key": "future-flight-portal-grant-2022",
+        "checked_at": "2026-11-12",
+        "company_id": "fb7c33f1-ae18-43d9-8554-523dc87be651",
+        "created_at": "2026-11-12T02:01:39.530329+00:00",
+        "updated_at": "2026-11-12T02:01:39.530329+00:00",
+        "record_kind": "round",
+        "amount_basis": "undisclosed",
+        "announced_date": "2022",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "382fec92-16ee-4d81-bcb1-6b695b374efd",
+        "stage": "Future of Flight Phase 3 Project PORTAL grant",
+        "amount": 406593.3,
+        "note_en": "Cambridge Sensoriis Ltd (12586186), now trading as skyAnchor, is the exact recipient. Original UKRI GtR project 10023177 lists its own grant offer GBP406,593.30; this is neither consortium total nor project cost. Project funding approval/award is not proof of cash paid. Existing2022 public-year precision retained; exact day not established. The earlier joint more-than-GBP500k issuer headline is not imported as an additional event.",
+        "currency": "GBP",
+        "round_key": "future-flight-portal-grant-2022",
+        "checked_at": "2026-11-15",
+        "company_id": "fb7c33f1-ae18-43d9-8554-523dc87be651",
+        "created_at": "2026-11-12T02:01:39.530329+00:00",
+        "updated_at": "2026-11-12T02:01:39.530329+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2022",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "amount",
+        "currency",
+        "amount_basis",
+        "amount_qualifier",
+        "checked_at",
+        "note_en"
+      ],
+      "reason": "Fresh official recipient-level grant offer resolves previously undisclosed PORTAL amount; do not create a duplicate event.",
+      "evidence": [
+        {
+          "url": "https://gtr.ukri.org/projects?ref=10023177",
+          "published_date": null,
+          "note": "Exact Cambridge Sensoriis own grant offer GBP406,593, distinct from whole consortium."
+        }
+      ],
+      "reversal": {
+        "id": "382fec92-16ee-4d81-bcb1-6b695b374efd",
+        "stage": "Future of Flight Phase 3 Project PORTAL grant",
+        "amount": null,
+        "note_en": "Cambridge Sensoriis announced that it had been awarded a grant for Project PORTAL. The same announcement says PORTAL and ALIAS together are worth more than GBP500,000 to the business over two years, but it does not allocate an amount to either project, so the event amount is left undisclosed.",
+        "currency": null,
+        "round_key": "future-flight-portal-grant-2022",
+        "checked_at": "2026-11-12",
+        "company_id": "fb7c33f1-ae18-43d9-8554-523dc87be651",
+        "created_at": "2026-11-12T02:01:39.530329+00:00",
+        "updated_at": "2026-11-12T02:01:39.530329+00:00",
+        "record_kind": "round",
+        "amount_basis": "undisclosed",
+        "announced_date": "2022",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key": "723e11b3-9fa6-4f5b-b5bb-106b646147ad",
+      "company_slug": "cambridge-sensoriis",
+      "expected_before": {
+        "id": "723e11b3-9fa6-4f5b-b5bb-106b646147ad",
+        "stage": "Future of Flight Phase 3 Project ALIAS grant",
+        "amount": null,
+        "note_en": "Cambridge Sensoriis announced that it had been awarded a grant for the AgiLe Integrated Airspace System (ALIAS). The joint value of the PORTAL and ALIAS awards was stated only as more than GBP500,000 to the business over two years, so no amount is assigned to this individual grant.",
+        "currency": null,
+        "round_key": "future-flight-alias-grant-2022",
+        "checked_at": "2026-11-12",
+        "company_id": "fb7c33f1-ae18-43d9-8554-523dc87be651",
+        "created_at": "2026-11-12T02:01:39.530329+00:00",
+        "updated_at": "2026-11-12T02:01:39.530329+00:00",
+        "record_kind": "round",
+        "amount_basis": "undisclosed",
+        "announced_date": "2022",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "723e11b3-9fa6-4f5b-b5bb-106b646147ad",
+        "stage": "Future of Flight Phase 3 Project ALIAS grant",
+        "amount": 204995,
+        "note_en": "Cambridge Sensoriis Ltd (12586186), now trading as skyAnchor, is the exact recipient. Original UKRI GtR project 10025418 lists its own grant offer GBP204,995; this is neither consortium total nor project cost. Project funding approval/award is not proof of cash paid. Existing2022 public-year precision retained; exact day not established. The earlier joint more-than-GBP500k issuer headline is not imported as an additional event.",
+        "currency": "GBP",
+        "round_key": "future-flight-alias-grant-2022",
+        "checked_at": "2026-11-15",
+        "company_id": "fb7c33f1-ae18-43d9-8554-523dc87be651",
+        "created_at": "2026-11-12T02:01:39.530329+00:00",
+        "updated_at": "2026-11-12T02:01:39.530329+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2022",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "amount",
+        "currency",
+        "amount_basis",
+        "amount_qualifier",
+        "checked_at",
+        "note_en"
+      ],
+      "reason": "Fresh official recipient-level grant offer resolves previously undisclosed ALIAS amount; do not create a duplicate event.",
+      "evidence": [
+        {
+          "url": "https://gtr.ukri.org/projects?ref=10025418",
+          "published_date": null,
+          "note": "Exact Cambridge Sensoriis own grant offer GBP204,995, distinct from whole consortium."
+        }
+      ],
+      "reversal": {
+        "id": "723e11b3-9fa6-4f5b-b5bb-106b646147ad",
+        "stage": "Future of Flight Phase 3 Project ALIAS grant",
+        "amount": null,
+        "note_en": "Cambridge Sensoriis announced that it had been awarded a grant for the AgiLe Integrated Airspace System (ALIAS). The joint value of the PORTAL and ALIAS awards was stated only as more than GBP500,000 to the business over two years, so no amount is assigned to this individual grant.",
+        "currency": null,
+        "round_key": "future-flight-alias-grant-2022",
+        "checked_at": "2026-11-12",
+        "company_id": "fb7c33f1-ae18-43d9-8554-523dc87be651",
+        "created_at": "2026-11-12T02:01:39.530329+00:00",
+        "updated_at": "2026-11-12T02:01:39.530329+00:00",
+        "record_kind": "round",
+        "amount_basis": "undisclosed",
+        "announced_date": "2022",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    }
+  ],
+  "source_additions": [
+    {
+      "round_id": "7457055a-063d-4745-9e2d-6823b7a01354",
+      "url": "https://www.sec.gov/Archives/edgar/data/1980743/000198074323000001/primary_doc.xml",
+      "title": "Birdstop issuer Form D: original exempt offering notice",
+      "source_type": "company_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "7457055a-063d-4745-9e2d-6823b7a01354",
+      "url": "https://data.sec.gov/submissions/CIK0001980743.json",
+      "title": "SEC EDGAR original Birdstop filing and acceptance metadata",
+      "source_type": "company_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "010d7443-1e6d-4a08-9e6d-17e4184b032b",
+      "url": "https://www.sec.gov/Archives/edgar/data/1980743/000198074325000001/primary_doc.xml",
+      "title": "Birdstop issuer Form D: original exempt offering notice",
+      "source_type": "company_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "010d7443-1e6d-4a08-9e6d-17e4184b032b",
+      "url": "https://data.sec.gov/submissions/CIK0001980743.json",
+      "title": "SEC EDGAR original Birdstop filing and acceptance metadata",
+      "source_type": "company_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "382fec92-16ee-4d81-bcb1-6b695b374efd",
+      "url": "https://gtr.ukri.org/projects?ref=10023177",
+      "title": "UKRI original participant-specific Cambridge Sensoriis grant offer",
+      "source_type": "investor_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "723e11b3-9fa6-4f5b-b5bb-106b646147ad",
+      "url": "https://gtr.ukri.org/projects?ref=10025418",
+      "title": "UKRI original participant-specific Cambridge Sensoriis grant offer",
+      "source_type": "investor_announcement",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "forward_sql": "DO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='7457055a-063d-4745-9e2d-6823b7a01354' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"stage\":\"Private placement\",\"amount\":2300000,\"note_en\":\"Form D reports USD 2.3 million sold to nine investors. The company announcement names seven institutions and explicitly identifies Lerer Hippeau as lead; financing type is left undisclosed rather than guessed.\",\"currency\":\"USD\",\"round_key\":\"private-placement-2023\",\"checked_at\":\"2026-11-11\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2023-05-25\",\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"stage\":\"Private placement\",\"amount\":2300000,\"note_en\":\"Form D reports USD 2.3 million sold to nine investors. The company announcement names seven institutions and explicitly identifies Lerer Hippeau as lead; financing type is left undisclosed rather than guessed. Review 2026-11-15: original SEC submission metadata establishes public filing 2023-06-08; 2023-05-25 is the first sale, not the public announcement. The issuer press release dated 8 August 2023 is later than the 8 June filing and separately corroborates the same financing and named roles. No duplicate round or change to amount, issuer or existing participation is made.\",\"currency\":\"USD\",\"round_key\":\"private-placement-2023\",\"checked_at\":\"2026-11-15\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2023-06-08\",\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 7457055a-063d-4745-9e2d-6823b7a01354'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"stage\":\"Private placement\",\"amount\":2300000,\"note_en\":\"Form D reports USD 2.3 million sold to nine investors. The company announcement names seven institutions and explicitly identifies Lerer Hippeau as lead; financing type is left undisclosed rather than guessed. Review 2026-11-15: original SEC submission metadata establishes public filing 2023-06-08; 2023-05-25 is the first sale, not the public announcement. The issuer press release dated 8 August 2023 is later than the 8 June filing and separately corroborates the same financing and named roles. No duplicate round or change to amount, issuer or existing participation is made.\",\"currency\":\"USD\",\"round_key\":\"private-placement-2023\",\"checked_at\":\"2026-11-15\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2023-06-08\",\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"stage\":\"Private placement\",\"amount\":2300000,\"note_en\":\"Form D reports USD 2.3 million sold to nine investors. The company announcement names seven institutions and explicitly identifies Lerer Hippeau as lead; financing type is left undisclosed rather than guessed. Review 2026-11-15: original SEC submission metadata establishes public filing 2023-06-08; 2023-05-25 is the first sale, not the public announcement. The issuer press release dated 8 August 2023 is later than the 8 June filing and separately corroborates the same financing and named roles. No duplicate round or change to amount, issuer or existing participation is made.\",\"currency\":\"USD\",\"round_key\":\"private-placement-2023\",\"checked_at\":\"2026-11-15\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"updated_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2023-06-08\",\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET announced_date=target.announced_date,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='7457055a-063d-4745-9e2d-6823b7a01354'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='010d7443-1e6d-4a08-9e6d-17e4184b032b' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"stage\":\"Equity private placement\",\"amount\":4600000,\"note_en\":\"Form D reports USD 4.6 million offered and sold to 16 investors with zero remaining; investor identities are undisclosed.\",\"currency\":\"USD\",\"round_key\":\"equity-private-placement-2025\",\"checked_at\":\"2026-11-11\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2025-08-01\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"stage\":\"Equity private placement\",\"amount\":4600000,\"note_en\":\"Form D reports USD 4.6 million offered and sold to 16 investors with zero remaining; investor identities are undisclosed. Review 2026-11-15: original SEC submission metadata establishes public filing 2025-08-15; 2025-08-01 is the first sale, not the public announcement. Original SEC Form D confirms USD4.6m sold to16 investors; identities remain undisclosed. No duplicate round or change to amount, issuer or existing participation is made.\",\"currency\":\"USD\",\"round_key\":\"equity-private-placement-2025\",\"checked_at\":\"2026-11-15\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2025-08-15\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 010d7443-1e6d-4a08-9e6d-17e4184b032b'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"stage\":\"Equity private placement\",\"amount\":4600000,\"note_en\":\"Form D reports USD 4.6 million offered and sold to 16 investors with zero remaining; investor identities are undisclosed. Review 2026-11-15: original SEC submission metadata establishes public filing 2025-08-15; 2025-08-01 is the first sale, not the public announcement. Original SEC Form D confirms USD4.6m sold to16 investors; identities remain undisclosed. No duplicate round or change to amount, issuer or existing participation is made.\",\"currency\":\"USD\",\"round_key\":\"equity-private-placement-2025\",\"checked_at\":\"2026-11-15\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2025-08-15\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"stage\":\"Equity private placement\",\"amount\":4600000,\"note_en\":\"Form D reports USD 4.6 million offered and sold to 16 investors with zero remaining; investor identities are undisclosed. Review 2026-11-15: original SEC submission metadata establishes public filing 2025-08-15; 2025-08-01 is the first sale, not the public announcement. Original SEC Form D confirms USD4.6m sold to16 investors; identities remain undisclosed. No duplicate round or change to amount, issuer or existing participation is made.\",\"currency\":\"USD\",\"round_key\":\"equity-private-placement-2025\",\"checked_at\":\"2026-11-15\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"updated_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2025-08-15\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET announced_date=target.announced_date,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='010d7443-1e6d-4a08-9e6d-17e4184b032b'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='382fec92-16ee-4d81-bcb1-6b695b374efd' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"382fec92-16ee-4d81-bcb1-6b695b374efd\",\"stage\":\"Future of Flight Phase 3 Project PORTAL grant\",\"amount\":null,\"note_en\":\"Cambridge Sensoriis announced that it had been awarded a grant for Project PORTAL. The same announcement says PORTAL and ALIAS together are worth more than GBP500,000 to the business over two years, but it does not allocate an amount to either project, so the event amount is left undisclosed.\",\"currency\":null,\"round_key\":\"future-flight-portal-grant-2022\",\"checked_at\":\"2026-11-12\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"382fec92-16ee-4d81-bcb1-6b695b374efd\",\"stage\":\"Future of Flight Phase 3 Project PORTAL grant\",\"amount\":406593.3,\"note_en\":\"Cambridge Sensoriis Ltd (12586186), now trading as skyAnchor, is the exact recipient. Original UKRI GtR project 10023177 lists its own grant offer GBP406,593.30; this is neither consortium total nor project cost. Project funding approval/award is not proof of cash paid. Existing2022 public-year precision retained; exact day not established. The earlier joint more-than-GBP500k issuer headline is not imported as an additional event.\",\"currency\":\"GBP\",\"round_key\":\"future-flight-portal-grant-2022\",\"checked_at\":\"2026-11-15\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 382fec92-16ee-4d81-bcb1-6b695b374efd'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"382fec92-16ee-4d81-bcb1-6b695b374efd\",\"stage\":\"Future of Flight Phase 3 Project PORTAL grant\",\"amount\":406593.3,\"note_en\":\"Cambridge Sensoriis Ltd (12586186), now trading as skyAnchor, is the exact recipient. Original UKRI GtR project 10023177 lists its own grant offer GBP406,593.30; this is neither consortium total nor project cost. Project funding approval/award is not proof of cash paid. Existing2022 public-year precision retained; exact day not established. The earlier joint more-than-GBP500k issuer headline is not imported as an additional event.\",\"currency\":\"GBP\",\"round_key\":\"future-flight-portal-grant-2022\",\"checked_at\":\"2026-11-15\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"382fec92-16ee-4d81-bcb1-6b695b374efd\",\"stage\":\"Future of Flight Phase 3 Project PORTAL grant\",\"amount\":406593.3,\"note_en\":\"Cambridge Sensoriis Ltd (12586186), now trading as skyAnchor, is the exact recipient. Original UKRI GtR project 10023177 lists its own grant offer GBP406,593.30; this is neither consortium total nor project cost. Project funding approval/award is not proof of cash paid. Existing2022 public-year precision retained; exact day not established. The earlier joint more-than-GBP500k issuer headline is not imported as an additional event.\",\"currency\":\"GBP\",\"round_key\":\"future-flight-portal-grant-2022\",\"checked_at\":\"2026-11-15\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"updated_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET amount=target.amount,currency=target.currency,amount_basis=target.amount_basis,amount_qualifier=target.amount_qualifier,checked_at=target.checked_at,note_en=target.note_en,updated_at=now() WHERE id='382fec92-16ee-4d81-bcb1-6b695b374efd'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='723e11b3-9fa6-4f5b-b5bb-106b646147ad' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"723e11b3-9fa6-4f5b-b5bb-106b646147ad\",\"stage\":\"Future of Flight Phase 3 Project ALIAS grant\",\"amount\":null,\"note_en\":\"Cambridge Sensoriis announced that it had been awarded a grant for the AgiLe Integrated Airspace System (ALIAS). The joint value of the PORTAL and ALIAS awards was stated only as more than GBP500,000 to the business over two years, so no amount is assigned to this individual grant.\",\"currency\":null,\"round_key\":\"future-flight-alias-grant-2022\",\"checked_at\":\"2026-11-12\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"723e11b3-9fa6-4f5b-b5bb-106b646147ad\",\"stage\":\"Future of Flight Phase 3 Project ALIAS grant\",\"amount\":204995,\"note_en\":\"Cambridge Sensoriis Ltd (12586186), now trading as skyAnchor, is the exact recipient. Original UKRI GtR project 10025418 lists its own grant offer GBP204,995; this is neither consortium total nor project cost. Project funding approval/award is not proof of cash paid. Existing2022 public-year precision retained; exact day not established. The earlier joint more-than-GBP500k issuer headline is not imported as an additional event.\",\"currency\":\"GBP\",\"round_key\":\"future-flight-alias-grant-2022\",\"checked_at\":\"2026-11-15\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 723e11b3-9fa6-4f5b-b5bb-106b646147ad'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"723e11b3-9fa6-4f5b-b5bb-106b646147ad\",\"stage\":\"Future of Flight Phase 3 Project ALIAS grant\",\"amount\":204995,\"note_en\":\"Cambridge Sensoriis Ltd (12586186), now trading as skyAnchor, is the exact recipient. Original UKRI GtR project 10025418 lists its own grant offer GBP204,995; this is neither consortium total nor project cost. Project funding approval/award is not proof of cash paid. Existing2022 public-year precision retained; exact day not established. The earlier joint more-than-GBP500k issuer headline is not imported as an additional event.\",\"currency\":\"GBP\",\"round_key\":\"future-flight-alias-grant-2022\",\"checked_at\":\"2026-11-15\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"723e11b3-9fa6-4f5b-b5bb-106b646147ad\",\"stage\":\"Future of Flight Phase 3 Project ALIAS grant\",\"amount\":204995,\"note_en\":\"Cambridge Sensoriis Ltd (12586186), now trading as skyAnchor, is the exact recipient. Original UKRI GtR project 10025418 lists its own grant offer GBP204,995; this is neither consortium total nor project cost. Project funding approval/award is not proof of cash paid. Existing2022 public-year precision retained; exact day not established. The earlier joint more-than-GBP500k issuer headline is not imported as an additional event.\",\"currency\":\"GBP\",\"round_key\":\"future-flight-alias-grant-2022\",\"checked_at\":\"2026-11-15\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"updated_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET amount=target.amount,currency=target.currency,amount_basis=target.amount_basis,amount_qualifier=target.amount_qualifier,checked_at=target.checked_at,note_en=target.note_en,updated_at=now() WHERE id='723e11b3-9fa6-4f5b-b5bb-106b646147ad'; END IF; END $reviewed$;\nINSERT INTO public.company_funding_round_sources SELECT * FROM jsonb_populate_record(NULL::public.company_funding_round_sources,'{\"round_id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"url\":\"https://www.sec.gov/Archives/edgar/data/1980743/000198074323000001/primary_doc.xml\",\"title\":\"Birdstop issuer Form D: original exempt offering notice\",\"source_type\":\"company_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) ON CONFLICT(round_id,url) DO NOTHING;\nDO $source_guard$ BEGIN IF NOT EXISTS(SELECT 1 FROM public.company_funding_round_sources z WHERE z.round_id='7457055a-063d-4745-9e2d-6823b7a01354' AND z.url='https://www.sec.gov/Archives/edgar/data/1980743/000198074323000001/primary_doc.xml' AND to_jsonb(z)='{\"round_id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"url\":\"https://www.sec.gov/Archives/edgar/data/1980743/000198074323000001/primary_doc.xml\",\"title\":\"Birdstop issuer Form D: original exempt offering notice\",\"source_type\":\"company_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) THEN RAISE EXCEPTION 'Corroborating source guard failed'; END IF; END $source_guard$;\nINSERT INTO public.company_funding_round_sources SELECT * FROM jsonb_populate_record(NULL::public.company_funding_round_sources,'{\"round_id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"url\":\"https://data.sec.gov/submissions/CIK0001980743.json\",\"title\":\"SEC EDGAR original Birdstop filing and acceptance metadata\",\"source_type\":\"company_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) ON CONFLICT(round_id,url) DO NOTHING;\nDO $source_guard$ BEGIN IF NOT EXISTS(SELECT 1 FROM public.company_funding_round_sources z WHERE z.round_id='7457055a-063d-4745-9e2d-6823b7a01354' AND z.url='https://data.sec.gov/submissions/CIK0001980743.json' AND to_jsonb(z)='{\"round_id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"url\":\"https://data.sec.gov/submissions/CIK0001980743.json\",\"title\":\"SEC EDGAR original Birdstop filing and acceptance metadata\",\"source_type\":\"company_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) THEN RAISE EXCEPTION 'Corroborating source guard failed'; END IF; END $source_guard$;\nINSERT INTO public.company_funding_round_sources SELECT * FROM jsonb_populate_record(NULL::public.company_funding_round_sources,'{\"round_id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"url\":\"https://www.sec.gov/Archives/edgar/data/1980743/000198074325000001/primary_doc.xml\",\"title\":\"Birdstop issuer Form D: original exempt offering notice\",\"source_type\":\"company_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) ON CONFLICT(round_id,url) DO NOTHING;\nDO $source_guard$ BEGIN IF NOT EXISTS(SELECT 1 FROM public.company_funding_round_sources z WHERE z.round_id='010d7443-1e6d-4a08-9e6d-17e4184b032b' AND z.url='https://www.sec.gov/Archives/edgar/data/1980743/000198074325000001/primary_doc.xml' AND to_jsonb(z)='{\"round_id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"url\":\"https://www.sec.gov/Archives/edgar/data/1980743/000198074325000001/primary_doc.xml\",\"title\":\"Birdstop issuer Form D: original exempt offering notice\",\"source_type\":\"company_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) THEN RAISE EXCEPTION 'Corroborating source guard failed'; END IF; END $source_guard$;\nINSERT INTO public.company_funding_round_sources SELECT * FROM jsonb_populate_record(NULL::public.company_funding_round_sources,'{\"round_id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"url\":\"https://data.sec.gov/submissions/CIK0001980743.json\",\"title\":\"SEC EDGAR original Birdstop filing and acceptance metadata\",\"source_type\":\"company_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) ON CONFLICT(round_id,url) DO NOTHING;\nDO $source_guard$ BEGIN IF NOT EXISTS(SELECT 1 FROM public.company_funding_round_sources z WHERE z.round_id='010d7443-1e6d-4a08-9e6d-17e4184b032b' AND z.url='https://data.sec.gov/submissions/CIK0001980743.json' AND to_jsonb(z)='{\"round_id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"url\":\"https://data.sec.gov/submissions/CIK0001980743.json\",\"title\":\"SEC EDGAR original Birdstop filing and acceptance metadata\",\"source_type\":\"company_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) THEN RAISE EXCEPTION 'Corroborating source guard failed'; END IF; END $source_guard$;\nINSERT INTO public.company_funding_round_sources SELECT * FROM jsonb_populate_record(NULL::public.company_funding_round_sources,'{\"round_id\":\"382fec92-16ee-4d81-bcb1-6b695b374efd\",\"url\":\"https://gtr.ukri.org/projects?ref=10023177\",\"title\":\"UKRI original participant-specific Cambridge Sensoriis grant offer\",\"source_type\":\"investor_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) ON CONFLICT(round_id,url) DO NOTHING;\nDO $source_guard$ BEGIN IF NOT EXISTS(SELECT 1 FROM public.company_funding_round_sources z WHERE z.round_id='382fec92-16ee-4d81-bcb1-6b695b374efd' AND z.url='https://gtr.ukri.org/projects?ref=10023177' AND to_jsonb(z)='{\"round_id\":\"382fec92-16ee-4d81-bcb1-6b695b374efd\",\"url\":\"https://gtr.ukri.org/projects?ref=10023177\",\"title\":\"UKRI original participant-specific Cambridge Sensoriis grant offer\",\"source_type\":\"investor_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) THEN RAISE EXCEPTION 'Corroborating source guard failed'; END IF; END $source_guard$;\nINSERT INTO public.company_funding_round_sources SELECT * FROM jsonb_populate_record(NULL::public.company_funding_round_sources,'{\"round_id\":\"723e11b3-9fa6-4f5b-b5bb-106b646147ad\",\"url\":\"https://gtr.ukri.org/projects?ref=10025418\",\"title\":\"UKRI original participant-specific Cambridge Sensoriis grant offer\",\"source_type\":\"investor_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) ON CONFLICT(round_id,url) DO NOTHING;\nDO $source_guard$ BEGIN IF NOT EXISTS(SELECT 1 FROM public.company_funding_round_sources z WHERE z.round_id='723e11b3-9fa6-4f5b-b5bb-106b646147ad' AND z.url='https://gtr.ukri.org/projects?ref=10025418' AND to_jsonb(z)='{\"round_id\":\"723e11b3-9fa6-4f5b-b5bb-106b646147ad\",\"url\":\"https://gtr.ukri.org/projects?ref=10025418\",\"title\":\"UKRI original participant-specific Cambridge Sensoriis grant offer\",\"source_type\":\"investor_announcement\",\"checked_at\":\"2026-11-15\"}'::jsonb) THEN RAISE EXCEPTION 'Corroborating source guard failed'; END IF; END $source_guard$;",
+  "reversal_sql": "DO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='723e11b3-9fa6-4f5b-b5bb-106b646147ad' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"723e11b3-9fa6-4f5b-b5bb-106b646147ad\",\"stage\":\"Future of Flight Phase 3 Project ALIAS grant\",\"amount\":204995,\"note_en\":\"Cambridge Sensoriis Ltd (12586186), now trading as skyAnchor, is the exact recipient. Original UKRI GtR project 10025418 lists its own grant offer GBP204,995; this is neither consortium total nor project cost. Project funding approval/award is not proof of cash paid. Existing2022 public-year precision retained; exact day not established. The earlier joint more-than-GBP500k issuer headline is not imported as an additional event.\",\"currency\":\"GBP\",\"round_key\":\"future-flight-alias-grant-2022\",\"checked_at\":\"2026-11-15\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"723e11b3-9fa6-4f5b-b5bb-106b646147ad\",\"stage\":\"Future of Flight Phase 3 Project ALIAS grant\",\"amount\":null,\"note_en\":\"Cambridge Sensoriis announced that it had been awarded a grant for the AgiLe Integrated Airspace System (ALIAS). The joint value of the PORTAL and ALIAS awards was stated only as more than GBP500,000 to the business over two years, so no amount is assigned to this individual grant.\",\"currency\":null,\"round_key\":\"future-flight-alias-grant-2022\",\"checked_at\":\"2026-11-12\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 723e11b3-9fa6-4f5b-b5bb-106b646147ad'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"723e11b3-9fa6-4f5b-b5bb-106b646147ad\",\"stage\":\"Future of Flight Phase 3 Project ALIAS grant\",\"amount\":null,\"note_en\":\"Cambridge Sensoriis announced that it had been awarded a grant for the AgiLe Integrated Airspace System (ALIAS). The joint value of the PORTAL and ALIAS awards was stated only as more than GBP500,000 to the business over two years, so no amount is assigned to this individual grant.\",\"currency\":null,\"round_key\":\"future-flight-alias-grant-2022\",\"checked_at\":\"2026-11-12\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"723e11b3-9fa6-4f5b-b5bb-106b646147ad\",\"stage\":\"Future of Flight Phase 3 Project ALIAS grant\",\"amount\":null,\"note_en\":\"Cambridge Sensoriis announced that it had been awarded a grant for the AgiLe Integrated Airspace System (ALIAS). The joint value of the PORTAL and ALIAS awards was stated only as more than GBP500,000 to the business over two years, so no amount is assigned to this individual grant.\",\"currency\":null,\"round_key\":\"future-flight-alias-grant-2022\",\"checked_at\":\"2026-11-12\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"updated_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET amount=target.amount,currency=target.currency,amount_basis=target.amount_basis,amount_qualifier=target.amount_qualifier,checked_at=target.checked_at,note_en=target.note_en,updated_at=now() WHERE id='723e11b3-9fa6-4f5b-b5bb-106b646147ad'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='382fec92-16ee-4d81-bcb1-6b695b374efd' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"382fec92-16ee-4d81-bcb1-6b695b374efd\",\"stage\":\"Future of Flight Phase 3 Project PORTAL grant\",\"amount\":406593.3,\"note_en\":\"Cambridge Sensoriis Ltd (12586186), now trading as skyAnchor, is the exact recipient. Original UKRI GtR project 10023177 lists its own grant offer GBP406,593.30; this is neither consortium total nor project cost. Project funding approval/award is not proof of cash paid. Existing2022 public-year precision retained; exact day not established. The earlier joint more-than-GBP500k issuer headline is not imported as an additional event.\",\"currency\":\"GBP\",\"round_key\":\"future-flight-portal-grant-2022\",\"checked_at\":\"2026-11-15\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"announced_round_size\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"382fec92-16ee-4d81-bcb1-6b695b374efd\",\"stage\":\"Future of Flight Phase 3 Project PORTAL grant\",\"amount\":null,\"note_en\":\"Cambridge Sensoriis announced that it had been awarded a grant for Project PORTAL. The same announcement says PORTAL and ALIAS together are worth more than GBP500,000 to the business over two years, but it does not allocate an amount to either project, so the event amount is left undisclosed.\",\"currency\":null,\"round_key\":\"future-flight-portal-grant-2022\",\"checked_at\":\"2026-11-12\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 382fec92-16ee-4d81-bcb1-6b695b374efd'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"382fec92-16ee-4d81-bcb1-6b695b374efd\",\"stage\":\"Future of Flight Phase 3 Project PORTAL grant\",\"amount\":null,\"note_en\":\"Cambridge Sensoriis announced that it had been awarded a grant for Project PORTAL. The same announcement says PORTAL and ALIAS together are worth more than GBP500,000 to the business over two years, but it does not allocate an amount to either project, so the event amount is left undisclosed.\",\"currency\":null,\"round_key\":\"future-flight-portal-grant-2022\",\"checked_at\":\"2026-11-12\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"382fec92-16ee-4d81-bcb1-6b695b374efd\",\"stage\":\"Future of Flight Phase 3 Project PORTAL grant\",\"amount\":null,\"note_en\":\"Cambridge Sensoriis announced that it had been awarded a grant for Project PORTAL. The same announcement says PORTAL and ALIAS together are worth more than GBP500,000 to the business over two years, but it does not allocate an amount to either project, so the event amount is left undisclosed.\",\"currency\":null,\"round_key\":\"future-flight-portal-grant-2022\",\"checked_at\":\"2026-11-12\",\"company_id\":\"fb7c33f1-ae18-43d9-8554-523dc87be651\",\"created_at\":\"2026-11-12T02:01:39.530329+00:00\",\"updated_at\":\"2026-11-12T02:01:39.530329+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"undisclosed\",\"announced_date\":\"2022\",\"closing_status\":\"announced\",\"financing_type\":\"grant\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET amount=target.amount,currency=target.currency,amount_basis=target.amount_basis,amount_qualifier=target.amount_qualifier,checked_at=target.checked_at,note_en=target.note_en,updated_at=now() WHERE id='382fec92-16ee-4d81-bcb1-6b695b374efd'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='010d7443-1e6d-4a08-9e6d-17e4184b032b' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"stage\":\"Equity private placement\",\"amount\":4600000,\"note_en\":\"Form D reports USD 4.6 million offered and sold to 16 investors with zero remaining; investor identities are undisclosed. Review 2026-11-15: original SEC submission metadata establishes public filing 2025-08-15; 2025-08-01 is the first sale, not the public announcement. Original SEC Form D confirms USD4.6m sold to16 investors; identities remain undisclosed. No duplicate round or change to amount, issuer or existing participation is made.\",\"currency\":\"USD\",\"round_key\":\"equity-private-placement-2025\",\"checked_at\":\"2026-11-15\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2025-08-15\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"stage\":\"Equity private placement\",\"amount\":4600000,\"note_en\":\"Form D reports USD 4.6 million offered and sold to 16 investors with zero remaining; investor identities are undisclosed.\",\"currency\":\"USD\",\"round_key\":\"equity-private-placement-2025\",\"checked_at\":\"2026-11-11\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2025-08-01\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 010d7443-1e6d-4a08-9e6d-17e4184b032b'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"stage\":\"Equity private placement\",\"amount\":4600000,\"note_en\":\"Form D reports USD 4.6 million offered and sold to 16 investors with zero remaining; investor identities are undisclosed.\",\"currency\":\"USD\",\"round_key\":\"equity-private-placement-2025\",\"checked_at\":\"2026-11-11\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2025-08-01\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"010d7443-1e6d-4a08-9e6d-17e4184b032b\",\"stage\":\"Equity private placement\",\"amount\":4600000,\"note_en\":\"Form D reports USD 4.6 million offered and sold to 16 investors with zero remaining; investor identities are undisclosed.\",\"currency\":\"USD\",\"round_key\":\"equity-private-placement-2025\",\"checked_at\":\"2026-11-11\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"updated_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2025-08-01\",\"closing_status\":\"closed\",\"financing_type\":\"equity\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET announced_date=target.announced_date,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='010d7443-1e6d-4a08-9e6d-17e4184b032b'; END IF; END $reviewed$;\nDO $reviewed$ DECLARE observed jsonb; target public.company_funding_rounds; BEGIN SELECT to_jsonb(r)-'updated_at' INTO observed FROM public.company_funding_rounds r WHERE id='7457055a-063d-4745-9e2d-6823b7a01354' FOR UPDATE; IF observed IS DISTINCT FROM '{\"id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"stage\":\"Private placement\",\"amount\":2300000,\"note_en\":\"Form D reports USD 2.3 million sold to nine investors. The company announcement names seven institutions and explicitly identifies Lerer Hippeau as lead; financing type is left undisclosed rather than guessed. Review 2026-11-15: original SEC submission metadata establishes public filing 2023-06-08; 2023-05-25 is the first sale, not the public announcement. The issuer press release dated 8 August 2023 is later than the 8 June filing and separately corroborates the same financing and named roles. No duplicate round or change to amount, issuer or existing participation is made.\",\"currency\":\"USD\",\"round_key\":\"private-placement-2023\",\"checked_at\":\"2026-11-15\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2023-06-08\",\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb AND observed IS DISTINCT FROM '{\"id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"stage\":\"Private placement\",\"amount\":2300000,\"note_en\":\"Form D reports USD 2.3 million sold to nine investors. The company announcement names seven institutions and explicitly identifies Lerer Hippeau as lead; financing type is left undisclosed rather than guessed.\",\"currency\":\"USD\",\"round_key\":\"private-placement-2023\",\"checked_at\":\"2026-11-11\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2023-05-25\",\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN RAISE EXCEPTION 'Reviewed correction guard failed: 7457055a-063d-4745-9e2d-6823b7a01354'; END IF; IF observed IS DISTINCT FROM '{\"id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"stage\":\"Private placement\",\"amount\":2300000,\"note_en\":\"Form D reports USD 2.3 million sold to nine investors. The company announcement names seven institutions and explicitly identifies Lerer Hippeau as lead; financing type is left undisclosed rather than guessed.\",\"currency\":\"USD\",\"round_key\":\"private-placement-2023\",\"checked_at\":\"2026-11-11\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2023-05-25\",\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb THEN target:=jsonb_populate_record(NULL::public.company_funding_rounds,'{\"id\":\"7457055a-063d-4745-9e2d-6823b7a01354\",\"stage\":\"Private placement\",\"amount\":2300000,\"note_en\":\"Form D reports USD 2.3 million sold to nine investors. The company announcement names seven institutions and explicitly identifies Lerer Hippeau as lead; financing type is left undisclosed rather than guessed.\",\"currency\":\"USD\",\"round_key\":\"private-placement-2023\",\"checked_at\":\"2026-11-11\",\"company_id\":\"f61feced-2b45-411b-a21a-b6cd943648e8\",\"created_at\":\"2026-11-11T22:58:58.309226+00:00\",\"updated_at\":\"2026-11-11T22:58:58.309226+00:00\",\"record_kind\":\"round\",\"amount_basis\":\"closed_amount\",\"announced_date\":\"2023-05-25\",\"closing_status\":\"closed\",\"financing_type\":\"undisclosed\",\"parent_round_id\":null,\"amount_qualifier\":\"exact\",\"publication_status\":\"approved\"}'::jsonb); UPDATE public.company_funding_rounds SET announced_date=target.announced_date,note_en=target.note_en,checked_at=target.checked_at,updated_at=now() WHERE id='7457055a-063d-4745-9e2d-6823b7a01354'; END IF; END $reviewed$;",
+  "reversal_scope": "Restore reviewed financial fields under guards; valid appended evidence retained, not deleted.",
+  "precision_note": "Root primary EDGAR metadata changes2023 public date toJune8, earlier than prepared August8 release. Current UKRI PORTAL grant offer retains30p omitted in the frozen proposal's rounded value."
+}
