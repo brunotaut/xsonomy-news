@@ -6,17 +6,17 @@
   "queue": "research-agent/queues/company-funding-all.csv",
   "total_companies": 2564,
   "published_landscape_companies": 567,
-  "partial_companies": 1228,
-  "fully_reviewed_companies": 1336,
-  "next_action": "Continue next_batch_preview excluding528 identities checked in partial-source-pass-1, prioritizing source-backed prepared reconciliations only when a specific new original is available. Retain227 explicit prepared holds; Joby Uber contribution and ITlogika signature-date error reconciled in run116. No company merges/deletions or duplicate subsidiary financing.",
+  "partial_companies": 1224,
+  "fully_reviewed_companies": 1340,
+  "next_action": "Prioritize newly prepared issuer/date/instrument reconciliations using originals and guarded reversals; then current preview excluding 552 identities checked in this partial-source pass. Do not repeat retained holds without a specific new original.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-15T23:02:53.714Z",
-  "source_reconciliation_companies": 1351,
-  "approved_funding_events": 4911,
-  "round_participations": 6689,
-  "investor_profiles": 3796,
-  "publication_pending": false,
-  "last_import": "research-agent/imports/funding-landscape-20261115-one-hundred-sixteenth.json",
+  "updated_at": "2026-11-15T23:05:55.418Z",
+  "source_reconciliation_companies": 1352,
+  "approved_funding_events": 4932,
+  "round_participations": 6705,
+  "investor_profiles": 3797,
+  "publication_pending": true,
+  "last_import": "research-agent/imports/funding-landscape-20261115-one-hundred-seventeenth.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
   "automation_instructions": "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md",
@@ -2290,7 +2290,11 @@
       "claim": "The reviewed public record also contains older and intermediate offerings with incomplete investor attribution. Only rounds with a supportable issuer, amount or explicit investor role are included; the 2018 investor identities remain undisclosed.",
       "bounded_review_disposition": "source_review_partial",
       "checked_at": "2026-11-12",
-      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-twenty-ninth.json"
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json",
+      "hold_note": "March/May offering linkage and USD2.5m debt candidate need original offering mapping. No extra event or allocation inferred.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "prepared_chronology_reconciled_overlap_hold_retained"
     },
     {
       "company_slug": "czechoslovak-group",
@@ -2332,7 +2336,11 @@
       "claim": "The issuer has earlier public venture rounds from 2009 through 2015 that require transaction-party source reconciliation. The US$300 million September 2025 financing is confirmed by the company, but the exact closing day and security mix were not disclosed; the first exact-dated company confirmation was October 21, 2025.",
       "bounded_review_disposition": "source_review_partial",
       "checked_at": "2026-11-12",
-      "audit_report": "research-agent/reports/2026-11-12-funding-landscape-twenty-ninth.json"
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json",
+      "hold_note": "Offering-level overlap remains unproved; do not sum85m+100m+250m+300m or infer50m incremental round.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "prepared_chronology_reconciled_overlap_hold_retained"
     },
     {
       "company_slug": "datashapes-ai",
@@ -7573,6 +7581,222 @@
       "latest_check": "2026-11-15",
       "status": "reviewed_public_sources",
       "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-sixteenth.json"
+    },
+    {
+      "company_slug": "kinnami",
+      "company_id": "6e8c296a-b40c-4757-b7cf-f676e352448d",
+      "hold_note": "Unverified100k/450k seed aggregates and earlierprivate equity held; no defaultaccelerator cheque.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "klaveness",
+      "company_id": "af7539ee-b844-43f9-808a-d8f97c91c4c1",
+      "hold_note": "Original2025 annual indexedbody identifies42.7m ownerloan balance; originalprincipal/date/legalborrower unestablished. KCC180m vessel facility/KDBoverdrafts/Finans100mNOK capacity not assigned to genericparent.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "klein-marine-systems",
+      "company_id": "5a3681f3-795a-4ad5-833a-0ae560598a52",
+      "hold_note": "Privateparent advances undisclosed.11.5m2023 sellerproceeds,2026parentIPO and4.5mrealestate disposal excluded. No zero-funding claim.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "klm-defense",
+      "company_id": "8721e082-5035-4f91-a9c0-0a78872329a1",
+      "hold_note": "CohortUSlabel conflicts with ownbrand evidence. Legal/economicissuer and financing unverified; no metadata mutation.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kms-solutions",
+      "company_id": "22b710d9-4a20-47e7-b8f1-822df6f5c0b2",
+      "hold_note": "26Aug2026SpaceEyes option contingent/exercisableto31Dec2026; not primaryfunding or completedownership. SPACPIPE/trustcash and procurement excluded; privatefundingunknown notzero.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "knds-robotics",
+      "company_id": "1f65c328-728c-4707-8e5b-5844bde52e00",
+      "hold_note": "AdditionalEUproject candidates require exactown allocations/originalterms; parentIPO/MGCSbudget/consortiumtotal not subsidiary financing.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "knitmesh-technologies",
+      "company_id": "340df3c2-1e0e-4598-a0f5-cf9adac31436",
+      "hold_note": "Originalfilinghistory30Oct2026charge(created28Oct) and29Sep2026accounts. Chargecollateral not cash; indexedloaninterest needs fulloriginalborrower/direction mapping, not inferredproceeds.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kodiak-ai",
+      "company_id": "04866b3c-abb9-4b3e-9f25-142f25a46152",
+      "hold_note": "2025SAFE23.66m/secondlien43.865m flows require individualagreement/overlap mapping.30mrefi notincremental30m; DoD49.9mprocurement ceiling excluded. Earlierstrategic/historyholds remain.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kompaniya-sovremennye-tekhnologii",
+      "company_id": "960d6bcf-add2-4951-877c-3b7b0ab82e51",
+      "hold_note": "Generic cohort name lacks website/legalidentifier; Russian/English searches surface distinct Moscow electronics, Chelyabinsk and Perm waste-treatment entities. Official GUR original identifies Perm business, not proof of cohort identity. No financing attributed; exact issuer and earlier/latest history require original identity evidence.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kongsberg-defence-australia",
+      "company_id": "25a2c9fa-d12e-475a-8bf5-1742763fef2f",
+      "hold_note": "Bounded public-source review completed. Up-toAUD850m partnership budget and signed factory procurement contract do not establish recipient cash, equity or a corporate loan. Factory and supply-chain spending not imported as corporate financing; undisclosed private/intragroup capital remains unknown.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kongsberg-discovery",
+      "company_id": "7c5f364c-29fd-406f-a1fe-2f1c8d7aac32",
+      "hold_note": "DIP own award verified, original July2026grant publicdate corrected. EU project participation candidates, historical Kongsberg group debt and US Discovery subsidiaries require exact own allocation and legalissuer mapping; no group procurement treated as own financing.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kongsberg-nanoavionics",
+      "company_id": "1b6eeee9-e029-42cf-bf9d-62f87f1dd5d8",
+      "hold_note": "Phase1 EUR50000 imported distinctly; phase2 signature-date correction only. Original3.2m combinedIntelektas/H2020 claim overlaps phase2; no subtraction-derived national grant. Original2019EUR10m consortium/private aggregate not own amount.2015Practica day and earlierLithuanian jointresearch allocations remain open;2022EUR65mEV acquisition is secondary/valuation, not cash round.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kord",
+      "company_id": "8d158167-b170-4dbc-b6a2-69d46d98e842",
+      "hold_note": "Cohort generic Kord lacks legalidentifier/website. Australian KordTech has40unnamed private investors and separate KordDefence/KordUSA/ShotDot subsidiaries. UK KordformerlyCheckboard GBP6.4m round is unrelated; USKordTechnologies and Australian subsidiary2017research contract not assigned without canonical issuer mapping. No zero funding conclusion.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "korea-aerospace-industries",
+      "company_id": "58c291d8-0f26-4aae-b246-16ebf7be6123",
+      "hold_note": "26-2 exactoriginal cash accepted;26-1 and earlier bond series, loan renewals and earlierpublic announcement dates remain held. Debt balances, group Genohco convertible and underwriter roles excluded.2026January upsized30th amount tied to finalpublicterms21January; no duplicate event.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "korea-robot-manufacturing",
+      "company_id": "33da68c3-2c01-424e-83ba-d80f01a3abf0",
+      "hold_note": "Sameissuer2021financings accepted with amountprecision;2023issue/payment dates removed as publicdates.2026conversion/redemption filings are not freshcash. Earlier firstconvertible and originalofferings/publicdates plus exactsubscriber allocations require further originals; GhostRobotics corporate financing excluded.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kp-labs",
+      "company_id": "04c9ef6e-ea90-4143-a469-59256bd548b9",
+      "hold_note": "Original PLN19.4m Momentum round and all existing individual EUgrant allocations corroborated.14October body dated release distinguished from26October websiteheader; no freshdate change. ApproximatelyPLN60m historical aggregate not anotherround; consortium highperformanceDPU ownshare and grant publicdates remain undisclosed. Investor mediaindex lackedreadablebody; no manager-to-vehicle substitution.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kpler",
+      "company_id": "ed4dc287-b58a-402e-987f-f1fee8af40f6",
+      "hold_note": "2026overUSD1bn equitytransaction has secondary exit/rollover; exactprimarycash and fulllegalvehicle allocation held. Existing2022EUR20m primary distinct from200mtransaction; ARRprincipals undisclosed.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kraken",
+      "company_id": "2482bbf3-9d7f-4a19-bda2-c1684a6383d6",
+      "hold_note": "Documented duplicate brand identity of existing KrakenRobotics via samewebsite/history/ticker; nofinancial facts copied, no merge/delete. Underlying financing research continues under canonicalkraken-robotics.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "reviewed_public_sources",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kraken-robotics",
+      "company_id": "2eb477b4-1190-4561-be31-de88cde79bea",
+      "hold_note": "2017NRCCAD1.47m/RDC745950 and2025NovaScotiaincentive target subsidiary legalissuers, notparent. Earlierprivateplacements/grantagreement history and publicfirstdates stillincomplete; noaggregatefunding total.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kraken-technology-group",
+      "company_id": "12bd6887-0bc4-4322-b8ee-c97743abfb42",
+      "hold_note": "Earlier2022/2024 equity/SAFE instruments and2026cashversusconversion mapping stillunresolved. Existing2025strategic/2026B preserved; Julyannouncement andlaterregistration/update notseparateraises.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kratos-defense-and-security-solutions",
+      "company_id": "90901ba3-3615-4b17-8366-be71d0a8725b",
+      "hold_note": "Earlier2010–2019 capitalhistory, 2020/2024firstpublicdates andexact2026net/gross reconciliation beyondverifiedfilings remainpartial. Acquisitionissuances, employeeplans anduncommittedcapacity excluded.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kraus-hamdani-aerospace",
+      "company_id": "305da5a8-fbaa-491b-befd-c3d684b18f75",
+      "hold_note": "2016seed/preseed sourcecandidates conflict1.5m versus1000 andlackprimaryequityinvestor/issuerterms; noimport. Procurement/researchprojects notblanketfunding; privateunknownsremainunknown.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "kronshtadt-group",
+      "company_id": "423fa7c7-a423-4e1d-be9c-f84cdfc7b5ce",
+      "hold_note": "Earlier/laterfinancing andexactissuer continuityacrossgroupownership/capitalspending remainincomplete. ExistingPSBcapacity retained; ownsiteaccesslimit andfactorycapex notfundingproof.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
+    },
+    {
+      "company_slug": "ksat-kongsberg-satellite-services",
+      "company_id": "dd52ed68-4436-462a-8a9d-22ed93f99394",
+      "hold_note": "POSEIDON ownallocation/grantagreement absent;5mconsortium notowncash. Group105mNOKloanbalance notoriginalfinancing andlegalborroweruncertain. Futurebond/6bncapexcandidate notclosedfunding; SpaceNorwayHEOSATissuerexcluded.",
+      "source_ledger": "research-agent/reports/2026-11-15-funding-one-hundred-seventeenth-source-ledger.json",
+      "latest_check": "2026-11-15",
+      "status": "source_review_partial",
+      "audit_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
     }
   ],
   "parallel_pilot": {
@@ -7606,8 +7830,8 @@
     "active_throughput_companies_per_hour": 190.4
   },
   "queue_disposition_counts": {
-    "reviewed_public_sources": 1336,
-    "source_review_partial": 1228,
+    "reviewed_public_sources": 1340,
+    "source_review_partial": 1224,
     "queued": 0
   },
   "last_execution_metrics": {
@@ -7715,10 +7939,10 @@
   "legacy_reported_fully_reviewed_companies": 455,
   "source_reviewed_or_partial_companies": 2564,
   "latest_manual_checkpoint": {
-    "run_id": "funding-20261115-one-hundred-sixteenth",
-    "status": "imported_and_publication_verified",
-    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-sixteenth.json",
-    "finished_at": "2026-11-15T22:04:43.842Z"
+    "run_id": "funding-20261115-one-hundred-seventeenth",
+    "status": "imported_publication_pending",
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json",
+    "updated_at": "2026-11-15T23:05:55.418Z"
   },
   "latest_correction_publication": {
     "site_commit": "e31b7088afd71a693fcf29d070203b0d60f8bb24",
@@ -8117,7 +8341,7 @@
   },
   "pending_import": {
     "run_id": "funding-20261115-one-hundred-seventeenth",
-    "status": "committed_exact_audit_passed",
+    "status": "committed_idempotency_audited",
     "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-seventeenth.json",
     "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-seventeenth-reviewed-corrections.json",
     "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json",
@@ -8135,7 +8359,11 @@
       }
     ]
   },
-  "pending_publication": null,
+  "pending_publication": {
+    "run_id": "funding-20261115-one-hundred-seventeenth",
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json",
+    "status": "awaiting_existing_push_build"
+  },
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
     "manifest": "research-agent/imports/funding-published-reconciliations-20261109.json",
@@ -9120,170 +9348,170 @@
   },
   "next_batch_preview": [
     {
-      "id": "6e8c296a-b40c-4757-b7cf-f676e352448d",
-      "slug": "kinnami",
-      "name": "Kinnami",
+      "id": "05614144-90ff-4852-9c7d-a2bc8dfb3609",
+      "slug": "kubota",
+      "name": "Kubota",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "af7539ee-b844-43f9-808a-d8f97c91c4c1",
-      "slug": "klaveness",
-      "name": "Klaveness",
+      "id": "57b0f05c-1285-4d75-8322-15e8bc180aa7",
+      "slug": "kvand",
+      "name": "KVAND",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "5a3681f3-795a-4ad5-833a-0ae560598a52",
-      "slug": "klein-marine-systems",
-      "name": "Klein Marine Systems",
+      "id": "39a5cdcd-acea-40dc-8abf-f55da93423e4",
+      "slug": "l-and-s-advanced-equipment",
+      "name": "L&S Advanced Equipment",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "8721e082-5035-4f91-a9c0-0a78872329a1",
-      "slug": "klm-defense",
-      "name": "KLM Defense",
+      "id": "39070bd1-52e3-4439-9001-b5e0438bdaa6",
+      "slug": "l3harris",
+      "name": "L3Harris",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "22b710d9-4a20-47e7-b8f1-822df6f5c0b2",
-      "slug": "kms-solutions",
-      "name": "KMS Solutions",
+      "id": "6cd4b6dc-fc0b-48c6-904e-68cfe86ce57c",
+      "slug": "lamarr-ai",
+      "name": "Lamarr AI",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "1f65c328-728c-4707-8e5b-5844bde52e00",
-      "slug": "knds-robotics",
-      "name": "KNDS Robotics",
+      "id": "bd58d1f8-8f6c-4ba5-81b4-26975ef53187",
+      "slug": "lambert-defence",
+      "name": "Lambert Defence",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "340df3c2-1e0e-4598-a0f5-cf9adac31436",
-      "slug": "knitmesh-technologies",
-      "name": "KnitMesh Technologies",
+      "id": "2dd90de8-06ab-4b2b-bd9e-9926251d16e6",
+      "slug": "landing-zones",
+      "name": "Landing Zones",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "04866b3c-abb9-4b3e-9f25-142f25a46152",
-      "slug": "kodiak-ai",
-      "name": "Kodiak AI",
+      "id": "684cc700-7d23-4321-9983-dc8a9c494292",
+      "slug": "landspace",
+      "name": "LandSpace",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "960d6bcf-add2-4951-877c-3b7b0ab82e51",
-      "slug": "kompaniya-sovremennye-tekhnologii",
-      "name": "Kompaniya Sovremennye Tekhnologii",
+      "id": "abaa5527-9ec0-40b7-8f74-bd64bcb226fc",
+      "slug": "lantronix",
+      "name": "Lantronix",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "25a2c9fa-d12e-475a-8bf5-1742763fef2f",
-      "slug": "kongsberg-defence-australia",
-      "name": "Kongsberg Defence Australia",
+      "id": "a935ea05-681c-4491-967d-97f83455c52b",
+      "slug": "larsen-and-toubro",
+      "name": "Larsen & Toubro",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "7c5f364c-29fd-406f-a1fe-2f1c8d7aac32",
-      "slug": "kongsberg-discovery",
-      "name": "Kongsberg Discovery",
+      "id": "365e2fcd-f523-45ae-9693-220c199d35f0",
+      "slug": "laser-photonics",
+      "name": "Laser Photonics",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "1b6eeee9-e029-42cf-bf9d-62f87f1dd5d8",
-      "slug": "kongsberg-nanoavionics",
-      "name": "Kongsberg NanoAvionics",
+      "id": "5443845b-a9c6-4bd4-9adf-0987d0214298",
+      "slug": "laser-zentrum-hannover",
+      "name": "Laser Zentrum Hannover",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "8d158167-b170-4dbc-b6a2-69d46d98e842",
-      "slug": "kord",
-      "name": "Kord",
+      "id": "24cce13f-7a5c-40f1-b9cc-e9fb1b58d211",
+      "slug": "latent-ai",
+      "name": "Latent AI",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "58c291d8-0f26-4aae-b246-16ebf7be6123",
-      "slug": "korea-aerospace-industries",
-      "name": "Korea Aerospace Industries",
+      "id": "3d23b434-3f71-4467-8e30-290ff1a3bb99",
+      "slug": "leetop",
+      "name": "Leetop",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "33da68c3-2c01-424e-83ba-d80f01a3abf0",
-      "slug": "korea-robot-manufacturing",
-      "name": "Korea Robot Manufacturing",
+      "id": "fd7dfcaf-c285-420d-b6f8-60805e75511e",
+      "slug": "leidos",
+      "name": "Leidos",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "04c9ef6e-ea90-4143-a469-59256bd548b9",
-      "slug": "kp-labs",
-      "name": "KP Labs",
+      "id": "b1809563-1d6f-4358-85e9-6ef4630632a4",
+      "slug": "leolabs",
+      "name": "LeoLabs",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "ed4dc287-b58a-402e-987f-f1fee8af40f6",
-      "slug": "kpler",
-      "name": "Kpler",
+      "id": "4eb42fa0-e8f1-432c-94a2-d3e12c04bf41",
+      "slug": "leonardo-drs-rada",
+      "name": "Leonardo DRS (RADA)",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "2482bbf3-9d7f-4a19-bda2-c1684a6383d6",
-      "slug": "kraken",
-      "name": "Kraken",
+      "id": "1585dd89-0518-469a-b770-100981b0a52b",
+      "slug": "levanta-tech",
+      "name": "LeVanta Tech",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "2eb477b4-1190-4561-be31-de88cde79bea",
-      "slug": "kraken-robotics",
-      "name": "Kraken Robotics",
+      "id": "197a7d5c-c94b-4385-a951-35926a369a23",
+      "slug": "liangxi-aerospace-technology-group",
+      "name": "Liangxi Aerospace Technology Group",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "12bd6887-0bc4-4322-b8ee-c97743abfb42",
-      "slug": "kraken-technology-group",
-      "name": "Kraken Technology Group",
+      "id": "fd623e7d-d235-412e-92d7-09490b388524",
+      "slug": "lig-nex1",
+      "name": "LIG Nex1",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "90901ba3-3615-4b17-8366-be71d0a8725b",
-      "slug": "kratos-defense-and-security-solutions",
-      "name": "Kratos Defense & Security Solutions",
+      "id": "b2de459f-ab50-423c-84ae-de1a9d833156",
+      "slug": "lighthouse-avionics",
+      "name": "Lighthouse Avionics",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "305da5a8-fbaa-491b-befd-c3d684b18f75",
-      "slug": "kraus-hamdani-aerospace",
-      "name": "Kraus Hamdani Aerospace",
+      "id": "dee222ad-d944-4b75-8cd2-8791e8884bcb",
+      "slug": "lightpath-technologies",
+      "name": "LightPath Technologies",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "423fa7c7-a423-4e1d-be9c-f84cdfc7b5ce",
-      "slug": "kronshtadt-group",
-      "name": "Kronshtadt Group",
+      "id": "5001364f-33c4-4119-867e-e97e843d386e",
+      "slug": "lily-robotics",
+      "name": "Lily Robotics",
       "priority_group": "2",
       "priority": "100"
     },
     {
-      "id": "dd52ed68-4436-462a-8a9d-22ed93f99394",
-      "slug": "ksat-kongsberg-satellite-services",
-      "name": "KSAT (Kongsberg Satellite Services)",
+      "id": "096bdc03-ab53-4ff3-9e78-f3fa9861e844",
+      "slug": "limitless-aeronautics",
+      "name": "Limitless Aeronautics",
       "priority_group": "2",
       "priority": "100"
     }
@@ -9769,7 +9997,7 @@
       "completed_reviews_per_active_hour": 51.4
     }
   },
-  "total_funding_events": 4929,
+  "total_funding_events": 4950,
   "latest_thirty_sixth_reconciliation": {
     "report": "research-agent/reports/2026-11-12-funding-landscape-thirty-sixth.json",
     "manifest": "research-agent/imports/funding-landscape-20261112-thirty-sixth.json",
@@ -13736,12 +13964,36 @@
       "4a84126c-e615-4eb4-8498-c9c6bbd9a664",
       "faefc8e4-8d16-4f1e-9c3c-2865c21537f4",
       "66648620-459b-4574-ad46-3c90ac0cdafb",
-      "723d8aa2-6b2d-4adb-a988-bed65550cb08"
+      "723d8aa2-6b2d-4adb-a988-bed65550cb08",
+      "6e8c296a-b40c-4757-b7cf-f676e352448d",
+      "af7539ee-b844-43f9-808a-d8f97c91c4c1",
+      "5a3681f3-795a-4ad5-833a-0ae560598a52",
+      "8721e082-5035-4f91-a9c0-0a78872329a1",
+      "22b710d9-4a20-47e7-b8f1-822df6f5c0b2",
+      "1f65c328-728c-4707-8e5b-5844bde52e00",
+      "340df3c2-1e0e-4598-a0f5-cf9adac31436",
+      "04866b3c-abb9-4b3e-9f25-142f25a46152",
+      "960d6bcf-add2-4951-877c-3b7b0ab82e51",
+      "25a2c9fa-d12e-475a-8bf5-1742763fef2f",
+      "7c5f364c-29fd-406f-a1fe-2f1c8d7aac32",
+      "1b6eeee9-e029-42cf-bf9d-62f87f1dd5d8",
+      "8d158167-b170-4dbc-b6a2-69d46d98e842",
+      "58c291d8-0f26-4aae-b246-16ebf7be6123",
+      "33da68c3-2c01-424e-83ba-d80f01a3abf0",
+      "04c9ef6e-ea90-4143-a469-59256bd548b9",
+      "ed4dc287-b58a-402e-987f-f1fee8af40f6",
+      "2482bbf3-9d7f-4a19-bda2-c1684a6383d6",
+      "2eb477b4-1190-4561-be31-de88cde79bea",
+      "12bd6887-0bc4-4322-b8ee-c97743abfb42",
+      "90901ba3-3615-4b17-8366-be71d0a8725b",
+      "305da5a8-fbaa-491b-befd-c3d684b18f75",
+      "423fa7c7-a423-4e1d-be9c-f84cdfc7b5ce",
+      "dd52ed68-4436-462a-8a9d-22ed93f99394"
     ],
-    "reviewed_identities": 528,
-    "remaining_initial_pass_identities": 815,
-    "latest_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-sixteenth.json",
-    "updated_at": "2026-11-15T22:01:20.724Z",
+    "reviewed_identities": 552,
+    "remaining_initial_pass_identities": 791,
+    "latest_report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json",
+    "updated_at": "2026-11-15T23:05:55.418Z",
     "selection_rule": "Use next_batch_preview then remaining source_review_partial identities excluding reviewed_company_ids in this pass; do not repeat recently retained holds without a specific new source. Published Liebherr allocation hold retained for final targeted revisit.",
     "reports": [
       "research-agent/reports/2026-11-15-funding-landscape-ninety-fifth.json",
@@ -13765,10 +14017,11 @@
       "research-agent/reports/2026-11-15-funding-landscape-one-hundred-thirteenth.json",
       "research-agent/reports/2026-11-15-funding-landscape-one-hundred-fourteenth.json",
       "research-agent/reports/2026-11-15-funding-landscape-one-hundred-fifteenth.json",
-      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-sixteenth.json"
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-sixteenth.json",
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json"
     ],
-    "bounded_reviews_closed": 115,
-    "retained_partial_reviews": 413
+    "bounded_reviews_closed": 119,
+    "retained_partial_reviews": 433
   },
   "last_reviewed_correction": "research-agent/imports/funding-landscape-20261115-one-hundred-tenth-reviewed-corrections.json",
   "latest_ninety_sixth_reconciliation": {
@@ -15177,6 +15430,37 @@
       "completed_reviews_per_hour": 16.6,
       "concurrency_speedup_claimed": false,
       "timing_scope": "Writer lease covers24 new queue identities and two prepared Joby/ITlogika reconciliations.119 executed search query items across four read-only groups; five root financing-original opens separately recorded. Ten prior-import check records preserved with zero fresh check credit. Includes exact issuer/currency/date/role checks, fresh PostgreSQL tests including full-parent conflict rejection, production rollback/full restoration, single atomic import, exact preservation audits, idempotent rollback replay, durable readbacks, successful build/deploy and fresh live datasets/HTTP checks. Four bounded closures,20 partial histories retained; no ETA or speedup claim."
+    }
+  },
+  "latest_one_hundred_seventeenth_reconciliation": {
+    "status": "imported_publication_pending",
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-seventeenth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-seventeenth.json",
+    "corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-seventeenth-reviewed-corrections.json",
+    "metrics": {
+      "new_queue_identities_checked": 24,
+      "prepared_source_identities_checked": 2,
+      "identities_checked": 26,
+      "parallel_read_only_groups": 4,
+      "new_approved_events": 21,
+      "new_round_participations": 16,
+      "new_source_rows": 33,
+      "new_generic_portfolio_relationships": 1,
+      "reviewed_existing_fact_corrections": 20,
+      "search_queries_executed": 112,
+      "newly_completed_bounded_reviews": 4,
+      "new_or_retained_partial": 20,
+      "local_postgresql_tests_passed": true,
+      "atomic_import_invocations": 1,
+      "prior_import_checks_recorded": 10,
+      "fresh_prior_import_row_checks": 0,
+      "rollback_rehearsal_passed": true,
+      "atomic_import_passed": true,
+      "new_investor_profiles": 1,
+      "new_coverage_rows": 1,
+      "post_import_idempotency_rehearsal_passed": true,
+      "queue_dispositions_applied": 24,
+      "approved_event_counts_refreshed_for_identities": 26
     }
   }
 }

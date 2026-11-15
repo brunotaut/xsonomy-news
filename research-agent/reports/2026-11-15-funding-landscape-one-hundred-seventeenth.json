@@ -1,5 +1,5 @@
 {
-  "status": "imported_exact_audit_passed",
+  "status": "imported_publication_pending",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T22:52:39.943Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-seventeenth.json",
@@ -994,7 +994,10 @@
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
     "new_investor_profiles": 1,
-    "new_coverage_rows": 1
+    "new_coverage_rows": 1,
+    "post_import_idempotency_rehearsal_passed": true,
+    "queue_dispositions_applied": 24,
+    "approved_event_counts_refreshed_for_identities": 26
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1180,7 +1183,8 @@
     }
   },
   "publication": {
-    "status": "not_started"
+    "status": "pending",
+    "requested_at": "2026-11-15T23:05:55.418Z"
   },
   "preserved": [
     "Legacy STATE.json and frozen snapshots",
@@ -1188,7 +1192,7 @@
     "Curated investor profiles and unrelated source/relationship history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-15T23:04:11.761Z",
+  "updated_at": "2026-11-15T23:05:55.431Z",
   "production_after": [
     {
       "events": 4950,
@@ -1199,5 +1203,17 @@
       "relationships": 767,
       "covered": 1352
     }
-  ]
+  ],
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1340,
+    "source_review_partial": 1224,
+    "queued": 0
+  },
+  "reconciliation_phase": {
+    "id": "partial-source-pass-1",
+    "checked": 552,
+    "remaining": 791,
+    "bounded_closed": 119,
+    "retained_partial": 433
+  }
 }
