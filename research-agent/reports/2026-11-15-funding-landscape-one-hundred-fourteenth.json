@@ -1,5 +1,5 @@
 {
-  "status": "imported_verified",
+  "status": "imported_publication_pending",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T19:46:09.326Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-fourteenth.json",
@@ -926,7 +926,11 @@
     "rollback_rehearsal_passed": true,
     "prior_import_checks_recorded": 6,
     "fresh_prior_import_row_checks": 2,
-    "atomic_import_passed": true
+    "atomic_import_passed": true,
+    "post_import_idempotency_rehearsal_passed": true,
+    "new_investor_profiles": 6,
+    "new_coverage_rows": 1,
+    "queue_dispositions_applied": 24
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1103,14 +1107,14 @@
     }
   },
   "publication": {
-    "status": "pending_import"
+    "status": "pending_build"
   },
   "preserved": [
     "Legacy STATE and frozen snapshots",
     "Unreviewed financial history, source links, curated profiles and portfolios",
     "Company metadata, geography, publication gates and schedules"
   ],
-  "updated_at": "2026-11-15T20:03:16.716Z",
+  "updated_at": "2026-11-15T20:04:41.884Z",
   "production_after": {
     "events": 4876,
     "approved": 4858,
@@ -1119,5 +1123,17 @@
     "profiles": 3784,
     "relationships": 765,
     "covered": 1346
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1332,
+    "source_review_partial": 1232,
+    "queued": 0
+  },
+  "reconciliation_phase": {
+    "id": "partial-source-pass-1",
+    "checked": 480,
+    "remaining": 863,
+    "bounded_closed": 111,
+    "retained_partial": 369
   }
 }
