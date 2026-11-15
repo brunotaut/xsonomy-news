@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T19:46:09.326Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-fourteenth.json",
@@ -930,7 +930,20 @@
     "post_import_idempotency_rehearsal_passed": true,
     "new_investor_profiles": 6,
     "new_coverage_rows": 1,
-    "queue_dispositions_applied": 24
+    "queue_dispositions_applied": 24,
+    "approved_event_counts_refreshed_for_identities": 26,
+    "live_referenced_profiles_verified": 18,
+    "live_participant_source_matches": 22,
+    "live_generic_profile_source_matches": 7,
+    "live_clickable_portfolio_links_verified": 7,
+    "live_company_routes_verified": 13,
+    "current_publication_scope_verified": true,
+    "active_minutes": 22.31,
+    "checked_identities_per_hour": 75.3,
+    "new_queue_identities_per_hour": 64.6,
+    "completed_reviews_per_hour": 5.4,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Writer lease for24 new cohort identities, two prepared ideaForge/Icarus original-source reviews and two separate Hylio/Hydrix canonical prior-import identity checks. Six preserved prior checks recorded; two freshly checked rows are separately counted.124 actual web query items include3 targeted Intel index checks. Prepared group transparently records missing earlier query strings and stopped rejected credential-like API probing; no secret access or programme blocker, SWARMER amount held. Includes original currency/unit checks, exact issuer/role/commitment and net/gross distinctions, PostgreSQL tests, production rollback with exact baseline restoration, one atomic import, exact audits/idempotent rollback replay, durable readbacks, successful build/deploy and fresh datasets/HTTP routes. Two bounded closures and22 partial histories retained; no ETA or speedup claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1105,22 +1118,162 @@
       ],
       "missing_link_sources": 0
     },
-    "durable_readbacks_verified": 7,
-    "frozen_inputs_unchanged": true
+    "durable_readbacks_verified": 8,
+    "frozen_inputs_unchanged": true,
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/infratec/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/innovaero-technologies/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/innoviz-technologies/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/insignito/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/insitu-boeing/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/inspired-flight/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/insta360/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/intel/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/invariant/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/invisio/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/iridium-communications/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ideaforge/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/israel-aerospace-industries-iai/",
+        "status": 200
+      }
+    ]
   },
   "publication": {
-    "status": "build_triggered",
+    "status": "verified",
     "source_commit": "b2a53bd597f1511d79e98f818513ba7d2bbbb712",
     "catalogue_commit": "588587470aa12608121a8caa45a850a504b8c790",
     "workflow_run": 43755993890,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43755993890"
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43755993890",
+    "generated_at": "2026-11-15T20:05:53.438Z",
+    "investor_generated_at": "2026-11-15T20:05:57.360Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3775,
+    "portfolio_relationships": 760,
+    "expected_profiles": 18,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 7,
+    "generic_portfolio_entries_verified": 7,
+    "clickable_company_links_verified": 7,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 22,
+    "manifest_generic_relationship_matches": 7,
+    "verified_at": "2026-11-15T20:08:27.759Z",
+    "workflow_conclusion": "success",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/infratec/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/innovaero-technologies/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/innoviz-technologies/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/insignito/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/insitu-boeing/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/inspired-flight/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/insta360/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/intel/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/invariant/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/invisio/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/iridium-communications/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ideaforge/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/israel-aerospace-industries-iai/",
+        "status": 200
+      }
+    ],
+    "current_manifest_event_rows": 26,
+    "current_manifest_live_matches": 0,
+    "scope_note": "Fresh directory verifies18 referenced profiles,22 participation citations and7 generic profile citations/clickable portfolio links. Nine pre-existing anonymous profiles and five retired portfolios remain excluded. Current financing targets remain outside European map; wider-cohort financial rows are not claimed rendered by map or company-page funding sections. Geography and publication gates unchanged."
   },
   "preserved": [
     "Legacy STATE and frozen snapshots",
     "Unreviewed financial history, source links, curated profiles and portfolios",
     "Company metadata, geography, publication gates and schedules"
   ],
-  "updated_at": "2026-11-15T20:05:27.676Z",
+  "updated_at": "2026-11-15T20:08:27.770Z",
   "production_after": {
     "events": 4876,
     "approved": 4858,
@@ -1141,5 +1294,6 @@
     "remaining": 863,
     "bounded_closed": 111,
     "retained_partial": 369
-  }
+  },
+  "completed_at": "2026-11-15T20:08:27.759Z"
 }
