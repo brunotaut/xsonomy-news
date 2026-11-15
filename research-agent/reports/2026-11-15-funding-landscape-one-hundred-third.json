@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T09:45:51.907Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-third.json",
@@ -57,13 +57,30 @@
     "new_exact_name_duplicate_groups": 0,
     "queue_dispositions_applied": 24,
     "approved_event_counts_refreshed_for_identities": 29,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "db_total_events": 4667,
     "db_approved_events": 4649,
     "db_round_participations": 6465,
     "db_investor_profiles": 3730,
     "db_source_reconciliation_companies": 1326,
-    "concurrency_speedup_claimed": false
+    "concurrency_speedup_claimed": false,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_source_ledger_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "referenced_directory_profiles_verified": 7,
+    "manifest_profile_source_matches": 6,
+    "generic_portfolio_entries_verified": 3,
+    "clickable_generic_company_links_verified": 3,
+    "retired_misattributed_generic_entries_verified_absent": 2,
+    "corrected_profile_primary_source_publication_verified": true,
+    "active_minutes": 16.22,
+    "checked_identities_per_hour": 118.4,
+    "new_queue_identities_per_hour": 88.8,
+    "completed_reviews_per_hour": 25.9,
+    "timing_scope": "Elapsed single writer lease covering24 next identities in three frozen read-only groups and8 prepared company reconciliations in a fourth. Includes100 actual searches, original-source issuer/currency/date/instrument/role checks, PostgreSQL event/participant/generic full-row guards and late generic-conflict atomicity, reversals and replay, production rollback with16 exact original snapshots restored, one atomic import, exact facts/roles/sources/ownership audits, prior-data hashes, idempotent rollback replay, seven durable readbacks, successful existing catalogue build, both fresh live datasets, landscapeHTTP200, three new generic entries and two retired misassignments absent. Seven bounded closures/17 specific holds; no speedup or ETA claim."
   },
   "production_before": {
     "links": 6459,
@@ -1118,7 +1135,23 @@
       "CSSC earlierprospectus/CiSCoronaPRO remain sourceholds, not zero-funding conclusions.",
       "DarkWolf eventtiming/type and Dataminr cumulative-offering mappings retained for separate sourcework.",
       "No DB or Gitwrites; root must apply fullrow guards, tested reversal, rollback and one atomic import."
-    ]
+    ],
+    "durable_readback_blobs": {
+      "research-agent/imports/funding-landscape-20261115-one-hundred-third.json": "97b06336e104f8472c41e4221ed6b591ee6352d4",
+      "research-agent/imports/funding-landscape-20261115-one-hundred-third-reviewed-corrections.json": "e715c7524a2c86195cf88526d4fc4f01b236c561",
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-third.json": "ca18e026d8f1f0c0013c0ad3620c5fbb2281050e",
+      "research-agent/reports/2026-11-15-funding-one-hundred-third-source-ledger.json": "e9a86374e939af928dab3cd59ce28923d8b4d6c7",
+      "research-agent/recovery/2026-11-15-funding-one-hundred-third-prepared-reconciliations.json": "cfa949659fd6360dce987a6ebe71941abbecaa56",
+      "research-agent/queues/company-funding-all.csv": "c4493c1659ca2f8478deb3d5ea56e0bd7cf3de57",
+      "research-agent/FUNDING_STATE.json": "71c3224a7dfdd873f734d5741a7c22be0f790d92"
+    },
+    "frozen_group_sha256": {
+      "a": "6af41c09fab4d995cf1c784a74c3634f3037e982d4c5ff50f4927228c32f23c1",
+      "b": "89d94c3b39e0708fdddc5d5005fb1f80f53a5216195e2f99a53ec911cb2e6e76",
+      "c": "b9ab5d32d6b75791a188eb10ecd5bdb120583aba6e3a0b61aa5dfaee127aedaa",
+      "prepared": "8cc1030a8c38f389ca65fe2a9a6afd3f396c567a20b140217c07b121a4c1e4d8",
+      "dornier": "8f06a8e528fdc798775f0e1974e7c34779a9c60c680436f5966dbf64a602a8ed"
+    }
   },
   "publication_scope": {
     "site": "https://xsonomy.com/landscape/",
@@ -1134,5 +1167,54 @@
     "unique_checked_this_pass": 216,
     "remaining_initial_pass_identities": 1127
   },
-  "publication": null
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-15T10:02:04.948Z",
+    "verified_at": "2026-11-15T10:02:04.948Z",
+    "source_commit": "627d3230f0ad9ff7cdf58086ffdda23a7052c6ba",
+    "catalogue_commit": "30c21da7f5d6ac8564692e99cff7bcb7604d3026",
+    "workflow_run": {
+      "id": 43701866763,
+      "head": "30c21da7f5d6ac8564692e99cff7bcb7604d3026",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43701866763"
+    },
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-third.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-third.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-third-reviewed-corrections.json",
+    "generated_at": "2026-11-15T10:00:12.295Z",
+    "investor_generated_at": "2026-11-15T10:00:15.757Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3721,
+    "portfolio_relationships": 732,
+    "expected_profiles": 7,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 3,
+    "generic_portfolio_entries_verified": 3,
+    "clickable_company_links_verified": 3,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 6,
+    "manifest_generic_relationship_matches": 3,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 12,
+    "current_manifest_live_matches": 0,
+    "retired_misattributed_generic_entries_verified_absent": 2,
+    "corrected_profile_primary_source_verified": true,
+    "directory_filter_note": "DB3730 profiles/live3721 retains nine prior anonymous-profile exclusions. DB737 generic rows/live732 reflects three prior retirements plus two reviewed issuer-misattribution retirements. All7 referenced profiles,6 manifest participant sources,3 new generic portfolio entries/source URLs/clickable links and the corrected Razor’s Edge primary source verified. Misassigned Dornier family/DSChina entries are absent. New financing targets and corrected financial records are outside the published European map; geography/publication gates preserved. Twelve corrected events, one participant and two generic records plus an unchanged related parent event verified exactly in the database."
+  },
+  "completed_at": "2026-11-15T10:02:04.948Z",
+  "preserved": [
+    "Legacy research-agent/STATE.json and frozen V1/V2 snapshots",
+    "Curated investor profiles and unchanged historical relationships",
+    "All uncorrected prior financial events, links and source history",
+    "Company metadata/geography/publication gates",
+    "Repository schedules"
+  ]
 }
