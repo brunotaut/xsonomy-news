@@ -1,0 +1,787 @@
+{
+  "id": "funding-landscape-20261115-ninety-sixth-reviewed-corrections",
+  "checked_at": "2026-11-15",
+  "method": "Tested expected-old/idempotent guard and reversal pattern, adapted to existing event dates/publication status and partial coverage note. Financial amounts, currencies, sources and participation rows are retained.",
+  "corrections": [
+    {
+      "table": "company_funding_rounds",
+      "key_column": "id",
+      "key": "27025a05-dd6a-4c2a-af3b-d290249ae52e",
+      "company_slug": "airshaper",
+      "expected_before": {
+        "id": "27025a05-dd6a-4c2a-af3b-d290249ae52e",
+        "stage": "VLAIO innovation grant",
+        "amount": 250000,
+        "note_en": "Exact annual-report award to Zastrugi NV; announcement day unavailable.",
+        "currency": "EUR",
+        "round_key": "vlaio-2017",
+        "checked_at": "2026-11-11",
+        "company_id": "bc5abc2d-1da9-4e60-8111-05eba8625e7a",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2017-12-31",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "27025a05-dd6a-4c2a-af3b-d290249ae52e",
+        "stage": "VLAIO innovation grant",
+        "amount": 250000,
+        "note_en": "Exact annual-report award to Zastrugi NV; announcement day unavailable. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.",
+        "currency": "EUR",
+        "round_key": "vlaio-2017",
+        "checked_at": "2026-11-15",
+        "company_id": "bc5abc2d-1da9-4e60-8111-05eba8625e7a",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": null,
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "announced_date",
+        "checked_at",
+        "note_en"
+      ],
+      "reason": "Remove unsupported year-end placeholder; no amount, issuer or security change.",
+      "evidence": [
+        {
+          "url": "https://www.vlaio.be/nl/jaarverslag2017",
+          "title": "VLAIO 2017 annual report",
+          "round_id": "27025a05-dd6a-4c2a-af3b-d290249ae52e",
+          "checked_at": "2026-11-11",
+          "source_type": "investor_announcement"
+        }
+      ],
+      "reversal": {
+        "id": "27025a05-dd6a-4c2a-af3b-d290249ae52e",
+        "stage": "VLAIO innovation grant",
+        "amount": 250000,
+        "note_en": "Exact annual-report award to Zastrugi NV; announcement day unavailable.",
+        "currency": "EUR",
+        "round_key": "vlaio-2017",
+        "checked_at": "2026-11-11",
+        "company_id": "bc5abc2d-1da9-4e60-8111-05eba8625e7a",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2017-12-31",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key_column": "id",
+      "key": "93b4d055-b280-4cd4-b6db-6fada6a95942",
+      "company_slug": "airshaper",
+      "expected_before": {
+        "id": "93b4d055-b280-4cd4-b6db-6fada6a95942",
+        "stage": "VLAIO growth subsidy",
+        "amount": 25000,
+        "note_en": "Exact disbursed support to Zastrugi NV; announcement day unavailable.",
+        "currency": "EUR",
+        "round_key": "vlaio-2019",
+        "checked_at": "2026-11-11",
+        "company_id": "bc5abc2d-1da9-4e60-8111-05eba8625e7a",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2019-12-31",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "93b4d055-b280-4cd4-b6db-6fada6a95942",
+        "stage": "VLAIO growth subsidy",
+        "amount": 25000,
+        "note_en": "Exact disbursed support to Zastrugi NV; announcement day unavailable. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.",
+        "currency": "EUR",
+        "round_key": "vlaio-2019",
+        "checked_at": "2026-11-15",
+        "company_id": "bc5abc2d-1da9-4e60-8111-05eba8625e7a",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": null,
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "announced_date",
+        "checked_at",
+        "note_en"
+      ],
+      "reason": "Remove unsupported year-end placeholder; no amount, issuer or security change.",
+      "evidence": [
+        {
+          "url": "https://www.vlaio.be/nl/media/1507",
+          "title": "VLAIO disbursed support list",
+          "round_id": "93b4d055-b280-4cd4-b6db-6fada6a95942",
+          "checked_at": "2026-11-11",
+          "source_type": "investor_announcement"
+        }
+      ],
+      "reversal": {
+        "id": "93b4d055-b280-4cd4-b6db-6fada6a95942",
+        "stage": "VLAIO growth subsidy",
+        "amount": 25000,
+        "note_en": "Exact disbursed support to Zastrugi NV; announcement day unavailable.",
+        "currency": "EUR",
+        "round_key": "vlaio-2019",
+        "checked_at": "2026-11-11",
+        "company_id": "bc5abc2d-1da9-4e60-8111-05eba8625e7a",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2019-12-31",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key_column": "id",
+      "key": "84fa8d8a-2e8d-4f72-ada3-587238505d0b",
+      "company_slug": "airwayz",
+      "expected_before": {
+        "id": "84fa8d8a-2e8d-4f72-ada3-587238505d0b",
+        "stage": "Seed round",
+        "amount": 5000000,
+        "note_en": "Reported total deal amount; exact day and complete investor list are not public.",
+        "currency": "USD",
+        "round_key": "seed-2021",
+        "checked_at": "2026-11-11",
+        "company_id": "17c2e2db-b5c2-4352-9dbf-1b3eceaad917",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2021-12-31",
+        "closing_status": "closed",
+        "financing_type": "equity",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "84fa8d8a-2e8d-4f72-ada3-587238505d0b",
+        "stage": "Seed round",
+        "amount": 5000000,
+        "note_en": "Reported total deal amount; exact day and complete investor list are not public. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.",
+        "currency": "USD",
+        "round_key": "seed-2021",
+        "checked_at": "2026-11-15",
+        "company_id": "17c2e2db-b5c2-4352-9dbf-1b3eceaad917",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": null,
+        "closing_status": "closed",
+        "financing_type": "equity",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "announced_date",
+        "checked_at",
+        "note_en"
+      ],
+      "reason": "Remove unsupported year-end placeholder; no amount, issuer or security change.",
+      "evidence": [
+        {
+          "url": "https://www.ivc-online.com/Google-Card?id=06552fb5-13e5-e911-8106-0050569a1018",
+          "title": "IVC Airwayz company profile",
+          "round_id": "84fa8d8a-2e8d-4f72-ada3-587238505d0b",
+          "checked_at": "2026-11-11",
+          "source_type": "third_party_report"
+        }
+      ],
+      "reversal": {
+        "id": "84fa8d8a-2e8d-4f72-ada3-587238505d0b",
+        "stage": "Seed round",
+        "amount": 5000000,
+        "note_en": "Reported total deal amount; exact day and complete investor list are not public.",
+        "currency": "USD",
+        "round_key": "seed-2021",
+        "checked_at": "2026-11-11",
+        "company_id": "17c2e2db-b5c2-4352-9dbf-1b3eceaad917",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2021-12-31",
+        "closing_status": "closed",
+        "financing_type": "equity",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key_column": "id",
+      "key": "cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9",
+      "company_slug": "aive-systems",
+      "expected_before": {
+        "id": "cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9",
+        "stage": "Seed funding",
+        "amount": 3000000,
+        "note_en": "Institutional profile reports USD3m raised; exact close date, security and investors undisclosed.",
+        "currency": "USD",
+        "round_key": "seed-2026",
+        "checked_at": "2026-11-11",
+        "company_id": "57eb5688-d079-436a-91ea-9bd97858eb66",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2026-12-31",
+        "closing_status": "closed",
+        "financing_type": "undisclosed",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9",
+        "stage": "Seed funding",
+        "amount": 3000000,
+        "note_en": "Institutional profile reports USD3m raised; exact close date, security and investors undisclosed. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.",
+        "currency": "USD",
+        "round_key": "seed-2026",
+        "checked_at": "2026-11-15",
+        "company_id": "57eb5688-d079-436a-91ea-9bd97858eb66",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": null,
+        "closing_status": "closed",
+        "financing_type": "undisclosed",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "announced_date",
+        "checked_at",
+        "note_en"
+      ],
+      "reason": "Remove unsupported year-end placeholder; no amount, issuer or security change.",
+      "evidence": [
+        {
+          "url": "https://www.tcu.edu/innovation/network/texas-innovation-conference-awards/awards.php",
+          "title": "Texas Innovation Conference award profile",
+          "round_id": "cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9",
+          "checked_at": "2026-11-11",
+          "source_type": "third_party_report"
+        }
+      ],
+      "reversal": {
+        "id": "cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9",
+        "stage": "Seed funding",
+        "amount": 3000000,
+        "note_en": "Institutional profile reports USD3m raised; exact close date, security and investors undisclosed.",
+        "currency": "USD",
+        "round_key": "seed-2026",
+        "checked_at": "2026-11-11",
+        "company_id": "57eb5688-d079-436a-91ea-9bd97858eb66",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2026-12-31",
+        "closing_status": "closed",
+        "financing_type": "undisclosed",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key_column": "id",
+      "key": "f0338ad2-0e66-4e3f-9362-87f3b283894a",
+      "company_slug": "amax",
+      "expected_before": {
+        "id": "f0338ad2-0e66-4e3f-9362-87f3b283894a",
+        "stage": "Ppp Loan",
+        "amount": 1858917,
+        "note_en": "Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven.",
+        "currency": "USD",
+        "round_key": "amax-engineering-ppp-2020",
+        "checked_at": "2026-11-11",
+        "company_id": "4a755697-38f1-480a-8607-286b4e923b76",
+        "created_at": "2026-11-11T16:06:34.445313+00:00",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2020-04-28",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "f0338ad2-0e66-4e3f-9362-87f3b283894a",
+        "stage": "Ppp Loan",
+        "amount": 1858917,
+        "note_en": "Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven. Reviewed 2026-11-15: retired from publication because these PPP proceeds belong to unrelated AMAX Engineering Corporation, not the cohort AMAX motor brand. Sources and lender links retained for audit; no zero-funding inference.",
+        "currency": "USD",
+        "round_key": "amax-engineering-ppp-2020",
+        "checked_at": "2026-11-15",
+        "company_id": "4a755697-38f1-480a-8607-286b4e923b76",
+        "created_at": "2026-11-11T16:06:34.445313+00:00",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2020-04-28",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "retired"
+      },
+      "changed_fields": [
+        "checked_at",
+        "note_en",
+        "publication_status"
+      ],
+      "reason": "Source-provenance identifies AMAX brushless motor brand in Ben Biggs Blackbird build, not AMAX Engineering Corporation AI-server issuer. Two PPP loans are real for the latter but misassigned to this cohort row. Retire publication only; preserve financial facts, sources, links and reversal snapshots. Exact motor legal entity remains unknown; do not invent or move financing blindly.",
+      "evidence": [
+        {
+          "url": "https://dronexl.co/2026/09/21/ben-biggs-blackbird-626-kmh-build-video/",
+          "fact": "Originating cohort source specifically custom-wound Amax2826motors, not AIservers."
+        },
+        {
+          "url": "https://amaxshop.com/",
+          "fact": "AMAX original ChinaWarehouse ownfactory FPV brushlessmotorcatalog, matching product category."
+        },
+        {
+          "url": "https://www.amax.com/about-us/",
+          "fact": "AMAXEngineering original founded1979/Fremont AIinfrastructure business, separate domain and product identity."
+        },
+        {
+          "url": "https://www.amax.com/content/files/2025/01/AMAX-Engineering-Corporation-ISO-9001_2015-Certificate-2025-R-.pdf",
+          "fact": "Indexed issuer ISO certificate identifies computing-system issuer/location, but direct current fetch404; not reliedon as directlyverifieddocument."
+        },
+        {
+          "url": "https://amaxshop.com/about_us",
+          "finding": "Original AMAXshop imprint lists China/Germany warehouses and Frankfurt operator Min Ling Gao. Retail operator is not automatically asserted as motor factory legal issuer."
+        },
+        {
+          "url": "https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million",
+          "finding": "Original7October2026DOJ explicitly identifiesPPPborrowerAMAXEngineeringCorporationasAI-data-centerengineeringfirm, confirming wrongissuerboundary."
+        }
+      ],
+      "reversal": {
+        "id": "f0338ad2-0e66-4e3f-9362-87f3b283894a",
+        "stage": "Ppp Loan",
+        "amount": 1858917,
+        "note_en": "Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven.",
+        "currency": "USD",
+        "round_key": "amax-engineering-ppp-2020",
+        "checked_at": "2026-11-11",
+        "company_id": "4a755697-38f1-480a-8607-286b4e923b76",
+        "created_at": "2026-11-11T16:06:34.445313+00:00",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2020-04-28",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key_column": "id",
+      "key": "dad8d6b2-d00c-41d0-87ad-96b7b33c8969",
+      "company_slug": "amax",
+      "expected_before": {
+        "id": "dad8d6b2-d00c-41d0-87ad-96b7b33c8969",
+        "stage": "Ppp Second Draw Loan",
+        "amount": 2000000,
+        "note_en": "Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven; 2026 DOJ settlement over alleged eligibility does not negate occurrence.",
+        "currency": "USD",
+        "round_key": "amax-engineering-ppp-second-draw-2021",
+        "checked_at": "2026-11-11",
+        "company_id": "4a755697-38f1-480a-8607-286b4e923b76",
+        "created_at": "2026-11-11T16:06:34.445313+00:00",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2021-01-23",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "dad8d6b2-d00c-41d0-87ad-96b7b33c8969",
+        "stage": "Ppp Second Draw Loan",
+        "amount": 2000000,
+        "note_en": "Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven; 2026 DOJ settlement over alleged eligibility does not negate occurrence. Reviewed 2026-11-15: retired from publication because these PPP proceeds belong to unrelated AMAX Engineering Corporation, not the cohort AMAX motor brand. Sources and lender links retained for audit; no zero-funding inference.",
+        "currency": "USD",
+        "round_key": "amax-engineering-ppp-second-draw-2021",
+        "checked_at": "2026-11-15",
+        "company_id": "4a755697-38f1-480a-8607-286b4e923b76",
+        "created_at": "2026-11-11T16:06:34.445313+00:00",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2021-01-23",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "retired"
+      },
+      "changed_fields": [
+        "checked_at",
+        "note_en",
+        "publication_status"
+      ],
+      "reason": "Source-provenance identifies AMAX brushless motor brand in Ben Biggs Blackbird build, not AMAX Engineering Corporation AI-server issuer. Two PPP loans are real for the latter but misassigned to this cohort row. Retire publication only; preserve financial facts, sources, links and reversal snapshots. Exact motor legal entity remains unknown; do not invent or move financing blindly.",
+      "evidence": [
+        {
+          "url": "https://dronexl.co/2026/09/21/ben-biggs-blackbird-626-kmh-build-video/",
+          "fact": "Originating cohort source specifically custom-wound Amax2826motors, not AIservers."
+        },
+        {
+          "url": "https://amaxshop.com/",
+          "fact": "AMAX original ChinaWarehouse ownfactory FPV brushlessmotorcatalog, matching product category."
+        },
+        {
+          "url": "https://www.amax.com/about-us/",
+          "fact": "AMAXEngineering original founded1979/Fremont AIinfrastructure business, separate domain and product identity."
+        },
+        {
+          "url": "https://www.amax.com/content/files/2025/01/AMAX-Engineering-Corporation-ISO-9001_2015-Certificate-2025-R-.pdf",
+          "fact": "Indexed issuer ISO certificate identifies computing-system issuer/location, but direct current fetch404; not reliedon as directlyverifieddocument."
+        },
+        {
+          "url": "https://amaxshop.com/about_us",
+          "finding": "Original AMAXshop imprint lists China/Germany warehouses and Frankfurt operator Min Ling Gao. Retail operator is not automatically asserted as motor factory legal issuer."
+        },
+        {
+          "url": "https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million",
+          "finding": "Original7October2026DOJ explicitly identifiesPPPborrowerAMAXEngineeringCorporationasAI-data-centerengineeringfirm, confirming wrongissuerboundary."
+        }
+      ],
+      "reversal": {
+        "id": "dad8d6b2-d00c-41d0-87ad-96b7b33c8969",
+        "stage": "Ppp Second Draw Loan",
+        "amount": 2000000,
+        "note_en": "Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven; 2026 DOJ settlement over alleged eligibility does not negate occurrence.",
+        "currency": "USD",
+        "round_key": "amax-engineering-ppp-second-draw-2021",
+        "checked_at": "2026-11-11",
+        "company_id": "4a755697-38f1-480a-8607-286b4e923b76",
+        "created_at": "2026-11-11T16:06:34.445313+00:00",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2021-01-23",
+        "closing_status": "closed",
+        "financing_type": "debt",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key_column": "id",
+      "key": "20676131-da2e-4665-84f0-80b7212c1e2d",
+      "company_slug": "althimis",
+      "expected_before": {
+        "id": "20676131-da2e-4665-84f0-80b7212c1e2d",
+        "stage": "Seed",
+        "amount": 5000000,
+        "note_en": "Issuer: Althimis Inc.. Amount basis: reported completed amount; exact close date undisclosed, using first located public report date.",
+        "currency": "USD",
+        "round_key": "althimis-seed-2026",
+        "checked_at": "2026-11-11",
+        "company_id": "9ed0bd44-5ce9-44bf-abb0-46c3e8578d62",
+        "created_at": "2026-11-11T16:06:34.445313+00:00",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2026-03-23",
+        "closing_status": "closed",
+        "financing_type": "equity",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "20676131-da2e-4665-84f0-80b7212c1e2d",
+        "stage": "Seed",
+        "amount": 5000000,
+        "note_en": "Issuer: Althimis Inc.. Amount basis: reported completed amount; exact close date undisclosed, using first located public report date. Reviewed 2026-11-15: earlier original Calcalist public report dated2026-03-19 confirms this same financing; exact closing day remains undisclosed.",
+        "currency": "USD",
+        "round_key": "althimis-seed-2026",
+        "checked_at": "2026-11-15",
+        "company_id": "9ed0bd44-5ce9-44bf-abb0-46c3e8578d62",
+        "created_at": "2026-11-11T16:06:34.445313+00:00",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2026-03-19",
+        "closing_status": "closed",
+        "financing_type": "equity",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "announced_date",
+        "checked_at",
+        "note_en"
+      ],
+      "reason": "Existing note explicitly uses first located public report rather than exact close date. Earlier original Calcalist reporting dated2026-03-19 explicitly reports completed5mUSD seed ledWGG; source should be added and March26competition article is not financing evidence. Exact close date remains undisclosed.",
+      "evidence": [
+        {
+          "url": "https://www.calcalist.co.il/calcalistech/article/sypptjkcwe"
+        }
+      ],
+      "reversal": {
+        "id": "20676131-da2e-4665-84f0-80b7212c1e2d",
+        "stage": "Seed",
+        "amount": 5000000,
+        "note_en": "Issuer: Althimis Inc.. Amount basis: reported completed amount; exact close date undisclosed, using first located public report date.",
+        "currency": "USD",
+        "round_key": "althimis-seed-2026",
+        "checked_at": "2026-11-11",
+        "company_id": "9ed0bd44-5ce9-44bf-abb0-46c3e8578d62",
+        "created_at": "2026-11-11T16:06:34.445313+00:00",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2026-03-23",
+        "closing_status": "closed",
+        "financing_type": "equity",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_funding_rounds",
+      "key_column": "id",
+      "key": "d6d3afc5-d4cb-488e-acc0-9fec03eeb794",
+      "company_slug": "airwayz",
+      "expected_before": {
+        "id": "d6d3afc5-d4cb-488e-acc0-9fec03eeb794",
+        "stage": "INDI2 programme grant",
+        "amount": 2000000,
+        "note_en": "Exact Airwayz press-reported grant amount; joint later project totals are held.",
+        "currency": "USD",
+        "round_key": "indi2-grant-2023",
+        "checked_at": "2026-11-11",
+        "company_id": "17c2e2db-b5c2-4352-9dbf-1b3eceaad917",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2023-02-16",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "expected_after": {
+        "id": "d6d3afc5-d4cb-488e-acc0-9fec03eeb794",
+        "stage": "INDI2 programme grant",
+        "amount": 2000000,
+        "note_en": "Exact Airwayz press-reported grant amount; joint later project totals are held. Reviewed 2026-11-15: contemporaneous February16 report and issuer PR agency March1 release explicitly support Airwayz recipient-specific USD2m grant; existing government programme URL retained as context. No joint later-project totals assigned.",
+        "currency": "USD",
+        "round_key": "indi2-grant-2023",
+        "checked_at": "2026-11-15",
+        "company_id": "17c2e2db-b5c2-4352-9dbf-1b3eceaad917",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2023-02-16",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      },
+      "changed_fields": [
+        "checked_at",
+        "note_en"
+      ],
+      "reason": "Add original recipient-specific corroboration while preserving existing amount/date.",
+      "evidence": [
+        {
+          "url": "https://www.incus-media.com/airwayz-to-participate-in-leading-european-drone-events/"
+        },
+        {
+          "url": "https://www.unmannedairspace.info/uncategorized/airwayz-to-take-part-in-second-phase-of-israeli-funded-usd2-million-drone-initiative/"
+        }
+      ],
+      "reversal": {
+        "id": "d6d3afc5-d4cb-488e-acc0-9fec03eeb794",
+        "stage": "INDI2 programme grant",
+        "amount": 2000000,
+        "note_en": "Exact Airwayz press-reported grant amount; joint later project totals are held.",
+        "currency": "USD",
+        "round_key": "indi2-grant-2023",
+        "checked_at": "2026-11-11",
+        "company_id": "17c2e2db-b5c2-4352-9dbf-1b3eceaad917",
+        "created_at": "2026-11-11T15:03:48.174938+00:00",
+        "updated_at": "2026-11-11T15:03:48.174938+00:00",
+        "record_kind": "round",
+        "amount_basis": "announced_round_size",
+        "announced_date": "2023-02-16",
+        "closing_status": "announced",
+        "financing_type": "grant",
+        "parent_round_id": null,
+        "amount_qualifier": "exact",
+        "publication_status": "approved"
+      }
+    },
+    {
+      "table": "company_investment_research",
+      "key_column": "company_id",
+      "key": "4a755697-38f1-480a-8607-286b4e923b76",
+      "company_slug": "amax",
+      "expected_before": {
+        "checked_at": "2026-11-11",
+        "company_id": "4a755697-38f1-480a-8607-286b4e923b76",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "source_urls": [
+          "https://pppreport.org/latest/company/amax%2Bengineering%2Bcorp",
+          "https://projects.propublica.org/coronavirus/bailouts/search?q=amax%20engineering%20corporation",
+          "https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million"
+        ],
+        "coverage_status": "partial",
+        "coverage_note_en": "Public-source funding history reviewed through 2026-11-11; unsupported, parent-only, procurement and ownership-transfer claims were held."
+      },
+      "expected_after": {
+        "checked_at": "2026-11-15",
+        "company_id": "4a755697-38f1-480a-8607-286b4e923b76",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "source_urls": [
+          "https://pppreport.org/latest/company/amax%2Bengineering%2Bcorp",
+          "https://projects.propublica.org/coronavirus/bailouts/search?q=amax%20engineering%20corporation",
+          "https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million",
+          "https://dronexl.co/2026/09/21/ben-biggs-blackbird-626-kmh-build-video/",
+          "https://amaxshop.com/",
+          "https://amaxshop.com/about_us",
+          "https://www.amax.com/about-us/"
+        ],
+        "coverage_status": "partial",
+        "coverage_note_en": "Public-source review through 2026-11-15 resolves cohort provenance to custom-wound AMAX2826 brushless motors. Two AMAX Engineering Corporation AI-server PPP loans are unrelated and retired from publication only, with sources and links preserved. Exact motor legal issuer and its private financing remain unknown; no zero-funding conclusion. Coverage remains partial."
+      },
+      "changed_fields": [
+        "checked_at",
+        "coverage_note_en",
+        "source_urls"
+      ],
+      "reason": "Document quarantined unrelated PPP claims; retain original sources and unknown motor issuer funding.",
+      "evidence": [
+        {
+          "url": "https://dronexl.co/2026/09/21/ben-biggs-blackbird-626-kmh-build-video/",
+          "fact": "Originating cohort source specifically custom-wound Amax2826motors, not AIservers."
+        },
+        {
+          "url": "https://amaxshop.com/",
+          "fact": "AMAX original ChinaWarehouse ownfactory FPV brushlessmotorcatalog, matching product category."
+        },
+        {
+          "url": "https://www.amax.com/about-us/",
+          "fact": "AMAXEngineering original founded1979/Fremont AIinfrastructure business, separate domain and product identity."
+        },
+        {
+          "url": "https://www.amax.com/content/files/2025/01/AMAX-Engineering-Corporation-ISO-9001_2015-Certificate-2025-R-.pdf",
+          "fact": "Indexed issuer ISO certificate identifies computing-system issuer/location, but direct current fetch404; not reliedon as directlyverifieddocument."
+        },
+        {
+          "url": "https://amaxshop.com/about_us",
+          "finding": "Original AMAXshop imprint lists China/Germany warehouses and Frankfurt operator Min Ling Gao. Retail operator is not automatically asserted as motor factory legal issuer."
+        },
+        {
+          "url": "https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million",
+          "finding": "Original7October2026DOJ explicitly identifiesPPPborrowerAMAXEngineeringCorporationasAI-data-centerengineeringfirm, confirming wrongissuerboundary."
+        }
+      ],
+      "reversal": {
+        "checked_at": "2026-11-11",
+        "company_id": "4a755697-38f1-480a-8607-286b4e923b76",
+        "updated_at": "2026-11-11T16:06:34.445313+00:00",
+        "source_urls": [
+          "https://pppreport.org/latest/company/amax%2Bengineering%2Bcorp",
+          "https://projects.propublica.org/coronavirus/bailouts/search?q=amax%20engineering%20corporation",
+          "https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million"
+        ],
+        "coverage_status": "partial",
+        "coverage_note_en": "Public-source funding history reviewed through 2026-11-11; unsupported, parent-only, procurement and ownership-transfer claims were held."
+      }
+    }
+  ],
+  "source_additions": [
+    {
+      "round_id": "d6d3afc5-d4cb-488e-acc0-9fec03eeb794",
+      "url": "https://www.incus-media.com/airwayz-to-participate-in-leading-european-drone-events/",
+      "title": "Airwayz issuer PR agency original confirms recipient-specific USD2m grant",
+      "source_type": "company_announcement",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "d6d3afc5-d4cb-488e-acc0-9fec03eeb794",
+      "url": "https://www.unmannedairspace.info/uncategorized/airwayz-to-take-part-in-second-phase-of-israeli-funded-usd2-million-drone-initiative/",
+      "title": "Contemporaneous16February2023 Airwayz INDI2 grant report",
+      "source_type": "third_party_report",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "round_id": "20676131-da2e-4665-84f0-80b7212c1e2d",
+      "url": "https://www.calcalist.co.il/calcalistech/article/sypptjkcwe",
+      "title": "Original19March2026 Althimis seed announcement report",
+      "source_type": "third_party_report",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "reversal_scope": "Restore reviewed event/coverage fields with expected-current guards. Valid added evidence sources remain; no source, link or profile deletion.",
+  "forward_sql": "do $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='27025a05-dd6a-4c2a-af3b-d290249ae52e'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"27025a05-dd6a-4c2a-af3b-d290249ae52e\", \"stage\": \"VLAIO innovation grant\", \"amount\": 250000, \"note_en\": \"Exact annual-report award to Zastrugi NV; announcement day unavailable.\", \"currency\": \"EUR\", \"round_key\": \"vlaio-2017\", \"checked_at\": \"2026-11-11\", \"company_id\": \"bc5abc2d-1da9-4e60-8111-05eba8625e7a\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2017-12-31\", \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set announced_date=NULL,checked_at='2026-11-15'::date,note_en='Exact annual-report award to Zastrugi NV; announcement day unavailable. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.',updated_at=now() where id='27025a05-dd6a-4c2a-af3b-d290249ae52e'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='27025a05-dd6a-4c2a-af3b-d290249ae52e'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"27025a05-dd6a-4c2a-af3b-d290249ae52e\", \"stage\": \"VLAIO innovation grant\", \"amount\": 250000, \"note_en\": \"Exact annual-report award to Zastrugi NV; announcement day unavailable. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.\", \"currency\": \"EUR\", \"round_key\": \"vlaio-2017\", \"checked_at\": \"2026-11-15\", \"company_id\": \"bc5abc2d-1da9-4e60-8111-05eba8625e7a\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": null, \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: 27025a05-dd6a-4c2a-af3b-d290249ae52e'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='93b4d055-b280-4cd4-b6db-6fada6a95942'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"93b4d055-b280-4cd4-b6db-6fada6a95942\", \"stage\": \"VLAIO growth subsidy\", \"amount\": 25000, \"note_en\": \"Exact disbursed support to Zastrugi NV; announcement day unavailable.\", \"currency\": \"EUR\", \"round_key\": \"vlaio-2019\", \"checked_at\": \"2026-11-11\", \"company_id\": \"bc5abc2d-1da9-4e60-8111-05eba8625e7a\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2019-12-31\", \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set announced_date=NULL,checked_at='2026-11-15'::date,note_en='Exact disbursed support to Zastrugi NV; announcement day unavailable. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.',updated_at=now() where id='93b4d055-b280-4cd4-b6db-6fada6a95942'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='93b4d055-b280-4cd4-b6db-6fada6a95942'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"93b4d055-b280-4cd4-b6db-6fada6a95942\", \"stage\": \"VLAIO growth subsidy\", \"amount\": 25000, \"note_en\": \"Exact disbursed support to Zastrugi NV; announcement day unavailable. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.\", \"currency\": \"EUR\", \"round_key\": \"vlaio-2019\", \"checked_at\": \"2026-11-15\", \"company_id\": \"bc5abc2d-1da9-4e60-8111-05eba8625e7a\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": null, \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: 93b4d055-b280-4cd4-b6db-6fada6a95942'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='84fa8d8a-2e8d-4f72-ada3-587238505d0b'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"84fa8d8a-2e8d-4f72-ada3-587238505d0b\", \"stage\": \"Seed round\", \"amount\": 5000000, \"note_en\": \"Reported total deal amount; exact day and complete investor list are not public.\", \"currency\": \"USD\", \"round_key\": \"seed-2021\", \"checked_at\": \"2026-11-11\", \"company_id\": \"17c2e2db-b5c2-4352-9dbf-1b3eceaad917\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2021-12-31\", \"closing_status\": \"closed\", \"financing_type\": \"equity\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set announced_date=NULL,checked_at='2026-11-15'::date,note_en='Reported total deal amount; exact day and complete investor list are not public. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.',updated_at=now() where id='84fa8d8a-2e8d-4f72-ada3-587238505d0b'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='84fa8d8a-2e8d-4f72-ada3-587238505d0b'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"84fa8d8a-2e8d-4f72-ada3-587238505d0b\", \"stage\": \"Seed round\", \"amount\": 5000000, \"note_en\": \"Reported total deal amount; exact day and complete investor list are not public. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.\", \"currency\": \"USD\", \"round_key\": \"seed-2021\", \"checked_at\": \"2026-11-15\", \"company_id\": \"17c2e2db-b5c2-4352-9dbf-1b3eceaad917\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": null, \"closing_status\": \"closed\", \"financing_type\": \"equity\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: 84fa8d8a-2e8d-4f72-ada3-587238505d0b'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9\", \"stage\": \"Seed funding\", \"amount\": 3000000, \"note_en\": \"Institutional profile reports USD3m raised; exact close date, security and investors undisclosed.\", \"currency\": \"USD\", \"round_key\": \"seed-2026\", \"checked_at\": \"2026-11-11\", \"company_id\": \"57eb5688-d079-436a-91ea-9bd97858eb66\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2026-12-31\", \"closing_status\": \"closed\", \"financing_type\": \"undisclosed\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set announced_date=NULL,checked_at='2026-11-15'::date,note_en='Institutional profile reports USD3m raised; exact close date, security and investors undisclosed. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.',updated_at=now() where id='cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9\", \"stage\": \"Seed funding\", \"amount\": 3000000, \"note_en\": \"Institutional profile reports USD3m raised; exact close date, security and investors undisclosed. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.\", \"currency\": \"USD\", \"round_key\": \"seed-2026\", \"checked_at\": \"2026-11-15\", \"company_id\": \"57eb5688-d079-436a-91ea-9bd97858eb66\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": null, \"closing_status\": \"closed\", \"financing_type\": \"undisclosed\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='f0338ad2-0e66-4e3f-9362-87f3b283894a'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"f0338ad2-0e66-4e3f-9362-87f3b283894a\", \"stage\": \"Ppp Loan\", \"amount\": 1858917, \"note_en\": \"Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven.\", \"currency\": \"USD\", \"round_key\": \"amax-engineering-ppp-2020\", \"checked_at\": \"2026-11-11\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2020-04-28\", \"closing_status\": \"closed\", \"financing_type\": \"debt\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set checked_at='2026-11-15'::date,note_en='Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven. Reviewed 2026-11-15: retired from publication because these PPP proceeds belong to unrelated AMAX Engineering Corporation, not the cohort AMAX motor brand. Sources and lender links retained for audit; no zero-funding inference.',publication_status='retired',updated_at=now() where id='f0338ad2-0e66-4e3f-9362-87f3b283894a'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='f0338ad2-0e66-4e3f-9362-87f3b283894a'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"f0338ad2-0e66-4e3f-9362-87f3b283894a\", \"stage\": \"Ppp Loan\", \"amount\": 1858917, \"note_en\": \"Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven. Reviewed 2026-11-15: retired from publication because these PPP proceeds belong to unrelated AMAX Engineering Corporation, not the cohort AMAX motor brand. Sources and lender links retained for audit; no zero-funding inference.\", \"currency\": \"USD\", \"round_key\": \"amax-engineering-ppp-2020\", \"checked_at\": \"2026-11-15\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2020-04-28\", \"closing_status\": \"closed\", \"financing_type\": \"debt\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"retired\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: f0338ad2-0e66-4e3f-9362-87f3b283894a'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='dad8d6b2-d00c-41d0-87ad-96b7b33c8969'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"dad8d6b2-d00c-41d0-87ad-96b7b33c8969\", \"stage\": \"Ppp Second Draw Loan\", \"amount\": 2000000, \"note_en\": \"Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven; 2026 DOJ settlement over alleged eligibility does not negate occurrence.\", \"currency\": \"USD\", \"round_key\": \"amax-engineering-ppp-second-draw-2021\", \"checked_at\": \"2026-11-11\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2021-01-23\", \"closing_status\": \"closed\", \"financing_type\": \"debt\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set checked_at='2026-11-15'::date,note_en='Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven; 2026 DOJ settlement over alleged eligibility does not negate occurrence. Reviewed 2026-11-15: retired from publication because these PPP proceeds belong to unrelated AMAX Engineering Corporation, not the cohort AMAX motor brand. Sources and lender links retained for audit; no zero-funding inference.',publication_status='retired',updated_at=now() where id='dad8d6b2-d00c-41d0-87ad-96b7b33c8969'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='dad8d6b2-d00c-41d0-87ad-96b7b33c8969'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"dad8d6b2-d00c-41d0-87ad-96b7b33c8969\", \"stage\": \"Ppp Second Draw Loan\", \"amount\": 2000000, \"note_en\": \"Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven; 2026 DOJ settlement over alleged eligibility does not negate occurrence. Reviewed 2026-11-15: retired from publication because these PPP proceeds belong to unrelated AMAX Engineering Corporation, not the cohort AMAX motor brand. Sources and lender links retained for audit; no zero-funding inference.\", \"currency\": \"USD\", \"round_key\": \"amax-engineering-ppp-second-draw-2021\", \"checked_at\": \"2026-11-15\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2021-01-23\", \"closing_status\": \"closed\", \"financing_type\": \"debt\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"retired\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: dad8d6b2-d00c-41d0-87ad-96b7b33c8969'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='20676131-da2e-4665-84f0-80b7212c1e2d'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"20676131-da2e-4665-84f0-80b7212c1e2d\", \"stage\": \"Seed\", \"amount\": 5000000, \"note_en\": \"Issuer: Althimis Inc.. Amount basis: reported completed amount; exact close date undisclosed, using first located public report date.\", \"currency\": \"USD\", \"round_key\": \"althimis-seed-2026\", \"checked_at\": \"2026-11-11\", \"company_id\": \"9ed0bd44-5ce9-44bf-abb0-46c3e8578d62\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2026-03-23\", \"closing_status\": \"closed\", \"financing_type\": \"equity\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set announced_date='2026-03-19',checked_at='2026-11-15'::date,note_en='Issuer: Althimis Inc.. Amount basis: reported completed amount; exact close date undisclosed, using first located public report date. Reviewed 2026-11-15: earlier original Calcalist public report dated2026-03-19 confirms this same financing; exact closing day remains undisclosed.',updated_at=now() where id='20676131-da2e-4665-84f0-80b7212c1e2d'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='20676131-da2e-4665-84f0-80b7212c1e2d'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"20676131-da2e-4665-84f0-80b7212c1e2d\", \"stage\": \"Seed\", \"amount\": 5000000, \"note_en\": \"Issuer: Althimis Inc.. Amount basis: reported completed amount; exact close date undisclosed, using first located public report date. Reviewed 2026-11-15: earlier original Calcalist public report dated2026-03-19 confirms this same financing; exact closing day remains undisclosed.\", \"currency\": \"USD\", \"round_key\": \"althimis-seed-2026\", \"checked_at\": \"2026-11-15\", \"company_id\": \"9ed0bd44-5ce9-44bf-abb0-46c3e8578d62\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2026-03-19\", \"closing_status\": \"closed\", \"financing_type\": \"equity\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: 20676131-da2e-4665-84f0-80b7212c1e2d'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='d6d3afc5-d4cb-488e-acc0-9fec03eeb794'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"d6d3afc5-d4cb-488e-acc0-9fec03eeb794\", \"stage\": \"INDI2 programme grant\", \"amount\": 2000000, \"note_en\": \"Exact Airwayz press-reported grant amount; joint later project totals are held.\", \"currency\": \"USD\", \"round_key\": \"indi2-grant-2023\", \"checked_at\": \"2026-11-11\", \"company_id\": \"17c2e2db-b5c2-4352-9dbf-1b3eceaad917\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2023-02-16\", \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set checked_at='2026-11-15'::date,note_en='Exact Airwayz press-reported grant amount; joint later project totals are held. Reviewed 2026-11-15: contemporaneous February16 report and issuer PR agency March1 release explicitly support Airwayz recipient-specific USD2m grant; existing government programme URL retained as context. No joint later-project totals assigned.',updated_at=now() where id='d6d3afc5-d4cb-488e-acc0-9fec03eeb794'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='d6d3afc5-d4cb-488e-acc0-9fec03eeb794'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"d6d3afc5-d4cb-488e-acc0-9fec03eeb794\", \"stage\": \"INDI2 programme grant\", \"amount\": 2000000, \"note_en\": \"Exact Airwayz press-reported grant amount; joint later project totals are held. Reviewed 2026-11-15: contemporaneous February16 report and issuer PR agency March1 release explicitly support Airwayz recipient-specific USD2m grant; existing government programme URL retained as context. No joint later-project totals assigned.\", \"currency\": \"USD\", \"round_key\": \"indi2-grant-2023\", \"checked_at\": \"2026-11-15\", \"company_id\": \"17c2e2db-b5c2-4352-9dbf-1b3eceaad917\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2023-02-16\", \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: d6d3afc5-d4cb-488e-acc0-9fec03eeb794'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_investment_research t where company_id='4a755697-38f1-480a-8607-286b4e923b76'::uuid and (to_jsonb(t)-'updated_at')=('{\"checked_at\": \"2026-11-11\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"source_urls\": [\"https://pppreport.org/latest/company/amax%2Bengineering%2Bcorp\", \"https://projects.propublica.org/coronavirus/bailouts/search?q=amax%20engineering%20corporation\", \"https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million\"], \"coverage_status\": \"partial\", \"coverage_note_en\": \"Public-source funding history reviewed through 2026-11-11; unsupported, parent-only, procurement and ownership-transfer claims were held.\"}'::jsonb-'updated_at')) then update public.company_investment_research set checked_at='2026-11-15'::date,coverage_note_en='Public-source review through 2026-11-15 resolves cohort provenance to custom-wound AMAX2826 brushless motors. Two AMAX Engineering Corporation AI-server PPP loans are unrelated and retired from publication only, with sources and links preserved. Exact motor legal issuer and its private financing remain unknown; no zero-funding conclusion. Coverage remains partial.',source_urls=ARRAY['https://pppreport.org/latest/company/amax%2Bengineering%2Bcorp','https://projects.propublica.org/coronavirus/bailouts/search?q=amax%20engineering%20corporation','https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million','https://dronexl.co/2026/09/21/ben-biggs-blackbird-626-kmh-build-video/','https://amaxshop.com/','https://amaxshop.com/about_us','https://www.amax.com/about-us/']::text[],updated_at=now() where company_id='4a755697-38f1-480a-8607-286b4e923b76'::uuid; elsif not exists(select 1 from public.company_investment_research t where company_id='4a755697-38f1-480a-8607-286b4e923b76'::uuid and (to_jsonb(t)-'updated_at')=('{\"checked_at\": \"2026-11-15\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"source_urls\": [\"https://pppreport.org/latest/company/amax%2Bengineering%2Bcorp\", \"https://projects.propublica.org/coronavirus/bailouts/search?q=amax%20engineering%20corporation\", \"https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million\", \"https://dronexl.co/2026/09/21/ben-biggs-blackbird-626-kmh-build-video/\", \"https://amaxshop.com/\", \"https://amaxshop.com/about_us\", \"https://www.amax.com/about-us/\"], \"coverage_status\": \"partial\", \"coverage_note_en\": \"Public-source review through 2026-11-15 resolves cohort provenance to custom-wound AMAX2826 brushless motors. Two AMAX Engineering Corporation AI-server PPP loans are unrelated and retired from publication only, with sources and links preserved. Exact motor legal issuer and its private financing remain unknown; no zero-funding conclusion. Coverage remains partial.\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: 4a755697-38f1-480a-8607-286b4e923b76'; end if; end $reviewed_guard$;\ninsert into public.company_funding_round_sources(round_id,url,title,source_type,checked_at) values('d6d3afc5-d4cb-488e-acc0-9fec03eeb794','https://www.incus-media.com/airwayz-to-participate-in-leading-european-drone-events/','Airwayz issuer PR agency original confirms recipient-specific USD2m grant','company_announcement','2026-11-15'::date) on conflict(round_id,url) do nothing;\ndo $source_guard$ begin if not exists(select 1 from public.company_funding_round_sources s where to_jsonb(s)='{\"round_id\": \"d6d3afc5-d4cb-488e-acc0-9fec03eeb794\", \"url\": \"https://www.incus-media.com/airwayz-to-participate-in-leading-european-drone-events/\", \"title\": \"Airwayz issuer PR agency original confirms recipient-specific USD2m grant\", \"source_type\": \"company_announcement\", \"checked_at\": \"2026-11-15\"}'::jsonb) then raise exception 'Reviewed evidence source guard failed';end if;end $source_guard$;\ninsert into public.company_funding_round_sources(round_id,url,title,source_type,checked_at) values('d6d3afc5-d4cb-488e-acc0-9fec03eeb794','https://www.unmannedairspace.info/uncategorized/airwayz-to-take-part-in-second-phase-of-israeli-funded-usd2-million-drone-initiative/','Contemporaneous16February2023 Airwayz INDI2 grant report','third_party_report','2026-11-15'::date) on conflict(round_id,url) do nothing;\ndo $source_guard$ begin if not exists(select 1 from public.company_funding_round_sources s where to_jsonb(s)='{\"round_id\": \"d6d3afc5-d4cb-488e-acc0-9fec03eeb794\", \"url\": \"https://www.unmannedairspace.info/uncategorized/airwayz-to-take-part-in-second-phase-of-israeli-funded-usd2-million-drone-initiative/\", \"title\": \"Contemporaneous16February2023 Airwayz INDI2 grant report\", \"source_type\": \"third_party_report\", \"checked_at\": \"2026-11-15\"}'::jsonb) then raise exception 'Reviewed evidence source guard failed';end if;end $source_guard$;\ninsert into public.company_funding_round_sources(round_id,url,title,source_type,checked_at) values('20676131-da2e-4665-84f0-80b7212c1e2d','https://www.calcalist.co.il/calcalistech/article/sypptjkcwe','Original19March2026 Althimis seed announcement report','third_party_report','2026-11-15'::date) on conflict(round_id,url) do nothing;\ndo $source_guard$ begin if not exists(select 1 from public.company_funding_round_sources s where to_jsonb(s)='{\"round_id\": \"20676131-da2e-4665-84f0-80b7212c1e2d\", \"url\": \"https://www.calcalist.co.il/calcalistech/article/sypptjkcwe\", \"title\": \"Original19March2026 Althimis seed announcement report\", \"source_type\": \"third_party_report\", \"checked_at\": \"2026-11-15\"}'::jsonb) then raise exception 'Reviewed evidence source guard failed';end if;end $source_guard$;\n",
+  "reversal_sql": "do $reviewed_guard$ begin if exists(select 1 from public.company_investment_research t where company_id='4a755697-38f1-480a-8607-286b4e923b76'::uuid and (to_jsonb(t)-'updated_at')=('{\"checked_at\": \"2026-11-15\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"source_urls\": [\"https://pppreport.org/latest/company/amax%2Bengineering%2Bcorp\", \"https://projects.propublica.org/coronavirus/bailouts/search?q=amax%20engineering%20corporation\", \"https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million\", \"https://dronexl.co/2026/09/21/ben-biggs-blackbird-626-kmh-build-video/\", \"https://amaxshop.com/\", \"https://amaxshop.com/about_us\", \"https://www.amax.com/about-us/\"], \"coverage_status\": \"partial\", \"coverage_note_en\": \"Public-source review through 2026-11-15 resolves cohort provenance to custom-wound AMAX2826 brushless motors. Two AMAX Engineering Corporation AI-server PPP loans are unrelated and retired from publication only, with sources and links preserved. Exact motor legal issuer and its private financing remain unknown; no zero-funding conclusion. Coverage remains partial.\"}'::jsonb-'updated_at')) then update public.company_investment_research set checked_at='2026-11-11'::date,coverage_note_en='Public-source funding history reviewed through 2026-11-11; unsupported, parent-only, procurement and ownership-transfer claims were held.',source_urls=ARRAY['https://pppreport.org/latest/company/amax%2Bengineering%2Bcorp','https://projects.propublica.org/coronavirus/bailouts/search?q=amax%20engineering%20corporation','https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million']::text[],updated_at='2026-11-11T16:06:34.445313+00:00'::timestamptz where company_id='4a755697-38f1-480a-8607-286b4e923b76'::uuid; elsif not exists(select 1 from public.company_investment_research t where company_id='4a755697-38f1-480a-8607-286b4e923b76'::uuid and (to_jsonb(t)-'updated_at')=('{\"checked_at\": \"2026-11-11\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"source_urls\": [\"https://pppreport.org/latest/company/amax%2Bengineering%2Bcorp\", \"https://projects.propublica.org/coronavirus/bailouts/search?q=amax%20engineering%20corporation\", \"https://www.justice.gov/usao-ndtx/pr/ai-data-center-engineering-firm-settles-ppp-lawsuit-248-million\"], \"coverage_status\": \"partial\", \"coverage_note_en\": \"Public-source funding history reviewed through 2026-11-11; unsupported, parent-only, procurement and ownership-transfer claims were held.\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: 4a755697-38f1-480a-8607-286b4e923b76'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='d6d3afc5-d4cb-488e-acc0-9fec03eeb794'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"d6d3afc5-d4cb-488e-acc0-9fec03eeb794\", \"stage\": \"INDI2 programme grant\", \"amount\": 2000000, \"note_en\": \"Exact Airwayz press-reported grant amount; joint later project totals are held. Reviewed 2026-11-15: contemporaneous February16 report and issuer PR agency March1 release explicitly support Airwayz recipient-specific USD2m grant; existing government programme URL retained as context. No joint later-project totals assigned.\", \"currency\": \"USD\", \"round_key\": \"indi2-grant-2023\", \"checked_at\": \"2026-11-15\", \"company_id\": \"17c2e2db-b5c2-4352-9dbf-1b3eceaad917\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2023-02-16\", \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set checked_at='2026-11-11'::date,note_en='Exact Airwayz press-reported grant amount; joint later project totals are held.',updated_at='2026-11-11T15:03:48.174938+00:00'::timestamptz where id='d6d3afc5-d4cb-488e-acc0-9fec03eeb794'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='d6d3afc5-d4cb-488e-acc0-9fec03eeb794'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"d6d3afc5-d4cb-488e-acc0-9fec03eeb794\", \"stage\": \"INDI2 programme grant\", \"amount\": 2000000, \"note_en\": \"Exact Airwayz press-reported grant amount; joint later project totals are held.\", \"currency\": \"USD\", \"round_key\": \"indi2-grant-2023\", \"checked_at\": \"2026-11-11\", \"company_id\": \"17c2e2db-b5c2-4352-9dbf-1b3eceaad917\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2023-02-16\", \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: d6d3afc5-d4cb-488e-acc0-9fec03eeb794'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='20676131-da2e-4665-84f0-80b7212c1e2d'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"20676131-da2e-4665-84f0-80b7212c1e2d\", \"stage\": \"Seed\", \"amount\": 5000000, \"note_en\": \"Issuer: Althimis Inc.. Amount basis: reported completed amount; exact close date undisclosed, using first located public report date. Reviewed 2026-11-15: earlier original Calcalist public report dated2026-03-19 confirms this same financing; exact closing day remains undisclosed.\", \"currency\": \"USD\", \"round_key\": \"althimis-seed-2026\", \"checked_at\": \"2026-11-15\", \"company_id\": \"9ed0bd44-5ce9-44bf-abb0-46c3e8578d62\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2026-03-19\", \"closing_status\": \"closed\", \"financing_type\": \"equity\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set announced_date='2026-03-23',checked_at='2026-11-11'::date,note_en='Issuer: Althimis Inc.. Amount basis: reported completed amount; exact close date undisclosed, using first located public report date.',updated_at='2026-11-11T16:06:34.445313+00:00'::timestamptz where id='20676131-da2e-4665-84f0-80b7212c1e2d'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='20676131-da2e-4665-84f0-80b7212c1e2d'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"20676131-da2e-4665-84f0-80b7212c1e2d\", \"stage\": \"Seed\", \"amount\": 5000000, \"note_en\": \"Issuer: Althimis Inc.. Amount basis: reported completed amount; exact close date undisclosed, using first located public report date.\", \"currency\": \"USD\", \"round_key\": \"althimis-seed-2026\", \"checked_at\": \"2026-11-11\", \"company_id\": \"9ed0bd44-5ce9-44bf-abb0-46c3e8578d62\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2026-03-23\", \"closing_status\": \"closed\", \"financing_type\": \"equity\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: 20676131-da2e-4665-84f0-80b7212c1e2d'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='dad8d6b2-d00c-41d0-87ad-96b7b33c8969'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"dad8d6b2-d00c-41d0-87ad-96b7b33c8969\", \"stage\": \"Ppp Second Draw Loan\", \"amount\": 2000000, \"note_en\": \"Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven; 2026 DOJ settlement over alleged eligibility does not negate occurrence. Reviewed 2026-11-15: retired from publication because these PPP proceeds belong to unrelated AMAX Engineering Corporation, not the cohort AMAX motor brand. Sources and lender links retained for audit; no zero-funding inference.\", \"currency\": \"USD\", \"round_key\": \"amax-engineering-ppp-second-draw-2021\", \"checked_at\": \"2026-11-15\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2021-01-23\", \"closing_status\": \"closed\", \"financing_type\": \"debt\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"retired\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set checked_at='2026-11-11'::date,note_en='Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven; 2026 DOJ settlement over alleged eligibility does not negate occurrence.',publication_status='approved',updated_at='2026-11-11T16:06:34.445313+00:00'::timestamptz where id='dad8d6b2-d00c-41d0-87ad-96b7b33c8969'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='dad8d6b2-d00c-41d0-87ad-96b7b33c8969'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"dad8d6b2-d00c-41d0-87ad-96b7b33c8969\", \"stage\": \"Ppp Second Draw Loan\", \"amount\": 2000000, \"note_en\": \"Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven; 2026 DOJ settlement over alleged eligibility does not negate occurrence.\", \"currency\": \"USD\", \"round_key\": \"amax-engineering-ppp-second-draw-2021\", \"checked_at\": \"2026-11-11\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2021-01-23\", \"closing_status\": \"closed\", \"financing_type\": \"debt\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: dad8d6b2-d00c-41d0-87ad-96b7b33c8969'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='f0338ad2-0e66-4e3f-9362-87f3b283894a'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"f0338ad2-0e66-4e3f-9362-87f3b283894a\", \"stage\": \"Ppp Loan\", \"amount\": 1858917, \"note_en\": \"Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven. Reviewed 2026-11-15: retired from publication because these PPP proceeds belong to unrelated AMAX Engineering Corporation, not the cohort AMAX motor brand. Sources and lender links retained for audit; no zero-funding inference.\", \"currency\": \"USD\", \"round_key\": \"amax-engineering-ppp-2020\", \"checked_at\": \"2026-11-15\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2020-04-28\", \"closing_status\": \"closed\", \"financing_type\": \"debt\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"retired\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set checked_at='2026-11-11'::date,note_en='Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven.',publication_status='approved',updated_at='2026-11-11T16:06:34.445313+00:00'::timestamptz where id='f0338ad2-0e66-4e3f-9362-87f3b283894a'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='f0338ad2-0e66-4e3f-9362-87f3b283894a'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"f0338ad2-0e66-4e3f-9362-87f3b283894a\", \"stage\": \"Ppp Loan\", \"amount\": 1858917, \"note_en\": \"Issuer: AMAX Engineering Corporation. Amount basis: exact initial/current approval amount; later paid in full and forgiven.\", \"currency\": \"USD\", \"round_key\": \"amax-engineering-ppp-2020\", \"checked_at\": \"2026-11-11\", \"company_id\": \"4a755697-38f1-480a-8607-286b4e923b76\", \"created_at\": \"2026-11-11T16:06:34.445313+00:00\", \"updated_at\": \"2026-11-11T16:06:34.445313+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2020-04-28\", \"closing_status\": \"closed\", \"financing_type\": \"debt\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: f0338ad2-0e66-4e3f-9362-87f3b283894a'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9\", \"stage\": \"Seed funding\", \"amount\": 3000000, \"note_en\": \"Institutional profile reports USD3m raised; exact close date, security and investors undisclosed. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.\", \"currency\": \"USD\", \"round_key\": \"seed-2026\", \"checked_at\": \"2026-11-15\", \"company_id\": \"57eb5688-d079-436a-91ea-9bd97858eb66\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": null, \"closing_status\": \"closed\", \"financing_type\": \"undisclosed\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set announced_date='2026-12-31',checked_at='2026-11-11'::date,note_en='Institutional profile reports USD3m raised; exact close date, security and investors undisclosed.',updated_at='2026-11-11T15:03:48.174938+00:00'::timestamptz where id='cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9\", \"stage\": \"Seed funding\", \"amount\": 3000000, \"note_en\": \"Institutional profile reports USD3m raised; exact close date, security and investors undisclosed.\", \"currency\": \"USD\", \"round_key\": \"seed-2026\", \"checked_at\": \"2026-11-11\", \"company_id\": \"57eb5688-d079-436a-91ea-9bd97858eb66\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2026-12-31\", \"closing_status\": \"closed\", \"financing_type\": \"undisclosed\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: cb3fd2ee-1ae5-4ad7-8510-f25d19db0ed9'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='84fa8d8a-2e8d-4f72-ada3-587238505d0b'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"84fa8d8a-2e8d-4f72-ada3-587238505d0b\", \"stage\": \"Seed round\", \"amount\": 5000000, \"note_en\": \"Reported total deal amount; exact day and complete investor list are not public. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.\", \"currency\": \"USD\", \"round_key\": \"seed-2021\", \"checked_at\": \"2026-11-15\", \"company_id\": \"17c2e2db-b5c2-4352-9dbf-1b3eceaad917\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": null, \"closing_status\": \"closed\", \"financing_type\": \"equity\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set announced_date='2021-12-31',checked_at='2026-11-11'::date,note_en='Reported total deal amount; exact day and complete investor list are not public.',updated_at='2026-11-11T15:03:48.174938+00:00'::timestamptz where id='84fa8d8a-2e8d-4f72-ada3-587238505d0b'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='84fa8d8a-2e8d-4f72-ada3-587238505d0b'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"84fa8d8a-2e8d-4f72-ada3-587238505d0b\", \"stage\": \"Seed round\", \"amount\": 5000000, \"note_en\": \"Reported total deal amount; exact day and complete investor list are not public.\", \"currency\": \"USD\", \"round_key\": \"seed-2021\", \"checked_at\": \"2026-11-11\", \"company_id\": \"17c2e2db-b5c2-4352-9dbf-1b3eceaad917\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2021-12-31\", \"closing_status\": \"closed\", \"financing_type\": \"equity\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: 84fa8d8a-2e8d-4f72-ada3-587238505d0b'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='93b4d055-b280-4cd4-b6db-6fada6a95942'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"93b4d055-b280-4cd4-b6db-6fada6a95942\", \"stage\": \"VLAIO growth subsidy\", \"amount\": 25000, \"note_en\": \"Exact disbursed support to Zastrugi NV; announcement day unavailable. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.\", \"currency\": \"EUR\", \"round_key\": \"vlaio-2019\", \"checked_at\": \"2026-11-15\", \"company_id\": \"bc5abc2d-1da9-4e60-8111-05eba8625e7a\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": null, \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set announced_date='2019-12-31',checked_at='2026-11-11'::date,note_en='Exact disbursed support to Zastrugi NV; announcement day unavailable.',updated_at='2026-11-11T15:03:48.174938+00:00'::timestamptz where id='93b4d055-b280-4cd4-b6db-6fada6a95942'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='93b4d055-b280-4cd4-b6db-6fada6a95942'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"93b4d055-b280-4cd4-b6db-6fada6a95942\", \"stage\": \"VLAIO growth subsidy\", \"amount\": 25000, \"note_en\": \"Exact disbursed support to Zastrugi NV; announcement day unavailable.\", \"currency\": \"EUR\", \"round_key\": \"vlaio-2019\", \"checked_at\": \"2026-11-11\", \"company_id\": \"bc5abc2d-1da9-4e60-8111-05eba8625e7a\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2019-12-31\", \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: 93b4d055-b280-4cd4-b6db-6fada6a95942'; end if; end $reviewed_guard$;\ndo $reviewed_guard$ begin if exists(select 1 from public.company_funding_rounds t where id='27025a05-dd6a-4c2a-af3b-d290249ae52e'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"27025a05-dd6a-4c2a-af3b-d290249ae52e\", \"stage\": \"VLAIO innovation grant\", \"amount\": 250000, \"note_en\": \"Exact annual-report award to Zastrugi NV; announcement day unavailable. Reviewed 2026-11-15: the former December31 value was an unsupported placeholder. Public announcement date is unknown; award/funding year is not silently substituted for publication date.\", \"currency\": \"EUR\", \"round_key\": \"vlaio-2017\", \"checked_at\": \"2026-11-15\", \"company_id\": \"bc5abc2d-1da9-4e60-8111-05eba8625e7a\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": null, \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then update public.company_funding_rounds set announced_date='2017-12-31',checked_at='2026-11-11'::date,note_en='Exact annual-report award to Zastrugi NV; announcement day unavailable.',updated_at='2026-11-11T15:03:48.174938+00:00'::timestamptz where id='27025a05-dd6a-4c2a-af3b-d290249ae52e'::uuid; elsif not exists(select 1 from public.company_funding_rounds t where id='27025a05-dd6a-4c2a-af3b-d290249ae52e'::uuid and (to_jsonb(t)-'updated_at')=('{\"id\": \"27025a05-dd6a-4c2a-af3b-d290249ae52e\", \"stage\": \"VLAIO innovation grant\", \"amount\": 250000, \"note_en\": \"Exact annual-report award to Zastrugi NV; announcement day unavailable.\", \"currency\": \"EUR\", \"round_key\": \"vlaio-2017\", \"checked_at\": \"2026-11-11\", \"company_id\": \"bc5abc2d-1da9-4e60-8111-05eba8625e7a\", \"created_at\": \"2026-11-11T15:03:48.174938+00:00\", \"updated_at\": \"2026-11-11T15:03:48.174938+00:00\", \"record_kind\": \"round\", \"amount_basis\": \"announced_round_size\", \"announced_date\": \"2017-12-31\", \"closing_status\": \"announced\", \"financing_type\": \"grant\", \"parent_round_id\": null, \"amount_qualifier\": \"exact\", \"publication_status\": \"approved\"}'::jsonb-'updated_at')) then raise exception 'Reviewed correction expected-old guard failed: 27025a05-dd6a-4c2a-af3b-d290249ae52e'; end if; end $reviewed_guard$;\n"
+}

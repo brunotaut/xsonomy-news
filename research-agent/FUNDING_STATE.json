@@ -10,7 +10,7 @@
   "fully_reviewed_companies": 1236,
   "next_action": "Continue PARTIAL SOURCE RECONCILIATION using current next_batch_preview: Air VEV throughAnkerSolix. Honor source_reconciliation_pass.reviewed_company_ids;24of1343initialpartial-pass identities reviewed,1319remaining this pass. Do not repeatedly restart retainedLiebherr/3DRholds withoutnewsource. Currentqueue1236boundedreviewed/1328partial/0queued; run95closed15boundedreviews/retained9holds.12newfacts importedonce; old6events/9legacyrelations andallcompanymetadata preserved, bothfreshdatasets/livepage verified. Read prior companyreports/currentevents and canonicalaliascrosschecks before newfacts/corrections. Unknownprivateinformation doesnotpreventboundedclosureafteroriginalsourceexhaustion. Finalcoverage/source/duplicate/qualifieraudit and postbaselineidentityreconciliation stillrequired. Programme incomplete; continuation enabled.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-15T02:56:23.150Z",
+  "updated_at": "2026-11-15T02:59:03.978Z",
   "source_reconciliation_companies": 1312,
   "approved_funding_events": 4475,
   "round_participations": 6309,
@@ -6896,7 +6896,22 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": null,
+  "pending_import": {
+    "run_id": "funding-20261115-ninety-sixth",
+    "status": "combined_import_and_guarded_corrections_tested_production_rollback_passed",
+    "manifest": "research-agent/imports/funding-landscape-20261115-ninety-sixth.json",
+    "corrections": "research-agent/imports/funding-landscape-20261115-ninety-sixth-reviewed-corrections.json",
+    "production_before": {
+      "events": 4488,
+      "approved": 4475,
+      "links": 6309,
+      "sources": 6153,
+      "profiles": 3661,
+      "covered": 1312,
+      "relationships": 697,
+      "preserved_profiles_hash": "840f717d5ab6f8fb16a08e002f05d68d"
+    }
+  },
   "pending_publication": null,
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
@@ -10324,7 +10339,14 @@
       "timing_scope": "Elapsed writer lease through four disjoint read-only research groups, exact issuer/profile/source reconciliation, current importer/schema validation, PostgreSQL tests, production rollback, atomic import, exact fact/role/source/contribution audit, idempotency, guarded NRC announcement-date correction with reversal record/rollback and corrected-manifest tests, durable queue/manifest readback and successful build with both fresh live JSON datasets. Concurrent durations not summed."
     }
   },
-  "pending_reviewed_correction": null,
+  "pending_reviewed_correction": {
+    "manifest": "research-agent/imports/funding-landscape-20261115-ninety-sixth-reviewed-corrections.json",
+    "guarded_rows": 9,
+    "event_rows": 8,
+    "retirements": 2,
+    "source_additions": 3,
+    "status": "tested_ready_same_atomic_transaction"
+  },
   "latest_seventy_second_reconciliation": {
     "status": "imported_and_publication_verified",
     "report": "research-agent/reports/2026-11-13-funding-landscape-seventy-second.json",
