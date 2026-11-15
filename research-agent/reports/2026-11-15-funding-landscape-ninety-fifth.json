@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T01:48:28.043Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-ninety-fifth.json",
@@ -48,14 +48,23 @@
     "contribution_fields_audited": true,
     "new_profile_exact_name_duplicates": 0,
     "queue_dispositions_applied": 24,
-    "current_manifest_publication_verified": false,
+    "current_manifest_publication_verified": true,
     "concurrency_speedup_claimed": false,
     "reviewed_existing_fact_corrections": 0,
     "db_total_events": 4488,
     "db_approved_events": 4475,
     "db_round_participations": 6309,
     "db_investor_profiles": 3661,
-    "db_source_reconciliation_companies": 1312
+    "db_source_reconciliation_companies": 1312,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "generic_portfolio_entries_verified": 8,
+    "clickable_generic_company_links_verified": 8,
+    "active_minutes": 14.1,
+    "checked_identities_per_hour": 102.1,
+    "completed_reviews_per_hour": 63.8,
+    "timing_scope": "Elapsed single writer lease through four disjoint read-only groups targeting24partial identities, prior report/manifest and currentfact reads, canonicalissuer duplicatechecks, allfourfinalfreezes, originalrecipient/currency/instrument/primary-versus-secondary and principal/cash checks, durableledgers, PostgreSQLtests, productionrollback, oneatomicimport, exactfacts/roles/sources/contributions/extensionaudit, preserved sixselectedevents/ninelegacyrows andmetadata, idempotentreplayrollback, durable readbacks, successfulexistingbuild, bothfreshdatasets/livepageHTTP200.15boundedpublicsourceclosures retain unknownprivatefacts;9specific holds retained. Concurrentdurationsnotsummed; no speedup/ETAclaimed."
   },
   "production_before": {
     "events": 4476,
@@ -1806,7 +1815,13 @@
       }
     ],
     "selected_legacy_relationships_exactly_preserved": true,
-    "queue_event_counts_from_actual_db": true
+    "queue_event_counts_from_actual_db": true,
+    "live_generic_entry_verification": {
+      "entries": 8,
+      "source_urls": 8,
+      "clickable_company_links": 8,
+      "unlinked": []
+    }
   },
   "publication_scope": {
     "current_manifest_event_rows": 12,
@@ -2047,5 +2062,49 @@
     "Repository schedules",
     "No new paid API"
   ],
-  "programme_complete": false
+  "programme_complete": false,
+  "publication": {
+    "status": "verified",
+    "checked_at": "2026-11-15T02:02:34.121Z",
+    "verified_at": "2026-11-15T02:02:34.121Z",
+    "catalogue_commit": "b4f3c7a6e829268ae420775490ce61cbd9aaae86",
+    "source_commit": "4f557d3ddacf15ab45de6b9acb04af00bd808b4e",
+    "workflow_run": {
+      "id": 43665672238,
+      "head": "b4f3c7a6e829268ae420775490ce61cbd9aaae86",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/brunotaut/xSonomy/actions/runs/43665672238"
+    },
+    "report": "research-agent/reports/2026-11-15-funding-landscape-ninety-fifth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-ninety-fifth.json",
+    "generated_at": "2026-11-15T02:00:55.769Z",
+    "investor_generated_at": "2026-11-15T02:00:59.136Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3652,
+    "portfolio_relationships": 694,
+    "expected_profiles": 19,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 8,
+    "generic_portfolio_entries_verified": 8,
+    "clickable_company_links_verified": 8,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 13,
+    "manifest_generic_relationship_matches": 8,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 12,
+    "current_manifest_live_matches": 0,
+    "reviewed_identities_in_european_map": [
+      "liebherr-aerospace"
+    ],
+    "catalogue_trigger_required": true,
+    "directory_filter_note": "DB3661profiles versus live3652 reflects nine pre-existing anonymous exclusions; DB697relationships versus live694 reflects three prior exclusions. All19referenced profiles,13participation sourceURLs and8generic entries/sourceURLs/clickable company links verified.12new profiles and8generic associations published. ReviewedLiebherr remains in Europeanmap with unchanged existingfunding; allnewmanifesttargets outside map.12approved newDBevents do not overridegeography/publicationgates. Map567companies/1590events/1390links."
+  },
+  "completed_at": "2026-11-15T02:02:34.121Z"
 }
