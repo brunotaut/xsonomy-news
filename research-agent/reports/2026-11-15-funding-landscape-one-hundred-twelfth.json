@@ -1,5 +1,5 @@
 {
-  "status": "imported_exact_audits_passed",
+  "status": "imported_and_publication_pending",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T17:48:09.734Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-twelfth.json",
@@ -1287,7 +1287,7 @@
     "atomic_import_invocations": 1,
     "newly_completed_bounded_reviews": 3,
     "new_or_retained_partial": 21,
-    "queue_dispositions_applied": 0,
+    "queue_dispositions_applied": 24,
     "frozen_source_hashes_unchanged": true,
     "concurrency_speedup_claimed": false,
     "per_company_search_ledger_entries": 130,
@@ -1302,7 +1302,9 @@
     "db_approved_events": 4795,
     "db_round_participations": 6599,
     "db_investor_profiles": 3774,
-    "db_source_reconciliation_companies": 1339
+    "db_source_reconciliation_companies": 1339,
+    "approved_event_counts_refreshed_for_identities": 26,
+    "post_import_idempotency_rehearsal_passed": true
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1547,10 +1549,12 @@
         "rows": 1323,
         "audit": "unrelated_research_coverage"
       }
-    ]
+    ],
+    "post_import_idempotent_rollback_and_exact_audit_passed": true
   },
   "publication": {
-    "status": "pending_db_import"
+    "status": "pending_build",
+    "checked_at": "2026-11-15"
   },
   "preserved": [
     "Legacy research STATE.json and frozen V1/V2",
@@ -1559,7 +1563,7 @@
     "Company metadata, geography and publication gates",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-15T18:16:13.429Z",
+  "updated_at": "2026-11-15T18:18:42.506Z",
   "production_after": {
     "events": 4813,
     "approved": 4795,
@@ -1568,5 +1572,17 @@
     "profiles": 3774,
     "relationships": 755,
     "covered": 1339
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1328,
+    "source_review_partial": 1236,
+    "queued": 0
+  },
+  "reconciliation_phase": {
+    "id": "partial-source-pass-1",
+    "checked": 432,
+    "remaining": 911,
+    "bounded_closed": 107,
+    "retained_partial": 325
   }
 }
