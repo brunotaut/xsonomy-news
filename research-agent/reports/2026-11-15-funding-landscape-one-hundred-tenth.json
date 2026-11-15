@@ -1,5 +1,5 @@
 {
-  "status": "atomic_import_verified_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-15",
   "started_at": "2026-11-15T16:53:16.328Z",
   "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-tenth.json",
@@ -1023,7 +1023,25 @@
     "concurrency_speedup_claimed": false,
     "per_company_search_ledger_entries": 98,
     "source_ledger_entries": 79,
-    "prepared_source_ledger_entries": 14
+    "prepared_source_ledger_entries": 14,
+    "durable_queue_readback_verified": true,
+    "durable_manifest_readback_verified": true,
+    "durable_correction_manifest_readback_verified": true,
+    "durable_source_ledger_readback_verified": true,
+    "durable_prepared_reconciliations_readback_verified": true,
+    "durable_issuer_guard_instruction_readback_verified": true,
+    "durable_queue_identity_count": 2564,
+    "referenced_directory_profiles_verified": 3,
+    "manifest_profile_source_matches": 4,
+    "generic_portfolio_entries_verified": 0,
+    "clickable_generic_company_links_verified": 0,
+    "live_target_company_routes_verified": 8,
+    "current_manifest_publication_verified": true,
+    "active_minutes": 30.43,
+    "checked_identities_per_hour": 53.2,
+    "new_queue_identities_per_hour": 47.3,
+    "completed_reviews_per_hour": 2,
+    "timing_scope": "Elapsed writer lease for24 next cohort identities plus GKN original-source identity review and Garuda/FlyGuys prior-repair checks in a fourth read-only group. IncidentalVaeridion existing-import comparison is not counted as a researched identity. Includes101 web queries plus2 separately counted Git code searches, original issuer/currency/date/role checks, Griselda exact-round versus aggregate reconciliation, Harvard gross-face/conduit/null-date checks, canonical agency bridges, schema normalization of unknown Havoc amount, fresh PostgreSQL rollback/import/replay/financial-conflict/source-FK tests, exact production rollback/eight preservation hashes, one atomic import, exact audits and idempotent rollback replay, eight durable readbacks, successful catalogue build, two fresh datasets and nine HTTP200 routes. One bounded closure/23 specific partial histories retained. No concurrency speedup or ETA claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1196,7 +1214,106 @@
       "duplicate_new_names": 0,
       "missing_link_sources": 0
     },
-    "issuer_guard_instructions_preserved_formatting_fixed": true
+    "issuer_guard_instructions_preserved_formatting_fixed": true,
+    "frozen_group_sha256": {
+      "a": "bbf8196f7e4b1124a0e6af39c59a7cf57a97e3dfa61b9252add5b67b27b44338",
+      "a_corrections": "91cbec004ce1f24e5651face3bf5fe15e48d715098aeefbb0d22191b145bb800",
+      "b": "ab20f2f1ed3dba1a3821e860fa46cd3ff518e386c0f189906e3ddffeeb153375",
+      "b_corrections": "542f41d8403e3cdedd1387374c85238cff2134d179d4e1a153454c9c23d5f66f",
+      "c": "10d0a4398863b74e9869379fc51fb4c7046d034645f02c32fa95da72728a7b2f",
+      "c_corrections": "d592ff51e72d4bd7e2cfa46a9b28bb07f576c0d1cf59bac773becfaee581f21c",
+      "prepared": "5da6b092fe4395ced20913cca934d73e9880341ef654040a8d58bb59124fdfa4"
+    },
+    "preservation_hashes_after": [
+      {
+        "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+        "rows": 2718,
+        "audit": "companies"
+      },
+      {
+        "md5": "569bd2bc28913d915c510521e4059178",
+        "rows": 4735,
+        "audit": "uncorrected_events"
+      },
+      {
+        "md5": "4d88feeee6c056bbb503b47bc61329a9",
+        "rows": 6531,
+        "audit": "uncorrected_existing_participants"
+      },
+      {
+        "md5": "9aa1eec686016d6b84b7a363e0168333",
+        "rows": 6516,
+        "audit": "existing_unrelated_event_sources"
+      },
+      {
+        "md5": "3a7e64c6e01eacbae740eacd8051dc75",
+        "rows": 3758,
+        "audit": "curated_profiles_full_rows"
+      },
+      {
+        "md5": "8fb61dfd6f3481ca5cd94024545d0ffc",
+        "rows": 7142,
+        "audit": "existing_unrelated_profile_sources"
+      },
+      {
+        "md5": "ea08fcf9602a02ec4b50893570a401a2",
+        "rows": 755,
+        "audit": "uncorrected_existing_generic_rows"
+      },
+      {
+        "md5": "58810937cd79d0ffadaa203b6bfffd9d",
+        "rows": 1325,
+        "audit": "unrelated_research_coverage"
+      }
+    ],
+    "durable_readback_blobs": {
+      "research-agent/imports/funding-landscape-20261115-one-hundred-tenth.json": "d74809f1433457c188727d0b97709436bddcc5d7",
+      "research-agent/imports/funding-landscape-20261115-one-hundred-tenth-reviewed-corrections.json": "2e99df5cfad274f6031a7ed214bba34193ff4d2e",
+      "research-agent/reports/2026-11-15-funding-landscape-one-hundred-tenth.json": "5880391a47155594692c15590d38384da4c446f3",
+      "research-agent/reports/2026-11-15-funding-one-hundred-tenth-source-ledger.json": "0559b38bab8616c0517973a6eab1d88ae2b98a13",
+      "research-agent/recovery/2026-11-15-funding-one-hundred-tenth-prepared-reconciliations.json": "ec9f70fb0cc51d6add50aebfaec3176587be2e5c",
+      "research-agent/instructions/INVESTMENT_RESEARCH_AUTONOMOUS.md": "ba33ae4d9188418d3b18b0ffc062543d837667f5",
+      "research-agent/queues/company-funding-all.csv": "e41c7b1f5964acdbc1cd4d4c677016bd4829ccf9",
+      "research-agent/FUNDING_STATE.json": "6b07bf976def786488d1649c907abcccd42d4529"
+    },
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/companies/grid-aero/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/griselda/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/grupo-oesia/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/guardian-rf/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hanwha-aerospace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hanwha/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/harvard-university/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/havocai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      }
+    ]
   },
   "production_after": {
     "events": 4746,
@@ -1220,10 +1337,85 @@
     "retained_partial": 286
   },
   "publication": {
-    "status": "catalogue_build_in_progress",
+    "status": "verified",
+    "checked_at": "2026-11-15",
+    "verified_at": "2026-11-15T17:23:42.283Z",
     "source_commit": "f04462e8786c218fc8cf36437c0c48c2f3282b3d",
     "catalogue_commit": "b32748d24d4f69feaa48c3448cd346e0f3231db4",
     "workflow_run": 43740063647,
-    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-tenth.json"
-  }
+    "workflow_conclusion": "success",
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43740063647",
+    "report": "research-agent/reports/2026-11-15-funding-landscape-one-hundred-tenth.json",
+    "manifest": "research-agent/imports/funding-landscape-20261115-one-hundred-tenth.json",
+    "reviewed_corrections": "research-agent/imports/funding-landscape-20261115-one-hundred-tenth-reviewed-corrections.json",
+    "generated_at": "2026-11-15T17:16:27.162Z",
+    "investor_generated_at": "2026-11-15T17:16:31.914Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3749,
+    "portfolio_relationships": 750,
+    "expected_profiles": 3,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 0,
+    "generic_portfolio_entries_verified": 0,
+    "clickable_company_links_verified": 0,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 4,
+    "manifest_generic_relationship_matches": 0,
+    "landscape_page_status": 200,
+    "current_manifest_event_rows": 11,
+    "current_manifest_live_matches": 0,
+    "directory_filter_note": "Nine existing anonymous profiles and five retired portfolios remain excluded by existing filters. Current financing targets remain outside the European map. Three existing referenced profiles and four new participation citations verified in fresh directory. No new profiles or portfolios; company gates preserved.",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/companies/grid-aero/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/griselda/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/grupo-oesia/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/guardian-rf/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hanwha-aerospace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/hanwha/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/harvard-university/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/havocai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      }
+    ]
+  },
+  "completed_at": "2026-11-15T17:23:42.283Z",
+  "preserved": [
+    "Legacy research STATE.json and frozen V1/V2",
+    "All prior financial events, participants and source history",
+    "Curated investor profiles and portfolio relationships",
+    "Company metadata, geography and publication gates",
+    "Repository schedules"
+  ]
 }
