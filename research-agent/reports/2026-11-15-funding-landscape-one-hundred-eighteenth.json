@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-16",
   "research_checked_dates": [
     "2026-11-15",
@@ -1069,7 +1069,20 @@
     "new_coverage_rows": 0,
     "post_import_idempotency_rehearsal_passed": true,
     "queue_dispositions_applied": 24,
-    "approved_event_counts_refreshed_for_identities": 26
+    "approved_event_counts_refreshed_for_identities": 26,
+    "live_referenced_profiles_verified": 15,
+    "live_manifest_profiles_verified": 15,
+    "live_participant_source_matches": 27,
+    "live_generic_profile_source_matches": 0,
+    "live_clickable_portfolio_links_verified": 0,
+    "live_company_routes_verified": 17,
+    "current_publication_scope_verified": true,
+    "active_minutes": 22.69,
+    "checked_identities_per_hour": 68.8,
+    "new_queue_identities_per_hour": 63.5,
+    "completed_reviews_per_hour": 7.9,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Writer lease spans15/16November and covers24 new queue identities plus two prepared D-TA/Draken original-source reconciliations.129 executed search query items across four read-only groups; four root original documents separately checked, including independent SHA-matched SSE PDF download/text and visually read Draken statutory-account image. Actual source dates15/16November retained; filenames use15November start. Ten prior-import check records preserved, zero fresh check credit. Includes exact issuer/currency/date/qualifier/role checks, fresh PostgreSQL tests, production rollback/full restoration, one atomic import, exact preservation audits, idempotent replay, durable readbacks, successful build/deploy and fresh live datasets/HTTP checks. Three bounded closures,21 partial histories retained; no ETA or speedup claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1265,15 +1278,190 @@
       "missing_link_sources": 0
     },
     "durable_readbacks_verified": 8,
-    "frozen_inputs_unchanged": true
+    "frozen_inputs_unchanged": true,
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/leolabs/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/laser-photonics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lily-robotics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/l3harris/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/leonardo-drs-rada/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/leidos/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lightpath-technologies/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kubota/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lighthouse-avionics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lantronix/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/landing-zones/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/larsen-and-toubro/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/landspace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/levanta-tech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/limitless-aeronautics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/d-ta-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/draken-international/",
+        "status": 200
+      }
+    ]
   },
   "publication": {
-    "status": "build_requested",
+    "status": "verified",
     "requested_at": "2026-11-16T00:09:50.187Z",
     "source_commit": "e3af51b7460c9e8534581cf1a93f904ae1d6c01a",
     "catalogue_commit": "2f2fed6aecf76100757ed8f92183255c24103e6a",
     "workflow_run": 43778739264,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43778739264"
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43778739264",
+    "generated_at": "2026-11-16T00:11:11.225Z",
+    "investor_generated_at": "2026-11-16T00:11:18.211Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3799,
+    "portfolio_relationships": 762,
+    "expected_profiles": 15,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 0,
+    "generic_portfolio_entries_verified": 0,
+    "clickable_company_links_verified": 0,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 27,
+    "manifest_generic_relationship_matches": 0,
+    "reviewed_correction_targets_in_european_landscape": [],
+    "lamarr_candidate_portfolio_not_imported": true,
+    "verified_at": "2026-11-16T00:14:17.402Z",
+    "workflow_conclusion": "success",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/leolabs/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/laser-photonics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lily-robotics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/l3harris/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/leonardo-drs-rada/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/leidos/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lightpath-technologies/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/kubota/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lighthouse-avionics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lantronix/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/landing-zones/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/larsen-and-toubro/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/landspace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/levanta-tech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/limitless-aeronautics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/d-ta-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/draken-international/",
+        "status": 200
+      }
+    ],
+    "current_manifest_event_rows": 29,
+    "current_manifest_live_matches": 0,
+    "existing_draft_financing_targets": [],
+    "scope_note": "Fresh directory verifies15 referenced profiles and27 new participation citations. Nine pre-existing anonymous profiles and five retired portfolios remain excluded. No generic portfolio imported; Lamarr candidate remains held. All current event/correction targets remain outside European map; wider-cohort financial rows are verified in DB, not claimed rendered as map or company-page financing sections. Existing geography, publication gates and curated records unchanged."
   },
   "preserved": [
     "Legacy STATE.json and frozen snapshots",
@@ -1281,7 +1469,7 @@
     "Curated investor profiles and unrelated source/relationship history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-16T00:11:34.278Z",
+  "updated_at": "2026-11-16T00:14:17.422Z",
   "production_after": [
     {
       "events": 4979,
@@ -1304,5 +1492,6 @@
     "remaining": 767,
     "bounded_closed": 122,
     "retained_partial": 454
-  }
+  },
+  "completed_at": "2026-11-16T00:14:17.402Z"
 }
