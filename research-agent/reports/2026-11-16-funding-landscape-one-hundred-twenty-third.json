@@ -993,7 +993,8 @@
     "local_postgresql_tests_passed": true,
     "atomic_import_invocations": 0,
     "prior_import_checks_recorded": 10,
-    "fresh_prior_import_row_checks": 0
+    "fresh_prior_import_row_checks": 0,
+    "rollback_rehearsal_passed": true
   },
   "validation": {
     "fresh_full_row_issuer_guards": {
@@ -1078,7 +1079,23 @@
         "finding": "Original27Oct2014announced300mdelayeddrawterm/500mrevolvercapacities; notassumed800mreceivedcash."
       }
     ],
-    "importer_parent_limitation": "Testedimporterdoesnotallowextensionreferencingexistingcorrectedparentoutsidecurrentmanifest. Nordic700mtapisordinaryincrementalfinancingeventwithsameISIN/trancheexplicitnote, notfabricatedparent. Existinginitialrowcorrected300m, combinedissue1bn; no1.7bndoublecount."
+    "importer_parent_limitation": "Testedimporterdoesnotallowextensionreferencingexistingcorrectedparentoutsidecurrentmanifest. Nordic700mtapisordinaryincrementalfinancingeventwithsameISIN/trancheexplicitnote, notfabricatedparent. Existinginitialrowcorrected300m, combinedissue1bn; no1.7bndoublecount.",
+    "production_rollback_full_baseline_restored": {
+      "counts": {
+        "events": 5065,
+        "approved": 5047,
+        "links": 6796,
+        "sources": 7041,
+        "profiles": 3820,
+        "relationships": 769,
+        "covered": 1364
+      },
+      "preservation_hashes_match": true,
+      "full_before_guards": {
+        "passed": true,
+        "rows": 13
+      }
+    }
   },
   "publication": {
     "status": "not_started"
@@ -1089,5 +1106,5 @@
     "Curatedprofiles/unrelatedsourceandrelationshiphistory",
     "Schedules"
   ],
-  "updated_at": "2026-11-16T04:55:09.233Z"
+  "updated_at": "2026-11-16T04:55:35.026Z"
 }
