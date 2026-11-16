@@ -1,5 +1,5 @@
 {
-  "status": "atomic_import_invoked",
+  "status": "imported_exact_audit_passed",
   "checked_at": "2026-11-16",
   "started_at": "2026-11-16T00:45:39.350Z",
   "manifest": "research-agent/imports/funding-landscape-20261116-one-hundred-nineteenth.json",
@@ -1040,7 +1040,10 @@
     "atomic_import_invocations": 1,
     "prior_import_checks_recorded": 10,
     "fresh_prior_import_row_checks": 0,
-    "rollback_rehearsal_passed": true
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "new_investor_profiles": 1,
+    "new_coverage_rows": 3
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1108,7 +1111,120 @@
       "https://www.sec.gov/Archives/edgar/data/1902314/000156459022029832/mpti-ex991_7.htm",
       "https://smlouvy.gov.cz/smlouva/33584340"
     ],
-    "production_rollback_full_baseline_restored": true
+    "production_rollback_full_baseline_restored": true,
+    "exact_post_import_audit": {
+      "facts": [
+        {
+          "audit": "manifest_event_exact_fields_and_parent",
+          "failed": 0,
+          "expected": 17,
+          "failures": []
+        },
+        {
+          "audit": "manifest_sources_exact",
+          "failed": 0,
+          "expected": 21,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participants_exact_role_source_contribution",
+          "failed": 0,
+          "expected": 14,
+          "failures": []
+        },
+        {
+          "audit": "manifest_generic_portfolios_exact",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participant_and_portfolio_profile_source_exists",
+          "failed": 0,
+          "expected": 14,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_source_additions_exact",
+          "failed": 0,
+          "expected": 9,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_profile_source_additions_exist",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "guarded_participant_additions_exact_parent_unchanged",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_events",
+          "failed": 0,
+          "expected": 25,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_participants",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_generic_relationships",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        }
+      ],
+      "preserved": [
+        {
+          "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+          "rows": 2718,
+          "audit": "companies"
+        },
+        {
+          "md5": "b30f9f4b9a1ee4e7f7d659ef7c067c05",
+          "rows": 4954,
+          "audit": "uncorrected_events"
+        },
+        {
+          "md5": "97bd65bcd4adc3578341b2d40547da8a",
+          "rows": 6732,
+          "audit": "uncorrected_existing_participants"
+        },
+        {
+          "md5": "823e507d81636065da38808e4561eb0c",
+          "rows": 6906,
+          "audit": "existing_unrelated_event_sources"
+        },
+        {
+          "md5": "997603b3733cca991612af7b88f79690",
+          "rows": 3808,
+          "audit": "curated_profiles_full_rows"
+        },
+        {
+          "md5": "c82daed61c644b3a3523024a053d3490",
+          "rows": 7332,
+          "audit": "existing_unrelated_profile_sources"
+        },
+        {
+          "md5": "6c4ba173e38a282ec8622e27ef5de3f7",
+          "rows": 767,
+          "audit": "uncorrected_existing_generic_rows"
+        },
+        {
+          "md5": "3e90f2d5db999f886e7bc12003c8292d",
+          "rows": 1347,
+          "audit": "unrelated_research_coverage"
+        }
+      ],
+      "missing_link_sources": 0
+    }
   },
   "publication": {
     "status": "not_started"
@@ -1119,5 +1235,16 @@
     "Curated investor profiles and unrelated source/relationship history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-16T01:01:18.604Z"
+  "updated_at": "2026-11-16T01:01:36.145Z",
+  "production_after": [
+    {
+      "events": 4996,
+      "approved": 4978,
+      "links": 6746,
+      "sources": 6936,
+      "profiles": 3809,
+      "relationships": 767,
+      "covered": 1355
+    }
+  ]
 }
