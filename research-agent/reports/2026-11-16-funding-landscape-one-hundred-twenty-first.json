@@ -1059,7 +1059,8 @@
     "local_postgresql_tests_passed": true,
     "atomic_import_invocations": 0,
     "prior_import_checks_recorded": 10,
-    "fresh_prior_import_row_checks": 0
+    "fresh_prior_import_row_checks": 0,
+    "rollback_rehearsal_passed": true
   },
   "validation": {
     "fresh_full_row_issuer_guards": {
@@ -1143,7 +1144,23 @@
         "url": "https://investors.mobixlabs.com/node/9436/html",
         "finding": "Originalprospectus independentlyopened; cash/noteface/OID/netseparate, originalsourceledgerretainsunits and no conversioncash."
       }
-    ]
+    ],
+    "production_rollback_full_baseline_restored": {
+      "counts": {
+        "events": 5018,
+        "approved": 5000,
+        "links": 6759,
+        "sources": 6967,
+        "profiles": 3812,
+        "relationships": 768,
+        "covered": 1360
+      },
+      "preservation_hashes_match": true,
+      "full_before_guards": {
+        "passed": true,
+        "rows": 18
+      }
+    }
   },
   "publication": {
     "status": "not_started"
@@ -1154,5 +1171,5 @@
     "Curated profiles and unrelated source/relationship history",
     "Schedules"
   ],
-  "updated_at": "2026-11-16T02:52:33.591Z"
+  "updated_at": "2026-11-16T02:53:05.695Z"
 }
