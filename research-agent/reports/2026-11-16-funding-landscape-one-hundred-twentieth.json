@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-16",
   "started_at": "2026-11-16T01:45:36.199Z",
   "manifest": "research-agent/imports/funding-landscape-20261116-one-hundred-twentieth.json",
@@ -1052,7 +1052,7 @@
     {
       "company_slug": "liebherr-aerospace",
       "company_id": "e03035a9-991b-4b7c-89f0-fad6866db061",
-      "status": "guarded_issuer_scope_correction_prepared",
+      "status": "guarded_issuer_scope_correction_imported_and_published",
       "new_events_prepared": 0,
       "guarded_corrections_prepared": 1,
       "new_generic_relationships_prepared": 0,
@@ -1170,7 +1170,21 @@
     "new_coverage_rows": 5,
     "post_import_idempotency_rehearsal_passed": true,
     "queue_dispositions_applied": 24,
-    "approved_event_counts_refreshed_for_identities": 26
+    "approved_event_counts_refreshed_for_identities": 26,
+    "live_referenced_profiles_verified": 11,
+    "live_manifest_profiles_verified": 11,
+    "live_participant_source_matches": 13,
+    "live_generic_profile_source_matches": 1,
+    "live_clickable_portfolio_links_verified": 1,
+    "live_company_routes_verified": 12,
+    "live_published_corrections_exact_verified": 1,
+    "current_publication_scope_verified": true,
+    "active_minutes": 31.79,
+    "checked_identities_per_hour": 49.1,
+    "new_queue_identities_per_hour": 45.3,
+    "completed_reviews_per_hour": 3.8,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Writer lease covers24 new queue identities and two prepared Liebherr/CiS original-source reconciliations.129 actual query items include128 in four read-only groups and one root original-source search; six root original documents independently checked. Ten prior-import check records preserved, zero fresh credit. Includes exact issuer/currency/date/qualifier/cash-vs-capacity checks, fresh PostgreSQL tests, production rollback/full restoration, one atomic import, exact preservation audits, idempotent rollback replay, durable readbacks, successful build/deploy, fresh live datasets and13 HTTP routes. Two bounded closures,22 partial histories retained. No ETA or concurrency speedup claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1393,12 +1407,66 @@
       "missing_link_sources": 0
     },
     "durable_readbacks_verified": {
-      "commit": "b885984cea6338f754379786cfc22857aec4966b",
+      "commit": "a336a74dbfd07e20eadbad6fa1432b984d3f0b9f",
       "files": 8,
-      "exact_contents": true
+      "exact_contents": true,
+      "final_checkpoint_readback_required": true
     },
     "frozen_inputs_unchanged": true,
-    "http_checks": "13 routes returned200; refreshed dataset confirmation awaits exact deployment",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/cis/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/liebherr-aerospace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/marineai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/marshall-aerospace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/martac/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mcq-inc/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mente-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mercury-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/merlin-labs/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/micasense/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/microcon-vision/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mikoyan-mig/",
+        "status": 200
+      }
+    ],
     "production_post_import_idempotent_rollback_replay": {
       "counts": {
         "events": 5018,
@@ -1413,12 +1481,104 @@
     }
   },
   "publication": {
-    "status": "build_requested",
+    "status": "verified",
     "requested_at": "2026-11-16T02:09:12.505Z",
     "source_commit": "564898dd6fa15a38a0196e83cf292da4937028a8",
     "catalogue_commit": "e67a3075c71616086108cfac3bf2e92d115a2eef",
     "workflow_run": 43790421763,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43790421763"
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43790421763",
+    "generated_at": "2026-11-16T02:10:45.271Z",
+    "investor_generated_at": "2026-11-16T02:10:50.773Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3803,
+    "portfolio_relationships": 763,
+    "expected_profiles": 11,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 1,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_company_links_verified": 1,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 13,
+    "manifest_generic_relationship_matches": 1,
+    "published_reviewed_corrections_exact": [
+      {
+        "slug": "liebherr-aerospace",
+        "round_id": "7e11a238-495a-4fad-bf54-39c3956eb4b5",
+        "exact_fields_verified": true,
+        "amount": null,
+        "kind": "investment_disclosure",
+        "date": "2021-01-27",
+        "source_count": 3
+      }
+    ],
+    "reviewed_correction_targets_in_european_landscape": [
+      "liebherr-aerospace"
+    ],
+    "verified_at": "2026-11-16T02:17:23.518Z",
+    "workflow_conclusion": "success",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/cis/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/liebherr-aerospace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/marineai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/marshall-aerospace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/martac/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mcq-inc/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mente-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mercury-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/merlin-labs/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/micasense/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/microcon-vision/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mikoyan-mig/",
+        "status": 200
+      }
+    ],
+    "current_manifest_event_rows": 22,
+    "current_manifest_live_matches": 0,
+    "scope_note": "Fresh directory verifies11 referenced profiles,13 participation citations and1 clickable AURELIUS/Marshall portfolio entry. Published European Liebherr existing row verified with exact corrected fields, NULL amount/currency, neutral investment_disclosure,27January2021 detailed-source publication and3 citations; subsidiary/project proceeds not assigned to German/divisional issuer. Nine anonymous profiles and five retired portfolios remain excluded. All new event targets remain outside European map, so wider-cohort financing rows verified in DB are not claimed rendered as company-page funding sections. Geography and company gates preserved; all13 checked site/company routes HTTP200."
   },
   "preserved": [
     "Legacy STATE.json and frozen snapshots",
@@ -1426,7 +1586,7 @@
     "Curated investor profiles and unrelated source/relationship history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-16T02:16:16.808Z",
+  "updated_at": "2026-11-16T02:17:23.527Z",
   "production_after": {
     "events": 5018,
     "approved": 5000,
@@ -1447,5 +1607,6 @@
     "remaining": 719,
     "bounded_closed": 128,
     "retained_partial": 496
-  }
+  },
+  "completed_at": "2026-11-16T02:17:23.518Z"
 }
