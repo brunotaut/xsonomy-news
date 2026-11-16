@@ -1,5 +1,5 @@
 {
-  "status": "production_rollback_verified_ready",
+  "status": "import_committed_audit_verified",
   "started_at": "2026-11-16T06:45:04.467Z",
   "checked_at": "2026-11-16",
   "programme_complete": false,
@@ -1198,11 +1198,16 @@
     "new_generic_portfolio_relationships": 1,
     "reviewed_existing_fact_corrections": 7,
     "local_postgresql_tests_passed": true,
-    "atomic_import_invocations": 0,
+    "atomic_import_invocations": 1,
     "prior_import_checks_recorded": 10,
     "fresh_prior_import_row_checks": 3,
     "extra_identity_credit_for_prior_import_checks": 0,
-    "rollback_rehearsal_passed": true
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "new_round_participations": 17,
+    "new_source_rows": 55,
+    "new_investor_profiles": 4,
+    "new_coverage_rows": 3
   },
   "validation": {
     "fresh_full_row_issuer_guards": {
@@ -1328,6 +1333,119 @@
         "passed": true,
         "rows": 7
       }
+    },
+    "exact_post_import_audit": {
+      "facts": [
+        {
+          "audit": "manifest_event_exact_fields_and_parent",
+          "failed": 0,
+          "expected": 24,
+          "failures": []
+        },
+        {
+          "audit": "manifest_sources_exact",
+          "failed": 0,
+          "expected": 42,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participants_exact_role_source_contribution",
+          "failed": 0,
+          "expected": 17,
+          "failures": []
+        },
+        {
+          "audit": "manifest_generic_portfolios_exact",
+          "failed": 0,
+          "expected": 1,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participant_and_portfolio_profile_source_exists",
+          "failed": 0,
+          "expected": 18,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_source_additions_exact",
+          "failed": 0,
+          "expected": 13,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_profile_source_additions_exist",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "guarded_participant_additions_exact_parent_unchanged",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_events",
+          "failed": 0,
+          "expected": 7,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_participants",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_generic_relationships",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        }
+      ],
+      "preserved": [
+        {
+          "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+          "rows": 2718,
+          "audit": "companies"
+        },
+        {
+          "md5": "6e830455d021d16a3392dc4bdc08eaaa",
+          "rows": 5108,
+          "audit": "uncorrected_events"
+        },
+        {
+          "md5": "d021dde3349e9483dbf33b4a68a9c042",
+          "rows": 6807,
+          "audit": "uncorrected_existing_participants"
+        },
+        {
+          "md5": "dc2cf6326145c805c0194cf4a1b29d45",
+          "rows": 7118,
+          "audit": "existing_unrelated_event_sources"
+        },
+        {
+          "md5": "6180aa1802158e57ab9ac65e625cb074",
+          "rows": 3825,
+          "audit": "curated_profiles_full_rows"
+        },
+        {
+          "md5": "d95483a302091ba89b521ee11b54f794",
+          "rows": 7399,
+          "audit": "existing_unrelated_profile_sources"
+        },
+        {
+          "md5": "6e4e68a630bc2ec3a72aa6061dfe02a0",
+          "rows": 769,
+          "audit": "uncorrected_existing_generic_rows"
+        },
+        {
+          "md5": "3119f3178b70a23827c805cd5b27b1f5",
+          "rows": 1365,
+          "audit": "unrelated_research_coverage"
+        }
+      ],
+      "missing_link_sources": 0
     }
   },
   "publication": {
@@ -1342,5 +1460,14 @@
     "Historical reconciliation metrics archive",
     "Schedules"
   ],
-  "updated_at": "2026-11-16T07:00:34.495Z"
+  "updated_at": "2026-11-16T07:01:09.121Z",
+  "production_after": {
+    "events": 5139,
+    "approved": 5121,
+    "links": 6824,
+    "sources": 7173,
+    "profiles": 3829,
+    "relationships": 770,
+    "covered": 1376
+  }
 }
