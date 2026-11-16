@@ -8,14 +8,14 @@
   "published_landscape_companies": 567,
   "partial_companies": 1217,
   "fully_reviewed_companies": 1347,
-  "next_action": "Prioritize newly prepared issuer/date/instrument reconciliations using originals and guarded reversals; then current preview excluding 600 identities checked in this partial-source pass. Do not repeat retained holds without a specific new original.",
+  "next_action": "Continue next_batch_preview excluding600 identities checked in partial-source-pass-1; prioritize prepared holds only with a specific new original.228 prepared holds remain. DarkWolf unsupported fundclose/date/type/status inference corrected; Lamarr identity corroborated but MET historical source still held. LPP Czech/Polish conflict unassigned without metadata mutation, Manna duplicate not copied, LiveU exited owners not added as active portfolios.",
   "completion_rule": "Every queue company needs an evidenced disposition. Absent structured rows do not mean no public round.",
-  "updated_at": "2026-11-16T01:03:52.777Z",
+  "updated_at": "2026-11-16T01:10:28.782Z",
   "source_reconciliation_companies": 1355,
   "approved_funding_events": 4978,
   "round_participations": 6746,
   "investor_profiles": 3809,
-  "publication_pending": true,
+  "publication_pending": false,
   "last_import": "research-agent/imports/funding-landscape-20261116-one-hundred-nineteenth.json",
   "published_landscape_discovery_complete": true,
   "discovery_index": "research-agent/discovery/funding-landscape-2026-11-02/index.json",
@@ -23,53 +23,22 @@
   "automation_id": "6ae8a29260108191a57ab58c00ff5894",
   "automation_enabled": true,
   "automation_cadence": "hourly",
-  "active_run": {
-    "id": "funding-20261116-one-hundred-nineteenth",
-    "writer": "ChatGPT root",
-    "started_at": "2026-11-16T00:45:39.350Z",
-    "lease_expires_at": "2026-11-16T02:45:39.350Z",
-    "company_ids": [
-      "4167a775-62e4-4aca-a732-35ac0cf7dd70",
-      "489df67d-6c74-4daf-a99c-443d027b8b51",
-      "26c31cf5-549c-47cf-a555-7f72b5d9eb0c",
-      "01ff6f3a-d721-4e19-8013-cc316bacddae",
-      "a36ed8fc-5ae1-41b7-b598-6a2a7da4c29e",
-      "ca6b5651-adc4-4fb4-8d78-f4902b49a41d",
-      "40904f35-0eae-4688-9db7-17d1b6f45f3f",
-      "dd23d2ac-3ed1-4337-8087-9eef16b1ccb3",
-      "dcc9af11-800c-43cd-9159-a8f0e62694ca",
-      "9488cc77-809a-4290-9913-5163d12172a9",
-      "095ec363-dc2f-4108-868b-9580f01d899e",
-      "26ec7891-c1f9-4ed4-b39e-6efeba60f0ac",
-      "b62985fa-6d1a-4097-b11f-4fe2a3879552",
-      "ad967d12-80f8-4b43-ae4d-97137c3c6987",
-      "8adceee8-7207-4dad-80d1-1c18616e6cb2",
-      "7ddc46f8-c44b-49b4-bc21-c21667db286e",
-      "8d034f23-0f04-4142-b397-cad998235834",
-      "c6cf3c51-b9d7-408a-beba-a70226e29b74",
-      "0c7c6097-156e-49ea-8e4e-c8e899aec296",
-      "b7a03c09-9e18-48ec-a1de-2582c8a4065b",
-      "b8366a2e-ae26-4edc-8ed7-778394be3a4c",
-      "0d0add6a-a40a-41d9-b2c4-28b5b2b6a4f3",
-      "40dd78c2-0572-4a2f-8adc-b303e09d1c1a",
-      "b547cb62-cf08-4129-a4a0-22ed52819d21"
-    ]
-  },
+  "active_run": null,
   "last_verified_publication": {
     "status": "verified",
-    "requested_at": "2026-11-16T00:09:50.187Z",
-    "source_commit": "e3af51b7460c9e8534581cf1a93f904ae1d6c01a",
-    "catalogue_commit": "2f2fed6aecf76100757ed8f92183255c24103e6a",
-    "workflow_run": 43778739264,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43778739264",
-    "generated_at": "2026-11-16T00:11:11.225Z",
-    "investor_generated_at": "2026-11-16T00:11:18.211Z",
+    "requested_at": "2026-11-16T01:03:52.777Z",
+    "source_commit": "f34f8ad0ae3480b43fa224f82cefb07cc4fe7148",
+    "catalogue_commit": "c34c8c6e95164996705ef2d1832f4aeb3124a1c2",
+    "workflow_run": 43784026754,
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43784026754",
+    "generated_at": "2026-11-16T01:04:55.805Z",
+    "investor_generated_at": "2026-11-16T01:04:59.966Z",
     "companies": 567,
     "events": 1590,
     "links": 1390,
-    "profiles": 3799,
+    "profiles": 3800,
     "portfolio_relationships": 762,
-    "expected_profiles": 15,
+    "expected_profiles": 7,
     "missing_profiles": [],
     "missing_participant_sources": [],
     "missing_relationships": [],
@@ -79,11 +48,12 @@
     "generic_portfolio_entries_verified": 0,
     "clickable_company_links_verified": 0,
     "unlinked_under_existing_publication_gates": [],
-    "manifest_participation_source_matches": 27,
+    "manifest_participation_source_matches": 14,
     "manifest_generic_relationship_matches": 0,
     "reviewed_correction_targets_in_european_landscape": [],
-    "lamarr_candidate_portfolio_not_imported": true,
-    "verified_at": "2026-11-16T00:14:17.402Z",
+    "lamarr_met_candidate_not_imported": true,
+    "exited_liveu_associations_not_added_as_active": true,
+    "verified_at": "2026-11-16T01:10:28.782Z",
     "workflow_conclusion": "success",
     "http_checks": [
       {
@@ -91,78 +61,60 @@
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/leolabs/",
+        "url": "https://xsonomy.com/companies/lyntris/",
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/laser-photonics/",
+        "url": "https://xsonomy.com/companies/mahindra/",
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/lily-robotics/",
+        "url": "https://xsonomy.com/companies/magnix/",
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/l3harris/",
+        "url": "https://xsonomy.com/companies/living-optics/",
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/leonardo-drs-rada/",
+        "url": "https://xsonomy.com/companies/lom-praha/",
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/leidos/",
+        "url": "https://xsonomy.com/companies/lockheed-martin/",
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/lightpath-technologies/",
+        "url": "https://xsonomy.com/companies/longbow-group/",
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/kubota/",
+        "url": "https://xsonomy.com/companies/m-tron-industries/",
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/lighthouse-avionics/",
+        "url": "https://xsonomy.com/companies/maglev-aero/",
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/lantronix/",
+        "url": "https://xsonomy.com/companies/luxspace/",
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/landing-zones/",
+        "url": "https://xsonomy.com/companies/dark-wolf-solutions/",
         "status": 200
       },
       {
-        "url": "https://xsonomy.com/companies/larsen-and-toubro/",
-        "status": 200
-      },
-      {
-        "url": "https://xsonomy.com/companies/landspace/",
-        "status": 200
-      },
-      {
-        "url": "https://xsonomy.com/companies/levanta-tech/",
-        "status": 200
-      },
-      {
-        "url": "https://xsonomy.com/companies/limitless-aeronautics/",
-        "status": 200
-      },
-      {
-        "url": "https://xsonomy.com/companies/d-ta-systems/",
-        "status": 200
-      },
-      {
-        "url": "https://xsonomy.com/companies/draken-international/",
+        "url": "https://xsonomy.com/companies/lamarr-ai/",
         "status": 200
       }
     ],
-    "current_manifest_event_rows": 29,
+    "current_manifest_event_rows": 17,
     "current_manifest_live_matches": 0,
-    "existing_draft_financing_targets": [],
-    "scope_note": "Fresh directory verifies15 referenced profiles and27 new participation citations. Nine pre-existing anonymous profiles and five retired portfolios remain excluded. No generic portfolio imported; Lamarr candidate remains held. All current event/correction targets remain outside European map; wider-cohort financial rows are verified in DB, not claimed rendered as map or company-page financing sections. Existing geography, publication gates and curated records unchanged."
+    "existing_draft_financing_targets": [
+      "liveeo"
+    ],
+    "scope_note": "Fresh directory verifies7 referenced profiles and14 new participation citations. Nine pre-existing anonymous profiles and five retired portfolios remain excluded. No generic portfolio imported; MET candidate and exited LiveU active associations withheld. All current event/correction targets remain outside European map; wider-cohort financial rows are verified in DB, not claimed rendered as map or company-page financing sections. Existing LiveEO draft gate retained; no draft route published. Geography/publication gates and curated records unchanged."
   },
   "known_financing_claims_to_reconcile": [
     {
@@ -8359,38 +8311,38 @@
     "prepared_source_identities_checked": 2,
     "identities_checked": 26,
     "parallel_read_only_groups": 4,
-    "new_approved_events": 29,
-    "new_round_participations": 27,
-    "new_source_rows": 57,
+    "new_approved_events": 17,
+    "new_round_participations": 14,
+    "new_source_rows": 30,
     "new_generic_portfolio_relationships": 0,
-    "reviewed_existing_fact_corrections": 31,
-    "search_queries_executed": 129,
-    "newly_completed_bounded_reviews": 3,
-    "new_or_retained_partial": 21,
+    "reviewed_existing_fact_corrections": 25,
+    "search_queries_executed": 103,
+    "newly_completed_bounded_reviews": 4,
+    "new_or_retained_partial": 20,
     "local_postgresql_tests_passed": true,
     "atomic_import_invocations": 1,
     "prior_import_checks_recorded": 10,
     "fresh_prior_import_row_checks": 0,
     "rollback_rehearsal_passed": true,
     "atomic_import_passed": true,
-    "new_investor_profiles": 11,
-    "new_coverage_rows": 0,
+    "new_investor_profiles": 1,
+    "new_coverage_rows": 3,
     "post_import_idempotency_rehearsal_passed": true,
     "queue_dispositions_applied": 24,
     "approved_event_counts_refreshed_for_identities": 26,
-    "live_referenced_profiles_verified": 15,
-    "live_manifest_profiles_verified": 15,
-    "live_participant_source_matches": 27,
+    "live_referenced_profiles_verified": 7,
+    "live_manifest_profiles_verified": 7,
+    "live_participant_source_matches": 14,
     "live_generic_profile_source_matches": 0,
     "live_clickable_portfolio_links_verified": 0,
-    "live_company_routes_verified": 17,
+    "live_company_routes_verified": 12,
     "current_publication_scope_verified": true,
-    "active_minutes": 22.69,
-    "checked_identities_per_hour": 68.8,
-    "new_queue_identities_per_hour": 63.5,
-    "completed_reviews_per_hour": 7.9,
+    "active_minutes": 24.82,
+    "checked_identities_per_hour": 62.8,
+    "new_queue_identities_per_hour": 58,
+    "completed_reviews_per_hour": 9.7,
     "concurrency_speedup_claimed": false,
-    "timing_scope": "Writer lease spans15/16November and covers24 new queue identities plus two prepared D-TA/Draken original-source reconciliations.129 executed search query items across four read-only groups; four root original documents separately checked, including independent SHA-matched SSE PDF download/text and visually read Draken statutory-account image. Actual source dates15/16November retained; filenames use15November start. Ten prior-import check records preserved, zero fresh check credit. Includes exact issuer/currency/date/qualifier/role checks, fresh PostgreSQL tests, production rollback/full restoration, one atomic import, exact preservation audits, idempotent replay, durable readbacks, successful build/deploy and fresh live datasets/HTTP checks. Three bounded closures,21 partial histories retained; no ETA or speedup claim."
+    "timing_scope": "Writer lease covers24 new queue identities and two prepared Lamarr/DarkWolf original-source reconciliations.103 executed search query items across four read-only groups; five root primary documents separately spotchecked, including NASA/GAO historical contract/latest cancellation and Czech first-public registry chronology. Ten prior-import check records preserved, zero fresh credit. Includes exact issuer/currency/date/qualifier/role checks, fresh PostgreSQL tests, production rollback/full restoration, one atomic import, exact preservation audits, idempotent replay, durable readbacks, successful build/deploy and fresh live datasets/HTTP checks. Four bounded closures,20 partial histories retained; no ETA or speedup claim."
   },
   "latest_followup_metrics": {
     "parallel_read_only_groups": 4,
@@ -8459,9 +8411,9 @@
   "source_reviewed_or_partial_companies": 2564,
   "latest_manual_checkpoint": {
     "run_id": "funding-20261116-one-hundred-nineteenth",
-    "status": "imported_publication_pending",
+    "status": "imported_and_publication_verified",
     "report": "research-agent/reports/2026-11-16-funding-landscape-one-hundred-nineteenth.json",
-    "updated_at": "2026-11-16T01:03:52.777Z"
+    "finished_at": "2026-11-16T01:10:28.782Z"
   },
   "latest_correction_publication": {
     "site_commit": "e31b7088afd71a693fcf29d070203b0d60f8bb24",
@@ -8858,36 +8810,8 @@
       "concurrency_speedup_claimed": false
     }
   },
-  "pending_import": {
-    "run_id": "funding-20261116-one-hundred-nineteenth",
-    "status": "committed_idempotency_audited",
-    "manifest": "research-agent/imports/funding-landscape-20261116-one-hundred-nineteenth.json",
-    "reviewed_corrections": "research-agent/imports/funding-landscape-20261116-one-hundred-nineteenth-reviewed-corrections.json",
-    "report": "research-agent/reports/2026-11-16-funding-landscape-one-hundred-nineteenth.json",
-    "atomic_import_invocations": 1,
-    "invoked_at": "2026-11-16T01:01:18.595Z",
-    "production_after": [
-      {
-        "events": 4996,
-        "approved": 4978,
-        "links": 6746,
-        "sources": 6936,
-        "profiles": 3809,
-        "relationships": 767,
-        "covered": 1355
-      }
-    ]
-  },
-  "pending_publication": {
-    "run_id": "funding-20261116-one-hundred-nineteenth",
-    "report": "research-agent/reports/2026-11-16-funding-landscape-one-hundred-nineteenth.json",
-    "status": "build_requested",
-    "requested_at": "2026-11-16T01:03:52.777Z",
-    "source_commit": "f34f8ad0ae3480b43fa224f82cefb07cc4fe7148",
-    "catalogue_commit": "c34c8c6e95164996705ef2d1832f4aeb3124a1c2",
-    "workflow_run": 43784026754,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43784026754"
-  },
+  "pending_import": null,
+  "pending_publication": null,
   "latest_published_reconciliations": {
     "report": "research-agent/reports/2026-11-09-funding-published-reconciliations.json",
     "manifest": "research-agent/imports/funding-published-reconciliations-20261109.json",
@@ -16095,7 +16019,7 @@
     }
   },
   "latest_one_hundred_nineteenth_reconciliation": {
-    "status": "imported_publication_pending",
+    "status": "imported_and_publication_verified",
     "report": "research-agent/reports/2026-11-16-funding-landscape-one-hundred-nineteenth.json",
     "manifest": "research-agent/imports/funding-landscape-20261116-one-hundred-nineteenth.json",
     "corrections": "research-agent/imports/funding-landscape-20261116-one-hundred-nineteenth-reviewed-corrections.json",
@@ -16122,7 +16046,20 @@
       "new_coverage_rows": 3,
       "post_import_idempotency_rehearsal_passed": true,
       "queue_dispositions_applied": 24,
-      "approved_event_counts_refreshed_for_identities": 26
+      "approved_event_counts_refreshed_for_identities": 26,
+      "live_referenced_profiles_verified": 7,
+      "live_manifest_profiles_verified": 7,
+      "live_participant_source_matches": 14,
+      "live_generic_profile_source_matches": 0,
+      "live_clickable_portfolio_links_verified": 0,
+      "live_company_routes_verified": 12,
+      "current_publication_scope_verified": true,
+      "active_minutes": 24.82,
+      "checked_identities_per_hour": 62.8,
+      "new_queue_identities_per_hour": 58,
+      "completed_reviews_per_hour": 9.7,
+      "concurrency_speedup_claimed": false,
+      "timing_scope": "Writer lease covers24 new queue identities and two prepared Lamarr/DarkWolf original-source reconciliations.103 executed search query items across four read-only groups; five root primary documents separately spotchecked, including NASA/GAO historical contract/latest cancellation and Czech first-public registry chronology. Ten prior-import check records preserved, zero fresh credit. Includes exact issuer/currency/date/qualifier/role checks, fresh PostgreSQL tests, production rollback/full restoration, one atomic import, exact preservation audits, idempotent replay, durable readbacks, successful build/deploy and fresh live datasets/HTTP checks. Four bounded closures,20 partial histories retained; no ETA or speedup claim."
     }
   }
 }

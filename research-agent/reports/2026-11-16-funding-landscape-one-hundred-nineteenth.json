@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "checked_at": "2026-11-16",
   "started_at": "2026-11-16T00:45:39.350Z",
   "manifest": "research-agent/imports/funding-landscape-20261116-one-hundred-nineteenth.json",
@@ -1046,7 +1046,20 @@
     "new_coverage_rows": 3,
     "post_import_idempotency_rehearsal_passed": true,
     "queue_dispositions_applied": 24,
-    "approved_event_counts_refreshed_for_identities": 26
+    "approved_event_counts_refreshed_for_identities": 26,
+    "live_referenced_profiles_verified": 7,
+    "live_manifest_profiles_verified": 7,
+    "live_participant_source_matches": 14,
+    "live_generic_profile_source_matches": 0,
+    "live_clickable_portfolio_links_verified": 0,
+    "live_company_routes_verified": 12,
+    "current_publication_scope_verified": true,
+    "active_minutes": 24.82,
+    "checked_identities_per_hour": 62.8,
+    "new_queue_identities_per_hour": 58,
+    "completed_reviews_per_hour": 9.7,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Writer lease covers24 new queue identities and two prepared Lamarr/DarkWolf original-source reconciliations.103 executed search query items across four read-only groups; five root primary documents separately spotchecked, including NASA/GAO historical contract/latest cancellation and Czech first-public registry chronology. Ten prior-import check records preserved, zero fresh credit. Includes exact issuer/currency/date/qualifier/role checks, fresh PostgreSQL tests, production rollback/full restoration, one atomic import, exact preservation audits, idempotent replay, durable readbacks, successful build/deploy and fresh live datasets/HTTP checks. Four bounded closures,20 partial histories retained; no ETA or speedup claim."
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1229,15 +1242,154 @@
       "missing_link_sources": 0
     },
     "durable_readbacks_verified": 8,
-    "frozen_inputs_unchanged": true
+    "frozen_inputs_unchanged": true,
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lyntris/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mahindra/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/magnix/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/living-optics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lom-praha/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lockheed-martin/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/longbow-group/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/m-tron-industries/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/maglev-aero/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/luxspace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/dark-wolf-solutions/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lamarr-ai/",
+        "status": 200
+      }
+    ],
+    "liveeo_draft_identity_check": "Fresh name/website duplicate search found only canonical LiveEO489df67d-6c74-4daf-a99c-443d027b8b51; draft gate preserved."
   },
   "publication": {
-    "status": "build_requested",
+    "status": "verified",
     "requested_at": "2026-11-16T01:03:52.777Z",
     "source_commit": "f34f8ad0ae3480b43fa224f82cefb07cc4fe7148",
     "catalogue_commit": "c34c8c6e95164996705ef2d1832f4aeb3124a1c2",
     "workflow_run": 43784026754,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43784026754"
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43784026754",
+    "generated_at": "2026-11-16T01:04:55.805Z",
+    "investor_generated_at": "2026-11-16T01:04:59.966Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3800,
+    "portfolio_relationships": 762,
+    "expected_profiles": 7,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 0,
+    "generic_portfolio_entries_verified": 0,
+    "clickable_company_links_verified": 0,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 14,
+    "manifest_generic_relationship_matches": 0,
+    "reviewed_correction_targets_in_european_landscape": [],
+    "lamarr_met_candidate_not_imported": true,
+    "exited_liveu_associations_not_added_as_active": true,
+    "verified_at": "2026-11-16T01:10:28.782Z",
+    "workflow_conclusion": "success",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lyntris/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mahindra/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/magnix/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/living-optics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lom-praha/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lockheed-martin/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/longbow-group/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/m-tron-industries/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/maglev-aero/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/luxspace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/dark-wolf-solutions/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/lamarr-ai/",
+        "status": 200
+      }
+    ],
+    "current_manifest_event_rows": 17,
+    "current_manifest_live_matches": 0,
+    "existing_draft_financing_targets": [
+      "liveeo"
+    ],
+    "scope_note": "Fresh directory verifies7 referenced profiles and14 new participation citations. Nine pre-existing anonymous profiles and five retired portfolios remain excluded. No generic portfolio imported; MET candidate and exited LiveU active associations withheld. All current event/correction targets remain outside European map; wider-cohort financial rows are verified in DB, not claimed rendered as map or company-page financing sections. Existing LiveEO draft gate retained; no draft route published. Geography/publication gates and curated records unchanged."
   },
   "preserved": [
     "Legacy STATE.json and frozen snapshots",
@@ -1245,7 +1397,7 @@
     "Curated investor profiles and unrelated source/relationship history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-16T01:06:32.510Z",
+  "updated_at": "2026-11-16T01:10:28.801Z",
   "production_after": [
     {
       "events": 4996,
@@ -1268,5 +1420,6 @@
     "remaining": 743,
     "bounded_closed": 126,
     "retained_partial": 474
-  }
+  },
+  "completed_at": "2026-11-16T01:10:28.782Z"
 }
