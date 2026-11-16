@@ -1,5 +1,5 @@
 {
-  "status": "imported_publication_pending",
+  "status": "imported_and_publication_verified",
   "started_at": "2026-11-16T02:45:33.625Z",
   "checked_at": "2026-11-16",
   "programme_complete": false,
@@ -1070,7 +1070,20 @@
     "queue_dispositions_applied": 24,
     "approved_event_counts_refreshed_for_identities": 26,
     "newly_completed_bounded_reviews": 3,
-    "new_or_retained_partial": 21
+    "new_or_retained_partial": 21,
+    "live_referenced_profiles_verified": 7,
+    "live_manifest_profiles_verified": 7,
+    "live_participant_source_matches": 13,
+    "live_generic_profile_source_matches": 1,
+    "live_clickable_portfolio_links_verified": 1,
+    "live_company_routes_verified": 13,
+    "current_publication_scope_verified": true,
+    "active_minutes": 13.97,
+    "checked_identities_per_hour": 111.7,
+    "new_queue_identities_per_hour": 103.1,
+    "completed_reviews_per_hour": 12.9,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "Writerlease covers24newqueueIDs and2preparedErdyn/ESH-Tech originals;126 actualqueryitems (124fourreadonlygroups+2rootqueries).5rootoriginals independentlyspotchecked.10priorchecks retained,0freshcredit. Includes freshPostgreSQLtests,fullissuer/parentguards, productionrollback/exactrestoration,oneatomicimport,exactaudits andidempotentreplay,durablereadbacks,successfulbuild/deploy,freshsame-hostliveartifactverification and14HTTP routes. Canonicalinvestordirectoryedgecache stillold; equivalentURLservesverifiednewartifact.13manifestcitationslive, extraDCVCcitationDBonlyunderexistingprojection.3boundedclosures,21partials; noETA/speedupclaim."
   },
   "validation": {
     "fresh_full_row_issuer_guards": {
@@ -1302,15 +1315,183 @@
         "covered": 1361
       },
       "exact_audit_unchanged": true
+    },
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/erdyn-consultants/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/esh-tech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/millibeam/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mind-foundry/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mitac-advance-technology/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mitsubishi-heavy-industries/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mitsui-fudosan/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mobilicom/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mobix-labs/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/modalai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mountain-horse-solutions/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/msubs/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/nanyang-technological-university/",
+        "status": 200
+      }
+    ],
+    "canonical_cache_followup": {
+      "url": "https://xsonomy.com/data/landscape-investors.json",
+      "observed_generated_at": "2026-11-16T02:10:50.773Z",
+      "status": "edge_cache_stale_after_successful_deploy",
+      "fresh_equivalent_path_generated_at": "2026-11-16T02:55:59.067Z",
+      "no_rebuild_required": true
     }
   },
   "publication": {
-    "status": "build_requested",
+    "status": "verified",
     "requested_at": "2026-11-16T02:54:55.883Z",
     "source_commit": "362af9a75ed4b6b7a34f2d8b38b0bf2c44c708ba",
     "catalogue_commit": "e1a2043b87385a4e059a53de28fb6426330bfa45",
     "workflow_run": 43795007977,
-    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43795007977"
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43795007977",
+    "generated_at": "2026-11-16T02:55:55.131Z",
+    "investor_generated_at": "2026-11-16T02:55:59.067Z",
+    "companies": 567,
+    "events": 1590,
+    "links": 1390,
+    "profiles": 3804,
+    "portfolio_relationships": 764,
+    "expected_profiles": 7,
+    "missing_profiles": [],
+    "missing_participant_sources": [],
+    "missing_relationships": [],
+    "targets_in_european_landscape": [],
+    "missing_generic_profile_sources": [],
+    "generic_profile_source_matches": 1,
+    "generic_portfolio_entries_verified": 1,
+    "clickable_company_links_verified": 1,
+    "unlinked_under_existing_publication_gates": [],
+    "manifest_participation_source_matches": 13,
+    "manifest_generic_relationship_matches": 1,
+    "guarded_participant_addition_profile_sources_verified": [
+      {
+        "investor_slug": "dcvc",
+        "round_id": "e09ca871-ee5d-4067-b0fe-549b2d18898c",
+        "source": "https://www.linkedin.com/posts/kineticavc_defensetech-lasertechnology-defenseinnovation-activity-7479865735796645889-scAu",
+        "mirrored_in_profile_sources": false,
+        "db_exact_audit_passed": true,
+        "scope": "Existing-round participation is outside European map; existing profile source list is independently curated."
+      }
+    ],
+    "verified_at": "2026-11-16T02:59:31.748Z",
+    "workflow_conclusion": "success",
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/erdyn-consultants/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/esh-tech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/millibeam/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mind-foundry/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mitac-advance-technology/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mitsubishi-heavy-industries/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mitsui-fudosan/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mobilicom/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mobix-labs/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/modalai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/mountain-horse-solutions/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/msubs/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/nanyang-technological-university/",
+        "status": 200
+      }
+    ],
+    "current_manifest_event_rows": 18,
+    "current_manifest_live_matches": 0,
+    "live_verification_urls": [
+      "https://xsonomy.com/data/landscape.json",
+      "https://xsonomy.com/data/%6candscape-investors.json"
+    ],
+    "canonical_cache_followup": {
+      "url": "https://xsonomy.com/data/landscape-investors.json",
+      "observed_generated_at": "2026-11-16T02:10:50.773Z",
+      "status": "edge_cache_stale_after_successful_deploy",
+      "fresh_equivalent_path_generated_at": "2026-11-16T02:55:59.067Z",
+      "no_rebuild_required": true
+    },
+    "scope_note": "Fresh deployed same-host byte-equivalent investor file verified through percent-encodedpath anddouble-slashpath because canonical CDNedge stillserves earliercachedcopy. Buildlogs independentlyconfirm3804profiles/764portfolios.7 referenced profiles/13 manifestparticipation citations/1clickableMiTAC portfolio verified. The extra guardedDCVC participation exactDBauditpasses butneworiginalcitationisnotmirroredinindependentlycuratedprofile-source list; no claim thatoutside-map event appearsinEuropeanmap orcompany-pagefinancing. Newevent/correctiontargetsalloutside567companyEuropeanmap. Nineanonymousprofiles/fiveretiredportfolios remainexcluded. Metadata/gatespreserved;14HTTP routes200."
   },
   "preserved": [
     "Legacy STATE.json/frozen snapshots",
@@ -1318,7 +1499,7 @@
     "Curated profiles and unrelated source/relationship history",
     "Schedules"
   ],
-  "updated_at": "2026-11-16T02:55:58.069Z",
+  "updated_at": "2026-11-16T02:59:31.759Z",
   "production_after": {
     "events": 5036,
     "approved": 5018,
@@ -1339,5 +1520,6 @@
     "remaining": 695,
     "bounded_closed": 131,
     "retained_partial": 517
-  }
+  },
+  "completed_at": "2026-11-16T02:59:31.748Z"
 }
