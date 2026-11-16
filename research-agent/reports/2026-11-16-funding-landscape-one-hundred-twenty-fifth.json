@@ -1,5 +1,5 @@
 {
-  "status": "imported_pending_publication",
+  "status": "imported_and_publication_verified",
   "started_at": "2026-11-16T06:45:04.467Z",
   "checked_at": "2026-11-16",
   "programme_complete": false,
@@ -1212,7 +1212,25 @@
     "queue_dispositions_applied": 24,
     "approved_event_counts_refreshed_for_identities": 26,
     "newly_completed_bounded_reviews": 1,
-    "new_or_retained_partial": 23
+    "new_or_retained_partial": 23,
+    "live_referenced_profiles_verified": 14,
+    "live_manifest_profiles_verified": 14,
+    "live_participant_source_matches": 17,
+    "live_generic_profile_source_matches": 1,
+    "live_clickable_company_links_verified": 1,
+    "live_clickable_portfolio_links_verified": 1,
+    "live_company_routes_verified": 25,
+    "draft_company_routes_confirmed_unpublished": 1,
+    "draft_head_checks": 2,
+    "current_publication_scope_verified": true,
+    "wall_elapsed_minutes": 180.47,
+    "interrupted_tool_wait_minutes": 159.19,
+    "processing_minutes_excluding_observed_wait": 21.28,
+    "checked_identities_per_wall_hour": 8.64,
+    "checked_identities_per_processing_hour": 73.3,
+    "completed_reviews_per_wall_hour": 0.33,
+    "concurrency_speedup_claimed": false,
+    "timing_scope": "26source-identities=24new queue+2prepared;141actual search-query items=47+43+36+13+2root.3fresh Fieldmade prior-import row checks carry0extraidentitycredit;10historical checks/228prepared holds preserved. Wall time includes9551.1s interrupted tool wait; processing rate subtracts only this observed wait, no ETA/speedup claim.1bounded closure,23retained partials. One atomicimport, rollback/restoration, exact audits/replay; successful existing build/deploy and live verification."
   },
   "validation": {
     "fresh_full_row_issuer_guards": {
@@ -1471,16 +1489,163 @@
       "prior_atomic_import_already_committed": true,
       "reimport_attempts": 0,
       "interrupted_tool_wait_seconds": 9551.1
-    }
+    },
+    "durable_readbacks_verified": 8,
+    "frozen_inputs_unchanged": 8,
+    "importer_sha256": "8e90426e43c954b7c2ffb0f01beb870fe790e38c92036db8a95634e89af9ca78",
+    "recovery_exact_audit_unchanged": true,
+    "http_checks": [
+      {
+        "url": "https://xsonomy.com/landscape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/fieldmade/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/general-dynamics/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/onshape/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/opsys-tech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/opterra/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/opticoelectron-group/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/oq-technology/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/orbit-communication-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/orbital-atk/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/orcas/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/orkid-tech/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/oshen/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/oshkosh-defense/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/osiris-ai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/oskbes-mai-moscow-aviation-institute/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/otokar/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/otto-aerospace/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ottopia-defense/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/ouster/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/outlook-industries/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/overland-ai/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/owt-global/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/oxford-space-systems/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/pacmar-technologies/",
+        "status": 200
+      },
+      {
+        "url": "https://xsonomy.com/companies/palantir-technologies/",
+        "status": 200
+      }
+    ],
+    "draft_gate_http_checks": [
+      {
+        "url": "https://xsonomy.com/companies/orbotix/",
+        "method": "HEAD",
+        "status": 404
+      },
+      {
+        "url": "https://xsonomy.com/companies/orbotix/index.html",
+        "method": "HEAD",
+        "status": 404
+      }
+    ],
+    "draft_initial_http_check": "Initial assert requiring both404 failed; status not captured. Both independently repeated HEAD checks returned404. Orbotix receives no new financial record, remains draft, absent from EU map and investor portfolios."
   },
   "publication": {
-    "status": "build_requested",
-    "financial_targets_in_european_map": [],
-    "scope_note": "Financial targets outside567-company EU map. Verify investor directory and existing publication gates; no claim wider-company funding sections render.",
+    "status": "verified",
     "source_commit": "712119cf1ae12afcd1b9f568f51919628695dc84",
     "catalogue_commit": "db0cbb62684bb9f6181ba08e6d68bce204b16d28",
-    "requested_at": "2026-11-16T07:02:06.753Z",
-    "report": "research-agent/reports/2026-11-16-funding-landscape-one-hundred-twenty-fifth.json"
+    "workflow_id": 43820966482,
+    "workflow_url": "https://github.com/brunotaut/xSonomy/actions/runs/43820966482",
+    "workflow_conclusion": "success",
+    "build": "success",
+    "deploy": "success",
+    "live_audit": {
+      "generated_at": "2026-11-16T07:03:16.507Z",
+      "investor_generated_at": "2026-11-16T07:03:21.737Z",
+      "companies": 567,
+      "events": 1590,
+      "links": 1390,
+      "profiles": 3820,
+      "portfolio_relationships": 765,
+      "expected_profiles": 14,
+      "missing_profiles": [],
+      "missing_participant_sources": [],
+      "missing_relationships": [],
+      "targets_in_european_landscape": [],
+      "missing_generic_profile_sources": [],
+      "generic_profile_source_matches": 1,
+      "generic_portfolio_entries_verified": 1,
+      "clickable_company_links_verified": 1,
+      "unlinked_under_existing_publication_gates": [],
+      "manifest_participation_source_matches": 17,
+      "manifest_generic_relationship_matches": 1
+    },
+    "verified_at": "2026-11-16T09:45:32.580Z",
+    "scope_note": "All14 referenced investor profiles,17 participant citations and1 generic relationship/source match live. All25 live reviewed company routes and landscape return200. Orbotix draft canonical/indexHEAD404. None of14 financing/generic target companies is in567-company European map; no claim their funding rows render in map or company-page funding sections. Curated and publication-gated identities preserved."
   },
   "preserved": [
     "Legacy STATE.json/frozen snapshots",
@@ -1489,7 +1654,7 @@
     "Historical reconciliation metrics archive",
     "Schedules"
   ],
-  "updated_at": "2026-11-16T09:43:02.552Z",
+  "updated_at": "2026-11-16T09:45:32.593Z",
   "production_after": {
     "events": 5139,
     "approved": 5121,
@@ -1510,5 +1675,6 @@
     "remaining": 599,
     "bounded_closed": 136,
     "retained_partial": 608
-  }
+  },
+  "completed_at": "2026-11-16T09:45:32.580Z"
 }
