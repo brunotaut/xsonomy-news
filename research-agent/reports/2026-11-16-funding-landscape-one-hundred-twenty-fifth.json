@@ -1,5 +1,5 @@
 {
-  "status": "import_committed_audit_verified",
+  "status": "imported_pending_publication",
   "started_at": "2026-11-16T06:45:04.467Z",
   "checked_at": "2026-11-16",
   "programme_complete": false,
@@ -1207,7 +1207,12 @@
     "new_round_participations": 17,
     "new_source_rows": 55,
     "new_investor_profiles": 4,
-    "new_coverage_rows": 3
+    "new_coverage_rows": 3,
+    "post_import_idempotency_rehearsal_passed": true,
+    "queue_dispositions_applied": 24,
+    "approved_event_counts_refreshed_for_identities": 26,
+    "newly_completed_bounded_reviews": 1,
+    "new_or_retained_partial": 23
   },
   "validation": {
     "fresh_full_row_issuer_guards": {
@@ -1446,6 +1451,19 @@
         }
       ],
       "missing_link_sources": 0
+    },
+    "production_post_import_idempotent_rollback_replay": {
+      "passed": true,
+      "counts": {
+        "events": 5139,
+        "approved": 5121,
+        "links": 6824,
+        "sources": 7173,
+        "profiles": 3829,
+        "relationships": 770,
+        "covered": 1376
+      },
+      "exact_audit_unchanged": true
     }
   },
   "publication": {
@@ -1460,7 +1478,7 @@
     "Historical reconciliation metrics archive",
     "Schedules"
   ],
-  "updated_at": "2026-11-16T07:01:09.121Z",
+  "updated_at": "2026-11-16T07:02:06.757Z",
   "production_after": {
     "events": 5139,
     "approved": 5121,
@@ -1469,5 +1487,17 @@
     "profiles": 3829,
     "relationships": 770,
     "covered": 1376
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1357,
+    "source_review_partial": 1207,
+    "queued": 0
+  },
+  "reconciliation_phase": {
+    "pass": "partial-source-pass-1",
+    "checked": 744,
+    "remaining": 599,
+    "bounded_closed": 136,
+    "retained_partial": 608
   }
 }
