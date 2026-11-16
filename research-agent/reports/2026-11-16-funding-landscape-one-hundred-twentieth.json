@@ -1,5 +1,5 @@
 {
-  "status": "prepared_for_production_rollback",
+  "status": "rollback_verified_ready_for_atomic_import",
   "checked_at": "2026-11-16",
   "started_at": "2026-11-16T01:45:36.199Z",
   "manifest": "research-agent/imports/funding-landscape-20261116-one-hundred-twentieth.json",
@@ -1162,7 +1162,8 @@
     "atomic_import_invocations": 0,
     "prior_import_checks_recorded": 10,
     "fresh_prior_import_row_checks": 0,
-    "existing_generic_relationships_confirmed_not_reimported": 2
+    "existing_generic_relationships_confirmed_not_reimported": 2,
+    "rollback_rehearsal_passed": true
   },
   "validation": {
     "preservation_hashes_before": [
@@ -1253,7 +1254,24 @@
         "finding": "Reproduced original government2009 programme line286 explicitly state subscription to RSKMiG additionalshares15bnRUB. Approvaldaynotpublicday; site17August2009 notasserted firstpublicday."
       }
     ],
-    "access_limit": "Root operational-structurePDF fetch404; prepared reader directoriginal reported readable. Scopecorrection independently supported by detailedissuerrelease andministryPDF; no unsupported continuity claim added."
+    "access_limit": "Root operational-structurePDF fetch404; prepared reader directoriginal reported readable. Scopecorrection independently supported by detailedissuerrelease andministryPDF; no unsupported continuity claim added.",
+    "production_rollback_full_baseline_restored": {
+      "counts": {
+        "events": 4996,
+        "approved": 4978,
+        "links": 6746,
+        "sources": 6936,
+        "profiles": 3809,
+        "relationships": 767,
+        "covered": 1355
+      },
+      "preservation_hashes_match": true,
+      "fresh_guard_result": {
+        "rows": 10,
+        "full_row_issuer_guards_passed": true,
+        "checked_at": "2026-11-16T02:06:42.300Z"
+      }
+    }
   },
   "publication": {
     "status": "not_started"
@@ -1264,5 +1282,5 @@
     "Curated investor profiles and unrelated source/relationship history",
     "Repository schedules"
   ],
-  "updated_at": "2026-11-16T02:05:53.107Z"
+  "updated_at": "2026-11-16T02:06:42.317Z"
 }
