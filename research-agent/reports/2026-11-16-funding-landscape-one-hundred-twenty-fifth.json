@@ -1,5 +1,5 @@
 {
-  "status": "prepared_tests_passed",
+  "status": "production_rollback_verified_ready",
   "started_at": "2026-11-16T06:45:04.467Z",
   "checked_at": "2026-11-16",
   "programme_complete": false,
@@ -1201,7 +1201,8 @@
     "atomic_import_invocations": 0,
     "prior_import_checks_recorded": 10,
     "fresh_prior_import_row_checks": 3,
-    "extra_identity_credit_for_prior_import_checks": 0
+    "extra_identity_credit_for_prior_import_checks": 0,
+    "rollback_rehearsal_passed": true
   },
   "validation": {
     "fresh_full_row_issuer_guards": {
@@ -1270,7 +1271,64 @@
       "General Dynamics SEC original filing chronology checked independently for 2025 and 2020.",
       "Ouster original 2026 interim filing checked; separate completed ATM programmes, not capacities."
     ],
-    "source_access_limit": "Root UKRI GtR re-open failed; group B reviewed original own participant grant offers. GBP185895 consortium vs GBP133545 own award; GBP1 source conflict kept NULL. Do not infer public date from project dates. Unavailable individual originals remain holds."
+    "source_access_limit": "Root UKRI GtR re-open failed; group B reviewed original own participant grant offers. GBP185895 consortium vs GBP133545 own award; GBP1 source conflict kept NULL. Do not infer public date from project dates. Unavailable individual originals remain holds.",
+    "production_rollback_full_baseline_restored": {
+      "counts": {
+        "events": 5115,
+        "approved": 5097,
+        "links": 6807,
+        "sources": 7118,
+        "profiles": 3825,
+        "relationships": 769,
+        "covered": 1373
+      },
+      "preserved": [
+        {
+          "audit": "companies",
+          "rows": 2718,
+          "md5": "b7509878eebe5d55868e6ad9ab209f9c"
+        },
+        {
+          "audit": "uncorrected_events",
+          "rows": 5108,
+          "md5": "6e830455d021d16a3392dc4bdc08eaaa"
+        },
+        {
+          "audit": "uncorrected_existing_participants",
+          "rows": 6807,
+          "md5": "d021dde3349e9483dbf33b4a68a9c042"
+        },
+        {
+          "audit": "existing_unrelated_event_sources",
+          "rows": 7118,
+          "md5": "dc2cf6326145c805c0194cf4a1b29d45"
+        },
+        {
+          "audit": "curated_profiles_full_rows",
+          "rows": 3825,
+          "md5": "6180aa1802158e57ab9ac65e625cb074"
+        },
+        {
+          "audit": "existing_unrelated_profile_sources",
+          "rows": 7399,
+          "md5": "d95483a302091ba89b521ee11b54f794"
+        },
+        {
+          "audit": "uncorrected_existing_generic_rows",
+          "rows": 769,
+          "md5": "6e4e68a630bc2ec3a72aa6061dfe02a0"
+        },
+        {
+          "audit": "unrelated_research_coverage",
+          "rows": 1365,
+          "md5": "3119f3178b70a23827c805cd5b27b1f5"
+        }
+      ],
+      "fresh_issuer_guards": {
+        "passed": true,
+        "rows": 7
+      }
+    }
   },
   "publication": {
     "status": "pending",
@@ -1284,5 +1342,5 @@
     "Historical reconciliation metrics archive",
     "Schedules"
   ],
-  "updated_at": "2026-11-16T06:59:50.177Z"
+  "updated_at": "2026-11-16T07:00:31.077Z"
 }
