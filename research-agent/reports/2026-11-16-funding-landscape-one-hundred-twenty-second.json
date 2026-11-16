@@ -1,5 +1,5 @@
 {
-  "status": "prepared_for_rollback",
+  "status": "imported_publication_pending",
   "started_at": "2026-11-16T03:49:09.488Z",
   "checked_at": "2026-11-16",
   "programme_complete": false,
@@ -1164,7 +1164,12 @@
     "atomic_import_invocations": 1,
     "prior_import_checks_recorded": 10,
     "fresh_prior_import_row_checks": 0,
-    "rollback_rehearsal_passed": true
+    "rollback_rehearsal_passed": true,
+    "atomic_import_passed": true,
+    "new_round_participations": 23,
+    "new_source_rows": 45,
+    "new_investor_profiles": 7,
+    "new_coverage_rows": 3
   },
   "validation": {
     "fresh_full_row_issuer_guards": {
@@ -1272,6 +1277,119 @@
         "passed": true,
         "rows": 11
       }
+    },
+    "exact_post_import_audit": {
+      "facts": [
+        {
+          "audit": "manifest_event_exact_fields_and_parent",
+          "failed": 0,
+          "expected": 29,
+          "failures": []
+        },
+        {
+          "audit": "manifest_sources_exact",
+          "failed": 0,
+          "expected": 39,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participants_exact_role_source_contribution",
+          "failed": 0,
+          "expected": 23,
+          "failures": []
+        },
+        {
+          "audit": "manifest_generic_portfolios_exact",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "manifest_participant_and_portfolio_profile_source_exists",
+          "failed": 0,
+          "expected": 23,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_source_additions_exact",
+          "failed": 0,
+          "expected": 6,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_profile_source_additions_exist",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "guarded_participant_additions_exact_parent_unchanged",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_events",
+          "failed": 0,
+          "expected": 11,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_participants",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        },
+        {
+          "audit": "reviewed_after_generic_relationships",
+          "failed": 0,
+          "expected": 0,
+          "failures": []
+        }
+      ],
+      "preserved": [
+        {
+          "md5": "b7509878eebe5d55868e6ad9ab209f9c",
+          "rows": 2718,
+          "audit": "companies"
+        },
+        {
+          "md5": "9ae759266e29f969c13340497b4eae32",
+          "rows": 5025,
+          "audit": "uncorrected_events"
+        },
+        {
+          "md5": "90bd3e4e834c9278ae0d92ceebc9e25d",
+          "rows": 6773,
+          "audit": "uncorrected_existing_participants"
+        },
+        {
+          "md5": "0470bac0b759e63618ae971faa878d48",
+          "rows": 6996,
+          "audit": "existing_unrelated_event_sources"
+        },
+        {
+          "md5": "926d57557c5404994b9520205b36be12",
+          "rows": 3813,
+          "audit": "curated_profiles_full_rows"
+        },
+        {
+          "md5": "13aa706b33ebed4f0e21faa900947d9a",
+          "rows": 7366,
+          "audit": "existing_unrelated_profile_sources"
+        },
+        {
+          "md5": "6e4e68a630bc2ec3a72aa6061dfe02a0",
+          "rows": 769,
+          "audit": "uncorrected_existing_generic_rows"
+        },
+        {
+          "md5": "bb7c67eabcdd5249d346ef3c1f7b2702",
+          "rows": 1351,
+          "audit": "unrelated_research_coverage"
+        }
+      ],
+      "missing_link_sources": 0
     }
   },
   "publication": {
@@ -1283,5 +1401,14 @@
     "Curatedprofiles/unrelatedsourceandrelationshiphistory",
     "Schedules"
   ],
-  "updated_at": "2026-11-16T03:57:23.474Z"
+  "updated_at": "2026-11-16T03:57:38.335Z",
+  "production_after": {
+    "events": 5065,
+    "approved": 5047,
+    "links": 6796,
+    "sources": 7041,
+    "profiles": 3820,
+    "relationships": 769,
+    "covered": 1364
+  }
 }
