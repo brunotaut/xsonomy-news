@@ -1169,7 +1169,12 @@
     "new_round_participations": 23,
     "new_source_rows": 45,
     "new_investor_profiles": 7,
-    "new_coverage_rows": 3
+    "new_coverage_rows": 3,
+    "post_import_idempotency_rehearsal_passed": true,
+    "queue_dispositions_applied": 24,
+    "approved_event_counts_refreshed_for_identities": 26,
+    "newly_completed_bounded_reviews": 0,
+    "new_or_retained_partial": 24
   },
   "validation": {
     "fresh_full_row_issuer_guards": {
@@ -1393,7 +1398,8 @@
     }
   },
   "publication": {
-    "status": "not_started"
+    "status": "pending",
+    "requested_at": "2026-11-16T03:58:49.946Z"
   },
   "preserved": [
     "Legacy STATE.json/frozen snapshots",
@@ -1401,7 +1407,7 @@
     "Curatedprofiles/unrelatedsourceandrelationshiphistory",
     "Schedules"
   ],
-  "updated_at": "2026-11-16T03:57:38.335Z",
+  "updated_at": "2026-11-16T03:58:49.958Z",
   "production_after": {
     "events": 5065,
     "approved": 5047,
@@ -1410,5 +1416,17 @@
     "profiles": 3820,
     "relationships": 769,
     "covered": 1364
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1352,
+    "source_review_partial": 1212,
+    "queued": 0
+  },
+  "reconciliation_phase": {
+    "id": "partial-source-pass-1",
+    "checked": 672,
+    "remaining": 671,
+    "bounded_closed": 131,
+    "retained_partial": 541
   }
 }
