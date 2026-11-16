@@ -1163,7 +1163,8 @@
     "local_postgresql_tests_passed": true,
     "atomic_import_invocations": 0,
     "prior_import_checks_recorded": 10,
-    "fresh_prior_import_row_checks": 0
+    "fresh_prior_import_row_checks": 0,
+    "rollback_rehearsal_passed": true
   },
   "validation": {
     "fresh_full_row_issuer_guards": {
@@ -1255,7 +1256,23 @@
         "url": "https://nironmagnetics.com/niron-magnetics-awarded-400000-minnesota-grant-to-support-workforce-training/",
         "finding": "OriginalMay6 own400kMJSPawardwithHennepintrainingcollaboration; notseparatecollegeinvestment/cashreceipt. Grantornamedsecondsource; issuerattributionexplicit."
       }
-    ]
+    ],
+    "production_rollback_full_baseline_restored": {
+      "counts": {
+        "events": 5036,
+        "approved": 5018,
+        "links": 6773,
+        "sources": 6996,
+        "profiles": 3813,
+        "relationships": 769,
+        "covered": 1361
+      },
+      "preservation_hashes_match": true,
+      "full_before_guards": {
+        "passed": true,
+        "rows": 11
+      }
+    }
   },
   "publication": {
     "status": "not_started"
@@ -1266,5 +1283,5 @@
     "Curatedprofiles/unrelatedsourceandrelationshiphistory",
     "Schedules"
   ],
-  "updated_at": "2026-11-16T03:56:29.709Z"
+  "updated_at": "2026-11-16T03:57:01.236Z"
 }
