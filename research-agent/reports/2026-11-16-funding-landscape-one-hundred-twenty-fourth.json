@@ -1142,7 +1142,12 @@
     "new_round_participations": 5,
     "new_source_rows": 30,
     "new_investor_profiles": 2,
-    "new_coverage_rows": 6
+    "new_coverage_rows": 6,
+    "post_import_idempotency_rehearsal_passed": true,
+    "queue_dispositions_applied": 24,
+    "approved_event_counts_refreshed_for_identities": 26,
+    "newly_completed_bounded_reviews": 2,
+    "new_or_retained_partial": 22
   },
   "validation": {
     "fresh_full_row_issuer_guards": {
@@ -1361,7 +1366,8 @@
     }
   },
   "publication": {
-    "status": "not_started"
+    "status": "pending",
+    "requested_at": "2026-11-16T06:02:41.628Z"
   },
   "preserved": [
     "LegacySTATE.json/frozensnapshots",
@@ -1370,7 +1376,7 @@
     "Historicalmetricsarchive",
     "Schedules"
   ],
-  "updated_at": "2026-11-16T06:01:14.934Z",
+  "updated_at": "2026-11-16T06:02:41.637Z",
   "production_after": {
     "events": 5115,
     "approved": 5097,
@@ -1379,5 +1385,17 @@
     "profiles": 3825,
     "relationships": 769,
     "covered": 1373
+  },
+  "queue_disposition_counts": {
+    "reviewed_public_sources": 1356,
+    "source_review_partial": 1208,
+    "queued": 0
+  },
+  "reconciliation_phase": {
+    "id": "partial-source-pass-1",
+    "checked": 720,
+    "remaining": 623,
+    "bounded_closed": 135,
+    "retained_partial": 585
   }
 }
